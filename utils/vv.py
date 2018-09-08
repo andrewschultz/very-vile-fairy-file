@@ -17,6 +17,11 @@ word_dict = defaultdict(lambda: defaultdict(bool))
 
 ##############start functions
 
+def usage():
+    print("-i = standard input")
+    print("-v = verbose output (prints under the hood info)")
+    exit()
+
 def word_upper(q):
     if q in word_dict[len(q)].keys(): return (q.upper(), True)
     return (q.lower(), False)
@@ -24,12 +29,19 @@ def word_upper(q):
 def write_all_26(a, b):
     read_words_of_length(a)
     read_words_of_length(b)
+    end_string_ary = []
+    anno = [ "", "<- single match", "<- DOUBLE MATCH!!!!" ]
+    strings_array = [ [], [], [] ]
     for x in ascii_lowercase:
         if x == a[0]: continue
         q = word_upper(x + a[1:])
         r = word_upper(x + b[1:])
-        xtra_string = "" if q[1] + r[1] < 2 else "<- DOUBLE MATCH"
-        print(q[0], r[0], xtra_string)
+        wo = q[1] + r[1]
+        strings_array[wo].append("{:s} {:s}{:s}".format(q[0], r[0], "" if wo == 0 else " " + anno[wo]))
+    count = 0
+    for q in strings_array:
+        print("\n".join(q) + " " + str(len(q)) + " of " + str(count))
+        count += 1
 
 def read_words_of_length(a):
     la = len(a)
@@ -50,6 +62,7 @@ count = 1
 while count < len(sys.argv):
     arg = sys.argv[count].lower()
     if arg == 'i': standard_input = True
+    elif arg == 'v': verbose = True
     else: word_ary.append(arg)
     count += 1
 
