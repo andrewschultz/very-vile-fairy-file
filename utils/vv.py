@@ -10,6 +10,7 @@ import sys
 verbose = False
 standard_input = False
 two_letter = False
+every_x = 3
 
 two_letter_array = [ 'br', 'bl', 'cr' ]
 
@@ -21,6 +22,7 @@ word_dict = defaultdict(lambda: defaultdict(bool))
 ##############start functions
 
 def usage():
+    print("-e = CR every x")
     print("-i = standard input")
     print("-v = verbose output (prints under the hood info)")
     print("-t = two letter combos as well")
@@ -34,7 +36,7 @@ def write_all_26(a, b, two_letters_too = False):
     read_words_of_length(a)
     read_words_of_length(b)
     end_string_ary = []
-    anno = [ "", "<- single match", "<- DOUBLE MATCH!!!!" ]
+    anno = [ "no match", "single match", "DOUBLE MATCH!!!!" ]
     strings_array = [ [], [], [] ]
     starts_array = list(ascii_lowercase)
     if two_letters_too: starts_array = sorted(starts_array + two_letter_array)
@@ -44,11 +46,17 @@ def write_all_26(a, b, two_letters_too = False):
         q = word_upper(x + a[1:])
         r = word_upper(x + b[1:])
         wo = q[1] + r[1]
-        strings_array[wo].append("{:s} {:s}{:s}".format(q[0], r[0], "" if wo == 0 else " " + anno[wo]))
+        strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
     count = 0
-    for q in (0, len(strings_array)):
-        print("\n".join(q) + " " + str(len(q)) + " of " + str(count))
-        count += 1
+    for q1 in range(0, 3):
+        end_string = ""
+        for q in range (0, len(strings_array[q1])):
+            end_string += strings_array[q1][q]
+            if q == len(strings_array[q1]) - 1: continue
+            elif (q + 1) % every_x == 0: end_string += "\n"
+            else: end_string += " / "
+            count += 1
+        if (end_string): print("{:s} {:s} ({:d})\n{:s}".format('=' * 40,  anno[q1], len(strings_array[q1]), end_string) )
 
 def read_words_of_length(a):
     la = len(a)
