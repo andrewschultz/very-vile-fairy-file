@@ -1,5 +1,9 @@
 "Very Vile Fairy File" by Andrew Schultz
 
+volume includes
+
+include Trivial Niceties Z-Only by Andrew Schultz.
+
 volume definitions
 
 definition: a thing (called th) is moot:
@@ -11,9 +15,22 @@ to say swh of (r - a room): say "[if r is unvisited]somewhere new[else][r][end i
 to moot (th - a thing):
 	move th to Zapped Zone; [ic]
 
-min-needed is a number that varies. min-needed is 1.
+to move-to-temp (th - a thing):
+	if th is in location of player, move th to hidey house;
 
-the maximum score is 2.
+to move-from-temp (th - a thing):
+	if th is in hidey house or th is off-stage, move th to location of player;
+
+to bold-my-room:
+	say "[b][location of player][r][paragraph break]"
+
+min-needed is a number that varies. min-needed is 3.
+
+the maximum score is 4.
+
+to up-min:
+	increment min-needed;
+	increment the score;
 
 main is a region.
 
@@ -71,7 +88,7 @@ carry out sparkspliffing:
 	if spliff-sparked is true, say "Whoah, dude. You already did." instead;
 	now spliff-sparked is true;
 	say "Whoah, dude! You totally discover a hidden spliff. You're less worried now.";
-	increment the score;
+	up-min;
 	the rule succeeds;
 
 chapter freefalling
@@ -79,8 +96,10 @@ chapter freefalling
 freefalling is an action applying to nothing.
 
 understand the command "free fall" as something new.
+understand the command "fall free" as something new.
 
 understand "free fall" as freefalling.
+understand "fall free" as freefalling.
 
 carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
@@ -94,6 +113,42 @@ part History Hall
 mistmall is a truth state that varies.
 
 History Hall is north of Cark Cliff. printed name of history hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+
+the Gutta Ganksta is a person.
+
+chapter historyhalling
+
+historyhalling is an action applying to nothing.
+
+understand the command "history hall" as something new.
+
+understand "history hall" as historyhalling.
+
+carry out historyhalling:
+	if mistmall is false, say "You're already in History Hall.";
+	move-to-temp gutta ganksta;
+	bold-my-room;
+	the rule succeeds;
+
+chapter mysterymalling
+
+evermall is a truth state that varies.
+
+mysterymalling is an action applying to nothing.
+
+understand the command "mystery mall" as something new.
+
+understand "mystery mall" as mysterymalling when player is in history hall.
+
+carry out mysterymalling:
+	if mistmall is true, say "You're already in the mystery mall." instead;
+	move-from-temp gutta ganksta;
+	now mistmall is true;
+	if evermall is false:
+		increment the score;
+		now evermall is true;
+	bold-my-room;
+	the rule succeeds;
 
 part curst cave
 
@@ -134,11 +189,13 @@ instead of listening:
 
 volume meta
 
-meta is a region.
+Meta is a region.
 
 a capped cone is a thing.
 
-Zapped Zone is a room in meta.
+Zapped Zone is a room in Meta.
+
+Hidey House is a room in Meta.
 
 volume unsorted
 
