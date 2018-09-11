@@ -1,8 +1,12 @@
-"Very Vile Fairy File" by Andrew Schultz
+"Very Vile Fairy File" by Billy Boling
+
+the story headline is "Rhymes Rue Times Two"
 
 volume includes
 
 include Trivial Niceties Z-Only by Andrew Schultz.
+
+include Basic Screen Effects by Emily Short.
 
 volume definitions
 
@@ -24,6 +28,10 @@ to move-from-temp (th - a thing):
 definition: a thing (called th) is quicknear:
 	if player carries th or th is in location of player, yes;
 	no;
+
+to win-the-game:
+	say "DEALS: DONE. FEELS FUN.";
+	end the story;
 
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
@@ -205,6 +213,8 @@ dead doom is a room.
 
 volume verbs
 
+book standard modifications
+
 chapter listening
 
 instead of listening:
@@ -216,9 +226,37 @@ chapter score
 check requesting the score:
 	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win."
 
+book nonstandard but general verbs
+
+chapter creditsing
+
+creditsing is an action out of world.
+
+understand the command "credits" as something new.
+
+understand "credits" as creditsing.
+
+carry out creditsing:
+	say "PUT CREDITS HERE.";
+	the rule succeeds;
+
+chapter abouting
+
+abouting is an action out of world.
+
+understand the command "about" as something new.
+
+understand "about" as abouting.
+
+carry out abouting:
+	say "Very Vile Fairy File came about when I was writing a yet-unnamed game on spoonerisms. I found a few spoonerisms that made more sense as alliteration, which was sort of fun, until I realized I had a lot more than that--enough for a game. It seemed like a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but my daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game, though I recognize the spelling for some of the commands may be tricky. I hope it is interesting and amusing.";
+	the rule succeeds;
+
 volume when play begins
 
-when play begins: now the turn count is 0;
+when play begins:
+	now the right hand status line is "[score]/[min-needed]-[maximum score]";
+	now the turn count is 0;
 
 section when play begins - not for release
 
