@@ -59,7 +59,7 @@ check going north in cark cliff:
 
 chapter spark-spliffing
 
-sparkspliffing is an action out of world.
+sparkspliffing is an action applying to nothing.
 
 understand the command "spark spliff" as something new.
 
@@ -74,9 +74,26 @@ carry out sparkspliffing:
 	increment the score;
 	the rule succeeds;
 
+chapter freefalling
+
+freefalling is an action applying to nothing.
+
+understand the command "free fall" as something new.
+
+understand "free fall" as freefalling.
+
+carry out freefalling:
+	if tree-down is true, say "You don't need the tree to fall any further." instead;
+	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now.";
+	now tree-down is true;
+	increment the score;
+	the rule succeeds;
+
 part History Hall
 
-History Hall is north of Cark Cliff.
+mistmall is a truth state that varies.
+
+History Hall is north of Cark Cliff. printed name of history hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 part curst cave
 
