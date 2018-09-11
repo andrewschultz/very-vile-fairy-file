@@ -21,15 +21,22 @@ to move-to-temp (th - a thing):
 to move-from-temp (th - a thing):
 	if th is in hidey house or th is off-stage, move th to location of player;
 
+definition: a thing (called th) is quicknear:
+	if player carries th or th is in location of player, yes;
+	no;
+
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
 min-needed is a number that varies. min-needed is 3.
 
-the maximum score is 4.
+min-gotten is a number that varies. min-gotten is 0.
+
+the maximum score is 5.
 
 to up-min:
 	increment min-needed;
+	increment min-gotten;
 	increment the score;
 
 main is a region.
@@ -150,6 +157,23 @@ carry out mysterymalling:
 	bold-my-room;
 	the rule succeeds;
 
+chapter whatawankstaing
+
+whatawankstaing is an action applying to nothing.
+
+understand the command "whatawanksta" as something new.
+
+understand "what a wanksta" as whatawankstaing when evermall is true.
+understand "whatta wanksta" as whatawankstaing when evermall is true.
+
+carry out whatawankstaing:
+	if ganksta is moot, say "You already got rid of the ganksta." instead;
+	if ganksta is not quicknear, say "That might work with the ganksta around." instead;
+	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
+	moot ganksta;
+	up-min;
+	the rule succeeds;
+
 part curst cave
 
 Curst Cave is a room.
@@ -186,6 +210,17 @@ chapter listening
 instead of listening:
 	if player is in wet wood, say "Bet, bud! Met mud!" instead;
 	say "Nothing special."
+
+chapter score
+
+check requesting the score:
+	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win."
+
+volume when play begins
+
+when play begins: now the turn count is 0;
+
+section when play begins - not for release
 
 volume meta
 
