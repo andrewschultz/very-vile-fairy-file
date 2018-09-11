@@ -6,8 +6,12 @@ definition: a thing (called th) is moot:
 	if th is in Zapped Zone, yes;
 	no;
 
+to say swh of (r - a room): say "[if r is unvisited]somewhere new[else][r][end if]"
+
 to moot (th - a thing):
 	move th to Zapped Zone; [ic]
+
+min-needed is a number that varies. min-needed is 1.
 
 the maximum score is 2.
 
@@ -39,8 +43,40 @@ carry out getgooding:
 	if get-good is true, say "You already did." instead;
 	say "You realize you can reason your way out of the Wet Wood.";
 	increment the score;
-	now get-good is true;
+	move player to cark cliff;
 	the rule succeeds;
+
+part Cark Cliff
+
+Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now."
+
+tree-down is a truth state that varies.
+
+The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]The tree has fallen north, giving passage to [swh of the room north of cark cliff][end if]."
+
+check going north in cark cliff:
+	if tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
+
+chapter spark-spliffing
+
+sparkspliffing is an action out of world.
+
+understand the command "spark spliff" as something new.
+
+understand "spark spliff" as sparkspliffing.
+
+spliff-sparked is a truth state that varies.
+
+carry out sparkspliffing:
+	if spliff-sparked is true, say "Whoah, dude. You already did." instead;
+	now spliff-sparked is true;
+	say "Whoah, dude! You totally discover a hidden spliff. You're less worried now.";
+	increment the score;
+	the rule succeeds;
+
+part History Hall
+
+History Hall is north of Cark Cliff.
 
 part curst cave
 
