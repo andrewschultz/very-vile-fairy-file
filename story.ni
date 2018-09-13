@@ -36,16 +36,21 @@ to win-the-game:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 4.
+min-needed is a number that varies. min-needed is 6.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 6.
+the maximum score is 9.
+
+max-poss is a number that varies.
 
 to up-min:
 	increment min-needed;
 	increment min-gotten;
 	increment the score;
+
+to max-down:
+	decrement max-poss;
 
 main is a region.
 
@@ -219,6 +224,21 @@ chapter Reeker Russell
 
 Reeker Russell is a person. Reeker Russell carries the good gun.
 
+to decide which number is russell-progress:
+	let rp be 0;
+	if meeker-yet is true, increment rp;
+	if good gun is moot, increment rp;
+	decide on rp;
+
+to check-russell-go:
+	increment the score;
+	if russell-progress is 2:
+		say "Russell flees!";
+		moot Reeker Russell;
+		if beaker-yet is false, max-down;
+	else:
+		say "Russell looks confused! One more setback, and he's had it.";
+
 chapter castcaping
 
 castcaping is an action applying to nothing.
@@ -232,6 +252,55 @@ carry out castcaping:
 	say "You cast your cap, and someone big and mean appears: (W)re(a/e)ker Russell!";
 	move Reeker Russell to Last Lap;
 	increment the score;
+	the rule succeeds;
+
+chapter beakerbustleing
+
+beakerbustleing is an action applying to nothing.
+
+understand the command "beaker bustle" as something new.
+
+understand "beaker bustle" as beakerbustleing.
+
+beaker-yet is a truth state that varies;
+
+carry out beakerbustleing:
+	if beaker-yet is true, say "You already did that!" instead;
+	say "You have a vision of a much nerdier version of Wreaker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
+	now beaker-yet is true;
+	up-min;
+	the rule succeeds;
+
+chapter meekermuscleing
+
+meekermuscleing is an action applying to nothing.
+
+understand the command "meeker muscle" as something new.
+
+understand "meeker muscle" as meekermuscleing.
+
+meeker-yet is a truth state that varies;
+
+carry out meekermuscleing:
+	if meeker-yet is true, say "You already did that!" instead;
+	now meeker-yet is true;
+	say "Russell becomes noticeably less muscular.";
+	check-russell-go;
+	the rule succeeds;
+
+chapter woodoneing
+
+woodoneing is an action applying to nothing.
+
+understand the command "wood one" as something new.
+
+understand "wood one" as woodoneing when good gun is quicknear or player is in last lap.
+
+carry out woodoneing:
+	if good gun is moot, say "You already got rid of the good gun." instead;
+	say "The good gun turns into a wood one in Wreaker Russell's hands! He throws it away in disgust.";
+	moot good gun;
+	check-russell-go;
 	the rule succeeds;
 
 part dead doom
@@ -276,13 +345,14 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Very Vile Fairy File came about when I was writing a yet-unnamed game on spoonerisms. I found a few spoonerisms that made more sense as alliteration, which was sort of fun, until I realized I had a lot more than that--enough for a game. It seemed like a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but my daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game, though I recognize the spelling for some of the commands may be tricky. I hope it is interesting and amusing.";
+	say "Very Vile Fairy File came about when I was writing a yet-unnamed game on spoonerisms. I found a few spoonerisms that made more sense as alliteration, which was sort of fun, until I realized I had a lot more than that--enough for a game. It seemed like a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but my daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.";
 	the rule succeeds;
 
 volume when play begins
 
 when play begins:
-	now the right hand status line is "[score]/[min-needed]-[maximum score]";
+	now max-poss is the maximum score;
+	now the right hand status line is "[score]/[min-needed]-[max-poss]";
 	now the turn count is 0;
 
 section when play begins - not for release
