@@ -36,11 +36,11 @@ to win-the-game:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 3.
+min-needed is a number that varies. min-needed is 4.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 5.
+the maximum score is 6.
 
 to up-min:
 	increment min-needed;
@@ -205,6 +205,33 @@ carry out firstfaveing:
 	say "Suddenly, the curst cave isn't very bad at all.";
 	increment the score;
 	now first-fave is true;
+	the rule succeeds;
+
+part last lap
+
+Last Lap is a room.
+
+cap-cast is a truth state that varies.
+
+[?? trusty tap / crusty cap]
+
+chapter Reeker Russell
+
+Reeker Russell is a person. Reeker Russell carries the good gun.
+
+chapter castcaping
+
+castcaping is an action applying to nothing.
+
+understand the command "cast cap" as something new.
+
+understand "cast cap" as castcaping when player is in last lap.
+
+carry out castcaping:
+	if cap-cast is true, say "You already did." instead;
+	say "You cast your cap, and someone big and mean appears: (W)re(a/e)ker Russell!";
+	move Reeker Russell to Last Lap;
+	increment the score;
 	the rule succeeds;
 
 part dead doom
