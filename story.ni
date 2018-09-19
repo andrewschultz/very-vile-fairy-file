@@ -365,6 +365,8 @@ a capped cone is a thing.
 
 Zapped Zone is a room in Meta.
 
+Gazy Gap is a room in Meta.
+
 Hidey House is a room in Meta.
 
 volume unsorted
@@ -390,5 +392,45 @@ Lit Lawn is a room.
 
 [?? burned bower/turned tower]
 
-Vast Void is a room.
+book Soft Sand
 
+Soft Sand is a room.
+
+ever-loft is a truth state that varies.
+
+land-loft is a truth state that varies.
+
+chapter softsanding
+
+softsanding is an action applying to nothing.
+
+understand the command "soft sand" as something new.
+
+understand "soft sand" as softsanding.
+
+carry out softsanding:
+	if land-loft is false, say "You're already on the soft sand." instead;
+	say "The loft land reverts to the soft sand.";
+	now loft-land is true;
+	the rule succeeds;
+
+chapter loftlanding
+
+loftlanding is an action applying to nothing.
+
+understand the command "loft land" as something new.
+
+understand "loft land" as loftlanding.
+
+carry out loftlanding:
+	if land-loft is true, say "You're already on the loft land." instead;
+	if ever-loft is false:
+		now ever-loft is true;
+		say "Boom! The soft sand rises up and becomes the Loft Land.";
+		now land-loft is false;
+		increment the score;
+	the rule succeeds;
+
+book other places
+
+Vast Void is a room.
