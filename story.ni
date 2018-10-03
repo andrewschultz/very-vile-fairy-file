@@ -222,7 +222,7 @@ cap-cast is a truth state that varies.
 
 chapter Reeker Russell
 
-Reeker Russell is a person. Reeker Russell carries the good gun.
+Reeker Russell is a person in Last Lap. Reeker Russell carries the good gun.
 
 to decide which number is russell-progress:
 	let rp be 0;
@@ -301,6 +301,35 @@ carry out woodoneing:
 	say "The good gun turns into a wood one in Wreaker Russell's hands! He throws it away in disgust.";
 	moot good gun;
 	check-russell-go;
+	the rule succeeds;
+
+part Merry Mile
+
+Merry Mile is north of Last Lap. "You hear laughter here, but it's all wrong."
+
+chapter very vile fairy file
+
+the very vile fairy file is a thing in Merry Mile. "The very vile fairy file is here! It sort of repels you, but you know there must be a way to neutralize it."
+
+instead of doing anything with the fairy file, say "[ff-no].";
+
+instead of doing anything when noun is fairy file, say "[ff-no].";
+
+to say ff-no: say "You can't do anything directly with or to the fairy file. There must be some overarching action"
+
+chapter burybileing
+
+burybileing is an action applying to nothing.
+
+understand the command "bury bile" as something new.
+
+understand "bury bile" as burybileing.
+
+carry out burybileing:
+	if location of very vile fairy file is unvisited, say "You can't do that until you find the very vile fairy file." instead;
+	if very vile fairy file is not in location of player, say "You can't do that if you're not around the very vile fairy file." instead;
+	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
+	end the story in victory;
 	the rule succeeds;
 
 part dead doom
