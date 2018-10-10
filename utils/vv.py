@@ -13,6 +13,7 @@ standard_input = False
 two_letter = False
 every_x = 3
 
+on_off = [ 'on', 'off' ]
 word_ary = []
 default_array = [ 'vast', 'void' ]
 two_letter_ary = []
@@ -50,8 +51,8 @@ def write_all_26(a, b, two_letters_too = 0):
     for x in starts_array:
         if x == a[0]: continue
         if len(x) == 2 and x[:2] == a[:2]: continue
-        q = word_upper(x + a[1:])
-        r = word_upper(x + b[1:])
+        q = word_upper(x + a[1+first_two:])
+        r = word_upper(x + b[1+first_two:])
         wo = q[1] + r[1]
         strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
     count = 0
@@ -87,6 +88,7 @@ while count < len(sys.argv):
     arg = sys.argv[count].lower()
     if arg == 'i': standard_input = True
     elif arg == 'v': verbose = True
+    elif arg == '2': first_two = True
     elif arg[0] == 't':
         two_letter = int(arg[1:])
     else: word_ary.append(arg)
@@ -101,10 +103,29 @@ if not len(word_ary):
 if standard_input:
     keep_going = True
     while keep_going:
-        x = input(">>")
+        x = input(">>").lower()
         if x[0] == 't' and x[1].isdigit():
             two_letter = int(x[1:])
             continue
+        if x == '2':
+            first_two = not first_two
+            print("First two is now", on_off[first_two])
+            continue
+        if x == '2y':
+            first_two = True
+            continue
+        if x == '2n':
+            first_two = True
+            continue
+        if x.startswith("2n"):
+            first_two = False
+            x = re.sub("^2n *", "", x)
+        if x.startswith("2y"):
+            first_two = True
+            x = re.sub("^2y *", "", x)
+        if x.startswith("2"):
+            first_two = not first_two
+            x = re.sub("^2 *", "", x)
         si = x.lower().strip().split(" ")
         if x == 'q': break
         if not x.strip(): break
