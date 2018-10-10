@@ -6,16 +6,16 @@
 from collections import defaultdict
 from string import ascii_lowercase
 import sys
+import re
 
 verbose = False
 standard_input = False
 two_letter = False
 every_x = 3
 
-two_letter_array = [ 'br', 'bl', 'cr' ]
-
 word_ary = []
 default_array = [ 'vast', 'void' ]
+two_letter_ary = []
 
 word_dict = defaultdict(lambda: defaultdict(bool))
 
@@ -28,18 +28,25 @@ def usage():
     print("-t = two letter combos as well")
     exit()
 
+def read_two_letters():
+    with open("2s.txt") as file:
+        for line in file:
+            if line.startswith("#"): continue
+            if line.startswith(";"): break
+            l = re.sub(" .*", "", line.lower().strip())
+            two_letter_ary.append(l)
+
 def word_upper(q):
     if q in word_dict[len(q)].keys(): return (q.upper(), True)
     return (q.lower(), False)
 
-def write_all_26(a, b, two_letters_too = False):
+def write_all_26(a, b, two_letters_too = 0):
     read_words_of_length(a)
     read_words_of_length(b)
     end_string_ary = []
     anno = [ "no match", "single match", "DOUBLE MATCH!!!!" ]
     strings_array = [ [], [], [] ]
-    starts_array = list(ascii_lowercase)
-    if two_letters_too: starts_array = sorted(starts_array + two_letter_array)
+    starts_array = list(ascii_lowercase) + two_letter_ary[0:two_letters_too]
     for x in starts_array:
         if x == a[0]: continue
         if len(x) == 2 and x[:2] == a[:2]: continue
@@ -74,13 +81,18 @@ def read_words_of_length(a):
 
 count = 1
 
+read_two_letters()
+
 while count < len(sys.argv):
     arg = sys.argv[count].lower()
     if arg == 'i': standard_input = True
     elif arg == 'v': verbose = True
-    elif arg == 't': two_letter = True
+    elif arg[0] == 't':
+        two_letter = int(arg[1:])
     else: word_ary.append(arg)
     count += 1
+
+starts_array = list(ascii_lowercase)
 
 if not len(word_ary):
     standard_input = True
@@ -90,6 +102,9 @@ if standard_input:
     keep_going = True
     while keep_going:
         x = input(">>")
+        if x[0] == 't' and x[1].isdigit():
+            two_letter = int(x[1:])
+            continue
         si = x.lower().strip().split(" ")
         if x == 'q': break
         if not x.strip(): break
