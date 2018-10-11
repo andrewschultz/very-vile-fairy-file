@@ -429,6 +429,59 @@ Lit Lawn is a room.
 
 [?? burned bower/turned tower]
 
+book Whining War
+
+Whining War is a room.
+
+chapter shiningshoreing
+
+shiningshoreing is an action applying to nothing.
+
+understand the command "shining shore" as something new.
+
+understand "shining shore" as shiningshoreing when player is in Whining War.
+
+carry out shiningshoreing:
+	if shore-shine is true, say "You already got (t)here." instead;
+	say "The whining stops. It's much brighter here. You feel there may be something else to find here.";
+	increment the score;
+	the rule succeeds.
+
+chapter miningmoreing
+
+miningmoreing is an action applying to nothing.
+
+understand the command "mining more" as something new.
+
+understand "mining more" as miningmoreing when player is in Whining War and mine-more is false.
+
+mine-more is a truth state that varies.
+
+carry out miningmoreing:
+	abide by the shone-yet rule;
+	increment the score;
+	now mine-more is true;
+	the rule succeeds.
+
+this is the shone-yet rule:
+	if shore-shine is false, say "Too whiny for that right now." instead;
+
+chapter diningdooring
+
+diningdooring is an action applying to nothing.
+
+understand the command "dining door" as something new.
+
+understand "dining door" as diningdooring whene player is in Whining War and dine-door is false.
+
+dine-door is a truth state that varies.
+
+carry out diningdooring:
+	abide by the shone-yet rule;
+	increment the score;
+	now dine-door is true;
+	the rule succeeds.
+
 book Soft Sand
 
 Soft Sand is a room.
