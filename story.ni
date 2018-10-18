@@ -8,6 +8,10 @@ include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
+section establish debug - not for release
+
+when play begins (this is the set debug state rule): now debug-state is true;
+
 volume definitions
 
 definition: a thing (called th) is moot:
@@ -62,7 +66,11 @@ volume rooms
 
 part wet wood
 
-Wet Wood is a room.
+Wet Wood is a room. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]."
+
+check going in wet wood: say "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp]." instead;
+
+to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
 chapter getgooding
 
@@ -85,14 +93,16 @@ carry out getgooding:
 
 part Cark Cliff
 
-Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now."
+Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]."
 
 tree-down is a truth state that varies.
 
-The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]The tree has fallen north, giving passage to [swh of the room north of cark cliff][end if]."
+The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of cark cliff][end if]."
 
 check going north in cark cliff:
 	if tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
+
+check going in cark cliff: say "You don't want to go back to the Wet Wood. Or fall off Cark Cliff." instead;
 
 chapter spark-spliffing
 
@@ -329,7 +339,7 @@ carry out burybileing:
 	if location of very vile fairy file is unvisited, say "You can't do that until you find the very vile fairy file." instead;
 	if very vile fairy file is not in location of player, say "You can't do that if you're not around the very vile fairy file." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
-	end the story in victory;
+	end the game in victory;
 	the rule succeeds;
 
 part dead doom
@@ -349,23 +359,25 @@ instead of listening:
 chapter score
 
 check requesting the score:
-	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win."
-	say "Your rank is [your-rank]."
+	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win.";
+	say "[line break]Your current rank is [your-rank].";
+	the rule succeeds;
 
 to say your-rank:
-	if score is max-score:
+	if score is maximum score:
 		say "gold god";
 		continue the action;
 	repeat through table of ranks:
-		if score < rank-max entry:
-		say "[rank-name entry]"
+		if there is no rank-max entry or score < rank-max entry:
+			say "[rank-name entry]";
+			continue the action;
 
 table of ranks
 rank-max	rank-name
 2	"sold sod"
 4	"cold cod"
 6	"old, odd"
-8	"bold bod"
+--	"bold bod"
 
 book nonstandard but general verbs
 
@@ -397,13 +409,13 @@ volume when play begins
 
 when play begins (this is the opening text rule):
 	now the left hand status line is "West Wall";
-	first-status;
-	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak]";
-	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
-	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
-	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File.[wfak]";
+	force-status;
+	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak-d]";
+	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak-d]";
+	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak-d]";
+	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File.[wfak-d]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, leaving you in ...";
-	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.
+	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.";
 	now max-poss is the maximum score;
 	now the right hand status line is "[score]/[min-needed]-[max-poss]";
 	now the turn count is 0;
@@ -457,6 +469,8 @@ understand the command "shining shore" as something new.
 
 understand "shining shore" as shiningshoreing when player is in Whining War.
 
+shore-shine is a truth state that varies.
+
 carry out shiningshoreing:
 	if shore-shine is true, say "You already got (t)here." instead;
 	say "The whining stops. It's much brighter here. You feel there may be something else to find here.";
@@ -488,7 +502,7 @@ diningdooring is an action applying to nothing.
 
 understand the command "dining door" as something new.
 
-understand "dining door" as diningdooring whene player is in Whining War and dine-door is false.
+understand "dining door" as diningdooring when player is in Whining War and dine-door is false.
 
 dine-door is a truth state that varies.
 
@@ -504,7 +518,7 @@ Soft Sand is a room.
 
 ever-loft is a truth state that varies.
 
-land-loft is a truth state that varies.
+loft-land is a truth state that varies.
 
 chapter softsanding
 
@@ -514,8 +528,10 @@ understand the command "soft sand" as something new.
 
 understand "soft sand" as softsanding.
 
+loft-land is a truth state that varies.
+
 carry out softsanding:
-	if land-loft is false, say "You're already on the soft sand." instead;
+	if loft-land is false, say "You're already on the soft sand." instead;
 	say "The loft land reverts to the soft sand.";
 	now loft-land is true;
 	the rule succeeds;
@@ -529,14 +545,16 @@ understand the command "loft land" as something new.
 understand "loft land" as loftlanding.
 
 carry out loftlanding:
-	if land-loft is true, say "You're already on the loft land." instead;
+	if loft-land is true, say "You're already on the loft land." instead;
+	say "Boom! The soft sand rises up and becomes the Loft Land[one of][or] again[stopping].";
 	if ever-loft is false:
 		now ever-loft is true;
-		say "Boom! The soft sand rises up and becomes the Loft Land.";
-		now land-loft is false;
+		now loft-land is false;
 		increment the score;
 	the rule succeeds;
 
 book other places
 
 Vast Void is a room.
+
+volume testables
