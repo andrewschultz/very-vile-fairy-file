@@ -34,6 +34,15 @@ def usage():
     print("-t = two letter combos as well")
     exit()
 
+def stdin_help():
+    print("? = this.")
+    print("t(number) = how many two-letter matches to look at.")
+    print("t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
+    print("ta = see all")
+    print("2 = toggling replacing 1 or 1st 2, 2y = force 1st 2, 2n = force only 1st character. You can have a command after that.")
+    print("standard input = 2 words to look through alliterative rhymes.")
+    return
+
 def read_two_letters():
     global tot_freq
     with open("2s.txt") as file:
@@ -117,13 +126,6 @@ if not len(word_ary):
     standard_input = True
     print("Going with standard input by default.")
 
-def stdin_help():
-    print("? = this.")
-    print("t# = how many two-letter things to see.")
-    print("2 = toggling replacing 1 or 1st 2, 2y = force 1st 2, 2n = force only 1st character. You can have a command after that.")
-    print("standard input = 2 words to look through alliterative rhymes.")
-    return
-
 if standard_input:
     keep_going = True
     cmds = []
@@ -153,10 +155,17 @@ if standard_input:
                     two_letter = 0
                     continue
                 two_letter = int(let_check)
-            elif x[1] == 'a': two_letter = len(two_letter_ary)
+            elif x == 'ta': two_letter = len(two_letter_ary)
             elif x[1] == '#':
                 two_letter = len(two_letter_ary) - 1
-                my_freq = int(x[2:])
+                try:
+                    if len(x) == 2 or not x[2:].strip():
+                        my_freq = len(two_letter_array)
+                    else:
+                        my_freq = int(x[2:])
+                except:
+                    print("T requires a, an integer, or # then an integer.")
+                    continue
                 while freq[two_letter_ary[two_letter]] < my_freq and two_letter > 0:
                     two_letter -= 1
             else:
