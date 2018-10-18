@@ -350,6 +350,22 @@ chapter score
 
 check requesting the score:
 	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win."
+	say "Your rank is [your-rank]."
+
+to say your-rank:
+	if score is max-score:
+		say "gold god";
+		continue the action;
+	repeat through table of ranks:
+		if score < rank-max entry:
+		say "[rank-name entry]"
+
+table of ranks
+rank-max	rank-name
+2	"sold sod"
+4	"cold cod"
+6	"old, odd"
+8	"bold bod"
 
 book nonstandard but general verbs
 
