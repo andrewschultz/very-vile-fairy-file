@@ -7,6 +7,7 @@ from collections import defaultdict
 from string import ascii_lowercase
 import sys
 import re
+import os
 
 verbose = False
 standard_input = False
@@ -36,6 +37,7 @@ def usage():
 
 def stdin_help():
     print("? = this.")
+    print("ri = what is read in")
     print("t(number) = how many two-letter matches to look at.")
     print("t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
     print("ta = see all")
@@ -65,12 +67,20 @@ def word_upper(q):
     return (q.lower(), False)
 
 def write_all_26(a, b, two_letters_too = False, two_letter_starts = 10):
-    read_words_of_length(a)
-    read_words_of_length(b)
+    global let_blank
+    la = len(a)
+    lb = len(b)
+    read_words_of_length(la)
+    read_words_of_length(lb)
+    if '' in let_blank:
+        read_words_of_length(la-1)
+        read_words_of_length(lb-1) # since we need to consider lair -> air
+    if two_letter_starts:
+        read_words_of_length(la+1)
+        read_words_of_length(lb+1)
     end_string_ary = []
     anno = [ "no match", "single match", "DOUBLE MATCH!!!!" ]
     strings_array = [ [], [], [] ]
-    global let_blank
     starts_array = list(let_blank)
     if two_letter_starts: starts_array.extend(two_letter_ary[0:two_letter_starts])
     for x in range(0, 3): strings_array[x] = []
@@ -92,17 +102,20 @@ def write_all_26(a, b, two_letters_too = False, two_letter_starts = 10):
             count += 1
         if (end_string): print("{:s} {:s} ({:d})\n{:s}".format('=' * 40,  anno[q1], len(strings_array[q1]), end_string) )
 
-def read_words_of_length(a):
-    la = len(a)
+def read_words_of_length(la):
     if la in word_dict.keys():
         if verbose:
             print("Already read words of length", la, "so returning.")
         return
     my_file = "c:/writing/dict/words-{:d}.txt".format(la)
+    if not os.path.exists(my_file):
+        print(myfile, "does not exist, won't bother with words of length", la)
+        word_dict[a] = 0
+        return
     with open(my_file) as f:
         for line in f:
             word_dict[la][line.lower().strip()] = True
-    print("Read in", len(word_dict[la].keys()), "words", "for", la)
+    print("Read in", len(word_dict[la].keys()), "words of length", la)
 
 ##############end functions
 
@@ -186,6 +199,11 @@ if standard_input:
             continue
         if x == '2n':
             first_two = False
+            continue
+        if x == 'ri':
+            print(len(word_dict.keys()), "total word files read in.")
+            for q in sorted(word_dict.keys()):
+                print(q, "has", len(word_dict[q]), "total words")
             continue
         if x.startswith("2n"):
             first_two = False
