@@ -20,6 +20,8 @@ two_letter_ary = []
 
 word_dict = defaultdict(lambda: defaultdict(bool))
 
+let_blank = [''] + ascii_lowercase
+
 ##############start functions
 
 def usage():
@@ -47,7 +49,7 @@ def write_all_26(a, b, two_letters_too = 0):
     end_string_ary = []
     anno = [ "no match", "single match", "DOUBLE MATCH!!!!" ]
     strings_array = [ [], [], [] ]
-    starts_array = list(ascii_lowercase) + two_letter_ary[0:two_letters_too]
+    starts_array = let_blank + two_letter_ary[0:two_letters_too]
     for x in starts_array:
         if x == a[0]: continue
         if len(x) == 2 and x[:2] == a[:2]: continue
@@ -94,7 +96,7 @@ while count < len(sys.argv):
     else: word_ary.append(arg)
     count += 1
 
-starts_array = list(ascii_lowercase)
+starts_array = let_blank
 
 if not len(word_ary):
     standard_input = True
