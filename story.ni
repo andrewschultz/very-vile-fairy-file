@@ -14,6 +14,10 @@ when play begins (this is the set debug state rule): now debug-state is true;
 
 volume definitions
 
+to decide whether the action is procedural:
+	if examining, yes;
+	no;
+
 definition: a thing (called th) is moot:
 	if th is in Zapped Zone, yes;
 	no;
@@ -53,8 +57,7 @@ to up-min:
 	increment min-gotten;
 	increment the score;
 
-to max-down:
-	decrement max-poss;
+to max-down: decrement max-poss;
 
 main is a region.
 
@@ -66,7 +69,7 @@ volume rooms
 
 part wet wood
 
-Wet Wood is a room. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]."
+Wet Wood is a room. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something."
 
 check going in wet wood: say "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp]." instead;
 
@@ -93,7 +96,7 @@ carry out getgooding:
 
 part Cark Cliff
 
-Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]."
+Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here."
 
 tree-down is a truth state that varies.
 
@@ -103,6 +106,14 @@ check going north in cark cliff:
 	if tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
 
 check going in cark cliff: say "You don't want to go back to the Wet Wood. Or fall off Cark Cliff." instead;
+
+chapter silly sign
+
+The silly sign is scenery in Cark Cliff. "The silly sign reads WILL [']E WHINE?"
+
+instead of doing something with silly sign:
+	if action is procedural, continue the action;
+	say "The silly sign is just there for atmosphere."
 
 chapter spark-spliffing
 
@@ -224,7 +235,7 @@ carry out firstfaveing:
 
 part last lap
 
-Last Lap is a room.
+Last Lap is a room. "[if reeker russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
 
 cap-cast is a truth state that varies.
 
@@ -232,7 +243,7 @@ cap-cast is a truth state that varies.
 
 chapter Reeker Russell
 
-Reeker Russell is a person in Last Lap. Reeker Russell carries the good gun.
+Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell is blocking the way north."
 
 to decide which number is russell-progress:
 	let rp be 0;
@@ -248,6 +259,18 @@ to check-russell-go:
 		if beaker-yet is false, max-down;
 	else:
 		say "Russell looks confused! One more setback, and he's had it.";
+
+chapter fastfaping
+
+fastfaping is an action applying to nothing.
+
+understand the command "fast fap" as something new.
+
+understand "fast fap" as fastfaping.
+
+carry out fastfaping:
+	say "Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.";
+	the rule succeeds.
 
 chapter castcaping
 
@@ -553,8 +576,98 @@ carry out loftlanding:
 		increment the score;
 	the rule succeeds;
 
-book other places
+part other places
+
+Done Dune is a room. "This room is full of things you should shun soon."
+
+book vast void
 
 Vast Void is a room.
+
+book Lake Lea
+
+Lake Lea is a room. "You're on the Lake Lea, which borders on Lake Lap."
+
+Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
+
+this is the jake-g-gone rule: if jake g is moot, say "You've already chased Jake G." instead;
+
+Lake Lap is scenery in Lake Lea. "You can't get a close enough view."
+
+jake-gone is a number that varies.
+
+to eval-jake-g:
+	increment jake-gone;
+	if jake-gone is 2:
+		moot jake g;
+		say "Jake leaves, satisfied.";
+
+chapter fakefeeing
+
+fakefeeing is an action applying to nothing.
+
+understand the command "fake fee" as something new.
+
+understand "fake fee" as fakefeeing.
+
+fake-fee is a truth state that varies.
+
+carry out fakefeeing:
+	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
+	now fake-fee is true;
+	increment the score;
+	the rule succeeds.
+
+chapter wakewheeing
+
+wakewheeing is an action applying to nothing.
+
+understand the command "wake whee" as something new.
+
+understand "wake whee" as wakewheeing.
+
+wake-whee is a truth state that varies.
+
+carry out wakewheeing:
+	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
+	now wake-whee is true;
+	increment the score;
+	the rule succeeds.
+
+chapter achying
+
+achying is an action applying to nothing.
+
+understand the command "achy" as something new.
+
+understand "achy" as achying.
+
+achy is a truth state that varies.
+
+carry out achying:
+	if achy is true, say "You already made Jake G achy." instead;
+	now achy is true;
+	increment the score;
+	the rule succeeds.
+
+chapter breakbrieing
+
+breakbrieing is an action applying to nothing.
+
+understand the command "break brie" as something new.
+
+understand "break brie" as breakbrieing when player is in lake lea.
+
+brie-broke is a truth state that varies;
+
+carry out breakbrieing:
+	if brie-broke is true, say "You already broke brie with Jake G." instead;
+	follow the jake-g-gone rule;
+	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
+	increment the score;
+	eval-jake-g;
+	the rule succeeds.
+
+volume meta rooms
 
 volume testables
