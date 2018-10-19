@@ -8,10 +8,16 @@ from string import ascii_lowercase
 import sys
 import re
 import os
+import i7
+
+this_time = defaultdict(int)
+all_time = defaultdict(int)
+
+all_time_file = os.path.join(i7.sdir("vvff"), "vva.txt")
 
 verbose = False
 standard_input = False
-two_letter = False
+two_letter = 0
 every_x = 3
 first_two = False
 tot_freq = 0
@@ -27,9 +33,19 @@ let_blank = [''] + list(ascii_lowercase)
 
 ##############start functions
 
+def read_all_time():
+    if not os.path.exists(all_time_file):
+        print("Could not find", all_time_file)
+        return
+    with open(all_time_file) as file:
+        for line in file:
+            l = line.lower().strip().split("=")
+            all_time[l[0]] = int(l[1])
+
 def print_configs():
     print("Replacing first two letters is {:s}.".format(i7.oo[first_two]))
-    print("Two-letter replacement texts:", ', '.join(two_letter_ary[0:two_letter]))
+    print("Do we replace two letters:", ', '.join(two_letter_ary[0:two_letter]))
+    print("# of two-letter replacements of original letters:", two_letter)
     return
 
 def cmd_line_usage():
@@ -145,7 +161,10 @@ if not len(word_ary):
     standard_input = True
     print("Going with standard input by default.")
 
+read_all_time()
+
 if standard_input:
+    last_lookup = ""
     keep_going = True
     cmds = []
     while keep_going:
@@ -157,7 +176,13 @@ if standard_input:
         cmds.append(x)
         if x == 'q' or x == '':
             print("Bailing.")
+            for j in this_time.keys():
+                all_time[j] += 1
+            f = open(all_time_file, "w")
+            for j in sorted(all_time.keys()):
+                f.write("{:s}={:d}\n".format(j, all_time[j]))
             break
+            f.close()
         if x[0] == '?':
             stdin_help()
             continue
@@ -225,14 +250,25 @@ if standard_input:
         if x.startswith("2"):
             first_two = not first_two
             x = re.sub("^2 *", "", x)
-        si = x.lower().strip().split(" ")
-        if not x.strip(): break
-        if ' ' not in x:
-            print("1-word command not recognized. You need a 2-word command. Type ? to see your options.")
-            continue
+        x = x.lower().strip()
+        if not x: break
         if x.count(' ') > 1:
             print("Too many words. A 2 word command should work.")
             continue
+        if x == '<' or x == '`':
+            if not last_lookup:
+                print("Can't use < until you've written something previously.")
+                continue
+            x = last_lookup
+            print("Trying", x)
+        elif ' ' not in x:
+            print("1-word command not recognized. You need a 2-word command. Type ? to see your options.")
+            continue
+        else:
+            last_lookup = x
+        this_time[x] = 1
+        si = x.split(" ")
+        if x in all_time.keys(): print("Note:", x, "already done", all_time[x], "time" + i7.plur(x))
         write_all_26(si[0], si[1], first_two, two_letter)
 else:
     for i in range(0, len(word_ary) // 2):
