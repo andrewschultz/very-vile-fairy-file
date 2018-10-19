@@ -77,6 +77,10 @@ check going in wet wood: say "You figure you'd just get lost. You don't feel con
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
+every turn when player is in wet wood:
+	if turn count < 5, continue the action;
+	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
+
 chapter getgooding
 
 getgooding is an action applying to nothing.
@@ -367,6 +371,16 @@ volume verbs
 
 book standard modifications
 
+chapter trivials
+
+instead of swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'"
+
+instead of saying no, say "No-no? Hoho, dodo! [yn-tell]"
+
+instead of saying yes, say "Yay! Yep! Hey, hep! [yn-tell]"
+
+to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
+
 chapter listening
 
 instead of listening:
@@ -397,6 +411,18 @@ rank-max	rank-name
 --	"bold bod"
 
 book nonstandard but general verbs
+
+chapter xyzzying
+
+xyzzying is an action applying to nothing.
+
+understand the command "xyzzy" as something new.
+
+understand "xyzzy" as xyzzying.
+
+carry out xyzzying:
+	say "Fie, fie. Sigh, sigh. Why, why?";
+	the rule succeeds.
 
 chapter creditsing
 
