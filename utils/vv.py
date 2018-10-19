@@ -2,6 +2,10 @@
 #
 # at first for 26 letters, but later, sounds
 #
+# todo: toggle showing long list of 0-matches
+# toggle max # of matches shown
+# allow for slashes in syntax so we can look for multiple word combos e.g. be/bee bad
+#
 
 from collections import defaultdict
 from string import ascii_lowercase
@@ -18,7 +22,7 @@ all_time_file = os.path.join(i7.sdir("vvff"), "vva.txt")
 verbose = False
 standard_input = False
 two_letter = 0
-every_x = 3
+every_x = 5
 first_two = False
 tot_freq = 0
 
@@ -46,10 +50,11 @@ def print_configs():
     print("Replacing first two letters is {:s}.".format(i7.oo[first_two]))
     print("Do we replace two letters:", ', '.join(two_letter_ary[0:two_letter]))
     print("# of two-letter replacements of original letters:", two_letter)
+    print("carriage returns after every", every_x, "matches.")
     return
 
 def cmd_line_usage():
-    print("-e = CR every x")
+    print("-e/c = CR every x matches. 1-10 are possible values.")
     print("-i = standard input")
     print("-v = verbose output (prints under the hood info)")
     print("-t = two letter combos as well")
@@ -58,6 +63,7 @@ def cmd_line_usage():
 
 def stdin_help():
     print("? = this.")
+    print("-e/c = CR every x matches. 1-10 are possible values.")
     print("ri = what is read in")
     print("t(number) = how many two-letter matches to look at.")
     print("t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
@@ -130,8 +136,8 @@ def read_words_of_length(la):
         return
     my_file = "c:/writing/dict/words-{:d}.txt".format(la)
     if not os.path.exists(my_file):
-        print(myfile, "does not exist, won't bother with words of length", la)
-        word_dict[a] = 0
+        print(my_file, "does not exist, won't bother with words of length", la)
+        word_dict[la] = {}
         return
     with open(my_file) as f:
         for line in f:
@@ -151,6 +157,7 @@ while count < len(sys.argv):
     elif arg == 'v': verbose = True
     elif arg == '2': first_two = True
     elif arg[0] == 't': two_letter = int(arg[1:])
+    elif re.search("^[ec][0-9]", arg): every_x = int(arg[1:])
     elif '?' in arg: cmd_line_usage()
     else: word_ary.append(arg)
     count += 1
@@ -176,20 +183,30 @@ if standard_input:
         cmds.append(x)
         if x == 'q' or x == '':
             print("Bailing.")
-            for j in this_time.keys():
-                all_time[j] += 1
-            f = open(all_time_file, "w")
-            for j in sorted(all_time.keys()):
-                f.write("{:s}={:d}\n".format(j, all_time[j]))
+            if len(this_time.keys()):
+                for j in this_time.keys():
+                    all_time[j] += 1
+                f = open(all_time_file, "w")
+                for j in sorted(all_time.keys()):
+                    f.write("{:s}={:d}\n".format(j, all_time[j]))
+                f.close()
+                print("Wrote successfully to", all_time_file)
+                this_time_list = []
+                ttk = sorted(this_time.keys())
+                for w in range(0, len(ttk), 5):
+                    this_time_list.append(' / '.join(ttk[w:w+5]))
+                print("Added:", "\n       ".join(this_time_list), "({:d} total)".format(len(ttk)))
+            else:
+                print("No pairs tried, so I'm not rewriting", all_time_file)
             break
-            f.close()
         if x[0] == '?':
             stdin_help()
             continue
-        if re.search("^e[0-9]", x):
+        if re.search("^[ec][0-9]", x):
             temp = int(x[1:])
             if temp < 1 or temp > 10: print("You can only make line breaks every 1 through 10.")
             else: every_x = temp
+            print("Now there are line breaks after every", every_x, "pair{:s}.".format(i7.plur(every_x)))
             continue
         if x[0] == '??':
             print_configs()
@@ -265,6 +282,9 @@ if standard_input:
             print("1-word command not recognized. You need a 2-word command. Type ? to see your options.")
             continue
         else:
+            if re.search("[^a-z ]", x):
+                print("WARNING: some non alpha characters are in here. Try again.")
+                continue
             last_lookup = x
         this_time[x] = 1
         si = x.split(" ")
