@@ -46,11 +46,11 @@ to win-the-game:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 6.
+min-needed is a number that varies. min-needed is 10.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 9.
+the maximum score is 15.
 
 max-poss is a number that varies.
 
@@ -582,11 +582,11 @@ book Lake Lea
 
 Lake Lea is a room. "You're on the Lake Lea, which borders on Lake Lap."
 
+check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
+
 Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
 
 this is the jake-g-gone rule: if jake g is moot, say "You've already chased Jake G." instead;
-
-Lake Lap is scenery in Lake Lea. "You can't get a close enough view."
 
 jake-gone is a number that varies.
 
@@ -660,6 +660,58 @@ carry out breakbrieing:
 	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
 	increment the score;
 	eval-jake-g;
+	the rule succeeds.
+
+book lake lap
+
+Whining War is east of Lake Lea. "You can't get a close enough view."
+
+[??mining more / dining door]
+
+Lake Lap is scenery.
+
+Ache App is a thing.
+
+chapter shiningshoreing
+
+shiningshoreing is an action applying to nothing.
+
+understand the command "shining shore" as something new.
+
+understand "shining shore" as shiningshoreing.
+
+carry out shiningshoreing:
+	if shi-sho is true, say "It already is!" instead;
+	say "The whining war dissipates, leaving the shining shore of ... Lake Lap!";
+	increment the score;
+	move lake lap to shining shore;
+	the rule succeeds.
+
+chapter snakesnaping
+
+snakesnaping is an action applying to nothing.
+
+understand the command "snake snap" as something new.
+
+understand "snake snap" as snakesnaping when ache app is off-stage and player is in lake lap.
+
+carry out snakesnaping:
+	increment the score;
+	say "The snake hissing in the lake leaves an Ache App behind.";
+	now ache app is in lake lap;
+	the rule succeeds.
+
+chapter makemaping
+
+makemaping is an action applying to nothing.
+
+understand the command "make map" as something new.
+
+understand "make map" as makemaping when ache app is in lake lap.
+
+carry out makemaping:
+	say "You can now see a map with M or MAP.";
+	moot ache app;
 	the rule succeeds.
 
 volume meta rooms
