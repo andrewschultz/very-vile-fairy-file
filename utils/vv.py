@@ -16,7 +16,6 @@ every_x = 3
 first_two = False
 tot_freq = 0
 
-on_off = [ 'on', 'off' ]
 word_ary = []
 default_array = [ 'vast', 'void' ]
 two_letter_ary = []
@@ -28,11 +27,17 @@ let_blank = [''] + list(ascii_lowercase)
 
 ##############start functions
 
-def usage():
+def print_configs():
+    print("Replacing first two letters is {:s}.".format(i7.oo[first_two]))
+    print("Two-letter replacement texts:", ', '.join(two_letter_ary[0:two_letter]))
+    return
+
+def cmd_line_usage():
     print("-e = CR every x")
     print("-i = standard input")
     print("-v = verbose output (prints under the hood info)")
     print("-t = two letter combos as well")
+    print("-? = this")
     exit()
 
 def stdin_help():
@@ -125,11 +130,12 @@ read_two_letters()
 
 while count < len(sys.argv):
     arg = sys.argv[count].lower()
+    if arg[0] == '-': arg = arg[1:]
     if arg == 'i': standard_input = True
     elif arg == 'v': verbose = True
     elif arg == '2': first_two = True
-    elif arg[0] == 't':
-        two_letter = int(arg[1:])
+    elif arg[0] == 't': two_letter = int(arg[1:])
+    elif '?' in arg: cmd_line_usage()
     else: word_ary.append(arg)
     count += 1
 
@@ -143,7 +149,8 @@ if standard_input:
     keep_going = True
     cmds = []
     while keep_going:
-        x = input(">>").lower()
+        x = input(">>").lower().strip()
+        x = re.sub("[ \t]+", " ", x)
         if x == 'c':
             print(cmds)
             continue
@@ -154,9 +161,13 @@ if standard_input:
         if x[0] == '?':
             stdin_help()
             continue
+        if re.search("^e[0-9]", x):
+            temp = int(x[1:])
+            if temp < 1 or temp > 10: print("You can only make line breaks every 1 through 10.")
+            else: every_x = temp
+            continue
         if x[0] == '??':
-            print("Replacing first two letters is {:s}.".format(on_off[first_two]))
-            print("Two-letter replacement texts:", ', '.join(two_letter_ary[0:two_letter]))
+            print_configs()
             continue
         if x[0] == 't':
             let_check = re.sub("^t *", "", x)
@@ -192,7 +203,7 @@ if standard_input:
                 continue
         if x == '2':
             first_two = not first_two
-            print("Replacing first two is now {:s}. That means they will be replaced with *ALL* 0- 1- and 2-letter combos.".format(on_off[first_two]))
+            print("Replacing first two is now {:s}. That means they will be replaced with *ALL* 0- 1- and 2-letter combos.".format(i7.oo[first_two]))
             continue
         if x == '2y':
             first_two = True

@@ -8,6 +8,8 @@ include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
+include Very Vile Fairy File Mistakes by Andrew Schultz
+
 section establish debug - not for release
 
 when play begins (this is the set debug state rule): now debug-state is true;
@@ -107,6 +109,10 @@ check going north in cark cliff:
 
 check going in cark cliff: say "You don't want to go back to the Wet Wood. Or fall off Cark Cliff." instead;
 
+instead of doing something with tall tree:
+	if action is procedural, continue the action;
+	say "[if tree-down is true]You'd better not do anything to the tree. It's your way across[else]You need to do something specific to the tree. Maybe give it an order[end if].";
+
 chapter silly sign
 
 The silly sign is scenery in Cark Cliff. "The silly sign reads WILL [']E WHINE?"
@@ -128,7 +134,7 @@ spliff-sparked is a truth state that varies.
 carry out sparkspliffing:
 	if spliff-sparked is true, say "Whoah, dude. You already did." instead;
 	now spliff-sparked is true;
-	say "Whoah, dude! You totally discover a hidden spliff. You're less worried now.";
+	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
 	up-min;
 	the rule succeeds;
 
@@ -260,18 +266,6 @@ to check-russell-go:
 	else:
 		say "Russell looks confused! One more setback, and he's had it.";
 
-chapter fastfaping
-
-fastfaping is an action applying to nothing.
-
-understand the command "fast fap" as something new.
-
-understand "fast fap" as fastfaping.
-
-carry out fastfaping:
-	say "Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.";
-	the rule succeeds.
-
 chapter castcaping
 
 castcaping is an action applying to nothing.
@@ -376,7 +370,7 @@ book standard modifications
 chapter listening
 
 instead of listening:
-	if player is in wet wood, say "Bet, bud! Met mud!" instead;
+	if player is in wet wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
 	say "Nothing special."
 
 chapter score
