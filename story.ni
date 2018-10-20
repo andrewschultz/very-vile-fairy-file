@@ -2,6 +2,8 @@
 
 the story headline is "Rhymes Rue Times Two"
 
+[implement help toggling: HELP HOW/WELP WOW]
+
 volume includes
 
 include Trivial Niceties Z-Only by Andrew Schultz.
@@ -424,6 +426,49 @@ carry out xyzzying:
 	say "Fie, fie. Sigh, sigh. Why, why?";
 	the rule succeeds.
 
+chapter helphowing
+
+help-how is a truth state that varies.
+
+helphowing is an action applying to one person.
+
+understand the command "help how" as something new.
+
+understand "help how [person]" as helphowing.
+
+carry out helphowing:
+	if help-how is true, say "Help-how is already on." instead;
+	now help-how is true;
+	say "Help-how is on. Welp-wow mode is off. In other words, more hints now." instead;
+	the rule succeeds.
+
+chapter welpwowing
+
+welpwowing is an action applying to one person.
+
+understand the command "welp wow" as something new.
+
+understand "welp wow [person]" as welpwowing.
+
+carry out welpwowing:
+	if help-how is false, say "Help-how is already off." instead;
+	now help-how is false;
+	say "Help-how is off. Welp-wow mode is on. In other words, fewer hints now." instead;
+	the rule succeeds.
+
+chapter verbsing
+
+verbsing is an action applying to nothing.
+
+understand the command "verbs" as something new.
+
+understand "verbs" as verbsing.
+
+carry out verbsing:
+	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle hints on and off, respectively. Currently they are [one-off of help-how].";
+	the rule succeeds.
+
 chapter creditsing
 
 creditsing is an action out of world.
@@ -453,6 +498,7 @@ volume when play begins
 when play begins (this is the opening text rule):
 	now the left hand status line is "West Wall";
 	force-status;
+	if debug-state is false, ask-screenread;
 	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak-d]";
 	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak-d]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak-d]";
