@@ -28,6 +28,8 @@ definition: a thing (called th) is moot:
 
 to say swh of (r - a room): say "[if r is unvisited]somewhere new[else][r][end if]"
 
+to bring-here (th - a thing): move th to location of player.
+
 to moot (th - a thing):
 	move th to Zapped Zone; [ic]
 
@@ -104,7 +106,7 @@ carry out getgooding:
 
 part Cark Cliff
 
-Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here."
+Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here. The wet wood is back every way except north, where there's, um, a cliff."
 
 tree-down is a truth state that varies.
 
@@ -113,11 +115,23 @@ The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits
 check going north in cark cliff:
 	if tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
 
+check going down in cark cliff: say "'Don't die.' / 'Won't! Why?'" instead;
+
 check going in cark cliff: say "You don't want to go back to the Wet Wood. Or fall off Cark Cliff." instead;
 
 instead of doing something with tall tree:
 	if action is procedural, continue the action;
 	say "[if tree-down is true]You'd better not do anything to the tree. It's your way across[else]You need to do something specific to the tree. Maybe give it an order[end if].";
+
+the hive heap is a thing.
+
+the vapor vile is a thing.
+
+the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.".
+
+check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
+
+the backed binder is a thing.
 
 chapter silly sign
 
@@ -156,10 +170,54 @@ understand "fall free" as freefalling.
 
 carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
-	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now.";
+	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby";
 	now tree-down is true;
+	move hive heap to cark cliff;
 	increment the score;
 	the rule succeeds;
+
+chapter divedeeping
+
+divedeeping is an action applying to nothing.
+
+understand the command "dive deep" as something new.
+
+understand "dive deep" as divedeeping when hive heap is quicknear.
+
+carry out divedeeping:
+	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
+	moot hive heap;
+	bring-here vapor vile;
+	the rule succeeds.
+
+chapter paperpileing
+
+paperpileing is an action applying to nothing.
+
+understand the command "paper pile" as something new.
+
+understand "paper pile" as paperpileing when vapor vile is quicknear.
+
+carry out paperpileing:
+	say "The vapor vile changes to a paper pile.";
+	increment the score;
+	moot vapor vile;
+	bring-here paper pile;
+	the rule succeeds.
+
+chapter backedbindering
+
+backedbindering is an action applying to nothing.
+
+understand the command "backed binder" as something new.
+
+understand "backed binder" as backedbindering when paper pile is quicknear.
+
+carry out backedbindering:
+	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you!";
+	now player has backed binder;
+	increment the score;
+	the rule succeeds.
 
 part History Hall
 
@@ -430,11 +488,11 @@ chapter helphowing
 
 help-how is a truth state that varies.
 
-helphowing is an action applying to one person.
+helphowing is an action applying to nothing.
 
 understand the command "help how" as something new.
 
-understand "help how [person]" as helphowing.
+understand "help how" as helphowing.
 
 carry out helphowing:
 	if help-how is true, say "Help-how is already on." instead;
@@ -444,11 +502,11 @@ carry out helphowing:
 
 chapter welpwowing
 
-welpwowing is an action applying to one person.
+welpwowing is an action applying to nothing.
 
 understand the command "welp wow" as something new.
 
-understand "welp wow [person]" as welpwowing.
+understand "welp wow" as welpwowing.
 
 carry out welpwowing:
 	if help-how is false, say "Help-how is already off." instead;
@@ -466,7 +524,7 @@ understand "verbs" as verbsing.
 
 carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
-	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle hints on and off, respectively. Currently they are [one-off of help-how].";
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle hints on and off, respectively. Currently they are [on-off of help-how].";
 	the rule succeeds.
 
 chapter creditsing
@@ -562,8 +620,9 @@ shore-shine is a truth state that varies.
 
 carry out shiningshoreing:
 	if shore-shine is true, say "You already got (t)here." instead;
-	say "The whining stops. It's much brighter here. You feel there may be something else to find here.";
+	say "The whining war dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	increment the score;
+	move lake lap to whining war;
 	the rule succeeds.
 
 chapter miningmoreing
@@ -743,21 +802,6 @@ Whining War is east of Lake Lea. "You can't get a close enough view."
 Lake Lap is scenery.
 
 Ache App is a thing.
-
-chapter shiningshoreing
-
-shiningshoreing is an action applying to nothing.
-
-understand the command "shining shore" as something new.
-
-understand "shining shore" as shiningshoreing.
-
-carry out shiningshoreing:
-	if shi-sho is true, say "It already is!" instead;
-	say "The whining war dissipates, leaving the shining shore of ... Lake Lap!";
-	increment the score;
-	move lake lap to shining shore;
-	the rule succeeds.
 
 chapter snakesnaping
 
