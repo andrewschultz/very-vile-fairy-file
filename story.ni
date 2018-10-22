@@ -420,6 +420,7 @@ carry out burybileing:
 	if location of very vile fairy file is unvisited, say "You can't do that until you find the very vile fairy file." instead;
 	if very vile fairy file is not in location of player, say "You can't do that if you're not around the very vile fairy file." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
+	increment the score; [nec]
 	end the game in victory;
 	the rule succeeds;
 
@@ -802,6 +803,25 @@ Whining War is east of Lake Lea. "You can't get a close enough view."
 Lake Lap is scenery.
 
 Ache App is a thing.
+
+chapter hardhating
+
+the marred mat is a thing.
+
+the hard hat is a thing.
+
+hardhating is an action applying to nothing.
+
+understand the command "hard mat" as something new.
+
+understand "hard hat" as hardhating when marred mat is quicknear.
+
+carry out hardhating:
+	say "Poof! The marred mat changes into a hard hat.";
+	moot marred mat;
+	now player wears hard hat;
+	increment the score; [nec]
+	the rule succeeds.
 
 chapter snakesnaping
 
