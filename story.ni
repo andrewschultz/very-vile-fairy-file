@@ -100,7 +100,7 @@ get-good is a truth state that varies.
 carry out getgooding:
 	if get-good is true, say "You already did." instead;
 	say "You realize you can reason your way out of the Wet Wood.";
-	increment the score;
+	increment the score; [nec]
 	move player to cark cliff;
 	the rule succeeds;
 
@@ -173,7 +173,7 @@ carry out freefalling:
 	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby";
 	now tree-down is true;
 	move hive heap to cark cliff;
-	increment the score;
+	increment the score; [nec]
 	the rule succeeds;
 
 chapter divedeeping
@@ -200,7 +200,7 @@ understand "paper pile" as paperpileing when vapor vile is quicknear.
 
 carry out paperpileing:
 	say "The vapor vile changes to a paper pile.";
-	increment the score;
+	increment the score; [nec]
 	moot vapor vile;
 	bring-here paper pile;
 	the rule succeeds.
@@ -216,7 +216,7 @@ understand "backed binder" as backedbindering when paper pile is quicknear.
 carry out backedbindering:
 	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you!";
 	now player has backed binder;
-	increment the score;
+	increment the score; [nec]
 	the rule succeeds.
 
 part History Hall
@@ -256,7 +256,7 @@ carry out mysterymalling:
 	move-from-temp gutta ganksta;
 	now mistmall is true;
 	if evermall is false:
-		increment the score;
+		increment the score; [nec]
 		now evermall is true;
 	bold-my-room;
 	the rule succeeds;
@@ -299,7 +299,7 @@ first-fave is a truth state that varies.
 carry out firstfaveing:
 	if first-fave is true, say "You already did." instead;
 	say "Suddenly, the curst cave isn't very bad at all.";
-	increment the score;
+	increment the score; [nec]
 	now first-fave is true;
 	the rule succeeds;
 
@@ -342,7 +342,7 @@ carry out castcaping:
 	if cap-cast is true, say "You already did." instead;
 	say "You cast your cap, and someone big and mean appears: (W)re(a/e)ker Russell!";
 	move Reeker Russell to Last Lap;
-	increment the score;
+	increment the score; [nec]
 	the rule succeeds;
 
 chapter beakerbustleing
@@ -376,7 +376,7 @@ carry out meekermuscleing:
 	if meeker-yet is true, say "You already did that!" instead;
 	now meeker-yet is true;
 	say "Russell becomes noticeably less muscular.";
-	check-russell-go;
+	check-russell-go; [nec]
 	the rule succeeds;
 
 chapter woodoneing
@@ -391,7 +391,7 @@ carry out woodoneing:
 	if good gun is moot, say "You already got rid of the good gun." instead;
 	say "The good gun turns into a wood one in Wreaker Russell's hands! He throws it away in disgust.";
 	moot good gun;
-	check-russell-go;
+	check-russell-go; [nec]
 	the rule succeeds;
 
 part Merry Mile
@@ -621,7 +621,7 @@ shore-shine is a truth state that varies.
 carry out shiningshoreing:
 	if shore-shine is true, say "You already got (t)here." instead;
 	say "The whining war dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
-	increment the score;
+	increment the score; [nec]
 	move lake lap to whining war;
 	the rule succeeds.
 
@@ -637,7 +637,7 @@ mine-more is a truth state that varies.
 
 carry out miningmoreing:
 	abide by the shone-yet rule;
-	increment the score;
+	increment the score; [nec]
 	now mine-more is true;
 	the rule succeeds.
 
@@ -656,7 +656,7 @@ dine-door is a truth state that varies.
 
 carry out diningdooring:
 	abide by the shone-yet rule;
-	increment the score;
+	increment the score; [nec]
 	now dine-door is true;
 	the rule succeeds.
 
@@ -698,7 +698,7 @@ carry out loftlanding:
 	if ever-loft is false:
 		now ever-loft is true;
 		now loft-land is false;
-		increment the score;
+		increment the score; [nec]
 	the rule succeeds;
 
 part other places
@@ -740,7 +740,7 @@ fake-fee is a truth state that varies.
 carry out fakefeeing:
 	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
 	now fake-fee is true;
-	increment the score;
+	increment the score; [nec] [x-of-y jake]
 	the rule succeeds.
 
 chapter wakewheeing
@@ -756,7 +756,7 @@ wake-whee is a truth state that varies.
 carry out wakewheeing:
 	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
 	now wake-whee is true;
-	increment the score;
+	increment the score; [nec] [x-of-y jake]
 	the rule succeeds.
 
 chapter achying
@@ -772,7 +772,7 @@ achy is a truth state that varies.
 carry out achying:
 	if achy is true, say "You already made Jake G achy." instead;
 	now achy is true;
-	increment the score;
+	increment the score; [opt] [x-of-y jake]
 	the rule succeeds.
 
 chapter breakbrieing
@@ -789,7 +789,7 @@ carry out breakbrieing:
 	if brie-broke is true, say "You already broke brie with Jake G." instead;
 	follow the jake-g-gone rule;
 	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
-	increment the score;
+	increment the score; [opt] [x-of-y jake]
 	eval-jake-g;
 	the rule succeeds.
 
@@ -812,7 +812,7 @@ understand the command "snake snap" as something new.
 understand "snake snap" as snakesnaping when ache app is off-stage and player is in lake lap.
 
 carry out snakesnaping:
-	increment the score;
+	increment the score; [nec]
 	say "The snake hissing in the lake leaves an Ache App behind.";
 	now ache app is in lake lap;
 	the rule succeeds.
@@ -828,6 +828,7 @@ understand "make map" as makemaping when ache app is in lake lap.
 carry out makemaping:
 	say "You can now see a map with M or MAP.";
 	moot ache app;
+	increment the score; [nec]
 	the rule succeeds.
 
 volume meta rooms
