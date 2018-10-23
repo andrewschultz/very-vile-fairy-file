@@ -50,11 +50,11 @@ to win-the-game:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 10.
+min-needed is a number that varies. min-needed is 20.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 15.
+the maximum score is 25.
 
 max-poss is a number that varies.
 
@@ -583,6 +583,29 @@ Gazy Gap is a room in Meta.
 Hidey House is a room in Meta.
 
 volume unsorted
+
+book go gate
+
+there is a thing called the go gate. the grow grate is part of the go gate.
+
+check entering go gate: [?? oh ate! Lo, late! / Foe, fate / D'oh date Ho Hate Mo Mate crow crate know Nate ]
+	say "Too fast. Boom! A hidden grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
+	end the story;
+
+chapter whoawaiting
+
+whoawaiting is an action applying to nothing.
+
+understand the command "whoa wait" as something new.
+understand the command "whoah wait" as something new.
+
+understand "whoah wait" as whoawaiting when go gate is quicknear.
+understand "whoa wait" as whoawaiting when go gate is quicknear.
+
+carry out whoawaiting:
+	say "You decide not to run in right away. The gate crumbles.";
+	increment the score; [nec]
+	the rule succeeds.
 
 book pain peasant
 
