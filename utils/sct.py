@@ -6,7 +6,6 @@ x_of_y = defaultdict(lambda: defaultdict(bool))
 scores = defaultdict(int)
 got = defaultdict(int)
 
-
 open_post = True
 to_open = 0
 
@@ -36,9 +35,19 @@ def check_walkthrough():
 def check_points():
     last_line = 0
     last_cmd = "(undefined)"
+    global min_sco
+    global max_sco
     print(hdr_str)
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
+            if line.startswith("min-needed"):
+                if min_sco: sys.exit("Minimum score redefined at line {:d}.".format(line_count))
+                min_sco = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+                continue
+            if line.startswith("the maximum score is"):
+                if max_sco: sys.exit("Maximum score redefined at line {:d}.".format(line_count))
+                max_sco = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+                continue
             if re.search("understand \".*\" as", line):
                 q = line.split("\"")
                 last_cmd = q[1]
@@ -67,8 +76,17 @@ def check_points():
                     print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d}".format(last_cmd, last_line))
     print(hdr_str)
 
+min_sco = 0
+max_sco = 0
+
 check_points()
 check_walkthrough()
+
+if min_sco != scores['nec']: print(min_sco, "in source but # of necessary scores in file = ", scores['nec'])
+else: print("MINIMUM SCORES MATCH IN SOURCE!")
+
+if max_sco != scores['total']: print(max_sco, "in source but # of possible scores in file = ", scores['total'])
+else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 
 for q in sorted(x_of_y.keys()):
     print('X-of-Y puzzle for', q, ':', ', '.join(sorted(x_of_y[q].keys())))
