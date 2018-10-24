@@ -282,14 +282,20 @@ if standard_input:
             print("1-word command not recognized. You need a 2-word command. Type ? to see your options.")
             continue
         else:
-            if re.search("[^a-z ]", x):
+            if re.search("[^a-z ,/]", x):
                 print("WARNING: some non alpha characters are in here. Try again.")
                 continue
             last_lookup = x
-        this_time[x] = 1
         si = x.split(" ")
-        if x in all_time.keys(): print("Note:", x, "already done", all_time[x], "time" + i7.plur(x))
-        write_all_26(si[0], si[1], first_two, two_letter)
+        si0 = re.split("[,/]", si[0])
+        si1 = re.split("[,/]", si[1])
+        for s0 in si0:
+            for s1 in si1:
+                this_combo = "{:s} {:s}".format(s0, s1)
+                this_time[this_combo] = 1
+                if this_combo in all_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
+                #print(s0, s1)
+                write_all_26(s0, s1, first_two, two_letter)
 else:
     for i in range(0, len(word_ary) // 2):
         write_all_26(word_ary[i*2], word_ary[i*2+1], two_letter)
