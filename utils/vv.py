@@ -25,6 +25,7 @@ two_letter = 0
 every_x = 5
 first_two = False
 tot_freq = 0
+show_zeros = True
 
 word_ary = []
 default_array = [ 'vast', 'void' ]
@@ -38,6 +39,7 @@ let_blank = [''] + list(ascii_lowercase)
 ##############start functions
 
 def read_all_time():
+    all_time.clear()
     if not os.path.exists(all_time_file):
         print("Could not find", all_time_file)
         return
@@ -58,6 +60,7 @@ def cmd_line_usage():
     print("-i = standard input")
     print("-v = verbose output (prints under the hood info)")
     print("-t = two letter combos as well")
+    print("-z/yz/zy and -nz/zn = show zeros or hide them.")
     print("-? = this")
     exit()
 
@@ -119,7 +122,7 @@ def write_all_26(a, b, two_letters_too = False, two_letter_starts = 10):
         wo = q[1] + r[1]
         strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
     count = 0
-    for q1 in range(0, 3):
+    for q1 in range(1 - show_zeros, 3):
         end_string = ""
         for q in range (0, len(strings_array[q1])):
             end_string += strings_array[q1][q]
@@ -184,6 +187,7 @@ if standard_input:
         if x == 'q' or x == '':
             print("Bailing.")
             if len(this_time.keys()):
+                read_all_time() # this is in case I've opened up 2 instances of vv.py
                 for j in this_time.keys():
                     all_time[j] += 1
                 f = open(all_time_file, "w")
@@ -246,6 +250,24 @@ if standard_input:
         if x == '2':
             first_two = not first_two
             print("Replacing first two is now {:s}. That means they will be replaced with *ALL* 0- 1- and 2-letter combos.".format(i7.oo[first_two]))
+            continue
+        if x == 'z':
+            show_zeros = not show_zeros
+            print("Toggling show_zeros. It is now {:s}. To fix the value, type yz/zy (on) or nz/zn (off).".format(i7.oo[show_zeros]))
+            continue
+        if x == 'yz' or x == 'zy':
+            if show_zeros:
+                print("Zeros already shown.")
+                continue
+            show_zeros = True
+            print("Showing zeros.")
+            continue
+        if x == 'nz' or x == 'zn':
+            if not show_zeros:
+                print("Zeros already hidden.")
+                continue
+            show_zeros = False
+            print("Hiding zeros.")
             continue
         if x == '2y':
             first_two = True
