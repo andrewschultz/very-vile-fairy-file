@@ -98,29 +98,49 @@ def word_upper(q):
 
 def write_all_26(a, b, two_letters_too = False, two_letter_starts = 10):
     global let_blank
-    la = len(a)
-    lb = len(b)
-    read_words_of_length(la)
-    read_words_of_length(lb)
-    if '' in let_blank:
-        read_words_of_length(la-1)
-        read_words_of_length(lb-1) # since we need to consider lair -> air
-    if two_letter_starts:
-        read_words_of_length(la+1)
-        read_words_of_length(lb+1)
-    end_string_ary = []
+    aa = re.split("[,/]", a)
+    ab = re.split("[,/]", b)
     anno = [ "no match", "single match", "DOUBLE MATCH!!!!" ]
     strings_array = [ [], [], [] ]
     starts_array = list(let_blank)
     if two_letter_starts: starts_array.extend(two_letter_ary[0:two_letter_starts])
-    for x in range(0, 3): strings_array[x] = []
-    for x in starts_array:
-        if x == a[0]: continue
-        if len(x) == 2 and x[:2] == a[:2]: continue
-        q = word_upper(x + a[1+two_letters_too:])
-        r = word_upper(x + b[1+two_letters_too:])
-        wo = q[1] + r[1]
-        strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
+    warns = defaultdict(bool)
+    for a in aa:
+        for b in ab:
+            la = len(a)
+            lb = len(b)
+            read_words_of_length(la)
+            read_words_of_length(lb)
+            if a not in word_dict[la] and a not in warns.keys():
+                print("WARNING", a, "may not be word.")
+                warns[a] = True
+            if b not in word_dict[la] and b not in warns.keys():
+                print("WARNING", b, "may not be word.")
+                warns[b] = True
+            if '' in let_blank:
+                read_words_of_length(la-1)
+                read_words_of_length(lb-1) # since we need to consider lair -> air
+            if two_letter_starts:
+                read_words_of_length(la+1)
+                read_words_of_length(lb+1)
+            this_combo = "{:s} {:s}".format(a, b)
+            this_time[this_combo] = 1
+            if this_combo in all_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
+            a_in = ""
+            b_in = ""
+            for q in all_time.keys():
+                if a in q and not a_in: a_in = q
+                if b in q and not b_in: b_in = q
+            if a_in and b_in:
+                print(a, b, "both seen separately in {:s}/{:s}.".format(a_in, b_in))
+            for x in starts_array:
+                if x == a[0]: continue
+                if len(x) == 2 and x[:2] == a[:2]: continue
+                q = word_upper(x + a[1+two_letters_too:])
+                r = word_upper(x + b[1+two_letters_too:])
+                wo = q[1] + r[1]
+                strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
+    for q in strings_array: q = sorted(q)
     count = 0
     for q1 in range(1 - show_zeros, 3):
         end_string = ""
@@ -309,15 +329,11 @@ if standard_input:
                 continue
             last_lookup = x
         si = x.split(" ")
-        si0 = re.split("[,/]", si[0])
-        si1 = re.split("[,/]", si[1])
-        for s0 in si0:
-            for s1 in si1:
-                this_combo = "{:s} {:s}".format(s0, s1)
-                this_time[this_combo] = 1
-                if this_combo in all_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
-                #print(s0, s1)
-                write_all_26(s0, s1, first_two, two_letter)
+        if len(si) != 2:
+            print("You need 2 words or word groups separated by spaces. You have {:d}. Groups can contain slashes/commas.".format(len(si)))
+            continue
+        #print(s0, s1)
+        write_all_26(si[0], si[1], first_two, two_letter)
 else:
     for i in range(0, len(word_ary) // 2):
         write_all_26(word_ary[i*2], word_ary[i*2+1], two_letter)
