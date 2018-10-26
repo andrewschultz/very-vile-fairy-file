@@ -6,6 +6,8 @@ the story headline is "Rhymes Rue Times Two"
 
 volume includes
 
+the release number is 1.
+
 include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
@@ -402,9 +404,29 @@ chapter very vile fairy file
 
 the very vile fairy file is a thing in Merry Mile. "The very vile fairy file is here! It sort of repels you, but you know there must be a way to neutralize it."
 
-instead of doing anything with the fairy file, say "[ff-no].";
+description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [vvff-nonsense]"
 
-instead of doing anything when noun is fairy file, say "[ff-no].";
+vvff-row is a number that varies.
+
+to say vvff-nonsense:
+	increment vvff-row;
+	choose row vvff-row in table of vvff digs;
+	say "[vvff-dis entry]";
+	if vvff-row is number of rows in table of vvff digs, say "[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
+
+table of vvff digs
+vvff-dis
+"Gonna go off! Shun a show-off!"
+"Rotten role: gotten goal?"
+"'My magic try: TRAGIC!'"
+
+instead of doing anything with the fairy file:
+	if action is procedural, continue the action;
+	say "[ff-no].";
+
+instead of doing anything when noun is fairy file:
+	if action is procedural, continue the action;
+	say "[ff-no].";
 
 to say ff-no: say "You can't do anything directly with or to the fairy file. There must be some overarching action"
 
@@ -443,6 +465,7 @@ instead of saying yes, say "Yay! Yep! Hey, hep! [yn-tell]"
 to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
 
 instead of swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'"
+
 instead of swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'"
 
 chapter listening
