@@ -432,15 +432,18 @@ volume verbs
 
 book standard modifications
 
-chapter trivials
+chapter trivial pointless but amusing verbs
 
-instead of swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'"
+instead of attacking, say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
 instead of saying no, say "No-no? Hoho, dodo! [yn-tell]"
 
 instead of saying yes, say "Yay! Yep! Hey, hep! [yn-tell]"
 
 to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
+
+instead of swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'"
+instead of swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'"
 
 chapter listening
 
