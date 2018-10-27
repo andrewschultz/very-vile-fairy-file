@@ -464,8 +464,9 @@ understand the command "bury bile" as something new.
 understand "bury bile" as burybileing.
 
 carry out burybileing:
-	if location of very vile fairy file is unvisited, say "You can't do that until you find the very vile fairy file." instead;
-	if very vile fairy file is not in location of player, say "You can't do that if you're not around the very vile fairy file." instead;
+	if very vile fairy file is not in location of player:
+		now burybile-clue is true;
+		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
 	increment the score; [nec]
 	end the game in victory;
@@ -497,7 +498,20 @@ chapter listening
 
 instead of listening:
 	if player is in wet wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
+	if player is in mystery mall and Oi Mo is in mystery mall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. Maybe there's a way to quiet it down." instead;
 	say "Nothing special."
+
+chapter thinking
+
+thought-any is a truth state that varies.
+
+to say tat: now thought-any is true;
+
+instead of thinking:
+	let thought-any be false;
+	say "You think about what you've done, what you've tried, and what you can do.";
+	if burybile-clue is true, say "[line break][tat]You tried to BURY BILE, but it didn't feel like the right place. Maybe somewhere else.";
+	if thought-any is false, say "[line break]But you don't have any leads right now."
 
 chapter score
 
