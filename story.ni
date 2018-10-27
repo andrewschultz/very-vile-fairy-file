@@ -28,7 +28,7 @@ definition: a thing (called th) is moot:
 	if th is in Zapped Zone, yes;
 	no;
 
-to say swh of (r - a room): say "[if r is unvisited]somewhere new[else][r][end if]"
+to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
 
 to bring-here (th - a thing): move th to location of player.
 
@@ -69,6 +69,18 @@ to max-down: decrement max-poss;
 
 main is a region.
 
+a room has text called noway-text.
+
+the can't go that way rule is not listed in any rulebook.
+
+check going nowhere:
+	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
+	say "You can't go [noun], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if]." instead;
+
+definition: a direction (called d) is viable:
+	if the room d of location of the player is nowhere, no;
+	yes;
+
 volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle.
@@ -77,9 +89,7 @@ volume rooms
 
 part wet wood
 
-Wet Wood is a room. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something."
-
-check going in wet wood: say "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp]." instead;
+Wet Wood is a room. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
@@ -108,18 +118,15 @@ carry out getgooding:
 
 part Cark Cliff
 
-Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here. The wet wood is back every way except north, where there's, um, a cliff."
+Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here. The wet wood is back every way except north, where there's, um, a cliff.". noway-text is "You don't want to go back to the Wet Wood. Or fall off Cark Cliff.".
 
 tree-down is a truth state that varies.
 
 The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of cark cliff][end if]."
 
-check going north in cark cliff:
-	if tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
-
-check going down in cark cliff: say "'Don't die.' / 'Won't! Why?'" instead;
-
-check going in cark cliff: say "You don't want to go back to the Wet Wood. Or fall off Cark Cliff." instead;
+check going in cark cliff:
+	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
+	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
 
 instead of doing something with tall tree:
 	if action is procedural, continue the action;
@@ -172,7 +179,7 @@ understand "fall free" as freefalling.
 
 carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
-	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby";
+	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.";
 	now tree-down is true;
 	move hive heap to cark cliff;
 	increment the score; [nec]
@@ -187,8 +194,9 @@ understand the command "dive deep" as something new.
 understand "dive deep" as divedeeping when hive heap is quicknear.
 
 carry out divedeeping:
-	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
+	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.[paragraph break]Hmm. That's interesting. DEEP and HEAP rhyme, but the spelling's a bit different.";
 	moot hive heap;
+	increment the score; [nec]
 	bring-here vapor vile;
 	the rule succeeds.
 
@@ -216,7 +224,7 @@ understand the command "backed binder" as something new.
 understand "backed binder" as backedbindering when paper pile is quicknear.
 
 carry out backedbindering:
-	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you!";
+	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you![paragraph break]Hmm, that was a bit tricker. BACKED and FACT rhyme, but the letters are different.";
 	now player has backed binder;
 	increment the score; [nec]
 	the rule succeeds.
@@ -398,11 +406,11 @@ carry out woodoneing:
 
 part Merry Mile
 
-Merry Mile is north of Last Lap. "You hear laughter here, but it's all wrong."
+Merry Mile is north of Last Lap. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
 chapter very vile fairy file
 
-the very vile fairy file is a thing in Merry Mile. "The very vile fairy file is here! It sort of repels you, but you know there must be a way to neutralize it."
+the very vile fairy file is a thing in Merry Mile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it."
 
 description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [vvff-nonsense]"
 
@@ -761,7 +769,7 @@ Vast Void is a room.
 
 book Lake Lea
 
-Lake Lea is a room. "You're on the Lake Lea, which borders on Lake Lap."
+Lake Lea is a room. "You're on the Lake Lea, which borders on Lake Lap.".
 
 check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
 
