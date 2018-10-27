@@ -56,7 +56,7 @@ min-needed is a number that varies. min-needed is 20.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 25.
+the maximum score is 26.
 
 max-poss is a number that varies.
 
@@ -235,7 +235,9 @@ mistmall is a truth state that varies.
 
 History Hall is north of Cark Cliff. printed name of history hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
-the Gutta Ganksta is a person.
+the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
+
+Oi Mo by Tim T Sims Pimp is scenery. "It's a truly awful song. If you could find a way to turn it down..."
 
 chapter historyhalling
 
@@ -264,12 +266,27 @@ understand "mystery mall" as mysterymalling when player is in history hall.
 carry out mysterymalling:
 	if mistmall is true, say "You're already in the mystery mall." instead;
 	move-from-temp gutta ganksta;
+	move-from-temp oi mo;
 	now mistmall is true;
 	if evermall is false:
 		increment the score; [nec]
 		now evermall is true;
 	bold-my-room;
 	the rule succeeds;
+
+chapter dimding
+
+dimding is an action applying to nothing.
+
+understand the command "dimd" as something new.
+
+understand "dimd" as dimding when Oi Mo is quicknear.
+
+carry out dimding:
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. Whew! That's a relief.";
+	moot oi mo;
+	up-min;
+	the rule succeeds.
 
 chapter whatawankstaing
 
@@ -501,8 +518,10 @@ to say your-rank:
 table of ranks
 rank-max	rank-name
 2	"sold sod"
-4	"cold cod"
-6	"old, odd"
+4	"trolled, trod"
+8	"cold cod"
+12	"old, odd"
+16	"rolled, rah'd"
 --	"bold bod"
 
 book nonstandard but general verbs
