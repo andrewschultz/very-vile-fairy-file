@@ -56,7 +56,7 @@ min-needed is a number that varies. min-needed is 20.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 26.
+the maximum score is 27.
 
 max-poss is a number that varies.
 
@@ -274,6 +274,23 @@ carry out mysterymalling:
 	bold-my-room;
 	the rule succeeds;
 
+chapter lotslameing
+
+lotslameing is an action applying to nothing.
+
+understand the command "lots lame" as something new.
+
+understand "lots lame" as lotslameing.
+
+lots-lame is a truth state that varies.
+
+carry out lotslameing:
+	if lots-lame is true, say "You already pinged the Gutta Ganksta like that." instead;
+	say "The Gutta Ganksta suddenly feeels dissed.";
+	increment the score; [opt]
+	now lots-lame is true;
+	the rule succeeds.
+
 chapter dimding
 
 dimding is an action applying to nothing.
@@ -469,8 +486,14 @@ carry out burybileing:
 		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
 	increment the score; [nec]
+	check-max-score;
 	end the game in victory;
 	the rule succeeds;
+
+to check-max-score:
+	if score is maximum score:
+		choose row with final response rule of missed-show rule in the Table of Final Question Options;
+		blank out the whole row; [don't let the player see MISSED if they got everything]
 
 part dead doom
 
@@ -940,6 +963,15 @@ carry out makemaping:
 	moot ache app;
 	increment the score; [nec]
 	the rule succeeds.
+
+volume endgame
+
+Table of Final Question Options (continued)
+final question wording	only if victorious	topic		final response rule		final response activity
+"see what you MISSED"	true	"missed"	missed-show rule	--
+
+this is the missed-show rule:
+	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
 
 volume meta rooms
 
