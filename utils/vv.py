@@ -75,11 +75,12 @@ def cmd_line_usage():
 def stdin_help():
     print("? = this.")
     print("-e/c = CR every x matches. 1-10 are possible values.")
+    print("q = quit, qx = quit without adding to the vva.txt try frequency data file.")
     print("ri = what is read in")
     print("t(number) = how many two-letter matches to look at.")
     print("t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
     print("ta = see all")
-    print("2 = toggling replacing 1 or 1st 2, 2y = force 1st 2, 2n = force only 1st character. You can have a command after that.")
+    print("(12) = toggling whether or not you show 1 or 2, (12)(ny) forces things. If you add a space, you can have a command after that.")
     print("standard input = 2 words to look through alliterative rhymes.")
     return
 
@@ -105,6 +106,9 @@ def word_upper(q):
     return (q.lower(), False)
 
 def write_all_26(a, b, dels, two_letter_starts = 10):
+    if not len(dels):
+        print("You need to set 1-letter or 2-letter replacements to true.")
+        return
     global let_blank
     done_anything = False
     aa = re.split("[,/]", a)
@@ -230,9 +234,11 @@ if standard_input:
             print(cmds)
             continue
         cmds.append(x)
-        if x == 'q' or x == '':
-            print("Bailing.")
-            if len(this_time.keys()):
+        if x == 'q' or x == '' or x == 'qx':
+            if x == 'qx':
+                print("Bailing without saving.")
+            elif len(this_time.keys()):
+                print("Bailing.")
                 read_all_time() # this is in case I've opened up 2 instances of vv.py
                 for j in this_time.keys():
                     all_time[j] += 1
@@ -319,19 +325,26 @@ if standard_input:
         x = x.lower().strip()
         if re.search("^[12]([ny])?$", x):
             iv = int(x[0])
-            print("Toggling {:d} to {:s}.".format(iv, i7.oo[dels[iv]]))
             if len(x) == 1:
                 dels[iv] = not dels[iv]
+                toggles = "Toggling"
             else:
                 dels[iv] = (x[1] == 'y')
+                toggles = "Setting"
+            print("{:s} {:d} to {:s}.".format(toggles, iv, i7.oo[dels[iv]]))
+            if not len(del_ary(dels)): print("WARNING: replacing starting 1 and 2 letters is both off.")
             continue
         if re.search("^[12]([ny])? +", x):
             iv = int(x[0])
             if x[1] == ' ':
                 dels[iv] = not dels[iv]
+                toggles = "Toggling"
             else:
                 dels[iv] = (x[1] == 'y')
+                toggles = "Setting"
             x = re.sub("^[12]([ny]?) +", "", x)
+            print("{:s} {:d} to {:s}.".format(toggles, iv, i7.oo[dels[iv]]))
+            if not len(del_ary(dels)): print("WARNING: replacing starting 1 and 2 letters is both off.")
         if not x: break
         if x.count(' ') > 1:
             print("Too many words. A 2 word command should work.")
