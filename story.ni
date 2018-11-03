@@ -111,9 +111,10 @@ get-good is a truth state that varies.
 
 carry out getgooding:
 	if get-good is true, say "You already did." instead;
-	say "You realize you can reason your way out of the Wet Wood.";
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, you overlook a trap that springs just as you're about to exit...";
+	wfak-d;
 	increment the score; [nec]
-	move player to cark cliff;
+	move player to Vined Vault;
 	the rule succeeds;
 
 part Cark Cliff
@@ -356,9 +357,6 @@ cap-cast is a truth state that varies.
 check going north in Last Lap:
 	if reeker russell is off-stage, say "You haven't found the way, yet." instead;
 	if reeker russell is in Last Lap, say "Not with Reeker Russell around." instead;
-	if vined vault is unvisited:
-		say "You skip in, overconfident. And you don't notice a trap door that sends you to...";
-		move player to Vined Vault instead;
 	say "You avoid the trap leading to the Vined Vault...";
 
 [?? trusty tap / crusty cap]
@@ -456,12 +454,69 @@ findfaulting is an action applying to nothing.
 
 understand the command "find fault" as something new.
 
-understand "find fault" as findfaulting.
+understand "find fault" as findfaulting when player is in vined vault.
 
 carry out findfaulting:
-	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...";
+	if mean mass is moot, say "Things are pretty good now. You probably want to deal with the strong stray." instead;
+	if mean mass is in vined vault, say "You already did, and things got worse. You'll have to try something else." instead;
+	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
+	say "But of course something outside was guarding the vault. A mean mass.";
+	move mean mass to vined vault;
 	increment the score; [nec]
-	move player to Merry Mile;
+	the rule succeeds.
+
+chapter mean mass
+
+The mean mass is a thing.
+
+chapter greengrassing
+
+greengrassing is an action applying to nothing.
+
+understand the command "green grass" as something new.
+
+understand "green grass" as greengrassing when player is in vined vault and mean mass is in vined vault.
+
+carry out greengrassing:
+	say "The mean mass collapses into green grass. But in the distance you hear a strong stray.";
+	increment the score; [nec]
+	move strong stray to vined vault;
+	moot mean mass;
+	the rule succeeds;
+
+chapter wrongwaying
+
+wrongwaying is an action applying to nothing.
+
+understand the command "wrong way" as something new.
+
+understand "wrong way" as wrongwaying.
+
+carry out wrongwaying:
+	say "The strong stray stops pacing back and forth and wanders off. You wait and listen to be sure it's gone, then walk into a ..."
+	increment the score;
+	move player to Trim Tram;
+	the rule succeeds.
+
+part Trim Tram
+
+Trim Tram is a room. "There's got to be a way to pay here to get the trim tram going."
+
+chapter flimflaming
+
+flimflaming is an action applying to nothing.
+
+understand the command "flim flam" as something new.
+understand the command "flimflam" as something new.
+understand the command "skim scam" as something new.
+
+understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
+
+carry out flimflaming:
+	if the player's command includes the word "skim", now skim-not-flim is true;
+	say "That does it! The tram moves off..."
+	move the player to Cark Cliff;
+	increment the score; [nec]
 	the rule succeeds.
 
 part Merry Mile
@@ -480,7 +535,8 @@ to say vvff-nonsense:
 	increment vvff-row;
 	choose row vvff-row in table of vvff digs;
 	say "[vvff-dis entry]";
-	if vvff-row is number of rows in table of vvff digs, say "[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
+	if vvff-row is number of rows in table of vvff digs + 1:
+		say "The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
 
 table of vvff digs
 vvff-dis
