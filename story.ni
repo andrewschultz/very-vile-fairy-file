@@ -91,13 +91,13 @@ Kerry Kyle is a person. The player is Kerry Kyle.
 
 volume intro
 
-part wet wood
+part Wet Wood
 
 Wet Wood is a room in intro. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
-every turn when player is in wet wood:
+every turn when player is in Wet Wood:
 	if turn count < 5, continue the action;
 	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
 
@@ -123,6 +123,12 @@ carry out getgooding:
 part vined vault
 
 Vined Vault is a room in intro. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]"
+
+the green grass is scenery. "The green grass goes well with the vined vault."
+
+instead of doing something with green grass:
+	if action is procedural, continue the action;
+	say "The green grass is there. You don't need to do anything with it."
 
 chapter findfaulting
 
@@ -157,6 +163,7 @@ carry out greengrassing:
 	say "The mean mass collapses into green grass. But in the distance you hear a strong stray.";
 	increment the score; [nec]
 	move strong stray to vined vault;
+	move green grass to vined vault;
 	moot mean mass;
 	the rule succeeds;
 
@@ -184,7 +191,7 @@ carry out wrongwaying:
 
 part Trim Tram
 
-Trim Tram is a room in intro. "There's got to be a way to pay here to get the trim tram going."
+Trim Tram is a room in intro. "There's got to be a way to pay here to get the Trim Tram going."
 
 chapter flimflaming
 
@@ -210,13 +217,13 @@ volume main
 
 part Cark Cliff
 
-Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here. The wet wood is back every way except north, where there's, um, a cliff.". noway-text is "You don't want to go back to the Wet Wood. Or fall off Cark Cliff.".
+Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here. The Wet Wood is back every way except north, where there's, um, a cliff.". noway-text is "You don't want to go back to the Wet Wood. Or fall off Cark Cliff.".
 
 tree-down is a truth state that varies.
 
-The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of cark cliff][end if]."
+The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Cark Cliff][end if]."
 
-check going in cark cliff:
+check going in Cark Cliff:
 	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
 	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
 
@@ -242,7 +249,7 @@ instead of doing something with silly sign:
 	if action is procedural, continue the action;
 	say "The silly sign is just there for atmosphere."
 
-chapter spark-spliffing
+chapter sparkspliffing
 
 sparkspliffing is an action applying to nothing.
 
@@ -273,7 +280,7 @@ carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
 	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
 	now tree-down is true;
-	move hive heap to cark cliff;
+	move hive heap to Cark Cliff;
 	increment the score; [nec]
 	the rule succeeds;
 
@@ -325,7 +332,7 @@ part History Hall
 
 mistmall is a truth state that varies.
 
-History Hall is north of Cark Cliff. printed name of history hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is north of Cark Cliff. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
 
@@ -353,7 +360,7 @@ mysterymalling is an action applying to nothing.
 
 understand the command "mystery mall" as something new.
 
-understand "mystery mall" as mysterymalling when player is in history hall.
+understand "mystery mall" as mysterymalling when player is in History Hall.
 
 carry out mysterymalling:
 	if mistmall is true, say "You're already in the mystery mall." instead;
@@ -439,15 +446,15 @@ carry out firstfaveing:
 	now first-fave is true;
 	the rule succeeds;
 
-part last lap
+part Last Lap
 
-Last Lap is a room. "[if reeker russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
+Last Lap is a room. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
 
 cap-cast is a truth state that varies.
 
 check going north in Last Lap:
-	if reeker russell is off-stage, say "You haven't found the way, yet." instead;
-	if reeker russell is in Last Lap, say "Not with Reeker Russell around." instead;
+	if Reeker Russell is off-stage, say "You haven't found the way, yet." instead;
+	if Reeker Russell is in Last Lap, say "Not with Reeker Russell around." instead;
 	say "You avoid the trap leading to the Vined Vault...";
 
 [?? trusty tap / crusty cap]
@@ -477,7 +484,7 @@ castcaping is an action applying to nothing.
 
 understand the command "cast cap" as something new.
 
-understand "cast cap" as castcaping when player is in last lap.
+understand "cast cap" as castcaping when player is in Last Lap.
 
 carry out castcaping:
 	if cap-cast is true, say "You already did." instead;
@@ -526,7 +533,7 @@ woodoneing is an action applying to nothing.
 
 understand the command "wood one" as something new.
 
-understand "wood one" as woodoneing when good gun is quicknear or player is in last lap.
+understand "wood one" as woodoneing when good gun is quicknear or player is in Last Lap.
 
 carry out woodoneing:
 	if good gun is moot, say "You already got rid of the good gun." instead;
@@ -604,7 +611,7 @@ book standard modifications
 chapter trivial pointless but amusing verbs
 
 instead of attacking:
-	if noun is Reeker russell, say "But he'd become Rager Russell. With major muscle." instead;
+	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
 instead of saying no, say "No-no? Hoho, dodo! [yn-tell]"
@@ -620,8 +627,8 @@ instead of swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'"
 chapter listening
 
 instead of listening:
-	if player is in wet wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
-	if player is in history hall and Oi Mo is in history hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. Maybe there's a way to quiet it down." instead;
+	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
+	if player is in History Hall and Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. Maybe there's a way to quiet it down." instead;
 	say "Nothing special."
 
 chapter thinking
@@ -634,9 +641,21 @@ to say tat: now thought-any is true;
 
 instead of thinking:
 	let thought-any be false;
-	say "You think about what you've done, what you've tried, and what you can do.";
+	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: ";
+	if Cark Cliff is visited:
+		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
+	else if player is in Trim Tram:
+		say "you've been able to collapse the first two letters to one (Strong Stray to Wrong Way) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
+	else if strong stray is in vined vault:
+		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant.";
+	else if mean mass is in vined vault:
+		say "FIND FAULT wasn't quite the same as VINED VAULT. Maybe you can do something different here.";
+	else if player is in vined vault:
+		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
+	else:
+		say "WET WOOD. What rhymes with WET WOOD?";
 	if burybile-clue is true, say "[line break][tat]You tried to BURY BILE, but it didn't feel like the right place. Maybe somewhere else.";
-	if thought-any is false, say "[line break]But you don't have any leads right now."
+	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 chapter score
 
@@ -656,11 +675,11 @@ to say your-rank:
 
 table of ranks
 rank-max	rank-name
-6	"sold sod"
-9	"trolled, trod"
+4	"sold sod"
+8	"trolled, trod"
 12	"cold cod"
-15	"old, odd"
-18	"rolled, rah'd"
+16	"old, odd"
+20	"rolled, rah'd"
 --	"bold bod"
 
 book nonstandard but general verbs
@@ -834,9 +853,9 @@ shore-shine is a truth state that varies.
 
 carry out shiningshoreing:
 	if shore-shine is true, say "You already got (t)here." instead;
-	say "The whining war dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
+	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	increment the score; [nec]
-	move lake lap to whining war;
+	move lake lap to Whining War;
 	the rule succeeds.
 
 chapter miningmoreing
@@ -995,7 +1014,7 @@ breakbrieing is an action applying to nothing.
 
 understand the command "break brie" as something new.
 
-understand "break brie" as breakbrieing when player is in lake lea.
+understand "break brie" as breakbrieing when player is in Lake Lea.
 
 brie-broke is a truth state that varies;
 

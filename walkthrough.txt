@@ -4,6 +4,45 @@ The wet wood seems like there's no way out. But if you listen carefully, you can
 
 > GET GOOD (1)
 
+Oops! You fell into the Vined Vault, which seems to have no weaknesses.
+
+> FIND FAULT (2)
+
+But now you must deal with the Mean Mass.
+
+> GREEN GRASS (3)
+
+And now there is that strong stray.
+
+> WRONG WAY (4)
+
+One more thing! The trim tram needs you to pay to get it started.
+
+> FLIM FLAM (5)
+
+You don't need a space, and you can also try a SKIM SKAM.
+
+That does it for the introduction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Now at Cark Cliff, you have an opportunity for a bonus point, or you can just tell the Tall Tree what to do.
 
 > FALL FREE (2)
@@ -72,7 +111,7 @@ Now you are free to go north.
 
 >N
 
-Here in the merry mile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
+Here in the Merry Mile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
 This is something you may've seen right away, but it's the final thing you need to do.
 

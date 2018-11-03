@@ -8,9 +8,9 @@ volume mistakes
 
 book Last Lap mistakes
 
-understand "fast fap" as a mistake ("Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.") when player is in last lap.
+understand "fast fap" as a mistake ("Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.") when player is in Last Lap.
 
-understand "gassed gap" as a mistake ("You don't need any sort of protection from enemies, behind or in front, here.") when player is in last lap.
+understand "gassed gap" as a mistake ("You don't need any sort of protection from enemies, behind or in front, here.") when player is in Last Lap.
 
 book Whining War mistakes
 
