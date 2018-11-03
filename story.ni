@@ -52,11 +52,11 @@ to win-the-game:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 20.
+min-needed is a number that varies. min-needed is 24.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 27.
+the maximum score is 32.
 
 max-poss is a number that varies.
 
@@ -68,6 +68,10 @@ to up-min:
 to max-down: decrement max-poss;
 
 main is a region.
+
+intro is a region.
+
+Meta is a region.
 
 a room has text called noway-text.
 
@@ -85,11 +89,11 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle.
 
-volume rooms
+volume intro
 
 part wet wood
 
-Wet Wood is a room. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
+Wet Wood is a room in intro. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
@@ -111,11 +115,98 @@ get-good is a truth state that varies.
 
 carry out getgooding:
 	if get-good is true, say "You already did." instead;
-	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, you overlook a trap that springs just as you're about to exit...";
-	wfak-d;
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, you overlook a trap that springs just as you're about to exit...[wfak-d]";
 	increment the score; [nec]
 	move player to Vined Vault;
 	the rule succeeds;
+
+part vined vault
+
+Vined Vault is a room in intro. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]"
+
+chapter findfaulting
+
+findfaulting is an action applying to nothing.
+
+understand the command "find fault" as something new.
+
+understand "find fault" as findfaulting when player is in vined vault.
+
+carry out findfaulting:
+	if mean mass is moot, say "Things are pretty good now. You probably want to deal with the strong stray." instead;
+	if mean mass is in vined vault, say "You already did, and things got worse. You'll have to try something else." instead;
+	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
+	say "But of course something outside was guarding the vault. A mean mass.";
+	move mean mass to vined vault;
+	increment the score; [nec]
+	the rule succeeds.
+
+chapter mean mass
+
+The mean mass is a thing.
+
+chapter greengrassing
+
+greengrassing is an action applying to nothing.
+
+understand the command "green grass" as something new.
+
+understand "green grass" as greengrassing when player is in vined vault and mean mass is in vined vault.
+
+carry out greengrassing:
+	say "The mean mass collapses into green grass. But in the distance you hear a strong stray.";
+	increment the score; [nec]
+	move strong stray to vined vault;
+	moot mean mass;
+	the rule succeeds;
+
+chapter strong stray
+
+the strong stray is scenery. "You can't see the strong stray, but you know it's out there."
+
+instead of doing something with strong stray:
+	if action is procedural, continue the action;
+	say "You have to mislead the strong stray someway."
+
+chapter wrongwaying
+
+wrongwaying is an action applying to nothing.
+
+understand the command "wrong way" as something new.
+
+understand "wrong way" as wrongwaying.
+
+carry out wrongwaying:
+	say "The strong stray stops pacing back and forth and wanders off. You wait and listen to be sure it's gone, then walk into a ...";
+	increment the score; [nec]
+	move player to Trim Tram;
+	the rule succeeds.
+
+part Trim Tram
+
+Trim Tram is a room in intro. "There's got to be a way to pay here to get the trim tram going."
+
+chapter flimflaming
+
+skim-not-flim is a truth state that varies;
+
+flimflaming is an action applying to nothing.
+
+understand the command "flim flam" as something new.
+understand the command "flimflam" as something new.
+understand the command "skim scam" as something new.
+
+understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
+
+carry out flimflaming:
+	if the player's command includes "skim", now skim-not-flim is true;
+	say "That does it! The tram moves off...";
+	move the player to Cark Cliff;
+	increment the score; [nec]
+	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
+	the rule succeeds.
+
+volume main
 
 part Cark Cliff
 
@@ -407,7 +498,7 @@ beaker-yet is a truth state that varies;
 
 carry out beakerbustleing:
 	if beaker-yet is true, say "You already did that!" instead;
-	say "You have a vision of a much nerdier version of Wreaker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
+	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
 	now beaker-yet is true;
 	up-min;
 	the rule succeeds;
@@ -439,85 +530,10 @@ understand "wood one" as woodoneing when good gun is quicknear or player is in l
 
 carry out woodoneing:
 	if good gun is moot, say "You already got rid of the good gun." instead;
-	say "The good gun turns into a wood one in Wreaker Russell's hands! He throws it away in disgust.";
+	say "The good gun turns into a wood one in Reeker Russell's hands! He throws it away in disgust.";
 	moot good gun;
 	check-russell-go; [nec]
 	the rule succeeds;
-
-part vined vault
-
-Vined Vault is a room. "You're stuck here! There looks to be no way out. It looks like a perfect trap, but..."
-
-chapter findfaulting
-
-findfaulting is an action applying to nothing.
-
-understand the command "find fault" as something new.
-
-understand "find fault" as findfaulting when player is in vined vault.
-
-carry out findfaulting:
-	if mean mass is moot, say "Things are pretty good now. You probably want to deal with the strong stray." instead;
-	if mean mass is in vined vault, say "You already did, and things got worse. You'll have to try something else." instead;
-	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
-	say "But of course something outside was guarding the vault. A mean mass.";
-	move mean mass to vined vault;
-	increment the score; [nec]
-	the rule succeeds.
-
-chapter mean mass
-
-The mean mass is a thing.
-
-chapter greengrassing
-
-greengrassing is an action applying to nothing.
-
-understand the command "green grass" as something new.
-
-understand "green grass" as greengrassing when player is in vined vault and mean mass is in vined vault.
-
-carry out greengrassing:
-	say "The mean mass collapses into green grass. But in the distance you hear a strong stray.";
-	increment the score; [nec]
-	move strong stray to vined vault;
-	moot mean mass;
-	the rule succeeds;
-
-chapter wrongwaying
-
-wrongwaying is an action applying to nothing.
-
-understand the command "wrong way" as something new.
-
-understand "wrong way" as wrongwaying.
-
-carry out wrongwaying:
-	say "The strong stray stops pacing back and forth and wanders off. You wait and listen to be sure it's gone, then walk into a ..."
-	increment the score;
-	move player to Trim Tram;
-	the rule succeeds.
-
-part Trim Tram
-
-Trim Tram is a room. "There's got to be a way to pay here to get the trim tram going."
-
-chapter flimflaming
-
-flimflaming is an action applying to nothing.
-
-understand the command "flim flam" as something new.
-understand the command "flimflam" as something new.
-understand the command "skim scam" as something new.
-
-understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
-
-carry out flimflaming:
-	if the player's command includes the word "skim", now skim-not-flim is true;
-	say "That does it! The tram moves off..."
-	move the player to Cark Cliff;
-	increment the score; [nec]
-	the rule succeeds.
 
 part Merry Mile
 
@@ -588,7 +604,7 @@ book standard modifications
 chapter trivial pointless but amusing verbs
 
 instead of attacking:
-	if noun is wreaker russell, say "But he'd become Rager Russell. With major muscle." instead;
+	if noun is Reeker russell, say "But he'd become Rager Russell. With major muscle." instead;
 	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
 instead of saying no, say "No-no? Hoho, dodo! [yn-tell]"
@@ -605,10 +621,12 @@ chapter listening
 
 instead of listening:
 	if player is in wet wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
-	if player is in mystery mall and Oi Mo is in mystery mall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. Maybe there's a way to quiet it down." instead;
+	if player is in history hall and Oi Mo is in history hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. Maybe there's a way to quiet it down." instead;
 	say "Nothing special."
 
 chapter thinking
+
+burybile-clue is a truth state that varies.
 
 thought-any is a truth state that varies.
 
@@ -638,11 +656,11 @@ to say your-rank:
 
 table of ranks
 rank-max	rank-name
-2	"sold sod"
-4	"trolled, trod"
-8	"cold cod"
-12	"old, odd"
-16	"rolled, rah'd"
+6	"sold sod"
+9	"trolled, trod"
+12	"cold cod"
+15	"old, odd"
+18	"rolled, rah'd"
 --	"bold bod"
 
 book nonstandard but general verbs
@@ -745,8 +763,6 @@ when play begins (this is the opening text rule):
 section when play begins - not for release
 
 volume meta
-
-Meta is a region.
 
 a capped cone is a thing.
 
