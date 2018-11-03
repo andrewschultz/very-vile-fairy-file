@@ -179,7 +179,7 @@ understand "fall free" as freefalling.
 
 carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
-	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.";
+	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
 	now tree-down is true;
 	move hive heap to cark cliff;
 	increment the score; [nec]
@@ -353,6 +353,14 @@ Last Lap is a room. "[if reeker russell is off-stage]It looks like there should 
 
 cap-cast is a truth state that varies.
 
+check going north in Last Lap:
+	if reeker russell is off-stage, say "You haven't found the way, yet." instead;
+	if reeker russell is in Last Lap, say "Not with Reeker Russell around." instead;
+	if vined vault is unvisited:
+		say "You skip in, overconfident. And you don't notice a trap door that sends you to...";
+		move player to Vined Vault instead;
+	say "You avoid the trap leading to the Vined Vault...";
+
 [?? trusty tap / crusty cap]
 
 chapter Reeker Russell
@@ -438,6 +446,24 @@ carry out woodoneing:
 	check-russell-go; [nec]
 	the rule succeeds;
 
+part vined vault
+
+Vined Vault is a room. "You're stuck here! There looks to be no way out. It looks like a perfect trap, but..."
+
+chapter findfaulting
+
+findfaulting is an action applying to nothing.
+
+understand the command "find fault" as something new.
+
+understand "find fault" as findfaulting.
+
+carry out findfaulting:
+	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...";
+	increment the score; [nec]
+	move player to Merry Mile;
+	the rule succeeds.
+
 part Merry Mile
 
 Merry Mile is north of Last Lap. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
@@ -505,7 +531,9 @@ book standard modifications
 
 chapter trivial pointless but amusing verbs
 
-instead of attacking, say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
+instead of attacking:
+	if noun is wreaker russell, say "But he'd become Rager Russell. With major muscle." instead;
+	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
 instead of saying no, say "No-no? Hoho, dodo! [yn-tell]"
 
