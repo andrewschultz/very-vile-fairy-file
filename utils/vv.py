@@ -323,9 +323,9 @@ if standard_input:
                 print(q, "has", len(word_dict[q]), "total words")
             continue
         x = x.lower().strip()
-        if re.search("^[12]([ny])?$", x):
+        if re.search("^[12]([ny])?($| +)", x):
             iv = int(x[0])
-            if len(x) == 1:
+            if len(x) == 1 or x[1] == ' ':
                 dels[iv] = not dels[iv]
                 toggles = "Toggling"
             else:
@@ -333,19 +333,8 @@ if standard_input:
                 toggles = "Setting"
             print("{:s} {:d} to {:s}.".format(toggles, iv, i7.oo[dels[iv]]))
             if not len(del_ary(dels)): print("WARNING: replacing starting 1 and 2 letters is both off.")
-            continue
-        if re.search("^[12]([ny])? +", x):
-            iv = int(x[0])
-            if x[1] == ' ':
-                dels[iv] = not dels[iv]
-                toggles = "Toggling"
-            else:
-                dels[iv] = (x[1] == 'y')
-                toggles = "Setting"
-            x = re.sub("^[12]([ny]?) +", "", x)
-            print("{:s} {:d} to {:s}.".format(toggles, iv, i7.oo[dels[iv]]))
-            if not len(del_ary(dels)): print("WARNING: replacing starting 1 and 2 letters is both off.")
-        if not x: break
+            x = re.sub("^[12]([ny]?)( +)?", "", x)
+            if not x: continue
         if x.count(' ') > 1:
             print("Too many words. A 2 word command should work.")
             continue
@@ -356,11 +345,14 @@ if standard_input:
             x = last_lookup
             print("Trying", x)
         elif ' ' not in x:
-            print("1-word command not recognized. You need a 2-word command. Type ? to see your options.")
+            if re.search("^[12]", x):
+                print("1/2 command must be followed by n/y or a space. Type ? to see your options.")
+                continue
+            print("1-word command ({:s}) not recognized. You need a 2-word command. Type ? to see your options.".format(x))
             continue
         else:
             if re.search("[^a-z ,/]", x):
-                print("WARNING: some non alpha characters are in here. Try again.")
+                print("WARNING: some non alpha characters are in {:s}. Try again.".format(x))
                 continue
             last_lookup = x
         si = x.split(" ")

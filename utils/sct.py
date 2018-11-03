@@ -9,6 +9,9 @@ got = defaultdict(int)
 open_post = True
 to_open = 0
 
+min_line = 0
+max_line = 0
+
 hdr_str = "                  NE OP UD TO"
 
 def check_walkthrough():
@@ -36,17 +39,21 @@ def check_points():
     last_line = 0
     last_cmd = "(undefined)"
     global min_sco
+    global min_line
     global max_sco
+    global max_line
     print(hdr_str)
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("min-needed"):
                 if min_sco: sys.exit("Minimum score redefined at line {:d}.".format(line_count))
                 min_sco = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+                min_line = line_count
                 continue
             if line.startswith("the maximum score is"):
                 if max_sco: sys.exit("Maximum score redefined at line {:d}.".format(line_count))
                 max_sco = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+                max_line = line_count
                 continue
             if re.search("understand \".*\" as", line):
                 q = line.split("\"")
@@ -82,10 +89,14 @@ max_sco = 0
 check_points()
 check_walkthrough()
 
-if min_sco != scores['nec']: print(min_sco, "in source but # of necessary scores in file = ", scores['nec'])
+if min_sco != scores['nec']:
+    print("{:d} in source but # of necessary scores in file = {:d}. Maybe fix line {:d}.".format(min_sco, scores['nec'], min_line))
+    if open_post and not to_open: to_open = min_line
 else: print("MINIMUM SCORES MATCH IN SOURCE!")
 
-if max_sco != scores['total']: print(max_sco, "in source but # of possible scores in file = ", scores['total'])
+if max_sco != scores['total']:
+    print("{:d} in source but # of possible scores in file = {:d}. Maybe fix line {:d}.".format(max_sco, scores['total'], max_line))
+    if open_post and not to_open: to_open = max_line
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 
 for q in sorted(x_of_y.keys()):
