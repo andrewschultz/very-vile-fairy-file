@@ -19,11 +19,12 @@ all_time = defaultdict(int)
 
 all_time_file = os.path.join(i7.sdir("vvff"), "vva.txt")
 
+standard_input_if_no_array = True
+
 verbose = False
 standard_input = False
 two_letter = 0
 every_x = 5
-first_two = False
 tot_freq = 0
 show_zeros = True
 
@@ -31,12 +32,18 @@ word_ary = []
 default_array = [ 'vast', 'void' ]
 two_letter_ary = []
 
+dels = defaultdict(bool)
+dels[1] = True
+
 word_dict = defaultdict(lambda: defaultdict(bool))
 freq = defaultdict(int)
 
 let_blank = [''] + list(ascii_lowercase)
 
 ##############start functions
+
+def del_ary(x):
+    return [a for a,b in x.items() if x[a] == True]
 
 def read_all_time():
     all_time.clear()
@@ -49,7 +56,8 @@ def read_all_time():
             all_time[l[0]] = int(l[1])
 
 def print_configs():
-    print("Replacing first two letters is {:s}.".format(i7.oo[first_two]))
+    print("Replacing first two letters is {:s}.".format(i7.oo[2 in dels]))
+    print("Replacing first letter is {:s}.".format(i7.oo[1 in dels]))
     print("Do we replace two letters:", ', '.join(two_letter_ary[0:two_letter]))
     print("# of two-letter replacements of original letters:", two_letter)
     print("carriage returns after every", every_x, "matches.")
@@ -96,8 +104,9 @@ def word_upper(q):
     if q in word_dict[len(q)].keys(): return (q.upper(), True)
     return (q.lower(), False)
 
-def write_all_26(a, b, two_letters_too = False, two_letter_starts = 10):
+def write_all_26(a, b, dels, two_letter_starts = 10):
     global let_blank
+    done_anything = False
     aa = re.split("[,/]", a)
     ab = re.split("[,/]", b)
     anno = [ "no match", "single match", "DOUBLE MATCH!!!!" ]
@@ -105,41 +114,49 @@ def write_all_26(a, b, two_letters_too = False, two_letter_starts = 10):
     starts_array = list(let_blank)
     if two_letter_starts: starts_array.extend(two_letter_ary[0:two_letter_starts])
     warns = defaultdict(bool)
-    for a in aa:
-        for b in ab:
-            la = len(a)
-            lb = len(b)
-            read_words_of_length(la)
-            read_words_of_length(lb)
-            if a not in word_dict[la] and a not in warns.keys():
-                print("WARNING", a, "may not be word.")
-                warns[a] = True
-            if b not in word_dict[la] and b not in warns.keys():
-                print("WARNING", b, "may not be word.")
-                warns[b] = True
-            if '' in let_blank:
-                read_words_of_length(la-1)
-                read_words_of_length(lb-1) # since we need to consider lair -> air
-            if two_letter_starts:
-                read_words_of_length(la+1)
-                read_words_of_length(lb+1)
-            this_combo = "{:s} {:s}".format(a, b)
-            this_time[this_combo] = 1
-            if this_combo in all_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
-            a_in = ""
-            b_in = ""
-            for q in all_time.keys():
-                if a in q and not a_in: a_in = q
-                if b in q and not b_in: b_in = q
-            if a_in and b_in:
-                print(a, b, "both seen separately in {:s}/{:s}.".format(a_in, b_in))
-            for x in starts_array:
-                if x == a[0]: continue
-                if len(x) == 2 and x[:2] == a[:2]: continue
-                q = word_upper(x + a[1+two_letters_too:])
-                r = word_upper(x + b[1+two_letters_too:])
-                wo = q[1] + r[1]
-                strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
+    for d in dels:
+        for a in aa:
+            for b in ab:
+                if a[:d] != b[:d]:
+                    print("Skipping {:s} and {:s} due to first {:d} letter{:s} mismatch.".format(a, b, d, i7.plur(d)))
+                    continue
+                done_anything = True
+                la = len(a)
+                lb = len(b)
+                read_words_of_length(la)
+                read_words_of_length(lb)
+                if a not in word_dict[la] and a not in warns.keys():
+                    print("WARNING", a, "may not be a word.")
+                    warns[a] = True
+                if b not in word_dict[lb] and b not in warns.keys():
+                    print("WARNING", b, "may not be a word.")
+                    warns[b] = True
+                if '' in let_blank:
+                    read_words_of_length(la-d)
+                    read_words_of_length(lb-d) # since we need to consider lair -> air
+                if two_letter_starts and d == 1:
+                    read_words_of_length(la+1)
+                    read_words_of_length(lb+1)
+                this_combo = "{:s} {:s}".format(a, b)
+                this_time[this_combo] = 1
+                if this_combo in all_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
+                a_in = ""
+                b_in = ""
+                for q in all_time.keys():
+                    if a in q and not a_in: a_in = q
+                    if b in q and not b_in: b_in = q
+                if a_in and b_in:
+                    print(a, b, "both seen separately in {:s}/{:s}.".format(a_in, b_in))
+                for x in starts_array:
+                    if x == a[0]: continue
+                    if len(x) == 2 and x[:2] == a[:2]: continue
+                    q = word_upper(x + a[d:])
+                    r = word_upper(x + b[d:])
+                    wo = q[1] + r[1]
+                    strings_array[wo].append("{:s} {:s}".format(q[0], r[0]))
+    if not done_anything:
+        print("Couldn't find anything to do.")
+        return
     for q in strings_array: q = sorted(q)
     count = 0
     for q1 in range(1 - show_zeros, 3):
@@ -177,19 +194,28 @@ while count < len(sys.argv):
     arg = sys.argv[count].lower()
     if arg[0] == '-': arg = arg[1:]
     if arg == 'i': standard_input = True
+    elif arg == 'ni': standard_input = False
     elif arg == 'v': verbose = True
-    elif arg == '2': first_two = True
     elif arg[0] == 't': two_letter = int(arg[1:])
     elif re.search("^[ec][0-9]", arg): every_x = int(arg[1:])
     elif '?' in arg: cmd_line_usage()
-    else: word_ary.append(arg)
+    else:
+        if '1' in arg: dels[1] = True
+        if '2' in arg:
+            dels[2] = True
+            if '1' not in arg: dels[1] = False
+        arg = re.sub("[12]", "", arg)
+        word_ary.append(arg)
     count += 1
 
-starts_array = let_blank
+if not standard_input and not len(word_ary):
+    if standard_input_if_no_array is True:
+        standard_input = True
+        print("No word array, so going to standard input.")
+    else:
+        sys.exit("I don't have a word array, and standard input is not specified or defaulteed to. Set standard_input_if_no_array to True or use the -i flag for standard input.")
 
-if not len(word_ary):
-    standard_input = True
-    print("Going with standard input by default.")
+starts_array = let_blank
 
 read_all_time()
 
@@ -267,10 +293,6 @@ if standard_input:
                 print("We now will check for the", two_letter, "most popular 2-letter combos:", ', '.join(two_letter_ary[:two_letter]))
                 print("Lowest replaceable frequency:", freq[two_letter_ary[two_letter-1]], "of", tot_freq, "= {:.2f} %".format(freq[two_letter_ary[two_letter-1]]*100/tot_freq))
                 continue
-        if x == '2':
-            first_two = not first_two
-            print("Replacing first two is now {:s}. That means they will be replaced with *ALL* 0- 1- and 2-letter combos.".format(i7.oo[first_two]))
-            continue
         if x == 'z':
             show_zeros = not show_zeros
             print("Toggling show_zeros. It is now {:s}. To fix the value, type yz/zy (on) or nz/zn (off).".format(i7.oo[show_zeros]))
@@ -289,27 +311,27 @@ if standard_input:
             show_zeros = False
             print("Hiding zeros.")
             continue
-        if x == '2y':
-            first_two = True
-            continue
-        if x == '2n':
-            first_two = False
-            continue
         if x == 'ri':
             print(len(word_dict.keys()), "total word files read in.")
             for q in sorted(word_dict.keys()):
                 print(q, "has", len(word_dict[q]), "total words")
             continue
-        if x.startswith("2n"):
-            first_two = False
-            x = re.sub("^2n *", "", x)
-        if x.startswith("2y"):
-            first_two = True
-            x = re.sub("^2y *", "", x)
-        if x.startswith("2"):
-            first_two = not first_two
-            x = re.sub("^2 *", "", x)
         x = x.lower().strip()
+        if re.search("^[12]([ny])?$", x):
+            iv = int(x[0])
+            print("Toggling {:d} to {:s}.".format(iv, i7.oo[dels[iv]]))
+            if len(x) == 1:
+                dels[iv] = not dels[iv]
+            else:
+                dels[iv] = (x[1] == 'y')
+            continue
+        if re.search("^[12]([ny])? +", x):
+            iv = int(x[0])
+            if x[1] == ' ':
+                dels[iv] = not dels[iv]
+            else:
+                dels[iv] = (x[1] == 'y')
+            x = re.sub("^[12]([ny]?) +", "", x)
         if not x: break
         if x.count(' ') > 1:
             print("Too many words. A 2 word command should work.")
@@ -333,8 +355,8 @@ if standard_input:
             print("You need 2 words or word groups separated by spaces. You have {:d}. Groups can contain slashes/commas.".format(len(si)))
             continue
         #print(s0, s1)
-        write_all_26(si[0], si[1], first_two, two_letter)
+        write_all_26(si[0], si[1], del_ary(dels), two_letter)
 else:
     for i in range(0, len(word_ary) // 2):
-        write_all_26(word_ary[i*2], word_ary[i*2+1], two_letter)
+        write_all_26(word_ary[i*2], word_ary[i*2+1], del_ary(dels), two_letter)
     if len(word_ary) % 2: print("Warning odd number of characters in word array. Last is", word_ary[len(word_ary)-1])
