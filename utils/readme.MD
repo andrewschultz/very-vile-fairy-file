@@ -2,6 +2,7 @@ README.MD for utils subdirectory of very vile fairy file
 
 SCRIPTS:
 * main
+** dno.py: notes duplicate checker, which may be merged with Ailihphilia's
 ** vv.py is the main one that helps us locate alliterative rhymes.
 * minor
 ** sct.py keeps track of scoring incidents and what is/isn't necessary.

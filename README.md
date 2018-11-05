@@ -1,3 +1,3 @@
-# very-vile-fairy-file
+# Very Vile Fairy File
 
-Possible IFComp 2019 game.
+Prospective IFComp 2019 game. See UTILS directory for utilities.
