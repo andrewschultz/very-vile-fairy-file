@@ -3,8 +3,11 @@
 #
 
 from collections import defaultdict
+import os
 import re
 import i7
+
+print_false_flag = True
 
 note_dict = defaultdict(int)
 
@@ -30,16 +33,28 @@ def read_notes_file(j):
                     mys = "{:s} {:s}".format(w1a, w2a)
                     note_dict[mys] = line_count
 
+def regexq(st):
+    st2 = re.sub(" ", "(s)? ", st)
+    st2 = re.sub("$", "(s)?", st2)
+    return r'\b{:s}\b'.format(st2)
+
 def read_source_files(j):
     global crossovers
     print("CHECKING", j)
-    for x in i7.i7f[j]:
+    fl = list(i7.i7f[j])
+    fl.append("c:/writing/spopal.otl")
+    for x in fl:
+        print(x, "...")
         with open(x) as file:
             for (line_count, line) in enumerate (file, 1):
                 for q in note_dict.keys():
                     if q in line.lower():
-                        print("CROSSOVER <<{:s} line {:d}>>".format(q, note_dict[q]), "From <<{:s} line {:d}>> =\n    {:s}".format(os.path.basename(x), line_count, line.strip()))
-                        crossovers += 1
+                        q2 = regexq(q)
+                        if re.search(q2, line.lower()):
+                            print("CROSSOVER <<{:s} line {:d}>>".format(q, note_dict[q]), "From <<{:s} line {:d}>> =\n    {:s}".format(os.path.basename(x), line_count, line.strip()))
+                            crossovers += 1
+                        elif print_false_flag:
+                            print("FALSE FLAG <<{:s} line {:d}>>".format(q, note_dict[q]), "From <<{:s} line {:d}>> =\n    {:s}".format(os.path.basename(x), line_count, line.strip()))
 
 crossovers = 0
 read_notes_file("very-vile-fairy-file")
