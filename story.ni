@@ -12,7 +12,7 @@ include Trivial Niceties Z-Only by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
-include Very Vile Fairy File Mistakes by Andrew Schultz
+include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 section establish debug - not for release
 
@@ -561,12 +561,6 @@ to say vvff-nonsense:
 	if vvff-row is number of rows in table of vvff digs + 1:
 		say "The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
 
-table of vvff digs
-vvff-dis
-"Gonna go off! Shun a show-off!"
-"Rotten role: gotten goal?"
-"'My magic try: TRAGIC!'"
-
 instead of doing anything with the fairy file:
 	if action is procedural, continue the action;
 	say "[ff-no].";
@@ -628,7 +622,7 @@ chapter listening
 
 instead of listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
-	if player is in History Hall and Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. Maybe there's a way to quiet it down." instead;
+	if player is in History Hall and Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
 	say "Nothing special."
 
 chapter thinking
@@ -816,9 +810,9 @@ carry out whoawaiting:
 	increment the score; [nec]
 	the rule succeeds.
 
-book pain peasant
+book Pain Peasant
 
-the pain peasant is a person.
+the Pain Peasant is a person.
 
 chapter plainpleasanting
 
@@ -829,11 +823,11 @@ understand the command "plainpleasant" as something new.
 understand "plainpleasant" as plainpleasanting.
 
 carry out plainpleasanting:
-	say "The pain peasant is much nicer now. You have a chat about stuff, and the peasant takes leave to go do peasant things.";
+	say "The Pain Peasant is much nicer now. You have a chat about stuff, and the peasant takes leave to go do peasant things.";
 	moot Pain Peasant;
 	the rule succeeds;
 
-Lit Lawn is a room.
+Lit Lawn is a room. [??get gone]
 
 [?? burned bower/turned tower]
 
@@ -950,14 +944,14 @@ check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't le
 
 Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
 
-this is the jake-g-gone rule: if jake g is moot, say "You've already chased Jake G." instead;
+this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
 
 jake-gone is a number that varies.
 
 to eval-jake-g:
 	increment jake-gone;
 	if jake-gone is 2:
-		moot jake g;
+		moot Jake G;
 		say "Jake leaves, satisfied.";
 
 chapter fakefeeing
