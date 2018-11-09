@@ -550,16 +550,9 @@ chapter very vile fairy file
 
 the very vile fairy file is a thing in Merry Mile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it."
 
-description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [vvff-nonsense]"
+description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [next-rand-txt of table of vvff digs]"
 
 vvff-row is a number that varies.
-
-to say vvff-nonsense:
-	increment vvff-row;
-	choose row vvff-row in table of vvff digs;
-	say "[vvff-dis entry]";
-	if vvff-row is number of rows in table of vvff digs + 1:
-		say "The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
 
 instead of doing anything with the fairy file:
 	if action is procedural, continue the action;
