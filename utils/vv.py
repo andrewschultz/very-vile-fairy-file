@@ -6,6 +6,7 @@
 # toggle max # of matches shown
 # allow for slashes in syntax so we can look for multiple word combos e.g. be/bee bad
 # 2o and 1o command line syntax, align_matches option
+# cmd_line_stuff merged with main STDIN read function
 #
 
 from collections import defaultdict
@@ -67,23 +68,28 @@ def print_configs():
     print("carriage returns after every", every_x, "matches.")
     return
 
-def cmd_line_usage():
+def stdin_or_basic_usage():
+    print("=" * 50)
+    print("Dashes at start are highly recommended, since we could be dealing with any words.")
+    print("-? = this")
+    print("-?? = details/examples")
     print("-e/c = CR every x matches. 1-{:d} are possible values.".format(max_every_x))
-    print("-i = standard input")
     print("-v = verbose output (prints under the hood info)")
     print("-t = two letter combos as well")
-    print("-z/yz/zy and -nz/zn = show zeros or hide them.")
-    print("-? = this")
+    print("-ta = see all")
+    print("-t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
+    print("-z/yz/zy and -nz/zn = show zero-matches or hide them.")
+    print("=" * 50)
+
+def cmd_line_usage():
+    stdin_or_basic_usage()
+    print("-i = standard input")
     exit()
 
 def stdin_help():
-    print("? = this.")
-    print("-e/c = CR every x matches. 1-10 are possible values.".format(max_every_x))
+    stdin_or_basic_usage()
     print("q = quit, qx = quit without adding to the vva.txt try frequency data file.")
-    print("ri = what is read in")
-    print("t(number) = how many two-letter matches to look at.")
-    print("t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
-    print("ta = see all")
+    print("ri = list which files are read in so far")
     print("(12) = toggling whether or not you show 1 or 2, (12)(ny) forces things. If you add a space, you can have a command after that.")
     print("standard input = 2 words to look through alliterative rhymes.")
     return
@@ -201,6 +207,8 @@ def read_words_of_length(la):
 count = 1
 
 read_two_letters()
+
+cmd_line_stuff = join(" ", sys.argv[1:]).split(";")
 
 while count < len(sys.argv):
     arg = sys.argv[count].lower()
