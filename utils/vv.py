@@ -27,8 +27,8 @@ verbose = False
 standard_input = False
 two_letter = 0
 every_x = 5
-max_every_x = 15
-warn_every_x = 10
+max_every_x = os.get_terminal_size().columns // 12
+warn_every_x = os.get_terminal_size().columns // 18
 tot_freq = 0
 show_zeros = True
 align_matches = True
@@ -208,7 +208,7 @@ count = 1
 
 read_two_letters()
 
-cmd_line_stuff = join(" ", sys.argv[1:]).split(";")
+cmd_line_stuff = " ".join(sys.argv[1:]).split(";")
 
 while count < len(sys.argv):
     arg = sys.argv[count].lower()
@@ -276,7 +276,7 @@ if standard_input:
             continue
         if re.search("^[ec][0-9]", x):
             temp = int(x[1:])
-            if temp < 1 or temp > max_every_x: print("You can only make line breaks every 1 through {:d}.".format(max_every_x))
+            if temp < 1 or temp > max_every_x: print("You can only make line breaks every 1 through {:d}, to avoid line breaking. However, if you can increase the terminal width before running, this number may rise.".format(max_every_x))
             else:
                 every_x = temp
                 if every_x >= warn_every_x: print("WARNING: this may cause a broken line.")
@@ -341,11 +341,14 @@ if standard_input:
                 print(q, "has", len(word_dict[q]), "total words")
             continue
         x = x.lower().strip()
-        if re.search("^[12]([ny])?($| +)", x):
+        if re.search("^[12]([nyo])?($| +)", x):
             iv = int(x[0])
             if len(x) == 1 or x[1] == ' ':
                 dels[iv] = not dels[iv]
                 toggles = "Toggling"
+            elif x[1] == 'o':
+                for i in range(0, 3): dels[i] = (i == iv)
+                toggles = "Forcing only"
             else:
                 dels[iv] = (x[1] == 'y')
                 toggles = "Setting"
