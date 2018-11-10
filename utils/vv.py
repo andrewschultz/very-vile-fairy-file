@@ -5,6 +5,7 @@
 # todo: toggle showing long list of 0-matches
 # toggle max # of matches shown
 # allow for slashes in syntax so we can look for multiple word combos e.g. be/bee bad
+# 2o and 1o command line syntax, align_matches option
 #
 
 from collections import defaultdict
@@ -25,8 +26,11 @@ verbose = False
 standard_input = False
 two_letter = 0
 every_x = 5
+max_every_x = 15
+warn_every_x = 10
 tot_freq = 0
 show_zeros = True
+align_matches = True
 
 word_ary = []
 default_array = [ 'vast', 'void' ]
@@ -64,7 +68,7 @@ def print_configs():
     return
 
 def cmd_line_usage():
-    print("-e/c = CR every x matches. 1-10 are possible values.")
+    print("-e/c = CR every x matches. 1-{:d} are possible values.".format(max_every_x))
     print("-i = standard input")
     print("-v = verbose output (prints under the hood info)")
     print("-t = two letter combos as well")
@@ -74,7 +78,7 @@ def cmd_line_usage():
 
 def stdin_help():
     print("? = this.")
-    print("-e/c = CR every x matches. 1-10 are possible values.")
+    print("-e/c = CR every x matches. 1-10 are possible values.".format(max_every_x))
     print("q = quit, qx = quit without adding to the vva.txt try frequency data file.")
     print("ri = what is read in")
     print("t(number) = how many two-letter matches to look at.")
@@ -118,6 +122,10 @@ def write_all_26(a, b, dels, two_letter_starts = 10):
     starts_array = list(let_blank)
     if two_letter_starts: starts_array.extend(two_letter_ary[0:two_letter_starts])
     warns = defaultdict(bool)
+    max_string_size = max([len(ax) for ax in aa]) + max([len(ax) for ax in ab]) + 1
+    if two_letter_starts: max_string_size += 2
+    if 1 not in dels: max_string_size -= 2
+    print(a, b, len(a), len(b), max_string_size)
     for d in dels:
         for a in aa:
             for b in ab:
@@ -161,12 +169,12 @@ def write_all_26(a, b, dels, two_letter_starts = 10):
     if not done_anything:
         print("Couldn't find anything to do.")
         return
-    for q in strings_array: q = sorted(q)
-    count = 0
+    strings_array = [sorted(q, key=str.lower) for q in strings_array]
     for q1 in range(1 - show_zeros, 3):
+        count = 0
         end_string = ""
         for q in range (0, len(strings_array[q1])):
-            end_string += strings_array[q1][q]
+            end_string += "{:{max_string_size}s}".format(strings_array[q1][q], max_string_size=max_string_size) if align_matches else strings_array[q1][q]
             if q == len(strings_array[q1]) - 1: continue
             elif (q + 1) % every_x == 0: end_string += "\n"
             else: end_string += " / "
@@ -260,8 +268,10 @@ if standard_input:
             continue
         if re.search("^[ec][0-9]", x):
             temp = int(x[1:])
-            if temp < 1 or temp > 10: print("You can only make line breaks every 1 through 10.")
-            else: every_x = temp
+            if temp < 1 or temp > max_every_x: print("You can only make line breaks every 1 through {:d}.".format(max_every_x))
+            else:
+                every_x = temp
+                if every_x >= warn_every_x: print("WARNING: this may cause a broken line.")
             print("Now there are line breaks after every", every_x, "pair{:s}.".format(i7.plur(every_x)))
             continue
         if x[0] == '??':
