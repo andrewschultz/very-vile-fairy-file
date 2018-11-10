@@ -8,6 +8,9 @@
 # 2o and 1o command line syntax, align_matches option
 # cmd_line_stuff merged with main STDIN read function
 #
+# usage: vv.py -i
+#
+# cl-sm-oke looks for cloak/smoke rhymes parallels
 
 from collections import defaultdict
 from string import ascii_lowercase
@@ -27,11 +30,13 @@ verbose = False
 standard_input = False
 two_letter = 0
 every_x = 5
-max_every_x = os.get_terminal_size().columns // 12
-warn_every_x = os.get_terminal_size().columns // 18
+termwidth = os.get_terminal_size().columns
+max_every_x = termwidth // 12
+warn_every_x = termwidth // 18
 tot_freq = 0
 show_zeros = True
 align_matches = True
+max_search_chars = 10
 
 word_ary = []
 default_array = [ 'vast', 'void' ]
@@ -131,7 +136,6 @@ def write_all_26(a, b, dels, two_letter_starts = 10):
     max_string_size = max([len(ax) for ax in aa]) + max([len(ax) for ax in ab]) + 1
     if two_letter_starts: max_string_size += 2
     if 1 not in dels: max_string_size -= 2
-    print(a, b, len(a), len(b), max_string_size)
     for d in dels:
         for a in aa:
             for b in ab:
@@ -202,6 +206,55 @@ def read_words_of_length(la):
             word_dict[la][line.lower().strip()] = True
     print("Read in", len(word_dict[la].keys()), "words of length", la)
 
+def replace_one(q):
+    got_any = False
+    if q.count("-") != 1:
+        if q.count("-") == 0: print("You need a ? in the string for simple replacement.")
+        else: print("Only one dash for simple replacement.")
+        return
+    q1 = re.sub("-", "", q)
+    for i in range(3, max_search_chars + 1):
+        read_words_of_length(i)
+    (x1, x2) = q.lower().strip().split("-")
+    for i in range(3, max_search_chars + 1):
+        for q2 in word_dict[i]:
+            if q2.endswith(x2):
+                print("{:s}- => {:s}- gives {:s} => {:s}".format(q1[:-len(x2)], q2[:-len(x2)], q1,  q2))
+                got_any = True
+    if not got_any: print("Got nothing for the word {:s}{:s}/{:s}-{:s}.".format(x1, x2, x1, x2))
+
+def replace_two(q):
+    got_any = False
+    max_width_local = (termwidth * 4) // 5
+    if q.count("-") != 2:
+        print("You need 2 dashes in the string to do complex replacements: from, to, suffix.")
+        return
+    (pre1, pre2, suff) = q.lower().strip().split("-")
+    for i in range(3, max_search_chars + 1):
+        read_words_of_length(i)
+    chars_this_line = 0
+    big_string = ""
+    for i in range(max_search_chars, 2, -1):
+        for q2 in word_dict[i]:
+            if q2.startswith(pre2):
+                base_word = pre1 + q2[len(pre2):]
+                if base_word in word_dict[len(base_word)]:
+                    if not got_any:
+                        print("{:s} / {:s}".format(pre1, pre2))
+                        print("=" * 50)
+                    got_any = True
+                    out_string = "{:s}~{:s}".format(q2, base_word)
+                    if chars_this_line + len(out_string) > max_width_local:
+                        big_string += "\n"
+                        chars_this_line = 0
+                    else:
+                        if chars_this_line: big_string += " | "
+                        chars_this_line += 3
+                    chars_this_line += len(out_string)
+                    big_string += out_string
+    print(big_string)
+    if not got_any: print("Got nothing for the words {:s}-{:s}/{:s}-{:s}.".format(pre1, suff, pre2, suff))
+
 ##############end functions
 
 count = 1
@@ -250,6 +303,13 @@ if standard_input:
             print(cmds)
             continue
         cmds.append(x)
+        if ' ' not in x:
+            if x.count('-') == 1:
+                replace_one(x)
+                continue
+            if x.count('-') == 2:
+                replace_two(x)
+                continue
         if x == 'q' or x == '' or x == 'qx':
             if x == 'qx':
                 print("Bailing without saving.")
