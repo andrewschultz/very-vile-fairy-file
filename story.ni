@@ -52,11 +52,11 @@ to win-the-game:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 24.
+min-needed is a number that varies. min-needed is 25.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 32.
+the maximum score is 33.
 
 max-poss is a number that varies.
 
@@ -88,6 +88,24 @@ definition: a direction (called d) is viable:
 volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle.
+
+the zig zag rig rag is a thing. The player has the zig zag rig rag.
+
+chapter bigbaging
+
+bigbaging is an action applying to nothing.
+
+understand the command "big bag" as something new.
+
+understand "big bag" as bigbaging.
+
+carry out bigbaging:
+	if player has big bag, say "You already made the big bag." instead;
+	say "You now have a more useful big bag!";
+	increment the score; [nec]
+	moot zig zag rig rag;
+	now player has big bag;
+	the rule succeeds.
 
 volume intro
 
