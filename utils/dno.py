@@ -10,6 +10,7 @@ import re
 import os
 import sys
 
+long_lines = defaultdict(int)
 note_dict = defaultdict(int)
 already_done = defaultdict(int)
 source_dupes = defaultdict(list)
@@ -17,13 +18,17 @@ dupes = 0
 uniq_dupes = 0
 internal_dupes = 0
 line_to_open = 0
+space_check = 0
 
 open_last = False
 open_first = False
 force_open = False
+check_spaces = False
 
 def usage():
     print("ol / of / lo / fo / l / f = open last or first duplicate in notes.txt. e = random.")
+    print("cs / sc / s / c = check spaces in notes file.")
+    print("e = forces open-notes file.")
     print("a = adjusts notes file so slashes have spaces before and after.")
     exit()
 
@@ -46,18 +51,33 @@ def rejig_notes_file():
 def read_notes_file(j):
     global line_to_open
     global internal_dupes
+    global space_check
+    blank_yet = False
+    long_so_far = 0
     print("START INTERNAL CHECK FOR", j)
     with open("notes.txt") as file:
         for (line_count, line) in enumerate (file, 1):
             ll = line.strip().lower()
+            if not ll: blank_yet = True
             if not ll or ll[0] == "#": continue
             ll = re.sub(" *#.*", "", ll)
             lla = re.split(" *\/ *", ll)
+            if check_spaces and '#' not in line:
+                flag_spaces = False
+                for q in lla:
+                    if q.count(" ") >= 3 and not blank_yet: flag_spaces = True
+                if flag_spaces:
+                    ld = "line-{:d}".format(line_count)
+                    note_dict[ld] = long_lines[ld] = line_count
+                    long_so_far += 1
+                    print("Long line {:d} ({:d}):".format(line_count, long_so_far), line.strip()[:50] + ("" if len(line) < 50 else "..."), "has lots of spaces. Maybe use slashes or comments or put long ideas at the top.")
+                    space_check += 1
             for q in lla:
                 if q and q in note_dict.keys():
                     if q in already_done.keys():
                         if not line_to_open: line_to_open = line_count
                         internal_dupes += 1
+                    else:
                         print(q, "already in note_dict.keys at line", note_dict[q], "duplicated at line", line_count)
                     already_done[q] += 1
                     continue
@@ -65,6 +85,9 @@ def read_notes_file(j):
     print("END INTERNAL CHECK FOR", j)
     if internal_dupes: print(internal_dupes, "internal dupes.")
     else: print("NO INTERNAL DUPES! YAY!")
+    if check_spaces:
+        if space_check: print("Found", space_check, "places to check spaces.")
+        else: print("Spacing all checked out.")
 
 def read_source_files(j):
     global uniq_dupes
@@ -90,21 +113,23 @@ def read_source_files(j):
 i7.go_proj("vvff")
 
 count = 1
+
 while count < len(sys.argv):
     arg = sys.argv[count]
+    if arg[0] == '-': arg = arg[1:]
     if arg == 'a':
         rejig_notes_file()
         exit
     if arg == 'ol' or arg == 'lo' or arg == 'l':
         open_last = True
         open_first = False
+    elif arg == 'cs' or arg == 'sc' or arg == 's' or arg == 'c':
+        check_spaces = True
     elif arg == 'of' or arg == 'fo' or arg == 'f':
         open_last = False
         open_first = True
     elif arg == 'e':
         force_open = True
-        if random.randint(0, 2): open_last = True
-        else: open_first = True
     else:
         usage()
     count += 1
@@ -118,19 +143,26 @@ if dupes + uniq_dupes + internal_dupes:
     print("Total duplicates:", dupes)
     print("Total unique duplicates:", uniq_dupes)
     print("Total internal duplicates:", internal_dupes)
+else:
+    print("Yay! Everything passed!")
+
+if force_open and not open_last and not open_first:
+    if random.randint(0, 2): open_last = True
+    else: open_first = True
+    print("Opening", "first" if open_first else open_last)
 
 if open_last or open_first:
-    u = list(set(source_dupes.keys()) | set(already_done.keys()))
+    u = list(set(source_dupes.keys()) | set(already_done.keys()) | set(long_lines.keys()))
     if len(u):
         if open_last:
-            u1 = min(u, key=lambda x: note_dict[x], reverse=True)
-        else:
             u1 = max(u, key=lambda x: note_dict[x])
+        else:
+            u1 = min(u, key=lambda x: note_dict[x])
         i7.npo("notes.txt", note_dict[u1])
     elif force_open:
         print("No duplicates. Opening notes file.")
         i7.npo("notes.txt")
     else:
         print("Nothing to open. Use -e to force opening.")
-elif len(source_dupes.keys()) + len(already_done.keys()):
+elif len(source_dupes.keys()) + len(already_done.keys()) + len(long_lines.keys()):
     print("Run -lo / -fo to open up the notes file at the first duplicate.")
