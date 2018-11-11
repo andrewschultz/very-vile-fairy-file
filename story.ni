@@ -69,7 +69,9 @@ to max-down: decrement max-poss;
 
 main is a region.
 
-intro is a region.
+Worst Whew is a region. [first few]
+
+Piddling Pain is a region. [middling main]
 
 Meta is a region.
 
@@ -119,11 +121,11 @@ carry out bigbaging:
 	now bag-hint is false;
 	the rule succeeds.
 
-volume intro
+volume Worst Whew
 
 part Wet Wood
 
-Wet Wood is a room in intro. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
@@ -152,7 +154,7 @@ carry out getgooding:
 
 part vined vault
 
-Vined Vault is a room in intro. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out."
+Vined Vault is a room in Worst Whew. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out."
 
 the green grass is scenery. "The green grass goes well with the vined vault."
 
@@ -198,7 +200,7 @@ carry out greengrassing:
 
 part Po' Pit
 
-Po' Pit is a room in Intro. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
+Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
 
 the wrong art is scenery in Po' Pit. "It says STRONG START [if fee-found is false]and also FIND FEE[end if]. It -- well, it seems to diagram the trash trap meticulously. What do you call those things where they draw what is where? Anyway, lots of dead ends are labeled ... CRASH! ****![paragraph break]Gosh! You've always felt uneasy around profanity, weak or strong. It's been used to hard-sell you on stuff and ideas you really didn't want before."
 
@@ -236,7 +238,7 @@ carry out mashmaping:
 
 part Trim Tram
 
-Trim Tram is a room in intro. "There's got to be a way to pay here to get the Trim Tram going.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
+Trim Tram is a room in Worst Whew. "There's got to be a way to pay here to get the Trim Tram going.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
 
 chapter flimflaming
 
