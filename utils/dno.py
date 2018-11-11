@@ -5,6 +5,7 @@
 #
 
 from collections import defaultdict
+from shutil import copy
 import i7
 import re
 import os
@@ -24,29 +25,37 @@ open_last = False
 open_first = False
 force_open = False
 check_spaces = False
+copy_rejigged = False
 
 def usage():
     print("ol / of / lo / fo / l / f = open last or first duplicate in notes.txt. e = random.")
     print("cs / sc / s / c = check spaces in notes file.")
     print("e = forces open-notes file.")
-    print("a = adjusts notes file so slashes have spaces before and after.")
+    print("a = checks notes file for slashes without spaces before and after. You need ac / ca to copy back over.")
     exit()
 
 def rejig_notes_file():
-    got_dif = False
+    got_dif = 0
+    byte_delta = 0
     f = open("notes2.txt", "w")
     with open("notes.txt") as file:
         for (line_count, line) in enumerate (file, 1):
-            ll = re.sub(" *\/ *", " \/ ", line)
-            if ll != line: got_dif = True
+            ll = re.sub(" *\/ *", " / ", line)
+            if ll != line:
+                got_dif += 1
+                byte_delta += abs(len(line) - len(ll))
             f.write(ll)
     f.close()
     if not got_dif:
         print("No differences. Deleting notes2.txt.")
-        os.remove("notes2.txt")
     else:
-        print("copy", "notes2.txt", "notes.txt")
-        #os.remove("notes2.txt")
+        if copy_rejigged:
+            copy("notes2.txt", "notes.txt")
+        else:
+            print("{:d} difference(s), {:d} byte-delta. -ac really copies over".format(got_dif, byte_delta))
+            i7.wm("notes.txt", "notes2.txt")
+    os.remove("notes2.txt")
+    exit()
 
 def read_notes_file(j):
     global line_to_open
@@ -85,7 +94,8 @@ def read_notes_file(j):
     print("END INTERNAL CHECK FOR", j)
     if internal_dupes: print(internal_dupes, "internal dupes.")
     else: print("NO INTERNAL DUPES! YAY!")
-    if check_spaces:
+    if not blank_yet: print("You may wish to put a blank line in notes.txt so spacing can be detected.")
+    elif check_spaces:
         if space_check: print("Found", space_check, "places to check spaces.")
         else: print("Spacing all checked out.")
 
@@ -115,11 +125,33 @@ i7.go_proj("vvff")
 count = 1
 
 while count < len(sys.argv):
-    arg = sys.argv[count]
+    arg = sys.argv[count].lower()
     if arg[0] == '-': arg = arg[1:]
-    if arg == 'a':
+    if arg == 'a' or arg == 'ac' or arg == 'ca':
+        copy_rejigged = 'c' in arg
         rejig_notes_file()
-        exit
+        exit()
+    if arg[0] == 'e':
+        if arg == 'e': i7.npo("notes.txt")
+        search_token = r'=={:s}'.format(arg[1:])
+        with open("notes.txt") as file:
+            for (line_count, line) in enumerate(file, 1):
+                if re.search(search_token, line):
+                    i7.npo("notes.txt", line_count)
+        try:
+            q = int(arg[1:])
+            pluses = 0
+            with open("notes.txt") as file:
+                for (line_count, line) in enumerate(file, 1):
+                    if re.search("==", line):
+                        pluses += 1
+                        if pluses == q:
+                            print("Opening === line #", pluses)
+                            i7.npo("notes.txt", line_count)
+            print("Couldn't find === line # {:d}. There were only {:d}.".format(q, pluses))
+        except:
+            print("Couldn't find === line with", arg[1:])
+        i7.npo("notes.txt")
     if arg == 'ol' or arg == 'lo' or arg == 'l':
         open_last = True
         open_first = False
