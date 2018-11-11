@@ -56,7 +56,7 @@ min-needed is a number that varies. min-needed is 27.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 34.
+the maximum score is 35.
 
 max-poss is a number that varies.
 
@@ -67,13 +67,15 @@ to up-min:
 
 to max-down: decrement max-poss;
 
-main is a region.
-
 Worst Whew is a region. [first few]
 
 Piddling Pain is a region. [middling main]
 
-Meta is a region.
+Poorly Penned is a region. [early end]
+
+Verminal Vale is a region. [terminal tale]
+
+there is a region called Get a Ghost. [meta most]
 
 a room has text called noway-text.
 
@@ -260,11 +262,11 @@ carry out flimflaming:
 	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
 	the rule succeeds.
 
-volume main
+volume Piddling Pain
 
 part Fun Fen
 
-Fun Fen is a room. "It's a bit nicer than back in the Done Den. There's also a silly sign here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. There's also a silly sign here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
 the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
 
@@ -381,11 +383,95 @@ carry out backedbindering:
 	increment the score; [nec]
 	the rule succeeds.
 
+part Lake Lea
+
+Lake Lea is north of Fun Fen. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
+
+check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
+
+Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
+
+this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
+
+jake-gone is a number that varies.
+
+to eval-jake-g:
+	increment jake-gone;
+	if jake-gone is 2:
+		moot Jake G;
+		say "Jake leaves, satisfied.";
+
+chapter fakefeeing
+
+fakefeeing is an action applying to nothing.
+
+understand the command "fake fee" as something new.
+
+understand "fake fee" as fakefeeing.
+
+fake-fee is a truth state that varies.
+
+carry out fakefeeing:
+	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
+	now fake-fee is true;
+	increment the score; [nec] [x-of-y jake]
+	the rule succeeds.
+
+chapter wakewheeing
+
+wakewheeing is an action applying to nothing.
+
+understand the command "wake whee" as something new.
+
+understand "wake whee" as wakewheeing.
+
+wake-whee is a truth state that varies.
+
+carry out wakewheeing:
+	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
+	now wake-whee is true;
+	increment the score; [nec] [x-of-y jake]
+	the rule succeeds.
+
+chapter achying
+
+achying is an action applying to nothing.
+
+understand the command "achy" as something new.
+
+understand "achy" as achying.
+
+achy is a truth state that varies.
+
+carry out achying:
+	if achy is true, say "You already made Jake G achy." instead;
+	now achy is true;
+	increment the score; [opt] [x-of-y jake]
+	the rule succeeds.
+
+chapter breakbrieing
+
+breakbrieing is an action applying to nothing.
+
+understand the command "break brie" as something new.
+
+understand "break brie" as breakbrieing when player is in Lake Lea.
+
+brie-broke is a truth state that varies;
+
+carry out breakbrieing:
+	if brie-broke is true, say "You already broke brie with Jake G." instead;
+	follow the jake-g-gone rule;
+	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
+	increment the score; [opt] [x-of-y jake]
+	eval-jake-g;
+	the rule succeeds.
+
 part History Hall
 
 mistmall is a truth state that varies.
 
-History Hall is north of Fun Fen. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is west of Lake Lea. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
 
@@ -476,7 +562,7 @@ carry out whatawankstaing:
 
 part curst cave
 
-Curst Cave is a room.
+Curst Cave is a room in Piddling Pain.
 
 the worst wave is scenery in Curst Cave.
 
@@ -501,7 +587,7 @@ carry out firstfaveing:
 
 part Last Lap
 
-Last Lap is a room. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
+Last Lap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
 
 cap-cast is a truth state that varies.
 
@@ -597,7 +683,7 @@ carry out woodoneing:
 
 part Merry Mile
 
-Merry Mile is north of Last Lap. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
+Merry Mile is north of Last Lap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
 chapter very vile fairy file
 
@@ -831,17 +917,53 @@ volume meta
 
 a capped cone is a thing.
 
-Zapped Zone is a room in Meta.
+Zapped Zone is a room in Get a Ghost.
 
-Gazy Gap is a room in Meta.
+Gazy Gap is a room in Get a Ghost.
 
-Hidey House is a room in Meta.
+Hidey House is a room in Get a Ghost.
 
 volume unsorted
 
 the wild weed is a thing.
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either."
+
+chapter wildweeding
+
+wildweeding is an action applying to nothing.
+
+understand the command "wild weed" as something new.
+
+understand "wild weed" as wildweeding when player has mild mead.
+
+carry out wildweeding:
+	say "Bingo! The mild mead becomes wild weed.";
+	up-min;
+	the rule succeeds.
+
+book got gear hot here
+
+Got Gear Hot Here is a room.
+
+chapter hardhating
+
+the marred mat is a thing in Got Gear Hot Here.
+
+the hard hat is a thing.
+
+hardhating is an action applying to nothing.
+
+understand the command "hard mat" as something new.
+
+understand "hard hat" as hardhating when marred mat is quicknear.
+
+carry out hardhating:
+	say "Poof! The marred mat changes into a hard hat.";
+	moot marred mat;
+	now player wears hard hat;
+	increment the score; [nec]
+	the rule succeeds.
 
 book go gate
 
@@ -887,9 +1009,56 @@ Lit Lawn is a room. [??get gone]
 
 [?? burned bower/turned tower]
 
-book Whining War
+part Soft Sand
 
-Whining War is a room.
+Soft Sand is a room in Piddling Pain.
+
+ever-loft is a truth state that varies.
+
+loft-land is a truth state that varies.
+
+chapter softsanding
+
+softsanding is an action applying to nothing.
+
+understand the command "soft sand" as something new.
+
+understand "soft sand" as softsanding.
+
+loft-land is a truth state that varies.
+
+carry out softsanding:
+	if loft-land is false, say "You're already on the soft sand." instead;
+	say "The loft land reverts to the soft sand.";
+	now loft-land is true;
+	the rule succeeds;
+
+chapter loftlanding
+
+loftlanding is an action applying to nothing.
+
+understand the command "loft land" as something new.
+
+understand "loft land" as loftlanding.
+
+carry out loftlanding:
+	if loft-land is true, say "You're already on the loft land." instead;
+	say "Boom! The soft sand rises up and becomes the Loft Land[one of][or] again[stopping].";
+	if ever-loft is false:
+		now ever-loft is true;
+		now loft-land is false;
+		increment the score; [nec]
+	the rule succeeds;
+
+part Whining War
+
+Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view."
+
+[??mining more / dining door]
+
+Lake Lap is scenery.
+
+Ache App is a thing.
 
 chapter shiningshoreing
 
@@ -943,168 +1112,6 @@ carry out diningdooring:
 	now dine-door is true;
 	the rule succeeds.
 
-book Soft Sand
-
-Soft Sand is a room.
-
-ever-loft is a truth state that varies.
-
-loft-land is a truth state that varies.
-
-chapter softsanding
-
-softsanding is an action applying to nothing.
-
-understand the command "soft sand" as something new.
-
-understand "soft sand" as softsanding.
-
-loft-land is a truth state that varies.
-
-carry out softsanding:
-	if loft-land is false, say "You're already on the soft sand." instead;
-	say "The loft land reverts to the soft sand.";
-	now loft-land is true;
-	the rule succeeds;
-
-chapter loftlanding
-
-loftlanding is an action applying to nothing.
-
-understand the command "loft land" as something new.
-
-understand "loft land" as loftlanding.
-
-carry out loftlanding:
-	if loft-land is true, say "You're already on the loft land." instead;
-	say "Boom! The soft sand rises up and becomes the Loft Land[one of][or] again[stopping].";
-	if ever-loft is false:
-		now ever-loft is true;
-		now loft-land is false;
-		increment the score; [nec]
-	the rule succeeds;
-
-part other places
-
-Done Dune is a room. "This room is full of things you should shun soon."
-
-book vast void
-
-Vast Void is a room.
-
-book Lake Lea
-
-Lake Lea is a room. "You're on the Lake Lea, which borders on Lake Lap.".
-
-check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
-
-Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
-
-this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
-
-jake-gone is a number that varies.
-
-to eval-jake-g:
-	increment jake-gone;
-	if jake-gone is 2:
-		moot Jake G;
-		say "Jake leaves, satisfied.";
-
-chapter fakefeeing
-
-fakefeeing is an action applying to nothing.
-
-understand the command "fake fee" as something new.
-
-understand "fake fee" as fakefeeing.
-
-fake-fee is a truth state that varies.
-
-carry out fakefeeing:
-	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
-	now fake-fee is true;
-	increment the score; [nec] [x-of-y jake]
-	the rule succeeds.
-
-chapter wakewheeing
-
-wakewheeing is an action applying to nothing.
-
-understand the command "wake whee" as something new.
-
-understand "wake whee" as wakewheeing.
-
-wake-whee is a truth state that varies.
-
-carry out wakewheeing:
-	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
-	now wake-whee is true;
-	increment the score; [nec] [x-of-y jake]
-	the rule succeeds.
-
-chapter achying
-
-achying is an action applying to nothing.
-
-understand the command "achy" as something new.
-
-understand "achy" as achying.
-
-achy is a truth state that varies.
-
-carry out achying:
-	if achy is true, say "You already made Jake G achy." instead;
-	now achy is true;
-	increment the score; [opt] [x-of-y jake]
-	the rule succeeds.
-
-chapter breakbrieing
-
-breakbrieing is an action applying to nothing.
-
-understand the command "break brie" as something new.
-
-understand "break brie" as breakbrieing when player is in Lake Lea.
-
-brie-broke is a truth state that varies;
-
-carry out breakbrieing:
-	if brie-broke is true, say "You already broke brie with Jake G." instead;
-	follow the jake-g-gone rule;
-	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
-	increment the score; [opt] [x-of-y jake]
-	eval-jake-g;
-	the rule succeeds.
-
-book lake lap
-
-Whining War is east of Lake Lea. "You can't get a close enough view."
-
-[??mining more / dining door]
-
-Lake Lap is scenery.
-
-Ache App is a thing.
-
-chapter hardhating
-
-the marred mat is a thing.
-
-the hard hat is a thing.
-
-hardhating is an action applying to nothing.
-
-understand the command "hard mat" as something new.
-
-understand "hard hat" as hardhating when marred mat is quicknear.
-
-carry out hardhating:
-	say "Poof! The marred mat changes into a hard hat.";
-	moot marred mat;
-	now player wears hard hat;
-	increment the score; [nec]
-	the rule succeeds.
-
 chapter snakesnaping
 
 snakesnaping is an action applying to nothing.
@@ -1133,7 +1140,17 @@ carry out makemaping:
 	increment the score; [nec]
 	the rule succeeds.
 
-volume endgame
+Volume Poorly Penned
+
+Done Dune is a room in Poorly Penned. "This room is full of things you should shun soon."
+
+book vast void
+
+Vast Void is a room in Poorly Penned.
+
+Volume Get a Gain
+
+Volume Verminal Vale
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
@@ -1144,6 +1161,18 @@ showmissesing is an activity.
 rule for showmissesing:
 	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
 
-volume meta rooms
+volume map index
 
-volume testables
+index map with vined vault mapped east of wet wood.
+index map with po' pit mapped east of vined vault.
+index map with trim tram mapped east of po' pit.
+index map with fun fen mapped east of trim tram.
+
+index map with soft sand mapped east of fun fen.
+index map with last lap mapped north of lake lea.
+
+section needs fixing
+
+index map with got gear hot here mapped west of history hall.
+index map with lit lawn mapped west of got gear hot here.
+index map with dead doom mapped west of lit lawn.
