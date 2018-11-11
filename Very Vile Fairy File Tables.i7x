@@ -5,13 +5,13 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 volume the tables
 
 table of miscellaneous people
-rand-txt
+randtxt
 "Hunter Hoke, Blunter Bloke"
 "Lair Level Daredevil Bear Bevell"
 "Bo, Better Go-Getter"
 
 table of vvff digs
-vvff-dis
+randtxt
 "Gonna go off! Shun a show-off!"
 "Rotten role: gotten goal?"
 "'My magic try: TRAGIC!'"
@@ -35,6 +35,8 @@ to next-rand (t - a table name):
 to say next-rand-txt of (t - a table name):
 	next-rand t;
 
+rand-cycle is a truth state that varies.
+
 every turn (this is the notify cycling rule):
 	if rand-cycle is true:
 		let tn be a table-name;
@@ -55,9 +57,9 @@ every turn (this is the notify cycling rule):
 volume big meta table
 
 table of all randoms
-tabnam	tabidx	lbrk	desc	cycle-note
-table of miscellaneous people	0	false	"Assorted randos"	--
-table of vvff digs	0	true	true	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
+tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
+table of miscellaneous people	0	false	0	"Assorted randos"	--
+table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
 

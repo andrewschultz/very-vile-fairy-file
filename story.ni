@@ -14,7 +14,11 @@ include Basic Screen Effects by Emily Short.
 
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
+include Very Vile Fairy File Tables by Andrew Schultz.
+
 section establish debug - not for release
+
+include Very Vile Fairy File Tests by Andrew Schultz.
 
 when play begins (this is the set debug state rule): now debug-state is true;
 
@@ -44,10 +48,6 @@ to move-from-temp (th - a thing):
 definition: a thing (called th) is quicknear:
 	if player carries th or th is in location of player, yes;
 	no;
-
-to win-the-game:
-	say "DEALS: DONE. FEELS FUN.";
-	end the story;
 
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
@@ -89,7 +89,9 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle.
 
-the zig zag rig rag is a thing. The player has the zig zag rig rag.
+the zig zag rig rag is a thing. The player carries the zig zag rig rag.
+
+the big bag is a thing.
 
 chapter bigbaging
 
@@ -596,14 +598,14 @@ carry out burybileing:
 		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
 	increment the score; [nec]
-	check-max-score;
-	end the game in victory;
+	win-the-game;
 	the rule succeeds;
 
-to check-max-score:
+to win-the-game:
 	if score is maximum score:
-		choose row with final response rule of missed-show rule in the Table of Final Question Options;
+		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
+	end the story finally saying "DEALS DONE: FEELS FUN!";
 
 part dead doom
 
@@ -1093,9 +1095,11 @@ volume endgame
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
-"see what you MISSED"	true	"missed"	missed-show rule	--
+"see what you MISSED"	true	"missed"	--	showmissesing
 
-this is the missed-show rule:
+showmissesing is an activity.
+
+rule for showmissesing:
 	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
 
 volume meta rooms
