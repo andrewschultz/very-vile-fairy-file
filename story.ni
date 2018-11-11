@@ -92,7 +92,7 @@ Kerry Kyle is a person. The player is Kerry Kyle.
 the zig zag rig rag is a thing. The player carries the zig zag rig rag.
 
 after examining zig zag rig rag when bag-hint is true:
-	say "[if cark cliff is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
+	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
 	continue the action;
 
 the big bag is a thing.
@@ -109,7 +109,7 @@ bag-hint is a truth state that varies.
 
 carry out bigbaging:
 	if player has big bag, say "You already made the big bag." instead;
-	if cark cliff is unvisited:
+	if Fun Fen is unvisited:
 		now bag-hint is true;
 		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
 	say "You now have a more useful big bag!";
@@ -172,14 +172,14 @@ carry out findfaulting:
 	if mean mass is moot, say "Things are pretty good now. You probably want to deal with the strong stray." instead;
 	if mean mass is in vined vault, say "You already did, and things got worse. You'll have to try something else." instead;
 	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
-	say "But of course something outside was guarding the vault. A mean mass.";
+	say "[line break]But of course something outside was guarding the vault, just waiting to walk in. A mean mass.";
 	move mean mass to vined vault;
 	increment the score; [nec]
 	the rule succeeds.
 
 chapter mean mass
 
-The mean mass is a thing.
+The mean mass is a thing. "The mean mass continues to pulse and block the way out of the vined vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally.".
 
 chapter greengrassing
 
@@ -238,22 +238,24 @@ understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player
 carry out flimflaming:
 	if the player's command includes "skim", now skim-not-flim is true;
 	say "That does it! The tram moves off...";
-	move the player to Cark Cliff;
+	move the player to Fun Fen;
 	increment the score; [nec]
 	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
 	the rule succeeds.
 
 volume main
 
-part Cark Cliff
+part Fun Fen
 
-Cark Cliff is a room. "'Cark' is an ancient word meaning worry[if spliff-sparked is true]. You forget what you were supposed to be worried about, now[end if]. There's also a silly sign here. The Wet Wood is back every way except north, where there's, um, a cliff.". noway-text is "You don't want to go back to the Wet Wood. Or fall off Cark Cliff.".
+Fun Fen is a room. "It's a bit nicer than back in the Done Den. There's also a silly sign here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+
+the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
 
 tree-down is a truth state that varies.
 
-The Tall Tree is a thing in Cark Cliff. "[if tree-down is false]A tall tree sits here, bending out over the cliff to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Cark Cliff][end if]."
+The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if]."
 
-check going in Cark Cliff:
+check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
 	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
 
@@ -271,9 +273,13 @@ check taking paper pile: say "There's got to be a way to put the paper pile toge
 
 the backed binder is a thing.
 
+chapter cark cliff
+
+Cark Cliff is scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if]."
+
 chapter silly sign
 
-The silly sign is scenery in Cark Cliff. "The silly sign reads WILL [']E WHINE?"
+The silly sign is scenery in Fun Fen. "The silly sign reads WILL [']E WHINE?"
 
 instead of doing something with silly sign:
 	if action is procedural, continue the action;
@@ -285,14 +291,14 @@ sparkspliffing is an action applying to nothing.
 
 understand the command "spark spliff" as something new.
 
-understand "spark spliff" as sparkspliffing.
-
-spliff-sparked is a truth state that varies.
+understand "spark spliff" as sparkspliffing when wild weed is quicknear or player is in fun fen.
 
 carry out sparkspliffing:
-	if spliff-sparked is true, say "Whoah, dude. You already did." instead;
-	now spliff-sparked is true;
+	if wild weed is moot, say "Whoah, dude. You already did." instead;
+	if player does not have wild weed, say "Whoah, dude. You have nothing to light up with." instead;
+	if player is not in fun fen, say "Not here, dude! No source of flame!" instead;
 	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
+	moot wild weed;
 	up-min;
 	the rule succeeds;
 
@@ -310,7 +316,7 @@ carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
 	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
 	now tree-down is true;
-	move hive heap to Cark Cliff;
+	move hive heap to Fun Fen;
 	increment the score; [nec]
 	the rule succeeds;
 
@@ -362,7 +368,7 @@ part History Hall
 
 mistmall is a truth state that varies.
 
-History Hall is north of Cark Cliff. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is north of Fun Fen. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
 
@@ -660,12 +666,12 @@ to say tat: now thought-any is true;
 instead of thinking:
 	let thought-any be false;
 	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: [rhyme-display]";
-	if bag-hint is true, say "[line break][tat]You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if cark cliff is visited]. Maybe it will, now[end if].";
+	if bag-hint is true, say "[line break][tat]You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if].";
 	if burybile-clue is true, say "[line break][tat]You tried to BURY BILE, but it didn't feel like the right place. Maybe somewhere else.";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 to say rhyme-display:
-	if Cark Cliff is visited:
+	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if player is in Trim Tram:
 		say "you've been able to collapse the first two letters to one (Strong Stray to Wrong Way) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
@@ -813,6 +819,10 @@ Gazy Gap is a room in Meta.
 Hidey House is a room in Meta.
 
 volume unsorted
+
+the wild weed is a thing.
+
+the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either."
 
 book go gate
 
