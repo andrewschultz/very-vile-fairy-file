@@ -14,17 +14,23 @@ But now you must deal with the Mean Mass.
 
 > GREEN GRASS (3)
 
-And now there is that strong stray.
+And now there is that trash trap. But that wrong art is messing with your mind. FIND FEE! And you have no money!
 
-> WRONG WAY (4)
+> MIND ME (4)
+
+You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
+
+> MASH MAP (5)
 
 One more thing! The trim tram needs you to pay to get it started.
 
-> FLIM FLAM (5)
+There are three ways.
 
-You don't need a space, and you can also try a SKIM SCAM.
+> FLIM FLAM (6)
 
-That does it for the introduction.
+The alternatives: no space, or you can also try a SKIM SCAM.
+
+Well, that does it for the introduction.
 
 
 

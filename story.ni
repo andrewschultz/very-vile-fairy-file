@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 25.
+min-needed is a number that varies. min-needed is 27.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 33.
+the maximum score is 34.
 
 max-poss is a number that varies.
 
@@ -190,31 +190,46 @@ understand the command "green grass" as something new.
 understand "green grass" as greengrassing when player is in vined vault and mean mass is in vined vault.
 
 carry out greengrassing:
-	say "The mean mass collapses into green grass. But in the distance you hear a strong stray.";
+	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
 	increment the score; [nec]
-	move strong stray to vined vault;
-	move green grass to vined vault;
+	move player to Po' Pit;
 	moot mean mass;
 	the rule succeeds;
 
-chapter strong stray
+part Po' Pit
 
-the strong stray is scenery. "You can't see the strong stray, but you know it's out there."
+Po' Pit is a room in Intro. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
 
-instead of doing something with strong stray:
-	if action is procedural, continue the action;
-	say "You have to mislead the strong stray someway."
+the wrong art is scenery in Po' Pit. "It says STRONG START [if fee-found is false]and also FIND FEE[end if]. It -- well, it seems to diagram the trash trap meticulously. What do you call those things where they draw what is where? Anyway, lots of dead ends are labeled ... CRASH! ****![paragraph break]Gosh! You've always felt uneasy around profanity, weak or strong. It's been used to hard-sell you on stuff and ideas you really didn't want before."
 
-chapter wrongwaying
+chapter mindmeing
 
-wrongwaying is an action applying to nothing.
+fee-found is a truth state that varies.
 
-understand the command "wrong way" as something new.
+mindmeing is an action applying to nothing.
 
-understand "wrong way" as wrongwaying.
+understand the command "mind me" as something new.
 
-carry out wrongwaying:
-	say "The strong stray stops pacing back and forth and wanders off. You wait and listen to be sure it's gone, then walk into a ...";
+understand "mind me" as mindmeing when player is in Po' Pit.
+
+carry out mindmeing:
+	if fee-found is true, say "You already did." instead;
+	say "FIND FEE can't be right. There's nobody here to collect it. You make a point to focus on what you can do. You rip off the top page of the wrong art ... and there's something below.";
+	now fee-found is true;
+	increment the score; [nec]
+	the rule succeeds.
+
+chapter mashmaping
+
+mashmaping is an action applying to nothing.
+
+understand the command "mash map" as something new.
+
+understand "mash map" as mashmaping when player is in Po' Pit.
+
+carry out mashmaping:
+	if fee-found is false, say "You don't have the guts or trust in yourself yet!" instead;
+	say "The heck with this! You just don't trust the trash trap to tell you the way through.";
 	increment the score; [nec]
 	move player to Trim Tram;
 	the rule succeeds.
@@ -674,11 +689,13 @@ to say rhyme-display:
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if player is in Trim Tram:
-		say "you've been able to collapse the first two letters to one (Strong Stray to Wrong Way) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
-	else if strong stray is in vined vault:
-		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant.";
+		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
+	else if fee-found is true:
+		say "You managed to FIND FEE, but now you need to evade the trash trap.";
+	else if player is in Po' Pit:
+		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant. You're not likely to find a fee, but maybe you can do something else.";
 	else if mean mass is in vined vault:
-		say "FIND FAULT wasn't quite the same as VINED VAULT. Maybe you can do something different here.";
+		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
 	else if player is in vined vault:
 		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
 	else:
