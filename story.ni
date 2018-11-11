@@ -91,6 +91,10 @@ Kerry Kyle is a person. The player is Kerry Kyle.
 
 the zig zag rig rag is a thing. The player carries the zig zag rig rag.
 
+after examining zig zag rig rag when bag-hint is true:
+	say "[if cark cliff is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
+	continue the action;
+
 the big bag is a thing.
 
 chapter bigbaging
@@ -101,12 +105,18 @@ understand the command "big bag" as something new.
 
 understand "big bag" as bigbaging.
 
+bag-hint is a truth state that varies.
+
 carry out bigbaging:
 	if player has big bag, say "You already made the big bag." instead;
+	if cark cliff is unvisited:
+		now bag-hint is true;
+		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
 	say "You now have a more useful big bag!";
 	increment the score; [nec]
 	moot zig zag rig rag;
 	now player has big bag;
+	now bag-hint is false;
 	the rule succeeds.
 
 volume intro
@@ -142,7 +152,7 @@ carry out getgooding:
 
 part vined vault
 
-Vined Vault is a room in intro. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]"
+Vined Vault is a room in intro. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out."
 
 the green grass is scenery. "The green grass goes well with the vined vault."
 
@@ -211,7 +221,7 @@ carry out wrongwaying:
 
 part Trim Tram
 
-Trim Tram is a room in intro. "There's got to be a way to pay here to get the Trim Tram going."
+Trim Tram is a room in intro. "There's got to be a way to pay here to get the Trim Tram going.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
 
 chapter flimflaming
 
@@ -649,7 +659,12 @@ to say tat: now thought-any is true;
 
 instead of thinking:
 	let thought-any be false;
-	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: ";
+	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: [rhyme-display]";
+	if bag-hint is true, say "[line break][tat]You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if cark cliff is visited]. Maybe it will, now[end if].";
+	if burybile-clue is true, say "[line break][tat]You tried to BURY BILE, but it didn't feel like the right place. Maybe somewhere else.";
+	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
+
+to say rhyme-display:
 	if Cark Cliff is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if player is in Trim Tram:
@@ -661,9 +676,7 @@ instead of thinking:
 	else if player is in vined vault:
 		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
 	else:
-		say "WET WOOD. What rhymes with WET WOOD?";
-	if burybile-clue is true, say "[line break][tat]You tried to BURY BILE, but it didn't feel like the right place. Maybe somewhere else.";
-	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
+		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
 chapter score
 
