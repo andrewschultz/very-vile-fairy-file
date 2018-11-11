@@ -616,6 +616,7 @@ book standard modifications
 chapter trivial pointless but amusing verbs
 
 instead of attacking:
+	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
@@ -802,8 +803,8 @@ book go gate
 
 there is a thing called the go gate. the grow grate is part of the go gate.
 
-check entering go gate: [?? oh ate! Lo, late! / Foe, fate / D'oh date Ho Hate Mo Mate crow crate know Nate ]
-	say "Too fast. Boom! A hidden grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
+check entering go gate:
+	say "Too fast. Boom! A hidden grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
 
 chapter whoawaiting

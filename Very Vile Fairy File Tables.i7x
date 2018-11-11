@@ -8,6 +8,7 @@ table of miscellaneous people
 rand-txt
 "Hunter Hoke, Blunter Bloke"
 "Lair Level Daredevil Bear Bevell"
+"Bo, Better Go-Getter"
 
 table of vvff digs
 vvff-dis
