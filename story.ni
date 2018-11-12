@@ -238,6 +238,20 @@ carry out mashmaping:
 	move player to Trim Tram;
 	the rule succeeds.
 
+chapter growgriting
+
+growgriting is an action out of world.
+
+understand the command "grow grit" as something new.
+
+understand "grow grit" as growgriting when player is in po' pit.
+
+carry out growgriting:
+	if grit-grown is false, say "You already did that." instead;
+	say "The trash trap looks less yucky now.";
+	increment the score; [nec]
+	the rule succeeds.
+
 part Trim Tram
 
 Trim Tram is a room in Worst Whew. "There's got to be a way to pay here to get the Trim Tram going.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"

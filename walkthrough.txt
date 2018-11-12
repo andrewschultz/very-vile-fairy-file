@@ -18,15 +18,19 @@ And now there is that trash trap. But that wrong art is messing with your mind. 
 
 > MIND ME (4)
 
+But, ugh! The trash trap is so odious. You don't have the guts. Something about this room...
+
+> GROW GRIT (5)
+
 You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
 
-> MASH MAP (5)
+> MASH MAP (6)
 
 One more thing! The trim tram needs you to pay to get it started.
 
 There are three ways.
 
-> FLIM FLAM (6)
+> FLIM FLAM (7)
 
 The alternatives: no space, or you can also try a SKIM SCAM.
 
