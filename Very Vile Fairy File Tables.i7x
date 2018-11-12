@@ -6,6 +6,7 @@ volume the tables
 
 table of miscellaneous people
 randtxt
+"Broken-Brain Jokin['] Jane"
 "Hunter Hoke, Blunter Bloke"
 "Lair Level Daredevil Bear Bevell"
 "Bo, Better Go-Getter"
@@ -15,6 +16,11 @@ randtxt
 "Gonna go off! Shun a show-off!"
 "Rotten role: gotten goal?"
 "'My magic try: TRAGIC!'"
+
+table of vvff books
+randtxt
+"One Wet Sunset"
+"Lay Lorn, Way Worn May Morn" [pay porn?]
 
 volume the code
 
@@ -60,6 +66,7 @@ table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of miscellaneous people	0	false	0	"Assorted randos"	--
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
+table of vvff books	0	false	0	"Books in the Lending Libe"	"That's all the books."
 
 Very Vile Fairy File Tables ends here.
 
