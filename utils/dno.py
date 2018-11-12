@@ -99,23 +99,33 @@ def read_notes_file(j):
         if space_check: print("Found", space_check, "places to check spaces.")
         else: print("Spacing all checked out.")
 
+def word_match(a, b):
+    a2 = r'\b{:s}\b'.format(a)
+    if re.search(a2, b): return True
+    return False
+
 def read_source_files(j):
     global uniq_dupes
     global dupes
     global line_to_open
     uniqs = defaultdict(bool)
+    blank_yet = False
     print("CHECKING PROJECT", j)
     for x in i7.i7f[j]:
         print("CHECKING FILE", x)
         with open(x) as file:
             for (line_count, line) in enumerate (file, 1):
+                ll = line.lower().strip()
                 for q in note_dict.keys():
-                    if q in line.lower():
+                    if q in ll and word_match(q, ll):
                         dupes += 1
                         if not line_to_open: line_to_open = note_dict[q]
                         if q not in uniqs.keys():
                             uniq_dupes += 1
-                            print("DUPLICATE #{:3d}/{:3d} <<{:s} line {:d}>>".format(dupes, uniq_dupes, q, note_dict[q]), "From <<{:s} line {:d}>> =\n    {:s}".format(os.path.basename(x), line_count, line.strip()))
+                            print("DUPLICATE #{:3d}/{:3d}".format(dupes, uniq_dupes),
+                              "File/line <<{:s} / {:d}>>".format(os.path.basename(x), line_count),
+                              "<<NOTES {:d}: {:s}>>=".format(note_dict[q], q))
+                            print("    ", line.strip())
                         uniqs[q] = True
                         source_dupes[q].append("{:s} L{:d}".format(os.path.basename(x), line_count))
 

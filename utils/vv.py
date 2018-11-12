@@ -7,6 +7,7 @@
 # allow for slashes in syntax so we can look for multiple word combos e.g. be/bee bad
 # 2o and 1o command line syntax, align_matches option
 # cmd_line_stuff merged with main STDIN read function
+# if no match, print nothing / give option for full printout with v-f-ile
 #
 # usage: vv.py -i
 #

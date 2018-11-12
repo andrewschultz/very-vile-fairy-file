@@ -266,9 +266,11 @@ volume Piddling Pain
 
 part Fun Fen
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. There's also a silly sign here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a silly sign here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
 the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
+
+instead of entering done den, say "As you start to enter, you imagine a weight falling on you. How much? A ton. Ten.[paragraph break]You don't need to revisit your initial success."
 
 tree-down is a truth state that varies.
 
@@ -687,7 +689,7 @@ Merry Mile is north of Last Lap. It is in Verminal Vale. "You hear laughter here
 
 chapter very vile fairy file
 
-the very vile fairy file is a thing in Merry Mile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it."
+the very vile fairy file is a thing in Merry Mile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, and Perry Pyle."
 
 description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [next-rand-txt of table of vvff digs]"
 
@@ -977,11 +979,13 @@ chapter whoawaiting
 
 whoawaiting is an action applying to nothing.
 
+understand the command "woe wait" as something new.
 understand the command "whoa wait" as something new.
 understand the command "whoah wait" as something new.
 
 understand "whoah wait" as whoawaiting when go gate is quicknear.
 understand "whoa wait" as whoawaiting when go gate is quicknear.
+understand "woe wait" as whoawaiting when go gate is quicknear.
 
 carry out whoawaiting:
 	say "You decide not to run in right away. The gate crumbles.";
