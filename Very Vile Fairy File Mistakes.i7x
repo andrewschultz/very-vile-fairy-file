@@ -34,7 +34,7 @@ book Fun Fen mistakes
 
 understand "pun pen" as a mistake ("You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me.") when player is in Fun Fen.
 
-understand "won when" as a mistake("Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst.") when payer is in Fun Fen.
+understand "won when" as a mistake("Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst.") when player is in Fun Fen.
 
 book Whining War mistakes
 
@@ -56,7 +56,7 @@ chapter go gate
 
 understand "crow crate" as a mistake ("No birds appear to fly you over the grate, nor does a box of crowbars materialize.") when go gate is quicknear.
 
-understand "woe/whoa/whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.") when go gate is quicknear.
+understand "woe weight" and "whoa weight" and "whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.") when go gate is quicknear.
 
 understand "foe fate" as a mistake ("You are nowhere near the end.") when go gate is quicknear.
 

@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 29.
+min-needed is a number that varies. min-needed is 30.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 37.
+the maximum score is 38.
 
 max-poss is a number that varies.
 
@@ -246,9 +246,12 @@ understand the command "grow grit" as something new.
 
 understand "grow grit" as growgriting when player is in po' pit.
 
+grit-grown is a truth state that varies.
+
 carry out growgriting:
 	if grit-grown is false, say "You already did that." instead;
 	say "The trash trap looks less yucky now.";
+	now grit-grown is true;
 	increment the score; [nec]
 	the rule succeeds.
 
@@ -576,6 +579,30 @@ carry out whatawankstaing:
 	up-min;
 	the rule succeeds;
 
+part Vending Vibe
+
+Vending Vibe is a room in Piddling Pain.
+
+The Trending Tribe are plural-named people in Vending Vibe.
+
+the Lending Libe is scenery. "Looking in, you see one book labeled [next-rand-txt of table of vvff books].";
+
+chapter lendinglibeing
+
+lendinglibeing is an action applying to nothing.
+
+understand the command "lending libe" as something new.
+
+understand "lending libe" as lendinglibeing.
+
+carry out lendinglibeing:
+	moot trending tribe;
+	increment the score; [nec]
+	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
+	now printed name of Vending Vibe is "Lending Libe";
+	move lending libe to Vending Vibe;
+	the rule succeeds.
+
 part curst cave
 
 Curst Cave is a room in Piddling Pain.
@@ -706,7 +733,7 @@ chapter telltorning
 the well worn hell horn is a thing in Airy Isle.
 
 instead of doing something with the well worn hell horn:
-	if action is procedual, continue the action;
+	if action is procedural, continue the action;
 	say "It ... well, it looks used, but it still hasn't fallen apart.";
 
 telltorning is an action applying to nothing.

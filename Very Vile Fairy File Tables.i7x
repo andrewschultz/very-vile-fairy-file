@@ -20,6 +20,7 @@ randtxt
 table of vvff books
 randtxt
 "One Wet Sunset"
+"Take Tess, Wake Wes, Make Mess"
 "Lay Lorn, Way Worn May Morn" [pay porn?]
 
 volume the code
