@@ -58,11 +58,11 @@ Well, that does it for the introduction.
 
 Now about that zig zag rig rag. It can become something more useful.
 
-> BIG BAG (6)
+> BIG BAG (8)
 
 Now at Cark Cliff, you have an opportunity for a bonus point, or you can just tell the Tall Tree what to do.
 
-> FALL FREE (7)
+> FALL FREE (9)
 
 > N
 
@@ -112,26 +112,30 @@ Here in the Last Lap, you sense you must be close. But how do you get anyone's a
 
 Your hard hat is really more like a cap.
 
-> CAST CAP (x-1)
+> CAST CAP (x-4)
 
 You need to dispose of Reeker Russell and his good gun.
 
 There's an LLP in here, but first, Russell can become wimpier ...
 
-> MEEKER MUSCLE (x-2)
+> MEEKER MUSCLE (x-3)
 
 And the good gun can go lame.
 
-> WOOD ONE (x-3)
+> WOOD ONE (x-2)
 
 Now you are free to go north.
 
 >N
 
+The airy isle still feels woeful. That well worn hell horn!
+
+> TELL TORN (x-1)
+
 Here in the Merry Mile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (10)
+> BURY BILE (x)
 
 Congratulations. You win! I hope you enjoyed this.

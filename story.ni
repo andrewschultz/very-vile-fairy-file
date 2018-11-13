@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 27.
+min-needed is a number that varies. min-needed is 29.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 35.
+the maximum score is 37.
 
 max-poss is a number that varies.
 
@@ -701,6 +701,26 @@ part Airy Isle
 
 Airy Isle is north of Last Lap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
+chapter telltorning
+
+the well worn hell horn is a thing in Airy Isle.
+
+instead of doing something with the well worn hell horn:
+	if action is procedual, continue the action;
+	say "It ... well, it looks used, but it still hasn't fallen apart.";
+
+telltorning is an action applying to nothing.
+
+understand the command "tell torn" as something new.
+
+understand "tell torn" as telltorning when well worn hell horn .
+
+carry out telltorning:
+	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born.";
+	moot well worn hell horn;
+	increment the score; [nec]
+	the rule succeeds.
+
 chapter very vile fairy file
 
 the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, and Perry Pyle."
@@ -730,7 +750,9 @@ understand "bury bile" as burybileing.
 carry out burybileing:
 	if very vile fairy file is not in location of player:
 		now burybile-clue is true;
-		if player is in Airy Isle, say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the airy isle, but not quite." instead;
+		if player is in Airy Isle:
+			if well worn hell horn is in airy isle, say "That is hard, with the well worn hell horn booming out." instead;
+			say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the airy isle, but not quite." instead;
 		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if][if airy isle is visited]. But you've found it, and that's a huge start[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
 	increment the score; [nec]

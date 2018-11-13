@@ -44,6 +44,12 @@ understand "fake fap" as a mistake ("You make a rude gesture, for whatever good 
 
 understand "cake cap" as a mistake ("No edible headgear appears.") when player is in Whining War and shore-shine is true.
 
+book airy isle mistakes
+
+understand "bell born" as a mistake ("There's enough noise right now.") when well worn hell horn is quicknear.
+
+understand "swell sworn" as a mistake ("That might augment the hell horn.") when well worn hell horn is quicknear.
+
 volume unsorted
 
 chapter go gate
