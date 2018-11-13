@@ -697,13 +697,13 @@ carry out woodoneing:
 	check-russell-go; [nec]
 	the rule succeeds;
 
-part Merry Mile
+part Airy Isle
 
-Merry Mile is north of Last Lap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
+Airy Isle is north of Last Lap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
 chapter very vile fairy file
 
-the very vile fairy file is a thing in Merry Mile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, and Perry Pyle."
+the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, and Perry Pyle."
 
 description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [next-rand-txt of table of vvff digs]"
 
@@ -730,7 +730,8 @@ understand "bury bile" as burybileing.
 carry out burybileing:
 	if very vile fairy file is not in location of player:
 		now burybile-clue is true;
-		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if]." instead;
+		if player is in Airy Isle, say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the airy isle, but not quite." instead;
+		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if][if airy isle is visited]. But you've found it, and that's a huge start[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
 	increment the score; [nec]
 	win-the-game;
@@ -741,6 +742,14 @@ to win-the-game:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	end the story finally saying "DEALS DONE: FEELS FUN!";
+
+part Merry Mile
+
+Merry Mile is a room in Verminal Vale.
+
+part Tarry Tile
+
+Tarry Tile is a room in Verminal Vale.
 
 part dead doom
 
