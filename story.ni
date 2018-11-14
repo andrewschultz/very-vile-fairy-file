@@ -81,6 +81,31 @@ a room has text called noway-text.
 
 volume going nowhere
 
+The silly sign is a backdrop. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[paragraph break][sign-dir]"
+
+nother-room is a room that varies.
+
+after looking in a signable room:
+	if nother-room is wet wood and player is not in Fun Fen:
+		now nother-room is location of player;
+	say "There's also [if player is in fun fen]a[else if location of player is nother-room]another[else]yet another[end if] silly sign here.";
+	continue the action;
+
+to say sign-dir:
+	repeat through table of bad locs:
+		if e1 entry is location of player, say "[fake-name entry] [e2 entry][line break]";
+
+instead of doing something with silly sign:
+	if action is procedural, continue the action;
+	say "The silly sign is just there for atmosphere."
+
+definition: a room (called rm) is signable:
+	repeat through table of bad locs:
+		if rm is e1 entry, yes;
+	no;
+
+when play begins: move the silly sign backdrop to all signable rooms;
+
 the can't go that way rule is not listed in any rulebook.
 
 check going nowhere:
@@ -329,14 +354,6 @@ the backed binder is a thing.
 chapter cark cliff
 
 Cark Cliff is scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if]."
-
-chapter silly sign
-
-The silly sign is scenery in Fun Fen. "The silly sign reads WILL [']E WHINE?"
-
-instead of doing something with silly sign:
-	if action is procedural, continue the action;
-	say "The silly sign is just there for atmosphere."
 
 chapter sparkspliffing
 
