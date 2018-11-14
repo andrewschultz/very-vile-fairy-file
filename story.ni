@@ -81,7 +81,7 @@ a room has text called noway-text.
 
 volume going nowhere
 
-The silly sign is a backdrop. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[paragraph break][sign-dir]"
+The silly sign is a backdrop. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
 nother-room is a room that varies.
 
@@ -93,7 +93,7 @@ after looking in a signable room:
 
 to say sign-dir:
 	repeat through table of bad locs:
-		if e1 entry is location of player, say "[fake-name entry] [e2 entry][line break]";
+		if e1 entry is location of player, say "[line break][b][fake-name entry][r]: [e2 entry]";
 
 instead of doing something with silly sign:
 	if action is procedural, continue the action;
@@ -244,24 +244,7 @@ part Po' Pit
 
 Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
 
-the wrong art is scenery in Po' Pit. "It says STRONG START [if fee-found is false]and also FIND FEE[end if]. It -- well, it seems to diagram the trash trap meticulously. What do you call those things where they draw what is where? Anyway, lots of dead ends are labeled ... CRASH! ****![paragraph break]Gosh! You've always felt uneasy around profanity, weak or strong. It's been used to hard-sell you on stuff and ideas you really didn't want before."
-
-chapter mindmeing
-
-fee-found is a truth state that varies.
-
-mindmeing is an action applying to nothing.
-
-understand the command "mind me" as something new.
-
-understand "mind me" as mindmeing when player is in Po' Pit.
-
-carry out mindmeing:
-	if fee-found is true, say "You already did." instead;
-	say "FIND FEE can't be right. There's nobody here to collect it. You make a point to focus on what you can do. You rip off the top page of the wrong art ... and there's something below.";
-	now fee-found is true;
-	increment the score; [nec]
-	the rule succeeds.
+the wrong art is scenery in Po' Pit. "It says STRONG START. It -- well, it seems to diagram the trash trap meticulously. What do you call those things where they draw what is where? Anyway, lots of dead ends are labeled ... CRASH! ****![paragraph break]Gosh! You've always felt uneasy around profanity, weak or strong. It's been used to hard-sell you on stuff and ideas you really didn't want before."
 
 chapter mashmaping
 
@@ -271,16 +254,21 @@ understand the command "mash map" as something new.
 
 understand "mash map" as mashmaping when player is in Po' Pit.
 
+mash-clue is a truth state that varies.
+
 carry out mashmaping:
-	if fee-found is false, say "You don't have the guts or trust in yourself yet!" instead;
+	if grit-grown is false:
+		now mash-clue is true;
+		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be." instead;
 	say "The heck with this! You just don't trust the trash trap to tell you the way through.";
 	increment the score; [nec]
 	move player to Trim Tram;
+	now mash-clue is false;
 	the rule succeeds.
 
 chapter growgriting
 
-growgriting is an action out of world.
+growgriting is an action applying to nothing.
 
 understand the command "grow grit" as something new.
 
@@ -289,7 +277,7 @@ understand "grow grit" as growgriting when player is in po' pit.
 grit-grown is a truth state that varies.
 
 carry out growgriting:
-	if grit-grown is false, say "You already did that." instead;
+	if grit-grown is true, say "You already did that." instead;
 	say "The trash trap looks less yucky now.";
 	now grit-grown is true;
 	increment the score; [nec]
@@ -297,7 +285,24 @@ carry out growgriting:
 
 part Trim Tram
 
-Trim Tram is a room in Worst Whew. "There's got to be a way to pay here to get the Trim Tram going.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
+Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
+
+chapter mindmeing
+
+me-minded is a truth state that varies.
+
+mindmeing is an action applying to nothing.
+
+understand the command "mind me" as something new.
+
+understand "mind me" as mindmeing when player is in Trim Tram.
+
+carry out mindmeing:
+	if me-minded is true, say "You already did." instead;
+	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
+	now me-minded is true;
+	increment the score; [nec]
+	the rule succeeds.
 
 chapter flimflaming
 
@@ -311,10 +316,16 @@ understand the command "skim scam" as something new.
 
 understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
 
+flim-clue is a truth state that varies.
+
 carry out flimflaming:
+	if me-minded is false:
+		now flim-clue is true;
+		say "But you don't have the confidence yet!" instead;
 	if the player's command includes "skim", now skim-not-flim is true;
 	say "That does it! The tram moves off...";
 	move the player to Fun Fen;
+	now flim-clue is false;
 	increment the score; [nec]
 	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
 	the rule succeeds.
@@ -876,16 +887,18 @@ instead of thinking:
 	let thought-any be false;
 	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: [rhyme-display]";
 	if bag-hint is true, say "[line break][tat]You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if].";
-	if burybile-clue is true, say "[line break][tat]You tried to BURY BILE, but it didn't feel like the right place. Maybe somewhere else.";
+	if burybile-clue is true, say "[line break][tat]When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if airy isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if].";
+	if flim-clue is true, say "[line break][tat]You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if].";
+	if mash-clue is true, say "[line break][tat]You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if].";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 to say rhyme-display:
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
+	else if me-minded is true:
+		say "You managed to MIND ME, but now you need to evade the trash trap.";
 	else if player is in Trim Tram:
 		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
-	else if fee-found is true:
-		say "You managed to FIND FEE, but now you need to evade the trash trap.";
 	else if player is in Po' Pit:
 		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant. You're not likely to find a fee, but maybe you can do something else.";
 	else if mean mass is in vined vault:
@@ -903,7 +916,7 @@ check requesting the score:
 	the rule succeeds;
 
 to say your-rank:
-	if score is maximum score:
+	if score is maximum score: [?? differentiate necessary vs unnecessary points?]
 		say "gold god";
 		continue the action;
 	repeat through table of ranks:
@@ -913,11 +926,14 @@ to say your-rank:
 
 table of ranks
 rank-max	rank-name
-4	"sold sod"
-8	"trolled, trod"
-12	"cold cod"
-16	"old, odd"
-20	"rolled, rah'd"
+4	"lol'd, lawd"
+8	"told, taw'd"
+12	"sold sod"
+16	"mold-mod"
+20	"trolled, trod"
+24	"cold cod"
+28	"old, odd"
+32	"rolled, rah'd"
 --	"bold bod"
 
 book nonstandard but general verbs
