@@ -29,7 +29,7 @@ to decide whether the action is procedural:
 	no;
 
 definition: a thing (called th) is moot:
-	if th is in Zapped Zone, yes;
+	if th is in Hidey House, yes;
 	no;
 
 to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
@@ -37,7 +37,7 @@ to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][en
 to bring-here (th - a thing): move th to location of player.
 
 to moot (th - a thing):
-	move th to Zapped Zone; [ic]
+	move th to Hidey House; [ic]
 
 to move-to-temp (th - a thing):
 	if th is in location of player, move th to hidey house;
@@ -75,7 +75,7 @@ Poorly Penned is a region. [early end]
 
 Verminal Vale is a region. [terminal tale]
 
-there is a region called Get a Ghost. [meta most]
+there is a region called Get a Guess. [meta mess]
 
 a room has text called noway-text.
 
@@ -585,7 +585,7 @@ Vending Vibe is a room in Piddling Pain.
 
 The Trending Tribe are plural-named people in Vending Vibe.
 
-the Lending Libe is scenery. "Looking in, you see one book labeled [next-rand-txt of table of vvff books].";
+the Lending Libe is scenery. "Looking in, you see one book labeled [next-rand-txt of table of vvff books]. This locational libe has no vocational vibe.";
 
 chapter lendinglibeing
 
@@ -983,19 +983,16 @@ when play begins (this is the opening text rule):
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.";
 	now max-poss is the maximum score;
 	now the right hand status line is "[score]/[min-needed]-[max-poss]";
+	now the left hand status line is "[location of the player]";
 	now the turn count is 0;
 
 section when play begins - not for release
 
 volume meta
 
-a capped cone is a thing.
+Gazy Gap is a room in Get a Guess. [crazy crap]
 
-Zapped Zone is a room in Get a Ghost.
-
-Gazy Gap is a room in Get a Ghost.
-
-Hidey House is a room in Get a Ghost.
+Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporarily gone]
 
 volume unsorted
 
@@ -1220,11 +1217,31 @@ Volume Poorly Penned
 
 Done Dune is a room in Poorly Penned. "This room is full of things you should shun soon."
 
+Volume Get a Guess
+
+prev-room is a room that varies.
+
+check going to a room (called rm) in Poorly Penned:
+	if rm is visited, say "[noun] is just a silly fake-death trap. There's no reason to go back." instead;
+	now prev-room is location of player;
+
+after looking in a room (called rm) in Poorly Penned:
+	say "Oops! This room is a death trap. I haven't implemented this, but when I do, there will something more clever.";
+	move player to prev-room, without printing a room description;
+
+book Fate Farm
+
+Fate Farm is a room in Poorly Penned. Fate Farm is east of Fun Fen.
+
+book Zapped Zone
+
+Zapped Zone is a room in Poorly Penned.
+
+a capped cone is a scenery. [?? where? It leads to the Zapped Zone]
+
 book vast void
 
 Vast Void is a room in Poorly Penned.
-
-Volume Get a Gain
 
 Volume Verminal Vale
 
