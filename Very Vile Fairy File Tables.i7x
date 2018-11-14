@@ -6,22 +6,29 @@ volume the tables
 
 table of miscellaneous people
 randtxt
+"Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
+"Fart Face Mart Mayes"
 "Hunter Hoke, Blunter Bloke"
 "Lair Level Daredevil Bear Bevell"
-"Bo, Better Go-Getter"
+"Madman Chad Chan"
+"Madman Tad Tan"
+"Not Noble Scott Scoble"
 
 table of vvff digs
 randtxt
 "Gonna go off! Shun a show-off!"
-"Rotten role: gotten goal?"
 "'My magic try: TRAGIC!'"
+"Rotten role: gotten goal?"
 
 table of vvff books
 randtxt
-"One Wet Sunset"
-"Take Tess, Wake Wes, Make Mess"
+"Barge, Banned Large Land"
 "Lay Lorn, Way Worn May Morn" [pay porn?]
+"One Wet Sunset"
+"Grepping: Groan? STEPPING STONE"
+"Near Null Fearful"
+"Take Tess, Wake Wes, Make Mess"
 
 volume the code
 
@@ -53,7 +60,7 @@ every turn (this is the notify cycling rule):
 			if thru-yet entry is 1:
 				now thru-yet entry is 2;
 				increment tables-found;
-				if debug-state is true, say "[tabnam entry].";
+				if debug-state is true, say "DEBUG NOTE: [tabnam entry].";
 				if tables-found is 1:
 					say "[line break][if there is a cycle-note entry][cycle-note entry][line break][else]Whoah...that sounds familiar. You suspect the dialogue will loop again.[end if]";
 				else if tables-found is 2:
@@ -66,8 +73,8 @@ volume big meta table
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of miscellaneous people	0	false	0	"Assorted randos"	--
-table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
-table of vvff books	0	false	0	"Books in the Lending Libe"	"That's all the books."
+table of vvff books	0	false	0	"Books in the Lending Libe"	"Wow! So much to read, so little time. You're up to digesting more text right now, but not quite like that."
+table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
 

@@ -79,15 +79,30 @@ there is a region called Get a Guess. [meta mess]
 
 a room has text called noway-text.
 
+volume going nowhere
+
 the can't go that way rule is not listed in any rulebook.
 
 check going nowhere:
+	repeat through table of bad locs:
+		if location of player is e1 entry and noun is e2 entry:
+			if been-here entry is true, say "You already went [noun] to [fake-name entry]. It's a death trap." instead;
+			say "[death-trap entry][paragraph break]";
+			say "[b][location of player][r][paragraph break]";
+			now been-here entry is true;
+			the rule succeeds;
 	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
 	say "You can't go [noun], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if]." instead;
 
 definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
 	yes;
+
+table of bad locs
+e1	e2	been-here	fake-name	death-trap
+fun fen	east	false	"Fate Farm"	"Boom!"
+Last Lap	east	false	"Done Dune"	"Blam!"
+Whining War	south	false	"Fast Foid"	"Ugh!"
 
 volume you
 
@@ -1219,29 +1234,9 @@ Done Dune is a room in Poorly Penned. "This room is full of things you should sh
 
 Volume Get a Guess
 
-prev-room is a room that varies.
-
-check going to a room (called rm) in Poorly Penned:
-	if rm is visited, say "[noun] is just a silly fake-death trap. There's no reason to go back." instead;
-	now prev-room is location of player;
-
-after looking in a room (called rm) in Poorly Penned:
-	say "Oops! This room is a death trap. I haven't implemented this, but when I do, there will something more clever.";
-	move player to prev-room, without printing a room description;
-
-book Fate Farm
-
-Fate Farm is a room in Poorly Penned. Fate Farm is east of Fun Fen.
-
-book Zapped Zone
-
-Zapped Zone is a room in Poorly Penned.
+[this is a sort of fake region. There are fake rooms you can't visit.]
 
 a capped cone is a scenery. [?? where? It leads to the Zapped Zone]
-
-book vast void
-
-Vast Void is a room in Poorly Penned.
 
 Volume Verminal Vale
 

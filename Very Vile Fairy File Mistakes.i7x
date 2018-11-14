@@ -56,8 +56,6 @@ chapter go gate
 
 understand "crow crate" as a mistake ("No birds appear to fly you over the grate, nor does a box of crowbars materialize.") when go gate is quicknear.
 
-understand "woe weight" and "whoa weight" and "whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.") when go gate is quicknear.
-
 understand "foe fate" as a mistake ("You are nowhere near the end.") when go gate is quicknear.
 
 understand "know nate" and "no nate" as a mistake ("Nobody named Nate appears to help you through the go gate.") when go gate is quicknear.
@@ -67,6 +65,8 @@ understand "lo late" as a mistake ("You feel you are on the right path to disabl
 understand "mo mate" as a mistake ("You remain alone.") when go gate is quicknear.
 
 understand "oh ate" as a mistake ("Nothing takes a bit out of the go gate.") when go gate is quicknear.
+
+understand "woe weight" and "whoa weight" and "whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.") when go gate is quicknear.
 
 Very Vile Fairy File Mistakes ends here.
 
