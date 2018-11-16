@@ -127,7 +127,7 @@ table of bad locs
 e1	e2	been-here	fake-name	death-trap
 fun fen	east	false	"Fate Farm"	"Boom!"
 Last Lap	east	false	"Done Dune"	"Blam!"
-Whining War	south	false	"Fast Foid"	"Ugh!"
+Whining War	south	false	"Vast Void"	"Ugh!"
 
 volume you
 
@@ -189,7 +189,7 @@ get-good is a truth state that varies.
 
 carry out getgooding:
 	if get-good is true, say "You already did." instead;
-	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, you overlook a trap that springs just as you're about to exit...[wfak-d]";
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak-d]";
 	increment the score; [nec]
 	move player to Vined Vault;
 	the rule succeeds;
@@ -600,7 +600,7 @@ understand the command "dimd" as something new.
 understand "dimd" as dimding when Oi Mo is quicknear.
 
 carry out dimding:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. Whew! That's a relief.";
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like 'Primp'r' or flip flop to Tip Top Hip Hop, but it's your lucky day. Blissful silence.";
 	moot oi mo;
 	up-min;
 	the rule succeeds.
@@ -793,9 +793,11 @@ carry out telltorning:
 
 chapter very vile fairy file
 
-the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, and Perry Pyle."
+the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs]."
 
-description of very vile fairy file is "Ooh! You get mad just looking at it. It seems to be actively trolling you. One line reads: [next-rand-txt of table of vvff digs]"
+to say ever-tried of (t - a table name):
+	repeat through table of all randoms:
+		if tabnam entry is t and tabidx entry > 0, say " some more"
 
 vvff-row is a number that varies.
 
@@ -938,6 +940,31 @@ rank-max	rank-name
 
 book nonstandard but general verbs
 
+chapter reading
+
+reading is an action applying to nothing.
+
+understand the command "read" as something new.
+
+understand "read" as reading.
+
+definition: a thing (called th) is readable:
+	if th is very vile fairy file, yes;
+	no;
+
+read-warn is a truth state that varies.
+
+carry out reading:
+	repeat through table of readables:
+		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
+	if read-warn is false, say "NOTE: read and examine are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
+	now read-warn is true;
+	try examining the noun instead;
+
+table of readables
+read-thing	read-txt
+very vile fairy file	"You note one book is [next-rand-txt of table of vvff digs]."
+
 chapter xyzzying
 
 xyzzying is an action applying to nothing.
@@ -1026,7 +1053,8 @@ when play begins (this is the opening text rule):
 	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak-d]";
 	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak-d]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak-d]";
-	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File.[wfak-d]";
+	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak-d]";
+	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak-d]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, leaving you in ...";
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.";
 	now max-poss is the maximum score;
