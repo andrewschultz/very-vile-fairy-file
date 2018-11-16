@@ -10,7 +10,8 @@ test qw with "gonear merry mile/bury bile"
 
 chapter walkthrough
 
-test w1 with "get good/big bag"
+test w1 with "get good/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
+test w1r with "get good/find fault/green grass/mash map/grow grit/mash map/flim flam/mind me/flim flam/big bag".
 
 Very Vile Fairy File Tests ends here.
 

@@ -24,11 +24,16 @@ randtxt
 table of vvff books
 randtxt
 "Barge, Banned Large Land"
-"Lay Lorn, Way Worn May Morn" [pay porn?]
-"One Wet Sunset"
+"Crew Came Grew Game"
+"Fall For Stall Store"
 "Grepping: Groan? STEPPING STONE"
+"Lay Lorn, Way Worn May Morn" [pay porn?]
+"Nag? No: Brag, Bro"
 "Near Null Fearful"
+"One Wet Sunset"
+"So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
+"Why When My Men, by Ben"
 
 volume the code
 
