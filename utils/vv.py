@@ -11,6 +11,10 @@
 #
 # usage: vv.py -i
 #
+# strong strand should look for 1-3 with similarity flag turned on
+# can we also look for first/last names?
+# remember to be able to toggle this and to check stuff like dict a = b, dict a = c
+#
 # cl-sm-oke looks for cloak/smoke rhymes parallels
 
 from collections import defaultdict
@@ -38,6 +42,8 @@ tot_freq = 0
 show_zeros = True
 align_matches = True
 max_search_chars = 10
+
+search_til_different = True
 
 word_ary = []
 default_array = [ 'vast', 'void' ]
@@ -81,6 +87,7 @@ def stdin_or_basic_usage():
     print("-?? = details/examples")
     print("-e/c = CR every x matches. 1-{:d} are possible values.".format(max_every_x))
     print("-v = verbose output (prints under the hood info)")
+    print("-sd / -nsd / -sdn = search til different on/off (default={:s})".i7.on_off[search_til_different])
     print("-t = two letter combos as well")
     print("-ta = see all")
     print("-t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
@@ -122,7 +129,18 @@ def word_upper(q):
     return (q.lower(), False)
 
 def write_all_26(a, b, dels, two_letter_starts = 10):
-    if not len(dels):
+    if a == b:
+        print("I won't let you compare two equivalent words.")
+        return
+    if search_til_different:
+        temp = 0
+        while a[:temp] == b[:temp] and temp < min(len(a), len(b)):
+            temp += 1
+        if temp == 0:
+            print("Since the first letter is different, searching until different turns up nothing. Returning.")
+            return
+        dels = list(range(1, temp))
+    elif not len(dels):
         print("You need to set 1-letter or 2-letter replacements to true.")
         return
     global let_blank
@@ -311,6 +329,12 @@ if standard_input:
             if x.count('-') == 2:
                 replace_two(x)
                 continue
+        if x == 'sd':
+            search_til_different = True
+            continue
+        if x == 'nsd' or x == 'sdn':
+            search_til_different = False
+            continue
         if x == 'q' or x == '' or x == 'qx':
             if x == 'qx':
                 print("Bailing without saving.")
