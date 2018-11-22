@@ -123,11 +123,12 @@ definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
 	yes;
 
-table of bad locs
+table of bad locs [pest post / messed most / rest roast]
 e1	e2	been-here	fake-name	death-trap
-fun fen	east	false	"Fate Farm"	"Boom!"
-Last Lap	east	false	"Done Dune"	"Blam!"
-Whining War	south	false	"Vast Void"	"Ugh!"
+fun fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
+fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!""
+Last Lap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
+Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
 
 volume you
 
