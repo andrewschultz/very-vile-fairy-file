@@ -100,7 +100,7 @@ def read_notes_file(j):
         else: print("Spacing all checked out.")
 
 def word_match(a, b):
-    a2 = r'\b{:s}\b'.format(a)
+    a2 = r'\b{:s}(s)?\b'.format(a)
     if re.search(a2, b): return True
     return False
 

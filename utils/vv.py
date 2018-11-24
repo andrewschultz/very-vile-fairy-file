@@ -11,7 +11,6 @@
 #
 # usage: vv.py -i
 #
-# strong strand should look for 1-3 with similarity flag turned on
 # can we also look for first/last names?
 # remember to be able to toggle this and to check stuff like dict a = b, dict a = c
 #
@@ -59,7 +58,8 @@ let_blank = [''] + list(ascii_lowercase)
 
 ##############start functions
 
-def del_ary(x):
+def del_ary(x, force_temp):
+    if force_temp: return list(range(0, force_temp))
     return [a for a,b in x.items() if x[a] == True]
 
 def read_all_time():
@@ -75,24 +75,26 @@ def read_all_time():
 def print_configs():
     print("Replacing first two letters is {:s}.".format(i7.oo[2 in dels]))
     print("Replacing first letter is {:s}.".format(i7.oo[1 in dels]))
+    print("Showing zero-matches is {:s}.".format(i7.oo[show_zeros]))
     print("Do we replace two letters:", ', '.join(two_letter_ary[0:two_letter]))
     print("# of two-letter replacements of original letters:", two_letter)
     print("carriage returns after every", every_x, "matches.")
     return
 
 def stdin_or_basic_usage():
-    print("=" * 50)
+    i7.ph(50)
     print("Dashes at start are highly recommended, since we could be dealing with any words.")
-    print("-? = this")
-    print("-?? = details/examples")
     print("-e/c = CR every x matches. 1-{:d} are possible values.".format(max_every_x))
     print("-v = verbose output (prints under the hood info)")
-    print("-sd / -nsd / -sdn = search til different on/off (default={:s})".i7.on_off[search_til_different])
+    print("-sd / -nsd / -sdn = search til different on/off (default={:s})".format(i7.on_off[search_til_different]))
     print("-t = two letter combos as well")
     print("-ta = see all")
     print("-t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
     print("-z/yz/zy and -nz/zn = show zero-matches or hide them.")
-    print("=" * 50)
+    i7.ph(50)
+    print("-? = this")
+    print("-?? = details/examples")
+    i7.ph(50)
 
 def cmd_line_usage():
     stdin_or_basic_usage()
@@ -132,7 +134,7 @@ def write_all_26(a, b, dels, two_letter_starts = 10):
     if a == b:
         print("I won't let you compare two equivalent words.")
         return
-    if search_til_different:
+    if search_til_different and not temp_letter_max:
         temp = 0
         while a[:temp] == b[:temp] and temp < min(len(a), len(b)):
             temp += 1
@@ -179,13 +181,13 @@ def write_all_26(a, b, dels, two_letter_starts = 10):
                     read_words_of_length(la+1)
                     read_words_of_length(lb+1)
                 this_combo = "{:s} {:s}".format(a, b)
+                if this_combo in all_time.keys() and this_combo not in this_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
                 this_time[this_combo] = 1
-                if this_combo in all_time.keys(): print("Note:", this_combo, "already done", all_time[this_combo], "time" + i7.plur(all_time[this_combo]))
                 a_in = ""
                 b_in = ""
                 for q in all_time.keys():
-                    if a in q and not a_in: a_in = q
-                    if b in q and not b_in: b_in = q
+                    if a in q and not a_in and q != this_combo: a_in = q
+                    if b in q and not b_in and q != this_combo: b_in = q
                 if a_in and b_in:
                     print(a, b, "both seen separately in {:s}/{:s}.".format(a_in, b_in))
                 for x in starts_array:
@@ -308,6 +310,7 @@ if not standard_input and not len(word_ary):
         sys.exit("I don't have a word array, and standard input is not specified or defaulteed to. Set standard_input_if_no_array to True or use the -i flag for standard input.")
 
 starts_array = let_blank
+temp_letter_max = 0
 
 read_all_time()
 
@@ -318,6 +321,10 @@ if standard_input:
     while keep_going:
         x = input(">>").lower().strip()
         x = re.sub("[ \t]+", " ", x)
+        temp_letter_max = 0
+        if re.search("=[0-9]$", x):
+            temp_letter_max = int(x[-1])
+            x = x[:-2]
         if x == 'c':
             print(cmds)
             continue
@@ -466,8 +473,8 @@ if standard_input:
             print("You need 2 words or word groups separated by spaces. You have {:d}. Groups can contain slashes/commas.".format(len(si)))
             continue
         #print(s0, s1)
-        write_all_26(si[0], si[1], del_ary(dels), two_letter)
+        write_all_26(si[0], si[1], del_ary(dels, temp_letter_max), two_letter)
 else:
     for i in range(0, len(word_ary) // 2):
-        write_all_26(word_ary[i*2], word_ary[i*2+1], del_ary(dels), two_letter)
+        write_all_26(word_ary[i*2], word_ary[i*2+1], del_ary(dels, temp_letter_max), two_letter)
     if len(word_ary) % 2: print("Warning odd number of characters in word array. Last is", word_ary[len(word_ary)-1])
