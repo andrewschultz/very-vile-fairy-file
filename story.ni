@@ -56,7 +56,7 @@ min-needed is a number that varies. min-needed is 32.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 41.
+the maximum score is 39.
 
 max-poss is a number that varies.
 
@@ -1381,7 +1381,13 @@ final question wording	only if victorious	topic		final response rule		final resp
 showmissesing is an activity.
 
 rule for showmissesing:
+	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
+	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
+	if wild weed is not moot, say "You could've SPARKed SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
+	if lots lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
+	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
 	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
+	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE.";
 
 rule for showdeathsing:
 	let temp be wry-wall-found;
