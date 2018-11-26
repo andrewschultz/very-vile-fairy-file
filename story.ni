@@ -123,12 +123,14 @@ definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
 	yes;
 
-table of bad locs [pest post / messed most / rest roast]
+[pest post / messed most / rest roast/ guest ghost / best boast]
+table of bad locs
 e1	e2	been-here	fake-name	death-trap
 fun fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
-fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!""
+fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
 Last Lap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
+Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN' TUNNEL."
 
 volume you
 
@@ -536,6 +538,8 @@ mistmall is a truth state that varies.
 
 History Hall is west of Lake Lea. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
+Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
+
 the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
 
 Oi Mo by Tim T Sims Pimp is scenery. "It's a truly awful song. If you could find a way to turn it down..."
@@ -551,6 +555,7 @@ understand "history hall" as historyhalling.
 carry out historyhalling:
 	if mistmall is false, say "You're already in History Hall.";
 	move-to-temp gutta ganksta;
+	move-from-temp Name Notes Tame Totes;
 	bold-my-room;
 	the rule succeeds;
 
@@ -566,6 +571,7 @@ understand "mystery mall" as mysterymalling when player is in History Hall.
 
 carry out mysterymalling:
 	if mistmall is true, say "You're already in the mystery mall." instead;
+	move-to-temp Name Notes Tame Totes;
 	move-from-temp gutta ganksta;
 	move-from-temp oi mo;
 	now mistmall is true;
@@ -893,6 +899,7 @@ instead of thinking:
 	if burybile-clue is true, say "[line break][tat]When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if airy isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if].";
 	if flim-clue is true, say "[line break][tat]You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if].";
 	if mash-clue is true, say "[line break][tat]You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if].";
+	if cage-mage is true, say "[line break][tat]You tried to find the MORAL MAGE, but you couldn't open the coral cage yet.";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 to say rhyme-display:
@@ -1073,11 +1080,48 @@ Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporari
 
 volume unsorted
 
+chapter moralmageing
+
+cage-mage is a truth state that varies.
+
+moralmageing is an action applying to nothing.
+
+understand the command "moral mage" as something new.
+
+understand "moral mage" as moralmageing when coral cage is quicknear.
+
+carry out moralmageing:
+	if player does not have cage's key:
+		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
+	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
+	increment the score; [nec]
+	moot moral mage;
+	the rule succeeds.
+
+chapter cageskeying
+
+the sages' sea is scenery.
+
+the cage's key is a thing.
+
+cageskeying is an action applying to nothing.
+
+understand the command "cages key" as something new.
+
+understand "cages key" as cageskeying when sages' sea is quicknear.
+
+carry out cageskeying:
+	unless cage's key is off-stage, say "You already searched the sages['] sea correctly." instead;
+	say "Woohoo! You get a cage's key!";
+	now player has cage's key;
+	increment the score; [nec]
+	the rule succeeds.
+
+chapter wildweeding
+
 the wild weed is a thing.
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either."
-
-chapter wildweeding
 
 wildweeding is an action applying to nothing.
 
@@ -1290,17 +1334,17 @@ carry out makemaping:
 	increment the score; [nec]
 	the rule succeeds.
 
-Volume Poorly Penned
+volume Poorly Penned
 
 Done Dune is a room in Poorly Penned. "This room is full of things you should shun soon."
 
-Volume Get a Guess
+volume Get a Guess
 
 [this is a sort of fake region. There are fake rooms you can't visit.]
 
 a capped cone is a scenery. [?? where? It leads to the Zapped Zone]
 
-Volume Verminal Vale
+volume Verminal Vale
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
