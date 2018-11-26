@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 30.
+min-needed is a number that varies. min-needed is 32.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 38.
+the maximum score is 41.
 
 max-poss is a number that varies.
 
@@ -81,32 +81,35 @@ a room has text called noway-text.
 
 volume going nowhere
 
-The silly sign is a backdrop. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
+the wry wall is a backdrop.
 
 nother-room is a room that varies.
 
 after looking in a signable room:
 	if nother-room is wet wood and player is not in Fun Fen:
 		now nother-room is location of player;
-	say "There's also [if player is in fun fen]a[else if location of player is nother-room]another[else]yet another[end if] silly sign here.";
+	say "There's also [if player is in fun fen]a[else if location of player is nother-room]another[else]yet another[end if] wry wall here.";
 	continue the action;
 
 to say sign-dir:
 	repeat through table of bad locs:
 		if e1 entry is location of player, say "[line break][b][fake-name entry][r]: [e2 entry]";
 
-instead of doing something with silly sign:
+instead of doing something with wry wall:
 	if action is procedural, continue the action;
-	say "The silly sign is just there for atmosphere."
+	say "The wry wall is just there for atmosphere."
 
 definition: a room (called rm) is signable:
 	repeat through table of bad locs:
 		if rm is e1 entry, yes;
 	no;
 
-when play begins: move the silly sign backdrop to all signable rooms;
+when play begins: move the wry wall backdrop to all signable rooms;
 
 the can't go that way rule is not listed in any rulebook.
+
+ever-wry-wall is a truth state that varies.
+wry-wall-found is a number that varies. wry-wall-found is 0.
 
 check going nowhere:
 	repeat through table of bad locs:
@@ -115,6 +118,8 @@ check going nowhere:
 			say "[death-trap entry][paragraph break]";
 			say "[b][location of player][r][paragraph break]";
 			now been-here entry is true;
+			increment wry-wall-found;
+			if wry-wall-found is number of rows in table of bad locs: say "Incidentally, you've found everything." instead;
 			the rule succeeds;
 	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
 	say "You can't go [noun], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if]." instead;
@@ -131,6 +136,23 @@ fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
 Last Lap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
 Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN' TUNNEL."
+
+chapter lieloling
+
+lieloling is an action applying to nothing.
+
+understand the command "lie lol" as something new.
+
+understand "lie lol" as lieloling.
+
+lol-yet is a truth state that varies.
+
+carry out lieloling:
+	if lol-yet is true, say "You already exposed the wry wall." instead;
+	up-min;
+	say "You have a chuckle to yourself. You see through the wry wall! Well, not literally. But you know its tricks. While this doesn't uncover anything you have to do, you're that much more sure of what you don't have to do, and that's a big morale boost.";
+	now lol-yet is true;
+	the rule succeeds.
 
 volume you
 
@@ -337,7 +359,7 @@ volume Piddling Pain
 
 part Fun Fen
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a silly sign here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
 the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
 
@@ -673,7 +695,7 @@ first-fave is a truth state that varies.
 
 carry out firstfaveing:
 	if first-fave is true, say "You already did." instead;
-	say "Suddenly, the curst cave isn't very bad at all.";
+	say "Suddenly, the worst wave isn't very bad or evil at all.";
 	increment the score; [nec]
 	now first-fave is true;
 	the rule succeeds;
@@ -839,6 +861,9 @@ carry out burybileing:
 	the rule succeeds;
 
 to win-the-game:
+	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
+		choose row with final response activity of showdeathsing in the Table of Final Question Options;
+		blank out the whole row;
 	if score is maximum score:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
@@ -1079,6 +1104,8 @@ Gazy Gap is a room in Get a Guess. [crazy crap]
 Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporarily gone]
 
 volume unsorted
+
+The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
 chapter moralmageing
 
@@ -1349,11 +1376,22 @@ volume Verminal Vale
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
 "see what you MISSED"	true	"missed"	--	showmissesing
+"see other DEATH TRAPS"	true	"death/traps" or "death traps"	--	showdeathsing
 
 showmissesing is an activity.
 
 rule for showmissesing:
 	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
+
+rule for showdeathsing:
+	let temp be wry-wall-found;
+	let tot-rows be number of rows in table of bad locs;
+	say "You could have gone";
+	repeat through table of bad locs:
+		if been-here entry is false:
+			increment temp;
+			say "[if temp is tot-rows and wry-wall-found < tot-rows - 1] and [end if][e2] of [e1][if temp < wry-wall-found - 1], [end if]";
+	say ".";
 
 volume map index
 
