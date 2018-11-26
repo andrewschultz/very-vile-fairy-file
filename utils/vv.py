@@ -92,9 +92,48 @@ def stdin_or_basic_usage():
     print("-t#(number) = try for 2-letter matches with combinations that start more than (number) words.")
     print("-z/yz/zy and -nz/zn = show zero-matches or hide them.")
     i7.ph(50)
+    prinr("3-6pl looks for words of length 3-6 starting with pl. 3- = all words of length 3+.")
     print("-? = this")
     print("-?? = details/examples")
     i7.ph(50)
+
+def see_starts(x):
+    low = 3
+    high = 18
+    nums = re.sub("^([0-9-]*).*", r'\1', x)
+    word = re.sub("^[0-9-]*(.*)", r'\1', x)
+    if not word:
+        print("Didn't define a word.")
+        return
+    if '-' in nums:
+        if nums[-1] == '-':
+            low = int(nums[:-1])
+        else:
+            ary = nums.split("-")
+            low = int(ary[0])
+            high = int(ary[1])
+    else:
+        low = int(nums[0])
+        high = int(nums[1:])
+    if low > high: (low, high) = (high, low)
+    count = 0
+    out_ary = []
+    for x in range(low, high + 1):
+        read_words_of_length(x)
+        for y in sorted(word_dict[x]):
+            if y.startswith(word):
+                out_ary.append(y)
+    if not out_ary:
+        print("Nothing found starting with", word, "from", low, "to", high, "letters.")
+        return
+    spaces = high + 1
+    while count < len(out_ary):
+        oa = out_ary[count:count+termwidth//spaces]
+        this_out = ""
+        for x in oa: this_out += '{x:{spaces}s}'.format(x=x, spaces=spaces)
+        print(this_out)
+        count += termwidth//spaces
+    print(len(out_ary), "total words found starting with", word, "from", low, "to", high, "letters.")
 
 def cmd_line_usage():
     stdin_or_basic_usage()
@@ -322,6 +361,9 @@ if standard_input:
         x = input(">>").lower().strip()
         x = re.sub("[ \t]+", " ", x)
         temp_letter_max = 0
+        if re.search("^[0-9](-)?([0-9]+)?", x):
+            see_starts(x)
+            continue
         if re.search("=[0-9]$", x):
             temp_letter_max = int(x[-1])
             x = x[:-2]
