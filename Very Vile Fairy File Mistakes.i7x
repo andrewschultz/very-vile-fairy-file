@@ -12,6 +12,16 @@ volume mistakes by room
 
 [note that these are arranged alphabetically, not in order of play.]
 
+chapter --- wry wall room mistakes
+
+understand "cry call" as a mistake ("You lash out meaninglessly at the wry wall.") when location of player is signable.
+
+understand "fry fall" as a mistake ("The wry wall remains upright.") when location of player is signable.
+
+understand "pry pall" as a mistake ("There is no hidden tomb under the wry wall.") when location of player is signable.
+
+understand "try tall" as a mistake ("The wry wall does not grow.") when location of player is signable.
+
 chapter airy isle mistakes
 
 understand "bell born" as a mistake ("There's enough noise right now.") when well worn hell horn is quicknear.
@@ -19,6 +29,8 @@ understand "bell born" as a mistake ("There's enough noise right now.") when wel
 understand "swell sworn" as a mistake ("That might augment the hell horn.") when well worn hell horn is quicknear.
 
 chapter Fun Fen mistakes
+
+understand "live leap" as a mistake ("The leap wouldn't be live for very long.") when hive heap is quicknear.
 
 understand "pun pen" as a mistake ("You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me.") when player is in Fun Fen.
 
@@ -42,11 +54,17 @@ chapter Trim Tram mistakes
 
 understand "prim pram" as a mistake ("That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse.") when player is in Trim Tram.
 
+understand "slim slam" as a mistake ("That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though.") when player is in Trim Tram.
+
 chapter Vined Vault mistakes
 
 understand "clean class" as a mistake ("You're on the right track, but ... that doesn't feel natural enough.") when player is in Vined Vault and mean mass is in Vined Vault.
 
+understand "hind halt" as a mistake ("You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.") when player is in Vined Vault.
+
 understand "lean lass" as a mistake ("This isn't that sort of game.") when player is in Vined Vault and mean mass is in Vined Vault.
+
+understand "mind malt" as a mistake ("Neither phosphates nor alcohol will help make you smarter here. You have to rely on yourself!") when player is in Vined Vault.
 
 chapter Whining War mistakes
 

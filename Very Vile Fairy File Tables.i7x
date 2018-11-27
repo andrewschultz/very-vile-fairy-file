@@ -14,10 +14,15 @@ randtxt
 "Madman Chad Chan"
 "Madman Tad Tan"
 "Not Noble Scott Scoble"
+"Pill-Perk Bill Burke"
+"Rude Rave Dude Dave"
+"Work-Will Kirk Kill"
 
 table of vvff digs
 randtxt
+"Catcall: at ALL!"
 "Gonna go off! Shun a show-off!"
+"Look leading?! Book beating!"
 "'My magic try: TRAGIC!'"
 "Rotten role: gotten goal?"
 
@@ -26,8 +31,12 @@ randtxt
 "Barge, Banned Large Land"
 "Crew Came Grew Game"
 "Fall For Stall Store"
+"Fat Farms['] Chat Charms: at Arms"
 "Grepping: Groan? STEPPING STONE"
-"Lay Lorn, Way Worn May Morn" [pay porn?]
+"Hole Hound Bowl Bound"
+"Lay Lorn, Way Worn May Morn, by Kay Korn" [pay porn?]
+"Must Mean Just Gene"
+"My Man? Fie, Fan"
 "Nag? No: Brag, Bro"
 "Near Null Fearful"
 "One Wet Sunset"
