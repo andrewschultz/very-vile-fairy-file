@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 32.
+min-needed is a number that varies. min-needed is 33.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 39.
+the maximum score is 40.
 
 max-poss is a number that varies.
 
@@ -700,6 +700,31 @@ carry out firstfaveing:
 	now first-fave is true;
 	the rule succeeds;
 
+part Shirk Shell
+
+Shirk Shell is a room in Piddling Pain.
+
+the jerk gel is a thing in Shirk Shell.
+
+understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
+
+check taking jerk gel when jerk gel is in shirk shell:
+	say "The jerk gel has spilled out a bit." instead;
+
+chapter workwelling
+
+workwelling is an action applying to nothing.
+
+understand the command "work well" as something new.
+
+understand "work well" as workwelling.
+
+carry out workwelling:
+	say "You work to put all the jerk gel back in. It becomes glowing globs.";
+	now the player has the jerk gel;
+	increment the score; [nec]
+	the rule succeeds.
+
 part Last Lap
 
 Last Lap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
@@ -884,6 +909,10 @@ dead doom is a room.
 volume verbs
 
 book standard modifications
+
+chapter inventory
+
+after printing the name of jerk gel while taking inventory: say " (glowing globs)";
 
 chapter trivial pointless but amusing verbs
 
@@ -1383,7 +1412,7 @@ showmissesing is an activity.
 rule for showmissesing:
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
-	if wild weed is not moot, say "You could've SPARKed SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
+	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
 	if lots lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
 	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
 	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
