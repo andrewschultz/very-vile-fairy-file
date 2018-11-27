@@ -36,11 +36,11 @@ understand "pun pen" as a mistake ("You find no way to reach behind the fourth w
 
 understand "won when" as a mistake("Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst.") when player is in Fun Fen.
 
-chapter Last Lap mistakes
+chapter Gassed Gap mistakes
 
-understand "fast fap" as a mistake ("Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.") when player is in Last Lap.
+understand "fast fap" as a mistake ("Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.") when player is in Gassed Gap.
 
-understand "gassed gap" as a mistake ("You don't need any sort of protection from enemies, behind or in front, here.") when player is in Last Lap.
+understand "passed pap" and "past pap" as a mistake ("You don't need to look back on what a trashy adventure this has been. Well, not in front of me") when player is in Gassed Gap.
 
 chapter Po' Pit mistakes
 

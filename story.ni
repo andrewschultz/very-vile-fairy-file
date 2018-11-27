@@ -133,7 +133,7 @@ table of bad locs
 e1	e2	been-here	fake-name	death-trap
 fun fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
 fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
-Last Lap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
+Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
 Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN' TUNNEL."
 
@@ -725,15 +725,17 @@ carry out workwelling:
 	increment the score; [nec]
 	the rule succeeds.
 
-part Last Lap
+part Gassed Gap
 
-Last Lap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but there isn't[else]There's a way to the north[end if]."
+Gassed Gap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
+
+printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
 cap-cast is a truth state that varies.
 
-check going north in Last Lap:
+check going north in Gassed Gap:
 	if Reeker Russell is off-stage, say "You haven't found the way, yet." instead;
-	if Reeker Russell is in Last Lap, say "Not with Reeker Russell around." instead;
+	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
 	say "You avoid the trap leading to the Vined Vault...";
 
 [?? trusty tap / crusty cap]
@@ -763,12 +765,12 @@ castcaping is an action applying to nothing.
 
 understand the command "cast cap" as something new.
 
-understand "cast cap" as castcaping when player is in Last Lap.
+understand "cast cap" as castcaping when player is in Gassed Gap.
 
 carry out castcaping:
 	if cap-cast is true, say "You already did." instead;
-	say "You cast your cap, and someone big and mean appears: (W)re(a/e)ker Russell!";
-	move Reeker Russell to Last Lap;
+	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
+	move Reeker Russell to Gassed Gap;
 	increment the score; [nec]
 	the rule succeeds;
 
@@ -812,7 +814,7 @@ woodoneing is an action applying to nothing.
 
 understand the command "wood one" as something new.
 
-understand "wood one" as woodoneing when good gun is quicknear or player is in Last Lap.
+understand "wood one" as woodoneing when good gun is quicknear or player is in Gassed Gap.
 
 carry out woodoneing:
 	if good gun is moot, say "You already got rid of the good gun." instead;
@@ -823,7 +825,7 @@ carry out woodoneing:
 
 part Airy Isle
 
-Airy Isle is north of Last Lap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
+Airy Isle is north of Gassed Gap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
 chapter telltorning
 
@@ -1436,7 +1438,7 @@ index map with trim tram mapped east of po' pit.
 index map with fun fen mapped east of trim tram.
 
 index map with soft sand mapped east of fun fen.
-index map with last lap mapped north of lake lea.
+index map with Gassed Gap mapped north of lake lea.
 
 section needs fixing
 
