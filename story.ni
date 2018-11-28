@@ -1138,6 +1138,29 @@ volume unsorted
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
+chapter blowingblobsing
+
+the knowing nobs are plural-named people.
+
+blowingblobsing is an action applying to nothing.
+
+understand the command "blowing blobs" as something new.
+understand the command "sowing sobs" as something new.
+understand the command "slowing slobs" as something new.
+
+understand "blowing blobs" and "sowing sobs" and "slowing slobs" as blowingblobsing when player has jerk gel.
+
+hint-nobs is a truth state that varies.
+
+carry out blowingblobsing:
+	if knowing nobs are not in location of player;
+		now hint-nobs is true;
+		say "That might work, but not here." instead;
+	increment the score; [nec]
+	say "Bye bye nobs!";
+	moot knowing nobs;
+	the rule succeeds.
+
 chapter moralmageing
 
 cage-mage is a truth state that varies.
