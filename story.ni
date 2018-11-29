@@ -1161,6 +1161,12 @@ carry out blowingblobsing:
 	moot knowing nobs;
 	the rule succeeds.
 
+part store all stage
+
+store all stage is a room in piddling pain.
+
+the coral cage is a thing in store all stage.
+
 chapter moralmageing
 
 cage-mage is a truth state that varies.
