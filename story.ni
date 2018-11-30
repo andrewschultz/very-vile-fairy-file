@@ -1138,6 +1138,38 @@ volume unsorted
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
+chapter staystronging
+
+staystronging is an action applying to nothing.
+
+understand the command "stay strong" as something new.
+
+understand "stay strong" as staystronging when in-way-wrong is true.
+
+in-way-wrong is a truth state that varies.
+in-way-wronged is a truth state that varies.
+
+carry out staystronging:
+	say "That's it! You feel much more comfortable now.";
+	now in-way-wrong is false;
+	now in-way-wronged is true;
+	increment the score;
+	the rule succeeds.
+
+the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
+
+this is the get-wrong rule:
+	if in-way-wronged is false and in-way-wrong is false and score >= 20:
+		now in-way-wrong is true;
+		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
+	the rue succeeds;
+
+every turn when in-way-wrong is true:
+	say "Way wrong ... way wrong ... you feel so depressed and upset.";
+
+instead of doing something when in-way-wrong is true:
+	say "You can't. Everything feels ... way wrong. You feel so weak!";
+
 chapter blowingblobsing
 
 the knowing nobs are plural-named people.
