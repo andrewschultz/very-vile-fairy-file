@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 33.
+min-needed is a number that varies. min-needed is 34.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 40.
+the maximum score is 41.
 
 max-poss is a number that varies.
 
@@ -113,6 +113,9 @@ wry-wall-found is a number that varies. wry-wall-found is 0.
 
 check going nowhere:
 	repeat through table of bad locs:
+		if there is no e1 entry:
+			if debug-state is true, say "Do something for [fake-name entry].";
+			continue the action;
 		if location of player is e1 entry and noun is e2 entry:
 			if been-here entry is true, say "You already went [noun] to [fake-name entry]. It's a death trap." instead;
 			say "[death-trap entry][paragraph break]";
@@ -136,6 +139,7 @@ fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
 Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
 Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN' TUNNEL."
+Airy Isle	down	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
 
 chapter lieloling
 
