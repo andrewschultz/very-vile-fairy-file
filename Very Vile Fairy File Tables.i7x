@@ -25,6 +25,7 @@ randtxt
 "Look leading?! Book beating!"
 "'My magic try: TRAGIC!'"
 "Rotten role: gotten goal?"
+"Want what? Taunt, tut!"
 
 table of vvff books
 randtxt

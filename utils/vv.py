@@ -240,7 +240,7 @@ def write_all_26(a, b, dels, two_letter_starts = 10):
         print("Couldn't find anything to do.")
         return
     strings_array = [sorted(q, key=str.lower) for q in strings_array]
-    strings_array = [list(set(q)) for q in strings_array]
+    strings_array = [sorted(list(set(q))) for q in strings_array]
     for q1 in range(1 - show_zeros, 3):
         count = 0
         end_string = ""
