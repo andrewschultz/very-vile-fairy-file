@@ -122,7 +122,7 @@ check going nowhere:
 			say "[b][location of player][r][paragraph break]";
 			now been-here entry is true;
 			increment wry-wall-found;
-			if wry-wall-found is number of rows in table of bad locs: say "Incidentally, you've found everything." instead;
+			if wry-wall-found is number of rows in table of bad locs, say "Incidentally, you've found everything." instead;
 			the rule succeeds;
 	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
 	say "You can't go [noun], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if]." instead;
@@ -1168,7 +1168,7 @@ this is the get-wrong rule:
 	if in-way-wronged is false and in-way-wrong is false and score >= 20:
 		now in-way-wrong is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
-	the rue succeeds;
+	the rule succeeds;
 
 every turn when in-way-wrong is true:
 	say "Way wrong ... way wrong ... you feel so depressed and upset.";
@@ -1191,7 +1191,7 @@ understand "blowing blobs" and "sowing sobs" and "slowing slobs" as blowingblobs
 hint-nobs is a truth state that varies.
 
 carry out blowingblobsing:
-	if knowing nobs are not in location of player;
+	if knowing nobs are not in location of player:
 		now hint-nobs is true;
 		say "That might work, but not here." instead;
 	increment the score; [nec]
@@ -1204,6 +1204,8 @@ part store all stage
 store all stage is a room in piddling pain.
 
 the coral cage is a thing in store all stage.
+
+the moral mage is a person in store all stage.
 
 chapter moralmageing
 
@@ -1221,6 +1223,7 @@ carry out moralmageing:
 	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
 	increment the score; [nec]
 	moot moral mage;
+	moot coral cage;
 	the rule succeeds.
 
 chapter cageskeying
@@ -1482,10 +1485,12 @@ rule for showmissesing:
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
 	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
-	if lots lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
+	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
 	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
 	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
 	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE.";
+
+showdeathsing is an activity.
 
 rule for showdeathsing:
 	let temp be wry-wall-found;
@@ -1494,8 +1499,24 @@ rule for showdeathsing:
 	repeat through table of bad locs:
 		if been-here entry is false:
 			increment temp;
-			say "[if temp is tot-rows and wry-wall-found < tot-rows - 1] and [end if][e2] of [e1][if temp < wry-wall-found - 1], [end if]";
+			if temp is tot-rows and wry-wall-found < tot-rows - 1, say " and ";
+			say "[e2 entry] of [e1 entry]";
+			if temp < wry-wall-found - 1, say ", ";
 	say ".";
+
+volume parser errors guiding us
+
+Rule for printing a parser error (this is the clue half right words rule):
+	repeat through table of understands:
+		if location of player is myloc entry:
+			if the player's command matches mytxt entry:
+				say "[myexp entry]";
+				the rule succeeds;
+
+table of understands
+mytxt (topic)	myloc	myexp
+"wet" or "wood"	wet wood	"You need to do something like wet wood. But it can't be either."
+"get" or "good"	wet wood	"You almost felt like you were able to find your way around."
 
 volume map index
 
