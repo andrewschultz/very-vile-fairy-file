@@ -131,17 +131,7 @@ definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
 	yes;
 
-[pest post / messed most / rest roast/ guest ghost / best boast]
-table of bad locs
-e1	e2	been-here	fake-name	death-trap
-fun fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
-fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
-fun fen	south	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']." [?? another bad place]
-Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
-Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
-Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN' TUNNEL."
-Airy Isle	down	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
-Soft Sand	up	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
+[see header file for table of bad locs]
 
 chapter lieloling
 
@@ -996,17 +986,7 @@ to say your-rank:
 			say "[rank-name entry]";
 			continue the action;
 
-table of ranks
-rank-max	rank-name
-4	"lol'd, lawd"
-8	"told, taw'd"
-12	"sold sod"
-16	"mold-mod"
-20	"trolled, trod"
-24	"cold cod"
-28	"old, odd"
-32	"rolled, rah'd"
---	"bold bod"
+[see header file for table of ranks]
 
 book nonstandard but general verbs
 
@@ -1509,14 +1489,12 @@ volume parser errors guiding us
 Rule for printing a parser error (this is the clue half right words rule):
 	repeat through table of understands:
 		if location of player is myloc entry:
-			if the player's command matches mytxt entry:
-				say "[myexp entry]";
+			if the player's command includes mytxt entry:
+				say "[myexp entry][line break]";
 				the rule succeeds;
+	continue the action;
 
-table of understands
-mytxt (topic)	myloc	myexp
-"wet" or "wood"	wet wood	"You need to do something like wet wood. But it can't be either."
-"get" or "good"	wet wood	"You almost felt like you were able to find your way around."
+[see header file for table of understands]
 
 volume map index
 
