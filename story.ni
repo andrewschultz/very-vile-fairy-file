@@ -707,7 +707,7 @@ carry out whatawankstaing:
 
 part Vending Vibe
 
-Vending Vibe is a room in Piddling Pain.
+Vending Vibe is a room in Piddling Pain. "You can only go back east."
 
 The Trending Tribe are plural-named people in Vending Vibe.
 
@@ -731,11 +731,18 @@ carry out lendinglibeing:
 
 part curst cave
 
-Curst Cave is a room in Piddling Pain.
+Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-vibe]."
 
 the worst wave is scenery in Curst Cave.
 
 the screaming skull is a thing in curst cave.
+
+to say tap-in-vibe:
+	if tool tap is in vending vibe, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
+
+the tool tap is scenery.
+
+the cool cap is a thing.
 
 chapter dreamingdulling
 
@@ -747,7 +754,7 @@ understand "dreaming dull" as dreamingdulling when player is in curst cave and s
 
 carry out dreamingdulling:
 	moot screaming skull;
-	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, or walking in as a skeleton at its own funeral, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
+	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
 	increment the score; [nec]
 	the rule succeeds.
 
@@ -773,6 +780,7 @@ carry out firstfaveing:
 	say "Suddenly, the worst wave isn't very bad or evil at all.";
 	increment the score; [nec]
 	now first-fave is true;
+	move tool tap to curst cave;
 	the rule succeeds;
 
 part Shirk Shell
@@ -844,9 +852,15 @@ understand the command "cast cap" as something new.
 
 understand "cast cap" as castcaping when player is in Gassed Gap.
 
+cap-cast-clue is a truth state that varies.
+
 carry out castcaping:
 	if cap-cast is true, say "You already did." instead;
+	if player does not have cool cap:
+		now cap-cast-clue is true;
+		say "You need a cap to cast!" instead;
 	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
+	moot cool cap;
 	move Reeker Russell to Gassed Gap;
 	increment the score; [nec]
 	the rule succeeds;
@@ -993,6 +1007,15 @@ chapter inventory
 
 after printing the name of jerk gel while taking inventory: say " (glowing globs)";
 
+check taking inventory:
+	now all things enclosed by the player are marked for listing;
+	now toe tappin is unmarked for listing;
+	now cool cap is unmarked for listing;
+	say "Stuff stole (rough role):[paragraph break]";
+	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
+	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. Maybe you can do things with it.";
+	if player has cool cap, say "You're also wearing a cool cap.";
+
 chapter trivial pointless but amusing verbs
 
 instead of attacking:
@@ -1036,6 +1059,7 @@ instead of thinking:
 	if cage-mage is true, say "[line break][tat]You tried to find the MORAL MAGE, but you couldn't open the coral cage yet.";
 	if feast-clue is true, say "[line break][tat]You could make the bull beast a full feast once/now it's been vanquished.";
 	if firstfave-clue is true, say "[line break][tat]You could say FIRST FAVE once/now the screaming skull is gone.";
+	if cap-cast-clue is true, say "[line break][tat]You can CAST CAP once you find one.";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 to say rhyme-display:
