@@ -1,6 +1,6 @@
 "Very Vile Fairy File" by Billy Boling
 
-the story headline is "Less Lame Guess Game: Rhymes Rue Times Two"
+the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 [implement help toggling: HELP HOW/WELP WOW]
 
@@ -560,7 +560,17 @@ Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt
 
 the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
 
+Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because it tunes out, making way for something much worse[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
+
+after examining Toe Tappin Row Rappin:
+	if player does not have Row Rappin, now player has Row Rappin;
+	continue the action;
+
 Oi Mo by Tim T Sims Pimp is scenery. "It's a truly awful song. If you could find a way to turn it down..."
+
+to decide which song is mall-song:
+	if toe tappin row rappin is moot, decide on oi mo;
+	decide on toe tappin row rappin;
 
 chapter historyhalling
 
@@ -591,7 +601,7 @@ carry out mysterymalling:
 	if mistmall is true, say "You're already in the mystery mall." instead;
 	move-to-temp Name Notes Tame Totes;
 	move-from-temp gutta ganksta;
-	move-from-temp oi mo;
+	move-from-temp mall-song;
 	now mistmall is true;
 	if evermall is false:
 		increment the score; [nec]
@@ -611,7 +621,7 @@ lots-lame is a truth state that varies.
 
 carry out lotslameing:
 	if lots-lame is true, say "You already pinged the Gutta Ganksta like that." instead;
-	say "The Gutta Ganksta suddenly feeels dissed.";
+	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever.";
 	increment the score; [opt]
 	now lots-lame is true;
 	the rule succeeds.
@@ -933,6 +943,7 @@ chapter listening
 
 instead of listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
+	if player is in History Hall and Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
 	if player is in History Hall and Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
 	say "Nothing special."
 
