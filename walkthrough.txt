@@ -34,7 +34,7 @@ There are three ways.
 
 The alternatives: no space, or you can also try a SKIM SCAM.
 
-Well, that does it for the introduction. You climb out of the Fun Fen to the Done Den. It gets a little less linear from here on out.
+Well, that does it for the introduction. You climb out of the Done Den to the Fun Fen. It gets a little less linear from here on out.
 
 
 
@@ -60,7 +60,7 @@ Now about that zig zag rig rag. It can become something more useful.
 
 > BIG BAG (8)
 
-Now at Cark Cliff, you have an opportunity for a bonus point in the long term, or you can just tell the Tall Tree what to do.
+Now at Fun Fen, you have an opportunity for a bonus point in the long term, or you can just tell the Tall Tree what to do.
 
 > FALL FREE (9)
 
@@ -94,6 +94,10 @@ You can twiddle back and forth as you need to.
 
 > W
 
+You should LISTEN in Mystery Mall. The song is useful later.
+
+>LISTEN
+
 You can deal with the gutta ganksta if you want for an LLP, but he won't stop you.
 
 > W
@@ -109,8 +113,17 @@ In the Shirk Shell, you need to do something to get the Jerk Gel.
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
 
+============================SOME MISC IDEAS=========================================
+
+> BEAST BOSS (x-6)
+
+It will take something from you. But you don't know what!
+
+> LEAST LOSS (x-5)
 
 ============================END UNIMPLEMENTED MIDDLEGAME============================
+
+The Gassed Gap is now the Last Lap!
 
 Here in the Last Lap, you sense you must be close. But how do you get anyone's attention?
 

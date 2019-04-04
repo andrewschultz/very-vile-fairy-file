@@ -466,9 +466,13 @@ carry out backedbindering:
 	increment the score; [nec]
 	the rule succeeds.
 
+part Creased Cross
+
+Creased Cross is north of Fun Fen.
+
 part Lake Lea
 
-Lake Lea is north of Fun Fen. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
+Lake Lea is east of Creased Cross. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
 
 check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
 
@@ -554,7 +558,7 @@ part History Hall
 
 mistmall is a truth state that varies.
 
-History Hall is west of Lake Lea. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is west of Creased Cross. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
@@ -571,6 +575,10 @@ Oi Mo by Tim T Sims Pimp is scenery. "It's a truly awful song. If you could find
 to decide which song is mall-song:
 	if toe tappin row rappin is moot, decide on oi mo;
 	decide on toe tappin row rappin;
+
+check going west in history hall:
+	if mistmall is true, continue the action;
+	say "[if evermall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
 
 chapter historyhalling
 
@@ -1255,7 +1263,7 @@ carry out wildweeding:
 
 book got gear hot here
 
-Got Gear Hot Here is a room.
+Got Gear Hot Here is west of History Hall.
 
 chapter hardhating
 
