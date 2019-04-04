@@ -120,6 +120,10 @@ This covers the shell and opens a new passage west.
 
 > W
 
+The screaming skull is annoying. You'll have to deal with it first.
+
+> DREAMING DULL
+
 How to get rid of the worst wave in the curst cave?
 
 > FIRST FAVE
@@ -127,6 +131,8 @@ How to get rid of the worst wave in the curst cave?
 What can you get from the tool tap?
 
 > COOL CAP
+
+This will come in handy later.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 

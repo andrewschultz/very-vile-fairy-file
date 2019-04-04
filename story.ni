@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 35.
+min-needed is a number that varies. min-needed is 36.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 42.
+the maximum score is 43.
 
 max-poss is a number that varies.
 
@@ -735,6 +735,22 @@ Curst Cave is a room in Piddling Pain.
 
 the worst wave is scenery in Curst Cave.
 
+the screaming skull is a thing in curst cave.
+
+chapter dreamingdulling
+
+dreamingdulling is an action applying to nothing.
+
+understand the command "dreaming dull" as something new.
+
+understand "dreaming dull" as dreamingdulling when player is in curst cave and screaming skull is in curst cave.
+
+carry out dreamingdulling:
+	moot screaming skull;
+	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, or walking in as a skeleton at its own funeral, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
+	increment the score; [nec]
+	the rule succeeds.
+
 chapter firstfaveing
 
 firstfaveing is an action applying to nothing.
@@ -747,8 +763,13 @@ understand "first fave" as firstfaveing.
 
 first-fave is a truth state that varies.
 
+firstfave-clue is a truth state that varies.
+
 carry out firstfaveing:
 	if first-fave is true, say "You already did." instead;
+	if screaming skull is in curst cave,
+		say "You can't like anything with that screaming skull around!";
+		now firstfave-clue is true;
 	say "Suddenly, the worst wave isn't very bad or evil at all.";
 	increment the score; [nec]
 	now first-fave is true;
@@ -1014,6 +1035,7 @@ instead of thinking:
 	if mash-clue is true, say "[line break][tat]You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if].";
 	if cage-mage is true, say "[line break][tat]You tried to find the MORAL MAGE, but you couldn't open the coral cage yet.";
 	if feast-clue is true, say "[line break][tat]You could make the bull beast a full feast once/now it's been vanquished.";
+	if firstfave-clue is true, say "[line break][tat]You could say FIRST FAVE once/now the screaming skull is gone.";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 to say rhyme-display:
