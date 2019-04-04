@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 34.
+min-needed is a number that varies. min-needed is 35.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 41.
+the maximum score is 42.
 
 max-poss is a number that varies.
 
@@ -93,7 +93,7 @@ after looking in a signable room:
 
 to say sign-dir:
 	repeat through table of bad locs:
-		if e1 entry is location of player, say "[line break][b][fake-name entry][r]: [e2 entry]";
+		if there is an e1 entry and e1 entry is location of player, say "[line break][b][fake-name entry][r]: [e2 entry]";
 
 instead of doing something with wry wall:
 	if action is procedural, continue the action;
@@ -101,6 +101,7 @@ instead of doing something with wry wall:
 
 definition: a room (called rm) is signable:
 	repeat through table of bad locs:
+		if there is no e1 entry or there is no e2 entry, next;
 		if rm is e1 entry, yes;
 	no;
 
@@ -113,8 +114,8 @@ wry-wall-found is a number that varies. wry-wall-found is 0.
 
 check going nowhere:
 	repeat through table of bad locs:
-		if there is no e1 entry:
-			if debug-state is true, say "Do something for [fake-name entry].";
+		if there is no e1 entry or there is no e2 entry:
+			if debug-state is true, say "Fill in location/direction for [fake-name entry].";
 			continue the action;
 		if location of player is e1 entry and noun is e2 entry:
 			if been-here entry is true, say "You already went [noun] to [fake-name entry]. It's a death trap." instead;
@@ -468,7 +469,49 @@ carry out backedbindering:
 
 part Creased Cross
 
-Creased Cross is north of Fun Fen.
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain.
+
+chapter Bull Beast
+
+The Bull Beast is a person.
+
+chapter fullfeasting
+
+fullfeasting is an action applying to nothing.
+
+understand the command "full feast" as something new.
+
+understand "full feast" as fullfeasting.
+
+feast-clue is a truth state that varies.
+
+carry out fullfeasting:
+	if bull beast is not in location of player, say "Not here." instead;
+	if bull beast is in location of player and loss-clue is false:
+		say "That should work. It might work better if the bull beast were incapacitated.";
+		now feast-clue is true instead;
+	if bull beast is moot, say "You already made a feast.";
+	the rule succeeds.
+
+chapter leastlossing
+
+leastlossing is an action applying to nothing.
+
+understand the command "least loss" as something new.
+
+understand "least loss" as leastlossing.
+
+loss-clue is a truth state that varies.
+
+carry out leastlossing:
+	if player is not in creased cross, say "Not here." instead;
+	if bull beast is off-stage:
+		say "Not yet.";
+		now loss-clue is true instead;
+	if loss-clue is true, say "You already did." instead;
+	increment the score; [nec]
+	say "BOOM! The bull beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";
+	the rule succeeds.
 
 part Lake Lea
 
@@ -572,10 +615,6 @@ after examining Toe Tappin Row Rappin:
 
 Oi Mo by Tim T Sims Pimp is scenery. "It's a truly awful song. If you could find a way to turn it down..."
 
-to decide which song is mall-song:
-	if toe tappin row rappin is moot, decide on oi mo;
-	decide on toe tappin row rappin;
-
 check going west in history hall:
 	if mistmall is true, continue the action;
 	say "[if evermall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
@@ -609,7 +648,8 @@ carry out mysterymalling:
 	if mistmall is true, say "You're already in the mystery mall." instead;
 	move-to-temp Name Notes Tame Totes;
 	move-from-temp gutta ganksta;
-	move-from-temp mall-song;
+	move-from-temp Oi Mo;
+	if Toe Tappin is not off-stage, move-from-temp Toe Tappin;
 	now mistmall is true;
 	if evermall is false:
 		increment the score; [nec]
@@ -716,7 +756,7 @@ carry out firstfaveing:
 
 part Shirk Shell
 
-Shirk Shell is a room in Piddling Pain.
+Shirk Shell is a room in Piddling Pain. It is west of Soft Sand.
 
 the jerk gel is a thing in Shirk Shell.
 
@@ -742,6 +782,8 @@ carry out workwelling:
 part Gassed Gap
 
 Gassed Gap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
+
+Gassed Gap is north of Soft Sand.
 
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
@@ -971,6 +1013,7 @@ instead of thinking:
 	if flim-clue is true, say "[line break][tat]You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if].";
 	if mash-clue is true, say "[line break][tat]You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if].";
 	if cage-mage is true, say "[line break][tat]You tried to find the MORAL MAGE, but you couldn't open the coral cage yet.";
+	if feast-clue is true, say "[line break][tat]You could make the bull beast a full feast once/now it's been vanquished.";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
 to say rhyme-display:
@@ -1263,7 +1306,7 @@ carry out wildweeding:
 
 book got gear hot here
 
-Got Gear Hot Here is west of History Hall.
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall.
 
 chapter hardhating
 
@@ -1332,11 +1375,14 @@ Lit Lawn is a room. [??get gone]
 
 part Soft Sand
 
-Soft Sand is a room in Piddling Pain.
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross.
 
 ever-loft is a truth state that varies.
 
 loft-land is a truth state that varies.
+
+check going west in soft sand:
+	if loft-land is false and jerk gel is not in Shirk Shell, say "The smirk smell is too repulsive. You can't go back." instead;
 
 chapter softsanding
 
@@ -1351,7 +1397,8 @@ loft-land is a truth state that varies.
 carry out softsanding:
 	if loft-land is false, say "You're already on the soft sand." instead;
 	say "The loft land reverts to the soft sand.";
-	now loft-land is true;
+	now loft-land is false;
+	now shirk shell is mapped west of soft sand;
 	the rule succeeds;
 
 chapter loftlanding
@@ -1369,6 +1416,8 @@ carry out loftlanding:
 		now ever-loft is true;
 		now loft-land is false;
 		increment the score; [nec]
+	now curst cave is mapped west of soft sand;
+	now soft sand is mapped west of curst cave;
 	the rule succeeds;
 
 part Whining War
@@ -1463,8 +1512,6 @@ carry out makemaping:
 
 volume Poorly Penned
 
-Done Dune is a room in Poorly Penned. "This room is full of things you should shun soon."
-
 volume Get a Guess
 
 [this is a sort of fake region. There are fake rooms you can't visit.]
@@ -1496,6 +1543,9 @@ rule for showdeathsing:
 	let tot-rows be number of rows in table of bad locs;
 	say "You could have gone";
 	repeat through table of bad locs:
+		if there is no e1 entry or there is no e2 entry:
+			say "[fake-name entry] needs a location/direction.";
+			next;
 		if been-here entry is false:
 			increment temp;
 			if temp is tot-rows and wry-wall-found < tot-rows - 1, say " and ";
@@ -1520,13 +1570,26 @@ volume map index
 index map with vined vault mapped east of wet wood.
 index map with po' pit mapped east of vined vault.
 index map with trim tram mapped east of po' pit.
-index map with fun fen mapped east of trim tram.
+index map with fun fen mapped north of trim tram.
 
-index map with soft sand mapped east of fun fen.
-index map with Gassed Gap mapped north of lake lea.
+section endrooms
+
+index map with tarry tile mapped east of airy isle.
+index map with merry mile mapped east of tarry tile.
+
+section altrooms
+
+index map with vending vibe mapped north of got gear hot here.
+index map with curst cave mapped north of shirk shell.
+
+section nonrooms
+
+index map with gazy gap mapped east of trim tram.
+index map with hidey house mapped east of gazy gap.
+
+section deathrooms - not for release
 
 section needs fixing
 
-index map with got gear hot here mapped west of history hall.
 index map with lit lawn mapped west of got gear hot here.
 index map with dead doom mapped west of lit lawn.

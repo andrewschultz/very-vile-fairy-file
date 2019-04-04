@@ -110,16 +110,38 @@ In the Shirk Shell, you need to do something to get the Jerk Gel.
 
 > WORK WELL
 
+>E
+
+Now you don't need to visit the Shirk Shell any more, so...
+
+> LOFT LAND
+
+This covers the shell and opens a new passage west.
+
+> W
+
+How to get rid of the worst wave in the curst cave?
+
+> FIRST FAVE
+
+What can you get from the tool tap?
+
+> COOL CAP
+
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
 
 ============================SOME MISC IDEAS=========================================
 
-> BEAST BOSS (x-6)
+> BEAST BOSS (x-7)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (x-5)
+> LEAST LOSS (x-6)
+
+Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
+
+> FULL FEAST (x-5)
 
 ============================END UNIMPLEMENTED MIDDLEGAME============================
 
