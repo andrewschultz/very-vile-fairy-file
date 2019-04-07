@@ -62,7 +62,7 @@
 			<dock index="0" id="4" port="e" />
 			<dock index="1" id="25" port="w" />
 		</line>
-		<room id="27" name="Done Dune" subtitle="" x="352" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="27" name="Done Dune" subtitle="" x="512" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="28" name="Capped Cone" subtitle="" x="-448" y="32" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Zapped Zone" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="29" name="Fast Foi'd" subtitle="" x="352" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Vast Void" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="30" name="" description="">
@@ -84,7 +84,7 @@
 			<dock index="1" id="35" port="e" />
 		</line>
 		<room id="37" name="Curst Cave" subtitle="" x="-128" y="-128" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="38" name="Hopping Hills" subtitle="" x="-288" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Popping Pills" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="38" name="Hopping Hills" subtitle="" x="-448" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Popping Pills" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="39" name="Faun Fen" subtitle="" x="-448" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="40" name="Creased Cross" subtitle="" x="32" y="32" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="41" name="" description="" style="dashed">
@@ -118,8 +118,8 @@
 		<room id="47" name="Lit Lawn" subtitle="" x="-128" y="-224" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="48" name="Dead Doom" subtitle="" x="-288" y="-224" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="49" name="" description="" startText="down" endText="up">
-			<dock index="0" id="12" port="n" />
-			<dock index="1" id="27" port="s" />
+			<dock index="0" id="12" port="se" />
+			<dock index="1" id="27" port="nw" />
 		</line>
 		<line id="50" name="" description="" style="dashed">
 			<dock index="0" id="19" port="e" />
@@ -128,6 +128,13 @@
 		<line id="51" name="" description="" style="dashed">
 			<dock index="0" id="10" port="e" />
 			<dock index="1" id="23" port="w" />
+		</line>
+		<room id="52" name="Here Hull" subtitle="" x="192" y="-96" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+			<objects>Beer Bull|(Dear Dull/Fearful)</objects>
+		</room>
+		<line id="53" name="" description="">
+			<dock index="0" id="9" port="e" />
+			<dock index="1" id="52" port="w" />
 		</line>
 	</map>
 	<settings>

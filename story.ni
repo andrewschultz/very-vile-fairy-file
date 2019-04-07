@@ -631,6 +631,8 @@ carry out historyhalling:
 	if mistmall is false, say "You're already in History Hall.";
 	move-to-temp gutta ganksta;
 	move-from-temp Name Notes Tame Totes;
+	now trending tribe is mapped west of history hall;
+	now history hall is mapped east of trending tribe;
 	bold-my-room;
 	the rule succeeds;
 
@@ -650,6 +652,7 @@ carry out mysterymalling:
 	move-from-temp gutta ganksta;
 	move-from-temp Oi Mo;
 	if Toe Tappin is not off-stage, move-from-temp Toe Tappin;
+	now got gear hot here is mapped west of history hall;
 	now mistmall is true;
 	if evermall is false:
 		increment the score; [nec]
@@ -704,6 +707,28 @@ carry out whatawankstaing:
 	moot ganksta;
 	up-min;
 	the rule succeeds;
+
+chapter firstflooring
+
+firstflooring is an action applying to nothing.
+
+understand the command "first floor" as something new.
+
+understand "first floor" as firstflooring when player is in mystery mall and mistmall is false.
+
+floor-yet is a truth state that varies.
+
+carry out firstflooring:
+	if floor-yet is true, say "You already did." instead;
+	increment the score; [nec]
+	say "Erst Lore, up on the ceiling, comes down. You can go IN, now.";
+	now Erst Lore is mapped inside of Mystery Mall;
+	now Mystery Mall is mapped outside of Erst Lore;
+	the rule succeeds.
+
+part erst lore
+
+Erst Lore is a room in Piddling Pain.
 
 part Vending Vibe
 
