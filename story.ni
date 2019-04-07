@@ -189,7 +189,15 @@ volume Worst Whew
 
 part Wet Wood
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "You figure you'd just get lost. You don't feel confident enough to learn from getting lost, either. You need to come into competence ... [oh-simp].".
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][line break]Oh, there's GOT to be a simple way to become better.".
+
+wood-row is a number that varies.
+
+to say wood-noway:
+	increment wood-row;
+	if wood-row > number of rows in table of wet wood clues, now wood-row is 1;
+	choose row wood-row in table of wet wood clues;
+	say "[randtxt entry]";
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
@@ -631,8 +639,8 @@ carry out historyhalling:
 	if mistmall is false, say "You're already in History Hall.";
 	move-to-temp gutta ganksta;
 	move-from-temp Name Notes Tame Totes;
-	now trending tribe is mapped west of history hall;
-	now history hall is mapped east of trending tribe;
+	now vending vibe is mapped west of history hall;
+	now history hall is mapped east of vending vibe;
 	bold-my-room;
 	the rule succeeds;
 
@@ -714,7 +722,7 @@ firstflooring is an action applying to nothing.
 
 understand the command "first floor" as something new.
 
-understand "first floor" as firstflooring when player is in mystery mall and mistmall is false.
+understand "first floor" as firstflooring when player is in history hall and mistmall is false.
 
 floor-yet is a truth state that varies.
 
@@ -722,8 +730,8 @@ carry out firstflooring:
 	if floor-yet is true, say "You already did." instead;
 	increment the score; [nec]
 	say "Erst Lore, up on the ceiling, comes down. You can go IN, now.";
-	now Erst Lore is mapped inside of Mystery Mall;
-	now Mystery Mall is mapped outside of Erst Lore;
+	now Erst Lore is mapped inside History Hall;
+	now History Hall is mapped outside Erst Lore;
 	the rule succeeds.
 
 part erst lore
