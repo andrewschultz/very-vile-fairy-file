@@ -92,7 +92,7 @@ after looking in a signable room:
 	continue the action;
 
 to say sign-dir:
-	repeat through table of bad locs:
+	repeat through table of bad locs: [this is in the tables file]
 		if there is an e1 entry and e1 entry is location of player, say "[line break][b][fake-name entry][r]: [e2 entry]";
 
 instead of doing something with wry wall:
@@ -113,10 +113,10 @@ ever-wry-wall is a truth state that varies.
 wry-wall-found is a number that varies. wry-wall-found is 0.
 
 check going nowhere:
-	repeat through table of bad locs:
+	repeat through table of bad locs: [this is in the tables file]
 		if there is no e1 entry or there is no e2 entry:
-			if debug-state is true, say "Fill in location/direction for [fake-name entry].";
-			continue the action;
+			if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";
+			next;
 		if location of player is e1 entry and noun is e2 entry:
 			if been-here entry is true, say "You already went [noun] to [fake-name entry]. It's a death trap." instead;
 			say "[death-trap entry][paragraph break]";
@@ -754,7 +754,7 @@ understand "dreaming dull" as dreamingdulling when player is in curst cave and s
 
 carry out dreamingdulling:
 	moot screaming skull;
-	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
+	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
 	increment the score; [nec]
 	the rule succeeds.
 
@@ -1011,10 +1011,11 @@ check taking inventory:
 	now all things enclosed by the player are marked for listing;
 	now toe tappin is unmarked for listing;
 	now cool cap is unmarked for listing;
-	say "Stuff stole (rough role):[paragraph break]";
+	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. Maybe you can do things with it.";
 	if player has cool cap, say "You're also wearing a cool cap.";
+	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
 
@@ -1036,7 +1037,7 @@ instead of swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'"
 chapter listening
 
 instead of listening:
-	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... it seems like a clue, sort of." instead;
+	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
 	if player is in History Hall and Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
 	if player is in History Hall and Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
 	say "Nothing special."
@@ -1049,6 +1050,9 @@ thought-any is a truth state that varies.
 
 to say tat: now thought-any is true;
 
+to thinkup (rn - a rule):
+	do nothing;
+
 instead of thinking:
 	let thought-any be false;
 	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: [rhyme-display]";
@@ -1059,6 +1063,7 @@ instead of thinking:
 	if cage-mage is true, say "[line break][tat]You tried to find the MORAL MAGE, but you couldn't open the coral cage yet.";
 	if feast-clue is true, say "[line break][tat]You could make the bull beast a full feast once/now it's been vanquished.";
 	if firstfave-clue is true, say "[line break][tat]You could say FIRST FAVE once/now the screaming skull is gone.";
+	if shining-clue is true, say "[line break][tat]You can make the SHINING SHORE once/now you dealt with the Whining War.";
 	if cap-cast-clue is true, say "[line break][tat]You can CAST CAP once you find one.";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
 
@@ -1211,10 +1216,10 @@ when play begins (this is the opening text rule):
 	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak-d]";
 	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak-d]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak-d]";
+	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak-d]";
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak-d]";
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak-d]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, leaving you in ...";
-	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.";
 	now max-poss is the maximum score;
 	now the right hand status line is "[score]/[min-needed]-[max-poss]";
 	now the left hand status line is "[location of the player]";
@@ -1419,6 +1424,40 @@ Lit Lawn is a room. [??get gone]
 
 [?? burned bower/turned tower]
 
+part Here Hull
+
+Here Hull is a room in Piddling Pain. It is east of Soft Sand.
+
+The Beer Bull is a thing in Here Hull.
+
+chapter fearfuling
+
+fearfuling is an action applying to nothing.
+
+understand the command "fearful" as something new.
+
+understand "fearful" as fearfuling.
+
+carry out fearfuling:
+	the rule succeeds.
+
+chapter deardulling
+
+deardulling is an action applying to nothing.
+
+understand the command "dear dull" as something new.
+
+understand "dear dull" as deardulling when beer bull is in location of player.
+
+fearful-on is a truth state that varies.
+
+carry out deardulling:
+	if fearful-on is false, say "No. The beer bull is too dull." instead;
+	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
+	say "The beer bull settles down. Both sides of the whining war cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
+	increment the score; [nec]
+	the rule succeeds.
+
 part Soft Sand
 
 Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross.
@@ -1486,8 +1525,13 @@ understand "shining shore" as shiningshoreing when player is in Whining War.
 
 shore-shine is a truth state that varies.
 
+shining-clue is a truth state that varies.
+
 carry out shiningshoreing:
 	if shore-shine is true, say "You already got (t)here." instead;
+	if beer bull is not moot:
+		now shining-clue is true;
+		say "It could be that way. But you need to get rid of the whining first." instead;
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	increment the score; [nec]
 	move lake lap to Whining War;
@@ -1586,7 +1630,7 @@ showdeathsing is an activity.
 
 rule for showdeathsing:
 	let temp be wry-wall-found;
-	let tot-rows be number of rows in table of bad locs;
+	let tot-rows be number of rows in table of bad locs; [this is in the tables file]
 	say "You could have gone";
 	repeat through table of bad locs:
 		if there is no e1 entry or there is no e2 entry:
