@@ -1036,6 +1036,10 @@ volume verbs
 
 book standard modifications
 
+chapter waiting
+
+check waiting: say "Hi ho! Lie low." instead;
+
 chapter inventory
 
 after printing the name of jerk gel while taking inventory: say " (glowing globs)";

@@ -60,11 +60,17 @@ chapter Vined Vault mistakes
 
 understand "clean class" as a mistake ("You're on the right track, but ... that doesn't feel natural enough.") when player is in Vined Vault and mean mass is in Vined Vault.
 
+understand "glean glass" as a mistake ("No, there's no hidden window you overlooked.") when player is in Vined Vault and mean mass is in Vined Vault.
+
 understand "hind halt" as a mistake ("You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.") when player is in Vined Vault.
 
 understand "lean lass" as a mistake ("This isn't that sort of game.") when player is in Vined Vault and mean mass is in Vined Vault.
 
 understand "mind malt" as a mistake ("Neither phosphates nor alcohol will help make you smarter here. You have to rely on yourself!") when player is in Vined Vault.
+
+understand "signed salt" as a mistake ("No block of salt appears. What would you do with it, anyway?") when player is in Vined Vault.
+
+understand "wined walt" as a mistake ("A drinking buddy won't help here.") when player is in Vined Vault.
 
 chapter Whining War mistakes
 
