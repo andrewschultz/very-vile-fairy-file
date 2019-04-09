@@ -1046,14 +1046,23 @@ chapter inventory
 after printing the name of jerk gel while taking inventory: say " (glowing globs)";
 
 check taking inventory:
+	if player has big bag, say "Boy! You can carry all you need with your big bag![paragraph break]";
 	now all things enclosed by the player are marked for listing;
 	now toe tappin is unmarked for listing;
 	now cool cap is unmarked for listing;
+	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. Maybe you can do things with it.";
 	if player has cool cap, say "You're also wearing a cool cap.";
 	the rule succeeds;
+
+check taking when player does not have big bag:
+	if number of things enclosed by the player > 3:
+		say "You can't carry so much at once! ";
+		if tried-yet of "BIG BAG":
+			say "Perhaps now is a good time to change the zig zag rig rag to a big bag, as you tried before." instead;
+		say "Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
 
 chapter trivial pointless but amusing verbs
 
@@ -1107,6 +1116,17 @@ instead of thinking:
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
+
+to decide whether tried-yet of (ct - text):
+	let tried-any be false;
+	repeat through table of forlaters:
+		if ct is cmd-to-say entry:
+			now tried-any is true;
+			if ready-to-hint entry is true:
+				process the can-do-now entry;
+				if the rule succeeded, decide yes;
+	if tried-any is false, say "BUG in the tried-yet code for text [ct]. This is not critical, but it is worth fixing on my end.";
+	decide no;
 
 to clue-later (ct - text):
 	repeat through table of forlaters:
