@@ -1002,7 +1002,7 @@ understand "bury bile" as burybileing.
 
 carry out burybileing:
 	if very vile fairy file is not in location of player:
-		now burybile-clue is true;
+		clue-later "BURY BILE";
 		if player is in Airy Isle:
 			if well worn hell horn is in airy isle, say "That is hard, with the well worn hell horn booming out." instead;
 			say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the airy isle, but not quite." instead;
@@ -1088,6 +1088,8 @@ thought-any is a truth state that varies.
 
 to say tat: now thought-any is true;
 
+ever-thought is a truth state that varies.
+
 instead of thinking:
 	let thought-any be false;
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
@@ -1096,12 +1098,15 @@ instead of thinking:
 			consider the is-done entry;
 			if the rule succeeded:
 				now ready-to-hint entry is false;
-				continue the action;
+				continue the action; [ this may be duplicate code in score and thinking changes rules but I'm a bit nervous about it at the moment, and this shuts the door 100%. Test later with this gone if I have time. ]
 			now thought-any is true;
 			consider the can-do-now entry;
 			if the rule succeeded, say "(CAN DO NOW) ";
 			say "[tat][think-advice entry][line break]";
-	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
+	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now." instead;
+	if ever-thought is false:
+		now ever-thought is true;
+		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
 
 to clue-later (ct - text):
 	repeat through table of forlaters:
@@ -1216,8 +1221,17 @@ check requesting the score:
 	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win.";
 	say "[line break]Your current rank is [your-rank].";
 	let dh be doable-hinted;
-	if dh > 0, say "[line break]You also have [dh] task[plur of dh] you performed when you weren't quite ready. You can see them with THINK.";
+	let fh be future-hinted;
+	if dh + fh > 0, say "[line break]You also have [dh + fh] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh] still need[plur of fh] to wait[else if fh is 0][dh] can be done now[else][dh] can be done now, but [fh] must wait[end if]. You can see more detailed information with THINK.";
 	the rule succeeds;
+
+the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
+
+this is the score and thinking changes rule:
+	repeat through table of forlaters:
+		if ready-to-hint entry is true:
+			process the is-done entry;
+			if the rule succeeded, now ready-to-hint entry is false;
 
 to decide which number is doable-hinted:
 	let temp be 0;
@@ -1227,6 +1241,14 @@ to decide which number is doable-hinted:
 			if the rule succeeded:
 				process the is-done entry;
 				if the rule failed, increment temp;
+	decide on temp;
+
+to decide which number is future-hinted:
+	let temp be 0;
+	repeat through the table of forlaters:
+		if ready-to-hint entry is true:
+			process the can-do-now entry;
+			if the rule failed, increment temp;
 	decide on temp;
 
 to say your-rank:
