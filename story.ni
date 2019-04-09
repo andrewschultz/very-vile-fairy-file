@@ -176,7 +176,7 @@ bag-hint is a truth state that varies.
 carry out bigbaging:
 	if player has big bag, say "You already made the big bag." instead;
 	if Fun Fen is unvisited:
-		now bag-hint is true;
+		clue-later "BIG BAG";
 		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
 	say "You now have a more useful big bag!";
 	increment the score; [nec]
@@ -1087,22 +1087,66 @@ thought-any is a truth state that varies.
 
 to say tat: now thought-any is true;
 
-to thinkup (rn - a rule):
-	do nothing;
-
 instead of thinking:
 	let thought-any be false;
-	say "You think about what you've done, what you've tried, and what you can do.[paragraph break]Here's what you know from your experience so far: [rhyme-display]";
-	if bag-hint is true, say "[line break][tat]You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if].";
-	if burybile-clue is true, say "[line break][tat]When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if airy isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if].";
-	if flim-clue is true, say "[line break][tat]You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if].";
+	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
+	repeat through table of forlaters:
+		if ready-to-hint entry is true:
+			consider the is-done entry;
+			if the rule succeeded:
+				now ready-to-hint entry is false;
+				continue the action;
+			now thought-any is true;
+			consider the can-do-now entry;
+			if the rule succeeded, say "(CAN DO NOW) ";
+			say "[tat][think-advice entry][line break]";
+	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
+
+to clue-later (ct - text):
+	repeat through table of forlaters:
+		if ct is cmd-to-say entry:
+			if ready-to-hint entry is true, say "(checking again) ";
+			now ready-to-hint entry is true;
+			say "[think-advice entry][line break]";
+			the rule succeeds;
+	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
+
+table of forlaters
+cmd-to-say	ready-to-hint	is-done	can-do-now	think-advice
+"BURY BILE"	false	trivially false rule	can-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if airy isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
+"BIG BAG"	false	did-big-bag rule	can-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
+"FLIM FLAM"	false	did-flim-flam rule	can-flim-flam rule	"You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if]."
+
+this is the can-bury-bile rule:
+	if well worn hell horn is moot, the rule succeeds;
+	the rule fails;
+
+this is the can-big-bag rule:
+	if fun fen is visited, the rule succeeds;
+	the rule fails;
+
+this is the did-big-bag rule:
+	if player has big bag, the rule succeeds;
+	the rule fails;
+
+this is the can-flim-flam rule:
+	if me-minded is true, the rule succeeds;
+	the rule fails;
+
+this is the did-flim-flam rule:
+	if fun fen is visited, the rule succeeds;
+	the rule fails;
+
+this is the trivially false rule: the rule fails;
+this is the trivially true rule: the rule succeeds;
+
+[	if burybile-clue is true, say "[line break][tat]
 	if mash-clue is true, say "[line break][tat]You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if].";
 	if cage-mage is true, say "[line break][tat]You tried to find the MORAL MAGE, but you couldn't open the coral cage yet.";
 	if feast-clue is true, say "[line break][tat]You could make the bull beast a full feast once/now it's been vanquished.";
 	if firstfave-clue is true, say "[line break][tat]You could say FIRST FAVE once/now the screaming skull is gone.";
 	if shining-clue is true, say "[line break][tat]You can make the SHINING SHORE once/now you dealt with the Whining War.";
-	if cap-cast-clue is true, say "[line break][tat]You can CAST CAP once you find one.";
-	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now."
+	if cap-cast-clue is true, say "[line break][tat]You can CAST CAP once you find one.";]
 
 to say rhyme-display:
 	if Fun Fen is visited:
