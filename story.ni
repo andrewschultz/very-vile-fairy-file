@@ -888,12 +888,10 @@ understand the command "cast cap" as something new.
 
 understand "cast cap" as castcaping when player is in Gassed Gap.
 
-cap-cast-clue is a truth state that varies.
-
 carry out castcaping:
-	if cap-cast is true, say "You already did." instead;
+	if cool cap is moot, say "You already did." instead;
 	if player does not have cool cap:
-		now cap-cast-clue is true;
+		clue-later "CAST CAP";
 		say "You need a cap to cast!" instead;
 	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
 	moot cool cap;
@@ -1108,9 +1106,8 @@ instead of thinking:
 to clue-later (ct - text):
 	repeat through table of forlaters:
 		if ct is cmd-to-say entry:
-			if ready-to-hint entry is true, say "(checking again) ";
+			if ready-to-hint entry is true, say "(re-checking) ";
 			now ready-to-hint entry is true;
-			say "[think-advice entry][line break]";
 			the rule succeeds;
 	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
 
@@ -1122,7 +1119,7 @@ cmd-to-say	ready-to-hint	is-done	can-do-now	think-advice
 "MASH MAP"	false	did-mash-map rule	can-mash-map rule	"You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "MORAL MAGE"	false	did-moral-mage rule	can-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
 "SHINING SHORE"	false	did-shining-shore rule	can-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
-"DREAMING DULL"	false	did-dream-dull rule	can-dream-dull rule	"You could say FIRST FAVE once/now the screaming skull is gone."
+"FIRST FAVE"	false	did-first-fave rule	can-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
 "CAST CAP"	false	did-cast-cap rule	can-cast-cap rule	"You can CAST CAP once you find one."
 "FULL FEAST"	false	did-full-feast rule	can-full-feast rule	"You could make the bull beast a full feast once/now it's been vanquished."
 
@@ -1218,7 +1215,19 @@ chapter score
 check requesting the score:
 	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win.";
 	say "[line break]Your current rank is [your-rank].";
+	let dh be doable-hinted;
+	if dh > 0, say "[line break]You also have [dh] task[plur of dh] you performed when you weren't quite ready. You can see them with THINK.";
 	the rule succeeds;
+
+to decide which number is doable-hinted:
+	let temp be 0;
+	repeat through the table of forlaters:
+		if ready-to-hint entry is true:
+			process the can-do-now entry;
+			if the rule succeeded:
+				process the is-done entry;
+				if the rule failed, increment temp;
+	decide on temp;
 
 to say your-rank:
 	if score is maximum score: [?? differentiate necessary vs unnecessary points?]
@@ -1351,7 +1360,7 @@ when play begins (this is the opening text rule):
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak-d]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, leaving you in ...";
 	now max-poss is the maximum score;
-	now the right hand status line is "[score]/[min-needed]-[max-poss]";
+	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
 	now the left hand status line is "[location of the player]";
 	now the turn count is 0;
 
