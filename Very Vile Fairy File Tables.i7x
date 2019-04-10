@@ -21,7 +21,7 @@ Whining War	north	false	"Done Dune"	"It doesn't seem like a place you should shu
 table of ranks
 rank-max	rank-name
 0	"cold cod"
-3	"lol'd, lawd" [this is defined because I want to trigger a rank gain at the Fun Fen]
+7	"lol'd, lawd" [this is defined because I want to trigger a rank gain at the Fun Fen]
 --	"FLOL'd, flawed" [false laugh out loud]
 --	"old, awed"
 --	"holed, hawed"
@@ -38,6 +38,7 @@ rank-max	rank-name
 --	"rolled, rah'd"
 
 to seed-score-list:
+	now core-max is min-needed;
 	let my-row be 0;
 	let blank-rows be 0;
 	let min-forced-score be -1;
@@ -51,16 +52,18 @@ to seed-score-list:
 			next;
 		if blank-rows is 0:
 			now blank-rows is number of rows in table of ranks - my-row + 1;
-		let temp be (my-row - last-forced-row) * ((maximum score - 1) - min-forced-score);
+		let temp be (my-row - last-forced-row) * ((core-max - 1) - min-forced-score);
 		now rank-max entry is (temp / blank-rows) + min-forced-score;
-		[if debug-state is true, say "Assigned rank [rank-name entry] to up to [rank-max entry].";]
+		if debug-state is true, say "Assigned rank [rank-name entry] to up to [rank-max entry].";
+	repeat through table of ranks:
+		say "[rank-name entry] is <= [rank-max entry] points.";
 
 to say your-rank:
 	repeat through table of ranks:
-		if score <= rank-max entry:
-			say "[rank-max entry]";
+		if core-score <= rank-max entry:
+			say "[rank-name entry]";
 			continue the action;
-	if score is not the maximum score:
+	if score is not the core-max:
 		say "(bug)";
 	else:
 		say "gold god";
