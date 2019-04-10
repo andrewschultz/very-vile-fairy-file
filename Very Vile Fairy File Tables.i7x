@@ -20,15 +20,50 @@ Whining War	north	false	"Done Dune"	"It doesn't seem like a place you should shu
 
 table of ranks
 rank-max	rank-name
+0	"cold cod"
+3	"lol'd, lawd" [this is defined because I want to trigger a rank gain at the Fun Fen]
+--	"FLOL'd, flawed" [false laugh out loud]
+--	"old, awed"
+--	"holed, hawed"
+--	"bowled, bah'd"
+--	"sold sod"
+--	"old, odd"
+--	"told, tawed" [tawed = when an animal hide is beaten]
+--	"th'old thawed"
+--	"polled, pawed"
+--	"scrolled scrod"
+--	"trolled, trod"
+--	"mold-mod"
 --	"bold bod"
-12	"sold sod"
-16	"mold-mod"
-20	"trolled, trod"
-24	"cold cod"
-28	"old, odd"
-32	"rolled, rah'd"
-4	"lol'd, lawd"
-8	"told, taw'd"
+--	"rolled, rah'd"
+
+to seed-score-list:
+	let my-row be 0;
+	let blank-rows be 0;
+	let min-forced-score be -1;
+	let Q be 0;
+	let last-forced-row be 0;
+	repeat through table of ranks:
+		increment my-row;
+		if there is a rank-max entry:
+			now min-forced-score is rank-max entry;
+			now last-forced-row is my-row;
+			next;
+		if blank-rows is 0:
+			now blank-rows is number of rows in table of ranks - my-row + 1;
+		let temp be (my-row - last-forced-row) * ((maximum score - 1) - min-forced-score);
+		now rank-max entry is (temp / blank-rows) + min-forced-score;
+		[if debug-state is true, say "Assigned rank [rank-name entry] to up to [rank-max entry].";]
+
+to say your-rank:
+	repeat through table of ranks:
+		if score <= rank-max entry:
+			say "[rank-max entry]";
+			continue the action;
+	if score is not the maximum score:
+		say "(bug)";
+	else:
+		say "gold god";
 
 table of understands
 mytxt (topic)	myloc	myexp

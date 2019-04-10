@@ -105,8 +105,6 @@ definition: a room (called rm) is signable:
 		if rm is e1 entry, yes;
 	no;
 
-when play begins: move the wry wall backdrop to all signable rooms;
-
 the can't go that way rule is not listed in any rulebook.
 
 ever-wry-wall is a truth state that varies.
@@ -1405,6 +1403,10 @@ when play begins (this is the opening text rule):
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
 	now the left hand status line is "[location of the player]";
 	now the turn count is 0;
+
+when play begins (this is the backdrop and score seeding rule):
+	seed-score-list; [this is in the table file]
+	move the wry wall backdrop to all signable rooms;
 
 section when play begins - not for release
 
