@@ -151,7 +151,7 @@ lol-yet is a truth state that varies.
 
 carry out lieloling:
 	if lol-yet is true, say "You already exposed the wry wall." instead;
-	up-min;
+	up-min; [LIE LOL]
 	say "You have a chuckle to yourself. You see through the wry wall! Well, not literally. But you know its tricks. While this doesn't uncover anything you have to do, you're that much more sure of what you don't have to do, and that's a big morale boost.";
 	now lol-yet is true;
 	the rule succeeds.
@@ -293,7 +293,7 @@ mash-clue is a truth state that varies.
 
 carry out mashmaping:
 	if grit-grown is false:
-		now mash-clue is true;
+		clue-later "MASH MAP";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be." instead;
 	say "The heck with this! You just don't trust the trash trap to tell you the way through.";
 	up-reg; [nec]
@@ -478,6 +478,36 @@ carry out backedbindering:
 	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you![paragraph break]Hmm, that was a bit tricker. BACKED and FACT rhyme, but the letters are different.";
 	now player has backed binder;
 	up-reg; [nec]
+	the rule succeeds.
+
+part Real Rear
+
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore, at least to the south. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north. You also sense a Ceiling Seer above, judging what you do."
+
+the Sage Sea is scenery in Real Rear.
+
+the steel steer is a thing in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do."
+
+the peeling pier is scenery in Real Rear.
+
+check taking steel steer: say "It is way too heavy." instead;
+
+chapter kneelnearing
+
+kneelnearing is an action applying to nothing.
+
+understand the command "kneel/kneeling near" as something new.
+
+understand "kneeling near" as kneelnearing when player is in Real Rear.
+understand "kneel near" as kneelnearing when player is in Real Rear.
+
+knelt-yet is a truth state that varies.
+
+carry out kneelnearing:
+	if knelt-yet is true, say "You already did!" instead;
+	up-reg; [kneel near]
+	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
+	now knelt-yet is true;
 	the rule succeeds.
 
 part Creased Cross
