@@ -12,13 +12,27 @@ scores = defaultdict(int)
 got = defaultdict(int)
 got_detail = defaultdict(lambda: defaultdict(int))
 
+#initialize values
+
 open_post = True
 to_open = 0
 
 min_line = 0
 max_line = 0
 
+max_sco = 0
+min_sco = 0
+
+show_nec = 1
+show_opt = 1
+
 hdr_str = "                  NE OP UD TO"
+
+def usage(msg = "CMD LINE USAGE"):
+    print(msg)
+    print("=" * 50)
+    print("b o n x = both optional necessary neither")
+    exit()
 
 def showmiss_check():
     in_showmiss = False
@@ -123,17 +137,47 @@ def check_points():
                 got[last_cmd] = line_count
                 got_detail[score_idx][last_cmd] = line_count
                 scores["total"] += 1
-                print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d} Rule {:s}".format(last_cmd, last_line, this_rule))
+                show_it = (score_idx == 'opt') and show_opt
+                show_it |= (score_idx == 'nec') and show_nec
+                if show_it: print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d} Rule {:s}".format(last_cmd, last_line, this_rule))
                 continue
             if "[nec]" in line: print("Warning, deprecated NEC at line", line_count)
     print(hdr_str)
 
-min_sco = 0
-max_sco = 0
+def read_cmd_line():
+    global show_nec
+    global show_opt
+    cmd_count = 1
+    while cmd_count < len(sys.argv):
+        arg = sys.argv[cmd_count]
+        if arg == 'n':
+            show_nec = True
+            show_opt = False
+        elif arg == 'o':
+            show_nec = False
+            show_opt = True
+        elif arg == 'b':
+            show_nec = True
+            show_opt = True
+        elif arg == 'x':
+            show_nec = False
+            show_opt = False
+        elif arg == '?': usage()
+        else: usage("Bad option {:s}".format(arg))
+        cmd_count += 1
+#
+# main program
+#
+
+read_cmd_line()
 
 check_points()
 check_walkthrough()
 showmiss_in_rule = showmiss_check()
+
+#
+# post-processing
+#
 
 if min_sco != scores['nec']:
     print("{:d} in source but # of necessary scores in file = {:d}. Maybe fix line {:d}.".format(min_sco, scores['nec'], min_line))
