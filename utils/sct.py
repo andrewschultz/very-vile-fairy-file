@@ -38,10 +38,11 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     exit()
 
-def showmiss_check():
+def check_miss_rule():
     in_showmiss = False
     first_showmiss = 0
     showmiss_count = 0
+    miss_accounted = defaultdict(lambda: defaultdict(int))
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
             if "rule for showmissesing:" in line:
@@ -50,8 +51,18 @@ def showmiss_check():
                 continue
             if in_showmiss:
                 if not line.strip(): in_showmiss = False
-                else: showmiss_count += 1
-    return (showmiss_count, first_showmiss)
+                else:
+                    for q in got_detail['opt']:
+                        if q.upper() in line:
+                            miss_accounted[q] = line_count
+    if len(miss_accounted) == len(got_detail['opt']): print("SHOWMISS rule has everything accounted for! Way to go!")
+    else:
+        x1 = list(set(list(got_detail['opt'].keys())) - set(list(miss_accounted.keys())))
+        x1 = sorted(x1, key=lambda x:got_detail['opt'][x])
+        print("RULE FOR SHOW MISSING needs", ', '.join(x1))
+        global to_open
+        if open_source_post and not to_open:
+            to_open = first_showmiss
 
 def print_here_not(a, b, title = "generic", print_w_not = False):
     x1 = list(set(list(a.keys())) - set(list(b.keys())))
@@ -133,7 +144,6 @@ def check_points():
                 if "[!" in line: #force last command
                     last_cmd = re.sub(".*\[!", "", line.strip())
                     last_cmd = re.sub("\].*", "", last_cmd)
-                score_idx = 'nec' if "up-reg" in line else "opt"
                 scores[score_idx] += 1
                 got[last_cmd] = line_count
                 got_detail[score_idx][last_cmd] = line_count
@@ -177,25 +187,22 @@ read_cmd_line()
 
 check_points()
 check_walkthrough()
-showmiss_in_rule = showmiss_check()
 
 #
 # post-processing
 #
 
 if min_sco != scores['nec']:
-    print("{:d} in source but # of necessary scores in file = {:d}. Maybe fix line {:d}.".format(min_sco, scores['nec'], min_line))
+    print("MINIMUM SCORE DISCREPANCY: {:d} in source but # of necessary scores in file = {:d}. Line {:d} defines min score.".format(min_sco, scores['nec'], min_line))
     if open_source_post and not to_open: to_open = min_line
 else: print("MINIMUM SCORES MATCH IN SOURCE!")
 
 if max_sco != scores['total']:
-    print("{:d} in source but # of possible scores in file = {:d}. Maybe fix line {:d}.".format(max_sco, scores['total'], max_line))
+    print("MAXIMUM SCORE DISCREPANCY: {:d} in source but # of possible scores in file = {:d}. Line {:d} defines max score.".format(max_sco, scores['total'], max_line))
     if open_source_post and not to_open: to_open = max_line
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 
-if showmiss_in_rule[0] != max_sco - min_sco:
-    print("Expected", max_sco - min_sco, "in final \"show what you missed\" rule but got", showmiss_in_rule[0])
-    if open_source_post and not to_open: to_open = showmiss_in_rule[1]
+check_miss_rule()
 
 for q in sorted(x_of_y.keys()):
     xqs = sorted(x_of_y[q].keys())
