@@ -38,6 +38,41 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     exit()
 
+def clue_hint_verify():
+    found_table = False
+    in_forlaters = False
+    file_name = "story.ni"
+    for_laters = defaultdict(int)
+    cmd_laters = defaultdict(int)
+    global to_open
+    with open(file_name) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of forlaters"):
+                found_table = True
+                in_forlaters = True
+                forlater_start = line_count
+                continue
+            if in_forlaters:
+                if not line.strip():
+                    in_forlaters = False
+                    continue
+                if not line.startswith("\""): continue
+                l = line.strip().split("\t")
+                q = re.sub("\"", "", l[0])
+                for_laters[q] = line_count
+            if "\tclue-later " in line:
+                q = re.sub("\";.*", "", line.strip())
+                q = re.sub(".*\"", "", q)
+                cmd_laters[q] = line_count
+    if not found_table: sys.exit("Did not find table of forlaters in", file_name)
+    x1 = list(set(list(cmd_laters)) - set(list(for_laters)))
+    if len(x1):
+        print("Stuff in commands but not table of forlaters:", ', '.join(x1))
+        if not to_open: to_open = forlater_start
+    x1 = list(set(list(for_laters)) - set(list(cmd_laters)))
+    if len(x1):
+        print("Stuff in table of forlaters but not commands:", ', '.join(x1))
+
 def check_miss_rule():
     in_showmiss = False
     first_showmiss = 0
@@ -203,6 +238,8 @@ if max_sco != scores['total']:
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 
 check_miss_rule()
+
+clue_hint_verify()
 
 for q in sorted(x_of_y.keys()):
     xqs = sorted(x_of_y[q].keys())
