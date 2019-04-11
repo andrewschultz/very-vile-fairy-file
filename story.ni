@@ -52,7 +52,7 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 40.
+min-needed is a number that varies. min-needed is 41.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -351,16 +351,13 @@ understand the command "skim scam" as something new.
 
 understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
 
-flim-clue is a truth state that varies.
-
 carry out flimflaming:
 	if me-minded is false:
-		now flim-clue is true;
+		clue-later "FLIM FLAM";
 		say "But you don't have the confidence yet!" instead;
 	if the player's command includes "skim", now skim-not-flim is true;
 	say "That does it! The tram moves off...";
 	move the player to Fun Fen;
-	now flim-clue is false;
 	up-reg;
 	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
 	the rule succeeds.
@@ -572,13 +569,11 @@ understand the command "full feast" as something new.
 
 understand "full feast" as fullfeasting.
 
-feast-clue is a truth state that varies.
-
 carry out fullfeasting:
 	if bull beast is not in location of player, say "Not here." instead;
 	if bull beast is in location of player and loss-clue is false:
-		say "That should work. It might work better if the bull beast were incapacitated.";
-		now feast-clue is true instead;
+		clue-later "FULL FEAST";
+		say "That should work. It might work better if the bull beast were incapacitated." instead;
 	if bull beast is moot, say "You already made a feast." instead;
 	up-reg;
 	say "BOOM! You managed to make a full feast of the bull beast. Everyone loves it. It tastes good.";
@@ -889,13 +884,11 @@ understand "first fave" as firstfaveing.
 
 first-fave is a truth state that varies.
 
-firstfave-clue is a truth state that varies.
-
 carry out firstfaveing:
 	if first-fave is true, say "You already did." instead;
 	if screaming skull is in curst cave,
-		say "You can't like anything with that screaming skull around!";
-		now firstfave-clue is true;
+		clue-later "FIRST FAVE";
+		say "You can't like anything with that screaming skull around!" instead;
 	say "Suddenly, the worst wave isn't very bad or evil at all.";
 	up-reg;
 	now first-fave is true;
@@ -1561,8 +1554,6 @@ the moral mage is a person in store all stage.
 
 chapter moralmageing
 
-cage-mage is a truth state that varies.
-
 moralmageing is an action applying to nothing.
 
 understand the command "moral mage" as something new.
@@ -1571,6 +1562,7 @@ understand "moral mage" as moralmageing when coral cage is quicknear.
 
 carry out moralmageing:
 	if player does not have cage's key:
+		clue-later "MORAL MAGE";
 		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
 	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
 	up-reg;
@@ -1765,12 +1757,10 @@ understand "shining shore" as shiningshoreing when player is in Whining War.
 
 shore-shine is a truth state that varies.
 
-shining-clue is a truth state that varies.
-
 carry out shiningshoreing:
 	if shore-shine is true, say "You already got (t)here." instead;
 	if beer bull is not moot:
-		now shining-clue is true;
+		clue-later "SHINING SHORE";
 		say "It could be that way. But you need to get rid of the whining first." instead;
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	up-reg;
