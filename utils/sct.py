@@ -61,6 +61,7 @@ def check_walkthrough():
     #print(sorted(got.keys()))
 
 def check_points():
+    this_rule = ""
     last_line = 0
     last_cmd = "(undefined)"
     global min_sco
@@ -84,29 +85,28 @@ def check_points():
                 q = line.split("\"")
                 last_cmd = q[1]
                 last_line = line_count
-            if line.startswith("to up-min"): continue
             if line.startswith("to check-russell-go"):
                 last_cmd = ""
                 continue
-            if "increment the score" in line or "check-russell-go" in line or "up-min" in line:
-                if last_line and last_cmd:
-                    if last_cmd in got.keys():
-                        print("WARNING", line_Count, last_cmd, "already flagged for a point at", got[last_cmd])
-                    if "[x-of-y" in line:
-                        puz_type = re.sub(".*x-of-y ", "", line.strip())
-                        puz_type = re.sub("\].*", "", puz_type)
-                        x_of_y[puz_type][last_cmd] = "[nec]" in line
-                    if "[nec]" in line: score_idx = "nec"
-                    elif "[x-of-y" in line: continue
-                    elif "[opt]" in line or "\tup-min" in line: score_idx = "opt"
-                    else:
-                        score_idx = "undef"
-                        to_open = line_count
-                    got[last_cmd] = line_count
-                    got_detail[score_idx][last_cmd] = line_count
-                    scores[score_idx] += 1
-                    scores["total"] += 1
-                    print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d}".format(last_cmd, last_line))
+            if line.strip() and not line.startswith("\t") and not line.startswith("["): this_rule = line.strip()
+            if "increment the score" in line:
+                if this_rule.startswith("to up-"): continue
+                print("WARNING errant 'increment the score' at line {:d}: {:s}".format(line_count, line.strip()))
+                print("Rule:", this_rule)
+            if "[x-of-y" in line:
+                puz_type = re.sub(".*x-of-y ", "", line.strip())
+                puz_type = re.sub("\].*", "", puz_type)
+                x_of_y[puz_type][last_cmd] = "[nec]" in line
+                continue
+            if "up-reg" in line or "up-min" in line:
+                score_idx = 'nec' if "up-reg" in line else "opt"
+                scores[score_idx] += 1
+                got[last_cmd] = line_count
+                got_detail[score_idx][last_cmd] = line_count
+                scores["total"] += 1
+                print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d}".format(last_cmd, last_line))
+                continue
+            if "[nec]" in line: print("Warning, deprecated NEC at line", line_count)
     print(hdr_str)
 
 min_sco = 0
