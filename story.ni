@@ -489,6 +489,8 @@ the peeling pier is scenery in Real Rear.
 
 check taking steel steer: say "It is way too heavy." instead;
 
+the cage's key is a thing.
+
 chapter kneelnearing
 
 kneelnearing is an action applying to nothing.
@@ -515,11 +517,14 @@ understand the command "feel fear" as something new.
 
 understand "feel fear" as feelfearing when player is in Real Rear.
 
+felt-fear is a truth state that varies.
+
 carry out feelfearing:
-	if kneelnearing is false:
+	if knelt-yet is false:
 		clue-later "FEEL FEAR";
 		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
 	up-reg;
+	now felt-fear is true;
 	the rule succeeds.
 
 chapter dealdearing
@@ -531,11 +536,11 @@ understand the command "deal dear" as something new.
 understand "deal dear" as dealdearing when player is in Real Rear.
 
 carry out dealdearing:
-	if kneelnearing is false:
+	if knelt-yet is false:
 		clue-later "DEAL DEAR";
 		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
 	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
-	now player has cage key;
+	now player has cage's key;
 	up-reg;
 	the rule succeeds.
 
@@ -547,10 +552,13 @@ understand the command "heal here" as something new.
 
 understand "heal here" as healhereing.
 
+healed-here is a truth state that varies.
+
 carry out healhereing:
 	clue-later "HEAL HERE";
 	say "You don't have anything to heal from, yet. Sorry." instead;
 	up-reg;
+	now healed-here is true;
 	the rule succeeds.
 
 part Creased Cross
@@ -1218,6 +1226,9 @@ cmd-to-say	ready-to-hint	is-done	can-do-now	think-advice
 "BIG BAG"	false	did-big-bag rule	can-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
 "FLIM FLAM"	false	did-flim-flam rule	can-flim-flam rule	"You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if]."
 "MASH MAP"	false	did-mash-map rule	can-mash-map rule	"You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
+"FEEL FEAR"	false	did-feel-fear rule	can-feel-fear rule	"You try to feel fear, but you can't think of a reason to, and even if you could, you might be overwhelmed without help from above."
+"DEAL DEAR"	false	did-deal-dear rule	can-deal-dear rule	"You don't have anything you need to deal with, yet."
+"HEAL HERE"	false	did-heal-here rule	can-heal-here rule	"You don't have anything you need to heal from, yet." [?? (heres of r-a room) ]
 "MORAL MAGE"	false	did-moral-mage rule	can-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
 "SHINING SHORE"	false	did-shining-shore rule	can-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
 "FIRST FAVE"	false	did-first-fave rule	can-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
@@ -1250,6 +1261,29 @@ this is the can-mash-map rule:
 
 this is the did-mash-map rule:
 	if Trim Tram is visited, the rule succeeds;
+	the rule fails.
+
+this is the can-feel-fear rule:
+	if knelt-yet is true, the rule succeeds;
+	the rule fails.
+
+this is the did-feel-fear rule:
+	if felt-fear is true, the rule succeeds;
+	the rule fails.
+
+this is the can-deal-dear rule:
+	if felt-fear is true, the rule succeeds;
+	the rule fails.
+
+this is the did-deal-dear rule:
+	if cage's key is not off-stage, the rule succeeds;
+	the rule fails.
+
+this is the can-heal-here rule: [?? obviously needs to be fleshed out]
+	the rule fails.
+
+this is the did-heal-here rule:
+	if healed-here is true, the rule succeeds;
 	the rule fails.
 
 this is the can-cast-cap rule:
