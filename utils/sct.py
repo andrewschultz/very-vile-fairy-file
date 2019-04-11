@@ -38,11 +38,12 @@ def showmiss_check():
 def print_here_not(a, b, title = "generic", print_w_not = False):
     x1 = list(set(list(a.keys())) - set(list(b.keys())))
     x2 = list(set(list(b.keys())) - set(list(a.keys())))
-    if x1: print (title, "score commands not in walkthrough:", len(x1), ', '.join(x1))
-    else: print("All score commands mapped to walkthrough!")
+    if not print_w_not:
+        if x1: print (title, ":", len(x1), ', '.join(x1))
+        else: print("It worked!")
     if print_w_not:
-        if x2: print ("Walkthrough commands not in", title, "score:", len(x2), ', '.join(x2))
-        else: print("All walkthrough commands mapped to score!")
+        if x2: print (title, ":", len(x2), ', '.join(x2))
+        else: print("It worked!")
 
 def check_walkthrough():
     got_thru = defaultdict(int)
@@ -58,14 +59,14 @@ def check_walkthrough():
     if pts_in_walkthrough != scores["nec"]:
         print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
     print("TRACKING NECESSARY POINTS:")
-    print_here_not(got_detail["nec"], got_thru, "Necessary")
+    print_here_not(got_detail["nec"], got_thru, "Necessary-source-not-walkthrough")
     print("TRACKING OPTIONAL POINTS:")
-    print_here_not(got_detail["opt"], got_thru, "Optional")
+    print_here_not(got_detail["opt"], got_thru, "Optional-source-not-walkthrough")
     temp = defaultdict(int)
     for q in got_detail["opt"]: temp[q] = 1
     for q in got_detail["nec"]: temp[q] = 2
     print("REVERSE TRACKING FROM WALKTHROUGH:")
-    print_here_not(got_thru, temp, "Reverse")
+    print_here_not(got_thru, temp, "Walkthrough-not-source")
     #print(len(sorted(got.keys())), sorted(got.keys()))
     #print(len(sorted(got_thru.keys())), sorted(got_thru.keys()))
     #print(sorted(got.keys()))
@@ -114,6 +115,9 @@ def check_points():
                 continue
             score_idx = pointup_type(line, this_rule)
             if score_idx:
+                if "[!" in line: #force last command
+                    last_cmd = re.sub(".*\[!", "", line.strip())
+                    last_cmd = re.sub("\].*", "", last_cmd)
                 score_idx = 'nec' if "up-reg" in line else "opt"
                 scores[score_idx] += 1
                 got[last_cmd] = line_count
