@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 36.
+min-needed is a number that varies. min-needed is 40.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 43.
+the maximum score is 48.
 
 core-score is a number that varies. core-score is 0.
 core-max is a number that varies.
@@ -184,7 +184,7 @@ carry out bigbaging:
 		clue-later "BIG BAG";
 		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
 	say "You now have a more useful big bag!";
-	up-reg; [nec]
+	up-reg;
 	moot zig zag rig rag;
 	now player has big bag;
 	now bag-hint is false;
@@ -225,7 +225,7 @@ get-good is a truth state that varies.
 carry out getgooding:
 	if get-good is true, say "You already did." instead;
 	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak-d]";
-	up-reg; [nec]
+	up-reg;
 	move player to Vined Vault;
 	the rule succeeds;
 
@@ -253,7 +253,7 @@ carry out findfaulting:
 	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
 	say "[line break]But of course something outside was guarding the vault, just waiting to walk in. A mean mass.";
 	move mean mass to vined vault;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 chapter mean mass
@@ -270,7 +270,7 @@ understand "green grass" as greengrassing when player is in vined vault and mean
 
 carry out greengrassing:
 	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
-	up-reg; [nec]
+	up-reg;
 	move player to Po' Pit;
 	moot mean mass;
 	the rule succeeds;
@@ -296,7 +296,7 @@ carry out mashmaping:
 		clue-later "MASH MAP";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be." instead;
 	say "The heck with this! You just don't trust the trash trap to tell you the way through.";
-	up-reg; [nec]
+	up-reg;
 	move player to Trim Tram;
 	now mash-clue is false;
 	the rule succeeds.
@@ -315,7 +315,7 @@ carry out growgriting:
 	if grit-grown is true, say "You already did that." instead;
 	say "The trash trap looks less yucky now.";
 	now grit-grown is true;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 part Trim Tram
@@ -336,7 +336,7 @@ carry out mindmeing:
 	if me-minded is true, say "You already did." instead;
 	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
 	now me-minded is true;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 chapter flimflaming
@@ -361,7 +361,7 @@ carry out flimflaming:
 	say "That does it! The tram moves off...";
 	move the player to Fun Fen;
 	now flim-clue is false;
-	up-reg; [nec]
+	up-reg;
 	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
 	the rule succeeds.
 
@@ -433,7 +433,7 @@ carry out freefalling:
 	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
 	now tree-down is true;
 	move hive heap to Fun Fen;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds;
 
 chapter divedeeping
@@ -447,7 +447,7 @@ understand "dive deep" as divedeeping when hive heap is quicknear.
 carry out divedeeping:
 	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.[paragraph break]Hmm. That's interesting. DEEP and HEAP rhyme, but the spelling's a bit different.";
 	moot hive heap;
-	up-reg; [nec]
+	up-reg;
 	bring-here vapor vile;
 	the rule succeeds.
 
@@ -461,7 +461,7 @@ understand "paper pile" as paperpileing when vapor vile is quicknear.
 
 carry out paperpileing:
 	say "The vapor vile changes to a paper pile.";
-	up-reg; [nec]
+	up-reg;
 	moot vapor vile;
 	bring-here paper pile;
 	the rule succeeds.
@@ -477,7 +477,7 @@ understand "backed binder" as backedbindering when paper pile is quicknear.
 carry out backedbindering:
 	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you![paragraph break]Hmm, that was a bit tricker. BACKED and FACT rhyme, but the letters are different.";
 	now player has backed binder;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 part Real Rear
@@ -522,7 +522,7 @@ carry out feelfearing:
 	if kneelnearing is false:
 		clue-later "FEEL FEAR";
 		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
-	reg-up;
+	up-reg;
 	the rule succeeds.
 
 chapter dealdearing
@@ -539,7 +539,7 @@ carry out dealdearing:
 		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
 	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
 	now player has cage key;
-	reg-up;
+	up-reg;
 	the rule succeeds.
 
 chapter healhereing
@@ -553,7 +553,7 @@ understand "heal here" as healhereing.
 carry out healhereing:
 	clue-later "HEAL HERE";
 	say "You don't have anything to heal from, yet. Sorry." instead;
-	reg-up;
+	up-reg;
 	the rule succeeds.
 
 part Creased Cross
@@ -603,7 +603,7 @@ carry out leastlossing:
 		now loss-clue is true instead;
 	if loss-clue is true, say "You already did." instead;
 	now least-loss is true;
-	up-reg; [nec]
+	up-reg;
 	say "BOOM! The bull beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";
 	the rule succeeds.
 
@@ -638,7 +638,7 @@ fake-fee is a truth state that varies.
 carry out fakefeeing:
 	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
 	now fake-fee is true;
-	up-reg; [nec] [x-of-y jake]
+	up-reg; [x-of-y jake]
 	the rule succeeds.
 
 chapter wakewheeing
@@ -654,7 +654,7 @@ wake-whee is a truth state that varies.
 carry out wakewheeing:
 	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
 	now wake-whee is true;
-	up-reg; [nec] [x-of-y jake]
+	up-reg; [x-of-y jake]
 	the rule succeeds.
 
 chapter achying
@@ -749,7 +749,7 @@ carry out mysterymalling:
 	now got gear hot here is mapped west of history hall;
 	now mistmall is true;
 	if evermall is false:
-		up-reg; [nec]
+		up-reg;
 		now evermall is true;
 	bold-my-room;
 	the rule succeeds;
@@ -767,7 +767,7 @@ lots-lame is a truth state that varies.
 carry out lotslameing:
 	if lots-lame is true, say "You already pinged the Gutta Ganksta like that." instead;
 	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever.";
-	up-reg; [opt]
+	up-min; [opt]
 	now lots-lame is true;
 	the rule succeeds.
 
@@ -814,7 +814,7 @@ floor-yet is a truth state that varies.
 
 carry out firstflooring:
 	if floor-yet is true, say "You already did." instead;
-	up-reg; [nec]
+	up-reg;
 	say "Erst Lore, up on the ceiling, comes down. You can go IN, now.";
 	now Erst Lore is mapped inside History Hall;
 	now History Hall is mapped outside Erst Lore;
@@ -842,7 +842,7 @@ understand "lending libe" as lendinglibeing.
 
 carry out lendinglibeing:
 	moot trending tribe;
-	up-reg; [nec]
+	up-reg;
 	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
 	now printed name of Vending Vibe is "Lending Libe";
 	move lending libe to Vending Vibe;
@@ -874,7 +874,7 @@ understand "dreaming dull" as dreamingdulling when player is in curst cave and s
 carry out dreamingdulling:
 	moot screaming skull;
 	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 chapter firstfaveing
@@ -897,7 +897,7 @@ carry out firstfaveing:
 		say "You can't like anything with that screaming skull around!";
 		now firstfave-clue is true;
 	say "Suddenly, the worst wave isn't very bad or evil at all.";
-	up-reg; [nec]
+	up-reg;
 	now first-fave is true;
 	move tool tap to curst cave;
 	the rule succeeds;
@@ -924,7 +924,7 @@ understand "work well" as workwelling.
 carry out workwelling:
 	say "You work to put all the jerk gel back in. It becomes glowing globs.";
 	now the player has the jerk gel;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 part Gassed Gap
@@ -979,7 +979,7 @@ carry out castcaping:
 	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
 	moot cool cap;
 	move Reeker Russell to Gassed Gap;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds;
 
 chapter beakerbustleing
@@ -1052,7 +1052,7 @@ understand "tell torn" as telltorning when well worn hell horn .
 carry out telltorning:
 	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born.";
 	moot well worn hell horn;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 chapter very vile fairy file
@@ -1091,7 +1091,7 @@ carry out burybileing:
 			say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the airy isle, but not quite." instead;
 		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if][if airy isle is visited]. But you've found it, and that's a huge start[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
-	up-reg; [nec]
+	up-reg;
 	win-the-game;
 	the rule succeeds;
 
@@ -1546,7 +1546,7 @@ carry out blowingblobsing:
 	if knowing nobs are not in location of player:
 		now hint-nobs is true;
 		say "That might work, but not here." instead;
-	up-reg; [nec]
+	up-reg;
 	say "Bye bye nobs!";
 	moot knowing nobs;
 	the rule succeeds.
@@ -1573,28 +1573,9 @@ carry out moralmageing:
 	if player does not have cage's key:
 		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
 	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
-	up-reg; [nec]
+	up-reg;
 	moot moral mage;
 	moot coral cage;
-	the rule succeeds.
-
-chapter cageskeying
-
-the sages' sea is scenery.
-
-the cage's key is a thing.
-
-cageskeying is an action applying to nothing.
-
-understand the command "cages key" as something new.
-
-understand "cages key" as cageskeying when sages' sea is quicknear.
-
-carry out cageskeying:
-	unless cage's key is off-stage, say "You already searched the sages['] sea correctly." instead;
-	say "Woohoo! You get a cage's key!";
-	now player has cage's key;
-	up-reg; [nec]
 	the rule succeeds.
 
 chapter wildweeding
@@ -1634,7 +1615,7 @@ carry out hardhating:
 	say "Poof! The marred mat changes into a hard hat.";
 	moot marred mat;
 	now player wears hard hat;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 book go gate
@@ -1659,7 +1640,7 @@ understand "woe wait" as whoawaiting when go gate is quicknear.
 
 carry out whoawaiting:
 	say "You decide not to run in right away. The gate crumbles.";
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 book Pain Peasant
@@ -1714,7 +1695,7 @@ carry out deardulling:
 	if fearful-on is false, say "No. The beer bull is too dull." instead;
 	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
 	say "The beer bull settles down. Both sides of the whining war cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 part Soft Sand
@@ -1759,7 +1740,7 @@ carry out loftlanding:
 	if ever-loft is false:
 		now ever-loft is true;
 		now loft-land is false;
-		up-reg; [nec]
+		up-reg;
 	now curst cave is mapped west of soft sand;
 	now soft sand is mapped west of curst cave;
 	the rule succeeds;
@@ -1792,7 +1773,7 @@ carry out shiningshoreing:
 		now shining-clue is true;
 		say "It could be that way. But you need to get rid of the whining first." instead;
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
-	up-reg; [nec]
+	up-reg;
 	move lake lap to Whining War;
 	the rule succeeds.
 
@@ -1808,7 +1789,7 @@ mine-more is a truth state that varies.
 
 carry out miningmoreing:
 	abide by the shone-yet rule;
-	up-reg; [nec]
+	up-reg;
 	now mine-more is true;
 	the rule succeeds.
 
@@ -1827,7 +1808,7 @@ dine-door is a truth state that varies.
 
 carry out diningdooring:
 	abide by the shone-yet rule;
-	up-reg; [nec]
+	up-reg;
 	now dine-door is true;
 	the rule succeeds.
 
@@ -1840,7 +1821,7 @@ understand the command "snake snap" as something new.
 understand "snake snap" as snakesnaping when ache app is off-stage and player is in lake lap.
 
 carry out snakesnaping:
-	up-reg; [nec]
+	up-reg;
 	say "The snake hissing in the lake leaves an Ache App behind.";
 	now ache app is in lake lap;
 	the rule succeeds.
@@ -1856,7 +1837,7 @@ understand "make map" as makemaping when ache app is in lake lap.
 carry out makemaping:
 	say "You can now see a map with M or MAP.";
 	moot ache app;
-	up-reg; [nec]
+	up-reg;
 	the rule succeeds.
 
 volume Poorly Penned
@@ -1882,7 +1863,7 @@ rule for showmissesing:
 	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
 	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
 	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
-	unless oi mo is moot, say "You could have DIM'D Oi Mo.";
+	unless oi mo is moot, say "You could have DIMD (dim'd) Oi Mo.";
 	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE.";
 
 showdeathsing is an activity.
