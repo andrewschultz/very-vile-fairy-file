@@ -35,11 +35,14 @@ def showmiss_check():
                 else: showmiss_count += 1
     return (showmiss_count, first_showmiss)
 
-def print_here_not(a, b):
-    x1 = list(set(list(got_detail[a].keys())) - set(list(b.keys())))
-    x2 = list(set(list(b.keys())) - set(list(got_detail[a].keys())))
-    if x1: print (a.title(), "score commands not in walkthrough:", len(x1), ', '.join(x1))
-    if x2: print ("Walkthrough commands not in", a.title(), "score:", len(x2), ', '.join(x2))
+def print_here_not(a, b, title = "generic", print_w_not = False):
+    x1 = list(set(list(a.keys())) - set(list(b.keys())))
+    x2 = list(set(list(b.keys())) - set(list(a.keys())))
+    if x1: print (title, "score commands not in walkthrough:", len(x1), ', '.join(x1))
+    else: print("All score commands mapped to walkthrough!")
+    if print_w_not:
+        if x2: print ("Walkthrough commands not in", title, "score:", len(x2), ', '.join(x2))
+        else: print("All walkthrough commands mapped to score!")
 
 def check_walkthrough():
     got_thru = defaultdict(int)
@@ -54,11 +57,25 @@ def check_walkthrough():
                 #print(line_count, my_cmd)
     if pts_in_walkthrough != scores["nec"]:
         print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
-    print_here_not("nec", got_thru)
-    print_here_not("opt", got_thru)
+    print("TRACKING NECESSARY POINTS:")
+    print_here_not(got_detail["nec"], got_thru, "Necessary")
+    print("TRACKING OPTIONAL POINTS:")
+    print_here_not(got_detail["opt"], got_thru, "Optional")
+    temp = defaultdict(int)
+    for q in got_detail["opt"]: temp[q] = 1
+    for q in got_detail["nec"]: temp[q] = 2
+    print("REVERSE TRACKING FROM WALKTHROUGH:")
+    print_here_not(got_thru, temp, "Reverse")
     #print(len(sorted(got.keys())), sorted(got.keys()))
     #print(len(sorted(got_thru.keys())), sorted(got_thru.keys()))
     #print(sorted(got.keys()))
+
+def pointup_type(l, ru):
+    if not l.startswith("\t"): return ''
+    if 'check-russell-go' in l: return 'nec'
+    if 'up-reg' in l and 'check-russell-go' not in ru: return 'nec'
+    if 'up-min' in l: return 'opt'
+    return ''
 
 def check_points():
     this_rule = ""
@@ -85,9 +102,6 @@ def check_points():
                 q = line.split("\"")
                 last_cmd = q[1]
                 last_line = line_count
-            if line.startswith("to check-russell-go"):
-                last_cmd = ""
-                continue
             if line.strip() and not line.startswith("\t") and not line.startswith("["): this_rule = line.strip()
             if "increment the score" in line:
                 if this_rule.startswith("to up-"): continue
@@ -98,13 +112,14 @@ def check_points():
                 puz_type = re.sub("\].*", "", puz_type)
                 x_of_y[puz_type][last_cmd] = "[nec]" in line
                 continue
-            if "up-reg" in line or "up-min" in line:
+            score_idx = pointup_type(line, this_rule)
+            if score_idx:
                 score_idx = 'nec' if "up-reg" in line else "opt"
                 scores[score_idx] += 1
                 got[last_cmd] = line_count
                 got_detail[score_idx][last_cmd] = line_count
                 scores["total"] += 1
-                print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d}".format(last_cmd, last_line))
+                print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d} Rule {:s}".format(last_cmd, last_line, this_rule))
                 continue
             if "[nec]" in line: print("Warning, deprecated NEC at line", line_count)
     print(hdr_str)
