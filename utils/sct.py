@@ -1,14 +1,14 @@
 #
 # sct.py : score tracker for Very Vile Fairy File
 #
-# todo: clue-hint verifying
-#       walkthrough number updating
-#       walkthrough branching, spoiler/nonspoiler
+# todo: walkthrough branching, spoiler/nonspoiler
 
+from shutil import copy
 from collections import defaultdict
 import re
 import i7
 import sys
+import os
 
 x_of_y = defaultdict(lambda: defaultdict(bool))
 scores = defaultdict(int)
@@ -17,6 +17,7 @@ got_detail = defaultdict(lambda: defaultdict(int))
 
 #initialize values
 
+copy_walkthrough_back = False
 open_source_post = True
 to_open = 0
 
@@ -112,14 +113,37 @@ def print_here_not(a, b, title = "generic", print_w_not = False):
 def check_walkthrough():
     got_thru = defaultdict(int)
     pts_in_walkthrough = 0
+    wthru_string = ""
+    found_dif = 0
+    point_count = 0
+    dif_map = []
     with open("walkthrough.txt") as file:
         for (line_count, line) in enumerate(file, 1):
-            if line.startswith(">") and re.search("\((x-)?[0-9]+\)", line):
+            if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
+                point_count += 1
                 my_cmd = re.sub("^> *", "", line.strip())
                 my_cmd = re.sub(" *\((x)?.*", "", my_cmd)
                 got_thru[my_cmd.lower()] = line_count
                 pts_in_walkthrough += 1
                 #print(line_count, my_cmd)
+                new_line = re.sub("\([0-9]+\)", "({:d})".format(point_count), line)
+                if new_line != line:
+                    found_dif += 1
+                    old_num = re.sub(".*\(", "", line.strip())
+                    old_num = re.sub("\).*", "", old_num)
+                    dif_map.append("{:s} {:s}->{:d}".format(my_cmd, old_num, point_count))
+                wthru_string += new_line
+            else: wthru_string += line
+    if found_dif:
+        if copy_walkthrough_back:
+            f = open("walkthrough2.txt", "w")
+            f.write(wthru_string)
+            f.close()
+            copy("walkthrough2.txt", "walkthrough.txt")
+            os.remove("walkthrough2.txt")
+            print("Rejigged walkthrough.txt with", found_dif, "difference" + i7.plur(found_dif))
+        else: print("Walkthrough numbered wrong. I found", found_dif, "difference" + i7.plur(found_dif) + ":", ', '.join(dif_map))
+    else: print("Walkthrough numbering okay.")
     if pts_in_walkthrough != scores["nec"]:
         print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
     print_here_not(got_detail["nec"], got_thru, "Necessary-source-not-walkthrough")
@@ -194,6 +218,7 @@ def read_cmd_line():
     global show_nec
     global show_opt
     global open_source_post
+    global copy_walkthrough_back
     cmd_count = 1
     while cmd_count < len(sys.argv):
         arg = sys.argv[cmd_count]
@@ -209,6 +234,8 @@ def read_cmd_line():
         elif arg == 'x':
             show_nec = False
             show_opt = False
+        elif arg == 'cw': copy_walkthrough_back = True
+        elif arg == 'ncw': copy_walkthrough_back = False
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
         elif arg == '?': usage()

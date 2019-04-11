@@ -78,11 +78,11 @@ There's something to the south you can polish off.
 
 The Real Rear has several possibilities. First, you need to show respect to the Ceiling Seer.
 
-> KNEEL NEAR (9)
+> KNEEL NEAR (12)
 
-> FEEL FEAR (10)
+> FEEL FEAR (13)
 
-> DEAL DEAR (11)
+> DEAL DEAR (14)
 
 There's one more thing you can do, but it will have to wait for later.
 
@@ -90,15 +90,15 @@ Now at Fun Fen, you have an opportunity for a bonus point in the long term, or y
 
 > N
 
-> FALL FREE (10)
+> FALL FREE (15)
 
 > N
 
 Jake G. presents a problem. But there are four ways to get rid of him. There's a one-letter solution, but there's also
 
-> FAKE FEE (11)
+> FAKE FEE (16)
 
-> WAKE WHEE (12)
+> WAKE WHEE (17)
 
 You can try the two others for bonus points if you want.
 
