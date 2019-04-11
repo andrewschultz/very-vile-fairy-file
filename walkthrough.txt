@@ -137,7 +137,9 @@ This will come in handy later.
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
 
-============================SOME MISC IDEAS=========================================
+============================END UNIMPLEMENTED MIDDLEGAME============================
+
+Now in Creased Cross, you are ready to take on the Beast Boss.
 
 > BEAST BOSS (x-7)
 
@@ -149,13 +151,11 @@ Now the Bull Beast is really out of place here. It's been defeated. Maybe it can
 
 > FULL FEAST (x-5)
 
-============================END UNIMPLEMENTED MIDDLEGAME============================
+Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
 
-The Gassed Gap is now the Last Lap!
+Now you sense you must be close. But how do you get anyone's attention?
 
-Here in the Last Lap, you sense you must be close. But how do you get anyone's attention?
-
-Your hard hat is really more like a cap.
+Your cool cap is useful here.
 
 > CAST CAP (x-4)
 

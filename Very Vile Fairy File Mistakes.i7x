@@ -44,7 +44,7 @@ understand "passed pap" and "past pap" as a mistake ("You don't need to look bac
 
 chapter Po' Pit mistakes
 
-understand "go get" and "go git" as a mistake ("You have no-one to order around, not that it'd to any good.") when player is in Po' Pit.
+understand "go get" and "go git" as a mistake ("You have no-one to order around, not that it'd do any good.") when player is in Po' Pit.
 
 understand "show shit" as a mistake ("Profanity doesn't work here.") when player is in Po' Pit.
 
