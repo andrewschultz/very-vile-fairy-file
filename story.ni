@@ -510,6 +510,52 @@ carry out kneelnearing:
 	now knelt-yet is true;
 	the rule succeeds.
 
+chapter feelfearing
+
+feelfearing is an action applying to nothing.
+
+understand the command "feel fear" as something new.
+
+understand "feel fear" as feelfearing when player is in Real Rear.
+
+carry out feelfearing:
+	if kneelnearing is false:
+		clue-later "FEEL FEAR";
+		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
+	reg-up;
+	the rule succeeds.
+
+chapter dealdearing
+
+dealdearing is an action applying to nothing.
+
+understand the command "deal dear" as something new.
+
+understand "deal dear" as dealdearing when player is in Real Rear.
+
+carry out dealdearing:
+	if kneelnearing is false:
+		clue-later "DEAL DEAR";
+		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
+	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
+	now player has cage key;
+	reg-up;
+	the rule succeeds.
+
+chapter healhereing
+
+healhereing is an action applying to nothing.
+
+understand the command "heal here" as something new.
+
+understand "heal here" as healhereing.
+
+carry out healhereing:
+	clue-later "HEAL HERE";
+	say "You don't have anything to heal from, yet. Sorry." instead;
+	reg-up;
+	the rule succeeds.
+
 part Creased Cross
 
 Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain.
@@ -533,7 +579,9 @@ carry out fullfeasting:
 	if bull beast is in location of player and loss-clue is false:
 		say "That should work. It might work better if the bull beast were incapacitated.";
 		now feast-clue is true instead;
-	if bull beast is moot, say "You already made a feast.";
+	if bull beast is moot, say "You already made a feast." instead;
+	up-reg;
+	say "BOOM! You managed to make a full feast of the bull beast. Everyone loves it. It tastes good.";
 	the rule succeeds.
 
 chapter leastlossing

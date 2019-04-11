@@ -60,15 +60,35 @@ Now about that zig zag rig rag. It can become something more useful.
 
 > BIG BAG (8)
 
+The hive heap is tough to search through, unless you ...
+
+> DIVE DEEP (9)
+
+Now the vapor (vile) needs to be removed.
+
+> PAPER PILE (10)
+
+And now the fact finder is not sturdy enough to pick up, because it needs a ...
+
+> BACKED BINDER (11)
+
 There's something to the south you can polish off.
 
 > S
 
-The Real Rear has several possibilities.
+The Real Rear has several possibilities. First, you need to show respect to the Ceiling Seer.
 
 > KNEEL NEAR (9)
 
+> FEEL FEAR (10)
+
+> DEAL DEAR (11)
+
+There's one more thing you can do, but it will have to wait for later.
+
 Now at Fun Fen, you have an opportunity for a bonus point in the long term, or you can just tell the Tall Tree what to do.
+
+> N
 
 > FALL FREE (10)
 
