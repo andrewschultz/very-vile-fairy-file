@@ -1,6 +1,9 @@
 #
 # sct.py : score tracker for Very Vile Fairy File
 #
+# todo: clue-hint verifying
+#       walkthrough number updating
+#       walkthrough branching, spoiler/nonspoiler
 
 from collections import defaultdict
 import re
@@ -14,7 +17,7 @@ got_detail = defaultdict(lambda: defaultdict(int))
 
 #initialize values
 
-open_post = True
+open_source_post = True
 to_open = 0
 
 min_line = 0
@@ -23,8 +26,8 @@ max_line = 0
 max_sco = 0
 min_sco = 0
 
-show_nec = 1
-show_opt = 1
+show_nec = False
+show_opt = False
 
 hdr_str = "                  NE OP UD TO"
 
@@ -32,6 +35,7 @@ def usage(msg = "CMD LINE USAGE"):
     print(msg)
     print("=" * 50)
     print("b o n x = both optional necessary neither")
+    print("p py = open source post run / pn = don't open it")
     exit()
 
 def showmiss_check():
@@ -72,14 +76,11 @@ def check_walkthrough():
                 #print(line_count, my_cmd)
     if pts_in_walkthrough != scores["nec"]:
         print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
-    print("TRACKING NECESSARY POINTS:")
     print_here_not(got_detail["nec"], got_thru, "Necessary-source-not-walkthrough")
-    print("TRACKING OPTIONAL POINTS:")
     print_here_not(got_detail["opt"], got_thru, "Optional-source-not-walkthrough")
     temp = defaultdict(int)
     for q in got_detail["opt"]: temp[q] = 1
     for q in got_detail["nec"]: temp[q] = 2
-    print("REVERSE TRACKING FROM WALKTHROUGH:")
     print_here_not(got_thru, temp, "Walkthrough-not-source")
     #print(len(sorted(got.keys())), sorted(got.keys()))
     #print(len(sorted(got_thru.keys())), sorted(got_thru.keys()))
@@ -100,7 +101,7 @@ def check_points():
     global min_line
     global max_sco
     global max_line
-    print(hdr_str)
+    if show_nec or show_opt: print(hdr_str)
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("min-needed"):
@@ -142,11 +143,12 @@ def check_points():
                 if show_it: print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d} Rule {:s}".format(last_cmd, last_line, this_rule))
                 continue
             if "[nec]" in line: print("Warning, deprecated NEC at line", line_count)
-    print(hdr_str)
+    if show_nec or show_opt: print(hdr_str)
 
 def read_cmd_line():
     global show_nec
     global show_opt
+    global open_source_post
     cmd_count = 1
     while cmd_count < len(sys.argv):
         arg = sys.argv[cmd_count]
@@ -162,6 +164,8 @@ def read_cmd_line():
         elif arg == 'x':
             show_nec = False
             show_opt = False
+        elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
+        elif arg == 'pn' or arg == 'np': open_source_post = False
         elif arg == '?': usage()
         else: usage("Bad option {:s}".format(arg))
         cmd_count += 1
@@ -181,21 +185,21 @@ showmiss_in_rule = showmiss_check()
 
 if min_sco != scores['nec']:
     print("{:d} in source but # of necessary scores in file = {:d}. Maybe fix line {:d}.".format(min_sco, scores['nec'], min_line))
-    if open_post and not to_open: to_open = min_line
+    if open_source_post and not to_open: to_open = min_line
 else: print("MINIMUM SCORES MATCH IN SOURCE!")
-
-if showmiss_in_rule[0] != max_sco - min_sco:
-    print("Expected", max_sco - min_sco, "in final rule but got", showmiss_in_rule[0])
-    if open_post and not to_open: to_open = showmiss_in_rule[1]
 
 if max_sco != scores['total']:
     print("{:d} in source but # of possible scores in file = {:d}. Maybe fix line {:d}.".format(max_sco, scores['total'], max_line))
-    if open_post and not to_open: to_open = max_line
+    if open_source_post and not to_open: to_open = max_line
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
+
+if showmiss_in_rule[0] != max_sco - min_sco:
+    print("Expected", max_sco - min_sco, "in final \"show what you missed\" rule but got", showmiss_in_rule[0])
+    if open_source_post and not to_open: to_open = showmiss_in_rule[1]
 
 for q in sorted(x_of_y.keys()):
     xqs = sorted(x_of_y[q].keys())
     xq = x_of_y[q]
     print('X-of-Y puzzle for', q, ':', ', '.join(sorted([z for z in xqs if xq[z] == True])), '/', ', '.join(sorted([z for z in xqs if xq[z] == False])))
 
-if open_post and to_open: i7.npo("story.ni", to_open)
+if open_source_post and to_open: i7.npo("story.ni", to_open)
