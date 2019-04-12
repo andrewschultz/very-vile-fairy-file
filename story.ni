@@ -22,7 +22,9 @@ include Very Vile Fairy File Tests by Andrew Schultz.
 
 when play begins (this is the set debug state rule): now debug-state is true;
 
-volume definitions
+volume definitions and properties
+
+book definitions
 
 to decide whether the action is procedural:
 	if examining, yes;
@@ -52,11 +54,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 43.
+min-needed is a number that varies. min-needed is 44.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 51.
+the maximum score is 52.
 
 core-score is a number that varies. core-score is 0.
 core-max is a number that varies.
@@ -84,7 +86,11 @@ Verminal Vale is a region. [terminal tale]
 
 there is a region called Get a Guess. [meta mess]
 
+book properties
+
 a room has text called noway-text.
+
+a person has text called talk-text.
 
 volume going nowhere
 
@@ -158,7 +164,7 @@ carry out lieloling:
 
 volume you
 
-Kerry Kyle is a person. The player is Kerry Kyle.
+Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble."
 
 the zig zag rig rag is a thing. The player carries the zig zag rig rag.
 
@@ -590,7 +596,27 @@ Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain.
 
 chapter Bull Beast
 
-The Bull Beast is a person.
+The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'"
+
+chapter cullceaseding
+
+cullceaseding is an action applying to nothing.
+
+understand the command "lul least" as something new.
+understand the command "cull ceased" as something new.
+
+understand "lul least" as cullceaseding when can-kill-beast.
+understand "cull ceased" as cullceaseding when can-kill-beast.
+
+to decide whether can-kill-beast:
+	if player is in cross and bull beast is in cross, yes;
+	no;
+
+carry out cullceaseding:
+	say "YOU KILLED THE BULL BEAST.";
+	moot bull beast;
+	up-reg;
+	the rule succeeds.
 
 chapter fullfeasting
 
@@ -641,7 +667,7 @@ History Hall is west of Creased Cross. it is in Piddling Pain. printed name of H
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
-the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta."
+the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'"
 
 Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because it tunes out, making way for something much worse[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
 
@@ -773,6 +799,8 @@ Y'Old Yard is south of Erst Lore. It is in Piddling Pain.
 The Bold Bard is a person in Y'Old Yard.
 
 Hold Hard is scenery in Y'Old Yard.
+
+the gold guard is a thing.
 
 chapter coldcarding
 
@@ -1207,7 +1235,7 @@ check going north in Gassed Gap:
 
 chapter Reeker Russell
 
-Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell is blocking the way north."
+Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell is blocking the way north.". talk-text is "'My mood: DIE, dude!'".
 
 to decide which number is russell-progress:
 	let rp be 0;
@@ -1380,6 +1408,23 @@ book standard modifications
 chapter waiting
 
 check waiting: say "Hi ho! Lie low." instead;
+
+chapter talking
+
+talktoing is an action applying to one thing.
+
+understand the command "talk to" as something new.
+understand the command "talk" as something new.
+understand the command "t" as something new.
+
+understand "talk to [something]" as talktoing.
+understand "talk [something]" as talktoing.
+understand "t [something]" as talktoing.
+
+check talktoing:
+	if noun is not a person, say "You can only talk to living things, and [the noun] doesn't qualify." instead;
+	if talk-text of noun is empty, say "BUG: there should be text, but there isn't." instead;
+	say "[talk-text of noun]" instead;
 
 chapter inventory
 
