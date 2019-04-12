@@ -192,7 +192,7 @@ carry out bigbaging:
 
 volume Worst Whew
 
-part Wet Wood
+part Wet Wood 3,0
 
 Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][line break]Oh, there's GOT to be a simple way to become better.".
 
@@ -229,7 +229,7 @@ carry out getgooding:
 	move player to Vined Vault;
 	the rule succeeds;
 
-part vined vault
+part vined vault 3,-1
 
 Vined Vault is a room in Worst Whew. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out."
 
@@ -275,7 +275,7 @@ carry out greengrassing:
 	moot mean mass;
 	the rule succeeds;
 
-part Po' Pit
+part Po' Pit 2,-1
 
 Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
 
@@ -318,7 +318,7 @@ carry out growgriting:
 	up-reg;
 	the rule succeeds.
 
-part Trim Tram
+part Trim Tram 1,-1
 
 Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
 
@@ -364,7 +364,7 @@ carry out flimflaming:
 
 volume Piddling Pain
 
-part Fun Fen
+part Fun Fen 0,0
 
 Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
@@ -477,7 +477,7 @@ carry out backedbindering:
 	up-reg;
 	the rule succeeds.
 
-part Real Rear
+part Real Rear 0,-1
 
 Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore, at least to the south. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north. You also sense a Ceiling Seer above, judging what you do."
 
@@ -561,7 +561,7 @@ carry out healhereing:
 	now healed-here is true;
 	the rule succeeds.
 
-part Creased Cross
+part Creased Cross 0,1
 
 Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain.
 
@@ -610,91 +610,7 @@ carry out leastlossing:
 	say "BOOM! The bull beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";
 	the rule succeeds.
 
-part Lake Lea
-
-Lake Lea is east of Creased Cross. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
-
-check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
-
-Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
-
-this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
-
-jake-gone is a number that varies.
-
-to eval-jake-g:
-	increment jake-gone;
-	if jake-gone is 2:
-		moot Jake G;
-		say "Jake leaves, satisfied.";
-
-chapter fakefeeing
-
-fakefeeing is an action applying to nothing.
-
-understand the command "fake fee" as something new.
-
-understand "fake fee" as fakefeeing.
-
-fake-fee is a truth state that varies.
-
-carry out fakefeeing:
-	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
-	now fake-fee is true;
-	up-reg; [x-of-y jake]
-	the rule succeeds.
-
-chapter wakewheeing
-
-wakewheeing is an action applying to nothing.
-
-understand the command "wake whee" as something new.
-
-understand "wake whee" as wakewheeing.
-
-wake-whee is a truth state that varies.
-
-carry out wakewheeing:
-	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
-	now wake-whee is true;
-	up-reg; [x-of-y jake]
-	the rule succeeds.
-
-chapter achying
-
-achying is an action applying to nothing.
-
-understand the command "achy" as something new.
-
-understand "achy" as achying.
-
-achy is a truth state that varies.
-
-carry out achying:
-	if achy is true, say "You already made Jake G achy." instead;
-	now achy is true;
-	up-reg; [opt] [x-of-y jake]
-	the rule succeeds.
-
-chapter breakbrieing
-
-breakbrieing is an action applying to nothing.
-
-understand the command "break brie" as something new.
-
-understand "break brie" as breakbrieing when player is in Lake Lea.
-
-brie-broke is a truth state that varies;
-
-carry out breakbrieing:
-	if brie-broke is true, say "You already broke brie with Jake G." instead;
-	follow the jake-g-gone rule;
-	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
-	up-reg; [opt] [x-of-y jake]
-	eval-jake-g;
-	the rule succeeds.
-
-part History Hall
+part History Hall -1,1
 
 mistmall is a truth state that varies.
 
@@ -823,11 +739,11 @@ carry out firstflooring:
 	now History Hall is mapped outside Erst Lore;
 	the rule succeeds.
 
-part erst lore
+part erst lore -2,0
 
 Erst Lore is a room in Piddling Pain.
 
-part Vending Vibe
+part Vending Vibe -2,1 a
 
 Vending Vibe is a room in Piddling Pain. "You can only go back east."
 
@@ -851,7 +767,277 @@ carry out lendinglibeing:
 	move lending libe to Vending Vibe;
 	the rule succeeds.
 
-part curst cave
+part Got Gear Hot Here -2,1 b
+
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall.
+
+chapter hardhating
+
+the marred mat is a thing in Got Gear Hot Here.
+
+the hard hat is a thing.
+
+hardhating is an action applying to nothing.
+
+understand the command "hard mat" as something new.
+
+understand "hard hat" as hardhating when marred mat is quicknear.
+
+carry out hardhating:
+	say "Poof! The marred mat changes into a hard hat.";
+	moot marred mat;
+	now player wears hard hat;
+	up-reg;
+	the rule succeeds.
+
+part Lake Lea 1,1
+
+Lake Lea is east of Creased Cross. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
+
+check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
+
+Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
+
+this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
+
+jake-gone is a number that varies.
+
+to eval-jake-g:
+	increment jake-gone;
+	if jake-gone is 2:
+		moot Jake G;
+		say "Jake leaves, satisfied.";
+
+chapter fakefeeing
+
+fakefeeing is an action applying to nothing.
+
+understand the command "fake fee" as something new.
+
+understand "fake fee" as fakefeeing.
+
+fake-fee is a truth state that varies.
+
+carry out fakefeeing:
+	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
+	now fake-fee is true;
+	up-reg; [x-of-y jake]
+	the rule succeeds.
+
+chapter wakewheeing
+
+wakewheeing is an action applying to nothing.
+
+understand the command "wake whee" as something new.
+
+understand "wake whee" as wakewheeing.
+
+wake-whee is a truth state that varies.
+
+carry out wakewheeing:
+	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
+	now wake-whee is true;
+	up-reg; [x-of-y jake]
+	the rule succeeds.
+
+chapter achying
+
+achying is an action applying to nothing.
+
+understand the command "achy" as something new.
+
+understand "achy" as achying.
+
+achy is a truth state that varies.
+
+carry out achying:
+	if achy is true, say "You already made Jake G achy." instead;
+	now achy is true;
+	up-reg; [opt] [x-of-y jake]
+	the rule succeeds.
+
+chapter breakbrieing
+
+breakbrieing is an action applying to nothing.
+
+understand the command "break brie" as something new.
+
+understand "break brie" as breakbrieing when player is in Lake Lea.
+
+brie-broke is a truth state that varies;
+
+carry out breakbrieing:
+	if brie-broke is true, say "You already broke brie with Jake G." instead;
+	follow the jake-g-gone rule;
+	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
+	up-reg; [opt] [x-of-y jake]
+	eval-jake-g;
+	the rule succeeds.
+
+part Whining War 2,1
+
+Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view."
+
+[??mining more / dining door]
+
+Lake Lap is scenery.
+
+Ache App is a thing.
+
+chapter shiningshoreing
+
+shiningshoreing is an action applying to nothing.
+
+understand the command "shining shore" as something new.
+
+understand "shining shore" as shiningshoreing when player is in Whining War.
+
+shore-shine is a truth state that varies.
+
+carry out shiningshoreing:
+	if shore-shine is true, say "You already got (t)here." instead;
+	if beer bull is not moot:
+		clue-later "SHINING SHORE";
+		say "It could be that way. But you need to get rid of the whining first." instead;
+	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
+	up-reg;
+	move lake lap to Whining War;
+	the rule succeeds.
+
+chapter miningmoreing
+
+miningmoreing is an action applying to nothing.
+
+understand the command "mining more" as something new.
+
+understand "mining more" as miningmoreing when player is in Whining War and mine-more is false.
+
+mine-more is a truth state that varies.
+
+carry out miningmoreing:
+	abide by the shone-yet rule;
+	up-reg;
+	now mine-more is true;
+	the rule succeeds.
+
+this is the shone-yet rule:
+	if shore-shine is false, say "Too whiny for that right now." instead;
+
+chapter diningdooring
+
+diningdooring is an action applying to nothing.
+
+understand the command "dining door" as something new.
+
+understand "dining door" as diningdooring when player is in Whining War and dine-door is false.
+
+dine-door is a truth state that varies.
+
+carry out diningdooring:
+	abide by the shone-yet rule;
+	up-reg;
+	now dine-door is true;
+	the rule succeeds.
+
+chapter snakesnaping
+
+snakesnaping is an action applying to nothing.
+
+understand the command "snake snap" as something new.
+
+understand "snake snap" as snakesnaping when ache app is off-stage and player is in lake lap.
+
+carry out snakesnaping:
+	up-reg;
+	say "The snake hissing in the lake leaves an Ache App behind.";
+	now ache app is in lake lap;
+	the rule succeeds.
+
+chapter makemaping
+
+makemaping is an action applying to nothing.
+
+understand the command "make map" as something new.
+
+understand "make map" as makemaping when ache app is in lake lap.
+
+carry out makemaping:
+	say "You can now see a map with M or MAP.";
+	moot ache app;
+	up-reg;
+	the rule succeeds.
+
+part Soft Sand 0,2
+
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross.
+
+ever-loft is a truth state that varies.
+
+loft-land is a truth state that varies.
+
+check going west in soft sand:
+	if loft-land is false and jerk gel is not in Shirk Shell, say "The smirk smell is too repulsive. You can't go back." instead;
+
+part Here Hull 1,2
+
+Here Hull is a room in Piddling Pain. It is east of Soft Sand.
+
+The Beer Bull is a thing in Here Hull.
+
+chapter fearfuling
+
+fearfuling is an action applying to nothing.
+
+understand the command "fearful" as something new.
+
+understand "fearful" as fearfuling.
+
+carry out fearfuling:
+	the rule succeeds.
+
+chapter deardulling
+
+deardulling is an action applying to nothing.
+
+understand the command "dear dull" as something new.
+
+understand "dear dull" as deardulling when beer bull is in location of player.
+
+fearful-on is a truth state that varies.
+
+carry out deardulling:
+	if fearful-on is false, say "No. The beer bull is too dull." instead;
+	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
+	say "The beer bull settles down. Both sides of the whining war cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
+	up-reg;
+	the rule succeeds.
+
+part Shirk Shell -1,2 a
+
+Shirk Shell is a room in Piddling Pain. It is west of Soft Sand.
+
+the jerk gel is a thing in Shirk Shell.
+
+understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
+
+check taking jerk gel when jerk gel is in shirk shell:
+	say "The jerk gel has spilled out a bit." instead;
+
+chapter workwelling
+
+workwelling is an action applying to nothing.
+
+understand the command "work well" as something new.
+
+understand "work well" as workwelling.
+
+carry out workwelling:
+	say "You work to put all the jerk gel back in. It becomes glowing globs.";
+	now the player has the jerk gel;
+	up-reg;
+	the rule succeeds.
+
+part curst cave -1,2 b
 
 Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-vibe]."
 
@@ -903,36 +1089,43 @@ carry out firstfaveing:
 	move tool tap to curst cave;
 	the rule succeeds;
 
-part Shirk Shell
+part Foe Field 0,3
 
-Shirk Shell is a room in Piddling Pain. It is west of Soft Sand.
+Foe Field is a room in Piddling Pain. It is north of Soft Sand.
 
-the jerk gel is a thing in Shirk Shell.
+part store all stage -1,3
 
-understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
+Store All Stage is a room in Piddling Pain. It is west of Foe Field.
 
-check taking jerk gel when jerk gel is in shirk shell:
-	say "The jerk gel has spilled out a bit." instead;
+the coral cage is a thing in store all stage.
 
-chapter workwelling
+the moral mage is a person in store all stage.
 
-workwelling is an action applying to nothing.
+chapter moralmageing
 
-understand the command "work well" as something new.
+moralmageing is an action applying to nothing.
 
-understand "work well" as workwelling.
+understand the command "moral mage" as something new.
 
-carry out workwelling:
-	say "You work to put all the jerk gel back in. It becomes glowing globs.";
-	now the player has the jerk gel;
+understand "moral mage" as moralmageing when coral cage is quicknear.
+
+carry out moralmageing:
+	if player does not have cage's key:
+		clue-later "MORAL MAGE";
+		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
+	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
 	up-reg;
+	moot moral mage;
+	moot coral cage;
 	the rule succeeds.
 
-part Gassed Gap
+volume Verminal Vale
+
+part Gassed Gap 0,4
 
 Gassed Gap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
 
-Gassed Gap is north of Soft Sand.
+Gassed Gap is north of Foe Field.
 
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
@@ -1032,7 +1225,7 @@ carry out woodoneing:
 	check-russell-go; [nec]
 	the rule succeeds;
 
-part Airy Isle
+part Airy Isle 0,5
 
 Airy Isle is north of Gassed Gap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
@@ -1105,11 +1298,11 @@ to win-the-game:
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 
-part Merry Mile
+part Merry Mile 1,5
 
 Merry Mile is a room in Verminal Vale.
 
-part Tarry Tile
+part Tarry Tile 2,5
 
 Tarry Tile is a room in Verminal Vale.
 
@@ -1449,32 +1642,6 @@ carry out blowingblobsing:
 	moot knowing nobs;
 	the rule succeeds.
 
-part store all stage
-
-Store All Stage is a room in Piddling Pain.
-
-the coral cage is a thing in store all stage.
-
-the moral mage is a person in store all stage.
-
-chapter moralmageing
-
-moralmageing is an action applying to nothing.
-
-understand the command "moral mage" as something new.
-
-understand "moral mage" as moralmageing when coral cage is quicknear.
-
-carry out moralmageing:
-	if player does not have cage's key:
-		clue-later "MORAL MAGE";
-		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
-	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
-	up-reg;
-	moot moral mage;
-	moot coral cage;
-	the rule succeeds.
-
 chapter wildweeding
 
 the wild weed is a thing.
@@ -1490,29 +1657,6 @@ understand "wild weed" as wildweeding when player has mild mead.
 carry out wildweeding:
 	say "Bingo! The mild mead becomes wild weed.";
 	up-min;
-	the rule succeeds.
-
-book got gear hot here
-
-Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall.
-
-chapter hardhating
-
-the marred mat is a thing in Got Gear Hot Here.
-
-the hard hat is a thing.
-
-hardhating is an action applying to nothing.
-
-understand the command "hard mat" as something new.
-
-understand "hard hat" as hardhating when marred mat is quicknear.
-
-carry out hardhating:
-	say "Poof! The marred mat changes into a hard hat.";
-	moot marred mat;
-	now player wears hard hat;
-	up-reg;
 	the rule succeeds.
 
 book go gate
@@ -1559,51 +1703,6 @@ carry out plainpleasanting:
 
 [?? burned bower/turned tower]
 
-part Here Hull
-
-Here Hull is a room in Piddling Pain. It is east of Soft Sand.
-
-The Beer Bull is a thing in Here Hull.
-
-chapter fearfuling
-
-fearfuling is an action applying to nothing.
-
-understand the command "fearful" as something new.
-
-understand "fearful" as fearfuling.
-
-carry out fearfuling:
-	the rule succeeds.
-
-chapter deardulling
-
-deardulling is an action applying to nothing.
-
-understand the command "dear dull" as something new.
-
-understand "dear dull" as deardulling when beer bull is in location of player.
-
-fearful-on is a truth state that varies.
-
-carry out deardulling:
-	if fearful-on is false, say "No. The beer bull is too dull." instead;
-	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
-	say "The beer bull settles down. Both sides of the whining war cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
-	up-reg;
-	the rule succeeds.
-
-part Soft Sand
-
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross.
-
-ever-loft is a truth state that varies.
-
-loft-land is a truth state that varies.
-
-check going west in soft sand:
-	if loft-land is false and jerk gel is not in Shirk Shell, say "The smirk smell is too repulsive. You can't go back." instead;
-
 chapter softsanding
 
 softsanding is an action applying to nothing.
@@ -1639,99 +1738,6 @@ carry out loftlanding:
 	now curst cave is mapped west of soft sand;
 	now soft sand is mapped west of curst cave;
 	the rule succeeds;
-
-part Whining War
-
-Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view."
-
-[??mining more / dining door]
-
-Lake Lap is scenery.
-
-Ache App is a thing.
-
-chapter shiningshoreing
-
-shiningshoreing is an action applying to nothing.
-
-understand the command "shining shore" as something new.
-
-understand "shining shore" as shiningshoreing when player is in Whining War.
-
-shore-shine is a truth state that varies.
-
-carry out shiningshoreing:
-	if shore-shine is true, say "You already got (t)here." instead;
-	if beer bull is not moot:
-		clue-later "SHINING SHORE";
-		say "It could be that way. But you need to get rid of the whining first." instead;
-	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
-	up-reg;
-	move lake lap to Whining War;
-	the rule succeeds.
-
-chapter miningmoreing
-
-miningmoreing is an action applying to nothing.
-
-understand the command "mining more" as something new.
-
-understand "mining more" as miningmoreing when player is in Whining War and mine-more is false.
-
-mine-more is a truth state that varies.
-
-carry out miningmoreing:
-	abide by the shone-yet rule;
-	up-reg;
-	now mine-more is true;
-	the rule succeeds.
-
-this is the shone-yet rule:
-	if shore-shine is false, say "Too whiny for that right now." instead;
-
-chapter diningdooring
-
-diningdooring is an action applying to nothing.
-
-understand the command "dining door" as something new.
-
-understand "dining door" as diningdooring when player is in Whining War and dine-door is false.
-
-dine-door is a truth state that varies.
-
-carry out diningdooring:
-	abide by the shone-yet rule;
-	up-reg;
-	now dine-door is true;
-	the rule succeeds.
-
-chapter snakesnaping
-
-snakesnaping is an action applying to nothing.
-
-understand the command "snake snap" as something new.
-
-understand "snake snap" as snakesnaping when ache app is off-stage and player is in lake lap.
-
-carry out snakesnaping:
-	up-reg;
-	say "The snake hissing in the lake leaves an Ache App behind.";
-	now ache app is in lake lap;
-	the rule succeeds.
-
-chapter makemaping
-
-makemaping is an action applying to nothing.
-
-understand the command "make map" as something new.
-
-understand "make map" as makemaping when ache app is in lake lap.
-
-carry out makemaping:
-	say "You can now see a map with M or MAP.";
-	moot ache app;
-	up-reg;
-	the rule succeeds.
 
 volume Poorly Penned
 
