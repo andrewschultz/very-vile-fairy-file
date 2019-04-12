@@ -1113,10 +1113,6 @@ part Tarry Tile
 
 Tarry Tile is a room in Verminal Vale.
 
-part dead doom
-
-dead doom is a room.
-
 volume verbs
 
 book standard modifications
@@ -1219,131 +1215,6 @@ to clue-later (ct - text):
 			now ready-to-hint entry is true;
 			the rule succeeds;
 	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
-
-table of forlaters
-cmd-to-say	ready-to-hint	is-done	can-do-now	think-advice
-"BURY BILE"	false	trivially false rule	can-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if airy isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
-"BIG BAG"	false	did-big-bag rule	can-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
-"FLIM FLAM"	false	did-flim-flam rule	can-flim-flam rule	"You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if]."
-"MASH MAP"	false	did-mash-map rule	can-mash-map rule	"You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
-"FEEL FEAR"	false	did-feel-fear rule	can-feel-fear rule	"You try to feel fear, but you can't think of a reason to, and even if you could, you might be overwhelmed without help from above."
-"DEAL DEAR"	false	did-deal-dear rule	can-deal-dear rule	"You don't have anything you need to deal with, yet."
-"HEAL HERE"	false	did-heal-here rule	can-heal-here rule	"You don't have anything you need to heal from, yet." [?? (heres of r-a room) ]
-"MORAL MAGE"	false	did-moral-mage rule	can-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
-"SHINING SHORE"	false	did-shining-shore rule	can-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
-"FIRST FAVE"	false	did-first-fave rule	can-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
-"CAST CAP"	false	did-cast-cap rule	can-cast-cap rule	"You can CAST CAP once you find one."
-"FULL FEAST"	false	did-full-feast rule	can-full-feast rule	"You could make the bull beast a full feast once/now it's been vanquished."
-
-this is the can-bury-bile rule:
-	if well worn hell horn is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-big-bag rule:
-	if fun fen is visited, the rule succeeds;
-	the rule fails.
-
-this is the did-big-bag rule:
-	if player has big bag, the rule succeeds;
-	the rule fails.
-
-this is the can-flim-flam rule:
-	if me-minded is true, the rule succeeds;
-	the rule fails.
-
-this is the did-flim-flam rule:
-	if fun fen is visited, the rule succeeds;
-	the rule fails.
-
-this is the can-mash-map rule:
-	if grit-grown is true, the rule succeeds;
-	the rule fails.
-
-this is the did-mash-map rule:
-	if Trim Tram is visited, the rule succeeds;
-	the rule fails.
-
-this is the can-feel-fear rule:
-	if knelt-yet is true, the rule succeeds;
-	the rule fails.
-
-this is the did-feel-fear rule:
-	if felt-fear is true, the rule succeeds;
-	the rule fails.
-
-this is the can-deal-dear rule:
-	if felt-fear is true, the rule succeeds;
-	the rule fails.
-
-this is the did-deal-dear rule:
-	if cage's key is not off-stage, the rule succeeds;
-	the rule fails.
-
-this is the can-heal-here rule: [?? obviously needs to be fleshed out]
-	the rule fails.
-
-this is the did-heal-here rule:
-	if healed-here is true, the rule succeeds;
-	the rule fails.
-
-this is the can-cast-cap rule:
-	if player has cool cap, the rule succeeds;
-	the rule fails.
-
-this is the did-cast-cap rule:
-	if cool cap is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-moral-mage rule:
-	if coral cage is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-moral-mage rule:
-	if player has cage's key, the rule succeeds;
-	the rule fails.
-
-this is the did-first-fave rule:
-	if worst wave is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-first-fave rule:
-	if screaming skull is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-full-feast rule:
-	if bull beast is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-full-feast rule:
-	if least-loss is true, the rule succeeds;
-	the rule fails.
-
-this is the can-shining-shore rule:
-	if beer bull is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-shining-shore rule:
-	if shore-shine is true, the rule succeeds;
-	the rule fails.
-
-this is the trivially false rule: the rule fails;
-this is the trivially true rule: the rule succeeds;
-
-to say rhyme-display:
-	if Fun Fen is visited:
-		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
-	else if me-minded is true:
-		say "You managed to MIND ME, but now you need to evade the trash trap.";
-	else if player is in Trim Tram:
-		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
-	else if player is in Po' Pit:
-		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant. You're not likely to find a fee, but maybe you can do something else.";
-	else if mean mass is in vined vault:
-		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
-	else if player is in vined vault:
-		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
-	else:
-		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
 chapter score
 
@@ -1580,7 +1451,7 @@ carry out blowingblobsing:
 
 part store all stage
 
-store all stage is a room in piddling pain.
+Store All Stage is a room in Piddling Pain.
 
 the coral cage is a thing in store all stage.
 
@@ -1685,8 +1556,6 @@ carry out plainpleasanting:
 	say "The Pain Peasant is much nicer now. You have a chat about stuff, and the peasant takes leave to go do peasant things.";
 	moot Pain Peasant;
 	the rule succeeds;
-
-Lit Lawn is a room. [??get gone]
 
 [?? burned bower/turned tower]
 
@@ -1870,7 +1739,7 @@ volume Get a Guess
 
 [this is a sort of fake region. There are fake rooms you can't visit.]
 
-a capped cone is a scenery. [?? where? It leads to the Zapped Zone]
+[a capped cone is a scenery.] [?? where? It leads to the Zapped Zone]
 
 volume Verminal Vale
 
@@ -1921,10 +1790,14 @@ Rule for printing a parser error (this is the clue half right words rule):
 
 volume map index
 
-index map with vined vault mapped east of wet wood.
-index map with po' pit mapped east of vined vault.
-index map with trim tram mapped east of po' pit.
-index map with fun fen mapped north of trim tram.
+index map with trim tram mapped east of real rear.
+index map with po' pit mapped east of trim tram.
+index map with vined vault mapped east of po' pit.
+index map with vined vault mapped south of wet wood.
+
+section odd directions
+
+index map with erst lore mapped south of got gear hot here.
 
 section endrooms
 
@@ -1933,17 +1806,14 @@ index map with merry mile mapped east of tarry tile.
 
 section altrooms
 
-index map with vending vibe mapped north of got gear hot here.
-index map with curst cave mapped north of shirk shell.
+index map with vending vibe mapped south of po' pit.
+index map with curst cave mapped south of vined vault.
 
 section nonrooms
 
-index map with gazy gap mapped east of trim tram.
-index map with hidey house mapped east of gazy gap.
+index map with gazy gap mapped south of trim tram.
+index map with hidey house mapped west of gazy gap.
 
-section deathrooms - not for release
+section side room to include
 
-section needs fixing
-
-index map with lit lawn mapped west of got gear hot here.
-index map with dead doom mapped west of lit lawn.
+include Very Vile Fairy File Fake Rooms by Andrew Schultz.
