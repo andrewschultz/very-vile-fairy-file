@@ -126,9 +126,32 @@ def check_walkthrough():
     num_dif = 0
     point_count = 0
     dif_map = []
+    strong_skip = False
+    strong_skipped = ""
+    way_wrong_points = 20
+    stay_strong = "\n\nHere's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.\n\n> STAY STRONG ({:d})\n".format(way_wrong_points+1)
     with open(wthru) as file:
         for (line_count, line) in enumerate(file, 1):
             new_line = line
+            if line.startswith("Here's where you get depressed"):
+                strong_skip = True
+                strong_skipped = "\n\n" + line
+                wthru_string = re.sub("\n*$", "", wthru_string)
+                continue
+            if strong_skip:
+                strong_skipped += line
+                if line.startswith(">"):
+                    print("Refurbing line", line_count)
+                    strong_skip = False
+                    if stay_strong != strong_skipped: found_dif += 1
+                    wthru_string += stay_strong
+                    point_count += 1
+                    pts_in_walkthrough += 1
+                    print("!-", stay_strong, "-!")
+                    print("!-", strong_skipped, "-!")
+                else:
+                    print("Skipping line", line_count)
+                continue
             if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
                 point_count += 1
                 my_cmd = re.sub("^> *", "", line.strip())
