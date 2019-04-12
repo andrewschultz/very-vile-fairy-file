@@ -52,11 +52,11 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 41.
+min-needed is a number that varies. min-needed is 43.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 48.
+the maximum score is 51.
 
 core-score is a number that varies. core-score is 0.
 core-max is a number that varies.
@@ -743,6 +743,28 @@ part erst lore -2,0
 
 Erst Lore is a room in Piddling Pain.
 
+part Y'Old Yard -2,-1
+
+Y'Old Yard is south of Erst Lore. It is in Piddling Pain.
+
+The Bold Bard is a person in Y'Old Yard.
+
+Hold Hard is scenery in Y'Old Yard.
+
+chapter coldcarding
+
+coldcarding is an action applying to nothing.
+
+understand the command "cold card" as something new.
+
+understand "cold card" as coldcarding when player is in Y'Old Yard.
+
+carry out coldcarding:
+	up-reg;
+	moot bold bard;
+	now player has gold guard;
+	the rule succeeds.
+
 part Vending Vibe -2,1 a
 
 Vending Vibe is a room in Piddling Pain. "You can only go back east."
@@ -1091,7 +1113,29 @@ carry out firstfaveing:
 
 part Foe Field 0,3
 
-Foe Field is a room in Piddling Pain. It is north of Soft Sand.
+Foe Field is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]".
+
+check going west in Foe Field: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
+
+chapter showshielding
+
+showshielding is an action out of world.
+
+understand the command "show shield" as something new.
+
+understand "show shield" as showshielding.
+
+shield-shown is a truth state that varies.
+
+carry out showshielding:
+	if shield-shown is true, say "You already did." instead;
+	if player does not have gold guard:
+		clue-later "SHOW SHIELD";
+		say "You have nothing that would guard you effectively. Maybe later." instead;
+	up-reg;
+	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down. You can go west now.";
+	now shield-shown is true;
+	the rule succeeds.
 
 part store all stage -1,3
 
@@ -1614,7 +1658,7 @@ this is the get-wrong rule:
 	the rule succeeds;
 
 every turn when in-way-wrong is true:
-	say "Way wrong ... way wrong ... you feel so depressed and upset.";
+	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
 instead of doing something when in-way-wrong is true:
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
