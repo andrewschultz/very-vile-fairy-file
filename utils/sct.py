@@ -32,11 +32,17 @@ show_opt = False
 
 hdr_str = "                  NE OP UD TO"
 
+src = i7.main_src("vv")
+wthru = i7.walkthrough_file("vv")
+wthru2 = re.sub("\.txt", "2.txt", wthru)
+vv_table = i7.table_file("vv")
+
 def usage(msg = "CMD LINE USAGE"):
     print(msg)
     print("=" * 50)
     print("b o n x = both optional necessary neither")
     print("p py = open source post run / pn = don't open it")
+    print("cw or ncw/cwn = copy walkthrough over if numbers are bad (or don't)")
     exit()
 
 def clue_hint_verify():
@@ -46,7 +52,7 @@ def clue_hint_verify():
     for_laters = defaultdict(int)
     cmd_laters = defaultdict(int)
     global to_open
-    with open(file_name) as file:
+    with open(vv_table) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("table of forlaters"):
                 found_table = True
@@ -61,6 +67,8 @@ def clue_hint_verify():
                 l = line.strip().split("\t")
                 q = re.sub("\"", "", l[0])
                 for_laters[q] = line_count
+    with open(src) as file:
+        for (line_count, line) in enumerate(file, 1):
             if "\tclue-later " in line:
                 q = re.sub("\";.*", "", line.strip())
                 q = re.sub(".*\"", "", q)
@@ -115,10 +123,12 @@ def check_walkthrough():
     pts_in_walkthrough = 0
     wthru_string = ""
     found_dif = 0
+    num_dif = 0
     point_count = 0
     dif_map = []
-    with open("walkthrough.txt") as file:
+    with open(wthru) as file:
         for (line_count, line) in enumerate(file, 1):
+            new_line = line
             if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
                 point_count += 1
                 my_cmd = re.sub("^> *", "", line.strip())
@@ -128,20 +138,23 @@ def check_walkthrough():
                 #print(line_count, my_cmd)
                 new_line = re.sub("\([0-9]+\)", "({:d})".format(point_count), line)
                 if new_line != line:
-                    found_dif += 1
+                    num_dif += 1
                     old_num = re.sub(".*\(", "", line.strip())
                     old_num = re.sub("\).*", "", old_num)
                     dif_map.append("{:s} {:s}->{:d}".format(my_cmd, old_num, point_count))
-                wthru_string += new_line
-            else: wthru_string += line
+            if new_line.startswith(">"):
+                new_line = re.sub("^> ?", "> ", new_line)
+                new_line = re.sub(" ?\(", " (", new_line)
+            if new_line != line: found_dif += 1
+            wthru_string += new_line
     if found_dif:
         if copy_walkthrough_back:
-            f = open("walkthrough2.txt", "w")
+            f = open(wthru2, "w")
             f.write(wthru_string)
             f.close()
-            copy("walkthrough2.txt", "walkthrough.txt")
-            os.remove("walkthrough2.txt")
-            print("Rejigged walkthrough.txt with", found_dif, "difference" + i7.plur(found_dif))
+            copy(wthru2, wthru)
+            os.remove(wthru2)
+            print("Rejigged wthru with", found_dif, "difference" + i7.plur(found_dif), num_dif, "number difference" + i7.plur(num_dif))
         else: print("Walkthrough numbered wrong. I found", found_dif, "difference" + i7.plur(found_dif) + ":", ', '.join(dif_map))
     else: print("Walkthrough numbering okay.")
     if pts_in_walkthrough != scores["nec"]:
@@ -235,7 +248,7 @@ def read_cmd_line():
             show_nec = False
             show_opt = False
         elif arg == 'cw': copy_walkthrough_back = True
-        elif arg == 'ncw': copy_walkthrough_back = False
+        elif arg == 'ncw' or arg == 'cwn': copy_walkthrough_back = False
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
         elif arg == '?': usage()
