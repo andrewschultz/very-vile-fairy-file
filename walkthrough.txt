@@ -98,9 +98,17 @@ There are a lot of ways to go in Creased Cross, but it's most helpful to go west
 
 > W
 
+History hall has something to the west.
+
+> W
+
+> LENDING LIBE (16)
+
+> E
+
 Erst Lore is too high up! How to bring it down?
 
-> FIRST FLOOR (16)
+> FIRST FLOOR (17)
 
 > IN
 
@@ -108,7 +116,7 @@ Erst Lore is too high up! How to bring it down?
 
 Let's deal with the Bard.
 
-> COLD CARD (17)
+> COLD CARD (18)
 
 The gold guard will be useful later.
 
@@ -118,17 +126,11 @@ The gold guard will be useful later.
 
 Let's pick up some points for later.
 
-> MYSTERY MALL (18)
+> MYSTERY MALL (19)
 
 How to deal with the gutta ganksta? Notice the tattoos.
 
-> LOTS LAME (19)
-
-> W
-
-The marred mat doesn't look like it's worth buying, but ...
-
-> HARD HAT (20)
+> LOTS LAME (20)
 
 Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
 
@@ -136,17 +138,73 @@ Here's where you get depressed. You need to find a way to stop feeling way wrong
 
 Back to normal.
 
-> E
+> W
+
+The marred mat doesn't look like it's worth buying, but ...
+
+> HARD HAT (22)
 
 > E
 
-> WAKE WHEE (22)
+> N
+
+> W
+
+In the Shirk Shell, you need to do something to get the Jerk Gel.
+
+> WORK WELL (23)
+
+> E
+
+Now you don't need to visit the Shirk Shell any more, so...
+
+> LOFT LAND (24)
+
+There's a new location to the west!
+
+> W
+
+> DREAMING DULL (25)
+
+How to get rid of the worst wave in the curst cave?
+
+> FIRST FAVE (26)
+
+What can you get from the tool tap?
+
+> COOL CAP (27)
+
+This will come in handy later.
+
+> E
+
+> N
+
+> SHOW SHIELD (28)
+
+> W
+
+You have the key, so...
+
+> MORAL MAGE (29)
+
+Let's go back east of the Creased Cross.
+
+> E
+
+> S
+
+> S
+
+> E
+
+> WAKE WHEE (30)
 
 You can try the two others for bonus points if you want.
 
 > E
 
-> SHINING SHORE
+> SHINING SHORE (31)
 
 The Lake Lap puzzle is also optional, but it is not too hard.
 
@@ -166,43 +224,11 @@ You can twiddle back and forth as you need to.
 
 You should LISTEN in Mystery Mall. The song is useful later.
 
-> LISTEN
-
-You can deal with the gutta ganksta if you want for an LLP, but he won't stop you.
-
-> W
-
-The marred mat isn't merchandise, but it could be.
-
-> HARD HAT
-
-In the Shirk Shell, you need to do something to get the Jerk Gel.
-
-> WORK WELL
-
-> E
-
-Now you don't need to visit the Shirk Shell any more, so...
-
-> LOFT LAND
-
 This covers the shell and opens a new passage west.
 
 > W
 
 The screaming skull is annoying. You'll have to deal with it first.
-
-> DREAMING DULL
-
-How to get rid of the worst wave in the curst cave?
-
-> FIRST FAVE
-
-What can you get from the tool tap?
-
-> COOL CAP
-
-This will come in handy later.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 

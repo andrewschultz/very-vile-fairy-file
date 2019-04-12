@@ -141,16 +141,12 @@ def check_walkthrough():
             if strong_skip:
                 strong_skipped += line
                 if line.startswith(">"):
-                    print("Refurbing line", line_count)
                     strong_skip = False
                     if stay_strong != strong_skipped: found_dif += 1
                     wthru_string += stay_strong
                     point_count += 1
                     pts_in_walkthrough += 1
-                    print("!-", stay_strong, "-!")
-                    print("!-", strong_skipped, "-!")
-                else:
-                    print("Skipping line", line_count)
+                    got_thru['stay strong'] = line_count
                 continue
             if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
                 point_count += 1
@@ -178,7 +174,9 @@ def check_walkthrough():
             copy(wthru2, wthru)
             os.remove(wthru2)
             print("Rejigged wthru with", found_dif, "difference" + i7.plur(found_dif), num_dif, "number difference" + i7.plur(num_dif))
-        else: print("Walkthrough numbered wrong. I found", found_dif, "difference" + i7.plur(found_dif) + ":", ', '.join(dif_map))
+        else:
+            print("Walkthrough numbered wrong. I found", found_dif, "difference" + i7.plur(found_dif) + ":", ', '.join(dif_map))
+            if not copy_walkthrough_back: print("You may wish to fix things with -cw.")
     else: print("Walkthrough numbering okay.")
     if pts_in_walkthrough != scores["nec"]:
         print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
