@@ -13,7 +13,24 @@ chapter walkthrough
 test w1 with "get good/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
 test w1r with "get good/find fault/green grass/mash map/grow grit/mash map/flim flam/mind me/flim flam/big bag".
 
-volume odd tests
+volume odd property tests
+
+chapter talksing
+
+talksing is an action applying to nothing.
+
+understand the command "talks" as something new.
+
+understand "talks" as talksing.
+
+carry out talksing:
+	let empties be 0;
+	repeat with Q running through people:
+		if talk-text of Q is empty:
+			increment empties;
+			say "[Q] needs talk-text.";
+	if empties is 0, say "Everyone has talk-text.";
+	the rule succeeds.
 
 chapter nowaying
 

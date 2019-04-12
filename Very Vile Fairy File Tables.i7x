@@ -44,17 +44,20 @@ to seed-score-list:
 	let min-forced-score be -1;
 	let Q be 0;
 	let last-forced-row be 0;
+	let last-points be 0;
 	repeat through table of ranks:
 		increment my-row;
 		if there is a rank-max entry:
 			now min-forced-score is rank-max entry;
 			now last-forced-row is my-row;
+			now last-points is rank-max entry + 1;
 			next;
 		if blank-rows is 0:
 			now blank-rows is number of rows in table of ranks - my-row + 1;
 		let temp be (my-row - last-forced-row) * ((core-max - 1) - min-forced-score);
 		now rank-max entry is (temp / blank-rows) + min-forced-score;
-		if debug-state is true, say "Assigned rank [rank-name entry] to up to [rank-max entry].";
+		if debug-state is true, say "Assigned rank: [b][rank-name entry][r] = [last-points] up to [rank-max entry].";
+		now last-points is rank-max entry + 1;
 	repeat through table of ranks:
 		say "[rank-name entry] is <= [rank-max entry] points.";
 
