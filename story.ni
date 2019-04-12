@@ -279,7 +279,11 @@ part Po' Pit 2,-1
 
 Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
 
-the wrong art is scenery in Po' Pit. "It says STRONG START. It -- well, it seems to diagram the trash trap meticulously. What do you call those things where they draw what is where? Anyway, lots of dead ends are labeled ... CRASH! ****![paragraph break]Gosh! You've always felt uneasy around profanity, weak or strong. It's been used to hard-sell you on stuff and ideas you really didn't want before."
+the row writ is scenery in Po' Pit. "It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason."
+
+the trash trap is scenery in Po' Pit. "There's a sort of map at the start of the trap, but it can't be right. And yet, at the same time, if you disbelieved the map and got caught, and it turned out the map was right, you'd feel dumb. Now you've seen the map, you can't get it out of your mind."
+
+understand "map" as trash trap when player is in Po' Pit.
 
 chapter mashmaping
 
@@ -376,6 +380,8 @@ tree-down is a truth state that varies.
 
 The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if]."
 
+the wrong art is scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things."
+
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
 	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
@@ -393,6 +399,23 @@ the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit mo
 check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
 
 the backed binder is a thing.
+
+chapter strongstarting
+
+strongstarting is an action applying to nothing.
+
+understand the command "strong start" as something new.
+
+understand "strong start" as strongstarting when player is in Fun Fen.
+
+started-strong is a truth state that varies.
+
+carry out strongstarting:
+	if started-strong is true, say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart." instead;
+	now started-strong is true;
+	say "Boom!";
+	up-min;
+	the rule succeeds.
 
 chapter cark cliff
 
@@ -1801,6 +1824,7 @@ final question wording	only if victorious	topic		final response rule		final resp
 showmissesing is an activity.
 
 rule for showmissesing:
+	if started-strong is false, say "You could've used the wrong art for a STRONG START.";
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
 	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
