@@ -98,8 +98,6 @@ a room has a cheattype. a room is usually phbt.
 
 a thing has a cheattype. a thing is usually phbt.
 
-the leet learner is a thing.
-
 volume going nowhere
 
 the wry wall is a backdrop.
@@ -1413,6 +1411,21 @@ volume verbs
 
 book standard modifications
 
+chapter reading
+
+reading is an action applying to nothing.
+
+understand the command "read" as something new.
+
+understand "read" as reading.
+
+carry out reading:
+	if noun is leet learner, say "CONCEIT CONCERNER is in blue.[line break]CHEAT CHURNER is in green.[line break]MEET MOURNER is in yellow.[line break]BEAT BURNER is in orange.[line break]EAT EARNER is in red.[line break]TREAT TURNER is in brown." instead;
+	if read-exam-note is false:
+		say "NOTE: most of the time, READ works equivalently to X or EXAMINE.";
+		now read-exam-note is true;
+	try examining noun instead;
+
 chapter waiting
 
 check waiting: say "Hi ho! Lie low." instead;
@@ -1675,7 +1688,7 @@ carry out abouting:
 
 book hinting
 
-the leet learner is a thing.
+the leet learner is a thing. description is "It says CHEAT CHURNER in green letters. You can probably READ it more in depth, because, well, there's more.[paragraph break]Also, to use it, LL (something)."
 
 chapter lling
 
