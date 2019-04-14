@@ -1,2 +1,2 @@
-15	\nYou feel tired and disappointed now. Way wrong. What to do?\n\n> STAY STRONG (1)\n
-30	\nYou feel so sad, mo' mad\n\nHow do you regain positivity?\n\n> GLOW GLAD (1)\n
+20	\nYou feel tired and disappointed now. Way wrong. What to do?\n\n> STAY STRONG (1)\n
+30	\nYou feel so sad, mo' mad.\n\nHow do you regain positivity?\n\n> GLOW GLAD (1)\n

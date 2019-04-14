@@ -1744,6 +1744,41 @@ volume unsorted
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
+chapter glowglading
+
+glowglading is an action applying to nothing.
+
+understand the command "glow glad" as something new.
+
+understand "glow glad" as glowglading when in-so-sad is true.
+
+in-so-sad is a truth state that varies.
+in-so-saded is a truth state that varies.
+
+carry out glowglading:
+	up-reg;
+	say "That's it! You feel much more comfortable now.";
+	now in-so-sad is false;
+	now in-so-saded is true;
+	now the player is phbt;
+	the rule succeeds.
+
+the get-sad rule is listed after the notify score changes rule in the turn sequence rulebook.
+
+this is the get-sad rule:
+	if in-so-saded is false and in-so-sad is false and score >= 30:
+		now in-so-sad is true;
+		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
+		now the player is letplus;
+	the rule succeeds;
+
+every turn when in-so-sad is true:
+	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
+
+instead of doing something when in-so-sad is true:
+	if current action is procedural or current action is not staystronging, continue the action;
+	say "You can't. You just feel ... so sad. Mo['] mad.";
+
 chapter staystronging
 
 staystronging is an action applying to nothing.
@@ -1760,6 +1795,7 @@ carry out staystronging:
 	now in-way-wrong is false;
 	now in-way-wronged is true;
 	up-reg;
+	now the player is phbt;
 	the rule succeeds.
 
 the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1768,12 +1804,14 @@ this is the get-wrong rule:
 	if in-way-wronged is false and in-way-wrong is false and score >= 20:
 		now in-way-wrong is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
+		now the player is letplus;
 	the rule succeeds;
 
 every turn when in-way-wrong is true:
 	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
 instead of doing something when in-way-wrong is true:
+	if current action is procedural or current action is not staystronging, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter blowingblobsing

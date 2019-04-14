@@ -1,4 +1,6 @@
-This is a walkthrough for Very Vile Fairy File.
+
+## minimum walkthrough
+This is a quick walkthrough for Very Vile Fairy File. It neglects bonus points.
 
 You can do something with the zigzag rig rag, but not right away. You don't want to be carrying it through the wet wood. In fact, it may help give you clues if you look at it.
 
@@ -36,29 +38,11 @@ The alternatives: no space, or you can also try a SKIM SCAM.
 
 Well, that does it for the introduction. You climb out of the Done Den to the Fun Fen. It gets a little less linear from here on out.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Now about that zig zag rig rag. It can become something more useful.
 
 > BIG BAG (8)
+
+At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
 
 The hive heap is tough to search through, unless you ...
 
@@ -132,11 +116,11 @@ How to deal with the gutta ganksta? Notice the tattoos.
 
 > LOTS LAME (20)
 
-Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
+You feel tired and disappointed now. Way wrong. What to do?
 
 > STAY STRONG (21)
 
-Back to normal.
+Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
 
 > W
 
@@ -200,11 +184,17 @@ Let's go back east of the Creased Cross.
 
 > WAKE WHEE (30)
 
+You feel so sad, mo' mad.
+
+How do you regain positivity?
+
+> GLOW GLAD (31)
+
 You can try the two others for bonus points if you want.
 
 > E
 
-> SHINING SHORE (31)
+> SHINING SHORE (32)
 
 The Lake Lap puzzle is also optional, but it is not too hard.
 
@@ -231,7 +221,6 @@ This covers the shell and opens a new passage west.
 The screaming skull is annoying. You'll have to deal with it first.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
-
 
 ============================END UNIMPLEMENTED MIDDLEGAME============================
 

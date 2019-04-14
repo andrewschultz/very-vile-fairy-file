@@ -10,29 +10,29 @@ So let's leave the wet wood. It seems like there's no way out. But if you listen
 
 Oops! You found your way out but fell into the Vined Vault, which seems to have no weaknesses.
 
-> FIND FAULT (1)
+> FIND FAULT (2)
 
 But now you must deal with the Mean Mass.
 
-> GREEN GRASS (1)
+> GREEN GRASS (3)
 
 Now, ugh! The trash trap is so odious. You don't have the guts. Something about this room...
 
-> GROW GRIT (1)
+> GROW GRIT (4)
 
 You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
 
-> MASH MAP (1)
+> MASH MAP (5)
 
 Woohoo! You made it through, and now you need to fake your way into (not really) paying for a trip on the Trim Tram.
 
-> MIND ME (1)
+> MIND ME (6)
 
 Okay, you're focused! Now the trim tram needs you to pay to get it started.
 
 There are three ways.
 
-> FLIM FLAM (1)
+> FLIM FLAM (7)
 
 The alternatives: no space, or you can also try a SKIM SCAM.
 
@@ -40,25 +40,25 @@ Well, that does it for the introduction. You climb out of the Done Den to the Fu
 
 Now about that zig zag rig rag. It can become something more useful.
 
-> BIG BAG (1)
+> BIG BAG (8)
 
 At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
 
 Since the "wr" is pronounced as "r," and there is a prong part as you examine it, it may help to figure what to do.
 
-> STRONG START (0)
+> STRONG START (9)
 
 The hive heap is tough to search through, unless you ...
 
-> DIVE DEEP (1)
+> DIVE DEEP (10)
 
 Now the vapor (vile) needs to be removed.
 
-> PAPER PILE (1)
+> PAPER PILE (11)
 
 And now the fact finder is not sturdy enough to pick up, because it needs a ...
 
-> BACKED BINDER (1)
+> BACKED BINDER (12)
 
 There's something to the south you can polish off.
 
@@ -66,11 +66,11 @@ There's something to the south you can polish off.
 
 The Real Rear has several possibilities. First, you need to show respect to the Ceiling Seer.
 
-> KNEEL NEAR (1)
+> KNEEL NEAR (13)
 
-> FEEL FEAR (1)
+> FEEL FEAR (14)
 
-> DEAL DEAR (1)
+> DEAL DEAR (15)
 
 There's one more thing you can do, but it will have to wait for later.
 
@@ -78,7 +78,7 @@ Now at Fun Fen, you have an opportunity for a bonus point in the long term, or y
 
 > N
 
-> FALL FREE (1)
+> FALL FREE (16)
 
 > N
 
@@ -90,13 +90,13 @@ History hall has something to the west.
 
 > W
 
-> LENDING LIBE (1)
+> LENDING LIBE (17)
 
 > E
 
 Erst Lore is too high up! How to bring it down?
 
-> FIRST FLOOR (1)
+> FIRST FLOOR (18)
 
 > IN
 
@@ -104,7 +104,7 @@ Erst Lore is too high up! How to bring it down?
 
 Let's deal with the Bard.
 
-> COLD CARD (1)
+> COLD CARD (19)
 
 The gold guard will be useful later.
 
@@ -114,23 +114,23 @@ The gold guard will be useful later.
 
 Let's pick up some points for later.
 
-> MYSTERY MALL (1)
+> MYSTERY MALL (20)
+
+You feel tired and disappointed now. Way wrong. What to do?
+
+> STAY STRONG (21)
 
 How to deal with the gutta ganksta? Notice the tattoos.
 
-> LOTS LAME (1)
+> LOTS LAME (22)
 
 Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
-
-> STAY STRONG (1)
-
-Back to normal.
 
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
 
-> HARD HAT (1)
+> HARD HAT (23)
 
 > E
 
@@ -140,27 +140,27 @@ The marred mat doesn't look like it's worth buying, but ...
 
 In the Shirk Shell, you need to do something to get the Jerk Gel.
 
-> WORK WELL (1)
+> WORK WELL (24)
 
 > E
 
 Now you don't need to visit the Shirk Shell any more, so...
 
-> LOFT LAND (1)
+> LOFT LAND (25)
 
 There's a new location to the west!
 
 > W
 
-> DREAMING DULL (1)
+> DREAMING DULL (26)
 
 How to get rid of the worst wave in the curst cave?
 
-> FIRST FAVE (1)
+> FIRST FAVE (27)
 
 What can you get from the tool tap?
 
-> COOL CAP (1)
+> COOL CAP (28)
 
 This will come in handy later.
 
@@ -168,13 +168,19 @@ This will come in handy later.
 
 > N
 
-> SHOW SHIELD (1)
+> SHOW SHIELD (29)
 
 > W
 
 You have the key, so...
 
-> MORAL MAGE (1)
+> MORAL MAGE (30)
+
+You feel so sad, mo' mad.
+
+How do you regain positivity?
+
+> GLOW GLAD (31)
 
 Let's go back east of the Creased Cross.
 
@@ -186,13 +192,13 @@ Let's go back east of the Creased Cross.
 
 > E
 
-> WAKE WHEE (1)
+> WAKE WHEE (32)
 
 You can try the two others for bonus points if you want.
 
 > E
 
-> SHINING SHORE (1)
+> SHINING SHORE (33)
 
 The Lake Lap puzzle is also optional, but it is not too hard.
 
