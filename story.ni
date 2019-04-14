@@ -92,6 +92,14 @@ a room has text called noway-text.
 
 a person has text called talk-text.
 
+cheattype is a kind of value. the cheattypes are letplus, letminus, partplus, partminus, leteq or phbt. A thing is usually phbt.
+
+a room has a cheattype. a room is usually phbt.
+
+a thing has a cheattype. a thing is usually phbt.
+
+the leet learner is a thing.
+
 volume going nowhere
 
 the wry wall is a backdrop.
@@ -386,7 +394,7 @@ tree-down is a truth state that varies.
 
 The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if]."
 
-the wrong art is scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things."
+the wrong art is scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things.". the wrong art is letplus.
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
@@ -1664,6 +1672,43 @@ understand "about" as abouting.
 carry out abouting:
 	say "Very Vile Fairy File came about when I was writing a yet-unnamed game on spoonerisms. I found a few spoonerisms that made more sense as alliteration, which was sort of fun, until I realized I had a lot more than that--enough for a game. It seemed like a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but my daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.";
 	the rule succeeds;
+
+book hinting
+
+the leet learner is a thing.
+
+chapter lling
+
+lling is an action applying to one thing.
+
+understand the command "cc" as something new.
+understand the command "ll" as something new.
+
+understand "cc [thing]" as lling.
+understand "ll [thing]" as lling.
+
+carry out lling:
+	if player does not have the leet learner, say "Regular hints aren't available."
+	if noun is phbt, say "The leet learner turns up nothing." instead;
+	if noun is letplus, say "The leet learner light turns solidly green." instead;
+	if noun is letminus, say "The leet learner light turns solidly  red." instead;
+	if noun is letplus, say "The leet learner blinks green." instead;
+	if noun is letminus, say "The leet learner blinks red." instead;
+	if noun is leteq, say "The leet learner's light turns yellow." instead;
+	say "BUG the leet learner encountered an unexpected value." instead;
+	the rule succeeds.
+
+chapter hinting
+
+hinting is an action applying to one thing.
+
+understand the command "hint" as something new.
+
+understand "hint [thing]" as hinting.
+
+carry out hinting:
+	say "Hints aren't available yet." instead;
+	the rule succeeds.
 
 volume when play begins
 
