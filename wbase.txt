@@ -1,0 +1,288 @@
+#--wbase.txt
+#--
+#--main branch file for Very Vile Fairy File walkthroughs
+#--  (there are only two, really. Full points, or minimum points.)
+#--
+#--command usage: rbr.py wbase.txt
+#--there will be post commands as well.
+
+files=walkthrough.txt,walkthrough-full.txt
+
+TSV:## minimum walkthrough	## maximum walkthrough
+
+==t0
+This is a quick walkthrough for Very Vile Fairy File. It neglects bonus points.
+==!
+This is a full walkthrough for Very Vile Fairy File. It details all bonus points.
+
+You can do something with the zigzag rig rag, but not right away. You don't want to be carrying it through the wet wood. In fact, it may help give you clues if you look at it.
+
+So let's leave the wet wood. It seems like there's no way out. But if you listen carefully and pay attention to clues, you can decide what to do.
+
+> GET GOOD (1)
+
+Oops! You found your way out but fell into the Vined Vault, which seems to have no weaknesses.
+
+> FIND FAULT (1)
+
+But now you must deal with the Mean Mass.
+
+> GREEN GRASS (1)
+
+Now, ugh! The trash trap is so odious. You don't have the guts. Something about this room...
+
+> GROW GRIT (1)
+
+You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
+
+> MASH MAP (1)
+
+Woohoo! You made it through, and now you need to fake your way into (not really) paying for a trip on the Trim Tram.
+
+> MIND ME (1)
+
+Okay, you're focused! Now the trim tram needs you to pay to get it started.
+
+There are three ways.
+
+> FLIM FLAM (1)
+
+The alternatives: no space, or you can also try a SKIM SCAM.
+
+Well, that does it for the introduction. You climb out of the Done Den to the Fun Fen. It gets a little less linear from here on out.
+
+Now about that zig zag rig rag. It can become something more useful.
+
+> BIG BAG (1)
+
+At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
+
+==t1
+Since the "wr" is pronounced as "r," and there is a prong part as you examine it, it may help to figure what to do.
+\\
+> STRONG START (0)
+
+The hive heap is tough to search through, unless you ...
+
+> DIVE DEEP (1)
+
+Now the vapor (vile) needs to be removed.
+
+> PAPER PILE (1)
+
+And now the fact finder is not sturdy enough to pick up, because it needs a ...
+
+> BACKED BINDER (1)
+
+There's something to the south you can polish off.
+
+> S
+
+The Real Rear has several possibilities. First, you need to show respect to the Ceiling Seer.
+
+> KNEEL NEAR (1)
+
+> FEEL FEAR (1)
+
+> DEAL DEAR (1)
+
+There's one more thing you can do, but it will have to wait for later.
+
+Now at Fun Fen, you have an opportunity for a bonus point in the long term, or you can just tell the Tall Tree what to do.
+
+> N
+
+> FALL FREE (1)
+
+> N
+
+There are a lot of ways to go in Creased Cross, but it's most helpful to go west at first.
+
+> W
+
+History hall has something to the west.
+
+> W
+
+> LENDING LIBE (1)
+
+> E
+
+Erst Lore is too high up! How to bring it down?
+
+> FIRST FLOOR (1)
+
+> IN
+
+> S
+
+Let's deal with the Bard.
+
+> COLD CARD (1)
+
+The gold guard will be useful later.
+
+> N
+
+> OUT
+
+Let's pick up some points for later.
+
+> MYSTERY MALL (1)
+
+How to deal with the gutta ganksta? Notice the tattoos.
+
+> LOTS LAME (1)
+
+Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
+
+> STAY STRONG (1)
+
+Back to normal.
+
+> W
+
+The marred mat doesn't look like it's worth buying, but ...
+
+> HARD HAT (1)
+
+> E
+
+> N
+
+> W
+
+In the Shirk Shell, you need to do something to get the Jerk Gel.
+
+> WORK WELL (1)
+
+> E
+
+Now you don't need to visit the Shirk Shell any more, so...
+
+> LOFT LAND (1)
+
+There's a new location to the west!
+
+> W
+
+> DREAMING DULL (1)
+
+How to get rid of the worst wave in the curst cave?
+
+> FIRST FAVE (1)
+
+What can you get from the tool tap?
+
+> COOL CAP (1)
+
+This will come in handy later.
+
+> E
+
+> N
+
+> SHOW SHIELD (1)
+
+> W
+
+You have the key, so...
+
+> MORAL MAGE (1)
+
+Let's go back east of the Creased Cross.
+
+> E
+
+> S
+
+> S
+
+> E
+
+> WAKE WHEE (1)
+
+You can try the two others for bonus points if you want.
+
+> E
+
+> SHINING SHORE (1)
+
+The Lake Lap puzzle is also optional, but it is not too hard.
+
+> SNAKE SNAP
+
+> MAKE MAP
+
+So now you have a handy map.
+
+> W
+
+> MYSTERY MALL
+
+You can twiddle back and forth as you need to.
+
+> W
+
+You should LISTEN in Mystery Mall. The song is useful later.
+
+This covers the shell and opens a new passage west.
+
+> W
+
+The screaming skull is annoying. You'll have to deal with it first.
+
+===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
+
+
+============================END UNIMPLEMENTED MIDDLEGAME============================
+
+Now in Creased Cross, you are ready to take on the Beast Boss.
+
+> BEAST BOSS (x-8)
+
+It will take something from you. But you don't know what!
+
+> LEAST LOSS (x-7)
+
+Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
+
+> CULL CEASED (x-6)
+
+That does for the bull beast! Incidentally, you can also say LUL LEAST.
+
+> FULL FEAST (x-5)
+
+Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
+
+Now you sense you must be close. But how do you get anyone's attention?
+
+Your cool cap is useful here.
+
+> CAST CAP (x-4)
+
+You need to dispose of Reeker Russell and his good gun.
+
+There's an LLP in here, but first, Russell can become wimpier ...
+
+> MEEKER MUSCLE (x-3)
+
+And the good gun can go lame.
+
+> WOOD ONE (x-2)
+
+Now you are free to go north.
+
+> N
+
+The airy isle still feels woeful. That well worn hell horn!
+
+> TELL TORN (x-1)
+
+Here in the Airy Isle, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
+
+This is something you may've seen right away, but it's the final thing you need to do.
+
+> BURY BILE (x)
+
+Congratulations. You win! I hope you enjoyed this.
