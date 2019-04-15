@@ -229,6 +229,11 @@ every turn when player is in Wet Wood:
 	if turn count < 5, continue the action;
 	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
 
+after looking in wet wood for the first time:
+	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could EXAMINE or READ it for instructions. (NOTE: You can use point the learner at something by typing LL (thing), or you can refer to the learner as LL. You can also LL to scan your current location.)[line break]";
+	now player has leet learner;
+	continue the action;
+
 chapter getgooding
 
 getgooding is an action applying to nothing.
@@ -976,7 +981,7 @@ carry out breakbrieing:
 
 part Whining War 2,1
 
-Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view."
+Whining War is east of Lake Lea. cht is partplus. It is in Piddling Pain. "You can't get a close enough view."
 
 [??mining more / dining door]
 
@@ -1001,6 +1006,7 @@ carry out shiningshoreing:
 		say "It could be that way. But you need to get rid of the whining first." instead;
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	up-reg;
+	phbt whining war;
 	move lake lap to Whining War;
 	the rule succeeds.
 
@@ -1069,7 +1075,7 @@ carry out makemaping:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross.
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht is leteq.
 
 ever-loft is a truth state that varies.
 
@@ -1247,7 +1253,7 @@ part Gassed Gap 0,4
 
 Gassed Gap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
 
-Gassed Gap is north of Foe Field.
+Gassed Gap is north of Foe Field. cht is partminus.
 
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
@@ -1296,6 +1302,7 @@ carry out castcaping:
 	moot cool cap;
 	move Reeker Russell to Gassed Gap;
 	up-reg;
+	phbt gassed gap;
 	the rule succeeds;
 
 chapter beakerbustleing
@@ -1353,7 +1360,7 @@ Airy Isle is north of Gassed Gap. It is in Verminal Vale. "You hear laughter her
 
 chapter telltorning
 
-the well worn hell horn is a thing in Airy Isle.
+the well worn hell horn is a thing in Airy Isle. cht is leteq.
 
 instead of doing something with the well worn hell horn:
 	if action is procedural, continue the action;
@@ -1373,7 +1380,7 @@ carry out telltorning:
 
 chapter very vile fairy file
 
-the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs]."
+the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht is partminus.
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -1528,6 +1535,7 @@ instead of thinking:
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
+	the rule succeeds;
 
 to decide whether tried-yet of (ct - text):
 	let tried-any be false;
