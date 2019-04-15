@@ -54,6 +54,22 @@ carry out nowaying:
 	say "[if needs is 0]Every noway-text is defined[else]You need to define noway-text for [needs] room[plur of needs][end if].";
 	the rule succeeds.
 
+volume monty stuff
+
+include Full Monty Testing by Andrew Schultz.
+
+table of monties (continued)
+montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
+"ll"	false	"Leet Learner"	show-leets rule	"showing leet learner readings"
+
+this is the show-leets rule:
+	let c be cht of location of player;
+	say "[location of player] is scanned as [scancol of c].";
+	repeat with Q running through things enclosed by location of player:
+		say "Checking [Q]...";
+		let cq be cht of Q;
+		if cq is not phbt, say "[Q] is scanned as [scancol of cq].";
+
 Very Vile Fairy File Tests ends here.
 
 ---- DOCUMENTATION ----
