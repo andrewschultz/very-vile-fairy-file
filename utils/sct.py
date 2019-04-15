@@ -34,6 +34,7 @@ hdr_str = "                  NE OP UD TO"
 
 src = i7.main_src("vv")
 wthru = i7.walkthrough_file("vv")
+wfull = re.sub("walkthrough", "walkthrough-full", wthru)
 wthru2 = re.sub("\.txt", "2.txt", wthru)
 vv_table = i7.table_file("vv")
 

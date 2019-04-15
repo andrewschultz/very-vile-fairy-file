@@ -5,7 +5,7 @@
 		<room id="1" name="Got Gear Hot Here" subtitle="" x="-288" y="64" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>marred mat</objects>
 		</room>
-		<room id="2" name="Wet Wood" subtitle="" x="-448" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="2" name="Wet Wood" subtitle="" x="512" y="160" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isStartRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="4" name="Fun Fen" subtitle="" x="32" y="160" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>silly sign|tall tree|Cark Cliff</objects>
 		</room>
@@ -31,24 +31,24 @@
 			<dock index="0" id="6" port="w" />
 			<dock index="1" id="1" port="e" />
 		</line>
-		<room id="16" name="Vined Vault" subtitle="" x="-288" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="16" name="Vined Vault" subtitle="" x="512" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="17" name="" description="" style="dashed" flow="oneWay">
-			<dock index="0" id="2" port="e" />
-			<dock index="1" id="16" port="w" />
+			<dock index="0" id="2" port="s" />
+			<dock index="1" id="16" port="n" />
 		</line>
-		<room id="5" name="Trim Tram" subtitle="" x="32" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="5" name="Trim Tram" subtitle="" x="192" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="20" name="" description="" style="dashed" flow="oneWay">
-			<dock index="0" id="5" port="n" />
-			<dock index="1" id="4" port="s" />
+			<dock index="0" id="5" port="nw" />
+			<dock index="1" id="4" port="se" />
 		</line>
-		<room id="18" name="Po' Pit" subtitle="" x="-128" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="18" name="Po' Pit" subtitle="" x="352" y="288" w="96" h="64" region="Worst Whew" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="21" name="" description="" style="dashed" flow="oneWay">
-			<dock index="0" id="16" port="e" />
-			<dock index="1" id="18" port="w" />
+			<dock index="0" id="16" port="w" />
+			<dock index="1" id="18" port="e" />
 		</line>
 		<line id="22" name="" description="" style="dashed" flow="oneWay">
-			<dock index="0" id="18" port="e" />
-			<dock index="1" id="5" port="w" />
+			<dock index="0" id="18" port="w" />
+			<dock index="1" id="5" port="e" />
 		</line>
 		<room id="19" name="Airy Isle" subtitle="" x="32" y="-352" w="96" h="64" region="Verminal Vale" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Very vile fairy file</objects>
@@ -62,7 +62,7 @@
 			<dock index="0" id="4" port="e" />
 			<dock index="1" id="25" port="w" />
 		</line>
-		<room id="27" name="Done Dune" subtitle="" x="512" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="27" name="Done Dune" subtitle="" x="512" y="32" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="28" name="Capped Cone" subtitle="" x="-448" y="-352" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Zapped Zone" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="29" name="Fast Foi'd" subtitle="" x="352" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Vast Void" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="30" name="" description="">
@@ -118,8 +118,8 @@
 		<room id="47" name="Lit Lawn" subtitle="" x="-128" y="-224" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="48" name="Dead Doom" subtitle="" x="-288" y="-224" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="49" name="" description="" startText="down" endText="up">
-			<dock index="0" id="12" port="se" />
-			<dock index="1" id="27" port="nw" />
+			<dock index="0" id="12" port="e" />
+			<dock index="1" id="27" port="w" />
 		</line>
 		<line id="50" name="" description="" style="dashed">
 			<dock index="0" id="19" port="e" />
@@ -141,6 +141,14 @@
 			<dock index="0" id="6" port="sw" />
 			<dock index="1" id="54" port="ne" />
 		</line>
+		<room id="56" name="Real Rear" subtitle="" x="32" y="288" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+			<objects>Peeling Pier|Steel Steer|Ceiling Seer</objects>
+		</room>
+		<line id="57" name="" description="">
+			<dock index="0" id="4" port="s" />
+			<dock index="1" id="56" port="n" />
+		</line>
+		<room id="58" name="Store All Stage" subtitle="" x="192" y="-224" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 	</map>
 	<settings>
 		<colors>
