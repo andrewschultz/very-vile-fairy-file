@@ -697,11 +697,19 @@ part History Hall -1,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Creased Cross. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is west of Creased Cross. cht is leteq. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
-the Gutta Ganksta is a person. description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'"
+the Gutta Ganksta is an optional person. description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht is leteq.
+
+GOTS GAME is part of the Gutta Ganksta. cht is leteq.
+
+after lling gutta ganksta:
+	if gots game is leteq:
+		say "But the GOTS GAME tattoo is worth scanning, too, so you do so.";
+		try lling gots game;
+	continue the action;
 
 Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because it tunes out, making way for something much worse[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
 
@@ -729,7 +737,11 @@ carry out historyhalling:
 	move-from-temp Name Notes Tame Totes;
 	now vending vibe is mapped west of history hall;
 	now history hall is mapped east of vending vibe;
+	move-from-temp erst lore;
+	move-to-temp gutta ganksta;
+	move-to-temp Oi Mo;
 	bold-my-room;
+	now mistmall is false;
 	the rule succeeds;
 
 chapter mysterymalling
@@ -852,9 +864,9 @@ carry out coldcarding:
 
 part Vending Vibe -2,1 a
 
-Vending Vibe is a room in Piddling Pain. "You can only go back east."
+Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 
-The Trending Tribe are plural-named people in Vending Vibe.
+The Trending Tribe are plural-named people in Vending Vibe. cht is red.
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [next-rand-txt of table of vvff books]. This locational libe has no vocational vibe.";
 
@@ -1152,6 +1164,8 @@ Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-vibe]."
 the worst wave is scenery in Curst Cave.
 
 the screaming skull is a thing in curst cave.
+
+check taking screaming skull: say "You need to 'take' it figuratively." instead;
 
 to say tap-in-vibe:
 	if tool tap is in vending vibe, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
@@ -1687,6 +1701,7 @@ understand "verbs" as verbsing.
 carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle hints on and off, respectively. Currently they are [on-off of help-how].";
+	say "[2da]The Leet Learner can help you determine what needs to be changed. [b]LL[r] or [b]CC[r] is the shorthand for scanning a location, and [b]LL[r] or [b]CC[r] (any thing) scans it.";
 	the rule succeeds.
 
 chapter creditsing
@@ -2035,11 +2050,20 @@ volume parser errors guiding us
 
 Rule for printing a parser error (this is the clue half right words rule):
 	repeat through table of understands:
-		if location of player is myloc entry:
-			if the player's command includes mytxt entry:
+		if there is a myloc entry:
+			if location of player is myloc entry:
+				if the player's command includes mytxt entry:
+					say "[myexp entry][line break]";
+					the rule succeeds;
+		else:
+			process the myrule entry;
+			if the myrule entry succeeded and the player's command includes mytxt entry:
 				say "[myexp entry][line break]";
 				the rule succeeds;
 	continue the action;
+
+Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
+	say "You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.";
 
 [see header file for table of understands]
 
