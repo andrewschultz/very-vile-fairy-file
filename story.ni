@@ -92,15 +92,15 @@ a room has text called noway-text.
 
 a person has text called talk-text.
 
-cheattype is a kind of value. the cheattypes are letplus, letminus, partplus, partminus, leteq or phbt. A thing is usually phbt.
+cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq.
 
-a room has a cheattype. a room is usually phbt.
+a room has a cheattype called cht. cht of a room is usually phbt.
 
-a thing has a cheattype. a thing is usually phbt.
+a thing has a cheattype called cht. cht of a thing is usually phbt.
 
 volume going nowhere
 
-the wry wall is a backdrop.
+the wry wall is a backdrop. "The wry wall reads:[line break][sign-dir]"
 
 nother-room is a room that varies.
 
@@ -112,7 +112,10 @@ after looking in a signable room:
 
 to say sign-dir:
 	repeat through table of bad locs: [this is in the tables file]
-		if there is an e1 entry and e1 entry is location of player, say "[line break][b][fake-name entry][r]: [e2 entry]";
+		if there is an e1 entry and e1 entry is location of player:
+			got-wry is true;
+			say "[line break][b][fake-name entry][r]: [e2 entry].";
+	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
 instead of doing something with wry wall:
 	if action is procedural, continue the action;
@@ -172,7 +175,7 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble."
 
-the zig zag rig rag is a thing. The player carries the zig zag rig rag.
+the zig zag rig rag is a thing. The player carries the zig zag rig rag. cht is leteq.
 
 after examining zig zag rig rag when bag-hint is true:
 	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
@@ -206,7 +209,7 @@ volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][line break]Oh, there's GOT to be a simple way to become better.".
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][line break]Oh, there's GOT to be a simple way to become better.". cht is leteq.
 
 wood-row is a number that varies.
 
@@ -243,7 +246,7 @@ carry out getgooding:
 
 part vined vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out."
+Vined Vault is a room in Worst Whew. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out.". cht is partminus.
 
 the green grass is scenery. "The green grass goes well with the vined vault."
 
@@ -270,7 +273,7 @@ carry out findfaulting:
 
 chapter mean mass
 
-The mean mass is a thing. "The mean mass continues to pulse and block the way out of the vined vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally.".
+The mean mass is a thing. "The mean mass continues to pulse and block the way out of the vined vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally.". cht is letplus.
 
 chapter greengrassing
 
@@ -289,11 +292,11 @@ carry out greengrassing:
 
 part Po' Pit 2,-1
 
-Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
+Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht is blue.
 
 the row writ is scenery in Po' Pit. "It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason."
 
-the trash trap is scenery in Po' Pit. "There's a sort of map at the start of the trap, but it can't be right. And yet, at the same time, if you disbelieved the map and got caught, and it turned out the map was right, you'd feel dumb. Now you've seen the map, you can't get it out of your mind."
+the trash trap is a scenery in Po' Pit. "There's a sort of map at the start of the trap, but it can't be right. And yet, at the same time, if you disbelieved the map and got caught, and it turned out the map was right, you'd feel dumb. Now you've seen the map, you can't get it out of your mind.". cht is letminus.
 
 understand "map" as trash trap when player is in Po' Pit.
 
@@ -370,7 +373,7 @@ understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player
 carry out flimflaming:
 	if me-minded is false:
 		clue-later "FLIM FLAM";
-		say "But you don't have the confidence yet!" instead;
+		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit." instead;
 	if the player's command includes "skim", now skim-not-flim is true;
 	say "That does it! The tram moves off...";
 	move the player to Fun Fen;
@@ -382,7 +385,7 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. Back north, well ... [if tall tree is moot]you can go that way now[else]there's no way, right now. But there is a tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, buit the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
 the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
 
@@ -390,9 +393,9 @@ instead of entering done den, say "As you start to enter, you imagine a weight f
 
 tree-down is a truth state that varies.
 
-The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if]."
+The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht is leteq.
 
-the wrong art is scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things.". the wrong art is letplus.
+the wrong art is scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things.". cht of the wrong art is letplus.
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
@@ -514,17 +517,17 @@ carry out backedbindering:
 
 part Real Rear 0,-1
 
-Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore, at least to the south. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north. You also sense a Ceiling Seer above, judging what you do."
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht is partplus.
 
-the Sage Sea is scenery in Real Rear.
+the Sage Sea is scenery in Real Rear. [?? cage key as a mistake, mage me]
 
-the steel steer is a thing in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do."
+the steel steer is a thing in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht is partminus.
 
 the peeling pier is scenery in Real Rear.
 
 check taking steel steer: say "It is way too heavy." instead;
 
-the cage's key is a thing.
+the cage key is a thing.
 
 chapter kneelnearing
 
@@ -541,7 +544,7 @@ carry out kneelnearing:
 	if knelt-yet is true, say "You already did!" instead;
 	up-reg; [kneel near]
 	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
-	now knelt-yet is true;
+	now knelt-yet is true; [?? track difference]
 	the rule succeeds.
 
 chapter feelfearing
@@ -575,7 +578,7 @@ carry out dealdearing:
 		clue-later "DEAL DEAR";
 		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
 	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
-	now player has cage's key;
+	now player has cage key;
 	up-reg;
 	the rule succeeds.
 
@@ -598,7 +601,7 @@ carry out healhereing:
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain.
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can go in all four directions here.". cht is letminus.
 
 chapter Bull Beast
 
@@ -1211,7 +1214,7 @@ understand the command "moral mage" as something new.
 understand "moral mage" as moralmageing when coral cage is quicknear.
 
 carry out moralmageing:
-	if player does not have cage's key:
+	if player does not have cage key:
 		clue-later "MORAL MAGE";
 		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
 	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
@@ -1411,21 +1414,6 @@ volume verbs
 
 book standard modifications
 
-chapter reading
-
-reading is an action applying to nothing.
-
-understand the command "read" as something new.
-
-understand "read" as reading.
-
-carry out reading:
-	if noun is leet learner, say "CONCEIT CONCERNER is in blue.[line break]CHEAT CHURNER is in green.[line break]MEET MOURNER is in yellow.[line break]BEAT BURNER is in orange.[line break]EAT EARNER is in red.[line break]TREAT TURNER is in brown." instead;
-	if read-exam-note is false:
-		say "NOTE: most of the time, READ works equivalently to X or EXAMINE.";
-		now read-exam-note is true;
-	try examining noun instead;
-
 chapter waiting
 
 check waiting: say "Hi ho! Lie low." instead;
@@ -1535,12 +1523,21 @@ to decide whether tried-yet of (ct - text):
 	decide no;
 
 to clue-later (ct - text):
+	now first-think-clue-flag is true;
 	repeat through table of forlaters:
 		if ct is cmd-to-say entry:
 			if ready-to-hint entry is true, say "(re-checking) ";
 			now ready-to-hint entry is true;
 			the rule succeeds;
 	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
+
+first-think-clue-flag is a truth state that varies.
+ever-think-flag is a truth state that varies.
+
+every turn when first-think-clue-flag is true and ever-think-flag is false:
+	if ever-think-flag is false, say "[line break]NOTE: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under THINK, with clues as to when they work.";
+	now ever-think-flag is true;
+	continue the action;
 
 chapter score
 
@@ -1584,7 +1581,7 @@ book nonstandard but general verbs
 
 chapter reading
 
-reading is an action applying to nothing.
+reading is an action applying to one thing.
 
 understand the command "read" as something new.
 
@@ -1592,20 +1589,22 @@ understand "read" as reading.
 
 definition: a thing (called th) is readable:
 	if th is very vile fairy file, yes;
+	if th is leet learner, yes;
 	no;
 
-read-warn is a truth state that varies.
+read-exam-note is a truth state that varies.
 
 carry out reading:
 	repeat through table of readables:
 		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
-	if read-warn is false, say "NOTE: read and examine are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
-	now read-warn is true;
+	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
+	now read-exam-note is true;
 	try examining the noun instead;
 
 table of readables
 read-thing	read-txt
 very vile fairy file	"You note one book is [next-rand-txt of table of vvff digs]."
+leet learner	"CONCEIT CONCERNER is in blue.[line break]CHEAT CHURNER is in green.[line break]MEET MOURNER is in yellow.[line break]BEAT BURNER is in orange.[line break]EAT EARNER is in red.[line break]TREAT TURNER is in brown."
 
 chapter xyzzying
 
@@ -1697,17 +1696,25 @@ lling is an action applying to one thing.
 understand the command "cc" as something new.
 understand the command "ll" as something new.
 
-understand "cc [thing]" as lling.
-understand "ll [thing]" as lling.
+understand "cc [thing]" as lling when player has leet learner.
+understand "ll [thing]" as lling when player has leet learner.
+understand "cc" as lling when player has leet learner.
+understand "ll" as lling when player has leet learner.
+
+rule for supplying a missing noun when lling:
+	if cht of the player is not phbt:
+		say "You are so focused inward, you just point the learner at yourself.";
+		now the noun is the player;
+	else:
+		say "You wave the leet learner all around [location of player].";
+		now the noun is the location of the player;
+	continue the action;
 
 carry out lling:
-	if player does not have the leet learner, say "Regular hints aren't available."
-	if noun is phbt, say "The leet learner turns up nothing." instead;
-	if noun is letplus, say "The leet learner light turns solidly green." instead;
-	if noun is letminus, say "The leet learner light turns solidly  red." instead;
-	if noun is letplus, say "The leet learner blinks green." instead;
-	if noun is letminus, say "The leet learner blinks red." instead;
-	if noun is leteq, say "The leet learner's light turns yellow." instead;
+	if player does not have the leet learner, say "Regular hints aren't available.";
+	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
+	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
+	say "The leet learner light turns solidly [if cht of noun is letplus]blue[else if cht of noun is partplus]green[else if cht of noun is leteq]yellow[else if cht of noun is partminus]orange[else if cht of noun is letminus]red[else]WEIRD AND BUGLY[cht of noun][end if] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
 	say "BUG the leet learner encountered an unexpected value." instead;
 	the rule succeeds.
 
@@ -1773,7 +1780,7 @@ carry out glowglading:
 	say "That's it! You feel much more comfortable now.";
 	now in-so-sad is false;
 	now in-so-saded is true;
-	now the player is phbt;
+	now cht of the player is phbt;
 	the rule succeeds.
 
 the get-sad rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1782,14 +1789,15 @@ this is the get-sad rule:
 	if in-so-saded is false and in-so-sad is false and score >= 30:
 		now in-so-sad is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
-		now the player is letplus;
+		now cht of the player is letplus;
 	the rule succeeds;
 
 every turn when in-so-sad is true:
 	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
 instead of doing something when in-so-sad is true:
-	if current action is procedural or current action is not staystronging, continue the action;
+	if action is procedural, continue the action;
+	if current action is glowglading, continue the action;
 	say "You can't. You just feel ... so sad. Mo['] mad.";
 
 chapter staystronging
@@ -1808,7 +1816,7 @@ carry out staystronging:
 	now in-way-wrong is false;
 	now in-way-wronged is true;
 	up-reg;
-	now the player is phbt;
+	now cht of the player is phbt;
 	the rule succeeds.
 
 the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1817,14 +1825,15 @@ this is the get-wrong rule:
 	if in-way-wronged is false and in-way-wrong is false and score >= 20:
 		now in-way-wrong is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
-		now the player is letplus;
+		now cht of the player is letplus;
 	the rule succeeds;
 
 every turn when in-way-wrong is true:
 	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
 instead of doing something when in-way-wrong is true:
-	if current action is procedural or current action is not staystronging, continue the action;
+	if action is procedural, continue the action;
+	if current action is not staystronging, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter blowingblobsing
