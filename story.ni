@@ -92,7 +92,7 @@ a room has text called noway-text.
 
 a person has text called talk-text.
 
-cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq.
+cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth.
 
 a room has a cheattype called cht. cht of a room is usually phbt.
 
@@ -111,9 +111,10 @@ after looking in a signable room:
 	continue the action;
 
 to say sign-dir:
+	let got-wry be false;
 	repeat through table of bad locs: [this is in the tables file]
 		if there is an e1 entry and e1 entry is location of player:
-			got-wry is true;
+			now got-wry is true;
 			say "[line break][b][fake-name entry][r]: [e2 entry].";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
@@ -175,7 +176,7 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble."
 
-the zig zag rig rag is a thing. The player carries the zig zag rig rag. cht is leteq.
+the zig zag rig rag is a thing. cht is leteq. The player carries the zig zag rig rag.
 
 after examining zig zag rig rag when bag-hint is true:
 	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
@@ -292,9 +293,9 @@ carry out greengrassing:
 
 part Po' Pit 2,-1
 
-Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht is blue.
+Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht is letplus.
 
-the row writ is scenery in Po' Pit. "It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason."
+the row writ is scenery in Po' Pit. "It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason.". cht is partplus.
 
 the trash trap is a scenery in Po' Pit. "There's a sort of map at the start of the trap, but it can't be right. And yet, at the same time, if you disbelieved the map and got caught, and it turned out the map was right, you'd feel dumb. Now you've seen the map, you can't get it out of your mind.". cht is letminus.
 
@@ -334,12 +335,16 @@ carry out growgriting:
 	if grit-grown is true, say "You already did that." instead;
 	say "The trash trap looks less yucky now.";
 	now grit-grown is true;
+	now row writ is phbt;
+	now po' pit is phbt;
 	up-reg;
 	the rule succeeds.
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
+Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht is yellow.
+
+FIND FEE is scenery in Trim Tram. cht is partplus.
 
 chapter mindmeing
 
@@ -1714,9 +1719,12 @@ carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available.";
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
-	say "The leet learner light turns solidly [if cht of noun is letplus]blue[else if cht of noun is partplus]green[else if cht of noun is leteq]yellow[else if cht of noun is partminus]orange[else if cht of noun is letminus]red[else]WEIRD AND BUGLY[cht of noun][end if] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
+	say "The leet learner light turns solidly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
 	say "BUG the leet learner encountered an unexpected value." instead;
 	the rule succeeds.
+
+to say scancol of (x - a cheattype):
+	say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
 
 chapter hinting
 
