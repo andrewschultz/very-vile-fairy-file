@@ -190,7 +190,7 @@ this is the can-deal-dear rule:
 	the rule fails.
 
 this is the did-deal-dear rule:
-	if cage's key is not off-stage, the rule succeeds;
+	if cage key is not off-stage, the rule succeeds;
 	the rule fails.
 
 this is the can-heal-here rule: [?? obviously needs to be fleshed out]
@@ -213,7 +213,7 @@ this is the did-moral-mage rule:
 	the rule fails.
 
 this is the can-moral-mage rule:
-	if player has cage's key, the rule succeeds;
+	if player has cage key, the rule succeeds;
 	the rule fails.
 
 this is the did-first-fave rule:

@@ -94,6 +94,9 @@ a person has text called talk-text.
 
 cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth.
 
+to phbt (x - a thing): now cht of x is phbt;
+to phbt (x - a room): now cht of x is phbt;
+
 a room has a cheattype called cht. cht of a room is usually phbt.
 
 a thing has a cheattype called cht. cht of a thing is usually phbt.
@@ -335,14 +338,14 @@ carry out growgriting:
 	if grit-grown is true, say "You already did that." instead;
 	say "The trash trap looks less yucky now.";
 	now grit-grown is true;
-	now row writ is phbt;
-	now po' pit is phbt;
+	phbt row writ;
+	phbt po' pit;
 	up-reg;
 	the rule succeeds.
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht is yellow.
+Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht is leteq.
 
 FIND FEE is scenery in Trim Tram. cht is partplus.
 
@@ -410,11 +413,15 @@ instead of doing something with tall tree:
 	if action is procedural, continue the action;
 	say "[if tree-down is true]You'd better not do anything to the tree. It's your way across[else]You need to do something specific to the tree. Maybe give it an order[end if].";
 
-the hive heap is a thing.
+the hive heap is a thing. cht is leteq.
 
-the vapor vile is a thing.
+check taking hive heap: say "You'd probably get stung." instead;
 
-the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.".
+the vapor vile is a thing. cht is leteq.
+
+check taking vapor vile: say "It's too ethereal to take," instead;
+
+the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht is partplus.
 
 check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
 
@@ -435,11 +442,12 @@ carry out strongstarting:
 	now started-strong is true;
 	say "Boom!";
 	up-min;
+	phbt wrong art;
 	the rule succeeds.
 
 chapter cark cliff
 
-Cark Cliff is scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if]."
+Cark Cliff is scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
 
 chapter sparkspliffing
 
@@ -472,6 +480,7 @@ carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
 	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
 	now tree-down is true;
+	phbt tall tree;
 	move hive heap to Fun Fen;
 	up-reg;
 	the rule succeeds;
@@ -550,6 +559,8 @@ carry out kneelnearing:
 	up-reg; [kneel near]
 	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
 	now knelt-yet is true; [?? track difference]
+	now cht of real rear is leteq;
+	now cht of steel steer is letminus;
 	the rule succeeds.
 
 chapter feelfearing
@@ -585,6 +596,8 @@ carry out dealdearing:
 	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
 	now player has cage key;
 	up-reg;
+	phbt real rear;
+	phbt steel steer;
 	the rule succeeds.
 
 chapter healhereing
@@ -1788,7 +1801,7 @@ carry out glowglading:
 	say "That's it! You feel much more comfortable now.";
 	now in-so-sad is false;
 	now in-so-saded is true;
-	now cht of the player is phbt;
+	phbt Kerry Kyle;
 	the rule succeeds.
 
 the get-sad rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1824,7 +1837,7 @@ carry out staystronging:
 	now in-way-wrong is false;
 	now in-way-wronged is true;
 	up-reg;
-	now cht of the player is phbt;
+	phbt Kerry Kyle;
 	the rule succeeds.
 
 the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
