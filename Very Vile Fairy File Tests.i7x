@@ -64,11 +64,11 @@ montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 
 this is the show-leets rule:
 	let c be cht of location of player;
-	say "[location of player] is scanned as [scancol of c].";
+	say "[if c is phbt]No puzzles for [location of player][else][location of player] is scanned as [scancol of c].";
 	repeat with Q running through things enclosed by location of player:
 		say "Checking [Q]...";
 		let cq be cht of Q;
-		if cq is not phbt, say "[Q] is scanned as [scancol of cq].";
+		if cq is not phbt, say "[Q] is scanned as [scancol of cq][if Q is optional]. OPTIONAL[end if].";
 
 Very Vile Fairy File Tests ends here.
 

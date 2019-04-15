@@ -101,6 +101,8 @@ a room has a cheattype called cht. cht of a room is usually phbt.
 
 a thing has a cheattype called cht. cht of a thing is usually phbt.
 
+a thing can be optional. a thing is usually not optional.
+
 volume going nowhere
 
 the wry wall is a backdrop. "The wry wall reads:[line break][sign-dir]"
@@ -408,7 +410,7 @@ tree-down is a truth state that varies.
 
 The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht is leteq.
 
-the wrong art is scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things.". cht of the wrong art is letplus.
+the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things.". cht of the wrong art is letplus.
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
@@ -452,7 +454,7 @@ carry out strongstarting:
 
 chapter cark cliff
 
-Cark Cliff is scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
+Cark Cliff is optional scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
 
 chapter sparkspliffing
 
@@ -707,7 +709,7 @@ after examining Toe Tappin Row Rappin:
 	if player does not have Row Rappin, now player has Row Rappin;
 	continue the action;
 
-Oi Mo by Tim T Sims Pimp is scenery. "It's a truly awful song. If you could find a way to turn it down..."
+Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht is leteq.
 
 check going west in history hall:
 	if mistmall is true, continue the action;
@@ -981,7 +983,7 @@ carry out breakbrieing:
 
 part Whining War 2,1
 
-Whining War is east of Lake Lea. cht is partplus. It is in Piddling Pain. "You can't get a close enough view."
+Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view.". cht is partplus.
 
 [??mining more / dining door]
 
@@ -1740,7 +1742,7 @@ carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available.";
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
-	say "The leet learner light turns solidly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
+	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
 	say "BUG the leet learner encountered an unexpected value." instead;
 	the rule succeeds.
 
