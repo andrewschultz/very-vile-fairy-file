@@ -14,7 +14,7 @@ import sys
 long_lines = defaultdict(int)
 note_dict = defaultdict(int)
 already_done = defaultdict(int)
-source_dupes = defaultdict(list)
+source_dupes = defaultdict(lambda:defaultdict(list))
 dupes = 0
 uniq_dupes = 0
 internal_dupes = 0
@@ -33,6 +33,14 @@ def usage():
     print("e = forces open-notes file.")
     print("a = checks notes file for slashes without spaces before and after. You need ac / ca to copy back over.")
     exit()
+
+def source_list_of(j):
+    temp = ''
+    for k in sorted(source_dupes[j], key=lambda x:len(source_dupes[j][x])):
+        if temp: temp += " || "
+        temp += os.path.basename(k) + "="
+        temp += ', '.join(source_dupes[j][k])
+    return temp
 
 def rejig_notes_file():
     got_dif = 0
@@ -130,7 +138,7 @@ def read_source_files(j):
                               "<<NOTES {:d}: {:s}>>=".format(note_dict[q], q))
                             print("    ", line.strip())
                         uniqs[q] = True
-                        source_dupes[q].append("{:s} L{:d}".format(os.path.basename(x), line_count))
+                        source_dupes[q][x].append("L{:d}".format(line_count))
 
 
 i7.go_proj("vvff")
@@ -182,7 +190,10 @@ while count < len(sys.argv):
 read_notes_file("very-vile-fairy-file")
 read_source_files("very-vile-fairy-file")
 
-for j in sorted(source_dupes.keys()): print(j, "appears", len(source_dupes[j]), "extra times in the source:", '/'.join(source_dupes[j]))
+for j in sorted(source_dupes.keys()):
+    detail_length = 0
+    for k in source_dupes[j]: detail_length += len(source_dupes[j][k])
+    print(j, "appears", detail_length, "extra time{:s} in the source:".format(i7.plur(len(source_dupes[j]))), source_list_of(j))
 
 if dupes + uniq_dupes + internal_dupes:
     print("Total duplicates:", dupes)
