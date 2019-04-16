@@ -82,6 +82,9 @@ def read_notes_file(j):
                     print("Long line {:d} ({:d}):".format(line_count, long_so_far), line.strip()[:50] + ("" if len(line) < 50 else "..."), "has lots of spaces. Maybe use slashes or comments or put long ideas at the top.")
                     space_check += 1
             for q in lla:
+                if not q.strip():
+                    print("WARNING blank entry at line {:d}. Check for errant slash at end or double slash.".format(line_count))
+                    continue
                 if q and q in note_dict.keys():
                     if q in already_done.keys():
                         if not line_to_open: line_to_open = line_count

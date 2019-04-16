@@ -86,6 +86,8 @@ understand "signing sore" as a mistake ("You make a rude gesture, for whatever g
 
 volume unsorted
 
+understand "card cat" as a mistake ("Not very practical.") when hard hat is quicknear or marred mat is quicknear.
+
 chapter go gate
 
 understand "crow crate" as a mistake ("No birds appear to fly you over the grate, nor does a box of crowbars materialize.") when go gate is quicknear.
