@@ -14,6 +14,7 @@ import sys
 long_lines = defaultdict(int)
 note_dict = defaultdict(int)
 already_done = defaultdict(int)
+open_after_dict = defaultdict(int)
 source_dupes = defaultdict(lambda:defaultdict(list))
 dupes = 0
 uniq_dupes = 0
@@ -139,7 +140,10 @@ def read_source_files(j):
                             print("    ", line.strip())
                         uniqs[q] = True
                         source_dupes[q][x].append("L{:d}".format(line_count))
-
+                        if x not in open_after_dict or not open_first:
+                            open_after_dict[x] = line_count
+                        if not line_to_open or not open_first:
+                            line_to_open = note_dict[q]
 
 i7.go_proj("vvff")
 
@@ -207,18 +211,12 @@ if force_open and not open_last and not open_first:
     else: open_first = True
     print("Opening", "first" if open_first else open_last)
 
-if open_last or open_first:
-    u = list(set(source_dupes.keys()) | set(already_done.keys()) | set(long_lines.keys()))
-    if len(u):
-        if open_last:
-            u1 = max(u, key=lambda x: note_dict[x])
-        else:
-            u1 = min(u, key=lambda x: note_dict[x])
-        i7.npo("notes.txt", note_dict[u1])
-    elif force_open:
-        print("No duplicates. Opening notes file.")
-        i7.npo("notes.txt")
-    else:
-        print("Nothing to open. Use -e to force opening.")
-elif len(source_dupes.keys()) + len(already_done.keys()) + len(long_lines.keys()):
-    print("Run -lo / -fo to open up the notes file at the first duplicate.")
+if len(open_after_dict):
+    if open_last or open_first or force_open:
+        for q in open_after_dict:
+            i7.npo(q, open_after_dict[q], bail=False)
+        i7.npo("notes.txt", line_to_open)
+    else: print("You need -of or -ol to open the duplicate(s) found.")
+elif force_open:
+    print("No duplicates. Opening notes file.")
+    i7.npo("notes.txt")
