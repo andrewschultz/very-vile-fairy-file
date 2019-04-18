@@ -14,7 +14,7 @@ fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
 fun fen	south	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']." [?? another bad place]
 Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Soft Sand	up	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
-Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN' TUNNEL."
+Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL."
 Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
 Whining War	north	false	"Done Dune"	"It doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
 
@@ -72,9 +72,15 @@ to say your-rank:
 		say "gold god";
 
 table of understands
-mytxt (topic)	myloc	myexp
-"get" or "good"	wet wood	"You almost felt like you were able to find your way around."
-"wet" or "wood"	wet wood	"You need to do something like wet wood. But it can't be either."
+mytxt (topic)	myloc	myrule	myexp
+"big" or "bag"	--	got-rig-rag rule	"Yes, the zig zag rig rag could be something else."
+"find" or "fault"	vined vault	--	"Hmm! That is interesting."
+"get" or "good"	wet wood	a rule	"You almost felt like you were able to find your way around."
+"wet" or "wood"	wet wood	--	"You need to do something like wet wood. But it can't be either."
+
+this is the got-rig-rag rule:
+	if player has zig zag rig rag, the rule succeeds;
+	the rule fails;
 
 volume random tables
 

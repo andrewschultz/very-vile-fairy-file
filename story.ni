@@ -697,7 +697,7 @@ part History Hall -1,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Creased Cross. cht is leteq. it is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is west of Creased Cross. cht is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
@@ -706,7 +706,7 @@ the Gutta Ganksta is an optional person. description is "GOTS GAME is tattooed o
 GOTS GAME is part of the Gutta Ganksta. cht is leteq.
 
 after lling gutta ganksta:
-	if gots game is leteq:
+	if cht of gots game is leteq:
 		say "But the GOTS GAME tattoo is worth scanning, too, so you do so.";
 		try lling gots game;
 	continue the action;
@@ -737,7 +737,7 @@ carry out historyhalling:
 	move-from-temp Name Notes Tame Totes;
 	now vending vibe is mapped west of history hall;
 	now history hall is mapped east of vending vibe;
-	move-from-temp erst lore;
+[	move-from-temp erst lore;?? should have scenery defining this]
 	move-to-temp gutta ganksta;
 	move-to-temp Oi Mo;
 	bold-my-room;
@@ -866,7 +866,7 @@ part Vending Vibe -2,1 a
 
 Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 
-The Trending Tribe are plural-named people in Vending Vibe. cht is red.
+The Trending Tribe are plural-named people in Vending Vibe. cht is letplus.
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [next-rand-txt of table of vvff books]. This locational libe has no vocational vibe.";
 
@@ -2057,7 +2057,7 @@ Rule for printing a parser error (this is the clue half right words rule):
 					the rule succeeds;
 		else:
 			process the myrule entry;
-			if the myrule entry succeeded and the player's command includes mytxt entry:
+			if the rule succeeded and the player's command includes mytxt entry:
 				say "[myexp entry][line break]";
 				the rule succeeds;
 	continue the action;
