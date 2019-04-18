@@ -685,9 +685,9 @@ least-loss is a truth state that varies.
 carry out leastlossing:
 	if player is not in creased cross, say "Not here." instead;
 	if bull beast is off-stage:
-		say "Not yet.";
-		now loss-clue is true instead;
-	if loss-clue is true, say "You already did." instead;
+		clue-later "LEAST LOSS";
+		say "Not yet. You need to be in a fighting situation" instead;
+	if least-loss is true, say "You already did." instead;
 	now least-loss is true;
 	up-reg;
 	say "BOOM! The bull beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";

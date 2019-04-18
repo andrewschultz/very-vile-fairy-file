@@ -150,6 +150,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
 "FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
 "SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
+"LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say LEAST LOSS once/now you have something to face ..." [heres of Creased Cross ??]
 "FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the bull beast a full feast once/now it's been vanquished."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can CAST CAP once you find one."
 
@@ -214,20 +215,20 @@ this is the did-show-shield rule:
 	if shield-shown is true, the rule succeeds;
 	the rule fails.
 
-this is the did-moral-mage rule:
-	if coral cage is moot, the rule succeeds;
-	the rule fails.
-
 this is the can-moral-mage rule:
 	if player has cage key, the rule succeeds;
 	the rule fails.
 
-this is the did-first-fave rule:
-	if worst wave is moot, the rule succeeds;
+this is the did-moral-mage rule:
+	if coral cage is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-first-fave rule:
 	if screaming skull is moot, the rule succeeds;
+	the rule fails.
+
+this is the did-first-fave rule:
+	if worst wave is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-shining-shore rule:
@@ -238,12 +239,20 @@ this is the did-shining-shore rule:
 	if shore-shine is true, the rule succeeds;
 	the rule fails.
 
-this is the did-full-feast rule:
-	if bull beast is moot, the rule succeeds;
+this is the can-least-loss rule:
+	if beast boss is in Creased Cross, the rule succeeds;
+	the rule fails.
+
+this is the did-least-loss rule:
+	if least-loss is true, the rule succeeds;
 	the rule fails.
 
 this is the can-full-feast rule:
 	if least-loss is true, the rule succeeds;
+	the rule fails.
+
+this is the did-full-feast rule:
+	if bull beast is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-cast-cap rule:
