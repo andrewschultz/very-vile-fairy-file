@@ -22,11 +22,15 @@ understand "pry pall" as a mistake ("There is no hidden tomb under the wry wall.
 
 understand "try tall" as a mistake ("The wry wall does not grow.") when location of player is signable.
 
-chapter airy isle mistakes
+chapter Airy Isle mistakes
 
 understand "bell born" as a mistake ("There's enough noise right now.") when well worn hell horn is quicknear.
 
 understand "swell sworn" as a mistake ("That might augment the hell horn.") when well worn hell horn is quicknear.
+
+chapter Creased Cross mistakes
+
+understand "beast boss" as a mistake ("The beast boss will surprise you when it does come.") when player is in Creased Cross.
 
 chapter Fun Fen mistakes
 
@@ -53,6 +57,12 @@ understand "go get" and "go git" as a mistake ("You have no-one to order around,
 understand "show shit" as a mistake ("Profanity doesn't work here.") when player is in Po' Pit.
 
 understand "so sit" as a mistake ("You sit and pout. It doesn't help.") when player is in Po' Pit.
+
+chapter Real Rear mistakes
+
+understand "cage key" as a mistake ("[if cage key is off-stage]You can't just ask for it. It's in the Sage Sea, but you have to earn it[else]You already got the key[end if].") when player has cage key or player is in Real Rear.
+
+understand "mage me" as a mistake ("[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do.") when player has cage key or player is in Real Rear.
 
 chapter Trim Tram mistakes
 

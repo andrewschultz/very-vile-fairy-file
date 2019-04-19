@@ -8,10 +8,11 @@ volume core tables
 table of bad locs
 e1	e2	been-here	fake-name	death-trap
 --	--	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
+--	--	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
 Airy Isle	down	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
-fun fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
-fun fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
-fun fen	south	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']." [?? another bad place]
+Fun Fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
+Fun Fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
+Fun Fen	south	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']." [?? another bad place]
 Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Soft Sand	up	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
 Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL."
@@ -74,9 +75,9 @@ to say your-rank:
 table of understands
 mytxt (topic)	myloc	myrule	myexp
 "big" or "bag"	--	got-rig-rag rule	"Yes, the zig zag rig rag could be something else."
-"find" or "fault"	vined vault	--	"Hmm! That is interesting."
-"get" or "good"	wet wood	a rule	"You almost felt like you were able to find your way around."
-"wet" or "wood"	wet wood	--	"You need to do something like wet wood. But it can't be either."
+"find" or "fault"	Vined Vault	--	"Hmm! That is interesting."
+"get" or "good"	Wet Wood	a rule	"You almost felt like you were able to find your way around."
+"wet" or "wood"	Wet Wood	--	"You need to do something like Wet Wood. But it can't be either."
 
 this is the got-rig-rag rule:
 	if player has zig zag rig rag, the rule succeeds;
@@ -127,7 +128,7 @@ randtxt
 "Take Tess, Wake Wes, Make Mess"
 "Why When My Men, by Ben"
 
-table of wet wood clues
+table of Wet Wood clues
 prof	randtxt
 False	"You walk around a bit for the first time, and you wind up by a place called the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You wander off and make it back to the Wet Wood."
 False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood."
@@ -139,18 +140,18 @@ volume hints for later
 
 table of forlaters
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if airy isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
+"BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
 "FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to FLIM FLAM, but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE[end if]."
 "MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to MASH MAP, [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
-"FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You try to feel fear, but you can't think of a reason to, and even if you could, you might be overwhelmed without help from above."
-"DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You don't have anything you need to deal with, yet."
-"HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You don't have anything you need to heal from, yet." [?? (heres of r-a room) ]
-"SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to SHOW SHIELD once you find something that can protect you in the Foe Field."
+"FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to FEEL FEAR [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
+"DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You tried to say DEAL DEAR [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
+"SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to SHOW SHIELD [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
 "MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
 "FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
 "SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
 "LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say LEAST LOSS once/now you have something to face ..." [heres of Creased Cross ??]
+"HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to HEAL HERE [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
 "FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the bull beast a full feast once/now it's been vanquished."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can CAST CAP once you find one."
 
@@ -161,7 +162,7 @@ this is the can-bury-bile rule:
 this is the did-bury-bile rule: the rule fails. [this probably won't change, but just for posterity...]
 
 this is the can-big-bag rule:
-	if fun fen is visited, the rule succeeds;
+	if Fun Fen is visited, the rule succeeds;
 	the rule fails.
 
 this is the did-big-bag rule:
@@ -173,7 +174,7 @@ this is the can-flim-flam rule:
 	the rule fails.
 
 this is the did-flim-flam rule:
-	if fun fen is visited, the rule succeeds;
+	if Fun Fen is visited, the rule succeeds;
 	the rule fails.
 
 this is the can-mash-map rule:
@@ -200,7 +201,8 @@ this is the did-deal-dear rule:
 	if cage key is not off-stage, the rule succeeds;
 	the rule fails.
 
-this is the can-heal-here rule: [?? obviously needs to be fleshed out]
+this is the can-heal-here rule:
+	if least-loss is true, the rule succeeds;
 	the rule fails.
 
 this is the did-heal-here rule:
@@ -240,7 +242,7 @@ this is the did-shining-shore rule:
 	the rule fails.
 
 this is the can-least-loss rule:
-	if beast boss is in Creased Cross, the rule succeeds;
+	if bull beast is in Creased Cross, the rule succeeds;
 	the rule fails.
 
 this is the did-least-loss rule:
@@ -248,7 +250,7 @@ this is the did-least-loss rule:
 	the rule fails.
 
 this is the can-full-feast rule:
-	if least-loss is true, the rule succeeds;
+	if cull-ceased is true, the rule succeeds;
 	the rule fails.
 
 this is the did-full-feast rule:
@@ -275,9 +277,9 @@ to say rhyme-display:
 		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
 	else if player is in Po' Pit:
 		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant. You're not likely to find a fee, but maybe you can do something else.";
-	else if mean mass is in vined vault:
+	else if mean mass is in Vined Vault:
 		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
-	else if player is in vined vault:
+	else if player is in Vined Vault:
 		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
 	else:
 		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
