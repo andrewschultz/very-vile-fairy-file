@@ -76,9 +76,14 @@ def read_notes_file(j):
     with open("notes.txt") as file:
         for (line_count, line) in enumerate (file, 1):
             ll = line.strip().lower()
+            if ll.startswith("<from"):
+                print("WARNING spare dgrab.py line {:d} in {:s}.".format(line_count, "notes.txt"))
+                continue
             if not ll: blank_yet = True
             if not ll or ll[0] == "#": continue
             ll = re.sub(" *#.*", "", ll)
+            if "/" not in line and "#" not in line:
+                print("WARNING no slashes or comments line {:d} in {:s}.".format(line_count, "notes.txt"))
             lla = re.split(" *\/ *", ll)
             if check_spaces and '#' not in line:
                 flag_spaces = False
@@ -96,10 +101,11 @@ def read_notes_file(j):
                     continue
                 if q and q in note_dict.keys():
                     if q in already_done.keys():
-                        if not line_to_open: line_to_open = line_count
-                        internal_dupes += 1
+                        pass
                     else:
+                        if not line_to_open: line_to_open = line_count
                         print(q, "already in note_dict.keys at line", note_dict[q], "duplicated at line", line_count)
+                        internal_dupes += 1
                     already_done[q] += 1
                     continue
                 else: note_dict[q] = line_count
@@ -200,8 +206,8 @@ for j in sorted(source_dupes.keys()):
     print(j, "appears", detail_length, "extra time{:s} in the source:".format(i7.plur(len(source_dupes[j]))), source_list_of(j))
 
 if dupes + uniq_dupes + internal_dupes:
-    print("Total duplicates:", dupes)
-    print("Total unique duplicates:", uniq_dupes)
+    print("Total note-to-source duplicates:", dupes)
+    print("Total unique note-to-source duplicates:", uniq_dupes)
     print("Total internal duplicates:", internal_dupes)
 else:
     print("Yay! Everything passed!")
@@ -216,7 +222,7 @@ if len(open_after_dict):
         for q in open_after_dict:
             i7.npo(q, open_after_dict[q], bail=False)
         i7.npo("notes.txt", line_to_open)
-    else: print("You need -of or -ol to open the duplicate(s) found.")
+    else: print("You need -of or -ol to open the duplicate(s) found at line {:d}.".format(line_to_open))
 elif force_open:
     print("No duplicates. Opening notes file.")
     i7.npo("notes.txt")
