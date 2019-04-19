@@ -60,13 +60,16 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
-min-needed is a number that varies. min-needed is 44.
+section scoring stuff
+
+the maximum score is 53.
+
+min-needed is a number that varies. min-needed is 45.
 
 min-gotten is a number that varies. min-gotten is 0.
 
-the maximum score is 52.
-
 core-score is a number that varies. core-score is 0.
+
 core-max is a number that varies.
 
 max-poss is a number that varies.
@@ -1375,6 +1378,8 @@ part Airy Isle 0,5
 
 Airy Isle is north of Gassed Gap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
+the frightening fridge is scenery.
+
 chapter telltorning
 
 the well worn hell horn is a thing in Airy Isle. cht is leteq.
@@ -1393,6 +1398,20 @@ carry out telltorning:
 	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born.";
 	moot well worn hell horn;
 	up-reg;
+	the rule succeeds.
+
+chapter brighteningbridgeing
+
+brighteningbridgeing is an action applying to nothing.
+
+understand the command "brightening bridge" as something new.
+
+understand "brightening bridge" as brighteningbridgeing when player is in airy isle and frightening fridge is in airy isle.
+
+carry out brighteningbridgeing:
+	say "Boom! There goes the fridge!";
+	up-reg;
+	moot frightening fridge;
 	the rule succeeds.
 
 chapter very vile fairy file
