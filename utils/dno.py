@@ -28,6 +28,8 @@ force_open = False
 check_spaces = False
 copy_rejigged = False
 
+slash_or_comment = []
+
 def usage():
     print("ol / of / lo / fo / l / f = open last or first duplicate in notes.txt. e = random.")
     print("cs / sc / s / c = check spaces in notes file.")
@@ -72,6 +74,7 @@ def read_notes_file(j):
     global space_check
     blank_yet = False
     long_so_far = 0
+    global slash_or_comment
     print("START INTERNAL CHECK FOR", j)
     with open("notes.txt") as file:
         for (line_count, line) in enumerate (file, 1):
@@ -82,8 +85,8 @@ def read_notes_file(j):
             if not ll: blank_yet = True
             if not ll or ll[0] == "#": continue
             ll = re.sub(" *#.*", "", ll)
-            if "/" not in line and "#" not in line:
-                print("WARNING no slashes or comments line {:d} in {:s}.".format(line_count, "notes.txt"))
+            if "/" not in line and "#" not in line and not line.startswith("======"):
+                slash_or_comment.append(line_count)
             lla = re.split(" *\/ *", ll)
             if check_spaces and '#' not in line:
                 flag_spaces = False
@@ -97,18 +100,19 @@ def read_notes_file(j):
                     space_check += 1
             for q in lla:
                 if not q.strip():
-                    print("WARNING blank entry at line {:d}. Check for errant slash at end or double slash.".format(line_count))
+                    slash_or_comment.append(line_count)
                     continue
-                if q and q in note_dict.keys():
-                    if q in already_done.keys():
+                q2 = re.sub("[^A-Za-z\/ ]", "", q)
+                if q2 and q2 in note_dict.keys():
+                    if q2 in already_done.keys():
                         pass
                     else:
                         if not line_to_open: line_to_open = line_count
-                        print(q, "already in note_dict.keys at line", note_dict[q], "duplicated at line", line_count)
+                        print(q, "/", q2, "already in note_dict.keys at line", note_dict[q2], "duplicated at line", line_count)
                         internal_dupes += 1
-                    already_done[q] += 1
+                    already_done[q2] += 1
                     continue
-                else: note_dict[q] = line_count
+                elif q2: note_dict[q2] = line_count
     print("END INTERNAL CHECK FOR", j)
     if internal_dupes: print(internal_dupes, "internal dupes.")
     else: print("NO INTERNAL DUPES! YAY!")
@@ -130,7 +134,9 @@ def read_source_files(j):
     blank_yet = False
     print("CHECKING PROJECT", j)
     for x in i7.i7f[j]:
-        print("CHECKING FILE", x)
+        fs = os.path.basename(x)
+        file_header = "CHECKING FILE {:s}".format(fs)
+        this_dupes = False
         with open(x) as file:
             for (line_count, line) in enumerate (file, 1):
                 ll = line.lower().strip()
@@ -140,6 +146,8 @@ def read_source_files(j):
                         if not line_to_open: line_to_open = note_dict[q]
                         if q not in uniqs.keys():
                             uniq_dupes += 1
+                            if not this_dupes: print(file_header)
+                            this_dupes = True
                             print("DUPLICATE #{:3d}/{:3d}".format(dupes, uniq_dupes),
                               "File/line <<{:s} / {:d}>>".format(os.path.basename(x), line_count),
                               "<<NOTES {:d}: {:s}>>=".format(note_dict[q], q))
@@ -150,6 +158,7 @@ def read_source_files(j):
                             open_after_dict[x] = line_count
                         if not line_to_open or not open_first:
                             line_to_open = note_dict[q]
+        if not this_dupes: print("{:s} CHECKED OUT.".format(fs))
 
 i7.go_proj("vvff")
 
@@ -211,6 +220,8 @@ if dupes + uniq_dupes + internal_dupes:
     print("Total internal duplicates:", internal_dupes)
 else:
     print("Yay! Everything passed!")
+
+if len(slash_or_comment): print("Notes.txt line(s) needing slash or comments or un-space:", len(slash_or_comment), 'total:', ', '.join([str(x) for x in slash_or_comment]))
 
 if force_open and not open_last and not open_first:
     if random.randint(0, 2): open_last = True
