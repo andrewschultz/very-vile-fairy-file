@@ -34,7 +34,13 @@ definition: a thing (called th) is moot:
 	if th is in Hidey House, yes;
 	no;
 
+to say here-in of (rm - a room): say "[if rm is location of player]here[else]in [rm][end if]"
+
 to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
+
+to say once-now of (ru - a rule):
+	process ru;
+	say "[if the rule succeeded]now[else]once[end if]"
 
 to bring-here (th - a thing): move th to location of player.
 
@@ -42,10 +48,10 @@ to moot (th - a thing):
 	move th to Hidey House; [ic]
 
 to move-to-temp (th - a thing):
-	if th is in location of player, move th to hidey house;
+	if th is in location of player, move th to Hidey House;
 
 to move-from-temp (th - a thing):
-	if th is in hidey house or th is off-stage, move th to location of player;
+	if th is in Hidey House or th is off-stage, move th to location of player;
 
 definition: a thing (called th) is quicknear:
 	if player carries th or th is in location of player, yes;
@@ -110,9 +116,9 @@ the wry wall is a backdrop. "The wry wall reads:[line break][sign-dir]"
 nother-room is a room that varies.
 
 after looking in a signable room:
-	if nother-room is wet wood and player is not in Fun Fen:
+	if nother-room is Wet Wood and player is not in Fun Fen:
 		now nother-room is location of player;
-	say "There's also [if player is in fun fen]a[else if location of player is nother-room]another[else]yet another[end if] wry wall here.";
+	say "There's also [if player is in Fun Fen]a[else if location of player is nother-room]another[else]yet another[end if] wry wall here.";
 	continue the action;
 
 to say sign-dir:
@@ -221,8 +227,8 @@ wood-row is a number that varies.
 
 to say wood-noway:
 	increment wood-row;
-	if wood-row > number of rows in table of wet wood clues, now wood-row is 1;
-	choose row wood-row in table of wet wood clues;
+	if wood-row > number of rows in table of Wet Wood clues, now wood-row is 1;
+	choose row wood-row in table of Wet Wood clues;
 	say "[randtxt entry]";
 
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
@@ -231,7 +237,7 @@ every turn when player is in Wet Wood:
 	if turn count < 5, continue the action;
 	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
 
-after looking in wet wood for the first time:
+after looking in Wet Wood for the first time:
 	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could EXAMINE or READ it for instructions. (NOTE: You can use point the learner at something by typing LL (thing), or you can refer to the learner as LL. You can also LL to scan your current location.)[line break]";
 	now player has leet learner;
 	continue the action;
@@ -255,11 +261,11 @@ carry out getgooding:
 	move player to Vined Vault;
 	the rule succeeds;
 
-part vined vault 3,-1
+part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in vined vault]You found fault in the vined vault, but you still can't leave.[else if green grass is in vined vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out.". cht is partminus.
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else if green grass is in Vined Vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out.". cht is partminus.
 
-the green grass is scenery. "The green grass goes well with the vined vault."
+the green grass is scenery. "The green grass goes well with the Vined Vault."
 
 instead of doing something with green grass:
 	if action is procedural, continue the action;
@@ -271,20 +277,20 @@ findfaulting is an action applying to nothing.
 
 understand the command "find fault" as something new.
 
-understand "find fault" as findfaulting when player is in vined vault.
+understand "find fault" as findfaulting when player is in Vined Vault.
 
 carry out findfaulting:
 	if mean mass is moot, say "Things are pretty good now. You probably want to deal with the strong stray." instead;
-	if mean mass is in vined vault, say "You already did, and things got worse. You'll have to try something else." instead;
+	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
 	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
 	say "[line break]But of course something outside was guarding the vault, just waiting to walk in. A mean mass.";
-	move mean mass to vined vault;
+	move mean mass to Vined Vault;
 	up-reg;
 	the rule succeeds.
 
 chapter mean mass
 
-The mean mass is a thing. "The mean mass continues to pulse and block the way out of the vined vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally.". cht is letplus.
+The mean mass is a thing. "The mean mass continues to pulse and block the way out of the Vined Vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally.". cht is letplus.
 
 chapter greengrassing
 
@@ -292,7 +298,7 @@ greengrassing is an action applying to nothing.
 
 understand the command "green grass" as something new.
 
-understand "green grass" as greengrassing when player is in vined vault and mean mass is in vined vault.
+understand "green grass" as greengrassing when player is in Vined Vault and mean mass is in Vined Vault.
 
 carry out greengrassing:
 	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
@@ -319,8 +325,6 @@ understand the command "mash map" as something new.
 
 understand "mash map" as mashmaping when player is in Po' Pit.
 
-mash-clue is a truth state that varies.
-
 carry out mashmaping:
 	if grit-grown is false:
 		clue-later "MASH MAP";
@@ -328,7 +332,6 @@ carry out mashmaping:
 	say "The heck with this! You just don't trust the trash trap to tell you the way through.";
 	up-reg;
 	move player to Trim Tram;
-	now mash-clue is false;
 	the rule succeeds.
 
 chapter growgriting
@@ -337,7 +340,7 @@ growgriting is an action applying to nothing.
 
 understand the command "grow grit" as something new.
 
-understand "grow grit" as growgriting when player is in po' pit.
+understand "grow grit" as growgriting when player is in Po' Pit.
 
 grit-grown is a truth state that varies.
 
@@ -346,7 +349,7 @@ carry out growgriting:
 	say "The trash trap looks less yucky now.";
 	now grit-grown is true;
 	phbt row writ;
-	phbt po' pit;
+	phbt Po' Pit;
 	up-reg;
 	the rule succeeds.
 
@@ -454,7 +457,7 @@ carry out strongstarting:
 
 chapter cark cliff
 
-Cark Cliff is optional scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
+cark cliff is optional scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about cark cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
 
 chapter sparkspliffing
 
@@ -462,12 +465,12 @@ sparkspliffing is an action applying to nothing.
 
 understand the command "spark spliff" as something new.
 
-understand "spark spliff" as sparkspliffing when wild weed is quicknear or player is in fun fen.
+understand "spark spliff" as sparkspliffing when wild weed is quicknear or player is in Fun Fen.
 
 carry out sparkspliffing:
 	if wild weed is moot, say "Whoah, dude. You already did." instead;
 	if player does not have wild weed, say "Whoah, dude. You have nothing to light up with." instead;
-	if player is not in fun fen, say "Not here, dude! No source of flame!" instead;
+	if player is not in Fun Fen, say "Not here, dude! No source of flame!" instead;
 	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
 	moot wild weed;
 	up-min;
@@ -566,7 +569,7 @@ carry out kneelnearing:
 	up-reg; [kneel near]
 	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
 	now knelt-yet is true; [?? track difference]
-	now cht of real rear is leteq;
+	now cht of Real Rear is leteq;
 	now cht of steel steer is letminus;
 	the rule succeeds.
 
@@ -603,7 +606,7 @@ carry out dealdearing:
 	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
 	now player has cage key;
 	up-reg;
-	phbt real rear;
+	phbt Real Rear;
 	phbt steel steer;
 	the rule succeeds.
 
@@ -662,7 +665,7 @@ understand "full feast" as fullfeasting.
 
 carry out fullfeasting:
 	if bull beast is not in location of player, say "Not here." instead;
-	if bull beast is in location of player and loss-clue is false:
+	if bull beast is in location of player:
 		clue-later "FULL FEAST";
 		say "That should work. It might work better if the bull beast were incapacitated." instead;
 	if bull beast is moot, say "You already made a feast." instead;
@@ -677,8 +680,6 @@ leastlossing is an action applying to nothing.
 understand the command "least loss" as something new.
 
 understand "least loss" as leastlossing.
-
-loss-clue is a truth state that varies.
 
 least-loss is a truth state that varies.
 
@@ -719,7 +720,7 @@ after examining Toe Tappin Row Rappin:
 
 Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht is leteq.
 
-check going west in history hall:
+check going west in History Hall:
 	if mistmall is true, continue the action;
 	say "[if evermall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
 
@@ -735,9 +736,9 @@ carry out historyhalling:
 	if mistmall is false, say "You're already in History Hall.";
 	move-to-temp gutta ganksta;
 	move-from-temp Name Notes Tame Totes;
-	now vending vibe is mapped west of history hall;
-	now history hall is mapped east of vending vibe;
-[	move-from-temp erst lore;?? should have scenery defining this]
+	now Vending Vibe is mapped west of History Hall;
+	now History Hall is mapped east of Vending Vibe;
+[	move-from-temp Erst Lore;?? should have scenery defining this]
 	move-to-temp gutta ganksta;
 	move-to-temp Oi Mo;
 	bold-my-room;
@@ -755,12 +756,12 @@ understand the command "mystery mall" as something new.
 understand "mystery mall" as mysterymalling when player is in History Hall.
 
 carry out mysterymalling:
-	if mistmall is true, say "You're already in the mystery mall." instead;
+	if mistmall is true, say "You're already in the Mystery Mall." instead;
 	move-to-temp Name Notes Tame Totes;
 	move-from-temp gutta ganksta;
 	move-from-temp Oi Mo;
 	if Toe Tappin is not off-stage, move-from-temp Toe Tappin;
-	now got gear hot here is mapped west of history hall;
+	now Got Gear Hot Here is mapped west of History Hall;
 	now mistmall is true;
 	if evermall is false:
 		up-reg;
@@ -822,7 +823,7 @@ firstflooring is an action applying to nothing.
 
 understand the command "first floor" as something new.
 
-understand "first floor" as firstflooring when player is in history hall and mistmall is false.
+understand "first floor" as firstflooring when player is in History Hall and mistmall is false.
 
 floor-yet is a truth state that varies.
 
@@ -834,7 +835,7 @@ carry out firstflooring:
 	now History Hall is mapped outside Erst Lore;
 	the rule succeeds.
 
-part erst lore -2,0
+part Erst Lore -2,0
 
 Erst Lore is a room in Piddling Pain.
 
@@ -1020,7 +1021,7 @@ carry out shiningshoreing:
 		say "It could be that way. But you need to get rid of the whining first." instead;
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	up-reg;
-	phbt whining war;
+	phbt Whining War;
 	move lake lap to Whining War;
 	the rule succeeds.
 
@@ -1095,7 +1096,7 @@ ever-loft is a truth state that varies.
 
 loft-land is a truth state that varies.
 
-check going west in soft sand:
+check going west in Soft Sand:
 	if loft-land is false and jerk gel is not in Shirk Shell, say "The smirk smell is too repulsive. You can't go back." instead;
 
 part Here Hull 1,2
@@ -1128,7 +1129,7 @@ fearful-on is a truth state that varies.
 carry out deardulling:
 	if fearful-on is false, say "No. The beer bull is too dull." instead;
 	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
-	say "The beer bull settles down. Both sides of the whining war cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
+	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
 	up-reg;
 	the rule succeeds.
 
@@ -1140,7 +1141,7 @@ the jerk gel is a thing in Shirk Shell.
 
 understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
 
-check taking jerk gel when jerk gel is in shirk shell:
+check taking jerk gel when jerk gel is in Shirk Shell:
 	say "The jerk gel has spilled out a bit." instead;
 
 chapter workwelling
@@ -1157,18 +1158,18 @@ carry out workwelling:
 	up-reg;
 	the rule succeeds.
 
-part curst cave -1,2 b
+part Curst Cave -1,2 b
 
 Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-vibe]."
 
 the worst wave is scenery in Curst Cave.
 
-the screaming skull is a thing in curst cave.
+the screaming skull is a thing in Curst Cave.
 
 check taking screaming skull: say "You need to 'take' it figuratively." instead;
 
 to say tap-in-vibe:
-	if tool tap is in vending vibe, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
+	if tool tap is in Vending Vibe, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
 
 the tool tap is scenery.
 
@@ -1180,7 +1181,7 @@ dreamingdulling is an action applying to nothing.
 
 understand the command "dreaming dull" as something new.
 
-understand "dreaming dull" as dreamingdulling when player is in curst cave and screaming skull is in curst cave.
+understand "dreaming dull" as dreamingdulling when player is in Curst Cave and screaming skull is in Curst Cave.
 
 carry out dreamingdulling:
 	moot screaming skull;
@@ -1195,20 +1196,20 @@ firstfaveing is an action applying to nothing.
 understand the command "firstfave" as something new.
 understand the command "first fave" as something new.
 
-understand "firstfave" as firstfaveing when player is in curst cave.
+understand "firstfave" as firstfaveing when player is in Curst Cave.
 understand "first fave" as firstfaveing.
 
 first-fave is a truth state that varies.
 
 carry out firstfaveing:
 	if first-fave is true, say "You already did." instead;
-	if screaming skull is in curst cave,
+	if screaming skull is in Curst Cave,
 		clue-later "FIRST FAVE";
 		say "You can't like anything with that screaming skull around!" instead;
 	say "Suddenly, the worst wave isn't very bad or evil at all.";
 	up-reg;
 	now first-fave is true;
-	move tool tap to curst cave;
+	move tool tap to Curst Cave;
 	the rule succeeds;
 
 part Foe Field 0,3
@@ -1237,13 +1238,13 @@ carry out showshielding:
 	now shield-shown is true;
 	the rule succeeds.
 
-part store all stage -1,3
+part Store All Stage -1,3
 
 Store All Stage is a room in Piddling Pain. It is west of Foe Field.
 
-the coral cage is a thing in store all stage.
+the coral cage is a thing in Store All Stage.
 
-the moral mage is a person in store all stage.
+the moral mage is a person in Store All Stage.
 
 chapter moralmageing
 
@@ -1318,7 +1319,7 @@ carry out castcaping:
 	moot cool cap;
 	move Reeker Russell to Gassed Gap;
 	up-reg;
-	phbt gassed gap;
+	phbt Gassed Gap;
 	the rule succeeds;
 
 chapter beakerbustleing
@@ -1426,9 +1427,9 @@ carry out burybileing:
 	if very vile fairy file is not in location of player:
 		clue-later "BURY BILE";
 		if player is in Airy Isle:
-			if well worn hell horn is in airy isle, say "That is hard, with the well worn hell horn booming out." instead;
-			say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the airy isle, but not quite." instead;
-		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if][if airy isle is visited]. But you've found it, and that's a huge start[end if]." instead;
+			if well worn hell horn is in Airy Isle, say "That is hard, with the well worn hell horn booming out." instead;
+			say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the Airy Isle, but not quite." instead;
+		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if][if Airy Isle is visited]. But you've found it, and that's a huge start[end if]." instead;
 	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
 	up-reg;
 	win-the-game;
@@ -1525,8 +1526,6 @@ instead of listening:
 	say "Nothing special."
 
 chapter thinking
-
-burybile-clue is a truth state that varies.
 
 thought-any is a truth state that varies.
 
@@ -1788,7 +1787,7 @@ when play begins (this is the opening text rule):
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak-d]";
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak-d]";
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak-d]";
-	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, leaving you in ...";
+	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to set sewin' with Rhett Rowan. You are left in ...";
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
 	now the left hand status line is "[location of the player]";
@@ -1977,10 +1976,10 @@ understand "soft sand" as softsanding.
 loft-land is a truth state that varies.
 
 carry out softsanding:
-	if loft-land is false, say "You're already on the soft sand." instead;
-	say "The loft land reverts to the soft sand.";
+	if loft-land is false, say "You're already on the Soft Sand." instead;
+	say "The loft land reverts to the Soft Sand.";
 	now loft-land is false;
-	now shirk shell is mapped west of soft sand;
+	now Shirk Shell is mapped west of Soft Sand;
 	the rule succeeds;
 
 chapter loftlanding
@@ -1993,13 +1992,13 @@ understand "loft land" as loftlanding.
 
 carry out loftlanding:
 	if loft-land is true, say "You're already on the loft land." instead;
-	say "Boom! The soft sand rises up and becomes the Loft Land[one of][or] again[stopping].";
+	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping].";
 	if ever-loft is false:
 		now ever-loft is true;
 		now loft-land is false;
 		up-reg;
-	now curst cave is mapped west of soft sand;
-	now soft sand is mapped west of curst cave;
+	now Curst Cave is mapped west of Soft Sand;
+	now Soft Sand is mapped west of Curst Cave;
 	the rule succeeds;
 
 volume Poorly Penned
@@ -2023,7 +2022,7 @@ rule for showmissesing:
 	if started-strong is false, say "You could've used the wrong art for a STRONG START.";
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
-	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
+	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by cark cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
 	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
 	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
 	unless oi mo is moot, say "You could have DIMD (dim'd) Oi Mo.";
@@ -2069,29 +2068,29 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 
 volume map index
 
-index map with trim tram mapped east of real rear.
-index map with po' pit mapped east of trim tram.
-index map with vined vault mapped east of po' pit.
-index map with vined vault mapped south of wet wood.
+index map with Trim Tram mapped east of Real Rear.
+index map with Po' Pit mapped east of Trim Tram.
+index map with Vined Vault mapped east of Po' Pit.
+index map with Vined Vault mapped south of Wet Wood.
 
 section odd directions
 
-index map with erst lore mapped south of got gear hot here.
+index map with Erst Lore mapped south of Got Gear Hot Here.
 
 section endrooms
 
-index map with tarry tile mapped east of airy isle.
-index map with merry mile mapped east of tarry tile.
+index map with Tarry Tile mapped east of Airy Isle.
+index map with Merry Mile mapped east of Tarry Tile.
 
 section altrooms
 
-index map with vending vibe mapped south of po' pit.
-index map with curst cave mapped south of vined vault.
+index map with Vending Vibe mapped south of Po' Pit.
+index map with Curst Cave mapped south of Vined Vault.
 
 section nonrooms
 
-index map with gazy gap mapped south of trim tram.
-index map with hidey house mapped west of gazy gap.
+index map with Gazy Gap mapped south of Trim Tram.
+index map with Hidey House mapped west of Gazy Gap.
 
 section side room to include
 
