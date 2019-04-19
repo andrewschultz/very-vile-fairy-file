@@ -226,11 +226,23 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
 
-> BEAST BOSS (x-8)
+> BEAST BOSS (x-9)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (x-7)
+> LEAST LOSS (x-8)
+
+This hurt, and you need to figure a way to get back to full strength.
+
+> S
+
+> S
+
+> HEAL HERE (x-7)
+
+> N
+
+> N
 
 Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
 

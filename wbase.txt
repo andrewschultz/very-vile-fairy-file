@@ -6,7 +6,7 @@
 #--command usage: rbr.py wbase.txt
 #--there will be post commands as well.
 
-files=walkthrough.txt,walkthrough-full.txt
+files=walkthrough-pre.txt,walkthrough-full-pre.txt
 
 TSV:## minimum walkthrough	## maximum walkthrough
 
@@ -136,10 +136,6 @@ How to deal with the gutta ganksta? Notice the tattoos.
 
 Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
 
-> STAY STRONG (1)
-
-Back to normal.
-
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
@@ -239,11 +235,23 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
 
-> BEAST BOSS (x-8)
+> BEAST BOSS (x-9)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (x-7)
+> LEAST LOSS (x-8)
+
+This hurt, and you need to figure a way to get back to full strength.
+
+> S
+
+> S
+
+> HEAL HERE (x-7)
+
+> N
+
+> N
 
 Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
 
