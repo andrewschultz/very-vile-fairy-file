@@ -62,9 +62,9 @@ to bold-my-room:
 
 section scoring stuff
 
-the maximum score is 53.
+the maximum score is 56.
 
-min-needed is a number that varies. min-needed is 45.
+min-needed is a number that varies. min-needed is 48.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -1382,6 +1382,66 @@ part Airy Isle 0,5
 Airy Isle is north of Gassed Gap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
 the frightening fridge is scenery.
+
+the bot board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!"
+
+chapter lotlording
+
+the lot lord is a person.
+
+lotlording is an action applying to nothing.
+
+understand the command "lot lord" as something new.
+
+understand "lot lord" as lotlording.
+
+carry out lotlording:
+	if Lot Lord is not off-stage, say "You already summoned the hot horde." instead;
+	reg-up;
+	say "The Lot Lord appears.";
+	the rule succeeds.
+
+chapter hothordeing
+
+the hot horde are plural-named people. talk-text is "Lots of rot roared right now.".
+
+hothordeing is an action applying to nothing.
+
+understand the command "hot horde" as something new.
+
+understand "hot horde" as hothordeing.
+
+carry out hothordeing:
+	if hot horde is not off-stage, say "You already summoned the hot horde." instead;
+	reg-up;
+	say "The legendary Hot Horde appears.";
+	the rule succeeds.
+
+chapter gotgoreding
+
+gotgoreding is an action applying to nothing.
+
+understand the command "got gored" as something new.
+
+understand "got gored" as gotgoreding when player is in airy isle.
+
+carry out gotgoreding:
+	if lot lord is moot and hot horde is moot, say "You already told the battle cry." instead;
+	if lot lord is in airy isle and hot horde is in airy isle:
+		say "YES! That's the cheer they need.
+		reg-up;
+		moot hot horde;
+		moot lot lord;
+		moot bot board;
+		the rule succeeds;
+	clue-later "got gored";
+	if hot horde is in airy isle: [and lot lord is off-stage]
+		say "The hot horde needs more than a battle cry. It needs a leader." instead;
+	else if lot lord is in airy isle: [and hot horde is off-stage]
+		say "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work." instead;
+	else:
+		say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry.";
+	the rule succeeds.
 
 chapter telltorning
 
