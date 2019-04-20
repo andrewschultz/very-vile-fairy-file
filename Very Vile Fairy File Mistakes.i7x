@@ -32,6 +32,10 @@ chapter Creased Cross mistakes
 
 understand "beast boss" as a mistake ("The beast boss will surprise you when it does come.") when player is in Creased Cross.
 
+chapter Curst Cave mistake
+
+understand "nursed knave" as a mistake ("You don't need any more of that.") when player is in Curst Cave.
+
 chapter Fun Fen mistakes
 
 understand "live leap" as a mistake ("The leap wouldn't be live for very long.") when hive heap is quicknear.

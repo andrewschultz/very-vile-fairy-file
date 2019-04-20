@@ -7,6 +7,7 @@ volume core tables
 [pest post / messed most / rest roast/ guest ghost / best boast]
 table of bad locs
 e1	e2	been-here	fake-name	death-trap
+--	--	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 --	--	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 --	--	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
 Airy Isle	down	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
@@ -101,12 +102,14 @@ randtxt
 
 table of vvff digs
 randtxt
+"Blue blood? Do? Dud! Boo, bud!"
 "Catcall: at ALL!"
 "Gonna go off! Shun a show-off!"
 "Look leading?! Book beating!"
 "'My magic try: TRAGIC!'"
 "Rotten role: gotten goal?"
 "Want what? Taunt, tut!"
+
 
 table of vvff books
 randtxt

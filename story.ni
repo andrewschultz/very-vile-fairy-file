@@ -458,9 +458,9 @@ carry out strongstarting:
 	phbt wrong art;
 	the rule succeeds.
 
-chapter cark cliff
+chapter Cark Cliff
 
-cark cliff is optional scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about cark cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
+Cark Cliff is optional scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
 
 chapter sparkspliffing
 
@@ -636,7 +636,9 @@ Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can g
 
 chapter Bull Beast
 
-The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'"
+The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here[end if]."
+
+instead of doing something with Bull Beast when cull-ceased is true: say "The Bull Beast is dead."
 
 chapter cullceaseding
 
@@ -649,12 +651,12 @@ understand "lul least" as cullceaseding when can-kill-beast.
 understand "cull ceased" as cullceaseding when can-kill-beast.
 
 to decide whether can-kill-beast:
-	if player is in cross and bull beast is in cross, yes;
+	if player is in cross and bull beast is in Creased Cross and heal-here is true, yes;
 	no;
 
 carry out cullceaseding:
 	say "YOU KILLED THE BULL BEAST.";
-	moot bull beast;
+	now cull-ceased is true;
 	up-reg;
 	the rule succeeds.
 
@@ -673,7 +675,8 @@ carry out fullfeasting:
 		say "That should work. It might work better if the bull beast were incapacitated." instead;
 	if bull beast is moot, say "You already made a feast." instead;
 	up-reg;
-	say "BOOM! You managed to make a full feast of the bull beast. Everyone loves it. It tastes good.";
+	say "BOOM! You managed to make a full feast of the bull beast. Everyone loves it. It tastes good. Nothing is left.";
+	now bull beast is moot;
 	the rule succeeds.
 
 chapter leastlossing
@@ -687,7 +690,7 @@ understand "least loss" as leastlossing.
 least-loss is a truth state that varies.
 
 carry out leastlossing:
-	if player is not in creased cross, say "Not here." instead;
+	if player is not in Creased Cross, say "Not here." instead;
 	if bull beast is off-stage:
 		clue-later "LEAST LOSS";
 		say "Not yet. You need to be in a fighting situation" instead;
@@ -1406,7 +1409,7 @@ brighteningbridgeing is an action applying to nothing.
 
 understand the command "brightening bridge" as something new.
 
-understand "brightening bridge" as brighteningbridgeing when player is in airy isle and frightening fridge is in airy isle.
+understand "brightening bridge" as brighteningbridgeing when player is in Airy Isle and frightening fridge is in Airy Isle.
 
 carry out brighteningbridgeing:
 	say "Boom! There goes the fridge!";
@@ -2041,7 +2044,7 @@ rule for showmissesing:
 	if started-strong is false, say "You could've used the wrong art for a STRONG START.";
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
-	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by cark cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
+	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
 	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
 	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
 	unless oi mo is moot, say "You could have DIMD (dim'd) Oi Mo.";
