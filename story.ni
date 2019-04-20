@@ -26,6 +26,11 @@ volume definitions and properties
 
 book definitions
 
+to too-generic: if debug-state is true, say "TEXT BELOW IS TOO GENERIC. Fix."
+
+to decide which region is mrlp:
+	decide on map region of location of player;
+
 to decide whether the action is procedural:
 	if examining, yes;
 	no;
@@ -62,9 +67,9 @@ to bold-my-room:
 
 section scoring stuff
 
-the maximum score is 56.
+the maximum score is 58.
 
-min-needed is a number that varies. min-needed is 48.
+min-needed is a number that varies. min-needed is 50.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -1397,7 +1402,7 @@ understand "lot lord" as lotlording.
 
 carry out lotlording:
 	if Lot Lord is not off-stage, say "You already summoned the hot horde." instead;
-	reg-up;
+	up-reg;
 	say "The Lot Lord appears.";
 	the rule succeeds.
 
@@ -1413,7 +1418,7 @@ understand "hot horde" as hothordeing.
 
 carry out hothordeing:
 	if hot horde is not off-stage, say "You already summoned the hot horde." instead;
-	reg-up;
+	up-reg;
 	say "The legendary Hot Horde appears.";
 	the rule succeeds.
 
@@ -1429,7 +1434,7 @@ carry out gotgoreding:
 	if lot lord is moot and hot horde is moot, say "You already told the battle cry." instead;
 	if lot lord is in airy isle and hot horde is in airy isle:
 		say "YES! That's the cheer they need.
-		reg-up;
+		up-reg;
 		moot hot horde;
 		moot lot lord;
 		moot bot board;
@@ -1479,7 +1484,7 @@ carry out brighteningbridgeing:
 
 chapter very vile fairy file
 
-the very vile fairy file is a thing in Airy Isle. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht is partminus.
+the very vile fairy file is a thing in Tarry Tile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht is partminus.
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -1506,16 +1511,24 @@ understand the command "bury bile" as something new.
 understand "bury bile" as burybileing.
 
 carry out burybileing:
-	if very vile fairy file is not in location of player:
-		clue-later "BURY BILE";
-		if player is in Airy Isle:
-			if well worn hell horn is in Airy Isle, say "That is hard, with the well worn hell horn booming out." instead;
-			say "Oh! You almost can. But you're not happy enough yet. You need somewhere big, open, and happy. Almost like the Airy Isle, but not quite." instead;
-		say "[if location of very vile fairy file is unvisited]You want to. But you don't feel up to it. You can't do that until you find the very vile fairy file[else]You can't do that if you're not around the very vile fairy file[end if][if Airy Isle is visited]. But you've found it, and that's a huge start[end if]." instead;
-	say "Yes. You know what to do. As you bury the bile -- yours for others, and so forth -- the very vile fairy file itself dissolves.";
+	if player is in Tarry Tile:
+		if well worn hell horn is in Tarry Tile:
+			clue-later "BURY BILE";
+			say "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file." instead;
+		if merry-mile is false:
+			clue-later "MERRY MILE";
+			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going." instead;
+	clue-later "BURY BILE";
+	if player is in airy isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
+	if mrlp is verminal vale:
+		too-generic;
+		say "It must be about the right time. But you are not quite there, yet." instead;
+	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
+	if mrlp is piddling pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
+	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the very vile fairy file itself dissolves. The Merry Mile changes significantly. You are on your way back.";
 	up-reg;
 	win-the-game;
-	the rule succeeds;
+	the rule succeeds; [Larry Lyle, Wary Wile, Dare-y Dial, Perry Pyle, Gary Guile]
 
 to win-the-game:
 	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
@@ -1526,11 +1539,7 @@ to win-the-game:
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 
-part Merry Mile 1,5
-
-Merry Mile is a room in Verminal Vale.
-
-part Tarry Tile 2,5
+part Tarry Tile 1,5
 
 Tarry Tile is a room in Verminal Vale.
 
@@ -2162,7 +2171,27 @@ index map with Erst Lore mapped south of Got Gear Hot Here.
 section endrooms
 
 index map with Tarry Tile mapped east of Airy Isle.
-index map with Merry Mile mapped east of Tarry Tile.
+
+chapter merrymileing
+
+merrymileing is an action applying to nothing.
+
+understand the command "merry mile" as something new.
+
+understand "merry mile" as merrymileing when mrlp is verminal vale.
+
+carry out merrymileing:
+	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
+	if player is in tarry tile:
+		if well worn hell horn is in tarry tile:
+			clue-later "MERRY MILE";
+			say "Not with the well worn hell horn making those un-merry noises." instead;
+		up-reg;
+		now merry-mile is true;
+		say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now." instead;
+	clue-later "MERRY MILE";
+	if player is in airy isle, say "Hard to be happy with the bot board around." instead;
+	the rule succeeds.
 
 section altrooms
 
