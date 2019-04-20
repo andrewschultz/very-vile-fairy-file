@@ -194,6 +194,7 @@ def check_walkthrough():
 def pointup_type(l, ru):
     if not l.startswith("\t"): return ''
     if 'check-russell-go' in l: return 'nec'
+    if 'reg-up' in l or 'min-up' in l: return 'bug'
     if 'up-reg' in l and 'check-russell-go' not in ru: return 'nec'
     if 'up-min' in l: return 'opt'
     return ''
@@ -298,6 +299,9 @@ if max_sco != scores['total']:
     print("MAXIMUM SCORE DISCREPANCY: {:d} in source but # of possible scores in file = {:d}. Line {:d} defines max score.".format(max_sco, scores['total'], max_line))
     if open_source_post and not to_open: to_open = max_line
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
+
+if len(got_detail['bug']):
+    print("SCORING COMMAND (up-min/up-reg backwards) BUG: ", ', '.join(["{:s} at line {:d}".format(x, got[x]) for x in sorted(got_detail['bug'], key=lambda x:got[x])]))
 
 check_miss_rule()
 
