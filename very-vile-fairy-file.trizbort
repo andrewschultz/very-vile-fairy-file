@@ -10,9 +10,9 @@
 			<objects>silly sign|tall tree|Cark Cliff</objects>
 		</room>
 		<room id="6" name="History Hall / Mystery Mall" subtitle="" x="-128" y="32" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="8" name="Gassed Gap / Last Lap" subtitle="" x="32" y="-352" w="96" h="64" region="Verminal Vale" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="8" name="Gassed Gap / Last Lap" subtitle="" x="32" y="-352" w="96" h="64" region="Vale Verminous" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="9" name="Soft Sand / Loft Land" subtitle="" x="32" y="-96" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="10" name="Merry Mile" subtitle="" x="192" y="-480" w="96" h="64" region="Verminal Vale" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="10" name="Tarry Tile / Merry Mile" subtitle="" x="192" y="-480" w="96" h="64" region="Vale Verminous" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="8" port="n" />
 			<dock index="1" id="19" port="s" />
@@ -50,10 +50,9 @@
 			<dock index="0" id="18" port="w" />
 			<dock index="1" id="5" port="e" />
 		</line>
-		<room id="19" name="Airy Isle" subtitle="" x="32" y="-480" w="96" h="64" region="Verminal Vale" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+		<room id="19" name="Airy Isle" subtitle="" x="32" y="-480" w="96" h="64" region="Vale Verminous" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Very vile fairy file</objects>
 		</room>
-		<room id="23" name="Tarry Tile" subtitle="" x="352" y="-480" w="96" h="64" region="Verminal Vale" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="24" name="Vending Vibe" subtitle="" x="-288" y="0" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects at="n">Trending Tribe</objects>
 		</room>
@@ -121,10 +120,6 @@
 			<dock index="0" id="19" port="e" />
 			<dock index="1" id="10" port="w" />
 		</line>
-		<line id="51" name="" description="" style="dashed">
-			<dock index="0" id="10" port="e" />
-			<dock index="1" id="23" port="w" />
-		</line>
 		<room id="52" name="Here Hull" subtitle="" x="192" y="-96" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Beer Bull|(Dear Dull/Fearful)</objects>
 		</room>
@@ -187,7 +182,7 @@
 			<NoRegion Name="NoRegion" TextColor="White">Black</NoRegion>
 			<Piddling____Pain Name="Piddling Pain" TextColor="Black">Lime</Piddling____Pain>
 			<Poorly____Penned Name="Poorly Penned" TextColor="Black">#FF8000</Poorly____Penned>
-			<Verminal____Vale Name="Verminal Vale" TextColor="Black">Red</Verminal____Vale>
+			<Vale____Verminous Name="Vale Verminous" TextColor="Black">Red</Vale____Verminous>
 			<Worst____Whew Name="Worst Whew" TextColor="MidnightBlue">Silver</Worst____Whew>
 		</regions>
 		<fonts>

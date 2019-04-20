@@ -96,7 +96,7 @@ Piddling Pain is a region. [middling main]
 
 Poorly Penned is a region. [early end]
 
-Verminal Vale is a region. [terminal tale]
+Vale Verminous is a region. [terminal tale]
 
 there is a region called Get a Guess. [meta mess]
 
@@ -1275,11 +1275,11 @@ carry out moralmageing:
 	moot coral cage;
 	the rule succeeds.
 
-volume Verminal Vale
+volume Vale Verminous
 
 part Gassed Gap 0,4
 
-Gassed Gap is a room in Verminal Vale. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
+Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
 
 Gassed Gap is north of Foe Field. cht is partminus.
 
@@ -1384,7 +1384,7 @@ carry out woodoneing:
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Verminal Vale. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
 
 the frightening fridge is scenery.
 
@@ -1520,7 +1520,7 @@ carry out burybileing:
 			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going." instead;
 	clue-later "BURY BILE";
 	if player is in airy isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
-	if mrlp is verminal vale:
+	if mrlp is Vale Verminous:
 		too-generic;
 		say "It must be about the right time. But you are not quite there, yet." instead;
 	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
@@ -1541,7 +1541,7 @@ to win-the-game:
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Verminal Vale.
+Tarry Tile is a room in Vale Verminous.
 
 volume verbs
 
@@ -2100,7 +2100,7 @@ volume Get a Guess
 
 [a capped cone is a scenery.] [?? where? It leads to the Zapped Zone]
 
-volume Verminal Vale
+volume Vale Verminous
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
@@ -2178,7 +2178,7 @@ merrymileing is an action applying to nothing.
 
 understand the command "merry mile" as something new.
 
-understand "merry mile" as merrymileing when mrlp is verminal vale.
+understand "merry mile" as merrymileing when mrlp is Vale Verminous.
 
 carry out merrymileing:
 	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
