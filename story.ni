@@ -655,8 +655,10 @@ understand the command "cull ceased" as something new.
 understand "lul least" as cullceaseding when can-kill-beast.
 understand "cull ceased" as cullceaseding when can-kill-beast.
 
+cull-ceased is a truth state that varies.
+
 to decide whether can-kill-beast:
-	if player is in cross and bull beast is in Creased Cross and heal-here is true, yes;
+	if player is in Creased Cross and bull beast is in Creased Cross and healed-here is true, yes;
 	no;
 
 carry out cullceaseding:
@@ -681,7 +683,7 @@ carry out fullfeasting:
 	if bull beast is moot, say "You already made a feast." instead;
 	up-reg;
 	say "BOOM! You managed to make a full feast of the bull beast. Everyone loves it. It tastes good. Nothing is left.";
-	now bull beast is moot;
+	moot bull beast;
 	the rule succeeds.
 
 chapter leastlossing
@@ -880,7 +882,7 @@ Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 
 The Trending Tribe are plural-named people in Vending Vibe. cht is letplus.
 
-the Lending Libe is scenery. "Looking in, you see one book labeled [next-rand-txt of table of vvff books]. This locational libe has no vocational vibe.";
+the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
 
 chapter lendinglibeing
 
@@ -1433,7 +1435,7 @@ understand "got gored" as gotgoreding when player is in airy isle.
 carry out gotgoreding:
 	if lot lord is moot and hot horde is moot, say "You already told the battle cry." instead;
 	if lot lord is in airy isle and hot horde is in airy isle:
-		say "YES! That's the cheer they need.
+		say "YES! That's the cheer they need.";
 		up-reg;
 		moot hot horde;
 		moot lot lord;
@@ -1481,6 +1483,10 @@ carry out brighteningbridgeing:
 	up-reg;
 	moot frightening fridge;
 	the rule succeeds.
+
+part Tarry Tile 1,5
+
+Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]"
 
 chapter very vile fairy file
 
@@ -1538,10 +1544,6 @@ to win-the-game:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	end the story finally saying "DEALS DONE: FEELS FUN!";
-
-part Tarry Tile 1,5
-
-Tarry Tile is a room in Vale Verminous.
 
 volume verbs
 
@@ -1735,7 +1737,7 @@ carry out reading:
 
 table of readables
 read-thing	read-txt
-very vile fairy file	"You note one book is [next-rand-txt of table of vvff digs]."
+very vile fairy file	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
 leet learner	"CONCEIT CONCERNER is in blue.[line break]CHEAT CHURNER is in green.[line break]MEET MOURNER is in yellow.[line break]BEAT BURNER is in orange.[line break]EAT EARNER is in red.[line break]TREAT TURNER is in brown."
 
 chapter xyzzying
@@ -1752,7 +1754,7 @@ carry out xyzzying:
 
 chapter helphowing
 
-help-how is a truth state that varies.
+help-how is a truth state that varies. help-how is true.
 
 helphowing is an action applying to nothing.
 
@@ -1784,8 +1786,12 @@ chapter verbsing
 
 verbsing is an action applying to nothing.
 
+understand the command "v" as something new.
+understand the command "verb" as something new.
 understand the command "verbs" as something new.
 
+understand "v" as verbsing.
+understand "verb" as verbsing.
 understand "verbs" as verbsing.
 
 carry out verbsing:
@@ -1854,17 +1860,54 @@ carry out lling:
 to say scancol of (x - a cheattype):
 	say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
 
-chapter hinting
+this is the welp-wow-check rule:
+	if help-how is false:
+		say "You've disabled hints with [b]WELP WOW[r]. You need to [b]HELP HOW[r] to turn them on again.";
+		the rule succeeds;
 
-hinting is an action applying to one thing.
+chapter hinting verb
+
+hinting is an action applying to nothing.
 
 understand the command "hint" as something new.
 
-understand "hint [thing]" as hinting.
+understand "hint" as hinting.
 
 carry out hinting:
-	say "Hints aren't available yet." instead;
+	abide by the welp-wow-check rule;
+	process room-hint-rule of location of player;
+	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general.";
 	the rule succeeds.
+
+section hint room rules
+
+a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule.
+
+section debug check - not for release
+
+when play begins:
+	say "[room-hint-rule of wet wood].";
+
+chapter hinting an object verb
+
+hintobjing is an action applying to one thing.
+
+understand "hint [thing]" as hintobjing.
+
+carry out hintobjing:
+	abide by the welp-wow-check rule;
+	process thing-hint-rule of noun;
+	if the rule failed, say "There doesn't seem to be anything more to do with [the noun] in general.";
+	the rule succeeds.
+
+section thing hint rules
+
+a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule.
+
+section debug check - not for release
+
+when play begins:
+	say "[thing-hint-rule of leet learner].";
 
 volume when play begins
 
@@ -2179,6 +2222,8 @@ merrymileing is an action applying to nothing.
 understand the command "merry mile" as something new.
 
 understand "merry mile" as merrymileing when mrlp is Vale Verminous.
+
+merry-mile is a truth state that varies.
 
 carry out merrymileing:
 	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
