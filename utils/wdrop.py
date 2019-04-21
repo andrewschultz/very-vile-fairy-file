@@ -10,7 +10,18 @@ import re
 import i7
 import sys
 
+insert_point = defaultdict(str)
+
+max_full_score = 0
+min_full_score = 0
+
 delete_after = True
+
+def usage(cmd="USAGE LIST"):
+	print(cmd)
+	print("=" * 50)
+	print("-d/-da = delete after, -nd/-dn = don't")
+	exit()
 
 def first_line(txt):
 	temp = txt.split("\n")
@@ -50,21 +61,29 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
 				cur_points += 1
 				fstream.write(new_points(line, cur_points, max_num = max_here))
 				if cur_points in insert_point:
-				    fstream.write(new_points(insert_point[cur_points].format(cur_points), cur_points+1, max_num = max_here))
-				    cur_points += 1
-				    inserts += 1
+					fstream.write(new_points(insert_point[cur_points].format(cur_points), cur_points+1, max_num = max_here))
+					cur_points += 1
+					inserts += 1
 			elif re.search(r'^>.*\(x(-[0-9]+)?\)', line):
 				fstream.write(new_points(line, cur_points, max_num = max_here))
 			else:
 				fstream.write(line)
 	fstream.close()
 	print(f, "twiddled to", fout, "with", inserts, "command insertion{:s}: {:s}.".format(i7.plur(inserts), ', '.join([str(x) + "=" + first_line(insert_point[x]) for x in insert_point])))
-	#if delete_after: os.remove(f)
+	if delete_after: os.remove(f)
 
-insert_point = defaultdict(str)
+#
+# start main file
+#
 
-max_full_score = 0
-min_full_score = 0
+cmd_count = 1
+while cmd_count < len(sys.argv):
+	arg = sys.argv[cmd_count].lower()
+	if arg[0] == '-': arg = arg[1:]
+	if arg == 'd' or arg == 'da': delete_after = True
+	elif arg == 'dn' or arg == 'nd': delete_after = True
+	elif arg == '?': usage()
+	else: usage("BAD COMMAND {:s}".format(sys.argv[cmd_count]))
 
 with open("story.ni") as file:
 	for (line_count, line) in enumerate(file, 1):
