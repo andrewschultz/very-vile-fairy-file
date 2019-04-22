@@ -226,11 +226,11 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
 
-> BEAST BOSS (x-9)
+> BEAST BOSS (37)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (x-8)
+> LEAST LOSS (38)
 
 This hurt, and you need to figure a way to get back to full strength.
 
@@ -238,7 +238,7 @@ This hurt, and you need to figure a way to get back to full strength.
 
 > S
 
-> HEAL HERE (x-7)
+> HEAL HERE (39)
 
 > N
 
@@ -246,11 +246,11 @@ This hurt, and you need to figure a way to get back to full strength.
 
 Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
 
-> CULL CEASED (x-6)
+> CULL CEASED (40)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (x-5)
+> FULL FEAST (41)
 
 Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
 
@@ -258,30 +258,46 @@ Now you sense you must be close. But how do you get anyone's attention?
 
 Your cool cap is useful here.
 
-> CAST CAP (x-4)
+> CAST CAP (42)
 
 You need to dispose of Reeker Russell and his good gun.
 
 There's an LLP in here, but first, Russell can become wimpier ...
 
-> MEEKER MUSCLE (x-3)
+> MEEKER MUSCLE (43)
 
 And the good gun can go lame.
 
-> WOOD ONE (x-2)
+> WOOD ONE (44)
 
 Now you are free to go north.
 
 > N
 
-The airy isle still feels woeful. That well worn hell horn!
+Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> TELL TORN (x-1)
+> HOT HORDE (45)
 
-Here in the Airy Isle, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
+Okay, you need leadership too.
+
+> LOT LORD (46)
+
+Finally, you need a stirring battle cry.
+
+> GOT GORED (47)
+
+Here in Tarry Tile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
+
+And the airy isle still feels woeful. That well worn hell horn!
+
+> TELL TORN (48)
+
+You still aren't cheerful enough.
+
+> MERRY MILE (49)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (x)
+> BURY BILE (50)
 
 Congratulations. You win! I hope you enjoyed this.
