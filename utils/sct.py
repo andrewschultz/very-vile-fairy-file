@@ -14,12 +14,13 @@ x_of_y = defaultdict(lambda: defaultdict(bool))
 scores = defaultdict(int)
 got = defaultdict(int)
 got_detail = defaultdict(lambda: defaultdict(int))
+to_open = defaultdict(int)
 
 #initialize values
 
 copy_walkthrough_back = False
 open_source_post = True
-to_open = 0
+
 
 min_line = 0
 max_line = 0
@@ -78,7 +79,7 @@ def clue_hint_verify():
     x1 = list(set(list(cmd_laters)) - set(list(for_laters)))
     if len(x1):
         print("Stuff in commands but not table of forlaters:", ', '.join(x1))
-        if not to_open: to_open = forlater_start
+        if vv_table not in to_open: to_open[vv_table] = forlater_start
     x1 = list(set(list(for_laters)) - set(list(cmd_laters)))
     if len(x1):
         print("Stuff in table of forlaters but not commands:", ', '.join(x1))
@@ -105,9 +106,8 @@ def check_miss_rule():
         x1 = list(set(list(got_detail['opt'].keys())) - set(list(miss_accounted.keys())))
         x1 = sorted(x1, key=lambda x:got_detail['opt'][x])
         print("RULE FOR SHOW MISSING needs", ', '.join(x1))
-        global to_open
-        if open_source_post and not to_open:
-            to_open = first_showmiss
+        if open_source_post and "story.ni" not in to_open:
+            to_open["story.ni"] = first_showmiss
 
 def print_here_not(a, b, title = "generic", print_w_not = False):
     x1 = list(set(list(a.keys())) - set(list(b.keys())))
@@ -127,28 +127,9 @@ def check_walkthrough():
     num_dif = 0
     point_count = 0
     dif_map = []
-    strong_skip = False
-    strong_skipped = ""
-    way_wrong_points = 20
-    stay_strong = "\n\nHere's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.\n\n> STAY STRONG ({:d})\n".format(way_wrong_points+1)
     with open(wthru) as file:
         for (line_count, line) in enumerate(file, 1):
             new_line = line
-            if line.startswith("Here's where you get depressed"):
-                strong_skip = True
-                strong_skipped = "\n\n" + line
-                wthru_string = re.sub("\n*$", "", wthru_string)
-                continue
-            if strong_skip:
-                strong_skipped += line
-                if line.startswith(">"):
-                    strong_skip = False
-                    if stay_strong != strong_skipped: found_dif += 1
-                    wthru_string += stay_strong
-                    point_count += 1
-                    pts_in_walkthrough += 1
-                    got_thru['stay strong'] = line_count
-                continue
             if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
                 point_count += 1
                 my_cmd = re.sub("^> *", "", line.strip())
@@ -292,12 +273,12 @@ check_walkthrough()
 
 if min_sco != scores['nec']:
     print("MINIMUM SCORE DISCREPANCY: {:d} in source but # of necessary scores in file = {:d}. Line {:d} defines min score.".format(min_sco, scores['nec'], min_line))
-    if open_source_post and not to_open: to_open = min_line
+    if open_source_post and "story.ni" not in to_open: to_open = min_line
 else: print("MINIMUM SCORES MATCH IN SOURCE!")
 
 if max_sco != scores['total']:
     print("MAXIMUM SCORE DISCREPANCY: {:d} in source but # of possible scores in file = {:d}. Line {:d} defines max score.".format(max_sco, scores['total'], max_line))
-    if open_source_post and not to_open: to_open = max_line
+    if open_source_post and "story.ni" not in to_open: to_open = max_line
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 
 if len(got_detail['bug']):
@@ -312,4 +293,8 @@ for q in sorted(x_of_y.keys()):
     xq = x_of_y[q]
     print('X-of-Y puzzle for', q, ':', ', '.join(sorted([z for z in xqs if xq[z] == True])), '/', ', '.join(sorted([z for z in xqs if xq[z] == False])))
 
-if open_source_post and to_open: i7.npo("story.ni", to_open)
+if open_source_post:
+    if len(to_open) == 0: sys.exit("No files to open.")
+    for fi_open in to_open:
+        i7.npo(fi_open, to_open[fi_open], bail=False)
+    exit()
