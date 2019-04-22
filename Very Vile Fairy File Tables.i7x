@@ -99,34 +99,43 @@ randtxt
 "Pill-Perk Bill Burke"
 "Rude Rave Dude Dave"
 "Work-Will Kirk Kill"
+"Would-Whirl Bud Burrell"
 
+[the taunts below could be something from an enemy as well. I may wish to randomize them later.]
 table of vvff digs
 randtxt
 "Blue blood? Do? Dud! Boo, bud!"
 "Catcall: at ALL!"
+"Fie! Face my mace!"
 "Gonna go off! Shun a show-off!"
 "Look leading?! Book beating!"
 "'My magic try: TRAGIC!'"
 "Rotten role: gotten goal?"
+"Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
-
+"Whoah! Words? No, nerds!"
 
 table of vvff books
 randtxt
+"Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Crew Came Grew Game"
+"Do, Dare: Woo! Where"
 "Fall For Stall Store"
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
+"Good Girl Would Whirl"
 "Grepping: Groan? STEPPING STONE"
 "Hole Hound Bowl Bound"
-"Lay Lorn, Way Worn May Morn, by Kay Korn" [pay porn?]
+"Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"
 "Nag? No: Brag, Bro"
 "Near Null Fearful"
+"Oh, Trait So Straight"
 "One Wet Sunset"
+"Self Centered Elf Entered"
 "So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
 "Why When My Men, by Ben"
@@ -141,7 +150,7 @@ True	"You walk around and notice a small puddle where a pet peed, then a small m
 
 volume hints for later
 
-table of forlaters
+table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
@@ -156,6 +165,8 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say LEAST LOSS once/now you have something to face ..." [heres of Creased Cross ??]
 "HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to HEAL HERE [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
 "FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the bull beast a full feast once/now it's been vanquished."
+"GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry GOT GORED [once-now of can-got-gored rule] you have a full army and its leader."
+"MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a MERRY MILE [once-now of can-merry-mile rule] things have calmed down."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can CAST CAP once you find one."
 
 this is the can-bury-bile rule:
@@ -258,6 +269,22 @@ this is the can-full-feast rule:
 
 this is the did-full-feast rule:
 	if bull beast is moot, the rule succeeds;
+	the rule fails.
+
+this is the can-got-gored rule:
+	if lot lord is in airy isle and hot horde is in airy isle, the rule succeeds;
+	the rule fails.
+
+this is the did-got-gored rule:
+	if bot board is moot, the rule succeeds;
+	the rule fails.
+
+this is the can-merry-mile rule:
+	if well worn hell horn is moot, the rule succeeds;
+	the rule fails.
+
+this is the did-merry-mile rule:
+	if merry-mile is true, the rule succeeds;
 	the rule fails.
 
 this is the can-cast-cap rule:
