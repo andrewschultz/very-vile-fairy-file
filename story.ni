@@ -248,6 +248,7 @@ every turn when player is in Wet Wood:
 after looking in Wet Wood for the first time:
 	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could EXAMINE or READ it for instructions. (NOTE: You can use point the learner at something by typing LL (thing), or you can refer to the learner as LL. You can also LL to scan your current location.)[line break]";
 	now player has leet learner;
+	set the pronoun it to leet learner;
 	continue the action;
 
 chapter getgooding
@@ -1441,7 +1442,7 @@ carry out gotgoreding:
 		moot lot lord;
 		moot bot board;
 		the rule succeeds;
-	clue-later "got gored";
+	clue-later "GOT GORED";
 	if hot horde is in airy isle: [and lot lord is off-stage]
 		say "The hot horde needs more than a battle cry. It needs a leader." instead;
 	else if lot lord is in airy isle: [and hot horde is off-stage]
@@ -1719,7 +1720,7 @@ reading is an action applying to one thing.
 
 understand the command "read" as something new.
 
-understand "read" as reading.
+understand "read [thing]" as reading.
 
 definition: a thing (called th) is readable:
 	if th is very vile fairy file, yes;
@@ -1738,7 +1739,20 @@ carry out reading:
 table of readables
 read-thing	read-txt
 very vile fairy file	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
-leet learner	"CONCEIT CONCERNER is in blue.[line break]CHEAT CHURNER is in green.[line break]MEET MOURNER is in yellow.[line break]BEAT BURNER is in orange.[line break]EAT EARNER is in red.[line break]TREAT TURNER is in brown."
+leet learner	"Some multi-colored text on the leet learner seems to function as examples.[paragraph break][table-of-color-hints][run paragraph on]"
+
+to say table-of-color-hints:
+	repeat through table of color clues:
+		say "[fixed letter spacing][my-text entry][variable letter spacing] is inscribed in [my-color entry]."
+
+table of color clues
+my-text	my-color
+"CONCEIT CONCERNER"	"blue"
+"CHEAT CHURNER"	"green"
+"MEET MOURNER"	"yellow"
+"BEAT BURNER"	"orange"
+"EAT EARNER"	"red"
+"TREAT TURNER"	"brown"
 
 chapter xyzzying
 
@@ -1796,8 +1810,9 @@ understand "verbs" as verbsing.
 
 carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
-	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle hints on and off, respectively. Currently they are [on-off of help-how].";
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [b]LL[r] or [b]CC[r] is the shorthand for scanning a location, and [b]LL[r] or [b]CC[r] (any thing) scans it.";
+	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan].";
 	the rule succeeds.
 
 chapter creditsing
@@ -1826,7 +1841,11 @@ carry out abouting:
 
 book hinting
 
-the leet learner is a thing. description is "It says CHEAT CHURNER in green letters. You can probably READ it more in depth, because, well, there's more.[paragraph break]Also, to use it, LL (something)."
+the leet learner is a thing. description is "It says CHEAT CHURNER in green letters. You can probably READ it more in depth, because, well, there's more.[paragraph break]It has two settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off) It's currently [off-on of shut-scan]. [b]LL/CC ON/OFF[r] can turn it on or off.[paragraph break]Also, to use it, [b]LL[r] (something). [b]LL[r] with no argument scans the current location."
+
+after printing the name of leet learner while taking inventory: say " ([off-on of shut-scan])";
+
+understand "ll" and "cc" as leet learner.
 
 chapter lling
 
@@ -1850,7 +1869,7 @@ rule for supplying a missing noun when lling:
 	continue the action;
 
 carry out lling:
-	if player does not have the leet learner, say "Regular hints aren't available.";
+	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
 	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
@@ -1864,6 +1883,48 @@ this is the welp-wow-check rule:
 	if help-how is false:
 		say "You've disabled hints with [b]WELP WOW[r]. You need to [b]HELP HOW[r] to turn them on again.";
 		the rule succeeds;
+
+chapter shutscaning
+
+shutscaning is an action applying to nothing.
+
+understand the command "cc off" as something new.
+understand the command "ll off" as something new.
+understand the command "shut scan" as something new.
+
+understand "cc off" as shutscaning.
+understand "ll off" as shutscaning.
+understand "shut scan" as shutscaning.
+
+shut-scan is a truth state that varies.
+
+carry out shutscaning:
+	if shut-scan is true, say "The Leet Learner is already off." instead;
+	now shut-scan is true;
+	say "You turn the Leet Learner off. You can turn it on again with [llon-cmd].";
+	the rule succeeds.
+
+to say llon-cmd: say "[b]HUT CAN[r] or [b]LL ON[r] or [b]CC ON[r]"
+
+chapter hutcaning
+
+hutcaning is an action applying to nothing.
+
+understand the command "cc on" as something new.
+understand the command "ll on" as something new.
+understand the command "hut can" as something new.
+
+understand "cc on" as hutcaning.
+understand "ll on" as hutcaning.
+understand "hut can" as hutcaning.
+
+carry out hutcaning:
+	if shut-scan is false, say "The Leet Learner is already on." instead;
+	now shut-scan is false;
+	say "You turn the Leet Learner on. You can turn it off again with [lloff-cmd].";
+	the rule succeeds.
+
+to say lloff-cmd: say "[b]SHUT SCAN[r] or [b]LL OFF[r] or [b]CC OFF[r]"
 
 chapter hinting verb
 
@@ -1886,7 +1947,8 @@ a room has a rule called room-hint-rule. room-hint-rule of a room is usually tri
 section debug check - not for release
 
 when play begins:
-	say "[room-hint-rule of wet wood].";
+	repeat with Q running through rooms:
+		if room-hint-rule of Q is trivially false rule, say "You need to specify room-hint-rule for [Q].";
 
 chapter hinting an object verb
 
@@ -1907,7 +1969,8 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 section debug check - not for release
 
 when play begins:
-	say "[thing-hint-rule of leet learner].";
+	repeat with Q running through things:
+		if thing-hint-rule of Q is trivially false rule, say "You need to specify thing-hint-rule for [Q].";
 
 volume when play begins
 
