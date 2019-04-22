@@ -108,7 +108,10 @@ a person has text called talk-text.
 
 cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth.
 
-to phbt (x - a thing): now cht of x is phbt;
+to phbt (x - a thing):
+	now cht of x is phbt;
+	now x is not optional-noted;
+
 to phbt (x - a room): now cht of x is phbt;
 
 a room has a cheattype called cht. cht of a room is usually phbt.
@@ -116,6 +119,8 @@ a room has a cheattype called cht. cht of a room is usually phbt.
 a thing has a cheattype called cht. cht of a thing is usually phbt.
 
 a thing can be optional. a thing is usually not optional.
+
+a thing can be optional-noted. A thing is usually not optional-noted.
 
 volume going nowhere
 
@@ -229,7 +234,7 @@ volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][line break]Oh, there's GOT to be a simple way to become better.". cht is leteq.
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break]Oh, there's GOT to be a simple way to become better.". cht is leteq.
 
 wood-row is a number that varies.
 
@@ -466,7 +471,7 @@ carry out strongstarting:
 
 chapter Cark Cliff
 
-Cark Cliff is optional scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
+Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
 
 chapter sparkspliffing
 
@@ -1550,6 +1555,24 @@ volume verbs
 
 book standard modifications
 
+chapter dropping
+
+instead of dropping when number of entries in multiple object list > 1 (this is the don't allow dropping all rule):
+	alter the multiple object list to { };
+	add noun to multiple object list;
+	continue the action;
+
+instead of dropping:
+	say "You don't need to drop anything in this game[if player has zig zag rig rag]. However, you have a way to make a carryall that can hold everything you want. Check your inventory[end if].";
+
+chapter taking
+
+check taking:
+	if player has zig zag rig rag and number of things enclosed by the player > 4:
+		alter the multiple object list to { };
+		add noun to multiple object list;
+		say "You're juggling too much! Maybe something you're carrying can be repurposed." instead;
+
 chapter waiting
 
 check waiting: say "Hi ho! Lie low." instead;
@@ -1644,6 +1667,8 @@ instead of thinking:
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
+	if number of optional-noted things > 0:
+		say "You also know several things that are optional to figure out: [list of optional-noted things].";
 	the rule succeeds;
 
 to decide whether tried-yet of (ct - text):
@@ -1739,7 +1764,7 @@ carry out reading:
 table of readables
 read-thing	read-txt
 very vile fairy file	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
-leet learner	"Some multi-colored text on the leet learner seems to function as examples.[paragraph break][table-of-color-hints][run paragraph on]"
+leet learner	"Some multi-colored text on the leet learner (itself written in yellow) seems to function as examples.[paragraph break][table-of-color-hints][run paragraph on]"
 
 to say table-of-color-hints:
 	repeat through table of color clues:
@@ -1748,11 +1773,11 @@ to say table-of-color-hints:
 table of color clues
 my-text	my-color
 "CONCEIT CONCERNER"	"blue"
-"CHEAT CHURNER"	"green"
-"MEET MOURNER"	"yellow"
-"BEAT BURNER"	"orange"
-"EAT EARNER"	"red"
-"TREAT TURNER"	"brown"
+"  CHEAT CHURNER  "	"green"
+"   MEET MOURNER  "	"yellow"
+"   BEAT BURNER   "	"orange"
+"    EAT EARNER   "	"red"
+"  TREAT TURNER   "	"brown"
 
 chapter xyzzying
 
@@ -1868,12 +1893,16 @@ rule for supplying a missing noun when lling:
 		now the noun is the location of the player;
 	continue the action;
 
+ever-opt-scan is a truth state that varies.
+
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
-	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun]." instead;
-	say "BUG the leet learner encountered an unexpected value." instead;
+	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
+	if ever-opt-scan is false:
+		say "[line break]The blinking light must mean something. The learner is usually lit solidly or not at all.";
+		now ever-opt-scan is true;
 	the rule succeeds.
 
 to say scancol of (x - a cheattype):
@@ -1940,15 +1969,139 @@ carry out hinting:
 	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general.";
 	the rule succeeds.
 
-section hint room rules
+section hint room rule definitions
 
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule.
+
+room-hint-rule of Airy Isle is airy-isle-hint rule.
+room-hint-rule of creased cross is creased-cross-hint rule.
+room-hint-rule of Curst Cave is curst-cave-hint rule.
+room-hint-rule of Erst Lore is erst-lore-hint rule.
+room-hint-rule of Foe Field is foe-field-so-sealed-hint rule.
+room-hint-rule of Fun Fen is fun-fen-hint rule.
+room-hint-rule of Gassed Gap is gassed-gap-hint rule.
+room-hint-rule of Got Gear Hot Here is got-gear-hot-here-hint rule.
+room-hint-rule of Here Hull is here-hull-hint rule.
+room-hint-rule of History Hall is history-hall-hint rule.
+room-hint-rule of Lake Lea is lake-lea-hint rule.
+room-hint-rule of Po' Pit is po-pit-hint rule.
+room-hint-rule of Real Rear is real-rear-hint rule.
+room-hint-rule of Shirk Shell is shirk-shell-hint rule.
+room-hint-rule of Soft Sand is soft-sand-hint rule.
+room-hint-rule of Store All Stage is store-all-stage-hint rule.
+room-hint-rule of Tarry Tile is tarry-tile-hint rule.
+room-hint-rule of Trim Tram is trim-tram-hint rule.
+room-hint-rule of Vending Vibe is vending-vibe-hint rule.
+room-hint-rule of vined vault is vined-vault-hint rule.
+room-hint-rule of wet wood is wet-wood-hint rule.
+room-hint-rule of Whining War is whining-war-hint rule.
+room-hint-rule of Y'Old Yard is yold-yard-hint rule.
+
+section hint room rules [xxhrr]
+
+this is the airy-isle-hint rule:
+	the rule fails.
+
+this is the creased-cross-hint rule:
+	if bull beast is moot, the rule fails;
+	if bull beast is off-stage:
+		say "There's not much to do now in Creased Cross.";
+	else:
+		say "Dispose of the bull beast.";
+
+this is the curst-cave-hint rule:
+	the rule fails.
+
+this is the erst-lore-hint rule:
+	the rule fails.
+
+this is the foe-field-so-sealed-hint rule:
+	the rule fails.
+
+this is the fun-fen-hint rule:
+	the rule fails.
+
+this is the gassed-gap-hint rule:
+	the rule fails.
+
+this is the got-gear-hot-here-hint rule:
+	the rule fails.
+
+this is the here-hull-hint rule:
+	the rule fails.
+
+this is the history-hall-hint rule:
+	the rule fails.
+
+this is the lake-lea-hint rule:
+	the rule fails.
+
+this is the po-pit-hint rule:
+	if grit-grown is false:
+		say "[one of]You have to deal with the Po['] Pit itself before dealing with the trash trap. You can find the right verb for the trash trap, but you can't use it until you deal with the Po['] Pit.[or]The learner giving a blue light in the pit indicates you need two longer words.[or]The learner giving a green light indicates that either row or writ is the right number of letters.[or]You need to get a lot tougher. Become a bigger person.[or]GROW GRIT.[stopping]";
+	else:
+		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cash cap is stupid, but they both turn the leet learner yellow.[or]Looking at the cash cap, it's got a rendering of the trap and gap. Which seems all wrong.[or]MASH MAP.[stopping]"; [??bash bap]
+
+this is the real-rear-hint rule:
+	if healed-here is true, the rule fails;
+	say "You need to do 3 things here rhyming with REAL REAR.";
+	if knelt-yet is false:
+		say "SPOILER need to KNEEL NEAR.";
+	else if felt-fear is false:
+		say "SPOILER need to FEEL FEAR.";
+	else if cage key is off-stage:
+		say "SPOILER need to DEAL DEAR.";
+
+this is the shirk-shell-hint rule:
+	the rule fails.
+
+this is the soft-sand-hint rule:
+	the rule fails.
+
+this is the store-all-stage-hint rule:
+	the rule fails.
+
+this is the tarry-tile-hint rule:
+	the rule fails.
+
+this is the trim-tram-hint rule:
+	if me-minded is true:
+		say "[one of]You need to find a way to sucker the trim tram into thinking you paid.[or]There are two ways.[or]FLIM FLAM, or SKIM SCAM.[stopping]";
+	else:
+		say "[one of]You can't get FIND FEE out of your head. It distracts you from thinking of you.[or]Wait, 'you' is the wrong pronoun from your perspective.[or]What can you do to ME?[or]MIND ME.[stopping]";
+
+this is the vending-vibe-hint rule:
+	the rule fails.
+
+this is the vined-vault-hint rule:
+	if mean mass is off-stage:
+		say "[one of]You need to deal with the vined vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's orange, which is different from the yellow of the wet wood[or]You also need to discover some weakness in the vined vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
+	else:
+		say "[one of]The mean mass is a bit trickier. The leet learner gives you a different color, blue[or]If you understand leet learner colors, this means you need to add letters to both mean and mass[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
+	the rule succeeds;
+
+this is the wet-wood-hint rule:
+	say "[one of]You may notice a pattern to items and people here, especially if you try going certain directions in the Wet Wood. You're very bad at finding your way through[or]There are parallel rhymes[or]Perhaps a parallel rhyme would help you get out of the wet wood[or]It's the first location, so you may guess the first action is easy[or]Try replacing W with each of the other 25 letters. Maybe one pair of words stands out[or]You need to GET GOOD[stopping].";
+	the rule succeeds;
+
+this is the whining-war-hint rule:
+	the rule fails.
+
+this is the yold-yard-hint rule:
+	the rule fails.
+
+[zzhrr]
 
 section debug check - not for release
 
 when play begins:
+	let hint-idx be 0;
 	repeat with Q running through rooms:
-		if room-hint-rule of Q is trivially false rule, say "You need to specify room-hint-rule for [Q].";
+		if map region of Q is poorly penned or map region of Q is Get a Guess, continue the action;
+		if room-hint-rule of Q is trivially false rule:
+			increment hint-idx;
+			say "[hint-idx]. You need to specify room-hint-rule for [Q].";
+	if hint-idx > 0, say "[hint-idx] room hint[plur of hint-idx] to implement.";
 
 chapter hinting an object verb
 
@@ -1958,19 +2111,52 @@ understand "hint [thing]" as hintobjing.
 
 carry out hintobjing:
 	abide by the welp-wow-check rule;
+	if noun is optional and noun is not optional-noted:
+		now noun is optional-noted;
+		say "While you can score a point from [the noun], it's not critical to the game. HINTing it again will show what to do with [the noun]." instead;
 	process thing-hint-rule of noun;
 	if the rule failed, say "There doesn't seem to be anything more to do with [the noun] in general.";
 	the rule succeeds.
 
-section thing hint rules
+section thing hint rule definitions
 
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule.
+
+the thing-hint-rule of the leet learner is the leet-learner-hint rule.
+the thing-hint-rule of the wry wall is the wry-wall-hint rule.
+the thing-hint-rule of the zig zag rig rag is the zig-zag-rig-rag-hint rule.
+the thing-hint-rule of the big bag is the big-bag-hint rule.
+
+section thing hint rules [xxthr]
+
+this is the leet-learner-hint rule:
+	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
+	the rule succeeds;
+
+this is the zig-zag-rig-rag-hint rule:
+	say "[one of]The zig zag rig rag can actually be simplified[or]The leet learner flags the rag as yellow, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremelty practical for carrying a lot of things[or]BIG BAG[stopping].";
+	the rule succeeds;
+
+this is the big-bag-hint rule:
+	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
+	the rule succeeds;
+
+this is the wry-wall-hint rule:
+	say "The wry wall is simply there to provide amusing deaths.";
+
+[zzthr]
 
 section debug check - not for release
 
 when play begins:
+	let hint-idx be 0;
+	let max-hint be 15;
 	repeat with Q running through things:
-		if thing-hint-rule of Q is trivially false rule, say "You need to specify thing-hint-rule for [Q].";
+		if thing-hint-rule of Q is trivially false rule:
+			increment hint-idx;
+			say "[hint-idx]. You need to specify thing-hint-rule for [Q].";
+			if hint-idx >= max-hint, say "Max-hint amount tripped." instead;
+	if hint-idx > 0, say "[hint-idx] thing hint[plur of hint-idx] to implement.";
 
 volume when play begins
 
