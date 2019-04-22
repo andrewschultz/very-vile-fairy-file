@@ -9,13 +9,15 @@ import os
 import re
 import i7
 import sys
+import stat
 
 insert_point = defaultdict(str)
 
 max_full_score = 0
 min_full_score = 0
 
-delete_after = True
+out_read_only = True
+delete_after = False #It's ok to have this, since we don't copy over the pre-files to the source control directory
 
 def usage(cmd="USAGE LIST"):
     print(cmd)
@@ -52,6 +54,9 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
     if not os.path.exists(f):
         print("WARNING need to create {:s}".format(f))
         return
+    if out_read_only and os.path.exists(fout): # the final output file should be read-only by default
+        os.chmod(fout, stat.S_IWGRP|stat.S_IWRITE|stat.S_IWUSR)
+        os.remove(fout)
     fstream = open(fout, "w")
     cur_points = 0
     inserts = 0
@@ -69,6 +74,7 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
             else:
                 fstream.write(line)
     fstream.close()
+    if out_read_only: os.chmod(fout, stat.S_IRGRP|stat.S_IREAD|stat.S_IRUSR)
     print(f, "twiddled to", fout, "with", inserts, "command insertion{:s}: {:s}.".format(i7.plur(inserts), ', '.join([str(x) + "=" + first_line(insert_point[x]) for x in insert_point])))
     if delete_after: os.remove(f)
 
@@ -84,6 +90,8 @@ while cmd_count < len(sys.argv):
     elif arg == 'dn' or arg == 'nd': delete_after = True
     elif arg == '?': usage()
     else: usage("BAD COMMAND {:s}".format(sys.argv[cmd_count]))
+
+i7.dir2proj("vv")
 
 with open("story.ni") as file:
     for (line_count, line) in enumerate(file, 1):
