@@ -2178,22 +2178,39 @@ section thing hint rule definitions
 
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
-the thing-hint-rule of the leet learner is the leet-learner-hint rule.
-the thing-hint-rule of the wry wall is the wry-wall-hint rule.
-the thing-hint-rule of the zig zag rig rag is the zig-zag-rig-rag-hint rule.
-the thing-hint-rule of the big bag is the big-bag-hint rule.
-the thing-hint-rule of Sage Sea is the sage-sea-hint rule.
-the thing-hint-rule of cash cap is the cash-cap-hint rule.
-the thing-hint-rule of trash trap is the cash-cap-hint rule.
-the thing-hint-rule of gash gap is the cash-cap-hint rule.
-the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
-the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
-the thing-hint-rule of wrong art is wrong-art-hint rule.
+the thing-hint-rule of big bag is the big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
+the thing-hint-rule of cash cap is the cash-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
+the thing-hint-rule of gash gap is the cash-cap-hint rule.
+the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
+the thing-hint-rule of leet learner is the leet-learner-hint rule.
+the thing-hint-rule of Sage Sea is the sage-sea-hint rule.
+the thing-hint-rule of trash trap is the cash-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
+the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
+the thing-hint-rule of wrong art is wrong-art-hint rule.
+the thing-hint-rule of wry wall is the wry-wall-hint rule.
+the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
 
 section thing hint rules [xxthr]
+
+this is the big-bag-hint rule:
+	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
+	the rule succeeds;
+
+this is the bold-bard-hint rule:
+	say "[one of]The bold bard needs something like an ID.[or]COLD CARD.[stopping]";
+
+this is the cash-cap-hint rule:
+	say "[one of]As you may have guessed, the cash cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cash cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cash cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
+	the rule succeeds;
+
+this is the coral-cage-hint rule:
+	if player does not have cage key:
+		say "You don't have the key you need yet. Look for something that rhymes with key.";
+	else:
+		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
 
 this is the kerry-kyle-hint rule:
 	if in-so-sad is true:
@@ -2203,20 +2220,16 @@ this is the kerry-kyle-hint rule:
 	else:
 		say "Woohoo! There's nothing wrong with you right now!"
 
-this is the wrong-art-hint rule:
-	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
+this is the leet-learner-hint rule:
+	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
+	the rule succeeds;
 
-this is the bold-bard-hint rule:
-	say "[one of]The bold bard needs something like an ID.[or]COLD CARD.[stopping]";
+this is the sage-sea-hint rule:
+	say "You don't need to do anything specifically with the Sage Sea. It just blocks you from elsewhere, [if cage key is off-stage]but it holds something you need, if you deal with Real Rear correctly[else]and you already got the cage key from it[end if].";
+	the rule succeeds;
 
 this is the trending-tribe-hint rule:
 	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
-
-this is the coral-cage-hint rule:
-	if player does not have cage key:
-		say "You don't have the key you need yet. Look for something that rhymes with key.";
-	else:
-		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
 
 this is the very-vile-fairy-file-hint rule:
 	if merry-mile is false:
@@ -2225,28 +2238,15 @@ this is the very-vile-fairy-file-hint rule:
 		say "[one of]Now that you're happy, the fairy file can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
 	the rule succeeds;
 
-this is the leet-learner-hint rule:
-	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
-	the rule succeeds;
+this is the wrong-art-hint rule:
+	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
+
+this is the wry-wall-hint rule:
+	say "The wry wall is simply there to provide amusing deaths.";
 
 this is the zig-zag-rig-rag-hint rule:
 	say "[one of]The zig zag rig rag can actually be simplified[or]The leet learner flags the rag as yellow, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremelty practical for carrying a lot of things[or]BIG BAG[stopping].";
 	the rule succeeds;
-
-this is the big-bag-hint rule:
-	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
-	the rule succeeds;
-
-this is the cash-cap-hint rule:
-	say "[one of]As you may have guessed, the cash cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cash cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cash cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
-	the rule succeeds;
-
-this is the sage-sea-hint rule:
-	say "You don't need to do anything specifically with the Sage Sea. It just blocks you from elsewhere, [if cage key is off-stage]but it holds something you need, if you deal with Real Rear correctly[else]and you already got the cage key from it[end if].";
-	the rule succeeds;
-
-this is the wry-wall-hint rule:
-	say "The wry wall is simply there to provide amusing deaths.";
 
 [zzthr]
 

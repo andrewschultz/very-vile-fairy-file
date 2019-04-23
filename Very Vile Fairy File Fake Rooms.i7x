@@ -6,17 +6,17 @@ volume stuff to tinker with I mean with which to tinker
 
 chapter fake rooms to define
 
-Bold 'n Brave is a room.
-Capped Cone is a room.
-Dead Doom is a room.
-Done Dune is a room.
-Fast Foi'd is a room.
-Fate Farm is a room.
-Faun Fen is a room.
-Fortune Funnel is a room.
-Happy Hall is a room.
-Hopping Hills is a room.
-Lit Lawn is a room.
+Bold 'n Brave is a room in Poorly Penned.
+Capped Cone is a room in Poorly Penned.
+Dead Doom is a room in Poorly Penned.
+Done Dune is a room in Poorly Penned.
+Fast Foi'd is a room in Poorly Penned.
+Fate Farm is a room in Poorly Penned.
+Faun Fen is a room in Poorly Penned.
+Fortune Funnel is a room in Poorly Penned.
+Happy Hall is a room in Poorly Penned.
+Hopping Hills is a room in Poorly Penned.
+Lit Lawn is a room in Poorly Penned.
 
 chapter fake rooms not in limbo
 
