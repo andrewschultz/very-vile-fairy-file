@@ -119,7 +119,7 @@ def print_here_not(a, b, title = "generic", print_w_not = False):
         if x2: print (title, ":", len(x2), ', '.join(x2))
         else: print("It worked!")
 
-def check_walkthrough():
+def check_walkthrough(my_file, is_opt):
     got_thru = defaultdict(int)
     pts_in_walkthrough = 0
     wthru_string = ""
@@ -127,7 +127,8 @@ def check_walkthrough():
     num_dif = 0
     point_count = 0
     dif_map = []
-    with open(wthru) as file:
+    print("=" * 50, my_file, "=" * 50)
+    with open(my_file) as file:
         for (line_count, line) in enumerate(file, 1):
             new_line = line
             if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
@@ -163,7 +164,7 @@ def check_walkthrough():
     if pts_in_walkthrough != scores["nec"]:
         print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
     print_here_not(got_detail["nec"], got_thru, "Necessary-source-not-walkthrough")
-    print_here_not(got_detail["opt"], got_thru, "Optional-source-not-walkthrough")
+    if is_opt: print_here_not(got_detail["opt"], got_thru, "Optional-source-not-walkthrough")
     temp = defaultdict(int)
     for q in got_detail["opt"]: temp[q] = 1
     for q in got_detail["nec"]: temp[q] = 2
@@ -265,7 +266,8 @@ def read_cmd_line():
 read_cmd_line()
 
 check_points()
-check_walkthrough()
+check_walkthrough("walkthrough.txt", False)
+check_walkthrough("walkthrough-full.txt", True)
 
 #
 # post-processing
@@ -273,12 +275,12 @@ check_walkthrough()
 
 if min_sco != scores['nec']:
     print("MINIMUM SCORE DISCREPANCY: {:d} in source but # of necessary scores in file = {:d}. Line {:d} defines min score.".format(min_sco, scores['nec'], min_line))
-    if open_source_post and "story.ni" not in to_open: to_open = min_line
+    if open_source_post and "story.ni" not in to_open: to_open["story.ni"] = min_line
 else: print("MINIMUM SCORES MATCH IN SOURCE!")
 
 if max_sco != scores['total']:
     print("MAXIMUM SCORE DISCREPANCY: {:d} in source but # of possible scores in file = {:d}. Line {:d} defines max score.".format(max_sco, scores['total'], max_line))
-    if open_source_post and "story.ni" not in to_open: to_open = max_line
+    if open_source_post and "story.ni" not in to_open: to_open["story.ni"] = max_line
 else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 
 if len(got_detail['bug']):

@@ -109,6 +109,15 @@ with open("wdrop.txt") as file:
         l = line.strip().split("\t")
         insert_point[int(l[0])] = re.sub(r'\\n', "\n", l[1])
 
+with open("wbase.txt") as file:
+    for (line_count, line) in enumerate(file, 1):
+        if line.startswith(">"):
+            old_line = line
+            line = re.sub("^> *", "> ", line)
+            line = re.sub(" *\(", " (", line)
+            if old_line != line:
+                print("WARNING bad spacing line {:d} of wbase.txt: {:s}".format(line_count, line.strip()))
+
 insert_stuff("walkthrough-pre.txt", "walkthrough.txt", delete_after, min_full_score)
 insert_stuff("walkthrough-full-pre.txt", "walkthrough-full.txt", delete_after, max_full_score)
 
