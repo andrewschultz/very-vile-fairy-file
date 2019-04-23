@@ -2086,7 +2086,7 @@ this is the real-rear-hint rule:
 
 this is the shirk-shell-hint rule:
 	if player has jerk gel, the rule fails;
-	say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]What you need to find is Jerk Gel.[or]You won't find the Jerk Gel if you're lazy.[or]WORK WELL.[stopping]";
+	process the jerk-gel-hint rule;
 
 this is the soft-sand-hint rule:
 	if ever-loft is false:
@@ -2174,20 +2174,45 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 
 the thing-hint-rule of big bag is the big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
+the thing-hint-rule of bot board is bot-board-hint rule.
 the thing-hint-rule of cage key is the cage-key-hint rule.
+the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of cash cap is the cash-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
+the thing-hint-rule of done den is done-den-hint rule.
+the thing-hint-rule of FIND FEE is find-fee-hint rule.
 the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
 the thing-hint-rule of gash gap is the cash-cap-hint rule.
+the thing-hint-rule of gold guard is gold-guard-hint rule.
 the thing-hint-rule of good gun is good-gun-hint rule.
+the thing-hint-rule of GOTS GAME is gots-game-hint rule.
+the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
+the thing-hint-rule of hive heap is hive-heap-hint rule.
+the thing-hint-rule of Hold Hard is hold-hard-hint rule.
+the thing-hint-rule of hot horde is bot-board-hint rule.
+the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is the leet-learner-hint rule.
+the thing-hint-rule of lot lord is bot-board-hint rule.
+the thing-hint-rule of marred mat is marred-mat-hint rule.
+the thing-hint-rule of mean mass is mean-mass-hint rule.
+the thing-hint-rule of mild mead is mild-mead-hint rule.
+the thing-hint-rule of Name Notes Tame Totes is name-notes-tame-totes-hint rule.
+the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
+the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
+the thing-hint-rule of paper pile is paper-pile-hint rule.
 the thing-hint-rule of peeling pier is the peeling-pier-hint rule.
+the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
+the thing-hint-rule of row writ is row-writ-hint rule.
 the thing-hint-rule of Sage Sea is the sage-sea-hint rule.
+the thing-hint-rule of screaming skull is screaming-skull-hint rule.
 the thing-hint-rule of steel steer is the steel-steer-hint rule.
 the thing-hint-rule of tall tree is the tall-tree-hint rule.
+the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
+the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is the cash-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
+the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
@@ -2195,48 +2220,25 @@ the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
 
 [
-the thing-hint-rule of mean mass is mean-mass-hint rule.
-the thing-hint-rule of row writ is row-writ-hint rule.
-the thing-hint-rule of FIND FEE is find-fee-hint rule.
-the thing-hint-rule of done den is done-den-hint rule.
-the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
-the thing-hint-rule of hive heap is hive-heap-hint rule.
-the thing-hint-rule of vapor vile is vapor-vile-hint rule.
-the thing-hint-rule of paper pile is paper-pile-hint rule.
 the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Bull Beast is bull-beast-hint rule.
-the thing-hint-rule of Name Notes Tame Totes is name-notes-tame-totes-hint rule.
-the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
-the thing-hint-rule of GOTS GAME is gots-game-hint rule.
-the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
-the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-by-tim-t-sims-pimp-hint rule.
-the thing-hint-rule of Hold Hard is hold-hard-hint rule.
-the thing-hint-rule of gold guard is gold-guard-hint rule.
 the thing-hint-rule of Lending Libe is lending-libe-hint rule.
-the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of hard hat is hard-hat-hint rule.
 the thing-hint-rule of Jake G is jake-g-hint rule.
 the thing-hint-rule of Lake Lap is lake-lap-hint rule.
 the thing-hint-rule of Ache App is ache-app-hint rule.
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
-the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of worst wave is worst-wave-hint rule.
-the thing-hint-rule of screaming skull is screaming-skull-hint rule.
-the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of moral mage is moral-mage-hint rule.
-the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
-the thing-hint-rule of bot board is bot-board-hint rule.
-the thing-hint-rule of lot lord is lot-lord-hint rule.
-the thing-hint-rule of hot horde is hot-horde-hint rule.
 the thing-hint-rule of silly sign is silly-sign-hint rule.
 the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
 the thing-hint-rule of wild weed is wild-weed-hint rule.
-the thing-hint-rule of mild mead is mild-mead-hint rule.
 the thing-hint-rule of go gate is go-gate-hint rule.
 the thing-hint-rule of grow grate is grow-grate-hint rule.
-the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
 ]
+
+[??styled steed]
 
 section thing hint rules [xxthr]
 
@@ -2246,12 +2248,25 @@ this is the big-bag-hint rule:
 this is the bold-bard-hint rule:
 	say "[one of]The bold bard needs something like an ID.[or]COLD CARD.[stopping]";
 
+this is the bot-board-hint rule:
+	if lot lord is in airy isle and hot horde is in airy isle:
+		say "[one of]Now that the lot lord and hot horde are in airy isle, they need a rallying cry[or]Or a victory cry[or]GOT GORED[stopping].";
+	else if lot lord is in airy isle:
+		say "[one of]The lot lord needs people to lead[or]The lot lord needs an enthusiastic, large following[or]HOT HORDE[stopping].";
+	else if hot horde is in airy isle:
+		say "[one of]The hot horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or]LOT LORD[stopping].";
+	else:
+		say "[one of]You need allies to take out the bot board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
+
 this is the cage-key-hint rule:
 	if player is in store all stage:
 		say "The cage key will help you open the cage here";
 	else:
 		say "The cage key will help you open a cage you have[if store all stage is unvisited]n't yet[end if] seen";
 	say ", but you need to figure the right command.";
+
+this is the cark-cliff-hint rule:
+	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or]SPARK SPLIFF.[stopping]";
 
 this is the cash-cap-hint rule:
 	say "[one of]As you may have guessed, the cash cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cash cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cash cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
@@ -2266,11 +2281,36 @@ this is the coral-cage-hint rule:
 this is the done-den-hint rule: [??general problems with what if you already know a certain command]
 	say "You don't need to go back through the done den. There are not even any extra points."
 
-this is the frightening-fridge rule:
+this is the find-fee-hint rule:
+	say "[one of]The FIND FEE makes you feel as though you need to pay, but you need to pay attention to yourself.[or]The leet learner scans orange, but the first word has to be *IND. So the second word must be very short indeed.[or]MIND ME.[stopping]"
+
+this is the frightening-fridge-hint rule:
 	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
+
+this is the gold-guard-hint rule:
+	say "[one of]The gold guard helps protect you [if player is in Foe Field]here[else if foe field is unvisited]somewhere you haven't been[else]somewhere you've been[end if].[or]Once the gold guard is in the right place, you can use it to protect yourself.[or]You need to be in the Foe Field for the gold guard to work.[or]Once in the Foe Field, SHOW SHIELD.[stopping]"
 
 this is the good-gun-hint rule:
 	say "[one of]You want to make the gun worthless.[or]A good gun is generally made out of metal. Any material you could change it to?[or]This sort of reverses a very early puzzle.[or]WOOD ONE.[stopping]"
+
+this is the gots-game-hint rule:
+	say "[one of]The Gutta Ganksta seems proud of the GOTS GAME tattoo, but perhaps there's a way to cut it down.[or]LOTS LAME.[stopping]"
+
+this is the gutta-ganksta-hint rule:
+	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA WANKSTA.[stopping]";
+
+this is the hive-heap-hint rule:
+	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
+
+this is the hold-hard-hint rule:
+	if bold bard is moot, the rule fails;
+	process the bold-bard-hint rule;
+
+this is the jerk-gel-hint rule:
+	if player does not have jerk gel:
+		say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]What you need to find is Jerk Gel.[or]You won't find the Jerk Gel if you're lazy.[or]WORK WELL.[stopping]";
+	else:
+		say "You need to find whom to use the jerk gel and its glowing globs on.";
 
 this is the kerry-kyle-hint rule:
 	if in-so-sad is true:
@@ -2284,14 +2324,43 @@ this is the leet-learner-hint rule:
 	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
 	the rule succeeds;
 
+this is the marred-mat-hint rule:
+	say "[one of]The marred mat is in Got Gear Hot Here, suggesting maybe it can become something you can wear.[or]What can you wear that rhymes with mat?[or]HARD HAT.[stopping]"
+
+this is the mean-mass-hint rule:
+	say "[one of]You need to make the mean mass into something much less harmful. Wholesome, even.[or]Maybe the mean mass can be changed to something you're missing on the outside. Something from nature.[or]The mean mass can become GREEN GRASS.[stopping]"
+
+this is the mild-mead-hint rule:
+	say "[one of]You can make the mild mead have a bit more kick, but you don't need to.[or]The mild mead can become a slightly harder drug.[or]WILD WEED.[stopping]";
+
+this is the name-notes-tame-totes-hint rule: say "The random names are just for fun."
+
+this is the oi-mo-hint rule:
+	say "[one of]Oi Mo['] is a bad song, but there may be a way to tune it out.[or]This is a bit tricky, because it relies on something different than the usual mechanic. That's why it's an optional point.[or]Everything is in the XimX format.[or]DIMD will turn the volume down.[stopping]"
+
+this is the pain-peasant-hint rule:
+	say "[one of]There needs to be a way to calm the peasant down and make it nicer.[or]PLAIN PLEASANT.[stopping]"
+
+this is the paper-pile-hint rule:
+	say "[one of]It's not what the paper pile is, but that it's a rather messy FACT FINDER. You need to organize it.[or]You can organize the paper pile/fact finder into a BACKED BINDER.[stopping]"
+
 this is the peeling-pier-hint rule:
 	if healed-here is true, the rule fails;
 	say "The peeling pier is just here to bring home that there's a lot to do in the Real Rear, but ... the pier is not quite right.";
 	process the real-rear-hint rule;
 
+this is the reeker-russell-hint rule:
+	say "[one of]Reeker Russell is big and tough, but you can make him less strong.[or]No, 'weaker wussle' doesn't quite work, but there's a synonym for weaker.[or]MEEKER MUSCLE.[stopping]"
+
+this is the row-writ-hint rule:
+	if grit-grown is true, the rule fails;
+	say "[one of]The row writ and Po['] Pit may have you stumped.[or]The leet learner on both will give you a clue of the nomber of letters.[or]You need to toughen up.[or]GROW GRIT.[stopping]"
+
 this is the sage-sea-hint rule:
 	say "You don't need to do anything specifically with the Sage Sea. It just blocks you from elsewhere, [if cage key is off-stage]but it holds something you need, if you deal with Real Rear correctly[else]and you already got the cage key from it[end if].";
 	the rule succeeds;
+
+this is the screaming-skull-hint rule: say "[one of]If there only were a way to make the screaming skull less imposing![or]Maybe there is a way the skull can make less noise as well.[or]DREAMING DULL.[stopping]"
 
 this is the steel-steer-hint rule:
 	if healed-here is true, the rule fails;
@@ -2302,8 +2371,17 @@ this is the tall-tree-hint rule:
 	if tree-down is true, the rule fails;
 	say "[one of]The way north is treacherous, and having a bridge over it would be nice.[or]The tall tree would make a nice bridge, if it were on the ground. But it is fixed upright.[or]How do you loosen the tall tree so it creates a walkway?[or]FALL FREE.[stopping]";
 
+this is the toe-tappin-row-rappin rule:
+	say "[one of]Man! The Toe Tappin Row Rappin song is energetic. But you don't need that.[or]You can slow the song down some.[or]SO SAPPIN[stopping]"
+
+this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
+	say "[one of]You can request something from the tool tap.[or]It might not be a tool, but who knows when it comes in handy.[or]Summon a COOL CAP.[stopping]"
+
 this is the trending-tribe-hint rule:
 	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
+
+this is the vapor-vile-hint rule:
+	say "[one of]It would be nice if the vapor vile became something more substansive.[or]It can become a PAPER PILE.[stopping]"
 
 this is the very-vile-fairy-file-hint rule:
 	if merry-mile is false:
@@ -2312,7 +2390,7 @@ this is the very-vile-fairy-file-hint rule:
 		say "[one of]Now that you're happy, the fairy file can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
 	the rule succeeds;
 
-this is the well-worn-hell-horn rule:
+this is the well-worn-hell-horn-hint rule:
 	say "[one of]The well worn hell horn seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
 
 this is the wrong-art-hint rule:
