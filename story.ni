@@ -741,7 +741,7 @@ Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you c
 
 check going west in History Hall:
 	if mistmall is true, continue the action;
-	say "[if evermall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
+	say "[if ever-mall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
 
 chapter historyhalling
 
@@ -766,7 +766,7 @@ carry out historyhalling:
 
 chapter mysterymalling
 
-evermall is a truth state that varies.
+ever-mall is a truth state that varies.
 
 mysterymalling is an action applying to nothing.
 
@@ -782,9 +782,9 @@ carry out mysterymalling:
 	if Toe Tappin is not off-stage, move-from-temp Toe Tappin;
 	now Got Gear Hot Here is mapped west of History Hall;
 	now mistmall is true;
-	if evermall is false:
+	if ever-mall is false:
 		up-reg;
-		now evermall is true;
+		now ever-mall is true;
 	bold-my-room;
 	the rule succeeds;
 
@@ -825,8 +825,8 @@ whatawankstaing is an action applying to nothing.
 
 understand the command "whatawanksta" as something new.
 
-understand "what a wanksta" as whatawankstaing when evermall is true.
-understand "whatta wanksta" as whatawankstaing when evermall is true.
+understand "what a wanksta" as whatawankstaing when ever-mall is true.
+understand "whatta wanksta" as whatawankstaing when ever-mall is true.
 
 carry out whatawankstaing:
 	if ganksta is moot, say "You already got rid of the ganksta." instead;
@@ -886,7 +886,7 @@ part Vending Vibe -2,1 a
 
 Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 
-The Trending Tribe are plural-named people in Vending Vibe. cht is letplus.
+The Trending Tribe are plural-named people in Vending Vibe. cht is letplus. talk-text is "'Bam, burning! Am earning!'"
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
 
@@ -899,6 +899,7 @@ understand the command "lending libe" as something new.
 understand "lending libe" as lendinglibeing.
 
 carry out lendinglibeing:
+	if trending tribe is moot, say "You already disposed of the trending tribe." instead;
 	moot trending tribe;
 	up-reg;
 	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
@@ -1041,7 +1042,8 @@ carry out shiningshoreing:
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	up-reg;
 	phbt Whining War;
-	move lake lap to Whining War;
+	move lake lap to Whining War; [??fake fap]
+	now shore-shine is true;
 	the rule succeeds.
 
 chapter miningmoreing
@@ -1122,7 +1124,15 @@ part Here Hull 1,2
 
 Here Hull is a room in Piddling Pain. It is east of Soft Sand.
 
-The Beer Bull is a thing in Here Hull.
+The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'"
+
+to decide whether hull-bull:
+	if player is in here hull or beer bull is in location of player, yes;
+	no;
+
+to reset-bull:
+	move beer bull to here hull;
+	now cht of beer bull is partminus;
 
 chapter fearfuling
 
@@ -1130,9 +1140,17 @@ fearfuling is an action applying to nothing.
 
 understand the command "fearful" as something new.
 
-understand "fearful" as fearfuling.
+understand "fearful" as fearfuling when hull-bull.
+
+fearful-ever is a truth state that varies.
 
 carry out fearfuling:
+	if fearful-ever is false:
+		now fearful-ever is true;
+		up-reg;
+	now cht of beer bull is leteq;
+	say "The beer bull snorts and begins to follow you.";
+	now fearful-on is true;
 	the rule succeeds.
 
 chapter deardulling
@@ -1141,15 +1159,16 @@ deardulling is an action applying to nothing.
 
 understand the command "dear dull" as something new.
 
-understand "dear dull" as deardulling when beer bull is in location of player.
+understand "dear dull" as deardulling when hull-bull.
 
 fearful-on is a truth state that varies.
 
 carry out deardulling:
 	if fearful-on is false, say "No. The beer bull is too dull." instead;
 	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
-	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk." instead;
+	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk. Once each side has had their fill, the bull wanders off." instead;
 	up-reg;
+	moot beer bull;
 	the rule succeeds.
 
 part Shirk Shell -1,2 a
@@ -1966,12 +1985,12 @@ understand "hint" as hinting.
 carry out hinting:
 	abide by the welp-wow-check rule;
 	process room-hint-rule of location of player;
-	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general.";
+	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but specific things in [location of player] may be worth looking at.";
 	the rule succeeds.
 
 section hint room rule definitions
 
-a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule.
+a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
 room-hint-rule of creased cross is creased-cross-hint rule.
@@ -2000,7 +2019,8 @@ room-hint-rule of Y'Old Yard is yold-yard-hint rule.
 section hint room rules [xxhrr]
 
 this is the airy-isle-hint rule:
-	the rule fails.
+	say "The bot board needs to be dealt with here, not the location.";
+	the rule succeeds;
 
 this is the creased-cross-hint rule:
 	if bull beast is moot, the rule fails;
@@ -2008,30 +2028,46 @@ this is the creased-cross-hint rule:
 		say "There's not much to do now in Creased Cross.";
 	else:
 		say "Dispose of the bull beast.";
+	the rule succeeds.
 
 this is the curst-cave-hint rule:
-	the rule fails.
+	if first-fave is true, the rule fails;
+	say "[one of]You need to show optimism.[or]FIRST FAVE.[stopping]";
+	the rule succeeds.
 
 this is the erst-lore-hint rule:
+	say "I think I'll need to fix this later, but for now, there's nothing to do.";
 	the rule fails.
 
 this is the foe-field-so-sealed-hint rule:
-	the rule fails.
+	if shield-shown is true, the rule fails;
+	if player does not have gold guard:
+		say "You don't have what you need, yet, to open up the Foe Field.";
+	else:
+		say "[one of]You need to brandish protection to get further in the Foe Field.[or]That's a fancy way of saying something much simpler[or]What's a synonym for guard? Especially the gold guard?[or]SHOW SHIELD.[stopping]";
 
 this is the fun-fen-hint rule:
-	the rule fails.
+	say "The fun fen is a busy place, but there's nothing you need to do to it in general.";
+	the rule succeeds.
 
 this is the gassed-gap-hint rule:
-	the rule fails.
+	if cool cap is moot, the rule fails;
+	if player does not have cool cap:
+		say "You don't have what you need yet to change the gassed gap.";
+	else:
+		say "[one of]You need to put forth a challenge.[or]You don't have a gauntlet to throw down, but you have something else.[or]You have a cap.[or]CAST CAP.[stopping]";
 
 this is the got-gear-hot-here-hint rule:
-	the rule fails.
+	the rule fails. [??not near]
 
 this is the here-hull-hint rule:
-	the rule fails.
+	if beer bull is moot, the rule fails;
 
 this is the history-hall-hint rule:
-	the rule fails.
+	if ever-mall is true:
+		say "You can pretty much twiddle the Mystery Mall and History Hall as you want.";
+	else:
+		say "[one of]The History Hall can become something a bit less profound.[or]A place of commerce, not of study.[or]MYSTERY MALL.[stopping]";
 
 this is the lake-lea-hint rule:
 	the rule fails.
@@ -2051,17 +2087,32 @@ this is the real-rear-hint rule:
 		say "SPOILER need to FEEL FEAR.";
 	else if cage key is off-stage:
 		say "SPOILER need to DEAL DEAR.";
+	else:
+		say "BUG in the hint code, but you're probably done here."
 
 this is the shirk-shell-hint rule:
-	the rule fails.
+	if player has jerk gel, the rule fails;
+	say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]What you need to find is Jerk Gel.[or]You won't find the Jerk Gel if you're lazy.[or]WORK WELL.[stopping]";
 
 this is the soft-sand-hint rule:
-	the rule fails.
+	if ever-loft is false:
+		say "[one of]You can't quite reach what's to the west[or]The soft sand can change its contours[or]Perhaps it could rise or fall based on what you do or think[or]LOFT LAND will raise the soft sand so you can go west[stopping].";
+	else:
+		say "You can toggle LOFT LAND and SOFT SAND back and forth as needed.";
+	the rule succeeds.
 
 this is the store-all-stage-hint rule:
-	the rule fails.
+	if moral mage is moot, the rule fails;
+	say "The coral cage is what's important here.";
+	process the coral-cage-hint rule;
 
 this is the tarry-tile-hint rule:
+	if well worn hell horn is in tarry tile:
+		say "You can do something with this location [once-now of can-merry-mile rule] the well worn hell horn is dealt with.";
+	else if merry-mile is false:
+		say "[one of]The tarry tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
+	else:
+		consider the very-vile-fairy-file-hint rule;
 	the rule fails.
 
 this is the trim-tram-hint rule:
@@ -2071,7 +2122,9 @@ this is the trim-tram-hint rule:
 		say "[one of]You can't get FIND FEE out of your head. It distracts you from thinking of you.[or]Wait, 'you' is the wrong pronoun from your perspective.[or]What can you do to ME?[or]MIND ME.[stopping]";
 
 this is the vending-vibe-hint rule:
-	the rule fails.
+	if trending tribe is moot, the rule fails;
+	say "You can deal with the trending tribe here.";
+	process the trending-tribe-hint rule;
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
@@ -2085,10 +2138,13 @@ this is the wet-wood-hint rule:
 	the rule succeeds;
 
 this is the whining-war-hint rule:
-	the rule fails.
+	if shore-shine is true, the rule fails;
+	say "[one of]You need to make the whining war something more positive.[or]Brighter. This is a waterfront, sort of, as well.[or]SHINING SHORE.[stopping]";
 
 this is the yold-yard-hint rule:
-	the rule fails.
+	if bold bard is moot, the rule fails;
+	say "The Bold Bard needs your help here.";
+	process the bold-bard-hint rule;
 
 [zzhrr]
 
@@ -2120,14 +2176,54 @@ carry out hintobjing:
 
 section thing hint rule definitions
 
-a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule.
+a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
 the thing-hint-rule of the leet learner is the leet-learner-hint rule.
 the thing-hint-rule of the wry wall is the wry-wall-hint rule.
 the thing-hint-rule of the zig zag rig rag is the zig-zag-rig-rag-hint rule.
 the thing-hint-rule of the big bag is the big-bag-hint rule.
+the thing-hint-rule of Sage Sea is the sage-sea-hint rule.
+the thing-hint-rule of cash cap is the cash-cap-hint rule.
+the thing-hint-rule of trash trap is the cash-cap-hint rule.
+the thing-hint-rule of gash gap is the cash-cap-hint rule.
+the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
+the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
+the thing-hint-rule of wrong art is wrong-art-hint rule.
+the thing-hint-rule of Bold Bard is bold-bard-hint rule.
+the thing-hint-rule of coral cage is coral-cage-hint rule.
+the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 
 section thing hint rules [xxthr]
+
+this is the kerry-kyle-hint rule:
+	if in-so-sad is true:
+		say "[one of]You need to make yourself happier, from being so sad.[or]Become shiny and happy.[or]GLOW GLAD.[stopping]";
+	else if in-way-wrong is true:
+		say "[one of]You feel not just wrong but weak. Things are slipping away.[or]How to keep things from slipping away?[or]STAY STRONG.[stopping]";
+	else:
+		say "Woohoo! There's nothing wrong with you right now!"
+
+this is the wrong-art-hint rule:
+	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
+
+this is the bold-bard-hint rule:
+	say "[one of]The bold bard needs something like an ID.[or]COLD CARD.[stopping]";
+
+this is the trending-tribe-hint rule:
+	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
+
+this is the coral-cage-hint rule:
+	if player does not have cage key:
+		say "You don't have the key you need yet. Look for something that rhymes with key.";
+	else:
+		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
+
+this is the very-vile-fairy-file-hint rule:
+	if merry-mile is false:
+		say "You can't do anything with the file until the Tarry Tile is cheerier.";
+	else:
+		say "[one of]Now that you're happy, the fairy file can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
+	the rule succeeds;
 
 this is the leet-learner-hint rule:
 	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
@@ -2141,6 +2237,14 @@ this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
 	the rule succeeds;
 
+this is the cash-cap-hint rule:
+	say "[one of]As you may have guessed, the cash cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cash cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cash cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
+	the rule succeeds;
+
+this is the sage-sea-hint rule:
+	say "You don't need to do anything specifically with the Sage Sea. It just blocks you from elsewhere, [if cage key is off-stage]but it holds something you need, if you deal with Real Rear correctly[else]and you already got the cage key from it[end if].";
+	the rule succeeds;
+
 this is the wry-wall-hint rule:
 	say "The wry wall is simply there to provide amusing deaths.";
 
@@ -2151,11 +2255,15 @@ section debug check - not for release
 when play begins:
 	let hint-idx be 0;
 	let max-hint be 15;
+	let ignore-text be false;
 	repeat with Q running through things:
 		if thing-hint-rule of Q is trivially false rule:
 			increment hint-idx;
-			say "[hint-idx]. You need to specify thing-hint-rule for [Q].";
-			if hint-idx >= max-hint, say "Max-hint amount tripped." instead;
+			if hint-idx > max-hint and ignore-text is false:
+				say "I went over the maximum. Not listing the rest.";
+				now ignore-text is true;
+				next;
+			if ignore-text is false, say "[hint-idx]. You need to specify thing-hint-rule for [Q].";
 	if hint-idx > 0, say "[hint-idx] thing hint[plur of hint-idx] to implement.";
 
 volume when play begins
