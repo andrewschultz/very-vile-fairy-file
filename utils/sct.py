@@ -114,10 +114,18 @@ def print_here_not(a, b, title = "generic", print_w_not = False):
     x2 = list(set(list(b.keys())) - set(list(a.keys())))
     if not print_w_not:
         if x1: print (title, ":", len(x1), ', '.join(x1))
-        else: print("It worked!")
+        else: print("I found no differences for {:s}!".format(title))
     if print_w_not:
         if x2: print (title, ":", len(x2), ', '.join(x2))
         else: print("It worked!")
+
+def extract_num(my_line):
+    temp = re.sub("\).*", "", my_line)
+    try:
+        return int(re.sub(".*\(", "", temp))
+    except:
+        print("Bad score in line", my_line)
+        return -1
 
 def check_walkthrough(my_file, is_opt):
     got_thru = defaultdict(int)
@@ -127,42 +135,19 @@ def check_walkthrough(my_file, is_opt):
     num_dif = 0
     point_count = 0
     dif_map = []
+    last_num = 0
     print("=" * 50, my_file, "=" * 50)
     with open(my_file) as file:
         for (line_count, line) in enumerate(file, 1):
             new_line = line
-            if line.startswith(">") and re.search("\(((x-)?[0-9]+|x)\)", line):
-                point_count += 1
-                my_cmd = re.sub("^> *", "", line.strip())
-                my_cmd = re.sub(" *\((x)?.*", "", my_cmd)
-                got_thru[my_cmd.lower()] = line_count
-                pts_in_walkthrough += 1
-                #print(line_count, my_cmd)
-                new_line = re.sub("\([0-9]+\)", "({:d})".format(point_count), line)
-                if new_line != line:
-                    num_dif += 1
-                    old_num = re.sub(".*\(", "", line.strip())
-                    old_num = re.sub("\).*", "", old_num)
-                    dif_map.append("{:s} {:s}->{:d}".format(my_cmd, old_num, point_count))
-            if new_line.startswith(">"):
-                new_line = re.sub("^> ?", "> ", new_line)
-                new_line = re.sub(" ?\(", " (", new_line)
-            if new_line != line: found_dif += 1
-            wthru_string += new_line
-    if found_dif:
-        if copy_walkthrough_back:
-            f = open(wthru2, "w")
-            f.write(wthru_string)
-            f.close()
-            copy(wthru2, wthru)
-            os.remove(wthru2)
-            print("Rejigged wthru with", found_dif, "difference" + i7.plur(found_dif), num_dif, "number difference" + i7.plur(num_dif))
-        else:
-            print("Walkthrough numbered wrong. I found", found_dif, "difference" + i7.plur(found_dif) + ":", ', '.join(dif_map))
-            if not copy_walkthrough_back: print("You may wish to fix things with -cw.")
-    else: print("Walkthrough numbering okay.")
-    if pts_in_walkthrough != scores["nec"]:
-        print("ERROR Walkthrough points =", pts_in_walkthrough, "necessary scores flagged in source code =", scores["nec"])
+            if line.startswith(">") and "(" in line:
+                my_num = extract_num(re.sub(".*\(", "", line))
+                if my_num - last_num > 1:
+                    print("Nonsequential number {:d} vs {:d} at line {:d}: {:s}".format(my_num, last_num, line_count, line.strip()))
+                last_num = my_num
+                my_cmd = re.sub(" *\(.*", "", line.strip().lower())
+                my_cmd = re.sub("^> *", "", my_cmd)
+                got_thru[my_cmd] = line_count
     print_here_not(got_detail["nec"], got_thru, "Necessary-source-not-walkthrough")
     if is_opt: print_here_not(got_detail["opt"], got_thru, "Optional-source-not-walkthrough")
     temp = defaultdict(int)

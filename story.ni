@@ -67,9 +67,9 @@ to bold-my-room:
 
 section scoring stuff
 
-the maximum score is 58.
+the maximum score is 61.
 
-min-needed is a number that varies. min-needed is 50.
+min-needed is a number that varies. min-needed is 53.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -185,7 +185,7 @@ lieloling is an action applying to nothing.
 
 understand the command "lie lol" as something new.
 
-understand "lie lol" as lieloling.
+understand "lie lol" as lieloling when fun fen is visited.
 
 lol-yet is a truth state that varies.
 
@@ -736,6 +736,20 @@ check going west in History Hall:
 	if mistmall is true, continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
 
+chapter sappining
+
+sosappining is an action applying to nothing.
+
+understand the command "so sappin" as something new.
+
+understand "so sappin" as sappining when toe tappin row rappin is in location of player or player has toe tappin row rappin.
+
+carry out sappining: [ho happen??]
+	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down.";
+	moot toe tappin row rappin;
+	up-reg;
+	the rule succeeds.
+
 chapter historyhalling
 
 historyhalling is an action applying to nothing.
@@ -1191,7 +1205,7 @@ carry out workwelling:
 
 part Curst Cave -1,2 b
 
-Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-vibe]."
+Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-cave]."
 
 the worst wave is scenery in Curst Cave.
 
@@ -1199,8 +1213,8 @@ the screaming skull is a thing in Curst Cave.
 
 check taking screaming skull: say "You need to 'take' it figuratively." instead;
 
-to say tap-in-vibe:
-	if tool tap is in Vending Vibe, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
+to say tap-in-cave:
+	if tool tap is in Curst Cave, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
 
 the tool tap is scenery.
 
@@ -1242,6 +1256,21 @@ carry out firstfaveing:
 	now first-fave is true;
 	move tool tap to Curst Cave;
 	the rule succeeds;
+
+chapter coolcaping
+
+coolcaping is an action applying to nothing.
+
+understand the command "cool cap" as something new.
+
+understand "cool cap" as coolcaping when player is in curst cave and tool tap is in cool cap.
+
+carry out coolcaping:
+	if cool cap is not off-stage, say "You already got the cool cap." instead;
+	up-reg;
+	say "What do you know? A cool cap DOES come out.";
+	now player has cool cap;
+	the rule succeeds.
 
 part Foe Field 0,3
 

@@ -57,11 +57,15 @@ Now about that zig zag rig rag. It can become something more useful.
 > BIG BAG (1)
 
 At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
-
 ==t1
+\\
 Since the "wr" is pronounced as "r," and there is a prong part as you examine it, it may help to figure what to do.
 \\
-> STRONG START (0)
+> STRONG START (1)
+\\
+The wry wall can also be deal with, sort of, for a bonus point. It's obviously all wrong, but how to say so?
+\\
+> LIE LOL (1)
 
 The hive heap is tough to search through, unless you ...
 
@@ -131,7 +135,22 @@ Let's pick up some points for later.
 
 > MYSTERY MALL (1)
 
-How to deal with the gutta ganksta? Notice the tattoos.
+There's something to listen to.
+
+> LISTEN
+
+How to deal with the gutta ganksta?
+==t1
+\\
+You can get an additional optional point here for insulting the ganksta "cleverly."
+\\
+> WHATTA WANKSTA (1)
+\\
+And you can also deal with the horrible music that replaced what you heard.
+\\
+> DIMD (1)
+
+Notice the tattoos.
 
 > LOTS LAME (1)
 
@@ -203,6 +222,12 @@ You can try the two others for bonus points if you want.
 
 > E
 
+You can get rid of the Frightening Fridge.
+
+> BRIGHTENING BRIDGE (1)
+
+Now the whining war can become much better.
+
 > SHINING SHORE (1)
 
 The Lake Lap puzzle is also optional, but it is not too hard.
@@ -231,7 +256,19 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
+When around someone or something you need to calm down...
 
+> SO SAPPIN (1)
+==t1
+\\
+> WILD WEED (1)
+\\
+> W
+\\
+> W
+\\
+> SPARK SPLIFF (1)
+\\
 ============================END UNIMPLEMENTED MIDDLEGAME============================
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
@@ -271,8 +308,13 @@ Your cool cap is useful here.
 > CAST CAP (x-8)
 
 You need to dispose of Reeker Russell and his good gun.
+==t1
+\\
+There's an LLP in here. Let's pretend to make Russell dorkier.
+\\
+> BEAKER BUSTLE (x-7)
 
-There's an LLP in here, but first, Russell can become wimpier ...
+Now, Russell can become wimpier ...
 
 > MEEKER MUSCLE (x-7)
 

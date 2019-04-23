@@ -112,7 +112,13 @@ Let's pick up some points for later.
 
 > MYSTERY MALL (19)
 
-How to deal with the gutta ganksta? Notice the tattoos.
+There's something to listen to.
+
+> LISTEN
+
+How to deal with the gutta ganksta?
+
+Notice the tattoos.
 
 > LOTS LAME (20)
 
@@ -194,7 +200,13 @@ You can try the two others for bonus points if you want.
 
 > E
 
-> SHINING SHORE (32)
+You can get rid of the Frightening Fridge.
+
+> BRIGHTENING BRIDGE (32)
+
+Now the whining war can become much better.
+
+> SHINING SHORE (33)
 
 The Lake Lap puzzle is also optional, but it is not too hard.
 
@@ -222,15 +234,17 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
-============================END UNIMPLEMENTED MIDDLEGAME============================
+When around someone or something you need to calm down...
+
+> SO SAPPIN (34)
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
 
-> BEAST BOSS (37)
+> BEAST BOSS (40)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (38)
+> LEAST LOSS (41)
 
 This hurt, and you need to figure a way to get back to full strength.
 
@@ -238,7 +252,7 @@ This hurt, and you need to figure a way to get back to full strength.
 
 > S
 
-> HEAL HERE (39)
+> HEAL HERE (42)
 
 > N
 
@@ -246,11 +260,11 @@ This hurt, and you need to figure a way to get back to full strength.
 
 Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
 
-> CULL CEASED (40)
+> CULL CEASED (43)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (41)
+> FULL FEAST (44)
 
 Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
 
@@ -258,17 +272,17 @@ Now you sense you must be close. But how do you get anyone's attention?
 
 Your cool cap is useful here.
 
-> CAST CAP (42)
+> CAST CAP (45)
 
 You need to dispose of Reeker Russell and his good gun.
 
-There's an LLP in here, but first, Russell can become wimpier ...
+Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (43)
+> MEEKER MUSCLE (46)
 
 And the good gun can go lame.
 
-> WOOD ONE (44)
+> WOOD ONE (47)
 
 Now you are free to go north.
 
@@ -276,28 +290,28 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (45)
+> HOT HORDE (48)
 
 Okay, you need leadership too.
 
-> LOT LORD (46)
+> LOT LORD (49)
 
 Finally, you need a stirring battle cry.
 
-> GOT GORED (47)
+> GOT GORED (50)
 
 Here in Tarry Tile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
 And the airy isle still feels woeful. That well worn hell horn!
 
-> TELL TORN (48)
+> TELL TORN (51)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (49)
+> MERRY MILE (52)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (50)
+> BURY BILE (53)
 
 Congratulations. You win! I hope you enjoyed this.
