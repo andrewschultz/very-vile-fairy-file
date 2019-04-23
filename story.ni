@@ -277,13 +277,7 @@ carry out getgooding:
 
 part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else if green grass is in Vined Vault]If only that strong stray weren't skulking around nearby, you could leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out.". cht is partminus.
-
-the green grass is scenery. "The green grass goes well with the Vined Vault."
-
-instead of doing something with green grass:
-	if action is procedural, continue the action;
-	say "The green grass is there. You don't need to do anything with it."
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out.". cht is partminus.
 
 chapter findfaulting
 
@@ -294,7 +288,6 @@ understand the command "find fault" as something new.
 understand "find fault" as findfaulting when player is in Vined Vault.
 
 carry out findfaulting:
-	if mean mass is moot, say "Things are pretty good now. You probably want to deal with the strong stray." instead;
 	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
 	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
 	say "[line break]But of course something outside was guarding the vault, just waiting to walk in. A mean mass.";
@@ -1918,6 +1911,7 @@ carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
+	if noun is peeling pier and healed-here is false, say "It seems like the leet learner is registering something everywhere except on the peeling pier, here." instead;
 	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
 	if ever-opt-scan is false:
 		say "[line break]The blinking light must mean something. The learner is usually lit solidly or not at all.";
@@ -2180,27 +2174,84 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 
 the thing-hint-rule of big bag is the big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
+the thing-hint-rule of cage key is the cage-key-hint rule.
 the thing-hint-rule of cash cap is the cash-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
+the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
 the thing-hint-rule of gash gap is the cash-cap-hint rule.
+the thing-hint-rule of good gun is good-gun-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is the leet-learner-hint rule.
+the thing-hint-rule of peeling pier is the peeling-pier-hint rule.
 the thing-hint-rule of Sage Sea is the sage-sea-hint rule.
+the thing-hint-rule of steel steer is the steel-steer-hint rule.
+the thing-hint-rule of tall tree is the tall-tree-hint rule.
 the thing-hint-rule of trash trap is the cash-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
+the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
+
+[
+the thing-hint-rule of mean mass is mean-mass-hint rule.
+the thing-hint-rule of row writ is row-writ-hint rule.
+the thing-hint-rule of FIND FEE is find-fee-hint rule.
+the thing-hint-rule of done den is done-den-hint rule.
+the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
+the thing-hint-rule of hive heap is hive-heap-hint rule.
+the thing-hint-rule of vapor vile is vapor-vile-hint rule.
+the thing-hint-rule of paper pile is paper-pile-hint rule.
+the thing-hint-rule of backed binder is backed-binder-hint rule.
+the thing-hint-rule of Bull Beast is bull-beast-hint rule.
+the thing-hint-rule of Name Notes Tame Totes is name-notes-tame-totes-hint rule.
+the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
+the thing-hint-rule of GOTS GAME is gots-game-hint rule.
+the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
+the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-by-tim-t-sims-pimp-hint rule.
+the thing-hint-rule of Hold Hard is hold-hard-hint rule.
+the thing-hint-rule of gold guard is gold-guard-hint rule.
+the thing-hint-rule of Lending Libe is lending-libe-hint rule.
+the thing-hint-rule of marred mat is marred-mat-hint rule.
+the thing-hint-rule of hard hat is hard-hat-hint rule.
+the thing-hint-rule of Jake G is jake-g-hint rule.
+the thing-hint-rule of Lake Lap is lake-lap-hint rule.
+the thing-hint-rule of Ache App is ache-app-hint rule.
+the thing-hint-rule of Beer Bull is beer-bull-hint rule.
+the thing-hint-rule of jerk gel is jerk-gel-hint rule.
+the thing-hint-rule of worst wave is worst-wave-hint rule.
+the thing-hint-rule of screaming skull is screaming-skull-hint rule.
+the thing-hint-rule of tool tap is tool-tap-hint rule.
+the thing-hint-rule of cool cap is cool-cap-hint rule.
+the thing-hint-rule of moral mage is moral-mage-hint rule.
+the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
+the thing-hint-rule of bot board is bot-board-hint rule.
+the thing-hint-rule of lot lord is lot-lord-hint rule.
+the thing-hint-rule of hot horde is hot-horde-hint rule.
+the thing-hint-rule of silly sign is silly-sign-hint rule.
+the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
+the thing-hint-rule of wild weed is wild-weed-hint rule.
+the thing-hint-rule of mild mead is mild-mead-hint rule.
+the thing-hint-rule of go gate is go-gate-hint rule.
+the thing-hint-rule of grow grate is grow-grate-hint rule.
+the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
+]
 
 section thing hint rules [xxthr]
 
 this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
-	the rule succeeds;
 
 this is the bold-bard-hint rule:
 	say "[one of]The bold bard needs something like an ID.[or]COLD CARD.[stopping]";
+
+this is the cage-key-hint rule:
+	if player is in store all stage:
+		say "The cage key will help you open the cage here";
+	else:
+		say "The cage key will help you open a cage you have[if store all stage is unvisited]n't yet[end if] seen";
+	say ", but you need to figure the right command.";
 
 this is the cash-cap-hint rule:
 	say "[one of]As you may have guessed, the cash cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cash cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cash cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
@@ -2211,6 +2262,15 @@ this is the coral-cage-hint rule:
 		say "You don't have the key you need yet. Look for something that rhymes with key.";
 	else:
 		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
+
+this is the done-den-hint rule: [??general problems with what if you already know a certain command]
+	say "You don't need to go back through the done den. There are not even any extra points."
+
+this is the frightening-fridge rule:
+	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
+
+this is the good-gun-hint rule:
+	say "[one of]You want to make the gun worthless.[or]A good gun is generally made out of metal. Any material you could change it to?[or]This sort of reverses a very early puzzle.[or]WOOD ONE.[stopping]"
 
 this is the kerry-kyle-hint rule:
 	if in-so-sad is true:
@@ -2224,9 +2284,23 @@ this is the leet-learner-hint rule:
 	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
 	the rule succeeds;
 
+this is the peeling-pier-hint rule:
+	if healed-here is true, the rule fails;
+	say "The peeling pier is just here to bring home that there's a lot to do in the Real Rear, but ... the pier is not quite right.";
+	process the real-rear-hint rule;
+
 this is the sage-sea-hint rule:
 	say "You don't need to do anything specifically with the Sage Sea. It just blocks you from elsewhere, [if cage key is off-stage]but it holds something you need, if you deal with Real Rear correctly[else]and you already got the cage key from it[end if].";
 	the rule succeeds;
+
+this is the steel-steer-hint rule:
+	if healed-here is true, the rule fails;
+	say "The steel steer is just here to bring home that there's a lot to do in the Real Rear.";
+	process the real-rear-hint rule;
+
+this is the tall-tree-hint rule:
+	if tree-down is true, the rule fails;
+	say "[one of]The way north is treacherous, and having a bridge over it would be nice.[or]The tall tree would make a nice bridge, if it were on the ground. But it is fixed upright.[or]How do you loosen the tall tree so it creates a walkway?[or]FALL FREE.[stopping]";
 
 this is the trending-tribe-hint rule:
 	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
@@ -2237,6 +2311,9 @@ this is the very-vile-fairy-file-hint rule:
 	else:
 		say "[one of]Now that you're happy, the fairy file can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
 	the rule succeeds;
+
+this is the well-worn-hell-horn rule:
+	say "[one of]The well worn hell horn seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
 
 this is the wrong-art-hint rule:
 	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
@@ -2254,7 +2331,7 @@ section debug check - not for release
 
 when play begins:
 	let hint-idx be 0;
-	let max-hint be 15;
+	let max-hint be 20;
 	let ignore-text be false;
 	repeat with Q running through things:
 		if thing-hint-rule of Q is trivially false rule:
