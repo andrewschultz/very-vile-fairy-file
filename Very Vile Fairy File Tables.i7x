@@ -60,8 +60,9 @@ to seed-score-list:
 		now rank-max entry is (temp / blank-rows) + min-forced-score;
 		if debug-state is true, say "Assigned rank: [b][rank-name entry][r] = [last-points] up to [rank-max entry].";
 		now last-points is rank-max entry + 1;
-	repeat through table of ranks:
-		say "[rank-name entry] is <= [rank-max entry] points.";
+	if debug-state is true:
+		repeat through table of ranks:
+			say "[rank-name entry] is <= [rank-max entry] points.";
 
 to say your-rank:
 	repeat through table of ranks:

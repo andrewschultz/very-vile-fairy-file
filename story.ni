@@ -26,6 +26,8 @@ volume definitions and properties
 
 book definitions
 
+in-beta is a truth state that varies.
+
 to too-generic: if debug-state is true, say "TEXT BELOW IS TOO GENERIC. Fix."
 
 to decide which region is mrlp:
@@ -742,9 +744,9 @@ sosappining is an action applying to nothing.
 
 understand the command "so sappin" as something new.
 
-understand "so sappin" as sappining when toe tappin row rappin is in location of player or player has toe tappin row rappin.
+understand "so sappin" as sosappining when toe tappin row rappin is in location of player or player has toe tappin row rappin.
 
-carry out sappining: [ho happen??]
+carry out sosappining: [ho happen??]
 	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down.";
 	moot toe tappin row rappin;
 	up-reg;
@@ -2400,7 +2402,7 @@ this is the tall-tree-hint rule:
 	if tree-down is true, the rule fails;
 	say "[one of]The way north is treacherous, and having a bridge over it would be nice.[or]The tall tree would make a nice bridge, if it were on the ground. But it is fixed upright.[or]How do you loosen the tall tree so it creates a walkway?[or]FALL FREE.[stopping]";
 
-this is the toe-tappin-row-rappin rule:
+this is the toe-tappin-row-rappin-hint rule:
 	say "[one of]Man! The Toe Tappin Row Rappin song is energetic. But you don't need that.[or]You can slow the song down some.[or]SO SAPPIN[stopping]"
 
 this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
@@ -2519,7 +2521,7 @@ when play begins (this is the opening text rule):
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak-d]";
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak-d]";
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak-d]";
-	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to set sewin' with Rhett Rowan. You are left in ...";
+	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
 	now the left hand status line is "[location of the player]";
@@ -2797,6 +2799,22 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 	say "You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.";
 
 [see header file for table of understands]
+
+volume beta testing - not for release
+
+the force tester wherever rule is listed last in the when play begins rulebook.
+
+when play begins (this is the force tester wherever rule):
+	now in-beta is true;
+	if currently transcripting:
+		say "It looks like you restarted, and the transcript should still be running.";
+	else if debug-state is false:
+		say "Note: I like to make sure beta testers have a transcript working. It's a big help to me. So, after you press a key, you'll be asked to save a file.";
+		wfak;
+		try switching the story transcript on;
+		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
+	if debug-state is false, say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
+	continue the action;
 
 volume map index
 
