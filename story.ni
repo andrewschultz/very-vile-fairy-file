@@ -2266,6 +2266,63 @@ when play begins:
 			if ignore-text is false, say "[hint-idx]. You need to specify thing-hint-rule for [Q].";
 	if hint-idx > 0, say "[hint-idx] thing hint[plur of hint-idx] to implement.";
 
+chapter going to rooms
+
+section gotoing
+
+gotoing is an action applying to one visible thing.
+
+understand the command "gi" as something new.
+understand the command "gr" as something new.
+understand the command "gt" as something new.
+understand the command "goto" as something new.
+understand the command "go to" as something new.
+
+understand "go to [any room]" as gotoing.
+understand "goto [any room]" as gotoing.
+understand "gt [any room]" as gotoing.
+understand "gr [any room]" as gotoing.
+understand "go [any room]" as gotoing.
+
+to decide whether goto-available:
+	yes.
+
+to decide whether (rm - a room) is available-from-here:
+	if map region of rm is worst whew, no;
+	if mrlp is vale verminous, no;
+	yes;
+
+carry out gotoing:
+	if noun is location of player, say "Already there! Er, here." instead;
+	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
+	if noun is available-from-here:
+		move player to noun;
+	else:
+		say "You can't get to [noun] from here.";
+	the rule succeeds;
+
+section gotothinging
+
+gotothinging is an action applying to one visible thing.
+
+does the player mean gotothinging a moot thing: it is very unlikely.
+does the player mean gotothinging a thing in an unvisited room: it is very unlikely.
+does the player mean gotothinging an off-stage thing: it is very unlikely.
+does the player mean gotothinging a thing carried by the player: it is unlikely.
+
+understand "go to [any thing]" as gotothinging.
+understand "goto [any thing]" as gotothinging.
+understand "gt [any thing]" as gotothinging.
+understand "gi [any thing]" as gotothinging.
+understand "go [any thing]" as gotothinging.
+
+carry out gotothinging:
+	let Q be location of noun;
+	if Q is Hidey House, say "Right now [the noun] is temporarily unavailable." instead;
+	if noun is moot, say "Unfortunately, you tried to go to something that has been dealt with. Okay, it's fortunate you dealt with [the noun], but GT doesn't know where to go." instead;
+	if noun is off-stage, say "Unfortunately, you tried to go to something that wasn't introduced to the game world yet." instead;
+	try gotoing Q instead;
+
 volume when play begins
 
 when play begins (this is the opening text rule):
