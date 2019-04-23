@@ -318,11 +318,30 @@ carry out greengrassing:
 
 part Po' Pit 2,-1
 
-Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is some wrong art by the trash trap which may or may not be helpful.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht is letplus.
+Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht is letplus.
 
-the row writ is scenery in Po' Pit. "It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason.". cht is partplus.
+the row writ is scenery in Po' Pit. "[if grit-grown is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht is partplus.
 
-the trash trap is a scenery in Po' Pit. "There's a sort of map at the start of the trap, but it can't be right. And yet, at the same time, if you disbelieved the map and got caught, and it turned out the map was right, you'd feel dumb. Now you've seen the map, you can't get it out of your mind.". cht is letminus.
+the trash trap is a scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht is letminus.
+
+the cache cap is a thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is true]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht is partminus.
+
+the gash gap is scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht is leteq.
+
+check taking the cache cap:
+	say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
+
+instead of doing something with cache cap:
+	if action is procedural, continue the action;
+	say "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit."
+
+instead of doing something with trash trap:
+	if action is procedural, continue the action;
+	say "You want to NOT do anything with the trash trap. You don't know what could set it off."
+
+instead of doing something with cache cap:
+	if action is procedural, continue the action;
+	say "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit."
 
 understand "map" as trash trap when player is in Po' Pit.
 
@@ -466,7 +485,7 @@ carry out strongstarting:
 
 chapter Cark Cliff
 
-Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus.
+Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus. [?? bark biff]
 
 chapter sparkspliffing
 
@@ -2101,7 +2120,7 @@ this is the po-pit-hint rule:
 	if grit-grown is false:
 		say "[one of]You have to deal with the Po['] Pit itself before dealing with the trash trap. You can find the right verb for the trash trap, but you can't use it until you deal with the Po['] Pit.[or]The learner giving a blue light in the pit indicates you need two longer words.[or]The learner giving a green light indicates that either row or writ is the right number of letters.[or]You need to get a lot tougher. Become a bigger person.[or]GROW GRIT.[stopping]";
 	else:
-		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cash cap is stupid, but they both turn the leet learner yellow.[or]Looking at the cash cap, it's got a rendering of the trap and gap. Which seems all wrong.[or]MASH MAP.[stopping]"; [??bash bap]
+		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cache cap is stupid, but they both turn the leet learner yellow.[or]Looking at the cache cap, it's got a rendering of the trap and gap. Which seems all wrong.[or]MASH MAP.[stopping]"; [??bash bap]
 
 this is the real-rear-hint rule:
 	if healed-here is true, the rule fails;
@@ -2208,12 +2227,12 @@ the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of bot board is bot-board-hint rule.
 the thing-hint-rule of cage key is the cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
-the thing-hint-rule of cash cap is the cash-cap-hint rule.
+the thing-hint-rule of cache cap is the cache-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
 the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
-the thing-hint-rule of gash gap is the cash-cap-hint rule.
+the thing-hint-rule of gash gap is the cache-cap-hint rule.
 the thing-hint-rule of gold guard is gold-guard-hint rule.
 the thing-hint-rule of good gun is good-gun-hint rule.
 the thing-hint-rule of GOTS GAME is gots-game-hint rule.
@@ -2241,7 +2260,7 @@ the thing-hint-rule of steel steer is the steel-steer-hint rule.
 the thing-hint-rule of tall tree is the tall-tree-hint rule.
 the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
 the thing-hint-rule of tool tap is tool-tap-hint rule.
-the thing-hint-rule of trash trap is the cash-cap-hint rule.
+the thing-hint-rule of trash trap is the cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
@@ -2249,17 +2268,17 @@ the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
+the thing-hint-rule of worst wave is worst-wave-hint rule.
+the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 
 [
 the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Bull Beast is bull-beast-hint rule.
-the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 the thing-hint-rule of hard hat is hard-hat-hint rule.
 the thing-hint-rule of Jake G is jake-g-hint rule.
 the thing-hint-rule of Lake Lap is lake-lap-hint rule.
 the thing-hint-rule of Ache App is ache-app-hint rule.
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
-the thing-hint-rule of worst wave is worst-wave-hint rule.
 the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of moral mage is moral-mage-hint rule.
 the thing-hint-rule of silly sign is silly-sign-hint rule.
@@ -2271,7 +2290,7 @@ the thing-hint-rule of grow grate is grow-grate-hint rule.
 
 [??styled steed]
 
-section thing hint rules [xxthr]
+section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
 
 this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
@@ -2296,11 +2315,17 @@ this is the cage-key-hint rule:
 		say "The cage key will help you open a cage you have[if store all stage is unvisited]n't yet[end if] seen";
 	say ", but you need to figure the right command.";
 
+this is the worst-wave-hint rule:
+	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
+
+this is the lending-libe-hint rule:
+	say "Now that you have the Lending Libe, you can take whatever books you need."
+
 this is the cark-cliff-hint rule:
 	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or]SPARK SPLIFF.[stopping]";
 
-this is the cash-cap-hint rule:
-	say "[one of]As you may have guessed, the cash cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cash cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cash cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
+this is the cache-cap-hint rule:
+	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
 	the rule succeeds;
 
 this is the coral-cage-hint rule:
@@ -2309,7 +2334,7 @@ this is the coral-cage-hint rule:
 	else:
 		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
 
-this is the done-den-hint rule: [??general problems with what if you already know a certain command]
+this is the done-den-hint rule:
 	say "You don't need to go back through the done den. There are not even any extra points."
 
 this is the find-fee-hint rule:
