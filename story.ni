@@ -26,8 +26,6 @@ volume definitions and properties
 
 book definitions
 
-in-beta is a truth state that varies.
-
 to too-generic: if debug-state is true, say "TEXT BELOW IS TOO GENERIC. Fix."
 
 to decide which region is mrlp:
@@ -66,6 +64,14 @@ definition: a thing (called th) is quicknear:
 
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
+
+section flags for testers
+
+[ this won't appear in the release version, but since these flags crop up in a lot of actions to help with playtesting, we can't put them in a debug version. debug-state is another such variable, but it's included in Trivial Niceties. ]
+
+in-beta is a truth state that varies.
+
+climb-clear is a truth state that varies. [ did the beta tester jump ahead until the end? ]
 
 section scoring stuff
 
@@ -1456,6 +1462,10 @@ part Airy Isle 0,5
 
 Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the Very Vile Fairy File.". noway-text is "The Fairy File's presence makes you bump into walls figuratively. Let's not to so literally."
 
+check going south in Airy Isle:
+	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
+	if bot board is in Airy Isle, say "The bot board loses interest as you flee back south.";
+
 the frightening fridge is scenery.
 
 the Bot Board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!"
@@ -1923,7 +1933,7 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Very Vile Fairy File came about when I was writing a yet-unnamed game on spoonerisms. I found a few spoonerisms that made more sense as alliteration, which was sort of fun, until I realized I had a lot more than that--enough for a game. It seemed like a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but my daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.";
+	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I like this sort of thing. It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break]I'm not the first parser game to deal with rhymes. Michael Martin's [i]EXTERMINATE![r] and DCBSupafly's [i]Beythilda the Witch Queen[r] did it first. They were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) offered more of a narrative. But I hope this is something new and does not abuse the concept.";
 	the rule succeeds;
 
 book hinting
@@ -2838,8 +2848,23 @@ when play begins (this is the force tester wherever rule):
 		wfak;
 		try switching the story transcript on;
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
-	if debug-state is false, say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
+	if debug-state is false:
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
 	continue the action;
+
+chapter climbclearing
+
+climbclearing is an action applying to nothing.
+
+understand the command "climb clear" as something new.
+
+understand "climb clear" as climbclearing.
+
+carry out climbclearing:
+	if airy isle is visited, say "You're already in the endgame.";
+	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
+	move player to airy isle;
+	the rule succeeds.
 
 volume map index
 
