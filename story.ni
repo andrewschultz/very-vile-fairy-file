@@ -439,35 +439,49 @@ part Fun Fen 0,0
 
 Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, buit the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
+check going in Fun Fen:
+	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
+	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
+
+section done den
+
 the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
 
 instead of entering done den, say "As you start to enter, you imagine a weight falling on you. How much? A ton. Ten.[paragraph break]You don't need to revisit your initial success."
+
+section wrong art
+
+the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way.". cht of the wrong art is letplus.
+
+section tall tree
 
 tree-down is a truth state that varies.
 
 The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht is leteq.
 
-the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things.". cht of the wrong art is letplus.
-
-check going in Fun Fen:
-	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
-	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
-
 instead of doing something with tall tree:
 	if action is procedural, continue the action;
 	say "[if tree-down is true]You'd better not do anything to the tree. It's your way across[else]You need to do something specific to the tree. Maybe give it an order[end if].";
 
-the hive heap is a thing. cht is leteq.
+section hive heap
 
-check taking hive heap: say "You'd probably get stung." instead;
+the hive heap is a thing. cht is leteq. "The hive heap that was released with the tall tree fell is here. There's got to be a way to look through it."
 
-the vapor vile is a thing. cht is leteq.
+check taking hive heap: say "You might not get stung, but it's too unwieldy to carry[if player has big bag], even with your big bag[end if]." instead;
+
+section vapor vile
+
+the vapor vile is a thing. cht is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it."
 
 check taking vapor vile: say "It's too ethereal to take," instead;
+
+section paper pile
 
 the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht is partplus.
 
 check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
+
+section backed binder
 
 the backed binder is a thing.
 
@@ -484,7 +498,7 @@ started-strong is a truth state that varies.
 carry out strongstarting:
 	if started-strong is true, say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart." instead;
 	now started-strong is true;
-	say "Boom!";
+	say "Boom! Yes, you mangle and destroy the wrong art. That is a way to get a strong start[if score > 11], even if you aren't really starting any more[end if].";
 	up-min;
 	phbt wrong art;
 	the rule succeeds.
@@ -1483,8 +1497,19 @@ understand "lot lord" as lotlording.
 carry out lotlording:
 	if Lot Lord is not off-stage, say "You already summoned the Hot Horde." instead;
 	up-reg;
-	say "The Lot Lord appears.";
+	say "The Lot Lord whirls in from above, only looking slightly stunned.";
+	check-gored-clue;
 	the rule succeeds.
+
+to check-gored-clue:
+	say "[line break]";
+	if hot horde is in airy isle and lot lord is in airy isle:
+		say "The hot horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
+		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
+	else if hot horde is in airy isle:
+		say "The hot horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
+	else:
+		say "The Lot Lord surveys the isle, as if looking for followers. He doesn't have any, yet. But maybe you could help him find some!"
 
 chapter hothordeing
 
@@ -1499,7 +1524,8 @@ understand "hot horde" as hothordeing.
 carry out hothordeing:
 	if Hot Horde is not off-stage, say "You already summoned the Hot Horde." instead;
 	up-reg;
-	say "The legendary Hot Horde appears.";
+	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
+	check-gored-clue;
 	the rule succeeds.
 
 chapter gotgoreding
