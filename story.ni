@@ -187,7 +187,7 @@ lieloling is an action applying to nothing.
 
 understand the command "lie lol" as something new.
 
-understand "lie lol" as lieloling when fun fen is visited.
+understand "lie lol" as lieloling when Fun Fen is visited.
 
 lol-yet is a truth state that varies.
 
@@ -678,7 +678,7 @@ understand "cull ceased" as cullceaseding when can-kill-beast.
 cull-ceased is a truth state that varies.
 
 to decide whether can-kill-beast:
-	if player is in Creased Cross and bull beast is in Creased Cross and healed-here is true, yes;
+	if player is in Creased Cross and Bull Beast is in Creased Cross and healed-here is true, yes;
 	no;
 
 carry out cullceaseding:
@@ -696,14 +696,14 @@ understand the command "full feast" as something new.
 understand "full feast" as fullfeasting.
 
 carry out fullfeasting:
-	if bull beast is not in location of player, say "Not here." instead;
-	if bull beast is in location of player:
+	if Bull Beast is not in location of player, say "Not here." instead;
+	if Bull Beast is in location of player:
 		clue-later "FULL FEAST";
-		say "That should work. It might work better if the bull beast were incapacitated." instead;
-	if bull beast is moot, say "You already made a feast." instead;
+		say "That should work. It might work better if the Bull Beast were incapacitated." instead;
+	if Bull Beast is moot, say "You already made a feast." instead;
 	up-reg;
-	say "BOOM! You managed to make a full feast of the bull beast. Everyone loves it. It tastes good. Nothing is left.";
-	moot bull beast;
+	say "BOOM! You managed to make a full feast of the Bull Beast. Everyone loves it. It tastes good. Nothing is left.";
+	moot Bull Beast;
 	the rule succeeds.
 
 chapter leastlossing
@@ -718,13 +718,13 @@ least-loss is a truth state that varies.
 
 carry out leastlossing:
 	if player is not in Creased Cross, say "Not here." instead;
-	if bull beast is off-stage:
+	if Bull Beast is off-stage:
 		clue-later "LEAST LOSS";
 		say "Not yet. You need to be in a fighting situation" instead;
 	if least-loss is true, say "You already did." instead;
 	now least-loss is true;
 	up-reg;
-	say "BOOM! The bull beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";
+	say "BOOM! The Bull Beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";
 	the rule succeeds.
 
 part History Hall -1,1
@@ -906,7 +906,7 @@ understand "cold card" as coldcarding when player is in Y'Old Yard.
 
 carry out coldcarding:
 	up-reg;
-	moot bold bard;
+	moot Bold Bard;
 	now player has gold guard;
 	the rule succeeds.
 
@@ -1155,11 +1155,11 @@ Here Hull is a room in Piddling Pain. It is east of Soft Sand.
 The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'"
 
 to decide whether hull-bull:
-	if player is in here hull or beer bull is in location of player, yes;
+	if player is in Here Hull or beer bull is in location of player, yes;
 	no;
 
 to reset-bull:
-	move beer bull to here hull;
+	move beer bull to Here Hull;
 	now cht of beer bull is partminus;
 
 chapter fearfuling
@@ -1284,7 +1284,7 @@ coolcaping is an action applying to nothing.
 
 understand the command "cool cap" as something new.
 
-understand "cool cap" as coolcaping when player is in curst cave and tool tap is in cool cap.
+understand "cool cap" as coolcaping when player is in Curst Cave and tool tap is in cool cap.
 
 carry out coolcaping:
 	if cool cap is not off-stage, say "You already got the cool cap." instead;
@@ -1293,11 +1293,11 @@ carry out coolcaping:
 	now player has cool cap;
 	the rule succeeds.
 
-part Foe Field 0,3
+part Foe Field So Sealed 0,3
 
-Foe Field is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]".
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]".
 
-check going west in Foe Field: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
+check going west in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
@@ -1454,15 +1454,15 @@ carry out woodoneing:
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the very vile fairy file.". noway-text is "The fairy file's presence makes you bump into walls figuratively. Let's not to so literally."
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the Very Vile Fairy File.". noway-text is "The Fairy File's presence makes you bump into walls figuratively. Let's not to so literally."
 
 the frightening fridge is scenery.
 
-the bot board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!"
+the Bot Board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!"
 
 chapter lotlording
 
-the lot lord is a person.
+the Lot Lord is a person.
 
 lotlording is an action applying to nothing.
 
@@ -1471,14 +1471,14 @@ understand the command "lot lord" as something new.
 understand "lot lord" as lotlording.
 
 carry out lotlording:
-	if Lot Lord is not off-stage, say "You already summoned the hot horde." instead;
+	if Lot Lord is not off-stage, say "You already summoned the Hot Horde." instead;
 	up-reg;
 	say "The Lot Lord appears.";
 	the rule succeeds.
 
 chapter hothordeing
 
-the hot horde are plural-named people. talk-text is "Lots of rot roared right now.".
+the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.".
 
 hothordeing is an action applying to nothing.
 
@@ -1487,7 +1487,7 @@ understand the command "hot horde" as something new.
 understand "hot horde" as hothordeing.
 
 carry out hothordeing:
-	if hot horde is not off-stage, say "You already summoned the hot horde." instead;
+	if Hot Horde is not off-stage, say "You already summoned the Hot Horde." instead;
 	up-reg;
 	say "The legendary Hot Horde appears.";
 	the rule succeeds.
@@ -1498,21 +1498,21 @@ gotgoreding is an action applying to nothing.
 
 understand the command "got gored" as something new.
 
-understand "got gored" as gotgoreding when player is in airy isle.
+understand "got gored" as gotgoreding when player is in Airy Isle.
 
 carry out gotgoreding:
-	if lot lord is moot and hot horde is moot, say "You already told the battle cry." instead;
-	if lot lord is in airy isle and hot horde is in airy isle:
+	if Lot Lord is moot and Hot Horde is moot, say "You already told the battle cry." instead;
+	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
 		say "YES! That's the cheer they need.";
 		up-reg;
-		moot hot horde;
-		moot lot lord;
-		moot bot board;
+		moot Hot Horde;
+		moot Lot Lord;
+		moot Bot Board;
 		the rule succeeds;
 	clue-later "GOT GORED";
-	if hot horde is in airy isle: [and lot lord is off-stage]
-		say "The hot horde needs more than a battle cry. It needs a leader." instead;
-	else if lot lord is in airy isle: [and hot horde is off-stage]
+	if Hot Horde is in Airy Isle: [and Lot Lord is off-stage]
+		say "The Hot Horde needs more than a battle cry. It needs a leader." instead;
+	else if Lot Lord is in Airy Isle: [and Hot Horde is off-stage]
 		say "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work." instead;
 	else:
 		say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry.";
@@ -1556,9 +1556,9 @@ part Tarry Tile 1,5
 
 Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]"
 
-chapter very vile fairy file
+chapter Very Vile Fairy File
 
-the very vile fairy file is a thing in Tarry Tile. "The very vile fairy file sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht is partminus.
+the Very Vile Fairy File is a thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht is partminus.
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -1566,15 +1566,15 @@ to say ever-tried of (t - a table name):
 
 vvff-row is a number that varies.
 
-instead of doing anything with the fairy file:
+instead of doing anything with the Fairy File:
 	if action is procedural, continue the action;
 	say "[ff-no].";
 
-instead of doing anything when noun is fairy file:
+instead of doing anything when noun is Fairy File:
 	if action is procedural, continue the action;
 	say "[ff-no].";
 
-to say ff-no: say "You can't do anything directly with or to the fairy file. There must be some overarching action"
+to say ff-no: say "You can't do anything directly with or to the Fairy File. There must be some overarching action"
 
 chapter burybileing
 
@@ -1593,13 +1593,13 @@ carry out burybileing:
 			clue-later "MERRY MILE";
 			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going." instead;
 	clue-later "BURY BILE";
-	if player is in airy isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
+	if player is in Airy Isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
 	if mrlp is Vale Verminous:
 		too-generic;
 		say "It must be about the right time. But you are not quite there, yet." instead;
 	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
-	if mrlp is piddling pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
-	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the very vile fairy file itself dissolves. The Merry Mile changes significantly. You are on your way back.";
+	if mrlp is Piddling Pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
+	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
 	up-reg;
 	win-the-game;
 	the rule succeeds; [Larry Lyle, Wary Wile, Dare-y Dial, Perry Pyle, Gary Guile]
@@ -1810,7 +1810,7 @@ understand the command "read" as something new.
 understand "read [thing]" as reading.
 
 definition: a thing (called th) is readable:
-	if th is very vile fairy file, yes;
+	if th is Very Vile Fairy File, yes;
 	if th is leet learner, yes;
 	no;
 
@@ -1825,7 +1825,7 @@ carry out reading:
 
 table of readables
 read-thing	read-txt
-very vile fairy file	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
+Very Vile Fairy File	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
 leet learner	"Some multi-colored text on the leet learner (itself written in yellow) seems to function as examples.[paragraph break][table-of-color-hints][run paragraph on]"
 
 to say table-of-color-hints:
@@ -2037,7 +2037,7 @@ section hint room rule definitions
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
-room-hint-rule of creased cross is creased-cross-hint rule.
+room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
 room-hint-rule of Erst Lore is erst-lore-hint rule.
 room-hint-rule of Foe Field is foe-field-so-sealed-hint rule.
@@ -2055,23 +2055,23 @@ room-hint-rule of Store All Stage is store-all-stage-hint rule.
 room-hint-rule of Tarry Tile is tarry-tile-hint rule.
 room-hint-rule of Trim Tram is trim-tram-hint rule.
 room-hint-rule of Vending Vibe is vending-vibe-hint rule.
-room-hint-rule of vined vault is vined-vault-hint rule.
-room-hint-rule of wet wood is wet-wood-hint rule.
+room-hint-rule of Vined Vault is vined-vault-hint rule.
+room-hint-rule of Wet Wood is wet-wood-hint rule.
 room-hint-rule of Whining War is whining-war-hint rule.
 room-hint-rule of Y'Old Yard is yold-yard-hint rule.
 
 section hint room rules [xxhrr]
 
 this is the airy-isle-hint rule:
-	say "The bot board needs to be dealt with here, not the location.";
+	say "The Bot Board needs to be dealt with here, not the location.";
 	the rule succeeds;
 
 this is the creased-cross-hint rule:
-	if bull beast is moot, the rule fails;
-	if bull beast is off-stage:
+	if Bull Beast is moot, the rule fails;
+	if Bull Beast is off-stage:
 		say "There's not much to do now in Creased Cross.";
 	else:
-		say "Dispose of the bull beast.";
+		say "Dispose of the Bull Beast.";
 	the rule succeeds.
 
 this is the curst-cave-hint rule:
@@ -2091,13 +2091,13 @@ this is the foe-field-so-sealed-hint rule:
 		say "[one of]You need to brandish protection to get further in the Foe Field.[or]That's a fancy way of saying something much simpler[or]What's a synonym for guard? Especially the gold guard?[or]SHOW SHIELD.[stopping]";
 
 this is the fun-fen-hint rule:
-	say "The fun fen is a busy place, but there's nothing you need to do to it in general.";
+	say "The Fun Fen is a busy place, but there's nothing you need to do to it in general.";
 	the rule succeeds.
 
 this is the gassed-gap-hint rule:
 	if cool cap is moot, the rule fails;
 	if player does not have cool cap:
-		say "You don't have what you need yet to change the gassed gap.";
+		say "You don't have what you need yet to change the Gassed Gap.";
 	else:
 		say "[one of]You need to put forth a challenge.[or]You don't have a gauntlet to throw down, but you have something else.[or]You have a cap.[or]CAST CAP.[stopping]";
 
@@ -2140,7 +2140,7 @@ this is the shirk-shell-hint rule:
 
 this is the soft-sand-hint rule:
 	if ever-loft is false:
-		say "[one of]You can't quite reach what's to the west[or]The soft sand can change its contours[or]Perhaps it could rise or fall based on what you do or think[or]LOFT LAND will raise the soft sand so you can go west[stopping].";
+		say "[one of]You can't quite reach what's to the west[or]The Soft Sand can change its contours[or]Perhaps it could rise or fall based on what you do or think[or]LOFT LAND will raise the Soft Sand so you can go west[stopping].";
 	else:
 		say "You can toggle LOFT LAND and SOFT SAND back and forth as needed.";
 	the rule succeeds.
@@ -2151,17 +2151,17 @@ this is the store-all-stage-hint rule:
 	process the coral-cage-hint rule;
 
 this is the tarry-tile-hint rule:
-	if well worn hell horn is in tarry tile:
+	if well worn hell horn is in Tarry Tile:
 		say "You can do something with this location [once-now of can-merry-mile rule] the well worn hell horn is dealt with.";
 	else if merry-mile is false:
-		say "[one of]The tarry tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
+		say "[one of]The Tarry Tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
 	else:
 		consider the very-vile-fairy-file-hint rule;
 	the rule fails.
 
 this is the trim-tram-hint rule:
 	if me-minded is true:
-		say "[one of]You need to find a way to sucker the trim tram into thinking you paid.[or]There are two ways.[or]FLIM FLAM, or SKIM SCAM.[stopping]";
+		say "[one of]You need to find a way to sucker the Trim Tram into thinking you paid.[or]There are two ways.[or]FLIM FLAM, or SKIM SCAM.[stopping]";
 	else:
 		say "[one of]You can't get FIND FEE out of your head. It distracts you from thinking of you.[or]Wait, 'you' is the wrong pronoun from your perspective.[or]What can you do to ME?[or]MIND ME.[stopping]";
 
@@ -2172,21 +2172,21 @@ this is the vending-vibe-hint rule:
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
-		say "[one of]You need to deal with the vined vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's orange, which is different from the yellow of the wet wood[or]You also need to discover some weakness in the vined vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
+		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's orange, which is different from the yellow of the Wet Wood[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
 	else:
 		say "[one of]The mean mass is a bit trickier. The leet learner gives you a different color, blue[or]If you understand leet learner colors, this means you need to add letters to both mean and mass[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
 	the rule succeeds;
 
 this is the wet-wood-hint rule:
-	say "[one of]You may notice a pattern to items and people here, especially if you try going certain directions in the Wet Wood. You're very bad at finding your way through[or]There are parallel rhymes[or]Perhaps a parallel rhyme would help you get out of the wet wood[or]It's the first location, so you may guess the first action is easy[or]Try replacing W with each of the other 25 letters. Maybe one pair of words stands out[or]You need to GET GOOD[stopping].";
+	say "[one of]You may notice a pattern to items and people here, especially if you try going certain directions in the Wet Wood. You're very bad at finding your way through[or]There are parallel rhymes[or]Perhaps a parallel rhyme would help you get out of the Wet Wood[or]It's the first location, so you may guess the first action is easy[or]Try replacing W with each of the other 25 letters. Maybe one pair of words stands out[or]You need to GET GOOD[stopping].";
 	the rule succeeds;
 
 this is the whining-war-hint rule:
 	if shore-shine is true, the rule fails;
-	say "[one of]You need to make the whining war something more positive.[or]Brighter. This is a waterfront, sort of, as well.[or]SHINING SHORE.[stopping]";
+	say "[one of]You need to make the Whining War something more positive.[or]Brighter. This is a waterfront, sort of, as well.[or]SHINING SHORE.[stopping]";
 
 this is the yold-yard-hint rule:
-	if bold bard is moot, the rule fails;
+	if Bold Bard is moot, the rule fails;
 	say "The Bold Bard needs your help here.";
 	process the bold-bard-hint rule;
 
@@ -2224,7 +2224,7 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 
 the thing-hint-rule of big bag is the big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
-the thing-hint-rule of bot board is bot-board-hint rule.
+the thing-hint-rule of Bot Board is bot-board-hint rule.
 the thing-hint-rule of cage key is the cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of cache cap is the cache-cap-hint rule.
@@ -2239,11 +2239,11 @@ the thing-hint-rule of GOTS GAME is gots-game-hint rule.
 the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hold Hard is hold-hard-hint rule.
-the thing-hint-rule of hot horde is bot-board-hint rule.
+the thing-hint-rule of Hot Horde is bot-board-hint rule.
 the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is the leet-learner-hint rule.
-the thing-hint-rule of lot lord is bot-board-hint rule.
+the thing-hint-rule of Lot Lord is bot-board-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
@@ -2263,7 +2263,7 @@ the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is the cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
-the thing-hint-rule of very vile fairy file is the very-vile-fairy-file-hint rule.
+the thing-hint-rule of Very Vile Fairy File is the very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
@@ -2296,23 +2296,23 @@ this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
 
 this is the bold-bard-hint rule:
-	say "[one of]The bold bard needs something like an ID.[or]COLD CARD.[stopping]";
+	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
 
 this is the bot-board-hint rule:
-	if lot lord is in airy isle and hot horde is in airy isle:
-		say "[one of]Now that the lot lord and hot horde are in airy isle, they need a rallying cry[or]Or a victory cry[or]GOT GORED[stopping].";
-	else if lot lord is in airy isle:
-		say "[one of]The lot lord needs people to lead[or]The lot lord needs an enthusiastic, large following[or]HOT HORDE[stopping].";
-	else if hot horde is in airy isle:
-		say "[one of]The hot horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or]LOT LORD[stopping].";
+	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
+		say "[one of]Now that the Lot Lord and Hot Horde are in Airy Isle, they need a rallying cry[or]Or a victory cry[or]GOT GORED[stopping].";
+	else if Lot Lord is in Airy Isle:
+		say "[one of]The Lot Lord needs people to lead[or]The Lot Lord needs an enthusiastic, large following[or]HOT HORDE[stopping].";
+	else if Hot Horde is in Airy Isle:
+		say "[one of]The Hot Horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or]LOT LORD[stopping].";
 	else:
-		say "[one of]You need allies to take out the bot board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
+		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
 
 this is the cage-key-hint rule:
-	if player is in store all stage:
+	if player is in Store All Stage:
 		say "The cage key will help you open the cage here";
 	else:
-		say "The cage key will help you open a cage you have[if store all stage is unvisited]n't yet[end if] seen";
+		say "The cage key will help you open a cage you have[if Store All Stage is unvisited]n't yet[end if] seen";
 	say ", but you need to figure the right command.";
 
 this is the worst-wave-hint rule:
@@ -2344,7 +2344,7 @@ this is the frightening-fridge-hint rule:
 	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
 
 this is the gold-guard-hint rule:
-	say "[one of]The gold guard helps protect you [if player is in Foe Field]here[else if foe field is unvisited]somewhere you haven't been[else]somewhere you've been[end if].[or]Once the gold guard is in the right place, you can use it to protect yourself.[or]You need to be in the Foe Field for the gold guard to work.[or]Once in the Foe Field, SHOW SHIELD.[stopping]"
+	say "[one of]The gold guard helps protect you [if player is in Foe Field]here[else if Foe Field is unvisited]somewhere you haven't been[else]somewhere you've been[end if].[or]Once the gold guard is in the right place, you can use it to protect yourself.[or]You need to be in the Foe Field for the gold guard to work.[or]Once in the Foe Field, SHOW SHIELD.[stopping]"
 
 this is the good-gun-hint rule:
 	say "[one of]You want to make the gun worthless.[or]A good gun is generally made out of metal. Any material you could change it to?[or]This sort of reverses a very early puzzle.[or]WOOD ONE.[stopping]"
@@ -2359,7 +2359,7 @@ this is the hive-heap-hint rule:
 	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
 
 this is the hold-hard-hint rule:
-	if bold bard is moot, the rule fails;
+	if Bold Bard is moot, the rule fails;
 	process the bold-bard-hint rule;
 
 this is the jerk-gel-hint rule:
@@ -2443,7 +2443,7 @@ this is the very-vile-fairy-file-hint rule:
 	if merry-mile is false:
 		say "You can't do anything with the file until the Tarry Tile is cheerier.";
 	else:
-		say "[one of]Now that you're happy, the fairy file can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
+		say "[one of]Now that you're happy, the Fairy File can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
 	the rule succeeds;
 
 this is the well-worn-hell-horn-hint rule:
@@ -2499,8 +2499,8 @@ to decide whether goto-available:
 	yes.
 
 to decide whether (rm - a room) is available-from-here:
-	if map region of rm is worst whew, no;
-	if mrlp is vale verminous, no;
+	if map region of rm is Worst Whew, no;
+	if mrlp is Vale Verminous, no;
 	yes;
 
 carry out gotoing:
@@ -2868,15 +2868,15 @@ merry-mile is a truth state that varies.
 
 carry out merrymileing:
 	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
-	if player is in tarry tile:
-		if well worn hell horn is in tarry tile:
+	if player is in Tarry Tile:
+		if well worn hell horn is in Tarry Tile:
 			clue-later "MERRY MILE";
 			say "Not with the well worn hell horn making those un-merry noises." instead;
 		up-reg;
 		now merry-mile is true;
 		say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now." instead;
 	clue-later "MERRY MILE";
-	if player is in airy isle, say "Hard to be happy with the bot board around." instead;
+	if player is in Airy Isle, say "Hard to be happy with the Bot Board around." instead;
 	the rule succeeds.
 
 section altrooms

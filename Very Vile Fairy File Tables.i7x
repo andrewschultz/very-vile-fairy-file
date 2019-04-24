@@ -165,7 +165,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
 "LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say LEAST LOSS once/now you have something to face ..." [heres of Creased Cross ??]
 "HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to HEAL HERE [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
-"FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the bull beast a full feast once/now it's been vanquished."
+"FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a full feast once/now it's been vanquished."
 "GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry GOT GORED [once-now of can-got-gored rule] you have a full army and its leader."
 "MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a MERRY MILE [once-now of can-merry-mile rule] things have calmed down."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can CAST CAP once you find one."
@@ -257,7 +257,7 @@ this is the did-shining-shore rule:
 	the rule fails.
 
 this is the can-least-loss rule:
-	if bull beast is in Creased Cross, the rule succeeds;
+	if Bull Beast is in Creased Cross, the rule succeeds;
 	the rule fails.
 
 this is the did-least-loss rule:
@@ -269,15 +269,15 @@ this is the can-full-feast rule:
 	the rule fails.
 
 this is the did-full-feast rule:
-	if bull beast is moot, the rule succeeds;
+	if Bull Beast is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-got-gored rule:
-	if lot lord is in airy isle and hot horde is in airy isle, the rule succeeds;
+	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
 	the rule fails.
 
 this is the did-got-gored rule:
-	if bot board is moot, the rule succeeds;
+	if Bot Board is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-merry-mile rule:
