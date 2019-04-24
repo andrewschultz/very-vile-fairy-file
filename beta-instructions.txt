@@ -1,0 +1,17 @@
+Currently the main focus should be to get through the introduction.
+
+It might be a bit long. What puzzles seem to work best? I think I can repurpose some to another place if need be. I originally meant the puzzles as an introduction to the game mechanics and variants on it, but that was before I had the hint item.
+
+Also, how intuitive is the hint item?
+
+If you get through to the Fen, that is great and will give me enough to work with. Beyond that is speculative, but have fun if you want. The most useful place to look at is south. There are three things to do--one won't work until later.
+
+However, there is also a puzzle to go north of the Fun Fen. It's pretty stable, so if you are able to wrestle with that, that would be a help. It also creates two more puzzles.
+
+Another useful thing to do is try for an optional point in Fun Fen. There are two, but one (the cliff) is obscure and needs an item for later.
+
+Anything past the Fen is nice if you look at it, but the tree puzzle may be the last that is really useful.
+
+I'm still busy meaningfully implementing things, so let me know if I left something out.
+
+One other thing you can do if you want is to explore the endgame with CLIMB CLEAR. There are two final rooms. They should not spoil earlier in the game, but I've had problems implementing endgames before, so anyone willing to work on them would give me a big boost.
