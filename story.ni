@@ -144,10 +144,11 @@ after looking in a signable room:
 
 to say sign-dir:
 	let got-wry be false;
+	say "[line break]";
 	repeat through table of bad locs: [this is in the tables file]
 		if there is an e1 entry and e1 entry is location of player:
 			now got-wry is true;
-			say "[line break][b][fake-name entry][r]: [e2 entry].";
+			say "[b][fake-name entry][r]: [e2 entry].";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
 instead of doing something with wry wall:
@@ -1936,6 +1937,7 @@ carry out verbsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [b]LL[r] or [b]CC[r] is the shorthand for scanning a location, and [b]LL[r] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan].";
+	say "[2da][b]EXITS[r] lists exits available.";
 	the rule succeeds.
 
 chapter creditsing
@@ -2569,6 +2571,31 @@ carry out gotothinging:
 	if noun is moot, say "Unfortunately, you tried to go to something that has been dealt with. Okay, it's fortunate you dealt with [the noun], but GT doesn't know where to go." instead;
 	if noun is off-stage, say "Unfortunately, you tried to go to something that wasn't introduced to the game world yet." instead;
 	try gotoing Q instead;
+
+chapter exitsing
+
+exitsing is an action applying to nothing.
+
+understand the command "exits" as something new.
+
+understand "exits" as exitsing.
+
+exitdirs is a list of directions variable. exitdirs is { north, south, east, west, inside, outside, up, down }.
+
+carry out exitsing:
+	let my-exits be 0;
+	repeat with Q running through exitdirs:
+		let RQ be the room Q of location of player;
+		if RQ is not nowhere:
+			if my-exits is 0, say "LIST OF EXITS:[line break]";
+			say "[Q]: [if Q is blocked](unavailable.)[else if RQ is visited][RQ].[else](unvisited.)[end if]";
+			increment my-exits;
+	if my-exits is 0, say "There are no clear safe exits. It looks like you need to solve a puzzle to find your way out of here.";
+	the rule succeeds.
+
+to decide whether (di - a direction) is blocked:
+	if player is in fun fen and di is north and tree-down is false, yes;
+	no;
 
 volume when play begins
 
