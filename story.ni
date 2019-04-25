@@ -77,9 +77,9 @@ climb-clear is a truth state that varies. [ did the beta tester jump ahead until
 
 section scoring stuff
 
-the maximum score is 63.
+the maximum score is 62.
 
-min-needed is a number that varies. min-needed is 55.
+min-needed is a number that varies. min-needed is 54.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -1486,7 +1486,7 @@ Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter he
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
-	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
+	if bot board is in Airy Isle, say "The bot board loses interest as you flee back south.";
 
 the frightening fridge is scenery.
 
@@ -1511,11 +1511,11 @@ carry out lotlording:
 
 to check-gored-clue:
 	say "[line break]";
-	if hot Horde is in airy Isle and lot Lord is in Airy Isle:
-		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
+	if hot horde is in airy isle and lot lord is in airy isle:
+		say "The hot horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
 		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
-	else if Hot Horde is in Airy Isle:
-		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
+	else if hot horde is in airy isle:
+		say "The hot horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
 	else:
 		say "The Lot Lord surveys the isle, as if looking for followers. He doesn't have any, yet. But maybe you could help him find some!"
 
@@ -2270,9 +2270,9 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 the thing-hint-rule of big bag is the big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
+the thing-hint-rule of cache cap is the cache-cap-hint rule.
 the thing-hint-rule of cage key is the cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
-the thing-hint-rule of cache cap is the cache-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
@@ -2288,6 +2288,7 @@ the thing-hint-rule of Hot Horde is bot-board-hint rule.
 the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is the leet-learner-hint rule.
+the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 the thing-hint-rule of Lot Lord is bot-board-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
@@ -2310,11 +2311,10 @@ the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of Very Vile Fairy File is the very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
+the thing-hint-rule of worst wave is worst-wave-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
-the thing-hint-rule of worst wave is worst-wave-hint rule.
-the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 
 [
 the thing-hint-rule of backed binder is backed-binder-hint rule.
@@ -2353,6 +2353,10 @@ this is the bot-board-hint rule:
 	else:
 		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
 
+this is the cache-cap-hint rule:
+	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
+	the rule succeeds;
+
 this is the cage-key-hint rule:
 	if player is in Store All Stage:
 		say "The cage key will help you open the cage here";
@@ -2360,18 +2364,8 @@ this is the cage-key-hint rule:
 		say "The cage key will help you open a cage you have[if Store All Stage is unvisited]n't yet[end if] seen";
 	say ", but you need to figure the right command.";
 
-this is the worst-wave-hint rule:
-	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
-
-this is the lending-libe-hint rule:
-	say "Now that you have the Lending Libe, you can take whatever books you need."
-
 this is the cark-cliff-hint rule:
 	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or]SPARK SPLIFF.[stopping]";
-
-this is the cache-cap-hint rule:
-	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
-	the rule succeeds;
 
 this is the coral-cage-hint rule:
 	if player does not have cage key:
@@ -2424,6 +2418,9 @@ this is the kerry-kyle-hint rule:
 this is the leet-learner-hint rule:
 	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
 	the rule succeeds;
+
+this is the lending-libe-hint rule:
+	say "Now that you have the Lending Libe, you can take whatever books you need."
 
 this is the marred-mat-hint rule:
 	say "[one of]The marred mat is in Got Gear Hot Here, suggesting maybe it can become something you can wear.[or]What can you wear that rhymes with mat?[or]HARD HAT.[stopping]"
@@ -2493,6 +2490,9 @@ this is the very-vile-fairy-file-hint rule:
 
 this is the well-worn-hell-horn-hint rule:
 	say "[one of]The well worn hell horn seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
+
+this is the worst-wave-hint rule:
+	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
 
 this is the wrong-art-hint rule:
 	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
@@ -2601,7 +2601,7 @@ carry out exitsing:
 	the rule succeeds.
 
 to decide whether (di - a direction) is blocked:
-	if player is in Fun Fen and di is north and tree-down is false, yes;
+	if player is in fun fen and di is north and tree-down is false, yes;
 	no;
 
 volume when play begins
@@ -2752,9 +2752,9 @@ carry out wildweeding:
 
 part Pit Pound
 
-Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if Hit Hound is moot]Grit Ground[else]Pit Pound[end if]".
+Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]".
 
-The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq.
+The hit hound is a person in Pit Pound. cht of hit hound is leteq.
 
 chapter sitsounding
 
@@ -2762,13 +2762,13 @@ sitsounding is an action applying to nothing.
 
 understand the command "sit sound" as something new.
 
-understand "sit sound" as sitsounding.
+understand "sit sound" as sitsounding when player is in Pit Pound.
 
 carry out sitsounding:
-	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
-	moot Hit Hound;
+	if hit hound is moot, say "You already did." instead;
+	say "The hit hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the hit hound gives up and goes away.";
+	moot hit hound;
 	up-reg;
-	now cht of Pit Pound is letminus;
 	the rule succeeds.
 
 chapter fitfounding
@@ -2777,16 +2777,18 @@ fitfounding is an action applying to nothing.
 
 understand the command "fit found" as something new.
 
-understand "fit found" as fitfounding.
+understand "fit found" as fitfounding when player is in Pit Pound.
+
+found-fit is a truth state that varies.
 
 carry out fitfounding:
-	if Hit Hound is in Pit Pound:
+	if found-fit is true, say "You already found a fit." instead;
+	if hit hound is in pit pound:
 		clue-later "FIT FOUND";
-		say "You can't fit in with the Hit Hound around, but maybe after..." instead;
-	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
-	moot Hit Hound;
+		say "You can't do much with the hit hound around." instead;
+	say "You feel comfortable here now. Wahoo!";
+	now found-fit is true;
 	up-reg;
-	phbt Pit Pound;
 	the rule succeeds.
 
 book go gate
@@ -2960,9 +2962,9 @@ understand the command "climb clear" as something new.
 understand "climb clear" as climbclearing.
 
 carry out climbclearing:
-	if Airy Isle is visited, say "You're already in the endgame.";
+	if airy isle is visited, say "You're already in the endgame.";
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
-	move player to Airy Isle;
+	move player to airy isle;
 	the rule succeeds.
 
 volume map index

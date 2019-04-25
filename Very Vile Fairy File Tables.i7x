@@ -171,11 +171,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a MERRY MILE [once-now of can-merry-mile rule] things have calmed down."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can CAST CAP once you find one."
 
-this is the can-bury-bile rule:
-	if well worn hell horn is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-bury-bile rule: the rule fails. [this probably won't change, but just for posterity...]
+[xx4l8r]
 
 this is the can-big-bag rule:
 	if Fun Fen is visited, the rule succeeds;
@@ -185,60 +181,34 @@ this is the did-big-bag rule:
 	if player has big bag, the rule succeeds;
 	the rule fails.
 
-this is the can-flim-flam rule:
-	if me-minded is true, the rule succeeds;
+this is the can-bury-bile rule:
+	if well worn hell horn is moot, the rule succeeds;
 	the rule fails.
 
-this is the did-flim-flam rule:
-	if Fun Fen is visited, the rule succeeds;
+this is the did-bury-bile rule: the rule fails. [this probably won't change, but just for posterity...]
+
+this is the did-cast-cap rule:
+	if cool cap is moot, the rule succeeds;
 	the rule fails.
 
-this is the can-mash-map rule:
-	if grit-grown is true, the rule succeeds;
-	the rule fails.
-
-this is the did-mash-map rule:
-	if Trim Tram is visited, the rule succeeds;
-	the rule fails.
-
-this is the can-feel-fear rule:
-	if knelt-yet is true, the rule succeeds;
-	the rule fails.
-
-this is the did-feel-fear rule:
-	if felt-fear is true, the rule succeeds;
-	the rule fails.
-
-this is the can-deal-dear rule:
-	if felt-fear is true, the rule succeeds;
+this is the can-cast-cap rule:
+	if player has cool cap, the rule succeeds;
 	the rule fails.
 
 this is the did-deal-dear rule:
 	if cage key is not off-stage, the rule succeeds;
 	the rule fails.
 
-this is the can-heal-here rule:
-	if least-loss is true, the rule succeeds;
+this is the can-deal-dear rule:
+	if felt-fear is true, the rule succeeds;
 	the rule fails.
 
-this is the did-heal-here rule:
-	if healed-here is true, the rule succeeds;
+this is the did-feel-fear rule:
+	if felt-fear is true, the rule succeeds;
 	the rule fails.
 
-this is the can-show-shield rule:
-	if player has gold guard, the rule succeeds;
-	the rule fails.
-
-this is the did-show-shield rule:
-	if shield-shown is true, the rule succeeds;
-	the rule fails.
-
-this is the can-moral-mage rule:
-	if player has cage key, the rule succeeds;
-	the rule fails.
-
-this is the did-moral-mage rule:
-	if coral cage is moot, the rule succeeds;
+this is the can-feel-fear rule:
+	if knelt-yet is true, the rule succeeds;
 	the rule fails.
 
 this is the can-first-fave rule:
@@ -249,20 +219,44 @@ this is the did-first-fave rule:
 	if worst wave is moot, the rule succeeds;
 	the rule fails.
 
-this is the can-shining-shore rule:
-	if beer bull is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-shining-shore rule:
-	if shore-shine is true, the rule succeeds;
-	the rule fails.
-
 this is the can-fit-found rule:
 	if hit hound is moot, the rule succeeds;
 	the rule fails.
 
 this is the did-fit-found rule:
-	if fit-found is true, the rule succeeds;
+	if found-fit is true, the rule succeeds;
+	the rule fails.
+
+this is the did-flim-flam rule:
+	if Fun Fen is visited, the rule succeeds;
+	the rule fails.
+
+this is the can-flim-flam rule:
+	if me-minded is true, the rule succeeds;
+	the rule fails.
+
+this is the did-full-feast rule:
+	if Bull Beast is moot, the rule succeeds;
+	the rule fails.
+
+this is the can-full-feast rule:
+	if cull-ceased is true, the rule succeeds;
+	the rule fails.
+
+this is the did-got-gored rule:
+	if Bot Board is moot, the rule succeeds;
+	the rule fails.
+
+this is the can-got-gored rule:
+	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
+	the rule fails.
+
+this is the did-heal-here rule:
+	if healed-here is true, the rule succeeds;
+	the rule fails.
+
+this is the can-heal-here rule:
+	if least-loss is true, the rule succeeds;
 	the rule fails.
 
 this is the can-least-loss rule:
@@ -273,20 +267,12 @@ this is the did-least-loss rule:
 	if least-loss is true, the rule succeeds;
 	the rule fails.
 
-this is the can-full-feast rule:
-	if cull-ceased is true, the rule succeeds;
+this is the did-mash-map rule:
+	if Trim Tram is visited, the rule succeeds;
 	the rule fails.
 
-this is the did-full-feast rule:
-	if Bull Beast is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-got-gored rule:
-	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
-	the rule fails.
-
-this is the did-got-gored rule:
-	if Bot Board is moot, the rule succeeds;
+this is the can-mash-map rule:
+	if grit-grown is true, the rule succeeds;
 	the rule fails.
 
 this is the can-merry-mile rule:
@@ -297,13 +283,31 @@ this is the did-merry-mile rule:
 	if merry-mile is true, the rule succeeds;
 	the rule fails.
 
-this is the can-cast-cap rule:
-	if player has cool cap, the rule succeeds;
+this is the did-moral-mage rule:
+	if coral cage is moot, the rule succeeds;
 	the rule fails.
 
-this is the did-cast-cap rule:
-	if cool cap is moot, the rule succeeds;
+this is the can-moral-mage rule:
+	if player has cage key, the rule succeeds;
 	the rule fails.
+
+this is the can-shining-shore rule:
+	if beer bull is moot, the rule succeeds;
+	the rule fails.
+
+this is the did-shining-shore rule:
+	if shore-shine is true, the rule succeeds;
+	the rule fails.
+
+this is the can-show-shield rule:
+	if player has gold guard, the rule succeeds;
+	the rule fails.
+
+this is the did-show-shield rule:
+	if shield-shown is true, the rule succeeds;
+	the rule fails.
+
+[zz4l8r]
 
 this is the trivially false rule: the rule fails;
 this is the trivially true rule: the rule succeeds;
