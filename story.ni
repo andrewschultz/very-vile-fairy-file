@@ -16,6 +16,8 @@ include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 include Very Vile Fairy File Tables by Andrew Schultz.
 
+use MAX_ACTIONS of 210.
+
 section establish debug - not for release
 
 include Very Vile Fairy File Tests by Andrew Schultz.
@@ -75,9 +77,9 @@ climb-clear is a truth state that varies. [ did the beta tester jump ahead until
 
 section scoring stuff
 
-the maximum score is 61.
+the maximum score is 62.
 
-min-needed is a number that varies. min-needed is 53.
+min-needed is a number that varies. min-needed is 54.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -2746,6 +2748,26 @@ understand "wild weed" as wildweeding when player has mild mead.
 carry out wildweeding:
 	say "Bingo! The mild mead becomes wild weed.";
 	up-min;
+	the rule succeeds.
+
+part grit ground
+
+Grit Ground is a room in Piddling Pain. cht of grit ground is letminus.
+
+The hit hound is a person in Grit Ground. cht of hit hound is leteq.
+
+chapter sitsounding
+
+sitsounding is an action applying to nothing.
+
+understand the command "sit sound" as something new.
+
+understand "sit sound" as sitsounding.
+
+carry out sitsounding:
+	say "The hit hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the hit hound gives up and goes away.";
+	moot hit hound;
+	up-reg;
 	the rule succeeds.
 
 book go gate

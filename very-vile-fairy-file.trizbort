@@ -162,6 +162,9 @@
 			<dock index="0" id="54" port="s" />
 			<dock index="1" id="62" port="n" />
 		</line>
+		<room id="23" name="Grit Ground" subtitle="" x="480" y="-480" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+			<objects>Hit Hound</objects>
+		</room>
 	</map>
 	<settings>
 		<colors>
