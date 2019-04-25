@@ -356,15 +356,20 @@ chapter mashmaping
 
 mashmaping is an action applying to nothing.
 
+understand the command "bash bap" as something new.
 understand the command "mash map" as something new.
 
+understand "bash bap" as mashmaping when player is in Po' Pit.
 understand "mash map" as mashmaping when player is in Po' Pit.
 
+bash-not-mash is a truth state that varies.
+
 carry out mashmaping:
+	now bash-not-mash is whether or not word number 1 in the player's command is "bash";
 	if grit-grown is false:
 		clue-later "MASH MAP";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be." instead;
-	say "The heck with this! You just don't trust the trash trap to tell you the way through.";
+	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap.";
 	up-reg;
 	move player to Trim Tram;
 	the rule succeeds.
@@ -380,7 +385,7 @@ understand "grow grit" as growgriting when player is in Po' Pit.
 grit-grown is a truth state that varies.
 
 carry out growgriting:
-	if grit-grown is true, say "You already did that." instead;
+	if grit-grown is true, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain." instead;
 	say "The trash trap looks less yucky now.";
 	now grit-grown is true;
 	phbt row writ;
@@ -2391,7 +2396,7 @@ this is the gots-game-hint rule:
 	say "[one of]The Gutta Ganksta seems proud of the GOTS GAME tattoo, but perhaps there's a way to cut it down.[or]LOTS LAME.[stopping]"
 
 this is the gutta-ganksta-hint rule:
-	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA WANKSTA.[stopping]";
+	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
 
 this is the hive-heap-hint rule:
 	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
@@ -2844,9 +2849,9 @@ rule for showmissesing:
 	if started-strong is false, say "You could've used the wrong art for a STRONG START.";
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
-	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had the[end if] wild weed.";
+	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting[else]the wild weed[end if].";
 	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
-	if ganksta is not moot, say "You could've said WHATTA WANKSTA to the Gutta Ganksta.";
+	if ganksta is not moot, say "You could've said WHATTA (or WHAT A) WANKSTA to the Gutta Ganksta.";
 	unless oi mo is moot, say "You could have DIMD (dim'd) Oi Mo.";
 	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE.";
 
