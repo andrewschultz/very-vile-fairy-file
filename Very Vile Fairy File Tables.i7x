@@ -163,6 +163,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
 "FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
 "SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
+"FIT FOUND"	false	can-fit-found rule	did-fit-found rule	"You can declare a FIT FOUND [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
 "LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say LEAST LOSS once/now you have something to face ..." [heres of Creased Cross ??]
 "HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to HEAL HERE [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
 "FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a full feast once/now it's been vanquished."
@@ -254,6 +255,14 @@ this is the can-shining-shore rule:
 
 this is the did-shining-shore rule:
 	if shore-shine is true, the rule succeeds;
+	the rule fails.
+
+this is the can-fit-found rule:
+	if hit hound is moot, the rule succeeds;
+	the rule fails.
+
+this is the did-fit-found rule:
+	if fit-found is true, the rule succeeds;
 	the rule fails.
 
 this is the can-least-loss rule:

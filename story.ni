@@ -77,9 +77,9 @@ climb-clear is a truth state that varies. [ did the beta tester jump ahead until
 
 section scoring stuff
 
-the maximum score is 62.
+the maximum score is 63.
 
-min-needed is a number that varies. min-needed is 54.
+min-needed is a number that varies. min-needed is 55.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -1486,7 +1486,7 @@ Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter he
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
-	if bot board is in Airy Isle, say "The bot board loses interest as you flee back south.";
+	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
 
 the frightening fridge is scenery.
 
@@ -1511,11 +1511,11 @@ carry out lotlording:
 
 to check-gored-clue:
 	say "[line break]";
-	if hot horde is in airy isle and lot lord is in airy isle:
-		say "The hot horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
+	if hot Horde is in airy Isle and lot Lord is in Airy Isle:
+		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
 		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
-	else if hot horde is in airy isle:
-		say "The hot horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
+	else if Hot Horde is in Airy Isle:
+		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
 	else:
 		say "The Lot Lord surveys the isle, as if looking for followers. He doesn't have any, yet. But maybe you could help him find some!"
 
@@ -2601,7 +2601,7 @@ carry out exitsing:
 	the rule succeeds.
 
 to decide whether (di - a direction) is blocked:
-	if player is in fun fen and di is north and tree-down is false, yes;
+	if player is in Fun Fen and di is north and tree-down is false, yes;
 	no;
 
 volume when play begins
@@ -2750,11 +2750,11 @@ carry out wildweeding:
 	up-min;
 	the rule succeeds.
 
-part grit ground
+part Pit Pound
 
-Grit Ground is a room in Piddling Pain. cht of grit ground is letminus.
+Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if Hit Hound is moot]Grit Ground[else]Pit Pound[end if]".
 
-The hit hound is a person in Grit Ground. cht of hit hound is leteq.
+The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq.
 
 chapter sitsounding
 
@@ -2765,9 +2765,28 @@ understand the command "sit sound" as something new.
 understand "sit sound" as sitsounding.
 
 carry out sitsounding:
-	say "The hit hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the hit hound gives up and goes away.";
-	moot hit hound;
+	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
+	moot Hit Hound;
 	up-reg;
+	now cht of Pit Pound is letminus;
+	the rule succeeds.
+
+chapter fitfounding
+
+fitfounding is an action applying to nothing.
+
+understand the command "fit found" as something new.
+
+understand "fit found" as fitfounding.
+
+carry out fitfounding:
+	if Hit Hound is in Pit Pound:
+		clue-later "FIT FOUND";
+		say "You can't fit in with the Hit Hound around, but maybe after..." instead;
+	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
+	moot Hit Hound;
+	up-reg;
+	phbt Pit Pound;
 	the rule succeeds.
 
 book go gate
@@ -2941,9 +2960,9 @@ understand the command "climb clear" as something new.
 understand "climb clear" as climbclearing.
 
 carry out climbclearing:
-	if airy isle is visited, say "You're already in the endgame.";
+	if Airy Isle is visited, say "You're already in the endgame.";
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
-	move player to airy isle;
+	move player to Airy Isle;
 	the rule succeeds.
 
 volume map index
