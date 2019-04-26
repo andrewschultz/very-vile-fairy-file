@@ -45,6 +45,7 @@ def usage(msg = "CMD LINE USAGE"):
     print("b o n x = both optional necessary neither")
     print("p py = open source post run / pn = don't open it")
     print("cw or ncw/cwn = copy walkthrough over if numbers are bad (or don't)")
+    print("u = update")
     exit()
 
 def clue_hint_verify():
@@ -238,6 +239,7 @@ def read_cmd_line():
             show_nec = False
             show_opt = False
         elif arg == 'cw': copy_walkthrough_back = True
+        elif arg == 'u': update = True
         elif arg == 'ncw' or arg == 'cwn': copy_walkthrough_back = False
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
@@ -249,6 +251,11 @@ def read_cmd_line():
 #
 
 read_cmd_line()
+
+if update:
+    print("Updating wbase.txt with rbr and wdrop...")
+    os.system("rbr.py wbase.txt")
+    print("...updated.")
 
 check_points()
 check_walkthrough("walkthrough.txt", False)
