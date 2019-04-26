@@ -77,9 +77,9 @@ climb-clear is a truth state that varies. [ did the beta tester jump ahead until
 
 section scoring stuff
 
-the maximum score is 62.
+the maximum score is 63.
 
-min-needed is a number that varies. min-needed is 54.
+min-needed is a number that varies. min-needed is 55.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -431,14 +431,14 @@ understand the command "skim scam" as something new.
 understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
 
 carry out flimflaming:
+	now skim-not-flim is whether or not the player's command contains "skim";
 	if me-minded is false:
 		clue-later "FLIM FLAM";
 		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit." instead;
 	if the player's command includes "skim", now skim-not-flim is true;
-	say "That does it! The tram moves off...";
+	say "That does it! The tram moves off to a more open place...";
 	move the player to Fun Fen;
 	up-reg;
-	say "(By the way, you could also have tried [if skim-not-flim is true]FLIM FLAM[else]SKIM SCAM[end if].)";
 	the rule succeeds.
 
 volume Piddling Pain
@@ -1969,6 +1969,7 @@ understand "about" as abouting.
 
 carry out abouting:
 	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I like this sort of thing. It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break]I'm not the first parser game to deal with rhymes. Michael Martin's [i]EXTERMINATE![r] and DCBSupafly's [i]Beythilda the Witch Queen[r] did it first. They were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) offered more of a narrative. But I hope this is something new and does not abuse the concept.";
+	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. (And if I haven't, let me know.) VVFF is also meant to be polite on the Zarfian cruelty scale.";
 	the rule succeeds;
 
 book hinting
@@ -2889,14 +2890,14 @@ final question wording	only if victorious	topic		final response rule		final resp
 showmissesing is an activity.
 
 rule for showmissesing:
-	if started-strong is false, say "You could've used the wrong art for a STRONG START.";
+	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a STRONG START.";
 	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
 	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting[else]the wild weed[end if].";
-	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME.";
-	if ganksta is not moot, say "You could've said WHATTA (or WHAT A) WANKSTA to the Gutta Ganksta.";
-	unless oi mo is moot, say "You could have DIMD (dim'd) Oi Mo.";
-	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE.";
+	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME in Mystery Mall.";
+	if ganksta is not moot, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
+	unless oi mo is moot, say "You could have DIMD (dim'd) the horrible song Oi Mo in Mystery Mall.";
+	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE in the Last Lap.";
 
 showdeathsing is an activity.
 
