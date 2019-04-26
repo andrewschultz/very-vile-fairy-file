@@ -18,7 +18,6 @@ to_open = defaultdict(int)
 
 #initialize values
 
-copy_walkthrough_back = False
 open_source_post = True
 
 
@@ -30,6 +29,10 @@ min_sco = 0
 
 show_nec = False
 show_opt = False
+
+i7.go_proj("vv")
+should_update = update = os.path.getmtime("wbase.txt") > os.path.getmtime("walkthrough.txt")
+update = should_update
 
 hdr_str = "                  NE OP UD TO"
 
@@ -44,8 +47,7 @@ def usage(msg = "CMD LINE USAGE"):
     print("=" * 50)
     print("b o n x = both optional necessary neither")
     print("p py = open source post run / pn = don't open it")
-    print("cw or ncw/cwn = copy walkthrough over if numbers are bad (or don't)")
-    print("u = update")
+    print("u = update, nu/un = don't update")
     exit()
 
 def clue_hint_verify():
@@ -222,7 +224,6 @@ def read_cmd_line():
     global show_nec
     global show_opt
     global open_source_post
-    global copy_walkthrough_back
     cmd_count = 1
     while cmd_count < len(sys.argv):
         arg = sys.argv[cmd_count]
@@ -238,9 +239,8 @@ def read_cmd_line():
         elif arg == 'x':
             show_nec = False
             show_opt = False
-        elif arg == 'cw': copy_walkthrough_back = True
         elif arg == 'u': update = True
-        elif arg == 'ncw' or arg == 'cwn': copy_walkthrough_back = False
+        elif arg == 'nu' or arg == 'un': update = False
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
         elif arg == '?': usage()
@@ -253,9 +253,14 @@ def read_cmd_line():
 read_cmd_line()
 
 if update:
+    if not should_update: print("You don't seem to need to update since wbase was edited before the walkthroughs, but I'll do so anyway.")
+    else: print("Detecting change in wbase after change in walkthroughs.")
     print("Updating wbase.txt with rbr and wdrop...")
     os.system("rbr.py wbase.txt")
     print("...updated.")
+else:
+    if should_update: print("Ignoring wbase's time being ahead of walkthroughs.")
+    else: print("Wbase is behind walkthroughs, and updating is not forced.")
 
 check_points()
 check_walkthrough("walkthrough.txt", False)
