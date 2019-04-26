@@ -155,6 +155,7 @@ table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
+"BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the Beast Boss [in-here of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
 "FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if], but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
 "MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [if bash-not-mash is true]BASH BAP[else]MASH MAP[end if], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to FEEL FEAR [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
@@ -179,6 +180,14 @@ this is the can-big-bag rule:
 
 this is the did-big-bag rule:
 	if player has big bag, the rule succeeds;
+	the rule fails.
+
+this is the can-beast-boss rule:
+	if score > 32, the rule succeeds; [?? very bad]
+	the rule fails.
+
+this is the did-beast-boss rule:
+	if Bull Beast is not off-stage, the rule succeeds;
 	the rule fails.
 
 this is the can-bury-bile rule:
@@ -220,7 +229,7 @@ this is the did-first-fave rule:
 	the rule fails.
 
 this is the can-fit-found rule:
-	if hit hound is moot, the rule succeeds;
+	if Hit Hound is moot, the rule succeeds;
 	the rule fails.
 
 this is the did-fit-found rule:

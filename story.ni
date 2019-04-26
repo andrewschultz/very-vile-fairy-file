@@ -693,6 +693,24 @@ The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-
 
 instead of doing something with Bull Beast when cull-ceased is true: say "The Bull Beast is dead."
 
+chapter beastbossing
+
+beastbossing is an action applying to nothing.
+
+understand the command "beast boss" as something new.
+
+understand "beast boss" as beastbossing.
+
+carry out beastbossing:
+	if Bull Beast is not off-stage, say "You already did." instead;
+	if score < 32:
+		clue-hint "BEAST BOSS";
+		say "You don't have the experience yet." instead;
+	up-reg;
+	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
+	move Bull Beast to Creased Cross;
+	the rule succeeds.
+
 chapter cullceaseding
 
 cullceaseding is an action applying to nothing.
@@ -1486,7 +1504,7 @@ Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter he
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
-	if bot board is in Airy Isle, say "The bot board loses interest as you flee back south.";
+	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
 
 the frightening fridge is scenery.
 
@@ -1511,11 +1529,11 @@ carry out lotlording:
 
 to check-gored-clue:
 	say "[line break]";
-	if hot horde is in airy isle and lot lord is in airy isle:
-		say "The hot horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
+	if Hot Horde is in Airy Isle and Lot Lord is in Airy Isle:
+		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
 		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
-	else if hot horde is in airy isle:
-		say "The hot horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
+	else if Hot Horde is in Airy Isle:
+		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
 	else:
 		say "The Lot Lord surveys the isle, as if looking for followers. He doesn't have any, yet. But maybe you could help him find some!"
 
@@ -2602,7 +2620,7 @@ carry out exitsing:
 	the rule succeeds.
 
 to decide whether (di - a direction) is blocked:
-	if player is in fun fen and di is north and tree-down is false, yes;
+	if player is in Fun Fen and di is north and tree-down is false, yes;
 	no;
 
 volume when play begins
@@ -2755,7 +2773,7 @@ part Pit Pound
 
 Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]".
 
-The hit hound is a person in Pit Pound. cht of hit hound is leteq.
+The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq.
 
 chapter sitsounding
 
@@ -2766,9 +2784,9 @@ understand the command "sit sound" as something new.
 understand "sit sound" as sitsounding when player is in Pit Pound.
 
 carry out sitsounding:
-	if hit hound is moot, say "You already did." instead;
-	say "The hit hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the hit hound gives up and goes away.";
-	moot hit hound;
+	if Hit Hound is moot, say "You already did." instead;
+	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
+	moot Hit Hound;
 	up-reg;
 	the rule succeeds.
 
@@ -2784,9 +2802,9 @@ found-fit is a truth state that varies.
 
 carry out fitfounding:
 	if found-fit is true, say "You already found a fit." instead;
-	if hit hound is in pit pound:
+	if Hit Hound is in Pit Pound:
 		clue-later "FIT FOUND";
-		say "You can't do much with the hit hound around." instead;
+		say "You can't do much with the Hit Hound around." instead;
 	say "You feel comfortable here now. Wahoo!";
 	now found-fit is true;
 	up-reg;
@@ -2963,9 +2981,9 @@ understand the command "climb clear" as something new.
 understand "climb clear" as climbclearing.
 
 carry out climbclearing:
-	if airy isle is visited, say "You're already in the endgame.";
+	if Airy Isle is visited, say "You're already in the endgame.";
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
-	move player to airy isle;
+	move player to Airy Isle;
 	the rule succeeds.
 
 volume map index
