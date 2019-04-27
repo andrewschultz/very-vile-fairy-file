@@ -77,9 +77,9 @@ climb-clear is a truth state that varies. [ did the beta tester jump ahead until
 
 section scoring stuff
 
-the maximum score is 63.
+the maximum score is 64.
 
-min-needed is a number that varies. min-needed is 55.
+min-needed is a number that varies. min-needed is 56.
 
 min-gotten is a number that varies. min-gotten is 0.
 
@@ -1097,6 +1097,22 @@ Lake Lap is scenery.
 
 Ache App is a thing.
 
+the frightening fridge is scenery in Whining War.
+
+chapter brighteningbridgeing
+
+brighteningbridgeing is an action applying to nothing.
+
+understand the command "brightening bridge" as something new.
+
+understand "brightening bridge" as brighteningbridgeing when player is in Airy Isle and frightening fridge is in Airy Isle.
+
+carry out brighteningbridgeing:
+	say "Boom! There goes the fridge!";
+	up-reg;
+	moot frightening fridge;
+	the rule succeeds.
+
 chapter shiningshoreing
 
 shiningshoreing is an action applying to nothing.
@@ -1505,8 +1521,6 @@ check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
 	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
 
-the frightening fridge is scenery.
-
 the Bot Board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!"
 
 chapter lotlording
@@ -1570,6 +1584,7 @@ carry out gotgoreding:
 		moot Lot Lord;
 		moot Bot Board;
 		wall-refresh;
+		move go gate to Airy Isle;
 		the rule succeeds;
 	clue-later "GOT GORED";
 	if Hot Horde is in Airy Isle: [and Lot Lord is off-stage]
@@ -1600,18 +1615,33 @@ carry out telltorning:
 	up-reg;
 	the rule succeeds.
 
-chapter brighteningbridgeing
+book go gate
 
-brighteningbridgeing is an action applying to nothing.
+there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus.
 
-understand the command "brightening bridge" as something new.
+check taking go gate: try entering go gate instead.
 
-understand "brightening bridge" as brighteningbridgeing when player is in Airy Isle and frightening fridge is in Airy Isle.
+check entering go gate:
+	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
+	end the story;
 
-carry out brighteningbridgeing:
-	say "Boom! There goes the fridge!";
+the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is letboth.
+
+chapter whoawaiting
+
+whoawaiting is an action applying to nothing.
+
+understand the command "woe wait" as something new.
+understand the command "whoa wait" as something new.
+understand the command "whoah wait" as something new.
+
+understand "woe wait" as whoawaiting when go gate is quicknear.
+understand "whoa wait" as whoawaiting when go gate is quicknear.
+understand "whoah wait" as whoawaiting when go gate is quicknear.
+
+carry out whoawaiting:
+	say "You decide not to run in right away. The gate crumbles.";
 	up-reg;
-	moot frightening fridge;
 	the rule succeeds.
 
 part Tarry Tile 1,5
@@ -1637,6 +1667,29 @@ instead of doing anything when noun is Fairy File:
 	say "[ff-no].";
 
 to say ff-no: say "You can't do anything directly with or to the Fairy File. There must be some overarching action"
+
+chapter merrymileing
+
+merrymileing is an action applying to nothing.
+
+understand the command "merry mile" as something new.
+
+understand "merry mile" as merrymileing when mrlp is Vale Verminous.
+
+merry-mile is a truth state that varies.
+
+carry out merrymileing:
+	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
+	if player is in Tarry Tile:
+		if well worn hell horn is in Tarry Tile:
+			clue-later "MERRY MILE";
+			say "Not with the well worn hell horn making those un-merry noises." instead;
+		up-reg;
+		now merry-mile is true;
+		say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now." instead;
+	clue-later "MERRY MILE";
+	if player is in Airy Isle, say "Hard to be happy with the Bot Board around." instead;
+	the rule succeeds.
 
 chapter burybileing
 
@@ -2829,33 +2882,6 @@ carry out fitfounding:
 	up-reg;
 	the rule succeeds.
 
-book go gate
-
-there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus.
-
-check entering go gate:
-	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
-	end the story;
-
-the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is letboth.
-
-chapter whoawaiting
-
-whoawaiting is an action applying to nothing.
-
-understand the command "woe wait" as something new.
-understand the command "whoa wait" as something new.
-understand the command "whoah wait" as something new.
-
-understand "whoah wait" as whoawaiting when go gate is quicknear.
-understand "whoa wait" as whoawaiting when go gate is quicknear.
-understand "woe wait" as whoawaiting when go gate is quicknear.
-
-carry out whoawaiting:
-	say "You decide not to run in right away. The gate crumbles.";
-	up-reg;
-	the rule succeeds.
-
 book Pain Peasant
 
 the Pain Peasant is a person.
@@ -3021,29 +3047,6 @@ index map with Erst Lore mapped south of Got Gear Hot Here.
 section endrooms
 
 index map with Tarry Tile mapped north of Airy Isle.
-
-chapter merrymileing
-
-merrymileing is an action applying to nothing.
-
-understand the command "merry mile" as something new.
-
-understand "merry mile" as merrymileing when mrlp is Vale Verminous.
-
-merry-mile is a truth state that varies.
-
-carry out merrymileing:
-	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
-	if player is in Tarry Tile:
-		if well worn hell horn is in Tarry Tile:
-			clue-later "MERRY MILE";
-			say "Not with the well worn hell horn making those un-merry noises." instead;
-		up-reg;
-		now merry-mile is true;
-		say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now." instead;
-	clue-later "MERRY MILE";
-	if player is in Airy Isle, say "Hard to be happy with the Bot Board around." instead;
-	the rule succeeds.
 
 section altrooms
 

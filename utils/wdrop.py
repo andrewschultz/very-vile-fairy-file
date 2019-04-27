@@ -62,6 +62,7 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
     inserts = 0
     with open(f) as file:
         for (line_count, line) in enumerate(file, 1):
+            if line.startswith("##"): continue #this is for comments
             if re.search("^>.*\([0-9]+\)", line):
                 cur_points += 1
                 fstream.write(new_points(line, cur_points, max_num = max_here))
@@ -70,7 +71,12 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
                     cur_points += 1
                     inserts += 1
             elif re.search(r'^>.*\(x(-[0-9]+)?\)', line):
-                fstream.write(new_points(line, cur_points, max_num = max_here))
+                temp = new_points(line, cur_points, max_num = max_here)
+                if verbose: print("Updating x- line to", temp)
+                fstream.write(temp)
+                temp = re.sub(".*\(", "", temp)
+                cur_points = int(re.sub("\).*", "", temp))
+                if verbose: print("Updating current points to", cur_points)
             else:
                 fstream.write(line)
     fstream.close()
