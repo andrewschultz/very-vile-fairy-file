@@ -17,9 +17,11 @@ This is a quick walkthrough for Very Vile Fairy File. It neglects bonus points.
 ==!
 This is a full walkthrough for Very Vile Fairy File. It details all bonus points.
 
-You can do something with the zigzag rig rag, but not right away. You don't want to be carrying it through the wet wood. In fact, it may help give you clues if you look at it.
+Because walkthroughs can be spoilers, I thought I'd offer some general hints up front about what to look for and how to use clues. There is HINT (item) or HINT to see if you can do anything in a room. You also may wish to mess about with the leet learner. This is strictly a walkthrough, so I won't explain it here, but if you use the learner before trying a puzzle, you'll see differences and be able to guess what they mean. A brief overview: the leet learner can scan both areas (LL) or items (LL THING).
 
-So let's leave the wet wood. It seems like there's no way out. But if you listen carefully and pay attention to clues, you can decide what to do.
+You can do something with the zigzag rig rag, and it may be an even easier puzzle than getting out of the Wet Wood, but not right away. You won't need to be carrying that item through the Wet Wood. However, being able to guess what to do with the rig rag is a good exercise. If you figure what to do, you'll also be introduced to how the THINK command works.
+
+So let's leave the Wet Wood. It seems like there's no way out, with what you know. But if you listen carefully and pay attention to clues, you can decide what to do.
 
 > GET GOOD (1)
 
@@ -31,17 +33,19 @@ But now you must deal with the Mean Mass.
 
 > GREEN GRASS (1)
 
-Now, ugh! The trash trap is so odious. You don't have the guts. Something about this room...
+Now, ugh! The trash trap is so gross. You don't have the guts to face it, yet. Something about this room ... the Po' Pit ...
 
 > GROW GRIT (1)
 
-You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
+Now there is the cache cap with something on it. There's the gash gap and trash trap. This suggests ...
 
 > MASH MAP (1)
 
 An alternative here would be to BASH BAP, which is obscure but still sensible.
 
-Woohoo! You made it through, and now you need to fake your way into (not really) paying for a trip on the Trim Tram.
+After this, you've got one more room before you emerge aboveground.
+
+Now you need to fake your way into (not really) paying for a trip on the Trim Tram.
 
 > MIND ME (1)
 
@@ -51,11 +55,11 @@ There are three ways.
 
 > FLIM FLAM (1)
 
-The alternatives: no space, or you can also try a SKIM SCAM.
+The alternatives: FLIMFLAM with no space, or you can also try a SKIM SCAM.
 
-Well, that does it for the introduction. You climb out of the Done Den to the Fun Fen. It gets a little less linear from here on out.
+You climb out of the Done Den to the Fun Fen, finished with the linear introduction. It gets a little less linear from here on out, but this way through should be relatively quick.
 
-Now about that zig zag rig rag. It can become something more useful.
+Now about that zig zag rig rag. It can become something more useful. If you already tried to change it and got the right command, you should see a (+1) by your score. That signifies something you tried will work now.
 
 > BIG BAG (1)
 
@@ -66,7 +70,7 @@ Since the "wr" is pronounced as "r," and there is a prong part as you examine it
 \\
 > STRONG START (1)
 \\
-The wry wall can also be deal with, sort of, for a bonus point. It's obviously all wrong, but how to say so?
+The wry wall can also be deal with, sort of, for a bonus point. There are other wry walls in future locations, and you can pick up this bonus point at any time. It's obviously all wrong, but how to say so?
 \\
 > LIE LOL (1)
 
@@ -86,19 +90,23 @@ There's something to the south you can polish off.
 
 > S
 
-The Real Rear has several possibilities. First, you need to show respect to the Ceiling Seer.
+The Real Rear has several possibilities. The Sage Sea may bound you from going further, but it may turn up a useful item. First, you need to show respect to the Ceiling Seer.
 
 > KNEEL NEAR (1)
 
+Now, you need to overcome obstacles to be worthy of the Sage Sea. Let's admit to one shortcoming ...
+
 > FEEL FEAR (1)
+
+... and figure a way to go around it.
 
 > DEAL DEAR (1)
 
-There's one more thing you can do, but it will have to wait for later.
-
-Now at Fun Fen, you have an opportunity for a bonus point in the long term, or you can just tell the Tall Tree what to do.
+A key! Keys always come in handy. There's one more thing you can do, but it will have to wait for later. You won't need it yet.
 
 > N
+
+Now at Fun Fen, you can just tell the Tall Tree what to do.
 
 > FALL FREE (1)
 
@@ -108,7 +116,7 @@ There are a lot of ways to go in Creased Cross, but it's most helpful to go west
 
 > W
 
-History hall has something to the west.
+History Hall has something to the west. It can also become something else, but let's deal with that later.
 
 > W
 
@@ -134,7 +142,7 @@ The gold guard will be useful later.
 
 > OUT
 
-Let's pick up some points for later.
+Now to replace History Hall for a bit.
 
 > MYSTERY MALL (1)
 
@@ -157,8 +165,6 @@ Notice the tattoos.
 
 > LOTS LAME (1)
 
-Here's where you get depressed. You need to find a way to stop feeling way wrong, way wrong.
-
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
@@ -174,6 +180,8 @@ The marred mat doesn't look like it's worth buying, but ...
 In the Shirk Shell, you need to do something to get the Jerk Gel.
 
 > WORK WELL (1)
+
+You probably need to spray the Jerk Gel on someone "worthy" later.
 
 > E
 

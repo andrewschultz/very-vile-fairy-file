@@ -195,7 +195,9 @@ this is the can-bury-bile rule:
 	if well worn hell horn is moot, the rule succeeds;
 	the rule fails.
 
-this is the did-bury-bile rule: the rule fails. [this probably won't change, but just for posterity...]
+this is the did-bury-bile rule:
+	if bile-buried is true, the rule succeeds;
+	the rule fails. [this isn't needed for gameplay, but if it's absent, a +1 will remain at game's end if you BURY BILE earlier]
 
 this is the did-cast-cap rule:
 	if cool cap is moot, the rule succeeds;

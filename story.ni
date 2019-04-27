@@ -158,6 +158,7 @@ instead of doing something with wry wall:
 	say "The wry wall is just there for atmosphere."
 
 definition: a room (called rm) is signable:
+	if rm is airy isle and bot board is in airy isle, no;
 	repeat through table of bad locs:
 		if there is no e1 entry or there is no e2 entry, next;
 		if rm is e1 entry, yes;
@@ -458,7 +459,9 @@ instead of entering done den, say "As you start to enter, you imagine a weight f
 
 section wrong art
 
-the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way.". cht of the wrong art is letplus.
+the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way. The wrong art also has a prong part sticking out from it.". cht of the wrong art is letplus.
+
+the prong part is part of the wrong art. The prong part is optional. "It's a particularly ugly part of the wrong art.". cht is letplus.
 
 section tall tree
 
@@ -505,9 +508,9 @@ started-strong is a truth state that varies.
 carry out strongstarting:
 	if started-strong is true, say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart." instead;
 	now started-strong is true;
-	say "Boom! Yes, you mangle and destroy the wrong art. That is a way to get a strong start[if score > 11], even if you aren't really starting any more[end if].";
+	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. You can't dunk on wrong stuff too much, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
 	up-min;
-	phbt wrong art;
+	moot wrong art;
 	the rule succeeds.
 
 chapter Cark Cliff
@@ -1515,13 +1518,13 @@ carry out woodoneing:
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense your destiny is to deal with the Very Vile Fairy File.". noway-text is "The Fairy File's presence makes you bump into walls figuratively. Let's not to so literally."
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now.". noway-text is "The Fairy File's presence makes you bump into walls figuratively. Let's not to so literally."
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
 	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
 
-the Bot Board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!"
+the Bot Board are plural-named people in Airy Isle. "[one of]A Bot Board stands here, impassive, emotionless, not looking for a fight but looking extremely hard to budge[or]The Bot Board stands here, unrattled[if lot lord is in airy isle or hot horde is in airy isle] despite your having summoned help[end if][stopping].". talk-text is "Meep, mate! Heap hate! Weep, wait!"
 
 chapter lotlording
 
@@ -1536,6 +1539,7 @@ understand "lot lord" as lotlording.
 carry out lotlording:
 	if Lot Lord is not off-stage, say "You already summoned the Hot Horde." instead;
 	up-reg;
+	move lot lord to airy isle;
 	say "The Lot Lord whirls in from above, only looking slightly stunned.";
 	check-gored-clue;
 	the rule succeeds.
@@ -1564,6 +1568,7 @@ carry out hothordeing:
 	if Hot Horde is not off-stage, say "You already summoned the Hot Horde." instead;
 	up-reg;
 	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
+	move hot horde to airy isle;
 	check-gored-clue;
 	the rule succeeds.
 
@@ -1595,26 +1600,6 @@ carry out gotgoreding:
 		say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry.";
 	the rule succeeds.
 
-chapter telltorning
-
-the well worn hell horn is a thing in Airy Isle. cht is leteq.
-
-instead of doing something with the well worn hell horn:
-	if action is procedural, continue the action;
-	say "It ... well, it looks used, but it still hasn't fallen apart.";
-
-telltorning is an action applying to nothing.
-
-understand the command "tell torn" as something new.
-
-understand "tell torn" as telltorning when well worn hell horn .
-
-carry out telltorning:
-	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born.";
-	moot well worn hell horn;
-	up-reg;
-	the rule succeeds.
-
 book go gate
 
 there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus.
@@ -1640,13 +1625,37 @@ understand "whoa wait" as whoawaiting when go gate is quicknear.
 understand "whoah wait" as whoawaiting when go gate is quicknear.
 
 carry out whoawaiting:
-	say "You decide not to run in right away. The gate crumbles.";
+	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.";
+	wfak;
+	move player to Tarry Tile;
 	up-reg;
+	now min-needed is score + 3;
+	now maximum score is score + 3;
 	the rule succeeds.
 
 part Tarry Tile 1,5
 
 Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]"
+
+chapter telltorning
+
+the well worn hell horn is a thing in Tarry Tile. cht is leteq. "A well worn hell horn balefully drones out hopeless noise that makes you feel why bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.".
+
+instead of doing something with the well worn hell horn:
+	if action is procedural, continue the action;
+	say "It ... well, it looks used, but it still hasn't fallen apart.";
+
+telltorning is an action applying to nothing.
+
+understand the command "tell torn" as something new.
+
+understand "tell torn" as telltorning when player is in tarry tile and well worn hell horn is in tarry tile.
+
+carry out telltorning:
+	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
+	moot well worn hell horn;
+	up-reg;
+	the rule succeeds.
 
 chapter Very Vile Fairy File
 
@@ -1688,7 +1697,10 @@ carry out merrymileing:
 		now merry-mile is true;
 		say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now." instead;
 	clue-later "MERRY MILE";
-	if player is in Airy Isle, say "Hard to be happy with the Bot Board around." instead;
+	if player is in Airy Isle:
+		if bot board is moot, say "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead." instead;
+		say "Hard to be happy with the Bot Board around." instead;
+	say "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though." instead;
 	the rule succeeds.
 
 chapter burybileing
@@ -1699,6 +1711,8 @@ understand the command "bury bile" as something new.
 
 understand "bury bile" as burybileing.
 
+bile-buried is a truth state that varies.
+
 carry out burybileing:
 	if player is in Tarry Tile:
 		if well worn hell horn is in Tarry Tile:
@@ -1707,19 +1721,23 @@ carry out burybileing:
 		if merry-mile is false:
 			clue-later "MERRY MILE";
 			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going." instead;
+		up-reg;
+		now bile-buried is true;
+		win-the-game;
+		say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
+		the rule succeeds;
 	clue-later "BURY BILE";
 	if player is in Airy Isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
 	if mrlp is Vale Verminous:
 		too-generic;
 		say "It must be about the right time. But you are not quite there, yet." instead;
 	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
-	if mrlp is Piddling Pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
-	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
-	up-reg;
-	win-the-game;
+	if mrlp is Piddling Pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!" instead;
+	say "This is a BUG that should not happen.";
 	the rule succeeds; [Larry Lyle, Wary Wile, Dare-y Dial, Perry Pyle, Gary Guile]
 
 to win-the-game:
+	[rejig-status;]
 	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
 		choose row with final response activity of showdeathsing in the Table of Final Question Options;
 		blank out the whole row;
@@ -2395,6 +2413,7 @@ the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wild weed is wild-weed-hint rule.
 the thing-hint-rule of worst wave is worst-wave-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
+the thing-hint-rule of prong part is prong-part-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
 
@@ -2582,6 +2601,10 @@ this is the wild-weed-hint rule:
 
 this is the worst-wave-hint rule:
 	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
+
+this is the prong-part-hint rule:
+	say "[one of]The prong part is part of the wrong art, so future clues will refer you there.[or][stopping]";
+	process the wrong-art-hint rule;
 
 this is the wrong-art-hint rule:
 	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
@@ -3028,9 +3051,14 @@ understand the command "climb clear" as something new.
 understand "climb clear" as climbclearing.
 
 carry out climbclearing:
-	if Airy Isle is visited, say "You're already in the endgame.";
+	if Airy Isle is visited, say "You're already in the endgame." instead;
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
+	now climb-clear is true;
+	now in-way-wronged is true;
+	now in-so-saded is true;
 	move player to Airy Isle;
+	now score is min-needed - 7;
+	now maximum score is min-needed;
 	the rule succeeds.
 
 volume map index

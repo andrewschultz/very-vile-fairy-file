@@ -13,6 +13,11 @@ chapter walkthrough
 test w1 with "get good/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
 test w1r with "get good/find fault/green grass/mash map/grow grit/mash map/flim flam/mind me/flim flam/big bag".
 
+chapter beta jump
+
+test cc1 with "climb clear/got gored/hot horde/got gored/lot lord/got gored/whoah wait/merry mile/tell torn/merry mile/bury bile".
+test cc2 with "bury bile/	climb clear/bury bile/got gored/lot lord/got gored/hot horde/got gored/woe wait/bury bile/tell torn/bury bile/merry mile/bury bile".
+
 volume odd property tests
 
 chapter talksing
