@@ -10,7 +10,8 @@ e1	e2	been-here	fake-name	death-trap
 --	--	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 --	--	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 --	--	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
-Airy Isle	down	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
+Airy Isle	west	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
+Airy Isle	east	false	"Hippy Hill"	"You are sure the Hippy Hill will be full of peace and love and goodness and be an appropriate end to all this ... until you hear noises. A drippy drill. Then you are caught by a grippy grill! You suddenly realize you lack ... skippy skill."
 Fun Fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
 Fun Fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
 Fun Fen	south	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']." [?? another bad place]
@@ -155,7 +156,7 @@ table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
-"BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the Beast Boss [in-here of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
+"BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the Beast Boss [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
 "FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if], but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
 "MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [if bash-not-mash is true]BASH BAP[else]MASH MAP[end if], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to FEEL FEAR [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
@@ -174,20 +175,20 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 
 [xx4l8r]
 
-this is the can-big-bag rule:
-	if Fun Fen is visited, the rule succeeds;
-	the rule fails.
-
-this is the did-big-bag rule:
-	if player has big bag, the rule succeeds;
+this is the did-beast-boss rule:
+	if Bull Beast is not off-stage, the rule succeeds;
 	the rule fails.
 
 this is the can-beast-boss rule:
 	if score > 32, the rule succeeds; [?? very bad]
 	the rule fails.
 
-this is the did-beast-boss rule:
-	if Bull Beast is not off-stage, the rule succeeds;
+this is the can-big-bag rule:
+	if Fun Fen is visited, the rule succeeds;
+	the rule fails.
+
+this is the did-big-bag rule:
+	if player has big bag, the rule succeeds;
 	the rule fails.
 
 this is the can-bury-bile rule:

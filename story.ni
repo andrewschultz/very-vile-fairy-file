@@ -431,11 +431,10 @@ understand the command "skim scam" as something new.
 understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
 
 carry out flimflaming:
-	now skim-not-flim is whether or not the player's command contains "skim";
+	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 	if me-minded is false:
 		clue-later "FLIM FLAM";
 		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit." instead;
-	if the player's command includes "skim", now skim-not-flim is true;
 	say "That does it! The tram moves off to a more open place...";
 	move the player to Fun Fen;
 	up-reg;
@@ -699,12 +698,12 @@ beastbossing is an action applying to nothing.
 
 understand the command "beast boss" as something new.
 
-understand "beast boss" as beastbossing.
+understand "beast boss" as beastbossing when player is in Creased Cross.
 
 carry out beastbossing:
 	if Bull Beast is not off-stage, say "You already did." instead;
 	if score < 32:
-		clue-hint "BEAST BOSS";
+		clue-later "BEAST BOSS";
 		say "You don't have the experience yet." instead;
 	up-reg;
 	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
@@ -766,7 +765,7 @@ carry out leastlossing:
 	if player is not in Creased Cross, say "Not here." instead;
 	if Bull Beast is off-stage:
 		clue-later "LEAST LOSS";
-		say "Not yet. You need to be in a fighting situation" instead;
+		say "Not yet. You need to be in a fighting situation." instead;
 	if least-loss is true, say "You already did." instead;
 	now least-loss is true;
 	up-reg;
@@ -1563,13 +1562,14 @@ understand the command "got gored" as something new.
 understand "got gored" as gotgoreding when player is in Airy Isle.
 
 carry out gotgoreding:
-	if Lot Lord is moot and Hot Horde is moot, say "You already told the battle cry." instead;
+	if Lot Lord is moot and Hot Horde is moot, say "You already inspired the Lot Lord and Hot Horde with the battle cry." instead;
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
-		say "YES! That's the cheer they need.";
+		say "YES! That's the cheer they need. The bot board is routed.[paragraph break]As things calm down, you realize a wry wall points you two ways, and there is now a go gate ahead! You must be close now.";
 		up-reg;
 		moot Hot Horde;
 		moot Lot Lord;
 		moot Bot Board;
+		wall-refresh;
 		the rule succeeds;
 	clue-later "GOT GORED";
 	if Hot Horde is in Airy Isle: [and Lot Lord is off-stage]
@@ -2111,6 +2111,7 @@ room-hint-rule of Got Gear Hot Here is got-gear-hot-here-hint rule.
 room-hint-rule of Here Hull is here-hull-hint rule.
 room-hint-rule of History Hall is history-hall-hint rule.
 room-hint-rule of Lake Lea is lake-lea-hint rule.
+room-hint-rule of Pit Pound is pit-pound-hint rule.
 room-hint-rule of Po' Pit is po-pit-hint rule.
 room-hint-rule of Real Rear is real-rear-hint rule.
 room-hint-rule of Shirk Shell is shirk-shell-hint rule.
@@ -2179,6 +2180,12 @@ this is the history-hall-hint rule:
 
 this is the lake-lea-hint rule:
 	the rule fails.
+
+this is the pit-pound-hint rule:
+	if hit hound is in pit pound:
+		say "The hit hound has your full attention here.";
+		try hintobjing hit hound instead;
+	say "[one of]The pit pound still leaves you uncomfortable[or]Like you don't belong here[or]FIT FOUND[stopping]."
 
 this is the po-pit-hint rule:
 	if grit-grown is false:
@@ -2286,6 +2293,7 @@ section thing hint rule definitions
 
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
+the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of big bag is the big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
@@ -2301,6 +2309,7 @@ the thing-hint-rule of gold guard is gold-guard-hint rule.
 the thing-hint-rule of good gun is good-gun-hint rule.
 the thing-hint-rule of GOTS GAME is gots-game-hint rule.
 the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
+the thing-hint-rule of hit hound is the hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hold Hard is hold-hard-hint rule.
 the thing-hint-rule of Hot Horde is bot-board-hint rule.
@@ -2330,13 +2339,13 @@ the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of Very Vile Fairy File is the very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
+the thing-hint-rule of wild weed is wild-weed-hint rule.
 the thing-hint-rule of worst wave is worst-wave-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
 
 [
-the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Bull Beast is bull-beast-hint rule.
 the thing-hint-rule of hard hat is hard-hat-hint rule.
 the thing-hint-rule of Jake G is jake-g-hint rule.
@@ -2347,7 +2356,6 @@ the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of moral mage is moral-mage-hint rule.
 the thing-hint-rule of silly sign is silly-sign-hint rule.
 the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
-the thing-hint-rule of wild weed is wild-weed-hint rule.
 the thing-hint-rule of go gate is go-gate-hint rule.
 the thing-hint-rule of grow grate is grow-grate-hint rule.
 ]
@@ -2355,6 +2363,9 @@ the thing-hint-rule of grow grate is grow-grate-hint rule.
 [??styled steed]
 
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
+
+this is the backed-binder-hint rule:
+	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
 
 this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
@@ -2412,6 +2423,9 @@ this is the gots-game-hint rule:
 
 this is the gutta-ganksta-hint rule:
 	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
+
+this is the hit-hound-hint rule:
+	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
 
 this is the hive-heap-hint rule:
 	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
@@ -2509,6 +2523,9 @@ this is the very-vile-fairy-file-hint rule:
 
 this is the well-worn-hell-horn-hint rule:
 	say "[one of]The well worn hell horn seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
+
+this is the wild-weed-hint rule:
+	say "[one of]The point for the wild weed is truly optional and recreational and slang-based[or]There's one place that makes you feel nervous, but you can relax[or]The wild weed may help at Cark Cliff[or]You can SPARK SPLIFF[stopping]."
 
 this is the worst-wave-hint rule:
 	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
@@ -2643,7 +2660,9 @@ when play begins (this is the opening text rule):
 
 when play begins (this is the backdrop and score seeding rule):
 	seed-score-list; [this is in the table file]
-	move the wry wall backdrop to all signable rooms;
+	wall-refresh;
+
+to wall-refresh: move the wry wall backdrop to all signable rooms;
 
 section when play begins - not for release
 
@@ -2812,11 +2831,13 @@ carry out fitfounding:
 
 book go gate
 
-there is a thing called the go gate. the grow grate is part of the go gate.
+there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus.
 
 check entering go gate:
-	say "Too fast. Boom! A hidden grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
+	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
+
+the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is letboth.
 
 chapter whoawaiting
 
@@ -2999,7 +3020,7 @@ index map with Erst Lore mapped south of Got Gear Hot Here.
 
 section endrooms
 
-index map with Tarry Tile mapped east of Airy Isle.
+index map with Tarry Tile mapped north of Airy Isle.
 
 chapter merrymileing
 
@@ -3029,7 +3050,7 @@ section altrooms
 index map with Vending Vibe mapped south of Po' Pit.
 index map with Curst Cave mapped south of Vined Vault.
 
-section nonrooms
+section metarooms [these are need to go somewhere]
 
 index map with Gazy Gap mapped south of Trim Tram.
 index map with Hidey House mapped west of Gazy Gap.

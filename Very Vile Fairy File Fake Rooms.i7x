@@ -4,7 +4,7 @@ Version 1/181111 of Very Vile Fairy File Fake Rooms by Andrew Schultz begins her
 
 volume stuff to tinker with I mean with which to tinker
 
-chapter fake rooms to define
+chapter fake rooms to define [xxfakes]
 
 Bold 'n Brave is a room in Poorly Penned.
 Capped Cone is a room in Poorly Penned.
@@ -15,6 +15,7 @@ Fate Farm is a room in Poorly Penned.
 Faun Fen is a room in Poorly Penned.
 Fortune Funnel is a room in Poorly Penned.
 Happy Hall is a room in Poorly Penned.
+Hippy Hill is a room in Poorly Penned.
 Hopping Hills is a room in Poorly Penned.
 Lit Lawn is a room in Poorly Penned.
 
@@ -25,6 +26,7 @@ index map with Fate Farm mapped east of Fun Fen.
 index map with Done Dune mapped east of Whining War.
 index map with Fast Foi'd mapped south of Whining War.
 index map with Happy Hall mapped west of Airy Isle.
+index map with Hippy Hill mapped east of Airy Isle.
 
 chapter fake rooms in limbo
 

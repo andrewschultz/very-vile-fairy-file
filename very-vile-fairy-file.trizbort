@@ -12,7 +12,7 @@
 		<room id="6" name="History Hall / Mystery Mall" subtitle="" x="-128" y="32" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="8" name="Gassed Gap / Last Lap" subtitle="" x="32" y="-352" w="96" h="64" region="Vale Verminous" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="9" name="Soft Sand / Loft Land" subtitle="" x="32" y="-96" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="10" name="Tarry Tile / Merry Mile" subtitle="" x="192" y="-480" w="96" h="64" region="Vale Verminous" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="10" name="Tarry Tile / Merry Mile" subtitle="" x="32" y="-608" w="96" h="64" region="Vale Verminous" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" isEndRoom="yes" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="11" name="" description="" style="dashed">
 			<dock index="0" id="8" port="n" />
 			<dock index="1" id="19" port="s" />
@@ -117,8 +117,8 @@
 			<dock index="1" id="27" port="w" />
 		</line>
 		<line id="50" name="" description="" style="dashed">
-			<dock index="0" id="19" port="e" />
-			<dock index="1" id="10" port="w" />
+			<dock index="0" id="19" port="n" />
+			<dock index="1" id="10" port="s" />
 		</line>
 		<room id="52" name="Here Hull" subtitle="" x="192" y="-96" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Beer Bull|(Dear Dull/Fearful)</objects>
@@ -162,9 +162,14 @@
 			<dock index="0" id="54" port="s" />
 			<dock index="1" id="62" port="n" />
 		</line>
-		<room id="23" name="Grit Ground" subtitle="" x="480" y="-480" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+		<room id="23" name="Grit Ground" subtitle="" x="512" y="-480" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Hit Hound</objects>
 		</room>
+		<room id="51" name="Hippy Hill" subtitle="" x="192" y="-480" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="64" name="" description="" startText="up" endText="down">
+			<dock index="0" id="19" port="e" />
+			<dock index="1" id="51" port="w" />
+		</line>
 	</map>
 	<settings>
 		<colors>
