@@ -1,5 +1,4 @@
 
-## maximum walkthrough
 This is a full walkthrough for Very Vile Fairy File. It details all bonus points.
 
 You can do something with the zigzag rig rag, but not right away. You don't want to be carrying it through the wet wood. In fact, it may help give you clues if you look at it.
@@ -23,6 +22,8 @@ Now, ugh! The trash trap is so odious. You don't have the guts. Something about 
 You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
 
 > MASH MAP (5)
+
+An alternative here would be to BASH BAP, which is obscure but still sensible.
 
 Woohoo! You made it through, and now you need to fake your way into (not really) paying for a trip on the Trim Tram.
 
@@ -250,27 +251,67 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
+Now here's what you need to do with the snake.
+
+> SNAKE SNAP (38)
+
+And now you can focus on the map.
+
+> MAKE MAP (39)
+
+The Beer Bull in Here Hull is a potential ally.
+
+> FEARFUL (40)
+
+> W
+
+> S
+
+> E
+
+> E
+
+Now to dispose of the whining war, once and for all!
+
+> DEAR DULL (41)
+
+That does it for the beer. Now for the food!
+
+> DINING DOOR (42)
+
+And now you can see if there is anything under.
+
+> MINING MORE (43)
+
+Now the Pit Pound has two things you need to do. First, deal with the Hit Hound. It can smell fear!
+
+> SIT SOUND (44)
+
+Now, feel more comfortable.
+
+> FIT FOUND (45)
+
 When around someone or something you need to calm down...
 
-> SO SAPPIN (38)
+> SO SAPPIN (46)
 
-> WILD WEED (39)
-
-> W
+> WILD WEED (47)
 
 > W
 
-> SPARK SPLIFF (40)
+> W
+
+> SPARK SPLIFF (48)
 
 ============================END UNIMPLEMENTED MIDDLEGAME============================
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
 
-> BEAST BOSS (48)
+> BEAST BOSS (49)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (49)
+> LEAST LOSS (50)
 
 This hurt, and you need to figure a way to get back to full strength.
 
@@ -278,7 +319,7 @@ This hurt, and you need to figure a way to get back to full strength.
 
 > S
 
-> HEAL HERE (50)
+> HEAL HERE (51)
 
 > N
 
@@ -286,11 +327,11 @@ This hurt, and you need to figure a way to get back to full strength.
 
 Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
 
-> CULL CEASED (51)
+> CULL CEASED (52)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (52)
+> FULL FEAST (53)
 
 Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
 
@@ -298,21 +339,21 @@ Now you sense you must be close. But how do you get anyone's attention?
 
 Your cool cap is useful here.
 
-> CAST CAP (53)
+> CAST CAP (54)
 
 You need to dispose of Reeker Russell and his good gun.
 
 There's an LLP in here. Let's pretend to make Russell dorkier.
 
-> BEAKER BUSTLE (54)
+> BEAKER BUSTLE (55)
 
 Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (54)
+> MEEKER MUSCLE (56)
 
 And the good gun can go lame.
 
-> WOOD ONE (55)
+> WOOD ONE (57)
 
 Now you are free to go north.
 
@@ -320,28 +361,34 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (56)
+> HOT HORDE (58)
 
 Okay, you need leadership too.
 
-> LOT LORD (57)
+> LOT LORD (59)
 
 Finally, you need a stirring battle cry.
 
-> GOT GORED (58)
+> GOT GORED (60)
+
+Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
+
+> WHOAH WAIT (61)
+
+You can also say WHOA WAIT or WOE WAIT for full credit.
 
 Here in Tarry Tile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
 And the airy isle still feels woeful. That well worn hell horn!
 
-> TELL TORN (59)
+> TELL TORN (62)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (60)
+> MERRY MILE (63)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (61)
+> BURY BILE (64)
 
 Congratulations. You win! I hope you enjoyed this.

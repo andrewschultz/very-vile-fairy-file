@@ -3,7 +3,8 @@
 #--main branch file for Very Vile Fairy File walkthroughs
 #--  (there are only two, really. Full points, or minimum points.)
 #--
-#--command usage: rbr.py wbase.txt
+#--command usage to regenerate walkthroughs after modifying this: rbr.py wbase.txt
+#
 
 #the postproc says to insert the two commands where you get tired after X points
 postproc=wdrop.py
@@ -37,6 +38,8 @@ Now, ugh! The trash trap is so odious. You don't have the guts. Something about 
 You notice that at the start, it's -- well, laid out. What do you call those things that show what's where?
 
 > MASH MAP (1)
+
+An alternative here would be to BASH BAP, which is obscure but still sensible.
 
 Woohoo! You made it through, and now you need to fake your way into (not really) paying for a trip on the Trim Tram.
 
@@ -256,6 +259,46 @@ The screaming skull is annoying. You'll have to deal with it first.
 
 ===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
 
+Now here's what you need to do with the snake.
+
+> SNAKE SNAP (1)
+
+And now you can focus on the map.
+
+> MAKE MAP (1)
+
+The Beer Bull in Here Hull is a potential ally.
+
+> FEARFUL (1)
+
+> W
+
+> S
+
+> E
+
+> E
+
+Now to dispose of the whining war, once and for all!
+
+> DEAR DULL (1)
+
+That does it for the beer. Now for the food!
+
+> DINING DOOR (1)
+
+And now you can see if there is anything under.
+
+> MINING MORE (1)
+
+Now the Pit Pound has two things you need to do. First, deal with the Hit Hound. It can smell fear!
+
+> SIT SOUND (1)
+
+Now, feel more comfortable.
+
+> FIT FOUND (1)
+
 When around someone or something you need to calm down...
 
 > SO SAPPIN (1)
@@ -273,11 +316,15 @@ When around someone or something you need to calm down...
 
 Now in Creased Cross, you are ready to take on the Beast Boss.
 
-> BEAST BOSS (x-13)
+##this will be deleted later once the walkthrough is complete. But I want to keep it for now, to verify the point totals for the partial walkthrough aren't off.
+==t1
+> BEAST BOSS (x-15)
+==!
+> BEAST BOSS (x-14)
 
 It will take something from you. But you don't know what!
 
-> LEAST LOSS (x-12)
+> LEAST LOSS (1)
 
 This hurt, and you need to figure a way to get back to full strength.
 
@@ -285,7 +332,7 @@ This hurt, and you need to figure a way to get back to full strength.
 
 > S
 
-> HEAL HERE (x-11)
+> HEAL HERE (1)
 
 > N
 
@@ -293,11 +340,11 @@ This hurt, and you need to figure a way to get back to full strength.
 
 Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
 
-> CULL CEASED (x-10)
+> CULL CEASED (1)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (x-9)
+> FULL FEAST (1)
 
 Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
 
@@ -305,22 +352,22 @@ Now you sense you must be close. But how do you get anyone's attention?
 
 Your cool cap is useful here.
 
-> CAST CAP (x-8)
+> CAST CAP (1)
 
 You need to dispose of Reeker Russell and his good gun.
 ==t1
 \\
 There's an LLP in here. Let's pretend to make Russell dorkier.
 \\
-> BEAKER BUSTLE (x-7)
+> BEAKER BUSTLE (1)
 
 Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (x-7)
+> MEEKER MUSCLE (1)
 
 And the good gun can go lame.
 
-> WOOD ONE (x-6)
+> WOOD ONE (1)
 
 Now you are free to go north.
 
@@ -328,28 +375,34 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (x-5)
+> HOT HORDE (1)
 
 Okay, you need leadership too.
 
-> LOT LORD (x-4)
+> LOT LORD (1)
 
 Finally, you need a stirring battle cry.
 
-> GOT GORED (x-3)
+> GOT GORED (1)
+
+Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
+
+> WHOAH WAIT (1)
+
+You can also say WHOA WAIT or WOE WAIT for full credit.
 
 Here in Tarry Tile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
 And the airy isle still feels woeful. That well worn hell horn!
 
-> TELL TORN (x-2)
+> TELL TORN (1)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (x-1)
+> MERRY MILE (1)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (x)
+> BURY BILE (1)
 
 Congratulations. You win! I hope you enjoyed this.
