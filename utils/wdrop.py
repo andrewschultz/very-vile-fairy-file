@@ -18,11 +18,13 @@ min_full_score = 0
 
 out_read_only = True
 delete_after = False #It's ok to have this, since we don't copy over the pre-files to the source control directory
+verbose = True
 
 def usage(cmd="USAGE LIST"):
     print(cmd)
     print("=" * 50)
     print("-d/-da = delete after, -nd/-dn = don't")
+    print("-v = verbose")
     exit()
 
 def first_line(txt):
@@ -92,6 +94,7 @@ cmd_count = 1
 while cmd_count < len(sys.argv):
     arg = sys.argv[cmd_count].lower()
     if arg[0] == '-': arg = arg[1:]
+    if arg == 'v': verbose = True
     if arg == 'd' or arg == 'da': delete_after = True
     elif arg == 'dn' or arg == 'nd': delete_after = True
     elif arg == '?': usage()

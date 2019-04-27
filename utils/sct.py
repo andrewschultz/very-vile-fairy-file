@@ -27,6 +27,8 @@ max_line = 0
 max_sco = 0
 min_sco = 0
 
+verbose = False
+
 show_nec = False
 show_opt = False
 
@@ -151,12 +153,16 @@ def check_walkthrough(my_file, is_opt):
                 my_cmd = re.sub(" *\(.*", "", line.strip().lower())
                 my_cmd = re.sub("^> *", "", my_cmd)
                 got_thru[my_cmd] = line_count
-    print_here_not(got_detail["nec"], got_thru, "Necessary-source-not-walkthrough")
-    if is_opt: print_here_not(got_detail["opt"], got_thru, "Optional-source-not-walkthrough")
+    print_here_not(got_detail["nec"], got_thru, "In source but not walkthrough")
+    if is_opt: print_here_not(got_detail["opt"], got_thru, "Optional LLP commands in source but not walkthrough")
     temp = defaultdict(int)
     for q in got_detail["opt"]: temp[q] = 1
     for q in got_detail["nec"]: temp[q] = 2
-    print_here_not(got_thru, temp, "Walkthrough-not-source")
+    print_here_not(got_thru, temp, "Commands in walkthrough but not source")
+    if not is_opt:
+        temp = [x for x in got_thru.keys() if x in got_detail["opt"].keys()]
+        if len(temp):
+            print("Optional command{:s} in streamlined walkthrough:".format(i7.plur(len(temp))), ", ".join(sorted(temp)))
     #print(len(sorted(got.keys())), sorted(got.keys()))
     #print(len(sorted(got_thru.keys())), sorted(got_thru.keys()))
     #print(sorted(got.keys()))
@@ -165,7 +171,10 @@ def pointup_type(l, ru):
     if not l.startswith("\t"): return ''
     if 'check-russell-go' in l: return 'nec'
     if 'reg-up' in l or 'min-up' in l: return 'bug'
-    if 'up-reg' in l and 'check-russell-go' not in ru: return 'nec'
+    if 'up-reg' in l:
+        if 'check-russell-go' in ru: return ''
+        if 'opt' in l: return ''
+        return 'nec'
     if 'up-min' in l: return 'opt'
     return ''
 
@@ -206,6 +215,7 @@ def check_points():
                 continue
             score_idx = pointup_type(line, this_rule)
             if score_idx:
+                if verbose and score_idx == 'nec': print(">", last_cmd.upper())
                 if "[!" in line: #force last command
                     last_cmd = re.sub(".*\[!", "", line.strip())
                     last_cmd = re.sub("\].*", "", last_cmd)
@@ -224,6 +234,7 @@ def read_cmd_line():
     global show_nec
     global show_opt
     global open_source_post
+    global verbose
     cmd_count = 1
     while cmd_count < len(sys.argv):
         arg = sys.argv[cmd_count]
@@ -240,6 +251,7 @@ def read_cmd_line():
             show_nec = False
             show_opt = False
         elif arg == 'u': update = True
+        elif arg == 'v': verbose = True
         elif arg == 'nu' or arg == 'un': update = False
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
