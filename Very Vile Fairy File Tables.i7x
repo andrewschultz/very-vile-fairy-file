@@ -10,11 +10,11 @@ e1	e2	been-here	fake-name	death-trap
 --	--	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 --	--	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 --	--	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
+--	--	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']."
 Airy Isle	west	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
 Airy Isle	east	false	"Hippy Hill"	"You are sure the Hippy Hill will be full of peace and love and goodness and be an appropriate end to all this ... until you hear noises. A drippy drill. Then you are caught by a grippy grill! You suddenly realize you lack ... skippy skill."
 Fun Fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
 Fun Fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
-Fun Fen	south	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible tauntin['] and conkin[']." [?? another bad place]
 Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Soft Sand	up	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
 Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL."
@@ -26,7 +26,7 @@ rank-max	rank-name
 0	"cold cod"
 7	"lol'd, lawd" [this is defined because I want to trigger a rank gain at the Fun Fen]
 --	"FLOL'd, flawed" [false laugh out loud]
---	"old, awed"
+--	"mold-mawed"
 --	"holed, hawed"
 --	"bowled, bah'd"
 --	"sold sod"
@@ -34,6 +34,7 @@ rank-max	rank-name
 --	"told, tawed" [tawed = when an animal hide is beaten]
 --	"th'old thawed"
 --	"polled, pawed"
+--	"shoaled, shod"
 --	"scrolled scrod"
 --	"trolled, trod"
 --	"mold-mod"
@@ -78,9 +79,14 @@ to say your-rank:
 table of understands
 mytxt (topic)	myloc	myrule	myexp
 "big" or "bag"	--	got-rig-rag rule	"Yes, the zig zag rig rag could be something else."
-"find" or "fault"	Vined Vault	--	"Hmm! That is interesting."
+"find" or "fault"	--	vault-no-mass rule	"Hmm! That is interesting."
 "get" or "good"	Wet Wood	a rule	"You almost felt like you were able to find your way around."
+"vine" or "vines"	Vined Vault	--	"Any vines aren't particularly important, here. You need to pay attention to the [if mean mass is in vined vault]mean mass[else]whole vault[end if]."
 "wet" or "wood"	Wet Wood	--	"You need to do something like Wet Wood. But it can't be either."
+
+this is the vault-no-mass rule:
+	if player is in vined vault and mean mass is off-stage, the rule succeeds;
+	the rule fails;
 
 this is the got-rig-rag rule:
 	if player has zig zag rig rag, the rule succeeds;

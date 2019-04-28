@@ -52,8 +52,6 @@ understand "passed pap" and "past pap" as a mistake ("You don't need to look bac
 
 chapter Po' Pit mistakes
 
-understand "bash bap" as a mistake ("Maybe a bit of violence is good, but you'll need to be more specific.") when player is in Po' Pit.
-
 understand "crash crap" as a mistake ("Profanity isn't necessary, here. Even minor ones.") when player is in Po' Pit.
 
 understand "go get" and "go git" as a mistake ("You have no-one to order around, not that it'd do any good.") when player is in Po' Pit.

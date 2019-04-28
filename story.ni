@@ -77,6 +77,12 @@ climb-clear is a truth state that varies. [ did the beta tester jump ahead until
 
 section scoring stuff
 
+to say hc: say "ch"
+
+to say email: say "blurglecrun[hc]eon@gmail.com"
+
+to say gh: say "https://github.com/andrews[hc]ultz/very-vile-fairy-file (currently private)"
+
 the maximum score is 64.
 
 min-needed is a number that varies. min-needed is 56.
@@ -289,7 +295,7 @@ carry out getgooding:
 
 part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here. You need to think up a safe way out.". cht is partminus.
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht is partminus.
 
 chapter findfaulting
 
@@ -302,14 +308,14 @@ understand "find fault" as findfaulting when player is in Vined Vault.
 carry out findfaulting:
 	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
 	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
-	say "[line break]But of course something outside was guarding the vault, just waiting to walk in. A mean mass.";
+	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass now blocks your way out!";
 	move mean mass to Vined Vault;
 	up-reg;
 	the rule succeeds.
 
 chapter mean mass
 
-The mean mass is a thing. "The mean mass continues to pulse and block the way out of the Vined Vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally.". cht is letplus.
+The mean mass is a thing. "The mean mass continues to pulse and block the way out of the Vined Vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally, too dangerous to walk through.". cht is letplus.
 
 chapter greengrassing
 
@@ -334,7 +340,7 @@ the row writ is scenery in Po' Pit. "[if grit-grown is true]It doesn't seem to b
 
 the trash trap is a scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht is letminus.
 
-the cache cap is a thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is true]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht is partminus.
+the cache cap is a thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht is partminus.
 
 the gash gap is scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht is leteq.
 
@@ -372,7 +378,7 @@ carry out mashmaping:
 	if grit-grown is false:
 		clue-later "MASH MAP";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be." instead;
-	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap.";
+	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
 	up-reg;
 	move player to Trim Tram;
 	the rule succeeds.
@@ -389,7 +395,7 @@ grit-grown is a truth state that varies.
 
 carry out growgriting:
 	if grit-grown is true, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain." instead;
-	say "The trash trap looks less yucky now.";
+	say "The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
 	now grit-grown is true;
 	phbt row writ;
 	phbt Po' Pit;
@@ -398,7 +404,7 @@ carry out growgriting:
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht is leteq.
+Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht is leteq.
 
 FIND FEE is scenery in Trim Tram. cht is partplus.
 
@@ -475,21 +481,23 @@ instead of doing something with tall tree:
 
 section hive heap
 
-the hive heap is a thing. cht is leteq. "The hive heap that was released with the tall tree fell is here. There's got to be a way to look through it."
+the hive heap is a thing. cht is leteq. "The hive heap that was released with the tall tree fell is here. There's got to be a way to look through it.". description is "The hive heap seems like it may be hiding something below the surface, but how best to attack it?"
 
 check taking hive heap: say "You might not get stung, but it's too unwieldy to carry[if player has big bag], even with your big bag[end if]." instead;
 
 section vapor vile
 
-the vapor vile is a thing. cht is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it."
+the vapor vile is a thing. cht is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it.". description is "The vapor vile is noxious, so you can't get too near it. But perhaps if it condensed into a solid, you could deal with it more easily.".
 
-check taking vapor vile: say "It's too ethereal to take," instead;
+check taking vapor vile: say "It's too ethereal to take." instead;
 
 section paper pile
 
 the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht is partplus.
 
 check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
+
+understand "fact/finder" and "fact finder" as backed binder.
 
 section backed binder
 
@@ -546,7 +554,7 @@ understand "fall free" as freefalling.
 
 carry out freefalling:
 	if tree-down is true, say "You don't need the tree to fall any further." instead;
-	say "The tree, already tipping over the cliff, leans and ... falls over. You can go north across it now. Also, a hive heap falls from the tree and lands nearby.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
+	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
 	now tree-down is true;
 	phbt tall tree;
 	move hive heap to Fun Fen;
@@ -595,6 +603,7 @@ carry out backedbindering:
 	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you![paragraph break]Hmm, that was a bit tricker. BACKED and FACT rhyme, but the letters are different.";
 	now player has backed binder;
 	up-reg;
+	phbt paper pile;
 	the rule succeeds.
 
 part Real Rear 0,-1
@@ -1845,6 +1854,8 @@ to say tat: now thought-any is true;
 
 ever-thought is a truth state that varies.
 
+[the block thinking rule is not listed in any rulebook.]
+
 instead of thinking:
 	let thought-any be false;
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
@@ -1864,7 +1875,6 @@ instead of thinking:
 		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
 	if number of optional-noted things > 0:
 		say "You also know several things that are optional to figure out: [list of optional-noted things].";
-	the rule succeeds;
 
 to decide whether tried-yet of (ct - text):
 	let tried-any be false;
@@ -2045,7 +2055,9 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "PUT CREDITS HERE.";
+	say "PUT TESTING CREDITS HERE.";
+	say "Thanks to github for hosting private repositories that helped keep VVFF hidden.";
+	say "Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	the rule succeeds;
 
 chapter abouting
@@ -2416,6 +2428,8 @@ the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of prong part is prong-part-hint rule.
 the thing-hint-rule of wry wall is the wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
+the thing-hint-rule of go gate is go-gate-hint rule.
+the thing-hint-rule of grow grate is grow-grate-hint rule.
 
 [
 the thing-hint-rule of Bull Beast is bull-beast-hint rule.
@@ -2428,13 +2442,18 @@ the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of moral mage is moral-mage-hint rule.
 the thing-hint-rule of silly sign is silly-sign-hint rule.
 the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
-the thing-hint-rule of go gate is go-gate-hint rule.
-the thing-hint-rule of grow grate is grow-grate-hint rule.
 ]
 
 [??styled steed]
 
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
+
+this is the go-gate-hint rule:
+	say "[one of]You want to go through the go gate, but you need to show a bit of caution[or]LO LATE doesn't quite cut it, here[or]You can also scan the component part, the grow grate, for maybe a bit of help[or]WHOAH WAIT, or any of three alternate spellings, works[stopping].";
+
+this is the grow-grate-hint rule:
+	say "[one of]Since the grow grate is part of the go gate, and they rhyme, they make the same puzzle.[or][stopping]";
+	process the go-gate-hint rule;
 
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
@@ -3021,7 +3040,7 @@ Rule for printing a parser error (this is the clue half right words rule):
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
-	say "You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.";
+	say "You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.";
 
 [see header file for table of understands]
 
