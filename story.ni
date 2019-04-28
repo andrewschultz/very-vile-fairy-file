@@ -3058,8 +3058,26 @@ when play begins (this is the force tester wherever rule):
 		try switching the story transcript on;
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
 	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
 	continue the action;
+
+chapter tricktriping
+
+tricktriping is an action applying to nothing.
+
+understand the command "slick slip" as something new.
+understand the command "trick trip" as something new.
+
+understand "slick slip" as tricktriping.
+understand "trick trip" as tricktriping.
+
+carry out tricktriping:
+	if fun fen is visited or airy isle is visited, say "You're already past the intro." instead;
+	process the any-warp rule;
+	say "You utter a, uh, QUICK QUIP. Your surroundings change.";
+	now score is 7;
+	move player to fun fen;
+	the rule succeeds.
 
 chapter climbclearing
 
@@ -3069,8 +3087,15 @@ understand the command "climb clear" as something new.
 
 understand "climb clear" as climbclearing.
 
+any-beta-warp is a truth state that varies.
+
+this is the any-warp rule:
+	if any-beta-warp is true, say "You already used a Beta testing warp." instead;
+	now any-beta-warp is true;
+
 carry out climbclearing:
 	if Airy Isle is visited, say "You're already in the endgame." instead;
+	process the any-warp rule;
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
 	now climb-clear is true;
 	now in-way-wronged is true;

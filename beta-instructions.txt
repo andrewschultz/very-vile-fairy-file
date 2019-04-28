@@ -1,12 +1,18 @@
-Currently the main focus should be to get through the introduction.
+Currently the main focus should be to get through the introduction. If you already have and want to try other areas, then the beta commands the binary tells you can help to poke at other things. The endgame has highest priority, since it is stable, but the post-intro area's first two rooms are worth looking at.
 
-It might be a bit long. What puzzles seem to work best? I think I can repurpose some to another place if need be. I originally meant the puzzles as an introduction to the game mechanics and variants on it, but that was before I had the hint item.
+There's no way to complete the game straight-up yet. I'm still not sure which puzzles should go where. But I think there is enough for a tester to work with.
 
-Also, how intuitive is the hint item?
+So here are my main questions:
 
-If you get through to the Fen, that is great and will give me enough to work with. Beyond that is speculative, but have fun if you want. The most useful place to look at is south. There are three things to do--one won't work until later.
+The introduction feels a bit long. What puzzles seem to work best? I think I can repurpose some to another place if need be. I originally meant the puzzles as an introduction to the game mechanics and variants on it, but that was before I had the hint item.
 
-However, there is also a puzzle to go north of the Fun Fen. It's pretty stable, so if you are able to wrestle with that, that would be a help. It also creates two more puzzles.
+I also am interested in good tries. I have a way to make parser errors give hints, so any good tries you think up--even if they seem trollish--can be added easily. I'd rather have you ask for too much than too little help.
+
+Also, how intuitive is the hint item? I want it to be a nice challenge to figure out, but not too critical.
+
+If you get through to the Fen, that is great and will give me enough to work with. Beyond that is speculative, but have fun if you want. The most useful place to look at is south. There are three things to do--one won't work until later. The Fen also got rearranged, so some descriptions may seem odd or wrong. It's not you, it's me, and I need to fix that.
+
+There is also a puzzle to go north of the Fun Fen. It's pretty stable, so if you are able to wrestle with that, that would be a help. It also creates two more puzzles which don't fit into the full walkthrough yet, but they're worth poking around at.
 
 Another useful thing to do is try for an optional point in Fun Fen. There are two, but one (the cliff) is obscure and needs an item for later.
 
