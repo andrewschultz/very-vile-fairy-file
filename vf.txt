@@ -1,0 +1,54 @@
+out=very-vile-fairy-file-invisiclues.htm
+!Very Vile Fairy File HTML Clues
+->c:/games/inform/very-vile-fairy-file Materials/Release
+==end header
+>INTRODUCTION
+>>WET WOOD
+?What do I do here?
+Regular directions don't work.
+?What do I do with the zigzag rig rag?
+You can change it, but it might hold you back while you're trying to find your way through.
+If you find the right thing, the game will reject your command and file it away for later.
+The theme of the game is alliterative rhymes.
+It can become a...
+BIG BAG.
+?What is the Leet Learner for?
+It is also a CHEAT CHURNER.
+You may notice different colors written on it.
+You can use it to get hints about what sort of letter/pronunciation swaps you need to make.
+Blue means you need to add letters to both words (CONCEIT CONCERNER).
+Green means you add a letter to one word (CHEAT CHURNER).
+Yellow is neutral. (FEAT FURR'NER).
+Orange means you need to subtract, partially (BEAT BURNER).
+Red means you need to subtract letters from two words (EAT EARNER).
+Brown means you need to add one letter and subtract another (TREAT TURNER).
+>>VINED VAULT
+?I'm perfectly trapped! What to do?
+Look for a weakness.
+FIND FAULT.
+?The mean mass is in my way!
+It's so unnatural and inorganic.
+Make it into something less intimidating...
+GREEN GRASS.
+>>TRIM TRAM
+?How can I find a fee? Or stop worrying?
+Look into yourself.
+MIND ME.
+?How do I get going now that I'm calm?
+What rhymes alliteratively with trim tram?
+FLIM FLAM.
+Alternatively, SKIM SCAM.
+>MIDDLEGAME
+>>FUN FEN
+?How I go back in the Done Den?
+You can't, and you don't need to.
+>ENDGAME
+>>LAST LAP
+?How do I get by Wreaker Russell?
+There are two things you need to do.
+Disarm him and decrease his physique.
+The good gun is easiest to deal with.
+What if it was made out of something not so good for shooting?
+WOOD ONE.
+Now what if Russell were not so strong?
+MEEKER MUSCLE.
