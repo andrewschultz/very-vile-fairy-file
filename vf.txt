@@ -2,7 +2,7 @@ out=very-vile-fairy-file-invisiclues.htm
 !Very Vile Fairy File HTML Clues
 ->c:/games/inform/very-vile-fairy-file Materials/Release
 ==end header
->INTRODUCTION
+>WORST WHEW
 >>WET WOOD
 ?What do I do here?
 Regular directions don't work.
@@ -18,7 +18,7 @@ You may notice different colors written on it.
 You can use it to get hints about what sort of letter/pronunciation swaps you need to make.
 Blue means you need to add letters to both words (CONCEIT CONCERNER).
 Green means you add a letter to one word (CHEAT CHURNER).
-Yellow is neutral. (FEAT FURR'NER).
+Yellow is neutral. (MEET MOURNER).
 Orange means you need to subtract, partially (BEAT BURNER).
 Red means you need to subtract letters from two words (EAT EARNER).
 Brown means you need to add one letter and subtract another (TREAT TURNER).
@@ -30,19 +30,63 @@ FIND FAULT.
 It's so unnatural and inorganic.
 Make it into something less intimidating...
 GREEN GRASS.
+>>PO' PIT
+?Why am I discouraged by the trash trap?
+You need to deal with the whole room first.
+?What's the row writ for?
+It can boost your confidence.
+It fits in with the Po' Pit.
+GROW GRIT.
+?Okay, now I have confidence, how do I get past the trash trap?
+The cache cap is a bit ... off.
+If you use the learner on it, it is only partially negative (orange,) but the trash trap is fully negative (red.) That means one word is "cap" and another is less than five letters.
+Also, the gash gap is yellow. So that's four and three letters.
+MASH MAP works. BASH BAP is an alternate.
 >>TRIM TRAM
 ?How can I find a fee? Or stop worrying?
 Look into yourself.
 MIND ME.
 ?How do I get going now that I'm calm?
 What rhymes alliteratively with trim tram?
-FLIM FLAM.
+FLIM FLAM. One or two words.
 Alternatively, SKIM SCAM.
->MIDDLEGAME
+>PIDDLING PAIN
 >>FUN FEN
 ?How I go back in the Done Den?
 You can't, and you don't need to.
->ENDGAME
+?Can I go north?
+Yes. You need to solve a puzzle.
+?What is the tall tree for?
+It could provide a passage over the more treacherous parts of the fen.
+Have you played Trinity? Do you remember what a tree did?
+Of course, you can just note a rhyme, too...
+FALL FREE.
+?What is the deal with going east or west?
+They are joke death rooms.
+I hope they are funny jokes.
+>>REAL REAR
+?Can I enter the Sage Sea?
+Not with directional commands.
+You need to show wisdom, and it will part and open for you.
+After that, you don't need it.
+?What is the significance of the steel steer and peeling pier and ceiling seer?
+Just to make it clear what the rhymes should be.
+They also provide an alternate solution, with "-ing" at the end.
+Also, you need something watching over you as you perform your actions.
+?What do I do here?
+The leet learner will tell you not only how many letters are in the action(s) you need to perform but also if there are any left.
+There are three things to do. Two can be done right away.
+First, you need to FEEL FEAR.
+But now you're fearful, you need to get rid of that fear properly.
+DEAL DEAR.
+The Sage Sea will give you a Cage Key.
+?What is the third action, and why can't I do it yet?
+You won't need it until a certain point.
+A point when you've been damaged.
+Then you'll need to regain stamina.
+I mean health.
+And HEAL HERE.
+>VALE VERMINOUS
 >>LAST LAP
 ?How do I get by Wreaker Russell?
 There are two things you need to do.
