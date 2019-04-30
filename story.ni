@@ -73,6 +73,8 @@ definition: a thing (called th) is quicknear:
 to bold-my-room:
 	say "[b][location of player][r][paragraph break]"
 
+to say ll: say "[b]LL[r]"
+
 section flags for testers
 
 [ this won't appear in the release version, but since these flags crop up in a lot of actions to help with playtesting, we can't put them in a debug version. debug-state is another such variable, but it's included in Trivial Niceties. ]
@@ -275,7 +277,7 @@ every turn when player is in Wet Wood:
 	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
 
 after looking in Wet Wood for the first time:
-	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could EXAMINE or READ it for instructions. (NOTE: You can use point the learner at something by typing LL (thing), or you can refer to the learner as LL. You can also LL to scan your current location.)[line break]";
+	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could [b]EXAMINE[r] or [b]READ[r] it for instructions. (NOTE: You can use point the learner at something by typing [ll] (thing), or you can refer to the learner as [ll]. You can also [ll] to scan your current location.)[line break]";
 	now player has leet learner;
 	set the pronoun it to leet learner;
 	continue the action;
@@ -1650,7 +1652,7 @@ carry out whoawaiting:
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]"
+Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all."
 
 chapter telltorning
 
@@ -2047,7 +2049,7 @@ understand "verbs" as verbsing.
 carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
-	say "[2da]The Leet Learner can help you determine what needs to be changed. [b]LL[r] or [b]CC[r] is the shorthand for scanning a location, and [b]LL[r] or [b]CC[r] (any thing) scans it.";
+	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	the rule succeeds.
@@ -2075,13 +2077,27 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I like this sort of thing. It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break]I'm not the first parser game to deal with rhymes. Michael Martin's [i]EXTERMINATE![r] and DCBSupafly's [i]Beythilda the Witch Queen[r] did it first. They were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) offered more of a narrative. But I hope this is something new and does not abuse the concept.";
+	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break]OTHERS will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
 	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. (And if I haven't, let me know.) VVFF is also meant to be polite on the Zarfian cruelty scale.";
 	the rule succeeds;
 
+chapter othersing
+
+othersing is an action applying to nothing.
+
+understand the command "others" as something new.
+understand the command "other" as something new.
+
+understand "other" as othersing.
+understand "others" as othersing.
+
+carry out othersing:
+	say "VVFF is not the first parser game to deal with rhymes. If you like the idea, you may wish to check out the following games: Michael Martin's [i]EXTERMINATE![r] (SpeedIF 2008) and DCBSupafly's [i]Beythilda the Witch Queen[r] (2011 EctoComp) were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) as part of Taleslinger's New Year's competitions offered more of a narrative.";
+	the rule succeeds.
+
 book hinting
 
-the leet learner is a thing. description is "It says CHEAT CHURNER in green letters. You can probably READ it more in depth, because, well, there's more.[paragraph break]It has two settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off) It's currently [off-on of shut-scan]. [b]LL/CC ON/OFF[r] can turn it on or off.[paragraph break]Also, to use it, [b]LL[r] (something). [b]LL[r] with no argument scans the current location."
+the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off) It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location."
 
 after printing the name of leet learner while taking inventory: say " ([off-on of shut-scan])";
 
