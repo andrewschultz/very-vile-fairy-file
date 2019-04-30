@@ -41,6 +41,12 @@ definition: a thing (called th) is moot:
 	if th is in Hidey House, yes;
 	no;
 
+definition: a thing (called th) is known-to-player:
+	if th is in Hidey House, no;
+	if th is off-stage, no;
+	if th is not a backdrop and location of th is unvisited, yes;
+	yes;
+
 to say here-in of (rm - a room): say "[if rm is location of player]here[else]in [rm][end if]"
 
 to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
@@ -2665,18 +2671,21 @@ understand the command "gt" as something new.
 understand the command "goto" as something new.
 understand the command "go to" as something new.
 
-understand "go to [any room]" as gotoing.
-understand "goto [any room]" as gotoing.
-understand "gt [any room]" as gotoing.
-understand "gr [any room]" as gotoing.
-understand "go [any room]" as gotoing.
+understand "go to [any available-from-here room]" as gotoing.
+understand "goto [any available-from-here room]" as gotoing.
+understand "gt [any available-from-here room]" as gotoing.
+understand "gr [any available-from-here room]" as gotoing.
+understand "go [any available-from-here room]" as gotoing.
+
+does the player mean gotoing a room:
+	if noun is available-from-here, it is very likely.
 
 to decide whether goto-available:
 	yes.
 
-to decide whether (rm - a room) is available-from-here:
+definition: a room (called rm) is available-from-here:
 	if map region of rm is Worst Whew, no;
-	if mrlp is Vale Verminous, no;
+	if player is in Tarry Tile, no;
 	yes;
 
 carry out gotoing:
@@ -2692,16 +2701,14 @@ section gotothinging
 
 gotothinging is an action applying to one visible thing.
 
-does the player mean gotothinging a moot thing: it is very unlikely.
-does the player mean gotothinging a thing in an unvisited room: it is very unlikely.
-does the player mean gotothinging an off-stage thing: it is very unlikely.
 does the player mean gotothinging a thing carried by the player: it is unlikely.
+does the player mean gotothinging a thing in location of the player: it is unlikely.
 
-understand "go to [any thing]" as gotothinging.
-understand "goto [any thing]" as gotothinging.
-understand "gt [any thing]" as gotothinging.
-understand "gi [any thing]" as gotothinging.
-understand "go [any thing]" as gotothinging.
+understand "go to [any known-to-player thing]" as gotothinging.
+understand "goto [any known-to-player thing]" as gotothinging.
+understand "gt [any known-to-player thing]" as gotothinging.
+understand "gi [any known-to-player thing]" as gotothinging.
+understand "go [any known-to-player thing]" as gotothinging.
 
 carry out gotothinging:
 	let Q be location of noun;
