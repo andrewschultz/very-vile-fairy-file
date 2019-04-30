@@ -64,6 +64,17 @@ FALL FREE.
 ?What is the deal with going east or west?
 They are joke death rooms.
 I hope they are funny jokes.
+?Can I do anything with the Wry Wall?
+You don't need to.
+But there is a bonus point.
+You can expose it for its untruths.
+LIE LOL.
+?What is the deal with Cark Cliff?
+It is a bonus point.
+But it's one pretty far down in the game.
+And it's pretty obscure.
+You need the Wild Weed.
+Then, SPARK SPLIFF.
 >>REAL REAR
 ?Can I enter the Sage Sea?
 Not with directional commands.
@@ -86,8 +97,24 @@ A point when you've been damaged.
 Then you'll need to regain stamina.
 I mean health.
 And HEAL HERE.
+>>CREASED CROSS
+?Is there anything to do here?
+Maybe not right away.
+?I tried to summon something, but it says I'm not protected enough yet!
+You need a few items.
+First, the Hard Hat.
+?Summon something?! What does that mean?
+You can summon an important enemy based on the cross's name.
+The BEAST BOSS.
 >VALE VERMINOUS
->>LAST LAP
+>>GASSED GAP
+?It seems like the gassed gap can be changed, but how do I do so?
+You can't just say LAST LAP.
+You need to do something.
+There's an item that seems ideal for here.
+It isn't quite a double rhyme, but with the right verb, it could be.
+The cool cap.
+CAST CAP.
 ?How do I get by Wreaker Russell?
 There are two things you need to do.
 Disarm him and decrease his physique.
@@ -96,3 +123,46 @@ What if it was made out of something not so good for shooting?
 WOOD ONE.
 Now what if Russell were not so strong?
 MEEKER MUSCLE.
+?Does anything prevent me from going north once Russell is gone?
+No.
+You can even come back south until you dispose of the next bad guys.
+>>AIRY ISLE
+?How do I get rid of the Bot Board?
+You need help.
+A group of people, as well as a leader more capable than yourself.
+The Bot Board has rhyming cousins.
+The HOT HORDE will outnumber the board, but they are too unruly.
+So you need a leader that double-rhymes bot board.
+LOT LORD.
+But you need one more thing! A battle cry!
+GOT GORED.
+?How do I get to the next area with the Bot Board defeated?
+The Go Gate looks pretty tempting to just enter.
+Did you? Oops.
+If you did, or you examined it, you know it has a Grow Grate.
+Entering right away is not cautious enough.
+You need to delay a bit. But Z or WAIT doesn't quite work.
+WHOAH WAIT.
+?Do I need to prep before jumping to the next area?
+No, unless you want to get all the points in the game.
+?Can I come back once I move to the next area?
+No, but you don't need to, unless you want maximum points.
+>>TARRY TILE
+?Why can't I deal with/take the fairy file yet?
+You need to remove distractions and be at peace and happy.
+There are three things left to do.
+They need to be done in a certain order, but the game will track whatever you did out of order.
+?Help! The horn won't shut up!
+It has its flaws.
+You need to examine the well worn hell horn.
+Not just examine it. Look for it.
+You can TELL TORN.
+?The horn is gone, but I'm still not up to ... whatever I have to do. What's up?
+The tarry tile can become a nicer place.
+A happy one.
+MERRY MILE.
+?How do I deal with the fairy file?
+You're happy now, but you need to remove hate that dwells in you.
+Tuck it away in a corner, if you will.
+You may note you can use this command at any time. Maybe you already did.
+Or BURY BILE.
