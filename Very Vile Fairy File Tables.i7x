@@ -94,6 +94,12 @@ this is the got-rig-rag rule:
 
 volume random tables
 
+table of mall songs
+randtxt
+"Good Gang? Dud, Dang"
+"Lo Love Show Shove"
+"Mercy Me, Jersey G[r], by Versy V & Percy P"
+
 table of miscellaneous people
 randtxt
 "Bo, Better Go-Getter"
@@ -388,6 +394,7 @@ volume big meta table
 
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
+table of mall songs	0	false	0	"Songs after Tim T Sims"	--
 table of miscellaneous people	0	false	0	"Assorted randos"	--
 table of vvff books	0	false	0	"Books in the Lending Libe"	"Wow! So much to read, so little time. You're up to digesting more text right now, but not quite like that."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."

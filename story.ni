@@ -1836,22 +1836,24 @@ instead of attacking:
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
-instead of saying no, say "No-no? Hoho, dodo! [yn-tell]"
+before saying no, say "No-no? Hoho, dodo! [yn-tell]" instead;
 
-instead of saying yes, say "Yay! Yep! Hey, hep! [yn-tell]"
+before saying yes, say "Yay! Yep! Hey, hep! [yn-tell]" instead;
 
 to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
 
-instead of swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'"
+before swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'" instead;
 
-instead of swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'"
+before swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'" instead;
 
 chapter listening
 
-instead of listening:
+check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
-	if player is in History Hall and Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
-	if player is in History Hall and Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
+	if player is in History Hall:
+		if Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
+		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
+		say "A random song plays briefly: [next-rand-txt of table of miscellaneous people]." instead;
 	say "Nothing special."
 
 chapter thinking
@@ -2399,13 +2401,14 @@ section thing hint rule definitions
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
 the thing-hint-rule of backed binder is backed-binder-hint rule.
+the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of big bag is big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
-the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
 the thing-hint-rule of cage key is cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
+the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
@@ -2453,7 +2456,6 @@ the thing-hint-rule of worst wave is worst-wave-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is zig-zag-rig-rag-hint rule.
-the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 
 [
 the thing-hint-rule of Bull Beast is bull-beast-hint rule.
@@ -2472,11 +2474,11 @@ the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
 
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
 
-this is the beer-bull-hint rule:
-	say "Say FEARFUL to get the beer bull going, then DEAR DULL after it chases you to the whining war."
-
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
+
+this is the beer-bull-hint rule:
+	say "Say FEARFUL to get the beer bull going, then DEAR DULL after it chases you to the whining war."
 
 this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
@@ -2494,9 +2496,6 @@ this is the bot-board-hint rule:
 	else:
 		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
 
-this is the cool-cap-hint rule:
-	say "[one of]The cool cap is useful in one specific place[or]You need to throw down the gauntlet, or something like it, somewhere[or]There is one place that rhymes with cap[or]You can do something with the cap[here-in of Gassed Gap][or]CAST CAP [here-in of Gassed Gap][stopping]."
-
 this is the cache-cap-hint rule:
 	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
 	the rule succeeds;
@@ -2510,6 +2509,9 @@ this is the cage-key-hint rule:
 
 this is the cark-cliff-hint rule:
 	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or]SPARK SPLIFF.[stopping]";
+
+this is the cool-cap-hint rule:
+	say "[one of]The cool cap is useful in one specific place[or]You need to throw down the gauntlet, or something like it, somewhere[or]There is one place that rhymes with cap[or]You can do something with the cap[here-in of Gassed Gap][or]CAST CAP [here-in of Gassed Gap][stopping]."
 
 this is the coral-cage-hint rule:
 	if player does not have cage key:
