@@ -2399,28 +2399,31 @@ section thing hint rule definitions
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
 the thing-hint-rule of backed binder is backed-binder-hint rule.
-the thing-hint-rule of big bag is the big-bag-hint rule.
+the thing-hint-rule of big bag is big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
-the thing-hint-rule of cache cap is the cache-cap-hint rule.
-the thing-hint-rule of cage key is the cage-key-hint rule.
+the thing-hint-rule of cool cap is cool-cap-hint rule.
+the thing-hint-rule of cache cap is cache-cap-hint rule.
+the thing-hint-rule of cage key is cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
 the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
-the thing-hint-rule of gash gap is the cache-cap-hint rule.
+the thing-hint-rule of gash gap is cache-cap-hint rule.
+the thing-hint-rule of go gate is go-gate-hint rule.
 the thing-hint-rule of gold guard is gold-guard-hint rule.
 the thing-hint-rule of good gun is good-gun-hint rule.
 the thing-hint-rule of GOTS GAME is gots-game-hint rule.
+the thing-hint-rule of grow grate is grow-grate-hint rule.
 the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
-the thing-hint-rule of hit hound is the hit-hound-hint rule.
+the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hold Hard is hold-hard-hint rule.
 the thing-hint-rule of Hot Horde is bot-board-hint rule.
 the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
-the thing-hint-rule of leet learner is the leet-learner-hint rule.
+the thing-hint-rule of leet learner is leet-learner-hint rule.
 the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 the thing-hint-rule of Lot Lord is bot-board-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
@@ -2430,28 +2433,27 @@ the thing-hint-rule of Name Notes Tame Totes is name-notes-tame-totes-hint rule.
 the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
 the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
 the thing-hint-rule of paper pile is paper-pile-hint rule.
-the thing-hint-rule of peeling pier is the peeling-pier-hint rule.
+the thing-hint-rule of peeling pier is peeling-pier-hint rule.
+the thing-hint-rule of prong part is prong-part-hint rule.
 the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
 the thing-hint-rule of row writ is row-writ-hint rule.
-the thing-hint-rule of Sage Sea is the sage-sea-hint rule.
+the thing-hint-rule of Sage Sea is sage-sea-hint rule.
 the thing-hint-rule of screaming skull is screaming-skull-hint rule.
-the thing-hint-rule of steel steer is the steel-steer-hint rule.
-the thing-hint-rule of tall tree is the tall-tree-hint rule.
+the thing-hint-rule of steel steer is steel-steer-hint rule.
+the thing-hint-rule of tall tree is tall-tree-hint rule.
 the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
 the thing-hint-rule of tool tap is tool-tap-hint rule.
-the thing-hint-rule of trash trap is the cache-cap-hint rule.
+the thing-hint-rule of trash trap is cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
-the thing-hint-rule of Very Vile Fairy File is the very-vile-fairy-file-hint rule.
+the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wild weed is wild-weed-hint rule.
 the thing-hint-rule of worst wave is worst-wave-hint rule.
 the thing-hint-rule of wrong art is wrong-art-hint rule.
-the thing-hint-rule of prong part is prong-part-hint rule.
-the thing-hint-rule of wry wall is the wry-wall-hint rule.
-the thing-hint-rule of zig zag rig rag is the zig-zag-rig-rag-hint rule.
-the thing-hint-rule of go gate is go-gate-hint rule.
-the thing-hint-rule of grow grate is grow-grate-hint rule.
+the thing-hint-rule of wry wall is wry-wall-hint rule.
+the thing-hint-rule of zig zag rig rag is zig-zag-rig-rag-hint rule.
+the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 
 [
 the thing-hint-rule of Bull Beast is bull-beast-hint rule.
@@ -2470,12 +2472,8 @@ the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
 
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
 
-this is the go-gate-hint rule:
-	say "[one of]You want to go through the go gate, but you need to show a bit of caution[or]LO LATE doesn't quite cut it, here[or]You can also scan the component part, the grow grate, for maybe a bit of help[or]WHOAH WAIT, or any of three alternate spellings, works[stopping].";
-
-this is the grow-grate-hint rule:
-	say "[one of]Since the grow grate is part of the go gate, and they rhyme, they make the same puzzle.[or][stopping]";
-	process the go-gate-hint rule;
+this is the beer-bull-hint rule:
+	say "Say FEARFUL to get the beer bull going, then DEAR DULL after it chases you to the whining war."
 
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
@@ -2495,6 +2493,9 @@ this is the bot-board-hint rule:
 		say "[one of]The Hot Horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or]LOT LORD[stopping].";
 	else:
 		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
+
+this is the cool-cap-hint rule:
+	say "[one of]The cool cap is useful in one specific place[or]You need to throw down the gauntlet, or something like it, somewhere[or]There is one place that rhymes with cap[or]You can do something with the cap[here-in of Gassed Gap][or]CAST CAP [here-in of Gassed Gap][stopping]."
 
 this is the cache-cap-hint rule:
 	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
@@ -2525,6 +2526,9 @@ this is the find-fee-hint rule:
 this is the frightening-fridge-hint rule:
 	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
 
+this is the go-gate-hint rule:
+	say "[one of]You want to go through the go gate, but you need to show a bit of caution[or]LO LATE doesn't quite cut it, here[or]You can also scan the component part, the grow grate, for maybe a bit of help[or]WHOAH WAIT, or any of three alternate spellings, works[stopping].";
+
 this is the gold-guard-hint rule:
 	say "[one of]The gold guard helps protect you [if player is in Foe Field]here[else if Foe Field is unvisited]somewhere you haven't been[else]somewhere you've been[end if].[or]Once the gold guard is in the right place, you can use it to protect yourself.[or]You need to be in the Foe Field for the gold guard to work.[or]Once in the Foe Field, SHOW SHIELD.[stopping]"
 
@@ -2533,6 +2537,10 @@ this is the good-gun-hint rule:
 
 this is the gots-game-hint rule:
 	say "[one of]The Gutta Ganksta seems proud of the GOTS GAME tattoo, but perhaps there's a way to cut it down.[or]LOTS LAME.[stopping]"
+
+this is the grow-grate-hint rule:
+	say "[one of]Since the grow grate is part of the go gate, and they rhyme, they make the same puzzle.[or][stopping]";
+	process the go-gate-hint rule;
 
 this is the gutta-ganksta-hint rule:
 	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
@@ -2593,6 +2601,10 @@ this is the peeling-pier-hint rule:
 	say "The peeling pier is just here to bring home that there's a lot to do in the Real Rear, but ... the pier is not quite right.";
 	process the real-rear-hint rule;
 
+this is the prong-part-hint rule:
+	say "[one of]The prong part is part of the wrong art, so future clues will refer you there.[or][stopping]";
+	process the wrong-art-hint rule;
+
 this is the reeker-russell-hint rule:
 	say "[one of]Reeker Russell is big and tough, but you can make him less strong.[or]No, 'weaker wussle' doesn't quite work, but there's a synonym for weaker.[or]MEEKER MUSCLE.[stopping]"
 
@@ -2642,10 +2654,6 @@ this is the wild-weed-hint rule:
 
 this is the worst-wave-hint rule:
 	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
-
-this is the prong-part-hint rule:
-	say "[one of]The prong part is part of the wrong art, so future clues will refer you there.[or][stopping]";
-	process the wrong-art-hint rule;
 
 this is the wrong-art-hint rule:
 	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
