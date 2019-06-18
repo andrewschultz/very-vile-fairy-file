@@ -1,7 +1,11 @@
 #
 # wdrop.py
 #
-# run after rbr.py wbase.txt for VVFF
+# Very Vile Fairy File specific
+#
+# this drops in the new walkthroughs created after rbr.py wbase.txt forks the min- and max- point walkthroughs.
+#
+# Note that I meddle with the Github repo files. The fils in inform/source have
 #
 
 from collections import defaultdict
@@ -10,21 +14,39 @@ import re
 import i7
 import sys
 import stat
+import mytools as mt
 
 insert_point = defaultdict(str)
 
 max_full_score = 0
 min_full_score = 0
 
+wri_dir = i7.gh_src("vv", give_source = False)
+wri_loc = i7.sdir("vv")
+
 out_read_only = True
 delete_after = False #It's ok to have this, since we don't copy over the pre-files to the source control directory
 verbose = True
+
+open_last_err = True
 
 def usage(cmd="USAGE LIST"):
     print(cmd)
     print("=" * 50)
     print("-d/-da = delete after, -nd/-dn = don't")
     print("-v = verbose")
+    exit()
+
+def zap_it(base):
+    print("Relinking", base)
+    os.system("attrib -r {:s}".format(base))
+    os.system("erase {:s}".format(base))
+    os.system("mklink {:s} {:s}".format(os.path.join(wri_loc, base), os.path.join(wri_dir, base)))
+    os.system("attrib +r {:s}".format(base))
+
+def relink():
+    zap_it("walkthrough.txt")
+    zap_it("walkthrough-full.txt")
     exit()
 
 def first_line(txt):
@@ -97,8 +119,15 @@ while cmd_count < len(sys.argv):
     if arg == 'v': verbose = True
     if arg == 'd' or arg == 'da': delete_after = True
     elif arg == 'dn' or arg == 'nd': delete_after = True
+    elif arg == 'lo' or arg == 'loc': wri_dir = wri_loc
+    elif arg == 'of': open_last = False
+    elif arg == 'ol': open_last = True
+    elif arg == 'rl':
+        relink()
+        exit()
     elif arg == '?': usage()
     else: usage("BAD COMMAND {:s}".format(sys.argv[cmd_count]))
+    cmd_count += 1
 
 i7.dir2proj("vv")
 
@@ -118,6 +147,8 @@ with open("wdrop.txt") as file:
         l = line.strip().split("\t")
         insert_point[int(l[0])] = re.sub(r'\\n', "\n", l[1])
 
+warnings = []
+
 with open("wbase.txt") as file:
     for (line_count, line) in enumerate(file, 1):
         if line.startswith(">"):
@@ -125,8 +156,13 @@ with open("wbase.txt") as file:
             line = re.sub("^> *", "> ", line)
             line = re.sub(" *\(", " (", line)
             if old_line != line:
+                warnings.append(line_count)
                 print("WARNING bad spacing line {:d} of wbase.txt: {:s}".format(line_count, line.strip()))
 
-insert_stuff("walkthrough-pre.txt", "c:/users/andrew/documents/github/very-vile-fairy-file/walkthrough.txt", delete_after, min_full_score)
-insert_stuff("walkthrough-full-pre.txt", "c:/users/andrew/documents/github/very-vile-fairy-file/walkthrough-full.txt", delete_after, max_full_score)
+insert_stuff("walkthrough-pre.txt", os.path.join(wri_dir, "walkthrough.txt"), delete_after, min_full_score)
+insert_stuff("walkthrough-full-pre.txt", os.path.join(wri_dir, "walkthrough-full.txt"), delete_after, max_full_score)
 
+lw = len(warnings)
+if lw:
+    print("Found {:d} warning{:s}: {:s}".format(lw, mt.plur(lw), ", ".join(lw)))
+    i7.npo("wbase.txt", warnings[-1 if open_last_err else 0])
