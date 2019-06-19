@@ -2796,9 +2796,15 @@ section when play begins - not for release
 
 volume meta
 
+book region and rooms
+
 Gazy Gap is a room in Get a Guess. [crazy crap]
 
 Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporarily gone]
+
+book meta verbs
+
+check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
 volume unsorted
 
