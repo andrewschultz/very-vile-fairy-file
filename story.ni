@@ -296,7 +296,7 @@ get-good is a truth state that varies.
 
 carry out getgooding:
 	if get-good is true, say "You already did." instead;
-	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak-d]";
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak]";
 	up-reg;
 	move player to Vined Vault;
 	the rule succeeds;
@@ -315,7 +315,7 @@ understand "find fault" as findfaulting when player is in Vined Vault.
 
 carry out findfaulting:
 	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
-	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak-d]";
+	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak]";
 	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass now blocks your way out!";
 	move mean mass to Vined Vault;
 	up-reg;
@@ -2789,12 +2789,12 @@ when play begins (this is the opening text rule):
 	now the left hand status line is "West Wall";
 	force-status;
 	if debug-state is false, ask-screenread;
-	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak-d]";
-	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak-d]";
-	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak-d]";
-	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak-d]";
-	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak-d]";
-	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak-d]";
+	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak]";
+	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
+	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
+	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
+	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
+	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
@@ -3112,7 +3112,60 @@ when play begins (this is the force tester wherever rule):
 		try switching the story transcript on;
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
 	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+	continue the action;
+
+chapter blowbying
+
+blowbying is an action applying to nothing.
+
+understand the command "blowby" as something new.
+understand the command "blow by" as something new.
+
+understand "blowby" as blowbying.
+understand "blow by" as blowbying.
+understand "flow fly" as blowbying.
+understand "slow sigh" as blowbying.
+
+carry out blowbying:
+	if fun fen is visited, say "Too late to blow by." instead;
+	let prev-blowby-score be the score;
+	repeat through table of intro-blowby:
+		consider the done-yet entry;
+		if the rule succeeded, next;
+		say "The correct command was [cmd-text entry].";
+		try my-action entry;
+		the rule succeeds;
+	say "Uh oh. Something went wrong. No rules succeeded.";
+
+table of intro-blowby
+done-yet	cmd-text	my-action
+got-good rule	"GET GOOD"	getgooding
+found-fault rule	"FIND FAULT"	findfaulting
+mass-moot rule	"GREEN GRASS"	greengrassing
+grown-grit rule	"GROW GRIT"	growgriting
+map-mashed rule	"MASH MAP/BASH BAP"	mashmaping
+minded-me rule	"MIND ME"	mindmeing
+fen-visited rule	"FLIM FLAM/SKIM SCAM"	flimflaming
+
+this is the got-good rule: if vined vault is visited, the rule succeeds;
+
+this is the found-fault rule: if mean mass is not off-stage, the rule succeeds;
+
+this is the mass-moot rule: if mean mass is moot, the rule succeeds;
+
+this is the grown-grit rule: if grit-grown is true, the rule succeeds;
+
+this is the map-mashed rule: if trim tram is visited, the rule succeeds;
+
+this is the minded-me rule: if me-minded is true, the rule succeeds;
+
+this is the fen-visited rule: if fun fen is visited, the rule succeeds;
+
+prev-blowby-score is a number that varies.
+
+after blowbying:
+	if fun fen is unvisited and prev-blowby-score is the score, say "Oops! Nothing positive happened. This is a bug in the testing code.";
 	continue the action;
 
 chapter tricktriping
