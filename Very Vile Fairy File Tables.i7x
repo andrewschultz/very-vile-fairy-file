@@ -69,6 +69,7 @@ to seed-score-list:
 
 to say your-rank:
 	repeat through table of ranks:
+		[ say "Comparing [core-score] <= [rank-max entry] for rank [rank-name entry]."; ]
 		if core-score <= rank-max entry:
 			say "[rank-name entry]";
 			continue the action;

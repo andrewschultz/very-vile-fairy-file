@@ -16,6 +16,8 @@ include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 include Very Vile Fairy File Tables by Andrew Schultz.
 
+include undo output control by Erik Temple.
+
 use MAX_ACTIONS of 210.
 
 section establish debug - not for release
@@ -658,10 +660,13 @@ understand "feel fear" as feelfearing when player is in Real Rear.
 
 felt-fear is a truth state that varies.
 
+to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
+
 carry out feelfearing:
 	if knelt-yet is false:
 		clue-later "FEEL FEAR";
-		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
+		say "Fear isn't something you can try to feel[seer-sez]." instead;
+	say "You let yourself feel fear, with the Ceiling Seer overlooking. No matter how much you feel, you have faith you can cope. Admitting you're fearful helps a bit.";
 	up-reg;
 	now felt-fear is true;
 	the rule succeeds.
@@ -675,9 +680,9 @@ understand the command "deal dear" as something new.
 understand "deal dear" as dealdearing when player is in Real Rear.
 
 carry out dealdearing:
-	if knelt-yet is false:
+	if felt-fear is false:
 		clue-later "DEAL DEAR";
-		say "Fear isn't something you can try to feel. The Ceiling Seer seems to be watching down on you, saying you can't do that yet." instead;
+		say "You haven't found anything you need to deal with[seer-sez]." instead;
 	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
 	now player has cage key;
 	up-reg;
@@ -697,7 +702,7 @@ healed-here is a truth state that varies.
 
 carry out healhereing:
 	clue-later "HEAL HERE";
-	say "You don't have anything to heal from, yet. Sorry." instead;
+	say "You don't have anything to heal from, yet[seer-sez]." instead;
 	up-reg;
 	now healed-here is true;
 	the rule succeeds.
@@ -1835,6 +1840,12 @@ check taking when player does not have big bag:
 			say "Perhaps now is a good time to change the zig zag rig rag to a big bag, as you tried before." instead;
 		say "Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
 
+chapter undoing
+
+report undoing an action:
+	say "Woo! Wiping one's typing!";
+	the rule succeeds;
+
 chapter trivial pointless but amusing verbs
 
 check attacking:
@@ -1932,10 +1943,10 @@ chapter score
 
 check requesting the score:
 	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win.";
-	say "[line break]Your current rank is [your-rank].";
+	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].";
 	let dh be doable-hinted;
 	let fh be future-hinted;
-	if dh + fh > 0, say "[line break]You also have [dh + fh] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh] still need[plur of fh] to wait[else if fh is 0][dh] can be done now[else][dh] can be done now, but [fh] must wait[end if]. You can see more detailed information with THINK.";
+	if dh + fh > 0, say "[line break]You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh in words] still need[plur of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
 	the rule succeeds;
 
 the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -3079,6 +3090,9 @@ rule for showdeathsing:
 
 volume parser errors guiding us
 
+Rule for printing a parser error when the latest parser error is the i beg your pardon error:
+	say "Blank blather? Rank! Rather!"
+
 Rule for printing a parser error (this is the clue half right words rule):
 	repeat through table of understands:
 		if there is a myloc entry:
@@ -3183,6 +3197,7 @@ carry out tricktriping:
 	process the any-warp rule;
 	say "You utter a, uh, QUICK QUIP. Your surroundings change.";
 	now score is 7;
+	now core-score is 7;
 	move player to fun fen;
 	the rule succeeds.
 
