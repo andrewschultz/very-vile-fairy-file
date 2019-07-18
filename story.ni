@@ -1785,6 +1785,12 @@ check taking:
 		add noun to multiple object list;
 		say "You're juggling too much! Maybe something you're carrying can be repurposed." instead;
 
+chapter sleeping
+
+the block sleeping rule is not listed in any rulebook.
+
+check sleeping: say "Lie late, my mate? Why wait?" instead;
+
 chapter waiting
 
 check waiting: say "Hi ho! Lie low." instead;
@@ -1831,20 +1837,28 @@ check taking when player does not have big bag:
 
 chapter trivial pointless but amusing verbs
 
-instead of attacking:
+check attacking:
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
-before saying no, say "No-no? Hoho, dodo! [yn-tell]" instead;
+the block saying no rule is not listed in any rulebook.
 
-before saying yes, say "Yay! Yep! Hey, hep! [yn-tell]" instead;
+check saying no: say "No-no? Hoho, dodo! [yn-tell]" instead;
+
+the block saying yes rule is not listed in any rulebook.
+
+check saying yes: say "Yay! Yep! Hey, hep! [yn-tell]" instead;
 
 to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
 
-before swearing obscenely, say "Gee, gad! Be bad! 'Me, mad!'" instead;
+the block swearing obscenely rule is not listed in any rulebook.
 
-before swearing mildly, say "Gee, gad! Be bad! 'Me, mad!'" instead;
+check swearing obscenely: say "Gee, gad! Be bad! 'Me, mad!'" instead;
+
+the block swearing mildly rule is not listed in any rulebook.
+
+check swearing mildly: say "Gee, gad! Be bad! 'Me, mad!'" instead;
 
 chapter listening
 
@@ -2068,6 +2082,7 @@ carry out creditsing:
 	say "PUT TESTING CREDITS HERE.";
 	say "Thanks to github for hosting private repositories that helped keep VVFF hidden.";
 	say "Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
+	say "Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
 	the rule succeeds;
 
 chapter abouting
