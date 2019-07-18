@@ -14,8 +14,8 @@ e1	e2	been-here	fake-name	death-trap
 --	--	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. You hear a voice (and oh, what a best boom it is) intone 'DEST.: DOOM!' You realize you have wound up in ... a TEST TOMB."
 Airy Isle	west	false	"Happy Hall"	"Man! You could use some cheer right now. The hall is spacious at first until you ... need to start crawling. You realize what this means."
 Airy Isle	east	false	"Hippy Hill"	"You are sure the Hippy Hill will be full of peace and love and goodness and be an appropriate end to all this ... until you hear noises. A drippy drill. Then you are caught by a grippy grill! You suddenly realize you lack ... skippy skill."
-Fun Fen	west	false	"Bold [']n Brave"	"Boom! Golden Grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
-Fun Fen	east	false	"Fate Farm"	"Boom! Hate, harm!"
+Fun Fen	west	false	"Bold [']n Brave"	"You feel like you can handle anything. Yes sir/ma'am! You are bold and brave! But shortly, you feel less warm. 'Cold ... and crave,' you think, slightly ungrammatically. Then an olden rave leaves you even more scared. You flee, until you tumble down and look up and realize you are trapped in a ...  golden grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
+Fun Fen	east	false	"Fate Farm"	"You figure, why not get to my fate sooner rather than later? A farm can't be that bad. You hear an innocuous 'Mate?! Marm?!' as you walk down a road, then a dismayed 'DISARM!' Yup, pretty nonviolent...[paragraph break]Until you are faced with mass chanting of 'Hate, harm!' The rest is unspeakable."
 Gassed Gap	east	false	"Done Dune"	"Blam! A gun goon appears out of nowhere and mows you down."
 Soft Sand	up	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
 Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL."
@@ -169,24 +169,24 @@ volume hints for later
 
 table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to BURY BILE, it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
-"BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a BIG BAG from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
-"BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the Beast Boss [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
-"FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if], but you didn't have the confidence. [if me-minded is true]Now you managed to MIND ME, that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
-"MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [if bash-not-mash is true]BASH BAP[else]MASH MAP[end if], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
-"FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to FEEL FEAR [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
-"DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You tried to say DEAL DEAR [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
-"SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to SHOW SHIELD [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
-"MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the MORAL MAGE, but you couldn't open the coral cage yet."
-"FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say FIRST FAVE once/now the screaming skull is gone."
-"SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the SHINING SHORE once/now you dealt with the Whining War."
-"FIT FOUND"	false	can-fit-found rule	did-fit-found rule	"You can declare a FIT FOUND [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
-"LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say LEAST LOSS once/now you have something to face ..." [heres of Creased Cross ??]
-"HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to HEAL HERE [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
-"FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a full feast once/now it's been vanquished."
-"GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry GOT GORED [once-now of can-got-gored rule] you have a full army and its leader."
-"MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a MERRY MILE [once-now of can-merry-mile rule] things have calmed down."
-"CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can CAST CAP once you find one."
+"BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
+"BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
+"BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
+"FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. [if me-minded is true]Now you managed to [b]MIND ME[r], that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
+"MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [b][if bash-not-mash is true]BASH BAP[else]MASH MAP[end if][r], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
+"FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
+"DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
+"SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
+"MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
+"FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say [b]FIRST FAVE[r] once/now the screaming skull is gone."
+"SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the [b]SHINING SHORE[r] once/now you dealt with the Whining War."
+"FIT FOUND"	false	can-fit-found rule	did-fit-found rule	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
+"LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say [b]LEAST LOSS[r] once/now you have something to face ..." [heres of Creased Cross ??]
+"HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
+"FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
+"CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can [b]CAST CAP[r] once you find one."
+"GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry [b]GOT GORED[r] [once-now of can-got-gored rule] you have a full army and its leader."
+"MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
 
 [xx4l8r]
 
