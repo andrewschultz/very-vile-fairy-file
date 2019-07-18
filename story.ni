@@ -81,7 +81,7 @@ section flags for testers
 
 [ this won't appear in the release version, but since these flags crop up in a lot of actions to help with playtesting, we can't put them in a debug version. debug-state is another such variable, but it's included in Trivial Niceties. ]
 
-in-beta is a truth state that varies.
+in-beta is a truth state that varies. [general beta flag]
 
 climb-clear is a truth state that varies. [ did the beta tester jump ahead until the end? ]
 
@@ -191,15 +191,27 @@ check going nowhere:
 			if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";
 			next;
 		if location of player is e1 entry and noun is e2 entry:
-			if been-here entry is true, say "You already went [noun] to [fake-name entry]. It's a death trap." instead;
+			if been-here entry is true, say "You already went [noun] to the joke death-trap [fake-name entry]." instead;
 			say "[death-trap entry][paragraph break]";
-			say "[b][location of player][r][paragraph break]";
 			now been-here entry is true;
 			increment wry-wall-found;
 			if wry-wall-found is number of rows in table of bad locs, say "Incidentally, you've found everything." instead;
+			say "[if ever-wry-wall is true]Well, that's another joke death trap visited[else]NOTE: The wry wall just leads to a bunch of joke deaths. You can avoid them or follow them as you please. You don't get any bonus for finding them all, but maybe you'll find them fun[end if]. Let's kick you back to where you were.";
+			now ever-wry-wall is true;
+			say "[line break][b][location of player][r][paragraph break]";
 			the rule succeeds;
 	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
-	say "You can't go [noun], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if]." instead;
+	now list-room-with is true;
+	say "You [if noun is diagonal]never need to use diagonal directions[else]can't go [noun][end if], [if number of viable directions is 0]and you may
+ need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if].";
+	now list-room-with is false;
+	the rule succeeds;
+
+list-room-with is a truth state that varies.
+
+after printing the name of a direction (called d) while list-room-with is true:
+	let rm be the room d of location of player;
+	if rm is visited, say " to [rm]";
 
 definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
@@ -464,7 +476,7 @@ part Fun Fen 0,0
 Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, buit the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
 check going in Fun Fen:
-	if noun is north and tree-down is false, say "You need a way off the cliff edge. Well, a safe one." instead;
+	if noun is north and tree-down is false, say "You need a way through the murky bit to the north. Well, a much safer one." instead;
 	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
 
 section done den
@@ -801,7 +813,7 @@ part History Hall -1,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Creased Cross. cht is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]".
+History Hall is west of Creased Cross. cht is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]."
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
@@ -825,7 +837,7 @@ Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you c
 
 check going west in History Hall:
 	if mistmall is true, continue the action;
-	say "[if ever-mall is true]You'll have to change back to History Hall[else]There should be something there, but there isn't, right now[end if]." instead;
+	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
 
 chapter sappining
 
@@ -1011,9 +1023,13 @@ Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall.
 
 chapter hardhating
 
-the marred mat is a thing in Got Gear Hot Here.
+the marred mat is a thing in Got Gear Hot Here. description is "What is a marred mat doing in a clothing store? Either it's misplaced, or ... it's more appropriate in another form. It has a message, of course.". "You can't imagine what a marred mat is doing in a clothing store, but here it is.".
+
+check taking marred mat: say "It can't be useful in that form." instead;
 
 the hard hat is a thing.
+
+check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
 
 hardhating is an action applying to nothing.
 
@@ -1022,7 +1038,7 @@ understand the command "hard mat" as something new.
 understand "hard hat" as hardhating when marred mat is quicknear.
 
 carry out hardhating:
-	say "Poof! The marred mat changes into a hard hat.";
+	say "Poof! The marred mat changes into a hard hat. A nice lightweight one. Light enough to wear, so you do.";
 	moot marred mat;
 	now player wears hard hat;
 	up-reg;
@@ -1225,7 +1241,7 @@ carry out makemaping:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht is leteq.
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht is leteq. "You can go all four directions here."
 
 ever-loft is a truth state that varies.
 
@@ -1381,13 +1397,13 @@ carry out coolcaping:
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]".
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment west, and[end if] you can still go west to a quieter, darker area."
 
 check going west in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
-showshielding is an action out of world.
+showshielding is an action applying to one thing.
 
 understand the command "show shield" as something new.
 
@@ -1873,6 +1889,8 @@ check swearing mildly: say "Gee, gad! Be bad! 'Me, mad!'" instead;
 
 chapter listening
 
+the block listening rule is not listed in any rulebook.
+
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
 	if player is in History Hall:
@@ -1889,9 +1907,9 @@ to say tat: now thought-any is true;
 
 ever-thought is a truth state that varies.
 
-[the block thinking rule is not listed in any rulebook.]
+the block thinking rule is not listed in any rulebook.
 
-instead of thinking:
+check thinking:
 	let thought-any be false;
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
 	repeat through table of forlaters:
@@ -2005,6 +2023,7 @@ table of readables
 read-thing	read-txt
 Very Vile Fairy File	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
 leet learner	"Some multi-colored text on the leet learner (itself written in yellow) seems to function as examples.[paragraph break][table-of-color-hints][run paragraph on]"
+marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 
 to say table-of-color-hints:
 	repeat through table of color clues:
@@ -3218,12 +3237,13 @@ this is the any-warp rule:
 carry out climbclearing:
 	if Airy Isle is visited, say "You're already in the endgame." instead;
 	process the any-warp rule;
-	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is probably hosed now. Your object is just to get through the game. You also should not be able to go back south.";
+	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is likely hosed now. Your object is just to get through the rest of the game. You also should not be able to go back south in this testing environment.";
 	now climb-clear is true;
 	now in-way-wronged is true;
 	now in-so-saded is true;
 	move player to Airy Isle;
-	now score is min-needed - 7;
+	now score is min-needed - 7 + min-gotten;
+	now core-score is score;
 	now maximum score is min-needed;
 	the rule succeeds.
 
