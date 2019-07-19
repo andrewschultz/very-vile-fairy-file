@@ -37,6 +37,7 @@ to decide which region is mrlp:
 
 to decide whether the action is procedural:
 	if examining, yes;
+	if lling, yes;
 	no;
 
 definition: a thing (called th) is moot:
@@ -253,7 +254,7 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble."
 
-the zig zag rig rag is a thing. cht is leteq. The player carries the zig zag rig rag.
+the zig zag rig rag is a thing. cht is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if]."
 
 after examining zig zag rig rag when bag-hint is true:
 	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
@@ -287,13 +288,19 @@ volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break]Oh, there's GOT to be a simple way to become better.". cht is leteq.
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht is leteq.
+
+to say how-better:
+	say "[one of]You'd like a simple way to become better[or]Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve[or]You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started[cycling]"
 
 wood-row is a number that varies.
 
 to say wood-noway:
 	increment wood-row;
-	if wood-row > number of rows in table of Wet Wood clues, now wood-row is 1;
+	if wood-row > number of rows in table of Wet Wood clues:
+		now wood-row is 1;
+		say "You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though";
+		continue the action;
 	choose row wood-row in table of Wet Wood clues;
 	say "[randtxt entry]";
 
@@ -304,7 +311,7 @@ every turn when player is in Wet Wood:
 	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
 
 after looking in Wet Wood for the first time:
-	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could [b]EXAMINE[r] or [b]READ[r] it for instructions. (NOTE: You can use point the learner at something by typing [ll] (thing), or you can refer to the learner as [ll]. You can also [ll] to scan your current location.)[line break]";
+	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could [b]EXAMINE[r] or [b]READ[r] it for instructions. (NOTE: You can point the learner at something by typing [ll] (thing), or you can refer to the learner as [ll]. You can also [ll] to scan your current location.)[line break]";
 	now player has leet learner;
 	set the pronoun it to leet learner;
 	continue the action;
@@ -342,9 +349,10 @@ understand "find fault" as findfaulting when player is in Vined Vault.
 
 carry out findfaulting:
 	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
-	say "Oh, wait! It isn't perfect. There you go ... if you do THIS, and THIS ...[wfak]";
+	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
 	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass now blocks your way out!";
 	move mean mass to Vined Vault;
+	now cht of Vined Vault is phbt;
 	up-reg;
 	the rule succeeds.
 
@@ -2122,7 +2130,7 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "PUT TESTING CREDITS HERE.";
+	say "Thanks to Wade Clarke for testing.";
 	say "Thanks to github for hosting private repositories that helped keep VVFF hidden.";
 	say "Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -2159,6 +2167,8 @@ book hinting
 
 the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off) It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location."
 
+understand "cheat/churner" and "cheat churner" as leet learner.
+
 after printing the name of leet learner while taking inventory: say " ([off-on of shut-scan])";
 
 understand "ll" and "cc" as leet learner.
@@ -2191,7 +2201,7 @@ carry out lling:
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
 	if noun is peeling pier and healed-here is false, say "It seems like the leet learner is registering something everywhere except on the peeling pier, here." instead;
-	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
+	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if][if the noun is not a room] [the noun][end if].";
 	if ever-opt-scan is false:
 		say "[line break]The blinking light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
@@ -3120,7 +3130,17 @@ rule for showdeathsing:
 			if temp < wry-wall-found - 1, say ", ";
 	say ".";
 
-volume parser errors guiding us
+volume parser stuff
+
+book command reading
+
+after reading the player's command:
+	if the player's command matches the regular expression "^ *<\*;>":
+		if currently transcripting:
+			say "Noted.";
+			reject the player's command;
+
+book parser errors
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "Blank blather? Rank! Rather!"

@@ -159,10 +159,9 @@ randtxt
 
 table of Wet Wood clues
 prof	randtxt
-False	"You walk around a bit for the first time, and you wind up by a place called the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You wander off and make it back to the Wet Wood."
+False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You wander off and make it back to the Wet Wood."
 False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood."
 False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you figure how to get out of the Wet Wood for a modest fee. You decline the offer and run back to where you came."
-False	"You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though."
 True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something else."
 
 volume hints for later
