@@ -201,23 +201,36 @@ check going nowhere:
 			say "[line break][b][location of player][r][paragraph break]";
 			the rule succeeds;
 	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
-	now list-room-with is true;
-	say "You [if noun is diagonal]never need to use diagonal directions[else]can't go [noun][end if], [if number of viable directions is 0]and you may
- need to figure a puzzle to go anywhere[else]but you can go [list of viable directions][end if].";
-	now list-room-with is false;
+	carry out the exitlisting activity;
 	the rule succeeds;
-
-list-room-with is a truth state that varies.
-
-after printing the name of a direction (called d) while list-room-with is true:
-	let rm be the room d of location of player;
-	if rm is visited, say " to [rm]";
 
 definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
 	yes;
 
+definition: a direction (called d) is viable-gone:
+	if d is viable and the room d of location of player is visited, yes;
+	no;
+
+definition: a direction (called d) is viable-ungone:
+	if d is viable and the room d of location of player is unvisited, yes;
+	no;
+
 [see header file for table of bad locs]
+
+section exitslisting
+
+exitlisting is an activity.
+
+rule for exitlisting:
+	let lvd be list of viable-gone directions;
+	let lvd2 be list of viable-ungone directions;
+	add lvd2 to lvd;
+	say "You [if noun is diagonal]never need to use diagonal directions[else]can't go [noun][end if], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [lvd][end if].";
+
+after printing the name of a direction (called d) while exitlisting:
+	let rm be the room d of location of player;
+	if rm is visited, say " to [rm]";
 
 chapter lieloling
 
