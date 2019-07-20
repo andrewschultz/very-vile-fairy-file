@@ -80,7 +80,9 @@ understand "mage me" as a mistake ("[if player is in Real Rear]One look at the S
 
 chapter Trim Tram mistakes
 
-understand "bind bee" and "bind be" as a mistake ("If there were a bee, it might distract you from being, well, you.[leetclue of partminus]") when player is in Trim Tram and me-minded is false.
+understand "bind be" as a mistake ("Your incantation fails. Perhaps something more straightforward and inward-looking would work better.[leetclue of leteq]") when player is in Trim Tram and me-minded is false.
+
+understand "bind bee" as a mistake ("If there were a bee, it might distract you from being, well, you.[leetclue of partminus]") when player is in Trim Tram and me-minded is false.
 
 understand "kind key" as a mistake ("Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU.[leetclue of partminus]") when player is in Trim Tram and me-minded is false.
 
@@ -120,11 +122,15 @@ understand "card cat" as a mistake ("Not very practical.[if player does not have
 
 chapter go gate mistakes
 
+to decide whether know-1:
+	if word number 1 in the player's command is "know", yes;
+	no;
+
 understand "crow crate" as a mistake ("No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus].") when go gate is quicknear.
 
 understand "foe fate" as a mistake ("You are nowhere near the end.[leetclue of partplus]") when go gate is quicknear.
 
-understand "know nate" and "no nate" as a mistake ("Nobody named Nate appears to help you through the go gate.[leetclue of leteq]") when go gate is quicknear.
+understand "know nate" and "no nate" as a mistake ("Nobody named Nate appears to help you through the go gate.[if know-1][leetclue of leteq][else][leetclue of partplus][end if]") when go gate is quicknear.
 
 understand "lo late" as a mistake ("You feel you are on the right path to disabling the go gate.[leetclue of partplus]") when go gate is quicknear.
 

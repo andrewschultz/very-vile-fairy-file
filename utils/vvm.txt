@@ -7,8 +7,10 @@ bell born=tell torn
 swell sworn=tell torn
 card cat=hard hat
 nursed knave=first fave
+cage key,mage me=x
 ######Trim Tram
 prim pram,slim slam=flim flam
+bind be=mind me
 bind bee=mind me
 kind key=mind me
 live leap=dive deep
@@ -17,18 +19,16 @@ pun pen=x
 won when=x
 signing sore=mining more
 crash crap=mash map
-crow crit=grow grit
-foe fit=grow grit
-go get=grow grit
-show shit=grow grit
-so sit=grow grit
-woe wit=grow grit
+go git,crow crit,foe fit,go get,show shit,so sit,woe wit=grow grit
 fast fap=cast cap
 passed pap=cast cap
+past pap=cast cap
 bean bass,clean class,glean glass,lean lass=green grass
 hind halt,mind malt,signed salt,wined walt=find fault
-crow crate,foe fate,know nate,lo late,mo mate,oh ate=whoa wait
+no nate,crow crate,foe fate,know nate,lo late,mo mate,oh ate=whoa wait
 # this is a bit of a cheat, as we have woe/whoa/whoah in the mistake file. We assume that the player can shift weight to wait.
 woe weight=woe wait
+whoa weight=whoa wait
+whoah weight=whoah wait
 cake cap,fake fap=make map
 ;

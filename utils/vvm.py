@@ -106,6 +106,8 @@ def read_mistake_file():
                         last_error_room = this_error_room
                         print("========", this_error_room)
                     print(need_add, "Line", line_count, ":", u, "~", should_be[u], "... needs you to {0}".format("FIX ERRONEOUS READING TO" if "leetclue" in line else "ADD READING"), leet_to_add)
+                    if mistake_file not in file_open_after:
+                        file_open_after[mistake_file] = line_count
                     if leet_to_add not in line_replace:
                         line_prev = line_replace
                         line_replace = re.sub(r"\"\)", "[{0}]\")".format(leet_to_add), line_replace, 1, re.IGNORECASE)
