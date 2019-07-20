@@ -13,10 +13,12 @@ from collections import defaultdict
 
 os.chdir(i7.sdir("vv"))
 mistake_cfg = os.path.join(i7.sdir("vv"), "vvm.txt")
+my_src = i7.src("vv")
 
 ignores = defaultdict(bool)
 should_be = defaultdict(str)
 found_yet = defaultdict(bool)
+file_open_after = defaultdict(int)
 
 def usage(hdr="GENERAL USAGE"):
     print("=" * 20 + hdr)
@@ -26,6 +28,7 @@ def usage(hdr="GENERAL USAGE"):
     exit()
 
 def learner_shift(x):
+    x = re.sub("[^a-z ]", "", x, 0, re.IGNORECASE)
     extra_letters = equal_letters = fewer_letters = 0
     y = should_be[x]
     x0 = x.split(" ")
@@ -130,6 +133,53 @@ def read_mistake_cfg():
                     should_be[f] = lary[1]
                 found_yet[f] = False
 
+def cht_change(my_line):
+    mll = my_line.lower()
+    if "now cht" in mll: return True
+    if mll.startswith("\t"): return False
+    if "cht of" in mll: return True
+    return False
+
+def parse_learner_line(l):
+    ll = l.lower().strip()
+    what_adjusted_to = re.sub(".*-> *(.*?)\].*", r'\1', ll)
+    if "[->" in l:
+        what_to_adj = re.sub(".*cht of *", "", ll)
+        what_to_adj = re.sub(" +is.*", "", what_to_adj)
+    else:
+        what_to_adj = re.sub(".*\[(.*?) *->.*", r'\1', ll)
+    if debug: print("What to adjust:", what_to_adj, "/", "What adjusted to:", what_adjusted_to)
+    return (0, 0)
+
+def check_for_cht():
+    cht_to_replace = 0
+    cht_count = 0
+    need_arrow = 0
+    with open(my_src) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if "cht is" in line.lower():
+                cht_to_replace += 1
+                cht_count += 1
+                print("'cht is' needs 'cht of * is' at line {0} (#{1})".format(line_count, cht_count))
+                if my_src not in file_open_after:
+                    file_open_after[my_src] = line_count
+                continue
+            if cht_change(line):
+                if not re.search("\[([^\]])*->([^\]])*\]", line):
+                    if 'is phbt' in line or 'is usually phbt' in line: continue # phbt means disabling things, so we pass on that, or default definitions
+                # if not re.search("\[([^\]])*->(^[^\]])*\]", line):
+                    need_arrow += 1
+                    print(need_arrow, "Need [->] at line", line_count, line.strip())
+                    if my_src not in file_open_after:
+                        file_open_after[my_src] = line_count
+                    continue
+                (my_from, my_to) = parse_learner_line(line)
+                # print(line_count, line.strip())
+                continue
+    if cht_count: print(cht_count, "total cht-is constructions to fix.")
+    else: print("Woohoo! No cht-is bugs in the main source.")
+
+debug = False
 add_and_verify = True
 
 cmd_count = 1
@@ -137,6 +187,8 @@ while cmd_count < len(sys.argv):
     arg = nohy(sys.argv[cmd_count])
     if arg == 'a':
         add_and_verify = True
+    elif arg == 'd':
+        debug = True
     elif arg == 'na' or arg == 'an':
         add_and_verify = False
     elif arg == 'e' or arg == 'ec' or arg == 'ce':
@@ -152,4 +204,9 @@ while cmd_count < len(sys.argv):
 read_mistake_cfg()
 read_mistake_file()
 
+check_for_cht()
 
+if len(file_open_after):
+    for x in file_open_after:
+        i7.npo(x, file_open_after[x], bail=False)
+    exit()
