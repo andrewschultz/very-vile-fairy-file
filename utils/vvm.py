@@ -78,7 +78,7 @@ def read_mistake_file():
                 if this_error_room != last_error_room:
                     last_error_room = this_error_room
                     print("========", this_error_room)
-                print(need_add, "Line", line_count, "/", u, "/", should_be[u], "... needs you to {0}".format("FIX ERRONEOUS READING TO" if "leetclue" in line else "ADD READING"), temp)
+                print(need_add, "Line", line_count, ":", u, "~", should_be[u], "... needs you to {0}".format("FIX ERRONEOUS READING TO" if "leetclue" in line else "ADD READING"), "[leetclue of {0}]".format(temp))
     print("Error summary: {0} cfg needed, {1} need to add leetclue, {2} excess leetclue.".format(cfg_needed, need_add, unnecc))
     if len(add_leetclue):
         print(len(add_leetclue), "Leetclues to add to vvm.txt:", ", ".join(sorted(add_leetclue)))
@@ -89,17 +89,17 @@ def read_mistake_cfg():
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("#"): continue
             if line.startswith(";"): break
-            if "\t" not in line:
-                print("Line", line_count, "should have tabs in it.")
+            if "=" not in line:
+                print("Line", line_count, "should have an equals sign in it.")
                 continue
-            lary = line.lower().strip().split("\t")
-            if lary[1] == 'x':
-                ignores[lary[0]] = True
-            else:
-                should_be[lary[0]] = lary[1]
-            found_yet[lary[0]] = False
-
-
+            lary = line.lower().strip().split("=")
+            from_ary = lary[0].split(",")
+            for f in from_ary:
+                if lary[1] == 'x':
+                    ignores[f] = True
+                else:
+                    should_be[f] = lary[1]
+                found_yet[f] = False
 
 read_mistake_cfg()
 read_mistake_file()
