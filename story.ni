@@ -687,13 +687,23 @@ part Real Rear 0,-1
 
 Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of real rear is partplus. [-> kneel near]
 
-the Sage Sea is scenery in Real Rear. [?? cage key as a mistake, mage me]
+chapter ceiling seer
+
+the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-near is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of a few favors[end if]."
+
+chapter Sage Sea
+
+the Sage Sea is scenery in Real Rear.
+
+chapter Steel Steer
 
 the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht of steel steer is partminus. [-> kneel near]
 
 the peeling pier is scenery in Real Rear.
 
-check taking steel steer: say "It is way too heavy." instead;
+check taking steel steer: say "It is way too heavy to STEAL STEER." instead;
+
+chapter Cage Key
 
 the cage key is a thing.
 
@@ -771,6 +781,7 @@ carry out healhereing:
 	clue-later "HEAL HERE";
 	say "You don't have anything to heal from, yet[seer-sez]." instead;
 	up-reg;
+	say "You call on the Ceiling Seer once more. You ask for your wounds to heal ... and they do!";
 	now healed-here is true;
 	the rule succeeds.
 
@@ -1471,7 +1482,7 @@ carry out showshielding:
 	if shield-shown is true, say "You already did." instead;
 	if player does not have gold guard:
 		clue-later "SHOW SHIELD";
-		say "You have nothing that would guard you effectively. Maybe later." instead;
+		say "That seems right, but you have nothing that would guard you effectively. Maybe later." instead;
 	up-reg;
 	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down. You can go west now.";
 	now shield-shown is true;
@@ -3156,7 +3167,7 @@ rule for showmissesing:
 	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME in Mystery Mall.";
 	if ganksta is not moot, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
 	unless oi mo is moot, say "You could have DIMD (dim'd) the horrible song Oi Mo in Mystery Mall.";
-	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE in the Last Lap.";
+	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE in the Gassed Gap/Last Lap.";
 
 showdeathsing is an activity.
 

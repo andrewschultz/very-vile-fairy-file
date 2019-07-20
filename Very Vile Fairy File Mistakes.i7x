@@ -18,7 +18,11 @@ chapter --- wry wall room mistakes
 
 understand "cry call" as a mistake ("You lash out meaninglessly at the wry wall.") when location of player is signable.
 
+understand "dry doll" as a mistake ("The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.") when location of player is signable.
+
 understand "fry fall" as a mistake ("The wry wall remains upright.") when location of player is signable.
+
+understand "my mall" as a mistake ("There's already a mall in this game.") when location of player is signable.
 
 understand "pry pall" as a mistake ("There is no hidden tomb under the wry wall.") when location of player is signable.
 
@@ -54,7 +58,13 @@ to decide whether passed-1:
 
 understand "fast fap" as a mistake ("Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.[leetclue of leteq]") when player is in Gassed Gap.
 
+understand "last lap" as a mstake ("It will be the last lap one day. But you need a different action to get to this finality.[leetclue of leteq]") when player is in Gassed Gap and cap is not moot.
+
 understand "passed pap" and "past pap" as a mistake ("You don't need to look back on what a trashy adventure this has been. Well, not in front of me.[if passed-1][leetclue of partminus][else][leetclue of leteq]") when player is in Gassed Gap.
+
+understand "razzed rap" as a mistake ("There's enough bad music in this game if you know where to look.[leetclue of partminus]") when player is in Gassed Gap. [?? if-then for if cap is moot]
+
+understand "sassed sap" as a mistake ("You look for someone who has recently lost an argument, but nobody turns up.[leetclue of partminus]") when player is in Gassed Gap.
 
 chapter Po' Pit mistakes
 
@@ -77,6 +87,10 @@ chapter Real Rear mistakes
 understand "cage key" as a mistake ("[if cage key is off-stage]You can't just ask for it. It's in the Sage Sea, but you have to earn it[else]You already got the key[end if].") when player has cage key or player is in Real Rear.
 
 understand "mage me" as a mistake ("[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do.") when player has cage key or player is in Real Rear.
+
+understand "peel pear" as a mistake ("You have no fruit.") when player is in Real Rear
+
+understand "wheel where" as a mistake ("The Ceiling Seer does not direct you to any wheel or any form of transportation.") when player is in Real Rear.
 
 chapter Trim Tram mistakes
 
