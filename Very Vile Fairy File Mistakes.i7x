@@ -4,9 +4,11 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [malf.py alphabetizes each set of mistakes internally by room after the "general mistakes" volume.]
 
-volume general mistakes
+volume what you start with
 
-understand "swig swag" as a mistake ("There's no time to be drinking here!").
+chapter general mistakes
+
+understand "swig swag" as a mistake ("There's no time to be drinking here![if player does not have big bag][leetclue of letminus][end if]").
 
 volume mistakes by room
 
@@ -24,21 +26,19 @@ understand "try tall" as a mistake ("The wry wall does not grow.") when location
 
 chapter Airy Isle mistakes
 
-understand "bell born" as a mistake ("There's enough noise right now.") when well worn hell horn is quicknear.
+understand "bell born" as a mistake ("There's enough noise right now.[leetclue of leteq]") when well worn hell horn is quicknear.
 
-understand "swell sworn" as a mistake ("That might augment the hell horn.") when well worn hell horn is quicknear.
+understand "swell sworn" as a mistake ("That might augment the hell horn.[leetclue of letminus]") when well worn hell horn is quicknear.
 
 chapter Creased Cross mistakes
 
-understand "beast boss" as a mistake ("The beast boss will surprise you when it does come.") when player is in Creased Cross.
+chapter Curst Cave mistakes
 
-chapter Curst Cave mistake
-
-understand "nursed knave" as a mistake ("You don't need any more of that.") when player is in Curst Cave.
+understand "nursed knave" as a mistake ("You don't need any more of that.[if tool tap is off-stage][leetclue of letminus][end if]") when player is in Curst Cave.
 
 chapter Fun Fen mistakes
 
-understand "live leap" as a mistake ("The leap wouldn't be live for very long.") when hive heap is quicknear.
+understand "live leap" as a mistake ("The leap wouldn't be live for very long.[leetclue of leteq]") when hive heap is quicknear.
 
 understand "one wen" as a mistake("Your skin remains unblemished, despite you tempting fate.") when player is in Fun Fen.
 
@@ -48,25 +48,29 @@ understand "won when" as a mistake("Hey, now! The Fun Fen is too cheery for such
 
 chapter Gassed Gap mistakes
 
-understand "fast fap" as a mistake ("Stop that! This is not AIF. While this is, uh, a solo adventure, it's not THAT sort of juvenile.") when player is in Gassed Gap.
+to decide whether passed-1:
+	if word number 1 in the player's command is "passed", yes;
+	no;
 
-understand "passed pap" and "past pap" as a mistake ("You don't need to look back on what a trashy adventure this has been. Well, not in front of me") when player is in Gassed Gap.
+understand "fast fap" as a mistake ("Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.[leetclue of leteq]") when player is in Gassed Gap.
+
+understand "passed pap" and "past pap" as a mistake ("You don't need to look back on what a trashy adventure this has been. Well, not in front of me.[if passed-1][leetclue of partminus][else][leetclue of leteq]") when player is in Gassed Gap.
 
 chapter Po' Pit mistakes
 
-understand "crash crap" as a mistake ("Profanity isn't necessary, here. Even minor ones.") when player is in Po' Pit.
+understand "crash crap" as a mistake ("Profanity isn't necessary, here. Even minor ones.[leetclue of letminus]") when player is in Po' Pit.
 
-understand "crow crit" as a mistake ("You wait for a little bird to give advice, but nothing happens.") when player is in Po' Pit.
+understand "crow crit" as a mistake ("You wait for a little bird to give advice, but nothing happens.[if grit-grown is true][leetclue of leteq][end if]") when player is in Po' Pit.
 
-understand "foe fit" as a mistake ("Complaining and speculation about who or what put you there won't help.") when player is in Po' Pit.
+understand "foe fit" as a mistake ("Complaining and speculation about who or what put you there won't help.[if grit-grown is true][leetclue of letplus][end if]") when player is in Po' Pit.
 
-understand "go get" and "go git" as a mistake ("You have no-one to order around, not that it'd do any good.") when player is in Po' Pit.
+understand "go get" and "go git" as a mistake ("You have no-one to order around, not that it'd do any good.[if grit-grown is true][leetclue of letplus][end if]") when player is in Po' Pit.
 
-understand "show shit" as a mistake ("Profanity doesn't work here.") when player is in Po' Pit.
+understand "show shit" as a mistake ("Profanity doesn't work here.[if grit-grown is true][leetclue of leteq][end if]") when player is in Po' Pit.
 
-understand "so sit" as a mistake ("You sit and pout. It doesn't help.") when player is in Po' Pit.
+understand "so sit" as a mistake ("You sit and pout. It doesn't help.[if grit-grown is true][leetclue of letplus][end if]") when player is in Po' Pit.
 
-understand "woe wit" as a mistake ("Clever complaining will make you feel better but won't do anything.") when player is in Po' Pit.
+understand "woe wit" as a mistake ("Clever complaining will make you feel better but won't do anything.[if grit-grown is true][leetclue of letplus][end if]") when player is in Po' Pit.
 
 chapter Real Rear mistakes
 
@@ -76,31 +80,31 @@ understand "mage me" as a mistake ("[if player is in Real Rear]One look at the S
 
 chapter Trim Tram mistakes
 
-understand "bind bee" as a mistake ("If there were a bee, it might distract you from being, well, you.") when player is in Trim Tram and me-minded is false.
+understand "bind bee" and "bind be" as a mistake ("If there were a bee, it might distract you from being, well, you.[leetclue of partminus]") when player is in Trim Tram and me-minded is false.
 
-understand "kind key" as a mistake ("Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU.") when player is in Trim Tram and me-minded is false.
+understand "kind key" as a mistake ("Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU.[leetclue of partminus]") when player is in Trim Tram and me-minded is false.
 
-understand "prim pram" as a mistake ("That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse.") when player is in Trim Tram.
+understand "prim pram" as a mistake ("That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse.[leetclue of leteq]") when player is in Trim Tram.
 
-understand "slim slam" as a mistake ("That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though.") when player is in Trim Tram.
+understand "slim slam" as a mistake ("That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though.[leetclue of leteq]") when player is in Trim Tram.
 
 chapter Vined Vault mistakes
 
-understand "bean bass" as a mistake ("You could use a delicious meal, but perhaps there is something even simpler the mean mass can become.") when mean mass is quicknear.
+understand "bean bass" as a mistake ("You could use a delicious meal, but perhaps there is something even simpler the mean mass can become.[leetclue of letplus]") when mean mass is quicknear.
 
-understand "clean class" as a mistake ("You can't help but feel the mean mass could be more wholesome, but that's not quite the right way to do things. It doesn't feel quite natural enough.") when mean mass is quicknear.
+understand "clean class" as a mistake ("You can't help but feel the mean mass could be more wholesome, but that's not quite the right way to do things. It doesn't feel quite natural enough.[leetclue of leteq]") when mean mass is quicknear.
 
-understand "glean glass" as a mistake ("No, there's no hidden window you overlooked.") when mean mass is quicknear.
+understand "glean glass" as a mistake ("No, there's no hidden window you overlooked.[leetclue of leteq]") when mean mass is quicknear.
 
-understand "hind halt" as a mistake ("You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.") when player is in Vined Vault.
+understand "hind halt" as a mistake ("You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.[leetclue of partplus]") when player is in Vined Vault.
 
-understand "lean lass" as a mistake ("This isn't that sort of game.") when mean mass is quicknear.
+understand "lean lass" as a mistake ("This isn't that sort of game.[leetclue of letplus]") when mean mass is quicknear.
 
-understand "mind malt" as a mistake ("The mind malt is gone. You have to rely on yourself!") when mean mass is quicknear.
+understand "mind malt" as a mistake ("The mind malt is gone. You have to rely on yourself![leetclue of partplus]") when mean mass is quicknear.
 
-understand "signed salt" as a mistake ("No block of salt appears. What would you do with it, anyway?") when player is in Vined Vault.
+understand "signed salt" as a mistake ("No block of salt appears. What would you do with it, anyway?[leetclue of letboth]") when player is in Vined Vault.
 
-understand "wined walt" as a mistake ("A drinking buddy won't help here.") when player is in Vined Vault.
+understand "wined walt" as a mistake ("A drinking buddy won't help here.[leetclue of letboth]") when player is in Vined Vault.
 
 chapter Whining War mistakes
 
@@ -112,23 +116,23 @@ understand "signing sore" as a mistake ("You make a rude gesture, for whatever g
 
 volume unsorted
 
-understand "card cat" as a mistake ("Not very practical.") when hard hat is quicknear or marred mat is quicknear.
+understand "card cat" as a mistake ("Not very practical.[if player does not have hard hat][leetclue of leteq][end if]") when hard hat is quicknear or marred mat is quicknear.
 
-chapter go gate
+chapter go gate mistakes
 
-understand "crow crate" as a mistake ("No birds appear to fly you over the grate, nor does a box of crowbars materialize.") when go gate is quicknear.
+understand "crow crate" as a mistake ("No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus].") when go gate is quicknear.
 
-understand "foe fate" as a mistake ("You are nowhere near the end.") when go gate is quicknear.
+understand "foe fate" as a mistake ("You are nowhere near the end.[leetclue of partplus]") when go gate is quicknear.
 
-understand "know nate" and "no nate" as a mistake ("Nobody named Nate appears to help you through the go gate.") when go gate is quicknear.
+understand "know nate" and "no nate" as a mistake ("Nobody named Nate appears to help you through the go gate.[leetclue of leteq]") when go gate is quicknear.
 
-understand "lo late" as a mistake ("You feel you are on the right path to disabling the go gate.") when go gate is quicknear.
+understand "lo late" as a mistake ("You feel you are on the right path to disabling the go gate.[leetclue of partplus]") when go gate is quicknear.
 
-understand "mo mate" as a mistake ("You remain alone.") when go gate is quicknear.
+understand "mo mate" as a mistake ("You remain alone.[leetclue of partplus]") when go gate is quicknear.
 
-understand "oh ate" as a mistake ("Nothing takes a bit out of the go gate.") when go gate is quicknear.
+understand "oh ate" as a mistake ("Nothing takes a bit out of the go gate.[leetclue of letplus]") when go gate is quicknear.
 
-understand "woe weight" and "whoa weight" and "whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.") when go gate is quicknear.
+understand "woe weight" and "whoa weight" and "whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]") when go gate is quicknear.
 
 Very Vile Fairy File Mistakes ends here.
 

@@ -676,6 +676,7 @@ carry out backedbindering:
 	now player has backed binder;
 	up-reg;
 	now player has paper pile;
+	now paper pile is part of the backed binder;
 	phbt paper pile;
 	the rule succeeds.
 
@@ -1728,7 +1729,7 @@ Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]
 
 chapter telltorning
 
-the well worn hell horn is a thing in Tarry Tile. cht is leteq. "A well worn hell horn balefully drones out hopeless noise that makes you feel why bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.".
+the well worn hell horn is a thing in Tarry Tile. cht is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.".
 
 instead of doing something with the well worn hell horn:
 	if action is procedural, continue the action;
@@ -2242,8 +2243,9 @@ carry out lling:
 		now ever-opt-scan is true;
 	the rule succeeds.
 
-to say scancol of (x - a cheattype):
-	say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
+to say leetclue of (x - a cheattype): if shut-scan is false, say "[paragraph break]As you say/think this, the Leet Learner momentarily turns [scancol of x].[no line break]"
+
+to say scancol of (x - a cheattype): say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
 
 this is the welp-wow-check rule:
 	if help-how is false:
