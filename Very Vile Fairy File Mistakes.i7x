@@ -40,6 +40,8 @@ chapter Fun Fen mistakes
 
 understand "live leap" as a mistake ("The leap wouldn't be live for very long.") when hive heap is quicknear.
 
+understand "one wen" as a mistake("Your skin remains unblemished, despite you tempting fate.") when player is in Fun Fen.
+
 understand "pun pen" as a mistake ("You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me.") when player is in Fun Fen.
 
 understand "won when" as a mistake("Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst.") when player is in Fun Fen.
@@ -54,11 +56,17 @@ chapter Po' Pit mistakes
 
 understand "crash crap" as a mistake ("Profanity isn't necessary, here. Even minor ones.") when player is in Po' Pit.
 
+understand "crow crit" as a mistake ("You wait for a little bird to give advice, but nothing happens.") when player is in Po' Pit.
+
+understand "foe fit" as a mistake ("Complaining and speculation about who or what put you there won't help.") when player is in Po' Pit.
+
 understand "go get" and "go git" as a mistake ("You have no-one to order around, not that it'd do any good.") when player is in Po' Pit.
 
 understand "show shit" as a mistake ("Profanity doesn't work here.") when player is in Po' Pit.
 
 understand "so sit" as a mistake ("You sit and pout. It doesn't help.") when player is in Po' Pit.
+
+understand "woe wit" as a mistake ("Clever complaining will make you feel better but won't do anything.") when player is in Po' Pit.
 
 chapter Real Rear mistakes
 
@@ -68,21 +76,27 @@ understand "mage me" as a mistake ("[if player is in Real Rear]One look at the S
 
 chapter Trim Tram mistakes
 
+understand "bind bee" as a mistake ("If there were a bee, it might distract you from being, well, you.") when player is in Trim Tram and me-minded is false.
+
+understand "kind key" as a mistake ("Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU.") when player is in Trim Tram and me-minded is false.
+
 understand "prim pram" as a mistake ("That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse.") when player is in Trim Tram.
 
 understand "slim slam" as a mistake ("That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though.") when player is in Trim Tram.
 
 chapter Vined Vault mistakes
 
-understand "clean class" as a mistake ("You're on the right track, but ... that doesn't feel natural enough.") when player is in Vined Vault and mean mass is in Vined Vault.
+understand "bean bass" as a mistake ("You could use a delicious meal, but perhaps there is something even simpler the mean mass can become.") when mean mass is quicknear.
 
-understand "glean glass" as a mistake ("No, there's no hidden window you overlooked.") when player is in Vined Vault and mean mass is in Vined Vault.
+understand "clean class" as a mistake ("You can't help but feel the mean mass could be more wholesome, but that's not quite the right way to do things. It doesn't feel quite natural enough.") when mean mass is quicknear.
+
+understand "glean glass" as a mistake ("No, there's no hidden window you overlooked.") when mean mass is quicknear.
 
 understand "hind halt" as a mistake ("You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.") when player is in Vined Vault.
 
-understand "lean lass" as a mistake ("This isn't that sort of game.") when player is in Vined Vault and mean mass is in Vined Vault.
+understand "lean lass" as a mistake ("This isn't that sort of game.") when mean mass is quicknear.
 
-understand "mind malt" as a mistake ("Neither phosphates nor alcohol will help make you smarter here. You have to rely on yourself!") when player is in Vined Vault.
+understand "mind malt" as a mistake ("The mind malt is gone. You have to rely on yourself!") when mean mass is quicknear.
 
 understand "signed salt" as a mistake ("No block of salt appears. What would you do with it, anyway?") when player is in Vined Vault.
 
