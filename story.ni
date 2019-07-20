@@ -26,6 +26,29 @@ include Very Vile Fairy File Tests by Andrew Schultz.
 
 when play begins (this is the set debug state rule): now debug-state is true;
 
+book i6 replacemets
+
+Include (-
+Replace LanguageVerb;
+-) after "Definitions.i6t".
+
+Include (-
+[ LanguageVerb i;
+	switch (i) {
+	  'i//','inv','inventory':
+			   print "take inventory";
+	  'll', 'cc':   print "scan";
+	  't', 'talk':   print "talk to";
+	  'x//':   print "examine";
+	  'gt//':   print "go to";
+	  'r//':   print "read";
+	  'z//':   print "wait";
+	  default: rfalse;
+	}
+	rtrue;
+];
+-) after "Language.i6t".
+
 volume definitions and properties
 
 book definitions
@@ -252,7 +275,7 @@ carry out lieloling:
 
 volume you
 
-Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble."
+Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
 
 the zig zag rig rag is a thing. cht is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if]."
 
@@ -339,6 +362,12 @@ part Vined Vault 3,-1
 
 Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht is partminus.
 
+chapter Mind Malt
+
+a packet of Mind Malt is a thing in Vined Vault. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus.
+
+check taking Mind Malt: say "Worthless. It's empty." instead;
+
 chapter findfaulting
 
 findfaulting is an action applying to nothing.
@@ -350,7 +379,7 @@ understand "find fault" as findfaulting when player is in Vined Vault.
 carry out findfaulting:
 	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
 	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
-	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass now blocks your way out!";
+	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
 	move mean mass to Vined Vault;
 	now cht of Vined Vault is phbt;
 	up-reg;
@@ -494,7 +523,7 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, buit the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way through the murky bit to the north. Well, a much safer one." instead;
@@ -502,9 +531,9 @@ check going in Fun Fen:
 
 section done den
 
-the done den is scenery in Fun Fen. "You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
+the done den is scenery in Fun Fen. "It looks nice and cozy. You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
 
-instead of entering done den, say "As you start to enter, you imagine a weight falling on you. How much? A ton. Ten.[paragraph break]You don't need to revisit your initial success."
+check entering done den: say "As you start to enter, you imagine a weight falling on you. How much? A ton. Ten.[paragraph break]You don't need to revisit your initial success." instead;
 
 section wrong art
 
@@ -613,7 +642,7 @@ understand the command "dive deep" as something new.
 understand "dive deep" as divedeeping when hive heap is quicknear.
 
 carry out divedeeping:
-	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.[paragraph break]Hmm. That's interesting. DEEP and HEAP rhyme, but the spelling's a bit different.";
+	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
 	moot hive heap;
 	up-reg;
 	bring-here vapor vile;
@@ -643,9 +672,10 @@ understand the command "backed binder" as something new.
 understand "backed binder" as backedbindering when paper pile is quicknear.
 
 carry out backedbindering:
-	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you![paragraph break]Hmm, that was a bit tricker. BACKED and FACT rhyme, but the letters are different.";
+	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you!"; [?? list out the clues a bit better]
 	now player has backed binder;
 	up-reg;
+	now player has paper pile;
 	phbt paper pile;
 	the rule succeeds.
 
@@ -655,7 +685,7 @@ Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels a
 
 the Sage Sea is scenery in Real Rear. [?? cage key as a mistake, mage me]
 
-the steel steer is a thing in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht is partminus.
+the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht is partminus.
 
 the peeling pier is scenery in Real Rear.
 
@@ -1849,10 +1879,12 @@ understand "talk to [something]" as talktoing.
 understand "talk [something]" as talktoing.
 understand "t [something]" as talktoing.
 
+does the player mean talktoing a person: it is very likely.
+
 check talktoing:
 	if noun is not a person, say "You can only talk to living things, and [the noun] doesn't qualify." instead;
 	if talk-text of noun is empty, say "BUG: there should be text, but there isn't." instead;
-	say "[talk-text of noun]" instead;
+	say "[talk-text of noun][line break]" instead;
 
 chapter inventory
 
@@ -2022,8 +2054,10 @@ chapter reading
 
 reading is an action applying to one thing.
 
+understand the command "r" as something new.
 understand the command "read" as something new.
 
+understand "r [thing]" as reading.
 understand "read [thing]" as reading.
 
 definition: a thing (called th) is readable:
@@ -2052,6 +2086,7 @@ to say table-of-color-hints:
 
 table of color clues
 my-text	my-color
+"   LEET LEARNER  "	"white"
 "CONCEIT CONCERNER"	"blue"
 "  CHEAT CHURNER  "	"green"
 "   MEET MOURNER  "	"yellow"
@@ -3134,7 +3169,7 @@ volume parser stuff
 
 book command reading
 
-after reading the player's command:
+after reading a command:
 	if the player's command matches the regular expression "^ *<\*;>":
 		if currently transcripting:
 			say "Noted.";
