@@ -172,9 +172,32 @@ a thing can be optional. a thing is usually not optional.
 
 a thing can be optional-noted. A thing is usually not optional-noted.
 
+a thing can be two-too. a thing is usually not two-too.
+
+a thing can be boring. a thing is usually not boring.
+
+a thing has text called bore-text.
+
+a thing has a rule called bore-rule. bore-rule of a thing is usually the bore-nothing rule.
+
+section boring rules
+
+skip-bore-text is a truth state that varies.
+
+this is the bore-nothing rule: do nothing;
+
+instead of doing something with a boring thing:
+	abide by the bore-rule of noun;
+	if skip-bore-text is true:
+		now skip-bore-text is false;
+		continue the action;
+	if bore-text of noun is not empty, say "[bore-text of noun]" instead;
+	say "Not much to do with [the noun], so, examining...";
+	try examining the noun instead;
+
 volume going nowhere
 
-the wry wall is a backdrop. "The wry wall reads:[line break][sign-dir]"
+the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
 
 nother-room is a room that varies.
 
@@ -192,10 +215,6 @@ to say sign-dir:
 			now got-wry is true;
 			say "[b][fake-name entry][r]: [e2 entry].";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
-
-instead of doing something with wry wall:
-	if action is procedural, continue the action;
-	say "The wry wall is just there for atmosphere."
 
 definition: a room (called rm) is signable:
 	if rm is airy isle and bot board is in airy isle, no;
@@ -410,28 +429,16 @@ Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, n
 
 the row writ is scenery in Po' Pit. "[if grit-grown is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
 
-the trash trap is a scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. [-> mash map]
+the trash trap is boring scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. bore-text of trash trap is "You want to NOT do anything with the trash trap. You don't know what could set it off.". [-> mash map]
 
-the cache cap is a thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht of cache cap is partminus. [-> mash map]
+the cache cap is a boring thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht of cache cap is partminus. bore-text of cache cap is "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit.". bore-rule of cache cap is bore-cache-cap rule. [-> mash map]
 
-the gash gap is scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht of gash gap is leteq. [-> mash map]
-
-check taking the cache cap:
-	say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
-
-instead of doing something with cache cap:
-	if action is procedural, continue the action;
-	say "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit."
-
-instead of doing something with trash trap:
-	if action is procedural, continue the action;
-	say "You want to NOT do anything with the trash trap. You don't know what could set it off."
-
-instead of doing something with cache cap:
-	if action is procedural, continue the action;
-	say "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit."
+the gash gap is boring scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht of gash gap is leteq. bore-text of gash gap is "The gash gap is an obstacle you need to find a special way around.". [-> mash map]
 
 understand "map" as trash trap when player is in Po' Pit.
+
+this is the bore-cache-cap rule:
+	if current action is taking, say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
 
 chapter mashmaping
 
@@ -545,11 +552,7 @@ section tall tree
 
 tree-down is a truth state that varies.
 
-The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht of tall tree is leteq. [-> fall free]
-
-instead of doing something with tall tree:
-	if action is procedural, continue the action;
-	say "[if tree-down is true]You'd better not do anything to the tree. It's your way across[else]You need to do something specific to the tree. Maybe give it an order[end if].";
+The Tall Tree is boring scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht of tall tree is leteq. bore-text of tall tree is "[if tree-down is true]You'd better not do anything to the tree. It's your way across[else]You need to do something specific to the tree. Maybe give it an order[end if].". [-> fall free]
 
 section hive heap
 
@@ -777,9 +780,7 @@ Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can g
 
 chapter Bull Beast
 
-The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here[end if]."
-
-instead of doing something with Bull Beast when cull-ceased is true: say "The Bull Beast is dead."
+The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.".
 
 chapter beastbossing
 
@@ -789,9 +790,11 @@ understand the command "beast boss" as something new.
 
 understand "beast boss" as beastbossing when player is in Creased Cross.
 
+beast-boss-min is a number that varies. beast-boss-min is 32.
+
 carry out beastbossing:
 	if Bull Beast is not off-stage, say "You already did." instead;
-	if score < 32:
+	if score < beast-boss-min:
 		clue-later "BEAST BOSS";
 		say "You don't have the experience yet." instead;
 	up-reg;
@@ -818,6 +821,7 @@ to decide whether can-kill-beast:
 carry out cullceaseding:
 	say "YOU KILLED THE BULL BEAST.";
 	now cull-ceased is true;
+	now bull beast is boring;
 	up-reg;
 	the rule succeeds.
 
@@ -1692,7 +1696,7 @@ carry out gotgoreding:
 
 book go gate
 
-there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus. [->whoa wait]
+there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". the go gate is two-too. cht of go gate is partplus. [->whoa wait]
 
 check taking go gate: try entering go gate instead.
 
@@ -1729,11 +1733,7 @@ Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]
 
 chapter telltorning
 
-the well worn hell horn is a thing in Tarry Tile. cht of well worn hell horn is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.". [-> tell torn]
-
-instead of doing something with the well worn hell horn:
-	if action is procedural, continue the action;
-	say "It ... well, it looks used, but it still hasn't fallen apart.";
+the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell horn is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.". bore-text of well worn hell horn is "It ... well, it looks used, but it still hasn't fallen apart.".[-> tell torn]
 
 telltorning is an action applying to nothing.
 
@@ -1749,7 +1749,7 @@ carry out telltorning:
 
 chapter Very Vile Fairy File
 
-the Very Vile Fairy File is a thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of very vile fairy file is partminus. [-> bury bile]
+the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of very vile fairy file is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -1757,11 +1757,7 @@ to say ever-tried of (t - a table name):
 
 vvff-row is a number that varies.
 
-instead of doing anything with the Fairy File:
-	if action is procedural, continue the action;
-	say "[ff-no].";
-
-instead of doing anything when noun is Fairy File:
+instead of doing anything when second noun is Fairy File:
 	if action is procedural, continue the action;
 	say "[ff-no].";
 
@@ -2209,6 +2205,10 @@ after printing the name of leet learner while taking inventory: say " ([off-on o
 
 understand "ll" and "cc" as leet learner.
 
+chapter two too
+
+the two too button is part of the leet learner.
+
 chapter lling
 
 lling is an action applying to one thing.
@@ -2232,6 +2232,8 @@ rule for supplying a missing noun when lling:
 
 ever-opt-scan is a truth state that varies.
 
+ever-two-too is a truth state that varies.
+
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
@@ -2239,9 +2241,14 @@ carry out lling:
 	if noun is peeling pier and healed-here is false, say "It seems like the leet learner is registering something everywhere except on the peeling pier, here." instead;
 	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if][if the noun is not a room] [the noun][end if].";
 	if ever-opt-scan is false:
-		say "[line break]The blinking light must mean something. The learner is usually lit solidly or not at all.";
+		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
+	if noun is two-too, say "[line break]The 'two too' light on the Leet Learner also appears[two-too-yet].";
 	the rule succeeds.
+
+to say two-too-yet:
+	if ever-two-too is false, say ". Hmm. You have a good idea what that means";
+	now ever-two-too is true;
 
 to say leetclue of (x - a cheattype): if shut-scan is false, say "[paragraph break]As you say/think this, the Leet Learner momentarily turns [scancol of x].[no line break]"
 
