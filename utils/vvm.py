@@ -11,6 +11,9 @@ import re
 import i7
 from collections import defaultdict
 
+debug = False
+add_and_verify = True
+
 os.chdir(i7.sdir("vv"))
 mistake_cfg = os.path.join(i7.sdir("vv"), "vvm.txt")
 my_src = i7.src("vv")
@@ -27,18 +30,19 @@ def usage(hdr="GENERAL USAGE"):
     print("es/se = edit source file")
     exit()
 
-def learner_shift(x):
-    x = re.sub("[^a-z ]", "", x, 0, re.IGNORECASE)
+def learner_shift(from_words, to_words):
+    from_words = re.sub("[^a-z ]", "", from_words, 0, re.IGNORECASE)
     extra_letters = equal_letters = fewer_letters = 0
-    y = should_be[x]
-    x0 = x.split(" ")
-    y0 = y.split(" ")
-    for a in range(0, 2):
-        lx = len(x0[a])
-        ly = len(y0[a])
-        if lx < ly: extra_letters += 1
-        if lx == ly: equal_letters += 1
-        if lx > ly: fewer_letters += 1
+    fw = from_words.split(" ")
+    tw = to_words.split(" ")
+    for a in range(0, len(fw)):
+        b = a % 2
+        lf = len(fw[a])
+        lt = len(tw[b])
+        extra_letters += (lf < lt)
+        equal_letters += (lf == lt)
+        fewer_letters += (lf > lt)
+    if debug: print(from_words, "/", to_words, "equal", equal_letters, "extra", extra_letters, "fewer", fewer_letters)
     if not extra_letters and not fewer_letters: return "leteq"
     if extra_letters and fewer_letters: return "letboth"
     if extra_letters and equal_letters: return "partplus"
@@ -93,7 +97,7 @@ def read_mistake_file():
                         unnecc += 1
                         print(line_count, "has unnecessary leetclue")
                     continue
-                temp = learner_shift(u)
+                temp = learner_shift(u, should_be[u])
                 leet_to_add = "leetclue of {0}".format(temp)
                 if leet_to_add not in line:
                     need_add += 1
@@ -149,7 +153,7 @@ def parse_learner_line(l):
     else:
         what_to_adj = re.sub(".*\[(.*?) *->.*", r'\1', ll)
     if debug: print("What to adjust:", what_to_adj, "/", "What adjusted to:", what_adjusted_to)
-    return (0, 0)
+    return (what_to_adj, what_adjusted_to)
 
 def check_for_cht():
     cht_to_replace = 0
@@ -174,13 +178,15 @@ def check_for_cht():
                         file_open_after[my_src] = line_count
                     continue
                 (my_from, my_to) = parse_learner_line(line)
+                settings_needed = learner_shift(my_from, my_to)
+                if settings_needed in line: continue
+                print(line_count, "Need", settings_needed, "have", my_from, "->", my_to, "for", line.strip(), "REPLACE" if 'cht' in line else "ADD")
                 # print(line_count, line.strip())
+                if my_src not in file_open_after:
+                    file_open_after[my_src] = line_count
                 continue
     if cht_count: print(cht_count, "total cht-is constructions to fix.")
     else: print("Woohoo! No cht-is bugs in the main source.")
-
-debug = False
-add_and_verify = True
 
 cmd_count = 1
 while cmd_count < len(sys.argv):

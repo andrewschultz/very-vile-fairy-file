@@ -108,11 +108,11 @@ understand "wined walt" as a mistake ("A drinking buddy won't help here.[leetclu
 
 chapter Whining War mistakes
 
-understand "cake cap" as a mistake ("No edible headgear appears.") when player is in Whining War and shore-shine is true.
+understand "cake cap" as a mistake ("No edible headgear appears.[leetclue of leteq]") when player is in Whining War and shore-shine is true.
 
-understand "fake fap" as a mistake ("You make a rude gesture, for whatever good it does.") when player is in Whining War and shore-shine is true.
+understand "fake fap" as a mistake ("You make a rude gesture, for whatever good it does.[leetclue of leteq]") when player is in Whining War and shore-shine is true.
 
-understand "signing sore" as a mistake ("You make a rude gesture, for whatever good it does.") when player is in Whining War.
+understand "signing sore" as a mistake ("You make a rude gesture, for whatever good it does.[leetclue of partminus]") when player is in Whining War.
 
 volume unsorted
 

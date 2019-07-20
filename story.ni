@@ -277,7 +277,7 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
 
-the zig zag rig rag is a thing. cht is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if]."
+the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if].". [-> big bag]
 
 after examining zig zag rig rag when bag-hint is true:
 	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
@@ -311,7 +311,7 @@ volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht is leteq.
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of wet wood is leteq. [-> get good]
 
 to say how-better:
 	say "[one of]You'd like a simple way to become better[or]Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve[or]You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started[cycling]"
@@ -360,11 +360,11 @@ carry out getgooding:
 
 part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht is partminus.
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
 
 chapter Mind Malt
 
-a packet of Mind Malt is a thing in Vined Vault. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus.
+a packet of Mind Malt is a thing in Vined Vault. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus. [-> find fault]
 
 check taking Mind Malt: say "Worthless. It's empty." instead;
 
@@ -381,13 +381,13 @@ carry out findfaulting:
 	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
 	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
 	move mean mass to Vined Vault;
-	now cht of Vined Vault is phbt;
+	phbt Vined Vault;
 	up-reg;
 	the rule succeeds.
 
 chapter mean mass
 
-The mean mass is a thing. "The mean mass continues to pulse and block the way out of the Vined Vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally, too dangerous to walk through.". cht is letplus.
+The mean mass is a thing. "The mean mass continues to pulse and block the way out of the Vined Vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally, too dangerous to walk through.". cht of mean mass is letplus. [-> green grass]
 
 chapter greengrassing
 
@@ -406,15 +406,15 @@ carry out greengrassing:
 
 part Po' Pit 2,-1
 
-Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht is letplus.
+Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap.". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht of po' pit is letplus. [-> grow grit]
 
-the row writ is scenery in Po' Pit. "[if grit-grown is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht is partplus.
+the row writ is scenery in Po' Pit. "[if grit-grown is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
 
-the trash trap is a scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht is letminus.
+the trash trap is a scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. [-> mash map]
 
-the cache cap is a thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht is partminus.
+the cache cap is a thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if grit-grown is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht of cache cap is partminus. [-> mash map]
 
-the gash gap is scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht is leteq.
+the gash gap is scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht of gash gap is leteq. [-> mash map]
 
 check taking the cache cap:
 	say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
@@ -476,9 +476,9 @@ carry out growgriting:
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht is leteq.
+Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht of trim tram is leteq. [-> flim flam]
 
-FIND FEE is scenery in Trim Tram. cht is partplus.
+FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. [-> mind me]
 
 chapter mindmeing
 
@@ -537,15 +537,15 @@ check entering done den: say "As you start to enter, you imagine a weight fallin
 
 section wrong art
 
-the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way. The wrong art also has a prong part sticking out from it.". cht of the wrong art is letplus.
+the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way. The wrong art also has a prong part sticking out from it.". cht of wrong art is letplus. [-> strong start]
 
-the prong part is part of the wrong art. The prong part is optional. "It's a particularly ugly part of the wrong art.". cht is letplus.
+the prong part is part of the wrong art. The prong part is optional. "It's a particularly ugly part of the wrong art.". cht of prong part is letplus. [-> strong start]
 
 section tall tree
 
 tree-down is a truth state that varies.
 
-The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht is leteq.
+The Tall Tree is scenery in Fun Fen. "[if tree-down is false]The tall tree sits here, bending out over the gap to the north. It could make a bridge reaching the other side[else]You made the tall tree fall free to the north, giving passage to [swh of the room north of Fun Fen][end if].". cht of tall tree is leteq. [-> fall free]
 
 instead of doing something with tall tree:
 	if action is procedural, continue the action;
@@ -553,19 +553,19 @@ instead of doing something with tall tree:
 
 section hive heap
 
-the hive heap is a thing. cht is leteq. "The hive heap that was released with the tall tree fell is here. There's got to be a way to look through it.". description is "The hive heap seems like it may be hiding something below the surface, but how best to attack it?"
+the hive heap is a thing. cht of hive heap is leteq. "The hive heap that was released with the tall tree fell is here. There's got to be a way to look through it.". description is "The hive heap seems like it may be hiding something below the surface, but how best to attack it?". [-> dive deep]
 
 check taking hive heap: say "You might not get stung, but it's too unwieldy to carry[if player has big bag], even with your big bag[end if]." instead;
 
 section vapor vile
 
-the vapor vile is a thing. cht is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it.". description is "The vapor vile is noxious, so you can't get too near it. But perhaps if it condensed into a solid, you could deal with it more easily.".
+the vapor vile is a thing. cht of vapor vile is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it.". description is "The vapor vile is noxious, so you can't get too near it. But perhaps if it condensed into a solid, you could deal with it more easily.". [-> paper pile]
 
 check taking vapor vile: say "It's too ethereal to take." instead;
 
 section paper pile
 
-the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht is partplus.
+the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht of paper pile is partplus. [fact finder -> backed binder]
 
 check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
 
@@ -595,7 +595,7 @@ carry out strongstarting:
 
 chapter Cark Cliff
 
-Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht is letplus. [?? bark biff]
+Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht of cark cliff is letplus. [-> spark spliff] [?? bark biff]
 
 chapter sparkspliffing
 
@@ -682,11 +682,11 @@ carry out backedbindering:
 
 part Real Rear 0,-1
 
-Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht is partplus.
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of real rear is partplus. [-> kneel near]
 
 the Sage Sea is scenery in Real Rear. [?? cage key as a mistake, mage me]
 
-the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht is partminus.
+the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht of steel steer is partminus. [-> kneel near]
 
 the peeling pier is scenery in Real Rear.
 
@@ -710,8 +710,8 @@ carry out kneelnearing:
 	up-reg; [kneel near]
 	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
 	now knelt-yet is true; [?? track difference]
-	now cht of Real Rear is leteq;
-	now cht of steel steer is letminus;
+	now cht of Real Rear is leteq; [real rear->feel fear]
+	now cht of steel steer is letminus; [steel steer->feel fear]
 	the rule succeeds.
 
 chapter feelfearing
@@ -773,7 +773,7 @@ carry out healhereing:
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can go in all four directions here.". cht is letminus.
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can go in all four directions here.". cht of creased cross is letminus. [-> beast boss]
 
 chapter Bull Beast
 
@@ -865,13 +865,13 @@ part History Hall -1,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Creased Cross. cht is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]."
+History Hall is west of Creased Cross. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if].". [-> mystery mall]
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
-the Gutta Ganksta is an optional person. description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht is leteq.
+the Gutta Ganksta is an optional person. description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
 
-GOTS GAME is part of the Gutta Ganksta. cht is leteq.
+GOTS GAME is part of the Gutta Ganksta. cht of gots game is leteq. [-> lots lame]
 
 after lling gutta ganksta:
 	if cht of gots game is leteq:
@@ -885,7 +885,7 @@ after examining Toe Tappin Row Rappin:
 	if player does not have Row Rappin, now player has Row Rappin;
 	continue the action;
 
-Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht is leteq.
+Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht of oi mo is leteq. [oimo -> dimd]
 
 check going west in History Hall:
 	if mistmall is true, continue the action;
@@ -1048,7 +1048,7 @@ part Vending Vibe -2,1 a
 
 Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 
-The Trending Tribe are plural-named people in Vending Vibe. cht is letplus. talk-text is "'Bam, burning! Am earning!'"
+The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". [-> lending libe]
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
 
@@ -1182,7 +1182,7 @@ carry out breakbrieing:
 
 part Whining War 2,1
 
-Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view.". cht is partplus.
+Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view.". cht of whining war is partplus. [-> shining shore]
 
 [??mining more / dining door]
 
@@ -1293,7 +1293,7 @@ carry out makemaping:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht is leteq. "You can go all four directions here."
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here.". [-> loft land]
 
 ever-loft is a truth state that varies.
 
@@ -1306,7 +1306,7 @@ part Here Hull 1,2
 
 Here Hull is a room in Piddling Pain. It is east of Soft Sand.
 
-The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'"
+The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". [->fear ful]
 
 to decide whether hull-bull:
 	if player is in Here Hull or beer bull is in location of player, yes;
@@ -1314,7 +1314,7 @@ to decide whether hull-bull:
 
 to reset-bull:
 	move beer bull to Here Hull;
-	now cht of beer bull is partminus;
+	now cht of beer bull is partminus; [beer bull->fear ful]
 
 chapter fearfuling
 
@@ -1330,7 +1330,7 @@ carry out fearfuling:
 	if fearful-ever is false:
 		now fearful-ever is true;
 		up-reg;
-	now cht of beer bull is leteq;
+	now cht of beer bull is leteq; [beer bull->dear dull]
 	say "The beer bull snorts and begins to follow you.";
 	now fearful-on is true;
 	the rule succeeds.
@@ -1505,7 +1505,7 @@ part Gassed Gap 0,4
 
 Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]."
 
-Gassed Gap is north of Foe Field. cht is partminus.
+Gassed Gap is north of Foe Field. cht of gassed gap is partminus. [-> last lap]
 
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
@@ -1692,7 +1692,7 @@ carry out gotgoreding:
 
 book go gate
 
-there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus.
+there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus. [->whoa wait]
 
 check taking go gate: try entering go gate instead.
 
@@ -1700,7 +1700,7 @@ check entering go gate:
 	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
 
-the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is letboth.
+the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait] [?? what if there are homonyms: two too?]
 
 chapter whoawaiting
 
@@ -1729,7 +1729,7 @@ Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]
 
 chapter telltorning
 
-the well worn hell horn is a thing in Tarry Tile. cht is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.".
+the well worn hell horn is a thing in Tarry Tile. cht of well worn hell horn is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.". [-> tell torn]
 
 instead of doing something with the well worn hell horn:
 	if action is procedural, continue the action;
@@ -1749,7 +1749,7 @@ carry out telltorning:
 
 chapter Very Vile Fairy File
 
-the Very Vile Fairy File is a thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht is partminus.
+the Very Vile Fairy File is a thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of very vile fairy file is partminus. [-> bury bile]
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -2939,8 +2939,8 @@ the get-sad rule is listed after the notify score changes rule in the turn seque
 this is the get-sad rule:
 	if in-so-saded is false and in-so-sad is false and score >= 30:
 		now in-so-sad is true;
-		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
-		now cht of the player is letplus;
+		say "Everything feels pointless. You're sick of these silly rhymes. You feel so sad, mo['] mad.";
+		now cht of the player is letplus; [so sad->glow glad]
 	the rule succeeds;
 
 every turn when in-so-sad is true:
@@ -2976,7 +2976,7 @@ this is the get-wrong rule:
 	if in-way-wronged is false and in-way-wrong is false and score >= 20:
 		now in-way-wrong is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
-		now cht of the player is letplus;
+		now cht of the player is letplus; [way wrong->stay strong]
 	the rule succeeds;
 
 every turn when in-way-wrong is true:
@@ -3029,9 +3029,9 @@ carry out wildweeding:
 
 part Pit Pound
 
-Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]".
+Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]". [->sit sound]
 
-The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq.
+The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. [->sit sound]
 
 chapter sitsounding
 
@@ -3045,6 +3045,7 @@ carry out sitsounding:
 	if Hit Hound is moot, say "You already did." instead;
 	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
 	moot Hit Hound;
+	phbt pit pound;
 	up-reg;
 	the rule succeeds.
 

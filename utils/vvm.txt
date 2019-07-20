@@ -30,4 +30,5 @@ hind halt,mind malt,signed salt,wined walt=find fault
 crow crate,foe fate,know nate,lo late,mo mate,oh ate=whoa wait
 # this is a bit of a cheat, as we have woe/whoa/whoah in the mistake file. We assume that the player can shift weight to wait.
 woe weight=woe wait
+cake cap,fake fap=make map
 ;
