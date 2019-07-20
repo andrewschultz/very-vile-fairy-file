@@ -4,14 +4,26 @@
 # very vile fairy file mistake guesser
 #
 
+from mytools import nohy
+import sys
 import os
 import re
 import i7
 from collections import defaultdict
 
+os.chdir(i7.sdir("vv"))
+mistake_cfg = os.path.join(i7.sdir("vv"), "vvm.txt")
+
 ignores = defaultdict(bool)
 should_be = defaultdict(str)
 found_yet = defaultdict(bool)
+
+def usage(hdr="GENERAL USAGE"):
+    print("=" * 20 + hdr)
+    print("a = add and verify, na/an = don't add and verify")
+    print("e/ec/ce = edit config file")
+    print("es/se = edit source file")
+    exit()
 
 def learner_shift(x):
     extra_letters = equal_letters = fewer_letters = 0
@@ -94,7 +106,7 @@ def read_mistake_file():
                             print("    **** failed to add {0} at line {1}.".format(leet_to_add, line_count))
             out_file.write(line_replace)
     out_file.close()
-    if need_add:
+    if add_and_verify and need_add:
         i7.wm(mistake_file, i7.tmp_hdr)
     os.remove(i7.tmp_hdr)
     print("Error summary: {0} cfg needed, {1} need to add leetclue, {2} excess leetclue.".format(cfg_needed, need_add, unnecc))
@@ -102,7 +114,6 @@ def read_mistake_file():
         print(len(add_leetclue), "Leetclues to add to vvm.txt:", ", ".join(sorted(add_leetclue)))
 
 def read_mistake_cfg():
-    mistake_cfg = "vvm.txt"
     with open(mistake_cfg) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("#"): continue
@@ -118,6 +129,25 @@ def read_mistake_cfg():
                 else:
                     should_be[f] = lary[1]
                 found_yet[f] = False
+
+add_and_verify = True
+
+cmd_count = 1
+while cmd_count < len(sys.argv):
+    arg = nohy(sys.argv[cmd_count])
+    if arg == 'a':
+        add_and_verify = True
+    elif arg == 'na' or arg == 'an':
+        add_and_verify = False
+    elif arg == 'e' or arg == 'ec' or arg == 'ce':
+        i7.open_source_config()
+        exit()
+    elif arg == 'es' or arg == 'se':
+        i7.open_source()
+        exit()
+    else:
+        usage()
+    cmd_count += 1
 
 read_mistake_cfg()
 read_mistake_file()
