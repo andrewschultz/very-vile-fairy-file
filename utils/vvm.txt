@@ -15,6 +15,7 @@ live leap=dive deep
 one wen=x
 pun pen=x
 won when=x
+signing sore=mining more
 crash crap=mash map
 crow crit=grow grit
 foe fit=grow grit
