@@ -8,6 +8,8 @@ volume what you start with
 
 chapter general mistakes
 
+understand "brig brag" as a mistake ("Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!").
+
 understand "swig swag" as a mistake ("There's no time to be drinking here![if player does not have big bag][leetclue of letminus][end if]").
 
 volume mistakes by room
@@ -58,7 +60,7 @@ to decide whether passed-1:
 
 understand "fast fap" as a mistake ("Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.[leetclue of leteq]") when player is in Gassed Gap.
 
-understand "last lap" as a mstake ("It will be the last lap one day. But you need a different action to get to this finality.[leetclue of leteq]") when player is in Gassed Gap and cap is not moot.
+understand "last lap" as a mistake ("It will be the last lap one day. But you need a different action to get to this finality.[leetclue of leteq]") when player is in Gassed Gap and cap is not moot.
 
 understand "passed pap" and "past pap" as a mistake ("You don't need to look back on what a trashy adventure this has been. Well, not in front of me.[if passed-1][leetclue of partminus][else][leetclue of leteq]") when player is in Gassed Gap.
 

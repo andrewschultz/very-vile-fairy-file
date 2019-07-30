@@ -22,9 +22,11 @@ use MAX_ACTIONS of 210.
 
 section establish debug - not for release
 
-include Very Vile Fairy File Tests by Andrew Schultz.
-
 when play begins (this is the set debug state rule): now debug-state is true;
+
+[Include this line after, as it may have some "when play begins" tests]
+
+include Very Vile Fairy File Tests by Andrew Schultz.
 
 book i6 replacemets
 
@@ -1873,7 +1875,7 @@ check sleeping: say "Lie late, my mate? Why wait?" instead;
 
 chapter waiting
 
-check waiting: say "Hi ho! Lie low." instead;
+check waiting: say "[one of]Hi ho! Lie low[or]Woo! Will stew, still[in order]." instead;
 
 chapter talking
 
@@ -1946,7 +1948,7 @@ check swearing obscenely: say "Gee, gad! Be bad! 'Me, mad!'" instead;
 
 the block swearing mildly rule is not listed in any rulebook.
 
-check swearing mildly: say "Gee, gad! Be bad! 'Me, mad!'" instead;
+check swearing mildly: try swearing obscenely instead;
 
 chapter listening
 
@@ -2502,7 +2504,7 @@ when play begins:
 		if room-hint-rule of Q is trivially false rule:
 			increment hint-idx;
 			say "[hint-idx]. You need to specify room-hint-rule for [Q].";
-	if hint-idx > 0, say "[hint-idx] room hint[plur of hint-idx] to implement.";
+	say "[if hint-idx > 0][hint-idx] room hint[plur of hint-idx] to implement[else]All room hints implemented[end if].";
 
 chapter hinting an object verb
 
@@ -2552,6 +2554,7 @@ the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is leet-learner-hint rule.
 the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 the thing-hint-rule of Lot Lord is bot-board-hint rule.
+the thing-hint-rule of mind malt is mind-malt-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
@@ -2571,6 +2574,7 @@ the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
 the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
+the thing-hint-rule of two too button is two-too-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
@@ -2693,6 +2697,12 @@ this is the kerry-kyle-hint rule:
 		say "[one of]You feel not just wrong but weak. Things are slipping away.[or]How to keep things from slipping away?[or]STAY STRONG.[stopping]";
 	else:
 		say "Woohoo! There's nothing wrong with you right now!"
+
+this is the mind-malt-hint rule:
+	say "The mind malt is just there to give another clue about weaknesses in the Vined Vault."
+
+this is the two-too-hint rule:
+	say "The two too button indicates that there may be an alternate homonym/spelling solution to a puzzle."
 
 this is the leet-learner-hint rule:
 	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";

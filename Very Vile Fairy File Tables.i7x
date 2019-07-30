@@ -164,11 +164,12 @@ randtxt
 
 table of Wet Wood clues
 prof	randtxt
-False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You wander off and make it back to the Wet Wood."
-False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood."
-False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you figure how to get out of the Wet Wood for a modest fee. You decline the offer and run back to where you came."
-True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something else."
+False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You wander off and make it back to the Wet Wood.[leetclue of leteq]"
+False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood.[leetclue of letminus]"
+False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to where you came.[leetclue of leteq]"
+True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something slightly more distasteful.[leetclue of leteq]" [pet pood]
 
+[leetclue of xxx]
 volume hints for later
 
 table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
