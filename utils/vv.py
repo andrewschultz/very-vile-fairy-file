@@ -72,6 +72,18 @@ def read_all_time():
             l = line.lower().strip().split("=")
             all_time[l[0]] = int(l[1])
 
+def list_all_sounds():
+    lines_got = 0
+    print("List of sounds...")
+    with open("notes.txt") as file:
+        for line in file:
+            if line.startswith("#sounds:"):
+                lines_got += 1
+                print(line[8:].strip())
+    if not lines_got:
+        print("Uh oh. I didn't find any sounds.")
+    exit()
+
 def print_configs():
     print("Replacing first two letters is {:s}.".format(i7.oo[2 in dels]))
     print("Replacing first letter is {:s}.".format(i7.oo[1 in dels]))
@@ -330,6 +342,7 @@ while count < len(sys.argv):
     if arg == 'i': standard_input = True
     elif arg == 'ni': standard_input = False
     elif arg == 'v': verbose = True
+    elif arg == 's': list_all_sounds()
     elif arg[0] == 't': two_letter = int(arg[1:])
     elif re.search("^[ec][0-9]", arg): every_x = int(arg[1:])
     elif '?' in arg: cmd_line_usage()
@@ -370,6 +383,9 @@ if standard_input:
             x = x[:-2]
         if x == 'c':
             print(cmds)
+            continue
+        if x == 's':
+            list_all_sounds()
             continue
         cmds.append(x)
         if ' ' not in x:
