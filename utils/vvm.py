@@ -16,7 +16,10 @@ add_and_verify = True
 
 os.chdir(i7.sdir("vv"))
 mistake_cfg = os.path.join(i7.sdir("vv"), "vvm.txt")
+source_cfg = os.path.join(i7.sdir("vv"), "vvs.txt")
 my_src = i7.src("vv")
+mistake_file = i7.hdr("vvff", "mi")
+table_file = i7.hdr("vvff", "ta")
 
 ignores = defaultdict(bool)
 should_be = defaultdict(str)
@@ -56,8 +59,34 @@ def first_understands(l):
     ret_val = preface.split("\"")[1::2]
     return ret_val
 
+def check_source_clues():
+    ignores.clear()
+    should_be.clear()
+    found_yet.clear()
+    read_rhyme_cfg(source_cfg)
+    source_files = [ my_src, table_file ]
+    for q in source_files:
+        with open(q) as file:
+            for (line_count, line) in enumerate(file, 1):
+                ll = line.lower().strip().replace(",", "").replace(".", "")
+                if "\"" not in ll: continue
+                need_valid_leet = "leetclue" in ll
+                for x in should_be:
+                    if x in ll:
+                        my_shift = learner_shift(x, should_be[x])
+                        if my_shift not in line:
+                            print("We need to {0} [leetclue of {1}] to line {2}: {3}".format("REPLACE" if "leetclue" in line else "ADD", my_shift, line_count, line[:50]))
+                            if q not in file_open_after:
+                                file_open_after[q] = line_count
+                                print(q, line_count)
+                        if found_yet[x]: print("DUPLICATE find", x, "at line", line_count)
+                        found_yet[x] = True
+    r = sorted([x for x in found_yet if not found_yet[x]])
+    if len(r): print("NOT FOUND YET:", ', '.join(r))
+    else: print("EVERYTHING WAS FOUND!")
+
 def read_mistake_file():
-    mistake_file = i7.hdr("vvff", "mi")
+    read_rhyme_cfg(mistake_cfg)
     need_add = 0
     cfg_needed = 0
     unnecc = 0
@@ -122,8 +151,8 @@ def read_mistake_file():
     if len(add_leetclue):
         print(len(add_leetclue), "Leetclues to add to vvm.txt:", ", ".join(sorted(add_leetclue)))
 
-def read_mistake_cfg():
-    with open(mistake_cfg) as file:
+def read_rhyme_cfg(cfg_to_read):
+    with open(cfg_to_read) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("#"): continue
             if line.startswith(";"): break
@@ -209,8 +238,8 @@ while cmd_count < len(sys.argv):
         usage()
     cmd_count += 1
 
-read_mistake_cfg()
 read_mistake_file()
+check_source_clues()
 
 check_for_cht()
 
