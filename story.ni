@@ -3108,6 +3108,24 @@ carry out fitfounding:
 	up-reg;
 	the rule succeeds.
 
+book clumpy cluster
+
+the clumpy cluster is scenery.
+
+chapter bumpybustering
+
+bumpybustering is an action applying to nothing.
+
+understand the command "bumpy buster" as something new.
+
+understand "bumpy buster" as bumpybustering.
+
+carry out bumpybustering:
+	say "The clumpy cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
+	moot clumpy cluster;
+	up-reg;
+	the rule succeeds.
+
 book Pain Peasant
 
 the Pain Peasant is a person.
