@@ -8,7 +8,9 @@ volume includes
 
 the release number is 1.
 
-include Trivial Niceties Z-Only by Andrew Schultz.
+include Trivial Niceties by Andrew Schultz.
+
+include Intro Restore Skip by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
@@ -18,7 +20,13 @@ include Very Vile Fairy File Tables by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
+use authorial modesty.
+
 use MAX_ACTIONS of 210.
+
+section debug include values - not for release
+
+use MAX_VERBS of 270
 
 section establish debug - not for release
 
@@ -691,7 +699,7 @@ Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels a
 
 chapter ceiling seer
 
-the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-near is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of a few favors[end if]."
+the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-yet is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of a few favors[end if]."
 
 chapter Sage Sea
 
@@ -1875,7 +1883,7 @@ check sleeping: say "Lie late, my mate? Why wait?" instead;
 
 chapter waiting
 
-check waiting: say "[one of]Hi ho! Lie low[or]Woo! Will stew, still[in order]." instead;
+check waiting: say "[one of]Hi ho! Lie low[or]Woo! Will stew, still[cycling]." instead;
 
 chapter talking
 
@@ -2907,6 +2915,7 @@ when play begins (this is the opening text rule):
 	now the left hand status line is "West Wall";
 	force-status;
 	if debug-state is false, ask-screenread;
+	anonymously abide by the check-skip-intro rule;
 	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak]";
 	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
@@ -2914,6 +2923,8 @@ when play begins (this is the opening text rule):
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
+
+when play begins (this is the score and status tweak rule):
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
 	now the left hand status line is "[location of the player]";
