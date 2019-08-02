@@ -164,13 +164,17 @@
 			<dock index="0" id="54" port="s" />
 			<dock index="1" id="62" port="n" />
 		</line>
-		<room id="23" name="Grit Ground" subtitle="" x="512" y="-480" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
+		<room id="23" name="Grit Ground" subtitle="" x="192" y="-224" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0">
 			<objects>Hit Hound</objects>
 		</room>
 		<room id="51" name="Hippy Hill" subtitle="" x="192" y="-480" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="64" name="" description="" startText="up" endText="down">
 			<dock index="0" id="19" port="e" />
 			<dock index="1" id="51" port="w" />
+		</line>
+		<line id="65" name="" description="">
+			<dock index="0" id="59" port="e" />
+			<dock index="1" id="23" port="w" />
 		</line>
 	</map>
 	<settings>
