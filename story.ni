@@ -26,7 +26,7 @@ use MAX_ACTIONS of 210.
 
 section debug include values - not for release
 
-use MAX_VERBS of 270
+use MAX_VERBS of 250
 
 section establish debug - not for release
 
@@ -368,25 +368,6 @@ after looking in Wet Wood for the first time:
 	set the pronoun it to leet learner;
 	continue the action;
 
-chapter getgooding
-
-getgooding is an action applying to nothing.
-
-understand the command "getgood" as something new.
-understand the command "get good" as something new.
-
-understand "getgood" as getgooding.
-understand "get good" as getgooding.
-
-get-good is a truth state that varies.
-
-carry out getgooding:
-	if get-good is true, say "You already did." instead;
-	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak]";
-	up-reg;
-	move player to Vined Vault;
-	the rule succeeds;
-
 part Vined Vault 3,-1
 
 Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
@@ -397,41 +378,9 @@ a packet of Mind Malt is a thing in Vined Vault. description is "It looks like t
 
 check taking Mind Malt: say "Worthless. It's empty." instead;
 
-chapter findfaulting
-
-findfaulting is an action applying to nothing.
-
-understand the command "find fault" as something new.
-
-understand "find fault" as findfaulting when player is in Vined Vault.
-
-carry out findfaulting:
-	if mean mass is in Vined Vault, say "You already did, and things got worse. You'll have to try something else." instead;
-	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
-	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
-	move mean mass to Vined Vault;
-	phbt Vined Vault;
-	up-reg;
-	the rule succeeds.
-
 chapter mean mass
 
 The mean mass is a thing. "The mean mass continues to pulse and block the way out of the Vined Vault.". description is "The mean mass doesn't quite attack you, but it hangs menacingly, unnaturally, too dangerous to walk through.". cht of mean mass is letplus. [-> green grass]
-
-chapter greengrassing
-
-greengrassing is an action applying to nothing.
-
-understand the command "green grass" as something new.
-
-understand "green grass" as greengrassing when player is in Vined Vault and mean mass is in Vined Vault.
-
-carry out greengrassing:
-	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
-	up-reg;
-	move player to Po' Pit;
-	moot mean mass;
-	the rule succeeds;
 
 part Po' Pit 2,-1
 
@@ -450,46 +399,9 @@ understand "map" as trash trap when player is in Po' Pit.
 this is the bore-cache-cap rule:
 	if current action is taking, say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
 
-chapter mashmaping
-
-mashmaping is an action applying to nothing.
-
-understand the command "bash bap" as something new.
-understand the command "mash map" as something new.
-
-understand "bash bap" as mashmaping when player is in Po' Pit.
-understand "mash map" as mashmaping when player is in Po' Pit.
-
 bash-not-mash is a truth state that varies.
 
-carry out mashmaping:
-	now bash-not-mash is whether or not word number 1 in the player's command is "bash";
-	if grit-grown is false:
-		clue-later "MASH MAP";
-		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be." instead;
-	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
-	up-reg;
-	move player to Trim Tram;
-	the rule succeeds.
-
-chapter growgriting
-
-growgriting is an action applying to nothing.
-
-understand the command "grow grit" as something new.
-
-understand "grow grit" as growgriting when player is in Po' Pit.
-
 grit-grown is a truth state that varies.
-
-carry out growgriting:
-	if grit-grown is true, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain." instead;
-	say "The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
-	now grit-grown is true;
-	phbt row writ;
-	phbt Po' Pit;
-	up-reg;
-	the rule succeeds.
 
 part Trim Tram 1,-1
 
@@ -497,44 +409,11 @@ Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered
 
 FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. [-> mind me]
 
-chapter mindmeing
-
 me-minded is a truth state that varies.
-
-mindmeing is an action applying to nothing.
-
-understand the command "mind me" as something new.
-
-understand "mind me" as mindmeing when player is in Trim Tram.
-
-carry out mindmeing:
-	if me-minded is true, say "You already did." instead;
-	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
-	now me-minded is true;
-	up-reg;
-	the rule succeeds.
 
 chapter flimflaming
 
 skim-not-flim is a truth state that varies;
-
-flimflaming is an action applying to nothing.
-
-understand the command "flim flam" as something new.
-understand the command "flimflam" as something new.
-understand the command "skim scam" as something new.
-
-understand "flim flam" and "flimflam" and "skim scam" as flimflaming when player is in Trim Tram.
-
-carry out flimflaming:
-	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
-	if me-minded is false:
-		clue-later "FLIM FLAM";
-		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit." instead;
-	say "That does it! The tram moves off to a more open place...";
-	move the player to Fun Fen;
-	up-reg;
-	the rule succeeds.
 
 volume Piddling Pain
 
@@ -2011,6 +1890,10 @@ to decide whether tried-yet of (ct - text):
 	if tried-any is false, say "BUG in the tried-yet code for text [ct]. This is not critical, but it is worth fixing on my end.";
 	decide no;
 
+to clue-later-w (ct - text):
+	clue-later ct;
+	process the note first think rule;
+
 to clue-later (ct - text):
 	now first-think-clue-flag is true;
 	repeat through table of forlaters:
@@ -2023,7 +1906,7 @@ to clue-later (ct - text):
 first-think-clue-flag is a truth state that varies.
 ever-think-flag is a truth state that varies.
 
-every turn when first-think-clue-flag is true and ever-think-flag is false:
+every turn when first-think-clue-flag is true and ever-think-flag is false (this is the note first think rule):
 	if ever-think-flag is false, say "[line break]NOTE: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under THINK, with clues as to when they work.";
 	now ever-think-flag is true;
 	continue the action;
@@ -3240,22 +3123,153 @@ book parser errors
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "Blank blather? Rank! Rather!"
 
+the clue half right words rule is listed first in the for printing a parser error rulebook.
+
 Rule for printing a parser error (this is the clue half right words rule):
-	repeat through table of understands:
-		if there is a myloc entry:
-			if location of player is myloc entry:
-				if the player's command includes mytxt entry:
-					say "[myexp entry][line break]";
-					the rule succeeds;
-		else:
-			process the myrule entry;
-			if the rule succeeded and the player's command includes mytxt entry:
-				say "[myexp entry][line break]";
-				the rule succeeds;
+	abide by the verb-checker rule;
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
 	say "You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.";
+
+ha-half is a truth state that varies.
+
+this is the verb-checker rule:
+	repeat through the table of verb checks:
+		let my-count be 0;
+		if the player's command includes w1 entry, increment my-count;
+		if the player's command includes w2 entry, increment my-count;
+		say "[ver-rule entry] [my-count].";
+		if there is a wfull entry:
+			if the player's command matches the wfull entry:
+				now my-count is 2;
+			else if my-count is 2:
+				say "Ooh! You're close, but you juggled some stuff up, somehow.";
+				the rule succeeds;
+		if my-count is 2:
+[			change the text of the player's command to "[word number 2 in the player's command]";
+			if the player's command includes w1 entry, say "Crap.";]
+			process the ver-rule entry;
+			if the rule failed, continue the action;
+			if the rule succeeded:
+				if there is a core entry: [in case we want to use a ternary something or other]
+					if core entry is true:
+						up-min;
+					else:
+						up-reg;
+				process the do-rule entry;
+				process the notify score changes rule;
+			the rule succeeds;
+		if ha-half is true and my-count is 1:
+			process the ver-rule entry;
+			if the rule failed, next;
+			say "The HA HALF button lights up on your Leet Learner.";
+			the rule succeeds;
+
+in-test-loop is a truth state that varies.
+
+table of verb checks
+w1 (topic)	w2 (topic)	core	ver-rule	do-rule	wfull (topic)
+"get"	"good"	true	vc-get-good rule	vr-get-good rule	--
+"find"	"fault"	true	vc-find-fault rule	vr-find-fault rule	--
+"green"	"grass"	true	vc-green-grass rule	vr-green-grass rule	--
+"grow"	"grit"	true	vc-grow-grit rule	vr-grow-grit rule	--
+"bash/mash"	"bap/map"	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
+"mind"	"me"	true	vc-mind-me rule	vr-mind-me rule	--
+"flim/skim"	"flam/scam"	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
+
+to loop-note (t - text):
+	if in-test-loop is true, say "COMMAND: [t]...[paragraph break]";
+
+this is the vc-get-good rule:
+	if player is not in wet wood:
+		if in-test-loop is false, say "You already managed to GET GOOD.";
+		do nothing instead;
+	the rule succeeds;
+
+this is the vr-get-good rule:
+	loop-note "GET GOOD";
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak]";
+	move player to Vined Vault instead;
+
+this is the vc-find-fault rule:
+	if mean mass is in Vined Vault:
+		if in-test-loop is false, say "You already did, and things got worse. You'll have to try something else.";
+		do nothing instead;
+	if player is in Vined Vault, the rule succeeds;
+
+this is the vr-find-fault rule:
+	loop-note "FIND FAULT";
+	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
+	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
+	move mean mass to Vined Vault;
+	phbt Vined Vault;
+
+this is the vc-green-grass rule:
+	if mean mass is in vined vault, the rule succeeds;
+	the rule fails;
+
+this is the vr-green-grass rule:
+	loop-note "GREEN GRASS";
+	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
+	move player to Po' Pit;
+	moot mean mass;
+	the rule succeeds;
+
+this is the vc-grow-grit rule:
+	if player is in po' pit and grit-grown is false, the rule succeeds;
+	if grit-grown is true:
+		if in-test-loop is false, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
+		do nothing instead;
+
+this is the vr-grow-grit rule:
+	loop-note "GROW GRIT";
+	say "The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
+	now grit-grown is true;
+	phbt row writ;
+	phbt Po' Pit;
+	the rule succeeds.
+
+this is the vc-mash-map rule:
+	if player is not in po' pit, the rule fails;
+	if the player's command matches "mash bap" or the player's command matches "bash map":
+		say "Ooh! Just tweak one letter in either word." instead;
+	if grit-grown is false:
+		now bash-not-mash is whether or not word number 1 in the player's command is "bash";
+		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
+		clue-later-w "MASH MAP";
+		do nothing instead;
+	the rule succeeds;
+
+this is the vr-mash-map rule:
+	loop-note "MASH MAP";
+	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
+	move player to Trim Tram;
+	the rule succeeds;
+
+this is the vc-mind-me rule:
+	if me-minded is true:
+		if in-test-loop is false, say "You already minded yourself.";
+		do nothing instead;
+	if player is in trim tram and me-minded is false, the rule succeeds;
+
+this is the vr-mind-me rule:
+	loop-note "MIND ME";
+	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
+	now me-minded is true;
+
+this is the vc-flim-flam rule:
+	if me-minded is false:
+		now skim-not-flim is whether or not word number 1 in the player's command is "skim";
+		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
+		clue-later-w "FLIM FLAM";
+		do nothing instead;
+	if player is in trim tram, the rule succeeds;
+
+this is the vr-flim-flam rule:
+	loop-note "FLIM FLAM/SKIM SCAM";
+	say "That does it! The tram moves off to a more open place...";
+	move the player to Fun Fen;
 
 [see header file for table of understands]
 
@@ -3273,7 +3287,7 @@ when play begins (this is the force tester wherever rule):
 		try switching the story transcript on;
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
 	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
 	continue the action;
 
 chapter blowbying
@@ -3285,49 +3299,24 @@ understand the command "blow by" as something new.
 
 understand "blowby" as blowbying.
 understand "blow by" as blowbying.
-understand "flow fly" as blowbying.
+understand "flow fie" as blowbying.
 understand "slow sigh" as blowbying.
 
 carry out blowbying:
 	if fun fen is visited, say "Too late to blow by." instead;
 	let prev-blowby-score be the score;
-	repeat through table of intro-blowby:
-		consider the done-yet entry;
-		if the rule succeeded, next;
-		say "The correct command was [cmd-text entry].";
-		try my-action entry;
-		the rule succeeds;
+	now in-test-loop is true;
+	repeat through table of verb checks:
+		process the ver-rule entry;
+		if the rule succeeded:
+			process the do-rule entry;
+			up-reg;
+			now in-test-loop is false;
+			the rule succeeds;
+	now in-test-loop is false;
 	say "Uh oh. Something went wrong. No rules succeeded.";
 
-table of intro-blowby
-done-yet	cmd-text	my-action
-got-good rule	"GET GOOD"	getgooding
-found-fault rule	"FIND FAULT"	findfaulting
-mass-moot rule	"GREEN GRASS"	greengrassing
-grown-grit rule	"GROW GRIT"	growgriting
-map-mashed rule	"MASH MAP/BASH BAP"	mashmaping
-minded-me rule	"MIND ME"	mindmeing
-fen-visited rule	"FLIM FLAM/SKIM SCAM"	flimflaming
-
-this is the got-good rule: if vined vault is visited, the rule succeeds;
-
-this is the found-fault rule: if mean mass is not off-stage, the rule succeeds;
-
-this is the mass-moot rule: if mean mass is moot, the rule succeeds;
-
-this is the grown-grit rule: if grit-grown is true, the rule succeeds;
-
-this is the map-mashed rule: if trim tram is visited, the rule succeeds;
-
-this is the minded-me rule: if me-minded is true, the rule succeeds;
-
-this is the fen-visited rule: if fun fen is visited, the rule succeeds;
-
 prev-blowby-score is a number that varies.
-
-after blowbying:
-	if fun fen is unvisited and prev-blowby-score is the score, say "Oops! Nothing positive happened. This is a bug in the testing code.";
-	continue the action;
 
 chapter tricktriping
 
