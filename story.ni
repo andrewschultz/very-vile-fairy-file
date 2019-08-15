@@ -490,24 +490,7 @@ carry out sparkspliffing:
 	up-min;
 	the rule succeeds;
 
-chapter freefalling
-
-freefalling is an action applying to nothing.
-
-understand the command "free fall" as something new.
-understand the command "fall free" as something new.
-
-understand "free fall" as freefalling.
-understand "fall free" as freefalling.
-
-carry out freefalling:
-	if tree-down is true, say "You don't need the tree to fall any further." instead;
-	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
-	now tree-down is true;
-	phbt tall tree;
-	move hive heap to Fun Fen;
-	up-reg;
-	the rule succeeds;
+tree-down is a truth state that varies.
 
 chapter divedeeping
 
@@ -3077,14 +3060,20 @@ ha-half is a truth state that varies.
 this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
-		if the player's command includes w1 entry, increment my-count;
-		if the player's command includes w2 entry, increment my-count;
+		if the player's command matches the regular expression "\b([w1 entry])\b", increment my-count;
+		if the player's command matches the regular expression "\b([w2 entry])\b", increment my-count;
+		let wfull-fail be true;
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
 				now my-count is 2;
 			else if my-count is 2:
-				say "Ooh! You're close, but you juggled some stuff up, somehow.";
-				the rule succeeds;
+				now wfull-fail is true;
+		if the player's command matches the regular expression "^([w2 entry])\b":
+			say "You've got it backwards! Just flip things around, and it'll be okay.";
+			the rule succeeds;
+		if wfull-fail is true:
+			say "Ooh! You're close, but you juggled things up, somehow.";
+			the rule succeeds;
 		if my-count is 2:
 			process the ver-rule entry;
 			if the rule failed:
@@ -3125,20 +3114,33 @@ section verb check table
 [verb check and verb run rules. This is in approximate game-solve order.]
 
 table of verb checks [xxvc]
-w1 (topic)	w2 (topic)	core	ver-rule	do-rule	wfull (topic)
-"get"	"good"	true	vc-get-good rule	vr-get-good rule	--
+w1 (text)	w2 (text)	core	ver-rule	do-rule	wfull (topic)
+"get"	"good"	true	vc-get-good rule	vr-get-good rule	-- [start Intro]
 "find"	"fault"	true	vc-find-fault rule	vr-find-fault rule	--
 "green"	"grass"	true	vc-green-grass rule	vr-green-grass rule	--
 "grow"	"grit"	true	vc-grow-grit rule	vr-grow-grit rule	--
-"bash/mash"	"bap/map"	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
+"bash|mash"	"bap|map"	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
 "mind"	"me"	true	vc-mind-me rule	vr-mind-me rule	--
-"flim/skim"	"flam/scam"	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
-"strong"	"start"	false	vc-strong-start rule	vr-strong-start rule	--
-"sit"	"sound"	true	vc-sit-sound rule	vr-sit-sound rule	--
+"flim|skim"	"flam|scam"	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
+"strong"	"start"	false	vc-strong-start rule	vr-strong-start rule	-- [start of Fun Fen]
+"fall"	"free"	true	vc-fall-free rule	vr-fall-free rule	--
+"sit"	"sound"	true	vc-sit-sound rule	vr-sit-sound rule	-- [start of undefined]
 "fit"	"found"	true	vc-fit-found rule	vr-fit-found rule	--
 "bumped"	"buster"	true	vc-bumped-buster rule	vr-bumped-buster rule	--
-"merry"	"mile"	true	vc-merrymile rule	vr-merrymile rule	--
+"merry"	"mile"	true	vc-merrymile rule	vr-merrymile rule	-- [start of endgame]
 "bury"	"bile"	true	vc-bury-bile rule	vr-bury-bile rule	--
+
+this is the vc-fall-free rule:
+	if tree-down is true, say "You don't need the tree to fall any further." instead;
+	if player is not in Fun Fen or Tall Tree is moot, the rule fails;
+	the rule succeeds;
+
+this is the vr-fall-free rule:
+	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
+	now tree-down is true;
+	phbt tall tree;
+	move hive heap to Fun Fen;
+	the rule succeeds;
 
 [ this is stuff for beta commands below ]
 
