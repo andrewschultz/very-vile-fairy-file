@@ -492,53 +492,6 @@ carry out sparkspliffing:
 
 tree-down is a truth state that varies.
 
-chapter divedeeping
-
-divedeeping is an action applying to nothing.
-
-understand the command "dive deep" as something new.
-
-understand "dive deep" as divedeeping when hive heap is quicknear.
-
-carry out divedeeping:
-	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
-	moot hive heap;
-	up-reg;
-	bring-here vapor vile;
-	the rule succeeds.
-
-chapter paperpileing
-
-paperpileing is an action applying to nothing.
-
-understand the command "paper pile" as something new.
-
-understand "paper pile" as paperpileing when vapor vile is quicknear.
-
-carry out paperpileing:
-	say "The vapor vile changes to a paper pile.";
-	up-reg;
-	moot vapor vile;
-	bring-here paper pile;
-	the rule succeeds.
-
-chapter backedbindering
-
-backedbindering is an action applying to nothing.
-
-understand the command "backed binder" as something new.
-
-understand "backed binder" as backedbindering when paper pile is quicknear.
-
-carry out backedbindering:
-	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you!"; [?? list out the clues a bit better]
-	now player has backed binder;
-	up-reg;
-	now player has paper pile;
-	now paper pile is part of the backed binder;
-	phbt paper pile;
-	the rule succeeds.
-
 part Real Rear 0,-1
 
 Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of real rear is partplus. [-> kneel near]
@@ -3062,24 +3015,25 @@ this is the verb-checker rule:
 		let my-count be 0;
 		if the player's command matches the regular expression "\b([w1 entry])\b", increment my-count;
 		if the player's command matches the regular expression "\b([w2 entry])\b", increment my-count;
-		let wfull-fail be true;
+		let wfull-fail be false;
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
 				now my-count is 2;
 			else if my-count is 2:
 				now wfull-fail is true;
-		if the player's command matches the regular expression "^([w2 entry])\b":
-			say "You've got it backwards! Just flip things around, and it'll be okay.";
-			the rule succeeds;
-		if wfull-fail is true:
-			say "Ooh! You're close, but you juggled things up, somehow.";
-			the rule succeeds;
 		if my-count is 2:
 			process the ver-rule entry;
 			if the rule failed:
 				continue the action;
 			else if the rule succeeded:
-				if there is a core entry: [in case we want to use a ternary something or other]
+				if okflip entry is false:
+					if the player's command matches the regular expression "^([w2 entry])\b":
+						say "You've got it backwards! Just flip things around, and it'll be okay.";
+						the rule succeeds;
+				if wfull-fail is true:
+					say "Ooh! You're close, but you juggled things up, somehow.";
+					the rule succeeds;
+				if there is a core entry: [I am cheating here to get a 3-way choice. Having something empty means you don't get a point, true means it's regular, false means it's optional]
 					if core entry is true:
 						up-reg;
 					else:
@@ -3114,33 +3068,24 @@ section verb check table
 [verb check and verb run rules. This is in approximate game-solve order.]
 
 table of verb checks [xxvc]
-w1 (text)	w2 (text)	core	ver-rule	do-rule	wfull (topic)
-"get"	"good"	true	vc-get-good rule	vr-get-good rule	-- [start Intro]
-"find"	"fault"	true	vc-find-fault rule	vr-find-fault rule	--
-"green"	"grass"	true	vc-green-grass rule	vr-green-grass rule	--
-"grow"	"grit"	true	vc-grow-grit rule	vr-grow-grit rule	--
-"bash|mash"	"bap|map"	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
-"mind"	"me"	true	vc-mind-me rule	vr-mind-me rule	--
-"flim|skim"	"flam|scam"	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
-"strong"	"start"	false	vc-strong-start rule	vr-strong-start rule	-- [start of Fun Fen]
-"fall"	"free"	true	vc-fall-free rule	vr-fall-free rule	--
-"sit"	"sound"	true	vc-sit-sound rule	vr-sit-sound rule	-- [start of undefined]
-"fit"	"found"	true	vc-fit-found rule	vr-fit-found rule	--
-"bumped"	"buster"	true	vc-bumped-buster rule	vr-bumped-buster rule	--
-"merry"	"mile"	true	vc-merrymile rule	vr-merrymile rule	-- [start of endgame]
-"bury"	"bile"	true	vc-bury-bile rule	vr-bury-bile rule	--
-
-this is the vc-fall-free rule:
-	if tree-down is true, say "You don't need the tree to fall any further." instead;
-	if player is not in Fun Fen or Tall Tree is moot, the rule fails;
-	the rule succeeds;
-
-this is the vr-fall-free rule:
-	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
-	now tree-down is true;
-	phbt tall tree;
-	move hive heap to Fun Fen;
-	the rule succeeds;
+w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
+"get"	"good"	false	true	vc-get-good rule	vr-get-good rule	-- [start Intro]
+"find"	"fault"	true	true	vc-find-fault rule	vr-find-fault rule	--
+"green"	"grass"	false	true	vc-green-grass rule	vr-green-grass rule	--
+"grow"	"grit"	true	true	vc-grow-grit rule	vr-grow-grit rule	--
+"bash|mash"	"bap|map"	true	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
+"mind"	"me"	false	true	vc-mind-me rule	vr-mind-me rule	--
+"flim|skim"	"flam|scam"	false	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
+"strong"	"start"	true	false	vc-strong-start rule	vr-strong-start rule	-- [start of Fun Fen]
+"fall"	"free"	true	true	vc-fall-free rule	vr-fall-free rule	--
+"dive"	"deep"	true	true	vc-dive-deep rule	vr-dive-deep rule	--
+"paper"	"pile"	false	true	vc-paper-pile rule	vr-paper-pile rule	--
+"backed"	"binder"	false	true	vc-backed-binder rule	vr-backed-binder rule	--
+"sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	-- [start of undefined]
+"fit"	"found"	true	true	vc-fit-found rule	vr-fit-found rule	--
+"bumped"	"buster"	true	true	vc-bumped-buster rule	vr-bumped-buster rule	--
+"merry"	"mile"	false	true	vc-merrymile rule	vr-merrymile rule	-- [start of endgame]
+"bury"	"bile"	false	true	vc-bury-bile rule	vr-bury-bile rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3162,6 +3107,47 @@ to win-the-game:
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 
 section vc vr rules
+
+this is the vc-dive-deep rule:
+	if hive heap is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-dive-deep rule:
+	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
+	moot hive heap;
+	bring-here vapor vile;
+
+this is the vc-paper-pile rule:
+	if paper pile is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-paper-pile rule:
+	say "The vapor vile changes to a paper pile.";
+	moot vapor vile;
+	bring-here paper pile;
+
+this is the vc-backed-binder rule:
+	if paper pile is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-backed-binder rule:
+	say "The papers labeled FACT FINDER should be useful. But you find a way to glue them all together. Go, you!"; [?? list out the clues a bit better]
+	now player has backed binder;
+	now player has paper pile;
+	now paper pile is part of the backed binder;
+	phbt paper pile;
+
+this is the vc-fall-free rule:
+	if tree-down is true, say "You don't need the tree to fall any further." instead;
+	if player is not in Fun Fen or Tall Tree is moot, the rule fails;
+	the rule succeeds;
+
+this is the vr-fall-free rule:
+	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
+	now tree-down is true;
+	phbt tall tree;
+	move hive heap to Fun Fen;
+	the rule succeeds;
 
 this is the vc-get-good rule:
 	if player is not in wet wood:
@@ -3241,12 +3227,13 @@ this is the vr-mind-me rule:
 	now me-minded is true;
 
 this is the vc-flim-flam rule:
+	if player is not in trim tram, the rule fails;
 	if me-minded is false:
 		now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
 		clue-later-w "FLIM FLAM";
 		do nothing instead;
-	if player is in trim tram, the rule succeeds;
+	the rule succeeds;
 
 this is the vr-flim-flam rule:
 	loop-note "FLIM FLAM/SKIM SCAM";
