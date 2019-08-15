@@ -26,7 +26,7 @@ use MAX_ACTIONS of 210.
 
 section debug include values - not for release
 
-use MAX_VERBS of 250
+use MAX_VERBS of 200
 
 section establish debug - not for release
 
@@ -3174,8 +3174,11 @@ this is the mistake-checker rule:
 				say "[mist-txt entry][line break]";
 				if there is a leet-rule entry:
 					process the leet-rule entry;
-				else if there is a leet-val entry:
+					unless the rule succeeded, the rule succeeds;
+				if there is a leet-val entry:
 					say "[leetclue of leet-val entry][line break]";
+				else if there is a leet-rule entry:
+					say "Oops. There should be a clue here, but there isn't. A BUG but not a game breaker.";
 				the rule succeeds;
 
 section verb check table
