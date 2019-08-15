@@ -3068,7 +3068,7 @@ carry out wildweeding:
 
 part Pit Pound
 
-Pit Pound is a room in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]". [->sit sound]
+Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]". [->sit sound]
 
 The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. [->sit sound]
 
@@ -3110,19 +3110,19 @@ carry out fitfounding:
 
 book clumpy cluster
 
-the clumpy cluster is scenery.
+the clumped cluster is scenery.
 
-chapter bumpybustering
+chapter bumpedbustering
 
-bumpybustering is an action applying to nothing.
+bumpedbustering is an action applying to nothing.
 
-understand the command "bumpy buster" as something new.
+understand the command "bumped buster" as something new.
 
-understand "bumpy buster" as bumpybustering.
+understand "bumped buster" as bumpedbustering.
 
-carry out bumpybustering:
-	say "The clumpy cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
-	moot clumpy cluster;
+carry out bumpedbustering:
+	say "The clumped cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
+	moot clumped cluster;
 	up-reg;
 	the rule succeeds.
 

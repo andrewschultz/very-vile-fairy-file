@@ -5,7 +5,7 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 volume core tables
 
 [pest post / messed most / rest roast/ guest ghost / best boast]
-table of bad locs
+table of bad locs [xxloc] [xxbadloc]
 e1	e2	been-here	fake-name	death-trap
 --	--	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 --	--	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
@@ -22,7 +22,7 @@ Vending Vibe	west	false	"Fortune Funnel"	"Boy oh boy! It would be neat to have f
 Whining War	south	false	"Fast Foi'd"	"Apparently, you do not get to fast-foward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
 Whining War	north	false	"Done Dune"	"It doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
 
-table of ranks
+table of ranks [xxranks]
 rank-max	rank-name
 0	"cold cod"
 7	"lol'd, lawd" [this is defined because I want to trigger a rank gain at the Fun Fen]
@@ -101,14 +101,14 @@ this is the got-rig-rag rule:
 
 volume random tables
 
-table of mall songs
+table of mall songs [xxmall] [xxsongs]
 randtxt
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Good Gang? Dud, Dang"
 "Lo Love Show Shove"
 "Mercy Me, Jersey G[r], by Versy V & Percy P"
 
-table of miscellaneous people
+table of miscellaneous people [xxpeople]
 randtxt
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
@@ -124,7 +124,7 @@ randtxt
 "Would-Whirl Bud Burrell"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
-table of vvff digs
+table of vvff digs [xxtaunts] [xxdigs] [xxmean]
 randtxt
 "Blue blood? Do? Dud! Boo, bud!"
 "Catcall: at ALL!"
@@ -136,8 +136,9 @@ randtxt
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
 "Whoah! Words? No, nerds!"
+"Yale? You'll fail, fool!"
 
-table of vvff books
+table of vvff books [xxbooks]
 randtxt
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
