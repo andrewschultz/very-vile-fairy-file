@@ -437,6 +437,8 @@ the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But per
 
 the prong part is part of the wrong art. The prong part is optional. "It's a particularly ugly part of the wrong art.". cht of prong part is letplus. [-> strong start]
 
+started-strong is a truth state that varies.
+
 section tall tree
 
 tree-down is a truth state that varies.
@@ -466,24 +468,6 @@ understand "fact/finder" and "fact finder" as backed binder.
 section backed binder
 
 the backed binder is a thing.
-
-chapter strongstarting
-
-strongstarting is an action applying to nothing.
-
-understand the command "strong start" as something new.
-
-understand "strong start" as strongstarting when player is in Fun Fen.
-
-started-strong is a truth state that varies.
-
-carry out strongstarting:
-	if started-strong is true, say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart." instead;
-	now started-strong is true;
-	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. You can't dunk on wrong stuff too much, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
-	up-min;
-	moot wrong art;
-	the rule succeeds.
 
 chapter Cark Cliff
 
@@ -2955,59 +2939,11 @@ Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound 
 
 The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. [->sit sound]
 
-chapter sitsounding
-
-sitsounding is an action applying to nothing.
-
-understand the command "sit sound" as something new.
-
-understand "sit sound" as sitsounding when player is in Pit Pound.
-
-carry out sitsounding:
-	if Hit Hound is moot, say "You already did." instead;
-	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
-	moot Hit Hound;
-	phbt pit pound;
-	up-reg;
-	the rule succeeds.
-
-chapter fitfounding
-
-fitfounding is an action applying to nothing.
-
-understand the command "fit found" as something new.
-
-understand "fit found" as fitfounding when player is in Pit Pound.
-
 found-fit is a truth state that varies.
 
-carry out fitfounding:
-	if found-fit is true, say "You already found a fit." instead;
-	if Hit Hound is in Pit Pound:
-		clue-later "FIT FOUND";
-		say "You can't do much with the Hit Hound around." instead;
-	say "You feel comfortable here now. Wahoo!";
-	now found-fit is true;
-	up-reg;
-	the rule succeeds.
+book clumped cluster
 
-book clumpy cluster
-
-the clumped cluster is scenery.
-
-chapter bumpedbustering
-
-bumpedbustering is an action applying to nothing.
-
-understand the command "bumped buster" as something new.
-
-understand "bumped buster" as bumpedbustering.
-
-carry out bumpedbustering:
-	say "The clumped cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
-	moot clumped cluster;
-	up-reg;
-	the rule succeeds.
+the clumped cluster is scenery. cht of clumped cluster is letminus. "The clumped cluster won't let you by!".
 
 book Pain Peasant
 
@@ -3139,7 +3075,6 @@ this is the verb-checker rule:
 		let my-count be 0;
 		if the player's command includes w1 entry, increment my-count;
 		if the player's command includes w2 entry, increment my-count;
-		say "[ver-rule entry] [my-count].";
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
 				now my-count is 2;
@@ -3147,16 +3082,14 @@ this is the verb-checker rule:
 				say "Ooh! You're close, but you juggled some stuff up, somehow.";
 				the rule succeeds;
 		if my-count is 2:
-[			change the text of the player's command to "[word number 2 in the player's command]";
-			if the player's command includes w1 entry, say "Crap.";]
 			process the ver-rule entry;
 			if the rule failed, continue the action;
 			if the rule succeeded:
 				if there is a core entry: [in case we want to use a ternary something or other]
 					if core entry is true:
-						up-min;
-					else:
 						up-reg;
+					else:
+						up-min;
 				process the do-rule entry;
 				process the notify score changes rule;
 			the rule succeeds;
@@ -3166,9 +3099,11 @@ this is the verb-checker rule:
 			say "The HA HALF button lights up on your Leet Learner.";
 			the rule succeeds;
 
-in-test-loop is a truth state that varies.
+section verb check table
 
-table of verb checks
+[verb check and verb run rules. This is in approximate game-solve order.]
+
+table of verb checks [xxvc]
 w1 (topic)	w2 (topic)	core	ver-rule	do-rule	wfull (topic)
 "get"	"good"	true	vc-get-good rule	vr-get-good rule	--
 "find"	"fault"	true	vc-find-fault rule	vr-find-fault rule	--
@@ -3177,9 +3112,19 @@ w1 (topic)	w2 (topic)	core	ver-rule	do-rule	wfull (topic)
 "bash/mash"	"bap/map"	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
 "mind"	"me"	true	vc-mind-me rule	vr-mind-me rule	--
 "flim/skim"	"flam/scam"	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
+"strong"	"start"	false	vc-strong-start rule	vr-strong-start rule	--
+"sit"	"sound"	true	vc-sit-sound rule	vr-sit-sound rule	--
+"fit"	"found"	true	vc-fit-found rule	vr-fit-found rule	--
+"bumped"	"buster"	true	vc-bumped-buster rule	vr-bumped-buster rule	--
+
+[ this is stuff for beta commands below ]
+
+in-test-loop is a truth state that varies.
 
 to loop-note (t - text):
 	if in-test-loop is true, say "COMMAND: [t]...[paragraph break]";
+
+section vc vr rules
 
 this is the vc-get-good rule:
 	if player is not in wet wood:
@@ -3271,7 +3216,51 @@ this is the vr-flim-flam rule:
 	say "That does it! The tram moves off to a more open place...";
 	move the player to Fun Fen;
 
-[see header file for table of understands]
+this is the vc-strong-start rule:
+	if player is not in Fun Fen, the rule fails;
+	if started-strong is true, say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart." instead;
+	the rule succeeds;
+
+this is the vr-strong-start rule:
+	now started-strong is true;
+	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. You can't dunk on wrong stuff too much, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
+	moot wrong art;
+	the rule succeeds.
+
+this is the vc-bumped-buster rule:
+	if clumped cluster is touchable, the rule succeeds;
+	the rule fails;
+
+this is the vr-bumped-buster rule:
+	say "The clumped cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
+	moot clumped cluster;
+	the rule succeeds.
+
+this is the vc-sit-sound rule:
+	if hit hound is not touchable:
+		if player is in pit pound, say "You already did." instead;
+		the rule fails;
+	the rule succeeds;
+
+this is the vr-sit-sound rule:
+	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
+	moot Hit Hound;
+	phbt pit pound;
+	up-reg;
+	the rule succeeds.
+
+this is the vc-fit-found rule:
+	if player is not in pit pound, the rule fails;
+	if found-fit is true, say "You already did." instead;
+	if hit hound is in pit pound:
+		say "You can't do much with the Hit Hound around.";
+		clue-later-w "FIT FOUND";
+		do nothing instead;
+
+this is the vr-fit-found rule:
+	say "You feel comfortable here now. Wahoo!";
+	now found-fit is true;
+	the rule succeeds.
 
 volume beta testing - not for release
 
