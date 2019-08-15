@@ -6,42 +6,34 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 volume what you start with
 
+[note that these are arranged alphabetically, not in order of play.]
+
 table of mistake substitution
 mist-cmd(topic)	mist-rule	leet-val	leet-rule	mist-txt
-"brig brag"	trivially true rule	a cheattype	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!"
+"brig brag"	trivially true rule	a cheattype	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start general mistakes]
 "swig swag"	trivially true rule	--	mist-bag-hint rule	"There's no time to be drinking here!"
+"cry call"	signable-loc rule	--	--	"You lash out meaninglessly at the wry wall." [start wry wall mistakes]
+"dry doll"	signable-loc rule	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
+"fry fall"	signable-loc rule	--	--	"The wry wall remains upright."
+"my mall"	signable-loc rule	--	--	"There's already a mall in this game."
+"pry pall"	signable-loc rule	--	--	"There is no hidden tomb under the wry wall."
+"try tall"	signable-loc rule	--	--	"The wry wall does not grow."
+"bell born"	hell-horn-near rule	leteq	--	"There's enough noise right now." [start airy isle]
+"swell sworn"	hell-horn-near rule	letminus	--	"That might augment the hell horn."
 
 this is the mist-bag-hint rule:
 	if big bag is off-stage, say "[leetclue of letminus]";
 	the rule succeeds;
 
+this is the signable-loc rule:
+	if location of player is signable, the rule succeeds;
+
+this is the hell-horn-near rule:
+	if hell horn is touchable, the rule succeeds;
+
 [
 
 volume mistakes by room
-
-[note that these are arranged alphabetically, not in order of play.]
-
-chapter --- wry wall room mistakes
-
-understand "cry call" as a mistake ("You lash out meaninglessly at the wry wall.") when location of player is signable.
-
-understand "dry doll" as a mistake ("The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.") when location of player is signable.
-
-understand "fry fall" as a mistake ("The wry wall remains upright.") when location of player is signable.
-
-understand "my mall" as a mistake ("There's already a mall in this game.") when location of player is signable.
-
-understand "pry pall" as a mistake ("There is no hidden tomb under the wry wall.") when location of player is signable.
-
-understand "try tall" as a mistake ("The wry wall does not grow.") when location of player is signable.
-
-chapter Airy Isle mistakes
-
-understand "bell born" as a mistake ("There's enough noise right now.[leetclue of leteq]") when well worn hell horn is quicknear.
-
-understand "swell sworn" as a mistake ("That might augment the hell horn.[leetclue of letminus]") when well worn hell horn is quicknear.
-
-chapter Creased Cross mistakes
 
 chapter Curst Cave mistakes
 

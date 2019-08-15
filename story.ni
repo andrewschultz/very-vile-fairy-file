@@ -2512,6 +2512,7 @@ the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of two too button is two-too-hint rule.
+the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
@@ -2549,6 +2550,9 @@ this is the big-bag-hint rule:
 
 this is the bold-bard-hint rule:
 	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
+
+this is the ha-half-nah-naff-hint rule:
+	say "HA HALF will tell you if one of your words is right. NAH NAFF hides that.";
 
 this is the bot-board-hint rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
