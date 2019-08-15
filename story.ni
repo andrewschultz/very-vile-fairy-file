@@ -1647,74 +1647,11 @@ instead of doing anything when second noun is Fairy File:
 
 to say ff-no: say "You can't do anything directly with or to the Fairy File. There must be some overarching action"
 
-chapter merrymileing
-
-merrymileing is an action applying to nothing.
-
-understand the command "merry mile" as something new.
-
-understand "merry mile" as merrymileing when mrlp is Vale Verminous.
-
 merry-mile is a truth state that varies.
-
-carry out merrymileing:
-	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
-	if player is in Tarry Tile:
-		if well worn hell horn is in Tarry Tile:
-			clue-later "MERRY MILE";
-			say "Not with the well worn hell horn making those un-merry noises." instead;
-		up-reg;
-		now merry-mile is true;
-		say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now." instead;
-	clue-later "MERRY MILE";
-	if player is in Airy Isle:
-		if bot board is moot, say "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead." instead;
-		say "Hard to be happy with the Bot Board around." instead;
-	say "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though." instead;
-	the rule succeeds.
 
 chapter burybileing
 
-burybileing is an action applying to nothing.
-
-understand the command "bury bile" as something new.
-
-understand "bury bile" as burybileing.
-
 bile-buried is a truth state that varies.
-
-carry out burybileing:
-	if player is in Tarry Tile:
-		if well worn hell horn is in Tarry Tile:
-			clue-later "BURY BILE";
-			say "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file." instead;
-		if merry-mile is false:
-			clue-later "MERRY MILE";
-			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going." instead;
-		up-reg;
-		now bile-buried is true;
-		win-the-game;
-		say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
-		the rule succeeds;
-	clue-later "BURY BILE";
-	if player is in Airy Isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
-	if mrlp is Vale Verminous:
-		too-generic;
-		say "It must be about the right time. But you are not quite there, yet." instead;
-	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
-	if mrlp is Piddling Pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!" instead;
-	say "This is a BUG that should not happen.";
-	the rule succeeds; [Larry Lyle, Wary Wile, Dare-y Dial, Perry Pyle, Gary Guile]
-
-to win-the-game:
-	[rejig-status;]
-	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
-		choose row with final response activity of showdeathsing in the Table of Final Question Options;
-		blank out the whole row;
-	if score is maximum score:
-		choose row with final response activity of showmissesing in the Table of Final Question Options;
-		blank out the whole row; [don't let the player see MISSED if they got everything]
-	end the story finally saying "DEALS DONE: FEELS FUN!";
 
 volume verbs
 
@@ -1884,7 +1821,7 @@ to clue-later (ct - text):
 		if ct is cmd-to-say entry:
 			if ready-to-hint entry is true, say "(re-checking) ";
 			now ready-to-hint entry is true;
-			the rule succeeds;
+			continue the action;
 	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
 
 first-think-clue-flag is a truth state that varies.
@@ -3150,8 +3087,9 @@ this is the verb-checker rule:
 				the rule succeeds;
 		if my-count is 2:
 			process the ver-rule entry;
-			if the rule failed, continue the action;
-			if the rule succeeded:
+			if the rule failed:
+				continue the action;
+			else if the rule succeeded:
 				if there is a core entry: [in case we want to use a ternary something or other]
 					if core entry is true:
 						up-reg;
@@ -3159,6 +3097,7 @@ this is the verb-checker rule:
 						up-min;
 				process the do-rule entry;
 				process the notify score changes rule;
+			process the note first think rule;
 			the rule succeeds;
 		if ha-half is true and my-count is 1:
 			process the ver-rule entry;
@@ -3198,13 +3137,27 @@ w1 (topic)	w2 (topic)	core	ver-rule	do-rule	wfull (topic)
 "sit"	"sound"	true	vc-sit-sound rule	vr-sit-sound rule	--
 "fit"	"found"	true	vc-fit-found rule	vr-fit-found rule	--
 "bumped"	"buster"	true	vc-bumped-buster rule	vr-bumped-buster rule	--
+"merry"	"mile"	true	vc-merrymile rule	vr-merrymile rule	--
+"bury"	"bile"	true	vc-bury-bile rule	vr-bury-bile rule	--
 
 [ this is stuff for beta commands below ]
 
 in-test-loop is a truth state that varies.
 
+section to-x stubs
+
 to loop-note (t - text):
 	if in-test-loop is true, say "COMMAND: [t]...[paragraph break]";
+
+to win-the-game:
+	[rejig-status;]
+	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
+		choose row with final response activity of showdeathsing in the Table of Final Question Options;
+		blank out the whole row;
+	if score is maximum score:
+		choose row with final response activity of showmissesing in the Table of Final Question Options;
+		blank out the whole row; [don't let the player see MISSED if they got everything]
+	end the story finally saying "DEALS DONE: FEELS FUN!";
 
 section vc vr rules
 
@@ -3343,6 +3296,50 @@ this is the vr-fit-found rule:
 	say "You feel comfortable here now. Wahoo!";
 	now found-fit is true;
 	the rule succeeds.
+
+this is the vc-merrymile rule:
+	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
+	if mrlp is not Vale Verminous, the rule fails;
+	clue-later "MERRY MILE";
+	if player is not in Tarry Tile, say "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though." instead;
+	if player is in Airy Isle:
+		if bot board is moot, say "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead." instead;
+		say "Hard to be happy with the Bot Board around." instead;
+	if player is in Tarry Tile:
+		if well worn hell horn is in Tarry Tile:
+			say "Not with the well worn hell horn making those un-merry noises.";
+			clue-later "MERRY MILE";
+			do nothing instead;
+
+this is the vr-merrymile rule:
+	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
+	now merry-mile is true;
+
+this is the vc-bury-bile rule:
+	if player is in Tarry Tile:
+		if well worn hell horn is moot and merry-mile is true, the rule succeeds;
+		if well worn hell horn is in Tarry Tile:
+			say "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
+			clue-later "BURY BILE";
+			do nothing instead;
+		if merry-mile is false:
+			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
+			clue-later "BURY BILE";
+			do nothing instead;
+	clue-later "BURY BILE";
+	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
+	if mrlp is Piddling Pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!" instead;
+	if player is in Airy Isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
+	if mrlp is Vale Verminous:
+		too-generic;
+		say "It must be about the right time. But you are not quite there, yet." instead;
+	say "This is a BUG that should not happen.";
+
+this is the vr-bury-bile rule:
+	now bile-buried is true;
+	win-the-game;
+	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
+	the rule succeeds;
 
 volume beta testing - not for release
 
