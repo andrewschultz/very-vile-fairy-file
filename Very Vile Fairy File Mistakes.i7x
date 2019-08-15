@@ -6,11 +6,16 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 volume what you start with
 
-chapter general mistakes
+table of mistake substitution
+mist-cmd(topic)	mist-rule	leet-val	leet-rule	mist-txt
+"brig brag"	trivially true rule	a cheattype	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!"
+"swig swag"	trivially true rule	--	mist-bag-hint rule	"There's no time to be drinking here!"
 
-understand "brig brag" as a mistake ("Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!").
+this is the mist-bag-hint rule:
+	if big bag is off-stage, say "[leetclue of letminus]";
+	the rule succeeds;
 
-understand "swig swag" as a mistake ("There's no time to be drinking here![if player does not have big bag][leetclue of letminus][end if]").
+[
 
 volume mistakes by room
 
@@ -155,7 +160,7 @@ understand "mo mate" as a mistake ("You remain alone.[leetclue of partplus]") wh
 understand "oh ate" as a mistake ("Nothing takes a bit out of the go gate.[leetclue of letplus]") when go gate is quicknear.
 
 understand "woe weight" and "whoa weight" and "whoah weight" as a mistake ("You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]") when go gate is quicknear.
-
+]
 Very Vile Fairy File Mistakes ends here.
 
 ---- DOCUMENTATION ----

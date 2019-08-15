@@ -2138,7 +2138,7 @@ to say two-too-yet:
 	if ever-two-too is false, say ". Hmm. You have a good idea what that means";
 	now ever-two-too is true;
 
-to say leetclue of (x - a cheattype): if shut-scan is false, say "[paragraph break]As you say/think this, the Leet Learner momentarily turns [scancol of x].[no line break]"
+to say leetclue of (x - a cheattype): if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x].[line break]"
 
 to say scancol of (x - a cheattype): say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
 
@@ -3063,6 +3063,7 @@ the clue half right words rule is listed first in the for printing a parser erro
 
 Rule for printing a parser error (this is the clue half right words rule):
 	abide by the verb-checker rule;
+	abide by the mistake-checker rule;
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
@@ -3098,6 +3099,18 @@ this is the verb-checker rule:
 			if the rule failed, next;
 			say "The HA HALF button lights up on your Leet Learner.";
 			the rule succeeds;
+
+this is the mistake-checker rule:
+	repeat through table of mistake substitution:
+		if the player's command matches mist-cmd entry:
+			process the mist-rule entry;
+			if the rule succeeded:
+				say "[mist-txt entry][line break]";
+				if there is a leet-rule entry:
+					process the leet-rule entry;
+				else if there is a leet-val entry:
+					say "[leetclue of leet-val entry][line break]";
+				the rule succeeds;
 
 section verb check table
 
