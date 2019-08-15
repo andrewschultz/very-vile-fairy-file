@@ -2037,7 +2037,7 @@ carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
-	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan].";
+	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan]. You can also use it to tweak other clues with [b]TWO TOO[r]/[b]DO DUE[r] or [b]HA HALF[r]/[b]NAH NAFF[r].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	the rule succeeds.
 
@@ -2085,7 +2085,7 @@ carry out othersing:
 
 book hinting
 
-the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off) It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location."
+the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]Other minor settings include two toggles, between [b]TWO TOO[r] (on) and [b]DO DUE[r], and another between [b]HA HALF[r] (on) and [b]NAH NAFF[r]. [b]TWO TOO[r] is currently set to [on-off of too-two]. [b]HA HALF[r] is currently set to [on-off of ha-half]."
 
 understand "cheat/churner" and "cheat churner" as leet learner.
 
@@ -2093,9 +2093,71 @@ after printing the name of leet learner while taking inventory: say " ([off-on o
 
 understand "ll" and "cc" as leet learner.
 
-chapter two too
+too-two is a truth state that varies.
 
-the two too button is part of the leet learner.
+ha-half is a truth state that varies.
+
+when play begins: [?? put this somewhere better]
+	now too-two is true;
+	now ha-half is true;
+
+chapter tootwoing
+
+tootwoing is an action applying to nothing.
+
+understand the command "too two" as something new.
+
+understand "too two" as tootwoing.
+understand "two too" as tootwoing.
+understand "tt" as tootwoing.
+
+carry out tootwoing:
+	say "[if too-two is true]The Leet Learner is already set[else]You set the Leet Learner[end if] to Too-Two.";
+	now too-two is true instead;
+
+chapter dodueing
+
+dodueing is an action applying to nothing.
+
+understand the command "do due" as something new.
+
+understand "do due" as dodueing.
+understand "due do" as dodueing.
+understand "dd" as dodueing.
+
+carry out dodueing:
+	say "[if too-two is false]The Leet Learner is already set[else]You set the Leet Learner[end if] to Do Due.";
+	now too-two is false instead;
+
+chapter halfing
+
+halfing is an action applying to nothing.
+
+understand the command "ha half" as something new.
+
+understand "ha half" as halfing.
+understand "half" as halfing.
+understand "hh" as halfing.
+
+carry out halfing:
+	say "[if ha-half is true]The Leet Learner is already set[else]You set the Leet Learner[end if] to Ha Half.";
+	now ha-half is true;
+	the rule succeeds.
+
+chapter nahnaffing
+
+nahnaffing is an action applying to nothing.
+
+understand the command "nah naff" as something new.
+
+understand "nah naff" as nahnaffing.
+understand "naff" as nahnaffing.
+understand "nn" as nahnaffing.
+
+carry out nahnaffing:
+	say "[if ha-half is false]The Leet Learner is already set[else]You set the Leet Learner[end if] to Nah Naff.";
+	now ha-half is false;
+	the rule succeeds.
 
 chapter lling
 
