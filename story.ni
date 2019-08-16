@@ -614,14 +614,12 @@ carry out sosappining: [ho happen??]
 
 chapter historyhalling
 
-historyhalling is an action applying to nothing.
+this is the vc-history-hall rule:
+	if player is not in History Hall, the rule fails;
+	if mistmall is false, say "You're already in History Hall." instead;
+	the rule succeeds;
 
-understand the command "history hall" as something new.
-
-understand "history hall" as historyhalling.
-
-carry out historyhalling:
-	if mistmall is false, say "You're already in History Hall.";
+this is the vr-history-hall rule:
 	move-to-temp gutta ganksta;
 	move-from-temp Name Notes Tame Totes;
 	now Vending Vibe is mapped west of History Hall;
@@ -631,20 +629,16 @@ carry out historyhalling:
 	move-to-temp Oi Mo;
 	now mistmall is false;
 	bold-my-room;
+	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually.";
+	now ever-hall is true;
 	the rule succeeds;
 
-chapter mysterymalling
-
-ever-mall is a truth state that varies.
-
-mysterymalling is an action applying to nothing.
-
-understand the command "mystery mall" as something new.
-
-understand "mystery mall" as mysterymalling when player is in History Hall.
-
-carry out mysterymalling:
+this is the vc-mystery-mall rule:
+	if player is not in History Hall, the rule fails;
 	if mistmall is true, say "You're already in the Mystery Mall." instead;
+	the rule succeeds;
+
+this is the vr-mystery-mall rule:
 	move-to-temp Name Notes Tame Totes;
 	move-from-temp gutta ganksta;
 	if Toe Tappin is not moot:
@@ -653,11 +647,17 @@ carry out mysterymalling:
 		move-from-temp Oi Mo;
 	now Got Gear Hot Here is mapped west of History Hall;
 	now mistmall is true;
-	if ever-mall is false:
-		up-reg;
-		now ever-mall is true;
 	bold-my-room;
+	if ever-mall is false, say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip back to History Hall, if you needed or wanted to.";
+	now ever-mall is true;
+	now zap-core-entry is true;
 	the rule succeeds;
+
+chapter mysterymalling
+
+ever-mall is a truth state that varies.
+
+ever-hall is a truth state that varies.
 
 lots-lame is a truth state that varies.
 
@@ -2826,6 +2826,8 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 
 ha-half is a truth state that varies.
 
+zap-core-entry is a truth state that varies.
+
 this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
@@ -2858,6 +2860,9 @@ this is the verb-checker rule:
 					else:
 						up-min;
 				process the do-rule entry;
+				if zap-core-entry is true:
+					blank out the core entry;
+					now zap-core-entry is false;
 				process the notify score changes rule;
 			process the note first think rule;
 			the rule succeeds;
@@ -2906,6 +2911,8 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "feel"	"fear"	false	true	vc-feel-fear rule	vr-feel-fear rule	--
 "deal"	"dear"	true	true	vc-deal-dear rule	vr-deal-dear rule	--
 "heal"	"here"	true	true	vc-heal-here rule	vr-heal-here rule	--
+"history"	"hall"	false	--	vc-history-hall rule	vr-history-hall rule	--
+"mystery"	"mall"	false	true	vc-mystery-mall rule	vr-mystery-mall rule	--
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	false	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" [?? this will create problems if we do it this way. It would be nice to say, if there is no | in w1 or w2, it's okay ]
