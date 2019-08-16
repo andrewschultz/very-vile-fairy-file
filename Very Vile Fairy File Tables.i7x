@@ -78,27 +78,6 @@ to say your-rank:
 	else:
 		say "gold god";
 
-table of understands
-mytxt (topic)	myloc	myrule	myexp
-"big" or "bag"	--	got-rig-rag rule	"Yes, the zig zag rig rag could be something else."
-"find" or "fault"	--	vault-no-mass rule	"Hmm! That is interesting."
-"get" or "good"	Wet Wood	a rule	"You almost felt like you were able to find your way around."
-"pass"	--	vault-mass rule	"Yes, you need to pass, but perhaps a better way to do so is to make the mass into something less threatening."
-"vine" or "vines"	Vined Vault	--	"Any vines aren't particularly important, here. You need to pay attention to the [if mean mass is in vined vault]mean mass[else]whole vault[end if]."
-"wet" or "wood"	Wet Wood	--	"You need to do something like Wet Wood. But it can't be either."
-
-this is the vault-no-mass rule:
-	if player is in vined vault and mean mass is off-stage, the rule succeeds;
-	the rule fails;
-
-this is the vault-mass rule:
-	if mean mass is quicknear, the rule succeeds;
-	the rule fails;
-
-this is the got-rig-rag rule:
-	if player has zig zag rig rag, the rule succeeds;
-	the rule fails;
-
 volume random tables
 
 table of mall songs [xxmall] [xxsongs]

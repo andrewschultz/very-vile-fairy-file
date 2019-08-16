@@ -15,11 +15,9 @@ mist-cmd(topic)	mist-rule	leet-val	leet-rule	mist-txt
 "cry call"	signable-loc rule	--	--	"You lash out meaninglessly at the wry wall." [start wry wall mistakes]
 "dry doll"	signable-loc rule	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
 "fry fall"	signable-loc rule	--	--	"The wry wall remains upright."
-"my mall"	signable-loc rule	--	--	"There's already a mall in this game."
 "pry pall"	signable-loc rule	--	--	"There is no hidden tomb under the wry wall."
 "try tall"	signable-loc rule	--	--	"The wry wall does not grow."
 "bell born"	hell-horn-near rule	leteq	--	"There's enough noise right now." [start airy isle]
-"swell sworn"	hell-horn-near rule	letminus	--	"That might augment the hell horn."
 "swell sworn"	hell-horn-near rule	letminus	--	"That might augment the hell horn."
 "nursed knave"	in-curst-cave rule	--	clue-worst-wave rule	"You don't need any more of that." [start curst cave]
 "live leap"	hive-heap-near rule	leteq	--	"The leap wouldn't be live for very long." [start fun fen]
@@ -67,50 +65,49 @@ to decide whether passed-1:
 
 section rules sorted alphabetically
 
-this is the mist-bag-hint rule:
-	if big bag is off-stage, say "[leetclue of letminus]";
-	the rule succeeds;
-
-this is the signable-loc rule:
-	if location of player is signable, the rule succeeds;
+this is the clue-worst-wave rule:
+	if tool tap is off-stage, say "[leetclue of letminus]";
 
 this is the hell-horn-near rule:
 	if hell horn is touchable, the rule succeeds;
 
+this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
+
+this is the if-grit-ungrown rule: if grit-grown is false, the rule succeeds;
+
 this is the in-curst-cave rule:
 	if player is in curst cave, the rule succeeds;
 
-this is the clue-worst-wave rule:
-	if tool tap is off-stage, say "[leetclue of letminus]";
-	
-this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
-
 this is the in-fun-fen rule: if player is in Fun Fen, the rule succeeds;
+
+this is the in-gap-with-cap rule: if player is in Gassed Gap and cap is not moot, the rule succeeds;
 
 this is the in-gassed-gap rule: if player is in Gassed Gap, the rule succeeds;
 
 this is the in-po-pit rule: if player is in Po' Pit, the rule succeeds;
 
-this is the if-grit-ungrown rule: if grit-grown is false, the rule succeeds;
-
-
-this is the in-gap-with-cap rule: if player is in Gassed Gap and cap is not moot, the rule succeeds;
-
-this is the key-or-rear rule: if player is in Real Rear or player has cage key, the rule succeeds;
-
 this is the in-real-rear rule: if player is in Real Rear, the rule succeeds;
-
-this is the tram-first-puzzle rule: if player is in trim tram and me-minded is false, the rule succeeds;
 
 this is the in-trim-tram rule: if player is in trim tram, the rule succeeds;
 
+this is the in-vined-vault rule: if player is in vined vault, the rule succeeds;
+
+this is the in-whining-war rule: if player is in Whining War, the rule succeeds;
+
+this is the key-or-rear rule: if player is in Real Rear or player has cage key, the rule succeeds;
+
 this is the mass-near rule: if mean mass is touchable, the rule succeeds;
 
-this is the in-vined-vault rule: if player is in vined vault, the rule succeeds;
+this is the mist-bag-hint rule:
+	if big bag is off-stage, say "[leetclue of letminus]";
+	the rule succeeds;
 
 this is the shore-shined rule: if player is in Whining War and shore-shine is true, the rule succeeds;
 
-this is the in-whining-war rule: if player is in Whining War, the rule succeeds;
+this is the signable-loc rule:
+	if location of player is signable, the rule succeeds;
+
+this is the tram-first-puzzle rule: if player is in trim tram and me-minded is false, the rule succeeds;
 
 book unsorted
 
