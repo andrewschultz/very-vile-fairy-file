@@ -285,23 +285,6 @@ after printing the name of a direction (called d) while exitlisting:
 	let rm be the room d of location of player;
 	if rm is visited, say " to [rm]";
 
-chapter lieloling
-
-lieloling is an action applying to nothing.
-
-understand the command "lie lol" as something new.
-
-understand "lie lol" as lieloling when Fun Fen is visited.
-
-lol-yet is a truth state that varies.
-
-carry out lieloling:
-	if lol-yet is true, say "You already exposed the wry wall." instead;
-	up-min; [LIE LOL]
-	say "You have a chuckle to yourself. You see through the wry wall! Well, not literally. But you know its tricks. While this doesn't uncover anything you have to do, you're that much more sure of what you don't have to do, and that's a big morale boost.";
-	now lol-yet is true;
-	the rule succeeds.
-
 volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
@@ -312,29 +295,9 @@ after examining zig zag rig rag when bag-hint is true:
 	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
 	continue the action;
 
-the big bag is a thing.
+the big bag is a thing. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!"
 
-chapter bigbaging
-
-bigbaging is an action applying to nothing.
-
-understand the command "big bag" as something new.
-
-understand "big bag" as bigbaging.
-
-bag-hint is a truth state that varies.
-
-carry out bigbaging:
-	if player has big bag, say "You already made the big bag." instead;
-	if Fun Fen is unvisited:
-		clue-later "BIG BAG";
-		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
-	say "You now have a more useful big bag!";
-	up-reg;
-	moot zig zag rig rag;
-	now player has big bag;
-	now bag-hint is false;
-	the rule succeeds.
+bag-hint is a truth state that varies. [ this seems like duplicating the THINK command, but it's used for the bag description and makes for easier code. ]
 
 volume Worst Whew
 
@@ -473,22 +436,7 @@ chapter Cark Cliff
 
 Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht of cark cliff is letplus. [-> spark spliff] [?? bark biff]
 
-chapter sparkspliffing
-
-sparkspliffing is an action applying to nothing.
-
-understand the command "spark spliff" as something new.
-
-understand "spark spliff" as sparkspliffing when wild weed is quicknear or player is in Fun Fen.
-
-carry out sparkspliffing:
-	if wild weed is moot, say "Whoah, dude. You already did." instead;
-	if player does not have wild weed, say "Whoah, dude. You have nothing to light up with." instead;
-	if player is not in Fun Fen, say "Not here, dude! No source of flame!" instead;
-	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
-	moot wild weed;
-	up-min;
-	the rule succeeds;
+[the fame fighter is a thing ?? -- lame lighter / spark spliff]
 
 tree-down is a truth state that varies.
 
@@ -516,83 +464,13 @@ chapter Cage Key
 
 the cage key is a thing.
 
-chapter kneelnearing
-
-kneelnearing is an action applying to nothing.
-
-understand the command "kneel/kneeling near" as something new.
-
-understand "kneeling near" as kneelnearing when player is in Real Rear.
-understand "kneel near" as kneelnearing when player is in Real Rear.
-
 knelt-yet is a truth state that varies.
-
-carry out kneelnearing:
-	if knelt-yet is true, say "You already did!" instead;
-	up-reg; [kneel near]
-	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
-	now knelt-yet is true; [?? track difference]
-	now cht of Real Rear is leteq; [real rear->feel fear]
-	now cht of steel steer is letminus; [steel steer->feel fear]
-	the rule succeeds.
-
-chapter feelfearing
-
-feelfearing is an action applying to nothing.
-
-understand the command "feel fear" as something new.
-
-understand "feel fear" as feelfearing when player is in Real Rear.
 
 felt-fear is a truth state that varies.
 
-to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
-
-carry out feelfearing:
-	if knelt-yet is false:
-		clue-later "FEEL FEAR";
-		say "Fear isn't something you can try to feel[seer-sez]." instead;
-	say "You let yourself feel fear, with the Ceiling Seer overlooking. No matter how much you feel, you have faith you can cope. Admitting you're fearful helps a bit.";
-	up-reg;
-	now felt-fear is true;
-	the rule succeeds.
-
-chapter dealdearing
-
-dealdearing is an action applying to nothing.
-
-understand the command "deal dear" as something new.
-
-understand "deal dear" as dealdearing when player is in Real Rear.
-
-carry out dealdearing:
-	if felt-fear is false:
-		clue-later "DEAL DEAR";
-		say "You haven't found anything you need to deal with[seer-sez]." instead;
-	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
-	now player has cage key;
-	up-reg;
-	phbt Real Rear;
-	phbt steel steer;
-	the rule succeeds.
-
-chapter healhereing
-
-healhereing is an action applying to nothing.
-
-understand the command "heal here" as something new.
-
-understand "heal here" as healhereing.
-
 healed-here is a truth state that varies.
 
-carry out healhereing:
-	clue-later "HEAL HERE";
-	say "You don't have anything to heal from, yet[seer-sez]." instead;
-	up-reg;
-	say "You call on the Ceiling Seer once more. You ask for your wounds to heal ... and they do!";
-	now healed-here is true;
-	the rule succeeds.
+to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
 
 part Creased Cross 0,1
 
@@ -689,7 +567,7 @@ part History Hall -1,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Creased Cross. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if].". [-> mystery mall]
+History Hall is west of Creased Cross. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. A mediocre song is in the air[end if].". [-> mystery mall]
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
@@ -703,13 +581,17 @@ after lling gutta ganksta:
 		try lling gots game;
 	continue the action;
 
-Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because it tunes out, making way for something much worse[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
+Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad. It could almost be motivational in the right place[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
+
+understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
 after examining Toe Tappin Row Rappin:
 	if player does not have Row Rappin, now player has Row Rappin;
 	continue the action;
 
 Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht of oi mo is leteq. [oimo -> dimd]
+
+understand "song" as oi mo when player is in History Hall and oi mo is in History Hall.
 
 check going west in History Hall:
 	if mistmall is true, continue the action;
@@ -724,8 +606,9 @@ understand the command "so sappin" as something new.
 understand "so sappin" as sosappining when toe tappin row rappin is in location of player or player has toe tappin row rappin.
 
 carry out sosappining: [ho happen??]
-	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down.";
+	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down. It feels generic, yet full of possibilities.[paragraph break]In its place a much worse song springs up. Just a minor nuisance, though. Not something you have to deal with.";
 	moot toe tappin row rappin;
+	move oi mo to History Hall;
 	up-reg;
 	the rule succeeds.
 
@@ -746,8 +629,8 @@ carry out historyhalling:
 [	move-from-temp Erst Lore;?? should have scenery defining this]
 	move-to-temp gutta ganksta;
 	move-to-temp Oi Mo;
-	bold-my-room;
 	now mistmall is false;
+	bold-my-room;
 	the rule succeeds;
 
 chapter mysterymalling
@@ -764,8 +647,10 @@ carry out mysterymalling:
 	if mistmall is true, say "You're already in the Mystery Mall." instead;
 	move-to-temp Name Notes Tame Totes;
 	move-from-temp gutta ganksta;
-	move-from-temp Oi Mo;
-	if Toe Tappin is not off-stage, move-from-temp Toe Tappin;
+	if Toe Tappin is not moot:
+		move-from-temp Toe Tappin;
+	else if Oi Mo is not moot:
+		move-from-temp Oi Mo;
 	now Got Gear Hot Here is mapped west of History Hall;
 	now mistmall is true;
 	if ever-mall is false:
@@ -774,53 +659,7 @@ carry out mysterymalling:
 	bold-my-room;
 	the rule succeeds;
 
-chapter lotslameing
-
-lotslameing is an action applying to nothing.
-
-understand the command "lots lame" as something new.
-
-understand "lots lame" as lotslameing.
-
 lots-lame is a truth state that varies.
-
-carry out lotslameing:
-	if lots-lame is true, say "You already pinged the Gutta Ganksta like that." instead;
-	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever.";
-	up-min; [opt]
-	now lots-lame is true;
-	the rule succeeds.
-
-chapter dimding
-
-dimding is an action applying to nothing.
-
-understand the command "dimd" as something new.
-
-understand "dimd" as dimding when Oi Mo is quicknear.
-
-carry out dimding:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like 'Primp'r' or flip flop to Tip Top Hip Hop, but it's your lucky day. Blissful silence.";
-	moot oi mo;
-	up-min;
-	the rule succeeds.
-
-chapter whatawankstaing
-
-whatawankstaing is an action applying to nothing.
-
-understand the command "whatawanksta" as something new.
-
-understand "what a wanksta" as whatawankstaing when ever-mall is true.
-understand "whatta wanksta" as whatawankstaing when ever-mall is true.
-
-carry out whatawankstaing:
-	if ganksta is moot, say "You already got rid of the ganksta." instead;
-	if ganksta is not quicknear, say "That might work with the ganksta around." instead;
-	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
-	moot ganksta;
-	up-min;
-	the rule succeeds;
 
 chapter firstflooring
 
@@ -1383,20 +1222,7 @@ carry out castcaping:
 
 chapter beakerbustleing
 
-beakerbustleing is an action applying to nothing.
-
-understand the command "beaker bustle" as something new.
-
-understand "beaker bustle" as beakerbustleing.
-
 beaker-yet is a truth state that varies;
-
-carry out beakerbustleing:
-	if beaker-yet is true, say "You already did that!" instead;
-	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
-	now beaker-yet is true;
-	up-min;
-	the rule succeeds;
 
 chapter meekermuscleing
 
@@ -1670,6 +1496,8 @@ report undoing an action:
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
+
+the block attacking rule is not listed in any rulebook.
 
 check attacking:
 	if noun is go gate, say "Ho! Hate!" instead;
@@ -2861,17 +2689,6 @@ the wild weed is a thing.
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either."
 
-wildweeding is an action applying to nothing.
-
-understand the command "wild weed" as something new.
-
-understand "wild weed" as wildweeding when player has mild mead.
-
-carry out wildweeding:
-	say "Bingo! The mild mead becomes wild weed.";
-	up-min;
-	the rule succeeds.
-
 part Pit Pound
 
 Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]". [->sit sound]
@@ -2958,7 +2775,6 @@ showmissesing is an activity.
 
 rule for showmissesing:
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a STRONG START.";
-	if lol-yet is false, say "You could have LIE LOL'd anywhere around the wry wall.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
 	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting[else]the wild weed[end if].";
 	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME in Mystery Mall.";
@@ -3014,7 +2830,10 @@ this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
 		if the player's command matches the regular expression "\b([w1 entry])\b", increment my-count;
-		if the player's command matches the regular expression "\b([w2 entry])\b", increment my-count;
+		if there is no w2 entry:
+			increment my-count;
+		else:
+			if the player's command matches the regular expression "\b([w2 entry])\b", increment my-count;
 		let wfull-fail be false;
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
@@ -3027,7 +2846,7 @@ this is the verb-checker rule:
 				continue the action;
 			else if the rule succeeded:
 				if okflip entry is false:
-					if the player's command matches the regular expression "^([w2 entry])\b":
+					unless the player's command matches the regular expression "^([w1 entry])\b": [this is for the DIM'D test case]
 						say "You've got it backwards! Just flip things around, and it'll be okay.";
 						the rule succeeds;
 				if wfull-fail is true:
@@ -3076,12 +2895,23 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "bash|mash"	"bap|map"	true	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
 "mind"	"me"	false	true	vc-mind-me rule	vr-mind-me rule	--
 "flim|skim"	"flam|scam"	false	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
-"strong"	"start"	true	false	vc-strong-start rule	vr-strong-start rule	-- [start of Fun Fen]
+"big"	"bag"	true	true	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
+"spark"	"spliff"	true	false	vc-spark-spliff rule	vr-spark-spliff rule	--
+"strong"	"start"	true	false	vc-strong-start rule	vr-strong-start rule	--
 "fall"	"free"	true	true	vc-fall-free rule	vr-fall-free rule	--
 "dive"	"deep"	true	true	vc-dive-deep rule	vr-dive-deep rule	--
 "paper"	"pile"	false	true	vc-paper-pile rule	vr-paper-pile rule	--
 "backed"	"binder"	false	true	vc-backed-binder rule	vr-backed-binder rule	--
-"sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	-- [start of undefined]
+"kneel"	"near"	false	true	vc-kneel-near rule	vr-kneel-near rule	-- [start of Real Rear]
+"feel"	"fear"	false	true	vc-feel-fear rule	vr-feel-fear rule	--
+"deal"	"dear"	true	true	vc-deal-dear rule	vr-deal-dear rule	--
+"heal"	"here"	true	true	vc-heal-here rule	vr-heal-here rule	--
+"lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
+"dimd"	--	false	false	vc-dimd rule	vr-dimd rule
+"whatta"	"wanksta"	false	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" [?? this will create problems if we do it this way. It would be nice to say, if there is no | in w1 or w2, it's okay ]
+"beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	-- [start gassed gap]
+"wild"	"weed"	true	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
+"sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	--
 "fit"	"found"	true	true	vc-fit-found rule	vr-fit-found rule	--
 "bumped"	"buster"	true	true	vc-bumped-buster rule	vr-bumped-buster rule	--
 "merry"	"mile"	false	true	vc-merrymile rule	vr-merrymile rule	-- [start of endgame]
@@ -3107,6 +2937,85 @@ to win-the-game:
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 
 section vc vr rules
+
+this is the vc-wild-weed rule:
+	if mild mead is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-wild-weed rule:
+	say "Bingo! The mild mead becomes wild weed.";
+
+this is the vc-beaker-bustle rule:
+	if reeker russell is not touchable, the rule fails;
+	if beaker-yet is true, say "You already did that!" instead;
+	the rule succeeds;
+
+this is the vr-beaker-bustle rule:
+	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
+	now beaker-yet is true;
+	the rule succeeds;
+
+this is the vc-lots-lame rule:
+	if gutta ganksta is not touchable, the rule fails;
+	if lots-lame is true, say "You already pinged the Gutta Ganksta like that." instead;
+	the rule succeeds;
+
+this is the vr-lots-lame rule:
+	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever.";
+	now lots-lame is true;
+	the rule succeeds.
+
+this is the vc-dimd rule:
+	if oi mo is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-dimd rule:
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like 'Primp'r' or flip flop to Tip Top Hip Hop, but it's your lucky day. Blissful silence.";
+	moot oi mo;
+	the rule succeeds.
+
+this is the vc-whatta-wanksta rule:
+	if gutta ganksta is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-whatta-wanksta rule:
+	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
+	moot ganksta;
+	the rule succeeds;
+
+this is the vc-kneel-near rule:
+	if player is not in real rear, the rule fails;
+	if knelt-yet is true, say "You already did!" instead;
+	the rule succeeds;
+
+this is the vr-kneel-near rule:
+	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you.";
+	now knelt-yet is true; [?? track difference]
+	now cht of Real Rear is leteq; [real rear->feel fear]
+	now cht of steel steer is letminus; [steel steer->feel fear]
+	the rule succeeds.
+
+this is the vc-big-bag rule:
+	if player has big bag, say "You already made the big bag." instead;
+	if Fun Fen is unvisited:
+		clue-later "BIG BAG";
+		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
+
+this is the vr-big-bag rule:
+	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
+	moot zig zag rig rag;
+	now player has big bag;
+	now bag-hint is false;
+
+this is the vc-spark-spliff rule:
+	if wild weed is moot, say "Whoah, dude. You already did." instead;
+	if player does not have wild weed, the rule fails;
+	if player is not in Fun Fen, say "Not here, dude! No source of flame!" instead;
+
+this is the vr-spark-spliff rule:
+	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
+	moot wild weed;
+	the rule succeeds;
 
 this is the vc-dive-deep rule:
 	if hive heap is not touchable, the rule fails;
@@ -3346,6 +3255,46 @@ when play begins (this is the force tester wherever rule):
 	if debug-state is false:
 		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
 	continue the action;
+
+this is the vc-feel-fear rule:
+	if player is not in Real Rear, the rule fails;
+	if knelt-yet is false:
+		clue-later "FEEL FEAR";
+		say "Fear isn't something you can try to feel[seer-sez]." instead;
+	the rule succeeds;
+
+this is the vr-feel-fear rule:
+	say "You let yourself feel fear, with the Ceiling Seer overlooking. No matter how much you feel, you have faith you can cope. Admitting you're fearful helps a bit.";
+	up-reg;
+	now felt-fear is true;
+	the rule succeeds.
+
+this is the vc-deal-dear rule:
+	if player is not in Real Rear, the rule fails;
+	if felt-fear is false:
+		clue-later "DEAL DEAR";
+		say "You haven't found anything you need to deal with[seer-sez]." instead;
+	the rule succeeds;
+
+this is the vr-deal-dear rule:
+	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity.";
+	now player has cage key;
+	phbt Real Rear;
+	phbt steel steer;
+	the rule succeeds.
+
+this is the vc-heal-here rule:
+	if player is not in Real Rear, the rule fails;
+	if healed-here is true, say "You already did." instead;
+	if 1 > 0:
+		clue-later "HEAL HERE";
+		say "You don't have anything to heal from, yet[seer-sez]." instead;
+	the rule succeeds;
+
+this is the vr-heal-here rule:
+	say "You call on the Ceiling Seer once more. You ask for your wounds to heal ... and they do!";
+	now healed-here is true;
+	the rule succeeds.
 
 chapter blowbying
 
