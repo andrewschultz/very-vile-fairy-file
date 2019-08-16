@@ -480,88 +480,11 @@ chapter Bull Beast
 
 The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.".
 
-chapter beastbossing
-
-beastbossing is an action applying to nothing.
-
-understand the command "beast boss" as something new.
-
-understand "beast boss" as beastbossing when player is in Creased Cross.
-
-beast-boss-min is a number that varies. beast-boss-min is 32.
-
-carry out beastbossing:
-	if Bull Beast is not off-stage, say "You already did." instead;
-	if score < beast-boss-min:
-		clue-later "BEAST BOSS";
-		say "You don't have the experience yet." instead;
-	up-reg;
-	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
-	move Bull Beast to Creased Cross;
-	the rule succeeds.
-
-chapter cullceaseding
-
-cullceaseding is an action applying to nothing.
-
-understand the command "lul least" as something new.
-understand the command "cull ceased" as something new.
-
-understand "lul least" as cullceaseding when can-kill-beast.
-understand "cull ceased" as cullceaseding when can-kill-beast.
-
 cull-ceased is a truth state that varies.
-
-to decide whether can-kill-beast:
-	if player is in Creased Cross and Bull Beast is in Creased Cross and healed-here is true, yes;
-	no;
-
-carry out cullceaseding:
-	say "YOU KILLED THE BULL BEAST.";
-	now cull-ceased is true;
-	now bull beast is boring;
-	up-reg;
-	the rule succeeds.
-
-chapter fullfeasting
-
-fullfeasting is an action applying to nothing.
-
-understand the command "full feast" as something new.
-
-understand "full feast" as fullfeasting.
-
-carry out fullfeasting:
-	if Bull Beast is not in location of player, say "Not here." instead;
-	if Bull Beast is in location of player:
-		clue-later "FULL FEAST";
-		say "That should work. It might work better if the Bull Beast were incapacitated." instead;
-	if Bull Beast is moot, say "You already made a feast." instead;
-	up-reg;
-	say "BOOM! You managed to make a full feast of the Bull Beast. Everyone loves it. It tastes good. Nothing is left.";
-	moot Bull Beast;
-	the rule succeeds.
-
-chapter leastlossing
-
-leastlossing is an action applying to nothing.
-
-understand the command "least loss" as something new.
-
-understand "least loss" as leastlossing.
 
 least-loss is a truth state that varies.
 
-carry out leastlossing:
-	if player is not in Creased Cross, say "Not here." instead;
-	if Bull Beast is off-stage:
-		clue-later "LEAST LOSS";
-		say "Not yet. You need to be in a fighting situation." instead;
-	if least-loss is true, say "You already did." instead;
-	now least-loss is true;
-	up-reg;
-	say "BOOM! The Bull Beast, upset it only got to take (minor random item) from you, falls over in a fit of shame.";
-	the rule succeeds.
+beast-boss-min is a number that varies. beast-boss-min is 32.
 
 part History Hall -1,1
 
@@ -596,62 +519,6 @@ understand "song" as oi mo when player is in History Hall and oi mo is in Histor
 check going west in History Hall:
 	if mistmall is true, continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
-
-chapter sappining
-
-sosappining is an action applying to nothing.
-
-understand the command "so sappin" as something new.
-
-understand "so sappin" as sosappining when toe tappin row rappin is in location of player or player has toe tappin row rappin.
-
-carry out sosappining: [ho happen??]
-	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down. It feels generic, yet full of possibilities.[paragraph break]In its place a much worse song springs up. Just a minor nuisance, though. Not something you have to deal with.";
-	moot toe tappin row rappin;
-	move oi mo to History Hall;
-	up-reg;
-	the rule succeeds.
-
-chapter historyhalling
-
-this is the vc-history-hall rule:
-	if player is not in History Hall, the rule fails;
-	if mistmall is false, say "You're already in History Hall." instead;
-	the rule succeeds;
-
-this is the vr-history-hall rule:
-	move-to-temp gutta ganksta;
-	move-from-temp Name Notes Tame Totes;
-	now Vending Vibe is mapped west of History Hall;
-	now History Hall is mapped east of Vending Vibe;
-[	move-from-temp Erst Lore;?? should have scenery defining this]
-	move-to-temp gutta ganksta;
-	move-to-temp Oi Mo;
-	now mistmall is false;
-	bold-my-room;
-	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually.";
-	now ever-hall is true;
-	the rule succeeds;
-
-this is the vc-mystery-mall rule:
-	if player is not in History Hall, the rule fails;
-	if mistmall is true, say "You're already in the Mystery Mall." instead;
-	the rule succeeds;
-
-this is the vr-mystery-mall rule:
-	move-to-temp Name Notes Tame Totes;
-	move-from-temp gutta ganksta;
-	if Toe Tappin is not moot:
-		move-from-temp Toe Tappin;
-	else if Oi Mo is not moot:
-		move-from-temp Oi Mo;
-	now Got Gear Hot Here is mapped west of History Hall;
-	now mistmall is true;
-	bold-my-room;
-	if ever-mall is false, say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip back to History Hall, if you needed or wanted to.";
-	now ever-mall is true;
-	now zap-core-entry is true;
-	the rule succeeds;
 
 chapter mysterymalling
 
@@ -2914,8 +2781,13 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "history"	"hall"	false	--	vc-history-hall rule	vr-history-hall rule	--
 "mystery"	"mall"	false	true	vc-mystery-mall rule	vr-mystery-mall rule	--
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
+"so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	false	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" [?? this will create problems if we do it this way. It would be nice to say, if there is no | in w1 or w2, it's okay ]
+"beast"	"boss"	true	true	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
+"cull|lul"	"ceased|least"	true	true	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
+"full"	"feast"	true	true	vc-full-feast rule	vr-full-feast rule	--
+"least"	"loss"	true	true	vc-least-loss rule	vr-least-loss rule	--
 "beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	-- [start gassed gap]
 "wild"	"weed"	true	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
 "sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	--
@@ -2944,6 +2816,107 @@ to win-the-game:
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 
 section vc vr rules
+
+this is the vc-so-sappin rule:
+	if toe tappin is touchable, the rule succeeds;
+	the rule fails;
+
+this is the vr-so-sappin rule:
+	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down. It feels generic, yet full of possibilities.[paragraph break]In its place a much worse song springs up. Just a minor nuisance, though. Not something you have to deal with.";
+	moot toe tappin row rappin;
+	move oi mo to History Hall;
+	the rule succeeds.
+
+this is the vc-history-hall rule:
+	if player is not in History Hall, the rule fails;
+	if mistmall is false, say "You're already in History Hall." instead;
+	the rule succeeds;
+
+this is the vr-history-hall rule:
+	move-to-temp gutta ganksta;
+	move-from-temp Name Notes Tame Totes;
+	now Vending Vibe is mapped west of History Hall;
+	now History Hall is mapped east of Vending Vibe;
+[	move-from-temp Erst Lore;?? should have scenery defining this]
+	move-to-temp gutta ganksta;
+	move-to-temp Oi Mo;
+	now mistmall is false;
+	bold-my-room;
+	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually.";
+	now ever-hall is true;
+	the rule succeeds;
+
+this is the vc-mystery-mall rule:
+	if player is not in History Hall, the rule fails;
+	if mistmall is true, say "You're already in the Mystery Mall." instead;
+	the rule succeeds;
+
+this is the vr-mystery-mall rule:
+	move-to-temp Name Notes Tame Totes;
+	move-from-temp gutta ganksta;
+	if Toe Tappin is not moot:
+		move-from-temp Toe Tappin;
+	else if Oi Mo is not moot:
+		move-from-temp Oi Mo;
+	now Got Gear Hot Here is mapped west of History Hall;
+	now mistmall is true;
+	bold-my-room;
+	if ever-mall is false, say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip back to History Hall, if you needed or wanted to.";
+	now ever-mall is true;
+	now zap-core-entry is true;
+	the rule succeeds;
+
+this is the vc-beast-boss rule:
+	if player is not in Creased Cross, the rule fails;
+	if Bull Beast is not off-stage, say "You already did." instead;
+	the rule succeeds;
+
+this is the vr-beast-boss rule:
+	if score < beast-boss-min:
+		clue-later "BEAST BOSS";
+		say "You don't have the experience yet." instead;
+	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
+	move Bull Beast to Creased Cross;
+	the rule succeeds.
+
+this is the vc-cull-ceased rule:
+	if Bull Beast is not touchable, the rule fails;
+	if player is not in Creased Cross:
+		clue-later "CULL CEASED";
+		say "You need to go back to Creased Cross." instead;
+	if healed-here is false:
+		clue-later "CULL CEASED";
+		say "You need to find a way to restore your health." instead;
+	the rule succeeds;
+
+this is the vr-cull-ceased rule:
+	say "YOU KILLED THE BULL BEAST.";
+	now cull-ceased is true;
+	now bull beast is boring;
+	the rule succeeds.
+
+this is the vc-full-feast rule:
+	if Bull Beast is not in location of player, the rule fails;
+	if Bull Beast is not boring:
+		clue-later "FULL FEAST";
+		say "That should work. It might work better if the Bull Beast were incapacitated." instead;
+
+this is the vr-full-feast rule:
+	say "BOOM! You managed to make a full feast of the Bull Beast. Everyone loves it. It tastes good. Nothing is left.";
+	moot Bull Beast;
+	the rule succeeds.
+
+this is the vc-least-loss rule:
+	if player is not in creased cross, the rule fails;
+	if Bull Beast is off-stage:
+		clue-later "LEAST LOSS";
+		say "Not yet. You need to be in a fighting situation." instead;
+	if least-loss is true, say "But then it wouldn't be the least loss any more." instead;
+
+this is the vr-least-loss rule:
+	now least-loss is true;
+	say "BOOM! The Bull Beast, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive.";
+	the rule succeeds.
 
 this is the vc-wild-weed rule:
 	if mild mead is not touchable, the rule fails;
@@ -3186,7 +3159,6 @@ this is the vr-sit-sound rule:
 	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
 	moot Hit Hound;
 	phbt pit pound;
-	up-reg;
 	the rule succeeds.
 
 this is the vc-fit-found rule:
@@ -3272,7 +3244,6 @@ this is the vc-feel-fear rule:
 
 this is the vr-feel-fear rule:
 	say "You let yourself feel fear, with the Ceiling Seer overlooking. No matter how much you feel, you have faith you can cope. Admitting you're fearful helps a bit.";
-	up-reg;
 	now felt-fear is true;
 	the rule succeeds.
 
