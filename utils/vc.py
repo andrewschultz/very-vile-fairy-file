@@ -5,18 +5,46 @@
 import re
 import sys
 import pyperclip
+import mytools as mt
+
+def get_ups():
+    new_rule = "<NO RULE YET>"
+    rule_line = 0
+    count = 0
+    with open("story.ni") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if not line.startswith("\t"):
+                if not line.startswith("["):
+                    new_rule = line.strip()
+                    new_rule = re.sub(":.*", "", new_rule)
+                    rule_line = line_count
+            else:
+                ls = line.strip();
+                if ls.startswith("up-"):
+                    if new_rule is "this is the verb-checker rule": continue
+                    count += 1
+                    print("RULE", count, rule_line, new_rule)
+                    print("    UP/DOWN", line_count, ls)
+                    mt.add_postopen_file_line("story.ni", line_count)
+    mt.postopen_files()
 
 myary = []
 
-if len(sys.argv) == 3:
+lsa = len(sys.argv)
+
+if lsa > 1 and sys.argv[1] == 'up':
+    get_ups()
+    exit()
+
+if lsa == 3:
     myary = sys.argv[1:]
-elif len(sys.argv) == 2:
+elif lsa == 2:
     temp = sum(not c.isalpha() for c in sys.argv[1])
     if temp == 1:
         myary = re.split("[^a-zA-Z]", sys.argv[1])
 
 if len(myary) != 2:
-    print("Need 2 args, or 1 arg with a separator.")
+    print("Need 2 args, or 1 arg with a separator. Or use up to track the remaining stuff to delete.")
     exit()
 
 w1 = myary[0]
