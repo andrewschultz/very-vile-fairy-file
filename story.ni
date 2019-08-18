@@ -486,11 +486,21 @@ least-loss is a truth state that varies.
 
 beast-boss-min is a number that varies. beast-boss-min is 32.
 
-part History Hall -1,1
+part Stark Store -1,1
+
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[elif dark door is moot]There's a way west where the dark door was[else]Nothing's here! But perhaps you could find something[end if]."
+
+check going west in Stark Store:
+	if dark door is off-stage, try going north instead;
+	if dark door is in Stark Store, say "You can't seem to get past the dark door." instead;
+
+the dark door is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.".
+
+part History Hall -2,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Creased Cross. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. A mediocre song is in the air[end if].". [-> mystery mall]
+History Hall is west of Stark Store. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. A mediocre song is in the air[end if].". [-> mystery mall]
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
@@ -2347,6 +2357,8 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "heal"	"here"	true	true	vc-heal-here rule	vr-heal-here rule	--
 "history"	"hall"	false	--	vc-history-hall rule	vr-history-hall rule	--
 "mystery"	"mall"	false	true	vc-mystery-mall rule	vr-mystery-mall rule	--
+"dark"	"door"	false	true	vc-dark-door rule	vr-dark-door rule	-- [start stark store]
+"mark"	"more"	false	true	vc-mark-more rule	vr-mark-more rule	--
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
@@ -2425,6 +2437,27 @@ this is the shone-yet rule:
 	if shore-shine is false, say "Too whiny for that right now." instead;
 
 section vc vr rules
+
+this is the vc-dark-door rule:
+	if player is not in stark store, the rule fails;
+	if dark door is not off-stage, say "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if]." instead;
+	the rule succeeds;
+
+this is the vr-dark-door rule:
+	say "A dark door appears to the west!";
+	move dark door to Stark Store;
+
+this is the vc-mark-more rule:
+	if player is not in stark store, the rule fails;
+	if dark door is off-stage:
+		clue-later "MARK MORE|"
+		say "That'd work, if there was something to mark." instead;
+	if dark door is moot, say "You saw what you could." instead;
+	the rule succeeds;
+
+this is the vr-mark-more rule:
+	say "Yes, there's more to the stark store than the dark door. You notice things about it--as well as how to take it off its hinges!";
+	now dark door is moot;
 
 this is the vc-lot-lord rule:
 	if player is not in airy isle, the rule fails;
