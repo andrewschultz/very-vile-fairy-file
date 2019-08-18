@@ -1,5 +1,7 @@
 "Very Vile Fairy File" by Billy Boling
 
+[??!!!!!! violent vale/silent sale/sail]
+
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 [implement help toggling: HELP HOW/WELP WOW]
@@ -470,8 +472,6 @@ felt-fear is a truth state that varies.
 
 healed-here is a truth state that varies.
 
-to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
-
 part Creased Cross 0,1
 
 Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can go in all four directions here.". cht of creased cross is letminus. [-> beast boss]
@@ -528,23 +528,7 @@ ever-hall is a truth state that varies.
 
 lots-lame is a truth state that varies.
 
-chapter firstflooring
-
-firstflooring is an action applying to nothing.
-
-understand the command "first floor" as something new.
-
-understand "first floor" as firstflooring when player is in History Hall and mistmall is false.
-
 floor-yet is a truth state that varies.
-
-carry out firstflooring:
-	if floor-yet is true, say "You already did." instead;
-	up-reg;
-	say "Erst Lore, up on the ceiling, comes down. You can go IN, now.";
-	now Erst Lore is mapped inside History Hall;
-	now History Hall is mapped outside Erst Lore;
-	the rule succeeds.
 
 part Erst Lore -2,0
 
@@ -554,25 +538,11 @@ part Y'Old Yard -2,-1
 
 Y'Old Yard is south of Erst Lore. It is in Piddling Pain.
 
-The Bold Bard is a person in Y'Old Yard.
+The Bold Bard is a person in Y'Old Yard. talk-text of bold bard is "'Scold-scarred. Mold-marred.'".
 
 Hold Hard is scenery in Y'Old Yard.
 
 the gold guard is a thing.
-
-chapter coldcarding
-
-coldcarding is an action applying to nothing.
-
-understand the command "cold card" as something new.
-
-understand "cold card" as coldcarding when player is in Y'Old Yard.
-
-carry out coldcarding:
-	up-reg;
-	moot Bold Bard;
-	now player has gold guard;
-	the rule succeeds.
 
 part Vending Vibe -2,1 a
 
@@ -581,23 +551,6 @@ Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". [-> lending libe]
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
-
-chapter lendinglibeing
-
-lendinglibeing is an action applying to nothing.
-
-understand the command "lending libe" as something new.
-
-understand "lending libe" as lendinglibeing.
-
-carry out lendinglibeing:
-	if trending tribe is moot, say "You already disposed of the trending tribe." instead;
-	moot trending tribe;
-	up-reg;
-	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
-	now printed name of Vending Vibe is "Lending Libe";
-	move lending libe to Vending Vibe;
-	the rule succeeds.
 
 part Got Gear Hot Here -2,1 b
 
@@ -612,19 +565,6 @@ check taking marred mat: say "It can't be useful in that form." instead;
 the hard hat is a thing.
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
-
-hardhating is an action applying to nothing.
-
-understand the command "hard mat" as something new.
-
-understand "hard hat" as hardhating when marred mat is quicknear.
-
-carry out hardhating:
-	say "Poof! The marred mat changes into a hard hat. A nice lightweight one. Light enough to wear, so you do.";
-	moot marred mat;
-	now player wears hard hat;
-	up-reg;
-	the rule succeeds.
 
 part Lake Lea 1,1
 
@@ -720,78 +660,15 @@ Lake Lap is scenery.
 
 Ache App is a thing.
 
-the frightening fridge is scenery in Whining War.
+the frightening fridge is scenery in Whining War. [??!! Violent Vale ]
 
-chapter brighteningbridgeing
-
-brighteningbridgeing is an action applying to nothing.
-
-understand the command "brightening bridge" as something new.
-
-understand "brightening bridge" as brighteningbridgeing when player is in Airy Isle and frightening fridge is in Airy Isle.
-
-carry out brighteningbridgeing:
-	say "Boom! There goes the fridge!";
-	up-reg;
-	moot frightening fridge;
-	the rule succeeds.
-
-chapter shiningshoreing
-
-shiningshoreing is an action applying to nothing.
-
-understand the command "shining shore" as something new.
-
-understand "shining shore" as shiningshoreing when player is in Whining War.
-
-shore-shine is a truth state that varies.
-
-carry out shiningshoreing:
-	if shore-shine is true, say "You already got (t)here." instead;
-	if beer bull is not moot:
-		clue-later "SHINING SHORE";
-		say "It could be that way. But you need to get rid of the whining first." instead;
-	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
-	up-reg;
-	phbt Whining War;
-	move lake lap to Whining War; [??fake fap]
-	now shore-shine is true;
-	the rule succeeds.
-
-chapter miningmoreing
-
-miningmoreing is an action applying to nothing.
-
-understand the command "mining more" as something new.
-
-understand "mining more" as miningmoreing when player is in Whining War and mine-more is false.
+Violent Vale is a room.
 
 mine-more is a truth state that varies.
 
-carry out miningmoreing:
-	abide by the shone-yet rule;
-	up-reg;
-	now mine-more is true;
-	the rule succeeds.
-
-this is the shone-yet rule:
-	if shore-shine is false, say "Too whiny for that right now." instead;
-
-chapter diningdooring
-
-diningdooring is an action applying to nothing.
-
-understand the command "dining door" as something new.
-
-understand "dining door" as diningdooring when player is in Whining War and dine-door is false.
-
 dine-door is a truth state that varies.
 
-carry out diningdooring:
-	abide by the shone-yet rule;
-	up-reg;
-	now dine-door is true;
-	the rule succeeds.
+shore-shine is a truth state that varies.
 
 chapter snakesnaping
 
@@ -865,23 +742,7 @@ carry out fearfuling:
 	now fearful-on is true;
 	the rule succeeds.
 
-chapter deardulling
-
-deardulling is an action applying to nothing.
-
-understand the command "dear dull" as something new.
-
-understand "dear dull" as deardulling when hull-bull.
-
 fearful-on is a truth state that varies.
-
-carry out deardulling:
-	if fearful-on is false, say "No. The beer bull is too dull." instead;
-	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
-	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk. Once each side has had their fill, the bull wanders off." instead;
-	up-reg;
-	moot beer bull;
-	the rule succeeds.
 
 part Shirk Shell -1,2 a
 
@@ -893,20 +754,6 @@ understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk 
 
 check taking jerk gel when jerk gel is in Shirk Shell:
 	say "The jerk gel has spilled out a bit." instead;
-
-chapter workwelling
-
-workwelling is an action applying to nothing.
-
-understand the command "work well" as something new.
-
-understand "work well" as workwelling.
-
-carry out workwelling:
-	say "You work to put all the jerk gel back in. It becomes glowing globs.";
-	now the player has the jerk gel;
-	up-reg;
-	the rule succeeds.
 
 part Curst Cave -1,2 b
 
@@ -925,20 +772,6 @@ the tool tap is scenery.
 
 the cool cap is a thing.
 
-chapter dreamingdulling
-
-dreamingdulling is an action applying to nothing.
-
-understand the command "dreaming dull" as something new.
-
-understand "dreaming dull" as dreamingdulling when player is in Curst Cave and screaming skull is in Curst Cave.
-
-carry out dreamingdulling:
-	moot screaming skull;
-	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
-	up-reg;
-	the rule succeeds.
-
 chapter firstfaveing
 
 firstfaveing is an action applying to nothing.
@@ -951,32 +784,6 @@ understand "first fave" as firstfaveing.
 
 first-fave is a truth state that varies.
 
-carry out firstfaveing:
-	if first-fave is true, say "You already did." instead;
-	if screaming skull is in Curst Cave,
-		clue-later "FIRST FAVE";
-		say "You can't like anything with that screaming skull around!" instead;
-	say "Suddenly, the worst wave isn't very bad or evil at all.";
-	up-reg;
-	now first-fave is true;
-	move tool tap to Curst Cave;
-	the rule succeeds;
-
-chapter coolcaping
-
-coolcaping is an action applying to nothing.
-
-understand the command "cool cap" as something new.
-
-understand "cool cap" as coolcaping when player is in Curst Cave and tool tap is in cool cap.
-
-carry out coolcaping:
-	if cool cap is not off-stage, say "You already got the cool cap." instead;
-	up-reg;
-	say "What do you know? A cool cap DOES come out.";
-	now player has cool cap;
-	the rule succeeds.
-
 part Foe Field So Sealed 0,3
 
 Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment west, and[end if] you can still go west to a quieter, darker area."
@@ -985,49 +792,13 @@ check going west in Foe Field So Sealed: if shield-shown is false, say "A boomin
 
 chapter showshielding
 
-showshielding is an action applying to one thing.
-
-understand the command "show shield" as something new.
-
-understand "show shield" as showshielding.
-
 shield-shown is a truth state that varies.
-
-carry out showshielding:
-	if shield-shown is true, say "You already did." instead;
-	if player does not have gold guard:
-		clue-later "SHOW SHIELD";
-		say "That seems right, but you have nothing that would guard you effectively. Maybe later." instead;
-	up-reg;
-	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down. You can go west now.";
-	now shield-shown is true;
-	the rule succeeds.
 
 part Store All Stage -1,3
 
 Store All Stage is a room in Piddling Pain. It is west of Foe Field.
 
 the coral cage is a thing in Store All Stage.
-
-the moral mage is a person in Store All Stage.
-
-chapter moralmageing
-
-moralmageing is an action applying to nothing.
-
-understand the command "moral mage" as something new.
-
-understand "moral mage" as moralmageing when coral cage is quicknear.
-
-carry out moralmageing:
-	if player does not have cage key:
-		clue-later "MORAL MAGE";
-		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
-	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
-	up-reg;
-	moot moral mage;
-	moot coral cage;
-	the rule succeeds.
 
 volume Vale Verminous
 
@@ -1059,7 +830,6 @@ to decide which number is russell-progress:
 	decide on rp;
 
 to check-russell-go:
-	up-reg;
 	if russell-progress is 2:
 		say "Russell flees!";
 		moot Reeker Russell;
@@ -1067,61 +837,9 @@ to check-russell-go:
 	else:
 		say "Russell looks confused! One more setback, and he's had it.";
 
-chapter castcaping
+beaker-yet is a truth state that varies.
 
-castcaping is an action applying to nothing.
-
-understand the command "cast cap" as something new.
-
-understand "cast cap" as castcaping when player is in Gassed Gap.
-
-carry out castcaping:
-	if cool cap is moot, say "You already did." instead;
-	if player does not have cool cap:
-		clue-later "CAST CAP";
-		say "You need a cap to cast!" instead;
-	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
-	moot cool cap;
-	move Reeker Russell to Gassed Gap;
-	up-reg;
-	phbt Gassed Gap;
-	the rule succeeds;
-
-chapter beakerbustleing
-
-beaker-yet is a truth state that varies;
-
-chapter meekermuscleing
-
-meekermuscleing is an action applying to nothing.
-
-understand the command "meeker muscle" as something new.
-
-understand "meeker muscle" as meekermuscleing.
-
-meeker-yet is a truth state that varies;
-
-carry out meekermuscleing:
-	if meeker-yet is true, say "You already did that!" instead;
-	now meeker-yet is true;
-	say "Russell becomes noticeably less muscular.";
-	check-russell-go; [nec]
-	the rule succeeds;
-
-chapter woodoneing
-
-woodoneing is an action applying to nothing.
-
-understand the command "wood one" as something new.
-
-understand "wood one" as woodoneing when good gun is quicknear or player is in Gassed Gap.
-
-carry out woodoneing:
-	if good gun is moot, say "You already got rid of the good gun." instead;
-	say "The good gun turns into a wood one in Reeker Russell's hands! He throws it away in disgust.";
-	moot good gun;
-	check-russell-go; [nec]
-	the rule succeeds;
+meeker-yet is a truth state that varies.
 
 part Airy Isle 0,5
 
@@ -1133,79 +851,9 @@ check going south in Airy Isle:
 
 the Bot Board are plural-named people in Airy Isle. "[one of]A Bot Board stands here, impassive, emotionless, not looking for a fight but looking extremely hard to budge[or]The Bot Board stands here, unrattled[if lot lord is in airy isle or hot horde is in airy isle] despite your having summoned help[end if][stopping].". talk-text is "Meep, mate! Heap hate! Weep, wait!"
 
-chapter lotlording
-
-the Lot Lord is a person.
-
-lotlording is an action applying to nothing.
-
-understand the command "lot lord" as something new.
-
-understand "lot lord" as lotlording.
-
-carry out lotlording:
-	if Lot Lord is not off-stage, say "You already summoned the Hot Horde." instead;
-	up-reg;
-	move lot lord to airy isle;
-	say "The Lot Lord whirls in from above, only looking slightly stunned.";
-	check-gored-clue;
-	the rule succeeds.
-
-to check-gored-clue:
-	say "[line break]";
-	if Hot Horde is in Airy Isle and Lot Lord is in Airy Isle:
-		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
-		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
-	else if Hot Horde is in Airy Isle:
-		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
-	else:
-		say "The Lot Lord surveys the isle, as if looking for followers. He doesn't have any, yet. But maybe you could help him find some!"
-
-chapter hothordeing
+the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?".
 
 the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.".
-
-hothordeing is an action applying to nothing.
-
-understand the command "hot horde" as something new.
-
-understand "hot horde" as hothordeing.
-
-carry out hothordeing:
-	if Hot Horde is not off-stage, say "You already summoned the Hot Horde." instead;
-	up-reg;
-	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
-	move hot horde to airy isle;
-	check-gored-clue;
-	the rule succeeds.
-
-chapter gotgoreding
-
-gotgoreding is an action applying to nothing.
-
-understand the command "got gored" as something new.
-
-understand "got gored" as gotgoreding when player is in Airy Isle.
-
-carry out gotgoreding:
-	if Lot Lord is moot and Hot Horde is moot, say "You already inspired the Lot Lord and Hot Horde with the battle cry." instead;
-	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
-		say "YES! That's the cheer they need. The bot board is routed.[paragraph break]As things calm down, you realize a wry wall points you two ways, and there is now a go gate ahead! You must be close now.";
-		up-reg;
-		moot Hot Horde;
-		moot Lot Lord;
-		moot Bot Board;
-		wall-refresh;
-		move go gate to Airy Isle;
-		the rule succeeds;
-	clue-later "GOT GORED";
-	if Hot Horde is in Airy Isle: [and Lot Lord is off-stage]
-		say "The Hot Horde needs more than a battle cry. It needs a leader." instead;
-	else if Lot Lord is in Airy Isle: [and Hot Horde is off-stage]
-		say "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work." instead;
-	else:
-		say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry.";
-	the rule succeeds.
 
 book go gate
 
@@ -1219,46 +867,13 @@ check entering go gate:
 
 the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait] [?? what if there are homonyms: two too?]
 
-chapter whoawaiting
-
-whoawaiting is an action applying to nothing.
-
-understand the command "woe wait" as something new.
-understand the command "whoa wait" as something new.
-understand the command "whoah wait" as something new.
-
-understand "woe wait" as whoawaiting when go gate is quicknear.
-understand "whoa wait" as whoawaiting when go gate is quicknear.
-understand "whoah wait" as whoawaiting when go gate is quicknear.
-
-carry out whoawaiting:
-	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.";
-	wfak;
-	move player to Tarry Tile;
-	up-reg;
-	now min-needed is score + 3;
-	now maximum score is score + 3;
-	the rule succeeds.
-
 part Tarry Tile 1,5
 
 Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all."
 
-chapter telltorning
+chapter well worn hell horn
 
 the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell horn is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.". bore-text of well worn hell horn is "It ... well, it looks used, but it still hasn't fallen apart.".[-> tell torn]
-
-telltorning is an action applying to nothing.
-
-understand the command "tell torn" as something new.
-
-understand "tell torn" as telltorning when player is in tarry tile and well worn hell horn is in tarry tile.
-
-carry out telltorning:
-	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
-	moot well worn hell horn;
-	up-reg;
-	the rule succeeds.
 
 chapter Very Vile Fairy File
 
@@ -1954,7 +1569,7 @@ this is the soft-sand-hint rule:
 	the rule succeeds.
 
 this is the store-all-stage-hint rule:
-	if moral mage is moot, the rule fails;
+	if coral cage is moot, the rule fails;
 	say "The coral cage is what's important here.";
 	process the coral-cage-hint rule;
 
@@ -2466,14 +2081,6 @@ understand "glow glad" as glowglading when in-so-sad is true.
 in-so-sad is a truth state that varies.
 in-so-saded is a truth state that varies.
 
-carry out glowglading:
-	up-reg;
-	say "That's it! You feel much more comfortable now.";
-	now in-so-sad is false;
-	now in-so-saded is true;
-	phbt Kerry Kyle;
-	the rule succeeds.
-
 the get-sad rule is listed after the notify score changes rule in the turn sequence rulebook.
 
 this is the get-sad rule:
@@ -2493,22 +2100,8 @@ instead of doing something when in-so-sad is true:
 
 chapter staystronging
 
-staystronging is an action applying to nothing.
-
-understand the command "stay strong" as something new.
-
-understand "stay strong" as staystronging when in-way-wrong is true.
-
 in-way-wrong is a truth state that varies.
 in-way-wronged is a truth state that varies.
-
-carry out staystronging:
-	say "That's it! You feel much more comfortable now.";
-	now in-way-wrong is false;
-	now in-way-wronged is true;
-	up-reg;
-	phbt Kerry Kyle;
-	the rule succeeds.
 
 the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
 
@@ -2596,32 +2189,6 @@ understand the command "soft sand" as something new.
 understand "soft sand" as softsanding.
 
 loft-land is a truth state that varies.
-
-carry out softsanding:
-	if loft-land is false, say "You're already on the Soft Sand." instead;
-	say "The loft land reverts to the Soft Sand.";
-	now loft-land is false;
-	now Shirk Shell is mapped west of Soft Sand;
-	the rule succeeds;
-
-chapter loftlanding
-
-loftlanding is an action applying to nothing.
-
-understand the command "loft land" as something new.
-
-understand "loft land" as loftlanding.
-
-carry out loftlanding:
-	if loft-land is true, say "You're already on the loft land." instead;
-	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping].";
-	if ever-loft is false:
-		now ever-loft is true;
-		now loft-land is false;
-		up-reg;
-	now Curst Cave is mapped west of Soft Sand;
-	now Soft Sand is mapped west of Curst Cave;
-	the rule succeeds;
 
 volume Poorly Penned
 
@@ -2784,23 +2351,52 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	false	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" [?? this will create problems if we do it this way. It would be nice to say, if there is no | in w1 or w2, it's okay ]
+"first"	"floor"	false	true	vc-first-floor rule	vr-first-floor rule	--
+"lending"	"libe"	false	true	vc-lending-libe rule	vr-lending-libe rule	-- [start trending tribe]
+"hard"	"hat"	false	true	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
 "beast"	"boss"	true	true	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
 "cull|lul"	"ceased|least"	true	true	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
 "full"	"feast"	true	true	vc-full-feast rule	vr-full-feast rule	--
 "least"	"loss"	true	true	vc-least-loss rule	vr-least-loss rule	--
-"beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	-- [start gassed gap]
+"dear"	"dull"	true	true	vc-dear-dull rule	vr-dear-dull rule	--
+"loft"	"land"	false	true	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
+"soft"	"sand"	false	--	vc-soft-sand rule	vr-soft-sand rule	--
+"show"	"shield"	true	true	vc-show-shield rule	vr-show-shield rule	-- [start foe field]
+"cool"	"cap"	true	true	vc-cool-cap rule	vr-cool-cap rule	-- [start curst cave]
+"dreaming"	"dull"	true	true	vc-dreaming-dull rule	vr-dreaming-dull rule	--
+"first"	"fave"	false	true	vc-first-fave rule	vr-first-fave rule	--
+"moral"	"mage"	false	true	vc-moral-mage rule	vr-moral-mage rule	--
+"brightening"	"bridge"	false	true	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
+"shining"	"shore"	false	true	vc-shining-shore rule	vr-shining-shore rule	--
+"mining"	"more"	true	true	vc-mining-more rule	vr-mining-more rule	--
+"dining"	"door"	false	true	vc-dining-door rule	vr-dining-door rule	--
+"cast"	"cap"	false	true	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
+"beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
+"meeker"	"muscle"	true	true	vc-meeker-muscle rule	vr-meeker-muscle rule	--
+"wood"	"one"	false	true	vc-wood-one rule	vr-wood-one rule	--
+"lot"	"lord"	false	true	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
+"hot"	"horde"	false	true	vc-hot-horde rule	vr-hot-horde rule	--
+"got"	"gored"	false	true	vc-got-gored rule	vr-got-gored rule	--
+"whoa"	"wait"	true	true	vc-whoa-wait rule	vr-whoa-wait rule	--
+"tell"	"torn"	false	true	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
+"merry"	"mile"	false	true	vc-merrymile rule	vr-merrymile rule	--
+"bury"	"bile"	false	true	vc-bury-bile rule	vr-bury-bile rule	--
 "wild"	"weed"	true	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
 "sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	--
 "fit"	"found"	true	true	vc-fit-found rule	vr-fit-found rule	--
 "bumped"	"buster"	true	true	vc-bumped-buster rule	vr-bumped-buster rule	--
-"merry"	"mile"	false	true	vc-merrymile rule	vr-merrymile rule	-- [start of endgame]
-"bury"	"bile"	false	true	vc-bury-bile rule	vr-bury-bile rule	--
+"glow"	"glad"	true	true	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
+"stay"	"strong"	false	true	vc-stay-strong rule	vr-stay-strong rule	--
+"cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
+"work"	"well"	true	true	vc-work-well rule	vr-work-well rule	--
 
 [ this is stuff for beta commands below ]
 
 in-test-loop is a truth state that varies.
 
 section to-x stubs
+
+to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
 
 to loop-note (t - text):
 	if in-test-loop is true, say "COMMAND: [t]...[paragraph break]";
@@ -2815,7 +2411,324 @@ to win-the-game:
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 
+to check-gored-clue:
+	say "[line break]";
+	if Hot Horde is in Airy Isle and Lot Lord is in Airy Isle:
+		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
+		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
+	else if Hot Horde is in Airy Isle:
+		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
+	else:
+		say "The Lot Lord surveys the isle, as if looking for followers. He doesn't have any, yet. But maybe you could help him find some!"
+
+this is the shone-yet rule:
+	if shore-shine is false, say "Too whiny for that right now." instead;
+
 section vc vr rules
+
+this is the vc-lot-lord rule:
+	if player is not in airy isle, the rule fails;
+	if Lot Lord is not off-stage, say "You already summoned the Hot Horde." instead;
+	the rule succeeds;
+
+this is the vr-lot-lord rule:
+	move lot lord to airy isle;
+	say "The Lot Lord whirls in from above, only looking slightly stunned.";
+	check-gored-clue;
+	the rule succeeds;
+
+this is the vc-hot-horde rule:
+	if player is not in airy isle, the rule fails;
+	if Hot Horde is not off-stage, say "You already summoned the Hot Horde." instead;
+	the rule succeeds;
+
+this is the vr-hot-horde rule:
+	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
+	move hot horde to airy isle;
+	check-gored-clue;
+	the rule succeeds.
+
+this is the vc-got-gored rule:
+	if player is not in airy isle or bot board is moot, the rule fails;
+	if lot lord is in airy isle and hot horde is in airy isle, the rule succeeds;
+	clue-later "GOT GORED";
+	if lot lord is off-stage and hot horde is off-stage, say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry." instead;
+	if lot lord is off-stage, say "The Hot Horde needs more than a battle cry. It needs a leader." instead;
+	if hot horde is off-stage, say "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work." instead;
+	say "Uh oh. This is a BUG case. This should not have happened." instead;
+
+this is the vr-got-gored rule:
+	say "YES! That's the cheer they need. The bot board is routed.[paragraph break]As things calm down, you realize a wry wall points you two ways, and there is now a go gate ahead! You must be close now.";
+	moot Hot Horde;
+	moot Lot Lord;
+	moot Bot Board;
+	wall-refresh;
+	move go gate to Airy Isle;
+
+this is the vc-whoa-wait rule:
+	unless player is in airy isle and go gate is in airy isle, the rule fails;
+	the rule succeeds;
+
+this is the vr-whoa-wait rule:
+	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.";
+	wfak;
+	move player to Tarry Tile;
+	now min-needed is score + 3;
+	now maximum score is score + 3;
+	the rule succeeds.
+
+this is the vc-work-well rule:
+	if jerk gel is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-work-well rule:
+	say "You work to put all the jerk gel back in. It becomes glowing globs.";
+	now the player has the jerk gel;
+	the rule succeeds.
+
+this is the vc-shining-shore rule:
+	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
+	if shore-shine is true, say "You already got (t)here." instead;
+	if beer bull is not moot:
+		clue-later "SHINING SHORE";
+		say "It could be that way. But you need to get rid of the whining first." instead;
+	the rule succeeds;
+
+this is the vr-shining-shore rule:
+	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
+	phbt Whining War;
+	move lake lap to Whining War; [??fake fap]
+	now shore-shine is true;
+
+this is the vc-mining-more rule:
+	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
+	abide by the shone-yet rule;
+	the rule succeeds;
+
+this is the vr-mining-more rule:
+	now mine-more is true;
+	say "You mine more, more, more.";
+	the rule succeeds.
+
+this is the vc-dining-door rule:
+	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
+	abide by the shone-yet rule;
+	the rule succeeds;
+
+this is the vr-dining-door rule:
+	say "The dining door appears.";
+	now dine-door is true;
+	the rule succeeds.
+
+this is the vc-brightening-bridge rule:
+	if frightening fridge is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-brightening-bridge rule:
+	say "Boom! There goes the fridge! You can go east now!";
+	moot frightening fridge;
+	the rule succeeds.
+
+this is the vc-soft-sand rule:
+	if player is not in soft sand, the rule fails;
+	if loft-land is false, say "You're already on the Soft Sand." instead;
+	the rule succeeds;
+
+this is the vr-soft-sand rule:
+	say "The loft land reverts to the Soft Sand.";
+	now loft-land is false;
+	now Shirk Shell is mapped west of Soft Sand;
+	the rule succeeds;
+
+this is the vc-loft-land rule:
+	if player is not in soft sand, the rule fails;
+	if loft-land is true, say "You're already on the loft land." instead;
+	the rule succeeds;
+
+this is the vr-loft-land rule:
+	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping].";
+	now zap-core-entry is true;
+	if ever-loft is false:
+		now ever-loft is true;
+		now loft-land is false;
+	now Curst Cave is mapped west of Soft Sand;
+	now Soft Sand is mapped west of Curst Cave;
+	the rule succeeds;
+
+this is the vc-first-fave rule:
+	if player is not in curst cave, the rule fails;
+	if first-fave is true, say "You already did." instead;
+	if screaming skull is in Curst Cave:
+		clue-later "FIRST FAVE";
+		say "You can't like anything with that screaming skull around!" instead;
+	the rule succeeds;
+
+this is the vr-first-fave rule:
+	say "Suddenly, the worst wave isn't very bad or evil at all.";
+	now first-fave is true;
+	move tool tap to Curst Cave;
+	the rule succeeds;
+
+this is the vc-stay-strong rule:
+	if in-way-wronged is true, say "You already did." instead;
+	if in-way-wrong is false, the rule fails;
+	the rule succeeds;
+
+this is the vr-stay-strong rule:
+	say "That's it! You feel much more comfortable now.";
+	now in-way-wrong is false;
+	now in-way-wronged is true;
+	phbt Kerry Kyle;
+	the rule succeeds.
+
+this is the vc-glow-glad rule:
+	if in-so-saded is true, say "You already did." instead;
+	if in-so-sad is false, the rule fails;
+	the rule succeeds;
+
+this is the vr-glow-glad rule:
+	say "That's it! You feel much more comfortable now.";
+	now in-so-sad is false;
+	now in-so-saded is true;
+	phbt Kerry Kyle;
+	the rule succeeds.
+
+this is the vc-moral-mage rule:
+	if coral cage is not touchable, the rule fails;
+	if player does not have cage key:
+		clue-later "MORAL MAGE";
+		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
+	the rule succeeds;
+
+this is the vr-moral-mage rule:
+	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
+	moot coral cage;
+	the rule succeeds.
+
+this is the vc-dreaming-dull rule:
+	if screaming skull is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-dreaming-dull rule:
+	moot screaming skull;
+	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
+
+this is the vc-show-shield rule:
+	if player is not in foe field, the rule fails;
+	if player does not have gold guard:
+		clue-later "SHOW SHIELD";
+		say "That seems right, but you have nothing that would guard you effectively. Maybe later." instead;
+	the rule succeeds;
+
+this is the vr-show-shield rule:
+	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down. But not bfore the usual energy ray shwos up and blasts your gold guard to pieces. Eh, it did its job. You can go west now.";
+	now shield-shown is true;
+	moot gold guard;
+
+this is the vc-cool-cap rule:  [?? YOULL YAP / CRUEL CRAP !!!!!]
+	if tool tap is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-cool-cap rule:
+	say "What do you know? A cool cap DOES come out.";
+	now player has cool cap;
+	the rule succeeds.
+
+this is the vc-dear-dull rule:
+	if beer bull is not touchable, the rule fails;
+	if fearful-on is false, say "No. The beer bull is too dull." instead;
+	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
+
+this is the vr-dear-dull rule:
+	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk. Once each side has had their fill, the bull wanders off." instead;
+	moot beer bull;
+	the rule succeeds.
+
+this is the vc-tell-torn rule:
+	if well worn hell horn is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-tell-torn rule:
+	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
+	moot well worn hell horn;
+
+this is the vc-hard-hat rule:
+	if marred mat is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-hard-hat rule:
+	say "Poof! The marred mat changes into a hard hat. A nice lightweight one. Light enough to wear, so you do.";
+	moot marred mat;
+	now player wears hard hat;
+
+this is the vc-lending-libe rule:
+	if player is not in trending tribe, the rule fails;
+	if trending tribe is moot, say "Yes. This is the place's new name. You already disposed of the trending tribe." instead;
+	the rule succeeds;
+
+this is the vr-lending-libe rule:
+	moot trending tribe;
+	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
+	now printed name of Vending Vibe is "Lending Libe";
+	move lending libe to Vending Vibe;
+	the rule succeeds.
+
+this is the vc-cast-cap rule:
+	if player is not in gassed gap, the rule fails;
+	if cool cap is moot, say "You already did." instead;
+	if player does not have cool cap:
+		clue-later "CAST CAP";
+		say "You need a cap to cast!" instead;
+	the rule succeeds;
+
+this is the vr-cast-cap rule:
+	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
+	moot cool cap;
+	move Reeker Russell to Gassed Gap;
+	phbt Gassed Gap;
+
+this is the vc-meeker-muscle rule:
+	if reeker russell is not touchable, the rule fails;
+	if meeker-yet is true, say "You already did that!" instead;
+	the rule succeeds;
+
+this is the vr-meeker-muscle rule:
+	now meeker-yet is true;
+	say "Russell becomes noticeably less muscular.";
+	check-russell-go; [nec]
+
+this is the vc-wood-one rule:
+	if reeker russell is not touchable, the rule fails;
+	if good gun is moot, say "You already got rid of the good gun." instead;
+	the rule succeeds;
+
+this is the vr-wood-one rule:
+	say "The good gun turns into a wood one in Reeker Russell's hands! He throws it away in disgust.";
+	moot good gun;
+	check-russell-go; [nec]
+	the rule succeeds;
+
+this is the vc-cold-card rule:
+	if player is not in Y'Old Yard, the rule fails;
+	if bold bard is moot, say "You already helped the Bold Bard." instead;
+	the rule succeeds;
+
+this is the vr-cold-card rule:
+	say "'Now that's a swap!' The Bold Bard hands you some armor he won't need. At least, you hope his music is good enough, he won't need it.";
+	moot Bold Bard;
+	now player has gold guard;
+	the rule succeeds.
+
+this is the vc-first-floor rule:
+	if player is not in history hall or mistmall is true, the rule fails;
+	the rule succeeds;
+
+this is the vr-first-floor rule:
+	if floor-yet is true, say "You already did." instead;
+	say "Erst Lore, up on the ceiling, comes [one of][or]back [stopping]down. You can go IN, now.";
+	now Erst Lore is mapped inside History Hall;
+	now History Hall is mapped outside Erst Lore;
+	the rule succeeds.
 
 this is the vc-so-sappin rule:
 	if toe tappin is touchable, the rule succeeds;
@@ -3218,23 +3131,6 @@ this is the vr-bury-bile rule:
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
 	the rule succeeds;
 
-volume beta testing - not for release
-
-the force tester wherever rule is listed last in the when play begins rulebook.
-
-when play begins (this is the force tester wherever rule):
-	now in-beta is true;
-	if currently transcripting:
-		say "It looks like you restarted, and the transcript should still be running.";
-	else if debug-state is false:
-		say "Note: I like to make sure beta testers have a transcript working. It's a big help to me. So, after you press a key, you'll be asked to save a file.";
-		wfak;
-		try switching the story transcript on;
-		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
-	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
-	continue the action;
-
 this is the vc-feel-fear rule:
 	if player is not in Real Rear, the rule fails;
 	if knelt-yet is false:
@@ -3273,6 +3169,23 @@ this is the vr-heal-here rule:
 	say "You call on the Ceiling Seer once more. You ask for your wounds to heal ... and they do!";
 	now healed-here is true;
 	the rule succeeds.
+
+volume beta testing - not for release
+
+the force tester wherever rule is listed last in the when play begins rulebook.
+
+when play begins (this is the force tester wherever rule):
+	now in-beta is true;
+	if currently transcripting:
+		say "It looks like you restarted, and the transcript should still be running.";
+	else if debug-state is false:
+		say "Note: I like to make sure beta testers have a transcript working. It's a big help to me. So, after you press a key, you'll be asked to save a file.";
+		wfak;
+		try switching the story transcript on;
+		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
+	if debug-state is false:
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+	continue the action;
 
 chapter blowbying
 
