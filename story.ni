@@ -474,7 +474,7 @@ healed-here is a truth state that varies.
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "You can go in all four directions here.". cht of creased cross is letminus. [-> beast boss]
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you sense it may need to be so much more, later. You can go in all four directions here.". cht of creased cross is letminus. [-> beast boss]
 
 chapter Bull Beast
 
@@ -488,13 +488,13 @@ beast-boss-min is a number that varies. beast-boss-min is 32.
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[elif dark door is moot]There's a way west where the dark door was[else]Nothing's here! But perhaps you could find something[end if]."
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here! But perhaps you could find something[end if]."
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
 	if dark door is in Stark Store, say "You can't seem to get past the dark door." instead;
 
-the dark door is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.".
+There is a thing called the dark door. It is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.".
 
 part History Hall -2,1
 
@@ -529,6 +529,8 @@ understand "song" as oi mo when player is in History Hall and oi mo is in Histor
 check going west in History Hall:
 	if mistmall is true, continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
+
+Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it."
 
 chapter mysterymalling
 
@@ -576,9 +578,21 @@ the hard hat is a thing.
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
 
-part Lake Lea 1,1
+part Violent Vale 1,1
 
-Lake Lea is east of Creased Cross. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
+Violent Vale is east of Creased Cross. It is in Piddling Pain. "Creased Cross is back west. [if fridge is in Vale]A frightening fridge towers over you to the east. Boy, it's scary here. Maybe getting rid of the fridge would help[else if silent-sale is true]It's not really violent here at all any more[else]There's just the memory of how violent it was, but maybe you can change that[end if]."
+
+silent-sale is a truth state that varies.
+
+the frightening fridge is scenery in Violent Vale. "It's really scary, darkening everything around by virtue of being fifteen feet tall. It's probably packed with spoiled and/or 'seriously, kid, it'll help you grow' food, too."
+
+check opening frightening fridge: say "You're scared to. There must be a better way to get rid of the fridge." instead;
+
+check going east in Violent Vale: if frightening fridge is not moot, say "Not with the frightening fridge blocking the way!" instead;
+
+part Lake Lea 3,2
+
+Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
 
 check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
 
@@ -662,17 +676,13 @@ carry out breakbrieing:
 
 part Whining War 2,1
 
-Whining War is east of Lake Lea. It is in Piddling Pain. "You can't get a close enough view.". cht of whining war is partplus. [-> shining shore]
+Whining War is east of Violent Vale. It is in Piddling Pain. "You can't get a close enough view.". cht of whining war is partplus. [-> shining shore]
 
 [??mining more / dining door]
 
 Lake Lap is scenery.
 
 Ache App is a thing.
-
-the frightening fridge is scenery in Whining War. [??!! Violent Vale ]
-
-Violent Vale is a room.
 
 mine-more is a truth state that varies.
 
@@ -2080,6 +2090,10 @@ volume unsorted
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
+the clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
+
+the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do."
+
 chapter glowglading
 
 glowglading is an action applying to nothing.
@@ -2127,7 +2141,6 @@ every turn when in-way-wrong is true:
 
 instead of doing something when in-way-wrong is true:
 	if action is procedural, continue the action;
-	if current action is not staystronging, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter blowingblobsing
@@ -2450,14 +2463,14 @@ this is the vr-dark-door rule:
 this is the vc-mark-more rule:
 	if player is not in stark store, the rule fails;
 	if dark door is off-stage:
-		clue-later "MARK MORE|"
+		clue-later "MARK MORE";
 		say "That'd work, if there was something to mark." instead;
 	if dark door is moot, say "You saw what you could." instead;
 	the rule succeeds;
 
 this is the vr-mark-more rule:
 	say "Yes, there's more to the stark store than the dark door. You notice things about it--as well as how to take it off its hinges!";
-	now dark door is moot;
+	moot dark door;
 
 this is the vc-lot-lord rule:
 	if player is not in airy isle, the rule fails;
