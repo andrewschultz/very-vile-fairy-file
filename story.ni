@@ -580,19 +580,45 @@ check taking off hard hat: say "No. Something will come out of nowhere to conk y
 
 part Violent Vale 1,1
 
-Violent Vale is east of Creased Cross. It is in Piddling Pain. "Creased Cross is back west. [if fridge is in Vale]A frightening fridge towers over you to the east. Boy, it's scary here. Maybe getting rid of the fridge would help[else if silent-sale is true]It's not really violent here at all any more[else]There's just the memory of how violent it was, but maybe you can change that[end if]."
+Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if fridge is in Vale]A frightening fridge towers over you to the east. Boy, it's scary here. Maybe getting rid of the fridge would help[else if silent-sale is true]It's not really violent here at all any more[else]There's just the memory of how violent it was, but maybe you can change that[end if]."
 
 silent-sale is a truth state that varies.
 
-the frightening fridge is scenery in Violent Vale. "It's really scary, darkening everything around by virtue of being fifteen feet tall. It's probably packed with spoiled and/or 'seriously, kid, it'll help you grow' food, too."
+check going east in Violent Vale: if frightening fridge is not moot, say "Not with the frightening fridge blocking the way!" instead;
+
+chapter frightening fridge
+
+the frightening fridge is scenery in Violent Vale. cht of frightening fridge is leteq. "It's really scary, darkening everything around by virtue of being fifteen feet tall. It's probably packed with spoiled and/or 'seriously, kid, it'll help you grow' food, too."
 
 check opening frightening fridge: say "You're scared to. There must be a better way to get rid of the fridge." instead;
 
-check going east in Violent Vale: if frightening fridge is not moot, say "Not with the frightening fridge blocking the way!" instead;
+chapter flooring float
+
+the flooring float is a thing. cht of flooring float is letminus. "A flooring float bobs here.".
+
+check taking flooring float: say "It's too heavy, and you can't take it anywhere. Maybe some other watercraft, though." instead;
+
+chapter boring boat
+
+the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see a new place.".
+
+check taking boring boat: try entering boring boat instead;
+
+check entering boring boat:
+	if player is in lake lea:
+		say "You take the boring boat back to [Violent Vale].";
+		move boring boat to violent vale;
+		move player to violent vale;
+	else:
+		if jake g is moot, say "You already did all you could in Lake Lea." instead;
+		say "You take the boring boat [if lake lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
+		move boring boat to Lake Lea;
+		move player to Lake Lea;
+	the rule succeeds;
 
 part Lake Lea 3,2
 
-Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap.".
+Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap to the east.".
 
 check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
 
@@ -680,8 +706,6 @@ Whining War is east of Violent Vale. It is in Piddling Pain. "You can't get a cl
 
 [??mining more / dining door]
 
-Lake Lap is scenery.
-
 Ache App is a thing.
 
 mine-more is a truth state that varies.
@@ -689,6 +713,10 @@ mine-more is a truth state that varies.
 dine-door is a truth state that varies.
 
 shore-shine is a truth state that varies.
+
+part Lake Lap ??,??
+
+Lake Lap is east of Lake Lea. It is in Piddling Pain.
 
 chapter snakesnaping
 
@@ -2392,7 +2420,9 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "first"	"fave"	false	true	vc-first-fave rule	vr-first-fave rule	--
 "moral"	"mage"	false	true	vc-moral-mage rule	vr-moral-mage rule	--
 "brightening"	"bridge"	false	true	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
-"shining"	"shore"	false	true	vc-shining-shore rule	vr-shining-shore rule	--
+"silent"	"sail|sale"	false	true	vc-silent-sail rule	vr-silent-sail rule	--
+"boring"	"boat"	false	true	vc-boring-boat rule	vr-boring-boat rule	--
+"shining"	"shore"	false	true	vc-shining-shore rule	vr-shining-shore rule	-- [start whining war]
 "mining"	"more"	true	true	vc-mining-more rule	vr-mining-more rule	--
 "dining"	"door"	false	true	vc-dining-door rule	vr-dining-door rule	--
 "cast"	"cap"	false	true	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
@@ -2450,6 +2480,26 @@ this is the shone-yet rule:
 	if shore-shine is false, say "Too whiny for that right now." instead;
 
 section vc vr rules
+
+this is the vc-boring-boat rule:
+	if player is not in violent vale or flooring float is off-stage, the rule fails;
+	if boring boat is in violent vale, say "The boat is already boring and practical enough." instead;
+	the rule succeeds;
+
+this is the vr-boring-boat rule:
+	say "The flooring float sinks and tips over slightly. Some of its excess cargo falls into the water, never to return. It becomes much leaner and more practical--a boring boat!";
+	moot flooring float;
+	move boring boat to Violent Vale;
+
+this is the vc-silent-sail rule:
+	if player is not in violent vale, the rule fails;
+	if flooring float is not off-stage, say "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if]." instead;
+	the rule succeeds;
+
+this is the vr-silent-sail rule:
+	say "Suddenly fom the watery depths, a flooring float pops up! It looks -- impractical for going anywhere, but man, is it aesthetic!";
+	move flooring float to violent vale;
+	the rule succeeds;
 
 this is the vc-dark-door rule:
 	if player is not in stark store, the rule fails;
