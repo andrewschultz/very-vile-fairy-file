@@ -604,16 +604,33 @@ the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENT
 
 check taking boring boat: try entering boring boat instead;
 
+this is the boat-drift rule:
+	if beer bull is moot and jake g is moot:
+		say "[line break]After a moment, the boring boat floats off, its job likely done.";
+		moot boring boat;
+	the rule succeeds;
+
 check entering boring boat:
+	if player is in Been Buggin':
+		if player does not have clay cloak, say "You have not properly passed all the tests you need to return and defeat the Beer Bull." instead;
+		say "With your clay cloak in hand, you return to [Violent Vale]. There, with your newfound mental and physical strength, you defeat the Beer Bull!";
+		moot Beer Bull;
+		move player to violent vale;
+		abide by the boat-drift rule;
+		the rule succeeds;
 	if player is in lake lea:
 		say "You take the boring boat back to [Violent Vale].";
 		move boring boat to violent vale;
 		move player to violent vale;
-	else:
-		if jake g is moot, say "You already did all you could in Lake Lea." instead;
-		say "You take the boring boat [if lake lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
-		move boring boat to Lake Lea;
-		move player to Lake Lea;
+		the rule succeeds;
+	if jake g is moot, say "You already did all you could in Lake Lea." instead;
+	if beer bull is in Violent Vale:
+		say "You take the boring boat but temporarily lose all sense of direction. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
+		move boring boat to Been Buggin';
+		move player to Been Buggin';
+	say "You take the boring boat [if lake lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
+	move boring boat to Lake Lea;
+	move player to Lake Lea;
 	the rule succeeds;
 
 part Lake Lea 3,2
@@ -745,6 +762,20 @@ carry out makemaping:
 	moot ache app;
 	up-reg;
 	the rule succeeds.
+
+part Been Buggin'
+
+Been Buggin' is a room in Piddling Pain. cht of Been Buggin' is leteq.
+
+Dean Duggan is a person in Been Buggin'.
+
+mean-mugged is a truth state that varies.
+
+lean-lugged is a truth state that varies.
+
+to decide whether dean-done:
+	if mean-mugged is true and lean-lugged is true, yes;
+	no;
 
 part Soft Sand 0,2
 
@@ -2483,7 +2514,12 @@ section vc vr rules
 
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
-	if boring boat is in violent vale, say "The boat is already boring and practical enough." instead;
+	if boring boat is moot:
+		say "You don't need to bring the boring boat back.";
+		continue the action;
+	if boring boat is in violent vale:
+		say "The boat is already boring and practical enough.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-boring-boat rule:
