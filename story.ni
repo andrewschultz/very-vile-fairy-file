@@ -72,6 +72,7 @@ to decide which region is mrlp:
 
 to decide whether the action is procedural:
 	if examining, yes;
+	if hintobjing, yes;
 	if lling, yes;
 	no;
 
@@ -199,6 +200,7 @@ skip-bore-text is a truth state that varies.
 this is the bore-nothing rule: do nothing;
 
 instead of doing something with a boring thing:
+	if action is procedural, continue the action;
 	abide by the bore-rule of noun;
 	if skip-bore-text is true:
 		now skip-bore-text is false;
@@ -3452,6 +3454,9 @@ when play begins (this is the force tester wherever rule):
 		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY to jump to the nonlinear part and avoid the introduction.[paragraph break]You can TRICK TRIP or SLICK SLIP before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
 	continue the action;
 
+this is the too-late-for-beta rule:
+	if fun fen is visited or airy isle is visited, say "It's too late to use the TRICK TRIP/BLOW BY commands." instead;
+
 chapter blowbying
 
 blowbying is an action applying to nothing.
@@ -3465,18 +3470,12 @@ understand "flow fie" as blowbying.
 understand "slow sigh" as blowbying.
 
 carry out blowbying:
-	if fun fen is visited, say "Too late to blow by." instead;
-	let prev-blowby-score be the score;
-	now in-test-loop is true;
-	repeat through table of verb checks:
-		process the ver-rule entry;
-		if the rule succeeded:
-			process the do-rule entry;
-			up-reg;
-			now in-test-loop is false;
-			the rule succeeds;
-	now in-test-loop is false;
-	say "Uh oh. Something went wrong. No rules succeeded.";
+	abide by the too-late-for-beta rule;
+	process the any-warp rule;
+	now score is 7;
+	now core-score is 7;
+	move player to fun fen;
+	the rule succeeds.
 
 prev-blowby-score is a number that varies.
 
@@ -3491,13 +3490,19 @@ understand "slick slip" as tricktriping.
 understand "trick trip" as tricktriping.
 
 carry out tricktriping:
-	if fun fen is visited or airy isle is visited, say "You're already past the intro." instead;
-	process the any-warp rule;
-	say "You utter a, uh, QUICK QUIP. Your surroundings change.";
-	now score is 7;
-	now core-score is 7;
-	move player to fun fen;
-	the rule succeeds.
+	abide by the too-late-for-beta rule;
+	say "You utter a, uh, QUICK QUIP. You feel enlightened.";
+	let prev-blowby-score be the score;
+	now in-test-loop is true;
+	repeat through table of verb checks:
+		process the ver-rule entry;
+		if the rule succeeded:
+			process the do-rule entry;
+			up-reg;
+			now in-test-loop is false;
+			the rule succeeds;
+	now in-test-loop is false;
+	say "Uh oh. Something went wrong. No rules succeeded.";
 
 chapter climbclearing
 
