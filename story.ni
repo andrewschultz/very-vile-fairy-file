@@ -2529,7 +2529,9 @@ this is the vr-boring-boat rule:
 
 this is the vc-silent-sail rule:
 	if player is not in violent vale, the rule fails;
-	if flooring float is not off-stage, say "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if]." instead;
+	if flooring float is not off-stage:
+		say "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if].";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-silent-sail rule:
@@ -2539,7 +2541,9 @@ this is the vr-silent-sail rule:
 
 this is the vc-dark-door rule:
 	if player is not in stark store, the rule fails;
-	if dark door is not off-stage, say "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if]." instead;
+	if dark door is not off-stage:
+		say "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if].";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-dark-door rule:
@@ -2550,8 +2554,11 @@ this is the vc-mark-more rule:
 	if player is not in stark store, the rule fails;
 	if dark door is off-stage:
 		clue-later "MARK MORE";
-		say "That'd work, if there was something to mark." instead;
-	if dark door is moot, say "You saw what you could." instead;
+		say "That'd work, if there was something to mark.";
+		continue the action;
+	if dark door is moot:
+		say "You saw what you could.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-mark-more rule:
@@ -2560,7 +2567,9 @@ this is the vr-mark-more rule:
 
 this is the vc-lot-lord rule:
 	if player is not in airy isle, the rule fails;
-	if Lot Lord is not off-stage, say "You already summoned the Hot Horde." instead;
+	if Lot Lord is not off-stage:
+		say "You already summoned the Hot Horde.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-lot-lord rule:
@@ -2571,7 +2580,9 @@ this is the vr-lot-lord rule:
 
 this is the vc-hot-horde rule:
 	if player is not in airy isle, the rule fails;
-	if Hot Horde is not off-stage, say "You already summoned the Hot Horde." instead;
+	if Hot Horde is not off-stage:
+		say "You already summoned the Hot Horde.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-hot-horde rule:
@@ -2584,10 +2595,17 @@ this is the vc-got-gored rule:
 	if player is not in airy isle or bot board is moot, the rule fails;
 	if lot lord is in airy isle and hot horde is in airy isle, the rule succeeds;
 	clue-later "GOT GORED";
-	if lot lord is off-stage and hot horde is off-stage, say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry." instead;
-	if lot lord is off-stage, say "The Hot Horde needs more than a battle cry. It needs a leader." instead;
-	if hot horde is off-stage, say "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work." instead;
-	say "Uh oh. This is a BUG case. This should not have happened." instead;
+	if lot lord is off-stage and hot horde is off-stage:
+		say "That would just be your epitaph right now. But with some help--a lot--it could be a potent rallying cry.";
+		continue the action;
+	if lot lord is off-stage:
+		say "The Hot Horde needs more than a battle cry. It needs a leader.";
+		continue the action;
+	if hot horde is off-stage:
+		say "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work.";
+		continue the action;
+	say "Uh oh. This is a BUG case. This should not have happened.";
+	continue the action;
 
 this is the vr-got-gored rule:
 	say "YES! That's the cheer they need. The bot board is routed.[paragraph break]As things calm down, you realize a wry wall points you two ways, and there is now a go gate ahead! You must be close now.";
@@ -2620,10 +2638,13 @@ this is the vr-work-well rule:
 
 this is the vc-shining-shore rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
-	if shore-shine is true, say "You already got (t)here." instead;
+	if shore-shine is true:
+		say "You already got (t)here.";
+		continue the action;
 	if beer bull is not moot:
 		clue-later "SHINING SHORE";
-		say "It could be that way. But you need to get rid of the whining first." instead;
+		say "It could be that way. But you need to get rid of the whining first.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-shining-shore rule:
@@ -2663,7 +2684,9 @@ this is the vr-brightening-bridge rule:
 
 this is the vc-soft-sand rule:
 	if player is not in soft sand, the rule fails;
-	if loft-land is false, say "You're already on the Soft Sand." instead;
+	if loft-land is false:
+		say "You're already on the Soft Sand.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-soft-sand rule:
@@ -2674,7 +2697,9 @@ this is the vr-soft-sand rule:
 
 this is the vc-loft-land rule:
 	if player is not in soft sand, the rule fails;
-	if loft-land is true, say "You're already on the loft land." instead;
+	if loft-land is true:
+		say "You're already on the loft land.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-loft-land rule:
@@ -2689,10 +2714,13 @@ this is the vr-loft-land rule:
 
 this is the vc-first-fave rule:
 	if player is not in curst cave, the rule fails;
-	if first-fave is true, say "You already did." instead;
+	if first-fave is true:
+		say "You already did.";
+		continue the action;
 	if screaming skull is in Curst Cave:
 		clue-later "FIRST FAVE";
-		say "You can't like anything with that screaming skull around!" instead;
+		say "You can't like anything with that screaming skull around!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-first-fave rule:
@@ -2702,7 +2730,9 @@ this is the vr-first-fave rule:
 	the rule succeeds;
 
 this is the vc-stay-strong rule:
-	if in-way-wronged is true, say "You already did." instead;
+	if in-way-wronged is true:
+		say "You already did.";
+		continue the action;
 	if in-way-wrong is false, the rule fails;
 	the rule succeeds;
 
@@ -2714,7 +2744,9 @@ this is the vr-stay-strong rule:
 	the rule succeeds.
 
 this is the vc-glow-glad rule:
-	if in-so-saded is true, say "You already did." instead;
+	if in-so-saded is true:
+		say "You already did.";
+		continue the action;
 	if in-so-sad is false, the rule fails;
 	the rule succeeds;
 
@@ -2729,7 +2761,8 @@ this is the vc-moral-mage rule:
 	if coral cage is not touchable, the rule fails;
 	if player does not have cage key:
 		clue-later "MORAL MAGE";
-		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it." instead;
+		say "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
@@ -2749,7 +2782,8 @@ this is the vc-show-shield rule:
 	if player is not in foe field, the rule fails;
 	if player does not have gold guard:
 		clue-later "SHOW SHIELD";
-		say "That seems right, but you have nothing that would guard you effectively. Maybe later." instead;
+		say "That seems right, but you have nothing that would guard you effectively. Maybe later.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-show-shield rule:
@@ -2768,8 +2802,12 @@ this is the vr-cool-cap rule:
 
 this is the vc-dear-dull rule:
 	if beer bull is not touchable, the rule fails;
-	if fearful-on is false, say "No. The beer bull is too dull." instead;
-	if player is not in Whining War, say "This isn't the right place to calm the beer bull down." instead;
+	if fearful-on is false:
+		say "No. The beer bull is too dull.";
+		continue the action;
+	if player is not in Whining War:
+		say "This isn't the right place to calm the beer bull down.";
+		continue the action;
 
 this is the vr-dear-dull rule:
 	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk. Once each side has had their fill, the bull wanders off." instead;
@@ -2795,7 +2833,9 @@ this is the vr-hard-hat rule:
 
 this is the vc-lending-libe rule:
 	if player is not in trending tribe, the rule fails;
-	if trending tribe is moot, say "Yes. This is the place's new name. You already disposed of the trending tribe." instead;
+	if trending tribe is moot:
+		say "Yes. This is the place's new name. You already disposed of the trending tribe.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-lending-libe rule:
@@ -2807,10 +2847,13 @@ this is the vr-lending-libe rule:
 
 this is the vc-cast-cap rule:
 	if player is not in gassed gap, the rule fails;
-	if cool cap is moot, say "You already did." instead;
+	if cool cap is moot:
+		say "You already did.";
+		continue the action;
 	if player does not have cool cap:
 		clue-later "CAST CAP";
-		say "You need a cap to cast!" instead;
+		say "You need a cap to cast!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-cast-cap rule:
@@ -2821,7 +2864,9 @@ this is the vr-cast-cap rule:
 
 this is the vc-meeker-muscle rule:
 	if reeker russell is not touchable, the rule fails;
-	if meeker-yet is true, say "You already did that!" instead;
+	if meeker-yet is true:
+		say "You already did that!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-meeker-muscle rule:
@@ -2831,7 +2876,9 @@ this is the vr-meeker-muscle rule:
 
 this is the vc-wood-one rule:
 	if reeker russell is not touchable, the rule fails;
-	if good gun is moot, say "You already got rid of the good gun." instead;
+	if good gun is moot:
+		say "You already got rid of the good gun.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-wood-one rule:
@@ -2842,7 +2889,9 @@ this is the vr-wood-one rule:
 
 this is the vc-cold-card rule:
 	if player is not in Y'Old Yard, the rule fails;
-	if bold bard is moot, say "You already helped the Bold Bard." instead;
+	if bold bard is moot:
+		say "You already helped the Bold Bard.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-cold-card rule:
@@ -2874,7 +2923,9 @@ this is the vr-so-sappin rule:
 
 this is the vc-history-hall rule:
 	if player is not in History Hall, the rule fails;
-	if mistmall is false, say "You're already in History Hall." instead;
+	if mistmall is false:
+		say "You're already in History Hall.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-history-hall rule:
@@ -2893,7 +2944,9 @@ this is the vr-history-hall rule:
 
 this is the vc-mystery-mall rule:
 	if player is not in History Hall, the rule fails;
-	if mistmall is true, say "You're already in the Mystery Mall." instead;
+	if mistmall is true:
+		say "You're already in the Mystery Mall.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-mystery-mall rule:
@@ -2913,7 +2966,9 @@ this is the vr-mystery-mall rule:
 
 this is the vc-beast-boss rule:
 	if player is not in Creased Cross, the rule fails;
-	if Bull Beast is not off-stage, say "You already did." instead;
+	if Bull Beast is not off-stage:
+		say "You already did.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-beast-boss rule:
@@ -2928,10 +2983,12 @@ this is the vc-cull-ceased rule:
 	if Bull Beast is not touchable, the rule fails;
 	if player is not in Creased Cross:
 		clue-later "CULL CEASED";
-		say "You need to go back to Creased Cross." instead;
+		say "You need to go back to Creased Cross.";
+		continue the action;
 	if healed-here is false:
 		clue-later "CULL CEASED";
-		say "You need to find a way to restore your health." instead;
+		say "You need to find a way to restore your health.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-cull-ceased rule:
@@ -2944,7 +3001,8 @@ this is the vc-full-feast rule:
 	if Bull Beast is not in location of player, the rule fails;
 	if Bull Beast is not boring:
 		clue-later "FULL FEAST";
-		say "That should work. It might work better if the Bull Beast were incapacitated." instead;
+		say "That should work. It might work better if the Bull Beast were incapacitated.";
+		continue the action;
 
 this is the vr-full-feast rule:
 	say "BOOM! You managed to make a full feast of the Bull Beast. Everyone loves it. It tastes good. Nothing is left.";
@@ -2955,8 +3013,11 @@ this is the vc-least-loss rule:
 	if player is not in creased cross, the rule fails;
 	if Bull Beast is off-stage:
 		clue-later "LEAST LOSS";
-		say "Not yet. You need to be in a fighting situation." instead;
-	if least-loss is true, say "But then it wouldn't be the least loss any more." instead;
+		say "Not yet. You need to be in a fighting situation.";
+		continue the action;
+	if least-loss is true:
+		say "But then it wouldn't be the least loss any more.";
+		continue the action;
 
 this is the vr-least-loss rule:
 	now least-loss is true;
@@ -2972,7 +3033,9 @@ this is the vr-wild-weed rule:
 
 this is the vc-beaker-bustle rule:
 	if reeker russell is not touchable, the rule fails;
-	if beaker-yet is true, say "You already did that!" instead;
+	if beaker-yet is true:
+		say "You already did that!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-beaker-bustle rule:
@@ -2982,7 +3045,9 @@ this is the vr-beaker-bustle rule:
 
 this is the vc-lots-lame rule:
 	if gutta ganksta is not touchable, the rule fails;
-	if lots-lame is true, say "You already pinged the Gutta Ganksta like that." instead;
+	if lots-lame is true:
+		say "You already pinged the Gutta Ganksta like that.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-lots-lame rule:
@@ -3010,7 +3075,9 @@ this is the vr-whatta-wanksta rule:
 
 this is the vc-kneel-near rule:
 	if player is not in real rear, the rule fails;
-	if knelt-yet is true, say "You already did!" instead;
+	if knelt-yet is true:
+		say "You already did!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-kneel-near rule:
@@ -3021,10 +3088,13 @@ this is the vr-kneel-near rule:
 	the rule succeeds.
 
 this is the vc-big-bag rule:
-	if player has big bag, say "You already made the big bag." instead;
+	if player has big bag:
+		say "You already made the big bag.";
+		continue the action;
 	if Fun Fen is unvisited:
 		clue-later "BIG BAG";
-		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag." instead;
+		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
+		continue the action;
 
 this is the vr-big-bag rule:
 	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
@@ -3033,9 +3103,13 @@ this is the vr-big-bag rule:
 	now bag-hint is false;
 
 this is the vc-spark-spliff rule:
-	if wild weed is moot, say "Whoah, dude. You already did." instead;
+	if wild weed is moot:
+		say "Whoah, dude. You already did.";
+		continue the action;
 	if player does not have wild weed, the rule fails;
-	if player is not in Fun Fen, say "Not here, dude! No source of flame!" instead;
+	if player is not in Fun Fen:
+		say "Not here, dude! No source of flame!";
+		continue the action;
 
 this is the vr-spark-spliff rule:
 	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
@@ -3072,7 +3146,9 @@ this is the vr-backed-binder rule:
 	phbt paper pile;
 
 this is the vc-fall-free rule:
-	if tree-down is true, say "You don't need the tree to fall any further." instead;
+	if tree-down is true:
+		say "You don't need the tree to fall any further.";
+		continue the action;
 	if player is not in Fun Fen or Tall Tree is moot, the rule fails;
 	the rule succeeds;
 
@@ -3086,7 +3162,7 @@ this is the vr-fall-free rule:
 this is the vc-get-good rule:
 	if player is not in wet wood:
 		if in-test-loop is false, say "You already managed to GET GOOD.";
-		do nothing instead;
+		continue the action;
 	the rule succeeds;
 
 this is the vr-get-good rule:
@@ -3097,7 +3173,7 @@ this is the vr-get-good rule:
 this is the vc-find-fault rule:
 	if mean mass is in Vined Vault:
 		if in-test-loop is false, say "You already did, and things got worse. You'll have to try something else.";
-		do nothing instead;
+		continue the action;
 	if player is in Vined Vault, the rule succeeds;
 
 this is the vr-find-fault rule:
@@ -3122,7 +3198,7 @@ this is the vc-grow-grit rule:
 	if player is in po' pit and grit-grown is false, the rule succeeds;
 	if grit-grown is true:
 		if in-test-loop is false, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
-		do nothing instead;
+		continue the action;
 
 this is the vr-grow-grit rule:
 	loop-note "GROW GRIT";
@@ -3134,13 +3210,11 @@ this is the vr-grow-grit rule:
 
 this is the vc-mash-map rule:
 	if player is not in po' pit, the rule fails;
-	if the player's command matches "mash bap" or the player's command matches "bash map":
-		say "Ooh! Just tweak one letter in either word." instead;
 	if grit-grown is false:
 		now bash-not-mash is whether or not word number 1 in the player's command is "bash";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
 		clue-later-w "MASH MAP";
-		do nothing instead;
+		continue the action;
 	the rule succeeds;
 
 this is the vr-mash-map rule:
@@ -3152,7 +3226,7 @@ this is the vr-mash-map rule:
 this is the vc-mind-me rule:
 	if me-minded is true:
 		if in-test-loop is false, say "You already minded yourself.";
-		do nothing instead;
+		continue the action;
 	if player is in trim tram and me-minded is false, the rule succeeds;
 
 this is the vr-mind-me rule:
@@ -3166,7 +3240,7 @@ this is the vc-flim-flam rule:
 		now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
 		clue-later-w "FLIM FLAM";
-		do nothing instead;
+		continue the action;
 	the rule succeeds;
 
 this is the vr-flim-flam rule:
@@ -3176,7 +3250,9 @@ this is the vr-flim-flam rule:
 
 this is the vc-strong-start rule:
 	if player is not in Fun Fen, the rule fails;
-	if started-strong is true, say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart." instead;
+	if started-strong is true:
+		say "You already did. You wouldn't want a stale start. Why, you might get sent to Male Mart. Or run over by a kale cart.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-strong-start rule:
@@ -3196,7 +3272,9 @@ this is the vr-bumped-buster rule:
 
 this is the vc-sit-sound rule:
 	if hit hound is not touchable:
-		if player is in pit pound, say "You already did." instead;
+		if player is in pit pound:
+			say "You already did.";
+			continue the action;
 		the rule fails;
 	the rule succeeds;
 
@@ -3208,11 +3286,13 @@ this is the vr-sit-sound rule:
 
 this is the vc-fit-found rule:
 	if player is not in pit pound, the rule fails;
-	if found-fit is true, say "You already did." instead;
+	if found-fit is true:
+		say "You already did.";
+		continue the action;
 	if hit hound is in pit pound:
 		say "You can't do much with the Hit Hound around.";
 		clue-later-w "FIT FOUND";
-		do nothing instead;
+		continue the action;
 
 this is the vr-fit-found rule:
 	say "You feel comfortable here now. Wahoo!";
@@ -3220,18 +3300,25 @@ this is the vr-fit-found rule:
 	the rule succeeds.
 
 this is the vc-merrymile rule:
-	if merry-mile is true, say "You already did. And if you force things, it might undo the good you did." instead;
+	if merry-mile is true:
+		say "You already did. And if you force things, it might undo the good you did.";
+		continue the action;
 	if mrlp is not Vale Verminous, the rule fails;
 	clue-later "MERRY MILE";
-	if player is not in Tarry Tile, say "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though." instead;
+	if player is not in Tarry Tile:
+		say "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though.";
+		continue the action;
 	if player is in Airy Isle:
-		if bot board is moot, say "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead." instead;
-		say "Hard to be happy with the Bot Board around." instead;
+		if bot board is moot:
+			say "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead.";
+			continue the action;
+		say "Hard to be happy with the Bot Board around.";
+		continue the action;
 	if player is in Tarry Tile:
 		if well worn hell horn is in Tarry Tile:
 			say "Not with the well worn hell horn making those un-merry noises.";
 			clue-later "MERRY MILE";
-			do nothing instead;
+			continue the action;
 
 this is the vr-merrymile rule:
 	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
@@ -3243,18 +3330,25 @@ this is the vc-bury-bile rule:
 		if well worn hell horn is in Tarry Tile:
 			say "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
 			clue-later "BURY BILE";
-			do nothing instead;
+			continue the action;
 		if merry-mile is false:
 			say "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
 			clue-later "BURY BILE";
-			do nothing instead;
+			continue the action;
 	clue-later "BURY BILE";
-	if mrlp is Worst Whew, say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective." instead;
-	if mrlp is Piddling Pain, say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!" instead;
-	if player is in Airy Isle, say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight." instead;
+	if mrlp is Worst Whew:
+		say "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.";
+		continue the action;
+	if mrlp is Piddling Pain:
+		say "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
+		continue the action;
+	if player is in Airy Isle:
+		say "You'd like to do that, but not here with so many distractions, during perhaps the big last fight.";
+		continue the action;
 	if mrlp is Vale Verminous:
 		too-generic;
-		say "It must be about the right time. But you are not quite there, yet." instead;
+		say "It must be about the right time. But you are not quite there, yet.";
+		continue the action;
 	say "This is a BUG that should not happen.";
 
 this is the vr-bury-bile rule:
@@ -3267,7 +3361,8 @@ this is the vc-feel-fear rule:
 	if player is not in Real Rear, the rule fails;
 	if knelt-yet is false:
 		clue-later "FEEL FEAR";
-		say "Fear isn't something you can try to feel[seer-sez]." instead;
+		say "Fear isn't something you can try to feel[seer-sez].";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-feel-fear rule:
@@ -3279,7 +3374,8 @@ this is the vc-deal-dear rule:
 	if player is not in Real Rear, the rule fails;
 	if felt-fear is false:
 		clue-later "DEAL DEAR";
-		say "You haven't found anything you need to deal with[seer-sez]." instead;
+		say "You haven't found anything you need to deal with[seer-sez].";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-deal-dear rule:
@@ -3291,10 +3387,13 @@ this is the vr-deal-dear rule:
 
 this is the vc-heal-here rule:
 	if player is not in Real Rear, the rule fails;
-	if healed-here is true, say "You already did." instead;
+	if healed-here is true:
+		say "You already did.";
+		continue the action;
 	if 1 > 0:
 		clue-later "HEAL HERE";
-		say "You don't have anything to heal from, yet[seer-sez]." instead;
+		say "You don't have anything to heal from, yet[seer-sez].";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-heal-here rule:
