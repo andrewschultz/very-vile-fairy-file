@@ -68,7 +68,7 @@ montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 "ll"	false	"Leet Learner"	show-leets rule	"showing leet learner readings"
 
 this is the show-leets rule:
-	try leetlearning;
+	try lling;
 
 Very Vile Fairy File Tests ends here.
 

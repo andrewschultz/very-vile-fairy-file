@@ -1539,11 +1539,22 @@ carry out hinting:
 	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but specific things in [location of player] may be worth looking at.";
 	the rule succeeds.
 
+section auxiliary functions
+
+to decide which number is buggin-score:
+	decide on (boolval of mean-mugged) + (boolval of lean-lugged);
+
+to decide whether should-mug-first:
+	if mean-mugged is true, no;
+	if mugged-first is true, yes;
+	no;
+
 section hint room rule definitions
 
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
+room-hint-rule of Been Buggin' is been-buggin-hint rule.
 room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
 room-hint-rule of Erst Lore is erst-lore-hint rule.
@@ -1560,6 +1571,9 @@ room-hint-rule of Real Rear is real-rear-hint rule.
 room-hint-rule of Shirk Shell is shirk-shell-hint rule.
 room-hint-rule of Soft Sand is soft-sand-hint rule.
 room-hint-rule of Store All Stage is store-all-stage-hint rule.
+room-hint-rule of Stark Store is start-store-hint rule.
+room-hint-rule of Violent Vale is violent-vale-hint rule.
+room-hint-rule of Lake Lap is lake-lap-hint rule.
 room-hint-rule of Tarry Tile is tarry-tile-hint rule.
 room-hint-rule of Trim Tram is trim-tram-hint rule.
 room-hint-rule of Vending Vibe is vending-vibe-hint rule.
@@ -1568,7 +1582,7 @@ room-hint-rule of Wet Wood is wet-wood-hint rule.
 room-hint-rule of Whining War is whining-war-hint rule.
 room-hint-rule of Y'Old Yard is yold-yard-hint rule.
 
-section hint room rules [xxhrr]
+section hint room rules [xxhrr] [xxrhr]
 
 this is the airy-isle-hint rule:
 	say "The Bot Board needs to be dealt with here, not the location.";
@@ -1581,6 +1595,17 @@ this is the creased-cross-hint rule:
 	else:
 		say "Dispose of the Bull Beast.";
 	the rule succeeds.
+
+this is the been-buggin-hint rule:
+	if dean duggan is moot:
+		say "You're done here. You can take the boring boat back to [Violent Vale] now.";
+		the rule fails;
+	if buggin-score is 0, say "[one of]There are two things to do, and they can be done in any order, so I picked one at random.[or][stopping]";
+	if should-mug-first:
+		say "[one of]You need to look a bit tougher, since you've been buggin['].[or]You need to change your facial expression.[or]Change your facial expression with [b]MEAN MUGGIN[r].[stopping]";
+	else:
+		say "[one of]You need to be able to carry more weight.[or]You need to be stronger and, not quite thinner, but ...[or]...leaner.[or]LEAN LUGGIN.[stopping]";
+	the rule succeeds;
 
 this is the curst-cave-hint rule:
 	if first-fave is true, the rule fails;
@@ -1741,6 +1766,7 @@ the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of big bag is big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
+the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
 the thing-hint-rule of cage key is cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
@@ -1812,6 +1838,10 @@ the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
 [??styled steed]
 
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
+
+this is the dean-duggan-hint rule:
+	say "[one of]Dean Duggan is an integral part of Been Buggin[']. So hints about him are hints about Been Buggin['].[or][stopping]";
+	process the been-buggin-hint rule;
 
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
@@ -2142,6 +2172,13 @@ when play begins (this is the backdrop and score seeding rule):
 	wall-refresh;
 
 to wall-refresh: move the wry wall backdrop to all signable rooms;
+
+mugged-first is a truth state that varies.
+
+when play begins (this is the randomize all the things rule):
+	if a random chance of 1 in 2 succeeds, now mugged-first is true;
+	repeat through table of all randoms:
+		sort tabnam entry in random order;
 
 section when play begins - not for release
 
