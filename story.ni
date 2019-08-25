@@ -72,6 +72,7 @@ to decide which region is mrlp:
 
 to decide whether the action is procedural:
 	if examining, yes;
+	if reading, yes;
 	if hintobjing, yes;
 	if lling, yes;
 	no;
@@ -930,7 +931,20 @@ check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
 	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
 
-the Bot Board are plural-named people in Airy Isle. "[one of]A Bot Board stands here, impassive, emotionless, not looking for a fight but looking extremely hard to budge[or]The Bot Board stands here, unrattled[if lot lord is in airy isle or hot horde is in airy isle] despite your having summoned help[end if][stopping].". talk-text is "Meep, mate! Heap hate! Weep, wait!"
+for printing a locale paragraph about a person (called per) in Airy Isle:
+	now per is mentioned;
+	if per is not Bot Board, continue the action;
+	say "[one of]A Bot Board stands here, impassive, emotionless, not looking for a fight but looking extremely hard to budge[or]The Bot Board stands here, unrattled[if lot lord is in airy isle or hot horde is in airy isle] despite your having summoned help[end if][stopping].";
+	if lot lord is off-stage and hot horde is off-stage, continue the action;
+	say "[line break]";
+	if Lot Lord is off-stage:
+		say "A Hot Horde rambles around aimlessly here. Maybe they could take down the Bot Board, but they need discipline and leadership and order.";
+	else if Hot Horde is off-stage:
+		say "A powerful-looking Lot Lord stands here, pacing around as if waiting for an army to help him out.";
+	else:
+		say "The Lot Lord and Hot Horde mumble amongst themselves. The right battle cry, and they will be fully jazzed to take down the Bot Board!";
+
+the Bot Board are plural-named people in Airy Isle. . talk-text is "Meep, mate! Heap hate! Weep, wait!"
 
 the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?".
 
@@ -1446,11 +1460,11 @@ ever-two-too is a truth state that varies.
 
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
-	if noun is leet learner, say "It's great as it is. You don't want to change it." instead;
-	if cht of noun is phbt, say "The leet learner turns up nothing." instead;
+	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
+	if cht of noun is phbt, say "The leet learner turns up nothing scanning [the noun]." instead;
 	if noun is peeling pier and healed-here is false, say "It seems like the leet learner is registering something everywhere except on the peeling pier, here." instead;
-	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if][if the noun is not a room] [the noun][end if].";
-	if ever-opt-scan is false:
+	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
+	if noun is optional and ever-opt-scan is false:
 		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
 	if noun is two-too, say "[line break]The 'two too' light on the Leet Learner also appears[two-too-yet].";
@@ -2107,8 +2121,8 @@ volume when play begins
 when play begins (this is the opening text rule):
 	now the left hand status line is "West Wall";
 	force-status;
-	if debug-state is false, ask-screenread;
 	anonymously abide by the check-skip-intro rule;
+	if debug-state is false, ask-screenread;
 	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak]";
 	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
@@ -2383,6 +2397,7 @@ this is the verb-checker rule:
 		if ha-half is true and my-count is 1:
 			process the ver-rule entry;
 			if the rule failed, next;
+			if debug-state is true, say "[ver-rule entry] tipped off the HA HALF button.";
 			say "The HA HALF button lights up on your Leet Learner.";
 			the rule succeeds;
 
@@ -3242,10 +3257,11 @@ this is the vr-green-grass rule:
 	the rule succeeds;
 
 this is the vc-grow-grit rule:
-	if player is in po' pit and grit-grown is false, the rule succeeds;
+	if player is not in po' pit, the rule fails;
 	if grit-grown is true:
 		if in-test-loop is false, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-grow-grit rule:
 	loop-note "GROW GRIT";
@@ -3361,11 +3377,11 @@ this is the vc-merrymile rule:
 			continue the action;
 		say "Hard to be happy with the Bot Board around.";
 		continue the action;
-	if player is in Tarry Tile:
-		if well worn hell horn is in Tarry Tile:
-			say "Not with the well worn hell horn making those un-merry noises.";
-			clue-later "MERRY MILE";
-			continue the action;
+	if player is in Tarry Tile and well worn hell horn is in Tarry Tile:
+		say "Not with the well worn hell horn making those un-merry noises.";
+		clue-later "MERRY MILE";
+		continue the action;
+	the rule succeeds;
 
 this is the vr-merrymile rule:
 	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
@@ -3402,6 +3418,7 @@ this is the vr-bury-bile rule:
 	now bile-buried is true;
 	win-the-game;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
+	end the game in victory;
 	the rule succeeds;
 
 this is the vc-feel-fear rule:
@@ -3462,11 +3479,34 @@ when play begins (this is the force tester wherever rule):
 		try switching the story transcript on;
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
 	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY to jump to the nonlinear part and avoid the introduction.[paragraph break]You can TRICK TRIP or SLICK SLIP before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
+		if fun fen is unvisited:
+			say "[line break]You can SLOW SIGH or BLOW BY or FLOW FLY to jump to the nonlinear part and avoid the introduction.[paragraph break]You can [b]TRICK TRIP or SLICK SLIP before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.";
+		if airy isle is unvisited:
+			say "[line break]Also, you can [b]CLIMB CLEAR[r] to jump to the (relatively brief) endgame, and LLA leet-learns everything in sight.";
 	continue the action;
 
 this is the too-late-for-beta rule:
 	if fun fen is visited or airy isle is visited, say "It's too late to use the TRICK TRIP/BLOW BY commands." instead;
+
+chapter llaing
+
+llaing is an action applying to nothing.
+
+understand the command "lla" as something new.
+
+understand "lla" as llaing.
+
+definition: a thing (called th) is llable:
+	if th is touchable, yes;
+	no;
+
+carry out llaing:
+	try lling the location of the player;
+	repeat with Q running through llable things:
+		say "====Leet-learning [Q]:";
+		try lling Q;
+	the rule succeeds.
 
 chapter blowbying
 

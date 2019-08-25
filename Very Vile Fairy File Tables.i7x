@@ -173,7 +173,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
 "FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can [b]CAST CAP[r] once you find one."
-"GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry [b]GOT GORED[r] [once-now of can-got-gored rule] you have a full army and its leader."
+"GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry [b]GOT GORED[r] should work [once-now of can-got-gored rule] you have a full army and its leader."
 "MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
 
 [xx4l8r]
