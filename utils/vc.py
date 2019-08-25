@@ -10,9 +10,17 @@ from i7 import is_outline_start
 from collections import defaultdict
 
 ignore_dict = defaultdict(bool)
-ignore_array = [ "this is the verb-checker rule", "carry out blowbying" ]
 
-for x in ignore_array: ignore_dict[x] = True
+def get_ignore_dict():
+    with open("vc.txt") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("#"): continue
+            if line.startswith(";"): continue
+            l = line.lower().strip()
+            if l in ignore_dict:
+                print("WARNING duplicate ignore dict entry", l, "at line", line_count)
+            ignore_dict[l] = True
+    return
 
 def get_ups():
     new_rule = "<NO RULE YET>"
@@ -39,7 +47,7 @@ def get_ups():
             else:
                 ls = line.strip();
                 if ls.startswith("up-"):
-                    if new_rule in ignore_list: continue
+                    if new_rule in ignore_dict: continue
                     count += 1
                     print("RULE", count, rule_line, new_rule)
                     print("    UP/DOWN", line_count, ls)
@@ -59,7 +67,8 @@ myary = []
 
 lsa = len(sys.argv)
 
-if lsa > 1 and sys.argv[1] == 'u':
+if lsa > 1 and (sys.argv[1] == 'u' or sys.argv[1] == 'up'):
+    get_ignore_dict()
     get_ups()
     exit()
 
