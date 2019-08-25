@@ -1099,10 +1099,6 @@ check listening:
 
 chapter thinking
 
-thought-any is a truth state that varies.
-
-to say tat: now thought-any is true;
-
 ever-thought is a truth state that varies.
 
 the block thinking rule is not listed in any rulebook.
@@ -1112,14 +1108,14 @@ check thinking:
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
 	repeat through table of forlaters:
 		if ready-to-hint entry is true:
-			consider the is-done entry;
+			process the is-done entry;
 			if the rule succeeded:
 				now ready-to-hint entry is false;
-				continue the action; [ this may be duplicate code in score and thinking changes rules but I'm a bit nervous about it at the moment, and this shuts the door 100%. Test later with this gone if I have time. ]
+				next; [ this may be duplicate code in score and thinking changes rules but I'm a bit nervous about it at the moment, and this shuts the door 100%. Test later with this gone if I have time. ]
 			now thought-any is true;
 			consider the can-do-now entry;
 			if the rule succeeded, say "(CAN DO NOW) ";
-			say "[tat][think-advice entry][line break]";
+			say "[think-advice entry][line break]";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now." instead;
 	if ever-thought is false:
 		now ever-thought is true;
@@ -1146,7 +1142,7 @@ to clue-later (ct - text):
 	now first-think-clue-flag is true;
 	repeat through table of forlaters:
 		if ct is cmd-to-say entry:
-			if ready-to-hint entry is true, say "(re-checking) ";
+			if debug-state is true and ready-to-hint entry is true, say "(re-checking)[line break]";
 			now ready-to-hint entry is true;
 			continue the action;
 	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
@@ -1155,7 +1151,7 @@ first-think-clue-flag is a truth state that varies.
 ever-think-flag is a truth state that varies.
 
 every turn when first-think-clue-flag is true and ever-think-flag is false (this is the note first think rule):
-	if ever-think-flag is false, say "[line break]NOTE: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under THINK, with clues as to when they work.";
+	if ever-think-flag is false, say "[line break][b]NOTE[r]: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under [b]THINK[r], with clues as to when they work.";
 	now ever-think-flag is true;
 	continue the action;
 
@@ -2438,6 +2434,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	false	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" [?? this will create problems if we do it this way. It would be nice to say, if there is no | in w1 or w2, it's okay ]
 "first"	"floor"	false	true	vc-first-floor rule	vr-first-floor rule	--
+"glean"	"glows"	false	true	vc-glean-glows rule	vr-glean-glows rule	--
 "lending"	"libe"	false	true	vc-lending-libe rule	vr-lending-libe rule	-- [start trending tribe]
 "hard"	"hat"	false	true	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
 "beast"	"boss"	true	true	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
@@ -2523,6 +2520,20 @@ to lean-and-mean:
 		say "'Not bad, but you can stll do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
 section vc vr rules
+
+this is the vc-glean-glows rule:
+	if player is not in history hall and mean moe's is not in history hall, the rule fails;
+	if player does not have clay cloak:
+		say "That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.";
+		clue-later "GLEAN GLOWS";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-glean-glows rule:
+	say "You figure how Mean Moe's Clean Clothes works. You lump the way woke clay cloak in, and after some beeping and coughing, out comes ... a clashing cloak! It's much less bulky than the way woke clay cloak, and it feels more versatile.";
+	moot way woke clay cloak;
+	now player has clashing cloak;
+	moot Mean Moe's Clean Clothes;
 
 this is the vc-mean-muggin rule:
 	if player is not in Been Buggin', the rule fails;

@@ -163,6 +163,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
 "DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
 "MARK MORE"	false	can-mark-more rule	did-mark-more rule	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found a dark door [here-in of Stark Store]."
+"GLEAN GLOWS"	false	can-glean-glows rule	did-glean-glows rule	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
 "SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
 "MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
 "FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say [b]FIRST FAVE[r] once/now the screaming skull is gone."
@@ -176,6 +177,14 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
 
 [xx4l8r]
+
+this is the can-glean-glows rule:
+	if player has way woke clay cloak, the rule succeeds;
+	the rule fails;
+
+this is the did-glean-glows rule:
+	if way woke clay cloak is moot, the rule succeeds;
+	the rule fails;
 
 this is the can-mark-more rule:
 	if dark door is in Stark Store, the rule succeeds;
