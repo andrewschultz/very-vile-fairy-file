@@ -2,6 +2,7 @@
 # vc.py: given 2 words, put the verb check rules along with the verb result/run rules
 #   to the screen and clipboard.
 
+import os
 import re
 import sys
 import pyperclip
@@ -10,6 +11,32 @@ from i7 import is_outline_start
 from collections import defaultdict
 
 ignore_dict = defaultdict(bool)
+
+def check_vc_rules():
+    out_file = open("story.niv", "w", newline="\n")
+    in_vc = False
+    with open("story.ni") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("this is the vc-"):
+                in_vc = True
+            elif in_vc and not line.strip():
+                in_vc = False
+            elif in_vc and "instead;" in line:
+                notabs = re.sub("[^\t]", "", line.rstrip())
+                l2 = re.sub(" *instead;", ";", line)
+                if "\tif" in l2:
+                    l2 = re.sub(", *(say \")", ":\n" + notabs + "\t" + r'\1', l2)
+                    opt_tab = "\t"
+                else:
+                    opt_tab = ""
+                out_file.write(l2)
+                out_file.write(notabs + opt_tab + "continue the action;\n");
+                continue
+            out_file.write(line)
+    out_file.close()
+    mt.wm("story.ni", "story.niv")
+    os.remove("story.niv")
+    exit()
 
 def get_ignore_dict():
     with open("vc.txt") as file:
@@ -66,11 +93,16 @@ def get_ups():
 myary = []
 
 lsa = len(sys.argv)
+get_ignore_dict()
 
-if lsa > 1 and (sys.argv[1] == 'u' or sys.argv[1] == 'up'):
-    get_ignore_dict()
-    get_ups()
-    exit()
+if lsa > 1:
+    if (sys.argv[1] == 'u' or sys.argv[1] == 'up'):
+        get_ups()
+        exit()
+    if (sys.argv[1] == 'vc'):
+        check_vc_rules()
+        exit()
+
 
 if lsa == 3:
     myary = sys.argv[1:]
