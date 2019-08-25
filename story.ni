@@ -488,7 +488,7 @@ beast-boss-min is a number that varies. beast-boss-min is 32.
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here! But perhaps you could find something[end if]."
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, except a way back east! But perhaps you could find something more[end if]."
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
@@ -612,8 +612,8 @@ this is the boat-drift rule:
 
 check entering boring boat:
 	if player is in Been Buggin':
-		if player does not have clay cloak, say "You have not properly passed all the tests you need to return and defeat the Beer Bull." instead;
-		say "With your clay cloak in hand, you return to [Violent Vale]. There, with your newfound mental and physical strength, you defeat the Beer Bull!";
+		if player does not have way woke clay cloak, say "You have not properly passed all the tests you need to return and defeat the Beer Bull." instead;
+		say "With your way woke clay cloak in hand, you return to [Violent Vale]. There, with your newfound mental and physical strength, you defeat the Beer Bull!";
 		moot Beer Bull;
 		move player to violent vale;
 		abide by the boat-drift rule;
@@ -2149,7 +2149,7 @@ volume unsorted
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
-the clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
+the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
 
 the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do."
 
@@ -2456,6 +2456,8 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "shining"	"shore"	false	true	vc-shining-shore rule	vr-shining-shore rule	-- [start whining war]
 "mining"	"more"	true	true	vc-mining-more rule	vr-mining-more rule	--
 "dining"	"door"	false	true	vc-dining-door rule	vr-dining-door rule	--
+"mean"	"muggin"	false	true	vc-mean-muggin rule	vr-mean-muggin rule	--
+"lean"	"luggin"	false	true	vc-lean-luggin rule	vr-lean-luggin rule	--
 "cast"	"cap"	false	true	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
 "beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
 "meeker"	"muscle"	true	true	vc-meeker-muscle rule	vr-meeker-muscle rule	--
@@ -2510,7 +2512,39 @@ to check-gored-clue:
 this is the shone-yet rule:
 	if shore-shine is false, say "Too whiny for that right now." instead;
 
+to lean-and-mean:
+	if lean-lugged is true and mean-mugged is true:
+		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Okay, you're worthy to carry it, and that's something, I guess. Well, I've helped you all I can.'[paragraph break]Maybe you will find the way to make the clay cloak wearable elsewhere.";
+		now player has clay cloak;
+		moot Dean Duggan;
+	else:
+		say "'Not bad, but you can stll do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
+
 section vc vr rules
+
+this is the vc-mean-muggin rule:
+	if player is not in Been Buggin', the rule fails;
+	if mean-mugged is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-mean-muggin rule:
+	say "You try some aggressive facial features. Dean Duggan helps you get things right.";
+	now mean-mugged is true;
+	lean-and-mean;
+
+this is the vc-lean-luggin rule:
+	if player is not in Been Buggin', the rule fails;
+	if lean-lugged is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-lean-luggin rule:
+	say "You ask Dean Duggan for help with carrying large awkward things.";
+	now lean-lugged is true;
+	lean-and-mean;
 
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
@@ -3415,7 +3449,7 @@ when play begins (this is the force tester wherever rule):
 		try switching the story transcript on;
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
 	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can TRICK TRIP or SLICK SLIP to jump to the nonlinear part and avoid the introduction.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.[paragraph break]You can SLOW SIGH or BLOW BY or FLOW FLY to jump to the nonlinear part and avoid the introduction.[paragraph break]You can TRICK TRIP or SLICK SLIP before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.[paragraph break]Also, you can CLIMB CLEAR to jump to the (relatively brief) endgame.";
 	continue the action;
 
 chapter blowbying
