@@ -2464,7 +2464,7 @@ this is the verb-checker rule:
 			the rule succeeds;
 
 this is the mistake-checker rule:
-	repeat through table of mistake substitution:
+	repeat through table of mistake substitutions:
 		if the player's command matches mist-cmd entry:
 			process the mist-rule entry;
 			if the rule succeeded:
@@ -2472,11 +2472,24 @@ this is the mistake-checker rule:
 				if there is a leet-rule entry:
 					process the leet-rule entry;
 					unless the rule succeeded, the rule succeeds;
-				if there is a leet-val entry:
-					say "[leetclue of leet-val entry][line break]";
-				else if there is a leet-rule entry:
-					say "Oops. There should be a clue here, but there isn't. A BUG but not a game breaker.";
+				let d1 be -10;
+				let d2 be -10;
+				if there is a w1let entry:
+					now d1 is w1let entry - number of characters in word number 1 in the player's command;
+					if there is a w2let entry:
+						now d2 is w2let entry - number of characters in word number 2 in the player's command;
+					if d2 is -10, now d2 is d1;
+					say "[leetclue of cluecheat of d1 and d2]";
 				the rule succeeds;
+
+to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number):
+	if n2 > n1, decide on cluecheat of n1 and n2;
+	if n1 is 0 and n2 is 0, decide on leteq; [yellow = 0]
+	if n1 > 0 and n2 is 0, decide on partplus; [blue + yellow = green]
+	if n1 > 0 and n2 > 0, decide on letplus; [blue]
+	if n1 is 0 and n2 < 0, decide on partminus; [yellow + red = orange]
+	if n1 < 0 and n2 < 0, decide on letminus; [red]
+	decide on letboth; [brown]
 
 section verb check table
 
