@@ -4,17 +4,41 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [malf.py alphabetizes each set of mistakes internally by room after the "general mistakes" volume.]
 
-[turk tell
+[too totes new notes]
+
+[stuff I haven't sorted yet:
+turk tell
+knots/nots name
+tots tame
+tots tame
+sots same
 gear gull
 near null
 lark lore
 lining lore
 bark bore
+park pore/poor
 barred/bard bat
 go gappin
 mo mappin
 taper/tapir tile
 coughed canned
+ball brie
+island ale
+spining spore
+pining pore/poor
+massed/mast map
+gear gull # rescue it from the Beer Bull, somehow
+pier/peer pull
+steal steer
+stooping stair
+looping lair
+pay prong
+eel ear/ere
+peel pier # a bit too on the nose
+fleeced floss # dental hygiene is a good idea in general, but here it's unnecessary.
+Fining Four #they are hete to ... well, make you pay up
+lining lore
 ]
 
 volume what you start with
@@ -60,10 +84,11 @@ mist-cmd(topic)	mist-rule	w1let	w2let	leet-rule	mist-txt
 "so sit"	in-po-pit rule	4	4	if-grit-ungrown rule	"You sit and pout. It doesn't help."
 "lash lap"	in-po-pit rule	4	4	if-grit-ungrown rule	"You bang your fists against your pockets. It sort of helps, you guess."
 "woe/whoa/whoah wit"	in-po-pit rule	4	4	clue-whoah-wit rule	"Clever complaining will make you feel better but won't do anything."
-"cage key"	key-or-rear rule	--	--	--	"[if cage key is off-stage]You can't just ask for it. It's in the Sage Sea, but you have to earn it[else]You already got the key[end if]." [start real rear]
+"cage key"	key-or-rear rule	--	--	--	"[if cage key is off-stage]It's clever but not wise to see what is in the Sage Sea. But you have to earn it[else]You already got the key[end if]." [start real rear]
 "mage me"	key-or-rear rule	--	--	--	"[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do."
-"peel pear"	in-real-rear rule	--	--	--	"You have no fruit."
-"wheel where"	in-real-rear rule	--	--	--	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
+"peel pear"	in-real-rear rule	--	--	if-rear-undone rule	"You have no fruit."
+"steal steer"	in-real-rear rule	4	4	if-rear-undone rule	"The steer would not fit in your bag."
+"wheel where"	in-real-rear rule	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
 "bind be"	tram-first-puzzle rule	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start trim tram]
 "bind bee"	tram-first-puzzle rule	4	2	--	"If there were a bee, it might distract you from being, well, you."
 "kind key"	tram-first-puzzle rule	4	2	--	"Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU."
@@ -108,6 +133,8 @@ this is the hell-horn-near rule:
 this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
 
 this is the if-grit-ungrown rule: if grit-grown is false, the rule succeeds;
+
+this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
 
 this is the in-curst-cave rule:
 	if player is in curst cave, the rule succeeds;
