@@ -15,12 +15,35 @@ ignore_dict = defaultdict(bool)
 def check_vc_rules():
     out_file = open("story.niv", "w", newline="\n")
     in_vc = False
+    in_vr = False
+    got_succeeds_yet = False
+    got_fails_yet = False
+    rule_start_line = 0
+    rule_name = "<NO RULE>"
+    no_succ = 0
+    no_fail = 0
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("this is the vc-"):
                 in_vc = True
+                got_succeeds_yet = False
+                got_fails_yet = False
+                rule_start_line = line_count
+                rule_name = re.sub(".*vc-", "vc-", line).strip()
+                rule_name = re.sub(" *rule:", "", rule_name)
+            elif line.startswith("this is the vr-"):
+                in_vr = True
             elif in_vc and not line.strip():
+                if not got_succeeds_yet:
+                    no_succ += 1
+                    print("Oops no 'rule succeeds' text in {} lines {}-{}.".format(rule_name, rule_start_line, line_count))
+                    mt.add_postopen_file_line("story.ni", line_count)
+                if not got_fails_yet:
+                    no_fail += 1
+                    print("Oops no 'rule fails' text in {} lines {}-{}.".format(rule_name, rule_start_line, line_count))
+                    mt.add_postopen_file_line("story.ni", line_count)
                 in_vc = False
+                in_vr = False
             elif in_vc and "instead;" in line:
                 notabs = re.sub("[^\t]", "", line.rstrip())
                 l2 = re.sub(" *instead;", ";", line)
@@ -32,10 +55,14 @@ def check_vc_rules():
                 out_file.write(l2)
                 out_file.write(notabs + opt_tab + "continue the action;\n");
                 continue
+            elif in_vc:
+                got_succeeds_yet |= 'rule succeeds' in line
+                got_fails_yet |= 'rule fails' in line
             out_file.write(line)
     out_file.close()
     mt.wm("story.ni", "story.niv")
     os.remove("story.niv")
+    mt.postopen_files()
     exit()
 
 def get_ignore_dict():
@@ -103,6 +130,7 @@ if lsa > 1:
         check_vc_rules()
         exit()
 
+# ok, no checking source. Let's create auto-text.
 
 if lsa == 3:
     myary = sys.argv[1:]
@@ -118,11 +146,10 @@ if len(myary) != 2:
 w1 = myary[0]
 w2 = myary[1]
 
-
 vc = "vc-{}-{} rule".format(w1, w2)
 vr = "vr-{}-{} rule".format(w1, w2)
 
-pastestr = "\"{}\"\t\"{}\"\ttrue/false\ttrue/false\t{}\t{}\t--\r\n".format(w1, w2, vc, vr)
+pastestr = "\"{}\"\t\"{}\"\tFLIP:true/false\tCORE:true/false\t{}\t{}\t--\r\n".format(w1, w2, vc, vr)
 pastestr += "\r\nthis is the {}:\r\n".format(vc)
 pastestr += "\r\nthis is the {}:\r\n".format(vr)
 

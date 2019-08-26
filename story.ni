@@ -2932,6 +2932,7 @@ this is the vc-dear-dull rule:
 	if player is not in Whining War:
 		say "This isn't the right place to calm the beer bull down.";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-dear-dull rule:
 	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk. Once each side has had their fill, the bull wanders off." instead;
@@ -3127,6 +3128,7 @@ this is the vc-full-feast rule:
 		clue-later "FULL FEAST";
 		say "That should work. It might work better if the Bull Beast were incapacitated.";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-full-feast rule:
 	say "BOOM! You managed to make a full feast of the Bull Beast. Everyone loves it. It tastes good. Nothing is left.";
@@ -3142,6 +3144,7 @@ this is the vc-least-loss rule:
 	if least-loss is true:
 		say "But then it wouldn't be the least loss any more.";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-least-loss rule:
 	now least-loss is true;
@@ -3235,6 +3238,7 @@ this is the vc-spark-spliff rule:
 	if player is not in Fun Fen:
 		say "Not here, dude! No source of flame!";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-spark-spliff rule:
 	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
@@ -3296,10 +3300,11 @@ this is the vr-get-good rule:
 	move player to Vined Vault instead;
 
 this is the vc-find-fault rule:
+	if player is not in Vined Vault, the rule fails;
 	if mean mass is in Vined Vault:
 		if in-test-loop is false, say "You already did, and things got worse. You'll have to try something else.";
 		continue the action;
-	if player is in Vined Vault, the rule succeeds;
+	the rule succeeds;
 
 this is the vr-find-fault rule:
 	loop-note "FIND FAULT";
@@ -3350,10 +3355,11 @@ this is the vr-mash-map rule:
 	the rule succeeds;
 
 this is the vc-mind-me rule:
+	if player is not in trim tram, the rule fails;
 	if me-minded is true:
 		if in-test-loop is false, say "You already minded yourself.";
 		continue the action;
-	if player is in trim tram and me-minded is false, the rule succeeds;
+	the rule succeeds;
 
 this is the vr-mind-me rule:
 	loop-note "MIND ME";
@@ -3419,6 +3425,7 @@ this is the vc-fit-found rule:
 		say "You can't do much with the Hit Hound around.";
 		clue-later-w "FIT FOUND";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-fit-found rule:
 	say "You feel comfortable here now. Wahoo!";
@@ -3475,7 +3482,8 @@ this is the vc-bury-bile rule:
 		too-generic;
 		say "It must be about the right time. But you are not quite there, yet.";
 		continue the action;
-	say "This is a BUG that should not happen.";
+	say "This situation tripped a BUG that should never happen. However, for the purpose of making sure you're not frozen out of winning the game, I'm going to let you slide by.";
+	the rule succeeds;
 
 this is the vr-bury-bile rule:
 	now bile-buried is true;
