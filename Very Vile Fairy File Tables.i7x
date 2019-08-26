@@ -166,10 +166,10 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "GLEAN GLOWS"	false	can-glean-glows rule	did-glean-glows rule	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
 "SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
 "MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
-"FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say [b]FIRST FAVE[r] once/now the screaming skull is gone."
-"SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the [b]SHINING SHORE[r] once/now you dealt with the Whining War."
+"FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
+"SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the [b]SHINING SHORE[r] [once-now of can-shining-shore rule] you dealt with the Whining War."
 "FIT FOUND"	false	can-fit-found rule	did-fit-found rule	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
-"LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say [b]LEAST LOSS[r] once/now you have something to face ..." [heres of Creased Cross ??]
+"LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
 "HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
 "FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can [b]CAST CAP[r] once you find one."

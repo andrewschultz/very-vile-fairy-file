@@ -4,9 +4,18 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [malf.py alphabetizes each set of mistakes internally by room after the "general mistakes" volume.]
 
-[turk tell]
-[gear gull]
-[near null]
+[turk tell
+gear gull
+near null
+lark lore
+lining lore
+bark bore
+barred/bard bat
+go gappin
+mo mappin
+taper/tapir tile
+coughed canned
+]
 
 volume what you start with
 
@@ -45,7 +54,7 @@ mist-cmd(topic)	mist-rule	w1let	w2let	leet-rule	mist-txt
 "bo/bow bit"	in-po-pit rule	4	4	if-grit-ungrown rule	"There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though."
 "rash wrap/rap"	in-po-pit rule	4	4	if-grit-ungrown rule	"You don't need a rash, or rash actions. You need a more mature response, you reckon."
 "slow slit"	in-po-pit rule	4	4	if-grit-ungrown rule	"You can't see where to make a cut, and you have nothing to make a cut with."
-"bro brit"	in-po-pit rule	4	4	if-grit-ungrown rule	"You can't see where to make a cut, and you have nothing to make a cut with."
+"bro brit/britt"	in-po-pit rule	4	4	if-grit-ungrown rule	"You can't see where to make a cut, and you have nothing to make a cut with."
 "know/no knit/nit"	in-po-pit rule	4	4	if-grit-ungrown rule	"You look for details to understand, but you might want to go in for a bigger picture."
 "show shit"	in-po-pit rule	4	4	if-grit-ungrown rule	"Profanity doesn't work here."
 "so sit"	in-po-pit rule	4	4	if-grit-ungrown rule	"You sit and pout. It doesn't help."

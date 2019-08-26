@@ -206,7 +206,7 @@ instead of doing something with a boring thing:
 	if skip-bore-text is true:
 		now skip-bore-text is false;
 		continue the action;
-	if bore-text of noun is not empty, say "[bore-text of noun]" instead;
+	if bore-text of noun is not empty, say "[bore-text of noun][line break]" instead;
 	say "Not much to do with [the noun], so, examining...";
 	try examining the noun instead;
 
@@ -254,7 +254,7 @@ check going nowhere:
 			now been-here entry is true;
 			increment wry-wall-found;
 			if wry-wall-found is number of rows in table of bad locs, say "Incidentally, you've found everything." instead;
-			say "[if ever-wry-wall is true]Well, that's another joke death trap visited[else]NOTE: The wry wall just leads to a bunch of joke deaths. You can avoid them or follow them as you please. You don't get any bonus for finding them all, but maybe you'll find them fun[end if]. Let's kick you back to where you were.";
+			say "[if ever-wry-wall is false]NOTE: The wry wall just leads to a bunch of joke deaths. You can avoid them or follow them as you please. You don't get any bonus for finding them all, but maybe you'll find them fun. You'll always be kicked back to where you were, with no harm done[else]Well, that's another joke death trap visitedLet's kick you back to where you were[end if].";
 			now ever-wry-wall is true;
 			say "[line break][b][location of player][r][paragraph break]";
 			the rule succeeds;
@@ -491,7 +491,7 @@ beast-boss-min is a number that varies. beast-boss-min is 32.
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, except a way back east! But perhaps you could find something more[end if]."
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if]. You can go back east to Creased Cross."
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
@@ -583,7 +583,7 @@ check taking off hard hat: say "No. Something will come out of nowhere to conk y
 
 part Violent Vale 1,1
 
-Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if fridge is in Vale]A frightening fridge towers over you to the east. Boy, it's scary here. Maybe getting rid of the fridge would help[else if silent-sale is true]It's not really violent here at all any more[else]There's just the memory of how violent it was, but maybe you can change that[end if]."
+Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if fridge is in Vale]A frightening fridge towers over you to the east. Boy, it's scary here. Maybe getting rid of the fridge would help[else]The way east is clear with the frightening fridge gone[end if][if boring boat is moot]. There's just the memory of how violent it was, but maybe you can change that[else if silent-sale is true]. It's not really violent here at all any more[end if]."
 
 silent-sale is a truth state that varies.
 
@@ -722,7 +722,7 @@ carry out breakbrieing:
 
 part Whining War 2,1
 
-Whining War is east of Violent Vale. It is in Piddling Pain. "You can't get a close enough view.". cht of whining war is partplus. [-> shining shore]
+Whining War is east of Violent Vale. It is in Piddling Pain. "[if shore-shine is false]You can't get a close enough view of the war, but you can sure hear it.[else]It's quieter and brighter here now than when you started. Yay![end if]". cht of whining war is partplus. [-> shining shore]
 
 [??mining more / dining door]
 
@@ -793,7 +793,7 @@ check going west in Soft Sand:
 
 part Here Hull 1,2
 
-Here Hull is a room in Piddling Pain. It is east of Soft Sand.
+Here Hull is east of Soft Sand. It is in Piddling Pain. "You can go back east to Soft Sand here."
 
 The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". [->fear ful]
 
@@ -828,9 +828,9 @@ fearful-on is a truth state that varies.
 
 part Shirk Shell -1,2 a
 
-Shirk Shell is a room in Piddling Pain. It is west of Soft Sand.
+Shirk Shell is a room in Piddling Pain. It is west of Soft Sand. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact."
 
-the jerk gel is a thing in Shirk Shell.
+the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy."
 
 understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
 
@@ -868,9 +868,9 @@ first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment west, and[end if] you can still go west to a quieter, darker area."
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south."
 
-check going west in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
+check going north in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
@@ -1308,8 +1308,9 @@ understand "verb" as verbsing.
 understand "verbs" as verbsing.
 
 carry out verbsing:
+	say "[one of]NOTE: More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[paragraph break][or][stopping]";
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
-	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan]. You can also use it to tweak other clues with [b]TWO TOO[r]/[b]DO DUE[r] or [b]HA HALF[r]/[b]NAH NAFF[r].";
 	say "[2da][b]EXITS[r] lists exits available.";
@@ -1530,13 +1531,17 @@ chapter hinting verb
 hinting is an action applying to nothing.
 
 understand the command "hint" as something new.
+understand the command "help" as something new.
+understand the command "hints" as something new.
 
 understand "hint" as hinting.
+understand "help" as hinting.
+understand "hints" as hinting.
 
 carry out hinting:
 	abide by the welp-wow-check rule;
 	process room-hint-rule of location of player;
-	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but specific things in [location of player] may be worth looking at.";
+	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but you can still hint specific things in [location of player] with HINT (object).";
 	the rule succeeds.
 
 section auxiliary functions
@@ -1733,7 +1738,7 @@ this is the violent-vale-hint rule:
 		say "You've done all you need to here.";
 		the rule fails;
 	if float is off-stage:
-		say "[one of]You need to make the violent vale less violent[or]Quieter, perhaps.[or]SILENT SAIL (or SALE).[stopping]";
+		say "[one of]You need to make the violent vale less violent[or]Quieter, perhaps[or]SILENT SAIL (or SALE)[stopping].";
 		the rule succeeds;
 	if fridge is not moot:
 		say "Have a look at the fridge, for the moment.";
@@ -1772,6 +1777,7 @@ chapter hinting an object verb
 hintobjing is an action applying to one thing.
 
 understand "hint [thing]" as hintobjing.
+understand "help [thing]" as hintobjing.
 
 carry out hintobjing:
 	abide by the welp-wow-check rule;
@@ -2309,7 +2315,7 @@ part Pit Pound
 
 Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]". [->sit sound]
 
-The Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. [->sit sound]
+A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". [->sit sound]
 
 found-fit is a truth state that varies.
 
@@ -2412,7 +2418,7 @@ Rule for printing a parser error (this is the clue half right words rule):
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
-	say "You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.";
+	say "[one of]You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[or]This isn't something you need to do here. [b]VERBS[r] has a list of standard verbs.[stopping]";
 
 ha-half is a truth state that varies.
 
@@ -2421,11 +2427,11 @@ zap-core-entry is a truth state that varies.
 this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
-		if the player's command matches the regular expression "\b([w1 entry])\b", increment my-count;
+		if the player's command matches the regular expression "(^|\W)([w1 entry])\W", increment my-count;
 		if there is no w2 entry:
 			increment my-count;
 		else:
-			if the player's command matches the regular expression "\b([w2 entry])\b", increment my-count;
+			if the player's command matches the regular expression "\W([w2 entry])($|\W)", increment my-count;
 		let wfull-fail be false;
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
@@ -2483,7 +2489,7 @@ this is the mistake-checker rule:
 				the rule succeeds;
 
 to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number):
-	if n2 > n1, decide on cluecheat of n1 and n2;
+	if n2 > n1, decide on cluecheat of n2 and n1;
 	if n1 is 0 and n2 is 0, decide on leteq; [yellow = 0]
 	if n1 > 0 and n2 is 0, decide on partplus; [blue + yellow = green]
 	if n1 > 0 and n2 > 0, decide on letplus; [blue]
@@ -2566,6 +2572,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "stay"	"strong"	false	true	vc-stay-strong rule	vr-stay-strong rule	--
 "cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
 "work"	"well"	true	true	vc-work-well rule	vr-work-well rule	--
+"smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -2610,6 +2617,20 @@ to lean-and-mean:
 		say "'Not bad, but you can stll do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
 section vc vr rules
+
+this is the vc-smashing-smoke rule:
+	if player does not have clashing cloak, the rule fails;
+	if beer bull is not in location of player:
+		say "Nobody or nothing to flee from.";
+		continue the action;
+	if player is not in violent vale:
+		say "That might cause a distraction, but you can't think of anything to do here.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-smashing-smoke rule:
+	now zap-core-entry is true;
+	say "You have confused the bull beast for the moment!";
 
 this is the vc-glean-glows rule:
 	if player is not in history hall and mean moe's is not in history hall, the rule fails;
@@ -3040,10 +3061,12 @@ this is the vr-cold-card rule:
 
 this is the vc-first-floor rule:
 	if player is not in history hall or mistmall is true, the rule fails;
+	if floor-yet is true:
+		say "You already did.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-first-floor rule:
-	if floor-yet is true, say "You already did." instead;
 	say "Erst Lore, up on the ceiling, comes [one of][or]back [stopping]down. You can go IN, now.";
 	now Erst Lore is mapped inside History Hall;
 	now History Hall is mapped outside Erst Lore;
@@ -3112,7 +3135,8 @@ this is the vc-beast-boss rule:
 this is the vr-beast-boss rule:
 	if score < beast-boss-min:
 		clue-later "BEAST BOSS";
-		say "You don't have the experience yet." instead;
+		say "You don't have the experience yet.";
+		continue the action;
 	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
 	move Bull Beast to Creased Cross;
 	the rule succeeds.
@@ -3268,7 +3292,7 @@ this is the vr-dive-deep rule:
 	bring-here vapor vile;
 
 this is the vc-paper-pile rule:
-	if paper pile is not touchable, the rule fails;
+	if vapor vile is not touchable, the rule fails;
 	the rule succeeds;
 
 this is the vr-paper-pile rule:
@@ -3310,7 +3334,6 @@ this is the vc-get-good rule:
 this is the vr-get-good rule:
 	loop-note "GET GOOD";
 	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak]";
-	move player to Vined Vault instead;
 
 this is the vc-find-fault rule:
 	if player is not in Vined Vault, the rule fails;
