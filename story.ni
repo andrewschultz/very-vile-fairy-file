@@ -1236,7 +1236,7 @@ carry out reading:
 table of readables
 read-thing	read-txt
 Very Vile Fairy File	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
-leet learner	"Some multi-colored text on the leet learner (itself written in yellow) seems to function as examples.[paragraph break][table-of-color-hints][run paragraph on]"
+leet learner	"Some multi-colored text on the leet learner (itself written in yellow) seems to function as examples. Some seem like a bit of a stretch, but they're probably there to help.[paragraph break][table-of-color-hints][run paragraph on]"
 marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 
 to say table-of-color-hints:
@@ -1474,7 +1474,7 @@ to say two-too-yet:
 	if ever-two-too is false, say ". Hmm. You have a good idea what that means";
 	now ever-two-too is true;
 
-to say leetclue of (x - a cheattype): if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x].[line break]"
+to say leetclue of (x - a cheattype): if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x]."
 
 to say scancol of (x - a cheattype): say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
 
@@ -1564,20 +1564,20 @@ room-hint-rule of Gassed Gap is gassed-gap-hint rule.
 room-hint-rule of Got Gear Hot Here is got-gear-hot-here-hint rule.
 room-hint-rule of Here Hull is here-hull-hint rule.
 room-hint-rule of History Hall is history-hall-hint rule.
+room-hint-rule of Lake Lap is lake-lap-hint rule.
 room-hint-rule of Lake Lea is lake-lea-hint rule.
 room-hint-rule of Pit Pound is pit-pound-hint rule.
 room-hint-rule of Po' Pit is po-pit-hint rule.
 room-hint-rule of Real Rear is real-rear-hint rule.
 room-hint-rule of Shirk Shell is shirk-shell-hint rule.
 room-hint-rule of Soft Sand is soft-sand-hint rule.
+room-hint-rule of Stark Store is stark-store-hint rule.
 room-hint-rule of Store All Stage is store-all-stage-hint rule.
-room-hint-rule of Stark Store is start-store-hint rule.
-room-hint-rule of Violent Vale is violent-vale-hint rule.
-room-hint-rule of Lake Lap is lake-lap-hint rule.
 room-hint-rule of Tarry Tile is tarry-tile-hint rule.
 room-hint-rule of Trim Tram is trim-tram-hint rule.
 room-hint-rule of Vending Vibe is vending-vibe-hint rule.
 room-hint-rule of Vined Vault is vined-vault-hint rule.
+room-hint-rule of Violent Vale is violent-vale-hint rule.
 room-hint-rule of Wet Wood is wet-wood-hint rule.
 room-hint-rule of Whining War is whining-war-hint rule.
 room-hint-rule of Y'Old Yard is yold-yard-hint rule.
@@ -1587,14 +1587,6 @@ section hint room rules [xxhrr] [xxrhr]
 this is the airy-isle-hint rule:
 	say "The Bot Board needs to be dealt with here, not the location.";
 	the rule succeeds;
-
-this is the creased-cross-hint rule:
-	if Bull Beast is moot, the rule fails;
-	if Bull Beast is off-stage:
-		say "There's not much to do now in Creased Cross.";
-	else:
-		say "Dispose of the Bull Beast.";
-	the rule succeeds.
 
 this is the been-buggin-hint rule:
 	if dean duggan is moot:
@@ -1606,6 +1598,14 @@ this is the been-buggin-hint rule:
 	else:
 		say "[one of]You need to be able to carry more weight.[or]You need to be stronger and, not quite thinner, but ...[or]...leaner.[or]LEAN LUGGIN.[stopping]";
 	the rule succeeds;
+
+this is the creased-cross-hint rule:
+	if Bull Beast is moot, the rule fails;
+	if Bull Beast is off-stage:
+		say "There's not much to do now in Creased Cross.";
+	else:
+		say "Dispose of the Bull Beast.";
+	the rule succeeds.
 
 this is the curst-cave-hint rule:
 	if first-fave is true, the rule fails;
@@ -1646,6 +1646,10 @@ this is the history-hall-hint rule:
 	else:
 		say "[one of]The History Hall can become something a bit less profound.[or]A place of commerce, not of study.[or]MYSTERY MALL.[stopping]";
 
+this is the lake-lap-hint rule:
+	say "Later..."; [??]
+	the rule succeeds;
+
 this is the lake-lea-hint rule:
 	the rule fails.
 
@@ -1684,6 +1688,14 @@ this is the soft-sand-hint rule:
 		say "You can toggle LOFT LAND and SOFT SAND back and forth as needed.";
 	the rule succeeds.
 
+this is the stark-store-hint rule:
+	if dark door is moot, the rule fails;
+	if dark door is off-stage:
+		say "[one of]You need to find something that would indicate passage. What rhymes with store?[or]The something that might indicate passage also might not be easily seen. What rhymes with stark?[or]You need to find a DARK DOOR.[stopping]";
+	else:
+		say "[one of]You can't see much about the dark door, so you need to increase how observant you are.[or]You need to become more observant.[or]MARK MORE.[stopping]";
+	the rule succeeds;
+
 this is the store-all-stage-hint rule:
 	if coral cage is moot, the rule fails;
 	say "The coral cage is what's important here.";
@@ -1714,6 +1726,19 @@ this is the vined-vault-hint rule:
 		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's orange, which is different from the yellow of the Wet Wood[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
 	else:
 		say "[one of]The mean mass is a bit trickier. The leet learner gives you a different color, blue[or]If you understand leet learner colors, this means you need to add letters to both mean and mass[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
+	the rule succeeds;
+
+this is the violent-vale-hint rule:
+	if boring boat is moot:
+		say "You've done all you need to here.";
+		the rule fails;
+	if float is off-stage:
+		say "[one of]You need to make the violent vale less violent[or]Quieter, perhaps.[or]SILENT SAIL (or SALE).[stopping]";
+		the rule succeeds;
+	if fridge is not moot:
+		say "Have a look at the fridge, for the moment.";
+		the rule succeeds;
+	say "Have a look at the boring boat.";
 	the rule succeeds;
 
 this is the wet-wood-hint rule:
@@ -1766,12 +1791,12 @@ the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of big bag is big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
-the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
 the thing-hint-rule of cage key is cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
+the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
 the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
@@ -1782,6 +1807,7 @@ the thing-hint-rule of good gun is good-gun-hint rule.
 the thing-hint-rule of GOTS GAME is gots-game-hint rule.
 the thing-hint-rule of grow grate is grow-grate-hint rule.
 the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
+the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hold Hard is hold-hard-hint rule.
@@ -1791,10 +1817,10 @@ the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is leet-learner-hint rule.
 the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 the thing-hint-rule of Lot Lord is bot-board-hint rule.
-the thing-hint-rule of mind malt is mind-malt-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
+the thing-hint-rule of mind malt is mind-malt-hint rule.
 the thing-hint-rule of Name Notes Tame Totes is name-notes-tame-totes-hint rule.
 the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
 the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
@@ -1812,7 +1838,6 @@ the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of two too button is two-too-hint rule.
-the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
@@ -1839,10 +1864,6 @@ the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
 
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
 
-this is the dean-duggan-hint rule:
-	say "[one of]Dean Duggan is an integral part of Been Buggin[']. So hints about him are hints about Been Buggin['].[or][stopping]";
-	process the been-buggin-hint rule;
-
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
 
@@ -1854,9 +1875,6 @@ this is the big-bag-hint rule:
 
 this is the bold-bard-hint rule:
 	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
-
-this is the ha-half-nah-naff-hint rule:
-	say "HA HALF will tell you if one of your words is right. NAH NAFF hides that.";
 
 this is the bot-board-hint rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
@@ -1891,6 +1909,10 @@ this is the coral-cage-hint rule:
 	else:
 		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
 
+this is the dean-duggan-hint rule:
+	say "[one of]Dean Duggan is an integral part of Been Buggin[']. So hints about him are hints about Been Buggin['].[or][stopping]";
+	process the been-buggin-hint rule;
+
 this is the done-den-hint rule:
 	say "You don't need to go back through the done den. There are not even any extra points."
 
@@ -1919,6 +1941,9 @@ this is the grow-grate-hint rule:
 this is the gutta-ganksta-hint rule:
 	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
 
+this is the ha-half-nah-naff-hint rule:
+	say "HA HALF will tell you if one of your words is right. NAH NAFF hides that.";
+
 this is the hit-hound-hint rule:
 	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
 
@@ -1943,12 +1968,6 @@ this is the kerry-kyle-hint rule:
 	else:
 		say "Woohoo! There's nothing wrong with you right now!"
 
-this is the mind-malt-hint rule:
-	say "The mind malt is just there to give another clue about weaknesses in the Vined Vault."
-
-this is the two-too-hint rule:
-	say "The two too button indicates that there may be an alternate homonym/spelling solution to a puzzle."
-
 this is the leet-learner-hint rule:
 	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
 	the rule succeeds;
@@ -1964,6 +1983,9 @@ this is the mean-mass-hint rule:
 
 this is the mild-mead-hint rule:
 	say "[one of]You can make the mild mead have a bit more kick, but you don't need to.[or]The mild mead can become a slightly harder drug.[or]WILD WEED.[stopping]";
+
+this is the mind-malt-hint rule:
+	say "The mind malt is just there to give another clue about weaknesses in the Vined Vault."
 
 this is the name-notes-tame-totes-hint rule: say "The random names are just for fun."
 
@@ -2015,6 +2037,9 @@ this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
 
 this is the trending-tribe-hint rule:
 	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
+
+this is the two-too-hint rule:
+	say "The two too button indicates that there may be an alternate homonym/spelling solution to a puzzle."
 
 this is the vapor-vile-hint rule:
 	say "[one of]It would be nice if the vapor vile became something more substansive.[or]It can become a PAPER PILE.[stopping]"
@@ -3194,6 +3219,7 @@ this is the vc-big-bag rule:
 		clue-later "BIG BAG";
 		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
 		continue the action;
+	the rule succeeds;
 
 this is the vr-big-bag rule:
 	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
