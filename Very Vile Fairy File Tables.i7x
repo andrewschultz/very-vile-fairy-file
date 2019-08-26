@@ -178,28 +178,12 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 
 [xx4l8r]
 
-this is the can-glean-glows rule:
-	if player has way woke clay cloak, the rule succeeds;
-	the rule fails;
-
-this is the did-glean-glows rule:
-	if way woke clay cloak is moot, the rule succeeds;
-	the rule fails;
-
-this is the can-mark-more rule:
-	if dark door is in Stark Store, the rule succeeds;
-	the rule fails;
-
-this is the did-mark-more rule:
-	if dark door is moot, the rule succeeds;
-	the rule fails;
+this is the can-beast-boss rule:
+	if score > beast-boss-min, the rule succeeds; [?? very bad]
+	the rule fails.
 
 this is the did-beast-boss rule:
 	if Bull Beast is not off-stage, the rule succeeds;
-	the rule fails.
-
-this is the can-beast-boss rule:
-	if score > beast-boss-min, the rule succeeds; [?? very bad]
 	the rule fails.
 
 this is the can-big-bag rule:
@@ -218,28 +202,28 @@ this is the did-bury-bile rule:
 	if bile-buried is true, the rule succeeds;
 	the rule fails. [this isn't needed for gameplay, but if it's absent, a +1 will remain at game's end if you BURY BILE earlier]
 
-this is the did-cast-cap rule:
-	if cool cap is moot, the rule succeeds;
-	the rule fails.
-
 this is the can-cast-cap rule:
 	if player has cool cap, the rule succeeds;
 	the rule fails.
 
-this is the did-deal-dear rule:
-	if cage key is not off-stage, the rule succeeds;
+this is the did-cast-cap rule:
+	if cool cap is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-deal-dear rule:
 	if felt-fear is true, the rule succeeds;
 	the rule fails.
 
-this is the did-feel-fear rule:
-	if felt-fear is true, the rule succeeds;
+this is the did-deal-dear rule:
+	if cage key is not off-stage, the rule succeeds;
 	the rule fails.
 
 this is the can-feel-fear rule:
 	if knelt-yet is true, the rule succeeds;
+	the rule fails.
+
+this is the did-feel-fear rule:
+	if felt-fear is true, the rule succeeds;
 	the rule fails.
 
 this is the can-first-fave rule:
@@ -258,36 +242,44 @@ this is the did-fit-found rule:
 	if found-fit is true, the rule succeeds;
 	the rule fails.
 
-this is the did-flim-flam rule:
-	if Fun Fen is visited, the rule succeeds;
-	the rule fails.
-
 this is the can-flim-flam rule:
 	if me-minded is true, the rule succeeds;
 	the rule fails.
 
-this is the did-full-feast rule:
-	if Bull Beast is moot, the rule succeeds;
+this is the did-flim-flam rule:
+	if Fun Fen is visited, the rule succeeds;
 	the rule fails.
 
 this is the can-full-feast rule:
 	if cull-ceased is true, the rule succeeds;
 	the rule fails.
 
-this is the did-got-gored rule:
-	if Bot Board is moot, the rule succeeds;
+this is the did-full-feast rule:
+	if Bull Beast is moot, the rule succeeds;
 	the rule fails.
+
+this is the can-glean-glows rule:
+	if player has way woke clay cloak, the rule succeeds;
+	the rule fails;
+
+this is the did-glean-glows rule:
+	if way woke clay cloak is moot, the rule succeeds;
+	the rule fails;
 
 this is the can-got-gored rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
 	the rule fails.
 
-this is the did-heal-here rule:
-	if healed-here is true, the rule succeeds;
+this is the did-got-gored rule:
+	if Bot Board is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-heal-here rule:
 	if least-loss is true, the rule succeeds;
+	the rule fails.
+
+this is the did-heal-here rule:
+	if healed-here is true, the rule succeeds;
 	the rule fails.
 
 this is the can-least-loss rule:
@@ -298,12 +290,20 @@ this is the did-least-loss rule:
 	if least-loss is true, the rule succeeds;
 	the rule fails.
 
-this is the did-mash-map rule:
-	if Trim Tram is visited, the rule succeeds;
-	the rule fails.
+this is the can-mark-more rule:
+	if dark door is in Stark Store, the rule succeeds;
+	the rule fails;
+
+this is the did-mark-more rule:
+	if dark door is moot, the rule succeeds;
+	the rule fails;
 
 this is the can-mash-map rule:
 	if grit-grown is true, the rule succeeds;
+	the rule fails.
+
+this is the did-mash-map rule:
+	if Trim Tram is visited, the rule succeeds;
 	the rule fails.
 
 this is the can-merry-mile rule:
@@ -314,12 +314,12 @@ this is the did-merry-mile rule:
 	if merry-mile is true, the rule succeeds;
 	the rule fails.
 
-this is the did-moral-mage rule:
-	if coral cage is moot, the rule succeeds;
-	the rule fails.
-
 this is the can-moral-mage rule:
 	if player has cage key, the rule succeeds;
+	the rule fails.
+
+this is the did-moral-mage rule:
+	if coral cage is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-shining-shore rule:
