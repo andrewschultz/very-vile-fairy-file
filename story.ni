@@ -491,13 +491,27 @@ beast-boss-min is a number that varies. beast-boss-min is 32.
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if]. You can go back east to Creased Cross."
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if]. You can go back east to Creased Cross."
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
 	if dark door is in Stark Store, say "You can't seem to get past the dark door." instead;
 
+check going down in Stark Store:
+	if weird way is off-stage, try going north instead;
+	if weird way is in Stark Store, say "You can't seem to get past the weird way." instead;
+
+chapter dark door
+
 There is a thing called the dark door. It is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.".
+
+chapter weird way
+
+the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a way past, but there has to be one.". bore-text of Weird Way is "You must be able to do something with it, somehow. Something a bit unorthodox."
+
+part Fight Funnel -2,2
+
+Fight Funnel is below Stark Store.
 
 part History Hall -2,1
 
@@ -569,7 +583,7 @@ the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand
 
 part Got Gear Hot Here -2,1 b
 
-Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall.
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. You can go back east here."
 
 chapter hardhating
 
@@ -2537,6 +2551,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "mystery"	"mall"	false	true	vc-mystery-mall rule	vr-mystery-mall rule	--
 "dark"	"door"	false	true	vc-dark-door rule	vr-dark-door rule	-- [start stark store]
 "mark"	"more"	false	true	vc-mark-more rule	vr-mark-more rule	--
+"cleared"	"clay"	true	true	vc-cleared-clay rule	vr-cleared-clay rule	--
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
@@ -2712,6 +2727,13 @@ this is the vc-cast-cap rule:
 	if player does not have cool cap:
 		clue-later "CAST CAP";
 		say "You need a cap to cast!";
+		continue the action;
+	the rule succeeds;
+
+this is the vc-cleared-clay rule:
+	if player is not in Stark Store, the rule fails;
+	if weird way is moot:
+		say "You already cleared the clay.";
 		continue the action;
 	the rule succeeds;
 
@@ -3225,6 +3247,10 @@ this is the vr-cast-cap rule:
 	move Reeker Russell to Gassed Gap;
 	phbt Gassed Gap;
 
+this is the vr-cleared-clay rule:
+	say "You concentrate on the weird way, which is, uh, weirder than trying to stat o clear it. But what do you know? It turns to clay that crumbles and goes away. You can go down now!";
+	moot weird way;
+
 this is the vr-cold-card rule:
 	say "'Now that's a swap!' The Bold Bard hands you some armor he won't need. At least, you hope his music is good enough, he won't need it.";
 	moot Bold Bard;
@@ -3439,7 +3465,8 @@ this is the vr-lots-lame rule:
 	the rule succeeds.
 
 this is the vr-mark-more rule:
-	say "Yes, there's more to the stark store than the dark door. You notice things about it--as well as how to take it off its hinges!";
+	say "Yes, there's more to the stark store than the dark door. You notice things about it--as well as how to take it off its hinges! And what's more, you also uncover a weird way off to the side.";
+	move weird way to Stark Store;
 	moot dark door;
 
 this is the vr-mash-map rule:
