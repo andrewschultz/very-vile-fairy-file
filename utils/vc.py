@@ -11,6 +11,7 @@ from i7 import is_outline_start
 from collections import defaultdict
 
 ignore_dict = defaultdict(bool)
+nofail = defaultdict(bool)
 
 def check_vc_rules():
     out_file = open("story.niv", "w", newline="\n")
@@ -38,7 +39,7 @@ def check_vc_rules():
                     no_succ += 1
                     print("Oops no 'rule succeeds' text in {} lines {}-{}.".format(rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
-                if not got_fails_yet:
+                if not got_fails_yet and rule_name not in nofail:
                     no_fail += 1
                     print("Oops no 'rule fails' text in {} lines {}-{}.".format(rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
@@ -71,9 +72,20 @@ def get_ignore_dict():
             if line.startswith("#"): continue
             if line.startswith(";"): continue
             l = line.lower().strip()
-            if l in ignore_dict:
-                print("WARNING duplicate ignore dict entry", l, "at line", line_count)
-            ignore_dict[l] = True
+            if l.startswith("ignoredict:") or l.startswith("ignorerule"):
+                l = l[11:]
+                ary = l.split(",")
+                for a in ary:
+                    if a in ignore_dict:
+                        print("WARNING duplicate ignore dict entry", a, "at line", line_count)
+                    ignore_dict[a] = True
+            elif l.startswith("nofail:"):
+                l = l[7:]
+                ary = l.split(",")
+                for a in ary:
+                    if a in nofail:
+                        print("WARNING duplicate nofail entry", a, "at line", line_count)
+                    nofail[a] = True
     return
 
 def get_ups():

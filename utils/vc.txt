@@ -1,4 +1,4 @@
-this is the verb-checker rule
-carry out blowbying
+IGNORERULE:this is the verb-checker rule,carry out blowbying,carry out tricktriping
+NOFAIL:vc-big-bag,vc-get-good,vc-bury-bile
 ;
 
