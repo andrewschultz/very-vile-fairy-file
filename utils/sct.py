@@ -178,7 +178,46 @@ def pointup_type(l, ru):
     if 'up-min' in l: return 'opt'
     return ''
 
+def first_word(x):
+    x = x.replace('"', '')
+    return re.sub("\|.*", "", x)
+
 def check_points():
+    core_points = 0
+    opt_points = 0
+    read_next_line = False
+    in_verb_checks = False
+    with open("story.ni") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of verb checks"):
+                read_next_line = True
+                in_verb_checks = True
+                continue
+            if read_next_line:
+                read_next_line = False
+                continue
+            if not in_verb_checks:
+                continue
+            if not line.strip():
+                in_verb_checks = False
+                continue
+            score_list = line.split("\t")
+            cmd_type = ""
+            if score_list[3] == 'true':
+                core_points += 1
+                cmd_type = "CORE"
+            elif score_list[3] == 'false':
+                opt_points += 1
+                cmd_type = "OPT"
+            my_cmd = first_word(score_list[0])
+            if score_list[2] != '--':
+                my_cmd += " " + first_word(score_list[1])
+            print(core_points, opt_points, cmd_type, "Command", my_cmd.upper())
+    print("Core points", core_points)
+    print("Opt points", opt_points)
+    exit()
+
+def check_points_old():
     this_rule = ""
     last_line = 0
     last_cmd = "(undefined)"

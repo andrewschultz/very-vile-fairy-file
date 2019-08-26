@@ -23,6 +23,7 @@ def check_vc_rules():
     rule_name = "<NO RULE>"
     no_succ = 0
     no_fail = 0
+    suggested_changes = 0
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("this is the vc-"):
@@ -34,18 +35,24 @@ def check_vc_rules():
                 rule_name = re.sub(" *rule:", "", rule_name)
             elif line.startswith("this is the vr-"):
                 in_vr = True
+                rule_start_line = line_count
+                rule_name = re.sub(".*vc-", "vc-", line).strip()
+                rule_name = re.sub(" *rule:", "", rule_name)
+            elif in_vr and not line.strip():
+                in_vc = False
+                in_vr = False
             elif in_vc and not line.strip():
                 if not got_succeeds_yet:
                     no_succ += 1
-                    print("Oops no 'rule succeeds' text in {} lines {}-{}.".format(rule_name, rule_start_line, line_count))
+                    print("{}/{}Oops no 'rule succeeds' text in {} lines {}-{}.".format(no_succ, no_fail + no_succ, rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
                 if not got_fails_yet and rule_name not in nofail:
                     no_fail += 1
-                    print("Oops no 'rule fails' text in {} lines {}-{}.".format(rule_name, rule_start_line, line_count))
+                    print("{}/{} Oops no 'rule fails' text in {} lines {}-{}.".format(no_fail, no_fail + no_succ, rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
                 in_vc = False
                 in_vr = False
-            elif in_vc and "instead;" in line:
+            elif (in_vc or in_vr) and "instead;" in line:
                 notabs = re.sub("[^\t]", "", line.rstrip())
                 l2 = re.sub(" *instead;", ";", line)
                 if "\tif" in l2:
@@ -55,13 +62,23 @@ def check_vc_rules():
                     opt_tab = ""
                 out_file.write(l2)
                 out_file.write(notabs + opt_tab + "continue the action;\n");
+                suggested_changes += 1
+                print("Suggested changes for {} at line {}.".format(rule_name, line_count))
                 continue
             elif in_vc:
                 got_succeeds_yet |= 'rule succeeds' in line
                 got_fails_yet |= 'rule fails' in line
             out_file.write(line)
     out_file.close()
-    mt.wm("story.ni", "story.niv")
+    if suggested_changes:
+        print(suggested_changes, "suggested changes.")
+        mt.wm("story.ni", "story.niv")
+    else:
+        print("No suggested changes.")
+    if no_succ or no_fail:
+        print("Need {} 'rule succeeds' and {} 'rule fails'.".format(no_succ, no_fail))
+    else:
+        print("All rules have rule succeeds/rule fails in place.")
     os.remove("story.niv")
     mt.postopen_files()
     exit()
