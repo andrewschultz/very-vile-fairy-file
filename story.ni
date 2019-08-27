@@ -133,6 +133,8 @@ to say gh: say "https://github.com/andrews[hc]ultz/very-vile-fairy-file (current
 
 the maximum score is 64.
 
+whew-score is a number that varies. whew-score is 8.
+
 min-needed is a number that varies. min-needed is 56.
 
 min-gotten is a number that varies. min-gotten is 0.
@@ -336,15 +338,45 @@ after looking in Wet Wood for the first time:
 	set the pronoun it to leet learner;
 	continue the action;
 
-part Vined Vault 3,-1
+part Rift River
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
+Rift River is a room in Worst Whew. "The rift river blocks you, and you can't go back, and you don't know which direction to go in, anyway. Though you managed to GET GOOD to get out of the wood, you'll need a different sort of boost to get around the river. It's too wide to cross, and you don't want to go back."
 
 chapter Mind Malt
 
-a packet of Mind Malt is a thing in Vined Vault. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus. [-> find fault]
+a packet of Mind Malt is a thing. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus. [-> find fault]
 
-check taking Mind Malt: say "Worthless. It's empty." instead;
+check eating Mind Malt: say "Worthless. It's empty." instead;
+
+Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing]"
+
+to say my-notes:
+	repeat through table of newnotes:
+		if there is a score-needed entry and score < score-needed entry, continue the action;
+		say "[note-to-give entry][line break]";
+
+table of newnotes
+score-needed	note-to-give
+1	"   GET GOOD to WET WOOD    = yellow."
+2	" RIFT RIVER to GIFT GIVER  = yellow."
+3	"VINED VAULT to FIND FAULT  = orange."
+--	"  MIND MALT to FIND FAULT  = green."
+4	"  MEAN MASS to GREEN GRASS = blue."
+5	"     PO PIT to GROW GRIT   = blue."
+--	"   ROW WRIT to GROW GRIT   = green."
+6	" TRASH TRAP to [ash-ap]    = red."
+--	"   GASH GAP to [ash-ap]    = yellow."
+--	"  CACHE CAP to [ash-ap]    = orange."
+7	"   FIND FEE to MIND ME     = orange."
+8	"  TRIM TRAM to [ski-fli]   = green."
+
+to say ski-fli: say "[if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if]"
+
+to say ash-ap: say "[if bap-map-rap is 1]BASH BAP[else if bap-map-rap is 2]RASH RAP[else]MASH MAP[end if]"
+
+part Vined Vault 3,-1
+
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
 
 chapter mean mass
 
@@ -362,12 +394,12 @@ the cache cap is a boring thing in Po' Pit. "A cap sits here, with half its bill
 
 the gash gap is boring scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht of gash gap is leteq. bore-text of gash gap is "The gash gap is an obstacle you need to find a special way around.". [-> mash map]
 
+bap-map-rap is a number that varies.
+
 understand "map" as trash trap when player is in Po' Pit.
 
 this is the bore-cache-cap rule:
 	if current action is taking, say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
-
-bash-not-mash is a truth state that varies.
 
 grit-grown is a truth state that varies.
 
@@ -511,7 +543,9 @@ the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a w
 
 part Fight Funnel -2,2
 
-Fight Funnel is below Stark Store.
+Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]".
+
+funnel-to-tunnel is a truth state that varies.
 
 part History Hall -2,1
 
@@ -2485,6 +2519,7 @@ this is the verb-checker rule:
 					blank out the core entry;
 					now zap-core-entry is false;
 				process the notify score changes rule;
+				skip upcoming rulebook break;
 				follow the every turn rules;
 			process the note first think rule;
 			the rule succeeds;
@@ -2530,10 +2565,11 @@ section verb check table
 table of verb checks [xxvc]
 w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "get"	"good"	false	true	vc-get-good rule	vr-get-good rule	-- [start Intro]
+"gift"	"giver"	false	true	vc-gift-giver rule	vr-gift-giver rule	--
 "find"	"fault"	true	true	vc-find-fault rule	vr-find-fault rule	--
 "green"	"grass"	false	true	vc-green-grass rule	vr-green-grass rule	--
 "grow"	"grit"	true	true	vc-grow-grit rule	vr-grow-grit rule	--
-"bash|mash"	"bap|map"	true	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map"
+"bash|mash|rash"	"bap|map|rap"	true	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap"
 "mind"	"me"	false	true	vc-mind-me rule	vr-mind-me rule	--
 "flim|skim"	"flam|scam"	false	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
 "big"	"bag"	true	true	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
@@ -2643,6 +2679,14 @@ to lean-and-mean:
 		moot Dean Duggan;
 	else:
 		say "'Not bad, but you can stll do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
+
+this is the ashap rule:
+	if word number 1 in the player's command is "mash", now bap-map-rap is 0;
+	if word number 1 in the player's command is "bash", now bap-map-rap is 1;
+	if word number 1 in the player's command is "rash", now bap-map-rap is 2;
+
+this is the trimtramcmd rule:
+	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 
 section vc vr rules [xxvcvr]
 
@@ -3004,7 +3048,7 @@ this is the vr-fit-found rule:
 this is the vc-flim-flam rule:
 	if player is not in trim tram, the rule fails;
 	if me-minded is false:
-		now skim-not-flim is whether or not word number 1 in the player's command is "skim";
+		process the trimtramcmd rule;
 		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
 		clue-later-w "FLIM FLAM";
 		continue the action;
@@ -3013,6 +3057,7 @@ this is the vc-flim-flam rule:
 this is the vr-flim-flam rule:
 	loop-note "FLIM FLAM/SKIM SCAM";
 	say "That does it! The tram moves off to a more open place...";
+	process the trimtramcmd rule;
 	move the player to Fun Fen;
 
 this is the vc-full-feast rule:
@@ -3036,7 +3081,19 @@ this is the vc-get-good rule:
 
 this is the vr-get-good rule:
 	loop-note "GET GOOD";
-	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]While doing so, you overlook a trap that you fall into just as you see the way out...[wfak]";
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]So many questions! On leaving the wood, you find yourself blocked by water.";
+	move player to Rift River;
+
+this is the vc-gift-giver rule:
+	if player is not in rift river, the rule fails;
+	the rule succeeds;
+
+this is the vr-gift-giver rule:
+	loop-note "GIFT GIVER";
+	say "Someone appears from the distance. 'Here! Take this. It will help you with a future puzzle or puzzles.' It's a packet of Mind Malt, whatever that is. And ... it's empty. You open your mouth to protest, but their hand goes up. 'The best sort of magic helps you help yourself.'[paragraph break]You stifle a hmph. 'Oh,' they continue, 'Also some Too-Totes-New Notes. They will tell you what your Leet Learner would've scanned for the puzzles you face at the start. Though you may wish to keep track of things by yourself. If you wish, you can DROP it to solve things the hard way.'[paragraph break]That's a bit better. They walk away. You grumble and putter around, wondering where you should go next. You put your hand on a tree, which has sick sap on it. You walk around, trying to get it off, and you fall into a ... TRICK TRAP.";
+	now player has Too Totes New Notes;
+	now player has Mind Malt;
+	move player to Vined Vault;
 
 this is the vc-glean-glows rule:
 	if player is not in history hall and mean moe's is not in history hall, the rule fails;
@@ -3292,7 +3349,8 @@ this is the vr-mark-more rule:
 this is the vc-mash-map rule:
 	if player is not in po' pit, the rule fails;
 	if grit-grown is false:
-		now bash-not-mash is whether or not word number 1 in the player's command is "bash";
+		process the ashap rule;
+		if debug-state is true, say "[word number 1 in the player's command] [bap-map-rap].";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
 		clue-later-w "MASH MAP";
 		continue the action;
@@ -3301,6 +3359,7 @@ this is the vc-mash-map rule:
 this is the vr-mash-map rule:
 	loop-note "MASH MAP";
 	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
+	process the ashap rule;
 	move player to Trim Tram;
 	the rule succeeds;
 
@@ -3570,7 +3629,7 @@ this is the vc-tight-tunnel rule:
 	the rule succeeds;
 
 this is the vr-tight-tunnel rule:
-	say "The fighting quiets down and moves off to the north. You can now go west!"
+	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
 
 this is the vc-whatta-wanksta rule:
@@ -3683,8 +3742,8 @@ understand "slow sigh" as blowbying.
 carry out blowbying:
 	abide by the too-late-for-beta rule;
 	process the any-warp rule;
-	now score is 7;
-	now core-score is 7;
+	now score is whew-score;
+	now core-score is whew-score;
 	move player to fun fen;
 	the rule succeeds.
 
@@ -3737,7 +3796,7 @@ carry out climbclearing:
 	now in-way-wronged is true;
 	now in-so-saded is true;
 	move player to Airy Isle;
-	now score is min-needed - 7 + min-gotten;
+	now score is min-needed - whew-score + min-gotten;
 	now core-score is score;
 	now maximum score is min-needed;
 	the rule succeeds.

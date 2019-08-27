@@ -2,6 +2,12 @@ Version 1/181111 of Very Vile Fairy File Tests by Andrew Schultz begins here.
 
 "This is the tests file for Very Vile Fairy File."
 
+volume optional tests
+
+[include Property Checking by Emily Short.
+
+a thing can be abstract. A thing is usually not abstract.]
+
 volume in-IDE tests
 
 chapter warps
@@ -10,13 +16,13 @@ test qw with "gonear merry mile/bury bile"
 
 chapter walkthrough
 
-test w1 with "get good/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
-test w1r with "get good/find fault/green grass/mash map/grow grit/mash map/flim flam/mind me/flim flam/big bag".
+test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
+test w1r with "get good/gift giver/find fault/green grass/bash bap/grow grit/mash map/flim flam/mind me/skim scam/big bag".
 
 chapter beta jump
 
 test cc1 with "climb clear/got gored/hot horde/got gored/lot lord/got gored/whoah wait/merry mile/tell torn/merry mile/bury bile".
-test cc2 with "bury bile/	climb clear/bury bile/got gored/lot lord/got gored/hot horde/got gored/woe wait/bury bile/tell torn/bury bile/merry mile/bury bile".
+test cc2 with "bury bile/climb clear/bury bile/got gored/lot lord/got gored/hot horde/got gored/woe wait/bury bile/tell torn/bury bile/merry mile/bury bile".
 
 volume odd property tests
 

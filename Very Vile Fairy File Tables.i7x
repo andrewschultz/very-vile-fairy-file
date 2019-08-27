@@ -26,7 +26,7 @@ Whining War	north	false	"Done Dune"	"It doesn't seem like a place you should shu
 table of ranks [xxranks]
 rank-max	rank-name
 0	"cold cod"
-7	"lol'd, lawd" [this is defined because I want to trigger a rank gain at the Fun Fen]
+-1	"lol'd, lawd" [this is defined explicitly as -1 because 1. I want to trigger a rank gain at the Fun Fen and 2. the introductory score may change]
 --	"FLOL'd, flawed" [false laugh out loud]
 --	"mold-mawed"
 --	"holed, hawed"
@@ -54,6 +54,7 @@ to seed-score-list:
 	repeat through table of ranks:
 		increment my-row;
 		if there is a rank-max entry:
+			if rank-max entry is -1, now rank-max entry is whew-score; [keep initial rank until you get to Fun Fen]
 			now min-forced-score is rank-max entry;
 			now last-forced-row is my-row;
 			now last-points is rank-max entry + 1;
@@ -159,7 +160,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
 "BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
 "FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. [if me-minded is true]Now you managed to [b]MIND ME[r], that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
-"MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [b][if bash-not-mash is true]BASH BAP[else]MASH MAP[end if][r], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
+"MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [b][bap-map-rap][r], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
 "DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
 "MARK MORE"	false	can-mark-more rule	did-mark-more rule	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found a dark door [here-in of Stark Store]."
