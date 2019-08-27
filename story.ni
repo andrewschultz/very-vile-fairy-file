@@ -678,11 +678,14 @@ this is the boat-drift rule:
 		moot boring boat;
 	the rule succeeds;
 
+nap-no is a truth state that varies.
+
 check entering boring boat:
+	if nap-no is false: say "You try to enter the boat, but it seems so ... boring. Perhaps if you had some jaunty nautical tune stuck in your head to whistle, that'd be better." instead;
 	if player is in Been Buggin':
 		if player does not have way woke clay cloak, say "You have not properly passed all the tests you need to return and defeat the Beer Bull." instead;
-		say "With your way woke clay cloak in hand, you return to [Violent Vale]. There, with your newfound mental and physical strength, you defeat the Beer Bull!";
-		moot Beer Bull;
+		say "With your way woke clay cloak in hand, you return to [Violent Vale]. The boring boat floats off, its job likely done.";
+		moot boring boat;
 		move player to violent vale;
 		abide by the boat-drift rule;
 		the rule succeeds;
@@ -691,9 +694,9 @@ check entering boring boat:
 		move boring boat to violent vale;
 		move player to violent vale;
 		the rule succeeds;
-	if jake g is moot, say "You already did all you could in Lake Lea." instead;
-	if beer bull is in Violent Vale:
-		say "You take the boring boat but temporarily lose all sense of direction. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
+	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
+	if player has cake cap:
+		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
 		move boring boat to Been Buggin';
 		move player to Been Buggin';
 	say "You take the boring boat [if lake lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
@@ -797,7 +800,7 @@ Whining War is east of Violent Vale. It is in Piddling Pain. "[if shore-shine is
 
 [??mining more / dining door]
 
-Ache App is a thing.
+war-sapped is a truth state that varies.
 
 mine-more is a truth state that varies.
 
@@ -808,6 +811,8 @@ shore-shine is a truth state that varies.
 part Lake Lap ??,??
 
 Lake Lap is east of Lake Lea. It is in Piddling Pain.
+
+Ache App is a thing.
 
 chapter snakesnaping
 
@@ -2728,6 +2733,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
 "fit"	"found"	true	true	vc-found-fit rule	vr-found-fit rule	--
 "minding"	"maze"	false	true	vc-minding-maze rule	vr-minding-maze rule	-- [start blinding blaze]
+"luck|snuck"	"lair|snare"	false	true	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
 "brightening"	"bridge"	false	true	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
 "silent"	"sail|sale"	false	true	vc-silent-sail rule	vr-silent-sail rule	--
 "boring"	"boat"	false	true	vc-boring-boat rule	vr-boring-boat rule	--
@@ -2755,7 +2761,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
 "smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
 "mo"	"mappin"	true	true	vc-mo-mappin rule	vr-mo-mappin rule	--
-"luck|snuck"	"lair|snare"	false	true	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
+"so"	"sappin"	true	true	vc-so-sappin rule	vr-so-sappin rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3739,15 +3745,18 @@ this is the vr-smashing-smoke rule:
 	now zap-core-entry is true;
 	say "You have confused the bull beast for the moment!";
 
-this is the vc-so-sappin rule:
-	if toe tappin is touchable, the rule succeeds;
-	the rule fails;
+this is the vc-so-sappin rule: [?? we need to make sure this works okay]
+	if war-sapped is true:
+		say "You already did.";
+		continue the action;
+	if player is not in whining war;
+		say "That's an interesting riff, but it doesn't seem to work here.";
+		clue-later "SO SAPPIN"
+	the rule succeeds;
 
 this is the vr-so-sappin rule:
-	say "Man! The tune in your head, the one you feel you have to whistle and sing, flows freely. But it's not exciting like it was. It's all slowed down. It feels generic, yet full of possibilities.[paragraph break]In its place a much worse song springs up. Just a minor nuisance, though. Not something you have to deal with.";
-	moot toe tappin row rappin;
-	move oi mo to History Hall;
-	the rule succeeds.
+	say "It's not much, but it's a start. The whining grows steadily less.";
+	now war-sapped is true;
 
 this is the vc-soft-sand rule:
 	if player is not in soft sand, the rule fails;

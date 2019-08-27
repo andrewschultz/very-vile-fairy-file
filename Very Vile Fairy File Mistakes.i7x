@@ -8,6 +8,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [stuff I haven't sorted yet:
 co capn
+woe whappin
 no nappin
 so sappin
 turk tell
@@ -22,8 +23,6 @@ lining lore
 bark bore
 park pore/poor
 barred/bard bat
-go gappin
-mo mappin
 taper/tapir tile
 coughed canned
 ball brie
