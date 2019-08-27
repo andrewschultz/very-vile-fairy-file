@@ -20,17 +20,15 @@ test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind
 test w1r with "get good/gift giver/find fault/green grass/bash bap/grow grit/mash map/flim flam/mind me/skim scam/big bag".
 
 test w2 with "dive deep/paper pile/backed binder/s/kneel near/feel fear/deal dear/n/fall free".
-test w3 with "n/w/dark door/mark more/cleared clay/w/mystery mall/listen/lots lame/no nappin/w/hard hat/e/e/e/n/w/work well/e/stay strong/e"
+test w3 with "n/w/dark door/mark more/cleared clay/w/mystery mall/listen/lots lame/no nappin/w/hard hat/e/stay strong/e/e/e/n/w/work well/e/"
 
 test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/brightening bridge/boring boat/no nappin/in"
 
+test w5 with "wake whee/take tea/fake fee/e/snake snap/make map/co capn/enter boat/mean muggin/lean luggin/enter boat"
+
+test w6 with "w/w/w/w/history hall/first floor/s/smashing smoke/n/w/lending libe/dabbler data/e/e/e/n/n/w/moral mage"
+
 [
-> W
-> DARK DOOR (1)
-> MARK MORE (1)
-> CLEARED CLAY (1)
-> W
-> MYSTERY MALL (1)
 > W
 > LENDING LIBE (1)
 > E

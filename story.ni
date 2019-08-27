@@ -1,6 +1,6 @@
 "Very Vile Fairy File" by Billy Boling
 
-[??!!!!!! violent vale/silent sale/sail]
+[SING Toe Tappin in your head to see if anything you can do]
 
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
@@ -719,87 +719,16 @@ part Lake Lea 3,2
 
 Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap to the east.".
 
-check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
+check going east in Lake Lea when Jake G is touchable:
+	if jake-woke is false, say "You have a feeling you may need Jake G.'s guidance.";
+	if jake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "Jake G [if whee-wake is false]dozes[else]paces back and forth[end if] here.". talk-text of Jake G is "Achy! Make me!'"
+Jake G is a person in Lake Lea. "Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else]paces back and forth here[end if].". talk-text of Jake G is "Achy! Make me!'"
 
-whee-wake is a truth state that varies.
-
-this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
-
-jake-gone is a number that varies.
-
-to eval-jake-g:
-	increment jake-gone;
-	if jake-gone is 2:
-		moot Jake G;
-		say "Jake leaves, satisfied.";
-
-chapter fakefeeing
-
-fakefeeing is an action applying to nothing.
-
-understand the command "fake fee" as something new.
-
-understand "fake fee" as fakefeeing.
-
-fake-fee is a truth state that varies.
-
-carry out fakefeeing:
-	if fake-fee is true, say "You already pretended to charge Jake G. a fake fee." instead;
-	now fake-fee is true;
-	up-reg; [x-of-y jake]
-	the rule succeeds.
-
-chapter wakewheeing
-
-wakewheeing is an action applying to nothing.
-
-understand the command "wake whee" as something new.
-
-understand "wake whee" as wakewheeing.
-
-wake-whee is a truth state that varies.
-
-carry out wakewheeing:
-	if wake-whee is true, say "You already did the whole wake-whee bit." instead;
-	now wake-whee is true;
-	up-reg; [x-of-y jake]
-	the rule succeeds.
-
-chapter achying
-
-achying is an action applying to nothing.
-
-understand the command "achy" as something new.
-
-understand "achy" as achying.
-
-achy is a truth state that varies.
-
-carry out achying:
-	if achy is true, say "You already made Jake G achy." instead;
-	now achy is true;
-	up-reg; [opt] [x-of-y jake]
-	the rule succeeds.
-
-chapter breakbrieing
-
-breakbrieing is an action applying to nothing.
-
-understand the command "break brie" as something new.
-
-understand "break brie" as breakbrieing when player is in Lake Lea.
-
-brie-broke is a truth state that varies;
-
-carry out breakbrieing:
-	if brie-broke is true, say "You already broke brie with Jake G." instead;
-	follow the jake-g-gone rule;
-	say "You find some fresh (relatively) brie cheese under a rock, and you split it and offer it to Jake G.";
-	up-reg; [opt] [x-of-y jake]
-	eval-jake-g;
-	the rule succeeds.
+jake-woke is a truth state that varies.
+jake-tea is a truth state that varies.
+jake-fee is a truth state that varies.
+jake-brie is a truth state that varies.
 
 part Whining War 2,1
 
@@ -2542,6 +2471,10 @@ after reading a command:
 
 book parser errors
 
+Rule for printing a parser error when the latest parser error is the can't see any such thing error:
+	if player is in lake lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
+	say "There's nothing here like that. You never need to refer directly to a room name, either."
+
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "Blank blather? Rank! Rather!"
 
@@ -2751,6 +2684,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "brightening"	"bridge"	false	true	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
 "silent"	"sail|sale"	false	true	vc-silent-sail rule	vr-silent-sail rule	--
 "boring"	"boat"	false	true	vc-boring-boat rule	vr-boring-boat rule	--
+"wake"	"whee"	true	true	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
 "shining"	"shore"	false	true	vc-shining-shore rule	vr-shining-shore rule	-- [start whining war]
 "mining"	"more"	true	true	vc-mining-more rule	vr-mining-more rule	--
 "dining"	"door"	false	true	vc-dining-door rule	vr-dining-door rule	--
@@ -2777,6 +2711,9 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "mo"	"mappin"	true	true	vc-mo-mappin rule	vr-mo-mappin rule	--
 "so"	"sappin"	true	true	vc-so-sappin rule	vr-so-sappin rule	--
 "no"	"nappin"	true	true	vc-no-nappin rule	vr-no-nappin rule	--
+"fake"	"fee"	false	true	vc-fake-fee rule	vr-fake-fee rule	--
+"take"	"tea"	false	true	vc-take-tea rule	vr-take-tea rule	--
+"break"	"brie"	false	false	vc-break-brie rule	vr-break-brie rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -2834,18 +2771,6 @@ this is the trimtramcmd rule:
 	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 
 section vc vr rules [xxvcvr]
-
-this is the vc-no-nappin rule:
-	if toe tappin row rappin is not touchable, the rule fails;
-	if nap-no is true:
-		say "You already changed Toe Tappin Row Rappin that way.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-no-nappin rule:
-	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
-	say "[line break][if boat-reject is true and lake lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
-	now nap-no is true;
 
 this is the vc-backed-binder rule:
 	if paper pile is not touchable, the rule fails;
@@ -2916,6 +2841,16 @@ this is the vr-boring-boat rule:
 	say "The flooring float sinks and tips over slightly. Some of its excess cargo falls into the water, never to return. It becomes much leaner and more practical--a boring boat!";
 	moot flooring float;
 	move boring boat to Violent Vale;
+
+this is the vc-break-brie rule:
+	if jake is not touchable, the rule succeeds;
+	if jake-brie is true:
+		say "You already did.";
+		the continue the action;
+	the rule succeeds;
+
+this is the vr-break-brie rule:
+	say "'Ooh, good one! I almost forgot I had it. I don't like it. Here, have it all.' This might not help in the end, but yay free food."
 
 this is the vc-brightening-bridge rule:
 	if frightening fridge is not touchable, the rule fails;
@@ -3116,6 +3051,16 @@ this is the vc-dreaming-dull rule:
 this is the vr-dreaming-dull rule:
 	moot screaming skull;
 	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
+
+this is the vc-fake-fee rule:
+	if jake is not touchable, the rule succeeds;
+	if jake-fee is true:
+		say "You already did.";
+		the continue the action;
+	the rule succeeds;
+
+this is the vr-fake-fee rule:
+	say "You and Jake have a laugh about how you'd like to pay, and he'd like payment, but that's not really what's important here. Jake is ready to work with you off to the east!"
 
 this is the vc-fall-free rule:
 	if tree-down is true:
@@ -3500,17 +3445,14 @@ this is the vr-lot-lord rule:
 	check-gored-clue;
 	the rule succeeds;
 
-this is the vc-whatta-wanksta rule:
+this is the vc-lots-lame rule:
 	if gutta ganksta is not touchable, the rule fails;
-	if gan-wan is true:
-		say "You already pinged the Gutta Ganksta like that.";
-		continue the action;
 	the rule succeeds;
 
-this is the vr-whatta-wanksta rule:
-	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever. After all, the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
-	now gan-wan is true;
-	the rule succeeds.
+this is the vr-lots-lame rule:
+	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
+	moot ganksta;
+	the rule succeeds;
 
 this is the vc-luck-lair rule:
 	if player is not in blinding blaze or stuck stair is off-stage, the rule fails;
@@ -3693,6 +3635,18 @@ this is the vr-mystery-mall rule:
 	now zap-core-entry is true;
 	the rule succeeds;
 
+this is the vc-no-nappin rule:
+	if toe tappin row rappin is not touchable, the rule fails;
+	if nap-no is true:
+		say "You already changed Toe Tappin Row Rappin that way.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-no-nappin rule:
+	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
+	say "[line break][if boat-reject is true and lake lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
+	now nap-no is true;
+
 this is the vc-paper-pile rule:
 	if vapor vile is not touchable, the rule fails;
 	the rule succeeds;
@@ -3772,6 +3726,10 @@ this is the vr-smashing-smoke rule:
 	now zap-core-entry is true;
 	say "You have confused the bull beast for the moment!";
 
+this is the vr-so-sappin rule:
+	say "It's not much, but it's a start. The whining grows steadily less.";
+	now war-sapped is true;
+
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if war-sapped is true:
 		say "You already did.";
@@ -3780,10 +3738,6 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 		say "That's an interesting riff, but it doesn't seem to work here.";
 		clue-later "SO SAPPIN";
 	the rule succeeds;
-
-this is the vr-so-sappin rule:
-	say "It's not much, but it's a start. The whining grows steadily less.";
-	now war-sapped is true;
 
 this is the vc-soft-sand rule:
 	if player is not in soft sand, the rule fails;
@@ -3840,6 +3794,17 @@ this is the vr-strong-start rule:
 	moot wrong art;
 	the rule succeeds.
 
+this is the vc-take-tea rule:
+	if jake is not touchable, the rule succeeds;
+	if jake-tea is true:
+		say "You already did.";
+		the continue the action;
+	the rule succeeds;
+
+this is the vr-take-tea rule:
+	say "You and Jake have a brief snack. It helps bring you together. But he looks awkwardly at you. He guesses he should expect payment, but he doesn't really want it.";
+	now jake-tea is true;
+
 this is the vc-tell-torn rule:
 	if well worn hell horn is not touchable, the rule fails;
 	the rule succeeds;
@@ -3859,14 +3824,28 @@ this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
 
-this is the vc-lots-lame rule:
-	if gutta ganksta is not touchable, the rule fails;
+this is the vc-wake-whee rule:
+	if jake g is not touchable, the rule fails;
+	if jake-woke is true:
+		say "You already did.";
+		continue the action;
 	the rule succeeds;
 
-this is the vr-lots-lame rule:
-	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
-	moot ganksta;
+this is the vr-wake-whee rule:
+	say "Jake G. wakes up.";
+	now jake-woke is true;
+
+this is the vc-whatta-wanksta rule:
+	if gutta ganksta is not touchable, the rule fails;
+	if gan-wan is true:
+		say "You already pinged the Gutta Ganksta like that.";
+		continue the action;
 	the rule succeeds;
+
+this is the vr-whatta-wanksta rule:
+	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever. After all, the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
+	now gan-wan is true;
+	the rule succeeds.
 
 this is the vc-whoa-wait rule:
 	unless player is in airy isle and go gate is in airy isle, the rule fails;
