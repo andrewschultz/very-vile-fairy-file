@@ -595,7 +595,9 @@ Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you c
 understand "song" as oi mo when player is in History Hall and oi mo is in History Hall.
 
 check going west in History Hall:
-	if ever-mall is true, continue the action;
+	if ever-mall is true:
+		if gutta ganksta is in history hall, say "The gutta ganksta pushes you back. Maybe you can win a quick diss war to, well, displace the ganksta." instead;
+		continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
 
 Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it."
@@ -606,7 +608,7 @@ ever-mall is a truth state that varies.
 
 ever-hall is a truth state that varies.
 
-lots-lame is a truth state that varies.
+gan-wan is a truth state that varies.
 
 floor-yet is a truth state that varies.
 
@@ -672,6 +674,10 @@ the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENT
 
 check taking boring boat: try entering boring boat instead;
 
+check going inside when player is in violent vale:
+	if boring boat is touchable, try entering boring boat instead;
+	if flooring float is touchable, try entering flooring float instead;
+
 this is the boat-drift rule:
 	if beer bull is moot and jake g is moot:
 		say "[line break]After a moment, the boring boat floats off, its job likely done.";
@@ -680,8 +686,13 @@ this is the boat-drift rule:
 
 nap-no is a truth state that varies.
 
+boat-reject is a truth state that varies.
+
 check entering boring boat:
-	if nap-no is false: say "You try to enter the boat, but it seems so ... boring. Perhaps if you had some jaunty nautical tune stuck in your head to whistle, that'd be better." instead;
+	if nap-no is false:
+		say "You try to enter the boat, but it seems so ... boring. Perhaps if you had some jaunty nautical tune stuck in your head to whistle, that'd be better.";
+		now boat-reject is true;
+		the rule succeeds;
 	if player is in Been Buggin':
 		if player does not have way woke clay cloak, say "You have not properly passed all the tests you need to return and defeat the Beer Bull." instead;
 		say "With your way woke clay cloak in hand, you return to [Violent Vale]. The boring boat floats off, its job likely done.";
@@ -710,7 +721,9 @@ Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borde
 
 check going east in Lake Lea when Jake G is in Lake Lea: say "Jake G. doesn't let you go that way." instead;
 
-Jake G is a person in Lake Lea. "Jake G paces back and forth here, muttering 'Make me take tea!' He seems a bit out of place because, well, reasons.".
+Jake G is a person in Lake Lea. "Jake G [if whee-wake is false]dozes[else]paces back and forth[end if] here.". talk-text of Jake G is "Achy! Make me!'"
+
+whee-wake is a truth state that varies.
 
 this is the jake-g-gone rule: if Jake G is moot, say "You've already chased Jake G." instead;
 
@@ -914,7 +927,7 @@ part Shirk Shell -1,2 a
 
 Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact."
 
-check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back." instead;
+check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
 
 the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy."
 
@@ -1212,6 +1225,7 @@ check thinking:
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
+	if boat-reject is true and nap-no is true and lake lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
 	if number of optional-noted things > 0:
 		say "You also know several things that are optional to figure out: [list of optional-noted things].";
 
@@ -2495,8 +2509,7 @@ rule for showmissesing:
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a STRONG START.";
 	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
 	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting[else]the wild weed[end if].";
-	if lots-lame is false, say "You could've said the Gutta Ganksta's Gots Game tattoo was LOTS LAME in Mystery Mall.";
-	if ganksta is not moot, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
+	if gan-wan is false, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
 	unless oi mo is moot, say "You could have DIMD (dim'd) the horrible song Oi Mo in Mystery Mall.";
 	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE in the Gassed Gap/Last Lap.";
 
@@ -2561,6 +2574,7 @@ this is the verb-checker rule:
 		else:
 			if the player's command matches the regular expression "\W([w2 entry])($|\W)", increment my-count;
 		let wfull-fail be false;
+		[say "[ver-rule entry].";]
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
 				now my-count is 2;
@@ -2762,6 +2776,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
 "mo"	"mappin"	true	true	vc-mo-mappin rule	vr-mo-mappin rule	--
 "so"	"sappin"	true	true	vc-so-sappin rule	vr-so-sappin rule	--
+"no"	"nappin"	true	true	vc-no-nappin rule	vr-no-nappin rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -2819,6 +2834,18 @@ this is the trimtramcmd rule:
 	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 
 section vc vr rules [xxvcvr]
+
+this is the vc-no-nappin rule:
+	if toe tappin row rappin is not touchable, the rule fails;
+	if nap-no is true:
+		say "You already changed Toe Tappin Row Rappin that way.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-no-nappin rule:
+	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
+	say "[line break][if boat-reject is true and lake lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
+	now nap-no is true;
 
 this is the vc-backed-binder rule:
 	if paper pile is not touchable, the rule fails;
@@ -3457,7 +3484,7 @@ this is the vr-loft-land rule:
 		now ever-loft is true;
 		now loft-land is true;
 	now Curst Cave is mapped west of Soft Sand;
-	now Soft Sand is mapped west of Curst Cave;
+	now Soft Sand is mapped east of Curst Cave;
 	the rule succeeds;
 
 this is the vc-lot-lord rule:
@@ -3473,16 +3500,16 @@ this is the vr-lot-lord rule:
 	check-gored-clue;
 	the rule succeeds;
 
-this is the vc-lots-lame rule:
+this is the vc-whatta-wanksta rule:
 	if gutta ganksta is not touchable, the rule fails;
-	if lots-lame is true:
+	if gan-wan is true:
 		say "You already pinged the Gutta Ganksta like that.";
 		continue the action;
 	the rule succeeds;
 
-this is the vr-lots-lame rule:
-	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever.";
-	now lots-lame is true;
+this is the vr-whatta-wanksta rule:
+	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever. After all, the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
+	now gan-wan is true;
 	the rule succeeds.
 
 this is the vc-luck-lair rule:
@@ -3749,9 +3776,9 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if war-sapped is true:
 		say "You already did.";
 		continue the action;
-	if player is not in whining war;
+	if player is not in whining war:
 		say "That's an interesting riff, but it doesn't seem to work here.";
-		clue-later "SO SAPPIN"
+		clue-later "SO SAPPIN";
 	the rule succeeds;
 
 this is the vr-so-sappin rule:
@@ -3832,11 +3859,11 @@ this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
 
-this is the vc-whatta-wanksta rule:
+this is the vc-lots-lame rule:
 	if gutta ganksta is not touchable, the rule fails;
 	the rule succeeds;
 
-this is the vr-whatta-wanksta rule:
+this is the vr-lots-lame rule:
 	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
 	moot ganksta;
 	the rule succeeds;
