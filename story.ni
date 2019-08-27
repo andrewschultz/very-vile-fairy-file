@@ -543,15 +543,19 @@ the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a w
 
 part Fight Funnel -2,2
 
-Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else]. You can probably just fit west[end if]."
+Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if beer bull is moot]. You don't need to go west now you trapped the beer bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[end if]. You can probably just fit west[end if]."
 
 funnel-to-tunnel is a truth state that varies.
 
 check going west in Fight Funnel:
 	if funnel-to-tunnel is false, say "You're not getting past the fight." instead;
 	if big bag is off-stage, say "You need to organize your possessions first. Maybe your inventory can be simplified." instead;
-	if kni-ni is true:
-		if beer bull is not in location of player, say "You need a very good reason not to set off the Knives Niche trap." instead;
+	if snuck snare is moot and beer bull is not in location of player, say "You need a very good reason not to set off the Knives Niche trap." instead;
+	if player has snuck snare:
+		moot snuck snare;
+		say "As you go west, you realize the snuck snare would be quite nice for trapping someone unsuspecting, somewhere, somehow. So you place it and return.";
+		move player to fight funnel;
+		the rule succeeds;
 	if beer bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
 
 part Dives Ditch -3,2
@@ -935,7 +939,7 @@ first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south."
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south. You could even try your luck east."
 
 check going north in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
@@ -2338,7 +2342,7 @@ the get-sad rule is listed after the notify score changes rule in the turn seque
 this is the get-sad rule:
 	if in-so-saded is false and in-so-sad is false and score >= 30:
 		now in-so-sad is true;
-		say "Everything feels pointless. You're sick of these silly rhymes. You feel so sad, mo['] mad.";
+		say "Suddenly, a terrible feeling comes over you. Everything feels pointless. You're sick of these silly rhymes. You feel so sad, mo['] mad.";
 		now cht of the player is letplus; [so sad->glow glad]
 	the rule succeeds;
 
@@ -2406,6 +2410,10 @@ Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is lete
 
 A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". [->sit sound]
 
+check going east in Pit Pound:
+	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
+	if found-fit is false, say "It's weird. You don't feel like you belong in the pit pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
+
 found-fit is a truth state that varies.
 
 part Blinding Blaze 2,3
@@ -2416,9 +2424,15 @@ blaze-maze is a truth state that varies.
 
 maze-mapped is a truth state that varies.
 
+check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
+
 chapter stuck stair
 
-the stuck stair is scenery.
+the stuck stair is scenery. "It looks like you may have to figure where the stair might go to use it."
+
+chapter snuck snare
+
+the snuck snare is a thing. "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
 
 book clumped cluster
 
@@ -2737,6 +2751,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
 "smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
 "mo"	"mappin"	true	true	vc-mo-mappin rule	vr-mo-mappin rule	--
+"luck|snuck"	"lair|snare"	false	true	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
 
 [ this is stuff for beta commands below ]
 
@@ -3444,6 +3459,18 @@ this is the vr-lots-lame rule:
 	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever.";
 	now lots-lame is true;
 	the rule succeeds.
+
+this is the vc-luck-lair rule:
+	if player is not in blinding blaze or stuck stair is off-stage, the rule fails;
+	if stuck stair is moot:
+		say "You already got to luck lair.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-luck-lair rule:
+	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.";
+	moot stuck stair;
+	now player has snuck snare;
 
 this is the vc-mark-more rule:
 	if player is not in stark store, the rule fails;

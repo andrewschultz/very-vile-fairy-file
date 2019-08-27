@@ -7,6 +7,9 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 [too totes new notes]
 
 [stuff I haven't sorted yet:
+co capn
+go gappin
+so sappin
 turk tell
 knots/nots name
 tots tame
