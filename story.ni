@@ -556,7 +556,7 @@ check going west in Fight Funnel:
 
 part Dives Ditch -3,2
 
-Dives Ditch is west of Fight Funnel. cht of Dives Ditch is letplus. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if].". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[end if]."
+Dives Ditch is west of Fight Funnel. cht of Dives Ditch is letplus. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[end if]."
 
 kni-ni is a truth state that varies.
 
@@ -1380,6 +1380,7 @@ carry out verbsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan]. You can also use it to tweak other clues with [b]TWO TOO[r]/[b]DO DUE[r] or [b]HA HALF[r]/[b]NAH NAFF[r].";
+	if lurking lump is not off-stage, say "[2da]You can [b]JJ[r] or [b]JERKING JUMP[r] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	the rule succeeds.
 
@@ -1632,7 +1633,9 @@ room-hint-rule of Airy Isle is airy-isle-hint rule.
 room-hint-rule of Been Buggin' is been-buggin-hint rule.
 room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
+room-hint-rule of Dives Ditch is dives-ditch-hint rule.
 room-hint-rule of Erst Lore is erst-lore-hint rule.
+room-hint-rule of Fight Funnel is fight-funnel-hint rule.
 room-hint-rule of Foe Field is foe-field-so-sealed-hint rule.
 room-hint-rule of Fun Fen is fun-fen-hint rule.
 room-hint-rule of Gassed Gap is gassed-gap-hint rule.
@@ -1644,6 +1647,7 @@ room-hint-rule of Lake Lea is lake-lea-hint rule.
 room-hint-rule of Pit Pound is pit-pound-hint rule.
 room-hint-rule of Po' Pit is po-pit-hint rule.
 room-hint-rule of Real Rear is real-rear-hint rule.
+room-hint-rule of Rift River is rift-river-hint rule.
 room-hint-rule of Shirk Shell is shirk-shell-hint rule.
 room-hint-rule of Soft Sand is soft-sand-hint rule.
 room-hint-rule of Stark Store is stark-store-hint rule.
@@ -1687,9 +1691,17 @@ this is the curst-cave-hint rule:
 	say "[one of]You need to show optimism.[or]FIRST FAVE.[stopping]";
 	the rule succeeds.
 
+this is the dives-ditch-hint rule:
+	if kni-ni is true, the rule fails;
+	say "[one of]Set up a subtler trap.[or]KNIVES NICHE.[stopping]";
+
 this is the erst-lore-hint rule:
 	say "I think I'll need to fix this later, but for now, there's nothing to do.";
 	the rule fails.
+
+this is the fight-funnel-hint rule:
+	if funnel-to-tunnel is true, the rule fails;
+	say "[one of]You need to get rid of the fighters[or]Maybe make it more awkward to fight[or]TIGHT TUNNEL[stopping].";
 
 this is the foe-field-so-sealed-hint rule:
 	if shield-shown is true, the rule fails;
@@ -1753,6 +1765,9 @@ this is the real-rear-hint rule:
 		say "SPOILER need to DEAL DEAR.";
 	else:
 		say "BUG in the hint code, but you're probably done here."
+
+this is the rift-river-hint rule:
+	say "[one of]You need someone to help you here[or]Maybe you could use an item, too[or]You need a GIFT GIVER to come by[stopping].";
 
 this is the shirk-shell-hint rule:
 	if player has jerk gel, the rule fails;
@@ -2597,13 +2612,18 @@ section jerkingjumping
 jerkingjumping is an action applying to nothing.
 
 understand the command "jerking jump" as something new.
+understand the command "jj" as something new.
 
 understand "jerking jump" as jerkingjumping.
+understand "jj" as jerkingjumping.
+
+in-jerk-jump is a truth state that varies.
 
 carry out jerkingjumping:
 	if debug-state is false:
 		if lurking lump is off-stage, say "You have nothing that would help you do that." instead;
 		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
+	now in-jerk-jump is true;
 	repeat through table of verb checks:
 		process the ver-rule entry;
 		if the rule succeeded:
@@ -2616,6 +2636,7 @@ carry out jerkingjumping:
 			decrement lump-charges;
 			say "The lurking lump shrivels [if lump-charges is 0]and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
 			if lump-charges is 0, moot lurking lump;
+			now in-jerk-jump is false;
 			the rule succeeds;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.
@@ -2707,6 +2728,11 @@ in-test-loop is a truth state that varies.
 
 section to-x stubs
 
+to decide whether print-why-fail:
+	if in-test-loop is true, no;
+	if in-jerk-jump is true, no;
+	yes;
+
 to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
 
 to loop-note (t - text):
@@ -2752,17 +2778,6 @@ this is the trimtramcmd rule:
 	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 
 section vc vr rules [xxvcvr]
-
-this is the vc-knives-niche rule:
-	if player is not in dives ditch, the rule fails;
-	if kni-ni is true:
-		say "You already changed the dives ditch.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-knives-niche rule:
-	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
-	now kni-ni is true;
 
 this is the vc-backed-binder rule:
 	if paper pile is not touchable, the rule fails;
@@ -3061,7 +3076,7 @@ this is the vr-feel-fear rule:
 this is the vc-find-fault rule:
 	if player is not in Vined Vault, the rule fails;
 	if mean mass is in Vined Vault:
-		if in-test-loop is false, say "You already did, and things got worse. You'll have to try something else.";
+		if print-why-fail, say "You already did, and things got worse. You'll have to try something else.";
 		continue the action;
 	the rule succeeds;
 
@@ -3148,7 +3163,7 @@ this is the vr-full-feast rule:
 
 this is the vc-get-good rule:
 	if player is not in wet wood:
-		if in-test-loop is false, say "You already managed to GET GOOD.";
+		if print-why-fail, say "You already managed to GET GOOD.";
 		continue the action;
 	the rule succeeds;
 
@@ -3234,7 +3249,7 @@ this is the vr-green-grass rule:
 this is the vc-grow-grit rule:
 	if player is not in po' pit, the rule fails;
 	if grit-grown is true:
-		if in-test-loop is false, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
+		if print-why-fail, say "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
 		continue the action;
 	the rule succeeds;
 
@@ -3318,6 +3333,17 @@ this is the vr-kneel-near rule:
 	now cht of Real Rear is leteq; [real rear->feel fear]
 	now cht of steel steer is letminus; [steel steer->feel fear]
 	the rule succeeds.
+
+this is the vc-knives-niche rule:
+	if player is not in dives ditch, the rule fails;
+	if kni-ni is true:
+		say "You already changed the dives ditch.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-knives-niche rule:
+	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
+	now kni-ni is true;
 
 this is the vc-lean-luggin rule:
 	if player is not in Been Buggin', the rule fails;
@@ -3488,7 +3514,7 @@ this is the vr-merrymile rule:
 this is the vc-mind-me rule:
 	if player is not in trim tram, the rule fails;
 	if me-minded is true:
-		if in-test-loop is false, say "You already minded yourself.";
+		if print-why-fail, say "You already minded yourself.";
 		continue the action;
 	the rule succeeds;
 
