@@ -547,14 +547,26 @@ Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is
 
 funnel-to-tunnel is a truth state that varies.
 
+this is the drop-snare rule:
+	if player has snuck snare and kni-ni is true:
+		moot snuck snare;
+		say "As you go [if player is in fight funnel]west[else]look around[end if], you realize the snuck snare would be quite nice for trapping someone unsuspecting, somewhere, somehow. So you place it and return.";
+		move player to fight funnel;
+		the rule succeeds;
+
 check going west in Fight Funnel:
 	if funnel-to-tunnel is false, say "You're not getting past the fight." instead;
 	if big bag is off-stage, say "You need to organize your possessions first. Maybe your inventory can be simplified." instead;
 	if snuck snare is moot and beer bull is not in location of player, say "You need a very good reason not to set off the Knives Niche trap." instead;
-	if player has snuck snare:
-		moot snuck snare;
-		say "As you go west, you realize the snuck snare would be quite nice for trapping someone unsuspecting, somewhere, somehow. So you place it and return.";
-		move player to fight funnel;
+	process the drop-snare rule;
+	if beer bull is in location of player:
+		if snuck snare is moot:
+			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! It tumbles into the remains of the Dives Ditch. You walk back to Here Hull, where a gear gull hands you a gold guard.";
+			now player has gold guard;
+			up-reg;
+			the rule succeeds;
+		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
+		reset-bull-chase;
 		the rule succeeds;
 	if beer bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
 
@@ -710,6 +722,7 @@ check entering boring boat:
 		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
 		move boring boat to Been Buggin';
 		move player to Been Buggin';
+		the rule succeeds;
 	say "You take the boring boat [if lake lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
 	move boring boat to Lake Lea;
 	move player to Lake Lea;
@@ -754,35 +767,9 @@ part Lake Lap ??,??
 
 Lake Lap is east of Lake Lea. It is in Piddling Pain.
 
-Ache App is a thing.
-
-chapter snakesnaping
-
-snakesnaping is an action applying to nothing.
-
-understand the command "snake snap" as something new.
-
-understand "snake snap" as snakesnaping when ache app is off-stage and player is in lake lap.
-
-carry out snakesnaping:
-	up-reg;
-	say "The snake hissing in the lake leaves an Ache App behind.";
-	now ache app is in lake lap;
-	the rule succeeds.
-
-chapter makemaping
-
-makemaping is an action applying to nothing.
-
-understand the command "make map" as something new.
-
-understand "make map" as makemaping when ache app is in lake lap.
-
-carry out makemaping:
-	say "You can now see a map with M or MAP.";
-	moot ache app;
-	up-reg;
-	the rule succeeds.
+jake-cocapn is a truth state that varies.
+jake-snap is a truth state that varies.
+jake-map is a truth state that varies.
 
 part Been Buggin'
 
@@ -823,13 +810,33 @@ Here Hull is east of Soft Sand. It is in Piddling Pain. "You can go back east to
 
 The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". [->fear ful]
 
+in-bull-chase is a truth state that varies.
+
 to decide whether hull-bull:
 	if player is in Here Hull or beer bull is in location of player, yes;
 	no;
 
-to reset-bull:
-	move beer bull to Here Hull;
-	now cht of beer bull is partminus; [beer bull->fear ful]
+to reset-bull-chase:
+	say "You limp [if player is in creased cross]around[else]back to[end if] Creased Cross.";
+	move player to Creased Cross;
+	move beer bull to here hull;
+	now in-bull-chase is false;
+	now bull-from is Here Hull;
+
+bull-from is a room that varies. bull-from is Here Hull.
+
+every turn when in-bull-chase is true:
+	if beer bull is not in location of player:
+		if location of player is bull-from:
+			say "The beer bull catches you doubling back!";
+			reset-bull-chase;
+			the rule succeeds;
+		say "The beer bull follows you.";
+		now bull-from is location of beer bull;
+		move beer bull to location of player;
+
+to start-bull-chase:
+	now in-bull-chase is true;
 
 chapter fearfuling
 
@@ -2278,12 +2285,6 @@ the clashing cloak is a thing. description is "It seems suited for more than jus
 
 chapter glowglading
 
-glowglading is an action applying to nothing.
-
-understand the command "glow glad" as something new.
-
-understand "glow glad" as glowglading when in-so-sad is true.
-
 in-so-sad is a truth state that varies.
 in-so-saded is a truth state that varies.
 
@@ -2294,14 +2295,13 @@ this is the get-sad rule:
 		now in-so-sad is true;
 		say "Suddenly, a terrible feeling comes over you. Everything feels pointless. You're sick of these silly rhymes. You feel so sad, mo['] mad.";
 		now cht of the player is letplus; [so sad->glow glad]
-	the rule succeeds;
+	continue the action;
 
 every turn when in-so-sad is true:
 	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
 instead of doing something when in-so-sad is true:
 	if action is procedural, continue the action;
-	if current action is glowglading, continue the action;
 	say "You can't. You just feel ... so sad. Mo['] mad.";
 
 chapter staystronging
@@ -2316,7 +2316,7 @@ this is the get-wrong rule:
 		now in-way-wrong is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
 		now cht of the player is letplus; [way wrong->stay strong]
-	the rule succeeds;
+	continue the action;
 
 every turn when in-way-wrong is true:
 	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
@@ -2714,6 +2714,9 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "fake"	"fee"	false	true	vc-fake-fee rule	vr-fake-fee rule	--
 "take"	"tea"	false	true	vc-take-tea rule	vr-take-tea rule	--
 "break"	"brie"	false	false	vc-break-brie rule	vr-break-brie rule	--
+"make"	"map"	false	true	vc-make-map rule	vr-make-map rule	--
+"snake"	"snap"	true	true	vc-snake-snap rule	vr-snake-snap rule	--
+"co"	"capn"	false	true	vc-co-capn rule	vr-co-capn rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -2770,7 +2773,53 @@ this is the ashap rule:
 this is the trimtramcmd rule:
 	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 
+every turn when player is in Lake Lea or player is in Lake Lap:
+	if Jake G is not in location of player and player is not in Violent Vale:
+		say "Jake G follows behind.";
+		move Jake G to location of player;
+	continue the action;
+
 section vc vr rules [xxvcvr]
+
+this is the vc-co-capn rule:
+	if jake g is not touchable, the rule fails;
+	if jake-fee is false:
+		say "Maybe once you established a bond with Jake, he could be a co-captain. But not yet.";
+		clue-later "CO CAPN";
+		continue the action;
+	if jake-cocapn is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-co-capn rule:
+	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
+	now jake-cocapn is true;
+
+this is the vc-make-map rule:
+	if player is not in Lake Lap, the rule fails;
+	if jake-map is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-make-map rule:
+	say "You make a map. As you do, you hear a hissing noise, as from a dangerous snake.";
+	now jake-map is true;
+
+this is the vc-snake-snap rule:
+	if player is not in Lake Lap, the rule fails;
+	if jake-cocapn is false:
+		say "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
+		clue-later "SNAKE SNAP";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-snake-snap rule:
+	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale.";
+	now player has cake cap;
+	move boring boat to Violent Vale;
+	move player to Violent Vale, without printing a room description;
 
 this is the vc-backed-binder rule:
 	if paper pile is not touchable, the rule fails;
@@ -2799,6 +2848,10 @@ this is the vc-beast-boss rule:
 	if player is not in Creased Cross, the rule fails;
 	if Bull Beast is not off-stage:
 		say "You already did.";
+		continue the action;
+	if player does not have gold guard:
+		say "You don't feel armed for that, yet.";
+		clue-later "BEAST BOSS";
 		continue the action;
 	the rule succeeds;
 
@@ -3060,7 +3113,8 @@ this is the vc-fake-fee rule:
 	the rule succeeds;
 
 this is the vr-fake-fee rule:
-	say "You and Jake have a laugh about how you'd like to pay, and he'd like payment, but that's not really what's important here. Jake is ready to work with you off to the east!"
+	say "You and Jake have a laugh about how you'd like to pay, and he'd like payment, but that's not really what's important here. Jake is ready to work with you off to the east!";
+	now jake-fee is true;
 
 this is the vc-fall-free rule:
 	if tree-down is true:
@@ -3215,10 +3269,10 @@ this is the vr-glean-glows rule:
 	moot Mean Moe's Clean Clothes;
 
 this is the vc-glow-glad rule:
+	if in-so-sad is false, the rule fails;
 	if in-so-saded is true:
 		say "You already did.";
 		continue the action;
-	if in-so-sad is false, the rule fails;
 	the rule succeeds;
 
 this is the vr-glow-glad rule:
@@ -3372,6 +3426,7 @@ this is the vc-knives-niche rule:
 this is the vr-knives-niche rule:
 	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
 	now kni-ni is true;
+	process the drop-snare rule;
 
 this is the vc-lean-luggin rule:
 	if player is not in Been Buggin', the rule fails;
