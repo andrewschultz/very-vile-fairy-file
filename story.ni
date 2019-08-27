@@ -2398,13 +2398,25 @@ the wild weed is a thing.
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either."
 
-part Pit Pound
+part Pit Pound 1,3
 
-Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". [->sit sound]
+Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-maze is false]There's a blaze to the east that may be trickier to visit, though[else]Why, you could even deal with the maze to the east[end if]." [->sit sound]
 
 A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". [->sit sound]
 
 found-fit is a truth state that varies.
+
+part Blinding Blaze 2,3
+
+Blinding Blaze is east of Pit Pound. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if blaze-maze is true]Minding Maze[else]Blinding Blaze[end if]". description is "[if blaze-maze is false]This is such a terrible blaze. You'll have to put it out, or you can only go back west[else if maze-mapped is false]There's a maze ahead. You'll want to plan out fully how to deal with it[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-maze is true]. You can also just go back west[end if]."
+
+blaze-maze is a truth state that varies.
+
+maze-mapped is a truth state that varies.
+
+chapter stuck stair
+
+the stuck stair is scenery.
 
 book clumped cluster
 
@@ -2693,6 +2705,10 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "dreaming"	"dull"	true	true	vc-dreaming-dull rule	vr-dreaming-dull rule	--
 "first"	"fave"	false	true	vc-first-fave rule	vr-first-fave rule	--
 "moral"	"mage"	false	true	vc-moral-mage rule	vr-moral-mage rule	--
+"work"	"well"	true	true	vc-work-well rule	vr-work-well rule	-- [start shirk shell]
+"sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
+"fit"	"found"	true	true	vc-found-fit rule	vr-found-fit rule	--
+"minding"	"maze"	false	true	vc-minding-maze rule	vr-minding-maze rule	-- [start blinding blaze]
 "brightening"	"bridge"	false	true	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
 "silent"	"sail|sale"	false	true	vc-silent-sail rule	vr-silent-sail rule	--
 "boring"	"boat"	false	true	vc-boring-boat rule	vr-boring-boat rule	--
@@ -2713,14 +2729,22 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "merry"	"mile"	false	true	vc-merrymile rule	vr-merrymile rule	--
 "bury"	"bile"	false	true	vc-bury-bile rule	vr-bury-bile rule	--
 "wild"	"weed"	true	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
-"sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	--
-"fit"	"found"	true	true	vc-fit-found rule	vr-fit-found rule	--
 "bumped"	"buster"	true	true	vc-bumped-buster rule	vr-bumped-buster rule	--
 "glow"	"glad"	true	true	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
 "stay"	"strong"	false	true	vc-stay-strong rule	vr-stay-strong rule	--
 "cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
-"work"	"well"	true	true	vc-work-well rule	vr-work-well rule	--
 "smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
+
+this is the vc-minding-maze rule:
+	if player is not in blinding blaze, the rule fails;
+	if blaze-maze is true:
+		say "You already converted the blaze to a maze.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-minding-maze rule:
+	say "The blaze swirls but dies down. In its place is a huge minding maze.";
+	now blaze-maze is true;
 
 [ this is stuff for beta commands below ]
 
@@ -3117,7 +3141,7 @@ this is the vr-first-floor rule:
 	now History Hall is mapped outside Erst Lore;
 	the rule succeeds.
 
-this is the vc-fit-found rule:
+this is the vc-found-fit rule:
 	if player is not in pit pound, the rule fails;
 	if found-fit is true:
 		say "You already did.";
@@ -3128,7 +3152,7 @@ this is the vc-fit-found rule:
 		continue the action;
 	the rule succeeds;
 
-this is the vr-fit-found rule:
+this is the vr-found-fit rule:
 	say "You feel comfortable here now. Wahoo!";
 	now found-fit is true;
 	the rule succeeds.
