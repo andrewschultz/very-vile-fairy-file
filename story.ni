@@ -543,7 +543,7 @@ the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a w
 
 part Fight Funnel -2,2
 
-Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if beer bull is moot]. You don't need to go west now you trapped the beer bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[end if]. You can probably just fit west[end if]."
+Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if beer bull is moot]. You don't need to go west now you trapped the beer bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[else]. You can probably just fit west[end if]."
 
 funnel-to-tunnel is a truth state that varies.
 
@@ -789,6 +789,12 @@ part Whining War 2,1
 
 Whining War is east of Violent Vale. It is in Piddling Pain. "[if shore-shine is false]You can't get a close enough view of the war, but you can sure hear it.[else]It's quieter and brighter here now than when you started. Yay![end if]". cht of whining war is partplus. [-> shining shore]
 
+[?? SO SAPPIN here to get rid of people]
+[?? mining more to reveal riches people might be happy with]
+[shining shore, oh, it is a nice place now!]
+[Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another whining war.]
+[mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
+
 [??mining more / dining door]
 
 Ache App is a thing.
@@ -849,6 +855,8 @@ part Soft Sand 0,2
 
 Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here. [soft-or-loft].". [-> loft land]
 
+printed name of Soft Sand is "[if loft-land is true]Loft Land[else]Soft Sand[end if]".
+
 to say soft-or-loft:
 	if loft-land is false:
 		say "[if ever-loft is false]The sand feels unstable, not like it's going to swallow you up, but like it could become something else. There's also something to the west you can't reach by flying. It's just--up there[else]Or you could bring back the loft land[end if]";
@@ -899,7 +907,9 @@ fearful-on is a truth state that varies.
 
 part Shirk Shell -1,2 a
 
-Shirk Shell is a room in Piddling Pain. It is west of Soft Sand. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact."
+Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact."
+
+check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back." instead;
 
 the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy."
 
@@ -910,7 +920,7 @@ check taking jerk gel when jerk gel is in Shirk Shell:
 
 part Curst Cave -1,2 b
 
-Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-cave]."
+Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-cave][if worst wave is in curst cave]. A worst wave rushes about, leaving you feeling terrible[end if]."
 
 the worst wave is scenery in Curst Cave.
 
@@ -919,21 +929,11 @@ the screaming skull is a thing in Curst Cave.
 check taking screaming skull: say "You need to 'take' it figuratively." instead;
 
 to say tap-in-cave:
-	if tool tap is in Curst Cave, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]."
+	if tool tap is in Curst Cave, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]"
 
 the tool tap is scenery.
 
 the cool cap is a thing.
-
-chapter firstfaveing
-
-firstfaveing is an action applying to nothing.
-
-understand the command "firstfave" as something new.
-understand the command "first fave" as something new.
-
-understand "firstfave" as firstfaveing when player is in Curst Cave.
-understand "first fave" as firstfaveing.
 
 first-fave is a truth state that varies.
 
@@ -968,7 +968,7 @@ cap-cast is a truth state that varies.
 gap-go is a truth state that varies.
 
 check going north in Gassed Gap:
-	if Reeker Russell is off-stage, say "You haven't found the way, yet." instead;
+	if Reeker Russell is off-stage, say "Oh, it's much too intimidating[if gap-go is true], even though you have a courageous song in your head[end if]." instead;
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
 	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
 
@@ -2320,6 +2320,8 @@ check quitting the game: say "You say to yourself, not fully convinced, 'Best bi
 
 volume unsorted
 
+The cake cap is a thing.
+
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
 the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
@@ -2653,6 +2655,7 @@ carry out jerkingjumping:
 		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
 	now in-jerk-jump is true;
 	repeat through table of verb checks:
+		say "Processing [ver-rule entry].";
 		process the ver-rule entry;
 		if the rule succeeded:
 			say "[do-rule entry], bam.";
@@ -2737,6 +2740,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
 "meeker"	"muscle"	true	true	vc-meeker-muscle rule	vr-meeker-muscle rule	--
 "wood"	"one"	false	true	vc-wood-one rule	vr-wood-one rule	--
+"go"	"gappin"	false	true	vc-go-gappin rule	vr-go-gappin rule	--
 "lot"	"lord"	false	true	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
 "hot"	"horde"	false	true	vc-hot-horde rule	vr-hot-horde rule	--
 "got"	"gored"	false	true	vc-got-gored rule	vr-got-gored rule	--
@@ -2937,6 +2941,9 @@ this is the vc-cast-cap rule:
 	if cool cap is moot:
 		say "You already did.";
 		continue the action;
+	if player has hard hat or player has cake cap:
+		say "Neither the hard hat nor the cake cap seems right to cast. You need something even cooler.";
+		clue-later "CAST CAP";
 	if player does not have cool cap:
 		clue-later "CAST CAP";
 		say "You need a cap to cast!";
@@ -3130,9 +3137,10 @@ this is the vc-first-fave rule:
 	the rule succeeds;
 
 this is the vr-first-fave rule:
-	say "Suddenly, the worst wave isn't very bad or evil at all.";
+	say "Suddenly, the worst wave isn't very bad or evil at all. In fact, with a bit of time, it recedes to reveal a tool tap.";
 	now first-fave is true;
 	move tool tap to Curst Cave;
+	moot worst wave;
 	the rule succeeds;
 
 this is the vc-first-floor rule:
@@ -3241,6 +3249,17 @@ this is the vr-glow-glad rule:
 	now in-so-saded is true;
 	phbt Kerry Kyle;
 	the rule succeeds.
+
+this is the vc-go-gappin rule:
+	if player is not in gassed gap, the rule fails;
+	if gap-go is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-go-gappin rule:
+	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things.";
+	now gap-go is true;
 
 this is the vc-got-gored rule:
 	if player is not in airy isle or bot board is moot, the rule fails;
@@ -3430,7 +3449,7 @@ this is the vr-loft-land rule:
 	now zap-core-entry is true;
 	if ever-loft is false:
 		now ever-loft is true;
-		now loft-land is false;
+		now loft-land is true;
 	now Curst Cave is mapped west of Soft Sand;
 	now Soft Sand is mapped west of Curst Cave;
 	the rule succeeds;

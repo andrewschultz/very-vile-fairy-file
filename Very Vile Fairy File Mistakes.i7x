@@ -8,7 +8,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [stuff I haven't sorted yet:
 co capn
-go gappin
+no nappin
 so sappin
 turk tell
 knots/nots name
