@@ -467,7 +467,7 @@ understand "fact/finder" and "fact finder" as backed binder.
 
 section backed binder
 
-the backed binder is a thing. description is "The backed binder holds critical, but obscure, information on the Crimes Crew Times Two and how they made the Very Vile Fairy File. It's full of data. Maybe you'll figure what sort of data it's full of, and you'll know what to do with it."
+the backed binder is a thing. description is "The backed binder holds critical, but obscure, information on the Crimes Crew Times Two and how they made the Very Vile Fairy File. It's pretty high level stuff. The ideas sound grand, but they're not backed up by evidence."
 
 chapter Cark Cliff
 
@@ -543,9 +543,22 @@ the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a w
 
 part Fight Funnel -2,2
 
-Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]".
+Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else]. You can probably just fit west[end if]."
 
 funnel-to-tunnel is a truth state that varies.
+
+check going west in Fight Funnel:
+	if funnel-to-tunnel is false, say "You're not getting past the fight." instead;
+	if big bag is off-stage, say "You need to organize your possessions first. Maybe your inventory can be simplified." instead;
+	if kni-ni is true:
+		if beer bull is not in location of player, say "You need a very good reason not to set off the Knives Niche trap." instead;
+	if beer bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
+
+part Dives Ditch -3,2
+
+Dives Ditch is west of Fight Funnel. cht of Dives Ditch is letplus. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if].". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[end if]."
+
+kni-ni is a truth state that varies.
 
 part History Hall -2,1
 
@@ -2372,7 +2385,7 @@ the mild mead is a thing. description is "It probably tastes gross and is not ve
 
 part Pit Pound
 
-Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is true]Pit Pound[else]Grit Ground[end if]". [->sit sound]
+Pit Pound is a room in Piddling Pain. it is east of Foe Field. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". [->sit sound]
 
 A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". [->sit sound]
 
@@ -2589,6 +2602,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "mark"	"more"	false	true	vc-mark-more rule	vr-mark-more rule	--
 "cleared"	"clay"	true	true	vc-cleared-clay rule	vr-cleared-clay rule	--
 "tight"	"tunnel"	false	true	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
+"knives"	"niche"	false	true	vc-knives-niche rule	vr-knives-niche rule	--
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
@@ -2689,6 +2703,17 @@ this is the trimtramcmd rule:
 	now skim-not-flim is whether or not word number 1 in the player's command is "skim";
 
 section vc vr rules [xxvcvr]
+
+this is the vc-knives-niche rule:
+	if player is not in dives ditch, the rule fails;
+	if kni-ni is true:
+		say "You already changed the dives ditch.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-knives-niche rule:
+	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
+	now kni-ni is true;
 
 this is the vc-backed-binder rule:
 	if paper pile is not touchable, the rule fails;
