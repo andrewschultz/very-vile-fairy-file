@@ -25,7 +25,11 @@ So let's leave the Wet Wood. It seems like there's no way out, with what you kno
 
 > GET GOOD (1)
 
-Oops! You found your way out but fell into the Vined Vault, which seems to have no weaknesses.
+Okay, you found your way out but now you're blocked at the Rift River.
+
+> GIFT GIVER (1)
+
+Oops! You fell into the Vined Vault, which seems to have no weaknesses.
 
 > FIND FAULT (1)
 
@@ -62,6 +66,8 @@ You climb out of the Done Den to the Fun Fen, finished with the linear introduct
 Now about that zig zag rig rag. It can become something more useful. If you already tried to change it and got the right command, you should see a (+1) by your score. That signifies something you tried will work now.
 
 > BIG BAG (1)
+
+You don't need to do this right now, but why not...
 
 At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
 ==t1
@@ -116,41 +122,30 @@ There are a lot of ways to go in Creased Cross, but it's most helpful to go west
 
 > W
 
-History Hall has something to the west. It can also become something else, but let's deal with that later.
+Okay, that stark store is suspiciously empty.
+
+> DARK DOOR (1)
+
+Hmm. We can do something with the door.
+
+> MARK MORE (1)
+
+We don't need the weird way yet, but why not?
+
+> CLEARED CLAY (1)
 
 > W
 
-> LENDING LIBE (1)
-
-> E
-
-Erst Lore is too high up! How to bring it down?
-
-> FIRST FLOOR (1)
-
-> IN
-
-> S
-
-Let's deal with the Bard.
-
-> COLD CARD (1)
-
-The gold guard will be useful later.
-
-> N
-
-> OUT
-
-Now to replace History Hall for a bit.
+History Hall has something to the west, eventually. But it can also become something else.
 
 > MYSTERY MALL (1)
 
-There's something to listen to.
+"loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/brightening bridge"
 
 > LISTEN
 
-How to deal with the gutta ganksta?
+Oh, that's life. An even worse song crops up.
+
 ==t1
 \\
 You can get an additional optional point here for insulting the ganksta "cleverly."
@@ -161,15 +156,23 @@ And you can also deal with the horrible music that replaced what you heard.
 \\
 > DIMD (1)
 
-Notice the tattoos.
-
 > LOTS LAME (1)
+
+Oh, you can also use Toe Tappin one way quickly...
+
+> NO NAPPIN (1)
 
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
 
 > HARD HAT (1)
+
+> E
+
+> E
+
+> E
 
 > E
 
@@ -181,15 +184,11 @@ In the Shirk Shell, you need to do something to get the Jerk Gel.
 
 > WORK WELL (1)
 
-You probably need to spray the Jerk Gel on someone "worthy" later.
+The Jerk Gel is handy for other stuff later.
 
 > E
 
-Now you don't need to visit the Shirk Shell any more, so...
-
 > LOFT LAND (1)
-
-There's a new location to the west!
 
 > W
 
@@ -207,146 +206,151 @@ This will come in handy later.
 
 > E
 
-> N
-
-> SHOW SHIELD (1)
-
-> W
-
-You have the key, so...
-
-> MORAL MAGE (1)
-
-Let's go back east of the Creased Cross.
-
-> E
-
-> S
-
 > S
 
 > E
 
-> WAKE WHEE (1)
-
-You can try the two others for bonus points if you want.
-
-> E
-
-You can get rid of the Frightening Fridge.
+> SILENT SAIL (1)
 
 > BRIGHTENING BRIDGE (1)
 
-Now the whining war can become much better.
+> ENTER BOAT
 
-> SHINING SHORE (1)
+Jake G may help you.
 
-The Lake Lap puzzle is also optional, but it is not too hard.
+> WAKE WHEE (1)
 
-> SNAKE SNAP
+> TAKE TEA (1)
 
-> MAKE MAP
+> FAKE FEE (1)
 
-So now you have a handy map.
-
-> W
-
-> MYSTERY MALL
-
-You can twiddle back and forth as you need to.
-
-> W
-
-You should LISTEN in Mystery Mall. The song is useful later.
-
-This covers the shell and opens a new passage west.
-
-> W
-
-The screaming skull is annoying. You'll have to deal with it first.
-
-===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
-
-Now here's what you need to do with the snake.
+Now you can go east to Lake Lap.
 
 > SNAKE SNAP (1)
 
-And now you can focus on the map.
-
 > MAKE MAP (1)
 
-The Beer Bull in Here Hull is a potential ally.
+So now you have a handy map. But Jake won't help you if he's your co ... co ... well, something.
 
-> FEARFUL (1)
+> CO CAPN (1)
+
+You find the cake cap in Lake Lap. Jake gets his rake wrap and flake flap, and it's all good.
+
+> ENTER BOAT
+
+> MEAN MUGGIN (1)
+
+> LEAN LUGGIN (1)
+
+> ENTER BOAT
+
+Now you want to use the clay cloak.
 
 > W
 
+> W
+
+> W
+
+> W
+
+> HISTORY HALL
+
+> FIRST FLOOR (1)
+
 > S
 
+> SMASHING SMOKE (1)
+
+This gets you a cold card and a gold guard. It's not a hold hard gold guard yet, but you can fix that.
+
+> N
+
+> W
+
+> LENDING LIBE (1)
+
+Because you have the cold card, you get a useless book! Well, not so useless.
+
+Babbler Beta seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
+
+> DABBLER DATA (1)
+
+Bam! Now the Backed Binder makes sense.
+
+> E
+
 > E
 
 > E
 
-Now to dispose of the whining war, once and for all!
+> N
 
-> DEAR DULL (1)
+> N
 
-That does it for the beer. Now for the food!
+> W
 
-> DINING DOOR (1)
+> MORAL MAGE (1)
 
-And now you can see if there is anything under.
+>E
 
-> MINING MORE (1)
-
-Now the Pit Pound has two things you need to do. First, deal with the Hit Hound. It can smell fear!
+> E
 
 > SIT SOUND (1)
 
-Now, feel more comfortable.
-
 > FIT FOUND (1)
 
-When around someone or something you need to calm down...
+> E
 
-> SO SAPPIN (1)
-==t1
-\\
-> WILD WEED (1)
-\\
+> MINDING MAZE (1)
+
+> LUCK LAIR (1)
+
 > W
-\\
+
+> S
+
+> S
+
 > W
-\\
-> SPARK SPLIFF (1)
-\\
-============================END UNIMPLEMENTED MIDDLEGAME============================
+> D
+> W
+> TIGHT TUNNEL (1)
+> W
+> KNIVES NICHE (1)
+> E
+> U
+> E
+> N
+> E
+> DEAR DULL (1)
+> NEAR NULL (1)
+> W
+> S
+> W
+> D
+> W
+> W
 
-Now in Creased Cross, you are ready to take on the Beast Boss.
+Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who gives you the gold guard.
 
-##this will be deleted later once the walkthrough is complete. But I want to keep it for now, to verify the point totals for the partial walkthrough aren't off.
-==t1
-> BEAST BOSS (x-15)
-==!
-> BEAST BOSS (x-14)
+>W
 
-It will take something from you. But you don't know what!
+>S
+
+> BEAST BOSS (1)
 
 > LEAST LOSS (1)
 
-This hurt, and you need to figure a way to get back to full strength.
+>S
+>S
 
-> S
+>HEAL HERE (1)
 
-> S
+>N
+>N
 
-> HEAL HERE (1)
-
-> N
-
-> N
-
-Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
+This time, you know what to do, and you can defeat the bull beast with a magic word!
 
 > CULL CEASED (1)
 
@@ -354,13 +358,36 @@ That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
 > FULL FEAST (1)
 
-Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
+You can't take it, but maybe you can use it in the future.
 
-Now you sense you must be close. But how do you get anyone's attention?
+>E
+>E
 
-Your cool cap is useful here.
+> SO SAPPIN (1)
 
-> CAST CAP (1)
+> SHINING SHORE (1)
+
+>DINING DOOR (1)
+
+> PULL PIECED (1)
+
+>MINING MORE (1)
+
+Now you have a hold-hard gold guard, and you are ready for what is way north.
+
+>W
+>W
+>N
+>N
+
+>SHOW SHIELD (1)
+
+>N
+>GO GAPPIN (1)
+
+>COUPLE CAPS (1)
+
+>CAST CAP (1)
 
 You need to dispose of Reeker Russell and his good gun.
 ==t1
@@ -401,7 +428,7 @@ You can also say WHOA WAIT or WOE WAIT for full credit.
 
 Here in Tarry Tile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
-And the airy isle still feels woeful. That well worn hell horn!
+And the airy isle still feels woeful. That well worn hell horn! We should deal with that first.
 
 > TELL TORN (1)
 
@@ -414,3 +441,98 @@ This is something you may've seen right away, but it's the final thing you need 
 > BURY BILE (1)
 
 Congratulations. You win! I hope you enjoyed this.
+;
+> WAKE WHEE (1)
+
+You can try the two others for bonus points if you want.
+
+> E
+
+You can get rid of the Frightening Fridge.
+
+> BRIGHTENING BRIDGE (1)
+
+Now the whining war can become much better.
+
+The Lake Lap puzzle is also optional, but it is not too hard.
+
+> W
+
+> MYSTERY MALL (1)
+
+You can twiddle back and forth as you need to.
+
+> LISTEN
+
+Toe Tappin' Row Rappin' will be useful later. In many ways.
+
+> E
+
+> E
+
+> N
+
+> W
+
+> WORK WELL (1)
+
+You don't need the jerk gel for a while, but why not get it? The Shirk Shell is now complete.
+
+> E
+
+>LOFT LAND (1)
+
+Now there's somewhere new to the west.
+
+> W
+
+The screaming skull is annoying. You'll have to deal with it first.
+
+> DREAMING DULL (1)
+
+>
+===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
+
+> SO SAPPIN (1)
+==t1
+\\
+> WILD WEED (1)
+\\
+> W
+\\
+> W
+\\
+> SPARK SPLIFF (1)
+\\
+============================END UNIMPLEMENTED MIDDLEGAME============================
+
+Now in Creased Cross, you are ready to take on the Beast Boss.
+
+##this will be deleted later once the walkthrough is complete. But I want to keep it for now, to verify the point totals for the partial walkthrough aren't off.
+==t1
+> BEAST BOSS (x-15)
+==!
+> BEAST BOSS (x-14)
+
+It will take something from you. But you don't know what!
+
+> LEAST LOSS (1)
+
+This hurt, and you need to figure a way to get back to full strength.
+
+> S
+
+> S
+
+> HEAL HERE (1)
+
+> N
+
+> N
+
+Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
+
+Now you sense you must be close. But how do you get anyone's attention?
+
+Your cool cap is useful here.
+
