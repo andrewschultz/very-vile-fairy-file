@@ -509,7 +509,17 @@ healed-here is a truth state that varies.
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you sense it may need to be so much more, later. You can go in all four directions here.". cht of creased cross is letminus. [-> beast boss]
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if bull beast is moot]defeated the bull beast here, which was exciting[else]sense it may need to be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of creased cross is letminus. [-> beast boss]
+
+to say beast-clue:
+	if bull beast is not moot:
+		say "[if healed-here is true]You get the feeling the right cry could bring the bull beast out[else if least-loss is true]The bull beast must be waiting in the shadows[end if]";
+
+need-loss is a truth state that varies.
+
+instead of doing something when need-loss is true:
+	if action is procedural, continue the action;
+	say "You need to do something ... no chance of winning, but you can't be routed here.";
 
 chapter Bull Beast
 
@@ -564,6 +574,9 @@ check going west in Fight Funnel:
 			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! It tumbles into the remains of the Dives Ditch. You walk back to Here Hull, where a gear gull hands you a gold guard.";
 			now player has gold guard;
 			up-reg;
+			now in-bull-chase is false;
+			moot beer bull;
+			move player to Here Hull, without printing a room description;
 			the rule succeeds;
 		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
 		reset-bull-chase;
@@ -808,7 +821,15 @@ part Here Hull 1,2
 
 Here Hull is east of Soft Sand. It is in Piddling Pain. "You can go back east to Soft Sand here."
 
+check going west in here hull:
+	if bull-null is false and in-bull-chase is true:
+		say "The bull is too fast and strong. It tears you up. Maybe there was some way to weaken it. At least it slinks back to where it was, maybe saving another beating for later.[paragraph break]";
+		reset-bull-chase;
+		the rule succeeds;
+
 The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". [->fear ful]
+
+bull-null is a truth state that varies.
 
 in-bull-chase is a truth state that varies.
 
@@ -2668,7 +2689,6 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "cull|lul"	"ceased|least"	true	true	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
 "full"	"feast"	true	true	vc-full-feast rule	vr-full-feast rule	--
 "least"	"loss"	true	true	vc-least-loss rule	vr-least-loss rule	--
-"dear"	"dull"	true	true	vc-dear-dull rule	vr-dear-dull rule	--
 "loft"	"land"	false	true	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
 "soft"	"sand"	false	--	vc-soft-sand rule	vr-soft-sand rule	--
 "show"	"shield"	true	true	vc-show-shield rule	vr-show-shield rule	-- [start foe field]
@@ -2717,6 +2737,8 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "make"	"map"	false	true	vc-make-map rule	vr-make-map rule	--
 "snake"	"snap"	true	true	vc-snake-snap rule	vr-snake-snap rule	--
 "co"	"capn"	false	true	vc-co-capn rule	vr-co-capn rule	--
+"dear"	"dull"	true	true	vc-dear-dull rule	vr-dear-dull rule	--
+"near"	"null"	true	true	vc-near-null rule	vr-near-null rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -2781,46 +2803,6 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 
 section vc vr rules [xxvcvr]
 
-this is the vc-co-capn rule:
-	if jake g is not touchable, the rule fails;
-	if jake-fee is false:
-		say "Maybe once you established a bond with Jake, he could be a co-captain. But not yet.";
-		clue-later "CO CAPN";
-		continue the action;
-	if jake-cocapn is true:
-		say "You already did.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-co-capn rule:
-	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
-	now jake-cocapn is true;
-
-this is the vc-make-map rule:
-	if player is not in Lake Lap, the rule fails;
-	if jake-map is true:
-		say "You already did.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-make-map rule:
-	say "You make a map. As you do, you hear a hissing noise, as from a dangerous snake.";
-	now jake-map is true;
-
-this is the vc-snake-snap rule:
-	if player is not in Lake Lap, the rule fails;
-	if jake-cocapn is false:
-		say "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
-		clue-later "SNAKE SNAP";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-snake-snap rule:
-	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale.";
-	now player has cake cap;
-	move boring boat to Violent Vale;
-	move player to Violent Vale, without printing a room description;
-
 this is the vc-backed-binder rule:
 	if paper pile is not touchable, the rule fails;
 	the rule succeeds;
@@ -2862,6 +2844,7 @@ this is the vr-beast-boss rule:
 		continue the action;
 	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
 	move Bull Beast to Creased Cross;
+	now need-loss is true;
 	the rule succeeds.
 
 this is the vc-big-bag rule:
@@ -2988,6 +2971,21 @@ this is the vr-cleared-clay rule:
 	say "You concentrate on the weird way, which is, uh, weirder than trying to stat o clear it. But what do you know? It turns to clay that crumbles and goes away. You can go down now!";
 	moot weird way;
 
+this is the vc-co-capn rule:
+	if jake g is not touchable, the rule fails;
+	if jake-fee is false:
+		say "Maybe once you established a bond with Jake, he could be a co-captain. But not yet.";
+		clue-later "CO CAPN";
+		continue the action;
+	if jake-cocapn is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-co-capn rule:
+	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
+	now jake-cocapn is true;
+
 this is the vc-cold-card rule:
 	if player is not in Y'Old Yard, the rule fails;
 	if bold bard is moot:
@@ -3055,19 +3053,19 @@ this is the vr-deal-dear rule:
 	the rule succeeds.
 
 this is the vc-dear-dull rule:
-	if beer bull is not touchable, the rule fails;
-	if fearful-on is false:
-		say "No. The beer bull is too dull.";
+	if player is not in here hull, the rule fails;
+	if beer bull is moot:
+		say "Yeah, easy to say with the beer bull gone for good.";
 		continue the action;
-	if player is not in Whining War:
-		say "This isn't the right place to calm the beer bull down.";
+	if in-bull-chase is true:
+		say "You don't need to do any more taunting.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-dear-dull rule:
-	say "The beer bull settles down. Both sides of the Whining War cautiously approach. It's not very good beer, but it doesn't matter. They all get drunk. Once each side has had their fill, the bull wanders off." instead;
-	moot beer bull;
-	the rule succeeds.
+	now zap-core-entry is true;
+	say "The beer bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
+	now in-bull-chase is true.
 
 this is the vc-dimd rule:
 	if oi mo is not touchable, the rule fails;
@@ -3357,7 +3355,7 @@ this is the vc-heal-here rule:
 	if healed-here is true:
 		say "You already did.";
 		continue the action;
-	if 1 > 0:
+	if least-loss is false:
 		clue-later "HEAL HERE";
 		say "You don't have anything to heal from, yet[seer-sez].";
 		continue the action;
@@ -3447,14 +3445,14 @@ this is the vc-least-loss rule:
 		say "Not yet. You need to be in a fighting situation.";
 		continue the action;
 	if least-loss is true:
-		say "But then it wouldn't be the least loss any more.";
+		say "You already minimized your losses. Time to be more aggressive.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-least-loss rule:
+	now need-loss is false;
 	now least-loss is true;
-	say "BOOM! The Bull Beast, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive.";
-	the rule succeeds.
+	say "BOOM! The Bull Beast, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. You take a bruising, but you'll live. The bull beast skulks back to the shadows.";
 
 this is the vc-lending-libe rule:
 	if player is not in trending tribe, the rule fails;
@@ -3520,6 +3518,17 @@ this is the vr-luck-lair rule:
 	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.";
 	moot stuck stair;
 	now player has snuck snare;
+
+this is the vc-make-map rule:
+	if player is not in Lake Lap, the rule fails;
+	if jake-map is true:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-make-map rule:
+	say "You make a map. As you do, you hear a hissing noise, as from a dangerous snake.";
+	now jake-map is true;
 
 this is the vc-mark-more rule:
 	if player is not in stark store, the rule fails;
@@ -3690,6 +3699,18 @@ this is the vr-mystery-mall rule:
 	now zap-core-entry is true;
 	the rule succeeds;
 
+this is the vc-near-null rule:
+	if beer bull is not touchable, the rule succeeds;
+	if bull-null is true:
+		say "You already reduced the bull's power!";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-near-null rule:
+	now zap-core-entry is true;
+	say "The beer bull writhes and roars. It's still plenty powerful, but it's not supercharged.";
+	now bull-null is true;
+
 this is the vc-no-nappin rule:
 	if toe tappin row rappin is not touchable, the rule fails;
 	if nap-no is true:
@@ -3780,6 +3801,20 @@ this is the vc-smashing-smoke rule:
 this is the vr-smashing-smoke rule:
 	now zap-core-entry is true;
 	say "You have confused the bull beast for the moment!";
+
+this is the vc-snake-snap rule:
+	if player is not in Lake Lap, the rule fails;
+	if jake-cocapn is false:
+		say "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
+		clue-later "SNAKE SNAP";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-snake-snap rule:
+	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale.";
+	now player has cake cap;
+	move boring boat to Violent Vale;
+	move player to Violent Vale, without printing a room description;
 
 this is the vr-so-sappin rule:
 	say "It's not much, but it's a start. The whining grows steadily less.";

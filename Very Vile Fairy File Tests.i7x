@@ -30,93 +30,9 @@ test w6 with "w/w/w/w/history hall/first floor/s/smashing smoke/n/w/lending libe
 
 test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e" [set the trap for the bull]
 
-test w8 with "w/s/w/d/w/w/w/s/beast boss/least loss"
+test w8 with "dear dull/near null/w/s/w/d/w/w/s/beast boss/least loss/s/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
 
-test wa with "test w1/test w2/test w3/test w4/test w5/test w6".
-
-[
-> W
-> LENDING LIBE (1)
-> E
-> FIRST FLOOR (1)
-> IN
-> S
-> COLD CARD (1)
-> N
-> OUT
-]
-[> LOFT LAND (1)
-> W
-> DREAMING DULL (1)
-> FIRST FAVE (1)
-> COOL CAP (1)
-> E
-> N
-> SHOW SHIELD (1)
-> W
-> MORAL MAGE (1)
-> E
-> S
-> S
-> E
-> WAKE WHEE (1)
-> E
-> BRIGHTENING BRIDGE (1)
-> SHINING SHORE (1)
-> SNAKE SNAP
-> MAKE MAP
-> W
-> MYSTERY MALL (1)
-> LISTEN
-> E
-> E
-> N
-> W
-> WORK WELL (1)
-> E
->LOFT LAND (1)
-> W
-> DREAMING DULL (1)
->
-> SNAKE SNAP (1)
-> MAKE MAP (1)
-> FEARFUL (1)
-> W
-> S
-> E
-> E
-> DEAR DULL (1)
-> DINING DOOR (1)
-> MINING MORE (1)
-> SIT SOUND (1)
-> FIT FOUND (1)
-> SO SAPPIN (1)
-> WILD WEED (1)
-> W
-> W
-> SPARK SPLIFF (1)
-> BEAST BOSS (x-15)
-> BEAST BOSS (x-14)
-> LEAST LOSS (1)
-> S
-> S
-> HEAL HERE (1)
-> N
-> N
-> CULL CEASED (1)
-> FULL FEAST (1)
-> CAST CAP (1)
-> BEAKER BUSTLE (1)
-> MEEKER MUSCLE (1)
-> WOOD ONE (1)
-> N
-> HOT HORDE (1)
-> LOT LORD (1)
-> GOT GORED (1)
-> WHOAH WAIT (1)
-> TELL TORN (1)
-> MERRY MILE (1)
-> BURY BILE (1)]
+test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7".
 
 chapter beta jump
 
