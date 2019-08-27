@@ -961,10 +961,12 @@ printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end
 
 cap-cast is a truth state that varies.
 
+gap-go is a truth state that varies.
+
 check going north in Gassed Gap:
 	if Reeker Russell is off-stage, say "You haven't found the way, yet." instead;
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
-	say "You avoid the trap leading to the Vined Vault...";
+	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
 
 [?? trusty tap / crusty cap]
 
@@ -1175,7 +1177,7 @@ check listening:
 	if player is in History Hall:
 		if Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
-		say "A random song plays briefly: [next-rand-txt of table of miscellaneous people]." instead;
+		say "A random song plays briefly: [next-rand-txt of table of mall songs]." instead;
 	say "Nothing special."
 
 chapter thinking
@@ -2688,7 +2690,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
-"whatta"	"wanksta"	false	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" [?? this will create problems if we do it this way. It would be nice to say, if there is no | in w1 or w2, it's okay ]
+"whatta"	"wanksta"	true	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
 "first"	"floor"	false	true	vc-first-floor rule	vr-first-floor rule	--
 "glean"	"glows"	false	true	vc-glean-glows rule	vr-glean-glows rule	--
 "lending"	"libe"	false	true	vc-lending-libe rule	vr-lending-libe rule	-- [start trending tribe]
@@ -2734,17 +2736,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "stay"	"strong"	false	true	vc-stay-strong rule	vr-stay-strong rule	--
 "cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
 "smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
-
-this is the vc-minding-maze rule:
-	if player is not in blinding blaze, the rule fails;
-	if blaze-maze is true:
-		say "You already converted the blaze to a maze.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-minding-maze rule:
-	say "The blaze swirls but dies down. In its place is a huge minding maze.";
-	now blaze-maze is true;
+"mo"	"mappin"	true	true	vc-mo-mappin rule	vr-mo-mappin rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3141,6 +3133,21 @@ this is the vr-first-floor rule:
 	now History Hall is mapped outside Erst Lore;
 	the rule succeeds.
 
+this is the vc-flim-flam rule:
+	if player is not in trim tram, the rule fails;
+	if me-minded is false:
+		process the trimtramcmd rule;
+		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
+		clue-later-w "FLIM FLAM";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-flim-flam rule:
+	loop-note "FLIM FLAM/SKIM SCAM";
+	say "That does it! The tram moves off to a more open place...";
+	process the trimtramcmd rule;
+	move the player to Fun Fen;
+
 this is the vc-found-fit rule:
 	if player is not in pit pound, the rule fails;
 	if found-fit is true:
@@ -3156,21 +3163,6 @@ this is the vr-found-fit rule:
 	say "You feel comfortable here now. Wahoo!";
 	now found-fit is true;
 	the rule succeeds.
-
-this is the vc-flim-flam rule:
-	if player is not in trim tram, the rule fails;
-	if me-minded is false:
-		process the trimtramcmd rule;
-		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
-		clue-later-w "FLIM FLAM";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-flim-flam rule:
-	loop-note "FLIM FLAM/SKIM SCAM";
-	say "That does it! The tram moves off to a more open place...";
-	process the trimtramcmd rule;
-	move the player to Fun Fen;
 
 this is the vc-full-feast rule:
 	if Bull Beast is not in location of player, the rule fails;
@@ -3547,6 +3539,17 @@ this is the vr-mind-me rule:
 	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
 	now me-minded is true;
 
+this is the vc-minding-maze rule:
+	if player is not in blinding blaze, the rule fails;
+	if blaze-maze is true:
+		say "You already converted the blaze to a maze.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-minding-maze rule:
+	say "The blaze swirls but dies down. In its place is a huge minding maze.";
+	now blaze-maze is true;
+
 this is the vc-mining-more rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
 	abide by the shone-yet rule;
@@ -3556,6 +3559,25 @@ this is the vr-mining-more rule:
 	now mine-more is true;
 	say "You mine more, more, more.";
 	the rule succeeds.
+
+this is the vc-mo-mappin rule:
+	if player is not in blinding blaze, the rule fails;
+	if player does not have Toe Tappin Row Rappin:
+		clue-later "MO MAPPIN";
+		say "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
+	if blaze-maze is false:
+		clue-later "MO MAPPIN";
+		say "The blaze isn't mappable, but maybe something that replaces it is.";
+		continue the action;
+	if stuck stair is in blinding blaze:
+		say "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-mo-mappin rule:
+	say "Having a catchy tune like Toe Tappin Row Rappin in your head certainly helps you with mapping. And once you see the way through the maze, you don't forget it. At the end of the maze, there is a stuck stair. As you approach it, the maze walls collapse, and ... you find yourself very near the entrance. Convenient!";
+	move stuck stair to blinding blaze;
+	now maze-mapped is true;
 
 this is the vc-moral-mage rule:
 	if coral cage is not touchable, the rule fails;

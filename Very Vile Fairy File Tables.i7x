@@ -123,6 +123,7 @@ table of vvff books [xxbooks]
 randtxt
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
+"Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
 "Crew Came Grew Game"
 "Do, Dare: Woo! Where"
 "Fall For Stall Store"
@@ -133,6 +134,7 @@ randtxt
 "Hole Hound Bowl Bound"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
+"Men, Messed, Been Best, by Ren Rest"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"
 "Nag? No: Brag, Bro"
