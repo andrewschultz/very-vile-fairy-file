@@ -1392,7 +1392,7 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "Thanks to Wade Clarke for testing.";
+	say "First, thanks to Wade Clarke and Arthur DiBianca for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It helps writing be an adventure.";
 	say "Thanks to github for hosting private repositories that helped keep VVFF hidden.";
 	say "Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -2496,6 +2496,12 @@ ha-half is a truth state that varies.
 
 zap-core-entry is a truth state that varies.
 
+to up-which (ts - a truth state):
+	if ts is true:
+		up-reg;
+	else:
+		up-min;
+
 this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
@@ -2522,15 +2528,8 @@ this is the verb-checker rule:
 				if wfull-fail is true:
 					say "Ooh! You're close, but you juggled things up, somehow.";
 					the rule succeeds;
-				if there is a core entry: [I am cheating here to get a 3-way choice. Having something empty means you don't get a point, true means it's regular, false means it's optional]
-					if core entry is true:
-						up-reg;
-					else:
-						up-min;
+				if there is a core entry, up-which core entry;
 				process the do-rule entry;
-				if zap-core-entry is true:
-					blank out the core entry;
-					now zap-core-entry is false;
 				process the notify score changes rule;
 				skip upcoming rulebook break;
 				follow the every turn rules;
@@ -2543,6 +2542,25 @@ this is the verb-checker rule:
 			say "The HA HALF button lights up on your Leet Learner.";
 			the rule succeeds;
 
+next-lump-level is a number that varies. next-lump-level is 5.
+next-lump-delta is a number that varies. next-lump-delta is 4.
+lump-count is a number that varies. lump-count is 0.
+lump-charges is a number that varies. lump-charges is 0.
+
+to check-lump-progress:
+	increment lump-count;
+	if debug-state is true, say "[lump-count] of [next-lump-level].";
+	if lump-count is next-lump-level:
+		if player does not have lurking lump:
+			say "[if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you know that you can make a JERKING JUMP with it, if you are in the right place at the right time[else if lurking lump]Thwup!
+			A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
+			now player has lurking lump;
+		increment lump-charges;
+		increase next-lump-level by next-lump-delta;
+		now lump-count is 0;
+
+the lurking lump is a thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP if anything is baffling you."
+
 this is the mistake-checker rule:
 	repeat through table of mistake substitutions:
 		if the player's command matches mist-cmd entry:
@@ -2552,6 +2570,9 @@ this is the mistake-checker rule:
 				if there is a leet-rule entry:
 					process the leet-rule entry;
 					unless the rule succeeded, the rule succeeds;
+				if got-yet entry is false:
+					check-lump-progress;
+				now got-yet entry is true;
 				let d1 be -10;
 				let d2 be -10;
 				if there is a w1let entry:
@@ -2570,6 +2591,34 @@ to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number
 	if n1 is 0 and n2 < 0, decide on partminus; [yellow + red = orange]
 	if n1 < 0 and n2 < 0, decide on letminus; [red]
 	decide on letboth; [brown]
+
+section jerkingjumping
+
+jerkingjumping is an action applying to nothing.
+
+understand the command "jerking jump" as something new.
+
+understand "jerking jump" as jerkingjumping.
+
+carry out jerkingjumping:
+	if debug-state is false:
+		if lurking lump is off-stage, say "You have nothing that would help you do that." instead;
+		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
+	repeat through table of verb checks:
+		process the ver-rule entry;
+		if the rule succeeded:
+			say "[do-rule entry], bam.";
+			process the do-rule entry;
+			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place.]
+			if zap-core-entry is true:
+				blank out the core entry;
+				now zap-core-entry is false;
+			decrement lump-charges;
+			say "The lurking lump shrivels [if lump-charges is 0]and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
+			if lump-charges is 0, moot lurking lump;
+			the rule succeeds;
+	say "The lurking lump remains immovable. I guess you've done all you need, here.";
+	the rule succeeds.
 
 section verb check table
 
@@ -2828,8 +2877,7 @@ this is the vc-bury-bile rule:
 		too-generic;
 		say "It must be about the right time. But you are not quite there, yet.";
 		continue the action;
-	say "This situation tripped a BUG that should never happen. However, for the purpose of making sure you're not frozen out of winning the game, I'm going to let you slide by.";
-	the rule succeeds;
+	the rule fails;
 
 this is the vr-bury-bile rule:
 	now bile-buried is true;
