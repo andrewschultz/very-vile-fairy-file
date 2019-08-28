@@ -663,7 +663,7 @@ part Got Gear Hot Here -2,1 b
 
 Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. You can go back east here."
 
-chapter hardhating
+chapter hard hat
 
 the marred mat is a thing in Got Gear Hot Here. description is "What is a marred mat doing in a clothing store? Either it's misplaced, or ... it's more appropriate in another form. It has a message, of course.". "You can't imagine what a marred mat is doing in a clothing store, but here it is.".
 
@@ -672,6 +672,12 @@ check taking marred mat: say "It can't be useful in that form." instead;
 the hard hat is a thing.
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
+
+chapter shy shawl
+
+the shy shawl is a thing in Got Gear Hot Here. "A shy shawl lies here. It really can't be the sort of thing a hero wears, but maybe you can get some practice with it.". cht of shy shawl is leteq. description is "It is terribly plain, but [if trawl-try is true]you did[else]maybe you could[end if] get motivation from it."
+
+[?? mistakes]
 
 part Violent Vale 1,1
 
@@ -1892,7 +1898,6 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of big bag is big-bag-hint rule.
-the thing-hint-rule of lurking lump is lurking-lump-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
@@ -1921,6 +1926,7 @@ the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is leet-learner-hint rule.
 the thing-hint-rule of Lending Libe is lending-libe-hint rule.
 the thing-hint-rule of Lot Lord is bot-board-hint rule.
+the thing-hint-rule of lurking lump is lurking-lump-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
@@ -1979,9 +1985,6 @@ this is the big-bag-hint rule:
 
 this is the bold-bard-hint rule:
 	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
-
-this is the lurking-lump-hint rule:
-	say "The lurking lump can be used to bypass any available local puzzle with [jjj]."
 
 this is the bot-board-hint rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
@@ -2081,6 +2084,9 @@ this is the leet-learner-hint rule:
 
 this is the lending-libe-hint rule:
 	say "Now that you have the Lending Libe, you can take whatever books you need."
+
+this is the lurking-lump-hint rule:
+	say "The lurking lump can be used to bypass any available local puzzle with [jjj]."
 
 this is the marred-mat-hint rule:
 	say "[one of]The marred mat is in Got Gear Hot Here, suggesting maybe it can become something you can wear.[or]What can you wear that rhymes with mat?[or]HARD HAT.[stopping]"
@@ -2771,6 +2777,7 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "co"	"capn"	false	true	vc-co-capn rule	vr-co-capn rule	--
 "dear"	"dull"	true	true	vc-dear-dull rule	vr-dear-dull rule	--
 "near"	"null"	true	true	vc-near-null rule	vr-near-null rule	--
+"try"	"trawl"	true	false	vc-try-trawl rule	vr-try-trawl rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3950,6 +3957,17 @@ this is the vc-tight-tunnel rule:
 this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
+
+this is the vc-try-trawl rule:
+	if player is not in Got Gear Hot Here, the rule fails;
+		if trawl-try is true:
+			say "Trying isn't about trying the same thing over and over again. It's about trying in different, creative ways!";
+			continue the action;
+	the rule succeeds;
+
+this is the vr-try-trawl rule:
+	say "Yes, you want to try to deserve more than the shy shawl.";
+	now trawl-try is true;
 
 this is the vc-wake-whee rule:
 	if jake g is not touchable, the rule fails;
