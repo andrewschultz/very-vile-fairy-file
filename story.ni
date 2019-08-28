@@ -1226,6 +1226,9 @@ check requesting the score:
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0, say "[line break]You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh in words] still need[plur of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
+	if lurking lump is not off-stage:
+		let gguess be next-lump-level - lump-count;
+		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhyme[plur of gguess] way from it re[if lurking lump is moot]turn[else]charg[end if]ing.";
 	the rule succeeds;
 
 the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1362,9 +1365,11 @@ carry out verbsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan]. You can also use it to tweak other clues with [b]TWO TOO[r]/[b]DO DUE[r] or [b]HA HALF[r]/[b]NAH NAFF[r].";
-	if lurking lump is not off-stage, say "[2da]You can [b]JJ[r] or [b]JERKING JUMP[r] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
+	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	the rule succeeds.
+
+to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
 
 chapter creditsing
 
@@ -1864,6 +1869,7 @@ a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually
 the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of big bag is big-bag-hint rule.
+the thing-hint-rule of lurking lump is lurking-lump-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
@@ -1950,6 +1956,9 @@ this is the big-bag-hint rule:
 
 this is the bold-bard-hint rule:
 	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
+
+this is the lurking-lump-hint rule:
+	say "The lurking lump can be used to bypass any available local puzzle with [jjj]."
 
 this is the bot-board-hint rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
@@ -2564,13 +2573,13 @@ next-lump-level is a number that varies. next-lump-level is 5.
 next-lump-delta is a number that varies. next-lump-delta is 4.
 lump-count is a number that varies. lump-count is 0.
 lump-charges is a number that varies. lump-charges is 0.
+lump-uses is a number that varies. lump-uses is 0.
 
 to check-lump-progress:
 	increment lump-count;
-	if debug-state is true, say "[lump-count] of [next-lump-level].";
 	if lump-count is next-lump-level:
 		if player does not have lurking lump:
-			say "[if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you know that you can make a JERKING JUMP with it, if you are in the right place at the right time[else if lurking lump]Thwup!
+			say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj][else if lurking lump]Thwup!
 			A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 			now player has lurking lump;
 		increment lump-charges;
@@ -2638,9 +2647,10 @@ carry out jerkingjumping:
 				blank out the core entry;
 				now zap-core-entry is false;
 			decrement lump-charges;
-			say "The lurking lump shrivels [if lump-charges is 0]and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
+			say "[line break]The lurking lump shrivels [if lump-charges is 0]and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
 			if lump-charges is 0, moot lurking lump;
 			now in-jerk-jump is false;
+			increment lump-uses;
 			the rule succeeds;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.
