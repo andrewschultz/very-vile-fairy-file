@@ -2579,6 +2579,8 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 the clue half right words rule is listed first in the for printing a parser error rulebook.
 
 Rule for printing a parser error (this is the clue half right words rule):
+	if in-so-sad is true or in-way-wrong is true:
+		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 	abide by the verb-checker rule;
 	abide by the mistake-checker rule;
 	continue the action;
@@ -2616,6 +2618,8 @@ this is the verb-checker rule:
 			if the rule failed:
 				continue the action;
 			else if the rule succeeded:
+				if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
+				if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
 				if okflip entry is false:
 					unless the player's command matches the regular expression "^([w1 entry])\b": [this is for the DIM'D test case]
 						say "You've got it backwards! Just flip things around, and it'll be okay.";
@@ -2630,7 +2634,8 @@ this is the verb-checker rule:
 				now idid entry is true;
 				process the do-rule entry;
 				process the notify score changes rule;
-				skip upcoming rulebook break;
+				process the get-sad rule;
+				process the get-wrong rule;
 				follow the every turn rules;
 			process the note first think rule;
 			the rule succeeds;
@@ -2725,6 +2730,9 @@ carry out jerkingjumping:
 			if lump-charges is 0, moot lurking lump;
 			now in-jerk-jump is false;
 			increment lump-uses;
+			process the notify score changes rule;
+			process the get-sad rule;
+			process the get-wrong rule;
 			the rule succeeds;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.

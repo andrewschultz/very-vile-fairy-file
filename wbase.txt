@@ -80,20 +80,6 @@ The wry wall can also be deal with, sort of, for a bonus point. There are other 
 \\
 > LIE LOL (1)
 
-The hive heap is tough to search through, unless you ...
-
-> DIVE DEEP (1)
-
-Now the vapor (vile) needs to be removed.
-
-> PAPER PILE (1)
-
-And now the fact finder is not sturdy enough to pick up, because it needs a ...
-
-> BACKED BINDER (1)
-
-There's something to the south you can polish off.
-
 > S
 
 The Real Rear has several possibilities. The Sage Sea may bound you from going further, but it may turn up a useful item. First, you need to show respect to the Ceiling Seer.
@@ -115,6 +101,22 @@ A key! Keys always come in handy. There's one more thing you can do, but it will
 Now at Fun Fen, you can just tell the Tall Tree what to do.
 
 > FALL FREE (1)
+
+This opens up the way north, as well as other immediate possibilities.
+
+The hive heap is tough to search through, unless you ...
+
+> DIVE DEEP (1)
+
+Now the vapor (vile) needs to be removed.
+
+> PAPER PILE (1)
+
+And now the fact finder is not sturdy enough to pick up, because it needs a ...
+
+> BACKED BINDER (1)
+
+There's something to the south you can polish off.
 
 > N
 
@@ -139,8 +141,6 @@ We don't need the weird way yet, but why not?
 History Hall has something to the west, eventually. But it can also become something else.
 
 > MYSTERY MALL (1)
-
-"loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/brightening bridge"
 
 > LISTEN
 
@@ -167,8 +167,6 @@ Oh, you can also use Toe Tappin one way quickly...
 The marred mat doesn't look like it's worth buying, but ...
 
 > HARD HAT (1)
-
-> E
 
 > E
 
@@ -214,19 +212,25 @@ This will come in handy later.
 
 > BRIGHTENING BRIDGE (1)
 
+> BORING BOAT (1)
+
 > ENTER BOAT
 
-Jake G may help you.
+Jake G may help you. But he's asleep!
 
 > WAKE WHEE (1)
 
+Now he wants to give you hospitality.
+
 > TAKE TEA (1)
+
+Now he sort of expects payment...
 
 > FAKE FEE (1)
 
 Now you can go east to Lake Lap.
 
-> SNAKE SNAP (1)
+> E
 
 > MAKE MAP (1)
 
@@ -234,7 +238,13 @@ So now you have a handy map. But Jake won't help you if he's your co ... co ... 
 
 > CO CAPN (1)
 
+Now you two can take care of what is hissing.
+
+> SNAKE SNAP (1)
+
 You find the cake cap in Lake Lap. Jake gets his rake wrap and flake flap, and it's all good.
+
+You automatically are sent back to Violent Vale, but now you will go somewhere else if you enter the boat.
 
 > ENTER BOAT
 
@@ -252,19 +262,19 @@ Now you want to use the clay cloak.
 
 > W
 
-> W
+> GLEAN GLOWS
 
 > HISTORY HALL
 
 > FIRST FLOOR (1)
 
-> S
+> IN
 
 > SMASHING SMOKE (1)
 
 This gets you a cold card and a gold guard. It's not a hold hard gold guard yet, but you can fix that.
 
-> N
+> OUT
 
 > W
 
@@ -272,9 +282,9 @@ This gets you a cold card and a gold guard. It's not a hold hard gold guard yet,
 
 Because you have the cold card, you get a useless book! Well, not so useless.
 
-Babbler Beta seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
+Heft Hata' seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
 
-> DABBLER DATA (1)
+> DEFT DATA (1)
 
 Bam! Now the Backed Binder makes sense.
 
@@ -290,11 +300,17 @@ Bam! Now the Backed Binder makes sense.
 
 > W
 
+You have the key, but who is inside?
+
 > MORAL MAGE (1)
 
->E
+Aha! Now you've fully translated the backed binder. Now let's go exploring to the east.
 
 > E
+
+> E
+
+You need to dispel the hit hound and get comfortable.
 
 > SIT SOUND (1)
 
@@ -302,22 +318,37 @@ Bam! Now the Backed Binder makes sense.
 
 > E
 
+The blaze is a doozy. How to get something less lethal?
+
 > MINDING MAZE (1)
+
+Boy! Manually mapping would be no fun. A song would help...
+
+> MO MAPPIN (1)
+
+The stuck stair must go somewhere!
 
 > LUCK LAIR (1)
 
+Okay, that's enough here.
+
+Now to set a trap for a bit later...
+
 > W
-
+> W
 > S
-
 > S
-
 > W
 > D
-> W
+
 > TIGHT TUNNEL (1)
+
 > W
+
 > KNIVES NICHE (1)
+
+And now to find the poor sap to trap...
+
 > E
 > U
 > E
@@ -330,25 +361,23 @@ Bam! Now the Backed Binder makes sense.
 > W
 > D
 > W
+
+Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who gives you the gold guard. You can now (sort of) deal with the odd peace in creased cross.
+
 > W
-
-Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who gives you the gold guard.
-
->W
-
->S
+> S
 
 > BEAST BOSS (1)
 
 > LEAST LOSS (1)
 
->S
->S
+> S
+> S
 
->HEAL HERE (1)
+> HEAL HERE (1)
 
->N
->N
+> N
+> N
 
 This time, you know what to do, and you can defeat the bull beast with a magic word!
 
@@ -360,34 +389,34 @@ That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
 You can't take it, but maybe you can use it in the future.
 
->E
->E
+> E
+> E
 
 > SO SAPPIN (1)
 
 > SHINING SHORE (1)
 
->DINING DOOR (1)
+> DINING DOOR (1)
 
 > PULL PIECED (1)
 
->MINING MORE (1)
+> MINING MORE (1)
 
-Now you have a hold-hard gold guard, and you are ready for what is way north.
+Now you have a hold hard gold guard, and you are ready for what is way north.
 
->W
->W
->N
->N
+> W
+> W
+> N
+> N
 
->SHOW SHIELD (1)
+> SHOW SHIELD (1)
 
->N
->GO GAPPIN (1)
+> N
+> GO GAPPIN (1)
 
->COUPLE CAPS (1)
+> COUPLE CAPS (1)
 
->CAST CAP (1)
+> CAST CAP (1)
 
 You need to dispose of Reeker Russell and his good gun.
 ==t1
@@ -414,13 +443,13 @@ Oh my! The bot board is in the way. You need numbers to stand up to them.
 
 Okay, you need leadership too.
 
-> LOT LORD (1)
-
-Finally, you need a stirring battle cry.
-
 > GOT GORED (1)
 
 Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
+
+> LOT LORD (1)
+
+Finally, you need a stirring battle cry.
 
 > WHOAH WAIT (1)
 
@@ -441,98 +470,3 @@ This is something you may've seen right away, but it's the final thing you need 
 > BURY BILE (1)
 
 Congratulations. You win! I hope you enjoyed this.
-;
-> WAKE WHEE (1)
-
-You can try the two others for bonus points if you want.
-
-> E
-
-You can get rid of the Frightening Fridge.
-
-> BRIGHTENING BRIDGE (1)
-
-Now the whining war can become much better.
-
-The Lake Lap puzzle is also optional, but it is not too hard.
-
-> W
-
-> MYSTERY MALL (1)
-
-You can twiddle back and forth as you need to.
-
-> LISTEN
-
-Toe Tappin' Row Rappin' will be useful later. In many ways.
-
-> E
-
-> E
-
-> N
-
-> W
-
-> WORK WELL (1)
-
-You don't need the jerk gel for a while, but why not get it? The Shirk Shell is now complete.
-
-> E
-
->LOFT LAND (1)
-
-Now there's somewhere new to the west.
-
-> W
-
-The screaming skull is annoying. You'll have to deal with it first.
-
-> DREAMING DULL (1)
-
->
-===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
-
-> SO SAPPIN (1)
-==t1
-\\
-> WILD WEED (1)
-\\
-> W
-\\
-> W
-\\
-> SPARK SPLIFF (1)
-\\
-============================END UNIMPLEMENTED MIDDLEGAME============================
-
-Now in Creased Cross, you are ready to take on the Beast Boss.
-
-##this will be deleted later once the walkthrough is complete. But I want to keep it for now, to verify the point totals for the partial walkthrough aren't off.
-==t1
-> BEAST BOSS (x-15)
-==!
-> BEAST BOSS (x-14)
-
-It will take something from you. But you don't know what!
-
-> LEAST LOSS (1)
-
-This hurt, and you need to figure a way to get back to full strength.
-
-> S
-
-> S
-
-> HEAL HERE (1)
-
-> N
-
-> N
-
-Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
-
-Now you sense you must be close. But how do you get anyone's attention?
-
-Your cool cap is useful here.
-

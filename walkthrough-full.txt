@@ -9,21 +9,25 @@ So let's leave the Wet Wood. It seems like there's no way out, with what you kno
 
 > GET GOOD (1)
 
-Oops! You found your way out but fell into the Vined Vault, which seems to have no weaknesses.
+Okay, you found your way out but now you're blocked at the Rift River.
 
-> FIND FAULT (2)
+> GIFT GIVER (2)
+
+Oops! You fell into the Vined Vault, which seems to have no weaknesses.
+
+> FIND FAULT (3)
 
 But now you must deal with the Mean Mass.
 
-> GREEN GRASS (3)
+> GREEN GRASS (4)
 
 Now, ugh! The trash trap is so gross. You don't have the guts to face it, yet. Something about this room ... the Po' Pit ...
 
-> GROW GRIT (4)
+> GROW GRIT (5)
 
 Now there is the cache cap with something on it. There's the gash gap and trash trap. This suggests ...
 
-> MASH MAP (5)
+> MASH MAP (6)
 
 An alternative here would be to BASH BAP, which is obscure but still sensible.
 
@@ -31,13 +35,13 @@ After this, you've got one more room before you emerge aboveground.
 
 Now you need to fake your way into (not really) paying for a trip on the Trim Tram.
 
-> MIND ME (6)
+> MIND ME (7)
 
 Okay, you're focused! Now the trim tram needs you to pay to get it started.
 
 There are three ways.
 
-> FLIM FLAM (7)
+> FLIM FLAM (8)
 
 The alternatives: FLIMFLAM with no space, or you can also try a SKIM SCAM.
 
@@ -45,45 +49,33 @@ You climb out of the Done Den to the Fun Fen, finished with the linear introduct
 
 Now about that zig zag rig rag. It can become something more useful. If you already tried to change it and got the right command, you should see a (+1) by your score. That signifies something you tried will work now.
 
-> BIG BAG (8)
+> BIG BAG (9)
+
+You don't need to do this right now, but why not...
 
 At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
 
 Since the "wr" is pronounced as "r," and there is a prong part as you examine it, it may help to figure what to do.
 
-> STRONG START (9)
+> STRONG START (10)
 
 The wry wall can also be deal with, sort of, for a bonus point. There are other wry walls in future locations, and you can pick up this bonus point at any time. It's obviously all wrong, but how to say so?
 
-> LIE LOL (10)
-
-The hive heap is tough to search through, unless you ...
-
-> DIVE DEEP (11)
-
-Now the vapor (vile) needs to be removed.
-
-> PAPER PILE (12)
-
-And now the fact finder is not sturdy enough to pick up, because it needs a ...
-
-> BACKED BINDER (13)
-
-There's something to the south you can polish off.
+> LIE LOL (11)
 
 > S
 
 The Real Rear has several possibilities. The Sage Sea may bound you from going further, but it may turn up a useful item. First, you need to show respect to the Ceiling Seer.
 
-> KNEEL NEAR (14)
+> KNEEL NEAR (12)
 
 Now, you need to overcome obstacles to be worthy of the Sage Sea. Let's admit to one shortcoming ...
 
-> FEEL FEAR (15)
+> FEEL FEAR (13)
 
 ... and figure a way to go around it.
 
-> DEAL DEAR (16)
+> DEAL DEAR (14)
 
 A key! Keys always come in handy. There's one more thing you can do, but it will have to wait for later. You won't need it yet.
 
@@ -91,7 +83,23 @@ A key! Keys always come in handy. There's one more thing you can do, but it will
 
 Now at Fun Fen, you can just tell the Tall Tree what to do.
 
-> FALL FREE (17)
+> FALL FREE (15)
+
+This opens up the way north, as well as other immediate possibilities.
+
+The hive heap is tough to search through, unless you ...
+
+> DIVE DEEP (16)
+
+Now the vapor (vile) needs to be removed.
+
+> PAPER PILE (17)
+
+And now the fact finder is not sturdy enough to pick up, because it needs a ...
+
+> BACKED BINDER (18)
+
+There's something to the south you can polish off.
 
 > N
 
@@ -99,63 +107,55 @@ There are a lot of ways to go in Creased Cross, but it's most helpful to go west
 
 > W
 
-History Hall has something to the west. It can also become something else, but let's deal with that later.
+Okay, that stark store is suspiciously empty.
 
-> W
+> DARK DOOR (19)
 
-> LENDING LIBE (18)
+Hmm. We can do something with the door.
 
-> E
-
-Erst Lore is too high up! How to bring it down?
-
-> FIRST FLOOR (19)
-
-> IN
-
-> S
-
-Let's deal with the Bard.
-
-> COLD CARD (20)
+> MARK MORE (20)
 
 You feel tired and disappointed now. Way wrong. What to do?
 
 > STAY STRONG (21)
 
-The gold guard will be useful later.
+We don't need the weird way yet, but why not?
 
-> N
+> CLEARED CLAY (22)
 
-> OUT
+> W
 
-Now to replace History Hall for a bit.
+History Hall has something to the west, eventually. But it can also become something else.
 
-> MYSTERY MALL (22)
-
-There's something to listen to.
+> MYSTERY MALL (23)
 
 > LISTEN
 
-How to deal with the gutta ganksta?
+Oh, that's life. An even worse song crops up.
 
 You can get an additional optional point here for insulting the ganksta "cleverly."
 
-> WHATTA WANKSTA (23)
+> WHATTA WANKSTA (24)
 
 And you can also deal with the horrible music that replaced what you heard.
 
-> DIMD (24)
+> DIMD (25)
 
-Notice the tattoos.
+> LOTS LAME (26)
 
-> LOTS LAME (25)
+Oh, you can also use Toe Tappin one way quickly...
+
+> NO NAPPIN (27)
 
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
 
-> HARD HAT (26)
+> HARD HAT (28)
+
+> E
+
+> E
 
 > E
 
@@ -165,25 +165,13 @@ The marred mat doesn't look like it's worth buying, but ...
 
 In the Shirk Shell, you need to do something to get the Jerk Gel.
 
-> WORK WELL (27)
+> WORK WELL (29)
 
-You probably need to spray the Jerk Gel on someone "worthy" later.
+The Jerk Gel is handy for other stuff later.
 
 > E
 
-Now you don't need to visit the Shirk Shell any more, so...
-
-> LOFT LAND (28)
-
-There's a new location to the west!
-
-> W
-
-> DREAMING DULL (29)
-
-How to get rid of the worst wave in the curst cave?
-
-> FIRST FAVE (30)
+> LOFT LAND (30)
 
 You feel so sad, mo' mad.
 
@@ -191,177 +179,249 @@ How do you regain positivity?
 
 > GLOW GLAD (31)
 
+> W
+
+> DREAMING DULL (32)
+
+How to get rid of the worst wave in the curst cave?
+
+> FIRST FAVE (33)
+
 What can you get from the tool tap?
 
-> COOL CAP (32)
+> COOL CAP (34)
 
 This will come in handy later.
 
 > E
 
-> N
-
-> SHOW SHIELD (33)
-
-> W
-
-You have the key, so...
-
-> MORAL MAGE (34)
-
-Let's go back east of the Creased Cross.
-
-> E
-
-> S
-
 > S
 
 > E
 
-> WAKE WHEE (35)
-
-You can try the two others for bonus points if you want.
-
-> E
-
-You can get rid of the Frightening Fridge.
+> SILENT SAIL (35)
 
 > BRIGHTENING BRIDGE (36)
 
-Now the whining war can become much better.
+> BORING BOAT (37)
 
-> SHINING SHORE (37)
+> ENTER BOAT
 
-The Lake Lap puzzle is also optional, but it is not too hard.
+Jake G may help you. But he's asleep!
 
-> SNAKE SNAP
+> WAKE WHEE (38)
 
-> MAKE MAP
+Now he wants to give you hospitality.
 
-So now you have a handy map.
+> TAKE TEA (39)
+
+Now he sort of expects payment...
+
+> FAKE FEE (40)
+
+Now you can go east to Lake Lap.
+
+> E
+
+> MAKE MAP (41)
+
+So now you have a handy map. But Jake won't help you if he's your co ... co ... well, something.
+
+> CO CAPN (42)
+
+Now you two can take care of what is hissing.
+
+> SNAKE SNAP (43)
+
+You find the cake cap in Lake Lap. Jake gets his rake wrap and flake flap, and it's all good.
+
+You automatically are sent back to Violent Vale, but now you will go somewhere else if you enter the boat.
+
+> ENTER BOAT
+
+> MEAN MUGGIN (44)
+
+> LEAN LUGGIN (45)
+
+> ENTER BOAT
+
+Now you want to use the clay cloak.
 
 > W
 
-> MYSTERY MALL
-
-You can twiddle back and forth as you need to.
+> W
 
 > W
 
-You should LISTEN in Mystery Mall. The song is useful later.
+> GLEAN GLOWS
 
-This covers the shell and opens a new passage west.
+> HISTORY HALL
 
-> W
+> FIRST FLOOR (46)
 
-The screaming skull is annoying. You'll have to deal with it first.
+> IN
 
-===========================BEGIN UNIMPLEMENTED MIDDLEGAME===========================
+> SMASHING SMOKE (47)
 
-Now here's what you need to do with the snake.
+This gets you a cold card and a gold guard. It's not a hold hard gold guard yet, but you can fix that.
 
-> SNAKE SNAP (38)
-
-And now you can focus on the map.
-
-> MAKE MAP (39)
-
-The Beer Bull in Here Hull is a potential ally.
-
-> FEARFUL (40)
+> OUT
 
 > W
 
-> S
+> LENDING LIBE (48)
+
+Because you have the cold card, you get a useless book! Well, not so useless.
+
+Heft Hata' seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
+
+> DEFT DATA (49)
+
+Bam! Now the Backed Binder makes sense.
 
 > E
 
 > E
 
-Now to dispose of the whining war, once and for all!
-
-> DEAR DULL (41)
-
-That does it for the beer. Now for the food!
-
-> DINING DOOR (42)
-
-And now you can see if there is anything under.
-
-> MINING MORE (43)
-
-Now the Pit Pound has two things you need to do. First, deal with the Hit Hound. It can smell fear!
-
-> SIT SOUND (44)
-
-Now, feel more comfortable.
-
-> FIT FOUND (45)
-
-When around someone or something you need to calm down...
-
-> SO SAPPIN (46)
-
-> WILD WEED (47)
-
-> W
-
-> W
-
-> SPARK SPLIFF (48)
-
-============================END UNIMPLEMENTED MIDDLEGAME============================
-
-Now in Creased Cross, you are ready to take on the Beast Boss.
-
-> BEAST BOSS (49)
-
-It will take something from you. But you don't know what!
-
-> LEAST LOSS (50)
-
-This hurt, and you need to figure a way to get back to full strength.
-
-> S
-
-> S
-
-> HEAL HERE (51)
+> E
 
 > N
 
 > N
 
-Now the Bull Beast is really out of place here. It's been defeated. Maybe it can be made into something ...
+> W
 
-> CULL CEASED (52)
+You have the key, but who is inside?
+
+> MORAL MAGE (50)
+
+Aha! Now you've fully translated the backed binder. Now let's go exploring to the east.
+
+> E
+
+> E
+
+You need to dispel the hit hound and get comfortable.
+
+> SIT SOUND (51)
+
+> FIT FOUND (52)
+
+> E
+
+The blaze is a doozy. How to get something less lethal?
+
+> MINDING MAZE (53)
+
+Boy! Manually mapping would be no fun. A song would help...
+
+> MO MAPPIN (54)
+
+The stuck stair must go somewhere!
+
+> LUCK LAIR (55)
+
+Okay, that's enough here.
+
+Now to set a trap for a bit later...
+
+> W
+> W
+> S
+> S
+> W
+> D
+
+> TIGHT TUNNEL (56)
+
+> W
+
+> KNIVES NICHE (57)
+
+And now to find the poor sap to trap...
+
+> E
+> U
+> E
+> N
+> E
+> DEAR DULL (58)
+> NEAR NULL (59)
+> W
+> S
+> W
+> D
+> W
+
+Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who gives you the gold guard. You can now (sort of) deal with the odd peace in creased cross.
+
+> W
+> S
+
+> BEAST BOSS (60)
+
+> LEAST LOSS (61)
+
+> S
+> S
+
+> HEAL HERE (62)
+
+> N
+> N
+
+This time, you know what to do, and you can defeat the bull beast with a magic word!
+
+> CULL CEASED (63)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (53)
+> FULL FEAST (64)
 
-Woohoo! Everyone is happy! The Gassed Gap is now the Last Lap!
+You can't take it, but maybe you can use it in the future.
 
-Now you sense you must be close. But how do you get anyone's attention?
+> E
+> E
 
-Your cool cap is useful here.
+> SO SAPPIN (65)
 
-> CAST CAP (54)
+> SHINING SHORE (66)
+
+> DINING DOOR (67)
+
+> PULL PIECED (68)
+
+> MINING MORE (69)
+
+Now you have a hold hard gold guard, and you are ready for what is way north.
+
+> W
+> W
+> N
+> N
+
+> SHOW SHIELD (70)
+
+> N
+> GO GAPPIN (71)
+
+> COUPLE CAPS (72)
+
+> CAST CAP (73)
 
 You need to dispose of Reeker Russell and his good gun.
 
 There's an LLP in here. Let's pretend to make Russell dorkier.
 
-> BEAKER BUSTLE (55)
+> BEAKER BUSTLE (74)
 
 Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (56)
+> MEEKER MUSCLE (75)
 
 And the good gun can go lame.
 
-> WOOD ONE (57)
+> WOOD ONE (76)
 
 Now you are free to go north.
 
@@ -369,34 +429,34 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (58)
+> HOT HORDE (77)
 
 Okay, you need leadership too.
 
-> LOT LORD (59)
-
-Finally, you need a stirring battle cry.
-
-> GOT GORED (60)
+> GOT GORED (78)
 
 Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
 
-> WHOAH WAIT (61)
+> LOT LORD (79)
+
+Finally, you need a stirring battle cry.
+
+> WHOAH WAIT (80)
 
 You can also say WHOA WAIT or WOE WAIT for full credit.
 
 Here in Tarry Tile, you've found the very vile fairy file! But what to do with it? You hate it too much to touch it.
 
-And the airy isle still feels woeful. That well worn hell horn!
+And the airy isle still feels woeful. That well worn hell horn! We should deal with that first.
 
-> TELL TORN (62)
+> TELL TORN (81)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (63)
+> MERRY MILE (82)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (64)
+> BURY BILE (83)
 
 Congratulations. You win! I hope you enjoyed this.

@@ -19,26 +19,26 @@ chapter walkthrough
 test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
 test w1r with "get good/gift giver/find fault/green grass/bash bap/grow grit/mash map/flim flam/mind me/skim scam/big bag". [this is the intro]
 
-test w2 with "dive deep/paper pile/backed binder/s/kneel near/feel fear/deal dear/n/fall free/n". [real rear 1st try, plus get to Creased Cross]
-test w3 with "w/dark door/mark more/cleared clay/w/mystery mall/listen/lots lame/no nappin/w/hard hat/e/stay strong/e/e/n/w/work well/e". [get jerk gel, clear shirk shell]
+test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder/n". [real rear 1st try, plus get to Creased Cross]
+test w3 with "w/dark door/mark more/cleared clay/w/mystery mall/stay strong/listen/lots lame/no nappin/w/hard hat/e/e/e/n/w/work well/e". [get jerk gel, clear shirk shell]
 
-test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/brightening bridge/boring boat/no nappin/in" [get cap, take boat]
+test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/glow glad/brightening bridge/boring boat" [get cap, take boat]
 
-test w5 with "wake whee/z/glow glad/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat" [this is the boat quest]
+test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat" [this is the boat quest]
 
-test w6 with "w/w/w/w/history hall/first floor/s/smashing smoke/n/w/lending libe/dabbler data/e/e/e/n/n/w/moral mage" [release the moral mage]
+test w6 with "w/w/w/glean glows/history hall/first floor/in/smashing smoke/out/w/lending libe/deft data/e/e/e/n/n/w/moral mage" [release the moral mage]
 
 test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e" [set the trap for the bull]
 
-test w8 with "dear dull/near null/w/s/w/d/w/w/s/beast boss/least loss/s/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
+test w8 with "dear dull/near null/w/s/w/d/w/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
 
 test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more" [get the hold hard gold guard]
 
 test w10 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap/meeker muscle/wood one/n" [enter airy isle]
 
-test w11 with "hot horde/got gored/lot lord/got gored/whoah wait/merry mile/tell torn/merry mile/bury bile".
+test w11 with "hot horde/got gored/lot lord/whoah wait/tell torn/merry mile/bury bile".
 
-test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8".
+test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11".
 
 chapter beta jump
 
