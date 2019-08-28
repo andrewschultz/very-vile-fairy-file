@@ -7,7 +7,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 [too totes new notes]
 
 [stuff I haven't sorted yet:
-
+slow slappin
 woe whappin
 yo yappin
 turk tell

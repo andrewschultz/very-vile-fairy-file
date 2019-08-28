@@ -1044,6 +1044,29 @@ volume verbs
 
 book standard modifications
 
+chapter singing
+
+the block singing rule is not listed in any rulebook.
+
+check singing:
+	if toe tappin is moot, say "You have fond memories of the tunes [Toe] opened to you. It and the others are worth writing down when you get home, when you're not quite as tired of it. But you've done enough." instead;
+	if player does not have Toe Tappin, say "Nothing comes to mind. But perhaps the right song, if found, might help you in many ways." instead;
+	if nap-no is false, say "[Toe] bounces in your head, making you feel a little more awake. But maybe you can do better!" instead;
+	if gap-go is false and player is in Gassed Gap, say "You sing a song, internally, about passing the gap to the north." instead;
+	if jake-fee is true and jake-cocapn is false, say "You conjure up a song about you and Jake being cemented as equals." instead;
+	if maze-mapped is false and player is in blinding blaze and blaze-maze is true, say "You whistle a tune about going through the maze. It makes the usual boring methods seem more interesting." instead;
+	if player is in whining war and war-sapped is false, say "You whistle a tune about not wanting to complain any more, because it's too exhausting." instead;
+	say "[Toe] bounces around in your head but offers no new possibilities." instead;
+
+sing-clues is a number that varies.
+sing-max is a number that varies. sing-max is 5.
+
+this is the check-sing-max rule:
+	increment sing-clues;
+	if sing-clues is sing-max:
+		say "Suddenly, [Toe] feels played out. You'll enjoy it later, but not now. It's done its job, and it's out of your mind, for the moment.";
+		moot Toe Tappin Row Rappin;
+
 chapter dropping
 
 instead of dropping when number of entries in multiple object list > 1 (this is the don't allow dropping all rule):
@@ -2688,7 +2711,6 @@ w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
 "tight"	"tunnel"	false	true	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
 "knives"	"niche"	false	true	vc-knives-niche rule	vr-knives-niche rule	--
 "lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
-"so"	"sappin"	false	true	vc-so-sappin rule	vr-so-sappin rule	--
 "dimd"	--	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	true	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
 "first"	"floor"	false	true	vc-first-floor rule	vr-first-floor rule	--
@@ -2995,6 +3017,7 @@ this is the vc-co-capn rule:
 this is the vr-co-capn rule:
 	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
 	now jake-cocapn is true;
+	process the check-sing-max rule;
 
 this is the vc-cold-card rule:
 	if player is not in Y'Old Yard, the rule fails;
@@ -3300,6 +3323,7 @@ this is the vc-go-gappin rule:
 this is the vr-go-gappin rule:
 	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things.";
 	now gap-go is true;
+	process the check-sing-max rule;
 
 this is the vc-got-gored rule:
 	if player is not in airy isle or bot board is moot, the rule fails;
@@ -3673,6 +3697,7 @@ this is the vr-mo-mappin rule:
 	say "Having a catchy tune like Toe Tappin Row Rappin in your head certainly helps you with mapping. And once you see the way through the maze, you don't forget it. At the end of the maze, there is a stuck stair. As you approach it, the maze walls collapse, and ... you find yourself very near the entrance. Convenient!";
 	move stuck stair to blinding blaze;
 	now maze-mapped is true;
+	process the check-sing-max rule;
 
 this is the vc-moral-mage rule:
 	if coral cage is not touchable, the rule fails;
@@ -3732,6 +3757,7 @@ this is the vr-no-nappin rule:
 	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
 	say "[line break][if boat-reject is true and lake lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
 	now nap-no is true;
+	process the check-sing-max rule;
 
 this is the vc-paper-pile rule:
 	if vapor vile is not touchable, the rule fails;
@@ -3829,6 +3855,7 @@ this is the vr-snake-snap rule:
 this is the vr-so-sappin rule:
 	say "It's not much, but it's a start. The whining grows steadily less.";
 	now war-sapped is true;
+	process the check-sing-max rule;
 
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if war-sapped is true:
