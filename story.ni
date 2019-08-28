@@ -1,6 +1,17 @@
 "Very Vile Fairy File" by Billy Boling
 
-[SING Toe Tappin in your head to see if anything you can do]
+[commands skipped:
+dive deep.
+paper pile.
+backed binder.
+whatta wanksta.
+first floor.
+glean glows.
+lending libe.
+bumped buster.
+cold card.
+smashing smoke.
+]
 
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
@@ -643,27 +654,41 @@ gan-wan is a truth state that varies.
 
 floor-yet is a truth state that varies.
 
-part Erst Lore -2,0
-
-Erst Lore is a room in Piddling Pain.
-
 part Y'Old Yard -2,-1
 
-Y'Old Yard is south of Erst Lore. It is in Piddling Pain.
+Y'Old Yard is a room in Piddling Pain.
 
-The Bold Bard is a person in Y'Old Yard. talk-text of bold bard is "'Scold-scarred. Mold-marred.'".
+The Bold Bard is a person in Y'Old Yard. talk-text of bold bard is "'Scold-scarred. Told. Tarred.' The bold bard clearly wants to get into the Shoaled Shard but probably got thrown out by now-watchful guards.".
 
 the gold guard is a thing. printed name of gold guard is "[if mine-more is true]hold hard [end if]gold guard". description is "[if mine-more is false]Could be sturdier, actually[else]Super sturdy now you got the boost from the Whining War[end if]."
 
 the Shoaled Shard is scenery in Y'Old Yard.
 
+the cold card is a thing. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.".
+
 part Vending Vibe -2,1 a
 
 Vending Vibe is a room in Piddling Pain. "You can only go back east here."
 
-The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". [-> lending libe]
+The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW.". [-> lending libe]
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
+
+after going to Vending Vibe:
+	process the card-and-libe rule;
+	continue the action;
+
+this is the card-and-libe rule:
+	say "Tribe in [location of trending tribe]. Cold card in [location of cold card].";
+	if trending tribe is moot and player has cold card:
+		say "You look at your cold card for a minute. You realize that it's actually a library card! In fact, it has a book on hold! Unfortunately, the book is [Heft], about how to be a jerk. And you don't need that, being a hero. Still, you take it.";
+		now player has Heft Hata';
+		moot cold card;
+	continue the action;
+
+Heft Hata' is a thing. description is "It's about how to be an extremely effective jerk. Why would you want to know that?".
+
+deft-data is a truth state that varies.
 
 part Got Gear Hot Here -2,1 b
 
@@ -960,6 +985,15 @@ check going north in Gassed Gap:
 	if Reeker Russell is off-stage, say "Oh, it's much too intimidating[if gap-go is true], even though you have a courageous song in your head[end if]." instead;
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
 	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
+	unless got-the-evidence, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
+	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. Heft Hata['] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
+
+to decide whether got-the-evidence:
+	if debug-state is true, say "Binder: [whether or not player has binder] Hata: [deft-data] Mage: [whether or not coral cage is moot].";
+	if player does not have backed binder, no;
+	if deft-data is false, no;
+	if coral cage is not moot, no;
+	yes;
 
 [?? trusty tap / crusty cap]
 
@@ -1133,6 +1167,8 @@ check talktoing:
 chapter inventory
 
 after printing the name of jerk gel while taking inventory: say " (glowing globs)";
+
+after printing the name of Heft Hata' while taking inventory: if deft-data is true, say " (with deft data derived)"
 
 check taking inventory:
 	if player has big bag, say "Boy! You can carry all you need with your big bag![paragraph break]";
@@ -1663,7 +1699,6 @@ room-hint-rule of Been Buggin' is been-buggin-hint rule.
 room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
 room-hint-rule of Dives Ditch is dives-ditch-hint rule.
-room-hint-rule of Erst Lore is erst-lore-hint rule.
 room-hint-rule of Fight Funnel is fight-funnel-hint rule.
 room-hint-rule of Foe Field is foe-field-so-sealed-hint rule.
 room-hint-rule of Fun Fen is fun-fen-hint rule.
@@ -1723,10 +1758,6 @@ this is the curst-cave-hint rule:
 this is the dives-ditch-hint rule:
 	if kni-ni is true, the rule fails;
 	say "[one of]Set up a subtler trap.[or]KNIVES NICHE.[stopping]";
-
-this is the erst-lore-hint rule:
-	say "I think I'll need to fix this later, but for now, there's nothing to do.";
-	the rule fails.
 
 this is the fight-funnel-hint rule:
 	if funnel-to-tunnel is true, the rule fails;
@@ -2609,6 +2640,7 @@ this is the verb-checker rule:
 			if debug-state is true, say "[ver-rule entry] tipped off the HA HALF button.";
 			say "The HA HALF button lights up on your Leet Learner.";
 			the rule succeeds;
+	if debug-state is true, say "OOPS if we're not in a test.";
 
 next-lump-level is a number that varies. next-lump-level is 5.
 next-lump-delta is a number that varies. next-lump-delta is 4.
@@ -2730,12 +2762,16 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
 "knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--
 "lots"	"lame"	false	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
+"no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
 "dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule
-"whatta"	"wanksta"	true	true	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
+"whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
 "first"	"floor"	false	true	false	vc-first-floor rule	vr-first-floor rule	--
 "glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
-"lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start trending tribe]
+"smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	-- [start Y'Old Yard]
+"lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start vending vibe]
+"deft|defd"	"data"	false	true	false	vc-deft-data rule	vr-deft-data rule	--
 "hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
+"try"	"trawl"	true	false	false	vc-try-trawl rule	vr-try-trawl rule	--
 "beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
 "cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
 "full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
@@ -2748,24 +2784,36 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "first"	"fave"	false	true	false	vc-first-fave rule	vr-first-fave rule	--
 "moral"	"mage"	false	true	false	vc-moral-mage rule	vr-moral-mage rule	--
 "work"	"well"	true	true	false	vc-work-well rule	vr-work-well rule	-- [start shirk shell]
+"dear"	"dull"	true	true	false	vc-dear-dull rule	vr-dear-dull rule	-- [start here hull]
+"near"	"null"	true	true	false	vc-near-null rule	vr-near-null rule	--
 "sit"	"sound"	false	true	false	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
 "fit"	"found"	true	true	false	vc-found-fit rule	vr-found-fit rule	--
 "minding"	"maze"	false	true	false	vc-minding-maze rule	vr-minding-maze rule	-- [start blinding blaze]
+"mo"	"mappin"	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--
 "luck|snuck"	"lair|snare"	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
 "brightening"	"bridge"	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
 "silent"	"sail|sale"	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--
 "boring"	"boat"	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--
 "wake"	"whee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
-"shining"	"shore"	false	true	false	vc-shining-shore rule	vr-shining-shore rule	-- [start whining war]
+"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
+"take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
+"break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
+"make"	"map"	false	true	false	vc-make-map rule	vr-make-map rule	-- [start Lake Lap]
+"snake"	"snap"	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--
+"co"	"capn"	false	true	false	vc-co-capn rule	vr-co-capn rule	--
+"so"	"sappin"	true	true	false	vc-so-sappin rule	vr-so-sappin rule	-- [start whining war]
+"shining"	"shore"	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--
 "mining"	"more"	true	true	false	vc-mining-more rule	vr-mining-more rule	--
 "dining"	"door"	false	true	false	vc-dining-door rule	vr-dining-door rule	--
 "mean"	"muggin"	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--
 "lean"	"luggin"	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--
+"pull"	"pieced"	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--
 "cast"	"cap"	false	true	false	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
 "beaker"	"bustle"	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
 "meeker"	"muscle"	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--
 "wood"	"one"	false	true	false	vc-wood-one rule	vr-wood-one rule	--
 "go"	"gappin"	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--
+"couple"	"caps"	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--
 "lot"	"lord"	false	true	false	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
 "hot"	"horde"	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--
 "got"	"gored"	false	true	false	vc-got-gored rule	vr-got-gored rule	--
@@ -2773,59 +2821,10 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
 "merry"	"mile"	false	true	false	vc-merrymile rule	vr-merrymile rule	--
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
-"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
-"bumped"	"buster"	true	true	false	vc-bumped-buster rule	vr-bumped-buster rule	--
 "glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
 "stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--
-"cold"	"card"	false	true	false	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
-"smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	--
-"mo"	"mappin"	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--
-"so"	"sappin"	true	true	false	vc-so-sappin rule	vr-so-sappin rule	--
-"no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
-"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
-"take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
-"break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
-"make"	"map"	false	true	false	vc-make-map rule	vr-make-map rule	--
-"snake"	"snap"	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--
-"co"	"capn"	false	true	false	vc-co-capn rule	vr-co-capn rule	--
-"dear"	"dull"	true	true	false	vc-dear-dull rule	vr-dear-dull rule	--
-"near"	"null"	true	true	false	vc-near-null rule	vr-near-null rule	--
-"try"	"trawl"	true	false	false	vc-try-trawl rule	vr-try-trawl rule	--
-"pull"	"pieced"	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--
-"couple"	"caps"	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--
-
-this is the vc-couple-caps rule:
-	if player does not have jerk gel, the rule fails;
-	let N be number of gaphats enclosed by the player;
-	if N is 3, the rule succeeds;
-	if N is 2:
-		say "Hmm. You may need one more cap, or hat.";
-	else if N is 1:
-		say "You need at least one more hat to couple the CAPS.";
-	else if N is 0:
-		say "You have no caps to couple. Maybe one day, though...";
-	continue the action;
-
-this is the vr-couple-caps rule:
-	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
-	now extra-cool-cap is true;
-
-this is the vc-pull-pieced rule:
-	if full feast is not in Creased Cross, the rule fails;
-	if shore-shine is false:
-		say "You're not sure where you could pull the full feast to, yet.";
-		clue-later "PULL PIECED";
-		continue the action;
-	if dine-door is false:
-		clue-later "PULL PIECED";
-		say "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-pull-pieced rule:
-	say "With the help of the Fining Four, you pull the full feast that was the bull beast to the Shining Shore. There, you have a very good feast. They're happy. They are quite ready to help you now.";
-	moot full feast;
-	move player to Whining War, without printing a room description;
+"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of unplaced]
+"bumped"	"buster"	true	true	false	vc-bumped-buster rule	vr-bumped-buster rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3033,6 +3032,7 @@ this is the vr-bury-bile rule:
 	win-the-game;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
 	end the game in victory;
+	follow the shutdown rules;
 	the rule succeeds;
 
 this is the vc-cast-cap rule:
@@ -3086,19 +3086,6 @@ this is the vr-co-capn rule:
 	now jake-cocapn is true;
 	process the check-sing-max rule;
 
-this is the vc-cold-card rule:
-	if player is not in Y'Old Yard, the rule fails;
-	if bold bard is moot:
-		say "You already helped the Bold Bard.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-cold-card rule:
-	say "'Now that's a swap!' The Bold Bard hands you some armor he won't need. At least, you hope his music is good enough, he won't need it.";
-	moot Bold Bard;
-	now player has gold guard;
-	the rule succeeds.
-
 this is the vr-cool-cap rule:
 	say "What do you know? A cool cap DOES come out.";
 	now player has cool cap;
@@ -3107,6 +3094,22 @@ this is the vr-cool-cap rule:
 this is the vc-cool-cap rule:  [?? YOULL YAP / CRUEL CRAP !!!!!]
 	if tool tap is not touchable, the rule fails;
 	the rule succeeds;
+
+this is the vc-couple-caps rule:
+	if player does not have jerk gel, the rule fails;
+	let N be number of gaphats enclosed by the player;
+	if N is 3, the rule succeeds;
+	if N is 2:
+		say "Hmm. You may need one more cap, or hat.";
+	else if N is 1:
+		say "You need at least one more hat to couple the CAPS.";
+	else if N is 0:
+		say "You have no caps to couple. Maybe one day, though...";
+	continue the action;
+
+this is the vr-couple-caps rule:
+	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
+	now extra-cool-cap is true;
 
 this is the vc-cull-ceased rule:
 	if Bull Beast is not touchable, the rule fails;
@@ -3166,6 +3169,17 @@ this is the vr-dear-dull rule:
 	now zap-core-entry is true;
 	say "The beer bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
 	now in-bull-chase is true.
+
+this is the vc-deft-data rule:
+	if player does not have Heft Hata', the rule fails;
+	if deft-data is true:
+		say "You already got the data you needed.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-deft-data rule:
+	say "A closer reading of Heft Hata['] reveals that you don't need to be a jerk to learn from it. You can learn about the games jerks play and how to expect and deflect them. It seems like grappling with this sort of thing without fighting it would be useful for dealing with the Very Vile Fairy File.";
+	now deft-data is true;
 
 this is the vc-dimd rule:
 	if oi mo is not touchable, the rule fails;
@@ -3282,8 +3296,8 @@ this is the vc-first-floor rule:
 
 this is the vr-first-floor rule:
 	say "Erst Lore, up on the ceiling, comes [one of][or]back [stopping]down. You can go IN, now.";
-	now Erst Lore is mapped inside History Hall;
-	now History Hall is mapped outside Erst Lore;
+	now Y'Old Yard is mapped inside History Hall;
+	now History Hall is mapped outside Y'Old Yard;
 	the rule succeeds.
 
 this is the vc-flim-flam rule:
@@ -3557,7 +3571,7 @@ this is the vr-least-loss rule:
 	say "BOOM! The Bull Beast, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. You take a bruising, but you'll live. The bull beast skulks back to the shadows.";
 
 this is the vc-lending-libe rule:
-	if player is not in trending tribe, the rule fails;
+	if player is not in vending vibe, the rule fails;
 	if trending tribe is moot:
 		say "Yes. This is the place's new name. You already disposed of the trending tribe.";
 		continue the action;
@@ -3568,6 +3582,7 @@ this is the vr-lending-libe rule:
 	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
 	now printed name of Vending Vibe is "Lending Libe";
 	move lending libe to Vending Vibe;
+	process the card-and-libe rule;
 	the rule succeeds.
 
 this is the vc-loft-land rule:
@@ -3776,7 +3791,7 @@ this is the vc-moral-mage rule:
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
-	say "The inner bars of the coral cage crumble. The moral mage thanks you.";
+	say "The inner bars of the coral cage crumble. The moral mage thanks you and explains to you some interesting details about the Very Vile Fairy File, its powers, and the people behind it. You feel your resolve increase.";
 	moot coral cage;
 	the rule succeeds.
 
@@ -3835,6 +3850,23 @@ this is the vr-paper-pile rule:
 	say "The vapor vile changes to a paper pile.";
 	moot vapor vile;
 	bring-here paper pile;
+
+this is the vc-pull-pieced rule:
+	if full feast is not in Creased Cross, the rule fails;
+	if shore-shine is false:
+		say "You're not sure where you could pull the full feast to, yet.";
+		clue-later "PULL PIECED";
+		continue the action;
+	if dine-door is false:
+		clue-later "PULL PIECED";
+		say "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-pull-pieced rule:
+	say "With the help of the Fining Four, you pull the full feast that was the bull beast to the Shining Shore. There, you have a very good feast. They're happy. They are quite ready to help you now.";
+	moot full feast;
+	move player to Whining War, without printing a room description;
 
 this is the vc-shining-shore rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
@@ -3897,17 +3929,20 @@ this is the vr-sit-sound rule:
 
 this is the vc-smashing-smoke rule:
 	if player does not have clashing cloak, the rule fails;
-	if beer bull is not in location of player:
-		say "Nobody or nothing to flee from.";
+	if beer bull is in location of player:
+		say "That's not enough to distract the Beer Bull for good.";
+		clue-later "SMASHING SMOKE";
 		continue the action;
-	if player is not in violent vale:
-		say "That might cause a distraction, but you can't think of anything to do here.";
+	if player is not in Y'Old Yard:
+		say "You don't seem to need to make a disturbance here.";
+		clue-later "SMASHING SMOKE";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-smashing-smoke rule:
-	now zap-core-entry is true;
-	say "You have confused the bull beast for the moment!";
+	say "The Bold Bard tosses you a cold card quickly as thanks before makes his way into the Shoaled Shard in the confusion! You hear shouting in there. The Bard has -- certanly made an impression. You hope it is a good one. Your clashing cloak went up in the smoke, but eh, it was sort of tacky anyway.";
+	moot bold bard;
+	now player has cold card;
 
 this is the vc-snake-snap rule:
 	if player is not in Lake Lap, the rule fails;
@@ -4061,8 +4096,7 @@ this is the vc-whoa-wait rule:
 	the rule succeeds;
 
 this is the vr-whoa-wait rule:
-	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.";
-	wfak;
+	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.[wfak]";
 	move player to Tarry Tile;
 	now min-needed is score + 3;
 	now maximum score is score + 3;
@@ -4225,7 +4259,7 @@ index map with Vined Vault mapped south of Wet Wood.
 
 section odd directions
 
-index map with Erst Lore mapped south of Got Gear Hot Here.
+index map with Y'Old Yard mapped south of Got Gear Hot Here.
 
 section endrooms
 
