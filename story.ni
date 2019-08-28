@@ -1,5 +1,7 @@
 "Very Vile Fairy File" by Billy Boling
 
+[d'oh done fo' fun]
+
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 [implement help toggling: HELP HOW/WELP WOW]
@@ -575,12 +577,15 @@ check going west in Fight Funnel:
 	process the drop-snare rule;
 	if beer bull is in location of player:
 		if snuck snare is moot:
-			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! It tumbles into the remains of the Dives Ditch. You walk back to Here Hull, where a gear gull hands you a gold guard.";
-			now player has gold guard;
+			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! It tumbles into the remains of the Dives Ditch. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
+			if player has gold guard:
+				buff-gold-guard;
+			else:
+				say "[line break]'I see no armor I could help improve. Come back when you find it. But for now, I need time to reorganize my domain.'";
 			up-reg;
 			now in-bull-chase is false;
 			moot beer bull;
-			move player to Here Hull, without printing a room description;
+			move player to Soft Sand, without printing a room description;
 			the rule succeeds;
 		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
 		reset-bull-chase;
@@ -645,13 +650,21 @@ floor-yet is a truth state that varies.
 
 part Y'Old Yard -2,-1
 
-Y'Old Yard is a room in Piddling Pain.
+Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. You can go back INSIDE to the History Hall[if bold bard is moot], and with the Bold Bard gone, there's nothing else to do[end if]."
 
-The Bold Bard is a person in Y'Old Yard. talk-text of bold bard is "'Scold-scarred. Told. Tarred.' The bold bard clearly wants to get into the Shoaled Shard but probably got thrown out by now-watchful guards.".
+The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a bold bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard.[stopping]"
 
-the gold guard is a thing. printed name of gold guard is "[if mine-more is true]hold hard [end if]gold guard". description is "[if mine-more is false]Could be sturdier, actually[else]Super sturdy now you got the boost from the Whining War[end if]."
+talk-text of bold bard is "'Scold-scarred. Told. Tarred.' The bold bard clearly wants to get into the Shoaled Shard but probably got thrown out by now-watchful guards. You both decide some sort of sneak attack or diversion would be best.".
 
-the Shoaled Shard is scenery in Y'Old Yard.
+chapter gold guard
+
+the mold marred gold guard is a thing. description is "[if mine-more is false]Could be sturdier, actually[else]Super sturdy now you got the boost from the Whining War[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
+
+understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when mine-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
+
+chapter shoaled shard
+
+the Shoaled Shard is scenery in Y'Old Yard. "It's intimidating and obviously well-guarded, but it could be breached with the right distraction."
 
 the cold card is a thing. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.".
 
@@ -846,9 +859,23 @@ loft-land is a truth state that varies.
 check going west in Soft Sand:
 	if loft-land is false and jerk gel is not in Shirk Shell, say "The smirk smell is too repulsive. You can't go back. But you got the jerk gel, and that's enough." instead;
 
+check going east in Soft Sand:
+	if gull-guard is true, say "You already got what you wanted from Here Hull and the Gear Gull. You must confront things more ... fearful." instead;
+	if player has gold guard and beer bull is moot:
+		say "As you go east, the Gear Gull inspects your mold-marred gold guard. 'I can do something now.'";
+		buff-gold-guard;
+		the rule succeeds;
+
 part Here Hull 1,2
 
 Here Hull is east of Soft Sand. It is in Piddling Pain. "You can go back east to Soft Sand here."
+
+gull-guard is a truth state that varies.
+
+to buff-gold-guard:
+	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal.[wfak]";
+	now gull-guard is true;
+	move player to Soft Sand;
 
 check going west in here hull:
 	if bull-null is false and in-bull-chase is true:
@@ -2931,6 +2958,10 @@ this is the vc-beast-boss rule:
 		say "You don't feel armed for that, yet.";
 		clue-later "BEAST BOSS";
 		continue the action;
+	if gull-guard is false:
+		say "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
+		clue-later "BEAST BOSS";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-beast-boss rule:
@@ -3088,14 +3119,14 @@ this is the vr-co-capn rule:
 	now jake-cocapn is true;
 	process the check-sing-max rule;
 
+this is the vc-cool-cap rule:
+	if tool tap is not touchable, the rule fails;
+	the rule succeeds;  [?? YOULL YAP / CRUEL CRAP !!!!!]
+
 this is the vr-cool-cap rule:
 	say "What do you know? A cool cap DOES come out.";
 	now player has cool cap;
 	the rule succeeds.
-
-this is the vc-cool-cap rule:  [?? YOULL YAP / CRUEL CRAP !!!!!]
-	if tool tap is not touchable, the rule fails;
-	the rule succeeds;
 
 this is the vc-couple-caps rule:
 	if player does not have jerk gel, the rule fails;
@@ -3948,6 +3979,7 @@ this is the vr-smashing-smoke rule:
 	say "The Bold Bard tosses you a cold card quickly as thanks before makes his way into the Shoaled Shard in the confusion! You hear shouting in there. The Bard has -- certanly made an impression. You hope it is a good one. Your clashing cloak went up in the smoke, but eh, it was sort of tacky anyway.";
 	moot bold bard;
 	now player has cold card;
+	now player has gold guard;
 
 this is the vc-snake-snap rule:
 	if player is not in Lake Lap, the rule fails;
@@ -3963,11 +3995,6 @@ this is the vr-snake-snap rule:
 	move boring boat to Violent Vale;
 	move player to Violent Vale, without printing a room description;
 
-this is the vr-so-sappin rule:
-	say "It's not much, but it's a start. The whining grows steadily less.";
-	now war-sapped is true;
-	process the check-sing-max rule;
-
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if war-sapped is true:
 		say "You already did.";
@@ -3976,6 +4003,11 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 		say "That's an interesting riff, but it doesn't seem to work here.";
 		clue-later "SO SAPPIN";
 	the rule succeeds;
+
+this is the vr-so-sappin rule:
+	say "It's not much, but it's a start. The whining grows steadily less.";
+	now war-sapped is true;
+	process the check-sing-max rule;
 
 this is the vc-soft-sand rule:
 	if player is not in soft sand, the rule fails;

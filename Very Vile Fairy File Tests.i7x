@@ -30,7 +30,7 @@ test w6 with "w/w/w/glean glows/history hall/first floor/in/smashing smoke/out/w
 
 test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e" [set the trap for the bull]
 
-test w8 with "dear dull/near null/w/s/w/d/w/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
+test w8 with "dear dull/near null/w/s/w/d/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
 
 test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more" [get the hold hard gold guard]
 

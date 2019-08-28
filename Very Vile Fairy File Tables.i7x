@@ -127,6 +127,7 @@ randtxt
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
 "Crew Came Grew Game"
+"Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
 "Do, Dare: Woo! Where"
 "Fall For Stall Store"
 "Fat Farms['] Chat Charms: at Arms"
