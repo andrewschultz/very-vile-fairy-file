@@ -1,18 +1,5 @@
 "Very Vile Fairy File" by Billy Boling
 
-[commands skipped:
-dive deep.
-paper pile.
-backed binder.
-whatta wanksta.
-first floor.
-glean glows.
-lending libe.
-bumped buster.
-cold card.
-smashing smoke.
-]
-
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 [implement help toggling: HELP HOW/WELP WOW]
@@ -624,12 +611,14 @@ after lling gutta ganksta:
 		try lling gots game;
 	continue the action;
 
-Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad. It could almost be motivational in the right place[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
+Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because what replced it is even worse. It could almost be motivational in the right place[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping]."
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
 after examining Toe Tappin Row Rappin:
-	if player does not have Row Rappin, now player has Row Rappin;
+	if player does not have Row Rappin:
+		now player has Row Rappin;
+		move Oi Mo to History Hall;
 	continue the action;
 
 Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht of oi mo is leteq. [oimo -> dimd]
@@ -681,14 +670,16 @@ after going to Vending Vibe:
 this is the card-and-libe rule:
 	say "Tribe in [location of trending tribe]. Cold card in [location of cold card].";
 	if trending tribe is moot and player has cold card:
-		say "You look at your cold card for a minute. You realize that it's actually a library card! In fact, it has a book on hold! Unfortunately, the book is [Heft], about how to be a jerk. And you don't need that, being a hero. Still, you take it.";
-		now player has Heft Hata';
+		say "You look at your cold card for a minute. You realize that it's actually a library card! In fact, it has a book on hold! Unfortunately, the book is [We Whine], about how to be a jerk for profitand excitement. And you don't need that, being a hero. Still, you take it.";
+		now player has We Whine ME MINE;
 		moot cold card;
 	continue the action;
 
-Heft Hata' is a thing. description is "It's about how to be an extremely effective jerk. Why would you want to know that?".
+We Whine ME MINE is a thing. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sign-seen is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a creful reading would turn something up.[end if]".
 
-deft-data is a truth state that varies.
+the printed name of We Whine is "[i]We Whine: ME, MINE[r]".
+
+sign-seen is a truth state that varies.
 
 part Got Gear Hot Here -2,1 b
 
@@ -985,15 +976,12 @@ check going north in Gassed Gap:
 	if Reeker Russell is off-stage, say "Oh, it's much too intimidating[if gap-go is true], even though you have a courageous song in your head[end if]." instead;
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
 	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
-	unless got-the-evidence, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
-	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. Heft Hata['] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
+	unless evidence-pieces is 3, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
+	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
 
-to decide whether got-the-evidence:
-	if debug-state is true, say "Binder: [whether or not player has binder] Hata: [deft-data] Mage: [whether or not coral cage is moot].";
-	if player does not have backed binder, no;
-	if deft-data is false, no;
-	if coral cage is not moot, no;
-	yes;
+to decide which number is evidence-pieces:
+	if debug-state is true, say "Binder: [whether or not player has binder] Hata: [sign-seen] Mage: [whether or not coral cage is moot].";
+	decide on boolval of sign-seen + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
 
 [?? trusty tap / crusty cap]
 
@@ -1004,10 +992,7 @@ chapter Reeker Russell
 Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell is blocking the way north.". talk-text is "'My mood: DIE, dude!'".
 
 to decide which number is russell-progress:
-	let rp be 0;
-	if meeker-yet is true, increment rp;
-	if good gun is moot, increment rp;
-	decide on rp;
+	decide on boolval of meeker-yet + boolval of whether or not good gun is moot;
 
 to check-russell-go:
 	if russell-progress is 2:
@@ -1094,6 +1079,10 @@ volume verbs
 
 book standard modifications
 
+chapter wearing
+
+check wearing a gaphat: say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
+
 chapter singing
 
 the block singing rule is not listed in any rulebook.
@@ -1168,18 +1157,19 @@ chapter inventory
 
 after printing the name of jerk gel while taking inventory: say " (glowing globs)";
 
-after printing the name of Heft Hata' while taking inventory: if deft-data is true, say " (with deft data derived)"
+after printing the name of We Whine while taking inventory: if sign-seen is true, say " (in which you can SEE SIGN)"
 
 check taking inventory:
 	if player has big bag, say "Boy! You can carry all you need with your big bag![paragraph break]";
 	now all things enclosed by the player are marked for listing;
 	now toe tappin is unmarked for listing;
-	now cool cap is unmarked for listing;
+	now all gaphats are unmarked for listing;
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
+	if number of gaphats carried by player > 0, say "You are also carrying a [if number of carried gaphats < 3]budding[else]complete[end if] hat collection: [list of gaphats carried by player].";
 	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. It has ... possibilities. [toe-poss].";
-	if player has cool cap, say "You're also wearing a cool cap.";
+	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
 	the rule succeeds;
 
 to say toe-poss:
@@ -1233,7 +1223,7 @@ check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
 	if player is in History Hall and mistmall is true:
 		if Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
-		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
+		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
 		say "A random song plays briefly: [next-rand-txt of table of mall songs]." instead;
 	say "Nothing special."
 
@@ -1606,6 +1596,9 @@ carry out lling:
 		now ever-opt-scan is true;
 	if noun is two-too, say "[line break]The 'two too' light on the Leet Learner also appears[two-too-yet].";
 	the rule succeeds.
+
+report lling:
+	if noun is We Whine and sign-seen is false, say "[line break]Well, it's a bit of a yellowish-brown, actually.";
 
 to say two-too-yet:
 	if ever-two-too is false, say ". Hmm. You have a good idea what that means";
@@ -2777,7 +2770,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
 "smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	-- [start Y'Old Yard]
 "lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start vending vibe]
-"deft|defd"	"data"	false	true	false	vc-deft-data rule	vr-deft-data rule	--
+"see"	"sign"	false	true	false	vc-see-sign rule	vr-see-sign rule	--
 "hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
 "try"	"trawl"	true	false	false	vc-try-trawl rule	vr-try-trawl rule	--
 "beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
@@ -3178,23 +3171,13 @@ this is the vr-dear-dull rule:
 	say "The beer bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
 	now in-bull-chase is true.
 
-this is the vc-deft-data rule:
-	if player does not have Heft Hata', the rule fails;
-	if deft-data is true:
-		say "You already got the data you needed.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-deft-data rule:
-	say "A closer reading of Heft Hata['] reveals that you don't need to be a jerk to learn from it. You can learn about the games jerks play and how to expect and deflect them. It seems like grappling with this sort of thing without fighting it would be useful for dealing with the Very Vile Fairy File.";
-	now deft-data is true;
-
 this is the vc-dimd rule:
 	if oi mo is not touchable, the rule fails;
 	the rule succeeds;
 
 this is the vr-dimd rule:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like 'Primp'r' or flip flop to Tip Top Hip Hop, but it's your lucky day. Blissful silence.";
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like 'Primp'r' or flip flop to Tip Top Hip Hop, but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
+	if gutta ganksta is in history hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
 	moot oi mo;
 	the rule succeeds.
 
@@ -3472,7 +3455,7 @@ this is the vc-hard-hat rule:
 this is the vr-hard-hat rule:
 	say "Poof! The marred mat changes into a hard hat. A nice lightweight one. Light enough to wear, so you do.";
 	moot marred mat;
-	now player wears hard hat;
+	now player has hard hat;
 
 this is the vc-heal-here rule:
 	if player is not in Real Rear, the rule fails;
@@ -3875,6 +3858,17 @@ this is the vr-pull-pieced rule:
 	say "With the help of the Fining Four, you pull the full feast that was the bull beast to the Shining Shore. There, you have a very good feast. They're happy. They are quite ready to help you now.";
 	moot full feast;
 	move player to Whining War, without printing a room description;
+
+this is the vc-see-sign rule:
+	if player does not have We Whine, the rule fails;
+	if sign-seen is true:
+		say "You've seen enough signs. Overkill might leave you demoralized.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-see-sign rule:
+	say "A closer reading of [We Whine] reveals that you don't need to be a jerk to learn from it. Whether that was the authors['] intent is unclear, but you realize You can learn about the games jerks play and how to expect and deflect them even before they become obvious jurks. It seems like grappling with this sort of thing without fighting it would be useful for dealing with the Very Vile Fairy File, and you now feel more worthy and prepared to do so.";
+	now sign-seen is true;
 
 this is the vc-shining-shore rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]

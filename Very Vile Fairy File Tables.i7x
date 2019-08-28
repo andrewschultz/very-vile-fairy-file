@@ -86,6 +86,7 @@ table of mall songs [xxmall] [xxsongs]
 randtxt
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Good Gang? Dud, Dang"
+"Hata['] Heft Data, Deft"
 "Lo Love Show Shove"
 "Mercy Me, Jersey G[r], by Versy V & Percy P"
 
@@ -98,6 +99,7 @@ randtxt
 "Lair Level Daredevil Bear Bevell"
 "Madman Chad Chan"
 "Madman Tad Tan"
+"Hefty Hata['] Lefty Leda"
 "Not Noble Scott Scoble"
 "Pill-Perk Bill Burke"
 "Rude Rave Dude Dave"

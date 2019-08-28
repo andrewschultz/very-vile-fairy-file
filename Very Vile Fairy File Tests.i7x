@@ -26,7 +26,7 @@ test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/gl
 
 test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat" [this is the boat quest]
 
-test w6 with "w/w/w/glean glows/history hall/first floor/in/smashing smoke/out/w/lending libe/deft data/e/e/e/n/n/w/moral mage" [release the moral mage]
+test w6 with "w/w/w/glean glows/history hall/first floor/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/w/moral mage" [release the moral mage]
 
 test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e" [set the trap for the bull]
 
