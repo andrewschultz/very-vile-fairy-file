@@ -36,7 +36,7 @@ test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more" [
 
 test w10 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap/meeker muscle/wood one/n" [enter airy isle]
 
-test w11 with "hot horde/got gored/lot lord/whoah wait/tell torn/merry mile/bury bile".
+test w11 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile".
 
 test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11".
 

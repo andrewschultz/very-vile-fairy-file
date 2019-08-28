@@ -597,7 +597,7 @@ part History Hall -2,1
 
 mistmall is a truth state that varies.
 
-History Hall is west of Stark Store. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. A mediocre song is in the air[end if].". [-> mystery mall]
+History Hall is west of Stark Store. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. A mediocre song is in the air[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if].". [-> mystery mall]
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
@@ -631,7 +631,7 @@ check going west in History Hall:
 		continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
 
-Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it."
+Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to navigate the lights and bells and whistles."
 
 chapter mysterymalling
 
@@ -668,7 +668,6 @@ after going to Vending Vibe:
 	continue the action;
 
 this is the card-and-libe rule:
-	say "Tribe in [location of trending tribe]. Cold card in [location of cold card].";
 	if trending tribe is moot and player has cold card:
 		say "You look at your cold card for a minute. You realize that it's actually a library card! In fact, it has a book on hold! Unfortunately, the book is [We Whine], about how to be a jerk for profitand excitement. And you don't need that, being a hero. Still, you take it.";
 		now player has We Whine ME MINE;
@@ -1433,6 +1432,7 @@ carry out verbsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan]. You can also use it to tweak other clues with [b]TWO TOO[r]/[b]DO DUE[r] or [b]HA HALF[r]/[b]NAH NAFF[r].";
+	if player has Toe Tappin, say "[2da]You can also [b]SING[r] [Toe Tappin] to see if it might be useful, as a small clue.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	the rule succeeds.
@@ -2579,6 +2579,7 @@ Rule for printing a parser error (this is the clue half right words rule):
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
+	if debug-state is true, say "[the latest parser error].";
 	say "[one of]You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[or]This isn't something you need to do here. [b]VERBS[r] has a list of standard verbs.[stopping]";
 
 ha-half is a truth state that varies.
@@ -2595,10 +2596,10 @@ this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
 		if the player's command matches the regular expression "(^|\W)([w1 entry])\W", increment my-count;
-		if there is no w2 entry:
-			increment my-count;
-		else:
+		if there is a w2 entry:
 			if the player's command matches the regular expression "\W([w2 entry])($|\W)", increment my-count;
+		else if my-count > 0:
+			increment my-count;
 		let wfull-fail be false;
 		[say "[ver-rule entry].";]
 		if there is a wfull entry:
@@ -2620,7 +2621,7 @@ this is the verb-checker rule:
 				if wfull-fail is true:
 					say "Ooh! You're close, but you juggled things up, somehow.";
 					the rule succeeds;
-				if there is a core entry, up-which core entry;
+				if there is a core entry and idid entry is false, up-which core entry;
 				if zap-core-entry is true:
 					blank out the core entry;
 					now zap-core-entry is false;
@@ -3359,7 +3360,7 @@ this is the vr-gift-giver rule:
 	move player to Vined Vault;
 
 this is the vc-glean-glows rule:
-	if player is not in history hall and mean moe's is not in history hall, the rule fails;
+	if player is not in history hall or mean moe's is not in history hall, the rule fails;
 	if player does not have clay cloak:
 		say "That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.";
 		clue-later "GLEAN GLOWS";
@@ -3482,6 +3483,7 @@ this is the vc-history-hall rule:
 
 this is the vr-history-hall rule:
 	move-to-temp gutta ganksta;
+	move-to-temp Mean Moe's Clean Clothes;
 	move-from-temp Name Notes Tame Totes;
 	now Vending Vibe is mapped west of History Hall;
 	now History Hall is mapped east of Vending Vibe;
@@ -3800,6 +3802,7 @@ this is the vr-mystery-mall rule:
 		move-from-temp Toe Tappin;
 	else if Oi Mo is not moot:
 		move-from-temp Oi Mo;
+	move-from-temp Mean Moe's Clean Clothes;
 	now Got Gear Hot Here is mapped west of History Hall;
 	now mistmall is true;
 	bold-my-room;
@@ -4191,11 +4194,18 @@ understand "flow fie" as blowbying.
 understand "slow sigh" as blowbying.
 
 carry out blowbying:
+	let cur-row be 1;
+	repeat through table of verb checks:
+		now idid entry is true;
+		if cur-row is whew-score, break;
+		increment cur-row;
 	abide by the too-late-for-beta rule;
 	process the any-warp rule;
 	now score is whew-score;
 	now core-score is whew-score;
 	move player to fun fen;
+	moot mind malt;
+	now player has too totes new notes;
 	the rule succeeds.
 
 prev-blowby-score is a number that varies.
@@ -4219,7 +4229,8 @@ carry out tricktriping:
 		process the ver-rule entry;
 		if the rule succeeded:
 			process the do-rule entry;
-			up-reg;
+			if there is a core entry and idid entry is false, up-which core entry;
+			now idid entry is true;
 			now in-test-loop is false;
 			the rule succeeds;
 	now in-test-loop is false;

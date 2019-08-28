@@ -273,9 +273,9 @@ This gets you a cold card and a gold guard. It's not a hold hard gold guard yet,
 
 Because you have the cold card, you get a useless book! Well, not so useless.
 
-Heft Hata' seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
+We Whine: ME MINE seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
 
-> DEFT DATA (49)
+> SEE SIGN (49)
 
 Bam! Now the Backed Binder makes sense.
 
@@ -433,13 +433,13 @@ Oh my! The bot board is in the way. You need numbers to stand up to them.
 
 Okay, you need leadership too.
 
-> GOT GORED (78)
-
-Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
-
-> LOT LORD (79)
+> LOT LORD (78)
 
 Finally, you need a stirring battle cry.
+
+> GOT GORED (79)
+
+Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
 
 > WHOAH WAIT (80)
 

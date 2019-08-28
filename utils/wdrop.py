@@ -5,6 +5,8 @@
 #
 # this drops in the new walkthroughs created after rbr.py wbase.txt forks the min- and max- point walkthroughs.
 #
+# It should not be run by itself.
+#
 # Note that I meddle with the Github repo files. The fils in inform/source have
 #
 
@@ -15,6 +17,7 @@ import i7
 import sys
 import stat
 import mytools as mt
+import __main__ as main
 
 insert_point = defaultdict(str)
 
@@ -29,6 +32,8 @@ delete_after = False #It's ok to have this, since we don't copy over the pre-fil
 verbose = True
 
 open_last_err = True
+
+print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
 
 def usage(cmd="USAGE LIST"):
     print(cmd)
