@@ -172,6 +172,8 @@ a room has text called noway-text.
 
 a person has text called talk-text.
 
+a gaphat is a kind of thing.
+
 cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth.
 
 to phbt (x - a thing):
@@ -531,6 +533,10 @@ least-loss is a truth state that varies.
 
 beast-boss-min is a number that varies. beast-boss-min is 32.
 
+chapter full feast
+
+The full feast is a thing. "A full feast lies here. You can't eat it all by yourself, and you have no way to move it on your own.". description is "It's what remains of the bull beast, and it's surprisingly tasty looking. Pre-cooked, too! Because you sure burned it with your magic words, there. Ahaha."
+
 part Stark Store -1,1
 
 Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if]. You can go back east to Creased Cross."
@@ -647,9 +653,9 @@ Y'Old Yard is south of Erst Lore. It is in Piddling Pain.
 
 The Bold Bard is a person in Y'Old Yard. talk-text of bold bard is "'Scold-scarred. Mold-marred.'".
 
-Hold Hard is scenery in Y'Old Yard.
+the gold guard is a thing. printed name of gold guard is "[if mine-more is true]hold hard [end if]gold guard". description is "[if mine-more is false]Could be sturdier, actually[else]Super sturdy now you got the boost from the Whining War[end if]."
 
-the gold guard is a thing.
+the Shoaled Shard is scenery in Y'Old Yard.
 
 part Vending Vibe -2,1 a
 
@@ -669,13 +675,15 @@ the marred mat is a thing in Got Gear Hot Here. description is "What is a marred
 
 check taking marred mat: say "It can't be useful in that form." instead;
 
-the hard hat is a thing.
+the hard hat is a gaphat.
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
 
 chapter shy shawl
 
 the shy shawl is a thing in Got Gear Hot Here. "A shy shawl lies here. It really can't be the sort of thing a hero wears, but maybe you can get some practice with it.". cht of shy shawl is leteq. description is "It is terribly plain, but [if trawl-try is true]you did[else]maybe you could[end if] get motivation from it."
+
+trawl-try is a truth state that varies.
 
 [?? mistakes]
 
@@ -914,7 +922,7 @@ to say tap-in-cave:
 
 the tool tap is scenery.
 
-the cool cap is a thing.
+the cool cap is a gaphat.
 
 first-fave is a truth state that varies.
 
@@ -954,6 +962,8 @@ check going north in Gassed Gap:
 	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
 
 [?? trusty tap / crusty cap]
+
+extra-cool-cap is a truth state that varies.
 
 chapter Reeker Russell
 
@@ -1132,9 +1142,12 @@ check taking inventory:
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
-	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. Maybe you can do things with it.";
+	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. It has ... possibilities. [toe-poss].";
 	if player has cool cap, say "You're also wearing a cool cap.";
 	the rule succeeds;
+
+to say toe-poss:
+	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if]"
 
 check taking when player does not have big bag:
 	if number of things enclosed by the player > 3:
@@ -1182,7 +1195,7 @@ the block listening rule is not listed in any rulebook.
 
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
-	if player is in History Hall:
+	if player is in History Hall and mistmall is true:
 		if Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still sings [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
 		say "A random song plays briefly: [next-rand-txt of table of mall songs]." instead;
@@ -1237,7 +1250,7 @@ to clue-later (ct - text):
 			if debug-state is true and ready-to-hint entry is true, say "(re-checking)[line break]";
 			now ready-to-hint entry is true;
 			continue the action;
-	say "Oops. I tried to hint something for later, but failed. This is a bug I need to know about. Text = [ct].";
+	say "Oops. I tried to save something in the THINK command for later, but failed. This is a bug I need to know about. Text = [ct].";
 
 first-think-clue-flag is a truth state that varies.
 ever-think-flag is a truth state that varies.
@@ -1919,7 +1932,6 @@ the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
 the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
-the thing-hint-rule of Hold Hard is hold-hard-hint rule.
 the thing-hint-rule of Hot Horde is bot-board-hint rule.
 the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
@@ -2059,10 +2071,6 @@ this is the hit-hound-hint rule:
 
 this is the hive-heap-hint rule:
 	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
-
-this is the hold-hard-hint rule:
-	if Bold Bard is moot, the rule fails;
-	process the bold-bard-hint rule;
 
 this is the jerk-gel-hint rule:
 	if player does not have jerk gel:
@@ -2334,7 +2342,7 @@ check quitting the game: say "You say to yourself, not fully convinced, 'Best bi
 
 volume unsorted
 
-The cake cap is a thing.
+The cake cap is a gaphat.
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
 
@@ -2585,6 +2593,10 @@ this is the verb-checker rule:
 					say "Ooh! You're close, but you juggled things up, somehow.";
 					the rule succeeds;
 				if there is a core entry, up-which core entry;
+				if zap-core-entry is true:
+					blank out the core entry;
+					now zap-core-entry is false;
+				now idid entry is true;
 				process the do-rule entry;
 				process the notify score changes rule;
 				skip upcoming rulebook break;
@@ -2671,10 +2683,11 @@ carry out jerkingjumping:
 		if the rule succeeded:
 			say "[do-rule entry], bam.";
 			process the do-rule entry;
-			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place.]
+			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
 			if zap-core-entry is true:
 				blank out the core entry;
 				now zap-core-entry is false;
+			now idid entry is true;
 			decrement lump-charges;
 			say "[line break]The lurking lump shrivels [if lump-charges is 0]and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
 			if lump-charges is 0, moot lurking lump;
@@ -2689,95 +2702,130 @@ section verb check table
 [verb check and verb run rules. This is in approximate game-solve order.]
 
 table of verb checks [xxvc]
-w1 (text)	w2 (text)	okflip	core	ver-rule	do-rule	wfull (topic)
-"get"	"good"	false	true	vc-get-good rule	vr-get-good rule	-- [start Intro]
-"gift"	"giver"	false	true	vc-gift-giver rule	vr-gift-giver rule	--
-"find"	"fault"	true	true	vc-find-fault rule	vr-find-fault rule	--
-"green"	"grass"	false	true	vc-green-grass rule	vr-green-grass rule	--
-"grow"	"grit"	true	true	vc-grow-grit rule	vr-grow-grit rule	--
-"bash|mash|rash"	"bap|map|rap"	true	true	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap"
-"mind"	"me"	false	true	vc-mind-me rule	vr-mind-me rule	--
-"flim|skim"	"flam|scam"	false	true	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
-"big"	"bag"	true	true	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
-"spark"	"spliff"	true	false	vc-spark-spliff rule	vr-spark-spliff rule	--
-"strong"	"start"	true	false	vc-strong-start rule	vr-strong-start rule	--
-"fall"	"free"	true	true	vc-fall-free rule	vr-fall-free rule	--
-"dive"	"deep"	true	true	vc-dive-deep rule	vr-dive-deep rule	--
-"paper"	"pile"	false	true	vc-paper-pile rule	vr-paper-pile rule	--
-"backed"	"binder"	false	true	vc-backed-binder rule	vr-backed-binder rule	--
-"kneel"	"near"	false	true	vc-kneel-near rule	vr-kneel-near rule	-- [start of Real Rear]
-"feel|feeling"	"fear"	false	true	vc-feel-fear rule	vr-feel-fear rule	--
-"deal|dealing"	"dear"	true	true	vc-deal-dear rule	vr-deal-dear rule	--
-"heal|healing"	"here"	true	true	vc-heal-here rule	vr-heal-here rule	--
-"history"	"hall"	false	--	vc-history-hall rule	vr-history-hall rule	--
-"mystery"	"mall"	false	true	vc-mystery-mall rule	vr-mystery-mall rule	--
-"dark"	"door"	false	true	vc-dark-door rule	vr-dark-door rule	-- [start stark store]
-"mark"	"more"	false	true	vc-mark-more rule	vr-mark-more rule	--
-"cleared"	"clay"	true	true	vc-cleared-clay rule	vr-cleared-clay rule	--
-"tight"	"tunnel"	false	true	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
-"knives"	"niche"	false	true	vc-knives-niche rule	vr-knives-niche rule	--
-"lots"	"lame"	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
-"dimd"	--	false	false	vc-dimd rule	vr-dimd rule
-"whatta"	"wanksta"	true	true	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
-"first"	"floor"	false	true	vc-first-floor rule	vr-first-floor rule	--
-"glean"	"glows"	false	true	vc-glean-glows rule	vr-glean-glows rule	--
-"lending"	"libe"	false	true	vc-lending-libe rule	vr-lending-libe rule	-- [start trending tribe]
-"hard"	"hat"	false	true	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
-"beast"	"boss"	true	true	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
-"cull|lul"	"ceased|least"	true	true	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
-"full"	"feast"	true	true	vc-full-feast rule	vr-full-feast rule	--
-"least"	"loss"	true	true	vc-least-loss rule	vr-least-loss rule	--
-"loft"	"land"	false	true	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
-"soft"	"sand"	false	--	vc-soft-sand rule	vr-soft-sand rule	--
-"show"	"shield"	true	true	vc-show-shield rule	vr-show-shield rule	-- [start foe field]
-"cool"	"cap"	true	true	vc-cool-cap rule	vr-cool-cap rule	-- [start curst cave]
-"dreaming"	"dull"	true	true	vc-dreaming-dull rule	vr-dreaming-dull rule	--
-"first"	"fave"	false	true	vc-first-fave rule	vr-first-fave rule	--
-"moral"	"mage"	false	true	vc-moral-mage rule	vr-moral-mage rule	--
-"work"	"well"	true	true	vc-work-well rule	vr-work-well rule	-- [start shirk shell]
-"sit"	"sound"	false	true	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
-"fit"	"found"	true	true	vc-found-fit rule	vr-found-fit rule	--
-"minding"	"maze"	false	true	vc-minding-maze rule	vr-minding-maze rule	-- [start blinding blaze]
-"luck|snuck"	"lair|snare"	false	true	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
-"brightening"	"bridge"	false	true	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
-"silent"	"sail|sale"	false	true	vc-silent-sail rule	vr-silent-sail rule	--
-"boring"	"boat"	false	true	vc-boring-boat rule	vr-boring-boat rule	--
-"wake"	"whee"	true	true	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
-"shining"	"shore"	false	true	vc-shining-shore rule	vr-shining-shore rule	-- [start whining war]
-"mining"	"more"	true	true	vc-mining-more rule	vr-mining-more rule	--
-"dining"	"door"	false	true	vc-dining-door rule	vr-dining-door rule	--
-"mean"	"muggin"	false	true	vc-mean-muggin rule	vr-mean-muggin rule	--
-"lean"	"luggin"	false	true	vc-lean-luggin rule	vr-lean-luggin rule	--
-"cast"	"cap"	false	true	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
-"beaker"	"bustle"	true	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
-"meeker"	"muscle"	true	true	vc-meeker-muscle rule	vr-meeker-muscle rule	--
-"wood"	"one"	false	true	vc-wood-one rule	vr-wood-one rule	--
-"go"	"gappin"	false	true	vc-go-gappin rule	vr-go-gappin rule	--
-"lot"	"lord"	false	true	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
-"hot"	"horde"	false	true	vc-hot-horde rule	vr-hot-horde rule	--
-"got"	"gored"	false	true	vc-got-gored rule	vr-got-gored rule	--
-"whoa"	"wait"	true	true	vc-whoa-wait rule	vr-whoa-wait rule	--
-"tell"	"torn"	false	true	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
-"merry"	"mile"	false	true	vc-merrymile rule	vr-merrymile rule	--
-"bury"	"bile"	false	true	vc-bury-bile rule	vr-bury-bile rule	--
-"wild"	"weed"	true	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
-"bumped"	"buster"	true	true	vc-bumped-buster rule	vr-bumped-buster rule	--
-"glow"	"glad"	true	true	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
-"stay"	"strong"	false	true	vc-stay-strong rule	vr-stay-strong rule	--
-"cold"	"card"	false	true	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
-"smashing"	"smoke"	false	true	vc-smashing-smoke rule	vr-smashing-smoke rule	--
-"mo"	"mappin"	true	true	vc-mo-mappin rule	vr-mo-mappin rule	--
-"so"	"sappin"	true	true	vc-so-sappin rule	vr-so-sappin rule	--
-"no"	"nappin"	true	true	vc-no-nappin rule	vr-no-nappin rule	--
-"fake"	"fee"	false	true	vc-fake-fee rule	vr-fake-fee rule	--
-"take"	"tea"	false	true	vc-take-tea rule	vr-take-tea rule	--
-"break"	"brie"	false	false	vc-break-brie rule	vr-break-brie rule	--
-"make"	"map"	false	true	vc-make-map rule	vr-make-map rule	--
-"snake"	"snap"	true	true	vc-snake-snap rule	vr-snake-snap rule	--
-"co"	"capn"	false	true	vc-co-capn rule	vr-co-capn rule	--
-"dear"	"dull"	true	true	vc-dear-dull rule	vr-dear-dull rule	--
-"near"	"null"	true	true	vc-near-null rule	vr-near-null rule	--
-"try"	"trawl"	true	false	vc-try-trawl rule	vr-try-trawl rule	--
+w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
+"get"	"good"	false	true	false	vc-get-good rule	vr-get-good rule	-- [start Intro]
+"gift"	"giver"	false	true	false	vc-gift-giver rule	vr-gift-giver rule	--
+"find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
+"green"	"grass"	false	true	false	vc-green-grass rule	vr-green-grass rule	--
+"grow"	"grit"	true	true	false	vc-grow-grit rule	vr-grow-grit rule	--
+"bash|mash|rash"	"bap|map|rap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap"
+"mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
+"flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
+"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
+"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--
+"strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
+"fall"	"free"	true	true	false	vc-fall-free rule	vr-fall-free rule	--
+"dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
+"paper"	"pile"	false	true	false	vc-paper-pile rule	vr-paper-pile rule	--
+"backed"	"binder"	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--
+"kneel"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	-- [start of Real Rear]
+"feel|feeling"	"fear"	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--
+"deal|dealing"	"dear"	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--
+"heal|healing"	"here"	true	true	false	vc-heal-here rule	vr-heal-here rule	--
+"history"	"hall"	false	--	false	vc-history-hall rule	vr-history-hall rule	--
+"mystery"	"mall"	false	true	false	vc-mystery-mall rule	vr-mystery-mall rule	--
+"dark"	"door"	false	true	false	vc-dark-door rule	vr-dark-door rule	-- [start stark store]
+"mark"	"more"	false	true	false	vc-mark-more rule	vr-mark-more rule	--
+"cleared"	"clay"	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--
+"tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
+"knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--
+"lots"	"lame"	false	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
+"dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule
+"whatta"	"wanksta"	true	true	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
+"first"	"floor"	false	true	false	vc-first-floor rule	vr-first-floor rule	--
+"glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
+"lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start trending tribe]
+"hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
+"beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
+"cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
+"full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
+"least"	"loss"	true	true	false	vc-least-loss rule	vr-least-loss rule	--
+"loft"	"land"	false	true	false	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
+"soft"	"sand"	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--
+"show"	"shield"	true	true	false	vc-show-shield rule	vr-show-shield rule	-- [start foe field]
+"cool"	"cap"	true	true	false	vc-cool-cap rule	vr-cool-cap rule	-- [start curst cave]
+"dreaming"	"dull"	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--
+"first"	"fave"	false	true	false	vc-first-fave rule	vr-first-fave rule	--
+"moral"	"mage"	false	true	false	vc-moral-mage rule	vr-moral-mage rule	--
+"work"	"well"	true	true	false	vc-work-well rule	vr-work-well rule	-- [start shirk shell]
+"sit"	"sound"	false	true	false	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
+"fit"	"found"	true	true	false	vc-found-fit rule	vr-found-fit rule	--
+"minding"	"maze"	false	true	false	vc-minding-maze rule	vr-minding-maze rule	-- [start blinding blaze]
+"luck|snuck"	"lair|snare"	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
+"brightening"	"bridge"	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
+"silent"	"sail|sale"	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--
+"boring"	"boat"	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--
+"wake"	"whee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
+"shining"	"shore"	false	true	false	vc-shining-shore rule	vr-shining-shore rule	-- [start whining war]
+"mining"	"more"	true	true	false	vc-mining-more rule	vr-mining-more rule	--
+"dining"	"door"	false	true	false	vc-dining-door rule	vr-dining-door rule	--
+"mean"	"muggin"	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--
+"lean"	"luggin"	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--
+"cast"	"cap"	false	true	false	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
+"beaker"	"bustle"	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
+"meeker"	"muscle"	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--
+"wood"	"one"	false	true	false	vc-wood-one rule	vr-wood-one rule	--
+"go"	"gappin"	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--
+"lot"	"lord"	false	true	false	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
+"hot"	"horde"	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--
+"got"	"gored"	false	true	false	vc-got-gored rule	vr-got-gored rule	--
+"whoa|woe|whoah"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
+"tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
+"merry"	"mile"	false	true	false	vc-merrymile rule	vr-merrymile rule	--
+"bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
+"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of undefined]
+"bumped"	"buster"	true	true	false	vc-bumped-buster rule	vr-bumped-buster rule	--
+"glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
+"stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--
+"cold"	"card"	false	true	false	vc-cold-card rule	vr-cold-card rule	-- [start unsorted]
+"smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	--
+"mo"	"mappin"	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--
+"so"	"sappin"	true	true	false	vc-so-sappin rule	vr-so-sappin rule	--
+"no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
+"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
+"take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
+"break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
+"make"	"map"	false	true	false	vc-make-map rule	vr-make-map rule	--
+"snake"	"snap"	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--
+"co"	"capn"	false	true	false	vc-co-capn rule	vr-co-capn rule	--
+"dear"	"dull"	true	true	false	vc-dear-dull rule	vr-dear-dull rule	--
+"near"	"null"	true	true	false	vc-near-null rule	vr-near-null rule	--
+"try"	"trawl"	true	false	false	vc-try-trawl rule	vr-try-trawl rule	--
+"pull"	"pieced"	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--
+"couple"	"caps"	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--
+
+this is the vc-couple-caps rule:
+	if player does not have jerk gel, the rule fails;
+	let N be number of gaphats enclosed by the player;
+	if N is 3, the rule succeeds;
+	if N is 2:
+		say "Hmm. You may need one more cap, or hat.";
+	else if N is 1:
+		say "You need at least one more hat to couple the CAPS.";
+	else if N is 0:
+		say "You have no caps to couple. Maybe one day, though...";
+	continue the action;
+
+this is the vr-couple-caps rule:
+	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
+	now extra-cool-cap is true;
+
+this is the vc-pull-pieced rule:
+	if full feast is not in Creased Cross, the rule fails;
+	if shore-shine is false:
+		say "You're not sure where you could pull the full feast to, yet.";
+		clue-later "PULL PIECED";
+		continue the action;
+	if dine-door is false:
+		clue-later "PULL PIECED";
+		say "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-pull-pieced rule:
+	say "With the help of the Fining Four, you pull the full feast that was the bull beast to the Shining Shore. There, you have a very good feast. They're happy. They are quite ready to help you now.";
+	moot full feast;
+	move player to Whining War, without printing a room description;
 
 [ this is stuff for beta commands below ]
 
@@ -2795,8 +2843,16 @@ to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, sayin
 to loop-note (t - text):
 	if in-test-loop is true, say "COMMAND: [t]...[paragraph break]";
 
+to check-missing-necc:
+	repeat through table of verb checks:
+		if there is a core entry and core entry is true and idid entry is false:
+			say "[one of]COMMANDS YOU SKIPPED DUE TO A BUG, SO PLEASE LET ME KNOW:[paragraph break][or][stopping]";
+			say "[w1 entry] [w2 entry].";
+
 to win-the-game:
 	[rejig-status;]
+	if in-beta is true or debug-state is true:
+		check-missing-necc;
 	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
 		choose row with final response activity of showdeathsing in the Table of Final Question Options;
 		blank out the whole row;
@@ -2984,14 +3040,18 @@ this is the vc-cast-cap rule:
 	if cool cap is moot:
 		say "You already did.";
 		continue the action;
-	if player has hard hat or player has cake cap:
-		say "Neither the hard hat nor the cake cap seems right to cast. You need something even cooler.";
-		clue-later "CAST CAP";
-	if player does not have cool cap:
-		clue-later "CAST CAP";
-		say "You need a cap to cast!";
-		continue the action;
-	the rule succeeds;
+	if extra-cool-cap is true, the rule succeeds;
+	let N be the number of gaphats enclosed by the player;
+	clue-later "CAST CAP";
+	if N is 0:
+		say "You don't have any caps to cast.";
+	else if N is 1:
+		say "The [random gaphat enclosed by the player] isn't enough on its own.";
+	else if N is 2:
+		say "The [list of gaphats enclosed by the player] aren't quite enough.";
+	else if N is 3:
+		say "Wow! Three hats! If only there was a way to combine them into an extra-cool hat!";
+	continue the action;
 
 this is the vr-cast-cap rule:
 	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
@@ -3266,8 +3326,9 @@ this is the vc-full-feast rule:
 	the rule succeeds;
 
 this is the vr-full-feast rule:
-	say "BOOM! You managed to make a full feast of the Bull Beast. Everyone loves it. It tastes good. Nothing is left.";
+	say "BOOM! You managed to make a full feast of the Bull Beast. But there's a lot of it. It'll be hard to move all at once.";
 	moot Bull Beast;
+	move full feast to location of player;
 	the rule succeeds.
 
 this is the vc-get-good rule:
@@ -3683,8 +3744,8 @@ this is the vc-mining-more rule:
 
 this is the vr-mining-more rule:
 	now mine-more is true;
-	say "You mine more, more, more.";
-	the rule succeeds.
+	say "You help the Fining Four mine more, more, more. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD!"; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
+	the rule succeeds. [pining poor]
 
 this is the vc-mo-mappin rule:
 	if player is not in blinding blaze, the rule fails;
@@ -3780,7 +3841,7 @@ this is the vc-shining-shore rule:
 	if shore-shine is true:
 		say "You already got (t)here.";
 		continue the action;
-	if beer bull is not moot:
+	if war-sapped is false:
 		clue-later "SHINING SHORE";
 		say "It could be that way. But you need to get rid of the whining first.";
 		continue the action;
@@ -3789,8 +3850,7 @@ this is the vc-shining-shore rule:
 this is the vr-shining-shore rule:
 	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
 	phbt Whining War;
-	move lake lap to Whining War; [??fake fap]
-	now shore-shine is true;
+	now shore-shine is true; [?? fake fap]
 
 this is the vc-show-shield rule:
 	if player is not in foe field, the rule fails;
@@ -3798,10 +3858,14 @@ this is the vc-show-shield rule:
 		clue-later "SHOW SHIELD";
 		say "That seems right, but you have nothing that would guard you effectively. Maybe later.";
 		continue the action;
+	if mine-more is false:
+		clue-later "SHOW SHIELD";
+		say "Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-show-shield rule:
-	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down. But not bfore the usual energy ray shwos up and blasts your gold guard to pieces. Eh, it did its job. You can go west now.";
+	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You can go west now.";
 	now shield-shown is true;
 	moot gold guard;
 
@@ -3960,9 +4024,9 @@ this is the vr-tight-tunnel rule:
 
 this is the vc-try-trawl rule:
 	if player is not in Got Gear Hot Here, the rule fails;
-		if trawl-try is true:
-			say "Trying isn't about trying the same thing over and over again. It's about trying in different, creative ways!";
-			continue the action;
+	if trawl-try is true:
+		say "Trying isn't about trying the same thing over and over again. It's about trying in different, creative ways!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-try-trawl rule:

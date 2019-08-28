@@ -326,7 +326,7 @@ this is the did-moral-mage rule:
 	the rule fails.
 
 this is the can-shining-shore rule:
-	if beer bull is moot, the rule succeeds;
+	if war-sapped is true, the rule succeeds;
 	the rule fails.
 
 this is the did-shining-shore rule:

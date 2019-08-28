@@ -32,12 +32,19 @@ test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s
 
 test w8 with "dear dull/near null/w/s/w/d/w/w/s/beast boss/least loss/s/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
 
-test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7".
+test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more" [get the hold hard gold guard]
+
+test w10 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap/meeker muscle/wood one/n" [enter airy isle]
+
+test w11 with "hot horde/got gored/lot lord/got gored/whoah wait/merry mile/tell torn/merry mile/bury bile".
+
+test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8".
 
 chapter beta jump
 
-test cc1 with "climb clear/got gored/hot horde/got gored/lot lord/got gored/whoah wait/merry mile/tell torn/merry mile/bury bile".
-test cc2 with "bury bile/climb clear/bury bile/got gored/lot lord/got gored/hot horde/got gored/woe wait/bury bile/tell torn/bury bile/merry mile/bury bile".
+test cc1 with "climb clear/got gored/test w11".
+
+test cc2 with "bury bile/climb clear/bury bile/got gored/lot lord/got gored/hot horde/got gored/woe wait/bury bile/tell torn/bury bile/merry mile/bury bile". [cc2 tests when we make mistakes and can't bury bile yet]
 
 volume odd property tests
 
