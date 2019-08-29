@@ -9,6 +9,7 @@ import pyperclip
 import mytools as mt
 from i7 import is_outline_start
 from collections import defaultdict
+from mytools import nohy
 
 ignore_rule = defaultdict(bool)
 mult_succ_fail_ok = defaultdict(bool)
@@ -178,25 +179,34 @@ myary = []
 lsa = len(sys.argv)
 get_ignore_notone()
 
-if lsa > 1:
-    if (sys.argv[1] == 'u' or sys.argv[1] == 'up'):
+cmd_count = 1
+
+myary = []
+
+while cmd_count < lsa:
+    arg = nohy(sys.argv[cmd_count])
+    if arg == 'u' or arg == 'up':
         get_ups()
         exit()
-    if (sys.argv[1] == 'vc'):
+    if arg == 'vc':
         check_vc_rules()
         exit()
+    if arg == 'ne':
+        go_to_verbcheck_end = False
+    else:
+        temp = sum(not c.isalpha() for c in arg)
+        if temp == 1:
+            myary += re.split("[^a-zA-Z]", arg)
+        else:
+            myary.append(arg)
+    cmd_count += 1
 
-# ok, no checking source. Let's create auto-text.
-
-if lsa == 3:
-    myary = sys.argv[1:]
-elif lsa == 2:
-    temp = sum(not c.isalpha() for c in sys.argv[1])
-    if temp == 1:
-        myary = re.split("[^a-zA-Z]", sys.argv[1])
+# ok, no checking source. Let's create auto-text. We need 2 arguments.
 
 if len(myary) != 2:
-    print("Need 2 args, or 1 arg with a separator. Or use u to track the remaining stuff to delete.")
+    print("Need 2 args, or 1 arg with a separator.")
+    print("Or use u to track the remaining stuff to delete.")
+    print("Or vc to check the vc- and vr- rules.")
     exit()
 
 w1 = myary[0]
@@ -216,3 +226,16 @@ print("Flip stuff: {0} {1} right, {1} {0} reverse.".format(w1, w2))
 
 pyperclip.copy(pastestr)
 
+if go_to_verbcheck_end:
+    line_to_open = 0
+    in_necc_table = False
+    with open("story.ni") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of verb checks"):
+                in_necc_table = True
+                continue
+            if in_necc_table and not line.strip():
+                line_to_open = line_count
+                break
+    if line_to_open:
+        mt.npo("story.ni", line_to_open)
