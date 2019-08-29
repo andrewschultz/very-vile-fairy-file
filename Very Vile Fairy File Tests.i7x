@@ -2,6 +2,32 @@ Version 1/181111 of Very Vile Fairy File Tests by Andrew Schultz begins here.
 
 "This is the tests file for Very Vile Fairy File."
 
+volume implementation test(s)
+
+when play begins (this is the room hint check rule):
+	let hint-idx be 0;
+	repeat with Q running through rooms:
+		if map region of Q is poorly penned or map region of Q is Get a Guess, continue the action;
+		if room-hint-rule of Q is trivially false rule:
+			increment hint-idx;
+			say "[hint-idx]. The room-hint-rule of [Q] is the [printed name of Q in lower case]-hint rule.";
+	say "[if hint-idx > 0][hint-idx] room hint[plur of hint-idx] to implement[else]All room hints implemented[end if].";
+
+
+when play begins (this is the thing hint check rule):
+	let hint-idx be 0;
+	let max-hint be 20;
+	let ignore-text be false;
+	repeat with Q running through things:
+		if thing-hint-rule of Q is trivially false rule:
+			increment hint-idx;
+			if hint-idx > max-hint and ignore-text is false:
+				say "I went over the maximum. Not listing the rest.";
+				now ignore-text is true;
+				next;
+			if ignore-text is false, say "[hint-idx]. The thing-hint-rule of [Q] is the [printed name of Q in lower case]-hint rule.";
+	if hint-idx > 0, say "[hint-idx] thing hint[plur of hint-idx] to implement.";
+
 volume optional tests
 
 [include Property Checking by Emily Short.
@@ -26,7 +52,7 @@ test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/gl
 
 test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat" [this is the boat quest]
 
-test w6 with "w/w/w/glean glows/history hall/first floor/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/w/moral mage" [release the moral mage]
+test w6 with "w/w/w/glean glows/history hall/first floor/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage" [release the moral mage]
 
 test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e" [set the trap for the bull]
 

@@ -958,6 +958,13 @@ chapter showshielding
 
 shield-shown is a truth state that varies.
 
+chapter Pain Peasant
+
+the Pain Peasant is a person in Foe Field. "Pretty simple looking, really. But clearly Upset about Stuff enough to push you back out of spite."
+
+check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
+	say "The Pain Peasant blocks you. Geez, what a pain!" instead; [?? fain pheasant]
+
 part Store All Stage -1,3
 
 Store All Stage is a room in Piddling Pain. It is west of Foe Field.
@@ -1913,17 +1920,6 @@ this is the yold-yard-hint rule:
 
 [zzhrr]
 
-section debug check - not for release
-
-when play begins:
-	let hint-idx be 0;
-	repeat with Q running through rooms:
-		if map region of Q is poorly penned or map region of Q is Get a Guess, continue the action;
-		if room-hint-rule of Q is trivially false rule:
-			increment hint-idx;
-			say "[hint-idx]. You need to specify room-hint-rule for [Q].";
-	say "[if hint-idx > 0][hint-idx] room hint[plur of hint-idx] to implement[else]All room hints implemented[end if].";
-
 chapter hinting an object verb
 
 hintobjing is an action applying to one thing.
@@ -1952,6 +1948,7 @@ the thing-hint-rule of Bot Board is bot-board-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
 the thing-hint-rule of cage key is cage-key-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
+the thing-hint-rule of ceiling seer is ceiling-seer-hint rule.
 the thing-hint-rule of cool cap is cool-cap-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
@@ -2057,6 +2054,9 @@ this is the cage-key-hint rule:
 
 this is the cark-cliff-hint rule:
 	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or]SPARK SPLIFF.[stopping]";
+
+this is the ceiling-seer-hint rule:
+	say "The Ceiling Seer is just there to reinforce what you need to do in the Real Rear. The -ing in each act is superfluous.";
 
 this is the cool-cap-hint rule:
 	say "[one of]The cool cap is useful in one specific place[or]You need to throw down the gauntlet, or something like it, somewhere[or]There is one place that rhymes with cap[or]You can do something with the cap[here-in of Gassed Gap][or]CAST CAP [here-in of Gassed Gap][stopping]."
@@ -2228,22 +2228,6 @@ this is the zig-zag-rig-rag-hint rule:
 	the rule succeeds;
 
 [zzthr]
-
-section debug check - not for release
-
-when play begins:
-	let hint-idx be 0;
-	let max-hint be 20;
-	let ignore-text be false;
-	repeat with Q running through things:
-		if thing-hint-rule of Q is trivially false rule:
-			increment hint-idx;
-			if hint-idx > max-hint and ignore-text is false:
-				say "I went over the maximum. Not listing the rest.";
-				now ignore-text is true;
-				next;
-			if ignore-text is false, say "[hint-idx]. You need to specify thing-hint-rule for [Q].";
-	if hint-idx > 0, say "[hint-idx] thing hint[plur of hint-idx] to implement.";
 
 chapter going to rooms
 
@@ -2428,29 +2412,6 @@ instead of doing something when in-way-wrong is true:
 	if action is procedural, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
-chapter blowingblobsing
-
-the knowing nobs are plural-named people.
-
-blowingblobsing is an action applying to nothing.
-
-understand the command "blowing blobs" as something new.
-understand the command "sowing sobs" as something new.
-understand the command "slowing slobs" as something new.
-
-understand "blowing blobs" and "sowing sobs" and "slowing slobs" as blowingblobsing when player has jerk gel.
-
-hint-nobs is a truth state that varies.
-
-carry out blowingblobsing:
-	if knowing nobs are not in location of player:
-		now hint-nobs is true;
-		say "That might work, but not here." instead;
-	up-reg;
-	say "Bye bye nobs!";
-	moot knowing nobs;
-	the rule succeeds.
-
 chapter wildweeding
 
 the wild weed is a thing.
@@ -2490,23 +2451,6 @@ the snuck snare is a thing. "You feel lucky enough that you'll know where to put
 book clumped cluster
 
 the clumped cluster is scenery. cht of clumped cluster is letminus. "The clumped cluster won't let you by!".
-
-book Pain Peasant
-
-the Pain Peasant is a person.
-
-chapter plainpleasanting
-
-plainpleasanting is an action applying to nothing.
-
-understand the command "plainpleasant" as something new.
-
-understand "plainpleasant" as plainpleasanting.
-
-carry out plainpleasanting:
-	say "The Pain Peasant is much nicer now. You have a chat about stuff, and the peasant takes leave to go do peasant things.";
-	moot Pain Peasant;
-	the rule succeeds;
 
 [?? burned bower/turned tower]
 
@@ -2799,7 +2743,8 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "least"	"loss"	true	true	false	vc-least-loss rule	vr-least-loss rule	--
 "loft"	"land"	false	true	false	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
 "soft"	"sand"	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--
-"show"	"shield"	true	true	false	vc-show-shield rule	vr-show-shield rule	-- [start foe field]
+"plain"	"pleasant"	true	true	false	vc-plain-pleasant rule	vr-plain-pleasant rule	-- [start foe field]
+"show"	"shield"	true	true	false	vc-show-shield rule	vr-show-shield rule	--
 "cool"	"cap"	true	true	false	vc-cool-cap rule	vr-cool-cap rule	-- [start curst cave]
 "dreaming"	"dull"	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--
 "first"	"fave"	false	true	false	vc-first-fave rule	vr-first-fave rule	--
@@ -3867,6 +3812,13 @@ this is the vr-paper-pile rule:
 	say "The vapor vile changes to a paper pile.";
 	moot vapor vile;
 	bring-here paper pile;
+
+this is the vc-plain-pleasant rule:
+	if pain peasant is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-plain-pleasant rule:
+	say "How about that? A few nice words, and the Pain Peasant forgets what the matter was. Apparently, with the Very Vile Fairy File's influence, that happens a lot. People lash out at whomever, just because. A lesson learned!";
 
 this is the vc-pull-pieced rule:
 	if full feast is not in Creased Cross, the rule fails;
