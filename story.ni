@@ -131,13 +131,13 @@ to say email: say "blurglecrun[hc]eon@gmail.com"
 
 to say gh: say "https://github.com/andrews[hc]ultz/very-vile-fairy-file (currently private)"
 
-the maximum score is 64.
+the maximum score is 89.
 
 whew-score is a number that varies. whew-score is 8.
 
-min-needed is a number that varies. min-needed is 56.
+min-needed is a number that varies. min-needed is 80.
 
-min-gotten is a number that varies. min-gotten is 0.
+min-gotten is a number that varies. min-gotten is 9.
 
 core-score is a number that varies. core-score is 0.
 
@@ -233,6 +233,7 @@ to say sign-dir:
 		if there is an e1 entry and e1 entry is location of player:
 			now got-wry is true;
 			say "[b][fake-name entry][r]: [e2 entry].";
+	say "[run paragraph on]";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
 definition: a room (called rm) is signable:
@@ -788,10 +789,10 @@ part Lake Lea 3,2
 Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap to the east.".
 
 check going east in Lake Lea when Jake G is touchable:
-	if jake-woke is false, say "You have a feeling you may need Jake G.'s guidance.";
+	if jake-woke is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if jake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else]paces back and forth here[end if].". talk-text of Jake G is "Achy! Make me!'"
+Jake G is a person in Lake Lea. "Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else]paces back and forth here[end if].". talk-text of Jake G is "'Achy! Make me!'"
 
 jake-woke is a truth state that varies.
 jake-tea is a truth state that varies.
@@ -873,7 +874,7 @@ Here Hull is east of Soft Sand. It is in Piddling Pain. "You can go back east to
 gull-guard is a truth state that varies.
 
 to buff-gold-guard:
-	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal.[wfak]";
+	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal.'[wfak]";
 	now gull-guard is true;
 	move player to Soft Sand;
 
@@ -914,27 +915,6 @@ every turn when in-bull-chase is true:
 
 to start-bull-chase:
 	now in-bull-chase is true;
-
-chapter fearfuling
-
-fearfuling is an action applying to nothing.
-
-understand the command "fearful" as something new.
-
-understand "fearful" as fearfuling when hull-bull.
-
-fearful-ever is a truth state that varies.
-
-carry out fearfuling:
-	if fearful-ever is false:
-		now fearful-ever is true;
-		up-reg;
-	now cht of beer bull is leteq; [beer bull->dear dull]
-	say "The beer bull snorts and begins to follow you.";
-	now fearful-on is true;
-	the rule succeeds.
-
-fearful-on is a truth state that varies.
 
 part Shirk Shell -1,2 a
 
@@ -1291,11 +1271,8 @@ to decide whether tried-yet of (ct - text):
 	if tried-any is false, say "BUG in the tried-yet code for text [ct]. This is not critical, but it is worth fixing on my end.";
 	decide no;
 
-to clue-later-w (ct - text):
-	clue-later ct;
-	process the note first think rule;
-
 to clue-later (ct - text):
+	if vc-dont-print is true, continue the action;
 	now first-think-clue-flag is true;
 	repeat through table of forlaters:
 		if ct is cmd-to-say entry:
@@ -1382,7 +1359,7 @@ carry out reading:
 table of readables
 read-thing	read-txt
 Very Vile Fairy File	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
-leet learner	"Some multi-colored text on the leet learner (itself written in yellow) seems to function as examples. Some seem like a bit of a stretch, but they're probably there to help.[paragraph break][table-of-color-hints][run paragraph on]"
+leet learner	"Some multi-colored text on the leet learner seems to function as examples. Some seem like a bit of a stretch, but they're probably there to help.[paragraph break][table-of-color-hints][run paragraph on]"
 marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 
 to say table-of-color-hints:
@@ -1391,7 +1368,7 @@ to say table-of-color-hints:
 
 table of color clues
 my-text	my-color
-"   LEET LEARNER  "	"white"
+"   LEET LEARNER  "	"grey"
 "CONCEIT CONCERNER"	"blue"
 "  CHEAT CHURNER  "	"green"
 "   MEET MOURNER  "	"yellow"
@@ -1631,7 +1608,15 @@ to say two-too-yet:
 	if ever-two-too is false, say ". Hmm. You have a good idea what that means";
 	now ever-two-too is true;
 
-to say leetclue of (x - a cheattype): if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x]."
+to say leetclue of (x - a cheattype):
+	if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x]";
+	if leetcool is 0:
+		say ". Once you figure out what to do, you may wish to remember how [the player's command in upper case] + [scancol of x] = what you needed";
+		now leetcool is a random number between 3 and 6;
+	else:
+		decrement leetcool;
+
+leetcool is a number that varies. leetcool is 0.
 
 to say scancol of (x - a cheattype): say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
 
@@ -2657,16 +2642,20 @@ this is the verb-checker rule:
 				process the notify score changes rule;
 				process the get-sad rule;
 				process the get-wrong rule;
-				follow the every turn rules;
 			process the note first think rule;
 			the rule succeeds;
-		if ha-half is true and my-count is 1:
+		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
+			now vc-dont-print is true;
 			process the ver-rule entry;
-			if the rule failed, next;
-			if debug-state is true, say "[ver-rule entry] tipped off the HA HALF button.";
+			if the rule failed:
+				now vc-dont-print is false;
+				next;
+			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
 			say "The HA HALF button lights up on your Leet Learner.";
 			the rule succeeds;
 	if debug-state is true, say "OOPS if we're not in a test.";
+
+vc-dont-print is a truth state that varies.
 
 next-lump-level is a number that varies. next-lump-level is 5.
 next-lump-delta is a number that varies. next-lump-delta is 4.
@@ -2696,9 +2685,6 @@ this is the mistake-checker rule:
 				if there is a leet-rule entry:
 					process the leet-rule entry;
 					unless the rule succeeded, the rule succeeds;
-				if got-yet entry is false:
-					check-lump-progress;
-				now got-yet entry is true;
 				let d1 be -10;
 				let d2 be -10;
 				if there is a w1let entry:
@@ -2706,7 +2692,10 @@ this is the mistake-checker rule:
 					if there is a w2let entry:
 						now d2 is w2let entry - number of characters in word number 2 in the player's command;
 					if d2 is -10, now d2 is d1;
-					say "[leetclue of cluecheat of d1 and d2]";
+					say "[leetclue of cluecheat of d1 and d2].";
+				if got-yet entry is false:
+					check-lump-progress;
+				now got-yet entry is true;
 				the rule succeeds;
 
 to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number):
@@ -2730,16 +2719,19 @@ understand "jj" as jerkingjumping.
 
 in-jerk-jump is a truth state that varies.
 
+to say firstor of (t - text):
+	replace the regular expression "\|.*" in t with "";
+	say "[t in upper case]";
+
 carry out jerkingjumping:
 	if debug-state is false:
 		if lurking lump is off-stage, say "You have nothing that would help you do that." instead;
 		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
 	now in-jerk-jump is true;
 	repeat through table of verb checks:
-		say "Processing [ver-rule entry].";
 		process the ver-rule entry;
 		if the rule succeeded:
-			say "[do-rule entry], bam.";
+			say "After some thought, you consider the right way forward: [firstor of w1 entry] [firstor of w2 entry]...";
 			process the do-rule entry;
 			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
 			if zap-core-entry is true:
@@ -2790,7 +2782,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "cleared"	"clay"	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--
 "tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
 "knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--
-"lots"	"lame"	false	false	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
+"lots"	"lame"	false	true	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
 "dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
@@ -2924,6 +2916,9 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 		move Jake G to location of player;
 	continue the action;
 
+to vcp (t - text): [verb conditional print]
+	if vc-dont-print is false, say "[t]";
+
 section vc vr rules [xxvcvr]
 
 this is the vc-backed-binder rule:
@@ -2940,7 +2935,7 @@ this is the vr-backed-binder rule:
 this is the vc-beaker-bustle rule:
 	if reeker russell is not touchable, the rule fails;
 	if beaker-yet is true:
-		say "You already did that!";
+		vcp "You already did that!";
 		continue the action;
 	the rule succeeds;
 
@@ -2952,23 +2947,19 @@ this is the vr-beaker-bustle rule:
 this is the vc-beast-boss rule:
 	if player is not in Creased Cross, the rule fails;
 	if Bull Beast is not off-stage:
-		say "You already did.";
+		vcp "You already did.";
 		continue the action;
 	if player does not have gold guard:
-		say "You don't feel armed for that, yet.";
+		vcp "You don't feel armed for that, yet.";
 		clue-later "BEAST BOSS";
 		continue the action;
 	if gull-guard is false:
-		say "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
+		vcp "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
 		clue-later "BEAST BOSS";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-beast-boss rule:
-	if score < beast-boss-min:
-		clue-later "BEAST BOSS";
-		say "You don't have the experience yet.";
-		continue the action;
 	say "A Bull Beast appears to answer your summons. You hope you have done the right thing.";
 	move Bull Beast to Creased Cross;
 	now need-loss is true;
@@ -2976,11 +2967,11 @@ this is the vr-beast-boss rule:
 
 this is the vc-big-bag rule:
 	if player has big bag:
-		say "You already made the big bag.";
+		vcp "You already made the big bag.";
 		continue the action;
 	if Fun Fen is unvisited:
 		clue-later "BIG BAG";
-		say "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
+		vcp "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
 		continue the action;
 	the rule succeeds;
 
@@ -2993,10 +2984,10 @@ this is the vr-big-bag rule:
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
 	if boring boat is moot:
-		say "You don't need to bring the boring boat back.";
+		vcp "You don't need to bring the boring boat back.";
 		continue the action;
 	if boring boat is in violent vale:
-		say "The boat is already boring and practical enough.";
+		vcp "The boat is already boring and practical enough.";
 		continue the action;
 	the rule succeeds;
 
@@ -3006,10 +2997,10 @@ this is the vr-boring-boat rule:
 	move boring boat to Violent Vale;
 
 this is the vc-break-brie rule:
-	if jake is not touchable, the rule succeeds;
+	if jake is not touchable, the rule fails;
 	if jake-brie is true:
 		say "You already did.";
-		the continue the action;
+		continue the action;
 	the rule succeeds;
 
 this is the vr-break-brie rule:
@@ -3177,7 +3168,7 @@ this is the vc-deal-dear rule:
 	if player is not in Real Rear, the rule fails;
 	if felt-fear is false:
 		clue-later "DEAL DEAR";
-		say "You haven't found anything you need to deal with[seer-sez].";
+		vcp "You haven't found anything you need to deal with[seer-sez].";
 		continue the action;
 	the rule succeeds;
 
@@ -3191,10 +3182,10 @@ this is the vr-deal-dear rule:
 this is the vc-dear-dull rule:
 	if player is not in here hull, the rule fails;
 	if beer bull is moot:
-		say "Yeah, easy to say with the beer bull gone for good.";
+		vcp "Yeah, easy to say with the beer bull gone for good.";
 		continue the action;
 	if in-bull-chase is true:
-		say "You don't need to do any more taunting.";
+		vcp "You don't need to do any more taunting.";
 		continue the action;
 	the rule succeeds;
 
@@ -3241,7 +3232,7 @@ this is the vr-dreaming-dull rule:
 	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse. You try to show empathy and interest, but it's hopeless. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
 
 this is the vc-fake-fee rule:
-	if jake is not touchable, the rule succeeds;
+	if jake is not touchable, the rule fails;
 	if jake-fee is true:
 		say "You already did.";
 		the continue the action;
@@ -3328,7 +3319,7 @@ this is the vc-flim-flam rule:
 	if me-minded is false:
 		process the trimtramcmd rule;
 		say "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
-		clue-later-w "FLIM FLAM";
+		clue-later "FLIM FLAM";
 		continue the action;
 	the rule succeeds;
 
@@ -3345,7 +3336,7 @@ this is the vc-found-fit rule:
 		continue the action;
 	if hit hound is in pit pound:
 		say "You can't do much with the Hit Hound around.";
-		clue-later-w "FIT FOUND";
+		clue-later "FIT FOUND";
 		continue the action;
 	the rule succeeds;
 
@@ -3693,7 +3684,7 @@ this is the vc-mash-map rule:
 		process the ashap rule;
 		if debug-state is true, say "[word number 1 in the player's command] [bap-map-rap].";
 		say "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
-		clue-later-w "MASH MAP";
+		clue-later "MASH MAP";
 		continue the action;
 	the rule succeeds;
 
@@ -3843,7 +3834,7 @@ this is the vr-mystery-mall rule:
 	the rule succeeds;
 
 this is the vc-near-null rule:
-	if beer bull is not touchable, the rule succeeds;
+	if beer bull is not touchable, the rule fails;
 	if bull-null is true:
 		say "You already reduced the bull's power!";
 		continue the action;
@@ -3996,6 +3987,7 @@ this is the vr-snake-snap rule:
 	move player to Violent Vale, without printing a room description;
 
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
+	if player does not have Toe Tappin Row Rappin, the rule fails;
 	if war-sapped is true:
 		say "You already did.";
 		continue the action;
@@ -4065,7 +4057,7 @@ this is the vr-strong-start rule:
 	the rule succeeds.
 
 this is the vc-take-tea rule:
-	if jake is not touchable, the rule succeeds;
+	if jake is not touchable, the rule fails;
 	if jake-tea is true:
 		say "You already did.";
 		the continue the action;

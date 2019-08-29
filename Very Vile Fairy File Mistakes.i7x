@@ -4,41 +4,71 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [malf.py alphabetizes each set of mistakes internally by room after the "general mistakes" volume.]
 
-[too totes new notes]
-
 [stuff I haven't sorted yet:
+##############unsorted
+##############trim tram
+whim wham
+grim gram
+jim jam
+dim dam
+swim swam
+rim ram
+shim sham
+###############paper pile
+gaper guile
+taper/tapir tile
+###############sage sea
+page pea
+wage wee
+phage fee
+#################dive deep
+jive jeep
+#################???? maybe future
+ball bee
+shawl she
+maul me
+call key
+###################po' pit
+snow snit
+co kit
 say soak
 slow slappin
 woe whappin
 yo yappin
 turk tell
+##############gots game
 knots/nots name
 tots tame
-tots tame
 sots same
-gear gull
-near null
+###############stark store
 lark lore
-lining lore
 bark bore
 park pore/poor
+#############marred mat
 barred/bard bat
-taper/tapir tile
-coughed canned
-ball brie
-island ale
-spining spore
-pining pore/poor
-massed/mast map
-gear gull # rescue it from the Beer Bull, somehow
+#############here hull
 pier/peer pull
-steal steer
+###############loft land
+coughed canned
+###################tall tree
+ball brie
+##################gassed gap
+massed/mast map
+##################violent vale
+island ale
+##################random i dunno
 stooping stair
 looping lair
+#################way wrong
 pay prong
+################real rear
 eel ear/ere
 peel pier # a bit too on the nose
+#######################creased cross
 fleeced floss # dental hygiene is a good idea in general, but here it's unnecessary.
+#########################shining shore
+spining spore
+pining pore/poor
 Fining Four #they are hete to ... well, make you pay up
 lining lore
 ]
@@ -51,11 +81,11 @@ table of mistake substitutions
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start general mistakes]
 "swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
+"wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start wry wall mistakes]
 "dry doll"	signable-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
 "fry fall"	signable-loc rule	false	--	--	--	"The wry wall remains upright."
 "pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
-"shy shawl"	signable-loc rule	false	--	--	--	"You'll need better clothing than that to get through things."
 "try tall"	signable-loc rule	false	--	--	--	"The wry wall does not grow."
 "bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start airy isle]
 "swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn."
@@ -80,7 +110,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "bo/bow bit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though."
 "rash wrap/rap"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You don't need a rash, or rash actions. You need a more mature response, you reckon."
 "slow slit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You can't see where to make a cut, and you have nothing to make a cut with."
-"bro brit/britt"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You can't see where to make a cut, and you have nothing to make a cut with."
+"bro brit/britt"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You don't need a sidekick. Well, right now, you don't. Hard to summon them, anyway."
 "know/no knit/nit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You look for details to understand, but you might want to go in for a bigger picture."
 "show shit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Profanity doesn't work here."
 "so sit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You sit and pout. It doesn't help."
@@ -89,10 +119,12 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cage key"	key-or-rear rule	false	--	--	--	"[if cage key is off-stage]It's clever but not wise to see what is in the Sage Sea. But you have to earn it[else]You already got the key[end if]." [start real rear]
 "mage me"	key-or-rear rule	false	--	--	--	"[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do."
 "peel pear"	in-real-rear rule	false	--	--	if-rear-undone rule	"You have no fruit."
-"steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"The steer would not fit in your bag."
+"steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
 "bind be"	tram-first-puzzle rule	false	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start trim tram]
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
+"signed see"	tram-first-puzzle rule	false	4	2	--	"You're still reacting to FIND FEE. You need to look inwards."
+"tined tee"	tram-first-puzzle rule	false	4	2	--	"You don't have time for silly games like golf now!"
 "kind key"	tram-first-puzzle rule	false	4	2	--	"Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU."
 "prim pram"	in-trim-tram rule	false	4	4	--	"That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse."
 "slim slam"	in-trim-tram rule	false	4	4	--	"That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though."
