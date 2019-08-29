@@ -135,7 +135,7 @@ the maximum score is 89.
 
 whew-score is a number that varies. whew-score is 8.
 
-min-needed is a number that varies. min-needed is 80.
+min-needed is a number that varies. min-needed is 81.
 
 min-gotten is a number that varies. min-gotten is 9.
 
@@ -1944,17 +1944,25 @@ the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of big bag is big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
+the thing-hint-rule of boring boat is the boring-boat-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
+the thing-hint-rule of Bull Beast is the bull-beast-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
 the thing-hint-rule of cage key is cage-key-hint rule.
+the thing-hint-rule of cake cap is all-caps-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of ceiling seer is ceiling-seer-hint rule.
-the thing-hint-rule of cool cap is cool-cap-hint rule.
+the thing-hint-rule of clashing cloak is the clashing-cloak-hint rule.
+the thing-hint-rule of cold card is the cold-card-hint rule.
+the thing-hint-rule of cool cap is all-caps-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
+the thing-hint-rule of dark door is the dark-door-hint rule.
 the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
+the thing-hint-rule of flooring float is the flooring-float-hint rule.
 the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
+the thing-hint-rule of full feast is the full-feast-hint rule.
 the thing-hint-rule of gash gap is cache-cap-hint rule.
 the thing-hint-rule of go gate is go-gate-hint rule.
 the thing-hint-rule of gold guard is gold-guard-hint rule.
@@ -1963,9 +1971,11 @@ the thing-hint-rule of GOTS GAME is gots-game-hint rule.
 the thing-hint-rule of grow grate is grow-grate-hint rule.
 the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
 the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
+the thing-hint-rule of hard hat is all-caps-hint rule.
 the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hot Horde is bot-board-hint rule.
+the thing-hint-rule of Jake G is the jake-g-hint rule.
 the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is leet-learner-hint rule.
@@ -1974,6 +1984,7 @@ the thing-hint-rule of Lot Lord is bot-board-hint rule.
 the thing-hint-rule of lurking lump is lurking-lump-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
+the thing-hint-rule of Mean Moe's Clean Clothes is the mean-moes-clean-clothes-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
 the thing-hint-rule of mind malt is mind-malt-hint rule.
 the thing-hint-rule of Name Notes Tame Totes is name-notes-tame-totes-hint rule.
@@ -1986,15 +1997,23 @@ the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
 the thing-hint-rule of row writ is row-writ-hint rule.
 the thing-hint-rule of Sage Sea is sage-sea-hint rule.
 the thing-hint-rule of screaming skull is screaming-skull-hint rule.
+the thing-hint-rule of Shoaled Shard is the shoaled-shard-hint rule.
+the thing-hint-rule of shy shawl is the shy-shawl-hint rule.
+the thing-hint-rule of snuck snare is the snuck-snare-hint rule.
 the thing-hint-rule of steel steer is steel-steer-hint rule.
+the thing-hint-rule of stuck stair is the stuck-stair-hint rule.
 the thing-hint-rule of tall tree is tall-tree-hint rule.
 the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
+the thing-hint-rule of Too Totes New Notes is the too-totes-new-notes-hint rule.
 the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
 the thing-hint-rule of two too button is two-too-hint rule.
 the thing-hint-rule of vapor vile is vapor-vile-hint rule.
 the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
+the thing-hint-rule of way woke clay cloak is the way-woke-clay-cloak-hint rule.
+the thing-hint-rule of We Whine ME MINE is the we-whine-me-mine-hint rule.
+the thing-hint-rule of Weird Way is the weird-way-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wild weed is wild-weed-hint rule.
 the thing-hint-rule of worst wave is worst-wave-hint rule.
@@ -2002,22 +2021,28 @@ the thing-hint-rule of wrong art is wrong-art-hint rule.
 the thing-hint-rule of wry wall is wry-wall-hint rule.
 the thing-hint-rule of zig zag rig rag is zig-zag-rig-rag-hint rule.
 
-[
-the thing-hint-rule of Bull Beast is bull-beast-hint rule.
-the thing-hint-rule of hard hat is hard-hat-hint rule.
-the thing-hint-rule of Jake G is jake-g-hint rule.
-the thing-hint-rule of Lake Lap is lake-lap-hint rule.
-the thing-hint-rule of Ache App is ache-app-hint rule.
-the thing-hint-rule of Beer Bull is beer-bull-hint rule.
-the thing-hint-rule of cool cap is cool-cap-hint rule.
-the thing-hint-rule of moral mage is moral-mage-hint rule.
-the thing-hint-rule of silly sign is silly-sign-hint rule.
-the thing-hint-rule of knowing nobs is knowing-nobs-hint rule.
-]
-
 [??styled steed]
 
+section variables etc
+
+[this is just to keep hinting code a bit cleaner and avoid nested one of/or when possible and sensible.]
+
+ttnn-yet is a truth state that varies.
+
+ssh-yet is a truth state that varies.
+
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
+
+this is the all-caps-hint rule:
+	let N be number of gaphats enclosed by the player;
+	say "You need to combine three hats, eventually. You have [N in words].";
+	if N is 3:
+		if player does not have jerk gel:
+			say "You need to find something to glue the hats together with." instead;
+		say "You can use the jerk gel to glue the hats together, but you need the right command.";
+
+this is the dark-door-hint rule:
+	say "[one of]The dark door is sort of defined and accessible, but not enough. You need to observe it a bit extra.[or]MARK MORE.[stopping]"
 
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
@@ -2031,6 +2056,12 @@ this is the big-bag-hint rule:
 this is the bold-bard-hint rule:
 	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
 
+this is the boring-boat-hint rule:
+	if nap-no is true, say "You can just board the boat.";
+	say "A song might help the boring boat be less boring.";
+	if player does not have toe tappin row rappin, say "[line break]You haven't found one yet." instead;
+	say "[line break][one of][Toe] can be modified[or]How to feel less sleepy or bored on the boat, using [Toe]?[or][Toe] can become NO NAPPIN.[stopping]";
+
 this is the bot-board-hint rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
 		say "[one of]Now that the Lot Lord and Hot Horde are in Airy Isle, they need a rallying cry[or]Or a victory cry[or]GOT GORED[stopping].";
@@ -2040,6 +2071,13 @@ this is the bot-board-hint rule:
 		say "[one of]The Hot Horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or]LOT LORD[stopping].";
 	else:
 		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
+
+this is the bull-beast-hint rule:
+	if need-loss is true:
+		if tried-yet of "LEAST LOSS", say "Now is the time to go in for LEAST LOSS." instead;
+		say "[one of]The Beast Boss/Bull Beast is going to hurt you, no question. But you want to minimize the damage[or]LEAST LOSS[stopping]." instead;
+	if tried-yet of "CULL CEASED", say "You already tried to say CULL CEASED. Now, it will work!" instead; [?? what if LUL LEAST??]
+	say "[one of]You need to say or do something that will put the Bull Beast down[or]There are two ways to nail the Bull Beast[or][one of]CULL CEASED tells the Bull Beast its rampaging days are over[or]LUL LEAST is a put-down that leaves the beast in shame[stopping][stopping].";
 
 this is the cache-cap-hint rule:
 	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if grit-grown is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
@@ -2058,8 +2096,21 @@ this is the cark-cliff-hint rule:
 this is the ceiling-seer-hint rule:
 	say "The Ceiling Seer is just there to reinforce what you need to do in the Real Rear. The -ing in each act is superfluous.";
 
-this is the cool-cap-hint rule:
-	say "[one of]The cool cap is useful in one specific place[or]You need to throw down the gauntlet, or something like it, somewhere[or]There is one place that rhymes with cap[or]You can do something with the cap[here-in of Gassed Gap][or]CAST CAP [here-in of Gassed Gap][stopping]."
+this is the clashing-cloak-hint rule:
+	if tried-yet of "SMASHING SMOKE":
+		say "You know what to do with the cloak, but the question is, where?";
+		if floor-yet is false:
+			say "You haven't unlocked the room, yet. You need to look at the Erst Lore [here-in of History Hall].";
+		else if y'old yard is unvisited:
+			say "You haven't visited beyond Erst Lore.";
+		else:
+			say "Using the cloak in Y'Old Yard will help the Bold Bard.";
+		the rule succeeds;
+	say "[one of]The clashing cloak can transform into another sort of distraction[or]SMASHING SMOKE[stopping].";
+	if floor-yet is false, say "You can't use the clashing cloak yet."
+
+this is the cold-card-hint rule:
+	say "You need to bring the cold card somewhere as a voucher[one of]. Hint again to see where[or]. [if the room east of vending vibe is nowhere]You will need to change Mystery Mall back, first[else if vending vibe is unvisited]You need to visit west of Mystery Mall[else if trending tribe is moot]The Lending Libe[else]The Vending Vibe, but first you must deal with the Trending Tribe[end if][stopping]."
 
 this is the coral-cage-hint rule:
 	if player does not have cage key:
@@ -2077,8 +2128,16 @@ this is the done-den-hint rule:
 this is the find-fee-hint rule:
 	say "[one of]The FIND FEE makes you feel as though you need to pay, but you need to pay attention to yourself.[or]The leet learner scans orange, but the first word has to be *IND. So the second word must be very short indeed.[or]MIND ME.[stopping]"
 
+this is the flooring-float-hint rule:
+	say "[one of]The flooring float seems almost too exciting to use. You need to tone it down.[or]Make the float a BORING BOAT.[stopping]";
+
 this is the frightening-fridge-hint rule:
 	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
+
+this is the full-feast-hint rule:
+	if tried-yet of "PULL PIECED":
+		say "You know what to do with the full feast. Nobody's ready for it yet." instead;
+	say "[one of]The full feast is too much to carry by yourself all at once[or]You can bring the full feast over a bit at a time[or]PULL PIECED[stopping].";
 
 this is the go-gate-hint rule:
 	say "[one of]You want to go through the go gate, but you need to show a bit of caution[or]LO LATE doesn't quite cut it, here[or]You can also scan the component part, the grow grate, for maybe a bit of help[or]WHOAH WAIT, or any of three alternate spellings, works[stopping].";
@@ -2107,6 +2166,15 @@ this is the hit-hound-hint rule:
 
 this is the hive-heap-hint rule:
 	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
+
+this is the jake-g-hint rule:
+	if jake-woke is false, say "[one of]Jake needs to be roused from his sleep gently and cheerily[or]Maybe you can rouse him with enthusiasm[or]WAKE WHEE[stopping]." instead;
+	if jake-tea is false, say "[one of]Time to eat and drink with Jake[or]A standard Inform verb does nicely here[or]TAKE TEA[stopping]." instead;
+	if jake-fee is false, say "[one of]Jake wants payment, but not really[or]You've sort of done this back at the Trim Tram, but it's a bit different[or]FAKE FEE[stopping]." instead;
+	if jake-cocapn is false, say "[one of]Jake wants to feel like an equal[or]You may or may not hear [Toe Tappin] again[or]A riff on [Toe Tappin] will make Jake happy[or]You can say CO CAPN[stopping]." instead;
+	if jake-map is false, say "[one of]You and Jake G are lost. You're in Lake Lap, so you may do things a bit differently[or]I'm pretty sure you know an item that helps you not get lost[or]MAKE MAP[stopping]." instead;
+	if jake-snap is false, say "[one of]Now you and Jake must deal with that hissing noise[or]I think you know what sort of animal makes a hissing noise[or]SNAKE SNAP[stopping]" instead;
+	say "Oops. It's a bug you got this far, but it's not a fatal one."
 
 this is the jerk-gel-hint rule:
 	if player does not have jerk gel:
@@ -2137,6 +2205,18 @@ this is the marred-mat-hint rule:
 
 this is the mean-mass-hint rule:
 	say "[one of]You need to make the mean mass into something much less harmful. Wholesome, even.[or]Maybe the mean mass can be changed to something you're missing on the outside. Something from nature.[or]The mean mass can become GREEN GRASS.[stopping]"
+
+this is the mean-moes-clean-clothes-hint rule:
+	say "You need something to clean as well as a way to operate the machine.";
+	if tried-yet of "GLEAN GLOWS":
+		say "You already know to GLEAN GLOWS.";
+	else:
+		say "[one of]How can you look into the inner mechanism of [clean clothes]?[or]Bells and lights and whistles.[or]GLEAN GLOWS.[stopping]";
+		the rule succeeds;
+	if player has way woke clay cloak:
+		say "The way woke clay cloak can be cleaned.";
+	else:
+		say "[one of]You'll need a dirty-ish clothing item. You don't have it yet, but you'll know when you do. Or the next hint will spoil it[or]The way woke clay cloak goes in once you GLEAN GLOWS[stopping].";
 
 this is the mild-mead-hint rule:
 	say "[one of]You can make the mild mead have a bit more kick, but you don't need to.[or]The mild mead can become a slightly harder drug.[or]WILD WEED.[stopping]";
@@ -2177,10 +2257,30 @@ this is the sage-sea-hint rule:
 
 this is the screaming-skull-hint rule: say "[one of]If there only were a way to make the screaming skull less imposing![or]Maybe there is a way the skull can make less noise as well.[or]DREAMING DULL.[stopping]"
 
+this is the shoaled-shard-hint rule:
+	say "The Shoaled Shart is just the place the Bold Bard need[if bold bard is moot]s[else]ed[end if] to get to. It's irrelevant on its own."
+
+this is the shy-shawl-hint rule:
+	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]It looks silly and stupid and wrong.[or]LIE LOL[stopping]."
+
+this is the snuck-snare-hint rule:
+	if ssh-yet is false:
+		now ssh-yet is true;
+		say "You need to find the right place to drop the snuck snare. You'll do so automatically." instead;
+	if weird way is not moot, say "You can get past the Weird Way." instead;
+	if fight funnel is not visited, say "Go down in Stark Store." instead;
+	if funnel-to-tunnel is false, say "You can get past the Fight Funnel." instead;
+	if Dives Ditch is unvisited, say "Go west in Fight Funnel." instead;
+	if kni-ni is false, say "You should see about changing Dives Ditch." instead;
+	say "You will need to place the snare in [Dives Ditch] before leading someone on a chase. Then, run back there to spring the trap.";
+
 this is the steel-steer-hint rule:
 	if healed-here is true, the rule fails;
 	say "The steel steer is just here to bring home that there's a lot to do in the Real Rear.";
 	process the real-rear-hint rule;
+
+this is the stuck-stair-hint rule:
+	say "[one of]The stuck stair holds a place as well as an item. Guessing either one works, but the place has fewer letters[or]The stair may lead to good fortune[or]Or luck[or][one of]The place is LUCK LAIR[or]The item is a SNUCK SNARE[cycling][stopping]."
 
 this is the tall-tree-hint rule:
 	if tree-down is true, the rule fails;
@@ -2188,6 +2288,13 @@ this is the tall-tree-hint rule:
 
 this is the toe-tappin-row-rappin-hint rule:
 	say "[one of]Man! The Toe Tappin Row Rappin song is energetic. But you don't need that.[or]You can slow the song down some.[or]SO SAPPIN[stopping]"
+
+this is the too-totes-new-notes-hint rule:
+	if ttnn-yet is false:
+		now ttnn-yet is true;
+		say "Too Totes New Notes just lists what you've done to give an idea how the Leet Learner works. Spoilers ahead.";
+	else:
+		process the leet-learner-hint rule;
 
 this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
 	say "[one of]You can request something from the tool tap.[or]It might not be a tool, but who knows when it comes in handy.[or]Summon a COOL CAP.[stopping]"
@@ -2207,6 +2314,15 @@ this is the very-vile-fairy-file-hint rule:
 	else:
 		say "[one of]Now that you're happy, the Fairy File can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
 	the rule succeeds;
+
+this is the way-woke-clay-cloak-hint rule:
+	say "[one of]You need to find a place to clean the cloak.[or]A machine off to the side can clean your cloak[or]The Mystery Mall holds [clean clothes][or]In the Mystery Mall, GLEAN GLOWS[stopping]."
+
+this is the we-whine-me-mine-hint rule:
+	say "[one of][We Whine] is useless read straight-up, but reading the right way can give insights[or]SEE SIGN[stopping]."
+
+this is the weird-way-hint rule:
+	say "[one of]The weird way is some odd substance blocking you. Maybe it could vanish and there'd be less of it.[or]Make it CLEARED CLAY.[stopping]"
 
 this is the well-worn-hell-horn-hint rule:
 	say "[one of]The well worn hell horn seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
@@ -2364,8 +2480,6 @@ volume unsorted
 
 The cake cap is a gaphat.
 
-The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
-
 the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
 
 the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do."
@@ -2447,10 +2561,6 @@ the stuck stair is scenery. "It looks like you may have to figure where the stai
 chapter snuck snare
 
 the snuck snare is a thing. "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
-
-book clumped cluster
-
-the clumped cluster is scenery. cht of clumped cluster is letminus. "The clumped cluster won't let you by!".
 
 [?? burned bower/turned tower]
 
@@ -2790,7 +2900,6 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
 "stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--
 "wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of unplaced]
-"bumped"	"buster"	true	true	false	vc-bumped-buster rule	vr-bumped-buster rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -2958,15 +3067,6 @@ this is the vc-brightening-bridge rule:
 this is the vr-brightening-bridge rule:
 	say "Boom! There goes the fridge! You can go east now!";
 	moot frightening fridge;
-	the rule succeeds.
-
-this is the vc-bumped-buster rule:
-	if clumped cluster is touchable, the rule succeeds;
-	the rule fails;
-
-this is the vr-bumped-buster rule:
-	say "The clumped cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
-	moot clumped cluster;
 	the rule succeeds.
 
 this is the vc-bury-bile rule:
