@@ -10,17 +10,22 @@ import mytools as mt
 from i7 import is_outline_start
 from collections import defaultdict
 
-ignore_dict = defaultdict(bool)
-nofail = defaultdict(bool)
+ignore_rule = defaultdict(bool)
+mult_succ_fail_ok = defaultdict(bool)
+nofail_ok = defaultdict(bool)
 
-def check_vc_rules():
+go_to_verbcheck_end = True
+
+def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should be 1.
     out_file = open("story.niv", "w", newline="\n")
     in_vc = False
     in_vr = False
-    got_succeeds_yet = False
-    got_fails_yet = False
+    got_succeeds_yet = 0
+    got_fails_yet = 0
     rule_start_line = 0
     rule_name = "<NO RULE>"
+    mult_succ = 0
+    mult_fail = 0
     no_succ = 0
     no_fail = 0
     suggested_changes = 0
@@ -28,8 +33,8 @@ def check_vc_rules():
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("this is the vc-"):
                 in_vc = True
-                got_succeeds_yet = False
-                got_fails_yet = False
+                got_succeeds_yet = 0
+                got_fails_yet = 0
                 rule_start_line = line_count
                 rule_name = re.sub(".*vc-", "vc-", line).strip()
                 rule_name = re.sub(" *rule:", "", rule_name)
@@ -46,7 +51,15 @@ def check_vc_rules():
                     no_succ += 1
                     print("{}/{}Oops no 'rule succeeds' text in {} lines {}-{}.".format(no_succ, no_fail + no_succ, rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
-                if not got_fails_yet and rule_name not in nofail:
+                elif got_succeeds_yet > 1 and rule_name not in mult_succ_fail_ok:
+                    mult_succ += 1
+                    print("{}/{}Oops multiple 'rule succeeds' text in {} lines {}-{}.".format(no_succ, no_fail + no_succ, rule_name, rule_start_line, line_count))
+                    mt.add_postopen_file_line("story.ni", line_count)
+                if not got_fails_yet and rule_name not in nofail_ok:
+                    no_fail += 1
+                    print("{}/{} Oops no 'rule fails' text in {} lines {}-{}.".format(no_fail, no_fail + no_succ, rule_name, rule_start_line, line_count))
+                    mt.add_postopen_file_line("story.ni", line_count)
+                elif got_fails_yet > 1 and rule_name not in mult_succ_fail_ok:
                     no_fail += 1
                     print("{}/{} Oops no 'rule fails' text in {} lines {}-{}.".format(no_fail, no_fail + no_succ, rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
@@ -66,8 +79,8 @@ def check_vc_rules():
                 print("Suggested changes for {} at line {}.".format(rule_name, line_count))
                 continue
             elif in_vc:
-                got_succeeds_yet |= 'rule succeeds' in line
-                got_fails_yet |= 'rule fails' in line
+                got_succeeds_yet += 'rule succeeds' in line
+                got_fails_yet += 'rule fails' in line
             out_file.write(line)
     out_file.close()
     if suggested_changes:
@@ -79,33 +92,47 @@ def check_vc_rules():
         print("Need {} 'rule succeeds' and {} 'rule fails'.".format(no_succ, no_fail))
     else:
         print("All rules have rule succeeds/rule fails in place.")
+    if mult_succ or mult_fail:
+        print("Need to trim {} extra 'rule succeeds' and {} extra 'rule fails'.".format(mult_succ, mult_fail))
+    else:
+        print("No rules have excess rule succeeds/rule fails.")
     os.remove("story.niv")
     mt.postopen_files()
     exit()
 
-def get_ignore_dict():
+def get_ignore_notone():
     with open("vc.txt") as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("#"): continue
             if line.startswith(";"): continue
             l = line.lower().strip()
-            if l.startswith("ignoredict:") or l.startswith("ignorerule"):
+            if l.startswith("ignorezero:"):
                 l = l[11:]
                 ary = l.split(",")
                 for a in ary:
-                    if a in ignore_dict:
-                        print("WARNING duplicate ignore dict entry", a, "at line", line_count)
-                    ignore_dict[a] = True
+                    if a in ignore_rule:
+                        print("WARNING duplicate ignore zero dict entry", a, "at line", line_count)
+                    ignore_rule[a] = True
+            if l.startswith("multok:"):
+                l = l[11:]
+                ary = l.split(",")
+                for a in ary:
+                    if a in mult_succ_fail_ok:
+                        print("WARNING duplicate ignore mult dict entry", a, "at line", line_count)
+                    mult_succ_fail_ok[a] = True
             elif l.startswith("nofail:"):
                 l = l[7:]
                 ary = l.split(",")
                 for a in ary:
-                    if a in nofail:
-                        print("WARNING duplicate nofail entry", a, "at line", line_count)
-                    nofail[a] = True
+                    if a in nofail_ok:
+                        print("WARNING duplicate nofail_ok entry", a, "at line", line_count)
+                    nofail_ok[a] = True
+            elif re.search("^[a-z]+:", l):
+                l0 = re.sub(":.*", "", l)
+                print("Uh oh line {} has bad dict-type val {}.".format(line_count, l0))
     return
 
-def get_ups():
+def get_ups(): # make sure up-(min/reg) isn't anywhere it shouldn't be
     new_rule = "<NO RULE YET>"
     rule_line = 0
     count = 0
@@ -130,7 +157,7 @@ def get_ups():
             else:
                 ls = line.strip();
                 if ls.startswith("up-"):
-                    if new_rule in ignore_dict: continue
+                    if new_rule in ignore_rule: continue
                     count += 1
                     print("RULE", count, rule_line, new_rule)
                     print("    UP/DOWN", line_count, ls)
@@ -149,7 +176,7 @@ def get_ups():
 myary = []
 
 lsa = len(sys.argv)
-get_ignore_dict()
+get_ignore_notone()
 
 if lsa > 1:
     if (sys.argv[1] == 'u' or sys.argv[1] == 'up'):
@@ -179,7 +206,7 @@ vc = "vc-{}-{} rule".format(w1, w2)
 vr = "vr-{}-{} rule".format(w1, w2)
 
 pastestr = "\"{}\"\t\"{}\"\tFLIP:true/false\tCORE:true/false\t{}\t{}\t--\r\n".format(w1, w2, vc, vr)
-pastestr += "\r\nthis is the {}:\r\n".format(vc)
+pastestr += "\r\nthis is the {}:\r\n\tthe rule succeeds;\r\n".format(vc)
 pastestr += "\r\nthis is the {}:\r\n".format(vr)
 
 print(pastestr.rstrip())
@@ -188,3 +215,4 @@ print("first word, last word, ok to flip, core, vc rule, vr rule")
 print("Flip stuff: {0} {1} right, {1} {0} reverse.".format(w1, w2))
 
 pyperclip.copy(pastestr)
+
