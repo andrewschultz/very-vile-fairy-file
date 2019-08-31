@@ -7,8 +7,8 @@
 
 #the postproc says to insert the two commands where you get tired after X points
 #  SO DON'T USE WDROP.PY. rbr.py incorporates wdrop because of the line below.
-postproc=wdrop.py
 files=walkthrough-pre.txt,walkthrough-full-pre.txt
+postproc=wdrop.py
 
 TSV:## minimum walkthrough	## maximum walkthrough
 
@@ -160,13 +160,27 @@ And you can also deal with the horrible music that replaced what you heard.
 
 Oh, you can also use Toe Tappin one way quickly...
 
+==t1
+\\
+There's a bonus-point way and a non-bonus-point way. Let's see the bonus-point way:
+> HO HAPPEN (1)
+\\
+And now the necessary way:
+
 > NO NAPPIN (1)
+
+Toe Tappin will be useful in other situations and puzzles throughout the game as well.
 
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
 
 > HARD HAT (1)
+
+==t1
+And you can actually do something with the shy shawl, too. It is there mostly for practice. You can use it to get some good guesses to recharge the lurking lump, if you want, though if you have this walkthrough, that's probably not necessary.
+\\
+> LIE LOL (1)
 
 > E
 
@@ -225,6 +239,11 @@ Now he wants to give you hospitality.
 > TAKE TEA (1)
 
 Now he sort of expects payment...
+
+==t1
+... but you can get a last lousy point, first.
+\\
+> BREAK BRIE (1)
 
 > FAKE FEE (1)
 
@@ -302,6 +321,10 @@ Bam! Now the Backed Binder makes sense.
 
 > N
 
+Oh no! A pain peasant!
+
+> PLAIN PLEASANT (1)
+
 > W
 
 You have the key, but who is inside?
@@ -351,7 +374,7 @@ Now to set a trap for a bit later...
 
 > KNIVES NICHE (1)
 
-And now to find the poor sap to trap...
+And now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
 
 > E
 > U
@@ -364,9 +387,14 @@ And now to find the poor sap to trap...
 > S
 > W
 > D
-> W
+> W (u)
 
 Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who enhances your gold guard. You can now (sort of) deal with the odd peace in creased cross.
+
+==t1
+You can do something with the mild mead, though.
+\\
+> WILD WEED (1)
 
 > S
 

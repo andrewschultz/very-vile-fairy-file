@@ -131,6 +131,8 @@ Oh, you can also use Toe Tappin one way quickly...
 
 > NO NAPPIN (23)
 
+Toe Tappin will be useful in other situations and puzzles throughout the game as well.
+
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
@@ -277,11 +279,15 @@ Bam! Now the Backed Binder makes sense.
 
 > N
 
+Oh no! A pain peasant!
+
+> PLAIN PLEASANT (47)
+
 > W
 
 You have the key, but who is inside?
 
-> MORAL MAGE (47)
+> MORAL MAGE (48)
 
 Aha! Now you've fully translated the backed binder. Now let's go exploring to the east.
 
@@ -291,23 +297,23 @@ Aha! Now you've fully translated the backed binder. Now let's go exploring to th
 
 You need to dispel the hit hound and get comfortable.
 
-> SIT SOUND (48)
+> SIT SOUND (49)
 
-> FIT FOUND (49)
+> FIT FOUND (50)
 
 > E
 
 The blaze is a doozy. How to get something less lethal?
 
-> MINDING MAZE (50)
+> MINDING MAZE (51)
 
 Boy! Manually mapping would be no fun. A song would help...
 
-> MO MAPPIN (51)
+> MO MAPPIN (52)
 
 The stuck stair must go somewhere!
 
-> LUCK LAIR (52)
+> LUCK LAIR (53)
 
 Okay, that's enough here.
 
@@ -320,65 +326,65 @@ Now to set a trap for a bit later...
 > W
 > D
 
-> TIGHT TUNNEL (53)
+> TIGHT TUNNEL (54)
 
 > W
 
-> KNIVES NICHE (54)
+> KNIVES NICHE (55)
 
-And now to find the poor sap to trap...
+And now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
 
 > E
 > U
 > E
 > N
 > E
-> DEAR DULL (55)
-> NEAR NULL (56)
+> DEAR DULL (56)
+> NEAR NULL (57)
 > W
 > S
 > W
 > D
-> W
+> W (58)
 
 Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who enhances your gold guard. You can now (sort of) deal with the odd peace in creased cross.
 
 > S
 
-> BEAST BOSS (57)
+> BEAST BOSS (59)
 
-> LEAST LOSS (58)
+> LEAST LOSS (60)
 
 > S
 > S
 
-> HEAL HERE (59)
+> HEAL HERE (61)
 
 > N
 > N
 
 This time, you know what to do, and you can defeat the bull beast with a magic word!
 
-> CULL CEASED (60)
+> CULL CEASED (62)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (61)
+> FULL FEAST (63)
 
 You can't take it, but maybe you can use it in the future.
 
 > E
 > E
 
-> SO SAPPIN (62)
+> SO SAPPIN (64)
 
-> SHINING SHORE (63)
+> SHINING SHORE (65)
 
-> DINING DOOR (64)
+> DINING DOOR (66)
 
-> PULL PIECED (65)
+> PULL PIECED (67)
 
-> MINING MORE (66)
+> MINING MORE (68)
 
 Now you have a hold hard gold guard, and you are ready for what is way north.
 
@@ -387,24 +393,24 @@ Now you have a hold hard gold guard, and you are ready for what is way north.
 > N
 > N
 
-> SHOW SHIELD (67)
+> SHOW SHIELD (69)
 
 > N
-> GO GAPPIN (68)
+> GO GAPPIN (70)
 
-> COUPLE CAPS (69)
+> COUPLE CAPS (71)
 
-> CAST CAP (70)
+> CAST CAP (72)
 
 You need to dispose of Reeker Russell and his good gun.
 
 Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (71)
+> MEEKER MUSCLE (73)
 
 And the good gun can go lame.
 
-> WOOD ONE (72)
+> WOOD ONE (74)
 
 Now you are free to go north.
 
@@ -412,19 +418,19 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (73)
+> HOT HORDE (75)
 
 Okay, you need leadership too.
 
-> LOT LORD (74)
+> LOT LORD (76)
 
 Finally, you need a stirring battle cry.
 
-> GOT GORED (75)
+> GOT GORED (77)
 
 Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
 
-> WHOAH WAIT (76)
+> WHOAH WAIT (78)
 
 You can also say WHOA WAIT or WOE WAIT for full credit.
 
@@ -432,14 +438,14 @@ Here in Tarry Tile, you've found the very vile fairy file! But what to do with i
 
 And the airy isle still feels woeful. That well worn hell horn! We should deal with that first.
 
-> TELL TORN (77)
+> TELL TORN (79)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (78)
+> MERRY MILE (80)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (79)
+> BURY BILE (81)
 
 Congratulations. You win! I hope you enjoyed this.
