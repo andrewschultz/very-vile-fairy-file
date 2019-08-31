@@ -137,7 +137,7 @@ whew-score is a number that varies. whew-score is 8.
 
 min-needed is a number that varies. min-needed is 81.
 
-min-gotten is a number that varies. min-gotten is 9.
+min-gotten is a number that varies. min-gotten is 10.
 
 core-score is a number that varies. core-score is 0.
 
@@ -2838,6 +2838,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--
 "lots"	"lame"	false	true	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
+"ho"	"happen"	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--
 "dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
 "first"	"floor"	false	true	false	vc-first-floor rule	vr-first-floor rule	--
@@ -2900,6 +2901,15 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
 "stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--
 "wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of unplaced]
+
+this is the vc-ho-happen rule:
+	if ho-hap is true:
+		vcp "You already said HO HAPPEN.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-ho-happen rule:
+	say "While nothing immediately happens, you feel more motivated to try new stuff--[Toe] may be more versatile than you think!"
 
 [ this is stuff for beta commands below ]
 
