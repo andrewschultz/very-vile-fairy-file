@@ -6,6 +6,8 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [stuff I haven't sorted yet:
 ##############unsorted
+##############rift river
+lift liver
 ##############trim tram
 whim wham
 grim gram
@@ -30,7 +32,10 @@ maul me
 call key
 ###################shy shawl
 try trawl
+sty stall
 dry droll
+buy ball
+my mall
 ###################po' pit
 snow snit
 co kit

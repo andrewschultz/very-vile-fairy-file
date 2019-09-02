@@ -2,6 +2,8 @@
 
 [d'oh done fo' fun]
 
+[cull ceased/lul least]
+
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 [implement help toggling: HELP HOW/WELP WOW]
@@ -347,7 +349,7 @@ a packet of Mind Malt is a thing. description is "It looks like there used to be
 
 check eating Mind Malt: say "Worthless. It's empty." instead;
 
-Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing]"
+Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]"
 
 to say my-notes:
 	repeat through table of newnotes:
@@ -1248,17 +1250,20 @@ the block thinking rule is not listed in any rulebook.
 
 check thinking:
 	let thought-any be false;
+	now vc-dont-print is true;
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
 	repeat through table of forlaters:
 		if ready-to-hint entry is true:
-			process the is-done entry;
-			if the rule succeeded:
+			if is-done entry is true:
+				if debug-state is true, say "(DEBUG NOTE) Somehow the [cmd-to-say entry] is-done entry didn't get wiped out after the score adjustments.";
 				now ready-to-hint entry is false;
-				next; [ this may be duplicate code in score and thinking changes rules but I'm a bit nervous about it at the moment, and this shuts the door 100%. Test later with this gone if I have time. ]
+				next; [ this may duplicate code from the score and thinking changes rules but I'm still a bit nervous about it at the moment. This shuts the door 100%. ]
+			if thought-any is false, say "[line break]";
 			now thought-any is true;
 			process the can-do-now entry; [?? surround with vc-dont-print being true then false ??]
 			if the rule succeeded, say "(CAN DO NOW) ";
 			say "[think-advice entry][line break]";
+	now vc-dont-print is false;
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now." instead;
 	if ever-thought is false:
 		now ever-thought is true;
@@ -1308,6 +1313,7 @@ every turn when first-think-clue-flag is true and ever-think-flag is false (this
 chapter score
 
 check requesting the score:
+	now vc-dont-print is true;
 	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [max-bonus] optional points so far and need [core-max] to win.";
 	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].";
 	let dh be doable-hinted;
@@ -1316,6 +1322,7 @@ check requesting the score:
 	if lurking lump is not off-stage:
 		let gguess be next-lump-level - lump-count;
 		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are a maximum of [gguess] of [next-lump-level] good-guess rhyme[plur of gguess] way from it re[if lurking lump is moot]turn[else]charg[end if]ing.";
+	now vc-dont-print is false;
 	the rule succeeds;
 
 the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1323,8 +1330,7 @@ the score and thinking changes rule is listed after the notify score changes rul
 this is the score and thinking changes rule:
 	repeat through table of forlaters:
 		if ready-to-hint entry is true:
-			process the is-done entry;
-			if the rule succeeded, now ready-to-hint entry is false;
+			if is-done entry is true, now ready-to-hint entry is false;
 
 to decide which number is doable-hinted:
 	let temp be 0;
@@ -1332,8 +1338,7 @@ to decide which number is doable-hinted:
 		if ready-to-hint entry is true:
 			process the can-do-now entry;
 			if the rule succeeded:
-				process the is-done entry;
-				if the rule failed, increment temp;
+				if is-done entry is false, increment temp;
 	decide on temp;
 
 to decide which number is future-hinted:
@@ -2953,7 +2958,10 @@ to win-the-game:
 	if score is maximum score:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
+	clue-zap "BURY BILE";
+	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
 	end the story finally saying "DEALS DONE: FEELS FUN!";
+	follow the shutdown rules;
 
 to check-gored-clue:
 	say "[line break]";
@@ -2991,7 +2999,7 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 	continue the action;
 
 to vcp (t - text): [verb conditional print]
-	if vc-dont-print is false, say "[t]";
+	if vc-dont-print is false, say "[t][line break]";
 
 section vc vr rules [xxvcvr]
 
@@ -3118,9 +3126,6 @@ this is the vc-bury-bile rule:
 this is the vr-bury-bile rule:
 	now bile-buried is true;
 	win-the-game;
-	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
-	end the game in victory;
-	follow the shutdown rules;
 
 this is the vc-cast-cap rule:
 	if player is not in gassed gap, the rule fails;
@@ -3475,7 +3480,11 @@ this is the vr-glow-glad rule:
 	phbt Kerry Kyle;
 
 this is the vc-go-gappin rule:
-	if player is not in gassed gap, the rule fails;
+	if player does not have Toe Tappin, the rule fails;
+	if gassed gap is not visited:
+		vcp "Hm! That might be useful in the right place[if gassed gap is visited], like the Gassed Gap[end if].";
+		clue-later "GO GAPPIN";
+		continue the action;
 	if gap-go is true:
 		vcp "The song already worked.";
 		continue the action;
@@ -3961,6 +3970,7 @@ this is the vc-plain-pleasant rule:
 
 this is the vr-plain-pleasant rule:
 	say "How about that? A few nice words, and the Pain Peasant forgets what the matter was. Apparently, with the Very Vile Fairy File's influence, that happens a lot. People lash out at whomever, just because. A lesson learned!";
+	moot pain peasant;
 
 this is the vc-pull-pieced rule:
 	if full feast is not in Creased Cross, the rule fails;

@@ -161,37 +161,37 @@ True	"You walk around and notice a small puddle where a pet peed, then a small m
 [leetclue of xxx]
 volume hints for later
 
-table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
+table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
-"BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
-"BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
-"CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can [b]CAST CAP[r] once you find one."
-"CO CAPN"	false	can-co-capn rule	did-co-capn rule	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
-"CULL CEASED"	false	can-cull-ceased rule	did-cull-ceased rule	"You should be able to say [b]CULL CEASED[r] [once-now of can-cull-ceased rule] you're back to full strength."
-"DEAL DEAR"	false	can-deal-dear rule	did-deal-dear rule	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
-"DINING DOOR"	false	can-dining-door rule	did-dining-door rule	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
-"FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
-"FIRST FAVE"	false	can-first-fave rule	did-first-fave rule	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
-"FIT FOUND"	false	can-fit-found rule	did-fit-found rule	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
-"FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. [if me-minded is true]Now you managed to [b]MIND ME[r], that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
-"FULL FEAST"	false	can-full-feast rule	did-full-feast rule	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
-"GLEAN GLOWS"	false	can-glean-glows rule	did-glean-glows rule	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
-"GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry [b]GOT GORED[r] should work [once-now of can-got-gored rule] you have a full army and its leader."
-"HEAL HERE"	false	can-heal-here rule	did-heal-here rule	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-deal-dear rule] you need to heal from something."
-"LEAST LOSS"	false	can-least-loss rule	did-least-loss rule	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
-"MARK MORE"	false	can-mark-more rule	did-mark-more rule	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found a dark door [here-in of Stark Store]."
-"MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [b][bap-map-rap][r], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
-"MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
-"MINING MORE"	false	can-mining-more rule	did-mining-more rule	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the Fining Four are fully satisfied."
-"MO MAPPIN"	false	can-mo-mappin rule	did-mo-mappin rule	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
-"MORAL MAGE"	false	can-moral-mage rule	did-moral-mage rule	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
-"PULL PIECED"	false	can-pull-pieced rule	did-pull-pieced rule	"You can [b]PULL PIECED[r] the bull beast [once-now of can-pull-pieced rule] you have more people willing to help you."
-"SHINING SHORE"	false	can-shining-shore rule	did-shining-shore rule	"You can make the [b]SHINING SHORE[r] [once-now of can-shining-shore rule] you dealt with the Whining War."
-"SHOW SHIELD"	false	can-show-shield rule	did-show-shield rule	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
-"SMASHING SMOKE"	false	can-smashing-smoke rule	did-smashing-smoke rule	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
-"SNAKE SNAP"	false	can-snake-snap rule	did-snake-snap rule	"You can [b]SNAKE SNAP[r] [once-now of can-snake-snap rule] it's clear a snake is present."
-"SO SAPPIN"	false	can-so-sappin rule	did-so-sappin rule	"You can make things [b]SO SAPPIN[r] [once-now of can-so-sappin rule] you can find where people are using their energy fruitlessly."
+"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
+"BIG BAG"	false	vc-big-bag rule	false	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag, but you can [once-now of vc-big-bag rule] it feels right."
+"BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
+"CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
+"CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
+"CULL CEASED"	false	can-cull-ceased rule	false	"You should be able to say [b]CULL CEASED[r] [once-now of can-cull-ceased rule] you're back to full strength."
+"DEAL DEAR"	false	can-deal-dear rule	false	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
+"DINING DOOR"	false	can-dining-door rule	false	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
+"FEEL FEAR"	false	can-feel-fear rule	false	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
+"FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
+"FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
+"FLIM FLAM"	false	can-flim-flam rule	false	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. [if me-minded is true]Now you managed to [b]MIND ME[r], that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
+"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
+"GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
+"GOT GORED"	false	can-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of can-got-gored rule] you have a full army and its leader."
+"HEAL HERE"	false	can-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-heal-here rule] you need to heal from something."
+"LEAST LOSS"	false	can-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
+"MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found a dark door [here-in of Stark Store]."
+"MASH MAP"	false	can-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
+"MERRY MILE"	false	can-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
+"MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the Fining Four are fully satisfied."
+"MO MAPPIN"	false	can-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
+"MORAL MAGE"	false	can-moral-mage rule	false	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
+"PULL PIECED"	false	can-pull-pieced rule	false	"You can [b]PULL PIECED[r] the bull beast [once-now of can-pull-pieced rule] you have more people willing to help you."
+"SHINING SHORE"	false	can-shining-shore rule	false	"You can make the [b]SHINING SHORE[r] [once-now of can-shining-shore rule] you dealt with the Whining War."
+"SHOW SHIELD"	false	can-show-shield rule	false	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
+"SMASHING SMOKE"	false	can-smashing-smoke rule	false	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
+"SNAKE SNAP"	false	can-snake-snap rule	false	"You can [b]SNAKE SNAP[r] [once-now of can-snake-snap rule] it's clear a snake is present."
+"SO SAPPIN"	false	can-so-sappin rule	false	"You can make things [b]SO SAPPIN[r] [once-now of can-so-sappin rule] you can find where people are using their energy fruitlessly."
 
 [?? see about collapsing the below into rules from the story file proper e.g. vc-can-cull-ceased rule]
 
@@ -201,231 +201,111 @@ this is the can-beast-boss rule:
 	if player has gold guard and gull-guard is true, the rule succeeds;
 	the rule fails.
 
-this is the did-beast-boss rule:
-	if Bull Beast is not off-stage, the rule succeeds;
-	the rule fails.
-
-this is the can-big-bag rule:
-	if Fun Fen is visited, the rule succeeds;
-	the rule fails.
-
-this is the did-big-bag rule:
-	if player has big bag, the rule succeeds;
-	the rule fails.
-
-this is the can-bury-bile rule:
-	if well worn hell horn is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-bury-bile rule:
-	if bile-buried is true, the rule succeeds;
-	the rule fails. [this isn't needed for gameplay, but if it's absent, a +1 will remain at game's end if you BURY BILE earlier]
-
 this is the can-cast-cap rule:
 	if player has cool cap, the rule succeeds;
-	the rule fails.
-
-this is the did-cast-cap rule:
-	if cool cap is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-co-capn rule:
 	if jake-fee is true, the rule succeeds;
 	the rule fails;
 
-this is the did-co-capn rule:
-	if jake-cocapn is true, the rule succeeds;
-	the rule fails;
-
 this is the can-cull-ceased rule:
 	if healed-here is true, the rule succeeds;
-	the rule fails;
-
-this is the did-cull-ceased rule:
-	if beast bull is moot, the rule succeeds;
 	the rule fails;
 
 this is the can-deal-dear rule:
 	if felt-fear is true, the rule succeeds;
 	the rule fails.
 
-this is the did-deal-dear rule:
-	if cage key is not off-stage, the rule succeeds;
-	the rule fails.
-
 this is the can-dining-door rule:
 	if war-sapped is true, the rule succeeds;
-	the rule fails;
-
-this is the did-dining-door rule:
-	if dine-door is true, the rule succeeds;
 	the rule fails;
 
 this is the can-feel-fear rule:
 	if knelt-yet is true, the rule succeeds;
 	the rule fails.
 
-this is the did-feel-fear rule:
-	if felt-fear is true, the rule succeeds;
-	the rule fails.
-
 this is the can-first-fave rule:
 	if screaming skull is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-first-fave rule:
-	if worst wave is moot, the rule succeeds;
 	the rule fails.
 
 this is the can-fit-found rule:
 	if Hit Hound is moot, the rule succeeds;
 	the rule fails.
 
-this is the did-fit-found rule:
-	if found-fit is true, the rule succeeds;
-	the rule fails.
-
 this is the can-flim-flam rule:
 	if me-minded is true, the rule succeeds;
-	the rule fails.
-
-this is the did-flim-flam rule:
-	if Fun Fen is visited, the rule succeeds;
 	the rule fails.
 
 this is the can-full-feast rule:
 	if cull-ceased is true, the rule succeeds;
 	the rule fails.
 
-this is the did-full-feast rule:
-	if Bull Beast is moot, the rule succeeds;
-	the rule fails.
-
 this is the can-glean-glows rule:
 	if player has way woke clay cloak, the rule succeeds;
 	the rule fails;
 
-this is the did-glean-glows rule:
-	if way woke clay cloak is moot, the rule succeeds;
+this is the can-go-gappin rule:
+	if gassed gap is visited, the rule succeeds;
 	the rule fails;
 
 this is the can-got-gored rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
 	the rule fails.
 
-this is the did-got-gored rule:
-	if Bot Board is moot, the rule succeeds;
-	the rule fails.
-
 this is the can-heal-here rule:
 	if least-loss is true, the rule succeeds;
-	the rule fails.
-
-this is the did-heal-here rule:
-	if healed-here is true, the rule succeeds;
 	the rule fails.
 
 this is the can-least-loss rule:
 	if Bull Beast is in Creased Cross, the rule succeeds;
 	the rule fails.
 
-this is the did-least-loss rule:
-	if least-loss is true, the rule succeeds;
-	the rule fails.
-
 this is the can-mark-more rule:
 	if dark door is in Stark Store, the rule succeeds;
-	the rule fails;
-
-this is the did-mark-more rule:
-	if dark door is moot, the rule succeeds;
 	the rule fails;
 
 this is the can-mash-map rule:
 	if grit-grown is true, the rule succeeds;
 	the rule fails.
 
-this is the did-mash-map rule:
-	if Trim Tram is visited, the rule succeeds;
-	the rule fails.
-
 this is the can-merry-mile rule:
 	if well worn hell horn is moot, the rule succeeds;
-	the rule fails.
-
-this is the did-merry-mile rule:
-	if merry-mile is true, the rule succeeds;
 	the rule fails.
 
 this is the can-mining-more rule:
 	if full feast is not moot, the rule fails;
 
-this is the did-mining-more rule:
-	if mine-more is true, the rule succeeds;
-	the rule fails;
-
 this is the can-mo-mappin rule:
 	if blaze-maze is true, the rule succeeds;
-	the rule fails;
-
-this is the did-mo-mappin rule:
-	if maze-mapped is true, the rule succeeds;
 	the rule fails;
 
 this is the can-moral-mage rule:
 	if player has cage key, the rule succeeds;
 	the rule fails.
 
-this is the did-moral-mage rule:
-	if coral cage is moot, the rule succeeds;
-	the rule fails.
-
 this is the can-pull-pieced rule:
 	if full feast is moot, the rule succeeds;
-	the rule fails;
-
-this is the did-pull-pieced rule:
-	if dine-door is true, the rule succeeds;
 	the rule fails;
 
 this is the can-shining-shore rule:
 	if war-sapped is true, the rule succeeds;
 	the rule fails.
 
-this is the did-shining-shore rule:
-	if shore-shine is true, the rule succeeds;
-	the rule fails.
-
 this is the can-show-shield rule:
 	if player has gold guard, the rule succeeds;
-	the rule fails.
-
-this is the did-show-shield rule:
-	if shield-shown is true, the rule succeeds;
 	the rule fails.
 
 this is the can-smashing-smoke rule:
 	if y'old yard is visited, the rule succeeds;
 	the rule fails;
 
-this is the did-smashing-smoke rule:
-	if clashing cloak is moot, the rule succeeds;
-	the rule fails;
-
 this is the can-snake-snap rule:
 	if jake-cocapn is true, the rule succeeds;
 	the rule fails;
 
-this is the did-snake-snap rule:
-	if cake cap is not off-stage, the rule succeeds;
-	the rule fails;
-
 this is the can-so-sappin rule:
 	if whining war is visited, the rule succeeds;
-	the rule fails;
-
-this is the did-so-sappin rule:
-	if war-sapped is true, the rule succeeds;
 	the rule fails;
 
 [zz4l8r]
