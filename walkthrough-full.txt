@@ -382,42 +382,48 @@ You can do something with the mild mead, though.
 
 > WILD WEED (66)
 
-> S
-
-> BEAST BOSS (67)
-
-> LEAST LOSS (68)
+And now something with the wild weed. It's a very silly extra point. Cark Cliff is actually useful for something.
 
 > S
+
+> SPARK SPLIFF (67)
+
+> N
+
+> BEAST BOSS (68)
+
+> LEAST LOSS (69)
+
+> S
 > S
 
-> HEAL HERE (69)
+> HEAL HERE (70)
 
 > N
 > N
 
 This time, you know what to do, and you can defeat the bull beast with a magic word!
 
-> CULL CEASED (70)
+> CULL CEASED (71)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (71)
+> FULL FEAST (72)
 
 You can't take it, but maybe you can use it in the future.
 
 > E
 > E
 
-> SO SAPPIN (72)
+> SO SAPPIN (73)
 
-> SHINING SHORE (73)
+> SHINING SHORE (74)
 
-> DINING DOOR (74)
+> DINING DOOR (75)
 
-> PULL PIECED (75)
+> PULL PIECED (76)
 
-> MINING MORE (76)
+> MINING MORE (77)
 
 Now you have a hold hard gold guard, and you are ready for what is way north.
 
@@ -426,28 +432,28 @@ Now you have a hold hard gold guard, and you are ready for what is way north.
 > N
 > N
 
-> SHOW SHIELD (77)
+> SHOW SHIELD (78)
 
 > N
-> GO GAPPIN (78)
+> GO GAPPIN (79)
 
-> COUPLE CAPS (79)
+> COUPLE CAPS (80)
 
-> CAST CAP (80)
+> CAST CAP (81)
 
 You need to dispose of Reeker Russell and his good gun.
 
 There's an LLP in here. Let's pretend to make Russell dorkier.
 
-> BEAKER BUSTLE (81)
+> BEAKER BUSTLE (82)
 
 Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (82)
+> MEEKER MUSCLE (83)
 
 And the good gun can go lame.
 
-> WOOD ONE (83)
+> WOOD ONE (84)
 
 Now you are free to go north.
 
@@ -455,19 +461,19 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (84)
+> HOT HORDE (85)
 
 Okay, you need leadership too.
 
-> LOT LORD (85)
+> LOT LORD (86)
 
 Finally, you need a stirring battle cry.
 
-> GOT GORED (86)
+> GOT GORED (87)
 
 Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
 
-> WHOAH WAIT (87)
+> WHOAH WAIT (88)
 
 You can also say WHOA WAIT or WOE WAIT for full credit.
 
@@ -475,14 +481,14 @@ Here in Tarry Tile, you've found the very vile fairy file! But what to do with i
 
 And the airy isle still feels woeful. That well worn hell horn! We should deal with that first.
 
-> TELL TORN (88)
+> TELL TORN (89)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (89)
+> MERRY MILE (90)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (90)
+> BURY BILE (91)
 
 Congratulations. You win! I hope you enjoyed this.

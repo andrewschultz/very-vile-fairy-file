@@ -355,7 +355,6 @@ for q in sorted(x_of_y.keys()):
     xq = x_of_y[q]
     print('X-of-Y puzzle for', q, ':', ', '.join(sorted([z for z in xqs if xq[z] == True])), '/', ', '.join(sorted([z for z in xqs if xq[z] == False])))
 
-sys.exit()
 if open_source_post:
     if len(to_open) == 0: sys.exit("No files to open.")
     for fi_open in to_open:

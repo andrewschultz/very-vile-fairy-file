@@ -395,7 +395,16 @@ Yay! You get a point for this. The mild mead will come in handy. The game also t
 You can do something with the mild mead, though.
 \\
 > WILD WEED (1)
+\\
+And now something with the wild weed. It's a very silly extra point. Cark Cliff is actually useful for something.
+\\
+> S
+\\
+> SPARK SPLIFF (1)
+\\
+> N
 
+==t0
 > S
 
 > BEAST BOSS (1)

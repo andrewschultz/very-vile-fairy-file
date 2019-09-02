@@ -135,7 +135,7 @@ whew-score is a number that varies. whew-score is 8.
 
 core-max is a number that varies. core-max is 81.
 
-max-bonus is a number that varies. max-bonus is 10.
+max-bonus is a number that varies. max-bonus is 9.
 
 core-score is a number that varies. core-score is 0.
 
@@ -255,7 +255,7 @@ check going nowhere:
 			now been-here entry is true;
 			increment wry-wall-found;
 			if wry-wall-found is number of rows in table of bad locs, say "Incidentally, you've found everything." instead;
-			say "[if ever-wry-wall is false]NOTE: The wry wall just leads to a bunch of joke deaths. You can avoid them or follow them as you please. You don't get any bonus for finding them all, but maybe you'll find them fun. You'll always be kicked back to where you were, with no harm done[else]Well, that's another joke death trap visitedLet's kick you back to where you were[end if].";
+			say "[if ever-wry-wall is false]NOTE: The wry wall just leads to a bunch of joke deaths. You can avoid them or follow them as you please. You don't get any bonus for finding them all, but maybe you'll find them fun. You'll always be kicked back to where you were, with no harm done[else]Well, that's another joke death trap visited. Let's kick you back to where you were[end if].";
 			now ever-wry-wall is true;
 			say "[line break][b][location of player][r][paragraph break]";
 			the rule succeeds;
@@ -367,7 +367,7 @@ score-needed	note-to-give
 --	"   GASH GAP to [ash-ap]    = yellow."
 --	"  CACHE CAP to [ash-ap]    = orange."
 7	"   FIND FEE to MIND ME     = orange."
-8	"  TRIM TRAM to [ski-fli]   = green."
+8	"  TRIM TRAM to [ski-fli]   = yellow."
 
 to say ski-fli: say "[if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if]"
 
@@ -579,7 +579,7 @@ check going west in Fight Funnel:
 				buff-gold-guard;
 			else:
 				say "[line break]'I see no armor I could help improve. Come back when you find it. But for now, I need time to reorganize my domain.'";
-			up-reg;
+			up-reg; [+beat beer bull]
 			now in-bull-chase is false;
 			moot beer bull;
 			now player has mild mead;
@@ -1233,6 +1233,7 @@ the block listening rule is not listed in any rulebook.
 
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
+	if player is in whining war and war-sapped is false, say "Boy! The whining is pretty intense and constant! You don't see how you could change the whining by itself. Maybe some artiness might help, here." instead;
 	if player is in History Hall and mistmall is true:
 		if Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
@@ -2594,13 +2595,15 @@ final question wording	only if victorious	topic		final response rule		final resp
 showmissesing is an activity.
 
 rule for showmissesing:
-	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a STRONG START.";
-	if hap-ho is false, say "You could've said HO HAPPEN while listening to [Toe].";
-	unless oi mo is moot, say "You could have DIMD (dim'd) the horrible song Oi Mo in Mystery Mall.";
-	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
-	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting, from the mild mead[else]the wild weed[end if].";
-	if gan-wan is false, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
-	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE in the Gassed Gap/Last Lap.";
+	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
+	if hap-ho is false, say "You could've said [b]HO HAPPEN[r] while listening to [Toe].";
+	unless oi mo is moot, say "You could have [b]DIMD[r] (dim'd) the horrible song Oi Mo in Mystery Mall.";
+	if lie-lol is false, say "You could've said [b]LIE LOL[r] to the shy shawl.";
+	if jake-brie is false, say "You could've tried to [b]BREAK BRIE[r] with Jake G. after taking tea.";
+	if wild weed is off-stage, say "You could've made the mild mead into [b]WILD WEED[r].";
+	if wild weed is not moot, say "You could've tried to [b]SPARK SPLIFF[r] by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting, from the mild mead[else]the wild weed[end if].";
+	if gan-wan is false, say "You could've said [b]WHAT A or WHATTA WANKSTA[r] to the Gutta Ganksta for a further insult.";
+	if beaker-yet is false, say "You could've given Reeker Russell [b]BEAKER BUSTLE[r] in the Gassed Gap/Last Lap.";
 
 showdeathsing is an activity.
 
@@ -2822,7 +2825,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
 "green"	"grass"	false	true	false	vc-green-grass rule	vr-green-grass rule	--
 "grow"	"grit"	true	true	false	vc-grow-grit rule	vr-grow-grit rule	--
-"bash|mash|rash"	"bap|map|rap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap"
+"mash|bash|rash"	"map|bap|rap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap"
 "mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
 "flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
 "big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
@@ -2902,7 +2905,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "lot"	"lord"	false	true	false	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
 "hot"	"horde"	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--
 "got"	"gored"	false	true	false	vc-got-gored rule	vr-got-gored rule	--
-"whoa|woe|whoah"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
+"whoah|whoa|woe"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
 "tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
 "merry"	"mile"	false	true	false	vc-merrymile rule	vr-merrymile rule	--
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
@@ -3271,7 +3274,10 @@ this is the vr-dimd rule:
 
 this is the vc-dining-door rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
-	abide by the shone-yet rule;
+	if war-sapped is false:
+		clue-later "DINING DOOR";
+		say "You can't make a dining door with all this whining going on!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-dining-door rule:
@@ -3830,8 +3836,11 @@ this is the vr-minding-maze rule:
 	now blaze-maze is true;
 
 this is the vc-mining-more rule:
-	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
-	abide by the shone-yet rule;
+	if player is not in Whining War, the rule fails;
+	if full feast is not moot:
+		say "You aren't ready to do any mining yet, but maybe later.";
+		clue-later "MINING MORE";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-mining-more rule:
