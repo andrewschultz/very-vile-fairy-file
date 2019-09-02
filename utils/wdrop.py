@@ -22,7 +22,8 @@ import __main__ as main
 insert_point = defaultdict(str)
 
 max_full_score = 0
-min_full_score = 0
+max_bonus = 0
+core_max = 0
 
 wri_dir = i7.gh_src("vv", give_source = False)
 wri_loc = i7.sdir("vv")
@@ -138,14 +139,15 @@ i7.dir2proj("vv")
 
 with open("story.ni") as file:
     for (line_count, line) in enumerate(file, 1):
-        if line.startswith("the maximum score is"):
-            max_full_score = get_first_num(line)
-            if max_full_score and min_full_score: break
-        elif line.startswith("min-needed"):
-            min_full_score = get_first_num(line)
-            if max_full_score and min_full_score: break
+        if line.startswith("max-bonus"):
+            max_bonus = get_first_num(line)
+            if max_bonus and core_max: break
+        elif line.startswith("core-max"):
+            core_max = get_first_num(line)
+            if max_bonus and core_max: break
 
-if not (max_full_score and min_full_score): sys.exit("Failed to read in maximum and minimum full scores.")
+if not (max_bonus and core_max): sys.exit("Failed to read in maximum and minimum full scores. Max={} Min={}. Bailing.".format(max_bonus, core_max))
+max_full_score = max_bonus
 
 with open("wdrop.txt") as file:
     for (line_count, line) in enumerate(file, 1):
@@ -164,7 +166,7 @@ with open("wbase.txt") as file:
                 warnings.append(line_count)
                 print("WARNING bad spacing line {:d} of wbase.txt: {:s}".format(line_count, line.strip()))
 
-insert_stuff("walkthrough-pre.txt", os.path.join(wri_dir, "walkthrough.txt"), delete_after, min_full_score)
+insert_stuff("walkthrough-pre.txt", os.path.join(wri_dir, "walkthrough.txt"), delete_after, core_max)
 insert_stuff("walkthrough-full-pre.txt", os.path.join(wri_dir, "walkthrough-full.txt"), delete_after, max_full_score)
 
 lw = len(warnings)

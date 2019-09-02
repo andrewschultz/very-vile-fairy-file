@@ -25,7 +25,7 @@ min_line = 0
 max_line = 0
 
 max_sco = 0
-min_sco = 0
+core_max = 0
 
 verbose = False
 
@@ -152,9 +152,10 @@ def check_walkthrough(my_file, is_opt):
                 last_num = my_num
                 my_cmd = re.sub(" *\(.*", "", line.strip().lower())
                 my_cmd = re.sub("^> *", "", my_cmd)
-                got_thru[my_cmd] = line_count
-    print_here_not(got_detail["nec"], got_thru, "In source but not walkthrough")
-    if is_opt: print_here_not(got_detail["opt"], got_thru, "Optional LLP commands in source but not walkthrough")
+                if my_cmd != "w":
+                    got_thru[my_cmd] = line_count
+    print_here_not(got_detail["nec"], got_thru, "In source but not walkthrough".format(my_file))
+    if is_opt: print_here_not(got_detail["opt"], got_thru, "Optional LLP commands in source but not walkthrough {}".format(my_file))
     temp = defaultdict(int)
     for q in got_detail["opt"]: temp[q] = 1
     for q in got_detail["nec"]: temp[q] = 2
@@ -167,7 +168,7 @@ def check_walkthrough(my_file, is_opt):
     #print(len(sorted(got_thru.keys())), sorted(got_thru.keys()))
     #print(sorted(got.keys()))
 
-def pointup_type(l, ru):
+def pointup_type(l, ru): # deprecated
     if not l.startswith("\t"): return ''
     if 'check-russell-go' in l: return 'nec'
     if 'reg-up' in l or 'min-up' in l: return 'bug'
@@ -189,6 +190,12 @@ def check_points():
     in_verb_checks = False
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
+            temp_pass = False
+            if 'up-reg' in line and '[+' in line:
+                cmd_type = "QUEST"
+                temp_pass = True
+                my_cmd = re.sub(".*\[\+", "", line.strip())
+                my_cmd = re.sub("\].*", "", my_cmd)
             if line.startswith("table of verb checks"):
                 read_next_line = True
                 in_verb_checks = True
@@ -196,78 +203,83 @@ def check_points():
             if read_next_line:
                 read_next_line = False
                 continue
-            if not in_verb_checks:
+            if not in_verb_checks and not temp_pass:
                 continue
             if not line.strip():
                 in_verb_checks = False
                 continue
             score_list = line.split("\t")
-            cmd_type = ""
-            if score_list[3] == 'true':
+            if cmd_type == "QUEST":
+                core_points += 1
+            elif score_list[3] == 'true':
                 core_points += 1
                 cmd_type = "CORE"
             elif score_list[3] == 'false':
                 opt_points += 1
                 cmd_type = "OPT"
-            my_cmd = first_word(score_list[0])
-            if score_list[2] != '--':
-                my_cmd += " " + first_word(score_list[1])
-            print(core_points, opt_points, cmd_type, "Command", my_cmd.upper())
+            else:
+                cmd_type = "<reversal>"
+            if not temp_pass:
+                my_cmd = first_word(score_list[0])
+                if score_list[2] != '--':
+                    my_cmd += " " + first_word(score_list[1])
+            if verbose: print(core_points, opt_points, cmd_type, "Command", my_cmd.upper())
+            cmd_type = ""
     print("Core points", core_points)
     print("Opt points", opt_points)
-    exit()
 
-def check_points_old():
+def qpeel(my_str):
+    if my_str == '--': return ''
+    temp = my_str.replace('"', '')
+    return re.sub("\|.*", "", temp)
+
+def check_points():
     this_rule = ""
     last_line = 0
     last_cmd = "(undefined)"
-    global min_sco
+    global core_max
     global min_line
     global max_sco
     global max_line
-    if show_nec or show_opt: print(hdr_str)
+    in_verb_checks = False
+    skip_next = False
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
-            if line.startswith("min-needed"):
-                if min_sco: sys.exit("Minimum score redefined at line {:d}.".format(line_count))
-                min_sco = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+            temp_pass = False
+            if line.startswith("core-max"):
+                if core_max: sys.exit("Core max / minimum score redefined at line {:d}.".format(line_count))
+                core_max = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
                 min_line = line_count
                 continue
-            if line.startswith("the maximum score is"):
-                if max_sco: sys.exit("Maximum score redefined at line {:d}.".format(line_count))
-                max_sco = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
-                max_line = line_count
+            if line.startswith("table of verb checks"):
+                in_verb_checks = True
+                skip_next = True
                 continue
-            if re.search("understand \".*\" as", line):
-                q = line.split("\"")
-                last_cmd = q[1]
-                last_line = line_count
-            if line.strip() and not line.startswith("\t") and not line.startswith("["): this_rule = line.strip()
-            if "increment the score" in line:
-                if this_rule.startswith("to up-"): continue
-                print("WARNING errant 'increment the score' at line {:d}: {:s}".format(line_count, line.strip()))
-                print("Rule:", this_rule)
-            if "[x-of-y" in line:
-                puz_type = re.sub(".*x-of-y ", "", line.strip())
-                puz_type = re.sub("\].*", "", puz_type)
-                x_of_y[puz_type][last_cmd] = "[nec]" in line
+            if 'up-reg' in line and '[+' in line:
+                temp_pass = True
+                base_cmd = re.sub(".*\[\+", "", line.lower().strip())
+                base_cmd = re.sub("\].*", "", base_cmd)
+                pt_type = 'nec'
+            if not in_verb_checks and not temp_pass: continue
+            if skip_next:
+                skip_next = False
                 continue
-            score_idx = pointup_type(line, this_rule)
-            if score_idx:
-                if verbose and score_idx == 'nec': print(">", last_cmd.upper())
-                if "[!" in line: #force last command
-                    last_cmd = re.sub(".*\[!", "", line.strip())
-                    last_cmd = re.sub("\].*", "", last_cmd)
-                scores[score_idx] += 1
-                got[last_cmd] = line_count
-                got_detail[score_idx][last_cmd] = line_count
-                scores["total"] += 1
-                show_it = (score_idx == 'opt') and show_opt
-                show_it |= (score_idx == 'nec') and show_nec
-                if show_it: print("({:>5s}) Cur score {:02d}+{:02d}+{:02d}={:02d} Line {:4d}".format(score_idx, scores["nec"], scores["opt"], scores["undef"], scores["total"], line_count), "score increment for command {:20s} Line {:4d} Rule {:s}".format(last_cmd, last_line, this_rule))
+            if not line.strip():
+                in_verb_checks = False
                 continue
-            if "[nec]" in line: print("Warning, deprecated NEC at line", line_count)
-    if show_nec or show_opt: print(hdr_str)
+            if not temp_pass:
+                a = line.lower().strip().split("\t")
+                b = qpeel(a[0])
+                c = qpeel(a[1])
+                base_cmd = "{} {}".format(qpeel(a[0]), qpeel(a[1])).strip()
+                try:
+                    pt_type = 'nec' if a[3].lower() == 'true' else 'opt' if a[3].lower() == 'false' else 'skip'
+                except:
+                    print("Bad value for 3rd column at line {}: {}".format(line_count, line.strip()))
+                if pt_type == 'skip': continue
+            if verbose: print("Command: {}".format(base_cmd))
+            scores[pt_type] += 1
+            if not temp_pass: got_detail[pt_type][base_cmd] = True
 
 def read_cmd_line():
     global show_nec
@@ -321,8 +333,8 @@ check_walkthrough("walkthrough-full.txt", True)
 # post-processing
 #
 
-if min_sco != scores['nec']:
-    print("MINIMUM SCORE DISCREPANCY: {:d} in source but # of necessary scores in file = {:d}. Line {:d} defines min score.".format(min_sco, scores['nec'], min_line))
+if core_max != scores['nec']:
+    print("MINIMUM SCORE DISCREPANCY: {:d} in source but # of necessary scores in file = {:d}. Line {:d} defines core max.".format(core_max, scores['nec'], min_line))
     if open_source_post and "story.ni" not in to_open: to_open["story.ni"] = min_line
 else: print("MINIMUM SCORES MATCH IN SOURCE!")
 
@@ -343,6 +355,7 @@ for q in sorted(x_of_y.keys()):
     xq = x_of_y[q]
     print('X-of-Y puzzle for', q, ':', ', '.join(sorted([z for z in xqs if xq[z] == True])), '/', ', '.join(sorted([z for z in xqs if xq[z] == False])))
 
+sys.exit()
 if open_source_post:
     if len(to_open) == 0: sys.exit("No files to open.")
     for fi_open in to_open:
