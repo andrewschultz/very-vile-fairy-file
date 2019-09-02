@@ -951,7 +951,7 @@ first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if shield-shown is false] So Sealed[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south. You could even try your luck east."
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if pain peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south. You could even try your luck east."
 
 check going north in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
@@ -4158,7 +4158,7 @@ this is the vr-tight-tunnel rule:
 
 this is the vc-lie-lol rule:
 	if player is not in Got Gear Hot Here, the rule fails;
-	if trawl-try is true:
+	if lie-lol is true:
 		vcp "The shy shawl has taken enough abuse.";
 		continue the action;
 	the rule succeeds;
@@ -4205,7 +4205,7 @@ this is the vc-wild-weed rule:
 	if mild mead is not touchable, the rule fails;
 	if wild weed is not off-stage:
 		say "Greedy, to try for more.";
-		continue the action.
+		continue the action;
 	the rule succeeds;
 
 this is the vr-wild-weed rule:
