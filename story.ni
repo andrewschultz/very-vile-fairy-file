@@ -3481,7 +3481,7 @@ this is the vr-glow-glad rule:
 
 this is the vc-go-gappin rule:
 	if player does not have Toe Tappin, the rule fails;
-	if gassed gap is not visited:
+	if player is not in gassed gap:
 		vcp "Hm! That might be useful in the right place[if gassed gap is visited], like the Gassed Gap[end if].";
 		clue-later "GO GAPPIN";
 		continue the action;
@@ -3493,6 +3493,7 @@ this is the vc-go-gappin rule:
 this is the vr-go-gappin rule:
 	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things.";
 	now gap-go is true;
+	clue-zap "GO GAPPIN";
 	process the check-sing-max rule;
 
 this is the vc-got-gored rule:

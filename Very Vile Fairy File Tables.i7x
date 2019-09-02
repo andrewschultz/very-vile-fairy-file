@@ -174,14 +174,15 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "FEEL FEAR"	false	can-feel-fear rule	false	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
 "FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
 "FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
-"FLIM FLAM"	false	can-flim-flam rule	false	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. [if me-minded is true]Now you managed to [b]MIND ME[r], that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
+"FLIM FLAM"	false	vc-flim-flam rule	false	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
 "FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
 "GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
-"GOT GORED"	false	can-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of can-got-gored rule] you have a full army and its leader."
+"GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
+"GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
 "HEAL HERE"	false	can-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-heal-here rule] you need to heal from something."
 "LEAST LOSS"	false	can-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
 "MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found a dark door [here-in of Stark Store]."
-"MASH MAP"	false	can-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
+"MASH MAP"	false	vc-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "MERRY MILE"	false	can-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
 "MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the Fining Four are fully satisfied."
 "MO MAPPIN"	false	can-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
@@ -233,10 +234,6 @@ this is the can-fit-found rule:
 	if Hit Hound is moot, the rule succeeds;
 	the rule fails.
 
-this is the can-flim-flam rule:
-	if me-minded is true, the rule succeeds;
-	the rule fails.
-
 this is the can-full-feast rule:
 	if cull-ceased is true, the rule succeeds;
 	the rule fails.
@@ -249,10 +246,6 @@ this is the can-go-gappin rule:
 	if gassed gap is visited, the rule succeeds;
 	the rule fails;
 
-this is the can-got-gored rule:
-	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
-	the rule fails.
-
 this is the can-heal-here rule:
 	if least-loss is true, the rule succeeds;
 	the rule fails.
@@ -264,10 +257,6 @@ this is the can-least-loss rule:
 this is the can-mark-more rule:
 	if dark door is in Stark Store, the rule succeeds;
 	the rule fails;
-
-this is the can-mash-map rule:
-	if grit-grown is true, the rule succeeds;
-	the rule fails.
 
 this is the can-merry-mile rule:
 	if well worn hell horn is moot, the rule succeeds;
