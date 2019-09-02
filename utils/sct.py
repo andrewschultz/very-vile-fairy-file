@@ -29,6 +29,7 @@ core_max = 0
 
 verbose = False
 
+print_forlaters = False
 show_nec = False
 show_opt = False
 
@@ -83,11 +84,21 @@ def clue_hint_verify():
     if not found_table: sys.exit("Did not find table of forlaters in", file_name)
     x1 = list(set(list(cmd_laters)) - set(list(for_laters)))
     if len(x1):
-        print("Stuff in commands but not table of forlaters:", ', '.join(x1))
-        if vv_table not in to_open: to_open[vv_table] = forlater_start
+        x1s = sorted(x1)
+        print("Stuff in commands but not table of forlaters:", ', '.join(x1s))
+        if print_forlaters:
+            for_later_print = ""
+            for u in x1s:
+                uld = re.sub(" ", "-", u.lower())
+                print("\"{}\"\tfalse\tcan-{} rule\tdid-{} rule\t\"\"".format(u, uld, uld))
+                for_later_print += "\nthis is the can-{} rule:\n\tif 1 is 1, the rule succeeds;\n\tthe rule fails;\n\nthis is the did-{} rule:\n\tif 1 is 1, the rule succeeds;\n\tthe rule fails;\n".format(uld, uld);
+            print(for_later_print)
+        else:
+            print("-pfl prints stuff to forlaters")
+        if vv_table not in to_open: to_open[vv_table] = forlater_start + 2
     x1 = list(set(list(for_laters)) - set(list(cmd_laters)))
     if len(x1):
-        print("Stuff in table of forlaters but not commands:", ', '.join(x1))
+        print("Stuff in table of forlaters but not commands:", ', '.join(sorted(x1)))
 
 def check_miss_rule():
     in_showmiss = False
@@ -286,9 +297,11 @@ def read_cmd_line():
     global show_opt
     global open_source_post
     global verbose
+    global print_forlaters
     cmd_count = 1
     while cmd_count < len(sys.argv):
         arg = sys.argv[cmd_count]
+        if arg[0] == '-': arg = arg[1:]
         if arg == 'n':
             show_nec = True
             show_opt = False
@@ -306,6 +319,7 @@ def read_cmd_line():
         elif arg == 'nu' or arg == 'un': update = False
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
+        elif arg == 'pfl': print_forlaters = True
         elif arg == '?': usage()
         else: usage("Bad option {:s}".format(arg))
         cmd_count += 1

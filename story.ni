@@ -1256,7 +1256,7 @@ check thinking:
 				now ready-to-hint entry is false;
 				next; [ this may be duplicate code in score and thinking changes rules but I'm a bit nervous about it at the moment, and this shuts the door 100%. Test later with this gone if I have time. ]
 			now thought-any is true;
-			consider the can-do-now entry;
+			process the can-do-now entry; [?? surround with vc-dont-print being true then false ??]
 			if the rule succeeded, say "(CAN DO NOW) ";
 			say "[think-advice entry][line break]";
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now." instead;
@@ -2042,9 +2042,6 @@ this is the all-caps-hint rule:
 			say "You need to find something to glue the hats together with." instead;
 		say "You can use the jerk gel to glue the hats together, but you need the right command.";
 
-this is the dark-door-hint rule:
-	say "[one of]The dark door is sort of defined and accessible, but not enough. You need to observe it a bit extra.[or]MARK MORE.[stopping]"
-
 this is the backed-binder-hint rule:
 	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
 
@@ -2118,6 +2115,9 @@ this is the coral-cage-hint rule:
 		say "You don't have the key you need yet. Look for something that rhymes with key.";
 	else:
 		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
+
+this is the dark-door-hint rule:
+	say "[one of]The dark door is sort of defined and accessible, but not enough. You need to observe it a bit extra.[or]MARK MORE.[stopping]"
 
 this is the dean-duggan-hint rule:
 	say "[one of]Dean Duggan is an integral part of Been Buggin[']. So hints about him are hints about Been Buggin['].[or][stopping]";
@@ -3668,6 +3668,17 @@ this is the vr-lending-libe rule:
 	process the card-and-libe rule;
 	the rule succeeds.
 
+this is the vc-lie-lol rule:
+	if player is not in Got Gear Hot Here, the rule fails;
+	if lie-lol is true:
+		vcp "The shy shawl has taken enough abuse.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-lie-lol rule:
+	say "You snicker a bit at the message on the shy shawl. But not too much! You don't want to become like the Very Vile Fairy File writers you're trying to defeat!";
+	now lie-lol is true;
+
 this is the vc-loft-land rule:
 	if player is not in soft sand, the rule fails;
 	if loft-land is true:
@@ -4164,17 +4175,6 @@ this is the vc-tight-tunnel rule:
 this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
-
-this is the vc-lie-lol rule:
-	if player is not in Got Gear Hot Here, the rule fails;
-	if lie-lol is true:
-		vcp "The shy shawl has taken enough abuse.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-lie-lol rule:
-	say "You snicker a bit at the message on the shy shawl. But not too much! You don't want to become like the Very Vile Fairy File writers you're trying to defeat!";
-	now lie-lol is true;
 
 this is the vc-wake-whee rule:
 	if jake g is not touchable, the rule fails;

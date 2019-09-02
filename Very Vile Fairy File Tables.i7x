@@ -163,9 +163,18 @@ volume hints for later
 
 table of forlaters [SHORTCUT REMINDER: tru.bat makes did-%1 and can-%1 rules]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
+"CULL CEASED"	false	can-cull-ceased rule	did-cull-ceased rule	"You should be able to say [b]CULL CEASED[r] [once-now of can-cull-ceased rule] you're back to full strength."
+"DINING DOOR"	false	can-dining-door rule	did-dining-door rule	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
+"MINING MORE"	false	can-mining-more rule	did-mining-more rule	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the Fining Four are fully satisfied."
+"MO MAPPIN"	false	can-mo-mappin rule	did-mo-mappin rule	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
+"PULL PIECED"	false	can-pull-pieced rule	did-pull-pieced rule	"You can [b]PULL PIECED[r] the bull beast [once-now of can-pull-pieced rule] you have more people willing to help you."
+"SMASHING SMOKE"	false	can-smashing-smoke rule	did-smashing-smoke rule	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
+"SNAKE SNAP"	false	can-snake-snap rule	did-snake-snap rule	"You can [b]SNAKE SNAP[r] [once-now of can-snake-snap] it's clear a snake is present."
+"SO SAPPIN"	false	can-so-sappin rule	did-so-sappin rule	"You can make things [b]SO SAPPIN[r] [once-now of can-so-sappin rule] you can find where people are using their energy fruitlessly."
 "BURY BILE"	false	can-bury-bile rule	did-bury-bile rule	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "BIG BAG"	false	can-big-bag rule	did-big-bag rule	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag, but it didn't feel right at the time[if Fun Fen is visited]. Maybe it will, now[end if]."
 "BEAST BOSS"	false	can-beast-boss rule	did-beast-boss rule	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
+"CO CAPN"	fase	can-co-capn rule	did-co-capn rule	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
 "FLIM FLAM"	false	can-flim-flam rule	did-flim-flam rule	"You tried to [b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r], but you didn't have the confidence. [if me-minded is true]Now you managed to [b]MIND ME[r], that may change[else]Part of you still believes you need to FIND FEE, or find a way around finding it[end if]."
 "MASH MAP"	false	can-mash-map rule	did-mash-map rule	"You tried to [b][bap-map-rap][r], [if grit-grown is true]and maybe now you were able to GROW GRIT, it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "FEEL FEAR"	false	can-feel-fear rule	did-feel-fear rule	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
@@ -183,6 +192,8 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "CAST CAP"	false	can-cast-cap rule	did-cast-cap rule	"You can [b]CAST CAP[r] once you find one."
 "GOT GORED"	false	can-got-gored rule	did-got-gored rule	"The battle cry [b]GOT GORED[r] should work [once-now of can-got-gored rule] you have a full army and its leader."
 "MERRY MILE"	false	can-merry-mile rule	did-merry-mile rule	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
+
+[?? see about collapsing the below into rules from the story file proper e.g. vc-can-cull-ceased rule]
 
 [xx4l8r]
 
@@ -217,6 +228,22 @@ this is the can-cast-cap rule:
 this is the did-cast-cap rule:
 	if cool cap is moot, the rule succeeds;
 	the rule fails.
+
+this is the can-co-capn rule:
+	if jake-fee is true, the rule succeeds;
+	the rule fails;
+
+this is the did-co-capn rule:
+	if jake-cocapn is true, the rule succeeds;
+	the rule fails;
+
+this is the can-cull-ceased rule:
+	if healed-here is true, the rule succeeds;
+	the rule fails;
+
+this is the did-cull-ceased rule:
+	if beast bull is moot, the rule succeeds;
+	the rule fails;
 
 this is the can-deal-dear rule:
 	if felt-fear is true, the rule succeeds;
@@ -322,6 +349,21 @@ this is the did-merry-mile rule:
 	if merry-mile is true, the rule succeeds;
 	the rule fails.
 
+this is the can-mining-more rule:
+	if full-feast is not moot, the rule fails;
+
+this is the did-mining-more rule:
+	if mine-more is true, the rule succeeds;
+	the rule fails;
+
+this is the can-mo-mappin rule:
+	if blaze-maze is true, the rule succeeds;
+	the rule fails;
+
+this is the did-mo-mappin rule:
+	if map-mo is true, the rule succeeds;
+	the rule fails;
+
 this is the can-moral-mage rule:
 	if player has cage key, the rule succeeds;
 	the rule fails.
@@ -329,6 +371,14 @@ this is the can-moral-mage rule:
 this is the did-moral-mage rule:
 	if coral cage is moot, the rule succeeds;
 	the rule fails.
+
+this is the can-pull-pieced rule:
+	if full feast is moot, the rule succeeds;
+	the rule fails;
+
+this is the did-pull-pieced rule:
+	if dine-door is true, the rule succeeds;
+	the rule fails;
 
 this is the can-shining-shore rule:
 	if war-sapped is true, the rule succeeds;
@@ -345,6 +395,30 @@ this is the can-show-shield rule:
 this is the did-show-shield rule:
 	if shield-shown is true, the rule succeeds;
 	the rule fails.
+
+this is the can-smashing-smoke rule:
+	if y'old yard is visited, the rule succeeds;
+	the rule fails;
+
+this is the did-smashing-smoke rule:
+	if clashing cloak is moot, the rule succeeds;
+	the rule fails;
+
+this is the can-snake-snap rule:
+	if jake-cocapn is true, the rule succeeds;
+	the rule fails;
+
+this is the did-snake-snap rule:
+	if cake cap is not off-stage, the rule succeeds;
+	the rule fails;
+
+this is the can-so-sappin rule:
+	if whining war is visited, the rule succeeds;
+	the rule fails;
+
+this is the did-so-sappin rule:
+	if sap-so is true, the rule succeeds;
+	the rule fails;
 
 [zz4l8r]
 
