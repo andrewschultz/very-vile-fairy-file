@@ -1,6 +1,8 @@
 # vmc.py
 # VVFF mistake checker (for duplicates)
+# also can open a specific section by room or inform you if it is there
 
+import sys
 import re
 import i7
 from collections import defaultdict
@@ -12,6 +14,34 @@ mist_sec = defaultdict(str)
 mi = i7.hdr('vv', 'mi')
 errs_table = errs_todo = mist_table = mist_todo = mists = 0
 total_errs = 0
+
+def search_for_opening(search_string, look_alphabetical = True, bail_on_misorder = True):
+    cur_index = ""
+    where_if_nothing = 0
+    actual_search_string = re.sub(".*?\?", "", search_string)
+    actual_search_string = re.sub("\\b", "", actual_search_string)
+    with open(mi) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if '[start ' in line:
+                this_index = re.sub(".*\[start ", "", line.lower().strip())
+                print(line.strip())
+                print(this_index, "vs", cur_index)
+                if this_index < cur_index:
+                    if look_alphabetical:
+                        print("OUT OF ORDER INDEX {} vs {} at line {}.".format(this_index, cur_index, line_count))
+                if look_alphabetical and this_index > actual_search_string and bail_on_misorder:
+                    print("Looking alphabetically, we overshot {} with {}.".format(actual_search_string, this_index))
+                    i7.npo(mi, line_count - 1)
+                    exit()
+                cur_index = this_index
+            if 'start' in line: print(line.strip())
+            if re.search(search_string, line, re.IGNORECASE):
+                print("Got", search_string, "in line", line_count)
+                i7.npo(mi, line_count)
+                exit()
+    print("Found nothing to open.")
+    i7.npo(mi, where_if_nothing)
+    exit()
 
 with open(mi) as file:
     header_next = False
@@ -66,6 +96,15 @@ with open(mi) as file:
             else:
                 mist_done[x] = line_count
                 mist_sec[x] = cur_sec
+
+cmd_count = 1
+while cmd_count < len(sys.argv):
+    arg = mt.nohy(sys.argv[cmd_count])
+    if arg[:2] == 's:':
+        search_for_opening(r'\[start (of )?{}\b'.format(arg[2:]))
+        search_for_opening(r'\[start (of )? {}\b'.format(arg[2:]))
+        exit()
+    cmd_count += 1
 
 print("Gauged", mists, "total mistakes,", mist_table, "in table and", mist_todo, "in todo.")
 

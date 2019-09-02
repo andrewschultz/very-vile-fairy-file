@@ -84,10 +84,10 @@ volume what you start with
 
 table of mistake substitutions
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
-"brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start general mistakes]
+"brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start 1 general mistakes]
 ["swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
-"cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start wry wall mistakes]
+"cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start 2 wry wall mistakes]
 "dry doll"	signable-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
 "fry fall"	signable-loc rule	false	--	--	--	"The wry wall remains upright."
 "pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
