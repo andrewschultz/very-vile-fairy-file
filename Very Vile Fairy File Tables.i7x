@@ -87,16 +87,17 @@ randtxt
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Good Gang? Dud, Dang"
 "Hata['] Heft Data, Deft"
-"Lo Love Show Shove"
-"Mercy Me, Jersey G[r], by Versy V & Percy P"
+["Lo Love Show Shove"
+"Mercy Me, Jersey G[r], by Versy V & Percy P"]
 
 table of miscellaneous people [xxpeople]
 randtxt
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
-"Fart Face Mart Mayes"
+["Fart Face Mart Mayes"
 "Hefty Hata['] Lefty Leda"
 "Hunter Hoke, Blunter Bloke"
+"Hurt-Hell Burt Bell"
 "Lair Level Daredevil Bear Bevell"
 "Madman Chad Chan"
 "Madman Tad Tan"
@@ -104,14 +105,14 @@ randtxt
 "Pill-Perk Bill Burke"
 "Rude Rave Dude Dave"
 "Work-Will Kirk Kill"
-"Would-Whirl Bud Burrell"
+"Would-Whirl Bud Burrell"]
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
 table of vvff digs [xxtaunts] [xxdigs] [xxmean]
 randtxt
 "Blue blood? Do? Dud! Boo, bud!"
 "Catcall: at ALL!"
-"Fie! Face my mace!"
+["Fie! Face my mace!"
 "Gonna go off! Shun a show-off!"
 "Look leading?! Book beating!"
 "'My magic try: TRAGIC!'"
@@ -119,13 +120,13 @@ randtxt
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
 "Whoah! Words? No, nerds!"
-"Yale? You'll fail, fool!"
+"Yale? You'll fail, fool!"]
 
 table of vvff books [xxbooks]
 randtxt
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
-"Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
+["Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
 "Crew Came Grew Game"
 "Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
 "Do, Dare: Woo! Where"
@@ -147,7 +148,7 @@ randtxt
 "Self Centered Elf Entered"
 "So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
-"Why When My Men, by Ben"
+"Why When My Men, by Ben"]
 
 table of Wet Wood clues
 prof	randtxt

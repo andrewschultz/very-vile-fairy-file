@@ -578,7 +578,7 @@ check going west in Fight Funnel:
 	process the drop-snare rule;
 	if beer bull is in location of player:
 		if snuck snare is moot:
-			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! It tumbles into the remains of the Dives Ditch. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
+			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! The Beer Bull's last words are 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
 			if player has gold guard:
 				buff-gold-guard;
 			else:
@@ -586,6 +586,7 @@ check going west in Fight Funnel:
 			up-reg;
 			now in-bull-chase is false;
 			moot beer bull;
+			now player has mild mead;
 			move player to Soft Sand, without printing a room description;
 			the rule succeeds;
 		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
@@ -710,11 +711,9 @@ check taking off hard hat: say "No. Something will come out of nowhere to conk y
 
 chapter shy shawl
 
-the shy shawl is a thing in Got Gear Hot Here. "A shy shawl lies here. It really can't be the sort of thing a hero wears, but maybe you can get some practice with it.". cht of shy shawl is leteq. description is "It is terribly plain, but [if trawl-try is true]you did[else]maybe you could[end if] get motivation from it."
+the shy shawl is a thing in Got Gear Hot Here. "A shy shawl lies here. It really can't be the sort of thing a hero wears, but maybe you can get some practice with it.". cht of shy shawl is leteq. description is "It is terribly plain, but [if lie-lol is true]you did[else]maybe you could[end if] get motivation from it."
 
-trawl-try is a truth state that varies.
-
-[?? mistakes]
+lie-lol is a truth state that varies.
 
 part Violent Vale 1,1
 
@@ -753,6 +752,8 @@ this is the boat-drift rule:
 	the rule succeeds;
 
 nap-no is a truth state that varies.
+
+hap-ho is a truth state that varies.
 
 boat-reject is a truth state that varies.
 
@@ -1208,7 +1209,8 @@ the block attacking rule is not listed in any rulebook.
 check attacking:
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
-	say "Gauge gore: wage war! Rage! Roar![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
+	if noun is Bot Board, say "The bot board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
+	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
 
 the block saying no rule is not listed in any rulebook.
 
@@ -1306,7 +1308,7 @@ check requesting the score:
 	if dh + fh > 0, say "[line break]You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh in words] still need[plur of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
 	if lurking lump is not off-stage:
 		let gguess be next-lump-level - lump-count;
-		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhyme[plur of gguess] way from it re[if lurking lump is moot]turn[else]charg[end if]ing.";
+		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are a maximum of [gguess] of [next-lump-level] good-guess rhyme[plur of gguess] way from it re[if lurking lump is moot]turn[else]charg[end if]ing.";
 	the rule succeeds;
 
 the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
@@ -1460,9 +1462,10 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "First, thanks to Wade Clarke and Arthur DiBianca for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It helps writing be an adventure.";
-	say "Thanks to github for hosting private repositories that helped keep VVFF hidden.";
-	say "Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
-	say "Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
+	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but I loved the streaks that github showed.";
+	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
+	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
+	say "[line break]You can get in the testing credits too if you find a bug or a worthwhile game-related rhyme command. I suspect I've missed some.";
 	the rule succeeds;
 
 chapter abouting
@@ -1475,7 +1478,7 @@ understand "about" as abouting.
 
 carry out abouting:
 	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break]OTHERS will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
-	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. (And if I haven't, let me know.) VVFF is also meant to be polite on the Zarfian cruelty scale.";
+	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
 	the rule succeeds;
 
 chapter othersing
@@ -2198,7 +2201,8 @@ this is the lending-libe-hint rule:
 	say "Now that you have the Lending Libe, you can take whatever books you need."
 
 this is the lurking-lump-hint rule:
-	say "The lurking lump can be used to bypass any available local puzzle with [jjj]."
+	say "The lurking lump can be used to bypass any available local puzzle with [jjj]. It gains charges when you make enough good guesses--some especially amusing guesses may count extra.";
+	say "[line break][one of]HINT the lump again to see the mechanics of when you get a good guess[or]The lump drops after the first [next-lump-level in words] good guesses, then the next [(next-lump-level + next-lump-delta) in words], then [(next-lump-level + (2 * next-lump-delta)) in words], and so on. Particularly good guesses (author's discretion,) or bonus points, count double[stopping]."
 
 this is the marred-mat-hint rule:
 	say "[one of]The marred mat is in Got Gear Hot Here, suggesting maybe it can become something you can wear.[or]What can you wear that rhymes with mat?[or]HARD HAT.[stopping]"
@@ -2219,7 +2223,7 @@ this is the mean-moes-clean-clothes-hint rule:
 		say "[one of]You'll need a dirty-ish clothing item. You don't have it yet, but you'll know when you do. Or the next hint will spoil it[or]The way woke clay cloak goes in once you GLEAN GLOWS[stopping].";
 
 this is the mild-mead-hint rule:
-	say "[one of]You can make the mild mead have a bit more kick, but you don't need to.[or]The mild mead can become a slightly harder drug.[or]WILD WEED.[stopping]";
+	say "The mild mead is there just to provide a liquid refreshment for a feast. It has no use on its own. [if wild weed is off-stage][one of]It does have a bonus point, though[or]The mild mead can get a little more kick[or]It can become a different drug, sort of[or]WILD WEED[stopping][else]And you already got the wild weed from it[end if]."
 
 this is the mind-malt-hint rule:
 	say "The mind malt is just there to give another clue about weaknesses in the Vined Vault."
@@ -2530,7 +2534,7 @@ chapter wildweeding
 
 the wild weed is a thing.
 
-the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either."
+the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration."
 
 part Pit Pound 1,3
 
@@ -2593,10 +2597,11 @@ showmissesing is an activity.
 
 rule for showmissesing:
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a STRONG START.";
-	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
-	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting[else]the wild weed[end if].";
-	if gan-wan is false, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
+	if hap-ho is false, say "You could've said HO HAPPEN while listening to [Toe].";
 	unless oi mo is moot, say "You could have DIMD (dim'd) the horrible song Oi Mo in Mystery Mall.";
+	if wild weed is off-stage, say "You could've made the mild mead into WILD WEED.";
+	if wild weed is not moot, say "You could've tried to SPARK SPLIFF by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting, from the mild mead[else]the wild weed[end if].";
+	if gan-wan is false, say "You could've said WHATTA WANKSTA or WHAT A WANKSTA to the Gutta Ganksta for a further insult.";
 	if beaker-yet is false, say "You could've given Reeker Russell BEAKER BUSTLE in the Gassed Gap/Last Lap.";
 
 showdeathsing is an activity.
@@ -2687,7 +2692,10 @@ this is the verb-checker rule:
 				if wfull-fail is true:
 					say "Ooh! You're close, but you juggled things up, somehow.";
 					the rule succeeds;
-				if there is a core entry and idid entry is false, up-which core entry;
+				if there is a core entry and idid entry is false:
+					up-which core entry;
+					if core entry is false:
+						increase lump-count by 2;
 				if zap-core-entry is true:
 					blank out the core entry;
 					now zap-core-entry is false;
@@ -2696,6 +2704,7 @@ this is the verb-checker rule:
 				process the notify score changes rule;
 				process the get-sad rule;
 				process the get-wrong rule;
+				if there is a core entry and core entry is false, check-lump-progress;
 			process the note first think rule;
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
@@ -2712,7 +2721,7 @@ this is the verb-checker rule:
 vc-dont-print is a truth state that varies.
 
 next-lump-level is a number that varies. next-lump-level is 5.
-next-lump-delta is a number that varies. next-lump-delta is 4.
+next-lump-delta is a number that varies. next-lump-delta is 2.
 lump-count is a number that varies. lump-count is 0.
 lump-charges is a number that varies. lump-charges is 0.
 lump-uses is a number that varies. lump-uses is 0.
@@ -2725,8 +2734,8 @@ to check-lump-progress:
 			A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 			now player has lurking lump;
 		increment lump-charges;
+		decrease lump-count by next-lump-delta;
 		increase next-lump-level by next-lump-delta;
-		now lump-count is 0;
 
 the lurking lump is a thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP if anything is baffling you."
 
@@ -2835,7 +2844,8 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "mark"	"more"	false	true	false	vc-mark-more rule	vr-mark-more rule	--
 "cleared"	"clay"	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--
 "tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
-"knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--
+"knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	-- [start dives ditch]
+"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--
 "lots"	"lame"	false	true	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
 "ho"	"happen"	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--
@@ -2847,7 +2857,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start vending vibe]
 "see"	"sign"	false	true	false	vc-see-sign rule	vr-see-sign rule	--
 "hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
-"try"	"trawl"	true	false	false	vc-try-trawl rule	vr-try-trawl rule	--
+"lie"	"lol"	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--
 "beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
 "cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
 "full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
@@ -2900,16 +2910,16 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
 "glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
 "stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--
-"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	-- [start of unplaced]
 
 this is the vc-ho-happen rule:
-	if ho-hap is true:
+	if hap-ho is true:
 		vcp "You already said HO HAPPEN.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-ho-happen rule:
-	say "While nothing immediately happens, you feel more motivated to try new stuff--[Toe] may be more versatile than you think!"
+	say "While nothing immediately happens, you feel more motivated to try new stuff--[Toe] may be more versatile than you think!";
+	now hap-ho is true;
 
 [ this is stuff for beta commands below ]
 
@@ -4146,16 +4156,16 @@ this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
 
-this is the vc-try-trawl rule:
+this is the vc-lie-lol rule:
 	if player is not in Got Gear Hot Here, the rule fails;
 	if trawl-try is true:
-		vcp "Trying isn't about trying the same thing over and over again. It's about trying in different, creative ways!";
+		vcp "The shy shawl has taken enough abuse.";
 		continue the action;
 	the rule succeeds;
 
-this is the vr-try-trawl rule:
-	say "Yes, you want to try to deserve more than the shy shawl.";
-	now trawl-try is true;
+this is the vr-lie-lol rule:
+	say "You snicker a bit at the message on the shy shawl. But not too much! You don't want to become like the Very Vile Fairy File writers you're trying to defeat!";
+	now lie-lol is true;
 
 this is the vc-wake-whee rule:
 	if jake g is not touchable, the rule fails;
@@ -4193,10 +4203,14 @@ this is the vr-whoa-wait rule:
 
 this is the vc-wild-weed rule:
 	if mild mead is not touchable, the rule fails;
+	if wild weed is not off-stage:
+		say "Greedy, to try for more.";
+		continue the action.
 	the rule succeeds;
 
 this is the vr-wild-weed rule:
-	say "Bingo! The mild mead becomes wild weed.";
+	say "Bingo! Some of the mild mead tumbles off to the ground and becomes wild weed. Which is totally unnecessary for the game, but hey.";
+	now player has wild weed;
 
 this is the vc-wood-one rule:
 	if reeker russell is not touchable, the rule fails;

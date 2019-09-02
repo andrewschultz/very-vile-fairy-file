@@ -28,12 +28,17 @@ ball bee
 shawl she
 maul me
 call key
+###################shy shawl
+try trawl
+dry droll
 ###################po' pit
 snow snit
 co kit
 say soak
+##################toe tappin
 slow slappin
 woe whappin
+crow crappin #bad bird had heard: gad, gird? Tad
 yo yappin
 turk tell
 ##############gots game
@@ -80,7 +85,7 @@ volume what you start with
 table of mistake substitutions
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start general mistakes]
-"swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
+["swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start wry wall mistakes]
 "dry doll"	signable-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
@@ -88,7 +93,13 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
 "try tall"	signable-loc rule	false	--	--	--	"The wry wall does not grow."
 "bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start airy isle]
-"swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn."
+"crow crate"	go-gate-vis rule	false	--	--	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus]."
+"foe fate"	go-gate-vis rule	false	--	--	--	"You are nowhere near the end.[leetclue of partplus]"
+"know/no nate"	go-gate-vis rule	false	--	--	--	"Nobody named Nate appears to help you through the go gate.[if know-1][leetclue of leteq][else][leetclue of partplus][end if]"
+"lo late"	go-gate-vis rule	false	--	--	--	"You feel you are on the right path to disabling the go gate.[leetclue of partplus]"
+"mo mate"	go-gate-vis rule	false	--	--	--	"You remain alone.[leetclue of partplus]"
+"oh ate"	go-gate-vis rule	false	--	--	--	"Nothing takes a bit out of the go gate.[leetclue of letplus]"
+"woe/whoa/whoah weight"	go-gate-vis rule	false	--	--	--	"You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]"
 "nursed knave"	in-curst-cave rule	false	5	5	clue-worst-wave rule	"You don't need any more of that." [start curst cave]
 "live leap"	hive-heap-near rule	false	4	4	--	"The leap wouldn't be live for very long." [start fun fen]
 "call cree"	in-fun-fen rule	false	4	4	--	"You need something simpler than an unusual language here."
@@ -100,7 +111,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "passed/past pap"	in-gassed-gap rule	false	4	3	--	"You don't need to look back on what a trashy adventure this has been. Well, not in front of me." [?? cap cast yet?]
 "razzed rap"	in-gassed-gap rule	false	4	3	--	"There's enough bad music in this game if you know where to look."[?? if-then for if cap is moot]
 "sassed sap"	in-gassed-gap rule	false	4	3	--	"You look for someone who has recently lost an argument, but nobody turns up."
-"mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]."
+"card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Not very practical." [start got gear hot here]
+"cake cap"	shore-shined rule	false	4	3	--	"No edible headgear appears." [start lake lap]
+"fake fap"	shore-shined rule	false	4	3	--	"You make a rude gesture, for whatever good it does."
+"mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
 "crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones." [start po' pit] [?? all this needs to be tested a lot]
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
 "foe fit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Complaining and speculation about who or what put you there won't help."
@@ -121,6 +135,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "peel pear"	in-real-rear rule	false	--	--	if-rear-undone rule	"You have no fruit."
 "steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
+"swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn." [start tarry tile]
 "bind be"	tram-first-puzzle rule	false	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start trim tram]
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
 "signed see"	tram-first-puzzle rule	false	4	2	--	"You're still reacting to FIND FEE. You need to look inwards."
@@ -136,9 +151,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mind malt"	mass-near rule	false	--	--	--	"The mind malt is gone. You have to rely on yourself!"
 "signed salt"	in-vined-vault rule	false	4	5		--	"Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though."
 "wined walt"	in-vined-vault rule	false	4	5	--	"A drinking buddy won't help here."
-"cake cap"	shore-shined rule	false	4	3	--	"No edible headgear appears." [start whining war] [?? this is all wrong now]
-"fake fap"	shore-shined rule	false	4	3	--	"You make a rude gesture, for whatever good it does."
-"signing sore"	in-whining-war rule	false	7	5	--	"You make a rude gesture, for whatever good it does."
+"signing sore"	in-whining-war rule	false	7	5	--	"You make a rude gesture, for whatever good it does." [start whining war] [?? this is all wrong now]]
 
 section texts and decides
 
@@ -197,27 +210,14 @@ this is the mass-near rule: if mean mass is touchable, the rule succeeds;
 
 this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 
+this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
+
 this is the shore-shined rule: if player is in Whining War and shore-shine is true, the rule succeeds;
 
 this is the signable-loc rule:
 	if location of player is signable, the rule succeeds;
 
 this is the tram-first-puzzle rule: if player is in trim tram and me-minded is false, the rule succeeds;
-
-book unsorted
-
-table of mistake substitutions (continued)
-mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
-"crow crate"	go-gate-vis rule	false	--	--	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus]."
-"foe fate"	go-gate-vis rule	false	--	--	--	"You are nowhere near the end.[leetclue of partplus]"
-"know/no nate"	go-gate-vis rule	false	--	--	--	"Nobody named Nate appears to help you through the go gate.[if know-1][leetclue of leteq][else][leetclue of partplus][end if]"
-"lo late"	go-gate-vis rule	false	--	--	--	"You feel you are on the right path to disabling the go gate.[leetclue of partplus]"
-"mo mate"	go-gate-vis rule	false	--	--	--	"You remain alone.[leetclue of partplus]"
-"oh ate"	go-gate-vis rule	false	--	--	--	"Nothing takes a bit out of the go gate.[leetclue of letplus]"
-"woe/whoa/whoah weight"	go-gate-vis rule	false	--	--	--	"You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]"
-"card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Not very practical." [general unsorted]
-
-this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
 section texts and decides
 
