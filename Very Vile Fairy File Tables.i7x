@@ -46,7 +46,6 @@ rank-max	rank-name
 --	"rolled, rah'd"
 
 to seed-score-list:
-	now core-max is min-needed;
 	let my-row be 0;
 	let blank-rows be 0;
 	let min-forced-score be -1;
@@ -77,7 +76,7 @@ to say your-rank:
 		if core-score <= rank-max entry:
 			say "[rank-name entry]";
 			continue the action;
-	if score is not the core-max:
+	if core-score is not the core-max:
 		say "(bug)";
 	else:
 		say "gold god";

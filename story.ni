@@ -131,23 +131,19 @@ to say email: say "blurglecrun[hc]eon@gmail.com"
 
 to say gh: say "https://github.com/andrews[hc]ultz/very-vile-fairy-file (currently private)"
 
-the maximum score is 89.
-
 whew-score is a number that varies. whew-score is 8.
 
-min-needed is a number that varies. min-needed is 81.
+core-max is a number that varies. core-max is 81.
 
-min-gotten is a number that varies. min-gotten is 10.
+max-bonus is a number that varies. max-bonus is 10.
 
 core-score is a number that varies. core-score is 0.
-
-core-max is a number that varies.
 
 max-poss is a number that varies.
 
 to up-min:
-	increment min-needed;
-	increment min-gotten;
+	increment core-max;
+	increment max-bonus;
 	increment the score;
 
 to up-reg:
@@ -1118,6 +1114,7 @@ this is the check-sing-max rule:
 	increment sing-clues;
 	if sing-clues is sing-max:
 		say "Suddenly, [Toe] feels played out. You'll enjoy it later, but not now. It's done its job, and it's out of your mind, for the moment.";
+		if hap-ho is false, max-down; [can't HO HAPPEN]
 		moot Toe Tappin Row Rappin;
 
 chapter dropping
@@ -1301,7 +1298,7 @@ every turn when first-think-clue-flag is true and ever-think-flag is false (this
 chapter score
 
 check requesting the score:
-	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [min-gotten] optional points so far and need [min-needed] to win.";
+	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [max-bonus] optional points so far and need [core-max] to win.";
 	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].";
 	let dh be doable-hinted;
 	let fh be future-hinted;
@@ -2448,8 +2445,9 @@ when play begins (this is the opening text rule):
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
 
 when play begins (this is the score and status tweak rule):
+	now the maximum score is core-max + max-bonus;
 	now max-poss is the maximum score;
-	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed]-[max-poss]";
+	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[core-max]-[max-poss]";
 	now the left hand status line is "[location of the player]";
 	now the turn count is 0;
 
@@ -3701,6 +3699,7 @@ this is the vc-lots-lame rule:
 this is the vr-lots-lame rule:
 	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for another mall to look cool in.";
 	moot ganksta;
+	if gan-wan is false, max-down; [can't WHATTA WANKSTA]
 	the rule succeeds;
 
 this is the vc-luck-lair rule:
@@ -4055,6 +4054,7 @@ this is the vc-snake-snap rule:
 
 this is the vr-snake-snap rule:
 	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale.";
+	if jake-brie is false, max-down; [can't BREAK BRIE any more]
 	now player has cake cap;
 	move boring boat to Violent Vale;
 	move player to Violent Vale, without printing a room description;
@@ -4197,7 +4197,7 @@ this is the vc-whoa-wait rule:
 this is the vr-whoa-wait rule:
 	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.[wfak]";
 	move player to Tarry Tile;
-	now min-needed is score + 3;
+	now core-max is score + 3;
 	now maximum score is score + 3;
 	the rule succeeds.
 
@@ -4356,9 +4356,9 @@ carry out climbclearing:
 	now in-way-wronged is true;
 	now in-so-saded is true;
 	move player to Airy Isle;
-	now score is min-needed - whew-score + min-gotten;
+	now score is core-max - whew-score + max-bonus;
 	now core-score is score;
-	now maximum score is min-needed;
+	now maximum score is core-max;
 	the rule succeeds.
 
 volume map index
