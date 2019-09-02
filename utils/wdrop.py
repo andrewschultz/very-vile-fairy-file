@@ -77,7 +77,7 @@ def new_points(my_line, my_score, end_points = False, max_num = 0):
             return re.sub(r'\(x-([0-9]+)\)', lambda x:"(" + str(max_num-int(x.group(1))) + ")", my_line)
         if re.search("\(x\)", my_line):
             return re.sub(r'\(x\)', "(" + str(max_num) + ")", my_line)
-    return re.sub(r'\([0-9]+\)', "({:d})".format(my_score), my_line)
+    return re.sub(r'\([u0-9]+\)', "({:d})".format(my_score), my_line)
 
 def insert_stuff(f, fout, delete=False, max_here = 0):
     if not os.path.exists(f):
@@ -92,7 +92,7 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
     with open(f) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("##"): continue #this is for comments
-            if re.search("^>.*\([0-9]+\)", line):
+            if re.search("^>.*\([u0-9]+\)", line):
                 cur_points += 1
                 fstream.write(new_points(line, cur_points, max_num = max_here))
                 if cur_points in insert_point:
