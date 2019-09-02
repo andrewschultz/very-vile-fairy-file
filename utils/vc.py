@@ -29,6 +29,8 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
     mult_fail = 0
     no_succ = 0
     no_fail = 0
+    any_say = total_say = say_rules = 0
+    ex_vcp = 0
     suggested_changes = 0
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
@@ -36,21 +38,26 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
                 in_vc = True
                 got_succeeds_yet = 0
                 got_fails_yet = 0
+                any_say = 0
                 rule_start_line = line_count
                 rule_name = re.sub(".*vc-", "vc-", line).strip()
                 rule_name = re.sub(" *rule:", "", rule_name)
             elif line.startswith("this is the vr-"):
                 in_vr = True
+                vcp_count = 0
                 rule_start_line = line_count
                 rule_name = re.sub(".*vc-", "vc-", line).strip()
                 rule_name = re.sub(" *rule:", "", rule_name)
             elif in_vr and not line.strip():
                 in_vc = False
                 in_vr = False
+                if vcp_count:
+                    ex_vcp += 1
+                    print("{} Extraneous VCP in {} lines {}-{}.".format(ex_vcp, rule_name, rule_start_line, line_count))
             elif in_vc and not line.strip():
                 if not got_succeeds_yet:
                     no_succ += 1
-                    print("{}/{}Oops no 'rule succeeds' text in {} lines {}-{}.".format(no_succ, no_fail + no_succ, rule_name, rule_start_line, line_count))
+                    print("{}/{} Oops no 'rule succeeds' text in {} lines {}-{}.".format(no_succ, no_fail + no_succ, rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
                 elif got_succeeds_yet > 1 and rule_name not in mult_succ_fail_ok:
                     mult_succ += 1
@@ -63,6 +70,11 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
                 elif got_fails_yet > 1 and rule_name not in mult_succ_fail_ok:
                     no_fail += 1
                     print("{}/{} Oops no 'rule fails' text in {} lines {}-{}.".format(no_fail, no_fail + no_succ, rule_name, rule_start_line, line_count))
+                    mt.add_postopen_file_line("story.ni", line_count)
+                if any_say:
+                    say_rules += 1
+                    total_say += any_say
+                    print("{}{}/{} potential excess 'say' in {} lines {}-{}.".format("****" if any_say > 1 else "", total_say, say_rules, rule_name, rule_start_line, line_count))
                     mt.add_postopen_file_line("story.ni", line_count)
                 in_vc = False
                 in_vr = False
@@ -82,6 +94,9 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
             elif in_vc:
                 got_succeeds_yet += 'rule succeeds' in line
                 got_fails_yet += 'rule fails' in line
+                any_say += 'say "' in line and "[oksay]" not in line
+            elif in_vr:
+                vcp_count += 'vcp "' in line
             out_file.write(line)
     out_file.close()
     if suggested_changes:
@@ -97,6 +112,14 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
         print("Need to trim {} extra 'rule succeeds' and {} extra 'rule fails'.".format(mult_succ, mult_fail))
     else:
         print("No rules have excess rule succeeds/rule fails.")
+    if say_rules:
+        print("No fishy 'say' in vc- rules.")
+    else:
+        print(say_rules, "vc- rules have say, total =", total_say)
+    if ex_vcp:
+        print("Need to fix {} extraneous VCP in vr- rules.",format(ex_vcp))
+    else:
+        print("No extraneous VCP in vr- rules.")
     os.remove("story.niv")
     mt.postopen_files()
     exit()
@@ -215,7 +238,7 @@ w2 = myary[1]
 vc = "vc-{}-{} rule".format(w1, w2)
 vr = "vr-{}-{} rule".format(w1, w2)
 
-pastestr = "\"{}\"\t\"{}\"\tFLIP:true/false\tCORE:true/false\t{}\t{}\t--\r\n".format(w1, w2, vc, vr)
+pastestr = "\"{}\"\t\"{}\"\tFLIP:true/false\tCORE:true/false\tfalse\t{}\t{}\t--\r\n".format(w1, w2, vc, vr)
 pastestr += "\r\nthis is the {}:\r\n\tthe rule succeeds;\r\n".format(vc)
 pastestr += "\r\nthis is the {}:\r\n".format(vr)
 
