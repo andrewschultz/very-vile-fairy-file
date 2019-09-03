@@ -25,6 +25,8 @@ ignores = defaultdict(bool)
 should_be = defaultdict(str)
 found_yet = defaultdict(bool)
 file_open_after = defaultdict(int)
+verbs = defaultdict(bool)
+got_yet = defaultdict(bool)
 
 def usage(hdr="GENERAL USAGE"):
     print("=" * 20 + hdr)
@@ -32,6 +34,28 @@ def usage(hdr="GENERAL USAGE"):
     print("e/ec/ce = edit config file")
     print("es/se = edit source file")
     exit()
+
+def read_rhymes_table():
+    skip_next = False
+    in_table = False
+    with open("story.ni") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of verb checks"):
+                in_table = True
+                skip_next = True
+            if skip_next:
+                skip_next = False
+                continue
+            if in_table and not line.strip():
+                in_table = False
+                continue
+            if not in_table: continue
+            tary = line.lower().strip().split("\t")
+            my_cmd = re.sub("^vr-", "", tary[6]).replace("-", " ")
+            my_cmd = re.sub(" rule.*", "", my_cmd)
+            is_opt = (tary[3] == 'false')
+            verbs[my_cmd] = is_opt
+            got_yet[my_cmd] = False
 
 def learner_shift(from_words, to_words):
     from_words = re.sub("[^a-z ]", "", from_words, 0, re.IGNORECASE)
@@ -175,7 +199,7 @@ def cht_change(my_line):
     if "cht of" in mll: return True
     return False
 
-def parse_learner_line(l):
+def parse_learner_line(l, lc):
     ll = l.lower().strip()
     what_adjusted_to = re.sub(".*-> *(.*?)\].*", r'\1', ll)
     if "[->" in l:
@@ -184,6 +208,9 @@ def parse_learner_line(l):
     else:
         what_to_adj = re.sub(".*\[(.*?) *->.*", r'\1', ll)
     if debug: print("What to adjust:", what_to_adj, "/", "What adjusted to:", what_adjusted_to)
+    if got_yet[what_adjusted_to]:
+        print("Potential duplicate for", what_to_adj, "->", what_adjusted_to, "at line", lc)
+    got_yet[what_adjusted_to] = True
     return (what_to_adj, what_adjusted_to)
 
 def check_for_cht():
@@ -208,7 +235,7 @@ def check_for_cht():
                     if my_src not in file_open_after:
                         file_open_after[my_src] = line_count
                     continue
-                (my_from, my_to) = parse_learner_line(line)
+                (my_from, my_to) = parse_learner_line(line, line_count)
                 settings_needed = learner_shift(my_from, my_to)
                 if settings_needed in line: continue
                 print(line_count, "Need", settings_needed, "have", my_from, "->", my_to, "for", line.strip(), "REPLACE" if 'cht' in line else "ADD")
@@ -238,10 +265,21 @@ while cmd_count < len(sys.argv):
         usage()
     cmd_count += 1
 
+read_rhymes_table()
+
 read_mistake_file()
 check_source_clues()
 
 check_for_cht()
+
+need_adj = 0
+
+for x in sorted(verbs):
+    if got_yet[x]: continue
+    print("Didn't have any adjustments for {}.".format(x))
+    need_adj += 1
+
+if need_adj: print("Total potential adjustments needed = {}.".format(need_adj))
 
 if len(file_open_after):
     for x in file_open_after:
