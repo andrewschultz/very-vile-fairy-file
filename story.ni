@@ -540,7 +540,7 @@ The full feast is a thing. "A full feast lies here. You can't eat it all by your
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if]. You can go back east to Creased Cross."
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if][if clumped cluster is in Stark Store]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or useful to[end if]. You can go back east to Creased Cross."
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
@@ -549,6 +549,10 @@ check going west in Stark Store:
 check going down in Stark Store:
 	if weird way is off-stage, try going north instead;
 	if weird way is in Stark Store, say "You can't seem to get past the weird way." instead;
+
+chapter clumped cluster
+
+a clumped cluster is scenery. "The clumped cluster is useless, but it's not blocking you, and you doubt anything's in there. It would've turned up when you turned the weird way to the cleared clay, anyhow.". cht of clumped cluster is letminus. [-> bumped buster]
 
 chapter dark door
 
@@ -2860,6 +2864,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "dark"	"door"	false	true	false	vc-dark-door rule	vr-dark-door rule	-- [start stark store]
 "mark"	"more"	false	true	false	vc-mark-more rule	vr-mark-more rule	--
 "cleared"	"clay"	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--
+"bumped|dumped"	"buster|duster"	true	false	false	vc-bumped-buster rule	vr-bumped-buster rule	"bumped buster" or "dumped duster"
 "tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
 "knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	-- [start dives ditch]
 "wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--
@@ -3104,6 +3109,15 @@ this is the vr-brightening-bridge rule:
 	say "Boom! There goes the fridge! You can go east now!";
 	moot frightening fridge;
 
+this is the vc-bumped-buster rule:
+	if clumped cluster is touchable, the rule succeeds;
+	the rule fails;
+
+this is the vr-bumped-buster rule:
+	say "You start pushing and kicking at the clumped cluster. Parts of it break off, but not very quickly until you start chanting 'Bumped, buster.' And what do you know? You find a dumped duster that makes your browsing through the clumped cluster easier. The rest of the cleanup is easy. Your only reward for your hard work is -- satisfaction of a job well done and that anyone who wrote the Very Vile Fairy File would be upset indeed to see someone doing nice stuff, just because.";
+	moot clumped cluster;
+	the rule succeeds.
+
 this is the vc-bury-bile rule:
 	if player is in Tarry Tile:
 		if well worn hell horn is moot and merry-mile is true, the rule succeeds;
@@ -3167,8 +3181,9 @@ this is the vc-cleared-clay rule:
 	the rule succeeds;
 
 this is the vr-cleared-clay rule:
-	say "You concentrate on the weird way, which is, uh, weirder than trying to stat o clear it. But what do you know? It turns to clay that crumbles and goes away. You can go down now!";
+	say "You concentrate on the weird way, which is, uh, weirder than trying to stat o clear it. But what do you know? It turns to clay that crumbles and goes away. You can go down now! Oh, the cleared clay becomes a clumped cluster, which isn't very aesthetic, but there's no need to remove it.";
 	moot weird way;
+	move clumped cluster to Stark Store;
 
 this is the vc-co-capn rule:
 	if jake g is not touchable, the rule fails;
@@ -3394,22 +3409,6 @@ this is the vr-first-floor rule:
 	now Y'Old Yard is mapped inside History Hall;
 	now History Hall is mapped outside Y'Old Yard;
 
-this is the vc-flim-flam rule:
-	if player is not in trim tram, the rule fails;
-	if me-minded is false:
-		process the trimtramcmd rule;
-		vcp "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
-		clue-later "FLIM FLAM";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-flim-flam rule:
-	loop-note "FLIM FLAM/SKIM SCAM";
-	say "That does it! The tram moves off to a more open place...";
-	process the trimtramcmd rule;
-	move the player to Fun Fen;
-	clue-zap "FLIM FLAM";
-
 this is the vc-fit-found rule:
 	if player is not in pit pound, the rule fails;
 	if found-fit is true:
@@ -3425,6 +3424,22 @@ this is the vr-fit-found rule:
 	say "You feel comfortable here now. Wahoo!";
 	now found-fit is true;
 	clue-zap "FIT FOUND";
+
+this is the vc-flim-flam rule:
+	if player is not in trim tram, the rule fails;
+	if me-minded is false:
+		process the trimtramcmd rule;
+		vcp "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
+		clue-later "FLIM FLAM";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-flim-flam rule:
+	loop-note "FLIM FLAM/SKIM SCAM";
+	say "That does it! The tram moves off to a more open place...";
+	process the trimtramcmd rule;
+	move the player to Fun Fen;
+	clue-zap "FLIM FLAM";
 
 this is the vc-full-feast rule:
 	if Bull Beast is not in location of player, the rule fails;
