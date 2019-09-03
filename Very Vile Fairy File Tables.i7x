@@ -133,6 +133,7 @@ randtxt
 "Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
 "Do, Dare: Woo! Where"
 "Fall For Stall Store"
+"Greater Gravel Traitor Travel"
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
 "Good Girl Would Whirl"
