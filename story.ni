@@ -143,6 +143,8 @@ core-max is a number that varies. core-max is 81.
 
 max-bonus is a number that varies. max-bonus is 10.
 
+isle-score is a number that varies. isle-score is 7.
+
 core-score is a number that varies. core-score is 0.
 
 max-poss is a number that varies.
@@ -343,7 +345,7 @@ after looking in Wet Wood for the first time:
 
 part Rift River
 
-Rift River is a room in Worst Whew. "The rift river blocks you, and you can't go back, and you don't know which direction to go in, anyway. Though you managed to GET GOOD to get out of the wood, you'll need a different sort of boost to get around the river. It's too wide to cross, and you don't want to go back."
+Rift River is a room in Worst Whew. "The rift river blocks you, and you can't go back, and you don't know which direction to go in, anyway. Though you managed to GET GOOD to get out of the wood, you'll need a different sort of boost to get around the river. It's too wide to cross, and you don't want to go back.". cht of rift river is leteq. [-> gift giver]
 
 chapter Mind Malt
 
@@ -575,6 +577,7 @@ this is the drop-snare rule:
 		moot snuck snare;
 		say "As you go [if player is in fight funnel]west[else]look around[end if], you realize the snuck snare would be quite nice for trapping someone unsuspecting, somewhere, somehow. So you place it and return.";
 		move player to fight funnel;
+		phbt dives ditch;
 		the rule succeeds;
 
 check going west in Fight Funnel:
@@ -908,9 +911,7 @@ check going west in here hull:
 		reset-bull-chase;
 		the rule succeeds;
 
-The Beer Bull is a person in Here Hull. cht of beer bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if]." [->dear dull]
-
-[beer bull -> near null]
+The Beer Bull is a person in Here Hull. cht of beer bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if]." [->dear dull] [->near null]
 
 to say bull-standby:
 	say "[if ever-bull-chase is true]There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you. It'd be interesting to see what[end if]"
@@ -949,11 +950,11 @@ to start-bull-chase:
 
 part Shirk Shell -1,2 a
 
-Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact."
+Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact.". cht of shirk shell is letminus. [->work well]
 
 check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
 
-the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[end if]."
+the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[end if].". cht of jerk gel is partplus. [-> work well]
 
 understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
 
@@ -1026,6 +1027,10 @@ check going north in Gassed Gap:
 	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
 	unless evidence-pieces is 3, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
 	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
+	isle-max-score;
+
+to isle-max-score:
+	now max-poss is isle-score + score;
 
 to decide which number is evidence-pieces:
 	if debug-state is true, say "Binder: [whether or not player has binder] Hata: [sign-seen] Mage: [whether or not coral cage is moot].";
@@ -2556,7 +2561,7 @@ chapter wildweeding
 
 the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
 
-the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration."
+the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
 
 part Pit Pound 1,3
 
@@ -3007,6 +3012,7 @@ to lean-and-mean:
 		now player has clay cloak;
 		moot Dean Duggan;
 		move clumped cluster to Been Buggin';
+		phbt Been Buggin';
 	else:
 		say "'Not bad, but you can stll do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
@@ -3458,6 +3464,7 @@ this is the vr-flim-flam rule:
 	process the trimtramcmd rule;
 	move the player to Fun Fen;
 	clue-zap "FLIM FLAM";
+	phbt Trim Tram;
 
 this is the vc-full-feast rule:
 	if Bull Beast is not in location of player, the rule fails;
@@ -3483,6 +3490,7 @@ this is the vr-get-good rule:
 	loop-note "GET GOOD";
 	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]So many questions! On leaving the wood, you find yourself blocked by water.";
 	move player to Rift River;
+	phbt Wet Wood;
 
 this is the vc-gift-giver rule:
 	if player is not in rift river, the rule fails;
@@ -3494,6 +3502,7 @@ this is the vr-gift-giver rule:
 	now player has Too Totes New Notes;
 	now player has Mind Malt;
 	move player to Vined Vault;
+	phbt Rift River;
 
 this is the vc-glean-glows rule:
 	if player is not in history hall or mean moe's is not in history hall, the rule fails;
@@ -3708,6 +3717,7 @@ this is the vr-least-loss rule:
 	now least-loss is true;
 	say "BOOM! The Bull Beast, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. You take a bruising, but you'll live. The bull beast skulks back to the shadows.";
 	clue-zap "LEAST LOSS";
+	phbt Creased Cross;
 
 this is the vc-lending-libe rule:
 	if player is not in vending vibe, the rule fails;
@@ -3809,6 +3819,7 @@ this is the vr-mark-more rule:
 	say "Yes, there's more to the stark store than the dark door. You notice things about it--as well as how to take it off its hinges! And what's more, you also uncover a weird way off to the side.";
 	move weird way to Stark Store;
 	moot dark door;
+	phbt Stark Store;
 	clue-zap "MARK MORE";
 
 this is the vc-mash-map rule:
@@ -3900,6 +3911,7 @@ this is the vc-minding-maze rule:
 this is the vr-minding-maze rule:
 	say "The blaze swirls but dies down. In its place is a huge minding maze.";
 	now blaze-maze is true;
+	phbt blinding blaze;
 
 this is the vc-mining-more rule:
 	if player is not in Whining War, the rule fails;
@@ -4078,6 +4090,7 @@ this is the vr-show-shield rule:
 	now shield-shown is true;
 	moot gold guard;
 	clue-zap "SHOW SHIELD";
+	phbt Foe Field So Sealed;
 
 this is the vc-silent-sail rule:
 	if player is not in violent vale, the rule fails;
@@ -4089,6 +4102,7 @@ this is the vc-silent-sail rule:
 this is the vr-silent-sail rule:
 	say "Suddenly fom the watery depths, a flooring float pops up! It looks -- impractical for going anywhere, but man, is it aesthetic!";
 	move flooring float to violent vale;
+	phbt violent vale;
 
 this is the vc-sit-sound rule:
 	if hit hound is not touchable:
@@ -4231,6 +4245,7 @@ this is the vc-tight-tunnel rule:
 this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
 	now funnel-to-tunnel is true;
+	phbt Fight Funnel;
 
 this is the vc-wake-whee rule:
 	if jake g is not touchable, the rule fails;
@@ -4294,6 +4309,7 @@ this is the vc-work-well rule:
 this is the vr-work-well rule:
 	say "You work to put all the jerk gel back in. It becomes glowing globs.";
 	now the player has the jerk gel;
+	now cht of Shirk Shell is phbt;
 
 [zzvcvr]
 
@@ -4418,6 +4434,7 @@ carry out climbclearing:
 	now in-so-saded is true;
 	move player to Airy Isle;
 	now score is core-max - whew-score + max-bonus;
+	isle-max-score;
 	now core-score is score;
 	now maximum score is core-max;
 	the rule succeeds.

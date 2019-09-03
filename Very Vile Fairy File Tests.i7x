@@ -113,6 +113,25 @@ carry out nowaying:
 	say "[if needs is 0]Every noway-text is defined[else]You need to define noway-text for [needs] room[plur of needs][end if].";
 	the rule succeeds.
 
+volume quaint questin' taint testin' (Ha! Ha!)
+
+Table of Final Question Options (continued)
+final question wording	only if victorious	topic		final response rule		final response activity
+"track CHT of each room"	true	"cht"	--	chttracking
+
+chttracking is an activity.
+
+rule for chttracking:
+	let phbts be 0;
+	repeat with X running through rooms:
+		let mrx be map region of location of X;
+		if mrx is Poorly Penned or mrx is Get a Guess, next; [meta rooms don't count]
+		if X is History Hall or X is Soft Sand, next; [these are always switchable back and forth]
+		if cht of X is not phbt:
+			increment phbts;
+			say "[phbts]. [X] should be phbt but is [cht of X].";
+	if phbts is 0, say "Hooray! All rooms have been reduced to PHBT.";
+
 volume monty stuff
 
 include Full Monty Testing by Andrew Schultz.
