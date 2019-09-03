@@ -137,7 +137,7 @@ whew-score is a number that varies. whew-score is 8.
 
 core-max is a number that varies. core-max is 81.
 
-max-bonus is a number that varies. max-bonus is 9.
+max-bonus is a number that varies. max-bonus is 10.
 
 core-score is a number that varies. core-score is 0.
 
@@ -2611,6 +2611,20 @@ Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
 "see what you MISSED"	true	"missed"	--	showmissesing
 "see other DEATH TRAPS"	true	"death/traps" or "death traps"	--	showdeathsing
+"see ALTernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
+
+showaltverbsing is an activity.
+
+rule for showaltverbsing:
+	say "[2da]You could either MASH MAP, BASH BAP or RASH RAP the cache cap.";
+	say "[2da]You could either FLIM FLAM or SKIM SCAM to leave the Trim Tram.";
+	say "[2da]BUMPED BUSTER or DUMPED DUSTER could've cleared the clumped cluster.";
+	say "[2da]WHAT A WANKSTA or WHATTA WANKSTA would've annoyed the Gutta Ganksta.";
+	say "[2da]KNEEL NEAR, FEEL FEAR, DEAL DEAR and HEAL HERE could've had an ING because of the Ceiling Seer.";
+	say "[2da]You could've found the LUCK LAIR or the SNUCK SNARE.";
+	say "[2da]SILENT SAIL or SILENT SALE could've quieted the Violent Vale.";
+	say "[2da]CULL CEASED or LUL LEAST could've taken down the Bull Beast.";
+	say "[2da]WHOA, WOE or WHOAH WAIT were all acceptable by the Go Gate in Airy Isle.";
 
 showmissesing is an activity.
 
@@ -2618,6 +2632,7 @@ rule for showmissesing:
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if hap-ho is false, say "You could've said [b]HO HAPPEN[r] while listening to [Toe].";
 	unless oi mo is moot, say "You could have [b]DIMD[r] (dim'd) the horrible song Oi Mo in Mystery Mall.";
+	if clumped cluster is not moot, say "You could've cleared up the clumped cluster with [b]BUMPED BUSTER[r] or [r]DUMPED DUSTER[r].";
 	if lie-lol is false, say "You could've said [b]LIE LOL[r] to the shy shawl.";
 	if jake-brie is false, say "You could've tried to [b]BREAK BRIE[r] with Jake G. after taking tea.";
 	if wild weed is off-stage, say "You could've made the mild mead into [b]WILD WEED[r].";
@@ -2855,7 +2870,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
 "paper"	"pile"	false	true	false	vc-paper-pile rule	vr-paper-pile rule	--
 "backed"	"binder"	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--
-"kneel"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	-- [start of Real Rear]
+"kneel|kneeling"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	-- [start of Real Rear]
 "feel|feeling"	"fear"	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--
 "deal|dealing"	"dear"	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--
 "heal|healing"	"here"	true	true	false	vc-heal-here rule	vr-heal-here rule	--
