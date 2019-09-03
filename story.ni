@@ -375,6 +375,8 @@ to say ski-fli: say "[if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if]"
 
 to say ash-ap: say "[if bap-map-rap is 1]BASH BAP[else if bap-map-rap is 2]RASH RAP[else]MASH MAP[end if]"
 
+to say cul-lul: say "[if lul-clue is true]LUL LEAST[else]CULL CEASED[end if]"
+
 part Vined Vault 3,-1
 
 Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
@@ -2984,8 +2986,13 @@ to lean-and-mean:
 	else:
 		say "'Not bad, but you can stll do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
+lul-clue is a truth state that varies.
+
+this is the lul-cull rule:
+	now lul-clue is whether or not word number 1 in the player's command is "lul";
+
 this is the ashap rule:
-	if word number 1 in the player's command is "mash", now bap-map-rap is 0;
+	now bap-map-rap is 0;
 	if word number 1 in the player's command is "bash", now bap-map-rap is 1;
 	if word number 1 in the player's command is "rash", now bap-map-rap is 2;
 
@@ -3206,6 +3213,7 @@ this is the vr-couple-caps rule:
 
 this is the vc-cull-ceased rule:
 	if player is not in Creased Cross and healed-here is false, the rule fails;
+	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
 	if player is not in Creased Cross:
 		clue-later "CULL CEASED";
 		vcp "You need to go back to Creased Cross.";
@@ -3772,6 +3780,7 @@ this is the vr-mark-more rule:
 
 this is the vc-mash-map rule:
 	if player is not in po' pit, the rule fails;
+	process the ashap rule; [to determine what was the first word]
 	if grit-grown is false:
 		process the ashap rule;
 		vcp "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
