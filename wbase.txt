@@ -136,6 +136,11 @@ We don't need the weird way yet, but why not?
 
 > CLEARED CLAY (1)
 
+==t1
+And why not deal with the clumped cluster for an extra point?
+\\
+> BUMPED BUSTER (1)
+
 > W
 
 History Hall has something to the west, eventually. But it can also become something else.
