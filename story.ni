@@ -18,6 +18,10 @@ include Intro Restore Skip by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
+a thing can be abstract. a thing is usually not abstract.
+
+include Property Checking for VVFF by Emily Short.
+
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 include Very Vile Fairy File Tables by Andrew Schultz.
@@ -410,7 +414,7 @@ part Trim Tram 1,-1
 
 Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht of trim tram is leteq. [-> flim flam]
 
-FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. [-> mind me]
+FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. "FIND FEE is plastered everywhere. [if me-minded is true]But you can shrug it off now[else]You wish you could find something a bit different to do[end if].". [-> mind me]
 
 me-minded is a truth state that varies.
 
@@ -438,7 +442,7 @@ section wrong art
 
 the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way. The wrong art also has a prong part sticking out from it.". cht of wrong art is letplus. [-> strong start]
 
-the prong part is part of the wrong art. The prong part is optional. "It's a particularly ugly part of the wrong art.". cht of prong part is letplus. [-> strong start]
+the prong part is part of the wrong art. The prong part is optional. description is "It's a particularly ugly part of the wrong art.". cht of prong part is letplus. [-> strong start]
 
 started-strong is a truth state that varies.
 
@@ -496,13 +500,13 @@ chapter Steel Steer
 
 the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht of steel steer is partminus. [-> kneel near]
 
-the peeling pier is scenery in Real Rear.
+the peeling pier is scenery in Real Rear. "It's -- well, not in great shape, but it certainly BELONGS."
 
 check taking steel steer: say "It is way too heavy to STEAL STEER." instead;
 
 chapter Cage Key
 
-the cage key is a thing.
+the cage key is a thing. description is "It looks important. It must open something. There can only be so many cages around.".
 
 knelt-yet is a truth state that varies.
 
@@ -526,7 +530,7 @@ instead of doing something when need-loss is true:
 
 chapter Bull Beast
 
-The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.".
+The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if healed-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].".
 
 cull-ceased is a truth state that varies.
 
@@ -540,11 +544,11 @@ The full feast is a thing. "A full feast lies here. You can't eat it all by your
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if][if clumped cluster is in Stark Store]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or useful to[end if]. You can go back east to Creased Cross."
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if][if clumped cluster is in Stark Store]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or useful to[end if]. You can go back east to Creased Cross." [-> dark door]
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
-	if dark door is in Stark Store, say "You can't seem to get past the dark door." instead;
+	if dark door is in Stark Store, say "You can't seem to get past the dark door. It's too featureless right now. You can't find anything to grab." instead;
 
 check going down in Stark Store:
 	if weird way is off-stage, try going north instead;
@@ -556,7 +560,7 @@ a clumped cluster is scenery. "The clumped cluster is useless, but it's not bloc
 
 chapter dark door
 
-There is a thing called the dark door. It is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.".
+There is a thing called the dark door. It is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.". cht of dark door is leteq. [-> mark more]
 
 chapter weird way
 
@@ -564,7 +568,7 @@ the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a w
 
 part Fight Funnel -2,2
 
-Fight Funnel is below Stark Store. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if beer bull is moot]. You don't need to go west now you trapped the beer bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[else]. You can probably just fit west[end if]."
+Fight Funnel is below Stark Store. It is in Piddling Pain. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if beer bull is moot]. You don't need to go west now you trapped the beer bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[else]. You can probably just fit west[end if]."
 
 funnel-to-tunnel is a truth state that varies.
 
@@ -600,7 +604,7 @@ check going west in Fight Funnel:
 
 part Dives Ditch -3,2
 
-Dives Ditch is west of Fight Funnel. cht of Dives Ditch is letplus. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[end if]."
+Dives Ditch is west of Fight Funnel. cht of Dives Ditch is letplus. Dives Ditch is in Piddling Pain. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[end if]."
 
 kni-ni is a truth state that varies.
 
@@ -612,9 +616,9 @@ History Hall is west of Stark Store. cht of history hall is leteq. History Hall 
 
 Name Notes Tame Totes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
 
-the Gutta Ganksta is an optional person. description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
+the Gutta Ganksta is an optional person. "A Gutta Ganksta chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
 
-GOTS GAME is part of the Gutta Ganksta. cht of gots game is leteq. [-> lots lame]
+GOTS GAME is part of the Gutta Ganksta. cht of gots game is leteq. description is "It's pretty bad, as tattoos go. It has so much wrong with it. Perhaps you could point it out, without being too hurtful.". [-> lots lame]
 
 after lling gutta ganksta:
 	if cht of gots game is leteq:
@@ -642,7 +646,13 @@ check going west in History Hall:
 		continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
 
+chapter Mean Moe's
+
 Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to navigate the lights and bells and whistles."
+
+chapter clashing cloak
+
+the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do."
 
 chapter mysterymalling
 
@@ -709,7 +719,7 @@ the marred mat is a thing in Got Gear Hot Here. description is "What is a marred
 
 check taking marred mat: say "It can't be useful in that form." instead;
 
-the hard hat is a gaphat.
+the hard hat is a gaphat. description is "The hard hat looks like it can protect you well enough, but it doesn't have a lot of flair, and it's not terribly lightweight.".
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
 
@@ -735,13 +745,13 @@ check opening frightening fridge: say "You're scared to. There must be a better 
 
 chapter flooring float
 
-the flooring float is a thing. cht of flooring float is letminus. "A flooring float bobs here.".
+the flooring float is a thing. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!"
 
 check taking flooring float: say "It's too heavy, and you can't take it anywhere. Maybe some other watercraft, though." instead;
 
 chapter boring boat
 
-the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see a new place.".
+the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see a new place.". description is "Just the sight of the boring boat leaves you yawning[if nap-no is true]a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
 
 check taking boring boat: try entering boring boat instead;
 
@@ -797,7 +807,9 @@ check going east in Lake Lea when Jake G is touchable:
 	if jake-woke is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if jake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else]paces back and forth here[end if].". talk-text of Jake G is "'Achy! Make me!'"
+Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]"
+
+description of Jake G is "[if jake-woke is false]He's sleeping. You need a personalized, cheery greeting[else if jake-tea is false]Jake seems to be fiddling with utensils and snack packs[else if jake-fee is false]Jake rubs the fingers of one hand together but waves it off with the other[else if jake-map is false]Jake looks a little llost[else if jake-cocapn is false]Jake looks a little down here, as if he wants to feel equal to you[else]Jake seems eager for battle[end if]."
 
 jake-woke is a truth state that varies.
 jake-tea is a truth state that varies.
@@ -826,7 +838,7 @@ shore-shine is a truth state that varies.
 
 part Lake Lap ??,??
 
-Lake Lap is east of Lake Lea. It is in Piddling Pain.
+Lake Lap is east of Lake Lea. It is in Piddling Pain. "You could go back west to Lake Lea, but you have a feeling that, whatever you need to do with Jake G., it's here.".
 
 jake-cocapn is a truth state that varies.
 jake-snap is a truth state that varies.
@@ -834,9 +846,17 @@ jake-map is a truth state that varies.
 
 part Been Buggin'
 
-Been Buggin' is a room in Piddling Pain. cht of Been Buggin' is leteq.
+Been Buggin' is a room in Piddling Pain. cht of Been Buggin' is leteq. "An isolated island too small to explore.". [->mean muggin]
 
-Dean Duggan is a person in Been Buggin'.
+Dean Duggan is a person in Been Buggin'. "[one of]'Hi! I'm Dean Duggan. Congratulations on making it here. Well, sort of. If you have, you -- well, you've done well, but you still need help with life skills and stuff.'[or]Dean Duggan smiles here, ready to help you with whatever you need to ask about[bug-so-far].[stopping]". description of Dean Duggan is "Dean Duggan nods patiently. He's ready to help you, but you need to know what to ask for[bug-so-far]."
+
+to say bug-so-far:
+	if mean-mugged is true:
+		say ". So far, you've managed to look tougher";
+	else if lean-lugged is true:
+		say ". So far, you've found new ways to be and feel stronger";
+	else:
+		say ". You'd love to be able to be stronger and tougher, mentally and physically";
 
 mean-mugged is a truth state that varies.
 
@@ -889,11 +909,15 @@ check going west in here hull:
 		reset-bull-chase;
 		the rule succeeds;
 
-The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". [->fear ful]
+The Beer Bull is a person in Here Hull. cht of beer bull is partminus. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if]." [->fear ful]
+
+to say bull-standby:
+	say "[if ever-bull-chase is true]There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you. It'd be interesting to see what[end if]"
 
 bull-null is a truth state that varies.
 
 in-bull-chase is a truth state that varies.
+ever-bull-chase is a truth state that varies.
 
 to decide whether hull-bull:
 	if player is in Here Hull or beer bull is in location of player, yes;
@@ -919,6 +943,7 @@ every turn when in-bull-chase is true:
 		move beer bull to location of player;
 
 to start-bull-chase:
+	now ever-bull-chase is true;
 	now in-bull-chase is true;
 
 part Shirk Shell -1,2 a
@@ -927,7 +952,7 @@ Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like 
 
 check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
 
-the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy."
+the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[end if]."
 
 understand "glowing/globs" and "glowing globs" as jerk gel when player has jerk gel.
 
@@ -938,18 +963,18 @@ part Curst Cave -1,2 b
 
 Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-cave][if worst wave is in curst cave]. A worst wave rushes about, leaving you feeling terrible[end if]."
 
-the worst wave is scenery in Curst Cave.
+the worst wave is scenery in Curst Cave. "Whoah! It's not terribly friendly or welcoming. Perhaps you can make it more likable."
 
-the screaming skull is a thing in Curst Cave.
+the screaming skull is a thing in Curst Cave. description is "The skull opens and closes its mouth, but the volume of its screaming remains constant.". "A screaming skull bobs up and down here, well, just screaming. It's not threatening, but it's really disruptive.". cht of screaming skull is letminus. [->dreaming dull]
 
 check taking screaming skull: say "You need to 'take' it figuratively." instead;
 
 to say tap-in-cave:
 	if tool tap is in Curst Cave, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]"
 
-the tool tap is scenery.
+the tool tap is scenery. "Something must come out of it. But what?".
 
-the cool cap is a gaphat.
+the cool cap is a gaphat. description is "The cool cap looks great[if jerk gel is moot], and boy, it feels great now you glued the other hats to it[else], but it doesn't seem functional, yet[end if]."
 
 first-fave is a truth state that varies.
 
@@ -965,16 +990,20 @@ shield-shown is a truth state that varies.
 
 chapter Pain Peasant
 
-the Pain Peasant is a person in Foe Field. "Pretty simple looking, really. But clearly Upset about Stuff enough to push you back out of spite."
+the Pain Peasant is a person in Foe Field. description is "Pretty simple looking, really. But clearly Upset about Stuff enough to push you back out of spite.". "A pain peasant paces back and forth, looking nervously east and west.".
 
 check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
-	say "The Pain Peasant blocks you. Geez, what a pain!" instead; [?? fain pheasant]
+	say "The Pain Peasant blocks you, saying 'It is even worse there than in here! Trust me!' Geez, what a pain!" instead; [?? fain pheasant]
 
 part Store All Stage -1,3
 
-Store All Stage is a room in Piddling Pain. It is west of Foe Field.
+Store All Stage is a room in Piddling Pain. It is west of Foe Field. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage.[paragraph break]Y[else]y[end if]ou can really only go back east."
 
-the coral cage is a thing in Store All Stage.
+the coral cage is scenery in Store All Stage. "You can't see into it to see who's there[if cage key is off-stage], and you have no way of opening it[end if]."
+
+check opening coral cage:
+	if player does not have cage key, say "You have nothing that opens the coral cage." instead;
+	say "The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage." instead;
 
 volume Vale Verminous
 
@@ -1007,7 +1036,9 @@ extra-cool-cap is a truth state that varies.
 
 chapter Reeker Russell
 
-Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell is blocking the way north.". talk-text is "'My mood: DIE, dude!'".
+Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell blocks the way north.". talk-text is "'My mood: DIE, dude!'". description of Reeker Russell is "He looks [if meeker-yet is true]meeker than at first[else]pretty strong[end if]. He is also [if good gun is moot]unarmed[else]holding a good gun[end if].".
+
+description of good gun is "It's made up of an obviously sleek and superior metal. A lesser material, and it might fall apart and be useless.".
 
 to decide which number is russell-progress:
 	decide on boolval of meeker-yet + boolval of whether or not good gun is moot;
@@ -1018,7 +1049,7 @@ to check-russell-go:
 		moot Reeker Russell;
 		if beaker-yet is false, max-down;
 	else:
-		say "Russell looks confused! One more setback, and he's had it.";
+		say "[line break]Russell looks confused! One more setback, and he's had it.";
 
 beaker-yet is a truth state that varies.
 
@@ -1045,11 +1076,11 @@ for printing a locale paragraph about a person (called per) in Airy Isle:
 	else:
 		say "The Lot Lord and Hot Horde mumble amongst themselves. The right battle cry, and they will be fully jazzed to take down the Bot Board!";
 
-the Bot Board are plural-named people in Airy Isle. . talk-text is "Meep, mate! Heap hate! Weep, wait!"
+the Bot Board are plural-named people in Airy Isle. . talk-text is "Meep, mate! Heap hate! Weep, wait!". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own."
 
-the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?".
+the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?". description is "The Lot Lord's authority as a battle leader is unquestionable. Yet he needs [if hot horde is off-stage]followers[else]a battle cry for his followers--he doesn't seem much of a poet[end if]."
 
-the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.".
+the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.". description is "The Hot Horde are all over the place. [if lot lord is off-stage]Even with the Lot Lord's leadership, they need something like a battle cry to unify them fully[else]They need a leader, and you're not tough enough. No offense[end if]."
 
 book go gate
 
@@ -1065,7 +1096,7 @@ the grow grate is part of the go gate. description is "The grow grate looks like
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all."
+Tarry Tile is a room in Vale Verminous. "You don't really see any way out, but you're pretty sure this is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all."
 
 chapter well worn hell horn
 
@@ -1074,6 +1105,8 @@ the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell h
 chapter Very Vile Fairy File
 
 the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of very vile fairy file is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
+
+description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless."
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -1385,7 +1418,7 @@ carry out reading:
 
 table of readables
 read-thing	read-txt
-Very Vile Fairy File	"You note one book is [i][next-rand-txt of table of vvff digs][r]."
+Very Vile Fairy File	"The file contains advice and catch-phrases to seem like an alpha male or whatever. One is [i][next-rand-txt of table of vvff digs][r]."
 leet learner	"Some multi-colored text on the leet learner seems to function as examples. Some seem like a bit of a stretch, but they're probably there to help.[paragraph break][table-of-color-hints][run paragraph on]"
 marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 
@@ -1530,6 +1563,13 @@ ha-half is a truth state that varies.
 when play begins: [?? put this somewhere better]
 	now too-two is true;
 	now ha-half is true;
+
+to say will-wont of (ts - a truth state):
+	say "[if ts is true]will[else]won't[end if]"
+
+chapter ha half button
+
+the ha half nah naff button is part of the leet learner. description is "It is set [on-off of ha-half], meaning if you get a guess half-right, the Leet Learner [will-wont of ha-half] alert you."
 
 chapter tootwoing
 
@@ -1974,6 +2014,7 @@ the thing-hint-rule of cake cap is all-caps-hint rule.
 the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of ceiling seer is ceiling-seer-hint rule.
 the thing-hint-rule of clashing cloak is the clashing-cloak-hint rule.
+the thing-hint-rule of clumped cluster is the clumped-cluster-hint rule.
 the thing-hint-rule of cold card is the cold-card-hint rule.
 the thing-hint-rule of cool cap is all-caps-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
@@ -2126,6 +2167,9 @@ this is the clashing-cloak-hint rule:
 		the rule succeeds;
 	say "[one of]The clashing cloak can transform into another sort of distraction[or]SMASHING SMOKE[stopping].";
 	if floor-yet is false, say "You can't use the clashing cloak yet."
+
+this is the clumped-cluster-hint rule:
+	say "[one of]The clumped cluster can be moved TWO ways[or]You can use an order to move the cluster or find an item[or][one of]BUMPED BUSTER is one way[or]DUMPED DUSTER is one way[cycling] to clear the clumped cluster[stopping].";
 
 this is the cold-card-hint rule:
 	say "You need to bring the cold card somewhere as a voucher[one of]. Hint again to see where[or]. [if the room east of vending vibe is nowhere]You will need to change Mystery Mall back, first[else if vending vibe is unvisited]You need to visit west of Mystery Mall[else if trending tribe is moot]The Lending Libe[else]The Vending Vibe, but first you must deal with the Trending Tribe[end if][stopping]."
@@ -2394,11 +2438,13 @@ to decide whether goto-available:
 definition: a room (called rm) is available-from-here:
 	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
+	if rm is Here Hull and beer bull is moot, no;
 	yes;
 
 carry out gotoing:
 	if noun is location of player, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
+	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
 	if noun is available-from-here:
 		move player to noun;
 	else:
@@ -2501,11 +2547,9 @@ check quitting the game: say "You say to yourself, not fully convinced, 'Best bi
 
 volume unsorted
 
-The cake cap is a gaphat.
+The cake cap is a gaphat. description is "The cake cap looks tasty and yet still incomplete and not quite wearable on its own."
 
 the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
-
-the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do."
 
 chapter glowglading
 
@@ -2551,7 +2595,7 @@ instead of doing something when in-way-wrong is true:
 
 chapter wildweeding
 
-the wild weed is a thing.
+the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration."
 
@@ -2559,7 +2603,7 @@ part Pit Pound 1,3
 
 Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-maze is false]There's a blaze to the east that may be trickier to visit, though[else]Why, you could even deal with the maze to the east[end if]." [->sit sound]
 
-A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". [->sit sound]
+A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!" [->sit sound]
 
 check going east in Pit Pound:
 	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
@@ -2569,7 +2613,7 @@ found-fit is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if blaze-maze is true]Minding Maze[else]Blinding Blaze[end if]". description is "[if blaze-maze is false]This is such a terrible blaze. You'll have to put it out, or you can only go back west[else if maze-mapped is false]There's a maze ahead. You'll want to plan out fully how to deal with it[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-maze is true]. You can also just go back west[end if]."
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if blaze-maze is true]Minding Maze[else]Blinding Blaze[end if]". description is "[if blaze-maze is false]This is such a terrible blaze. You'll have to put it out, or you can only go back west[else if maze-mapped is false]There's a maze ahead. You'll want to plan out fully how to deal with it[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-maze is true]. You can also just go back west[end if]."
 
 blaze-maze is a truth state that varies.
 
@@ -2583,7 +2627,7 @@ the stuck stair is scenery. "It looks like you may have to figure where the stai
 
 chapter snuck snare
 
-the snuck snare is a thing. "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
+the snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
 
 [?? burned bower/turned tower]
 
@@ -3131,7 +3175,6 @@ this is the vc-bumped-buster rule:
 this is the vr-bumped-buster rule:
 	say "You start pushing and kicking at the clumped cluster. Parts of it break off, but not very quickly until you start chanting 'Bumped, buster.' And what do you know? You find a dumped duster that makes your browsing through the clumped cluster easier. The rest of the cleanup is easy. Your only reward for your hard work is -- satisfaction of a job well done and that anyone who wrote the Very Vile Fairy File would be upset indeed to see someone doing nice stuff, just because.";
 	moot clumped cluster;
-	the rule succeeds.
 
 this is the vc-bury-bile rule:
 	if player is in Tarry Tile:
@@ -4425,6 +4468,8 @@ index map with Trim Tram mapped east of Real Rear.
 index map with Po' Pit mapped east of Trim Tram.
 index map with Vined Vault mapped east of Po' Pit.
 index map with Vined Vault mapped south of Wet Wood.
+
+index map with Fight Funnel mapped north of History Hall.
 
 section odd directions
 

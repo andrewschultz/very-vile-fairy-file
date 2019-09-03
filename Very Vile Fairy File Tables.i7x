@@ -64,11 +64,12 @@ to seed-score-list:
 			now blank-rows is number of rows in table of ranks - my-row + 1;
 		let temp be (my-row - last-forced-row) * ((core-max - 1) - min-forced-score);
 		now rank-max entry is (temp / blank-rows) + min-forced-score;
-		if debug-state is true, say "Assigned rank: [b][rank-name entry][r] = [last-points] up to [rank-max entry].";
+[		if debug-state is true, say "Assigned rank: [b][rank-name entry][r] = [last-points] up to [rank-max entry].";]
 		now last-points is rank-max entry + 1;
-	if debug-state is true:
+[	if debug-state is true:
 		repeat through table of ranks:
-			say "[rank-name entry] is <= [rank-max entry] points.";
+			say "[rank-name entry] is <= [rank-max entry] points.";]
+			[ the comment-out is because ranks aren't changing any more with the points set, and also I need to see more interesting and likely-to-change debug information at the start.]
 
 to say your-rank:
 	repeat through table of ranks:
