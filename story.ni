@@ -548,7 +548,7 @@ check taking the full feast: say "Too much at once." instead;
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if][if clumped cluster is in Stark Store]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or useful to[end if]. You can go back east to Creased Cross." [-> dark door]
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if]. [if weird way is in stark store]There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too." [-> dark door]
 
 check going west in Stark Store:
 	if dark door is off-stage, try going north instead;
@@ -592,20 +592,23 @@ check going west in Fight Funnel:
 	if beer bull is in location of player:
 		if snuck snare is moot:
 			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! The Beer Bull's last words are 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
-			if player has gold guard:
-				buff-gold-guard;
-			else:
-				say "[line break]'I see no armor I could help improve. Come back when you find it. But for now, I need time to reorganize my domain.'";
-			up-reg; [+beat beer bull]
-			now in-bull-chase is false;
-			moot beer bull;
-			now player has mild mead;
-			move player to Soft Sand, without printing a room description;
+			solve-bull-chase;
 			the rule succeeds;
 		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
 		reset-bull-chase;
 		the rule succeeds;
 	if beer bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
+
+to solve-bull-chase:
+	if player has gold guard:
+		buff-gold-guard;
+	else:
+		say "[line break]'I see no armor I could help improve. Come back when you find it. But for now, I need time to reorganize my domain.'";
+	up-reg; [+beat beer bull]
+	now in-bull-chase is false;
+	moot beer bull;
+	now player has mild mead;
+	move player to Soft Sand, without printing a room description;
 
 part Dives Ditch -3,2
 
@@ -854,7 +857,7 @@ jake-map is a truth state that varies.
 
 part Been Buggin'
 
-Been Buggin' is a room in Piddling Pain. cht of Been Buggin' is leteq. "An isolated island too small to explore.". [->mean muggin]
+Been Buggin' is a room in Piddling Pain. cht of Been Buggin' is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin']. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". [->mean muggin]
 
 Dean Duggan is a person in Been Buggin'. "[one of]'Hi! I'm Dean Duggan. Congratulations on making it here. Well, sort of. If you have, you -- well, you've done well, but you still need help with life skills and stuff.'[or]Dean Duggan smiles here, ready to help you with whatever you need to ask about[bug-so-far].[stopping]". description of Dean Duggan is "Dean Duggan nods patiently. He's ready to help you, but you need to know what to ask for[bug-so-far].". talk-text is "'Teach tons, reach runs!' You probably need to ask him what, specifically, you want to learn.". cht of Dean Duggan is leteq. [-> lean luggin]
 
@@ -902,7 +905,7 @@ check going east in Soft Sand:
 
 part Here Hull 1,2
 
-Here Hull is east of Soft Sand. It is in Piddling Pain. "You can go back east to Soft Sand here."
+Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back east to [soft sand]."
 
 gull-guard is a truth state that varies.
 
@@ -920,7 +923,7 @@ check going west in here hull:
 The Beer Bull is a person in Here Hull. cht of beer bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if]." [->dear dull] [->near null]
 
 to say bull-standby:
-	say "[if ever-bull-chase is true]There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you. It'd be interesting to see what[end if]"
+	say "[if ever-bull-chase is false]A beer bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying DEAR DULL. It'd be interesting to see what[end if]"
 
 bull-null is a truth state that varies.
 
@@ -933,19 +936,21 @@ to decide whether hull-bull:
 
 to reset-bull-chase:
 	say "You limp [if player is in creased cross]around[else]back to[end if] Creased Cross.";
-	move player to Creased Cross;
 	move beer bull to here hull;
+	move player to Creased Cross;
 	now in-bull-chase is false;
 	now bull-from is Here Hull;
 
 bull-from is a room that varies. bull-from is Here Hull.
 
-every turn when in-bull-chase is true:
+check going when in-bull-chase is true:
+	if the room noun of location of player is bull-from :
+		say "The beer bull catches you doubling back!";
+		reset-bull-chase;
+		the rule succeeds;
+
+every turn when in-bull-chase is true: [?? make this so that we track by last-bull-loc]
 	if beer bull is not in location of player:
-		if location of player is bull-from:
-			say "The beer bull catches you doubling back!";
-			reset-bull-chase;
-			the rule succeeds;
 		say "The beer bull follows you.";
 		now bull-from is location of beer bull;
 		move beer bull to location of player;
@@ -2847,11 +2852,29 @@ to say firstor of (t - text):
 	replace the regular expression "\|.*" in t with "";
 	say "[t in upper case]";
 
+to lump-minus:
+	decrement lump-charges;
+	say "[line break]The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
+	if lump-charges is 0, moot lurking lump;
+	now in-jerk-jump is false;
+	increment lump-uses;
+	process the notify score changes rule;
+	process the get-sad rule;
+	process the get-wrong rule;
+
 carry out jerkingjumping:
 	if debug-state is false:
 		if lurking lump is off-stage, say "You have nothing that would help you do that." instead;
 		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
+	else:
+		say "DEBUG: ignoring the charges in the lump, currently at [lump-charges].";
 	now in-jerk-jump is true;
+	if in-bull-chase is true:
+		if snuck snare is not moot, say "The lurking lump remains immovable. Perhaps you don't need to know where to go yet." instead;
+		say "The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the beer bull into running into the trap you set. You head back to the Gear Gull in Here Hull.";
+		solve-bull-chase;
+		lump-minus;
+		the rule succeeds;
 	repeat through table of verb checks:
 		process the ver-rule entry;
 		if the rule succeeded:
@@ -2862,14 +2885,7 @@ carry out jerkingjumping:
 				blank out the core entry;
 				now zap-core-entry is false;
 			now idid entry is true;
-			decrement lump-charges;
-			say "[line break]The lurking lump shrivels [if lump-charges is 0]and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
-			if lump-charges is 0, moot lurking lump;
-			now in-jerk-jump is false;
-			increment lump-uses;
-			process the notify score changes rule;
-			process the get-sad rule;
-			process the get-wrong rule;
+			lump-minus;
 			the rule succeeds;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.

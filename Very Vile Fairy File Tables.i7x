@@ -86,6 +86,7 @@ volume random tables
 
 table of mall songs [xxmall] [xxsongs]
 randtxt
+"Be Bop: See, Sop"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Good Gang? Dud, Dang"
 "Hata['] Heft Data, Deft"
@@ -133,6 +134,7 @@ randtxt
 "Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
 "Do, Dare: Woo! Where"
 "Fall For Stall Store"
+"Dandy Dyin['] Sandy, Sighin[r], by Randy Ryan"
 "Greater Gravel Traitor Travel"
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
