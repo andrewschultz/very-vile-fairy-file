@@ -96,6 +96,11 @@ Now, you need to overcome obstacles to be worthy of the Sage Sea. Let's admit to
 
 A key! Keys always come in handy. There's one more thing you can do, but it will have to wait for later. You won't need it yet.
 
+==t1
+Also, there's a last lousy point here, to make the peeling pier look nicer.
+\\
+> APPEALING APPEAR (1)
+
 > N
 
 Now at Fun Fen, you can just tell the Tall Tree what to do.
@@ -135,11 +140,6 @@ Hmm. We can do something with the door.
 We don't need the weird way yet, but why not?
 
 > CLEARED CLAY (1)
-
-==t1
-And why not deal with the clumped cluster for an extra point?
-\\
-> BUMPED BUSTER (1)
 
 > W
 
@@ -276,6 +276,11 @@ You automatically are sent back to Violent Vale, but now you will go somewhere e
 
 > LEAN LUGGIN (1)
 
+==t1
+And why not deal with the clumped cluster for an extra point?
+\\
+> BUMPED BUSTER (1)
+
 > ENTER BOAT
 
 Now you want to use the clay cloak.
@@ -292,7 +297,11 @@ Mean Moe's Clean Clothes could clean up something you can't quite wear...
 
 > HISTORY HALL
 
-> FIRST FLOOR (1)
+Now to read that book, Poor Ponder for Fonder. It seems like rubbish, but maybe you can imagine it isn't?
+
+There are actually two homonyms that work equally well here.
+
+> YOURE YONDER (1)
 
 > IN
 

@@ -79,25 +79,29 @@ Now, you need to overcome obstacles to be worthy of the Sage Sea. Let's admit to
 
 A key! Keys always come in handy. There's one more thing you can do, but it will have to wait for later. You won't need it yet.
 
+Also, there's a last lousy point here, to make the peeling pier look nicer.
+
+> APPEALING APPEAR (15)
+
 > N
 
 Now at Fun Fen, you can just tell the Tall Tree what to do.
 
-> FALL FREE (15)
+> FALL FREE (16)
 
 This opens up the way north, as well as other immediate possibilities.
 
 The hive heap is tough to search through, unless you ...
 
-> DIVE DEEP (16)
+> DIVE DEEP (17)
 
 Now the vapor (vile) needs to be removed.
 
-> PAPER PILE (17)
+> PAPER PILE (18)
 
 And now the fact finder is not sturdy enough to pick up, because it needs a ...
 
-> BACKED BINDER (18)
+> BACKED BINDER (19)
 
 There's something to the south you can polish off.
 
@@ -109,23 +113,19 @@ There are a lot of ways to go in Creased Cross, but it's most helpful to go west
 
 Okay, that stark store is suspiciously empty.
 
-> DARK DOOR (19)
-
-Hmm. We can do something with the door.
-
-> MARK MORE (20)
+> DARK DOOR (20)
 
 You feel tired and disappointed now. Way wrong. What to do?
 
 > STAY STRONG (21)
 
+Hmm. We can do something with the door.
+
+> MARK MORE (22)
+
 We don't need the weird way yet, but why not?
 
-> CLEARED CLAY (22)
-
-And why not deal with the clumped cluster for an extra point?
-
-> BUMPED BUSTER (23)
+> CLEARED CLAY (23)
 
 > W
 
@@ -262,6 +262,10 @@ You automatically are sent back to Violent Vale, but now you will go somewhere e
 
 > LEAN LUGGIN (49)
 
+And why not deal with the clumped cluster for an extra point?
+
+> BUMPED BUSTER (50)
+
 > ENTER BOAT
 
 Now you want to use the clay cloak.
@@ -274,17 +278,21 @@ Now you want to use the clay cloak.
 
 Mean Moe's Clean Clothes could clean up something you can't quite wear...
 
-> GLEAN GLOWS (50)
+> GLEAN GLOWS (51)
 
 > HISTORY HALL
 
-> FIRST FLOOR (51)
+Now to read that book, Poor Ponder for Fonder. It seems like rubbish, but maybe you can imagine it isn't?
+
+There are actually two homonyms that work equally well here.
+
+> YOURE YONDER (52)
 
 > IN
 
 Okay, the Bold Bard needs to get into the Shoaled Shard. Needs an element of surprise.
 
-> SMASHING SMOKE (52)
+> SMASHING SMOKE (53)
 
 This gets you a cold card and a mold-marred gold guard. It's not a regular gold guard, or even a hold hard gold guard yet, but you will fix that.
 
@@ -292,13 +300,13 @@ This gets you a cold card and a mold-marred gold guard. It's not a regular gold 
 
 > W
 
-> LENDING LIBE (53)
+> LENDING LIBE (54)
 
 Because you have the cold card, you get a useless book! Well, not so useless.
 
 We Whine: ME MINE seems like nonsense, but it has some ideas of why the Very Vile Fairy File is so effective.
 
-> SEE SIGN (54)
+> SEE SIGN (55)
 
 Bam! Now the Backed Binder makes sense.
 
@@ -314,13 +322,13 @@ Bam! Now the Backed Binder makes sense.
 
 Oh no! A pain peasant!
 
-> PLAIN PLEASANT (55)
+> PLAIN PLEASANT (56)
 
 > W
 
 You have the key, but who is inside?
 
-> MORAL MAGE (56)
+> MORAL MAGE (57)
 
 Aha! Now you've fully translated the backed binder. Now let's go exploring to the east.
 
@@ -330,23 +338,23 @@ Aha! Now you've fully translated the backed binder. Now let's go exploring to th
 
 You need to dispel the hit hound and get comfortable.
 
-> SIT SOUND (57)
+> SIT SOUND (58)
 
-> FIT FOUND (58)
+> FIT FOUND (59)
 
 > E
 
 The blaze is a doozy. How to get something less lethal?
 
-> MINDING MAZE (59)
+> MINDING MAZE (60)
 
 Boy! Manually mapping would be no fun. A song would help...
 
-> MO MAPPIN (60)
+> MO MAPPIN (61)
 
 The stuck stair must go somewhere!
 
-> LUCK LAIR (61)
+> LUCK LAIR (62)
 
 Okay, that's enough here.
 
@@ -359,11 +367,11 @@ Now to set a trap for a bit later...
 > W
 > D
 
-> TIGHT TUNNEL (62)
+> TIGHT TUNNEL (63)
 
 > W
 
-> KNIVES NICHE (63)
+> KNIVES NICHE (64)
 
 And now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
 
@@ -372,62 +380,62 @@ And now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
 > E
 > N
 > E
-> DEAR DULL (64)
-> NEAR NULL (65)
+> DEAR DULL (65)
+> NEAR NULL (66)
 > W
 > S
 > W
 > D
-> W (66)
+> W (67)
 
 Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who enhances your gold guard. You can now (sort of) deal with the odd peace in creased cross.
 
 You can do something with the mild mead, though.
 
-> WILD WEED (67)
+> WILD WEED (68)
 
 And now something with the wild weed. It's a very silly extra point. Cark Cliff is actually useful for something.
 
 > S
 
-> SPARK SPLIFF (68)
+> SPARK SPLIFF (69)
 
 > N
 
-> BEAST BOSS (69)
+> BEAST BOSS (70)
 
-> LEAST LOSS (70)
+> LEAST LOSS (71)
 
 > S
 > S
 
-> HEAL HERE (71)
+> HEAL HERE (72)
 
 > N
 > N
 
 This time, you know what to do, and you can defeat the bull beast with a magic word!
 
-> CULL CEASED (72)
+> CULL CEASED (73)
 
 That does for the bull beast! Incidentally, you can also say LUL LEAST.
 
-> FULL FEAST (73)
+> FULL FEAST (74)
 
 You can't take it, but maybe you can use it in the future.
 
 > E
 > E
 
-> SO SAPPIN (74)
+> SO SAPPIN (75)
 
-> SHINING SHORE (75)
+> SHINING SHORE (76)
 
-> DINING DOOR (76)
+> DINING DOOR (77)
 
-> PULL PIECED (77)
+> PULL PIECED (78)
 
-> MINING MORE (78)
+> MINING MORE (79)
 
 Now you have a hold hard gold guard, and you are ready for what is way north.
 
@@ -436,28 +444,28 @@ Now you have a hold hard gold guard, and you are ready for what is way north.
 > N
 > N
 
-> SHOW SHIELD (79)
+> SHOW SHIELD (80)
 
 > N
-> GO GAPPIN (80)
+> GO GAPPIN (81)
 
-> COUPLE CAPS (81)
+> COUPLE CAPS (82)
 
-> CAST CAP (82)
+> CAST CAP (83)
 
 You need to dispose of Reeker Russell and his good gun.
 
 There's an LLP in here. Let's pretend to make Russell dorkier.
 
-> BEAKER BUSTLE (83)
+> BEAKER BUSTLE (84)
 
 Now, Russell can become wimpier ...
 
-> MEEKER MUSCLE (84)
+> MEEKER MUSCLE (85)
 
 And the good gun can go lame.
 
-> WOOD ONE (85)
+> WOOD ONE (86)
 
 Now you are free to go north.
 
@@ -465,19 +473,19 @@ Now you are free to go north.
 
 Oh my! The bot board is in the way. You need numbers to stand up to them.
 
-> HOT HORDE (86)
+> HOT HORDE (87)
 
 Okay, you need leadership too.
 
-> LOT LORD (87)
+> LOT LORD (88)
 
 Finally, you need a stirring battle cry.
 
-> GOT GORED (88)
+> GOT GORED (89)
 
 Hooray! It's a bit clearer now, and all you have to do is go through the go gate. All? Well, yes and no. You have something to not-do.
 
-> WHOAH WAIT (89)
+> WHOAH WAIT (90)
 
 You can also say WHOA WAIT or WOE WAIT for full credit.
 
@@ -485,14 +493,14 @@ Here in Tarry Tile, you've found the very vile fairy file! But what to do with i
 
 And the airy isle still feels woeful. That well worn hell horn! We should deal with that first.
 
-> TELL TORN (90)
+> TELL TORN (91)
 
 You still aren't cheerful enough.
 
-> MERRY MILE (91)
+> MERRY MILE (92)
 
 This is something you may've seen right away, but it's the final thing you need to do.
 
-> BURY BILE (92)
+> BURY BILE (93)
 
 Congratulations. You win! I hope you enjoyed this.
