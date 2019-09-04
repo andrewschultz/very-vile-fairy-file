@@ -1,0 +1,320 @@
+# reg-vvff-jjthru.txt
+
+## reg-vvff-jjthru.txt
+## GENERATOR FILE: walkthrough.txt + w2j.py
+
+## walkthrough with all points, jumping everywhere
+** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
+** interpreter: /home/andrew/prt/dfrotz -m
+
+* main-thru
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> s
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> n
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> n
+> w
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> w
+> jj
+by one point
+
+> jj
+by one point
+
+> listen
+> jj
+by one point
+
+> jj
+by one point
+
+> w
+> jj
+by one point
+
+> e
+> e
+> e
+> n
+> w
+> jj
+by one point
+
+> e
+> jj
+by one point
+
+> w
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> e
+> s
+> e
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> enter boat
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> e
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> enter boat
+> jj
+by one point
+
+> jj
+by one point
+
+> enter boat
+> w
+> w
+> w
+> jj
+by one point
+
+> history hall
+> jj
+by one point
+
+> in
+> jj
+by one point
+
+> out
+> w
+> jj
+by one point
+
+> jj
+by one point
+
+> e
+> e
+> e
+> n
+> n
+> jj
+by one point
+
+> w
+> jj
+by one point
+
+> e
+> e
+> jj
+by one point
+
+> jj
+by one point
+
+> e
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> w
+> w
+> s
+> s
+> w
+> d
+> jj
+by one point
+
+> w
+> jj
+by one point
+
+> e
+> u
+> e
+> n
+> e
+> jj
+by one point
+
+> jj
+by one point
+
+> w
+> s
+> w
+> d
+> jj
+by one point
+
+> s
+> jj
+by one point
+
+> jj
+by one point
+
+> s
+> s
+> jj
+by one point
+
+> n
+> n
+> jj
+by one point
+
+> jj
+by one point
+
+> e
+> e
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> w
+> w
+> n
+> n
+> jj
+by one point
+
+> n
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> n
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
+> jj
+by one point
+
