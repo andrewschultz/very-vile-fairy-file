@@ -32,6 +32,7 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
     any_say = total_say = say_rules = 0
     ex_vcp = 0
     suggested_changes = 0
+    last_multi_tab = "continue the action"
     with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("this is the vc-"):
@@ -42,6 +43,7 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
                 rule_start_line = line_count
                 rule_name = re.sub(".*vc-", "vc-", line).strip()
                 rule_name = re.sub(" *rule:", "", rule_name)
+                last_multi_tab = "continue the action"
             elif line.startswith("this is the vr-"):
                 in_vr = True
                 vcp_count = 0
@@ -101,6 +103,11 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
                 got_succeeds_yet += 'rule succeeds' in line
                 got_fails_yet += 'rule fails' in line
                 any_say += 'say "' in line and "[oksay]" not in line
+                if line.startswith("\t\t"):
+                    last_multi_tab = line
+                elif line.startswith("\t"):
+                    if 'continue the action' not in last_multi_tab:
+                        print("May be missing CONTINUE THE ACTION in line", line_count - 1)
             elif in_vr:
                 vcp_count += 'vcp "' in line
                 got_succeeds_yet += 'rule succeeds' in line
