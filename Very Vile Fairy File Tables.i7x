@@ -88,10 +88,12 @@ table of mall songs [xxmall] [xxsongs]
 randtxt
 "Be Bop: See, Sop"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
-"Good Gang? Dud, Dang"
+["Good Gang? Dud, Dang"
+"Stern Stable Turn Table"
+"War Whistles, More Missiles"
 "Hata['] Heft Data, Deft"
 "Pay, Pow, Hey, How"
-["Lo Love Show Shove"
+"Lo Love Show Shove"
 "Mercy Me, Jersey G[r], by Versy V & Percy P"]
 
 table of miscellaneous people [xxpeople]

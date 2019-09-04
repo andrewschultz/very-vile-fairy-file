@@ -48,23 +48,37 @@ test w1r with "get good/gift giver/find fault/green grass/bash bap/grow grit/mas
 test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder/n". [real rear 1st try, plus get to Creased Cross]
 test w3 with "w/dark door/mark more/cleared clay/w/mystery mall/stay strong/listen/lots lame/no nappin/w/hard hat/e/e/e/n/w/work well/e". [get jerk gel, clear shirk shell]
 
-test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/glow glad/brightening bridge/boring boat" [get cap, take boat]
+test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/glow glad/brightening bridge/boring boat". [get cap, take boat]
 
-test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat" [this is the boat quest]
+test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat". [this is the boat quest]
 
-test w6 with "w/w/w/glean glows/history hall/youre yonder/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage" [release the moral mage]
+test w6 with "w/w/w/glean glows/history hall/youre yonder/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage". [release the moral mage]
 
-test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e" [set the trap for the bull]
+test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e". [set the trap for the bull]
 
-test w8 with "dear dull/near null/w/s/w/d/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast" [deal with the beer bull and beast boss]
+test w8 with "dear dull/near null/w/s/w/d/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast". [deal with the beer bull and beast boss]
 
-test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more" [get the hold hard gold guard]
+test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more". [get the hold hard gold guard]
 
-test w10 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap/meeker muscle/wood one/n" [enter airy isle]
+test w10 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap/meeker muscle/wood one/n". [enter airy isle]
 
-test w11 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile".
+test w11 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile"..
 
 test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11".
+
+chapter jumpthrough (should be commented out to save space--it is in a REG file anyway)
+
+[test w1j with "jj/jj/jj/jj/jj/jj/jj/jj/jj".
+test w2j with "s/jj/jj/jj/n/jj/jj/jj/jj/n". [real rear 1st try, plus get to Creased Cross]
+test w3j with "w/jj/jj/jj/w/jj/jj/listen/jj/jj/w/jj/e/e/e/n/w/jj/e".
+test w4j with "jj/w/jj/jj/jj/e/s/e/jj/jj/jj/jj".
+test w5j with "enter boat/jj/jj/jj/e/jj/jj/jj/enter boat/jj/jj/enter boat". [this is the boat quest]
+test w6j with "w/w/w/jj/history hall/jj/in/jj/out/w/jj/jj/e/e/e/n/n/jj/w/jj". [jj will give COUPLE CAPS if I don't spell out History Hall]
+test w7j with "e/e/jj/jj/e/jj/jj/jj/w/w/s/s/w/d/jj/w/jj/e/u/e/n/e". [set the trap for the bull]
+test w8j with "jj/jj/jj/s/jj/jj/s/s/jj/n/n/jj/jj". [deal with the beer bull and beast boss]
+test w9j with "e/e/jj/jj/jj/jj/jj". [get the hold hard gold guard]
+test w10j with "w/w/n/n/jj/n/jj/jj/jj/jj/jj/n". [enter airy isle]
+test w11j with "jj/jj/jj/jj/jj/jj/jj".]
 
 chapter beta jump
 

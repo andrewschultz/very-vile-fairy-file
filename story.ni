@@ -2896,8 +2896,8 @@ carry out jerkingjumping:
 	else:
 		say "DEBUG: ignoring the charges in the lump, currently at [lump-charges].";
 	now in-jerk-jump is true;
-	if in-bull-chase is true:
-		if snuck snare is not moot, say "The lurking lump remains immovable. Perhaps you don't need to know where to go yet." instead;
+	if in-bull-chase is true and bull-null is true:
+		if snuck snare is not moot, say "The lurking lump remains immovable. Perhaps you can't quite outrun or outsmart the Beer Bull, yet, and you'll have to take your lumps. Which is a hint in its own way, I guess." instead;
 		say "The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the beer bull into running into the trap you set. You head back to the Gear Gull in Here Hull.";
 		solve-bull-chase;
 		lump-minus;
@@ -2997,8 +2997,8 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "silent"	"sail|sale"	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--
 "boring"	"boat"	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--
 "wake"	"whee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
-"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
 "take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
+"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
 "break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
 "make"	"map"	false	true	false	vc-make-map rule	vr-make-map rule	-- [start Lake Lap]
 "snake"	"snap"	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--
@@ -3135,7 +3135,7 @@ this is the vr-beaker-bustle rule:
 this is the vc-appealing-appear rule:
 	if player is not in real rear, the rule fails;
 	if appeal-appear is true:
-		say "The peeling pier already looks better.";
+		vcp "The peeling pier already looks better.";
 		continue the action;
 	the rule succeeds;
 
@@ -3258,18 +3258,19 @@ this is the vc-cast-cap rule:
 	if cool cap is moot:
 		vcp "The cap has been cast.";
 		continue the action;
-	if extra-cool-cap is true, the rule succeeds;
-	let N be the number of gaphats enclosed by the player;
-	clue-later "CAST CAP";
-	if N is 0:
-		vcp "You don't have any caps to cast.";
-	else if N is 1:
-		vcp "The [random gaphat enclosed by the player] isn't enough on its own.";
-	else if N is 2:
-		vcp "The [list of gaphats enclosed by the player] aren't quite enough.";
-	else if N is 3:
-		vcp "Wow! Three hats! If only there was a way to combine them into an extra-cool hat!";
-	continue the action;
+	if extra-cool-cap is false:
+		let N be the number of gaphats enclosed by the player;
+		if N is 0:
+			vcp "You don't have any caps to cast.";
+		else if N is 1:
+			vcp "The [random gaphat enclosed by the player] isn't enough on its own.";
+		else if N is 2:
+			vcp "The [list of gaphats enclosed by the player] aren't quite enough.";
+		else if N is 3:
+			vcp "Wow! Three hats! If only there was a way to combine them into an extra-cool hat!";
+		clue-later "CAST CAP";
+		continue the action;
+	the rule succeeds;
 
 this is the vr-cast-cap rule:
 	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
@@ -3317,14 +3318,15 @@ this is the vr-cool-cap rule:
 this is the vc-couple-caps rule:
 	if player does not have jerk gel, the rule fails;
 	let N be number of gaphats enclosed by the player;
-	if N is 3, the rule succeeds;
-	if N is 2:
-		vcp "You may need one more cap, or hat.";
-	else if N is 1:
-		vcp "You need at least one more hat to couple the CAPS.";
-	else:
-		vcp "You have no caps to couple. Maybe one day, though.";
-	continue the action;
+	if N < 3: [this seems a bit awkward, but I put it this way so vc.py can detect CONTINUE THE ACTION as appropriate]
+		if N is 2:
+			vcp "You may need one more cap, or hat.";
+		else if N is 1:
+			vcp "You need at least one more hat to couple the CAPS.";
+		else:
+			vcp "You have no caps to couple. Maybe one day, though.";
+		continue the action;
+	the rule succeeds;
 
 this is the vr-couple-caps rule:
 	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
@@ -3371,7 +3373,7 @@ this is the vc-deal-dear rule:
 		vcp "You haven't found anything you need to deal with[seer-sez].";
 		continue the action;
 	if cage key is not off-stage:
-		say "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
+		vcp "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
 		continue the action;
 	the rule succeeds;
 
@@ -4012,14 +4014,16 @@ this is the vr-mining-more rule: [?? pining poor]
 this is the vc-mo-mappin rule:
 	if player is not in blinding blaze and player does not have Toe Tappin Row Rappin, the rule fails;
 	if player does not have Toe Tappin Row Rappin:
-		clue-later "MO MAPPIN";
 		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
+		clue-later "MO MAPPIN";
+		continue the action;
 	if player is not in blinding blaze:
-		clue-later "MO MAPPIN";
 		vcp "Maybe some other place could use mapping, but not here.";
-	if blaze-maze is false:
 		clue-later "MO MAPPIN";
+		continue the action;
+	if blaze-maze is false:
 		vcp "The blaze isn't mappable, but maybe something that replaces it is.";
+		clue-later "MO MAPPIN";
 		continue the action;
 	if stuck stair is in blinding blaze:
 		vcp "You're already in the mood to map. No need to overdo it.";
@@ -4042,7 +4046,7 @@ this is the vc-moral-mage rule:
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
-	say "The inner bars of the coral cage crumble. The moral mage thanks you and explains to you some interesting details about the Very Vile Fairy File, its powers, and the people behind it. You feel your resolve increase.";
+	say "The inner bars of the coral cage crumble. The moral mage thanks you and begins a lecture. You're worried it's going to be a sermon, but it turns into interesting details about the Very Vile Fairy File, its powers, the people behind it, and how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase. The moral mage nods and departs, leaving you to realize that the knowledge they passed on was a sort of magic in its own right.";
 	moot coral cage;
 	clue-zap "MORAL MAGE";
 
@@ -4188,11 +4192,10 @@ this is the vr-silent-sail rule:
 	phbt violent vale;
 
 this is the vc-sit-sound rule:
+	if player is not in pit pound, the rule fails;
 	if hit hound is not touchable:
-		if player is in pit pound:
-			vcp "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
-			continue the action;
-		the rule fails;
+		vcp "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-sit-sound rule:
