@@ -81,6 +81,7 @@ to decide whether the action is procedural:
 	if reading, yes;
 	if hintobjing, yes;
 	if lling, yes;
+	if jerkingjumping, yes;
 	no;
 
 definition: a thing (called th) is moot:
@@ -501,7 +502,7 @@ the Sage Sea is scenery in Real Rear. "[if cage key is off-stage]You feel as tho
 
 chapter peeling pier
 
-the peeling pier is optional scenery in Real Rear. "It's -- well, not in great shape, but it certainly BELONGS. [if appeal-appear is false]You can't quite read who constructed it, and it's not a necessary mystery, but maybe it's a fun one[else]In fact, you fully notice the wabi-sabi thing it's got going on, now that you know APPEALING-APPEAR made it[end if].". cht of peeling pier is letplus. [->APPEALING APPEAR]
+the peeling pier is optional scenery in Real Rear. "It's -- well, not in great shape, but it feels appropriate for a semi-spiritual area under the Ceiling Seer's surveillance. [if appeal-appear is false]You can't quite read who constructed it, and it's not a necessary mystery, but maybe it's a fun one[else]In fact, you fully notice the wabi-sabi thing it's got going on. Not flashy, but appropriate and welcoming[end if].". cht of peeling pier is letplus. [->APPEALING APPEAR]
 
 appeal-appear is a truth state that varies.
 
@@ -788,6 +789,8 @@ chapter boring boat
 
 the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see a new place.". description is "Just the sight of the boring boat leaves you yawning[if nap-no is true]a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
 
+does the player mean entering boring boat: it is very likely;
+
 check taking boring boat: try entering boring boat instead;
 
 check going inside when player is in violent vale:
@@ -1025,6 +1028,9 @@ first-fave is a truth state that varies.
 part Foe Field So Sealed 0,3
 
 Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if pain peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south. You could even try your luck east.". cht of Foe Field So Sealed is partplus. [->show shield]
+
+check going south in Foe Field So Sealed:
+	if pain peasant is in Foe Field, say "The pain peasant booms 'Go, gassed foe, fast!'" instead;
 
 check going north in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
@@ -2869,13 +2875,13 @@ understand "jj" as jerkingjumping.
 
 in-jerk-jump is a truth state that varies.
 
-to say firstor of (t - text):
+to say firstor of (t - indexed text):
 	replace the regular expression "\|.*" in t with "";
 	say "[t in upper case]";
 
 to lump-minus:
 	decrement lump-charges;
-	say "[line break]The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
+	say "The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
 	if lump-charges is 0, moot lurking lump;
 	now in-jerk-jump is false;
 	increment lump-uses;
@@ -2896,7 +2902,11 @@ carry out jerkingjumping:
 		solve-bull-chase;
 		lump-minus;
 		the rule succeeds;
+	now vc-dont-print is true;
 	repeat through table of verb checks:
+		unless there is a core entry, next;
+		if core entry is false, next;
+		if idid entry is true, next;
 		process the ver-rule entry;
 		if the rule succeeded:
 			say "After some thought, you consider the right way forward: [firstor of w1 entry] [firstor of w2 entry]...";
@@ -2906,8 +2916,11 @@ carry out jerkingjumping:
 				blank out the core entry;
 				now zap-core-entry is false;
 			now idid entry is true;
+			skip upcoming rulebook break;
 			lump-minus;
+			now vc-dont-print is false;
 			the rule succeeds;
+	now vc-dont-print is false;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.
 
@@ -2917,6 +2930,8 @@ section verb check table
 
 table of verb checks [xxvc]
 w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
+"glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
+"stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	-- [must be at top for JJ]
 "get"	"good"	false	true	false	vc-get-good rule	vr-get-good rule	-- [start Intro]
 "gift"	"giver"	false	true	false	vc-gift-giver rule	vr-gift-giver rule	--
 "find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
@@ -3008,8 +3023,6 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
 "merry"	"mile"	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
-"glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
-"stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3097,7 +3110,7 @@ to vcp (t - text): [verb conditional print]
 section vc vr rules [xxvcvr]
 
 this is the vc-backed-binder rule:
-	if paper pile is not touchable, the rule fails;
+	if paper pile is not touchable or player has the backed binder, the rule fails;
 	the rule succeeds;
 
 this is the vr-backed-binder rule:
@@ -3127,7 +3140,7 @@ this is the vc-appealing-appear rule:
 	the rule succeeds;
 
 this is the vr-appealing-appear rule:
-	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. It has this wabi-sabi thing going on.";
+	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
 	now appeal-appear is true;
 
 this is the vc-beast-boss rule:
@@ -3357,6 +3370,9 @@ this is the vc-deal-dear rule:
 		clue-later "DEAL DEAR";
 		vcp "You haven't found anything you need to deal with[seer-sez].";
 		continue the action;
+	if cage key is not off-stage:
+		say "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-deal-dear rule:
@@ -3452,6 +3468,9 @@ this is the vc-feel-fear rule:
 	if knelt-yet is false:
 		clue-later "FEEL FEAR";
 		vcp "Fear isn't something you can try to feel[seer-sez].";
+		continue the action;
+	if felt-fear is true:
+		vcp "No need to overdo feeling fear.";
 		continue the action;
 	the rule succeeds;
 
@@ -4223,6 +4242,7 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if player is not in whining war:
 		vcp "That's an interesting riff, but it doesn't seem to work here.";
 		clue-later "SO SAPPIN";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-so-sappin rule:
@@ -4232,16 +4252,13 @@ this is the vr-so-sappin rule:
 	process the check-sing-max rule;
 
 this is the vc-soft-sand rule:
-	say "1.";
 	if player is not in soft sand, the rule fails;
 	if loft-land is false:
 		vcp "You're already on the Soft Sand.";
 		continue the action;
-	say "2.";
 	the rule succeeds;
 
 this is the vr-soft-sand rule:
-	say "3.";
 	say "The loft land reverts to the Soft Sand.";
 	now loft-land is false;
 	now Shirk Shell is mapped west of Soft Sand;
@@ -4257,7 +4274,7 @@ this is the vc-spark-spliff rule:
 	the rule succeeds;
 
 this is the vr-spark-spliff rule:
-	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without munchies.";
+	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without a bong bunch and long lunch.";
 	moot wild weed;
 
 this is the vc-stay-strong rule:
@@ -4273,7 +4290,7 @@ this is the vr-stay-strong rule:
 this is the vc-strong-start rule:
 	if player is not in Fun Fen, the rule fails;
 	if started-strong is true:
-		vcp "You already did. You wouldn't want a stale startor a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
+		vcp "You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
 		continue the action;
 	the rule succeeds;
 

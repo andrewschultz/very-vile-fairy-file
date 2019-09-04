@@ -11,64 +11,91 @@
 
 > jj
 by one point
+GET GOOD
 
 > jj
 by one point
+GIFT GIVER
 
 > jj
 by one point
+FIND FAULT
 
 > jj
 by one point
+GREEN GRASS
 
 > jj
 by one point
+GROW GRIT
 
 > jj
 by one point
+MASH MAP
 
 > jj
 by one point
+MIND ME
 
 > jj
 by one point
+FLIM FLAM
+
+# ok, we're in the main area now
 
 > jj
 by one point
+BIG BAG
+
+# clean up real rear for the moment
 
 > s
 > jj
 by one point
+KNEEL NEAR
 
 > jj
 by one point
+FEEL FEAR
 
 > jj
 by one point
+DEAL DEAR
+
+# push north in Fun Fen, get the binde
 
 > n
 > jj
 by one point
+FALL FREE
 
 > jj
 by one point
+DIVE DEEP
 
 > jj
 by one point
+PAPER PILE
 
 > jj
 by one point
+BACKED BINDER
 
 > n
 > w
 > jj
 by one point
+DARK DOOR
 
 > jj
 by one point
+MARK MORE
+
+# the first roadblock!
 
 > jj
 by one point
+WAY WRONG
 
 > w
 > jj
