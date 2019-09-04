@@ -1,0 +1,392 @@
+
+## reg-vvff-alt-verbs.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
+** interpreter: /home/andrew/prt/dfrotz -m
+
+* main-thru
+
+> get good
+by one point
+
+# test the reverse flip warning
+> giver gift
+Ooh! You're close, but you juggled things up, somehow.
+
+> gift giver
+by one point
+
+# test the reverse flip works
+> fault find
+by one point
+> undo
+
+> find fault
+by one point
+
+> green grass
+by one point
+
+> grow grit
+by one point
+
+> rash rap
+by one point
+> undo
+> bash bap
+by one point
+> undo
+
+> mash map
+by one point
+
+> mind me
+by one point
+
+> skim scam
+by one point
+>undo
+
+> flim flam
+by one point
+
+> big bag
+by one point
+
+> s
+
+> kneeling near
+by one point
+> undo
+
+> kneel near
+by one point
+
+> feeling near
+by one point
+> undo
+
+> feel fear
+by one point
+
+> dealing near
+by one point
+> undo
+
+> deal dear
+by one point
+
+> n
+> fall free
+by one point
+
+> dive deep
+by one point
+
+> paper pile
+by one point
+
+> backed binder
+by one point
+
+> n
+> w
+
+> dark door
+by one point
+
+> mark more
+by one point
+
+> cleared clay
+by one point
+
+> w
+> mystery mall
+by one point
+
+> listen
+> lots lame
+by one point
+
+> no nappin
+by one point
+
+> w
+
+> hard hat
+by one point
+
+> e
+> e
+> e
+> n
+> w
+> work well
+by one point
+
+> e
+
+> loft land
+by one point
+
+> w
+
+> dreaming dull
+by one point
+
+> first fave
+by one point
+
+> cool cap
+by one point
+
+> e
+> s
+> e
+
+> silent sale
+by one point
+>undo
+
+> silent sail
+by one point
+
+> glow glad
+by one point
+
+> brightening bridge
+by one point
+
+> boring boat
+by one point
+
+> enter boat
+
+> wake whee
+by one point
+
+> take tea
+by one point
+
+> fake fee
+by one point
+
+> e
+> make map
+by one point
+
+> co capn
+by one point
+
+> snake snap
+by one point
+
+> enter boat
+> mean muggin
+by one point
+
+> lean luggin
+by one point
+
+> dumped duster
+by one point
+> undo
+
+> enter boat
+
+> w
+> w
+> w
+> glean glows
+by one point
+
+> history hall
+by one point
+
+> youre yonder
+by one point
+> undo
+> your yonder
+by one point
+> undo
+
+> yore yonder
+by one point
+
+> in
+> smashing smoke
+by one point
+
+> out
+> w
+> lending libe
+by one point
+
+> see sign
+by one point
+
+> e
+> e
+> e
+> n
+
+> n
+> plain pleasant
+by one point
+
+> w
+> moral mage
+by one point
+
+> e
+> e
+
+> sit sound
+by one point
+
+> fit found
+by one point
+
+> e
+> minding maze
+by one point
+
+> mo mappin
+by one point
+
+> snuck snare
+by one point
+>undo
+
+> luck lair
+by one point
+
+> w
+> w
+> s
+> s
+> w
+> d
+> tight tunnel
+by one point
+
+> w
+> knives niche
+by one point
+
+> e
+> u
+> e
+> n
+> e
+
+> dear dull
+by one point
+
+> near null
+by one point
+
+> w
+> s
+> w
+> d
+> w
+> s
+> beast boss
+by one point
+
+> least loss
+by one point
+
+> lul least
+by one point
+> undo
+
+> s
+
+> s
+> heal here
+by one point
+
+> n
+> n
+
+> cull ceased
+by one point
+
+> full feast
+by one point
+
+> e
+> e
+
+> so sappin
+by one point
+
+> shining shore
+by one point
+
+> dining door
+by one point
+
+> pull pieced
+by one point
+
+> mining more
+by one point
+
+> w
+> w
+> n
+> n
+> show shield
+by one point
+
+> n
+> go gappin
+by one point
+
+> couple caps
+by one point
+
+> cast cap
+by one point
+
+> meeker muscle
+by one point
+
+> wood one
+by one point
+
+> n
+
+> hot horde
+by one point
+
+> lot lord
+by one point
+
+> got gored
+by one point
+
+> woe wait
+by one point
+> undo
+> whoa wait
+by one point
+> undo
+
+> whoah wait
+by one point
+
+> tell torn
+by one point
+
+> merry mile
+by one point
+
+> bury bile
+by one point
+

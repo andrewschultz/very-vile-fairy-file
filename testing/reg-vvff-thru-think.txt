@@ -1,0 +1,523 @@
+
+## reg-vvff-thru-think.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
+
+## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests
+** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
+** interpreter: /home/andrew/prt/dfrotz -m
+
+* main-thru
+
+> big bag
+
+> bury bile
+
+> think
+
+BIG BAG
+BURY BILE
+
+> get good
+by one point
+
+> gift giver
+by one point
+
+> find fault
+by one point
+
+> green grass
+by one point
+
+> mash map
+> think
+MASH MAP
+
+> grow grit
+by one point
+
+> mash map
+by one point
+
+> flim flam
+> think
+FLIM FLAM
+
+> mind me
+by one point
+
+> flim flam
+by one point
+
+> big bag
+by one point
+
+> think
+!BIG BAG
+
+> s
+
+> feel fear
+> deal dear
+> heal here
+> think
+FEEL FEAR
+DEAL DEAR
+HEAL HERE
+
+> kneel near
+by one point
+
+> feel fear
+by one point
+
+> think
+!FEEL FEAR
+
+> deal dear
+by one point
+
+> think
+!DEAL DEAR
+
+> n
+> fall free
+by one point
+
+> dive deep
+by one point
+
+> paper pile
+by one point
+
+> backed binder
+by one point
+
+> n
+> w
+
+> mark more
+> think
+MARK MORE
+
+> dark door
+by one point
+
+> mark more
+by one point
+
+> think
+!MARK MORE
+
+> cleared clay
+by one point
+
+> w
+> mystery mall
+by one point
+
+> glean glows
+> think
+GLEAN GLOWS
+
+> listen
+> lots lame
+by one point
+
+> co capn
+> so sappin
+> mo mappin
+> THINK
+MO MAPPIN
+SO SAPPIN
+CO CAPN
+
+> no nappin
+by one point
+
+> w
+
+> hard hat
+by one point
+
+> e
+> e
+> e
+> n
+> w
+> work well
+by one point
+
+> e
+
+> loft land
+by one point
+
+> w
+
+> first fave
+> think
+FIRST FAVE
+
+> dreaming dull
+by one point
+
+> first fave
+by one point
+
+> think
+!FIRST FAVE
+
+> cool cap
+by one point
+
+> e
+> s
+> e
+
+> silent sail
+by one point
+
+> glow glad
+by one point
+
+> brightening bridge
+by one point
+
+> boring boat
+by one point
+
+> enter boat
+
+> wake whee
+by one point
+
+> take tea
+by one point
+
+> fake fee
+by one point
+
+> e
+> make map
+by one point
+
+> snake snap
+> think
+SNAKE SNAP
+
+> co capn
+by one point
+
+>think
+!CO CAPN
+
+> snake snap
+by one point
+
+> think
+!SNAKE SNAP
+
+> enter boat
+> mean muggin
+by one point
+
+> lean luggin
+by one point
+
+> enter boat
+
+> w
+> w
+> w
+> glean glows
+by one point
+
+> smashing smoke
+> think
+!GLEAN GLOWS
+SMASHING SMOKE
+
+> history hall
+by one point
+
+> yore yonder
+by one point
+
+> in
+> smashing smoke
+by one point
+
+> out
+> w
+> lending libe
+by one point
+
+> see sign
+by one point
+
+> e
+> e
+> e
+> n
+
+> beast boss
+> least loss
+> think
+BEAST BOSS
+LEAST LOSS
+
+> show shield
+> think
+SHOW SHIELD
+
+> n
+> plain pleasant
+by one point
+
+> w
+> moral mage
+by one point
+
+> e
+> e
+
+> fit found
+> think
+FIT FOUND
+
+> sit sound
+by one point
+
+> fit found
+by one point
+
+> think
+!FIT FOUND
+
+> e
+> minding maze
+by one point
+
+> mo mappin
+by one point
+
+> think
+!MO MAPPIN
+
+> luck lair
+by one point
+
+> w
+> w
+> s
+> s
+> w
+> d
+> tight tunnel
+by one point
+
+> w
+> knives niche
+by one point
+
+> e
+> u
+> e
+> n
+> e
+
+> dear dull
+by one point
+
+> near null
+by one point
+
+> w
+> s
+> w
+> d
+> w
+> s
+> beast boss
+by one point
+
+> think
+!BEAST BOSS
+
+> least loss
+by one point
+
+> cull ceased
+> think
+!LEAST LOSS
+!CULL CEASED
+
+> s
+
+> s
+> heal here
+by one point
+
+> think
+!HEAL HERE
+
+> n
+> n
+
+> full feast
+> think
+FULL FEAST
+
+> cull ceased
+by one point
+
+> full feast
+by one point
+
+> pull pieced
+> think
+!FULL FEAST
+PULL PIECED
+
+> e
+> e
+
+> shining shore
+> mining more
+> dining more
+> think
+SHINING SHORE
+MINING MORE
+DINING DOOR
+
+> so sappin
+by one point
+
+> think
+!SO SAPPIN
+
+> shining shore
+by one point
+
+> think
+!SHINING SHORE
+
+> dining door
+by one point
+
+> think
+!DINING DOOR
+
+> pull pieced
+by one point
+
+> think
+!PULL PIECED
+
+> mining more
+by one point
+
+> think
+!MINING MORE
+
+> w
+> w
+> n
+> n
+> show shield
+by one point
+
+> think
+!SHOW SHIELD
+
+> n
+> go gappin
+by one point
+
+> cast cap
+> think
+CAST CAP
+
+> couple caps
+by one point
+
+> cast cap
+by one point
+
+> think
+!CAST CAP
+
+> meeker muscle
+by one point
+
+> wood one
+by one point
+
+> n
+
+> got gored
+> think
+GOT GORED
+
+> hot horde
+by one point
+
+> lot lord
+by one point
+
+> got gored
+by one point
+
+> think
+!GOT GORED
+
+> whoah wait
+by one point
+
+> merry mile
+> think
+MERRY MILE
+
+> tell torn
+by one point
+
+> merry mile
+by one point
+
+> think
+!MERRY MILE
+
+> bury bile
+by one point
+
+* moral-mage-check
+
+# while technically I could have rolled this into the walkthrough, 1) it would have clashed with the general traceable quick way through, and 2) it's a bit out of the way, and it doesn't take long, anyway.
+
+> blow by
+> fall free
+> n
+> n
+> n
+> plain pleasant
+> w
+> moral mage
+> think
+MORAL MAGE
+>e
+>s
+>s
+>s
+>s
+>kneel near
+>feel fear
+>deal dear
+>n
+>n
+>n
+>n
+>w
+> moral mage
+>think
+!MORAL MAGE
