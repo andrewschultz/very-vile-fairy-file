@@ -141,7 +141,7 @@ whew-score is a number that varies. whew-score is 8.
 
 core-max is a number that varies. core-max is 81.
 
-max-bonus is a number that varies. max-bonus is 10.
+max-bonus is a number that varies. max-bonus is 11.
 
 isle-score is a number that varies. isle-score is 7.
 
@@ -185,6 +185,7 @@ cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partpl
 to phbt (x - a thing):
 	now cht of x is phbt;
 	now x is not optional-noted;
+	now x is not optional;
 
 to phbt (x - a room): now cht of x is phbt;
 
@@ -498,11 +499,15 @@ chapter Sage Sea
 
 the Sage Sea is scenery in Real Rear. "[if cage key is off-stage]You feel as though the Sage Sea must hold something, if you can prove yourself worthy[else]You've proved yourself worthy enough. The Sage Sea may hold other mysteries, but they are beyond the bounds of this quest[end if]."
 
+chapter peeling pier
+
+the peeling pier is optional scenery in Real Rear. "It's -- well, not in great shape, but it certainly BELONGS. [if appeal-appear is false]You can't quite read who constructed it, and it's not a necessary mystery, but maybe it's a fun one[else]In fact, you fully notice the wabi-sabi thing it's got going on, now that you know APPEALING-APPEAR made it[end if].". cht of peeling pier is letplus. [->APPEALING APPEAR]
+
+appeal-appear is a truth state that varies.
+
 chapter Steel Steer
 
 the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht of steel steer is partminus. [-> kneel near]
-
-the peeling pier is scenery in Real Rear. "It's -- well, not in great shape, but it certainly BELONGS."
 
 check taking steel steer: say "It is way too heavy to STEAL STEER." instead;
 
@@ -2927,7 +2932,8 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
 "paper"	"pile"	false	true	false	vc-paper-pile rule	vr-paper-pile rule	--
 "backed"	"binder"	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--
-"kneel|kneeling"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	-- [start of Real Rear]
+"appealing"	"appear"	true	false	false	vc-appealing-appear rule	vr-appealing-appear rule	-- [start of Real Rear]
+"kneel|kneeling"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	--
 "feel|feeling"	"fear"	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--
 "deal|dealing"	"dear"	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--
 "heal|healing"	"here"	true	true	false	vc-heal-here rule	vr-heal-here rule	--
@@ -3112,6 +3118,17 @@ this is the vr-beaker-bustle rule:
 	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
 	now beaker-yet is true;
 	adjust-russell;
+
+this is the vc-appealing-appear rule:
+	if player is not in real rear, the rule fails;
+	if appeal-appear is true:
+		say "The peeling pier already looks better.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-appealing-appear rule:
+	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. It has this wabi-sabi thing going on.";
+	now appeal-appear is true;
 
 this is the vc-beast-boss rule:
 	if player is not in Creased Cross, the rule fails;
