@@ -548,10 +548,10 @@ check taking the full feast: say "Too much at once." instead;
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if]. [if weird way is in stark store]There's also a (blocked) weird way down[else if weird way is moot]You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too." [-> dark door]
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too." [-> dark door]
 
 check going west in Stark Store:
-	if dark door is off-stage, try going north instead;
+	if dark door is off-stage, say "Maybe there's something there. This can't just be a dead end." instead;
 	if dark door is in Stark Store, say "You can't seem to get past the dark door. It's too featureless right now. You can't find anything to grab." instead;
 
 check going down in Stark Store:
@@ -618,13 +618,33 @@ kni-ni is a truth state that varies.
 
 part History Hall -2,1
 
-mistmall is a truth state that varies.
+History Hall is west of Stark Store. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if mistmall is true][mystdesc][else][histdesc][end if].[paragraph break]You can go back east[if the room inside of History Hall is Y'Old Yard], or you can go inside[end if][if ever-mall is true] or west[end if][if ever-mall is true]. Or you could just shift back to [mist-hist of false][end if].". [-> mystery mall] [mystery mall->history hall]
 
-History Hall is west of Stark Store. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[if mistmall is true]Mystery Mall[else]History Hall[end if]". "You can go back east here. [if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. A mediocre song is in the air[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if][if fussed folks is in history hall]. You can also read something called Fussed Folks Just Jokes, but that's probably just for entertainment[end if].". [-> mystery mall] [mystery mall->history hall]
+to say mist-hist of (ts - a truth state): say "[if mistmall is ts]Mystery Mall[else]History Hall[end if]"
 
-[?? break up history hall into hist-desc and myst-desc]
+to say mystdesc:
+	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. There's mall music in the air you can LISTEN to[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
 
-Fussed Folks Just Jokes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
+to say histdesc:
+	say "[one of]Something called [or][stopping]Fussed Folks lies here for your amusement[if poor ponder is in History Hall]. A work called Poor Ponder seems, or is trying to seem, more important[end if]"
+
+check going west in History Hall: [gutta ganksta blocks you]
+	if ever-mall is true:
+		if gutta ganksta is in history hall, say "The gutta ganksta pushes you back. Maybe you can win a quick diss war to, well, displace the ganksta." instead;
+		continue the action;
+	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
+
+section truth states fpr puzzles/map
+
+mistmall is a truth state that varies. [are we in the mall or the hall?]
+
+ever-mall is a truth state that varies. [have we ever flipped to the mall?]
+
+ever-hall is a truth state that varies. [have we ever flipped to the hall?]
+
+gan-wan is a truth state that varies. [have we called the ganksta a rude name?]
+
+chapter Gutta Ganksta (M)
 
 the Gutta Ganksta is an optional person. "A Gutta Ganksta chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
 
@@ -636,6 +656,8 @@ after lling gutta ganksta:
 		try lling gots game;
 	continue the action;
 
+chapter Toe Tappin Row Rappin (M)
+
 Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because what replced it is even worse. It could almost be motivational in the right place[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
@@ -646,33 +668,31 @@ after examining Toe Tappin Row Rappin:
 		move Oi Mo to History Hall;
 	continue the action;
 
+chapter Oi Mo (M)
+
 Oi Mo by Tim T Sims Pimp is optional scenery. "It's a truly awful song. If you could find a way to turn it down...". cht of oi mo is leteq. [oimo -> dimd]
 
 understand "song" as oi mo when player is in History Hall and oi mo is in History Hall.
 
-check going west in History Hall:
-	if ever-mall is true:
-		if gutta ganksta is in history hall, say "The gutta ganksta pushes you back. Maybe you can win a quick diss war to, well, displace the ganksta." instead;
-		continue the action;
-	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, History Hall might afford passage west[end if]." instead;
+chapter Poor Ponder for Fonder
 
-chapter Mean Moe's
+Poor Ponder for Fonder is scenery. cht of Poor Ponder for Fonder is partplus. "Reading [poor], it seems quite bad. It's trying to give the reader a grasp of history, but it seems like it doesn't really place the reader IN the era it's trying to describe. It's not even trying. And yet, perhaps it is worth the effort for YOU to try.". [->youre yonder]
+
+printed name of Poor Ponder is "[i]Poor? Ponder for Fonder[r]"
+
+check taking Poor Ponder: say "You can figure out its inner meaning right here." instead;
+
+chapter fussed folks (H)
+
+Fussed Folks Just Jokes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
+
+chapter Mean Moe's (M)
 
 Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to navigate the lights and bells and whistles.". cht of Mean Moe's Clean Clothes is letboth. [-> glean glows]
 
-chapter clashing cloak
+chapter clashing cloak (M)
 
 the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do.". cht of clashing cloak is leteq. [-> smashing smoke]
-
-chapter mysterymalling
-
-ever-mall is a truth state that varies.
-
-ever-hall is a truth state that varies.
-
-gan-wan is a truth state that varies.
-
-floor-yet is a truth state that varies.
 
 part Y'Old Yard -2,-1
 
@@ -696,7 +716,7 @@ the cold card is a thing. description is "It's useful for one very useless borin
 
 part Vending Vibe -2,1 a
 
-Vending Vibe is a room in Piddling Pain. "You can only go back east here."
+Vending Vibe is a room in Piddling Pain. "This isn't a very big place. You can only go back east."
 
 The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW.". [-> lending libe]
 
@@ -879,9 +899,11 @@ to decide whether dean-done:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here. [soft-or-loft].". [-> loft land] [loft land->soft sand]
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here[if ever-loft is true]. Or you can change back to [soft-loft of false][end if].". [-> loft land] [loft land->soft sand]
 
-printed name of Soft Sand is "[if loft-land is true]Loft Land[else]Soft Sand[end if]".
+to say soft-loft of (ts - a truth state): say "[if loft-land is ts]Loft Land[else]Soft Sand[end if]".
+
+printed name of Soft Sand is "[soft-loft of true]".
 
 to say soft-or-loft:
 	if loft-land is false:
@@ -902,6 +924,10 @@ check going east in Soft Sand:
 		say "As you go east, the Gear Gull inspects your mold-marred gold guard. 'I can do something now.'";
 		buff-gold-guard;
 		the rule succeeds;
+
+section booleans for location appearance
+
+loft-land is a truth state that varies.
 
 part Here Hull 1,2
 
@@ -2146,15 +2172,15 @@ this is the ceiling-seer-hint rule:
 this is the clashing-cloak-hint rule:
 	if tried-yet of "SMASHING SMOKE":
 		say "You know what to do with the cloak, but the question is, where?";
-		if floor-yet is false:
-			say "You haven't unlocked the room, yet. You need to look at the Erst Lore [here-in of History Hall].";
+		if poor ponder is not moot:
+			say "You haven't unlocked the room, yet. You need to look at [poor] [here-in of History Hall].";
 		else if y'old yard is unvisited:
-			say "You haven't visited beyond Erst Lore.";
+			say "You haven't visited beyond [poor].";
 		else:
 			say "Using the cloak in Y'Old Yard will help the Bold Bard.";
 		the rule succeeds;
 	say "[one of]The clashing cloak can transform into another sort of distraction[or]SMASHING SMOKE[stopping].";
-	if floor-yet is false, say "You can't use the clashing cloak yet."
+	if poor ponder is not moot, say "You can't use the clashing cloak yet."
 
 this is the clumped-cluster-hint rule:
 	say "[one of]The clumped cluster can be moved TWO ways[or]You can use an order to move the cluster or find an item[or][one of]BUMPED BUSTER is one way[or]DUMPED DUSTER is one way[cycling] to clear the clumped cluster[stopping].";
@@ -2617,16 +2643,6 @@ the snuck snare is a thing. description is "You feel lucky enough that you'll kn
 
 [?? burned bower/turned tower]
 
-chapter softsanding
-
-softsanding is an action applying to nothing.
-
-understand the command "soft sand" as something new.
-
-understand "soft sand" as softsanding.
-
-loft-land is a truth state that varies.
-
 volume Poorly Penned
 
 volume Get a Guess
@@ -2929,7 +2945,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "ho"	"happen"	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--
 "dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule
 "whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
-"first"	"floor"	false	true	false	vc-first-floor rule	vr-first-floor rule	--
+"youre|your|yore"	"yonder"	false	true	false	vc-youre-yonder rule	vr-youre-yonder rule	--
 "glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
 "smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	-- [start Y'Old Yard]
 "lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start vending vibe]
@@ -3240,7 +3256,7 @@ this is the vc-cleared-clay rule:
 	the rule succeeds;
 
 this is the vr-cleared-clay rule:
-	say "You concentrate on the weird way, which is, uh, weirder than trying to stat o clear it. But what do you know? It turns to clay that crumbles and goes away. You can go down now!";
+	say "You concentrate on the weird way, which is, uh, weirder than trying to clear it with actual hard physical work. But what do you know? It turns to clay that crumbles and goes away. You can go down now!";
 	moot weird way;
 
 this is the vc-co-capn rule:
@@ -3459,18 +3475,6 @@ this is the vr-first-fave rule:
 	moot worst wave;
 	clue-zap "FIRST FAVE";
 
-this is the vc-first-floor rule:
-	if player is not in history hall or mistmall is true, the rule fails;
-	if floor-yet is true:
-		vcp "You already brought Erst Lore down.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-first-floor rule:
-	say "Erst Lore, up on the ceiling, comes [one of][or]back [stopping]down. You can go IN, now.";
-	now Y'Old Yard is mapped inside History Hall;
-	now History Hall is mapped outside Y'Old Yard;
-
 this is the vc-fit-found rule:
 	if player is not in pit pound, the rule fails;
 	if found-fit is true:
@@ -3672,12 +3676,12 @@ this is the vr-history-hall rule:
 	move-from-temp Fussed Folks Just Jokes;
 	now Vending Vibe is mapped west of History Hall;
 	now History Hall is mapped east of Vending Vibe;
-[	move-from-temp Erst Lore;?? should have scenery defining this]
+	move-from-temp Poor Ponder;
 	move-to-temp gutta ganksta;
 	move-to-temp Oi Mo;
 	now mistmall is false;
 	bold-my-room;
-	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually.";
+	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor].";
 	now ever-hall is true;
 
 this is the vc-ho-happen rule:
@@ -4211,13 +4215,16 @@ this is the vr-so-sappin rule:
 	process the check-sing-max rule;
 
 this is the vc-soft-sand rule:
+	say "1.";
 	if player is not in soft sand, the rule fails;
 	if loft-land is false:
 		vcp "You're already on the Soft Sand.";
 		continue the action;
+	say "2.";
 	the rule succeeds;
 
 this is the vr-soft-sand rule:
+	say "3.";
 	say "The loft land reverts to the Soft Sand.";
 	now loft-land is false;
 	now Shirk Shell is mapped west of Soft Sand;
@@ -4351,6 +4358,16 @@ this is the vr-work-well rule:
 	now the player has the jerk gel;
 	now cht of Shirk Shell is phbt;
 	now cht of jerk gel is leteq; [supple saps->couple caps]
+
+this is the vc-youre-yonder rule:
+	if poor ponder is not touchable, the rule fails;
+	the rule succeeds;
+
+this is the vr-youre-yonder rule:
+	say "You begin to make sense of [poor]. Of course it should not be too easy to enjoy, or the Crimes Crew Times Two might. You can see how they would give up on it without sorting out its detailed meaning, the stuff between the lines. And as you figure that out, you see clues to a passage going IN. One you'd otherwise have missed. The book itself, however, bursts into flames once you discover the secret passage.";
+	moot poor ponder;
+	now Y'Old Yard is mapped inside History Hall;
+	now History Hall is mapped outside Y'Old Yard;
 
 [zzvcvr]
 

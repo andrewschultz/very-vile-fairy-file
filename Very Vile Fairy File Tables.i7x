@@ -90,6 +90,7 @@ randtxt
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Good Gang? Dud, Dang"
 "Hata['] Heft Data, Deft"
+"Pay, Pow, Hey, How"
 ["Lo Love Show Shove"
 "Mercy Me, Jersey G[r], by Versy V & Percy P"]
 
