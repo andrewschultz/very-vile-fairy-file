@@ -43,6 +43,7 @@ def read_rhymes_table():
             if line.startswith("table of verb checks"):
                 in_table = True
                 skip_next = True
+                continue
             if skip_next:
                 skip_next = False
                 continue
@@ -194,24 +195,26 @@ def read_rhyme_cfg(cfg_to_read):
 
 def cht_change(my_line):
     mll = my_line.lower()
-    if "now cht" in mll: return True
+    if "[unforce cht]" in mll: return False # this probably isn't necessary, but it's a safety valve just in case.
+    if "now cht" in mll or "[force cht]" in mll: return True # these have to be before the tab-reject. "cht of" + tab may mean an if statement. "now cht" changes the hint.
     if mll.startswith("\t"): return False
-    if "cht of" in mll: return True
-    return False
+    return "cht of" in mll
 
 def parse_learner_line(l, lc):
     ll = l.lower().strip()
-    what_adjusted_to = re.sub(".*-> *(.*?)\].*", r'\1', ll)
-    if "[->" in l:
-        what_to_adj = re.sub(".*cht of *", "", ll)
-        what_to_adj = re.sub(" +is.*", "", what_to_adj)
-    else:
-        what_to_adj = re.sub(".*\[(.*?) *->.*", r'\1', ll)
-    if debug: print("What to adjust:", what_to_adj, "/", "What adjusted to:", what_adjusted_to)
-    if got_yet[what_adjusted_to]:
-        print("Potential duplicate for", what_to_adj, "->", what_adjusted_to, "at line", lc)
-    got_yet[what_adjusted_to] = True
-    return (what_to_adj, what_adjusted_to)
+    cht_clues = re.findall("\[[^\[]*->[^\[]*\]", ll)
+    for my_clue in cht_clues:
+        what_adjusted_to = re.sub(".*-> *(.*?)\].*", r'\1', my_clue)
+        if "[->" in ll:
+            what_to_adj = re.sub(".*cht of *", "", ll)
+            what_to_adj = re.sub(" +is.*", "", what_to_adj)
+        else:
+            what_to_adj = re.sub(".*\[(.*?) *->.*", r'\1', my_clue)
+        if debug: print("What to adjust:", what_to_adj, "/", "What adjusted to:", what_adjusted_to)
+        if got_yet[what_adjusted_to]:
+            print("Potential duplicate for", what_to_adj, "->", what_adjusted_to, "at line", lc)
+        got_yet[what_adjusted_to] = True
+        yield (what_to_adj, what_adjusted_to)
 
 def check_for_cht():
     cht_to_replace = 0
@@ -235,13 +238,14 @@ def check_for_cht():
                     if my_src not in file_open_after:
                         file_open_after[my_src] = line_count
                     continue
-                (my_from, my_to) = parse_learner_line(line, line_count)
-                settings_needed = learner_shift(my_from, my_to)
-                if settings_needed in line: continue
-                print(line_count, "Need", settings_needed, "have", my_from, "->", my_to, "for", line.strip(), "REPLACE" if 'cht' in line else "ADD")
-                # print(line_count, line.strip())
-                if my_src not in file_open_after:
-                    file_open_after[my_src] = line_count
+                pll = parse_learner_line(line, line_count)
+                for x in pll:
+                    (my_from, my_to) = x
+                    settings_needed = learner_shift(my_from, my_to)
+                    if settings_needed in line: continue
+                    print(line_count, "Need", settings_needed, "have", my_from, "->", my_to, "for", line_count, "REPLACE" if 'cht' in line else "ADD")
+                    if my_src not in file_open_after:
+                        file_open_after[my_src] = line_count
                 continue
     if cht_count: print(cht_count, "total cht-is constructions to fix.")
     else: print("Woohoo! No cht-is bugs in the main source.")
