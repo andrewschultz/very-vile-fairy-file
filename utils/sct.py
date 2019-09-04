@@ -53,12 +53,20 @@ def usage(msg = "CMD LINE USAGE"):
     print("u = update, nu/un = don't update")
     exit()
 
+def print_list_dif(dkey1, dkey2, descrip):
+    x1 = list(set(list(dkey1)) - set(list(dkey2)))
+    if len(x1):
+        print("Stuff in table of forlaters but not called by {} ({}): {}".format(descrip, len(x1), ', '.join(sorted(x1))))
+    else:
+        print("CLUE VERIFICATION:", descrip, "all matches up.")
+
 def clue_hint_verify():
     found_table = False
     in_forlaters = False
     file_name = "story.ni"
     for_laters = defaultdict(int)
     cmd_laters = defaultdict(int)
+    cmd_zaps = defaultdict(int)
     global to_open
     with open(vv_table) as file:
         for (line_count, line) in enumerate(file, 1):
@@ -81,6 +89,10 @@ def clue_hint_verify():
                 q = re.sub("\";.*", "", line.strip())
                 q = re.sub(".*\"", "", q)
                 cmd_laters[q] = line_count
+            if "\tclue-zap " in line:
+                q = re.sub("\";.*", "", line.strip())
+                q = re.sub(".*\"", "", q)
+                cmd_zaps[q] = line_count
     if not found_table: sys.exit("Did not find table of forlaters in", file_name)
     x1 = list(set(list(cmd_laters)) - set(list(for_laters)))
     if len(x1):
@@ -96,9 +108,8 @@ def clue_hint_verify():
         else:
             print("-pfl prints stuff to forlaters")
         if vv_table not in to_open: to_open[vv_table] = forlater_start + 2
-    x1 = list(set(list(for_laters)) - set(list(cmd_laters)))
-    if len(x1):
-        print("Stuff in table of forlaters but not commands:", ', '.join(sorted(x1)))
+    print_list_dif(for_laters, cmd_laters, "clue-later")
+    print_list_dif(for_laters, cmd_zaps, "clue-zap")
 
 def check_miss_rule():
     in_showmiss = False

@@ -45,8 +45,10 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
             elif line.startswith("this is the vr-"):
                 in_vr = True
                 vcp_count = 0
+                got_succeeds_yet = 0
+                got_fails_yet = 0
                 rule_start_line = line_count
-                rule_name = re.sub(".*vc-", "vc-", line).strip()
+                rule_name = re.sub(".*vr-", "vr-", line).strip()
                 rule_name = re.sub(" *rule:", "", rule_name)
             elif in_vr and not line.strip():
                 in_vc = False
@@ -54,6 +56,10 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
                 if vcp_count:
                     ex_vcp += 1
                     print("{} Extraneous VCP in {} lines {}-{}.".format(ex_vcp, rule_name, rule_start_line, line_count))
+                if got_succeeds_yet:
+                    print("Harmless extra rule-succeeds in {} line {}.".format(rule_name, line_count - 1))
+                if got_fails_yet:
+                    print("Harmless extra rule-fails in {} line {}.".format(rule_name, line_count - 1))
             elif in_vc and not line.strip():
                 if not got_succeeds_yet:
                     no_succ += 1
@@ -97,6 +103,8 @@ def check_vc_rules(): # count # of rule succeeds/fails in VC rules. There should
                 any_say += 'say "' in line and "[oksay]" not in line
             elif in_vr:
                 vcp_count += 'vcp "' in line
+                got_succeeds_yet += 'rule succeeds' in line
+                got_fails_yet += 'rule fails' in line
             out_file.write(line)
     out_file.close()
     if suggested_changes:
