@@ -1,0 +1,615 @@
+#-- rbr-vvff-thru.txt
+#-- main branch file for Very Vile Fairy File walkthroughs
+#--
+#-- [additional notes here]
+#--
+
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt
+
+## *FILE
+## *FORK
+
+TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
+** interpreter: /home/andrew/prt/dfrotz -m
+
+* main-thru
+
+==t2
+> big bag
+\\
+> bury bile
+\\
+> think
+\\
+BIG BAG
+BURY BILE
+
+> get good
+by one point
+
+> gift giver
+by one point
+
+> find fault
+by one point
+
+> green grass
+by one point
+
+==t2
+> mash map
+> think
+MASH MAP
+
+> grow grit
+by one point
+
+> mash map
+by one point
+
+==t2
+> flim flam
+> think
+FLIM FLAM
+
+> mind me
+by one point
+
+> flim flam
+by one point
+
+> big bag
+by one point
+
+==t2
+> think
+!BIG BAG
+
+> s
+
+==t2
+> feel fear
+> deal dear
+> heal here
+> think
+FEEL FEAR
+DEAL DEAR
+HEAL HERE
+
+> kneel near
+by one point
+
+> feel fear
+by one point
+
+==t2
+> think
+!FEEL FEAR
+
+> deal dear
+by one point
+
+==t2
+> think
+!DEAL DEAR
+
+==t1
+> strong start
+by one point
+
+> n
+> fall free
+by one point
+
+> dive deep
+by one point
+
+> paper pile
+by one point
+
+> backed binder
+by one point
+
+> n
+> w
+
+==t2
+> mark more
+> think
+MARK MORE
+
+> dark door
+by one point
+
+> mark more
+by one point
+
+==t2
+> think
+!MARK MORE
+
+> cleared clay
+by one point
+
+> w
+> mystery mall
+by one point
+
+==t1
+> stay strong
+by one point
+
+==t2
+> glean glows
+> think
+GLEAN GLOWS
+
+==t1
+> whatta wanksta
+by one point
+> undo
+> what a wanksta
+by one point
+
+> listen
+> lots lame
+by one point
+
+==t2
+> co capn
+> so sappin
+> mo mappin
+> THINK
+MO MAPPIN
+SO SAPPIN
+CO CAPN
+
+==t1
+> ho happen
+by one point
+> dimd
+by one point
+
+> no nappin
+by one point
+
+> w
+
+==t1
+> lie lol
+By one point
+
+> hard hat
+by one point
+
+> e
+> e
+> e
+> n
+> w
+> work well
+by one point
+
+> e
+
+> loft land
+by one point
+
+> w
+
+==t2
+> first fave
+> think
+FIRST FAVE
+
+> dreaming dull
+by one point
+
+> first fave
+by one point
+
+==t2
+> think
+!FIRST FAVE
+
+> cool cap
+by one point
+
+> e
+> s
+> e
+> silent sail
+by one point
+
+> glow glad
+by one point
+
+> brightening bridge
+by one point
+
+> boring boat
+by one point
+
+> enter boat
+
+> wake whee
+by one point
+
+> take tea
+by one point
+
+==t1
+> break brie
+by one point
+
+> fake fee
+by one point
+
+> e
+> make map
+by one point
+
+
+==t2
+> snake snap
+> think
+SNAKE SNAP
+
+> co capn
+by one point
+
+==t2
+>think
+!CO CAPN
+
+> snake snap
+by one point
+
+==t2
+> think
+!SNAKE SNAP
+
+> enter boat
+> mean muggin
+by one point
+
+> lean luggin
+by one point
+
+==t1
+> bumped buster
+by one point
+
+> enter boat
+
+> w
+> w
+> w
+> glean glows
+by one point
+
+==t2
+> smashing smoke
+> think
+!GLEAN GLOWS
+SMASHING SMOKE
+
+> history hall
+by one point
+
+> first floor
+> in
+> smashing smoke
+by one point
+
+> out
+> w
+> lending libe
+by one point
+
+> see sign
+by one point
+
+> e
+> e
+> e
+> n
+
+==t2
+> beast boss
+> least loss
+> think
+BEAST BOSS
+LEAST LOSS
+
+==t2
+> show shield
+> think
+SHOW SHIELD
+
+> n
+> plain pleasant
+by one point
+
+> w
+> moral mage
+by one point
+
+> e
+> e
+
+==t2
+> fit found
+> think
+FIT FOUND
+
+> sit sound
+by one point
+
+> fit found
+by one point
+
+==t2
+> think
+!FIT FOUND
+
+> e
+> minding maze
+by one point
+
+> mo mappin
+by one point
+
+==t2
+> think
+!MO MAPPIN
+
+> luck lair
+by one point
+
+> w
+> w
+> s
+> s
+> w
+> d
+> tight tunnel
+by one point
+
+> w
+> knives niche
+by one point
+
+> e
+> u
+> e
+> n
+> e
+
+> dear dull
+by one point
+
+> near null
+by one point
+
+> w
+> s
+> w
+> d
+> w
+> s
+> beast boss
+by one point
+
+==t2
+> think
+!BEAST BOSS
+
+> least loss
+by one point
+
+==t1
+> wild weed
+by one point
+
+==t2
+> cull ceased
+> think
+!LEAST LOSS
+!CULL CEASED
+
+> s
+
+==t1
+> spark spliff
+by one point
+
+> s
+> heal here
+by one point
+
+==t2
+> think
+!HEAL HERE
+
+> n
+> n
+
+==t2
+> full feast
+> think
+FULL FEAST
+
+> cull ceased
+by one point
+
+> full feast
+by one point
+
+==t2
+> pull pieced
+> think
+!FULL FEAST
+PULL PIECED
+
+> e
+> e
+
+==t2
+> shining shore
+> mining more
+> dining more
+> think
+SHINING SHORE
+MINING MORE
+DINING DOOR
+
+> so sappin
+by one point
+
+==t2
+> think
+!SO SAPPIN
+
+> shining shore
+by one point
+
+==t2
+> think
+!SHINING SHORE
+
+> dining door
+by one point
+
+==t2
+> think
+!DINING DOOR
+
+> pull pieced
+by one point
+
+==t2
+> think
+!PULL PIECED
+
+> mining more
+by one point
+
+==t2
+> think
+!MINING MORE
+
+> w
+> w
+> n
+> n
+> show shield
+by one point
+
+==t2
+> think
+!SHOW SHIELD
+
+> n
+> go gappin
+by one point
+
+==t2
+> cast cap
+> think
+CAST CAP
+
+> couple caps
+by one point
+
+> cast cap
+by one point
+
+==t2
+> think
+!CAST CAP
+
+==t1
+> beaker bustle
+by one point
+
+> meeker muscle
+by one point
+
+> wood one
+by one point
+
+> n
+
+==t2
+> got gored
+> think
+GOT GORED
+
+> hot horde
+by one point
+
+> lot lord
+by one point
+
+> got gored
+by one point
+
+==t2
+> think
+!GOT GORED
+
+> whoah wait
+by one point
+
+==t2
+> merry mile
+> think
+MERRY MILE
+
+> tell torn
+by one point
+
+> merry mile
+by one point
+
+==t2
+> think
+!MERRY MILE
+
+> bury bile
+by one point
+
+==t2
+* moral-mage-check
+\\
+# while technically I could have rolled this into the walkthrough, 1) it would have clashed with the general traceable quick way through, and 2) it's a bit out of the way, and it doesn't take long, anyway.
+\\
+> blow by
+> fall free
+> n
+> n
+> n
+> plain pleasant
+> w
+> moral mage
+> think
+MORAL MAGE
+>e
+>s
+>s
+>s
+>s
+>kneel near
+>feel fear
+>deal dear
+>n
+>n
+>n
+>n
+>w
+> moral mage
+>think
+!MORAL MAGE
