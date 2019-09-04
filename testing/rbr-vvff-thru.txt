@@ -4,12 +4,12 @@
 #-- [additional notes here]
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt
 
 ## *FILE
 ## *FORK
 
-TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities
+TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
@@ -29,8 +29,19 @@ BURY BILE
 > get good
 by one point
 
+==t3
+# test the reverse flip warning
+> giver gift
+Ooh! You're close, but you juggled things up, somehow.
+
 > gift giver
 by one point
+
+==t3
+# test the reverse flip works
+> fault find
+by one point
+> undo
 
 > find fault
 by one point
@@ -46,6 +57,14 @@ MASH MAP
 > grow grit
 by one point
 
+==t3
+> rash rap
+by one point
+> undo
+> bash bap
+by one point
+> undo
+
 > mash map
 by one point
 
@@ -56,6 +75,11 @@ FLIM FLAM
 
 > mind me
 by one point
+
+==t3
+> skim scam
+by one point
+>undo
 
 > flim flam
 by one point
@@ -78,8 +102,18 @@ FEEL FEAR
 DEAL DEAR
 HEAL HERE
 
+==t3
+> kneeling near
+by one point
+> undo
+
 > kneel near
 by one point
+
+==t3
+> feeling near
+by one point
+> undo
 
 > feel fear
 by one point
@@ -87,6 +121,11 @@ by one point
 ==t2
 > think
 !FEEL FEAR
+
+==t3
+> dealing near
+by one point
+> undo
 
 > deal dear
 by one point
@@ -220,6 +259,12 @@ by one point
 > e
 > s
 > e
+
+==t3
+> silent sale
+by one point
+>undo
+
 > silent sail
 by one point
 
@@ -278,6 +323,11 @@ by one point
 > lean luggin
 by one point
 
+==t3
+> dumped duster
+by one point
+> undo
+
 ==t1
 > bumped buster
 by one point
@@ -299,7 +349,17 @@ SMASHING SMOKE
 > history hall
 by one point
 
-> first floor
+==t3
+> youre yonder
+by one point
+> undo
+> your yonder
+by one point
+> undo
+
+> yore yonder
+by one point
+
 > in
 > smashing smoke
 by one point
@@ -366,6 +426,11 @@ by one point
 > think
 !MO MAPPIN
 
+==t3
+> snuck snare
+by one point
+>undo
+
 > luck lair
 by one point
 
@@ -413,6 +478,11 @@ by one point
 ==t1
 > wild weed
 by one point
+
+==t3
+> lul least
+by one point
+> undo
 
 ==t2
 > cull ceased
@@ -560,6 +630,14 @@ by one point
 ==t2
 > think
 !GOT GORED
+
+==t3
+> woe wait
+by one point
+> undo
+> whoa wait
+by one point
+> undo
 
 > whoah wait
 by one point
