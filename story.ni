@@ -236,7 +236,7 @@ to say sign-dir:
 	let got-wry be false;
 	say "[line break]";
 	repeat through table of bad locs: [this is in the tables file]
-		if there is an e1 entry and e1 entry is location of player:
+		if there is an e1 entry and e1 entry is location of player and there is an e2 entry:
 			now got-wry is true;
 			say "[b][fake-name entry][r]: [e2 entry].";
 	say "[run paragraph on]";
@@ -3994,9 +3994,12 @@ this is the vc-minding-maze rule:
 	the rule succeeds;
 
 this is the vr-minding-maze rule:
-	say "The blaze swirls but dies down. In its place is a huge minding maze.";
+	say "The blaze swirls but dies down. In its place is a huge minding maze. And hey, that wry wall pops up too!";
 	now blaze-maze is true;
 	phbt blinding blaze;
+	choose row with e1 of Blinding Blaze in table of bad locs;
+	now e2 entry is north;
+	wall-refresh;
 
 this is the vc-mining-more rule:
 	if player is not in Whining War, the rule fails;

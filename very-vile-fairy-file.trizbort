@@ -263,6 +263,11 @@
 			<dock index="0" id="74" port="s" />
 			<dock index="1" id="95" port="n" />
 		</line>
+		<room id="97" name="Straight Street" subtitle="" x="352" y="-352" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="98" name="" description="" style="dashed">
+			<dock index="0" id="72" port="n" />
+			<dock index="1" id="97" port="s" />
+		</line>
 	</map>
 	<settings>
 		<colors>
