@@ -22,19 +22,3 @@ carry out blowingblobsing:
 	the rule succeeds.
 
 The silly sign is scenery. "The silly sign reads 'One of many by Willie Wines and Tillie Tines.'[line break][sign-dir]"
-
-"bumped"	"buster"	true	true	false	vc-bumped-buster rule	vr-bumped-buster rule	--
-
-book clumped cluster
-
-the clumped cluster is scenery. cht of clumped cluster is letminus. "The clumped cluster won't let you by!".
-
-this is the vc-bumped-buster rule:
-	if clumped cluster is touchable, the rule succeeds;
-	the rule fails;
-
-this is the vr-bumped-buster rule:
-	say "The clumped cluster no longer blocks your way. It starts pulsing further until it runs out of energy and collapses.";
-	moot clumped cluster;
-	the rule succeeds.
-

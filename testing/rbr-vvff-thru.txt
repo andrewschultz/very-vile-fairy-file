@@ -4,12 +4,12 @@
 #-- [additional notes here]
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt
 
 ## *FILE
 ## *FORK
 
-TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests
+TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
@@ -90,6 +90,14 @@ by one point
 ==t2
 > think
 !BIG BAG
+
+==t4
+>w
+west to Bold
+>w
+You already went west
+>e
+east to Fate Farm
 
 > s
 
@@ -282,6 +290,14 @@ by one point
 > wake whee
 by one point
 
+==t4
+>w
+west to Capped Cone
+>s
+south to Blest Bloom
+>n
+north to Mo Main Low Lane
+
 > take tea
 by one point
 
@@ -364,6 +380,12 @@ by one point
 > smashing smoke
 by one point
 
+==t4
+>w
+west to Faun Fen
+>s
+south to Lit Lawn
+
 > out
 > w
 > lending libe
@@ -415,9 +437,17 @@ by one point
 > think
 !FIT FOUND
 
+==t4
+>n
+!north to Straight Street
+
 > e
 > minding maze
 by one point
+
+==t4
+>n
+north to Straight Street
 
 > mo mappin
 by one point
@@ -442,6 +472,10 @@ by one point
 > d
 > tight tunnel
 by one point
+
+==t4
+>n
+north to Fortune Funnel
 
 > w
 > knives niche
@@ -539,6 +573,12 @@ DINING DOOR
 > so sappin
 by one point
 
+==t4
+>e
+east to Done Dune
+>d
+down to Fast Foi'd
+
 ==t2
 > think
 !SO SAPPIN
@@ -605,6 +645,12 @@ by one point
 > beaker bustle
 by one point
 
+==t4
+>w
+west to Rattlin' Runs
+>e
+east to Hopping Hills
+
 > meeker muscle
 by one point
 
@@ -638,6 +684,14 @@ by one point
 > whoa wait
 by one point
 > undo
+
+==t4
+>d
+down to Happy Hall
+>u
+up to Hippy Hill
+>n
+north to Earning Ridges
 
 > whoah wait
 by one point

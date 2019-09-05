@@ -91,22 +91,25 @@ DARK DOOR
 by one point
 MARK MORE
 
-# the first roadblock!
-
 > jj
 by one point
-WAY WRONG
+MYSTERY MALL
+
+# the first generic roadblock!
 
 > w
 > jj
 by one point
+STAY STRONG
 
 > jj
 by one point
+LOTS LAME
 
 > listen
 > jj
 by one point
+NO NAPPIN
 
 > jj
 by one point
@@ -114,6 +117,9 @@ by one point
 > w
 > jj
 by one point
+HARD HAT
+
+# okay, let's look north a bit
 
 > e
 > e
@@ -122,85 +128,111 @@ by one point
 > w
 > jj
 by one point
+WORK WELL
 
 > e
 > jj
 by one point
+LOFT LAND
 
 > w
 > jj
 by one point
+DREAMING DULL
 
 > jj
 by one point
+FIRST FAVE
 
 > jj
 by one point
+COOL CAP
+
+# now off to the east to get the cloak and Jake and stuff
 
 > e
 > s
 > e
 > jj
 by one point
+BRIGHTENING BRIDGE
 
 > jj
 by one point
+GLOW GLAD
 
 > jj
 by one point
+SILENT SAIL
 
 > jj
 by one point
+BORING BOAT
 
 > enter boat
 > jj
 by one point
+WAKE WHEE
 
 > jj
 by one point
+TAKE TEA
 
 > jj
 by one point
+FAKE FEE
 
 > e
 > jj
 by one point
+MAKE MAP
 
 > jj
 by one point
+CO CAPN
 
 > jj
 by one point
-
-> enter boat
-> jj
-by one point
-
-> jj
-by one point
+SNAKE SNAP
 
 > enter boat
+> jj
+by one point
+MEAN MUGGIN
+
+> jj
+by one point
+LEAN LUGGIN
+
+# get the gold guard, rescue the mage
+
+> enter boat
 > w
 > w
 > w
 > jj
 by one point
+GLEAN GLOWS
 
 > history hall
 > jj
 by one point
+YOURE YONDER
 
 > in
 > jj
 by one point
+SMASHING SMOKE
 
 > out
 > w
 > jj
 by one point
+LENDING LIBE
 
 > jj
 by one point
+SEE SIGN
 
 > e
 > e
@@ -209,28 +241,37 @@ by one point
 > n
 > jj
 by one point
+PLAIN PLEASANT
 
 > w
 > jj
 by one point
+MORAL MAGE
+
+# clear the maze and such
 
 > e
 > e
 > jj
 by one point
+SIT SOUND
 
 > jj
 by one point
+FIT FOUND
 
 > e
 > jj
 by one point
+MINDING MAZE
 
 > jj
 by one point
+MO MAPPIN
 
 > jj
 by one point
+LUCK LAIR
 
 > w
 > w
@@ -240,10 +281,14 @@ by one point
 > d
 > jj
 by one point
+TIGHT TUNNEL
 
 > w
 > jj
 by one point
+KNIVES NICHE
+
+# okay, the trap is set
 
 > e
 > u
@@ -252,53 +297,63 @@ by one point
 > e
 > jj
 by one point
+DEAR DULL
 
 > jj
 by one point
-
-> w
-> s
-> w
-> d
-> jj
-by one point
-
-> s
-> jj
-by one point
+NEAR NULL
 
 > jj
-by one point
+The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the beer bull into running into the trap you set.
+
+# beat the bull beast/beast boss
 
 > s
+> jj
+by one point
+BEAST BOSS
+
+> jj
+by one point
+LEAST LOSS
+
+> s
 > s
 > jj
 by one point
+HEAL HERE
 
 > n
 > n
 > jj
 by one point
+CULL CEASED
 
 > jj
 by one point
+FULL FEAST
 
 > e
 > e
 > jj
 by one point
+SO SAPPIN
 
 > jj
 by one point
+SHINING SHORE
 
 > jj
 by one point
+DINING DOOR
 
 > jj
 by one point
+PULL PIECED
 
 > jj
 by one point
+MINING MORE
 
 > w
 > w
@@ -306,42 +361,54 @@ by one point
 > n
 > jj
 by one point
+SHOW SHIELD
 
 > n
 > jj
 by one point
+GO GAPPIN
 
 > jj
 by one point
+COUPLE CAPS
 
 > jj
 by one point
+CAST CAP
 
 > jj
 by one point
+MEEKER MUSCLE
 
 > jj
 by one point
+WOOD ONE
 
 > n
 > jj
 by one point
+LOT LORD
 
 > jj
 by one point
+HOT HORDE
 
 > jj
 by one point
+GOT GORED
 
 > jj
 by one point
+WHOAH WAIT
 
 > jj
 by one point
+TELL TORN
 
 > jj
 by one point
+MERRY MILE
 
 > jj
 by one point
-
+BURY BILE
