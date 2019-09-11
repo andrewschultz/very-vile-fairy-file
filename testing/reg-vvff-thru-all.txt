@@ -46,10 +46,11 @@ by one point
 > deal dear
 by one point
 
+> n
+
 > strong start
 by one point
 
-> n
 > fall free
 by one point
 
@@ -190,7 +191,6 @@ by one point
 by one point
 
 > history hall
-by one point
 
 > yore yonder
 by one point
@@ -210,9 +210,11 @@ by one point
 > e
 > e
 > e
+
 > n
 
 > n
+
 > plain pleasant
 by one point
 

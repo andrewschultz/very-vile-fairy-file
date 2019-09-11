@@ -16,6 +16,9 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 
 * main-thru
 
+==t3
+> z
+
 ==t2
 > big bag
 \\
@@ -32,13 +35,14 @@ by one point
 ==t3
 # test the reverse flip warning
 > giver gift
-Ooh! You're close, but you juggled things up, somehow.
+You've got it backwards! Just flip things around, and it'll be okay.
 
 > gift giver
 by one point
 
 ==t3
 # test the reverse flip works
+> z
 > fault find
 by one point
 > undo
@@ -119,7 +123,7 @@ by one point
 by one point
 
 ==t3
-> feeling near
+> feeling fear
 by one point
 > undo
 
@@ -131,7 +135,7 @@ by one point
 !FEEL FEAR
 
 ==t3
-> dealing near
+> dealing dear
 by one point
 > undo
 
@@ -142,11 +146,12 @@ by one point
 > think
 !DEAL DEAR
 
+> n
+
 ==t1
 > strong start
 by one point
 
-> n
 > fall free
 by one point
 
@@ -184,7 +189,7 @@ by one point
 > mystery mall
 by one point
 
-==t1
+==t0,1,2,3,4
 > stay strong
 by one point
 
@@ -363,7 +368,6 @@ by one point
 SMASHING SMOKE
 
 > history hall
-by one point
 
 ==t3
 > youre yonder
@@ -397,7 +401,6 @@ by one point
 > e
 > e
 > e
-> n
 
 ==t2
 > beast boss
@@ -406,12 +409,15 @@ by one point
 BEAST BOSS
 LEAST LOSS
 
+> n
+
+> n
+
 ==t2
 > show shield
 > think
 SHOW SHIELD
 
-> n
 > plain pleasant
 by one point
 
@@ -513,16 +519,11 @@ by one point
 > wild weed
 by one point
 
-==t3
-> lul least
-by one point
-> undo
-
 ==t2
 > cull ceased
 > think
 !LEAST LOSS
-!CULL CEASED
+CULL CEASED
 
 > s
 
@@ -546,6 +547,11 @@ by one point
 > think
 FULL FEAST
 
+==t3
+> lul least
+by one point
+> undo
+
 > cull ceased
 by one point
 
@@ -564,7 +570,7 @@ PULL PIECED
 ==t2
 > shining shore
 > mining more
-> dining more
+> dining door
 > think
 SHINING SHORE
 MINING MORE

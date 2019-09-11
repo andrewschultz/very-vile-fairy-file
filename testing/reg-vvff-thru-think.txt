@@ -2,7 +2,7 @@
 ## reg-vvff-thru-think.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests
+## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
 
@@ -81,6 +81,7 @@ by one point
 !DEAL DEAR
 
 > n
+
 > fall free
 by one point
 
@@ -114,6 +115,9 @@ by one point
 
 > w
 > mystery mall
+by one point
+
+> stay strong
 by one point
 
 > glean glows
@@ -239,7 +243,6 @@ by one point
 SMASHING SMOKE
 
 > history hall
-by one point
 
 > yore yonder
 by one point
@@ -259,7 +262,6 @@ by one point
 > e
 > e
 > e
-> n
 
 > beast boss
 > least loss
@@ -267,11 +269,14 @@ by one point
 BEAST BOSS
 LEAST LOSS
 
+> n
+
+> n
+
 > show shield
 > think
 SHOW SHIELD
 
-> n
 > plain pleasant
 by one point
 
@@ -351,7 +356,7 @@ by one point
 > cull ceased
 > think
 !LEAST LOSS
-!CULL CEASED
+CULL CEASED
 
 > s
 
@@ -385,7 +390,7 @@ PULL PIECED
 
 > shining shore
 > mining more
-> dining more
+> dining door
 > think
 SHINING SHORE
 MINING MORE

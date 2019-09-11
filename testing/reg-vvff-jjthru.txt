@@ -93,11 +93,16 @@ MARK MORE
 
 > jj
 by one point
+CLEARED CLAY
+
+> w
+
+> jj
+by one point
 MYSTERY MALL
 
 # the first generic roadblock!
 
-> w
 > jj
 by one point
 STAY STRONG
@@ -110,9 +115,6 @@ LOTS LAME
 > jj
 by one point
 NO NAPPIN
-
-> jj
-by one point
 
 > w
 > jj
