@@ -257,10 +257,11 @@ wry-wall-found is a number that varies. wry-wall-found is 0.
 check going nowhere:
 	repeat through table of bad locs: [this is in the tables file]
 		if there is no e1 entry or there is no e2 entry:
-			if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";
+			[if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";] [commented out since fake death appears in Blinding Blaze. Also there are python-script ways to check.]
 			next;
 		if location of player is e1 entry and noun is e2 entry:
 			if been-here entry is true, say "You already went [noun] to the joke death-trap [fake-name entry]." instead;
+			say "You decide to go [noun] to [fake-name entry].[paragraph break]";
 			say "[death-trap entry][paragraph break]";
 			now been-here entry is true;
 			increment wry-wall-found;
@@ -664,7 +665,7 @@ after lling gutta ganksta:
 
 chapter Toe Tappin Row Rappin (M)
 
-Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future. It's stuck in your head now, and that's not all bad, because what replced it is even worse. It could almost be motivational in the right place[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
+Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replced it is even worse.[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
@@ -2582,7 +2583,7 @@ in-so-saded is a truth state that varies.
 the get-sad rule is listed after the notify score changes rule in the turn sequence rulebook.
 
 this is the get-sad rule:
-	if in-so-saded is false and in-so-sad is false and score >= 30:
+	if in-so-saded is false and in-so-sad is false and core-score >= 30:
 		now in-so-sad is true;
 		say "Suddenly, a terrible feeling comes over you. Everything feels pointless. You're sick of these silly rhymes. You feel so sad, mo['] mad.";
 		now cht of the player is letplus; [so sad->glow glad]
@@ -2603,7 +2604,7 @@ in-way-wronged is a truth state that varies.
 the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
 
 this is the get-wrong rule:
-	if in-way-wronged is false and in-way-wrong is false and score >= 20:
+	if in-way-wronged is false and in-way-wrong is false and core-score >= 20:
 		now in-way-wrong is true;
 		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
 		now cht of the player is letplus; [way wrong->stay strong]
@@ -2757,11 +2758,12 @@ to up-which (ts - a truth state):
 		up-min;
 
 this is the verb-checker rule:
+	let local-ha-half be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
-		if the player's command matches the regular expression "(^|\W)([w1 entry])\W", increment my-count;
+		if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
 		if there is a w2 entry:
-			if the player's command matches the regular expression "\W([w2 entry])($|\W)", increment my-count;
+			if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
 		else if my-count > 0:
 			increment my-count;
 		let wfull-fail be false;
@@ -2779,7 +2781,7 @@ this is the verb-checker rule:
 				if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
 				if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
 				if okflip entry is false:
-					unless the player's command matches the regular expression "^([w1 entry])\b": [this is for the DIM'D test case]
+					unless the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case]
 						say "You've got it backwards! Just flip things around, and it'll be okay.";
 						the rule succeeds;
 				if wfull-fail is true:
@@ -2802,13 +2804,17 @@ this is the verb-checker rule:
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
 			now vc-dont-print is true;
+			now local-ha-half is true;
 			process the ver-rule entry;
 			if the rule failed:
 				now vc-dont-print is false;
 				next;
+			now vc-dont-print is false;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
-			say "The HA HALF button lights up on your Leet Learner.";
-			the rule succeeds;
+			next;
+	if local-ha-half is true:
+		say "The HA HALF button lights up on your Leet Learner.";
+		the rule succeeds;
 	if debug-state is true, say "OOPS if we're not in a test.";
 
 vc-dont-print is a truth state that varies.
@@ -2910,12 +2916,12 @@ carry out jerkingjumping:
 		process the ver-rule entry;
 		if the rule succeeded:
 			say "After some thought, you consider the right way forward: [firstor of w1 entry] [firstor of w2 entry]...";
-			process the do-rule entry;
+			now idid entry is true; [this is so BURY BILE gets processed. We already checked IDID above.]
 			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
+			process the do-rule entry;
 			if zap-core-entry is true:
 				blank out the core entry;
 				now zap-core-entry is false;
-			now idid entry is true;
 			skip upcoming rulebook break;
 			lump-minus;
 			now vc-dont-print is false;
@@ -2964,7 +2970,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "lots"	"lame"	false	true	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
 "no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
 "ho"	"happen"	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--
-"dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule
+"dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule	--
 "whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
 "youre|your|yore"	"yonder"	false	true	false	vc-youre-yonder rule	vr-youre-yonder rule	--
 "glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
@@ -3048,8 +3054,6 @@ to check-missing-necc:
 
 to win-the-game:
 	[rejig-status;]
-	if in-beta is true or debug-state is true:
-		check-missing-necc;
 	if wry-wall-found < 2 or wry-wall-found is number of rows in table of bad locs:
 		choose row with final response activity of showdeathsing in the Table of Final Question Options;
 		blank out the whole row;
@@ -3059,6 +3063,9 @@ to win-the-game:
 	clue-zap "BURY BILE";
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. You are on your way back.";
+	process the notify score changes rule;
+	if in-beta is true or debug-state is true:
+		check-missing-necc;
 	end the story finally saying "DEALS DONE: FEELS FUN!";
 	follow the shutdown rules;
 
@@ -3152,10 +3159,12 @@ this is the vc-beast-boss rule:
 		vcp "You don't feel armed for that, yet.";
 		clue-later "BEAST BOSS";
 		continue the action;
+	say "3.";
 	if gull-guard is false:
 		vcp "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
 		clue-later "BEAST BOSS";
 		continue the action;
+	say "4.";
 	the rule succeeds;
 
 this is the vr-beast-boss rule:
@@ -3224,6 +3233,7 @@ this is the vr-bumped-buster rule:
 	moot clumped cluster;
 
 this is the vc-bury-bile rule:
+	if debug-state is true, say "Executing the VC BURY BILE rule.";
 	if player is in Tarry Tile:
 		if well worn hell horn is moot and merry-mile is true, the rule succeeds;
 		if well worn hell horn is in Tarry Tile:
@@ -3291,7 +3301,10 @@ this is the vr-cleared-clay rule:
 	moot weird way;
 
 this is the vc-co-capn rule:
-	if jake g is not touchable, the rule fails;
+	if player does not have toe tappin, the rule fails;
+	if jake is not touchable:
+		say "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
+		clue-later "CO CAPN";
 	if jake-fee is false:
 		vcp "Maybe once you established a bond with Jake, he could be a co-captain. But not yet.";
 		clue-later "CO CAPN";
@@ -3644,7 +3657,7 @@ this is the vc-got-gored rule:
 	continue the action;
 
 this is the vr-got-gored rule:
-	say "YES! That's the cheer they need. The bot board is routed.[paragraph break]As things calm down, you realize a wry wall points you two ways, and there is now a go gate ahead! You must be close now.";
+	say "YES! That's the cheer the Hot Horde needs. No need for a ham-handed 'BAM! BANDED!' as they coalesce and organize under the Lot Lord's leadership.[paragraph break]As things calm down, you realize a wry wall points you three ways, and there is now a go gate ahead! You must be close now.";
 	moot Hot Horde;
 	moot Lot Lord;
 	moot Bot Board;
