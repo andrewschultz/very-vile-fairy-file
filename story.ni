@@ -48,7 +48,7 @@ when play begins (this is the set debug state rule): now debug-state is true;
 
 [Include this line after, as it may have some "when play begins" tests]
 
-[include Very Vile Fairy File Tests by Andrew Schultz.]
+include Very Vile Fairy File Tests by Andrew Schultz.
 
 book i6 replacemets
 
@@ -911,6 +911,38 @@ lean-lugged is a truth state that varies.
 to decide whether dean-done:
 	if mean-mugged is true and lean-lugged is true, yes;
 	no;
+
+the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
+
+chapter staystronging
+
+in-way-wrong is a truth state that varies.
+in-way-wronged is a truth state that varies.
+
+after looking in Been Buggin' for the first time:
+	now in-way-wrong is true;
+	say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
+	now cht of the player is letplus; [way wrong->stay strong]
+	continue the action;
+
+every turn when in-way-wrong is true:
+	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
+
+instead of doing something when in-way-wrong is true:
+	if action is procedural, continue the action;
+	say "You can't. Everything feels ... way wrong. You feel so weak!";
+
+chapter glowglading
+
+in-so-sad is a truth state that varies.
+in-so-saded is a truth state that varies.
+
+every turn when in-so-sad is true:
+	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
+
+instead of doing something when in-so-sad is true:
+	if action is procedural, continue the action;
+	say "You can't. You just feel ... so sad. Mo['] mad.";
 
 part Soft Sand 0,2
 
@@ -2579,50 +2611,6 @@ volume unsorted
 
 The cake cap is a gaphat. description is "The cake cap looks tasty and yet still incomplete and not quite wearable on its own."
 
-the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
-
-chapter glowglading
-
-in-so-sad is a truth state that varies.
-in-so-saded is a truth state that varies.
-
-the get-sad rule is listed after the notify score changes rule in the turn sequence rulebook.
-
-this is the get-sad rule:
-	if in-so-saded is false and in-so-sad is false and core-score >= 30:
-		now in-so-sad is true;
-		say "Suddenly, a terrible feeling comes over you. Everything feels pointless. You're sick of these silly rhymes. You feel so sad, mo['] mad.";
-		now cht of the player is letplus; [so sad->glow glad]
-	continue the action;
-
-every turn when in-so-sad is true:
-	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
-
-instead of doing something when in-so-sad is true:
-	if action is procedural, continue the action;
-	say "You can't. You just feel ... so sad. Mo['] mad.";
-
-chapter staystronging
-
-in-way-wrong is a truth state that varies.
-in-way-wronged is a truth state that varies.
-
-the get-wrong rule is listed after the notify score changes rule in the turn sequence rulebook.
-
-this is the get-wrong rule:
-	if in-way-wronged is false and in-way-wrong is false and core-score >= 20:
-		now in-way-wrong is true;
-		say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
-		now cht of the player is letplus; [way wrong->stay strong]
-	continue the action;
-
-every turn when in-way-wrong is true:
-	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
-
-instead of doing something when in-way-wrong is true:
-	if action is procedural, continue the action;
-	say "You can't. Everything feels ... way wrong. You feel so weak!";
-
 chapter wildweeding
 
 the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
@@ -2693,6 +2681,7 @@ rule for showaltverbsing:
 showmissesing is an activity.
 
 rule for showmissesing:
+	if appeal-appear is false, say "You could've figured the Peeling Pier's brand name as [b]APPEALING APPEAR[r].";
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if hap-ho is false, say "You could've said [b]HO HAPPEN[r] while listening to [Toe].";
 	unless oi mo is moot, say "You could have [b]DIMD[r] (dim'd) the horrible song Oi Mo in Mystery Mall.";
@@ -2743,10 +2732,10 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 the clue half right words rule is listed first in the for printing a parser error rulebook.
 
 Rule for printing a parser error (this is the clue half right words rule):
-	if in-so-sad is true or in-way-wrong is true:
-		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 	abide by the verb-checker rule;
 	abide by the mistake-checker rule;
+	if in-so-sad is true or in-way-wrong is true:
+		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
@@ -2803,8 +2792,6 @@ this is the verb-checker rule:
 				now idid entry is true;
 				process the do-rule entry;
 				process the notify score changes rule;
-				process the get-sad rule;
-				process the get-wrong rule;
 				if there is a core entry and core entry is false, check-lump-progress;
 			process the note first think rule;
 			the rule succeeds;
@@ -2898,8 +2885,6 @@ to lump-minus:
 	now in-jerk-jump is false;
 	increment lump-uses;
 	process the notify score changes rule;
-	process the get-sad rule;
-	process the get-wrong rule;
 
 carry out jerkingjumping:
 	if debug-state is false:
@@ -3122,6 +3107,17 @@ to vcp (t - text): [verb conditional print]
 
 section vc vr rules [xxvcvr]
 
+this is the vc-appealing-appear rule:
+	if player is not in real rear, the rule fails;
+	if appeal-appear is true:
+		vcp "The peeling pier already looks better.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-appealing-appear rule:
+	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
+	now appeal-appear is true;
+
 this is the vc-backed-binder rule:
 	if paper pile is not touchable or player has the backed binder, the rule fails;
 	the rule succeeds;
@@ -3144,17 +3140,6 @@ this is the vr-beaker-bustle rule:
 	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
 	now beaker-yet is true;
 	adjust-russell;
-
-this is the vc-appealing-appear rule:
-	if player is not in real rear, the rule fails;
-	if appeal-appear is true:
-		vcp "The peeling pier already looks better.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-appealing-appear rule:
-	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
-	now appeal-appear is true;
 
 this is the vc-beast-boss rule:
 	if player is not in Creased Cross, the rule fails;
@@ -3624,7 +3609,7 @@ this is the vc-glow-glad rule:
 	the rule succeeds;
 
 this is the vr-glow-glad rule:
-	say "That's it! You feel much more comfortable now.";
+	say "Okay! You're really ready to face things now. Someone comes into view, congratulates you on fighting off your inner demons, and introduces himself as Dean Duggan. 'I have a couple more things I can teach you, but you'll have to ask me specifically.'";
 	now in-so-sad is false;
 	now in-so-saded is true;
 	phbt Kerry Kyle;
@@ -3790,7 +3775,7 @@ this is the vr-knives-niche rule:
 	process the drop-snare rule;
 
 this is the vc-lean-luggin rule:
-	if player is not in Been Buggin', the rule fails;
+	if Dean Duggan is not touchable, the rule fails;
 	if lean-lugged is true:
 		vcp "You already learned lean luggin['].";
 		continue the action;
@@ -3942,7 +3927,7 @@ this is the vr-mash-map rule:
 	clue-zap "MASH MAP";
 
 this is the vc-mean-muggin rule:
-	if player is not in Been Buggin', the rule fails;
+	if Dean Duggan is not touchable, the rule fails;
 	if mean-mugged is true:
 		vcp "You already learned mean muggin['].";
 		continue the action;
@@ -4307,10 +4292,11 @@ this is the vc-stay-strong rule:
 	the rule succeeds;
 
 this is the vr-stay-strong rule:
-	say "That's it! You feel much more comfortable now.";
+	say "That's ... well, it helps a little! You've overcome a bit, but you still feel so sad ... so sad.";
 	now in-way-wrong is false;
 	now in-way-wronged is true;
-	phbt Kerry Kyle;
+	now in-so-sad is true;
+	now cht of the player is letplus; [so sad->glow glad]
 
 this is the vc-strong-start rule:
 	if player is not in Fun Fen, the rule fails;

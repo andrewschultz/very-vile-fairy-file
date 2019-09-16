@@ -2,6 +2,8 @@ Version 1/181111 of Very Vile Fairy File Tests by Andrew Schultz begins here.
 
 "This is the tests file for Very Vile Fairy File."
 
+[wch.py checks the walkthrough versus this]
+
 volume implementation test(s)
 
 when play begins (this is the room hint check rule):
