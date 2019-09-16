@@ -46,13 +46,13 @@ test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind
 test w1r with "get good/gift giver/find fault/green grass/bash bap/grow grit/mash map/flim flam/mind me/skim scam/big bag". [this is the intro]
 
 test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder/n". [real rear 1st try, plus get to Creased Cross]
-test w3 with "w/dark door/mark more/cleared clay/w/mystery mall/stay strong/listen/lots lame/no nappin/w/hard hat/e/e/e/n/w/work well/e". [get jerk gel, clear shirk shell]
+test w3 with "w/dark door/mark more/cleared clay/w/mystery mall/listen/lots lame/no nappin/w/hard hat/e/e/e/n/w/work well/e". [get jerk gel, clear shirk shell]
 
-test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/glow glad/brightening bridge/boring boat". [get cap, take boat]
+test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/silent sail/brightening bridge/boring boat". [get cap, take boat]
 
-test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat/mean muggin/lean luggin/enter boat". [this is the boat quest]
+test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat". [this is part 1 of the boat quest]
 
-test w6 with "w/w/w/glean glows/history hall/youre yonder/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage". [release the moral mage]
+test w6 with "stay strong/glow glad/mean muggin/lean luggin/enter boat/w/w/w/glean glows/history hall/youre yonder/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage". [release the moral mage. This part is a bit long because there were no good breaks and I wanted to start a test with the stay strong/glow glad verbs that were twiddled late in the release.]
 
 test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e". [set the trap for the bull]
 

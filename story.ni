@@ -20,11 +20,17 @@ include Basic Screen Effects by Emily Short.
 
 a thing can be abstract. a thing is usually not abstract.
 
+[a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game. Perhaps this is quixotic, but I enjoyed the programmin exercise. Long story short: the mistakes and tables take up a ton of space I don't really need for testing. But they don't take up enough to threaten a beta build's z8-ness.]
+
 [include Property Checking for VVFF by Emily Short.] [modified version]
 
-include Very Vile Fairy File Mistakes by Andrew Schultz.
+[dnc.py can/should toggle this]
 
-include Very Vile Fairy File Tables by Andrew Schultz.
+include Very Vile Fairy File Mistakes by Andrew Schultz. [must commit]
+[include Very Vile Fairy File Bare Mistakes by Andrew Schultz. [do not commit]]
+
+include Very Vile Fairy File Tables by Andrew Schultz. [must commit]
+[include Very Vile Fairy File Bare Tables by Andrew Schultz. [do not commit]]
 
 include undo output control by Erik Temple.
 
@@ -42,7 +48,7 @@ when play begins (this is the set debug state rule): now debug-state is true;
 
 [Include this line after, as it may have some "when play begins" tests]
 
-include Very Vile Fairy File Tests by Andrew Schultz.
+[include Very Vile Fairy File Tests by Andrew Schultz.]
 
 book i6 replacemets
 

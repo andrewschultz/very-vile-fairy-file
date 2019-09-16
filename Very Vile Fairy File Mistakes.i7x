@@ -2,12 +2,10 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 "List of good guesses that don't quite work for Very Vile Fairy File."
 
-[malf.py alphabetizes each set of mistakes internally by room after the "general mistakes" volume.]
+[use vmc.py to check for duplicates]
 
 [stuff I haven't sorted yet:
 ##############unsorted
-##############rift river
-lift liver
 ##############trim tram
 whim wham
 grim gram
@@ -16,9 +14,6 @@ dim dam
 swim swam
 rim ram
 shim sham
-###############paper pile
-gaper guile
-taper/tapir tile
 ###############sage sea
 page pea
 wage wee
@@ -70,7 +65,6 @@ island ale
 stooping stair
 looping lair
 #################way wrong
-pay prong
 ################real rear
 eel ear/ere
 peel pier # a bit too on the nose
@@ -90,7 +84,7 @@ volume what you start with
 table of mistake substitutions
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start 1 general mistakes]
-["swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
+"swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start 2 wry wall mistakes]
 "dry doll"	signable-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
@@ -111,6 +105,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "one wen"	in-fun-fen rule	false	--	--	--	"Your skin remains unblemished, despite you tempting fate."
 "pun pen"	in-fun-fen rule	false	--	--	--	"You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me."
 "won when"	in-fun-fen rule	false	--	--	--	"Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst."
+"gaper guile"	vapor-vile-vis rule	false	5	4	--	"You stare at the vapor but get no insight."
+"taper/tapir tile"	vapor-vile-vis rule	false	5	4	--	"No tile appears, but on the bright side, neither does a charging tapir."
 "fast fap"	in-gassed-gap rule	false	4	3	--	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here." [start gassed gap]
 "last lap"	in-gap-with-cap rule	false	4	3	--	"It will be the last lap one day. But you need a different action to get to this finality."
 "passed/past pap"	in-gassed-gap rule	false	4	3	--	"You don't need to look back on what a trashy adventure this has been. Well, not in front of me." [?? cap cast yet?]
@@ -140,6 +136,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "peel pear"	in-real-rear rule	false	--	--	if-rear-undone rule	"You have no fruit."
 "steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
+"lift liver"	in-rift-river rule	false	4	5	--	"You gain no nutritious meat nor uplifting advice." [start rift river]
 "swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn." [start tarry tile]
 "bind be"	tram-first-puzzle rule	false	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start trim tram]
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
@@ -156,7 +153,17 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mind malt"	mass-near rule	false	--	--	--	"The mind malt is gone. You have to rely on yourself!"
 "signed salt"	in-vined-vault rule	false	4	5		--	"Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though."
 "wined walt"	in-vined-vault rule	false	4	5	--	"A drinking buddy won't help here."
-"signing sore"	in-whining-war rule	false	7	5	--	"You make a rude gesture, for whatever good it does." [start whining war] [?? this is all wrong now]]
+"signing sore"	in-whining-war rule	false	7	5	--	"You make a rude gesture, for whatever good it does." [start whining war] [?? this may need to be fixed]
+"ho had"		in-so-sad rule	false	6	4	--	"You're trying to feel less in the dumps, not more." [start of general stuff that doesn't fit anywhere else]
+"mo mad"		in-so-sad rule	false	6	4	--	"Once the anger wore off, you might be even more lethargic."
+"co cad"		in-so-sad rule	false	6	4	--	"Nobody appears to commiserate with you."
+"grow grad"		in-so-sad rule	false	6	4	--	"You acquire no diploma."
+"po pad"		in-so-sad rule	false	6	4	--	"You don't need a depressing place to live."
+"lo lad"		in-so-sad rule	false	6	4	--	"Recalling a condescending adult's advice to you (or others) fails to help."
+"go gad"		in-so-sad rule	false	6	4	--	"Trying to shock yourself into action fails."
+"foe/fo fad"		in-so-sad rule	false	6	4	--	"You try to cinvince yourself it's a passing phase, but it doesn't work."
+"doh dad"		in-so-sad rule	false	6	4	--	"Blaming your parents fails to help."
+"pay prong"		in-way-wrong rule	false	6	4	--	"Buying things won't improve your lack of self-worth."
 
 section texts and decides
 
@@ -165,6 +172,8 @@ to decide whether passed-1:
 	no;
 
 section rules sorted alphabetically
+
+[xxmisrul]
 
 this is the clue-whoah-wit rule:
 	if grit-grown is true or player is not in Po' Pit, the rule fails;
@@ -178,6 +187,10 @@ this is the clue-whoah-wit rule:
 
 this is the clue-worst-wave rule:
 	if tool tap is off-stage, say "[leetclue of letminus]";
+
+this is the go-gate-vis rule: if go gate is touchable, the rule succeeds;
+
+this is the hat-or-mat rule: if hard hat is touchable or marred mat is touchable, the rule succeeds;
 
 this is the hell-horn-near rule:
 	if hell horn is touchable, the rule succeeds;
@@ -203,9 +216,15 @@ this is the in-po-pit rule: if player is in Po' Pit, the rule succeeds;
 
 this is the in-real-rear rule: if player is in Real Rear, the rule succeeds;
 
+this is the in-rift-river rule: if player is in rift river, the rule succeeds;
+
+this is the in-so-sad rule: if in-so-sad is true, the rule succeeds;
+
 this is the in-trim-tram rule: if player is in trim tram, the rule succeeds;
 
 this is the in-vined-vault rule: if player is in vined vault, the rule succeeds;
+
+this is the in-way-wrong rule: if in-way-wrong is true, the rule succeeds;
 
 this is the in-whining-war rule: if player is in Whining War, the rule succeeds;
 
@@ -224,6 +243,10 @@ this is the signable-loc rule:
 
 this is the tram-first-puzzle rule: if player is in trim tram and me-minded is false, the rule succeeds;
 
+this is the vapor-vile-vis rule: if vapor vile is touchable, the rule succeeds;
+
+[zzmisrul]
+
 section texts and decides
 
 to decide whether know-1:
@@ -231,10 +254,6 @@ to decide whether know-1:
 	no;
 
 section rules sorted alphabetically
-
-this is the go-gate-vis rule: if go gate is touchable, the rule succeeds;
-
-this is the hat-or-mat rule: if hard hat is touchable or marred mat is touchable, the rule succeeds;
 
 Very Vile Fairy File Mistakes ends here.
 
