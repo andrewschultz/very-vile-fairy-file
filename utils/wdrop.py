@@ -19,8 +19,6 @@ import stat
 import mytools as mt
 import __main__ as main
 
-insert_point = defaultdict(str)
-
 max_full_score = 0
 max_bonus = 0
 core_max = 0
@@ -34,7 +32,7 @@ verbose = True
 
 open_last_err = True
 
-print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
+print("NOTE do not run wdrop.py on its own--run rbr.py 4.")
 
 def usage(cmd="USAGE LIST"):
     print(cmd)
@@ -96,10 +94,6 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
             if re.search("^>.*\([u0-9]+\)", line):
                 cur_points += 1
                 fstream.write(new_points(line, cur_points, max_num = max_here))
-                if cur_points in insert_point:
-                    fstream.write(new_points(insert_point[cur_points].format(cur_points), cur_points+1, max_num = max_here))
-                    cur_points += 1
-                    inserts += 1
             elif re.search(r'^>.*\(x(-[0-9]+)?\)', line):
                 temp = new_points(line, cur_points, max_num = max_here)
                 if verbose: print("Updating x- line to", temp)
@@ -111,7 +105,6 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
                 fstream.write(line)
     fstream.close()
     if out_read_only: os.chmod(fout, stat.S_IRGRP|stat.S_IREAD|stat.S_IRUSR)
-    print(f, "twiddled to", fout, "with", inserts, "command insertion{:s}: {:s}.".format(i7.plur(inserts), ', '.join([str(x) + "=" + first_line(insert_point[x]) for x in insert_point])))
     if delete_after: os.remove(f)
 
 #
@@ -148,11 +141,6 @@ with open("story.ni") as file:
 
 if not (max_bonus and core_max): sys.exit("Failed to read in maximum and minimum full scores. Max={} Min={}. Bailing.".format(max_bonus, core_max))
 max_full_score = max_bonus
-
-with open("wdrop.txt") as file:
-    for (line_count, line) in enumerate(file, 1):
-        l = line.strip().split("\t")
-        insert_point[int(l[0])] = re.sub(r'\\n', "\n", l[1])
 
 warnings = []
 

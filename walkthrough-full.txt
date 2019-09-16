@@ -115,23 +115,19 @@ Okay, that stark store is suspiciously empty.
 
 > DARK DOOR (20)
 
-You feel tired and disappointed now. Way wrong. What to do?
-
-> STAY STRONG (21)
-
 Hmm. We can do something with the door.
 
-> MARK MORE (22)
+> MARK MORE (21)
 
 We don't need the weird way yet, but why not?
 
-> CLEARED CLAY (23)
+> CLEARED CLAY (22)
 
 > W
 
 History Hall has something to the west, eventually. But it can also become something else.
 
-> MYSTERY MALL (24)
+> MYSTERY MALL (23)
 
 > LISTEN
 
@@ -139,22 +135,22 @@ Oh, that's life. An even worse song crops up.
 
 You can get an additional optional point here for insulting the ganksta "cleverly."
 
-> WHATTA WANKSTA (25)
+> WHATTA WANKSTA (24)
 
 And you can also deal with the horrible music that replaced what you heard.
 
-> DIMD (26)
+> DIMD (25)
 
-> LOTS LAME (27)
+> LOTS LAME (26)
 
-Oh, you can also use Toe Tappin one way quickly...
+It's possible to use Toe Tappin one way quickly. This may give you clues for other ways to use it.
 
 There's a bonus-point way and a non-bonus-point way. Let's see the bonus-point way:
-> HO HAPPEN (28)
+> HO HAPPEN (27)
 
 And now the necessary way:
 
-> NO NAPPIN (29)
+> NO NAPPIN (28)
 
 Toe Tappin will be useful in other situations and puzzles throughout the game as well.
 
@@ -162,17 +158,11 @@ Toe Tappin will be useful in other situations and puzzles throughout the game as
 
 The marred mat doesn't look like it's worth buying, but ...
 
-> HARD HAT (30)
-
-You feel so sad, mo' mad.
-
-How do you regain positivity?
-
-> GLOW GLAD (31)
+> HARD HAT (29)
 
 And you can actually do something with the shy shawl, too. It is there mostly for practice. You can use it to get some good guesses to recharge the lurking lump, if you want, though if you have this walkthrough, that's probably not necessary.
 
-> LIE LOL (32)
+> LIE LOL (30)
 
 > E
 
@@ -186,25 +176,25 @@ And you can actually do something with the shy shawl, too. It is there mostly fo
 
 In the Shirk Shell, you need to do something to get the Jerk Gel.
 
-> WORK WELL (33)
+> WORK WELL (31)
 
 The Jerk Gel is handy for other stuff later.
 
 > E
 
-> LOFT LAND (34)
+> LOFT LAND (32)
 
 > W
 
-> DREAMING DULL (35)
+> DREAMING DULL (33)
 
 How to get rid of the worst wave in the curst cave?
 
-> FIRST FAVE (36)
+> FIRST FAVE (34)
 
 What can you get from the tool tap?
 
-> COOL CAP (37)
+> COOL CAP (35)
 
 This will come in handy later.
 
@@ -214,49 +204,59 @@ This will come in handy later.
 
 > E
 
-> SILENT SAIL (38)
+> SILENT SAIL (36)
 
-> BRIGHTENING BRIDGE (39)
+> BRIGHTENING BRIDGE (37)
 
-> BORING BOAT (40)
+> BORING BOAT (38)
 
 > ENTER BOAT
 
 Jake G may help you. But he's asleep!
 
-> WAKE WHEE (41)
+> WAKE WHEE (39)
 
 Now he wants to give you hospitality.
 
-> TAKE TEA (42)
+> TAKE TEA (40)
 
 Now he sort of expects payment...
 
 ... but you can get a last lousy point, first.
 
-> BREAK BRIE (43)
+> BREAK BRIE (41)
 
-> FAKE FEE (44)
+> FAKE FEE (42)
 
 Now you can go east to Lake Lap.
 
 > E
 
-> MAKE MAP (45)
+> MAKE MAP (43)
 
 So now you have a handy map. But Jake won't help you if he's your co ... co ... well, something.
 
-> CO CAPN (46)
+> CO CAPN (44)
 
 Now you two can take care of what is hissing.
 
-> SNAKE SNAP (47)
+> SNAKE SNAP (45)
 
 You find the cake cap in Lake Lap. Jake gets his rake wrap and flake flap, and it's all good.
 
 You automatically are sent back to Violent Vale, but now you will go somewhere else if you enter the boat.
 
 > ENTER BOAT
+
+Now you're all depressed! You have to fight through it two ways. First, to feel less way wrong...
+
+> STAY STRONG (46)
+
+Then, to feel that adventuring spirit ...
+
+> GLOW GLAD (47)
+
+Now Dean Duggan has something to teach you. The two commands below can be done in either order.
 
 > MEAN MUGGIN (48)
 

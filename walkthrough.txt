@@ -117,19 +117,15 @@ History Hall has something to the west, eventually. But it can also become somet
 
 > MYSTERY MALL (20)
 
-You feel tired and disappointed now. Way wrong. What to do?
-
-> STAY STRONG (21)
-
 > LISTEN
 
 Oh, that's life. An even worse song crops up.
 
-> LOTS LAME (22)
+> LOTS LAME (21)
 
-Oh, you can also use Toe Tappin one way quickly...
+It's possible to use Toe Tappin one way quickly. This may give you clues for other ways to use it.
 
-> NO NAPPIN (23)
+> NO NAPPIN (22)
 
 Toe Tappin will be useful in other situations and puzzles throughout the game as well.
 
@@ -137,7 +133,7 @@ Toe Tappin will be useful in other situations and puzzles throughout the game as
 
 The marred mat doesn't look like it's worth buying, but ...
 
-> HARD HAT (24)
+> HARD HAT (23)
 
 > E
 
@@ -151,25 +147,25 @@ The marred mat doesn't look like it's worth buying, but ...
 
 In the Shirk Shell, you need to do something to get the Jerk Gel.
 
-> WORK WELL (25)
+> WORK WELL (24)
 
 The Jerk Gel is handy for other stuff later.
 
 > E
 
-> LOFT LAND (26)
+> LOFT LAND (25)
 
 > W
 
-> DREAMING DULL (27)
+> DREAMING DULL (26)
 
 How to get rid of the worst wave in the curst cave?
 
-> FIRST FAVE (28)
+> FIRST FAVE (27)
 
 What can you get from the tool tap?
 
-> COOL CAP (29)
+> COOL CAP (28)
 
 This will come in handy later.
 
@@ -179,51 +175,55 @@ This will come in handy later.
 
 > E
 
-> SILENT SAIL (30)
+> SILENT SAIL (29)
 
-You feel so sad, mo' mad.
+> BRIGHTENING BRIDGE (30)
 
-How do you regain positivity?
-
-> GLOW GLAD (31)
-
-> BRIGHTENING BRIDGE (32)
-
-> BORING BOAT (33)
+> BORING BOAT (31)
 
 > ENTER BOAT
 
 Jake G may help you. But he's asleep!
 
-> WAKE WHEE (34)
+> WAKE WHEE (32)
 
 Now he wants to give you hospitality.
 
-> TAKE TEA (35)
+> TAKE TEA (33)
 
 Now he sort of expects payment...
 
-> FAKE FEE (36)
+> FAKE FEE (34)
 
 Now you can go east to Lake Lap.
 
 > E
 
-> MAKE MAP (37)
+> MAKE MAP (35)
 
 So now you have a handy map. But Jake won't help you if he's your co ... co ... well, something.
 
-> CO CAPN (38)
+> CO CAPN (36)
 
 Now you two can take care of what is hissing.
 
-> SNAKE SNAP (39)
+> SNAKE SNAP (37)
 
 You find the cake cap in Lake Lap. Jake gets his rake wrap and flake flap, and it's all good.
 
 You automatically are sent back to Violent Vale, but now you will go somewhere else if you enter the boat.
 
 > ENTER BOAT
+
+Now you're all depressed! You have to fight through it two ways. First, to feel less way wrong...
+
+> STAY STRONG (38)
+
+Then, to feel that adventuring spirit ...
+
+> GLOW GLAD (39)
+
+Now Dean Duggan has something to teach you. The two commands below can be done in either order.
 
 > MEAN MUGGIN (40)
 
