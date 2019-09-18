@@ -671,7 +671,7 @@ after lling gutta ganksta:
 
 chapter Toe Tappin Row Rappin (M)
 
-Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good and might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replced it is even worse.[or]already have the song in your head. Perhaps it will be useful to see things differently[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
+Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replced it is even worse.[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way;[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
@@ -1308,8 +1308,6 @@ check talktoing:
 
 chapter inventory
 
-after printing the name of jerk gel while taking inventory: say " (glowing globs)";
-
 after printing the name of We Whine while taking inventory: if sign-seen is true, say " (in which you can SEE SIGN)"
 
 check taking inventory:
@@ -1325,8 +1323,17 @@ check taking inventory:
 	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
 	the rule succeeds;
 
+to decide which number is toe-clued:
+	let temp be 0;
+	if tried-yet of "SO SAPPIN", increment temp;
+	if tried-yet of "NO NAPPIN", increment temp;
+	if tried-yet of "CO CAPN", increment temp;
+	if tried-yet of "GO GAPPIN", increment temp;
+	if tried-yet of "MO MAPPIN", increment temp;
+	decide on temp;
+
 to say toe-poss:
-	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if]"
+	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if][if toe-clued > 0]. You also found a riff you weren't ready for yet[end if]"
 
 check taking when player does not have big bag:
 	if number of things enclosed by the player > 3:
@@ -2825,8 +2832,7 @@ to check-lump-progress:
 	increment lump-count;
 	if lump-count is next-lump-level:
 		if player does not have lurking lump:
-			say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj][else if lurking lump]Thwup!
-			A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
+			say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj][else if lurking lump]Thwup! A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 			now player has lurking lump;
 		increment lump-charges;
 		decrease lump-count by next-lump-delta;

@@ -112,8 +112,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Not very practical." [start got gear hot here]
 "cake cap"	shore-shined rule	false	4	3	--	"No edible headgear appears." [start lake lap]
 "fake fap"	shore-shined rule	false	4	3	--	"You make a rude gesture, for whatever good it does."
-"woe/whoa/whoah whappin"	have-toe-tappin rule	2	6	--	"You don't need an exhortation to violence."
-"crow crappin"	have-toe-tappin rule	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but [Toe] is versatile enough. And this game isn't THAT juvenile.I hope."
+"woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence."
+"crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but [Toe] is versatile enough. And this game isn't THAT juvenile.I hope."
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That makes sense, but you can't imagine how it'd help you in your adventure."
 "flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
@@ -154,19 +154,19 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "hind halt"	in-vined-vault rule	false	4	5	--	"You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop."
 "lean lass"	mass-near rule	false	5	5	--	"This isn't that sort of game."
 "mind malt"	mass-near rule	false	--	--	--	"The mind malt is gone. You have to rely on yourself!"
-"signed salt"	in-vined-vault rule	false	4	5		--	"Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though."
+"signed salt"	in-vined-vault rule	false	4	5	--	"Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though."
 "wined walt"	in-vined-vault rule	false	4	5	--	"A drinking buddy won't help here."
 "signing sore"	in-whining-war rule	false	7	5	--	"You make a rude gesture, for whatever good it does." [start whining war] [?? this may need to be fixed]
-"ho had"		in-so-sad rule	false	6	4	--	"You're trying to feel less in the dumps, not more." [start of general stuff that doesn't fit anywhere else]
-"mo mad"		in-so-sad rule	false	6	4	--	"Once the anger wore off, you might be even more lethargic."
-"co cad"		in-so-sad rule	false	6	4	--	"Nobody appears to commiserate with you."
-"grow grad"		in-so-sad rule	false	6	4	--	"You acquire no diploma."
-"po pad"		in-so-sad rule	false	6	4	--	"You don't need a depressing place to live."
-"lo lad"		in-so-sad rule	false	6	4	--	"Recalling a condescending adult's advice to you (or others) fails to help."
-"go gad"		in-so-sad rule	false	6	4	--	"Trying to shock yourself into action fails."
-"foe/fo fad"		in-so-sad rule	false	6	4	--	"You try to cinvince yourself it's a passing phase, but it doesn't work."
-"doh dad"		in-so-sad rule	false	6	4	--	"Blaming your parents fails to help."
-"pay prong"		in-way-wrong rule	false	6	4	--	"Buying things won't improve your lack of self-worth."
+"ho had"	in-so-sad rule	false	6	4	--	"You're trying to feel less in the dumps, not more." [start of general stuff that doesn't fit anywhere else]
+"mo mad"	in-so-sad rule	false	6	4	--	"Once the anger wore off, you might be even more lethargic."
+"co cad"	in-so-sad rule	false	6	4	--	"Nobody appears to commiserate with you."
+"grow grad"	in-so-sad rule	false	6	4	--	"You acquire no diploma."
+"po pad"	in-so-sad rule	false	6	4	--	"You don't need a depressing place to live."
+"lo lad"	in-so-sad rule	false	6	4	--	"Recalling a condescending adult's advice to you (or others) fails to help."
+"go gad"	in-so-sad rule	false	6	4	--	"Trying to shock yourself into action fails."
+"foe/fo fad"	in-so-sad rule	false	6	4	--	"You try to cinvince yourself it's a passing phase, but it doesn't work."
+"doh dad"	in-so-sad rule	false	6	4	--	"Blaming your parents fails to help."
+"pay prong"	in-way-wrong rule	false	6	4	--	"Buying things won't improve your lack of self-worth."
 
 section texts and decides
 
@@ -177,6 +177,8 @@ to decide whether passed-1:
 section rules sorted alphabetically
 
 [xxmisrul]
+
+this is the bot-board-vis rule: if bot board is touchable, the rule succeeds;
 
 this is the clue-whoah-wit rule:
 	if grit-grown is true or player is not in Po' Pit, the rule fails;
@@ -191,9 +193,13 @@ this is the clue-whoah-wit rule:
 this is the clue-worst-wave rule:
 	if tool tap is off-stage, say "[leetclue of letminus]";
 
+this is the coral-cage-around rule: if coral cage is touchable, the rule succeeds;
+
 this is the go-gate-vis rule: if go gate is touchable, the rule succeeds;
 
 this is the hat-or-mat rule: if hard hat is touchable or marred mat is touchable, the rule succeeds;
+
+this is the have-toe-tappin rule: if player has toe tappin row rappin, the rule succeeds;
 
 this is the hell-horn-near rule:
 	if hell horn is touchable, the rule succeeds;
@@ -240,8 +246,6 @@ this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
 this is the shore-shined rule: if player is in Whining War and shore-shine is true, the rule succeeds;
-
-this is the have-toe-tappin rule: if player has toe tappin row rappin, the rule succeeds;
 
 this is the signable-loc rule:
 	if location of player is signable, the rule succeeds;
