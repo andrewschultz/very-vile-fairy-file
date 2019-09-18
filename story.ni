@@ -1098,7 +1098,7 @@ volume Vale Verminous
 
 part Gassed Gap 0,4
 
-Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if].". cht of Gassed Gap is partminus. [-> cast cap]
+Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]. [if evidence-pieces < 3]However, it's still too intimidating[else]You feel confident you can make it through[end if].". cht of Gassed Gap is partminus. [-> cast cap]
 
 Gassed Gap is north of Foe Field. cht of gassed gap is partminus. [-> last lap]
 
@@ -1111,7 +1111,7 @@ gap-go is a truth state that varies.
 check going north in Gassed Gap:
 	if Reeker Russell is off-stage, say "Oh, it's much too intimidating[if gap-go is true], even though you have a courageous song in your head[end if]." instead;
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
-	if gap-go is false, say "You whistle in fear. You need some sort of motivation." instead;
+	if gap-go is false, say "You whistle in fear. You need some sort of motivation. One last song, maybe" instead;
 	unless evidence-pieces is 3, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
 	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
 	isle-max-score;
@@ -1120,7 +1120,6 @@ to isle-max-score:
 	now max-poss is isle-score + score;
 
 to decide which number is evidence-pieces:
-	if debug-state is true, say "Binder: [whether or not player has binder] Hata: [sign-seen] Mage: [whether or not coral cage is moot].";
 	decide on boolval of sign-seen + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
 
 [?? trusty tap / crusty cap]
@@ -2118,6 +2117,7 @@ the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
 the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
 the thing-hint-rule of paper pile is paper-pile-hint rule.
 the thing-hint-rule of peeling pier is peeling-pier-hint rule.
+the thing-hint-rule of poor ponder for fonder is poor-ponder-for-fonder rule.
 the thing-hint-rule of prong part is prong-part-hint rule.
 the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
 the thing-hint-rule of row writ is row-writ-hint rule.
@@ -2168,7 +2168,7 @@ this is the all-caps-hint rule:
 		say "You can use the jerk gel to glue the hats together, but you need the right command.";
 
 this is the backed-binder-hint rule:
-	say "[one of]The backed binder is not useful immediately. But it can gain evidence.[or]It will accumulate evidence as you walk through. Once you have enough, you can deal with more major bosses.[stopping]" [?? too general]
+	say "[if gassed gap is unvisited]The backed binder is not useful immediately. But it is part of what you need to get to the final area.[else]You will automatically use the backed binder to get past the gassed gap[end if].";
 
 this is the beer-bull-hint rule:
 	say "Say FEARFUL to get the beer bull going, then DEAR DULL after it chases you to the whining war."
@@ -2367,6 +2367,9 @@ this is the peeling-pier-hint rule:
 	if healed-here is true, the rule fails;
 	say "The peeling pier is just here to bring home that there's a lot to do in the Real Rear, but ... the pier is not quite right.";
 	process the real-rear-hint rule;
+
+this is the poor-ponder-for-fonder rule:
+	say "[one of][Poor] isn't a good read. It doesn't really put the reader where the history was[or]So you have to force what [poor] does. Imagine being there[or]YOU'RE (or YORE) YONDER[stopping].";
 
 this is the prong-part-hint rule:
 	say "[one of]The prong part is part of the wrong art, so future clues will refer you there.[or][stopping]";

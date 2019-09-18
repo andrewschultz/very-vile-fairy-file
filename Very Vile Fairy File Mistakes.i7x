@@ -36,9 +36,6 @@ snow snit
 co kit
 say soak
 ##################toe tappin
-slow slappin
-woe whappin
-crow crappin #bad bird had heard: gad, gird? Tad
 yo yappin
 turk tell
 ##############gots game
@@ -91,7 +88,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "fry fall"	signable-loc rule	false	--	--	--	"The wry wall remains upright."
 "pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
 "try tall"	signable-loc rule	false	--	--	--	"The wry wall does not grow."
-"bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start airy isle]
+"cot cord"	bot-board-vis rule	false	--	--	--	"A pull down bed is not what you need now that the action is heating up!" [start airy isle]
 "crow crate"	go-gate-vis rule	false	--	--	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus]."
 "foe fate"	go-gate-vis rule	false	--	--	--	"You are nowhere near the end.[leetclue of partplus]"
 "know/no nate"	go-gate-vis rule	false	--	--	--	"Nobody named Nate appears to help you through the go gate.[if know-1][leetclue of leteq][else][leetclue of partplus][end if]"
@@ -115,6 +112,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Not very practical." [start got gear hot here]
 "cake cap"	shore-shined rule	false	4	3	--	"No edible headgear appears." [start lake lap]
 "fake fap"	shore-shined rule	false	4	3	--	"You make a rude gesture, for whatever good it does."
+"woe/whoa/whoah whappin"	have-toe-tappin rule	2	6	--	"You don't need an exhortation to violence."
+"crow crappin"	have-toe-tappin rule	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but [Toe] is versatile enough. And this game isn't THAT juvenile.I hope."
+"slow slappin"	have-toe-tappin rule	false	2	6	--	"That makes sense, but you can't imagine how it'd help you in your adventure."
+"flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
 "crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones." [start po' pit] [?? all this needs to be tested a lot]
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
@@ -137,7 +138,9 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
 "lift liver"	in-rift-river rule	false	4	5	--	"You gain no nutritious meat nor uplifting advice." [start rift river]
-"swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn." [start tarry tile]
+"oral age"	coral-cage-around rule	false	5	4	--	"Someone here is really old-school. As if text adventures weren't retro enough!" [start store all stage]
+"bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start tarry tile]
+"swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn."
 "bind be"	tram-first-puzzle rule	false	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start trim tram]
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
 "signed see"	tram-first-puzzle rule	false	4	2	--	"You're still reacting to FIND FEE. You need to look inwards."
@@ -237,6 +240,8 @@ this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
 this is the shore-shined rule: if player is in Whining War and shore-shine is true, the rule succeeds;
+
+this is the have-toe-tappin rule: if player has toe tappin row rappin, the rule succeeds;
 
 this is the signable-loc rule:
 	if location of player is signable, the rule succeeds;
