@@ -2,6 +2,8 @@
 
 [d'oh done fo' fun]
 
+[?? run through all possible directions you can't go]
+
 [note that arrows in comments are for vvm.py to detect that, yes, the clues indeed work right. So don't delete them!]
 
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
@@ -356,7 +358,7 @@ after looking in Wet Wood for the first time:
 
 part Rift River
 
-Rift River is a room in Worst Whew. "The rift river blocks you, and you can't go back, and you don't know which direction to go in, anyway. Though you managed to GET GOOD to get out of the wood, you'll need a different sort of boost to get around the river. It's too wide to cross, and you don't want to go back.". cht of rift river is leteq. [-> gift giver]
+Rift River is a room in Worst Whew. "The rift river blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of rift river is leteq. noway-text of Rift River is "Directions don't seem to work here. You feel like a guide would be helpful.". [-> gift giver]
 
 chapter Mind Malt
 
@@ -551,8 +553,6 @@ cull-ceased is a truth state that varies.
 
 least-loss is a truth state that varies.
 
-beast-boss-min is a number that varies. beast-boss-min is 32.
-
 chapter full feast
 
 The full feast is a thing. "A full feast lies here. You can't eat it all by yourself, and you have no way to move it on your own.". description is "It's what remains of the bull beast, and it's surprisingly tasty looking. Pre-cooked, too! Because you sure burned it with your magic words, there. Ahaha.". cht of full feast is partplus. [->pull pieced]
@@ -561,7 +561,7 @@ check taking the full feast: say "Too much at once." instead;
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too." [-> dark door]
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". noway-text of Stark Store is "It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.". [-> dark door]
 
 check going west in Stark Store:
 	if dark door is off-stage, say "Maybe there's something there. This can't just be a dead end." instead;
@@ -1620,7 +1620,7 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "First, thanks to Wade Clarke and Arthur DiBianca for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It helps writing be an adventure.";
+	say "First, thanks to Wade Clarke, Arthur DiBianca and Anssi Räisänen for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
 	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but I loved the streaks that github showed.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -1636,7 +1636,7 @@ understand the command "about" as something new.
 understand "about" as abouting.
 
 carry out abouting:
-	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break]OTHERS will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
+	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break][b]OTHERS[r] will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
 	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
 	the rule succeeds;
 
@@ -1656,7 +1656,7 @@ carry out othersing:
 
 book hinting
 
-the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on, notify when half-right) and [b]NAH NAFF[r] [b]HA HALF[r] is currently set to [on-off of ha-half]."
+the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]."
 
 understand "cheat/churner" and "cheat churner" as leet learner.
 
@@ -1746,10 +1746,14 @@ carry out lling:
 report lling:
 	if noun is We Whine and sign-seen is false, say "[line break]Well, it's a bit of a yellowish-brown, actually.";
 
+ever-leet-clue is a truth state that varies.
+
 to say leetclue of (x - a cheattype):
 	if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x]";
+	if fun fen is visited and ever-leet-clue is true, continue the action;
+	now ever-leet-clue is true;
 	if leetcool is 0:
-		say ". Once you figure out what to do, you may wish to remember how [the player's command in upper case] + [scancol of x] = what you needed";
+		say ". Once you figure out what to do, you may wish to remember how [the player's command in upper case] + [scancol of x] = what you needed--along with other things you've found find";
 		now leetcool is a random number between 3 and 6;
 	else:
 		decrement leetcool;
@@ -2641,7 +2645,13 @@ found-fit is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if blaze-maze is true]Minding Maze[else]Blinding Blaze[end if]". description is "[if blaze-maze is false]This is such a terrible blaze. You'll have to put it out, or you can only go back west[else if maze-mapped is false]There's a maze ahead. You'll want to plan out fully how to deal with it[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-maze is true]. You can also just go back west[end if].". [-> minding maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if blaze-maze is true]Minding Maze[else]Blinding Blaze[end if]". description is "[if blaze-maze is false]This is such a terrible blaze. You'll have to put it out, or you can only go back west[else if maze-mapped is false]There's a maze ahead. You'll want to plan out fully how to deal with it[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-maze is true]. You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
+
+to say blazno:
+	if stuck stair is off-stage:
+		say "You might get lost in the [if blaze-maze is true]m[else]bl[end if]aze that way. You can go back west, though";
+	else:
+		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operat the stuck stair[end if]. No directions except exiting back west were, or are, needed.";
 
 blaze-maze is a truth state that varies.
 
@@ -2734,7 +2744,7 @@ book parser errors
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	if player is in lake lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
-	say "There's nothing here like that. You never need to refer directly to a room name, either."
+	say "You can't see any objects like that here. Note that if you're trying to refer directly to the room name, you never need to."
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "Blank blather? Rank! Rather!"
@@ -2781,7 +2791,7 @@ this is the verb-checker rule:
 		if my-count is 2:
 			process the ver-rule entry;
 			if the rule failed:
-				continue the action;
+				next;
 			else if the rule succeeded:
 				if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
 				if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
@@ -2807,11 +2817,11 @@ this is the verb-checker rule:
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
 			now vc-dont-print is true;
-			now local-ha-half is true;
 			process the ver-rule entry;
 			if the rule failed:
 				now vc-dont-print is false;
 				next;
+			now local-ha-half is true;
 			now vc-dont-print is false;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
 			next;
