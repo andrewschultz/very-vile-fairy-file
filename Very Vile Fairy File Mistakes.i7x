@@ -117,7 +117,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That makes sense, but you can't imagine how it'd help you in your adventure."
 "flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
-"crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones." [start po' pit] [?? all this needs to be tested a lot]
+"clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded" [start po' pit] [?? all this needs to be tested a lot]
+"crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones."
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
 "foe fit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Complaining and speculation about who or what put you there won't help."
 "go get/git"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You have no-one to order around, not that it'd do any good."

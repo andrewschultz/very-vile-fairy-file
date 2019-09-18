@@ -152,6 +152,8 @@ core-max is a number that varies. core-max is 81.
 
 max-bonus is a number that varies. max-bonus is 11.
 
+cur-bonus is a number that varies. cur-bonus is 0.
+
 isle-score is a number that varies. isle-score is 7.
 
 core-score is a number that varies. core-score is 0.
@@ -230,7 +232,7 @@ instead of doing something with a boring thing:
 
 volume going nowhere
 
-the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
+the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][one of][paragraph break]It looks too sturdy to manipulate. But maybe trying would be good exercise.[or][stopping]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
 
 nother-room is a room that varies.
 
@@ -439,7 +441,7 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den. You don't fear ambush by a hun hen. There's also a wry wall here. The Done Den [if tree-down is false]you just left [end if]is also around. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den[one of] you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way through the murky bit to the north. Well, a much safer one." instead;
@@ -1461,7 +1463,7 @@ chapter score
 
 check requesting the score:
 	now vc-dont-print is true;
-	say "You have scored a total of [score] out of [maximum score] points in [turn count] moves. You have found [max-bonus] optional points so far and need [core-max] to win.";
+	say "You have scored a total of [score] out of [maximum score] points and need [core-max] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
 	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].";
 	let dh be doable-hinted;
 	let fh be future-hinted;
@@ -1481,19 +1483,23 @@ this is the score and thinking changes rule:
 
 to decide which number is doable-hinted:
 	let temp be 0;
+	now vc-dont-print is true;
 	repeat through the table of forlaters:
 		if ready-to-hint entry is true:
 			process the can-do-now entry;
 			if the rule succeeded:
 				if is-done entry is false, increment temp;
+	now vc-dont-print is false;
 	decide on temp;
 
 to decide which number is future-hinted:
 	let temp be 0;
+	now vc-dont-print is true;
 	repeat through the table of forlaters:
 		if ready-to-hint entry is true:
 			process the can-do-now entry;
 			if the rule failed, increment temp;
+	now vc-dont-print is false;
 	decide on temp;
 
 [see header file for table of ranks]
@@ -1536,7 +1542,7 @@ to say table-of-color-hints:
 
 table of color clues
 my-text	my-color
-"   LEET LEARNER  "	"grey"
+"   LEET LEARNER  "	"grey, with arrows to each of the words and colors below"
 "CONCEIT CONCERNER"	"blue"
 "  CHEAT CHURNER  "	"green"
 "   MEET MOURNER  "	"yellow"
@@ -1603,7 +1609,7 @@ carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
-	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [on-off of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
+	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
 	if player has Toe Tappin, say "[2da]You can also [b]SING[r] [Toe Tappin] to see if it might be useful, as a small clue, or LL TOE for further hints.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
@@ -1749,6 +1755,7 @@ report lling:
 ever-leet-clue is a truth state that varies.
 
 to say leetclue of (x - a cheattype):
+	if shut-scan is true, continue the action;
 	if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x]";
 	if fun fen is visited and ever-leet-clue is true, continue the action;
 	now ever-leet-clue is true;
@@ -2482,7 +2489,7 @@ this is the wry-wall-hint rule:
 	say "The wry wall is simply there to provide amusing deaths.";
 
 this is the zig-zag-rig-rag-hint rule:
-	say "[one of]The zig zag rig rag can actually be simplified[or]The leet learner flags the rag as yellow, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremelty practical for carrying a lot of things[or]BIG BAG[stopping].";
+	say "[one of]The zig zag rig rag can be changed with a simple command[or]The leet learner flags the rag as yellow, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremelty practical for carrying a lot of things[or]BIG BAG[stopping].";
 	the rule succeeds;
 
 [zzthr]
@@ -2742,21 +2749,32 @@ after reading a command:
 
 book parser errors
 
-Rule for printing a parser error when the latest parser error is the can't see any such thing error:
-	if player is in lake lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
-	say "You can't see any objects like that here. Note that if you're trying to refer directly to the room name, you never need to."
-
-Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	say "Blank blather? Rank! Rather!"
-
-the clue half right words rule is listed first in the for printing a parser error rulebook.
-
 Rule for printing a parser error (this is the clue half right words rule):
 	abide by the verb-checker rule;
 	abide by the mistake-checker rule;
 	if in-so-sad is true or in-way-wrong is true:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
+		the rule succeeds;
 	continue the action;
+
+Rule for printing a parser error (this is the check for room name in player command rule):
+	repeat with X running from 1 to the number of words in the player's command:
+		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
+			say "It looks like you may have tried to refer to the room name, or parrt of it. You never need to, directly.";
+			the rule succeeds;
+	continue the action;
+
+Rule for printing a parser error when the latest parser error is the can't see any such thing error:
+	if player is in lake lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
+	if player is in wet wood and word number 1 in the player's command is "get", continue the action;
+	say "You can't see any objects like that here.";
+
+Rule for printing a parser error when the latest parser error is the i beg your pardon error:
+	say "Blank blather? Rank! Rather!"
+
+the check for room name in player command rule is listed first in the for printing a parser error rulebook.
+
+the clue half right words rule is listed before the check for room name in player command rule in the for printing a parser error rulebook.
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
 	if debug-state is true, say "[the latest parser error].";
@@ -2771,6 +2789,7 @@ to up-which (ts - a truth state):
 		up-reg;
 	else:
 		up-min;
+		increment cur-bonus
 
 this is the verb-checker rule:
 	let local-ha-half be false;
@@ -2828,7 +2847,6 @@ this is the verb-checker rule:
 	if local-ha-half is true:
 		say "The HA HALF button lights up on your Leet Learner.";
 		the rule succeeds;
-	if debug-state is true, say "OOPS if we're not in a test.";
 
 vc-dont-print is a truth state that varies.
 
@@ -2848,7 +2866,7 @@ to check-lump-progress:
 		decrease lump-count by next-lump-delta;
 		increase next-lump-level by next-lump-delta;
 
-the lurking lump is a thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP if anything is baffling you."
+a lurking lump is a thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you."
 
 this is the mistake-checker rule:
 	repeat through table of mistake substitutions:
@@ -3587,7 +3605,7 @@ this is the vr-full-feast rule:
 this is the vc-get-good rule:
 	if player is not in wet wood:
 		if print-why-fail, vcp "You already managed to GET GOOD.";
-		continue the action;
+		the rule fails;
 	the rule succeeds;
 
 this is the vr-get-good rule:
@@ -3860,7 +3878,7 @@ this is the vr-loft-land rule:
 	now zap-core-entry is true;
 	if ever-loft is false:
 		now ever-loft is true;
-		now loft-land is true;
+	now loft-land is true;
 	now Curst Cave is mapped west of Soft Sand;
 	now Soft Sand is mapped east of Curst Cave;
 
@@ -4281,7 +4299,7 @@ this is the vr-so-sappin rule:
 	process the check-sing-max rule;
 
 this is the vc-soft-sand rule:
-	if player is not in soft sand, the rule fails;
+	if player is not in soft sand or ever-loft is false, the rule fails;
 	if loft-land is false:
 		vcp "You're already on the Soft Sand.";
 		continue the action;
