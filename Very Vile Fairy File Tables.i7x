@@ -291,7 +291,7 @@ this is the can-mining-more rule:
 	if full feast is not moot, the rule fails;
 
 this is the can-mo-mappin rule:
-	if blaze-maze is true, the rule succeeds;
+	if blaze-ways is true, the rule succeeds;
 	the rule fails;
 
 this is the can-moral-mage rule:

@@ -441,7 +441,7 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den[one of] you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way through the murky bit to the north. Well, a much safer one." instead;
@@ -563,7 +563,7 @@ check taking the full feast: say "Too much at once." instead;
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]Nothing's here, but there should be something[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". noway-text of Stark Store is "It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.". [-> dark door]
+Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]It's far too empty here! You can't have hit a dead end so soon[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". noway-text of Stark Store is "It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.". [-> dark door]
 
 check going west in Stark Store:
 	if dark door is off-stage, say "Maybe there's something there. This can't just be a dead end." instead;
@@ -641,7 +641,7 @@ to say mystdesc:
 	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. There's mall music in the air you can LISTEN to[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
 
 to say histdesc:
-	say "[one of]Something called [or][stopping]Fussed Folks lies here for your amusement[if poor ponder is in History Hall]. A work called Poor Ponder seems, or is trying to seem, more important[end if]"
+	say "[one of]Something called [or][stopping]Fussed Folks Just Jokes lies here for your amusement[if poor ponder is in History Hall]. A work called Poor Ponder seems, or is trying to seem, more important[end if]"
 
 check going west in History Hall: [gutta ganksta blocks you]
 	if ever-mall is true:
@@ -651,7 +651,7 @@ check going west in History Hall: [gutta ganksta blocks you]
 
 section truth states fpr puzzles/map
 
-mistmall is a truth state that varies. [are we in the mall or the hall?]
+mistmall is a truth state that varies. mistmall is true. [are we in the mall or the hall?]
 
 ever-mall is a truth state that varies. [have we ever flipped to the mall?]
 
@@ -700,6 +700,8 @@ check taking Poor Ponder: say "You can figure out its inner meaning right here."
 chapter fussed folks (H)
 
 Fussed Folks Just Jokes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
+
+check taking Fussed Folks: say "It's pretty obviously got nothing concrete to help you. It's just for entertainment." instead;
 
 chapter Mean Moe's (M)
 
@@ -948,7 +950,7 @@ instead of doing something when in-so-sad is true:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here[if ever-loft is true]. Or you can change back to [soft-loft of false][end if].". [-> loft land] [loft land->soft sand]
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here[if ever-loft is true]. Or you can change back to [soft-loft of false][else]. But ... well, it also feels a bit low. It seems like there's something way high above to the west[end if].". [-> loft land] [loft land->soft sand]
 
 to say soft-loft of (ts - a truth state): say "[if loft-land is ts]Loft Land[else]Soft Sand[end if]".
 
@@ -1247,7 +1249,7 @@ check singing:
 	if nap-no is false, say "[Toe] bounces in your head, making you feel a little more awake. But maybe you can do better." instead;
 	if gap-go is false and player is in Gassed Gap, say "You sing a song, internally, about passing the gap to the north." instead; [now cht of toe tappin is partminus] [->go gappin]
 	if jake-fee is true and jake-cocapn is false, say "You conjure up a song about you and Jake being cemented as equals." instead; [now cht of toe tappin is letminus] [->co capn]
-	if maze-mapped is false and player is in blinding blaze and blaze-maze is true, say "You whistle a tune about going through the maze. It makes the usual boring methods seem more interesting." instead; [now cht of toe tappin is partminus] [->mo mappin]
+	if maze-mapped is false and player is in blinding blaze and blaze-ways is true, say "You whistle a tune about going through the maze. It makes the usual boring methods seem more interesting." instead; [now cht of toe tappin is partminus] [->mo mappin]
 	if player is in whining war and war-sapped is false, say "You whistle a tune about not wanting to complain any more, because it's too exhausting." instead; [now cht of toe tappin is partminus] [->so sappin]
 	say "[Toe] bounces around in your head but offers no new constructive possibilities[if hap-ho is false], though there's probably some silly general motivation you can access for fun[end if]." instead;
 
@@ -1464,7 +1466,7 @@ chapter score
 check requesting the score:
 	now vc-dont-print is true;
 	say "You have scored a total of [score] out of [maximum score] points and need [core-max] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
-	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank][line break].";
+	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].[line break]";
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0:
@@ -1851,11 +1853,6 @@ to decide whether should-mug-first:
 
 section hint room rule definitions
 
-when play begins:
-	repeat with X running through rooms:
-		if map region of X is Poorly Penned or map region of X is Get a Guess, next;
-		if room-hint-rule of X is trivially false rule, say "Need to hint [x].";
-
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
@@ -1908,8 +1905,8 @@ this is the been-buggin-hint rule:
 	the rule succeeds;
 
 this is the blinding-blaze-hint rule:
-	if blaze-maze is true, the rule fails;
-	say "[one of]The blinding blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become a MINDING MAZE[stopping].";
+	if blaze-ways is true, the rule fails;
+	say "[one of]The blinding blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become WINDING WAYS. There are actually three acceptable answers here[or]WINDING WAYS, MINDING MAZE or FINDING PHASE[stopping].";
 	the rule succeeds;
 
 this is the creased-cross-hint rule:
@@ -2656,7 +2653,7 @@ the mild mead is a thing. description is "It probably tastes gross and is not ve
 
 part Pit Pound 1,3
 
-Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-maze is false]There's a blaze to the east that may be trickier to visit, though[else]Why, you could even deal with the maze to the east[end if]." [->fit found]
+Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
 
 A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menachingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
 
@@ -2668,19 +2665,27 @@ found-fit is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if blaze-maze is true]Minding Maze[else]Blinding Blaze[end if]". description is "[if blaze-maze is false]This is such a terrible blaze. You'll have to put it out, or you can only go back west[else if maze-mapped is false]There's a maze ahead. You'll want to plan out fully how to deal with it[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-maze is true]. You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with eveyrthing you can, here[end if][if blaze-ways is true]. You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
 
 to say blazno:
+	if blaze-ways is false:
+		say "You can't see any way other than back west";
 	if stuck stair is off-stage:
-		say "You might get lost in the [if blaze-maze is true]m[else]bl[end if]aze that way. You can go back west, though";
+		say "You explore the minding maze a bit, but you get frustrated quickly. You need some support, support from inside you and not related to this location, to make it through smoothly and happily";
 	else:
 		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operat the stuck stair[end if]. No directions except exiting back west were, or are, needed.";
 
-blaze-maze is a truth state that varies.
+blaze-ways is a truth state that varies.
 
 maze-mapped is a truth state that varies.
 
 check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
+
+chapter minding maze
+
+the minding maze is scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
+
+check entering minding maze: try going east instead;
 
 chapter stuck stair
 
@@ -2716,6 +2721,7 @@ rule for showaltverbsing:
 	say "[2da]BUMPED BUSTER or DUMPED DUSTER could've cleared the clumped cluster.";
 	say "[2da]WHAT A WANKSTA or WHATTA WANKSTA would've annoyed the Gutta Ganksta.";
 	say "[2da]KNEEL NEAR, FEEL FEAR, DEAL DEAR and HEAL HERE could've had an ING because of the Ceiling Seer.";
+	say "[2da]You could've disersed the blinding blaze with WINDING WAYS, MINDING MAZE or FINDING PHASE.";
 	say "[2da]You could've found the LUCK LAIR or the SNUCK SNARE.";
 	say "[2da]SILENT SAIL or SILENT SALE could've quieted the Violent Vale.";
 	say "[2da]CULL CEASED or LUL LEAST could've taken down the Bull Beast.";
@@ -2858,17 +2864,21 @@ this is the verb-checker rule:
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
 			now vc-dont-print is true;
+			now already-rhymed-this is false;
 			process the ver-rule entry;
 			if the rule failed:
 				now vc-dont-print is false;
 				next;
-			now local-ha-half is true;
 			now vc-dont-print is false;
+			if already-rhymed-this is true, break;
+			 now local-ha-half is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
 			next;
 	if local-ha-half is true:
 		say "The HA HALF button lights up on your Leet Learner.";
 		the rule succeeds;
+
+already-rhymed-this is a truth state that varies.
 
 vc-dont-print is a truth state that varies.
 
@@ -3046,7 +3056,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "near"	"null"	true	true	false	vc-near-null rule	vr-near-null rule	--
 "sit"	"sound"	false	true	false	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
 "fit"	"found"	true	true	false	vc-fit-found rule	vr-fit-found rule	--
-"minding"	"maze"	false	true	false	vc-minding-maze rule	vr-minding-maze rule	-- [start blinding blaze]
+"winding|minding|finding"	"ways|maze|phase"	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase" [start blinding blaze]
 "mo"	"mappin"	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--
 "luck|snuck"	"lair|snare"	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
 "brightening"	"bridge"	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
@@ -3164,12 +3174,16 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 to vcp (t - text): [verb conditional print]
 	if vc-dont-print is false, say "[t][line break]";
 
+to vcal (t - text): [verb conditional print]
+	now already-rhymed-this is true;
+	if vc-dont-print is false, say "[t][line break]";
+
 section vc vr rules [xxvcvr]
 
 this is the vc-appealing-appear rule:
 	if player is not in real rear, the rule fails;
 	if appeal-appear is true:
-		vcp "The peeling pier already looks better.";
+		vcal "The peeling pier already looks better.";
 		continue the action;
 	the rule succeeds;
 
@@ -3191,7 +3205,7 @@ this is the vr-backed-binder rule:
 this is the vc-beaker-bustle rule:
 	if reeker russell is not touchable, the rule fails;
 	if beaker-yet is true:
-		vcp "You already did that!";
+		vcal "You already did that!";
 		continue the action;
 	the rule succeeds;
 
@@ -3203,7 +3217,7 @@ this is the vr-beaker-bustle rule:
 this is the vc-beast-boss rule:
 	if player is not in Creased Cross, the rule fails;
 	if Bull Beast is not off-stage:
-		vcp "You already did.";
+		vcal "You already did.";
 		continue the action;
 	if player does not have gold guard:
 		vcp "You don't feel armed for that, yet.";
@@ -3225,7 +3239,7 @@ this is the vr-beast-boss rule:
 
 this is the vc-big-bag rule:
 	if player has big bag:
-		vcp "You already made the big bag.";
+		vcal "You already made the big bag.";
 		continue the action;
 	if Fun Fen is unvisited:
 		clue-later "BIG BAG";
@@ -3243,10 +3257,10 @@ this is the vr-big-bag rule:
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
 	if boring boat is moot:
-		vcp "You don't need to bring the boring boat back.";
+		vcal "You don't need to bring the boring boat back.";
 		continue the action;
 	if boring boat is in violent vale:
-		vcp "The boat is already boring and practical enough.";
+		vcal "The boat is already boring and practical enough.";
 		continue the action;
 	the rule succeeds;
 
@@ -3259,7 +3273,7 @@ this is the vr-boring-boat rule:
 this is the vc-break-brie rule:
 	if jake is not touchable, the rule fails;
 	if jake-brie is true:
-		vcp "Hey! Don't get greedy, now.";
+		vcal "Hey! Don't get greedy, now.";
 		continue the action;
 	the rule succeeds;
 
@@ -3316,7 +3330,7 @@ this is the vr-bury-bile rule:
 this is the vc-cast-cap rule:
 	if player is not in gassed gap, the rule fails;
 	if cool cap is moot:
-		vcp "The cap has been cast.";
+		vcal "The cap has been cast.";
 		continue the action;
 	if extra-cool-cap is false:
 		let N be the number of gaphats enclosed by the player;
@@ -3342,7 +3356,7 @@ this is the vr-cast-cap rule:
 this is the vc-cleared-clay rule:
 	if player is not in Stark Store, the rule fails;
 	if weird way is moot:
-		vcp "The clay is cleared enough.";
+		vcal "The clay is cleared enough.";
 		continue the action;
 	the rule succeeds;
 
@@ -3360,7 +3374,7 @@ this is the vc-co-capn rule:
 		clue-later "CO CAPN";
 		continue the action;
 	if jake-cocapn is true:
-		vcp "Jake already is.";
+		vcal "Jake already is.";
 		continue the action;
 	the rule succeeds;
 
@@ -3407,7 +3421,7 @@ this is the vc-cull-ceased rule:
 		vcp "You need to find a way to restore your health.";
 		continue the action;
 	if bull beast is boring:
-		vcp "Don't brag too much, now.";
+		vcal "Don't brag too much, now.";
 		continue the action;
 	the rule succeeds;
 
@@ -3421,12 +3435,12 @@ this is the vr-cull-ceased rule:
 this is the vc-dark-door rule:
 	if player is not in stark store, the rule fails;
 	if dark door is not off-stage:
-		vcp "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if].";
+		vcal "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if].";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-dark-door rule:
-	say "A dark door appears to the west!";
+	say "Hey, wait a minute! You have a closer look and notice the outline of a dark door. Now you've seen it, you can't un-see it. There we go!";
 	move dark door to Stark Store;
 
 this is the vc-deal-dear rule:
@@ -3436,7 +3450,7 @@ this is the vc-deal-dear rule:
 		vcp "You haven't found anything you need to deal with[seer-sez].";
 		continue the action;
 	if cage key is not off-stage:
-		vcp "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
+		vcal "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
 		continue the action;
 	the rule succeeds;
 
@@ -3450,10 +3464,10 @@ this is the vr-deal-dear rule:
 this is the vc-dear-dull rule:
 	if player is not in here hull, the rule fails;
 	if beer bull is moot:
-		vcp "Yeah, easy to say with the beer bull gone for good.";
+		vcal "Yeah, easy to say with the beer bull gone for good.";
 		continue the action;
 	if in-bull-chase is true:
-		vcp "You don't need to do any more taunting.";
+		vcal "You don't need to do any more taunting.";
 		continue the action;
 	the rule succeeds;
 
@@ -3476,6 +3490,9 @@ this is the vc-dining-door rule:
 	if war-sapped is false:
 		clue-later "DINING DOOR";
 		vcp "You can't make a dining door with all this whining going on!";
+		continue the action;
+	if dine-door is true:
+		vcal "You already did.";
 		continue the action;
 	the rule succeeds;
 
@@ -3505,7 +3522,7 @@ this is the vr-dreaming-dull rule:
 this is the vc-fake-fee rule:
 	if jake is not touchable, the rule fails;
 	if jake-fee is true:
-		vcp "That's over. Time to work with Jake!";
+		vcal "That's over. Time to work with Jake!";
 		the continue the action;
 	the rule succeeds;
 
@@ -3518,7 +3535,7 @@ this is the vr-fake-fee rule:
 this is the vc-fall-free rule:
 	if player is not in Fun Fen, the rule fails;
 	if tree-down is true:
-		vcp "The tree is already fallen. It's in a good place.";
+		vcal "The tree is already fallen. It's in a good place.";
 		continue the action;
 	the rule succeeds;
 
@@ -3535,7 +3552,7 @@ this is the vc-feel-fear rule:
 		vcp "Fear isn't something you can try to feel[seer-sez].";
 		continue the action;
 	if felt-fear is true:
-		vcp "No need to overdo feeling fear.";
+		vcal "No need to overdo feeling fear.";
 		continue the action;
 	the rule succeeds;
 
@@ -3547,7 +3564,7 @@ this is the vr-feel-fear rule:
 this is the vc-find-fault rule:
 	if player is not in Vined Vault, the rule fails;
 	if mean mass is in Vined Vault:
-		if print-why-fail, vcp "You already did, and things got worse. You'll have to try something else.";
+		if print-why-fail, vcal "You already did, and things got worse. You'll have to try something else.";
 		continue the action;
 	the rule succeeds;
 
@@ -3561,7 +3578,7 @@ this is the vr-find-fault rule:
 this is the vc-first-fave rule:
 	if player is not in curst cave, the rule fails;
 	if first-fave is true:
-		vcp "The curst cave is already a cheerier place.";
+		vcal "The curst cave is already a cheerier place.";
 		continue the action;
 	if screaming skull is in Curst Cave:
 		clue-later "FIRST FAVE";
@@ -3579,7 +3596,7 @@ this is the vr-first-fave rule:
 this is the vc-fit-found rule:
 	if player is not in pit pound, the rule fails;
 	if found-fit is true:
-		vcp "You already fit in.";
+		vcal "You already fit in.";
 		continue the action;
 	if hit hound is in pit pound:
 		vcp "Maybe later, but you can't focus on that with the Hit Hound around.";
@@ -3626,8 +3643,8 @@ this is the vr-full-feast rule:
 
 this is the vc-get-good rule:
 	if player is not in wet wood:
-		if print-why-fail, vcp "You already managed to GET GOOD.";
-		the rule fails;
+		if print-why-fail, vcal "You already managed to GET GOOD.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-get-good rule:
@@ -3680,7 +3697,7 @@ this is the vc-go-gappin rule:
 		clue-later "GO GAPPIN";
 		continue the action;
 	if gap-go is true:
-		vcp "The song already worked.";
+		vcal "The song already worked.";
 		continue the action;
 	the rule succeeds;
 
@@ -3728,7 +3745,7 @@ this is the vr-green-grass rule:
 this is the vc-grow-grit rule:
 	if player is not in po' pit, the rule fails;
 	if grit-grown is true:
-		if print-why-fail, vcp "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
+		if print-why-fail, vcal "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
 		continue the action;
 	the rule succeeds;
 
@@ -3751,7 +3768,7 @@ this is the vr-hard-hat rule:
 this is the vc-heal-here rule:
 	if player is not in Real Rear, the rule fails;
 	if healed-here is true:
-		vcp "No need to heal further.";
+		vcal "No need to heal further.";
 		continue the action;
 	if least-loss is false:
 		clue-later "HEAL HERE";
@@ -3767,7 +3784,7 @@ this is the vr-heal-here rule:
 this is the vc-history-hall rule:
 	if player is not in History Hall, the rule fails;
 	if mistmall is false:
-		vcp "You already [if ever-mall is true]flipped back to[else]are in[end if] History Hall.";
+		vcal "You already [if ever-mall is true]flipped back to[else]are in[end if] History Hall.";
 		continue the action;
 	the rule succeeds;
 
@@ -3788,7 +3805,7 @@ this is the vr-history-hall rule:
 this is the vc-ho-happen rule:
 	if player does not have Toe Tappin, the rule fails;
 	if hap-ho is true:
-		vcp "You already said HO HAPPEN.";
+		vcal "You already said HO HAPPEN.";
 		continue the action;
 	the rule succeeds;
 
@@ -3799,7 +3816,7 @@ this is the vr-ho-happen rule:
 this is the vc-hot-horde rule:
 	if player is not in airy isle, the rule fails;
 	if Hot Horde is not off-stage:
-		vcp "You already summoned the Hot Horde.";
+		vcal "You already summoned the Hot Horde.";
 		continue the action;
 	the rule succeeds;
 
@@ -3824,7 +3841,7 @@ this is the vr-kneel-near rule:
 this is the vc-knives-niche rule:
 	if player is not in dives ditch, the rule fails;
 	if kni-ni is true:
-		vcp "You already changed the dives ditch.";
+		vcal "You already changed the dives ditch.";
 		continue the action;
 	the rule succeeds;
 
@@ -3836,7 +3853,7 @@ this is the vr-knives-niche rule:
 this is the vc-lean-luggin rule:
 	if Dean Duggan is not touchable, the rule fails;
 	if lean-lugged is true:
-		vcp "You already learned lean luggin['].";
+		vcal "You already learned lean luggin['].";
 		continue the action;
 	the rule succeeds;
 
@@ -3852,7 +3869,7 @@ this is the vc-least-loss rule:
 		vcp "Not yet. You need to be in a fighting situation.";
 		continue the action;
 	if least-loss is true:
-		vcp "You already minimized your losses. Time to be more aggressive.";
+		vcal "You already minimized your losses. Time to be more aggressive.";
 		continue the action;
 	the rule succeeds;
 
@@ -3866,7 +3883,7 @@ this is the vr-least-loss rule:
 this is the vc-lending-libe rule:
 	if player is not in vending vibe, the rule fails;
 	if trending tribe is moot:
-		vcp "Yes, It's a library now.";
+		vcal "Yes, It's a library now.";
 		continue the action;
 	the rule succeeds;
 
@@ -3880,7 +3897,7 @@ this is the vr-lending-libe rule:
 this is the vc-lie-lol rule:
 	if player is not in Got Gear Hot Here, the rule fails;
 	if lie-lol is true:
-		vcp "The shy shawl has taken enough abuse.";
+		vcal "The shy shawl has taken enough abuse.";
 		continue the action;
 	the rule succeeds;
 
@@ -3891,12 +3908,12 @@ this is the vr-lie-lol rule:
 this is the vc-loft-land rule:
 	if player is not in soft sand, the rule fails;
 	if loft-land is true:
-		vcp "You're already on the Loft Land.";
+		vcal "You're already on the Loft Land.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-loft-land rule:
-	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping].";
+	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping]. You can now reach [if curst cave is visited]the Curst Cave again[else]that new cave west that you couldn't in the Soft Sand[end if].";
 	now zap-core-entry is true;
 	if ever-loft is false:
 		now ever-loft is true;
@@ -3907,7 +3924,7 @@ this is the vr-loft-land rule:
 this is the vc-lot-lord rule:
 	if player is not in airy isle, the rule fails;
 	if Lot Lord is not off-stage:
-		vcp "You already summoned the Hot Horde.";
+		vcal "You already summoned the Lot Lord.";
 		continue the action;
 	the rule succeeds;
 
@@ -3929,19 +3946,19 @@ this is the vr-lots-lame rule:
 this is the vc-luck-lair rule:
 	if player is not in blinding blaze or stuck stair is off-stage, the rule fails;
 	if stuck stair is moot:
-		vcp "You already got the snuck snare from the luck lair.";
+		vcal "You already got the snuck snare from the luck lair.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-luck-lair rule:
-	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.";
+	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.[paragraph break]Your surroundings dim. You doubt there's much else exciting to do here.";
 	moot stuck stair;
 	now player has snuck snare;
 
 this is the vc-make-map rule:
 	if player is not in Lake Lap, the rule fails;
 	if jake-map is true:
-		vcp "You already made a map.";
+		vcal "You already made a map.";
 		continue the action;
 	the rule succeeds;
 
@@ -3957,7 +3974,7 @@ this is the vc-mark-more rule:
 		vcp "That'd work, if there was something to mark. There isn't, yet.";
 		continue the action;
 	if dark door is moot:
-		vcp "You saw what you could.";
+		vcal "You already saw what you could.";
 		continue the action;
 	the rule succeeds;
 
@@ -3988,7 +4005,7 @@ this is the vr-mash-map rule:
 this is the vc-mean-muggin rule:
 	if Dean Duggan is not touchable, the rule fails;
 	if mean-mugged is true:
-		vcp "You already learned mean muggin['].";
+		vcal "You already learned mean muggin['].";
 		continue the action;
 	the rule succeeds;
 
@@ -4000,7 +4017,7 @@ this is the vr-mean-muggin rule:
 this is the vc-meeker-muscle rule:
 	if reeker russell is not touchable, the rule fails;
 	if meeker-yet is true:
-		vcp "Russell's already meeker. Maybe disarm him?";
+		vcal "Russell's already meeker. Maybe disarm him?";
 		continue the action;
 	the rule succeeds;
 
@@ -4011,10 +4028,10 @@ this is the vr-meeker-muscle rule:
 	adjust-russell;
 
 this is the vc-merry-mile rule:
-	if merry-mile is true:
-		vcp "You already did. And if you force things, it might undo the good you did.";
-		continue the action;
 	if mrlp is not Vale Verminous, the rule fails;
+	if merry-mile is true:
+		vcal "You already did. And forcing cheeriness tends to backfire.";
+		continue the action;
 	clue-later "MERRY MILE";
 	if player is not in Tarry Tile:
 		vcp "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though.";
@@ -4040,29 +4057,14 @@ this is the vr-merry-mile rule:
 this is the vc-mind-me rule:
 	if player is not in trim tram, the rule fails;
 	if me-minded is true:
-		if print-why-fail, vcp "You already minded yourself.";
-		the rule fails;
+		if print-why-fail, vcal "You already minded yourself.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-mind-me rule:
 	loop-note "MIND ME";
 	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
 	now me-minded is true;
-
-this is the vc-minding-maze rule:
-	if player is not in blinding blaze, the rule fails;
-	if blaze-maze is true:
-		vcp "You already converted the blaze to a maze.";
-		the rule fails;
-	the rule succeeds;
-
-this is the vr-minding-maze rule:
-	say "The blaze swirls but dies down. In its place is a huge minding maze. And hey, that wry wall pops up too!";
-	now blaze-maze is true;
-	phbt blinding blaze;
-	choose row with e1 of Blinding Blaze in table of bad locs;
-	now e2 entry is north;
-	wall-refresh;
 
 this is the vc-mining-more rule:
 	if player is not in Whining War, the rule fails;
@@ -4087,12 +4089,12 @@ this is the vc-mo-mappin rule:
 		vcp "Maybe some other place could use mapping, but not here.";
 		clue-later "MO MAPPIN";
 		continue the action;
-	if blaze-maze is false:
+	if blaze-ways is false:
 		vcp "The blaze isn't mappable, but maybe something that replaces it is.";
 		clue-later "MO MAPPIN";
 		continue the action;
 	if stuck stair is in blinding blaze:
-		vcp "You're already in the mood to map. No need to overdo it.";
+		vcal "You're already in the mood to map. No need to overdo it.";
 		continue the action;
 	the rule succeeds;
 
@@ -4101,6 +4103,7 @@ this is the vr-mo-mappin rule:
 	move stuck stair to blinding blaze;
 	now maze-mapped is true;
 	clue-zap "MO MAPPIN";
+	moot minding maze;
 	process the check-sing-max rule;
 
 this is the vc-moral-mage rule:
@@ -4120,7 +4123,7 @@ this is the vr-moral-mage rule:
 this is the vc-mystery-mall rule:
 	if player is not in History Hall, the rule fails;
 	if mistmall is true:
-		vcp "You've already flipped this area to the Mystery Mall.";
+		vcal "You've already flipped this area to the Mystery Mall.";
 		continue the action;
 	the rule succeeds;
 
@@ -4142,7 +4145,7 @@ this is the vr-mystery-mall rule:
 this is the vc-near-null rule:
 	if beer bull is not touchable, the rule fails;
 	if bull-null is true:
-		vcp "You already reduced the bull's power!";
+		vcal "You already reduced the bull's power!";
 		continue the action;
 	the rule succeeds;
 
@@ -4154,7 +4157,7 @@ this is the vr-near-null rule:
 this is the vc-no-nappin rule:
 	if toe tappin row rappin is not touchable, the rule fails;
 	if nap-no is true:
-		vcp "You already changed Toe Tappin Row Rappin that way.";
+		vcal "You already changed Toe Tappin Row Rappin that way.";
 		continue the action;
 	the rule succeeds;
 
@@ -4202,7 +4205,7 @@ this is the vr-pull-pieced rule:
 this is the vc-see-sign rule:
 	if player does not have We Whine, the rule fails;
 	if sign-seen is true:
-		vcp "You've seen enough signs. Overkill might leave you demoralized.";
+		vcal "You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.";
 		continue the action;
 	the rule succeeds;
 
@@ -4213,7 +4216,7 @@ this is the vr-see-sign rule:
 this is the vc-shining-shore rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
 	if shore-shine is true:
-		vcp "You already got (t)here.";
+		vcal "You already got (t)here.";
 		continue the action;
 	if war-sapped is false:
 		clue-later "SHINING SHORE";
@@ -4237,6 +4240,9 @@ this is the vc-show-shield rule:
 		clue-later "SHOW SHIELD";
 		vcp "Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements.";
 		continue the action;
+	if gold guard is moot:
+		vcal "Your gold guard has done its duty.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-show-shield rule:
@@ -4249,7 +4255,7 @@ this is the vr-show-shield rule:
 this is the vc-silent-sail rule:
 	if player is not in violent vale, the rule fails;
 	if flooring float is not off-stage:
-		vcp "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if].";
+		vcal "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if].";
 		continue the action;
 	the rule succeeds;
 
@@ -4261,7 +4267,7 @@ this is the vr-silent-sail rule:
 this is the vc-sit-sound rule:
 	if player is not in pit pound, the rule fails;
 	if hit hound is not touchable:
-		vcp "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
+		vcal "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
 		continue the action;
 	the rule succeeds;
 
@@ -4307,7 +4313,7 @@ this is the vr-snake-snap rule:
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if player does not have Toe Tappin Row Rappin, the rule fails;
 	if war-sapped is true:
-		vcp "You already discouraged some whining. Do it again, you might be the whiner.";
+		vcal "You already discouraged some whining. Do it again, you might be the whiner.";
 		continue the action;
 	if player is not in whining war:
 		vcp "That's an interesting riff, but it doesn't seem to work here.";
@@ -4324,18 +4330,18 @@ this is the vr-so-sappin rule:
 this is the vc-soft-sand rule:
 	if player is not in soft sand or ever-loft is false, the rule fails;
 	if loft-land is false:
-		vcp "You're already on the Soft Sand.";
+		vcal "You're already on the Soft Sand.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-soft-sand rule:
-	say "The loft land reverts to the Soft Sand.";
+	say "The loft land reverts to the Soft Sand, revealing the old passage west[if shirk shell is visited] to the Shirk Shell[end if].";
 	now loft-land is false;
 	now Shirk Shell is mapped west of Soft Sand;
 
 this is the vc-spark-spliff rule:
 	if wild weed is moot:
-		vcp "Whoah, dude. You already did.";
+		vcal "Whoah, dude. You already did.";
 		continue the action;
 	if player does not have wild weed, the rule fails;
 	if player is not in Fun Fen:
@@ -4361,7 +4367,7 @@ this is the vr-stay-strong rule:
 this is the vc-strong-start rule:
 	if player is not in Fun Fen, the rule fails;
 	if started-strong is true:
-		vcp "You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
+		vcal "You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
 		continue the action;
 	the rule succeeds;
 
@@ -4373,7 +4379,7 @@ this is the vr-strong-start rule:
 this is the vc-take-tea rule:
 	if jake is not touchable, the rule fails;
 	if jake-tea is true:
-		vcp "Don't get greedy. You have the sustenance needed to work with Jake G.";
+		vcal "Don't get greedy. You have the sustenance needed to work with Jake G.";
 		the continue the action;
 	the rule succeeds;
 
@@ -4392,7 +4398,7 @@ this is the vr-tell-torn rule:
 this is the vc-tight-tunnel rule:
 	if player is not in fight funnel, the rule fails;
 	if funnel-to-tunnel is true:
-		vcp "You already narrowed the funnel to a tunnel.";
+		vcal "You already narrowed the funnel to a tunnel.";
 		continue the action;
 	the rule succeeds;
 
@@ -4404,7 +4410,7 @@ this is the vr-tight-tunnel rule:
 this is the vc-wake-whee rule:
 	if jake g is not touchable, the rule fails;
 	if jake-woke is true:
-		vcp "He's already awake, Blake.";
+		vcal "He's already awake, Blake.";
 		continue the action;
 	the rule succeeds;
 
@@ -4415,7 +4421,7 @@ this is the vr-wake-whee rule:
 this is the vc-whatta-wanksta rule:
 	if gutta ganksta is not touchable, the rule fails;
 	if gan-wan is true:
-		vcp "That insult only works once.";
+		vcal "That insult only works once.";
 		continue the action;
 	the rule succeeds;
 
@@ -4434,7 +4440,7 @@ this is the vr-whoa-wait rule:
 this is the vc-wild-weed rule:
 	if mild mead is not touchable, the rule fails;
 	if wild weed is not off-stage:
-		vcp "Greedy, to try for more.";
+		vcal "Greedy, to try for more.";
 		continue the action;
 	the rule succeeds;
 
@@ -4442,10 +4448,26 @@ this is the vr-wild-weed rule:
 	say "Bingo! Some of the mild mead tumbles off to the ground and becomes wild weed. Which is totally unnecessary for the game, but hey.";
 	now player has wild weed;
 
+this is the vc-winding-ways rule:
+	if player is not in blinding blaze, the rule fails;
+	if blaze-ways is true:
+		vcal "You already did.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-winding-ways rule:
+	say "The blaze swirls but dies down. In its place are winding ways leading to a huge minding maze that will surely bust your brain and require a finding phase. And hey, that wry wall pops up too!";
+	now blaze-ways is true;
+	move minding maze to blinding blaze;
+	phbt blinding blaze;
+	choose row with e1 of Blinding Blaze in table of bad locs;
+	now e2 entry is north;
+	wall-refresh;
+
 this is the vc-wood-one rule:
 	if reeker russell is not touchable, the rule fails;
 	if good gun is moot:
-		vcp "Russell's already disarmed, but he's still too strong.";
+		vcal "Russell's already disarmed, but he's still too strong.";
 		continue the action;
 	the rule succeeds;
 
