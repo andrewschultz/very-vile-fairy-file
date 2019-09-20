@@ -28,11 +28,11 @@ a thing can be abstract. a thing is usually not abstract.
 
 [dnc.py can/should toggle this]
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [must commit]
-[include Very Vile Fairy File Bare Mistakes by Andrew Schultz. [do not commit]]
+[include Very Vile Fairy File Mistakes by Andrew Schultz. [must commit]]
+include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [do not commit]
 
 include Very Vile Fairy File Tables by Andrew Schultz. [must commit]
-[include Very Vile Fairy File Bare Tables by Andrew Schultz. [do not commit]]
+[include Very Vile Fairy File Debug Tables by Andrew Schultz. [do not commit]]
 
 include undo output control by Erik Temple.
 
@@ -232,7 +232,7 @@ instead of doing something with a boring thing:
 
 volume going nowhere
 
-the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][one of][paragraph break]It looks too sturdy to manipulate. But maybe trying would be good exercise.[or][stopping]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
+the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][one of][paragraph break]It looks too sturdy to manipulate with rhymes. But maybe trying would be good exercise.[or][stopping]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
 
 nother-room is a room that varies.
 
@@ -535,7 +535,7 @@ healed-here is a truth state that varies.
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if bull beast is moot]defeated the bull beast here, which was exciting[else]sense it may need to be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of creased cross is letminus. [-> beast boss] [-> least loss]
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if bull beast is moot]defeated the bull beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of creased cross is letminus. [-> beast boss] [-> least loss]
 
 to say beast-clue:
 	if bull beast is not moot:
@@ -1068,12 +1068,12 @@ first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if pain peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "[if shield-shown is false]You detect a presence blocking you from going north, but[else]You removed the impediment north, and[end if] you can still go west to a quieter, darker area, or back south. You could even try your luck east.". cht of Foe Field So Sealed is partplus. [->show shield]
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if pain peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "Passages lead all four directions[if shield-shown is false]. However, you detect a presence blocking you from going north[end if].". cht of Foe Field So Sealed is partplus. [->show shield]
 
 check going south in Foe Field So Sealed:
 	if pain peasant is in Foe Field, say "The pain peasant booms 'Go, gassed foe, fast!'" instead;
 
-check going north in Foe Field So Sealed: if shield-shown is false, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
+check going north in Foe Field So Sealed: if shield-shown is false and pain peasant is moot, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
@@ -1088,7 +1088,7 @@ check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
 
 part Store All Stage -1,3
 
-Store All Stage is a room in Piddling Pain. It is west of Foe Field. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage.[paragraph break]Y[else]y[end if]ou can really only go back east."
+Store All Stage is a room in Piddling Pain. It is west of Foe Field. cht of Store All Stage is letminus. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage.[paragraph break]Y[else]y[end if]ou can really only go back east."
 
 the coral cage is scenery in Store All Stage. "You can't see into it to see who's there[if cage key is off-stage], and you have no way of opening it[end if].". cht of coral cage is leteq. [-> moral mage]
 
@@ -1416,7 +1416,7 @@ check thinking:
 	if thought-any is false, say "[line break]But you don't have leads for any puzzles right now." instead;
 	if ever-thought is false:
 		now ever-thought is true;
-		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK or type SCORE to see things you figured but aren't quite ready to do yet.";
+		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK to see things you figured but aren't quite ready to do yet.";
 	if boat-reject is true and nap-no is true and lake lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
 	if number of optional-noted things > 0:
 		say "You also know several things that are optional to figure out: [list of optional-noted things].";
@@ -1464,10 +1464,13 @@ chapter score
 check requesting the score:
 	now vc-dont-print is true;
 	say "You have scored a total of [score] out of [maximum score] points and need [core-max] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
-	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].";
+	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank][line break].";
 	let dh be doable-hinted;
 	let fh be future-hinted;
-	if dh + fh > 0, say "[line break]You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh in words] still need[plur of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
+	if dh + fh > 0:
+		say "You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready. [if dh is 0][fh in words] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
+	else:
+		say "There are no tasks you have figured out but weren't quite ready.";
 	if lurking lump is not off-stage:
 		let gguess be next-lump-level - lump-count;
 		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are a maximum of [gguess] of [next-lump-level] good-guess rhyme[plur of gguess] way from it re[if lurking lump is moot]turn[else]charg[end if]ing.";
@@ -1552,7 +1555,7 @@ my-text	my-color
 
 chapter xyzzying
 
-xyzzying is an action applying to nothing.
+xyzzying is an action out of world.
 
 understand the command "xyzzy" as something new.
 
@@ -1566,7 +1569,7 @@ chapter helphowing
 
 help-how is a truth state that varies. help-how is true.
 
-helphowing is an action applying to nothing.
+helphowing is an action out of world.
 
 understand the command "help how" as something new.
 
@@ -1580,7 +1583,7 @@ carry out helphowing:
 
 chapter welpwowing
 
-welpwowing is an action applying to nothing.
+welpwowing is an action out of world.
 
 understand the command "welp wow" as something new.
 
@@ -1594,7 +1597,7 @@ carry out welpwowing:
 
 chapter verbsing
 
-verbsing is an action applying to nothing.
+verbsing is an action out of world.
 
 understand the command "v" as something new.
 understand the command "verb" as something new.
@@ -1739,6 +1742,8 @@ carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
 	if cht of noun is phbt, say "The leet learner turns up nothing scanning [the noun]." instead;
+	if noun is Store All Stage and coral cage is not moot:
+		say "You suspect 'Store All' counts as one word for the learner's purposes.[paragraph break]";
 	if noun is ceiling seer:
 		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
 		try lling location of player instead;
@@ -1760,7 +1765,7 @@ to say leetclue of (x - a cheattype):
 	if fun fen is visited and ever-leet-clue is true, continue the action;
 	now ever-leet-clue is true;
 	if leetcool is 0:
-		say ". Once you figure out what to do, you may wish to remember how [the player's command in upper case] + [scancol of x] = what you needed--along with other things you've found find";
+		say ". Once you figure out what to do, you may wish to remember how the words you saw or read combined with the Leet Learner reading";
 		now leetcool is a random number between 3 and 6;
 	else:
 		decrement leetcool;
@@ -1846,10 +1851,16 @@ to decide whether should-mug-first:
 
 section hint room rule definitions
 
+when play begins:
+	repeat with X running through rooms:
+		if map region of X is Poorly Penned or map region of X is Get a Guess, next;
+		if room-hint-rule of X is trivially false rule, say "Need to hint [x].";
+
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
 room-hint-rule of Been Buggin' is been-buggin-hint rule.
+room-hint-rule of Blinding Blaze is blinding-blaze-hint rule.
 room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
 room-hint-rule of Dives Ditch is dives-ditch-hint rule.
@@ -1894,6 +1905,11 @@ this is the been-buggin-hint rule:
 		say "[one of]You need to look a bit tougher, since you've been buggin['].[or]You need to change your facial expression.[or]Change your facial expression with [b]MEAN MUGGIN[r].[stopping]";
 	else:
 		say "[one of]You need to be able to carry more weight.[or]You need to be stronger and, not quite thinner, but ...[or]...leaner.[or]LEAN LUGGIN.[stopping]";
+	the rule succeeds;
+
+this is the blinding-blaze-hint rule:
+	if blaze-maze is true, the rule fails;
+	say "[one of]The blinding blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become a MINDING MAZE[stopping].";
 	the rule succeeds;
 
 this is the creased-cross-hint rule:
@@ -2004,7 +2020,7 @@ this is the stark-store-hint rule:
 
 this is the store-all-stage-hint rule:
 	if coral cage is moot, the rule fails;
-	say "The coral cage is what's important here.";
+	say "The coral cage is what's important here.[paragraph break]";
 	process the coral-cage-hint rule;
 
 this is the tarry-tile-hint rule:
@@ -2760,7 +2776,13 @@ Rule for printing a parser error (this is the clue half right words rule):
 Rule for printing a parser error (this is the check for room name in player command rule):
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
-			say "It looks like you may have tried to refer to the room name, or parrt of it. You never need to, directly.";
+			if word number 1 in the player's command is "ll":
+				say "It looks like you may have tried to scan the current location. You just need to say LL to do this. Would you like to do so now?";
+				if the player yes-consents, try lling location of player instead;
+				say "Okay. ";
+			else:
+				say "It looks like you may have tried to refer to the room name, or part of it. ";
+			say "You never need to use the room name directly.";
 			the rule succeeds;
 	continue the action;
 
@@ -3566,7 +3588,7 @@ this is the vc-fit-found rule:
 	the rule succeeds;
 
 this is the vr-fit-found rule:
-	say "You feel comfortable here now. Wahoo!";
+	say "You feel comfortable here now. Comfortable enough to enter and leave as you please. Woohoo!";
 	now found-fit is true;
 	clue-zap "FIT FOUND";
 	phbt pit pound;
@@ -4019,7 +4041,7 @@ this is the vc-mind-me rule:
 	if player is not in trim tram, the rule fails;
 	if me-minded is true:
 		if print-why-fail, vcp "You already minded yourself.";
-		continue the action;
+		the rule fails;
 	the rule succeeds;
 
 this is the vr-mind-me rule:
@@ -4031,7 +4053,7 @@ this is the vc-minding-maze rule:
 	if player is not in blinding blaze, the rule fails;
 	if blaze-maze is true:
 		vcp "You already converted the blaze to a maze.";
-		continue the action;
+		the rule fails;
 	the rule succeeds;
 
 this is the vr-minding-maze rule:
@@ -4085,13 +4107,14 @@ this is the vc-moral-mage rule:
 	if coral cage is not touchable, the rule fails;
 	if player does not have cage key:
 		clue-later "MORAL MAGE";
-		vcp "The coral cage is too dense to see through or destroy right now. Maybe if you were able to get into it.";
+		vcp "That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
 	say "The inner bars of the coral cage crumble. The moral mage thanks you and begins a lecture. You're worried it's going to be a sermon, but it turns into interesting details about the Very Vile Fairy File, its powers, the people behind it, and how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase. The moral mage nods and departs, leaving you to realize that the knowledge they passed on was a sort of magic in its own right.";
 	moot coral cage;
+	phbt Store All Stage;
 	clue-zap "MORAL MAGE";
 
 this is the vc-mystery-mall rule:

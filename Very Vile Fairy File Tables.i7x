@@ -89,33 +89,39 @@ volume random tables
 table of mall songs [xxmall] [xxsongs]
 randtxt
 "Be Bop: See, Sop"
+"Blue Blood Crew? Crud"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
-["Good Gang? Dud, Dang"
+"Fit Fo['] Wit, Whoah" [show]
+"Get Got, Net Naught"
+"Good Gang? Dud, Dang"
+"Hata['] Heft Data, Deft"
+"Lo Love Show Shove"
+"Mercy Me, Jersey G[r], by Versy V & Percy P"
+"Pay, Pow, Hey, How"
 "Stern Stable Turn Table"
 "War Whistles, More Missiles"
-"Hata['] Heft Data, Deft"
-"Pay, Pow, Hey, How"
-"Fit Fo['] Wit, Whoah" [show]
-"Lo Love Show Shove"
-"Mercy Me, Jersey G[r], by Versy V & Percy P"]
 
 table of miscellaneous people [xxpeople]
 randtxt
+"Blue Blood Stu, Stud"
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
-["Fart Face Mart Mayes"
+"Fart Face Mart Mayes"
 "Hefty Hata['] Lefty Leda"
 "Hunter Hoke, Blunter Bloke"
 "Hurt-Hell Burt Bell"
 "Lair Level Daredevil Bear Bevell"
 "Madman Chad Chan"
 "Madman Tad Tan"
-"Wig Wearin['] Big Baron"
 "Not Noble Scott Scoble"
 "Pill-Perk Bill Burke"
+"Quite Quick Knight Nick"
 "Rude Rave Dude Dave"
+"Sure-Shank Burbank"
+"Trot Trice, Not-Nice Lot Lice"
+"Wig Wearin['] Big Baron"
 "Work-Will Kirk Kill"
-"Would-Whirl Bud Burrell"]
+"Would-Whirl Bud Burrell"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
 table of vvff digs [xxtaunts] [xxdigs] [xxmean]
@@ -136,22 +142,21 @@ randtxt
 
 table of vvff books [xxbooks]
 randtxt
+"Ache or Make More Lake Lore"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
-["Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
+"Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
 "Crew Came Grew Game"
+"Dandy Dyin['] Sandy, Sighin[r], by Randy Ryan"
 "Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
 "Do, Dare: Woo! Where"
-Duel Down, Cruel Crown
+"Duel Down, Cruel Crown"
+"Dust Devils['] Lust Levels"
 "Fall For Stall Store"
-"Your Be-Yays: Derby Days[r], by Herbie Hayes"
-"Ache or Make More Lake Lore"
-"Dandy Dyin['] Sandy, Sighin[r], by Randy Ryan"
-"Greater Gravel Traitor Travel"
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
-"Dust Devils['] Lust Levels"
 "Good Girl Would Whirl"
+"Greater Gravel Traitor Travel"
 "Grepping: Groan? STEPPING STONE"
 "Hole Hound Bowl Bound"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
@@ -166,14 +171,17 @@ Duel Down, Cruel Crown
 "Self Centered Elf Entered"
 "So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
-"Why When My Men, by Ben"]
+"Why When My Men, by Ben"
+"Your Be-Yays: Derby Days[r], by Herbie Hayes"
+
+to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [scancol of x]"
 
 table of Wet Wood clues
 prof	randtxt
-False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You wander off and make it back to the Wet Wood.[leetclue of leteq]"
-False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood.[leetclue of letminus]"
-False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to where you came.[leetclue of leteq]"
-True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something slightly more distasteful.[leetclue of leteq]" [pet pood]
+False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
+False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood.  [not-leet of letminus]."
+False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. [not-leet of leteq]."
+True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something slightly more distasteful.  [not-leet of leteq]." [pet pood]
 
 [leetclue of xxx]
 volume hints for later

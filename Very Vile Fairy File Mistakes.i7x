@@ -6,14 +6,12 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [stuff I haven't sorted yet:
 ##############unsorted
+##############po pit
+flow flit
+go git/get
+so sit
+oh it
 ##############trim tram
-whim wham
-grim gram
-jim jam
-dim dam
-swim swam
-rim ram
-shim sham
 ###############sage sea
 page pea
 wage wee
@@ -66,7 +64,6 @@ looping lair
 eel ear/ere
 peel pier # a bit too on the nose
 #######################creased cross
-fleeced floss # dental hygiene is a good idea in general, but here it's unnecessary.
 #########################shining shore
 spining spore
 pining pore/poor
@@ -96,7 +93,13 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mo mate"	go-gate-vis rule	false	--	--	--	"You remain alone.[leetclue of partplus]"
 "oh ate"	go-gate-vis rule	false	--	--	--	"Nothing takes a bit out of the go gate.[leetclue of letplus]"
 "woe/whoa/whoah weight"	go-gate-vis rule	false	--	--	--	"You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]"
+"greased gross"	need-least-loss rule	false	5	5	--	"The creased cross doesn't need to become ickier."
+"fleeced floss"	need-least-loss rule	false	5	5	--	"Dental hygiene is a good idea in general, but here, it's unnecessary."
+"binding bays/baize"	blaze-before-maze rule	false	7	4	--	"You need to break free here, not get more tied up." [start blinding blaze]
+"grinding grays"	blaze-before-maze rule	false	7	4	--	"The blaze might be colored duller, but it'd still be too uncomfortable."
 "nursed knave"	in-curst-cave rule	false	5	5	clue-worst-wave rule	"You don't need any more of that." [start curst cave]
+"crane crescent"	peasant-around rule	false	5	7	--	"No bird swoops to pick up the pain peasant." [start foe field]
+"fain pheasant"	peasant-around rule	false	5	7	--	"The pain peasant remains human."
 "live leap"	hive-heap-near rule	false	4	4	--	"The leap wouldn't be live for very long." [start fun fen]
 "call cree"	in-fun-fen rule	false	4	4	--	"You need something simpler than an unusual language here."
 "one wen"	in-fun-fen rule	false	--	--	--	"Your skin remains unblemished, despite you tempting fate."
@@ -117,7 +120,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That makes sense, but you can't imagine how it'd help you in your adventure."
 "flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
-"clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded" [start po' pit] [?? all this needs to be tested a lot]
+"clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded." [start po' pit] [?? all this needs to be tested a lot]
 "crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones."
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
 "foe fit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Complaining and speculation about who or what put you there won't help."
@@ -142,13 +145,22 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "drift driver"	in-rift-river rule	false	4	5	--	"No vehicle comes to take you across the river. And that doesn't quite rhyme, anyway[rift-need]."
 "shift shiver"	in-rift-river rule	false	4	5	--	"You try fearing things different ways, but nobody comes to comfort you."
 "oral age"	coral-cage-around rule	false	5	4	--	"Someone here is really old-school. As if text adventures weren't retro enough!" [start store all stage]
+"immoral image"	coral-cage-around rule	5	4	--	"You sort of need the opposite. I suspect you know this and are just trying to see what happens."
 "bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start tarry tile]
 "swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn."
 "bind be"	tram-first-puzzle rule	false	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start trim tram]
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
 "signed see"	tram-first-puzzle rule	false	4	2	--	"You're still reacting to FIND FEE. You need to look inwards."
 "tined tee"	tram-first-puzzle rule	false	4	2	--	"You don't have time for silly games like golf now!"
-"kind key"	tram-first-puzzle rule	false	4	2	--	"Oh, it won't be that easy. Someone won't drop it for you. But you can do for YOU."
+"kind key"	tram-first-puzzle rule	false	4	2	--	"Oh, it won't be that easy. Someone won't drop it for you. But you can do for "whim wham"	in-trim-tram rule	false	4	4	--	"Hmm, you try to figure a poetic way through, but perhaps you need something more worldly."
+"grim gram"	in-trim-tram rule	false	4	4	--	"No elder appears to upbraid you, which is all for the better."
+"jim jam"	in-trim-tram rule	false	4	4	--	"No elder appears to upbraid you, which is all for the better."
+"dim dam"	in-trim-tram rule	false	4	4	--	"You need fewer blockages, not more."
+"swim swam"	in-trim-tram rule	false	4	4	--	"You don't need to fall in the water here."
+"rim ram"	in-trim-tram rule	false	4	4	--	"Banging on the walls won't help."
+"shim sham"	in-trim-tram rule	false	4	4	--	"Hmm. Interesting. But you might need to fake something besides a shim."
+"him ham"	in-trim-tram rule	false	4	4	--	"Pigs, male or female, aren't allowed on public transport."
+YOU."
 "prim pram"	in-trim-tram rule	false	4	4	--	"That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse."
 "slim slam"	in-trim-tram rule	false	4	4	--	"That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though."
 "bean bass"	mass-near rule	false	5	5	--	"You could use a delicious meal, but perhaps there is something even simpler the mean mass can become." [start vined vault]
@@ -247,6 +259,8 @@ this is the key-or-rear rule: if player is in Real Rear or player has cage key, 
 this is the mass-near rule: if mean mass is touchable, the rule succeeds;
 
 this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
+
+this is the need-least-loss rule: if least-loss is false, the rule succeeds;
 
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
