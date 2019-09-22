@@ -2,6 +2,8 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
 "This is divided into 3 volumes: the tables, the core code and the big meta table. It is roughly copied from Ailihphilia. Ctrl-end for meta table. The core code is about a page long, so you can go ctrl-end page-up for that."
 
+[dbh.py shortens to the debug version]
+
 volume core tables
 
 [pest post / messed most / rest roast/ guest ghost / best boast]
@@ -307,7 +309,7 @@ this is the can-shining-shore rule:
 	the rule fails.
 
 this is the can-show-shield rule:
-	if player has gold guard, the rule succeeds;
+	if player has gold guard and mine-more is true, the rule succeeds;
 	the rule fails.
 
 this is the can-smashing-smoke rule:
