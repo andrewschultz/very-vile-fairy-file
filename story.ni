@@ -885,9 +885,6 @@ part Whining War 2,1
 
 Whining War is east of Violent Vale. It is in Piddling Pain. "[if shore-shine is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in whining war][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[end if]". cht of whining war is partplus. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> shining shore]
 
-[?? SO SAPPIN here to get rid of people]
-[?? mining more to reveal riches people might be happy with]
-[shining shore, oh, it is a nice place now!]
 [Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another whining war.]
 [mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
 
@@ -1673,9 +1670,26 @@ carry out verbsing:
 	if player has Toe Tappin, say "[2da]You can also [b]SING[r] [Toe Tappin] to see if it might be useful, as a small clue, or LL TOE for further hints.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
+	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
 	the rule succeeds.
 
 to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
+
+chapter soundsing
+
+soundsing is an action applying to nothing.
+
+understand the command "sounds" as something new.
+understand the command "sound" as something new.
+
+understand "sounds" and "sound" as soundsing.
+
+carry out soundsing:
+	say "The basic sounds in the English language are:[paragraph break]";
+	say "one letter: b k d f g h j l m n p r s t v w x z (c q and x map to others.)";
+	say "two letters: ur ar or bl br cl cr dr fl fr gl gr pl pr sk sl sp st sw spr str tr.";
+	say "rarer two letters: ch so th (thing or this) wh ng nk oi ow oo (took) aw zh (vision.)";
+	the rule succeeds.
 
 chapter creditsing
 
@@ -4145,7 +4159,7 @@ this is the vc-mining-more rule:
 this is the vr-mining-more rule: [?? pining poor]
 	now mine-more is true;
 	moot dining door;
-	say "You help the Fining Four mine more, more, more. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD!"; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
+	say "You help the pining poor mine more, more, more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD!"; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
 	clue-zap "MINING MORE";
 
 this is the vc-mo-mappin rule:
@@ -4385,7 +4399,7 @@ this is the vr-snake-snap rule:
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if player does not have Toe Tappin Row Rappin, the rule fails;
 	if war-sapped is true:
-		vcal "You already discouraged some whining. Bringing it up again might make you be the whiny one.";
+		vcal "You already discouraged some whining. Bringing it up again might make you the whiny one.";
 		continue the action;
 	if player is not in whining war:
 		vcp "That's an interesting riff, but it doesn't seem to work here.";
