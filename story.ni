@@ -691,13 +691,14 @@ after lling gutta ganksta:
 
 chapter Toe Tappin Row Rappin (M)
 
-Toe Tappin Row Rappin is scenery. "You [one of]listen a bit. The song is Toe Tappin Row Rappin['], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replced it is even worse.[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way;[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
+Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SING[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
 after examining Toe Tappin Row Rappin:
 	if player does not have Row Rappin:
 		now player has Row Rappin;
+		now sing-clue is true;
 		move Oi Mo to History Hall;
 	continue the action;
 
@@ -888,7 +889,7 @@ jake-brie is a truth state that varies.
 
 part Whining War 2,1
 
-Whining War is east of Violent Vale. It is in Piddling Pain. "[if shore-shine is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in whining war][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[end if]". cht of whining war is partplus. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> shining shore]
+Whining War is east of Violent Vale. It is in Piddling Pain. "[if shore-shine is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in whining war][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[end if]". cht of whining war is partplus. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> shining shore]
 
 [Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another whining war.]
 [mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
@@ -1280,15 +1281,24 @@ chapter singing
 
 the block singing rule is not listed in any rulebook.
 
+sing-clue is a truth state that varies.
+
 check singing:
 	if toe tappin is moot, say "You have fond memories of the tunes [Toe] opened to you. It and the others are worth writing down when you get home, when you're not quite as tired of it. But you've done enough." instead;
 	if player does not have Toe Tappin, say "Nothing comes to mind. But perhaps the right song, if found, might help you in many ways." instead;
-	if nap-no is false, say "[Toe] bounces in your head, making you feel a little more awake. But maybe you can do better." instead;
-	if gap-go is false and player is in Gassed Gap, say "You sing a song, internally, about passing the gap to the north." instead; [now cht of toe tappin is partminus] [->go gappin]
-	if jake-fee is true and jake-cocapn is false, say "You conjure up a song about you and Jake being cemented as equals." instead; [now cht of toe tappin is letminus] [->co capn]
-	if maze-mapped is false and player is in blinding blaze and blaze-ways is true, say "You whistle a tune about going through the maze. It makes the usual boring methods seem more interesting." instead; [now cht of toe tappin is partminus] [->mo mappin]
-	if player is in whining war and war-sapped is false, say "You whistle a tune about not wanting to complain any more, because it's too exhausting." instead; [now cht of toe tappin is partminus] [->so sappin]
-	say "[Toe] bounces around in your head but offers no new constructive possibilities[if hap-ho is false], though there's probably some silly general motivation you can access for fun[end if]." instead;
+	now sing-clue is whether or not sing-clue is false;
+	say "You sing [Toe] for a bit to get it back [if sing-clue is true]in[else]out of[end if] your head." instead;
+
+every turn when sing-clue is true:
+	if song-clue, say "[Toe] bounces around in your head a bit.";
+
+to decide whether song-clue:
+	if player is in violent vale and boring boat is in violent vale and nap-no is false, yes; [now cht of toe tappin is partminus] [->no nappin]
+	if player is in gassed gap and gap-go is false, yes; [now cht of toe tappin is partminus] [now cht of toe tappin is partminus] [->go gappin]
+	if jake g is touchable and jake-fee is true and jake-cocapn is false, yes; [now cht of toe tappin is letminus] [->co capn]
+	if maze-mapped is false and player is in blinding blaze and blaze-ways is true, yes; [now cht of toe tappin is partminus] [->mo mappin]
+	if player is in whining war and war-sapped is false, yes; [now cht of toe tappin is partminus] [->so sappin]
+	no;
 
 sing-clues is a number that varies.
 sing-max is a number that varies. sing-max is 5.
@@ -1360,7 +1370,7 @@ check taking inventory:
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of gaphats carried by player > 0, say "You are also carrying a [if number of carried gaphats < 3]budding[else]complete[end if] hat collection: [list of gaphats carried by player].";
-	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. It has ... possibilities. [toe-poss].";
+	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with SING[else]in your head. It has ... possibilities. [toe-poss][end if].";
 	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
 	check-injury;
 	the rule succeeds;
@@ -1428,7 +1438,7 @@ check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
 	if player is in whining war, say "[if war-sapped is false]Boy! The whining is pretty intense and constant! You don't see how you could change the whining by itself. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
 	if player is in History Hall and mistmall is true:
-		if Toe Tappin Row Rappin is in History Hall, try examining Row Rappin instead;
+		if Toe is in History Hall, try examining Toe Tappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
 		say "A random song plays briefly: [next-rand-txt of table of mall songs]." instead;
 	say "Nothing special."
@@ -1672,7 +1682,7 @@ carry out verbsing:
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
 	check-flip-verbs;
-	if player has Toe Tappin, say "[2da]You can also [b]SING[r] [Toe Tappin] to see if it might be useful, as a small clue, or LL TOE for further hints.";
+	if player has Toe Tappin, say "[2da]You can also [b]SING[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
@@ -1814,6 +1824,12 @@ rule for supplying a missing noun when lling:
 
 ever-opt-scan is a truth state that varies.
 
+to say ll-cheat of (th - a thing):
+	if th is Toe and Jake G is touchable and jake-fee is true and jake-cocapn is false:
+		say "red";
+	else:
+		say "[scancol of cht of th]"
+
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
@@ -1824,7 +1840,7 @@ carry out lling:
 		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
 		try lling location of player instead;
 	if noun is peeling pier and healed-here is false, say "It seems like the leet learner is registering something everywhere except on the peeling pier, here." instead;
-	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [scancol of cht of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
+	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
 	if noun is optional and ever-opt-scan is false:
 		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
@@ -3802,7 +3818,7 @@ this is the vc-go-gappin rule:
 	the rule succeeds;
 
 this is the vr-go-gappin rule:
-	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things.";
+	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
 	now gap-go is true;
 	clue-zap "GO GAPPIN";
 	process the check-sing-max rule;
@@ -4427,7 +4443,7 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	the rule succeeds;
 
 this is the vr-so-sappin rule:
-	say "It's not much, but it's a start. The whining grows steadily less.";
+	say "Amazingly, as you filk [Toe], the whining grows less. People realize they're not being productive at all. It becomes much quieter here. Your passive-aggressiveness has trumped others[']! Hooray!";
 	now war-sapped is true;
 	clue-zap "SO SAPPIN";
 	process the check-sing-max rule;
