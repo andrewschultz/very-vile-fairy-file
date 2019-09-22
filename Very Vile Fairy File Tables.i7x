@@ -198,6 +198,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "CULL CEASED"	false	can-cull-ceased rule	false	"You should be able to say [b][cul-lul][r] [once-now of can-cull-ceased rule] you're back to full strength."
 "DEAL DEAR"	false	can-deal-dear rule	false	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
 "DINING DOOR"	false	can-dining-door rule	false	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
+"FAKE FEE"	false	can-fake-fee rule	false	"You could give Jake G. a [b]FAKE FEE[r] [once-now of can-fake-fee rule] Jake G. has given you something of value."
 "FEEL FEAR"	false	can-feel-fear rule	false	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
 "FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
 "FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
@@ -220,6 +221,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "SMASHING SMOKE"	false	can-smashing-smoke rule	false	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
 "SNAKE SNAP"	false	can-snake-snap rule	false	"You can [b]SNAKE SNAP[r] [once-now of can-snake-snap rule] it's clear a snake is present."
 "SO SAPPIN"	false	can-so-sappin rule	false	"You can make things [b]SO SAPPIN[r] [once-now of can-so-sappin rule] you can find where people are using their energy fruitlessly."
+"TAKE TEA"	false	can-take-tea rule	false	"You could [b]TAKE TEA[r] with Jake G. [once-now of can-fake-fee rule] he's conscious."
 
 [?? see about collapsing the below into rules from the story file proper e.g. vc-can-cull-ceased rule]
 
@@ -248,6 +250,10 @@ this is the can-deal-dear rule:
 this is the can-dining-door rule:
 	if war-sapped is true, the rule succeeds;
 	the rule fails;
+
+this is the can-fake-fee rule:
+	if jake-tea is true, the rule succeeds;
+	the rule fails.
 
 this is the can-feel-fear rule:
 	if knelt-yet is true, the rule succeeds;
@@ -323,6 +329,10 @@ this is the can-snake-snap rule:
 this is the can-so-sappin rule:
 	if whining war is visited, the rule succeeds;
 	the rule fails;
+
+this is the can-take-tea rule:
+	if jake-woke is true, the rule succeeds;
+	the rule fails.
 
 [zz4l8r]
 

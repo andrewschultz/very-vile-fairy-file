@@ -31,8 +31,8 @@ a thing can be abstract. a thing is usually not abstract.
 [include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
 include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
 
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
 
 include undo output control by Erik Temple.
 
@@ -51,6 +51,10 @@ when play begins (this is the set debug state rule): now debug-state is true;
 [Include this line after, as it may have some "when play begins" tests]
 
 include Very Vile Fairy File Tests by Andrew Schultz.
+
+section rules to exclude
+
+The print final score rule is not listed in for printing the player's obituary.
 
 book i6 replacemets
 
@@ -269,11 +273,12 @@ the can't go that way rule is not listed in any rulebook.
 ever-wry-wall is a truth state that varies.
 wry-wall-found is a number that varies. wry-wall-found is 0.
 
-check going nowhere:
+check going nowhere (this is the look for bad locs rule):
 	repeat through table of bad locs: [this is in the tables file]
 		if there is no e1 entry or there is no e2 entry:
 			[if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";] [commented out since fake death appears in Blinding Blaze. Also there are python-script ways to check.]
 			next;
+		say "[location of player] ?= [e1 entry] [e2 entry].";
 		if location of player is e1 entry and noun is e2 entry:
 			if been-here entry is true, say "You already went [noun] to the joke death-trap [fake-name entry]." instead;
 			say "You decide to go [noun] to [fake-name entry].[paragraph break]";
@@ -1064,7 +1069,7 @@ part Shirk Shell -1,2 a
 
 Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact.". cht of shirk shell is letminus. [->work well]
 
-check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back." instead;
+check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
 
 after printing the name of jerk gel while taking inventory: say " (brand name: SUPPLE SAPS)";
 
@@ -1465,7 +1470,7 @@ check thinking:
 	read-laters false;
 	if ever-thought is false:
 		now ever-thought is true;
-		say "[line break]NOTE: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can THINK to see things you figured but aren't quite ready to do yet.";
+		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
 	if boat-reject is true and nap-no is true and lake lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
 	if number of optional-noted things > 0:
 		say "You also know several things that are optional to figure out: [list of optional-noted things].";
@@ -2796,16 +2801,16 @@ final question wording	only if victorious	topic		final response rule		final resp
 showaltverbsing is an activity.
 
 rule for showaltverbsing:
-	say "[2da]You could either MASH MAP, BASH BAP or RASH RAP the cache cap.";
-	say "[2da]You could either FLIM FLAM or SKIM SCAM to leave the Trim Tram.";
-	say "[2da]BUMPED BUSTER or DUMPED DUSTER could've cleared the clumped cluster.";
-	say "[2da]WHAT A WANKSTA or WHATTA WANKSTA would've annoyed the Gutta Ganksta.";
-	say "[2da]KNEEL NEAR, FEEL FEAR, DEAL DEAR and HEAL HERE could've had an ING because of the Ceiling Seer.";
-	say "[2da]You could've disersed the blinding blaze with WINDING WAYS, MINDING MAZE or FINDING PHASE.";
-	say "[2da]You could've found the LUCK LAIR or the SNUCK SNARE.";
-	say "[2da]SILENT SAIL or SILENT SALE could've quieted the Violent Vale.";
-	say "[2da]CULL CEASED or LUL LEAST could've taken down the Bull Beast.";
-	say "[2da]WHOA, WOE or WHOAH WAIT were all acceptable by the Go Gate in Airy Isle.";
+	say "[2da]You could either [b]MASH MAP[r], [b]BASH BAP[r] or [b]RASH RAP[r] the cache cap.";
+	say "[2da]You could either [b]FLIM FLAM[r] or [b]SKIM SCAM[r] to leave the Trim Tram.";
+	say "[2da][b]BUMPED BUSTER[r] or [b]DUMPED DUSTER[r] could've cleared the clumped cluster.";
+	say "[2da][b]WHAT A/WHATTA WANKSTA[r] would've annoyed the Gutta Ganksta.";
+	say "[2da][b]KNEEL NEAR/FEEL FEAR/DEAL DEAR/HEAL HERE[r] could've had an ING because of the Ceiling Seer.";
+	say "[2da]You could've dispersed the Blinding Blaze with [b]WINDING WAYS[r], [b]MINDING MAZE[r] or [b]FINDING PHASE[r].";
+	say "[2da]You could've found the [b]LUCK LAIR[r] or the [b]SNUCK SNARE[r].";
+	say "[2da][b]SILENT SAIL/SALE[r]  could've quieted the Violent Vale.";
+	say "[2da][b]CULL CEASED[r] or [b]LUL LEAST[r] could've taken down the Bull Beast.";
+	say "[2da][b]WHOA/WOE/WHOAH WAIT[r] were all acceptable by the Go Gate in Airy Isle.";
 
 showmissesing is an activity.
 
@@ -3142,7 +3147,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "brightening"	"bridge"	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
 "silent"	"sail|sale"	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--
 "boring"	"boat"	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--
-"wake"	"whee/wee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
+"wake"	"whee|wee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
 "take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
 "fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
 "break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
@@ -3206,7 +3211,7 @@ to win-the-game:
 	process the notify score changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
-	end the story finally saying "DEALS DONE: FEELS FUN!";
+	end the story finally saying "DEAL'S DONE: FEELS FUN!";
 	follow the shutdown rules;
 
 to check-gored-clue:
@@ -3603,6 +3608,14 @@ this is the vr-dreaming-dull rule:
 
 this is the vc-fake-fee rule:
 	if jake is not touchable, the rule fails;
+	if jake-woke is false:
+		vcp "Maybe when Jake is awake.";
+		clue-later "FAKE FEE";
+		continue the action;
+	if jake-tea is false:
+		vcp "Buit Jake has given you nothing of value yet.";
+		clue-later "FAKE FEE";
+		continue the action;
 	if jake-fee is true:
 		vcal "That's over. Time to work with Jake!";
 		the continue the action;
@@ -4394,6 +4407,7 @@ this is the vr-snake-snap rule:
 	now snake-snap is true;
 	move boring boat to Violent Vale;
 	move player to Violent Vale, without printing a room description;
+	phbt Lake Lap;
 	clue-zap "SNAKE SNAP";
 
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
@@ -4464,6 +4478,10 @@ this is the vr-strong-start rule:
 
 this is the vc-take-tea rule:
 	if jake is not touchable, the rule fails;
+	if jake-woke is false:
+		vcp "Maybe when Jake is awake.";
+		clue-later "TAKE TEA";
+		continue the action;
 	if jake-tea is true:
 		vcal "Don't get greedy. You have the sustenance needed to work with Jake G.";
 		the continue the action;
@@ -4546,8 +4564,10 @@ this is the vr-winding-ways rule:
 	now blaze-ways is true;
 	move minding maze to blinding blaze;
 	phbt blinding blaze;
-	choose row with e1 of Blinding Blaze in table of bad locs;
-	now e2 entry is north;
+	repeat through table of bad locs:
+		if e1 entry is Blinding Blaze:
+			now e2 entry is north;
+			break;
 	wall-refresh;
 
 this is the vc-wood-one rule:
