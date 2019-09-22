@@ -22,17 +22,17 @@ include Basic Screen Effects by Emily Short.
 
 a thing can be abstract. a thing is usually not abstract.
 
-[a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game. Perhaps this is quixotic, but I enjoyed the programmin exercise. Long story short: the mistakes and tables take up a ton of space I don't really need for testing. But they don't take up enough to threaten a beta build's z8-ness.]
+[a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game. Perhaps this is quixotic, but I enjoyed the programming exercise. Long story short: the mistakes and tables take up a ton of space I don't really need for testing. But they don't take up enough to threaten a beta build's z8-ness.]
 
 [include Property Checking for VVFF by Emily Short.] [modified version]
 
-[dnc.py can/should toggle this]
+[dnc.py/icl.pl can/should toggle this]
 
 [include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
 include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
 
-[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
+include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
 
 include undo output control by Erik Temple.
 
@@ -101,6 +101,11 @@ definition: a thing (called th) is known-to-player:
 	if th is off-stage, no;
 	if th is not a backdrop and location of th is unvisited, yes;
 	yes;
+
+definition: a thing (called th) is acquired:
+	if th is moot, yes;
+	if th is enclosed by the player, yes;
+	no;
 
 to say here-in of (rm - a room): say "[if rm is location of player]here[else]in [rm][end if]"
 
@@ -808,7 +813,7 @@ check taking flooring float: say "It's too heavy, and you can't take it anywhere
 
 chapter boring boat
 
-the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see somewhere new.". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[if nap-no is true]a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
+the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see somewhere new.". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true]a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
 
 does the player mean entering boring boat: it is very likely;
 
@@ -867,7 +872,7 @@ check going east in Lake Lea when Jake G is touchable:
 	if jake-woke is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if jake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else if co-capn is true]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. [-> wake whee] [-> fake fee] [-> take tea]
+Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else if jake-cocapn is true]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. [-> wake whee] [-> fake fee] [-> take tea]
 
 description of Jake G is "[if jake-woke is false]He's sleeping. You need a personalized, cheery greeting[else if jake-tea is false]Jake seems to be fiddling with utensils and snack packs[else if jake-fee is false]Jake rubs the fingers of one hand together but waves it off with the other[else if jake-map is false]Jake looks a little llost[else if jake-cocapn is false]Jake looks a little down here, as if he wants to feel equal to you, or he could use a song[else]Jake seems eager for battle[end if]."
 
@@ -896,6 +901,10 @@ dine-door is a truth state that varies.
 
 shore-shine is a truth state that varies.
 
+chapter pining poor
+
+the pining poor are plural-named people. talk-text of pining poor is "'Rich row niche? No! ... Which woe?'". description of pining poor is "They look [if full feast is not moot]hungry[else]idle, waiting for work[end if].". "The pining poor, relics of the whining war, stand here, looking needy.". cht of pining poor is leteq.
+
 chapter dining door
 
 the dining door is scenery. "The dining door is just there to invite people to eat, once there's a proper meal. It's not intrinsically useful."
@@ -907,6 +916,7 @@ Lake Lap is east of Lake Lea. It is in Piddling Pain. "You could go back west to
 jake-cocapn is a truth state that varies.
 jake-snap is a truth state that varies.
 jake-map is a truth state that varies.
+snake-snap is a truth state that varies. [equivalent to "if cake cap is off-stage"]
 
 part Been Buggin'
 
@@ -1002,7 +1012,7 @@ gull-guard is a truth state that varies.
 
 to buff-gold-guard:
 	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal.'[wfak]";
-	if clue-tried of "BEAST BOSS", say "[line break]You also feel more ready to face the beast boss, now.";
+	if tried-yet of "BEAST BOSS", say "[line break]You also feel more ready to face the beast boss, now.";
 	now gull-guard is true;
 	move player to Soft Sand;
 
@@ -1348,17 +1358,17 @@ check taking inventory:
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of gaphats carried by player > 0, say "You are also carrying a [if number of carried gaphats < 3]budding[else]complete[end if] hat collection: [list of gaphats carried by player].";
-	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. It has ... possibilities. You can SING it to yourself. [toe-poss].";
+	if player has toe tappin, say "Toe Tappin Row Rappin['], that catchy song, is in your head. It has ... possibilities. [toe-poss].";
 	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
 	check-injury;
 	the rule succeeds;
 
-to check-injury: if least-loss is false, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
+to check-injury: if least-loss is true, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
 
 to decide which number is toe-clued:
 	let temp be 0;
 	if tried-yet of "SO SAPPIN", increment temp;
-	if tried-yet of "NO NAPPIN", increment temp;
+	if nap-no is true, increment temp;
 	if tried-yet of "CO CAPN", increment temp;
 	if tried-yet of "GO GAPPIN", increment temp;
 	if tried-yet of "MO MAPPIN", increment temp;
@@ -1443,11 +1453,16 @@ to read-laters (ts - a truth state):
 			now thought-any is true;
 			say "[think-advice entry][line break]";
 
+to check-flip-verbs:
+	if player is in soft sand and ever-loft is true, say "[line break]You can switch between LOFT LAND and SOFT SAND freely.";
+	if player is in history hall and ever-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
+
 check thinking:
 	let thought-any be false;
 	now vc-dont-print is true;
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
 	if all-hinted is 0, say "[line break]But you don't have leads for any puzzles right now." instead;
+	check-flip-verbs;
 	now vc-dont-print is false;
 	read-laters true;
 	read-laters false;
@@ -1654,6 +1669,7 @@ carry out verbsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
+	check-flip-verbs;
 	if player has Toe Tappin, say "[2da]You can also [b]SING[r] [Toe Tappin] to see if it might be useful, as a small clue, or LL TOE for further hints.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
@@ -2153,6 +2169,7 @@ the thing-hint-rule of cool cap is all-caps-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of dark door is the dark-door-hint rule.
 the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
+the thing-hint-rule of dining door is dining-door-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
 the thing-hint-rule of FIND FEE is find-fee-hint rule.
 the thing-hint-rule of flooring float is the flooring-float-hint rule.
@@ -2183,10 +2200,12 @@ the thing-hint-rule of mean mass is mean-mass-hint rule.
 the thing-hint-rule of Mean Moe's Clean Clothes is the mean-moes-clean-clothes-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
 the thing-hint-rule of mind malt is mind-malt-hint rule.
+the thing-hint-rule of minding maze is minding-maze-hint rule.
 the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
 the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
 the thing-hint-rule of paper pile is paper-pile-hint rule.
 the thing-hint-rule of peeling pier is peeling-pier-hint rule.
+the thing-hint-rule of pining poor is dining-door-hint rule. [pining poor and dining door both map to mining more]
 the thing-hint-rule of poor ponder for fonder is poor-ponder-for-fonder rule.
 the thing-hint-rule of prong part is prong-part-hint rule.
 the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
@@ -2321,6 +2340,10 @@ this is the dean-duggan-hint rule:
 	say "[one of]Dean Duggan is an integral part of Been Buggin[']. So hints about him are hints about Been Buggin['].[or][stopping]";
 	process the been-buggin-hint rule;
 
+this is the dining-door-hint rule:
+	if full feast is not moot, say "(NOTE: you can't fully solve this until you do something else. But you can guess the verb.)[paragraph break]";
+	say "[one of]There's one more thing you can do with the dining door and pining poor once you've had a feast[or]The pining poor want jobs, or to discover riches[or]You can find riches here if you look the right way[or]MINING MORE[stopping]";
+
 this is the done-den-hint rule:
 	say "You don't need to go back through the done den. There are not even any extra points."
 
@@ -2423,6 +2446,10 @@ this is the mean-moes-clean-clothes-hint rule:
 this is the mild-mead-hint rule: say "The mild mead is there just to provide a liquid refreshment for a feast. It has no use on its own. [if wild weed is off-stage][one of]It does have a bonus point, though[or]The mild mead can get a little more kick[or]It can become a different drug, sort of[or]WILD WEED[stopping][else]And you already got the wild weed from it[end if]."
 
 this is the mind-malt-hint rule: say "The mind malt is just there to give another clue about weaknesses in the Vined Vault."
+
+this is the minding-maze-hint rule:
+	if toe tappin row rappin is not acquired, say "You don't have what you need yet to get through the maze. You need a riff on another item." instead;
+	say "[one of]You need to think outside the box, or the maze, for the minding maze.[or]If you have Toe Tappin in your head, well, you may have a clue you need to use it.[or]What do you need to do to get through a maze?[or]You need to MAP it. A lot.[or]You can only map a bit if you just use your head.[or]MO MAPPIN will make mapping the maze go faster.[stopping]";
 
 this is the oi-mo-hint rule:
 	say "[one of]Oi Mo['] is a bad song, but there may be a way to tune it out.[or]This is a bit tricky, because it relies on something different than the usual mechanic. That's why it's an optional point.[or]Everything is in the XimX format.[or]DIMD will turn the volume down.[stopping]"
@@ -3325,7 +3352,7 @@ this is the vc-brightening-bridge rule:
 	the rule succeeds;
 
 this is the vr-brightening-bridge rule:
-	say "Boom! There goes the fridge! You can go east now!";
+	say "The fridge collapses and flattens and provides a secure passage to the east!";
 	moot frightening fridge;
 
 this is the vc-bumped-buster rule:
@@ -3537,7 +3564,7 @@ this is the vc-dining-door rule:
 	the rule succeeds;
 
 this is the vr-dining-door rule:
-	say "The dining door appears.";
+	say "Up from the ground, a dining door rumbles and appears. You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
 	now dine-door is true;
 	move dining door to Whining War;
 	clue-zap "DINING DOOR";
@@ -4110,7 +4137,7 @@ this is the vr-mind-me rule:
 this is the vc-mining-more rule:
 	if player is not in Whining War, the rule fails;
 	if full feast is not moot:
-		vcp "You aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
+		vcp "You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
 		clue-later "MINING MORE";
 		continue the action;
 	the rule succeeds;
@@ -4180,7 +4207,7 @@ this is the vr-mystery-mall rule:
 	now Got Gear Hot Here is mapped west of History Hall;
 	now mistmall is true;
 	bold-my-room;
-	if ever-mall is false, say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.";
+	if ever-mall is false, say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksa 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to LISTEN to, as well.";
 	now ever-mall is true;
 	now zap-core-entry is true;
 
@@ -4239,8 +4266,9 @@ this is the vc-pull-pieced rule:
 	the rule succeeds;
 
 this is the vr-pull-pieced rule:
-	say "With the help of the Fining Four, you pull the full feast that was the bull beast to the Shining Shore. There, you have a very good feast. They're happy. They are quite ready to help you now.";
+	say "With the help of the pining poor, you pull the full feast that was the bull beast to the Shining Shore. There, the dining door swings open. You enter and have a very good feast. As you leave, the dining door dissolves. The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
+	moot dining door;
 	move player to Whining War, without printing a room description;
 	clue-zap "PULL PIECED";
 
@@ -4267,9 +4295,10 @@ this is the vc-shining-shore rule:
 	the rule succeeds;
 
 this is the vr-shining-shore rule:
-	say "The Whining War dissipates, leaving the shining shore of ... Lake Lap! It's much brighter here. You feel there may be something else to find here.";
+	say "The Whining War dissipates, leaving a shining shore! It's not total paradise or anything, but it's much brighter here. You feel there may be something else to find here. The combatants turn into ... the pining poor.";
 	now cht of Whining War is letminus; [shining shore -> dining door] [shining shore -> mining more]
-	now shore-shine is true; [?? fake fap]
+	now shore-shine is true;
+	move pining poor to whining war;
 	clue-zap "SHINING SHORE";
 
 this is the vc-show-shield rule:
@@ -4348,6 +4377,7 @@ this is the vr-snake-snap rule:
 	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale. It seems sturdy enough for another journey, if you want to go.";
 	if jake-brie is false, max-down; [can't BREAK BRIE any more]
 	now player has cake cap;
+	now snake-snap is true;
 	move boring boat to Violent Vale;
 	move player to Violent Vale, without printing a room description;
 	clue-zap "SNAKE SNAP";
@@ -4355,7 +4385,7 @@ this is the vr-snake-snap rule:
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if player does not have Toe Tappin Row Rappin, the rule fails;
 	if war-sapped is true:
-		vcal "You already discouraged some whining. Do it again, you might be the whiner.";
+		vcal "You already discouraged some whining. Bringing it up again might make you be the whiny one.";
 		continue the action;
 	if player is not in whining war:
 		vcp "That's an interesting riff, but it doesn't seem to work here.";

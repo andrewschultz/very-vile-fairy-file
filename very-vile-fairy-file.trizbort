@@ -175,7 +175,7 @@
 			<dock index="0" id="3" port="ne" />
 			<dock index="1" id="70" port="sw" />
 		</line>
-		<room id="72" name="Blinding Blaze/Minding Maze" subtitle="" x="352" y="-224" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="&quot;Mo Mappin&quot;" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="72" name="Blinding Blaze/Winding Ways" subtitle="" x="352" y="-224" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="&quot;Mo Mappin&quot;" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="65" name="" description="" style="dashed">
 			<dock index="0" id="59" port="e" />
 			<dock index="1" id="23" port="w" />
@@ -267,6 +267,11 @@
 		<line id="98" name="" description="" style="dashed">
 			<dock index="0" id="72" port="n" />
 			<dock index="1" id="97" port="s" />
+		</line>
+		<room id="99" name="Hi Here Buy Beer" subtitle="" x="672" y="288" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="100" name="" description="">
+			<dock index="0" id="74" port="e" />
+			<dock index="1" id="99" port="w" />
 		</line>
 	</map>
 	<settings>

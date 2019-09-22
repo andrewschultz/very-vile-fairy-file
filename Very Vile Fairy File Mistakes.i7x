@@ -101,7 +101,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pay poke"	have-clay-cloak rule	--	--	"The clay cloak was free. No need to pay anything."
 "binding bays/baize"	blaze-before-maze rule	false	7	4	--	"You need to break free here, not get more tied up." [start blinding blaze]
 "grinding grays"	blaze-before-maze rule	false	7	4	--	"The blaze might be colored duller, but it'd still be too uncomfortable."
-"ceased sauce"	in-creased-cross rule	false	5	4	beast-boss-here rule	--	"You don't need any fancy cooking." [start creased cross]
+"ceased sauce"	in-creased-cross rule	false	5	4	beast-boss-here rule	"You don't need any fancy cooking." [start creased cross]
 "nursed knave"	in-curst-cave rule	false	5	5	clue-worst-wave rule	"You don't need any more of that." [start curst cave]
 "rule rap/wrap"	tool-tap-near rule	false	4	3	--	"You need something more substantial to come out of the cool cap."
 "crane crescent"	peasant-around rule	false	5	7	--	"No bird swoops to pick up the pain peasant." [start foe field]
@@ -192,7 +192,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
 "signed see"	tram-first-puzzle rule	false	4	2	--	"You're still reacting to FIND FEE. You need to look inwards."
 "tined tee"	tram-first-puzzle rule	false	4	2	--	"You don't have time for silly games like golf now!"
-"kind key"	tram-first-puzzle rule	false	4	2	--	"Oh, it won't be that easy. Someone won't drop it for you. But you can do for "whim wham"	in-trim-tram rule	false	4	4	--	"Hmm, you try to figure a poetic way through, but perhaps you need something more worldly."
+"kind key"	tram-first-puzzle rule	false	4	2	--	"Oh, it won't be that easy. Someone won't drop a key for you. But you can do for yourself."
+"whim wham"	in-trim-tram rule	false	4	4	--	"Hmm, you try to figure a poetic way through, but perhaps you need something more worldly."
 "grim gram"	in-trim-tram rule	false	4	4	--	"No elder appears to upbraid you, which is all for the better."
 "jim jam"	in-trim-tram rule	false	4	4	--	"No elder appears to upbraid you, which is all for the better."
 "dim dam"	in-trim-tram rule	false	4	4	--	"You need fewer blockages, not more."
@@ -200,7 +201,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "rim ram"	in-trim-tram rule	false	4	4	--	"Banging on the walls won't help."
 "shim sham"	in-trim-tram rule	false	4	4	--	"Hmm. Interesting. But you might need to fake something besides a shim."
 "him ham"	in-trim-tram rule	false	4	4	--	"Pigs, male or female, aren't allowed on public transport."
-YOU."
 "prim pram"	in-trim-tram rule	false	4	4	--	"That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse."
 "slim slam"	in-trim-tram rule	false	4	4	--	"That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though."
 "bean bass"	mass-near rule	false	5	5	--	"You could use a delicious meal, but perhaps there is something even simpler the mean mass can become." [start vined vault]
