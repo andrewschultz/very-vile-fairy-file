@@ -83,6 +83,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory. Try a homonym, here. You're close."
 "pot poured"	bot-board-vis rule	false	3	5	--	"There's no time for coffee here!"
 "rot roared"	bot-board-vis rule	false	3	5	--	"Not the battle cry needed."
+"snot snored"	bot-board-vis rule	false	3	5	--	"Not the battle cry needed."
 "fought ford"	bot-board-vis rule	false	3	5	--	"The battle is ahead, not in the past."
 "crow crate"	go-gate-vis rule	false	--	--	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus]."
 "foe fate"	go-gate-vis rule	false	--	--	--	"You are very near the end, but it's not that easy.[leetclue of partplus]"

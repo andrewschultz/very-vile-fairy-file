@@ -264,7 +264,7 @@ to say sign-dir:
 definition: a room (called rm) is signable:
 	if rm is airy isle and bot board is in airy isle, no;
 	repeat through table of bad locs:
-		if there is no e1 entry or there is no e2 entry, next;
+		if avail entry is false, next;
 		if rm is e1 entry, yes;
 	no;
 
@@ -276,9 +276,9 @@ wry-wall-found is a number that varies. wry-wall-found is 0.
 check going nowhere (this is the look for bad locs rule):
 	repeat through table of bad locs: [this is in the tables file]
 		if there is no e1 entry or there is no e2 entry:
-			[if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";] [commented out since fake death appears in Blinding Blaze. Also there are python-script ways to check.]
+			if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";
 			next;
-		say "[location of player] ?= [e1 entry] [e2 entry].";
+		if avail entry is false, next;
 		if location of player is e1 entry and noun is e2 entry:
 			if been-here entry is true, say "You already went [noun] to the joke death-trap [fake-name entry]." instead;
 			say "You decide to go [noun] to [fake-name entry].[paragraph break]";
@@ -1197,7 +1197,7 @@ meeker-yet is a truth state that varies.
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if shot sword is in Airy Isle]. A shot sword lies unused here[end if].". noway-text is "The Fairy File's presence makes you bump into walls figuratively. Let's not to so literally."
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if swat sword is in Airy Isle]. A swat sword lies unused here. It looks slightly out of place[end if].". noway-text is "[if lot lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if]."
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
@@ -1216,9 +1216,9 @@ for printing a locale paragraph about a person (called per) in Airy Isle:
 	else:
 		say "The Lot Lord and Hot Horde mumble amongst themselves. The right battle cry, and they will be fully jazzed to take down the Bot Board!";
 
-the Bot Board are plural-named people in Airy Isle. talk-text is "Meep, mate! Heap hate! Weep, wait!". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own.". cht of Bot Board is leteq. [->got gored] [-> hot horde]
+the Bot Board are plural-named people in Airy Isle. talk-text is "'Meep, mate! Heap hate! Weep, wait!'". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own. NOT [']NORED is etched on each of their chests.". cht of Bot Board is leteq. [->got gored] [-> hot horde]
 
-the shot sword is scenery in Airy Isle. "It says PROPERTY OF ... Man, maybe if you figured out who owned it, they might be able to help you.". cht of shot sword is letminus. [-> lot lord]
+the swat sword is scenery in Airy Isle. "It says PROPERTY OF ... Man, maybe if you figured out who owned it, they might be able to help you. It looks a bit, well, off.". cht of swat sword is letminus. [-> lot lord]
 
 the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?". description is "The Lot Lord's authority as a battle leader is unquestionable. Yet he needs [if hot horde is off-stage]followers[else]a battle cry for his followers--he doesn't seem much of a poet[end if].". cht of Lot Lord is partplus. [->got gored]
 
@@ -2232,11 +2232,11 @@ the thing-hint-rule of row writ is row-writ-hint rule.
 the thing-hint-rule of Sage Sea is sage-sea-hint rule.
 the thing-hint-rule of screaming skull is screaming-skull-hint rule.
 the thing-hint-rule of Shoaled Shard is the shoaled-shard-hint rule.
-the thing-hint-rule of shot sword is shot-sword-hint rule.
 the thing-hint-rule of shy shawl is the shy-shawl-hint rule.
 the thing-hint-rule of snuck snare is the snuck-snare-hint rule.
 the thing-hint-rule of steel steer is steel-steer-hint rule.
 the thing-hint-rule of stuck stair is the stuck-stair-hint rule.
+the thing-hint-rule of swat sword is shot-sword-hint rule.
 the thing-hint-rule of tall tree is tall-tree-hint rule.
 the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
 the thing-hint-rule of Too Totes New Notes is the too-totes-new-notes-hint rule.
@@ -2508,7 +2508,7 @@ this is the shoaled-shard-hint rule:
 	say "The Shoaled Shart is just the place the Bold Bard need[if bold bard is moot]s[else]ed[end if] to get to. It's irrelevant on its own."
 
 this is the shot-sword-hint rule:
-	say "[one of]The shot sword belongs to someone. It's surprisingly noble for being kind of useless[or]The shot sword hints that you can call the LOT LORD[stopping].";
+	say "[one of]The swat sword belongs to someone. It's surprisingly noble for being kind of useless[or]The swat sword hints that you can call the LOT LORD[stopping].";
 
 this is the shy-shawl-hint rule:
 	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]It looks silly and stupid and wrong.[or]LIE LOL[stopping]."
@@ -2705,6 +2705,11 @@ when play begins (this is the backdrop and score seeding rule):
 
 to wall-refresh: move the wry wall backdrop to all signable rooms;
 
+to wall-add (rm - a room):
+	repeat through table of bad locs:
+		if e1 entry is rm, now avail entry is true;
+	wall-refresh;
+
 mugged-first is a truth state that varies.
 
 when play begins (this is the randomize all the things rule):
@@ -2755,7 +2760,7 @@ Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Bla
 to say blazno:
 	if blaze-ways is false:
 		say "You can't see any way other than back west";
-	if stuck stair is off-stage:
+	else if stuck stair is off-stage:
 		say "You explore the minding maze a bit, but you get frustrated quickly. You need some support, support from inside you and not related to this location, to make it through smoothly and happily";
 	else:
 		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operat the stuck stair[end if]. No directions except exiting back west were, or are, needed.";
@@ -3823,7 +3828,7 @@ this is the vr-got-gored rule:
 	moot Hot Horde;
 	moot Lot Lord;
 	moot Bot Board;
-	wall-refresh;
+	wall-add Airy Isle;
 	move go gate to Airy Isle;
 	clue-zap "GOT GORED";
 
@@ -4025,8 +4030,8 @@ this is the vc-lot-lord rule:
 
 this is the vr-lot-lord rule:
 	move lot lord to airy isle;
-	say "The Lot Lord whirls in from above, only looking slightly stunned. 'Ah! That's where my shot sword is. Not useful in combat, but it has ancient powers and lineage and stuff. Good for leadership and all that.' The sword glows as he takes it.";
-	moot shot sword;
+	say "The Lot Lord whirls in from above, only looking slightly stunned. 'Ah! That's where my swat sword is. Not useful in combat, but it has ancient powers and lineage and stuff. Good for leadership and all that.' The sword glows as he takes it.";
+	moot swat sword;
 	check-gored-clue;
 
 this is the vc-lots-lame rule:
@@ -4568,7 +4573,7 @@ this is the vr-winding-ways rule:
 		if e1 entry is Blinding Blaze:
 			now e2 entry is north;
 			break;
-	wall-refresh;
+	wall-add Blinding Blaze;
 
 this is the vc-wood-one rule:
 	if reeker russell is not touchable, the rule fails;
