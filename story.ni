@@ -1471,11 +1471,11 @@ to check-flip-verbs:
 
 check thinking:
 	let thought-any be false;
+	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do.";
+	if all-hinted is 0:
+		say "[line break]But you don't have leads for any puzzles right now." instead;
 	now vc-dont-print is true;
-	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encounterd and not solved, and what you've done and tried, and what you can do.";
-	if all-hinted is 0, say "[line break]But you don't have leads for any puzzles right now." instead;
 	check-flip-verbs;
-	now vc-dont-print is false;
 	read-laters true;
 	read-laters false;
 	if ever-thought is false:
@@ -1485,6 +1485,7 @@ check thinking:
 	if number of optional-noted things > 0:
 		say "You also know several things that are optional to figure out: [list of optional-noted things].";
 	check-injury;
+	now vc-dont-print is false;
 	the rule succeeds;
 
 to decide whether tried-yet of (ct - text):
@@ -1567,7 +1568,7 @@ to decide which number is future-hinted:
 	repeat through the table of forlaters:
 		if ready-to-hint entry is true:
 			process the can-do-now entry;
-			if the rule failed, increment temp;
+			unless the rule succeeded, increment temp;
 	now vc-dont-print is false;
 	decide on temp;
 
@@ -1760,9 +1761,6 @@ after printing the name of leet learner while taking inventory: say " ([off-on o
 understand "ll" and "cc" as leet learner.
 
 ha-half is a truth state that varies.
-
-when play begins: [?? put this somewhere better]
-	now ha-half is true;
 
 to say will-wont of (ts - a truth state):
 	say "[if ts is true]will[else]won't[end if]"
@@ -2695,19 +2693,6 @@ to decide whether (di - a direction) is blocked:
 
 volume when play begins
 
-when play begins (this is the opening text rule):
-	now the left hand status line is "West Wall";
-	force-status;
-	anonymously abide by the check-skip-intro rule;
-	if debug-state is false, ask-screenread;
-	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak]";
-	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
-	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
-	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
-	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
-	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
-	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
-
 when play begins (this is the score and status tweak rule):
 	now the maximum score is core-max + max-bonus;
 	now max-poss is the maximum score;
@@ -2719,6 +2704,26 @@ when play begins (this is the backdrop and score seeding rule):
 	seed-score-list; [this is in the table file]
 	wall-refresh;
 
+when play begins (this is the randomize all the things rule):
+	if a random chance of 1 in 2 succeeds, now mugged-first is true;
+	repeat through table of all randoms:
+		sort tabnam entry in random order;
+
+when play begins (this is the opening text rule):
+	now ha-half is true;
+	now the left hand status line is "West Wall";
+	force-status;
+	process the check-skip-intro rule;
+	if the rule succeeded, continue the action;
+	if debug-state is false, ask-screenread;
+	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[wfak]";
+	say "[line break]'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
+	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
+	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
+	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
+	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
+	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
+
 to wall-refresh: move the wry wall backdrop to all signable rooms;
 
 to wall-add (rm - a room):
@@ -2727,11 +2732,6 @@ to wall-add (rm - a room):
 	wall-refresh;
 
 mugged-first is a truth state that varies.
-
-when play begins (this is the randomize all the things rule):
-	if a random chance of 1 in 2 succeeds, now mugged-first is true;
-	repeat through table of all randoms:
-		sort tabnam entry in random order;
 
 section when play begins - not for release
 
