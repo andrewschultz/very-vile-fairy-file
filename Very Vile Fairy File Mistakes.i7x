@@ -103,7 +103,9 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "binding bays/baize"	blaze-before-maze rule	false	7	4	--	"You need to break free here, not get more tied up." [start blinding blaze]
 "grinding grays"	blaze-before-maze rule	false	7	4	--	"The blaze might be colored duller, but it'd still be too uncomfortable."
 "ceased sauce"	in-creased-cross rule	false	5	4	bull-beast-here rule	"You don't need any fancy cooking." [start creased cross]
-"nursed knave"	in-curst-cave rule	false	5	5	clue-worst-wave rule	"You don't need any more of that." [start curst cave]
+"nursed nave|knave"	in-curst-cave rule	false	5	5	clue-worst-wave rule	"You don't need to nurse a bad guy or a religious place." [start curst cave]
+"cruel crap"	tool-tap-near rule	false	4	3	--	"But you got rid of the skull. Also, swearing bad."
+"mule map"	tool-tap-near rule	false	4	3	--	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
 "rule rap/wrap"	tool-tap-near rule	false	4	3	--	"You need something more substantial to come out of the cool cap."
 "crane crescent"	peasant-around rule	false	5	7	--	"No bird swoops to pick up the pain peasant." [start foe field]
 "fain pheasant"	peasant-around rule	false	5	7	--	"The pain peasant remains human."
@@ -168,6 +170,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "woe/whoa/whoah wit"	in-po-pit rule	false	4	4	clue-whoah-wit rule	"Clever complaining will make you feel better but won't do anything."
 "cage key"	key-or-rear rule	false	--	--	--	"[if cage key is off-stage]It's clever but not wise to see what is in the Sage Sea. But you have to earn it[else]You already got the key[end if]." [start real rear]
 "mage me"	key-or-rear rule	false	--	--	--	"[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do."
+"page pea/pee/p"	in-real-rear rule	false	4	5	"You don't need to skip around a book or summon anything."
+"beige bee"	in-real-rear rule	false	4	5	"This isn't a nature retreat."
 "peel pear"	in-real-rear rule	false	--	--	if-rear-undone rule	"You have no fruit."
 "steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
