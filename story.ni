@@ -291,7 +291,7 @@ instead of doing something with a boring thing:
 
 volume going nowhere
 
-the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][one of][paragraph break]It looks too sturdy to manipulate with rhymes. But maybe trying would be good exercise.[or][stopping]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
+the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][one of][paragraph break]The wall looks too sturdy to manipulate with rhymes. But maybe trying would be good exercise[if lurking lump is not off-stage] and super- or re-charge that lurking lump[else], because more practice is always good[end if].[or][stopping]". bore-text of wry wall is "The wry wall is just there for atmosphere.".
 
 nother-room is a room that varies.
 
@@ -308,6 +308,7 @@ to say sign-dir:
 		if there is an e1 entry and e1 entry is location of player and there is an e2 entry:
 			now got-wry is true;
 			say "[b][fake-name entry][r]: [e2 entry].";
+	if player is in Fun Fen, say "[b]CARK CLIFF: straight down.[r]";
 	say "[run paragraph on]";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
@@ -439,7 +440,7 @@ table of newnotes
 score-needed	note-to-give
 1	"   GET GOOD to WET WOOD    = center."
 2	" RIFT RIVER to GIFT GIVER  = center."
-3	"VINED VAULT to FIND FAULT  = orange."
+3	"VINED VAULT to FIND FAULT  = center-right."
 --	"  MIND MALT to FIND FAULT  = center-left."
 4	"  MEAN MASS to GREEN GRASS = left."
 5	"     PO PIT to GROW GRIT   = left."
@@ -458,7 +459,7 @@ to say cul-lul: say "[if lul-clue is true]LUL LEAST[else]CULL CEASED[end if]"
 
 part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, but you still can't leave.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, so there's a way out.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
 
 chapter mean mass
 
@@ -501,11 +502,11 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tall tree is moot]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you can do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". [?? different description than in cross]
 
 check going in Fun Fen:
 	if noun is north and tree-down is false, say "You need a way through the murky bit to the north. Well, a much safer one." instead;
-	if noun is down, say "'Don't die.' / 'Won't! Why?'" instead;
+	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
 section done den
 
@@ -516,6 +517,8 @@ check entering done den: say "As you start to enter, you imagine a weight fallin
 section wrong art
 
 the wrong art is optional scenery in Fun Fen. "It just looks wrong here. But perhaps it is sort of right, because it may give you one more idea about how to do things. Like all art, it's strictly not necessary, and neither is viewing it the right way. The wrong art also has a prong part sticking out from it.". cht of wrong art is letplus. [-> strong start]
+
+check taking wrong art: say "Not worth it at all." instead;
 
 the prong part is part of the wrong art. The prong part is optional. description is "It's a particularly ugly part of the wrong art.". cht of prong part is letplus. [-> strong start]
 
@@ -699,6 +702,7 @@ to solve-bull-chase:
 	moot beer bull;
 	now player has mild mead;
 	move player to Soft Sand, without printing a room description;
+	say "Man! I guess you could say you had ... one wound run-round."
 
 part Dives Ditch -3,2
 
@@ -1038,7 +1042,13 @@ instead of doing something when in-so-sad is true:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here[if ever-loft is true]. Or you can change back to [soft-loft of false][else]. But ... well, it also feels a bit low. It seems like there's something way high above to the west[end if].". [-> loft land] [loft land->soft sand]
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here[check-hull][if ever-loft is true]. Or you can change back to [soft-loft of false][else]. But ... well, it also feels a bit low. It seems like there's something way high above to the west[end if].". [-> loft land] [loft land->soft sand]
+
+to say check-hull:
+	if gull-guard is true:
+		say ", though you're done to the east";
+	else if beer bull is moot:
+		say ", and west is the Gear Gull, who could help with [if player has gold guard]your gold guard[else]any armor you find[end if]"
 
 to say soft-loft of (ts - a truth state): say "[if loft-land is ts]Loft Land[else]Soft Sand[end if]".
 
@@ -1577,12 +1587,13 @@ to decide whether tried-yet of (ct - text):
 
 to clue-later (ct - text):
 	if vc-dont-print is true, continue the action;
-	now first-think-clue-flag is true;
 	repeat through table of forlaters:
 		if ct is cmd-to-say entry:
 			if debug-state is true and ready-to-hint entry is true, say "(DEBUG re-checking)[line break]";
+			if ready-to-hint entry is false, now think-clue-flag is true;
 			now ready-to-hint entry is true;
 			continue the action;
+	now think-clue-flag is true;
 	say "Oops. I tried to save [ct] in the THINK command for later, but failed[not-crit-but].";
 
 to clue-zap (ct - text):
@@ -1594,12 +1605,11 @@ to clue-zap (ct - text):
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
 
-first-think-clue-flag is a truth state that varies.
-ever-think-flag is a truth state that varies.
+think-clue-flag is a truth state that varies.
 
-every turn when first-think-clue-flag is true and ever-think-flag is false (this is the note first think rule):
-	if ever-think-flag is false, say "[line break][b]NOTE[r]: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under [b]THINK[r], with clues as to when they work.";
-	now ever-think-flag is true;
+every turn when think-clue-flag is true (this is the note right guess wrong time rule):
+	say "[line break][one of][b]NOTE[r]: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under [b]THINK[r], with clues as to when they work.[or](correct guess saved to [b]THINK[r] for later reference.)[stopping]";
+	now think-clue-flag is false;
 	continue the action;
 
 chapter score
@@ -1753,7 +1763,7 @@ understand "verbs" as verbsing.
 
 carry out verbsing:
 	say "[one of]NOTE: More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[paragraph break][or][stopping]";
-	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really.";
+	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really. The verb should never involve proper names, though clever or sensible guesses may help you gain a hint/spoiler item.";
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
@@ -1791,7 +1801,7 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "First, thanks to Wade Clarke, Arthur DiBianca and Anssi Räisänen for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
+	say "First, thanks to Wade Clarke, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen and Jack Welch for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
 	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but I loved the streaks that github showed.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -1827,7 +1837,9 @@ carry out othersing:
 
 book hinting
 
-the leet learner is a thing. description is "It says [b]CHEAT CHURNER[r] in green letters. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]."
+the leet learner is a thing. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]."
+
+the needle is part of the leet learner. it is boring. description is "The needle will move (or not) whenever you SCAN something.". bore-text of needle is "You can't really operate the needle, and you don't need to.".
 
 understand "cheat/churner" and "cheat churner" as leet learner.
 
@@ -1880,18 +1892,21 @@ lling is an action applying to one thing.
 
 understand the command "cc" as something new.
 understand the command "ll" as something new.
+understand the command "scan" as something new.
 
 understand "cc [thing]" as lling when player has leet learner.
 understand "ll [thing]" as lling when player has leet learner.
+understand "scan [thing]" as lling when player has leet learner.
 understand "cc" as lling when player has leet learner.
 understand "ll" as lling when player has leet learner.
+understand "scan" as lling when player has leet learner.
 
 rule for supplying a missing noun when lling:
 	if cht of the player is not phbt:
 		say "You are so focused inward, you just point the learner at yourself.";
 		now the noun is the player;
 	else:
-		say "You wave the leet learner all around... ";
+		say "You wave the leet learner all around...";
 		now the noun is the location of the player;
 	continue the action;
 
@@ -1908,21 +1923,21 @@ to say ll-cheat of (th - a thing):
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
-	if cht of noun is phbt, say "The leet learner turns up nothing scanning [the noun]." instead;
+	if cht of noun is phbt, say "The needle area of the leet learner stays dark when you scan [the noun][if noun is a room], so there's nothing you need to do with the room title." instead;
 	if noun is Store All Stage and coral cage is not moot:
 		say "You suspect 'Store All' counts as one word for the learner's purposes.[paragraph break]";
 	if noun is ceiling seer:
 		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
 		try lling location of player instead;
 	if noun is peeling pier and healed-here is false, say "It seems like the leet learner is registering something everywhere except on the peeling pier, here." instead;
-	say "The leet learner light turns [if noun is optional]faint[else]solid[end if]ly [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
+	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].";
 	if noun is optional and ever-opt-scan is false:
 		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
 	the rule succeeds.
 
 report lling:
-	if noun is We Whine and sign-seen is false, say "[line break]Well, it's a bit of a yellowish-brown, actually.";
+	if noun is We Whine and sign-seen is false, say "[line break]Well, it's alternately in the center and waving around, actually.";
 
 ever-leet-clue is a truth state that varies.
 
@@ -2000,8 +2015,15 @@ understand "hint" as hinting.
 understand "help" as hinting.
 understand "hints" as hinting.
 
+to say sorry-bull: say ". Sorry. But you can try as often as you need"
+
 carry out hinting:
 	abide by the welp-wow-check rule;
+	if in-bull-chase is true:
+		if player does not have snuck snare, say "You don't have what you need to neutralize the beer bull yet[sorry-bull]." instead;
+		if dives ditch is unvisited, say "You haven't found the place to take the beer bull too, yet. Sorry. But you can try as often as you need[sorry-bull].";
+		if snuck snare is not moot, say "[one of]You won't have time to place the snuck snare AND sucker the bull beast this chase, but you will be able to place the snare. HINT again to see where to put the snare[or]You will automatically put the snare in [dives ditch] once you get there[if kni-ni is false], though you need to change the name, first[end if][stopping]." instead;
+		say "You need to lure the beer bull to [dives ditch] now you've placed the snare." instead;
 	process room-hint-rule of location of player;
 	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but you can still hint specific things in [location of player] with HINT (object).";
 	the rule succeeds.
@@ -2143,9 +2165,9 @@ this is the pit-pound-hint rule:
 
 this is the po-pit-hint rule:
 	if grit-grown is false:
-		say "[one of]You have to deal with the Po['] Pit itself before dealing with the trash trap. You can find the right verb for the trash trap, but you can't use it until you deal with the Po['] Pit.[or]The learner giving a blue light in the pit indicates you need two longer words.[or]The learner giving a green light indicates that either row or writ is the right number of letters.[or]You need to get a lot tougher. Become a bigger person.[or]GROW GRIT.[stopping]";
+		say "[one of]You have to deal with the Po['] Pit itself before dealing with the trash trap. You can find the right verb for the trash trap, but you can't use it until you deal with the Po['] Pit.[or]The learner needle swinging left indicates you need two longer words.[or]The learner needle going center-left indicates that either row or writ is the right number of letters.[or]You need to get a lot tougher. Become a bigger person.[or]GROW GRIT.[stopping]";
 	else:
-		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cache cap is stupid, but they both turn the leet learner yellow.[or]Looking at the cache cap, it's got a rendering of the trap and gap. Which seems all wrong.[or]MASH MAP.[stopping]"; [??bash bap]
+		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cache cap is stupid, but they both keep the learner needle in the center.[or]Looking at the cache cap, it's got a rendering of the trap and gap. Which seems all wrong.[or]MASH MAP.[stopping]"; [??bash bap]
 
 this is the real-rear-hint rule:
 	if healed-here is true, the rule fails;
@@ -2208,9 +2230,9 @@ this is the vending-vibe-hint rule:
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
-		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's orange, which is different from the yellow of the Wet Wood[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
+		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
 	else:
-		say "[one of]The mean mass is a bit trickier. The leet learner gives you a different color, blue[or]If you understand leet learner colors, this means you need to add letters to both mean and mass[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
+		say "[one of]The mean mass is a bit trickier. The leet learner swings to the left[or]If you've been observant, you may notice VINED VAULT and MIND MALT swung center-right and center-left, respectively, for FIND FAULT. This may help you guess what swinging left could mean[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
 	the rule succeeds;
 
 this is the violent-vale-hint rule:
@@ -2464,7 +2486,7 @@ this is the done-den-hint rule:
 	say "You don't need to go back through the done den. There are not even any extra points."
 
 this is the find-fee-hint rule:
-	say "[one of]The FIND FEE makes you feel as though you need to pay, but you need to pay attention to yourself.[or]The leet learner scans orange, but the first word has to be *IND. So the second word must be very short indeed.[or]MIND ME.[stopping]"
+	say "[one of]The FIND FEE makes you feel as though you need to pay, but you need to pay attention to yourself.[or]The leet learner scans center-right, but the first word has to be *IND. So the second word must be very short indeed.[or]MIND ME.[stopping]"
 
 this is the flooring-float-hint rule:
 	say "[one of]The flooring float seems almost too exciting to use. You need to tone it down.[or]Make the float a BORING BOAT.[stopping]";
@@ -2531,7 +2553,7 @@ this is the kerry-kyle-hint rule:
 		say "Woohoo! There's nothing wrong with you right now!"
 
 this is the leet-learner-hint rule:
-	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both are in yellow, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The color the leet learner gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is blue.[or]CHEAT CHURNER adds a letter only to LEET, and it is green. Note the mnemonic that green is blue plus yellow.[or]EAT EARNER takes one letter each from LEET LEARNER. It is red. So red is subtraction.[or]BEAT BURNER is in orange. It only takes one letter from one word.[or]So orange, a combination of yellow and red, means you need to drop a letter or letters from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, brown is a small muddle of colors. I suppose it could be purple, too, but that might give people a false rainbow hint.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, blue means add letters, red means subtract, yellow means keep letters. Blue or red mixed with yellow means add letters to only one word. Blinking means the target is optional.[stopping]";
+	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both point to the center, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The reading the needle gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is on the left.[or]CHEAT CHURNER adds a letter only to LEET, and it is center-left.[or]EAT EARNER takes one letter each from LEET LEARNER and is on the right.[or]BEAT BURNER is center-right. It only takes one letter from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, the Leet Learner will swing back and forth.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, left means add letters to both words, center-left means add to one, center means no change in the number of letters, center-right means subtract letters from one word, and right means subtract letters from both words. Blinking means the target is optional.[stopping]";
 	the rule succeeds;
 
 this is the lending-libe-hint rule:
@@ -2656,7 +2678,7 @@ this is the very-vile-fairy-file-hint rule:
 	if merry-mile is false:
 		say "You can't do anything with the file until the Tarry Tile is cheerier.";
 	else:
-		say "[one of]Now that you're happy, the Fairy File can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives an orange reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
+		say "[one of]Now that you're happy, the Fairy File can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives a center-right reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
 	the rule succeeds;
 
 this is the way-woke-clay-cloak-hint rule:
@@ -2684,7 +2706,7 @@ this is the wry-wall-hint rule:
 	say "The wry wall is simply there to provide amusing deaths.";
 
 this is the zig-zag-rig-rag-hint rule:
-	say "[one of]The zig zag rig rag can be changed with a simple command[or]The leet learner flags the rag as yellow, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremely practical for carrying a lot of things[or]BIG BAG[stopping].";
+	say "[one of]The zig zag rig rag can be changed with a simple command[or]The leet learner flags the rag in the center, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremely practical for carrying a lot of things[or]BIG BAG[stopping].";
 	the rule succeeds;
 
 [zzthr]
@@ -2717,12 +2739,14 @@ definition: a room (called rm) is available-from-here:
 	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
+	if rm is unvisited, no;
 	yes;
 
 carry out gotoing:
 	if noun is location of player, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
+	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
 	if noun is available-from-here:
 		move player to noun;
 	else:
@@ -2743,10 +2767,10 @@ understand "gi [any known-to-player thing]" as gotothinging.
 understand "go [any known-to-player thing]" as gotothinging.
 
 carry out gotothinging:
+	if noun is off-stage, say "Unfortunately, you tried to go to something that wasn't introduced to the game world yet." instead; [shouldn't be necessary, but just in case... we want to avoid weird errors, for now, until things have been tested. ??]
 	let Q be location of noun;
 	if Q is Hidey House, say "Right now [the noun] is temporarily unavailable." instead;
 	if noun is moot, say "Unfortunately, you tried to go to something that has been dealt with. Okay, it's fortunate you dealt with [the noun], but GT doesn't know where to go." instead;
-	if noun is off-stage, say "Unfortunately, you tried to go to something that wasn't introduced to the game world yet." instead;
 	try gotoing Q instead;
 
 chapter exitsing
@@ -2791,10 +2815,8 @@ when play begins (this is the opening text rule):
 	force-status;
 	process the check-skip-intro rule;
 	if the rule succeeded, continue the action;
-	if debug-state is false:
-		say "[line break]";
-		ask-screenread;
-	say "[line break]You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
+	if debug-state is false, ask-screenread;
+	say "[paragraph break]You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
 	say "'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
@@ -2976,7 +2998,9 @@ Rule for printing a parser error (this is the check for room name in player comm
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
 			if word number 1 in the player's command is "ll":
 				say "It looks like you may have tried to scan the current location. You just need to say LL to do this. Would you like to do so now?";
-				if the player yes-consents, try lling location of player instead;
+				if the player yes-consents:
+					skip upcoming rulebook break;
+					try lling location of player instead;
 				say "Okay. ";
 			else:
 				say "It looks like you may have tried to refer to the room name, or part of it. ";
@@ -3035,7 +3059,7 @@ this is the verb-checker rule:
 				if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
 				if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
 				if okflip entry is false:
-					unless the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case]
+					unless there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case]
 						say "You've got it backwards! Just flip things around, and it'll be okay.";
 						the rule succeeds;
 				if wfull-fail is true:
@@ -3052,7 +3076,7 @@ this is the verb-checker rule:
 				process the do-rule entry;
 				process the notify score changes rule;
 				if there is a core entry and core entry is false, check-lump-progress;
-			process the note first think rule;
+			process the note right guess wrong time rule;
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
 			now vc-dont-print is true;
@@ -3089,7 +3113,7 @@ to check-lump-progress:
 		decrease lump-count by next-lump-delta;
 		increase next-lump-level by next-lump-delta;
 
-a lurking lump is a thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you."
+a lurking lump is a boring thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump."
 
 this is the mistake-checker rule:
 	repeat through table of mistake substitutions:
@@ -3115,12 +3139,12 @@ this is the mistake-checker rule:
 
 to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number):
 	if n2 > n1, decide on cluecheat of n2 and n1;
-	if n1 is 0 and n2 is 0, decide on leteq; [yellow = 0]
-	if n1 > 0 and n2 is 0, decide on partplus; [blue + yellow = green]
-	if n1 > 0 and n2 > 0, decide on letplus; [blue]
-	if n1 is 0 and n2 < 0, decide on partminus; [yellow + red = orange]
-	if n1 < 0 and n2 < 0, decide on letminus; [red]
-	decide on letboth; [brown]
+	if n1 is 0 and n2 is 0, decide on leteq; [center]
+	if n1 > 0 and n2 is 0, decide on partplus; [center left]
+	if n1 > 0 and n2 > 0, decide on letplus; [left]
+	if n1 is 0 and n2 < 0, decide on partminus; [center right]
+	if n1 < 0 and n2 < 0, decide on letminus; [right]
+	decide on letboth; [one +, one minus, wobbles]
 
 section jerkingjumping
 
@@ -3671,7 +3695,7 @@ this is the vc-dimd rule:
 	the rule succeeds;
 
 this is the vr-dimd rule:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like 'Primp'r' or flip flop to Tip Top Hip Hop, but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or flip flop to [i]Tip Top Hip Hop[r], but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
 	if gutta ganksta is in history hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
 	moot oi mo;
 
@@ -4578,7 +4602,7 @@ this is the vc-strong-start rule:
 
 this is the vr-strong-start rule:
 	now started-strong is true;
-	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. You can't dunk on wrong stuff too much, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
+	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. Dunk on messed-up stuff too much may distract you from your goals, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
 	moot wrong art;
 
 this is the vc-take-tea rule:

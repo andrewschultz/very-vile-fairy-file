@@ -72,7 +72,10 @@ table of mistake substitutions
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start 1 general mistakes]
 "swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
+"cig sag"	trivially true rule	false	3	3	mist-bag-hint rule	"You find no black market currency in the [bag-rag].";
+"jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing.";
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
+"treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
 "cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start 2 wry wall mistakes]
 "dry doll"	signable-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
 "fry fall"	signable-loc rule	false	--	--	--	"The wry wall remains upright."
@@ -94,6 +97,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "woe/whoa/whoah weight"	go-gate-vis rule	false	--	--	--	"You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]"
 "greased gross"	need-least-loss rule	false	5	5	--	"The creased cross doesn't need to become ickier."
 "fleeced floss"	need-least-loss rule	false	5	5	--	"Dental hygiene is a good idea in general, but here, it's unnecessary."
+"teased toss"	need-least-loss rule	false	5	5	--	"A bit of taunting might work here, but you might need to be a bit harsher."
 "jay joke"	have-clay-cloak rule	false	--	--	--	"You recall some off-color drug humor from your younger days." [start been buggin]
 "stay stoke"	have-clay-cloak rule	false	--	--	--	"You take a slightly ungrammatical approach to keeping your spirits up."
 "bray broke"	have-clay-cloak rule	false	--	--	--	"You try a poor-righteous-teacher approach with the clay cloak."
@@ -117,8 +121,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "one wen"	in-fun-fen rule	false	--	--	--	"Your skin remains unblemished, despite you tempting fate."
 "pun pen"	in-fun-fen rule	false	--	--	--	"You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me."
 "won when"	in-fun-fen rule	false	--	--	--	"Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst."
-"gaper guile"	vapor-vile-vis rule	false	5	4	--	"You stare at the vapor but get no insight."
-"taper/tapir tile"	vapor-vile-vis rule	false	5	4	--	"No tile appears, but on the bright side, neither does a charging tapir."
+"gaper guile"	vapor-vile-vis rule	false	5	4	--	"You stare at the vapor but get no insight[kind-of-paper]."
+"taper/tapir tile"	vapor-vile-vis rule	false	5	4	--	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
 "fast fap"	in-gassed-gap rule	false	4	3	--	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here." [start gassed gap]
 "last lap"	in-gap-with-cap rule	false	4	3	--	"It will be the last lap one day. But you need a different action to get to this finality."
 "massed/mast map"	in-gap-with-cap rule	false	4	3	--	"You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here."
@@ -158,9 +162,12 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cake key"	in-lakes rule	false	--	--	--	"Ooh! That'd be nice and tasty. But you don't need that right now." [start lake lea] [?? what about multiple]
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
 "bit bound"	in-pit-pound rule	false	3	5	--	"Now you mention it, you [if found-fit is false]do[else]did[end if]feel a bit restricted here. Have a participation point for sharing your feelings!"
+"cash cap"	in-po-pit rule	true	4	3	--	"You need more than just a homonym here."
 "clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded. But perhaps other violence might be more productive." [start po' pit] [?? all this needs to be tested a lot]
 "crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones."
 "gnash/nash nap"	in-po-pit rule	false	4	3	--	"You need something more active."
+"sash sap"	in-po-pit rule	false	4	3	--	"You don't need to be dressed outlandishly to figure what to do."
+"flash flap"	in-po-pit rule	false	4	3	--	"Perhaps more focused violence would work better."
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
 "foe fit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Complaining and speculation about who or what put you there won't help."
 "go get/git"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You have no-one to order around, not that it'd do any good."
@@ -197,6 +204,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "beard bay"	in-stark-store rule	false	7	4	--	"No, the store is landlocked."
 "feared fay"	in-stark-store rule	false	7	4	--	"No, there is enough fearful magic."
 "oral age"	coral-cage-around rule	false	5	4	--	"Someone here is really old-school. As if text adventures weren't retro enough!" [start store all stage]
+"sorel/sorrel sage"	coral-cage-around rule	5	4	--	"Someone not just wise but ethical is behind the coral cage[if sage sea is visited]. Besides, there's already the sage sea[end if]."
 "immoral image"	coral-cage-around rule	false	5	4	--	"You sort of need the opposite. I suspect you know this and are just trying to see what happens."
 "bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start tarry tile]
 "swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn."
@@ -208,7 +216,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "whim wham"	in-trim-tram rule	false	4	4	--	"Hmm, you try to figure a poetic way through, but perhaps you need something more worldly."
 "grim gram"	in-trim-tram rule	false	4	4	--	"No elder appears to upbraid you, which is all for the better."
 "jim jam"	in-trim-tram rule	false	4	4	--	"No elder appears to upbraid you, which is all for the better."
-"dim dam"	in-trim-tram rule	false	4	4	--	"You need fewer blockages, not more."
+"dim dam/damn"	in-trim-tram rule	false	4	4	--	"You need fewer blockages and/or minor curses, not more."
 "swim swam"	in-trim-tram rule	false	4	4	--	"You don't need to fall in the water here."
 "rim ram"	in-trim-tram rule	false	4	4	--	"Banging on the walls won't help."
 "shim sham"	in-trim-tram rule	false	4	4	--	"Hmm. Interesting. But you might need to fake something besides a shim."
@@ -228,6 +236,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "storing stoat"	boat-or-float rule	false	6	4	float-present rule	"You can carry what you need. You don't need any Brian Jacques villains upsetting that."
 "mooring moat"	boat-or-float rule	false	6	4	float-present rule	"The seacraft seem to anchor themselves okay here."
 "island ale/ail"	in-violent-vale rule	false	--	--	--	"No need to drink or get an island disease."
+"stet stood"	in-wet-wood rule	false	3	4	--	"No proofreading is necessary."
+"het hood"	in-wet-wood rule	false	3	4	--	"You consider the possibility of changing the Wet Wood to a Straight Pride parade, but decide against it, as you're worried you might get trampled by all of a dozen people."
 "signing sore"	in-whining-war rule	false	7	5	--	"You make a rude gesture, for whatever good it does." [start whining war] [?? this may need to be fixed]
 "ho had"	in-so-sad rule	false	6	4	--	"You're trying to feel less in the dumps, not more." [start of general stuff that doesn't fit anywhere else]
 "mo mad"	in-so-sad rule	false	6	4	--	"Once the anger wore off, you might be even more lethargic."
@@ -244,6 +254,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt] [in case I have a bunch I need to dump and am too lazy to sort them right away]
 
 section texts and decides
+
+to say bag-rag: say "[if player has big bag]big bag[else]zig zag rig rag[end if]"
+
+to say kind-of-paper: say ". Now you've organized the pile, maybe its details are more important to read or examine"
 
 to say shawl-lol: if lie-lol is true, say ". That might not have been the best thing to say, but hey, practice"
 

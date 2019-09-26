@@ -210,7 +210,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
 "HEAL HERE"	false	can-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-heal-here rule] you need to heal from something."
 "LEAST LOSS"	false	can-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
-"MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found a dark door [here-in of Stark Store]."
+"MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found something to mark [here-in of Stark Store]."
 "MASH MAP"	false	vc-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "MERRY MILE"	false	can-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
 "MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the Fining Four are fully satisfied."
