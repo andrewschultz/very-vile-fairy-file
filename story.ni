@@ -260,6 +260,19 @@ a thing has text called bore-text.
 
 a thing has a rule called bore-rule. bore-rule of a thing is usually the bore-nothing rule.
 
+a thing can be fakeenter. a thing is usually not fakeenter.
+
+rule for supplying a missing noun when entering: [?? yes, this is bad coding. I should define a property. But ... later.]
+	let TFE be number of touchable fakeenter things;
+	if TFE > 1:
+		say "While there's more than one thing you can logically enter here, you don't need to enter anything to win the game.";
+		reject the player's command;
+	else if TFE is 0:
+		say "I didn't find anything to enter, but on the other hand, you need to enter anything to win the game.";
+		reject the player's command;
+	now noun is a random touchable fakeenter thing;
+	say "([the noun])[line break][one of][line break]NOTE: you never need to enter anything to win the game.[or][stopping]";
+
 section boring rules
 
 skip-bore-text is a truth state that varies.
@@ -424,18 +437,18 @@ to say my-notes:
 
 table of newnotes
 score-needed	note-to-give
-1	"   GET GOOD to WET WOOD    = yellow."
-2	" RIFT RIVER to GIFT GIVER  = yellow."
+1	"   GET GOOD to WET WOOD    = center."
+2	" RIFT RIVER to GIFT GIVER  = center."
 3	"VINED VAULT to FIND FAULT  = orange."
---	"  MIND MALT to FIND FAULT  = green."
-4	"  MEAN MASS to GREEN GRASS = blue."
-5	"     PO PIT to GROW GRIT   = blue."
---	"   ROW WRIT to GROW GRIT   = green."
-6	" TRASH TRAP to [ash-ap]    = red."
---	"   GASH GAP to [ash-ap]    = yellow."
---	"  CACHE CAP to [ash-ap]    = orange."
-7	"   FIND FEE to MIND ME     = orange."
-8	"  TRIM TRAM to [ski-fli]   = yellow."
+--	"  MIND MALT to FIND FAULT  = center-left."
+4	"  MEAN MASS to GREEN GRASS = left."
+5	"     PO PIT to GROW GRIT   = left."
+--	"   ROW WRIT to GROW GRIT   = center-left."
+6	" TRASH TRAP to [ash-ap]    = right."
+--	"   GASH GAP to [ash-ap]    = center."
+--	"  CACHE CAP to [ash-ap]    = center-right."
+7	"   FIND FEE to MIND ME     = center-right."
+8	"  TRIM TRAM to [ski-fli]   = center."
 
 to say ski-fli: say "[if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if]"
 
@@ -530,13 +543,15 @@ section paper pile
 
 the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht of paper pile is partplus. [fact finder -> backed binder]
 
-check taking paper pile: say "There's got to be a way to put the paper pile together a bit better first." instead;
+check taking paper pile: say "It's too disorganized as-is[if player has big bag], even with your big bag[end if]." instead;
 
 understand "fact/finder" and "fact finder" as backed binder.
 
 section backed binder
 
 the backed binder is a thing. description is "The backed binder holds critical, but obscure, information on the Crimes Crew Times Two and how they made the Very Vile Fairy File. It's pretty high level stuff. The ideas sound grand, but they're not backed up by evidence."
+
+understand "paper/pile" and "paper pile" as backed binder when paper pile is moot.
 
 chapter Cark Cliff
 
@@ -548,7 +563,10 @@ tree-down is a truth state that varies.
 
 part Real Rear 0,-1
 
-Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. This seems like a place for reflection on your emotions.". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of real rear is partplus. [-> kneel near]
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of real rear is partplus. [-> kneel near]
+
+to say seer-is:
+	say "[if healed-here is false]You're glad it's there, even though you don't need it any more[else if knelt-yet is false]You don't feel it's paying attention to you, yet[else if felt-fear is true]You remember the fear you felt, and you just need to do a bit more[else]Perhaps the Seer can do a bit more for you, if you ask right[end if]";
 
 chapter ceiling seer
 
@@ -628,7 +646,9 @@ a clumped cluster is optional scenery. "The clumped cluster is useless, but it's
 
 chapter dark door
 
-There is a thing called the dark door. It is scenery. "You can't seem to open the dark door. It's there, and it's forbidding.". cht of dark door is leteq. [-> mark more]
+There is a thing called the dark door. It is fakeenter and scenery. "You can't seem to open the dark door. It's there, and it's forbidding.". cht of dark door is leteq. [-> mark more]
+
+check entering dark door: try opening dark door instead;
 
 check opening dark door: say "You can't find a way off-hand. It doesn't even seem to have a handle. Perhaps careful observation will turn something up." instead;
 
@@ -850,13 +870,15 @@ check opening frightening fridge: say "You're scared to. There must be a better 
 
 chapter flooring float
 
-the flooring float is a thing. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!". [-> boring boat]
+the flooring float is a fakeenter thing. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!". [-> boring boat]
 
 check taking flooring float: say "It's too heavy, and you can't take it anywhere. Maybe some other watercraft, though." instead;
 
+check entering flooring float: say "It's there for decoration, not transport. But something like it might let you go somewhere new..." instead;
+
 chapter boring boat
 
-the boring boat is a thing. "A boring boat is docked here. Perhaps you could ENTER it to see somewhere new.". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true]a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
+the boring boat is a fakeenter thing. "A boring boat is docked here. Perhaps you could ENTER it to see somewhere new.". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true]a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
 
 does the player mean entering boring boat: it is very likely;
 
@@ -947,7 +969,9 @@ the pining poor are plural-named people. talk-text of pining poor is "'Rich row 
 
 chapter dining door
 
-the dining door is scenery. "The dining door is just there to invite people to eat, once there's a proper meal. It's not intrinsically useful."
+the dining door is fakeenter scenery. "The dining door is just there to invite people to eat, once there's a proper meal. It's not intrinsically useful."
+
+check entering dining door: say "It doesn't seem to budge. Perhaps you need to prepare a meal somehow first." instead;
 
 part Lake Lap ??,??
 
@@ -1046,7 +1070,7 @@ loft-land is a truth state that varies.
 
 part Here Hull 1,2
 
-Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back east to [soft sand]."
+Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [soft sand]."
 
 gull-guard is a truth state that varies.
 
@@ -1161,18 +1185,22 @@ check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
 
 part Store All Stage -1,3
 
-Store All Stage is a room in Piddling Pain. It is west of Foe Field. cht of Store All Stage is letminus. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage.[paragraph break]Y[else]y[end if]ou can really only go back east."
+Store All Stage is a room in Piddling Pain. It is west of Foe Field. cht of Store All Stage is letminus. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east."
 
 the coral cage is scenery in Store All Stage. "It looks locked, and it's too opaque to see who's there. You [if cage key is off-stage]have no way of opening it[else]could use the cage key on it, but you probably need to figure out who or what is inside[end if].". cht of coral cage is leteq. [-> moral mage]
 
-does the player mean unlocking the coral cage with: it is very likely.
-does the player mean unlocking with the cage key: it is very likely.
+[does the player mean unlocking the coral cage with: it is very likely.]
+does the player mean unlocking the coral cage with the cage key: it is very likely.
+does the player mean unlocking the cage key with: it is very unlikely.
+[does the player mean unlocking with the coral cage: it is unlikely.]
 
 check taking coral cage: say "It's too heavy, but you can unlock it." instead;
 
 check opening coral cage:
 	if player does not have cage key, say "You have nothing that opens the coral cage." instead;
 	say "The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage." instead;
+
+check unlocking coral cage with: try opening coral cage instead;
 
 volume Vale Verminous
 
@@ -1266,7 +1294,7 @@ the Hot Horde are plural-named people. talk-text is "Lots of rot roared right no
 
 book go gate
 
-there is a thing called the go gate. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus. [->whoa wait]
+there is a thing called the go gate. it is fakeenter. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus. [->whoa wait]
 
 check taking go gate: try entering go gate instead.
 
@@ -1404,13 +1432,15 @@ check taking inventory:
 	if player has big bag, say "Boy! You can carry all you need with your big bag![paragraph break]";
 	now all things enclosed by the player are marked for listing;
 	now toe tappin is unmarked for listing;
+	now lurking lump is unmarked for listing;
 	now all gaphats are unmarked for listing;
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
-	if number of gaphats carried by player > 0, say "You are also carrying a [if number of carried gaphats < 3]budding[else]complete[end if] hat collection: [list of gaphats carried by player].";
+	if number of gaphats carried by player > 0, say "You are also carrying a [if number of carried gaphats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with SING[else]in your head. It has ... possibilities. [toe-poss][end if].";
 	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
+	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges] charge[plur of lump-charges] left.";
 	check-injury;
 	the rule succeeds;
 
@@ -1428,12 +1458,19 @@ to decide which number is toe-clued:
 to say toe-poss:
 	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if][if toe-clued > 0]. You also found a riff you weren't ready for yet[end if]"
 
-check taking when player does not have big bag:
-	if number of things enclosed by the player > 3:
+to decide which number is carried-fungible:
+	let temp be number of things enclosed by player;
+	if the player carries Toe Tappin Row Rappin, decrement temp;
+	decide on temp;
+
+check taking when player does not have big bag (this is the need bag for lots of items rule):
+	if carried-fungible > 3:
 		say "You can't carry so much at once! ";
 		if tried-yet of "BIG BAG":
 			say "Perhaps now is a good time to change the zig zag rig rag to a big bag, as you tried before." instead;
 		say "Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
+
+the need bag for lots of items rule is listed last in the check taking rulebook.
 
 chapter undoing
 
@@ -1644,22 +1681,21 @@ carry out reading:
 table of readables
 read-thing	read-txt
 Very Vile Fairy File	"The file contains advice and catch-phrases to seem like an alpha male or whatever. One is [i][next-rand-txt of table of vvff digs][r]."
-leet learner	"Some multi-colored text on the leet learner seems to function as examples. Some seem like a bit of a stretch, but they're probably there to help.[paragraph break][table-of-color-hints][run paragraph on]"
+leet learner	"Some text matches up with where the needle nose might spin. It's a bit of a stretch, in some cases, but you figure the more help the better.[paragraph break][table-of-needle-hints][run paragraph on]"
 marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 
-to say table-of-color-hints:
+to say table-of-needle-hints:
 	repeat through table of color clues:
-		say "[fixed letter spacing][my-text entry][variable letter spacing] is inscribed in [my-color entry]."
+		say "[fixed letter spacing][my-text entry][variable letter spacing] is written to the [my-color entry].";
+	say "[line break]Also, TREAT TURNER is plastered across the bottom in wavy font. Maybe if you know what everything else stands for, you can figure that, too."
 
 table of color clues
 my-text	my-color
-"   LEET LEARNER  "	"grey, with arrows to each of the words and colors below"
-"CONCEIT CONCERNER"	"blue"
-"  CHEAT CHURNER  "	"green"
-"   MEET MOURNER  "	"yellow"
-"   BEAT BURNER   "	"orange"
-"    EAT EARNER   "	"red"
-"  TREAT TURNER   "	"brown"
+"CONCEIT CONCERNER"	"left"
+"  CHEAT CHURNER  "	"center-left"
+"   MEET MOURNER  "	"center"
+"   BEAT BURNER   "	"center-right"
+"    EAT EARNER   "	"right"
 
 chapter xyzzying
 
@@ -1865,7 +1901,7 @@ to say ll-cheat of (rm - a room): say "[scancol of cht of rm]"
 
 to say ll-cheat of (th - a thing):
 	if th is Toe and Jake G is touchable and jake-fee is true and jake-cocapn is false:
-		say "red";
+		say "[scancol of partminus]";
 	else:
 		say "[scancol of cht of th]"
 
@@ -1892,7 +1928,7 @@ ever-leet-clue is a truth state that varies.
 
 to say leetclue of (x - a cheattype):
 	if shut-scan is true, continue the action;
-	if shut-scan is false, say "[line break]As you say/think this, the Leet Learner momentarily turns [scancol of x]";
+	if shut-scan is false, say "[line break]As you say/think this, the Leet Learner needle [scancol of x]";
 	if fun fen is visited and ever-leet-clue is true, continue the action;
 	now ever-leet-clue is true;
 	if leetcool is 0:
@@ -1903,7 +1939,7 @@ to say leetclue of (x - a cheattype):
 
 leetcool is a number that varies. leetcool is 0.
 
-to say scancol of (x - a cheattype): say "[if x is letplus]blue[else if x is partplus]green[else if x is leteq]yellow[else if x is partminus]orange[else if x is letminus]red[else if x is letboth]brown[else if x is phbt]undefined[else]BUG[end if]"
+to say scancol of (x - a cheattype): say "[if x is letplus]swerves left[else if x is partplus]slides center-left[else if x is leteq]stays at the center[else if x is partminus]slides center-right[else if x is letminus]swerves right[else if x is letboth]bounces back and forth[else if x is phbt]sits in the center[else]BUG[end if]"
 
 this is the welp-wow-check rule:
 	if help-how is false:
@@ -2325,7 +2361,7 @@ section thing hint rules [xxthr] [??general problems with what if you already kn
 
 this is the all-caps-hint rule:
 	let N be number of gaphats enclosed by the player;
-	say "You need to combine three hats, eventually. You have [N in words].";
+	say "You need to combine three hats, eventually. You have [N in words]. So no need to do anything now.";
 	if N is 3:
 		if player does not have jerk gel:
 			say "You need to find something to glue the hats together with." instead;
@@ -2335,7 +2371,12 @@ this is the backed-binder-hint rule:
 	say "[if gassed gap is unvisited]The backed binder is not useful immediately. But it is part of what you need to get to the final area.[else]You will automatically use the backed binder to get past the gassed gap[end if].";
 
 this is the beer-bull-hint rule:
-	say "Say FEARFUL to get the beer bull going, then DEAR DULL after it chases you to the whining war."
+	if bull-null is false:
+		say "[one of]The beer bull is too powerful in its present form! You have to lessen its power a bit. A pretty simple rhyme will work[or]NEAR NULL[stopping]." instead;
+	if ever-bull-chase is false, say "[one of]You need to provoke the Beer Bull to chase you[or]There's a phrase that might insult something or someone who is part of something as exciting as alcohol advertising[or]DEAR DULL[stopping]." instead;
+	if in-bull-chase is false
+	, say "You can say DEAR DULL to get the bull to chase you again." instead;
+	say "This is a bit tricky--you need to get the bull to chase you somewhere and spring a trap. I'm going to palm the rest of these hints on to an item you have[if snuck snare is off-stage]n't found yet[end if].";
 
 this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
@@ -2753,7 +2794,7 @@ when play begins (this is the opening text rule):
 	if debug-state is false:
 		say "[line break]";
 		ask-screenread;
-	say "You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
+	say "[line break]You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
 	say "'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
@@ -2834,13 +2875,13 @@ check going down in Blinding Blaze when stuck stair is in blinding blaze: say "I
 
 chapter minding maze
 
-the minding maze is scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
+the minding maze is fakeenter scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
 
 check entering minding maze: try going east instead;
 
 chapter stuck stair
 
-the stuck stair is scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
+the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
 
 chapter snuck snare
 
@@ -3042,7 +3083,7 @@ lump-uses is a number that varies. lump-uses is 0.
 to check-lump-progress:
 	increment lump-count;
 	if lump-count is next-lump-level:
-		say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj][else if lurking lumpis moot]Thwup! A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
+		say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. It's dull and grey, but looking at it, with your experience, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj][else if lurking lump is moot]Thwup! A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 		now player has lurking lump;
 		increment lump-charges;
 		decrease lump-count by next-lump-delta;
@@ -3153,7 +3194,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
 "green"	"grass"	false	true	false	vc-green-grass rule	vr-green-grass rule	--
 "grow"	"grit"	true	true	false	vc-grow-grit rule	vr-grow-grit rule	--
-"mash|bash|rash"	"map|bap|rap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap"
+"mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap" or "slash slap"
 "mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
 "flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
 "big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
@@ -3347,11 +3388,9 @@ this is the vc-backed-binder rule:
 	the rule succeeds;
 
 this is the vr-backed-binder rule:
-	say "The papers labeled FACT FINDER should be useful. You find a way to glue them all together. They contain exploits of the Crimes Crew Times Two, objectively reported, as opposed to the Very Vile Fairy File's version of things. It's good to have this sort of concrete evidence you're with the good guys.";
+	say "The papers labeled FACT FINDER should be useful. You find a way to glue them all together. They contain objective reportings of the exploits of the Crimes Crew Times Two. You shudder a bit--you've been at the receiving end of some of their psychological tricks.";
 	now player has backed binder;
-	now player has paper pile;
-	now paper pile is part of the backed binder;
-	phbt paper pile;
+	moot paper pile;
 
 this is the vc-beaker-bustle rule:
 	if reeker russell is not touchable, the rule fails;
@@ -3606,7 +3645,7 @@ this is the vc-deal-dear rule:
 	the rule succeeds;
 
 this is the vr-deal-dear rule:
-	say "The Sage Sea calms and parts briefly to reveal a cage key. You step in, slightly worried it may engulf you, but you've practiced your serenity, so you retrieve the key with no problems.";
+	say "You reflect and have faith in yourself. Help will come at a good time, when you do not feel too desperate. And wait! It's coming now! The Sage Sea calms and parts briefly to reveal a cage key. You step in, not worried it may engulf you, because you've practiced your serenity. You retrieve the key with no problems.";
 	now player has cage key;
 	phbt Real Rear;
 	phbt steel steer;
@@ -3709,7 +3748,7 @@ this is the vc-feel-fear rule:
 	if player is not in Real Rear, the rule fails;
 	if knelt-yet is false:
 		clue-later "FEEL FEAR";
-		vcp "Fear isn't something you can try to feel[seer-sez].";
+		vcp "Fear isn't something you can, or want to, force[seer-sez].";
 		continue the action;
 	if felt-fear is true:
 		vcal "No need to overdo feeling fear.";
@@ -3717,7 +3756,7 @@ this is the vc-feel-fear rule:
 	the rule succeeds;
 
 this is the vr-feel-fear rule:
-	say "You let yourself feel fear, with the Ceiling Seer overlooking. No matter how much you feel, you have faith you can cope. Admitting you're fearful helps a bit.";
+	say "You let yourself feel fear, both of physical harm and of being unable to figure a way to any secret areas. Admitting to this fear helps a bit, but somehow, you have to put your fear aside.";
 	now felt-fear is true;
 	clue-zap "FEEL FEAR";
 
@@ -4276,7 +4315,8 @@ this is the vc-moral-mage rule:
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
-	say "The inner bars of the coral cage crumble. The moral mage thanks you and begins a lecture. You're worried it's going to be a sermon, but it turns into interesting details about the Very Vile Fairy File, its powers, the people behind it, and how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase. The moral mage nods and departs, leaving you to realize that the knowledge they passed on was a sort of magic in its own right.";
+	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it's going to be a sermon, but it turns into interesting details about the Very Vile Fairy File, its powers, the people behind it, and how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase. The moral mage nods and departs, leaving you to realize that the knowledge they passed on was a sort of magic in its own right.";
+	moot coral cage;
 	moot coral cage;
 	phbt Store All Stage;
 	clue-zap "MORAL MAGE";
