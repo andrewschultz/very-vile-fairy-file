@@ -115,6 +115,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "rule rap/wrap"	tool-tap-near rule	false	4	3	--	"You need something more substantial to come out of the cool cap."
 "crane crescent"	peasant-around rule	false	5	7	--	"No bird or complex machinery drops by to sweep the pain peasant away." [start foe field]
 "fain pheasant"	peasant-around rule	false	5	7	--	"The pain peasant remains human."
+"woe/whoah/whoa wield"	in-foe-field rule	false	4	6	--	"You [if gold guard is moot]don't[else]didn't[end if] need a weapon but rather armor to repel the foe field."
 "mo mealed"	in-foe-field rule	false	4	6	--	"Alas, no food magically appears."
 "live leap"	hive-heap-near rule	false	4	4	--	"The leap wouldn't be live for very long." [start fun fen]
 "call cree"	in-fun-fen rule	false	4	4	--	"You need something simpler than an unusual language here."
@@ -156,11 +157,14 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "low lappin"	have-toe-tappin rule	false	2	6	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus. [i]Chariots of Fire[r] works better, anyway."
 "frotz frame"	ganksta-nearby rule	false	4	4	--	"Anything as esoteric as text adventure vocabulary would go over the Gutta Ganksta's head. You need to be more brutal."
 "gene/jean joes"	mean-moes-by rule	false	5	5	--	"You don't need to visit another clothing store."
+"seen sos"	mean-moes-by rule	false	5	5	--	"That must be about right, but it's not specific enough. You need to see something specific, and not quite see..."
+"sheen shows"	mean-moes-by rule	false	5	5	--	"That must be about right, but you need to do something to look and find a light, or lights."
 "green grows"	mean-moes-by rule	false	5	5	--	"There's no gardening shop in the mall, but there doesn't need to be."
 "mashing moke"	have-clashing-cloak rule	false	8	5	--	"You need subtlety, not violence."
 "ashing oak"	have-clashing-cloak rule	false	8	5	--	"No genetically twisted tree appears."
 "cake key"	in-lakes rule	false	--	--	--	"Ooh! That'd be nice and tasty. But you don't need that right now." [start lake lea] [?? what about multiple]
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
+"grit ground"	pit-pound-unsolved rule	false	3	5	--	"You need to find some other way to [if hit hound is in pit pound]banish the pit ound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway." [start pit pound]
 "bit bound"	in-pit-pound rule	false	3	5	--	"Now you mention it, you [if found-fit is false]do[else]did[end if]feel a bit restricted here. Have a participation point for sharing your feelings!"
 "cash cap"	in-po-pit rule	true	4	3	--	"You need more than just a homonym here."
 "clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded. But perhaps other violence might be more productive." [start po' pit] [?? all this needs to be tested a lot]
@@ -186,6 +190,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mage me"	key-or-rear rule	false	--	--	--	"[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do."
 "page pea/pee/p"	key-or-rear rule	false	4	5	--	"You don't need to skip around a book or summon anything."
 "beige bee"	key-or-rear rule	false	4	5	--	"This isn't a nature retreat."
+"wheel/wheeling weir"	in-real-rear rule	false	4	5	--	"The Sage Sea is enough of a boundary."
 "peel pear"	in-real-rear rule	false	--	--	if-rear-undone rule	"You have no fruit."
 "steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
@@ -375,6 +380,8 @@ this is the need-least-loss rule: if least-loss is false, the rule succeeds;
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
 this is the peasant-around rule: if pain peasant is touchable, the rule succeeds;
+
+this is the pit-pound-unsolved rule: if player is in pit pound and found-fit is false, the rule succeeds;
 
 this is the shore-shined rule: if player is in Whining War and shore-shine is true, the rule succeeds;
 

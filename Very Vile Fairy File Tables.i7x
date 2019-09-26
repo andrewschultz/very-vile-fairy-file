@@ -66,14 +66,15 @@ to seed-score-list:
 			next;
 		if blank-rows is 0:
 			now blank-rows is number of rows in table of ranks - my-row + 1;
-		let temp be (my-row - last-forced-row) * ((core-max - 1) - min-forced-score);
+		let temp be (my-row - last-forced-row) * ((core-max - 2) - min-forced-score);
 		now rank-max entry is (temp / blank-rows) + min-forced-score;
 [		if debug-state is true, say "Assigned rank: [b][rank-name entry][r] = [last-points] up to [rank-max entry].";]
 		now last-points is rank-max entry + 1;
-[	if debug-state is true:
-		repeat through table of ranks:
-			say "[rank-name entry] is <= [rank-max entry] points.";]
-			[ the comment-out is because ranks aren't changing any more with the points set, and also I need to see more interesting and likely-to-change debug information at the start.]
+	if debug-state is true, show-ranks;
+
+to show-ranks:
+	repeat through table of ranks:
+		say "[rank-name entry] is <= [rank-max entry] points.";
 
 to say your-rank:
 	repeat through table of ranks:
@@ -81,10 +82,10 @@ to say your-rank:
 		if core-score <= rank-max entry:
 			say "[rank-name entry]";
 			continue the action;
-	if core-score is not the core-max:
+	if core-score < core-max - 1:
 		say "(bug)";
 	else:
-		say "gold god";
+		say "gold god[if core-score < core-max] (almost)[end if]";
 
 volume random tables
 

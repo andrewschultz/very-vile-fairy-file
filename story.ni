@@ -1150,7 +1150,7 @@ the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk G
 understand "supple/saps" and "supple saps" as jerk gel.
 
 check taking jerk gel when jerk gel is in Shirk Shell:
-	say "The jerk gel has spilled out a bit." instead;
+	say "The jerk gel has spilled out a bit, and it's too icky to take. You'll need to show diligence putting it back in." instead;
 
 part Curst Cave -1,2 b
 
@@ -1386,6 +1386,8 @@ this is the check-sing-max rule:
 		say "Suddenly, [Toe] feels played out. You'll enjoy it later, but not now. It's done its job, and it's out of your mind, for the moment.";
 		if hap-ho is false, max-down; [can't HO HAPPEN]
 		moot Toe Tappin Row Rappin;
+	else:
+		say "[line break]You feel like you could do [one of][or]even [or]yet [or]still [stopping]more with [Toe] when the time is right."
 
 chapter dropping
 
@@ -1617,7 +1619,7 @@ chapter score
 check requesting the score:
 	now vc-dont-print is true;
 	say "You have scored a total of [score] out of [maximum score] points and need [core-max] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
-	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].[line break]";
+	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].[paragraph break]";
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0:
@@ -2334,6 +2336,7 @@ the thing-hint-rule of Mean Moe's Clean Clothes is the mean-moes-clean-clothes-h
 the thing-hint-rule of mild mead is mild-mead-hint rule.
 the thing-hint-rule of mind malt is mind-malt-hint rule.
 the thing-hint-rule of minding maze is minding-maze-hint rule.
+the thing-hint-rule of needle is leet-learner-hint rule.
 the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
 the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
 the thing-hint-rule of paper pile is paper-pile-hint rule.
@@ -2540,7 +2543,7 @@ this is the jake-g-hint rule:
 
 this is the jerk-gel-hint rule:
 	if player does not have jerk gel:
-		say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]What you need to find is Jerk Gel.[or]You won't find the Jerk Gel if you're lazy.[or]WORK WELL.[stopping]";
+		say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]The Jerk Gel is there, but you can't just take it.[or]You won't find the Jerk Gel if you're lazy.[or]WORK WELL.[stopping]";
 	else:
 		say "You need to find whom to use the jerk gel on.";
 
@@ -2885,7 +2888,7 @@ to say blazno:
 	if blaze-ways is false:
 		say "You can't see any way other than back west";
 	else if stuck stair is off-stage:
-		say "You explore the minding maze a bit, but you get frustrated quickly. You need some support, support from inside you and not related to this location, to make it through smoothly and happily";
+		say "You explore the minding maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgework of working through all the dead ends and to make it through smoothly and happily";
 	else:
 		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed.";
 
@@ -2926,6 +2929,16 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see what you MISSED"	true	"missed"	--	showmissesing
 "see other DEATH TRAPS"	true	"death/traps" or "death traps"	--	showdeathsing
 "see ALTernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
+"see the RANKs"	true	"rank/ranks"	--	showranksing
+
+showranksing is an activity.
+
+rule for showranksing:
+	let low-bound-score be 0;
+	repeat through table of ranks:
+		say "[rank-name entry] is [if rank-max entry > 0][low-bound-score] to [end if][rank-max entry] points.";
+		now low-bound-score is rank-max entry + 1;
+	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.";
 
 showaltverbsing is an activity.
 
@@ -3603,8 +3616,9 @@ this is the vc-cool-cap rule:
 	the rule succeeds;  [?? YOULL YAP / CRUEL CRAP !!!!!]
 
 this is the vr-cool-cap rule:
-	say "Whoah! A cool cap must REALLY have been stuck in the tool tap. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips.";
+	say "Whoah! A cool cap must REALLY have been stuck in the tool tap. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips. The tool tap explodes and vaporizes from the effort of having squeezed out the cool cap.";
 	now player has cool cap;
+	moot tool tap;
 
 this is the vc-couple-caps rule:
 	if player does not have jerk gel, the rule fails;
