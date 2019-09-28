@@ -56,7 +56,7 @@ test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake sn
 
 test w6 with "stay strong/glow glad/mean muggin/lean luggin/enter boat/w/w/w/glean glows/history hall/youre yonder/in/smashing smoke/out/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage". [release the moral mage. This part is a bit long because there were no good breaks and I wanted to start a test with the stay strong/glow glad verbs that were twiddled late in the release.]
 
-test w7 with "e/e/sit sound/fit found/e/minding maze/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e". [set the trap for the bull]
+test w7 with "e/e/sit sound/fit found/e/winding ways/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/e/u/e/n/e". [set the trap for the bull]
 
 test w8 with "dear dull/near null/w/s/w/d/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast". [deal with the beer bull and beast boss]
 
@@ -150,14 +150,14 @@ rule for chttracking:
 
 volume monty stuff
 
-include Full Monty Testing by Andrew Schultz.
+[include Full Monty Testing by Andrew Schultz.
 
 table of monties (continued)
 montopic (topic)	on-off	test-title (text)	test-action	topic-as-text (text)
 "ll"	false	"Leet Learner"	show-leets rule	"showing leet learner readings"
 
 this is the show-leets rule:
-	try lling;
+	try lling;]
 
 Very Vile Fairy File Tests ends here.
 

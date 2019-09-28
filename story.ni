@@ -14,6 +14,10 @@ volume includes
 
 the release number is 1.
 
+release along with a website.
+
+release along with an interpreter.
+
 include Trivial Niceties by Andrew Schultz.
 
 include Intro Restore Skip by Andrew Schultz.
@@ -134,7 +138,7 @@ to decide whether the action is procedural:
 	no;
 
 definition: a thing (called th) is moot:
-	if th is in Hidey House, yes;
+	if th is in Gazy Gap, yes;
 	no;
 
 definition: a thing (called th) is known-to-player:
@@ -159,7 +163,7 @@ to say once-now of (ru - a rule):
 to bring-here (th - a thing): move th to location of player.
 
 to moot (th - a thing):
-	move th to Hidey House; [ic]
+	move th to Gazy Gap; [ic]
 
 to move-to-temp (th - a thing):
 	if th is in location of player, move th to Hidey House;
@@ -196,7 +200,7 @@ whew-score is a number that varies. whew-score is 8.
 
 core-max is a number that varies. core-max is 81.
 
-max-bonus is a number that varies. max-bonus is 11.
+max-bonus is a number that varies. max-bonus is 12.
 
 cur-bonus is a number that varies. cur-bonus is 0.
 
@@ -720,7 +724,7 @@ to say mystdesc:
 	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. There's mall music in the air you can LISTEN to[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
 
 to say histdesc:
-	say "[one of]Something called [or][stopping]Fussed Folks Just Jokes lies here for your amusement[if poor ponder is in History Hall]. [Poor Ponder] seems, or is trying to seem, more important[end if][if ever-mall is false]. But surely there must be more here[end if]"
+	say "[if poor ponder is in History Hall]. [Poor Ponder] lies here seeming, or is trying to seem, more important[else if ever-mall is false]It's pretty empty in here. Perhaps it could become something more modern. Or less ancient[else]History Hall is empty once again[end if]"
 
 check going west in History Hall: [gutta ganksta blocks you]
 	if ever-mall is true:
@@ -740,7 +744,9 @@ gan-wan is a truth state that varies. [have we called the ganksta a rude name?]
 
 chapter Gutta Ganksta (M)
 
-the Gutta Ganksta is an optional person. "A Gutta Ganksta chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
+the Gutta Ganksta is an optional person. "A Gutta Ganksta with a tattoo chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
+
+understand "tattoo" as GOTS GAME when Gutta Ganksta is quicknear.
 
 GOTS GAME is part of the Gutta Ganksta. cht of gots game is leteq. description is "It's pretty bad, as tattoos go. It has so much wrong with it. Perhaps you could point it out, without being too hurtful.". [-> lots lame]
 
@@ -752,7 +758,7 @@ after lling gutta ganksta:
 
 chapter Toe Tappin Row Rappin (M)
 
-Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replaced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SING[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
+Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replaced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SAVE SONG[r] and [b]RAVE WRONG[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
@@ -771,21 +777,26 @@ understand "song" as oi mo when player is in History Hall and oi mo is in Histor
 
 chapter Poor Ponder for Fonder
 
-Poor Ponder for Fonder is scenery. cht of Poor Ponder for Fonder is partplus. "Reading [poor], it seems quite bad. It's trying to give the reader a grasp of history, but it seems like it doesn't really place the reader IN the era it's trying to describe. It's not even trying. And yet, perhaps it is worth the effort for YOU to try.". [->youre yonder]
+Poor Ponder for Fonder is scenery. cht of Poor Ponder for Fonder is partplus. "Reading [poor ponder], it seems quite bad. It's trying to give the reader a grasp of history, but it seems like it doesn't really place the reader IN the era it's trying to describe. It's not even trying. And yet, perhaps it is worth the effort for YOU to try.". [->youre yonder]
 
-printed name of Poor Ponder is "[i]Poor? Ponder for Fonder[r]"
+printed name of Poor Ponder is "[i]Poor? Ponder for Fonder[r]".
+
+understand "book" as Poor Ponder when Poor Ponder is touchable.
 
 check taking Poor Ponder: say "You can figure out its inner meaning right here." instead;
 
-chapter fussed folks (H)
-
-Fussed Folks Just Jokes is scenery in History Hall. "You read about [next-rand-txt of table of miscellaneous people]."
-
-check taking Fussed Folks: say "It's pretty obviously got nothing concrete to help you. It's just for entertainment." instead;
-
 chapter Mean Moe's (M)
 
-Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to navigate the lights and bells and whistles.". cht of Mean Moe's Clean Clothes is letboth. [-> glean glows]
+Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to discover the lights and bells and whistles that make it tick.". cht of Mean Moe's Clean Clothes is letboth. [-> glean glows]
+
+to decide whether can-glean:
+	if tried-yet of "GLEAN GLOWS", yes;
+	no;
+
+check entering Mean Moe's: say "It is too small to do anything to accept clothes." instead;
+
+check inserting into Mean Moe's:
+	say "You need to [if can-glean]GLEAN GLOWS[else]find the right command to get Mean Moe's to work." instead;
 
 chapter clashing cloak (M)
 
@@ -813,9 +824,12 @@ the cold card is a thing. description is "It's useful for one very useless borin
 
 part Vending Vibe -2,1 a
 
-Vending Vibe is a room in Piddling Pain. "This isn't a very big place. You can only go back east."
+Vending Vibe is a room in Piddling Pain. "This isn't a very big place[if lending libe is off-stage]. And the 'vibe' here is a bit slangy[else if fussed folks is in Vending Vibe]A book called [fussed folks] lies here you [may-already] to check out something more substantial[end if]. You can only go back east."
 
-The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW.". [-> lending libe]
+to say may-already:
+	say "[if we whine is off-stage]may wish[else]managed[end if]"
+
+The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> lending libe]
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
 
@@ -832,13 +846,25 @@ this is the card-and-libe rule:
 
 We Whine ME MINE is a thing. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sign-seen is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a careful reading would turn something up.[end if]". [-> see sign]
 
+understand "book" as We Whine Me Mine when We Whine Me Mine is touchable.
+
 the printed name of We Whine is "[i]We Whine: ME, MINE[r]".
 
 sign-seen is a truth state that varies.
 
+chapter fussed folks
+
+Fussed Folks Just Jokes is scenery. "You read about [next-rand-txt of table of miscellaneous people]."
+
+understand "book" as Fussed Folks when Fussed Folks is touchable.
+
+check taking Fussed Folks: say "It's pretty obviously got nothing concrete to help you. It's just for entertainment." instead;
+
 part Got Gear Hot Here -2,1 b
 
-Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. You can go back east here."
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if trounce-track is false], but there may be another useless silly way to leave[end if]."
+
+trounce-track is a truth state that varies.
 
 chapter hard hat
 
@@ -852,7 +878,7 @@ check taking off hard hat: say "No. Something will come out of nowhere to conk y
 
 chapter shy shawl
 
-the shy shawl is an optional thing in Got Gear Hot Here. "A shy shawl lies here. It really can't be the sort of thing a hero wears, but maybe you can get some practice with it.". cht of shy shawl is partminus. description is "It is terribly plain, but [if lie-lol is true]you did[else]maybe you could[end if] get motivation from it.". [-> lie lol]
+the shy shawl is an optional thing in Got Gear Hot Here. "A shy shawl lies here. It can't possibly be directly useful.". cht of shy shawl is partminus. description is "Its weird and amorphous. The design is weird and abstract and, well, let's be charitable--open to possibilities. Maybe finding them would be good practice[if lurking lump is not off-stage] or help build the lump back up[else], but the shawl can't actually be useful[end if].". [-> lie lol]
 
 check taking the shy shawl: say "It is not suitable apparel for a hero. But you can practice your rhyming on it. Anyway, being shy, it somehow scootches out of your reach." instead;
 
@@ -1246,7 +1272,7 @@ extra-cool-cap is a truth state that varies.
 
 chapter Reeker Russell
 
-Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell blocks the way north.". talk-text is "'My mood: DIE, dude!'". description of Reeker Russell is "He looks [if meeker-yet is true]meeker than at first[else]pretty strong[end if]. He is also [if good gun is moot]unarmed[else]holding a good gun[end if].". cht of Reeker Russell is partminus. [-> meeker muscle] [-> beaker bustle]
+Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell blocks the way north[if good gun is not moot], and he's armed with a good gun![else].[end if]". talk-text is "'My mood: DIE, dude!'". description of Reeker Russell is "He looks [if meeker-yet is true]meeker than at first[else]pretty strong[end if]. He is also [if good gun is moot]unarmed[else]holding a good gun[end if].". cht of Reeker Russell is partminus. [-> meeker muscle] [-> beaker bustle]
 
 description of good gun is "It's made up of an obviously sleek and superior metal. A lesser material, and it might fall apart and be useless.". cht of good gun is leteq. [->wood one]
 
@@ -1354,6 +1380,14 @@ chapter wearing
 
 check wearing a gaphat: say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
 
+chapter cleaning
+
+the block rubbing rule is not listed in any rulebook.
+
+check rubbing:
+	if mean moe's clean clothes is not touchable, say "You aren't by any machine that can clean anything. And you don't need to clean anything directly." instead;
+	say "You can just [if can-glean]GLEAN GLOWS[else]riff on [mean moe's][end if] to see if anything in your inventory is cleanable." instead;
+
 chapter singing
 
 the block singing rule is not listed in any rulebook.
@@ -1363,8 +1397,31 @@ sing-clue is a truth state that varies.
 check singing:
 	if toe tappin is moot, say "You have fond memories of the tunes [Toe] opened to you. It and the others are worth writing down when you get home, when you're not quite as tired of it. But you've done enough." instead;
 	if player does not have Toe Tappin, say "Nothing comes to mind. But perhaps the right song, if found, might help you in many ways." instead;
-	now sing-clue is whether or not sing-clue is false;
-	say "You sing [Toe] for a bit to get it back [if sing-clue is true]in[else]out of[end if] your head." instead;
+	say "You sing [Toe] for a bit. Catchier than you expected. It may help you [if sing-max is 0]in the future, who knows[else if sing-max < 3]more[else]a bit more[end if]." instead;
+
+chapter savesonging
+
+savesonging is an action applying to nothing.
+
+understand the command "save song" as something new.
+
+understand "save song" as savesonging when toe tappin is enclosed by the player.
+
+carry out savesonging:
+	say "[Toe] is [if sing-clue is true]already[else]now back[end if] in your head." instead;
+	now sing-clue is true;
+
+chapter ravewronging
+
+ravewronging is an action applying to nothing.
+
+understand the command "rave wrong" as something new.
+
+understand "rave wrong" as ravewronging.
+
+carry out ravewronging:
+	say "[Toe] is [if sing-clue is false]already[else]now back[end if] out of your head.";
+	now sing-clue is false;
 
 every turn when sing-clue is true:
 	if song-clue, say "[Toe] bounces around in your head a bit.";
@@ -1450,7 +1507,7 @@ check taking inventory:
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if number of gaphats carried by player > 0, say "You are also carrying a [if number of carried gaphats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
-	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with SING[else]in your head. It has ... possibilities. [toe-poss][end if].";
+	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
 	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges] charge[plur of lump-charges] left.";
 	check-injury;
@@ -1610,7 +1667,7 @@ to say not-crit-but: say ". This is not a critical bug, but I'd like to know abo
 think-clue-flag is a truth state that varies.
 
 every turn when think-clue-flag is true (this is the note right guess wrong time rule):
-	say "[line break][one of][b]NOTE[r]: this is the first time you guessed a command right but aren't ready to use it, yet. These commands will be tracked under [b]THINK[r], with clues as to when they work.[or](correct guess saved to [b]THINK[r] for later reference.)[stopping]";
+	say "[line break][one of][b]NOTE[r]: this command will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command again saved to [b]THINK[r] for later reference.)[stopping]";
 	now think-clue-flag is false;
 	continue the action;
 
@@ -1770,7 +1827,7 @@ carry out verbsing:
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
 	check-flip-verbs;
-	if player has Toe Tappin, say "[2da]You can also [b]SING[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints.";
+	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
@@ -1803,7 +1860,7 @@ understand the command "credits" as something new.
 understand "credits" as creditsing.
 
 carry out creditsing:
-	say "First, thanks to Wade Clarke, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen and Jack Welch for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
+	say "First, thanks to Wade Clarke, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. The help you get in this game is largely due to their requests, prodding and awesome tries and plowing on in the face of some pretty obvious bugs. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
 	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but I loved the streaks that github showed.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -2139,16 +2196,17 @@ this is the gassed-gap-hint rule:
 		say "[one of]You need to put forth a challenge.[or]You don't have a gauntlet to throw down, but you have something else.[or]You have a cap.[or]CAST CAP.[stopping]";
 
 this is the got-gear-hot-here-hint rule:
-	say "?? fill in.";
-	the rule fails. [??not near]
+	if marred mat is moot, the rule fails;
+	say "You need to change the marred mat."
 
 this is the here-hull-hint rule:
 	if beer bull is moot, the rule fails;
-	say "You can do something with the beer bull, so HINT BEER BULL for that.";
+	say "You need to dispose of the Beer Bull, here. There are hints for it, if you need them.";
 
 this is the history-hall-hint rule:
+	if mean moe's is moot and gutta ganksta is moot and poor ponder is moot, the rule fails;
 	if ever-mall is true:
-		say "You can pretty much twiddle the Mystery Mall and History Hall as you want.";
+		say "You can pretty much twiddle the Mystery Mall and History Hall as you want. There are plenty of things to hint in each of them.";
 	else:
 		say "[one of]The History Hall can become something a bit less profound.[or]A place of commerce, not of study.[or]MYSTERY MALL.[stopping]";
 
@@ -2270,7 +2328,9 @@ chapter hinting an object verb
 hintobjing is an action applying to one thing.
 
 understand "hint [thing]" as hintobjing.
+understand "hint on [thing]" as hintobjing.
 understand "help [thing]" as hintobjing.
+understand "help on [thing]" as hintobjing.
 
 carry out hintobjing:
 	abide by the welp-wow-check rule;
@@ -2407,7 +2467,8 @@ this is the big-bag-hint rule:
 	say "The big bag just holds as many items as you want without you doing anything to it. It's working great as-is.";
 
 this is the bold-bard-hint rule:
-	say "[one of]The Bold Bard needs something like an ID.[or]COLD CARD.[stopping]";
+	if player does not have clashing cloak, say "You have nothing to help the Bold Bard make a distraction, yet." instead;
+	say "[one of]The Bold Bard needs a distraction, and something you have will help.[or]More precisely, use something you're wearing.[or]The clashing cloak is distracting in another form, too.[or]SMASHING SMOKE.[stopping]";
 
 this is the boring-boat-hint rule:
 	if nap-no is true, say "You can just board the boat.";
@@ -2453,9 +2514,9 @@ this is the clashing-cloak-hint rule:
 	if tried-yet of "SMASHING SMOKE":
 		say "You know what to do with the cloak, but the question is, where?";
 		if poor ponder is not moot:
-			say "You haven't unlocked the room, yet. You need to look at [poor] [here-in of History Hall].";
+			say "You haven't unlocked the room, yet. You need to look at [poor ponder] [here-in of History Hall].";
 		else if y'old yard is unvisited:
-			say "You haven't visited beyond [poor].";
+			say "You haven't visited beyond [poor ponder].";
 		else:
 			say "Using the cloak in Y'Old Yard will help the Bold Bard.";
 		the rule succeeds;
@@ -2463,7 +2524,7 @@ this is the clashing-cloak-hint rule:
 	if poor ponder is not moot, say "You can't use the clashing cloak yet."
 
 this is the clumped-cluster-hint rule:
-	say "[one of]The clumped cluster can be moved TWO ways[or]You can use an order to move the cluster or find an item[or][one of]BUMPED BUSTER is one way[or]DUMPED DUSTER is one way[cycling] to clear the clumped cluster[stopping].";
+	say "[one of]The clumped cluster can be moved two ways. Either is equivalent[or]You can use an order to move the cluster or find an item[or][one of]BUMPED BUSTER is one way[or]DUMPED DUSTER is one way[cycling] to clear the clumped cluster[stopping].";
 
 this is the cold-card-hint rule:
 	say "You need to bring the cold card somewhere as a voucher[one of]. Hint again to see where[or]. [if the room east of vending vibe is nowhere]You will need to change Mystery Mall back, first[else if vending vibe is unvisited]You need to visit west of Mystery Mall[else if trending tribe is moot]The Lending Libe[else]The Vending Vibe, but first you must deal with the Trending Tribe[end if][stopping]."
@@ -2574,7 +2635,7 @@ this is the mean-mass-hint rule:
 
 this is the mean-moes-clean-clothes-hint rule:
 	say "You need something to clean as well as a way to operate the machine.";
-	if tried-yet of "GLEAN GLOWS":
+	if can-glean:
 		say "You already know to GLEAN GLOWS.";
 	else:
 		say "[one of]How can you look into the inner mechanism of [clean clothes]?[or]Bells and lights and whistles.[or]GLEAN GLOWS.[stopping]";
@@ -2607,7 +2668,7 @@ this is the peeling-pier-hint rule:
 	process the real-rear-hint rule;
 
 this is the poor-ponder-for-fonder rule:
-	say "[one of][Poor] isn't a good read. It doesn't really put the reader where the history was[or]So you have to force what [poor] does. Imagine being there[or]YOU'RE (or YORE) YONDER[stopping].";
+	say "[one of][poor ponder] isn't a good read. It doesn't really put the reader where the history was[or]So you have to force what [poor ponder] does. Imagine being there[or]YOU'RE (or YORE) YONDER[stopping].";
 
 this is the prong-part-hint rule:
 	say "[one of]The prong part is part of the wrong art, so future clues will refer you there.[or][stopping]";
@@ -2633,7 +2694,7 @@ this is the shot-sword-hint rule:
 	say "[one of]The swat sword belongs to someone. It's surprisingly noble for being kind of useless[or]The swat sword hints that you can call the LOT LORD[stopping].";
 
 this is the shy-shawl-hint rule:
-	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]It looks silly and stupid and wrong.[or]LIE LOL[stopping]."
+	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]The shawl looks silly and stupid and wrong. There's a right way to make light of this, spoiled if you HINT again[or]LIE LOL[stopping]."
 
 this is the snuck-snare-hint rule:
 	if ssh-yet is false:
@@ -2926,10 +2987,10 @@ volume Vale Verminous
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
-"see what you MISSED"	true	"missed"	--	showmissesing
-"see other DEATH TRAPS"	true	"death/traps" or "death traps"	--	showdeathsing
-"see ALTernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
-"see the RANKs"	true	"rank/ranks"	--	showranksing
+"see the points you [b]MISSED[r]"	true	"missed"	--	showmissesing
+"see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
+"see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
+"see the [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
 
 showranksing is an activity.
 
@@ -2961,8 +3022,9 @@ rule for showmissesing:
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if hap-ho is false, say "You could've said [b]HO HAPPEN[r] while listening to [Toe].";
 	unless oi mo is moot, say "You could have [b]DIMD[r] (dim'd) the horrible song Oi Mo in Mystery Mall.";
-	if clumped cluster is not moot, say "You could've cleared up the clumped cluster with [b]BUMPED BUSTER[r] or [r]DUMPED DUSTER[r].";
+	if clumped cluster is not moot, say "You could've cleared up the clumped cluster with [b]BUMPED BUSTER[r] or [b]DUMPED DUSTER[r].";
 	if lie-lol is false, say "You could've said [b]LIE LOL[r] to the shy shawl.";
+	if trounce-track is false, say "You could've gone [b]NOT NEAR[r] in Got Gear Hot Here.";
 	if jake-brie is false, say "You could've tried to [b]BREAK BRIE[r] with Jake G. after taking tea.";
 	if wild weed is off-stage, say "You could've made the mild mead into [b]WILD WEED[r].";
 	if wild weed is not moot, say "You could've tried to [b]SPARK SPLIFF[r] by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting, from the mild mead[else]the wild weed[end if].";
@@ -3267,6 +3329,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "see"	"sign"	false	true	false	vc-see-sign rule	vr-see-sign rule	--
 "hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
 "lie"	"lol"	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--
+"not"	"near"	true	false	false	vc-not-near rule	vr-not-near rule	--
 "beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
 "cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
 "full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
@@ -4036,7 +4099,7 @@ this is the vr-history-hall rule:
 	move-to-temp Oi Mo;
 	now mistmall is false;
 	bold-my-room;
-	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor].";
+	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
 	now ever-hall is true;
 
 this is the vc-ho-happen rule:
@@ -4126,9 +4189,10 @@ this is the vc-lending-libe rule:
 
 this is the vr-lending-libe rule:
 	moot trending tribe;
-	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit.";
+	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit. They run away screaming. The Vending Vibe goes away, replaced by a Lending Libe. A book even falls out: [fussed folks].";
 	now printed name of Vending Vibe is "Lending Libe";
 	move lending libe to Vending Vibe;
+	move fussed folks just jokes to Lending Libe;
 	process the card-and-libe rule;
 
 this is the vc-lie-lol rule:
@@ -4311,7 +4375,7 @@ this is the vc-mining-more rule:
 		continue the action;
 	the rule succeeds;
 
-this is the vr-mining-more rule: [?? pining poor]
+this is the vr-mining-more rule:
 	now mine-more is true;
 	moot dining door;
 	say "You help the pining poor mine more, more, more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD!"; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
@@ -4367,7 +4431,6 @@ this is the vc-mystery-mall rule:
 	the rule succeeds;
 
 this is the vr-mystery-mall rule:
-	move-to-temp Fussed Folks Just Jokes;
 	move-from-temp gutta ganksta;
 	if Toe Tappin is not moot:
 		move-from-temp Toe Tappin;
@@ -4405,6 +4468,17 @@ this is the vr-no-nappin rule:
 	say "[line break][if boat-reject is true and lake lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
 	now nap-no is true;
 	process the check-sing-max rule;
+
+this is the vc-not-near rule:
+	if player is not in got gear hot here, the rule fails;
+	if trounce-track is true:
+		vcp "You already teleported for a bonus point.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-not-near rule:
+	say "You feel pulled from the ground, and you pass through the walls without feeling anything. You are teleported to the TROUNCE TRACK, where you are set upon but what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. You're doing well enough here.";
+	now trounce-track is true;
 
 this is the vc-paper-pile rule:
 	if vapor vile is not touchable, the rule fails;
@@ -4740,7 +4814,7 @@ this is the vc-youre-yonder rule:
 	the rule succeeds;
 
 this is the vr-youre-yonder rule:
-	say "You begin to make sense of [poor]. Of course it should not be too easy to enjoy, or the Crimes Crew Times Two might. You can see how they would give up on it without sorting out its detailed meaning, the stuff between the lines. And as you figure that out, you see clues to a passage going IN. One you'd otherwise have missed. The book itself, however, bursts into flames once you discover the secret passage.";
+	say "You begin to make sense of [poor ponder]. Of course it should not be too easy to enjoy, or the Crimes Crew Times Two might. You can see how they would give up on it without sorting out its detailed meaning, the stuff between the lines. And as you figure that out, you see clues to a passage going IN. One you'd otherwise have missed. The book itself, however, bursts into flames once you discover the secret passage.";
 	moot poor ponder;
 	now Y'Old Yard is mapped inside History Hall;
 	now History Hall is mapped outside Y'Old Yard;
