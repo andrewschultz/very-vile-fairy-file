@@ -292,6 +292,13 @@ by one point
 
 > enter boat
 
+==t2
+>take tea
+>fake fee
+>think
+TAKE TEA
+FAKE FEE
+
 > wake whee
 by one point
 
@@ -306,12 +313,20 @@ north to Mo Main Low Lane
 > take tea
 by one point
 
+==t2
+>think
+!TAKE TEA
+
 ==t1
 > break brie
 by one point
 
 > fake fee
 by one point
+
+==t2
+>think
+!FAKE FEE
 
 > e
 > make map

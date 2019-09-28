@@ -74,9 +74,9 @@ You don't need to do this right now, but why not...
 At this point you may notice the wrong art. It's not critical to the game, but it's your first clear bonus point.
 ==t1
 \\
-Since the "wr" is pronounced as "r," and there is a prong part as you examine it, it may help to figure what to do.
+Since the "wr" is pronounced as "r," and there is a prong part as you examine it, it may help to figure what to do. It is the first LLP (Last Lousy Point).
 \\
-> STRONG START (1)
+> STRONG START (OPTIONAL) (1)
 \\
 The wry wall can also be deal with, sort of, for a bonus point. There are other wry walls in future locations, and you can pick up this bonus point at any time. It's obviously all wrong, but how to say so?
 \\
@@ -101,7 +101,7 @@ A key! Keys always come in handy. There's one more thing you can do, but it will
 ==t1
 Also, there's a last lousy point here, to make the peeling pier look nicer.
 \\
-> APPEALING APPEAR (1)
+> APPEALING APPEAR (OPTIONAL) (1)
 
 > N
 
@@ -157,7 +157,7 @@ Oh, that's life. An even worse song crops up.
 \\
 You can get an additional optional point here for insulting the ganksta "cleverly."
 \\
-> WHATTA WANKSTA (1)
+> WHATTA WANKSTA (OPTIONAL) (1)
 \\
 And you can also deal with the horrible music that replaced what you heard.
 \\
@@ -165,18 +165,15 @@ And you can also deal with the horrible music that replaced what you heard.
 
 > LOTS LAME (1)
 
-It's possible to use Toe Tappin one way quickly. This may give you clues for other ways to use it.
+There are many ways to use Toe Tappin, including for a bonus point. This may give you clues for other ways to use it. If you play around, you may get rejects saying "hey, this'll work later." Or you may get rejects with SLOW SLAPPIN and FLOW FLAPPIN.
 
 ==t1
 \\
 There's a bonus-point way and a non-bonus-point way. Let's see the bonus-point way:
-> HO HAPPEN (1)
+> HO HAPPEN (OPTIONAL) (1)
 \\
-And now the necessary way:
 
-> NO NAPPIN (1)
-
-Toe Tappin will be useful in other situations and puzzles throughout the game as well.
+SING toggles Toe Tappin's usefulness.
 
 > W
 
@@ -187,7 +184,11 @@ The marred mat doesn't look like it's worth buying, but ...
 ==t1
 And you can actually do something with the shy shawl, too. It is there mostly for practice. You can use it to get some good guesses to recharge the lurking lump, if you want, though if you have this walkthrough, that's probably not necessary.
 \\
-> LIE LOL (1)
+> LIE LOL (OPTIONAL) (1)
+\\
+And not just the shy shawl! This silly joke was too good for me to pass up. So you can actually teleport somewhere useless.
+\\
+> NOT NEAR (OPTIONAL) (1)
 
 > E
 
@@ -229,11 +230,19 @@ This will come in handy later.
 
 > E
 
-> SILENT SAIL (1)
+There are a few things to do here. You don't need to go east right away, but let's make it so we can.
 
 > BRIGHTENING BRIDGE (1)
 
+> SILENT SAIL (1)
+
+The flooring float is aesthetic but not useful.
+
 > BORING BOAT (1)
+
+If you try to enter the boat right away, it's still too boring. But you have a song in your head--one that can deflect that.
+
+> NO NAPPIN (1)
 
 > ENTER BOAT
 
@@ -250,7 +259,7 @@ Now he sort of expects payment...
 ==t1
 ... but you can get a last lousy point, first.
 \\
-> BREAK BRIE (1)
+> BREAK BRIE (OPTIONAL) (1)
 
 > FAKE FEE (1)
 
@@ -291,7 +300,7 @@ Now Dean Duggan has something to teach you. The two commands below can be done i
 ==t1
 And why not deal with the clumped cluster for an extra point?
 \\
-> BUMPED BUSTER (1)
+> BUMPED BUSTER (OPTIONAL) (1)
 
 > ENTER BOAT
 
@@ -373,7 +382,7 @@ You need to dispel the hit hound and get comfortable.
 
 The blaze is a doozy. How to get something less lethal?
 
-> MINDING MAZE (1)
+> WINDING WAYS (1)
 
 Boy! Manually mapping would be no fun. A song would help...
 
@@ -400,9 +409,10 @@ Now to set a trap for a bit later...
 
 > KNIVES NICHE (1)
 
-And now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
+You'll note you don't want to go back to the niche, because you know there's a trap there. But nobody else does. Maybe there's someone or something that deserves to be suckered.
 
-> E
+So now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
+
 > U
 > E
 > N
@@ -420,13 +430,17 @@ Yay! You get a point for this. The mild mead will come in handy. The game also t
 ==t1
 You can do something with the mild mead, though.
 \\
-> WILD WEED (1)
+> WILD WEED (OPTIONAL) (1)
 \\
 And now something with the wild weed. It's a very silly extra point. Cark Cliff is actually useful for something.
 \\
 > S
 \\
-> SPARK SPLIFF (1)
+> S
+\\
+> SPARK SPLIFF (OPTIONAL) (1)
+\\
+> N
 \\
 > N
 
@@ -489,7 +503,7 @@ You need to dispose of Reeker Russell and his good gun.
 \\
 There's an LLP in here. Let's pretend to make Russell dorkier.
 \\
-> BEAKER BUSTLE (1)
+> BEAKER BUSTLE (OPTIONAL) (1)
 
 Now, Russell can become wimpier ...
 

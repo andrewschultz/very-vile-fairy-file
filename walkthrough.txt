@@ -123,17 +123,15 @@ Oh, that's life. An even worse song crops up.
 
 > LOTS LAME (21)
 
-It's possible to use Toe Tappin one way quickly. This may give you clues for other ways to use it.
+There are many ways to use Toe Tappin, including for a bonus point. This may give you clues for other ways to use it. If you play around, you may get rejects saying "hey, this'll work later." Or you may get rejects with SLOW SLAPPIN and FLOW FLAPPIN.
 
-> NO NAPPIN (22)
-
-Toe Tappin will be useful in other situations and puzzles throughout the game as well.
+SING toggles Toe Tappin's usefulness.
 
 > W
 
 The marred mat doesn't look like it's worth buying, but ...
 
-> HARD HAT (23)
+> HARD HAT (22)
 
 > E
 
@@ -147,25 +145,25 @@ The marred mat doesn't look like it's worth buying, but ...
 
 In the Shirk Shell, you need to do something to get the Jerk Gel.
 
-> WORK WELL (24)
+> WORK WELL (23)
 
 The Jerk Gel is handy for other stuff later.
 
 > E
 
-> LOFT LAND (25)
+> LOFT LAND (24)
 
 > W
 
-> DREAMING DULL (26)
+> DREAMING DULL (25)
 
 How to get rid of the worst wave in the curst cave?
 
-> FIRST FAVE (27)
+> FIRST FAVE (26)
 
 What can you get from the tool tap?
 
-> COOL CAP (28)
+> COOL CAP (27)
 
 This will come in handy later.
 
@@ -175,11 +173,19 @@ This will come in handy later.
 
 > E
 
+There are a few things to do here. You don't need to go east right away, but let's make it so we can.
+
+> BRIGHTENING BRIDGE (28)
+
 > SILENT SAIL (29)
 
-> BRIGHTENING BRIDGE (30)
+The flooring float is aesthetic but not useful.
 
-> BORING BOAT (31)
+> BORING BOAT (30)
+
+If you try to enter the boat right away, it's still too boring. But you have a song in your head--one that can deflect that.
+
+> NO NAPPIN (31)
 
 > ENTER BOAT
 
@@ -309,7 +315,7 @@ You need to dispel the hit hound and get comfortable.
 
 The blaze is a doozy. How to get something less lethal?
 
-> MINDING MAZE (51)
+> WINDING WAYS (51)
 
 Boy! Manually mapping would be no fun. A song would help...
 
@@ -336,9 +342,10 @@ Now to set a trap for a bit later...
 
 > KNIVES NICHE (55)
 
-And now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
+You'll note you don't want to go back to the niche, because you know there's a trap there. But nobody else does. Maybe there's someone or something that deserves to be suckered.
 
-> E
+So now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
+
 > U
 > E
 > N

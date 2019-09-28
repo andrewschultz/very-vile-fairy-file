@@ -193,14 +193,26 @@ by one point
 
 > enter boat
 
+>take tea
+>fake fee
+>think
+TAKE TEA
+FAKE FEE
+
 > wake whee
 by one point
 
 > take tea
 by one point
 
+>think
+!TAKE TEA
+
 > fake fee
 by one point
+
+>think
+!FAKE FEE
 
 > e
 > make map
