@@ -63,6 +63,7 @@ table of mistake substitutions
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in vined vault]being[else if vined vault is visited]having been[else]if they were ever[end if] in jail!" [start 1 general mistakes]
 "swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
+"tig tag"	trivially true rule	false	3	3	mist-bag-hint rule	"But you already have one utterly childish game right in front of you. Do you really need any more?"
 "cig sag"	trivially true rule	false	3	3	mist-bag-hint rule	"You find no black market currency in the [bag-rag]."
 "jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing."
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
@@ -72,12 +73,12 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "fry fall"	signable-loc rule	false	--	--	--	"The wry wall remains upright."
 "pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
 "try tall"	signable-loc rule	false	--	--	--	"The wry wall does not grow."
-"cot cord"	bot-board-vis rule	false	--	--	--	"A pull down bed is not what you need now that the action is heating up!" [start airy isle]
+"cot cord"	bot-board-vis rule	false	3	5	--	"A pull down bed is not what you need now that the action is heating up!" [start airy isle]
 "got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homonym, here. You're close."
 "hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homonym, here. You're close."
 "pot poured"	bot-board-vis rule	false	3	5	--	"There's no time for coffee here!"
-"rot roared"	bot-board-vis rule	false	3	5	--	"Not the battle cry needed."
-"snot snored"	bot-board-vis rule	false	3	5	--	"Not the battle cry needed."
+"rot roared"	bot-board-vis rule	false	3	5	--	"A decent battle cry, but you sense there could a more violent action."
+"snot snored"	bot-board-vis rule	false	3	5	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
 "fought ford"	bot-board-vis rule	false	3	5	--	"The battle is ahead, not in the past."
 "crow crate"	go-gate-vis rule	false	--	--	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize[leetclue of partminus]."
 "foe fate"	go-gate-vis rule	false	--	--	--	"You are very near the end, but it's not that easy.[leetclue of partplus]"
@@ -86,9 +87,9 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mo mate"	go-gate-vis rule	false	--	--	--	"You remain alone.[leetclue of partplus]"
 "oh ate"	go-gate-vis rule	false	--	--	--	"Nothing takes a bit out of the go gate.[leetclue of letplus]"
 "woe/whoa/whoah weight"	go-gate-vis rule	false	--	--	--	"You wouldn't want to be crushed by a weight. But you've got the right idea.[leetclue of partminus]"
-"greased gross"	need-least-loss rule	false	5	5	--	"The creased cross doesn't need to become ickier."
-"fleeced floss"	need-least-loss rule	false	5	5	--	"Dental hygiene is a good idea in general, but here, it's unnecessary."
-"teased toss"	need-least-loss rule	false	5	5	--	"A bit of taunting might work here, but you might need to be a bit harsher."
+"greased gross"	in-creased-cross rule	false	5	5	need-least-loss rule	"The creased cross doesn't need to become ickier."
+"fleeced floss"	in-creased-cross rule	false	5	5	need-least-loss rule	"Dental hygiene is a good idea in general, but here, it's unnecessary."
+"teased toss"	in-creased-cross rule	false	5	5	need-least-loss rule	"[if bull beast is moot]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
 "jay joke"	have-clay-cloak rule	false	--	--	--	"You recall some off-color drug humor from your younger days." [start been buggin]
 "stay stoke"	have-clay-cloak rule	false	--	--	--	"You take a slightly ungrammatical approach to keeping your spirits up."
 "bray broke"	have-clay-cloak rule	false	--	--	--	"You try a poor-righteous-teacher approach with the clay cloak."
@@ -100,7 +101,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "ceased sauce"	in-creased-cross rule	false	5	4	bull-beast-here rule	"You don't need any fancy cooking." [start creased cross]
 "nursed nave|knave"	in-curst-cave rule	false	5	5	clue-worst-wave rule	"You don't need to nurse a bad guy or a religious place." [start curst cave]
 "creaming cull"	skull-near rule	false	8	5	--	"Less violence, more letters."
-"cruel crap"	tool-tap-near rule	false	4	3	--	"But you got rid of the skull. Also, swearing bad."
+"cruel crap"	tool-tap-near rule	false	4	3	--	"But you got rid of the skull. Also, swearing is naughty."
+"youll yap"	tool-tap-near rule	false	4	3	--	"Is that an invitation to drone on endlessly? Why, thank you."
 "pool pap"	tool-tap-near rule	false	4	3	--	"You want something nice and useful to come out of the tap, not ... that."
 "mule map"	tool-tap-near rule	false	4	3	--	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
 "rule rap/wrap"	tool-tap-near rule	false	4	3	--	"You need something more substantial to come out of the cool cap."
@@ -270,6 +272,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "foe/fo fad"	in-so-sad rule	false	6	4	--	"You try to cinvince yourself it's a passing phase, but it doesn't work."
 "doh dad"	in-so-sad rule	false	6	4	--	"Blaming your parents fails to help."
 "pay prong"	in-way-wrong rule	false	6	4	--	"Buying things won't improve your lack of self-worth."
+"perking pump"	lump-known rule	false	--	--	--	"I don't want to know."
 
 [table of mistake substitutions (continued)
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt] [in case I have a bunch I need to dump and am too lazy to sort them right away]
@@ -382,6 +385,8 @@ this is the in-wet-wood rule: if player is in wet wood, the rule succeeds;
 this is the in-whining-war rule: if player is in Whining War, the rule succeeds;
 
 this is the key-or-rear rule: if player is in Real Rear or player has cage key, the rule succeeds;
+
+this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds;
 
 this is the mass-near rule: if mean mass is touchable, the rule succeeds;
 

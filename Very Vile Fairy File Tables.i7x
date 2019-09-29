@@ -193,6 +193,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
 "CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
+"COUPLE CAPS"	false	can-couple-caps rule	false	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of can-couple-caps rule] you've got enough caps to couple."
 "CULL CEASED"	false	can-cull-ceased rule	false	"You should be able to say [b][cul-lul][r] [once-now of can-cull-ceased rule] you're back to full strength."
 "DEAL DEAR"	false	can-deal-dear rule	false	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
 "DINING DOOR"	false	can-dining-door rule	false	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
@@ -210,7 +211,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found something to mark [here-in of Stark Store]."
 "MASH MAP"	false	vc-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
 "MERRY MILE"	false	can-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
-"MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the Fining Four are fully satisfied."
+"MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the pining poor are fully satisfied."
 "MO MAPPIN"	false	can-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
 "MORAL MAGE"	false	can-moral-mage rule	false	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
 "PULL PIECED"	false	can-pull-pieced rule	false	"You can [b]PULL PIECED[r] the bull beast [once-now of can-pull-pieced rule] you have more people willing to help you."
@@ -235,6 +236,10 @@ this is the can-cast-cap rule:
 
 this is the can-co-capn rule:
 	if jake-fee is true, the rule succeeds;
+	the rule fails;
+
+this is the can-couple-caps rule:
+	if my-hats is 3, the rule succeeds;
 	the rule fails;
 
 this is the can-cull-ceased rule:
