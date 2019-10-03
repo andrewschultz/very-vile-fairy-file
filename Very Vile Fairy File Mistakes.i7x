@@ -137,7 +137,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "scry scrawl"	got-gear-hot-here rule	false	3	3	--	"The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer[shawl-lol]."
 "spry sprawl"	got-gear-hot-here rule	false	3	3	--	"The shy shawl fails to spread out all over the floor[shawl-lol]."
 "sty stall"	got-gear-hot-here rule	false	3	3	--	"You denigrate the condition of Got Gear Hot Here[shawl-lol]."
-"dry droll"	got-gear-hot-here rule	false	3	3	--	"You make fun of the shy shawl subtly[shawl-lol]."
+"dry droll/drawl"	got-gear-hot-here rule	false	3	3	--	"You make fun of the shy shawl subtly[shawl-lol]."
+"tie tall"	got-gear-hot-here rule	false	3	3	--	"You look for any extra-long ties that might help you feel taller, or whatever. You find none, and you also receive no mispronounced title[shawl-lol]."
 "high hall"	got-gear-hot-here rule	false	3	3	--	"You imagine yourself in a much more spacious megastore[shawl-lol]."
 "guy gall/gaul"	got-gear-hot-here rule	false	3	3	--	"You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere[shawl-lol]."
 "buy ball"	got-gear-hot-here rule	false	3	3	--	"You wonder what sort of mall this is, without a sports store[shawl-lol]."
@@ -157,6 +158,9 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "sots same"	ganksta-nearby rule	false	4	4	--	"The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult."
 "shots shame"	ganksta-nearby rule	false	4	4	--	"The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun."
 "knots/nots name"	ganksta-nearby rule	false	4	4	--	"You fail to tie the ganksta up in knots with well-timed 'NOT's."
+"cots came"	ganksta-nearby rule	false	4	4	--	"The gutta ganksta is unmoved by the prospect of a good night's sleep."
+"dots dame"	ganksta-nearby rule	false	4	4	--	"The gutta ganksta's fashion sense tends away from polka dots."
+"blots blame"	ganksta-nearby rule	false	4	4	--	"There's another way to insult the tattoo as bad art. You're very close."
 "crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but [Toe] is versatile enough. And this game isn't THAT juvenile.I hope."
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That would be handy in a more violent adventure, but not this one."
 "flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
@@ -195,6 +199,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "know/no knit/nit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You look for details to understand, but you might want to go in for a bigger picture."
 "show shit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!"
 "so sit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You sit and pout. It doesn't help."
+"glow glit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here."
 "lash lap"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You bang your fists against your pockets. It sort of helps, you guess."
 "woe/whoa/whoah wit"	in-po-pit rule	false	4	4	--	"Clever complaining will make you feel better but won't do anything."
 "cage key"	key-or-rear rule	false	--	--	--	"[if cage key is off-stage]You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it. [cagekey-prog][else]You already got the key[end if]." [start real rear]
@@ -267,7 +272,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pining pore/poor"	in-whining-war rule	false	7	5	--	"They'll come along later, if you do something else."
 "fining four"	in-whining-war rule	false	7	5	--	"You don't need to summon people that may audit you."
 "lining lor/lore"	in-whining-war rule	false	7	5	--	"Alas, nobody falls into line to tell stories of how they got here."
-"polled pard"	in-yolde-yarde rule	false	--	--	--	"Nobody stops by with a clipboard to ask how you are enjoying your experience so far."
+"polled pard"	in-yold-yard rule	false	--	--	--	"Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far."
+"lold lard"	in-yold-yard rule	false	--	--	--	"Fat jokes aren't funny, self-depreciating or otherwise."
 "ho had"	in-so-sad rule	false	4	4	--	"You're trying to feel less in the dumps, not more." [start of general stuff that doesn't fit anywhere else]
 "mo mad"	in-so-sad rule	false	4	4	--	"Once the anger wore off, you might be even more lethargic."
 "co cad"	in-so-sad rule	false	4	4	--	"Nobody appears to commiserate with you."
@@ -353,8 +359,7 @@ this is the in-been-buggin rule: if player is in been buggin', the rule succeeds
 
 this is the in-creased-cross rule: if player is in creased cross, the rule succeeds;
 
-this is the in-curst-cave rule:
-	if player is in curst cave, the rule succeeds;
+this is the in-curst-cave rule: if player is in curst cave, the rule succeeds;
 
 this is the in-foe-field rule: if player is in foe field, the rule succeeds;
 
@@ -391,6 +396,8 @@ this is the in-way-wrong rule: if in-way-wrong is true, the rule succeeds;
 this is the in-wet-wood rule: if player is in wet wood, the rule succeeds;
 
 this is the in-whining-war rule: if player is in Whining War, the rule succeeds;
+
+this is the in-yold-yard rule: if player is in Y'Old Yard, the rule succeeds;
 
 this is the key-or-rear rule: if player is in Real Rear or player has cage key, the rule succeeds;
 
