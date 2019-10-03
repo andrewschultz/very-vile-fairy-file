@@ -1252,6 +1252,10 @@ check opening coral cage:
 
 check unlocking coral cage with: try opening coral cage instead;
 
+section Here Hip Queer Quip
+
+Here Hip Queer Quip is a proper-named thing. description is "It contains summaries of the Moral Mage's lecture."
+
 volume Vale Verminous
 
 part Gassed Gap 0,4
@@ -1518,12 +1522,18 @@ after printing the name of We Whine while taking inventory: if sign-seen is true
 
 to decide which number is my-hats: decide on number of gaphats carried by player;
 
+definition: a thing (called th) is evidencey:
+  if th is Here Hip Queer Quip, yes;
+  if th is We Whine and sign-seen is true, yes;
+  if th is backed binder, yes;
+
 check taking inventory:
 	if player has big bag, say "Boy! You can carry all you need with your big bag![paragraph break]";
 	now all things enclosed by the player are marked for listing;
 	now toe tappin is unmarked for listing;
 	now lurking lump is unmarked for listing;
 	now all gaphats are unmarked for listing;
+	now all evidencey things are unmarked for listing;
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
@@ -1533,7 +1543,7 @@ check taking inventory:
 		else:
 			say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
-	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
+	if evidence-pieces > 0, say "You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of evidencey things].";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
 	check-injury;
 	the rule succeeds;
@@ -1765,6 +1775,7 @@ definition: a thing (called th) is readable:
 read-exam-note is a truth state that varies.
 
 carry out reading:
+	if noun is evidencey, say "Yes, [the noun]'s details are important, but not to your quest specifically." instead;
 	repeat through table of readables:
 		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
 	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
@@ -1886,8 +1897,8 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "First, thanks to Wade Clarke, dgtziea, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. Their requests, observations, clever tries and plowing on in the face of some pretty obvious bugs helped push me to do things I didn't consider or put off--in particular, many ways of hinting. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
-	say "[line break]Thanks to someone who found a big in-comp bug. I'll wait for their approval before naming them, but it was a big one.";
-	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but I loved the streaks that github showed.";
+	say "[line break]Thanks to Matt Weiner for finding a big in-comp bug.";
+	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but github's daily commit tracker helps so much with big and small goals.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
 	say "[line break]You can get in the testing credits too if you find a bug or a worthwhile game-related rhyme command. I suspect I've missed some.";
@@ -2829,10 +2840,11 @@ to decide whether goto-available:
 	yes.
 
 definition: a room (called rm) is available-from-here:
+	if rm is unvisited, no;
 	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
-	if rm is unvisited, no;
+	if rm is Been Buggin', no;
 	yes;
 
 carry out gotoing:
@@ -3686,28 +3698,29 @@ this is the vc-cleared-clay rule:
 	the rule succeeds;
 
 this is the vr-cleared-clay rule:
-	say "You concentrate on the weird way, which is, uh, weirder than trying to clear it with actual hard physical work. But what do you know? It turns to clay that crumbles and goes away. You can go down now!";
+		say "You concentrate on the weird way, which is, uh, weirder than trying to clear it with actual hard physical work. But it's effective! The clay crumbles and sinks into the ground. You can go down now!";
 	moot weird way;
 
 this is the vc-co-capn rule:
-	if player does not have toe tappin, the rule fails;
+	if player does not have toe tappin or snake-snap is true, the rule fails;
+	if jake-cocapn is true:
+		vcal "Jake already is[if jake is not touchable] and will be when you return to see him[end if].";
+		continue the action;
 	if jake is not touchable:
-		say "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
-		clue-later "CO CAPN";
-	if jake-fee is false:
-		vcp "Maybe once you established a bond with Jake, he could be a co-captain. But not yet.";
+		vcp "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
 		clue-later "CO CAPN";
 		continue the action;
-	if jake-cocapn is true:
-		vcal "Jake already is.";
+	if jake-fee is false:
+		vcp "You haven't (yet) bonded with Jake G. enough for that.";
+		clue-later "CO CAPN";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-co-capn rule:
 	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
 	now jake-cocapn is true;
-	process the check-sing-max rule;
 	clue-zap "CO CAPN";
+	process the check-sing-max rule;
 
 this is the vc-cool-cap rule:
 	if tool tap is not touchable, the rule fails;
@@ -3735,6 +3748,7 @@ this is the vr-couple-caps rule:
 	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
 	moot hard hat;
 	moot cake cap;
+	moot jerk gel;
 	now printed name of cool cap is "extra cool cap";
 	now extra-cool-cap is true;
 
@@ -4458,10 +4472,11 @@ this is the vc-moral-mage rule:
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
-	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it's going to be a sermon, but it turns into interesting details about the Very Vile Fairy File, its powers, the people behind it, and how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase. The moral mage nods and departs, leaving you to realize that the knowledge they passed on was a sort of magic in its own right.";
+	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it'll be a sermon, but it fills interesting details about the Very Vile Fairy File, its powers, the Crimes Crew Times Two, how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase.[paragraph break]The moral mage nods and departs, leaving you with [here hip], a summary of the lecture. You realize that the knowledge passed on was a sort of magic in its own right, and you'd groan if it weren't so helpful.";
 	moot coral cage;
 	moot cage key;
 	phbt Store All Stage;
+	now player has Here Hip Queer Quip;
 	clue-zap "MORAL MAGE";
 
 this is the vc-mystery-mall rule:

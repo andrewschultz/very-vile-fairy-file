@@ -22,7 +22,6 @@ maul me
 call key
 ###################shy shawl
 ###################po' pit
-snow snit
 co kit
 ##################clay cloak
 say soak
@@ -33,26 +32,21 @@ knots/nots name
 tots tame
 sots same
 #############marred mat
-barred/bard bat
 #############here hull
-pier/peer pull
 ###############loft land
-coughed canned
 ###################tall tree
 ball brie
 ##################gassed gap
-massed/mast map
 ##################violent vale
 ##################random i dunno
 stooping stair
 looping lair
+whooping where
+hooping hare / space jam ain't it
 #################way wrong
 ################real rear
-eel ear/ere
-peel pier # a bit too on the nose
 #######################creased cross
 #########################shining shore
-Fining Four #they are hete to ... well, make you pay up
 ]
 
 volume what you start with
@@ -98,6 +92,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "k coke"	have-clay-cloak rule	false	--	--	--	"No fizzy beverage (or anything less healthy) appears."
 "yay yoke"	have-clay-cloak rule	false	--	--	--	"Some woke people like to self-immolate, but not you."
 "pay poke"	have-clay-cloak rule	false	--	--	--	"The clay cloak was free. No need to pay anything."
+"teen tuggin"	in-been-buggin rule	false	--	--	--	"Dealing with the shame of having done, er, THAT is beyond the scope of this game."
 "binding bays/baize"	blaze-before-maze rule	false	7	4	--	"You need to break free here, not get more tied up." [start blinding blaze]
 "grinding grays"	blaze-before-maze rule	false	7	4	--	"The blaze might be colored duller, but it'd still be too uncomfortable."
 "ceased sauce"	in-creased-cross rule	false	5	4	bull-beast-here rule	"You don't need any fancy cooking." [start creased cross]
@@ -344,6 +339,8 @@ this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
 this is the if-grit-ungrown rule: if grit-grown is false, the rule succeeds;
 
 this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
+
+this is the in-been-buggin rule: if player is in been buggin', the rule succeeds;
 
 this is the in-creased-cross rule: if player is in creased cross, the rule succeeds;
 
