@@ -957,7 +957,7 @@ check entering boring boat:
 		move player to violent vale;
 		the rule succeeds;
 	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
-	if player has cake cap:
+	if cake cap is not off-stage:
 		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
 		move boring boat to Been Buggin';
 		move player to Been Buggin';
@@ -1527,7 +1527,11 @@ check taking inventory:
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
-	if my-hats > 0, say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
+	if my-hats > 0:
+		if jerk gel is moot:
+			say "You also have the extra cool cap you constructed.";
+		else:
+			say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
 	if coral cage is moot, say "You also carry within you lessons of the Very Vile Fairy File from the moral mage.";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
@@ -1882,6 +1886,7 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "First, thanks to Wade Clarke, dgtziea, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. Their requests, observations, clever tries and plowing on in the face of some pretty obvious bugs helped push me to do things I didn't consider or put off--in particular, many ways of hinting. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
+	say "[line break]Thanks to someone who found a big in-comp bug. I'll wait for their approval before naming them, but it was a big one.";
 	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but I loved the streaks that github showed.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -4615,6 +4620,7 @@ this is the vc-silent-sail rule:
 this is the vr-silent-sail rule:
 	say "Suddenly from the watery depths, a flooring float pops up! It looks -- impractical for going anywhere, but man, is it aesthetic!";
 	move flooring float to violent vale;
+	now silent-sale is true;
 	phbt violent vale;
 
 this is the vc-sit-sound rule:
@@ -5024,4 +5030,4 @@ index map with Hidey House mapped west of Gazy Gap.
 
 section side room to include - not for release
 
-include Very Vile Fairy File Fake Rooms by Andrew Schultz.
+[include Very Vile Fairy File Fake Rooms by Andrew Schultz.]

@@ -244,6 +244,11 @@ by one point
 > work well
 by one point
 
+==t2
+> couple caps
+> think
+COUPLE CAPS
+
 > e
 
 > loft land
@@ -351,6 +356,15 @@ by one point
 ==t2
 > think
 !SNAKE SNAP
+
+==t2
+# test bug found in-comp
+\\
+>couple caps
+>enter boat
+Been Buggin
+>undo
+>undo
 
 > enter boat
 > mean muggin
@@ -654,6 +668,10 @@ CAST CAP
 
 > couple caps
 by one point
+
+==t2
+> think
+!COUPLE CAPS
 
 > cast cap
 by one point

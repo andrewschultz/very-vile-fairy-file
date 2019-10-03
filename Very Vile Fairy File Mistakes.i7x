@@ -9,6 +9,8 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 [dbh.py shortens to the debug version]
 
 [stuff I haven't sorted yet:
+Polled Pard
+By Ball
 ##############unsorted
 ##############po pit
 ###############sage sea
@@ -22,9 +24,9 @@ call key
 ###################po' pit
 snow snit
 co kit
+##################clay cloak
 say soak
 ##################toe tappin
-yo yappin
 turk tell
 ##############gots game
 knots/nots name
