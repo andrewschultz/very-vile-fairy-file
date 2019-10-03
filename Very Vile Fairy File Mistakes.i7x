@@ -112,6 +112,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "rive reap"	hive-heap-near rule	false	4	4	--	"Tearing apart the hive heap would get you stung before you found whatever's in there."
 "jive jeep"	hive-heap-near rule	false	4	4	--	"You acquire no wacky form of transport."
 "call cree"	in-fun-fen rule	false	4	4	--	"You need something simpler than an unusual language here."
+"ball brie"	in-fun-fen rule	false	4	4	--	"This game is cheesy-making, not cheese-making."
 "one wen"	in-fun-fen rule	false	--	--	--	"Your skin remains unblemished, despite you tempting fate."
 "pun pen"	in-fun-fen rule	false	--	--	--	"You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me."
 "won when"	in-fun-fen rule	false	--	--	--	"Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst."
@@ -130,6 +131,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "starred stat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Get ahold of yourself! There's no time for in-depth sabermetrics!"
 "guard gat"	hat-or-mat rule	false	4	3	no-hardhat rule	"I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though."
 "try trawl"	got-gear-hot-here rule	false	3	3	--	"You put in effort, and stuff[shawl-lol]."
+"buy/by/bye ball/bawl"	got-gear-hot-here rule	false	3	3	--	"You can only buy sporting goods here. No whining[shawl-lol]."
 "fie fall"	got-gear-hot-here rule	false	3	3	--	"The shawl remains motionless, but you feel smarter for your guess[shawl-lol]."
 "die/dye doll"	got-gear-hot-here rule	false	3	3	--	"There are no dolls to manipulate in this game[shawl-lol]."
 "scry scrawl"	got-gear-hot-here rule	false	3	3	--	"The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer[shawl-lol]."
@@ -151,6 +153,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "fake fap"	shore-shined rule	false	4	3	--	"You make a rude gesture, for whatever good it does."
 "woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence." [start history hall]
 "butter/butta bankster/banksta"	ganksta-nearby rule	false	4	4	--	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of."
+"tots tame"	ganksta-nearby rule	false	4	4	--	"The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though."
+"sots same"	ganksta-nearby rule	false	4	4	--	"The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult."
+"shots shame"	ganksta-nearby rule	false	4	4	--	"The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun."
+"knots/nots name"	ganksta-nearby rule	false	4	4	--	"You fail to tie the ganksta up in knots with well-timed 'NOT's."
 "crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but [Toe] is versatile enough. And this game isn't THAT juvenile.I hope."
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That would be handy in a more violent adventure, but not this one."
 "flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
@@ -163,6 +169,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "green grows"	mean-moes-by rule	false	5	5	--	"There's no gardening shop in the mall, but there doesn't need to be."
 "mashing moke"	have-clashing-cloak rule	false	8	5	--	"You need subtlety, not violence."
 "ashing oak"	have-clashing-cloak rule	false	8	5	--	"No genetically twisted tree appears."
+"say soak"	have-clay-cloak rule	false	--	--	--	"Water might make the clay cloak even heavier and messier."
 "cake key"	in-lakes rule	false	--	--	--	"Ooh! That'd be nice and tasty. But you don't need that right now." [start lake lea] [?? what about multiple]
 "mit/mitt mound"	in-pit-pound rule	false	3	5	--	"[if hit hound is moot]The hit hound won't need to go chasing after that[else]The pit pound doesn't need clutter like that[end if]." [start pit pound]
 "grit ground"	pit-pound-unsolved rule	false	3	5	--	"You need to find some other way to [if hit hound is in pit pound]banish the pit ound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway." [start pit pound]
@@ -173,6 +180,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "gnash/nash nap"	in-po-pit rule	false	4	3	--	"You need something more active."
 "sash sap"	in-po-pit rule	false	4	3	--	"You don't need to be dressed outlandishly to figure what to do."
 "flash flap"	in-po-pit rule	false	4	3	--	"Perhaps more focused violence would work better."
+"co kit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You receive no kit to help you throw, corporate or otherwise."
 "snow snit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"No bad weather blows in to be complained about."
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
 "flow flit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You don't need your mind to wander further. You need to focus on a solution."
@@ -259,6 +267,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pining pore/poor"	in-whining-war rule	false	7	5	--	"They'll come along later, if you do something else."
 "fining four"	in-whining-war rule	false	7	5	--	"You don't need to summon people that may audit you."
 "lining lor/lore"	in-whining-war rule	false	7	5	--	"Alas, nobody falls into line to tell stories of how they got here."
+"polled pard"	in-yolde-yarde rule	false	--	--	--	"Nobody stops by with a clipboard to ask how you are enjoying your experience so far."
 "ho had"	in-so-sad rule	false	4	4	--	"You're trying to feel less in the dumps, not more." [start of general stuff that doesn't fit anywhere else]
 "mo mad"	in-so-sad rule	false	4	4	--	"Once the anger wore off, you might be even more lethargic."
 "co cad"	in-so-sad rule	false	4	4	--	"Nobody appears to commiserate with you."
