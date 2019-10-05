@@ -736,7 +736,7 @@ check going west in History Hall: [gutta ganksta blocks you]
 		continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, [location of player] might afford passage west[end if]." instead;
 
-section truth states fpr puzzles/map
+section truth states for puzzles/map
 
 mistmall is a truth state that varies. [are we in the mall or the hall?]
 
@@ -1578,7 +1578,7 @@ the need bag for lots of items rule is listed last in the check taking rulebook.
 chapter undoing
 
 report undoing an action:
-	say "Woo! Wiping one's typing!";
+	say "Wiping one's typing ... TONS!";
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
@@ -2042,7 +2042,7 @@ ever-leet-clue is a truth state that varies.
 
 to say leetclue of (x - a cheattype):
 	if shut-scan is true, continue the action;
-	if shut-scan is false, say "[line break]As you say/think this, the Leet Learner needle [scancol of x]";
+	say "[line break]As you say/think this, the Leet Learner needle [scancol of x]";
 	if fun fen is visited and ever-leet-clue is true, continue the action;
 	now ever-leet-clue is true;
 	if leetcool is 0:
