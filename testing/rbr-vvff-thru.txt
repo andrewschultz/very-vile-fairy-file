@@ -4,12 +4,12 @@
 #-- [additional notes here]
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt
 
 ## *FILE
 ## *FORK
 
-TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths
+TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
@@ -18,6 +18,41 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 
 ==t3
 > z
+
+==t6
+> brig brag
+Good guys don't brag about if they
+Learner needle
+>swig swag
+There's no time to be drinking here!
+Learner needle
+>tig tag
+But you already have one utterly childish game right in front of you.
+Learner needle
+>cig sag
+You find no black market currency in the zig zag rig rag.
+Learner needle
+>jig jag
+Learner needle
+You aren't up for dancing.
+>wary wile
+Yes, you will need wary wile, and lots of it!
+>perking pump
+!Learner needle
+
+==t6
+>treat turner
+Nothing happens. The words are just settings
+>conceit concerner
+Nothing happens. The words are just settings
+>cheat churner
+Nothing happens. The words are just settings
+>meet mourner
+Nothing happens. The words are just settings
+>beat burner
+Nothing happens. The words are just settings
+>eat earner
+Nothing happens. The words are just settings
 
 ==t2
 > big bag
@@ -39,6 +74,11 @@ You've got it backwards! Just flip things around, and it'll be okay.
 
 > gift giver
 by one point
+
+==t6
+#okdup
+> brig brag
+Good guys don't brag about being
 
 ==t3
 # test the reverse flip works
@@ -90,6 +130,36 @@ by one point
 
 > big bag
 by one point
+
+==t6
+> brig brag
+Good guys don't brag about having been
+Learner needle
+>swig swag
+Learner needle
+>tig tag
+Learner needle
+>cig sag
+Learner needle
+>jig jag
+Learner needle
+
+==t6
+>cry call
+You lash out meaninglessly at the wry wall.
+!Learner needle
+>dry doll
+The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.
+!Learner needle
+>fry fall
+!Learner needle
+The wry wall remains upright.
+>pry pall
+!Learner needle
+There is no hidden tomb under the wry wall.
+>try tall
+!Learner needle
+The wry wall does not grow.
 
 ==t2
 > think
@@ -556,9 +626,19 @@ CULL CEASED
 
 > s
 
+==t6
+> bark biff
+McFly
+Learner needle
+
 ==t1
 > spark spliff
 by one point
+
+==t6
+> bark biff
+McFly
+Learner needle
 
 > s
 > heal here
@@ -698,6 +778,29 @@ by one point
 
 > n
 
+==t6
+> cot cord
+Learner needle
+A pull down bed is not what you need now that the action is heating up!
+> got gourd
+Learner needle
+That worked in The Life of Brian, but ... try a homonym, here. You're close.
+> hot hoard
+Learner needle
+You already hoarded enough inventory in your big bag. Try a homonym, here. You're close.
+> pot poured
+Learner needle
+There's no time for coffee here!
+> rot roared
+Learner needle
+A decent battle cry, but you sense there could a more violent action.
+> snot snored
+Learner needle
+While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral.
+> fought ford
+Learner needle
+The battle is ahead, not in the past.
+
 ==t2
 > got gored
 > think
@@ -749,6 +852,11 @@ by one point
 ==t2
 > think
 !MERRY MILE
+
+==t6
+#okdup
+>wary wile
+Yes, you have shown wary wile, and lots of it!
 
 > bury bile
 by one point
