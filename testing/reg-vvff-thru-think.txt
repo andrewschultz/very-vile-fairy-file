@@ -2,7 +2,10 @@
 ## reg-vvff-thru-think.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths
+## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
+#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+#** interpreter: /home/andrew/prt/glulxe -q
+
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
 
@@ -95,6 +98,7 @@ by one point
 by one point
 
 > n
+
 > w
 
 > mark more
@@ -117,14 +121,12 @@ by one point
 > mystery mall
 by one point
 
-> stay strong
-by one point
-
 > glean glows
 > think
 GLEAN GLOWS
 
 > listen
+
 > lots lame
 by one point
 
@@ -149,6 +151,7 @@ by one point
 > e
 > n
 > w
+
 > work well
 by one point
 
@@ -186,9 +189,6 @@ by one point
 > silent sail
 by one point
 
-> glow glad
-by one point
-
 > brightening bridge
 by one point
 
@@ -219,6 +219,7 @@ by one point
 !FAKE FEE
 
 > e
+
 > make map
 by one point
 
@@ -247,6 +248,12 @@ Been Buggin
 >undo
 
 > enter boat
+
+> stay strong
+
+> glow glad
+by one point
+
 > mean muggin
 by one point
 
@@ -271,11 +278,11 @@ SMASHING SMOKE
 > yore yonder
 by one point
 
-> in
+> out
 > smashing smoke
 by one point
 
-> out
+> in
 > w
 > lending libe
 by one point
@@ -305,6 +312,7 @@ SHOW SHIELD
 by one point
 
 > w
+
 > moral mage
 by one point
 
@@ -325,7 +333,8 @@ by one point
 !FIT FOUND
 
 > e
-> minding maze
+
+> winding ways
 by one point
 
 > mo mappin

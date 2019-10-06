@@ -41,6 +41,8 @@ with open(mist_file) as file:
         if "\t" not in line: continue
         if "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
         ary = re.split("\t", line.strip())
+        if "|" in ary[0]:
+            mt.print_and_warn("Uh oh. We have a pipe instead of a slash for the topic {} in line {}.".format(ary[0], line_count))
         if '"' not in ary[0] or len(ary) == 1: continue
         try:
             if ary[1] == '--': sys.exit("Fatal error line {} has no mistake rule.".format(line_count))
@@ -52,7 +54,7 @@ with open(mist_file) as file:
             need_mistake_test[my_cmd] = True
             my_line[my_cmd] = line_count
             need_leet_check[my_cmd] = ary[5] != '--'
-            text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + "Learner needle\n" + noquo_single(ary[6])
+            text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + "Learner needle\n" + noquo_single(i7.a2q(ary[6]))
 
 cmd_count = 1
 while cmd_count < len(sys.argv):
@@ -146,5 +148,5 @@ else: print("No extraneous leet checks.")
 
 final_string = "{} total error{}".format(err_found, mt.plur(err_found)) if err_found else "SUCCESS! The mistake file and test file match."
 
-print(final_string)
-sys.stderr.write(final_string)
+mt.print_and_warn(final_string)
+

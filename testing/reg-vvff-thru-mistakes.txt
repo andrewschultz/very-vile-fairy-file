@@ -6,7 +6,6 @@
 #** interpreter: /home/andrew/prt/glulxe -q
 
 ** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
-
 ** interpreter: /home/andrew/prt/dfrotz -m
 
 * main-thru
@@ -56,13 +55,13 @@ by one point
 
 > lift liver
 Learner needle
-You gain no nutritious meat nor uplifting advice. But you must be close/.
+You gain no nutritious meat nor uplifting advice. But you must be close. You just feel you could use another person's help, here.
 > sift siever
 Learner needle
-That would be a good tool in a cooking simulation, but the Leet Learner is more useful.
+That would be a good tool in a cooking simulation, but the Leet Learner is more useful. You just feel you could use another person's help, here.
 > drift driver
 Learner needle
-No vehicle comes to take you across the river. And that doesn't quite rhyme, anyway/.
+No vehicle comes to take you across the river. And that doesn't quite rhyme, anyway. You just feel you could use another person's help, here.
 > shift shiver
 Learner needle
 You try fearing things different ways, but nobody comes to comfort you.
@@ -165,9 +164,6 @@ You wonder if the dark, or a racy novel, will help. Probably not.
 > bo bit
 Learner needle
 There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though.
-> rash wrap
-Learner needle
-You don't need a rash, or rash actions. You need a more mature response, you reckon.
 > slow slit
 Learner needle
 You can't see where to make a cut, and you have nothing to make a cut with.
@@ -180,9 +176,6 @@ You look for details to understand, but you might want to go in for a bigger pic
 > show shit
 Learner needle
 Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
-> so sit
-Learner needle
-You sit and pout. It doesn't help.
 > woe wit
 Learner needle
 Clever complaining will make you feel better but won't do anything.
@@ -214,9 +207,6 @@ You wonder if the dark, or a racy novel, will help. Probably not.
 > bo bit
 !Learner needle
 There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though.
-> rash wrap
-!Learner needle
-You don't need a rash, or rash actions. You need a more mature response, you reckon.
 > slow slit
 !Learner needle
 You can't see where to make a cut, and you have nothing to make a cut with.
@@ -229,9 +219,6 @@ You look for details to understand, but you might want to go in for a bigger pic
 > show shit
 !Learner needle
 Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
-> so sit
-!Learner needle
-You sit and pout. It doesn't help.
 > woe wit
 !Learner needle
 Clever complaining will make you feel better but won't do anything.
@@ -250,7 +237,7 @@ Learner needle
 Whether or not you are more or less tense, or more or less exciting, you need to focus on you the right way here.
 > signed see
 Learner needle
-You're still reacting to FIND FEE. You need to look inwards.
+There's nobody to see any forged signature. Look within.
 > tined tee
 Learner needle
 You don't have time for silly games like golf now!
@@ -300,31 +287,19 @@ by one point
 
 > brig brag
 Good guys don't brag about having been
-Learner needle
+!Learner needle
 >swig swag
-Learner needle
+There's no time to be drinking here!
+!Learner needle
 >tig tag
-Learner needle
+But you already have one utterly childish game right in front of you.
+!Learner needle
 >cig sag
-Learner needle
+You find no black market currency in the big bag.
+!Learner needle
 >jig jag
-Learner needle
-
->cry call
-You lash out meaninglessly at the wry wall.
+You aren't up for dancing.
 !Learner needle
->dry doll
-The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.
-!Learner needle
->fry fall
-!Learner needle
-The wry wall remains upright.
->pry pall
-!Learner needle
-There is no hidden tomb under the wry wall.
->try tall
-!Learner needle
-The wry wall does not grow.
 
 > s
 
@@ -382,7 +357,7 @@ Your skin remains unblemished, despite you tempting fate.
 You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me.
 > won when
 !Learner needle
-Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst.
+Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
 
 > call cree
 Learner needle
@@ -394,6 +369,23 @@ by one point
 > call cree
 !Learner needle
 You need something simpler than an unusual language here.
+
+# must be after the FALL FREE or FRY FALL gives an erroneous HA HALF.
+>cry call
+You lash out meaninglessly at the wry wall.
+!Learner needle
+>dry doll
+The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.
+!Learner needle
+>fry fall
+!Learner needle
+The wry wall remains upright.
+>pry pall
+!Learner needle
+There is no hidden tomb under the wry wall.
+>try tall
+!Learner needle
+The wry wall does not grow.
 
 > live leap
 Learner needle
@@ -443,7 +435,7 @@ Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
 > teased toss
 Learner needle
-You imagine yourself cleverly insulting the Crimes Crew Times Two
+A bit of taunting might work here, but you might need to be a bit harsher.
 
 > w
 
@@ -509,7 +501,7 @@ Learner needle
 You don't need an exhortation to violence.
 > crow crappin
 Learner needle
-You plan out some filk called Bad Bird Had Heard, about Tad, but Toe Tappin' Row Rappin' is versatile enough. And this game isn't THAT juvenile.I hope.
+You plan out some filk called Bad Bird Had Heard, about Tad, but Toe Tappin' Row Rappin' is versatile enough. And this game isn't THAT juvenile. I hope.
 > slow slappin
 Learner needle
 That would be handy in a more violent adventure, but not this one.
@@ -518,7 +510,7 @@ Learner needle
 That might be funky to some, but you need something more practical.
 > low lappin
 Learner needle
-You put your best-ever time for a mile run to Toe Tappin' Row Rappin', but you can't see how it will help here. Plus./Chariots of Fire/works better, anyway.
+You put your best-ever time for a mile run to Toe Tappin' Row Rappin', but you can't see how it will help here. Plus, Chariots of Fire works better, anyway.
 > butter bankster
 Learner needle
 The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
@@ -551,11 +543,10 @@ by one point
 
 > try trawl
 Learner needle
-You put in effort, and stuff. The shawl seems worthless as ever, maybe not even worth changing to something else.
-!good for practice
+You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
 > fie fall
 Learner needle
-The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless as ever, maybe not even worth changing to something else, but it sore is good for practice.
+The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless to your quest, but maybe it's good for further practice.
 > die doll
 Learner needle
 There are no dolls to manipulate in this game.
@@ -594,11 +585,12 @@ Learner needle
 You feel overcome with emotion.
 
 > lie lol
-By one point
+by one point
 
 > try trawl
 !Learner needle
 You put in effort, and stuff.
+!further practice
 > fie fall
 !Learner needle
 The shawl remains motionless, but you feel smarter for your guess.
@@ -634,7 +626,7 @@ You bemoan the lack of a food court in the mall.
 You show suitable ambition and aggression for an adventurer.
 > why wall
 !Learner needle
-You complain to nobody in particular about the number of dead ends in the mall/.
+You complain to nobody in particular about the number of dead ends in the mall.
 > cry crawl
 !Learner needle
 You feel overcome with emotion.
@@ -870,6 +862,10 @@ You make a rude gesture, for whatever good it does.
 
 > enter boat
 
+> pay prong
+Learner needle
+Buying things won't improve your lack of self-worth.
+
 > stay strong
 
 > ho had
@@ -899,9 +895,6 @@ You try to convince yourself it's a passing phase, but it doesn't work.
 > doh dad
 Learner needle
 Blaming your parents fails to help.
-> pay prong
-Learner needle
-Buying things won't improve your lack of self-worth.
 
 > glow glad
 by one point
@@ -1006,7 +999,7 @@ Learner needle
 Someone here is really old-school. As if text adventures weren't retro enough!
 > sorel sage
 Learner needle
-Someone not just wise but ethical is behind the coral cage/. Besides, there's already the sage sea/.
+Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
 > immoral image
 Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
@@ -1019,7 +1012,7 @@ by one point
 Someone here is really old-school. As if text adventures weren't retro enough!
 > sorel sage
 !Learner needle
-Someone not just wise but ethical is behind the coral cage/. Besides, there's already the sage sea/.
+Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
 > immoral image
 !Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
@@ -1029,16 +1022,20 @@ You sort of need the opposite. I suspect you know this and are just trying to se
 
 > mit mound
 Learner needle
-/The hit hound won't need to go chasing after that/The pit pound doesn't need clutter like that/.
+The hit hound won't need to go chasing after that.
 > grit ground
 Learner needle
-You need to find some other way to/banish the hit hound and/feel comfortable here. You already showed grit in the Po/Pit, anyway.
+You need to find some other way to banish the hit hound and feel comfortable here. You already showed grit in the Po' Pit, anyway.
 > bit bound
 Learner needle
-Now you mention it, you/do/did/feel a bit restricted here. Have a participation point for sharing your feelings!
+Now you mention it, you do feel a bit restricted here. Have a participation point for sharing your feelings!
 
 > sit sound
 by one point
+
+#okdup
+>grit ground
+You need to find some other way to feel comfortable here. You already showed grit in the Po' Pit, anyway.
 
 > fit found
 by one point
@@ -1054,7 +1051,7 @@ Now you mention it, you did feel a bit restricted here. Have a participation poi
 
 > binding bays
 Learner needle
-You need to break free here, not get more tied up.
+You need to find your way here, not get more tied up.
 > grinding grays
 Learner needle
 Even if it were duller, you'd still be left with a hot blaze.
@@ -1171,6 +1168,11 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 > cull ceased
 by one point
 
+#okdup
+> teased toss
+!Learner needle
+You imagine yourself cleverly insulting the Crimes Crew Times Two.
+
 > full feast
 by one point
 
@@ -1239,8 +1241,8 @@ Alas, nobody falls into line to tell stories of how they got here.
 by one point
 
 > woe wield
-Learner needle
-You don't need a weapon but rather armor to repel the foe field.
+!Learner needle
+You didn't need a weapon but rather armor to repel the foe field.
 > stow steeled
 !Learner needle
 You don't have anything steely to stow.
