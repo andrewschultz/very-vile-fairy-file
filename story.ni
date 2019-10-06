@@ -30,11 +30,11 @@ a thing can be abstract. a thing is usually not abstract.
 
 [dnc.py/icl.pl can/should toggle this]
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
 
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
 
 include undo output control by Erik Temple.
 
@@ -3100,10 +3100,14 @@ after reading a command:
 
 book parser errors
 
+to decide whether buggin-freeze:
+	if in-so-sad is true or in-way-wrong is true, yes;
+	no;
+
 Rule for printing a parser error (this is the clue half right words rule):
 	abide by the verb-checker rule;
 	abide by the mistake-checker rule;
-	if in-so-sad is true or in-way-wrong is true:
+	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 		the rule succeeds;
 	continue the action;
@@ -3159,6 +3163,7 @@ this is the verb-checker rule:
 	let local-ha-half be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
+		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
 		if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
 		if there is a w2 entry:
 			if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
@@ -3207,7 +3212,7 @@ this is the verb-checker rule:
 				next;
 			now vc-dont-print is false;
 			if already-rhymed-this is true, break;
-			 now local-ha-half is true;
+			now local-ha-half is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
 			next;
 	if local-ha-half is true:
@@ -3753,7 +3758,7 @@ this is the vr-couple-caps rule:
 	now extra-cool-cap is true;
 
 this is the vc-cull-ceased rule:
-	if player is not in Creased Cross and healed-here is false and bull beast is off-stage, the rule fails;
+	if player is not in Creased Cross or healed-here is false or bull beast is off-stage, the rule fails;
 	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
 	if player is not in Creased Cross:
 		clue-later "CULL CEASED";
@@ -4437,11 +4442,9 @@ this is the vr-mining-more rule:
 	clue-zap "MINING MORE";
 
 this is the vc-mo-mappin rule:
-	if player is not in blinding blaze and player does not have Toe Tappin Row Rappin, the rule fails;
-	if player does not have Toe Tappin Row Rappin:
-		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
-		clue-later "MO MAPPIN";
-		continue the action;
+	if player is not in blinding blaze:
+		if player does not have Toe Tappin Row Rappin, the rule fails;
+		if blaze-ways is false or stuck stair is not off-stage, the rule fails;
 	if player is not in blinding blaze:
 		vcp "Maybe some other place could use mapping, but not here.";
 		clue-later "MO MAPPIN";
@@ -4452,6 +4455,10 @@ this is the vc-mo-mappin rule:
 		continue the action;
 	if stuck stair is in blinding blaze:
 		vcal "You're already in the mood to map. No need to overdo it.";
+		continue the action;
+	if player does not have Toe Tappin Row Rappin:
+		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
+		clue-later "MO MAPPIN";
 		continue the action;
 	the rule succeeds;
 
