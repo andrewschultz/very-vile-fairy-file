@@ -20,7 +20,7 @@ got_leet_check = defaultdict(bool)
 
 mist_file = i7.hdrfile('vv', 'mi')
 
-max_count = 20
+max_count = 15
 
 def first_slash(x):
     return re.sub("[\|/][a-zA-Z]+", "", x)
@@ -54,6 +54,18 @@ with open(mist_file) as file:
             need_leet_check[my_cmd] = ary[5] != '--'
             text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + "Learner needle\n" + noquo_single(ary[6])
 
+cmd_count = 1
+while cmd_count < len(sys.argv):
+    arg = sys.argv[cmd_count]
+    try:
+        max_count = int(arg)
+        cmd_count += 1
+        continue
+    except:
+        pass
+    sys.exit("Can only define max_count with a number.")
+    cmd_count += 1
+
 okay_next_dup = False
 
 in_mistakes = False
@@ -63,7 +75,7 @@ with open("rbr-vvff-thru.txt") as file:
         if okay_next_dup:
             okay_next_dup = False
             continue
-        if '==t6' in line: in_mistakes = True
+        if '==t5' in line: in_mistakes = True
         if 'okdup' in line: okay_next_dup = True
         if not line.strip():
             in_mistakes = False
@@ -96,7 +108,7 @@ if len(y):
     for q in sorted(y, key=lambda x:my_line[x]):
         count += 1
         if count > max_count:
-            print("Went over max.")
+            print("Went over max of {}.".format(max_count))
             break;
         print(">", q)
         print(text_needed[q])
@@ -118,7 +130,7 @@ if len(y):
     for q in sorted(y, key=lambda x:my_line[x]):
         count += 1
         if count > max_count:
-            print("Went over max.")
+            print("Went over max of {}.".format(max_count))
             break;
         print(">", q)
         tn = re.sub("^([^a-zA-Z])?", "!", text_needed[q])
@@ -132,7 +144,7 @@ if len(y):
     print("Extraneous leet checks({}): {}".format(len(y), ', '.join(sorted(y, key=lambda x:my_line[x]))))
 else: print("No extraneous leet checks.")
 
-if err_found:
-    print(err_found, "total error" + mt.plur(err_found))
-else:
-    print("SUCCESS! The mistake file and test file match.")
+final_string = "{} total error{}".format(err_found, mt.plur(err_found)) if err_found else "SUCCESS! The mistake file and test file match."
+
+print(final_string)
+sys.stderr.write(final_string)
