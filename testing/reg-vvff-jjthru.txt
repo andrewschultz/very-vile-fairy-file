@@ -105,10 +105,6 @@ MYSTERY MALL
 
 > jj
 by one point
-STAY STRONG
-
-> jj
-by one point
 LOTS LAME
 
 > listen
@@ -161,10 +157,6 @@ BRIGHTENING BRIDGE
 
 > jj
 by one point
-GLOW GLAD
-
-> jj
-by one point
 SILENT SAIL
 
 > jj
@@ -198,6 +190,15 @@ by one point
 SNAKE SNAP
 
 > enter boat
+
+> jj
+by one point
+STAY STRONG
+
+> jj
+by one point
+GLOW GLAD
+
 > jj
 by one point
 MEAN MUGGIN
@@ -221,12 +222,13 @@ GLEAN GLOWS
 by one point
 YOURE YONDER
 
-> in
+> out
+
 > jj
 by one point
 SMASHING SMOKE
 
-> out
+> in
 > w
 > jj
 by one point
@@ -265,7 +267,7 @@ FIT FOUND
 > e
 > jj
 by one point
-MINDING MAZE
+WINDING WAYS
 
 > jj
 by one point

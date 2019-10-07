@@ -1084,7 +1084,7 @@ to say check-hull:
 	if gull-guard is true:
 		say ", though you're done to the east";
 	else if beer bull is moot:
-		say ", and west is the Gear Gull, who could help with [if player has gold guard]your gold guard[else]any armor you find[end if]"
+		say ", and you remember the Gear Gull waits east in Here Hull to help with [if player has gold guard]your gold guard[else]any armor you find[end if]"
 
 to say soft-loft of (ts - a truth state): say "[if loft-land is ts]Loft Land[else]Soft Sand[end if]".
 
@@ -1164,6 +1164,8 @@ check going when in-bull-chase is true:
 		the rule succeeds;
 
 every turn when in-bull-chase is true: [?? make this so that we track by last-bull-loc]
+	if action is procedural:
+		continue the action;
 	if beer bull is in location of player:
 		say "The beer bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats [if player is in here hull]into its corner[else]back to Here Hull[end if].[paragraph break]";
 		reset-bull-chase;
@@ -1543,7 +1545,7 @@ check taking inventory:
 		else:
 			say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
-	if evidence-pieces > 0, say "You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of evidencey things].";
+	if evidence-pieces > 0, say "You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
 	check-injury;
 	the rule succeeds;
@@ -3639,7 +3641,6 @@ this is the vr-bumped-buster rule:
 	moot clumped cluster;
 
 this is the vc-bury-bile rule:
-	if debug-state is true, say "debug: executing the final VC BURY BILE rule.";
 	if player is in Tarry Tile:
 		if well worn hell horn is moot and merry-mile is true, the rule succeeds;
 		if well worn hell horn is in Tarry Tile:
@@ -3756,9 +3757,10 @@ this is the vr-couple-caps rule:
 	moot jerk gel;
 	now printed name of cool cap is "extra cool cap";
 	now extra-cool-cap is true;
+	clue-zap "COUPLE CAPS";
 
 this is the vc-cull-ceased rule:
-	if player is not in Creased Cross or healed-here is false or bull beast is off-stage, the rule fails;
+	if bull beast is off-stage, the rule fails;
 	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
 	if player is not in Creased Cross:
 		clue-later "CULL CEASED";
@@ -3888,6 +3890,7 @@ this is the vr-fake-fee rule:
 	now jake-fee is true;
 	now jake g is optional;
 	now cht of jake g is letplus; [->break brie]
+	clue-zap "FAKE FEE";
 
 this is the vc-fall-free rule:
 	if player is not in Fun Fen, the rule fails;
@@ -4442,9 +4445,9 @@ this is the vr-mining-more rule:
 	clue-zap "MINING MORE";
 
 this is the vc-mo-mappin rule:
-	if player is not in blinding blaze:
-		if player does not have Toe Tappin Row Rappin, the rule fails;
-		if blaze-ways is false or stuck stair is not off-stage, the rule fails;
+	if stuck stair is moot:
+		vcp "You did all the mapping you needed to.";
+		continue the action;
 	if player is not in blinding blaze:
 		vcp "Maybe some other place could use mapping, but not here.";
 		clue-later "MO MAPPIN";

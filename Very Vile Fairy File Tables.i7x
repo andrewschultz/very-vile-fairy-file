@@ -162,6 +162,7 @@ randtxt
 "Hole Hound Bowl Bound"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
+"Silly Signs[r], by Willy Wines and Tillie Tines"
 "Men, Messed, Been Best, by Ren Rest"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"

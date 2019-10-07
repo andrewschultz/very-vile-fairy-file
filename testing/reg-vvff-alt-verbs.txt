@@ -34,6 +34,13 @@ by one point
 > green grass
 by one point
 
+> so sit
+by one point
+undo
+> oh it
+by one point
+undo
+
 > grow grit
 by one point
 
@@ -41,6 +48,9 @@ by one point
 by one point
 > undo
 > bash bap
+by one point
+> undo
+> slash slap
 by one point
 > undo
 
@@ -51,6 +61,9 @@ by one point
 by one point
 
 > skim scam
+by one point
+>undo
+> flimflam
 by one point
 >undo
 
@@ -267,14 +280,14 @@ by one point
 
 > e
 
-> winding ways
-by one point
-
->undo
 > finding phase
 by one point
 >undo
 > minding maze
+by one point
+>undo
+
+> winding ways
 by one point
 
 > mo mappin

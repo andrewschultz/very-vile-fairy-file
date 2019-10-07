@@ -14,7 +14,7 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 #** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 #** interpreter: /home/andrew/prt/glulxe -q
 
-==t5
+==t4,5
 ** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
 ==!
@@ -233,6 +233,14 @@ Clever complaining will make you feel better but won't do anything.
 > think
 MASH MAP
 
+==t3
+> so sit
+by one point
+undo
+> oh it
+by one point
+undo
+
 > grow grit
 by one point
 
@@ -284,6 +292,9 @@ by one point
 > bash bap
 by one point
 > undo
+> slash slap
+by one point
+> undo
 
 > mash map
 by one point
@@ -318,6 +329,9 @@ by one point
 
 ==t3
 > skim scam
+by one point
+>undo
+> flimflam
 by one point
 >undo
 
@@ -1387,6 +1401,14 @@ You need to find your way here, not get more tied up.
 Learner needle
 Even if it were duller, you'd still be left with a hot blaze.
 
+==t3
+> finding phase
+by one point
+>undo
+> minding maze
+by one point
+>undo
+
 > winding ways
 by one point
 
@@ -1397,14 +1419,6 @@ You need to find your way here, not get more tied up.
 > grinding grays
 !Learner needle
 Even if it were duller, you'd still be left with a tricky maze.
-
-==t3
->undo
-> finding phase
-by one point
->undo
-> minding maze
-by one point
 
 ==t4
 >n
