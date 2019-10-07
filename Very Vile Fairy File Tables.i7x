@@ -139,6 +139,7 @@ randtxt
 "Want what? Taunt, tut!"
 "Whoah! Words? No, nerds!"
 "Yale? You'll fail, fool!"
+"Zork?! Zero! Dork, Dear-oh!"
 
 table of vvff books [xxbooks]
 randtxt
@@ -313,7 +314,7 @@ this is the can-moral-mage rule:
 	the rule fails.
 
 this is the can-pull-pieced rule:
-	if full feast is moot, the rule succeeds;
+	if full feast is in creased cross and dining door is in whining war and pining poor are in whining war, the rule succeeds;
 	the rule fails;
 
 this is the can-shining-shore rule:

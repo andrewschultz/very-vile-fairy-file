@@ -482,6 +482,9 @@ by one point
 > think
 !DEAL DEAR
 
+==t1
+> appealing appear
+
 > n
 
 ==t5
@@ -838,6 +841,10 @@ Get ahold of yourself! There's no time for in-depth sabermetrics!
 > guard gat
 Learner needle
 I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
+
+==t1
+> not near
+by one point
 
 > hard hat
 by one point
@@ -1666,6 +1673,11 @@ by one point
 > think
 !PULL PIECED
 
+==t3
+> mining moor
+by one point
+>undo
+
 > mining more
 by one point
 
@@ -1906,6 +1918,9 @@ Yes, you have shown wary wile, and lots of it!
 
 > bury bile
 by one point
+
+==t1
+!see the points you MISSED
 
 ==t2
 * moral-mage-check

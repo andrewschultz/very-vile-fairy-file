@@ -371,6 +371,10 @@ by one point
 > pull pieced
 by one point
 
+> mining moor
+by one point
+>undo
+
 > mining more
 by one point
 

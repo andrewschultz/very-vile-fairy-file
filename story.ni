@@ -30,11 +30,11 @@ a thing can be abstract. a thing is usually not abstract.
 
 [dnc.py/icl.pl can/should toggle this]
 
-[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
+include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
 
-[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
+include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
 
 include undo output control by Erik Temple.
 
@@ -176,7 +176,7 @@ definition: a thing (called th) is quicknear:
 	no;
 
 to bold-my-room:
-	say "[b][location of player][r][paragraph break]"
+	say "[b][location of player][r][line break]"
 
 to say ll: say "[b]LL[r]"
 
@@ -685,7 +685,7 @@ check going west in Fight Funnel:
 	if funnel-to-tunnel is false, say "You're not getting past the fight." instead;
 	if big bag is off-stage:
 		say "You don't have enough space. You need to organize your possessions first. Maybe your inventory can be simplified--perhaps one item, changed, could hold the others, for convenience." instead;
-	if snuck snare is moot and beer bull is not in location of player, say "You need a very good reason not to set off the Knives Niche trap." instead;
+	if snuck snare is moot and beer bull is not in location of player, say "Not now. You've prepared the trap. Let someone, or something, else walk into it." instead;
 	process the drop-snare rule;
 	if beer bull is in location of player:
 		if snuck snare is moot:
@@ -725,7 +725,7 @@ check going outside in history hall:
 to say mist-hist of (ts - a truth state): say "[if mistmall is ts]Mystery Mall[else]History Hall[end if]"
 
 to say mystdesc:
-	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if][if oi mo is in History Hall]. There's a horrible song providing atmosphere[else if toe tappin is in History Hall]. There's mall music in the air you can LISTEN to[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
+	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]. [if oi mo is in History Hall]There's a horrible song providing atmosphere[else if toe tappin is in History Hall]There's mall music in the air you can LISTEN to[else]You can LISTEN to random music if you want, too[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
 
 to say histdesc:
 	say "[if poor ponder is in History Hall][Poor Ponder] lies here seeming, or trying to seem, more important[else if ever-mall is false]It's pretty empty in here. Perhaps it could become something more modern. Or less ancient[else]History Hall is empty once again[end if]"
@@ -986,7 +986,7 @@ jake-brie is a truth state that varies.
 
 part Whining War 2,1
 
-Whining War is east of Violent Vale. It is in Piddling Pain. "[if war-sapped is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if shore-shine is false]It's less whiny here, but it's still a bit too dull[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in whining war][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage]But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot]With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of whining war is partplus. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> shining shore]
+Whining War is east of Violent Vale. It is in Piddling Pain. "[if war-sapped is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if shore-shine is false]It's less whiny here, but it's still a bit too dull.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in whining war][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage] But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot] With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of whining war is partplus. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> shining shore]
 
 [Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another whining war.]
 [mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
@@ -1302,7 +1302,7 @@ to decide which number is russell-progress:
 to check-russell-go:
 	say "[line break]";
 	if russell-progress is 2:
-		say "Ashamed of how effortlessly and nonviolently you disarmed him, Russell flees!";
+		say "Ashamed of how effortlessly and nonviolently you disarmed him, Russell flees! 'Cold cad rolled, rad,' you think to yourself.";
 		moot Reeker Russell;
 		if beaker-yet is false, max-down;
 	else:
@@ -1462,7 +1462,7 @@ sing-max is a number that varies. sing-max is 5.
 this is the check-sing-max rule:
 	increment sing-clues;
 	if sing-clues is sing-max:
-		say "Suddenly, [Toe] feels played out. You'll enjoy it later, but not now. It's done its job, and it's out of your mind, for the moment.";
+		say "[line break]Suddenly, [Toe] feels played out. You'll enjoy it later, but not now. It's done its job, and it's out of your mind, for the moment.";
 		if hap-ho is false, max-down; [can't HO HAPPEN]
 		moot Toe Tappin Row Rappin;
 	else:
@@ -1547,6 +1547,7 @@ check taking inventory:
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
 	if evidence-pieces > 0, say "You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
+	if lurking lump is moot, say "The lurking lump disappeared when you used it, but maybe with more good guesses, it will come back.";
 	check-injury;
 	the rule succeeds;
 
@@ -1899,7 +1900,7 @@ understand "credits" as creditsing.
 
 carry out creditsing:
 	say "First, thanks to Wade Clarke, dgtziea, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. Their requests, observations, clever tries and plowing on in the face of some pretty obvious bugs helped push me to do things I didn't consider or put off--in particular, many ways of hinting. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
-	say "[line break]Thanks to Matt Weiner for finding a big in-comp bug.";
+	say "[line break]Thanks to Arclight_Dynamo and Matt Weiner for finding and reporting in-comp bugs that, uh, revealed other bugs, too.";
 	say "[line break]Thanks to github for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but github's daily commit tracker helps so much with big and small goals.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
@@ -2970,6 +2971,8 @@ the wild weed is a thing. description is "You can't tell how potent it is by loo
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
 
+check drinking mild mead: say "Not unless there's food with it." instead;
+
 part Pit Pound 1,3
 
 Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
@@ -2984,7 +2987,7 @@ found-fit is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here[end if][if blaze-ways is true]. You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true]You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
 
 to say blazno:
 	if blaze-ways is false:
@@ -3414,7 +3417,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "co"	"capn"	false	true	false	vc-co-capn rule	vr-co-capn rule	--
 "so"	"sappin"	true	true	false	vc-so-sappin rule	vr-so-sappin rule	-- [start whining war]
 "shining"	"shore"	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--
-"mining"	"more"	true	true	false	vc-mining-more rule	vr-mining-more rule	--
+"mining"	"more|moor"	true	true	false	vc-mining-more rule	vr-mining-more rule	--
 "dining"	"door"	false	true	false	vc-dining-door rule	vr-dining-door rule	--
 "mean"	"muggin"	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--
 "lean"	"luggin"	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--
@@ -3622,7 +3625,8 @@ this is the vc-break-brie rule:
 	the rule succeeds;
 
 this is the vr-break-brie rule:
-	say "'Ooh, good one! I almost forgot I had it. I don't like it. Here, have it all.' This might not help in the end, but yay free food."
+	say "'Ooh, good one! I almost forgot I had it. I don't like it. Here, have it all.' This might not help in the end, but yay free food.";
+	now jake-brie is true;
 
 this is the vc-brightening-bridge rule:
 	if frightening fridge is not touchable, the rule fails;
@@ -3824,7 +3828,7 @@ this is the vc-dear-dull rule:
 this is the vr-dear-dull rule:
 	now zap-core-entry is true;
 	say "The beer bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
-	now in-bull-chase is true.
+	start-bull-chase;
 
 this is the vc-dimd rule:
 	if oi mo is not touchable, the rule fails;
@@ -3840,6 +3844,10 @@ this is the vc-dining-door rule:
 	if war-sapped is false:
 		clue-later "DINING DOOR";
 		vcp "You can't make a dining door with all this whining going on!";
+		continue the action;
+	if shore-shine is false:
+		clue-later "DINING DOOR";
+		vcp "You hear a rumbling, but it's still too dingy here for anything nice like a dining door.";
 		continue the action;
 	if dine-door is true:
 		vcal "You already did.";
@@ -4161,7 +4169,10 @@ this is the vr-history-hall rule:
 	move-to-temp Oi Mo;
 	now mistmall is false;
 	bold-my-room;
-	if ever-hall is false, say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
+	if ever-hall is false:
+		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
+	else:
+		say "[location of player][line break]";
 	now ever-hall is true;
 
 this is the vc-ho-happen rule:
@@ -4440,7 +4451,7 @@ this is the vc-mining-more rule:
 this is the vr-mining-more rule:
 	now mine-more is true;
 	moot dining door;
-	say "You help the pining poor mine more, more, more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
+	say "You help the pining poor find a moor to mine more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
 	moot pining poor;
 	clue-zap "MINING MORE";
 
@@ -4508,7 +4519,8 @@ this is the vr-mystery-mall rule:
 	if ever-mall is false:
 		say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksta 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to LISTEN to, as well.";
 	else:
-		try looking;
+		bold-my-room;
+		say "[description of history hall][line break]";
 	now ever-mall is true;
 	now zap-core-entry is true;
 
@@ -4580,6 +4592,8 @@ this is the vc-pull-pieced rule:
 this is the vr-pull-pieced rule:
 	say "With the help of the pining poor, you pull the full feast that was the bull beast to the Shining Shore. There, the dining door swings open. You enter and have a very good feast. As you leave, the dining door dissolves. The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
+	moot mild mead;
+	if wild weed is off-stage, max-down;
 	moot dining door;
 	move player to Whining War, without printing a room description;
 	clue-zap "PULL PIECED";
@@ -4672,7 +4686,7 @@ this is the vc-smashing-smoke rule:
 	the rule succeeds;
 
 this is the vr-smashing-smoke rule:
-	say "The Bold Bard tosses you a cold card quickly as thanks before makes his way into the Shoaled Shard in the confusion! You hear shouting in there. The Bard has -- certainly made an impression. You hope it is a good one. Your clashing cloak went up in the smoke, but eh, it was sort of tacky anyway.";
+	say "The Bold Bard tosses you a cold card quickly as thanks before making his way into the Shoaled Shard in the confusion! You hear shouting in there. The Bard has -- certainly made an impression. You hope it is a good one. Your clashing cloak went up in the smoke, but eh, it was sort of tacky anyway. As the smoke lifts, you notice a mold-marred gold guard. It could be useful, repaired. You take it.";
 	moot bold bard;
 	moot clashing cloak;
 	now player has cold card;
@@ -4822,7 +4836,7 @@ this is the vc-whatta-wanksta rule:
 	the rule succeeds;
 
 this is the vr-whatta-wanksta rule:
-	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, but enough to make you feel clever. After all, the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
+	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, because the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
 	now gan-wan is true;
 
 this is the vc-whoa-wait rule:
@@ -4889,7 +4903,7 @@ this is the vc-youre-yonder rule:
 	the rule succeeds;
 
 this is the vr-youre-yonder rule:
-	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going IN. One you'd otherwise have missed. The book itself, however, bursts into flames like any proper secret communication once you discover the secret passage.";
+	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. The book itself, however, bursts into flames like any proper secret communication once you discover the secret passage.";
 	moot poor ponder;
 	now Y'Old Yard is mapped outside History Hall;
 	now History Hall is mapped inside Y'Old Yard;
