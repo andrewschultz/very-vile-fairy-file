@@ -42,6 +42,8 @@ by one point
 > mash map
 by one point
 
+> think
+!MASH MAP
 > flim flam
 > think
 FLIM FLAM
@@ -51,6 +53,9 @@ by one point
 
 > flim flam
 by one point
+
+> think
+!FLIM FLAM
 
 > big bag
 by one point
@@ -282,6 +287,9 @@ by one point
 > smashing smoke
 by one point
 
+> think
+!SMASHING SMOKE
+
 > in
 > w
 > lending libe
@@ -411,6 +419,9 @@ FULL FEAST
 > cull ceased
 by one point
 
+> think
+!CULL CEASED
+
 > full feast
 by one point
 
@@ -470,9 +481,16 @@ by one point
 > think
 !SHOW SHIELD
 
+> go gappin
+> think
+GO GAPPIN
+
 > n
 > go gappin
 by one point
+
+> think
+!GO GAPPIN
 
 > cast cap
 > think

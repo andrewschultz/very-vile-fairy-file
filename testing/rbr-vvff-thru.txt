@@ -302,6 +302,8 @@ by one point
 by one point
 
 ==t2
+> think
+!MASH MAP
 > flim flam
 > think
 FLIM FLAM
@@ -371,6 +373,10 @@ That might be cool, to make the puzzle a slam dunk and lose the last few pounds,
 
 > flim flam
 by one point
+
+==t2
+> think
+!FLIM FLAM
 
 > big bag
 by one point
@@ -1288,6 +1294,10 @@ by one point
 > smashing smoke
 by one point
 
+==t2
+> think
+!SMASHING SMOKE
+
 ==t4
 >w
 west to Faun Fen
@@ -1610,6 +1620,10 @@ by one point
 > cull ceased
 by one point
 
+==t2
+> think
+!CULL CEASED
+
 ==t5
 #okdup
 > teased toss
@@ -1747,9 +1761,18 @@ Alas, no food magically appears.
 > think
 !SHOW SHIELD
 
+==t2
+> go gappin
+> think
+GO GAPPIN
+
 > n
 > go gappin
 by one point
+
+==t2
+> think
+!GO GAPPIN
 
 ==t5
 > fast fap

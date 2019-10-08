@@ -53,6 +53,57 @@ def usage(msg = "CMD LINE USAGE"):
     print("u = update, nu/un = don't update")
     exit()
 
+def check_think_tests():
+    think_needed = defaultdict(int)
+    fin = i7.hdr('vv', 'ta')
+    ft = "rbr-vvff-thru.txt"
+    in_think_table = False
+    skip_header = False
+    with open(fin) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of forlaters"):
+                skip_header = True
+                in_think_table = True
+                continue
+            if skip_header:
+                skip_header = False
+                continue
+            if not line.strip():
+                in_think_table = False
+            if not in_think_table: continue
+            tary = line.split("\t")
+            tnq = tary[0].replace('"', '')
+            think_needed[tnq] = 0
+            think_needed["!" + tnq] = 0
+    in_think_test = False
+    prev_think = False
+    with open(ft) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("==t") and '2' in line:
+                in_think_test = True
+                continue
+            if in_think_test and not line.strip():
+                in_think_test = False
+            if not in_think_test:
+                if '>' in line and 'think' in line:
+                    print("Bad think test line {} {}".format(line_count, line))
+                    think_errs += 1
+                continue
+            prev_think = 'think' in line.lower() and '>' in line.lower()
+            if line.strip() in think_needed:
+                think_needed[line.strip()] += 1
+    think_errs = 0
+    for q in sorted(think_needed, key=lambda x: (re.sub("^!", "", x), "!" in x)):
+        if q == '!BURY BILE': continue #special case for final command
+        if think_needed[q] == 0:
+            print("Think test needed for", q)
+            think_errs += 1
+        elif think_needed[q] > 1:
+            print("Excess think test for", q)
+            think_errs += 1
+    if think_errs == 0: print("THINK ERR TESTS ALL IN PLACE")
+    else: print(think_errs, "THINK ERR tests to fix")
+
 def check_multiple_command_tests():
     need_base_test = defaultdict(int)
     need_mult_test = defaultdict(int)
@@ -531,6 +582,7 @@ check_miss_rule()
 
 clue_hint_verify()
 
+check_think_tests()
 check_bad_loc_tests()
 check_multiple_command_tests()
 

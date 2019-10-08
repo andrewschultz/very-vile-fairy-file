@@ -6,6 +6,8 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
 volume core tables
 
+[run sct.py to verify deaths/thinks/alt good verbs file testing is up-to-date. Also, rbr-vvff-thru.txt / reg-vvff-thru-fake-deaths.txt / reg-vvff-thru-think.txt / reg-vvff-thru-alt.txt]
+
 [pest post / messed most / rest roast/ guest ghost / best boast]
 table of bad locs [xxloc] [xxbadloc]
 e1	e2	avail	been-here	fake-name	death-trap
