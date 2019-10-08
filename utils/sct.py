@@ -1,7 +1,8 @@
 #
 # sct.py : score tracker for Very Vile Fairy File
 #
-# todo: walkthrough branching, spoiler/nonspoiler
+# this tracks not only walkthrough branching but also specific tests.
+# tests include death rooms and multiple commands (e.g. mining more|moor)
 
 from shutil import copy
 from collections import defaultdict
@@ -51,6 +52,102 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     print("u = update, nu/un = don't update")
     exit()
+
+def check_multiple_command_tests():
+    need_base_test = defaultdict(int)
+    need_mult_test = defaultdict(int)
+    fin = i7.src('vv')
+    skip_header = False
+    in_verb_table = False
+    with open(fin) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of verb checks"):
+                skip_header = True
+                in_verb_table = True
+                continue
+            if skip_header:
+                skip_header = False
+                continue
+            if not in_verb_table: continue
+            if not line.strip():
+                in_verb_table = False
+                continue
+            tary = line.strip().split("\t")
+            if True:
+                if tary[7].startswith('"'):
+                    lt = re.sub(" *\[.*?\]", "", tary[7])
+                    lt = lt.replace('" or "', "\t")
+                    lt = lt.replace('"', '')
+                    tary2 = lt.split("\t")
+                    got_first = False
+                    for q in tary2:
+                        for q0 in i7.topx2ary(q):
+                            #print("C8 {} Need to verify {}".format(line_count, q0))
+                            if got_first:
+                                need_mult_test[q0] = 0
+                            else:
+                                need_base_test[q0] = 0
+                            got_first = True
+                elif '|' in tary[0] or '|' in tary[1]:
+                    tz = tary[0] + " " + tary[1]
+                    got_first = False
+                    for q0 in i7.topx2ary(tz, div_char='|'):
+                        #print("C1/2 {} Need to verify {}".format(line_count, q0))
+                        if got_first:
+                            need_mult_test[q0] = 0
+                        else:
+                            need_base_test[q0] = 0
+                        got_first = True
+                #sys.exit("Uh oh bad table line read {} len={} {}.".format(line_count, len(tary), tary))
+    in_alt_verbs = False
+    skip_next = False
+    mult_err = 0
+    need_byone = False
+    need_undo = False
+    with open("rbr-vvff-thru.txt") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if need_byone:
+                if not line.startswith('by one point'):
+                    print("Need -by one point- at line {}: {}.".format(line_count, line.strip()))
+                need_byone = False
+                need_undo = True
+                continue
+            if need_undo:
+                if not line.startswith(">") or 'undo' not in line:
+                    print("Need -undo- at line {}: {}.".format(line_count, line.strip()))
+                need_undo = False
+                continue
+            if 'okdup' in line:
+                skip_next = True
+                continue
+            if skip_next:
+                skip_next = False
+                continue
+            if line.startswith("==t3"):
+                in_alt_verbs = True
+                continue
+            if in_alt_verbs and not line.strip():
+                in_alt_verbs = False
+                continue
+            if not in_alt_verbs: continue
+            if not line.startswith(">"): continue
+            my_cmd = re.sub("^> *", "", line.strip().lower())
+            if my_cmd == 'undo' or my_cmd == 'z': continue
+            if my_cmd not in need_mult_test:
+                mult_err += 1
+                print(mult_err, "Bad command {} at line {}.".format(my_cmd, line_count))
+            else:
+                need_mult_test[my_cmd] += 1
+                need_byone = True
+    for x in sorted(need_mult_test):
+        if need_mult_test[x] == 0:
+            mult_err += 1
+            print(mult_err, "No mult-cmd test for", x)
+        elif need_mult_test[x] > 1:
+            mult_err += 1
+            print(mult_err, "Multiple mult-cmd test for", x)
+    if mult_err: print(mult_err, "total multiple command test file errors")
+    else: print("ALL MULTIPLE COMMANDS HAVE TEST CASE!")
 
 def check_bad_loc_tests():
     death_moves = defaultdict(int)
@@ -109,8 +206,8 @@ def check_bad_loc_tests():
         elif death_moves[x] > 1:
             print("Found excess test case for", x)
             loc_errs += 1
-    print(loc_errs, "total location test errors")
-    sys.exit()
+    if loc_errs: print(loc_errs, "total location test errors")
+    else: print("ALL DEATH LOCATIONS ARE TESTED!")
 
 def print_list_dif(dkey1, dkey2, descrip):
     x1 = list(set(list(dkey1)) - set(list(dkey2)))
@@ -434,10 +531,11 @@ check_miss_rule()
 
 clue_hint_verify()
 
+check_bad_loc_tests()
+check_multiple_command_tests()
+
 if open_source_post:
     if len(to_open) == 0: sys.exit("No files to open.")
     for fi_open in to_open:
         i7.npo(fi_open, to_open[fi_open], bail=False)
     exit()
-
-check_bad_loc_tests()

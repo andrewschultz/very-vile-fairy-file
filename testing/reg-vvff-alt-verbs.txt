@@ -16,6 +16,7 @@
 by one point
 
 # test the reverse flip warning
+#okdup
 > giver gift
 You've got it backwards! Just flip things around, and it'll be okay.
 
@@ -24,6 +25,7 @@ by one point
 
 # test the reverse flip works
 > z
+#okdup
 > fault find
 by one point
 > undo
@@ -36,10 +38,10 @@ by one point
 
 > so sit
 by one point
-undo
+> undo
 > oh it
 by one point
-undo
+> undo
 
 > grow grit
 by one point
@@ -127,6 +129,10 @@ by one point
 > mystery mall
 by one point
 
+> whatta wanksta
+by one point
+> undo
+
 > listen
 
 > lots lame
@@ -184,6 +190,10 @@ by one point
 
 > enter boat
 
+> wake wee
+by one point
+> undo
+
 > wake whee
 by one point
 
@@ -231,14 +241,14 @@ by one point
 
 > history hall
 
-> youre yonder
-by one point
-> undo
 > your yonder
 by one point
 > undo
-
 > yore yonder
+by one point
+> undo
+
+> youre yonder
 by one point
 
 > out
@@ -281,6 +291,9 @@ by one point
 > e
 
 > finding phase
+by one point
+>undo
+> finding fays
 by one point
 >undo
 > minding maze
@@ -340,6 +353,11 @@ by one point
 > s
 
 > s
+
+> healing here
+by one point
+> undo
+
 > heal here
 by one point
 
@@ -415,14 +433,11 @@ by one point
 > woe wait
 by one point
 > undo
-> whoa wait
-by one point
-> undo
 > whoah wait
 by one point
 >undo
 
-> whoah wait
+> whoa wait
 by one point
 
 > tell torn

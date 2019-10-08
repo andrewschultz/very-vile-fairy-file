@@ -275,7 +275,7 @@ SMASHING SMOKE
 
 > history hall
 
-> yore yonder
+> youre yonder
 by one point
 
 > out
@@ -394,6 +394,7 @@ CULL CEASED
 > s
 
 > s
+
 > heal here
 by one point
 
@@ -513,7 +514,7 @@ by one point
 > think
 !GOT GORED
 
-> whoah wait
+> whoa wait
 by one point
 
 > merry mile

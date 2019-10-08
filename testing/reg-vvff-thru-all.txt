@@ -85,9 +85,6 @@ by one point
 > mystery mall
 by one point
 
-> whatta wanksta
-by one point
-> undo
 > what a wanksta
 by one point
 
@@ -204,7 +201,7 @@ by one point
 
 > history hall
 
-> yore yonder
+> youre yonder
 by one point
 
 > out
@@ -301,6 +298,7 @@ by one point
 by one point
 
 > s
+
 > heal here
 by one point
 
@@ -368,7 +366,7 @@ by one point
 > got gored
 by one point
 
-> whoah wait
+> whoa wait
 by one point
 
 > tell torn

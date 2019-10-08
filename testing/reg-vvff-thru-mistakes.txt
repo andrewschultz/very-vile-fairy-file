@@ -950,7 +950,7 @@ No genetically twisted tree appears.
 
 > history hall
 
-> yore yonder
+> youre yonder
 by one point
 
 > out
@@ -1146,6 +1146,7 @@ McFly
 Learner needle
 
 > s
+
 > heal here
 by one point
 
@@ -1359,7 +1360,7 @@ Nothing takes a bit out of the go gate.
 Learner needle
 You wouldn't want to be crushed by a weight. But you've got the right idea.
 
-> whoah wait
+> whoa wait
 by one point
 
 > bell born

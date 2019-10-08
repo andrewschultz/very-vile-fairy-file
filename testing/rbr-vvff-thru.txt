@@ -84,6 +84,7 @@ by one point
 
 ==t3
 # test the reverse flip warning
+#okdup
 > giver gift
 You've got it backwards! Just flip things around, and it'll be okay.
 
@@ -112,6 +113,7 @@ Good guys don't brag about being
 ==t3
 # test the reverse flip works
 > z
+#okdup
 > fault find
 by one point
 > undo
@@ -236,10 +238,10 @@ MASH MAP
 ==t3
 > so sit
 by one point
-undo
+> undo
 > oh it
 by one point
-undo
+> undo
 
 > grow grit
 by one point
@@ -662,10 +664,12 @@ by one point
 > think
 GLEAN GLOWS
 
-==t1
+==t3
 > whatta wanksta
 by one point
 > undo
+
+==t1
 > what a wanksta
 by one point
 
@@ -1066,6 +1070,12 @@ Ooh! That'd be nice and tasty. But you don't need that right now.
 TAKE TEA
 FAKE FEE
 
+==t3
+> wake wee
+by one point
+> undo
+
+
 > wake whee
 by one point
 
@@ -1264,14 +1274,14 @@ SMASHING SMOKE
 > history hall
 
 ==t3
-> youre yonder
-by one point
-> undo
 > your yonder
 by one point
 > undo
-
 > yore yonder
+by one point
+> undo
+
+> youre yonder
 by one point
 
 > out
@@ -1419,6 +1429,9 @@ Even if it were duller, you'd still be left with a hot blaze.
 > finding phase
 by one point
 >undo
+> finding fays
+by one point
+>undo
 > minding maze
 by one point
 >undo
@@ -1553,6 +1566,12 @@ McFly
 Learner needle
 
 > s
+
+==t3
+> healing here
+by one point
+> undo
+
 > heal here
 by one point
 
@@ -1885,9 +1904,6 @@ You wouldn't want to be crushed by a weight. But you've got the right idea.
 > woe wait
 by one point
 > undo
-> whoa wait
-by one point
-> undo
 > whoah wait
 by one point
 >undo
@@ -1900,7 +1916,7 @@ up to Hippy Hill
 >n
 north to Earning Ridges
 
-> whoah wait
+> whoa wait
 by one point
 
 ==t2
