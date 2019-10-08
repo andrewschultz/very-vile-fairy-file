@@ -10,7 +10,6 @@ import i7
 import sys
 import os
 
-x_of_y = defaultdict(lambda: defaultdict(bool))
 scores = defaultdict(int)
 got = defaultdict(int)
 got_detail = defaultdict(lambda: defaultdict(int))
@@ -52,6 +51,66 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     print("u = update, nu/un = don't update")
     exit()
+
+def check_bad_loc_tests():
+    death_moves = defaultdict(int)
+    fin = i7.hdr('vvff', 'ta')
+    ft = "rbr-vvff-thru.txt"
+    in_death_test = False
+    loc_errs = 0
+    skip_header = False
+    in_loc_table = False
+    with open(fin) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of bad locs"):
+                skip_header = True
+                in_loc_table = True
+                continue
+            if skip_header:
+                skip_header = False
+                continue
+            if not line.strip():
+                in_loc_table = False
+            if not in_loc_table: continue
+            tary = line.split("\t")
+            try:
+                temp_string = tary[1] + " to " + i7.a2q(tary[4].replace('"', ''))
+            except:
+                sys.exit("Bad array {} line {}".format(tary, line_count))
+            death_moves[temp_string] = 0
+            if tary[2] == 'false':
+                temp_string = "!" + temp_string
+                death_moves[temp_string] = 0
+    got_main_yet = False
+    with open(ft) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith('==t') and '4' in line:
+                if not got_main_yet: continue
+                in_death_test = True
+                continue
+            if not got_main_yet:
+                if "* main-thru" in line: got_main_yet = True
+            if in_death_test and not line.strip():
+                in_death_test = False
+            if not in_death_test: continue
+            if line.startswith(">"): continue
+            ls = line.strip()
+            if ls.startswith("You already went"): continue
+            if ls.startswith("#"): continue
+            if ls not in death_moves:
+                print(os.path.basename(ft), "has bad death_moves line", line_count, line.strip())
+                loc_errs += 1
+            else:
+                death_moves[ls] += 1
+    for x in death_moves:
+        if death_moves[x] == 0:
+            print("Did not find test case for", x)
+            loc_errs += 1
+        elif death_moves[x] > 1:
+            print("Found excess test case for", x)
+            loc_errs += 1
+    print(loc_errs, "total location test errors")
+    sys.exit()
 
 def print_list_dif(dkey1, dkey2, descrip):
     x1 = list(set(list(dkey1)) - set(list(dkey2)))
@@ -375,13 +434,10 @@ check_miss_rule()
 
 clue_hint_verify()
 
-for q in sorted(x_of_y.keys()):
-    xqs = sorted(x_of_y[q].keys())
-    xq = x_of_y[q]
-    print('X-of-Y puzzle for', q, ':', ', '.join(sorted([z for z in xqs if xq[z] == True])), '/', ', '.join(sorted([z for z in xqs if xq[z] == False])))
-
 if open_source_post:
     if len(to_open) == 0: sys.exit("No files to open.")
     for fi_open in to_open:
         i7.npo(fi_open, to_open[fi_open], bail=False)
     exit()
+
+check_bad_loc_tests()

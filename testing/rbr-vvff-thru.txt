@@ -396,7 +396,7 @@ You aren't up for dancing.
 
 ==t4
 >w
-west to Bold
+west to Bold 'n Brave
 >w
 You already went west
 >e
@@ -1113,6 +1113,13 @@ You make a rude gesture, for whatever good it does.
 > make map
 by one point
 
+==t4
+>e
+east to Hi! Here, Buy Beer
+>s
+south to Rad Route
+>n
+north to See Some... Gee, Gum
 
 ==t2
 > snake snap
@@ -1865,6 +1872,14 @@ Nothing takes a bit out of the go gate.
 > woe weight
 Learner needle
 You wouldn't want to be crushed by a weight. But you've got the right idea.
+
+==t4
+>d
+!down to Happy Hall
+>u
+!up to Hippy Hill
+>n
+!north to Earning Ridges
 
 ==t3
 > woe wait

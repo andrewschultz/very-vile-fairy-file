@@ -38,7 +38,7 @@ by one point
 by one point
 
 >w
-west to Bold
+west to Bold 'n Brave
 >w
 You already went west
 >e
@@ -159,6 +159,13 @@ by one point
 
 > make map
 by one point
+
+>e
+east to Hi! Here, Buy Beer
+>s
+south to Rad Route
+>n
+north to See Some... Gee, Gum
 
 > co capn
 by one point
@@ -367,6 +374,13 @@ by one point
 
 > got gored
 by one point
+
+>d
+!down to Happy Hall
+>u
+!up to Hippy Hill
+>n
+!north to Earning Ridges
 
 >d
 down to Happy Hall
