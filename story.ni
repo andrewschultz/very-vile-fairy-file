@@ -2971,7 +2971,10 @@ the wild weed is a thing. description is "You can't tell how potent it is by loo
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
 
-check drinking mild mead: say "Not unless there's food with it." instead;
+check drinking:
+	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
+	if noun is sage sea or noun is worst wave, say "Sea salt? Ee! Alt!" instead;
+	say "Drink dry? Sink ... sigh ...[one of] (you don't need to DRINK anything in this game.)[or][stopping]" instead;
 
 part Pit Pound 1,3
 
@@ -3058,6 +3061,7 @@ rule for showaltverbsing:
 	say "[2da]You could've found the [b]LUCK LAIR[r] or the [b]SNUCK SNARE[r].";
 	say "[2da][b]SILENT SAIL/SALE[r]  could've quieted the Violent Vale.";
 	say "[2da][b]CULL CEASED[r] or [b]LUL LEAST[r] could've taken down the Bull Beast.";
+	say "[2da][b]MINING MOOR/MORE[r] could give the pining poor employment.";
 	say "[2da][b]WHOA/WOE/WHOAH WAIT[r] were all acceptable by the Go Gate in Airy Isle.";
 
 showmissesing is an activity.
@@ -3348,9 +3352,9 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
 "green"	"grass"	false	true	false	vc-green-grass rule	vr-green-grass rule	--
 "grow|oh|so"	"grit|it|sit"	true	true	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"
-"mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"bash bap" or "mash map" or "rash rap" or "slash slap"
+"mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"
 "mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
-"flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flimflam" or "flim flam" or "skim scam"
+"flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"
 "big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
 "spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--
 "strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
@@ -3386,7 +3390,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "lie"	"lol"	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--
 "not"	"near"	true	false	false	vc-not-near rule	vr-not-near rule	--
 "beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
-"cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	-- [?? maybe put something on the previous line, if you get a match, then wait for the next actual rule]
+"cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	"cull ceased" or "lul least"
 "full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
 "least"	"loss"	true	true	false	vc-least-loss rule	vr-least-loss rule	--
 "loft"	"land"	false	true	false	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
@@ -3431,7 +3435,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "lot"	"lord"	false	true	false	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
 "hot"	"horde"	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--
 "got"	"gored"	false	true	false	vc-got-gored rule	vr-got-gored rule	--
-"whoah|whoa|woe"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
+"whoa|whoah|woe"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
 "tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
 "merry"	"mile"	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
