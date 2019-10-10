@@ -1,6 +1,8 @@
-out=very-vile-fairy-file-invisiclues.htm
+# Very Vile Fairy File HTML clues
 !Very Vile Fairy File HTML Clues
 ->c:/games/inform/very-vile-fairy-file Materials/Release
+out=very-vile-fairy-file-invisiclues.htm
+outraw=very-vile-fairy-file-invisiclues-raw.htm
 ==end header
 >WORST WHEW
 >>WET WOOD
@@ -135,6 +137,58 @@ CLEARED CLAY.
 ?It's blank here. How can I make it more interesting?
 Well, you can make it a place where more people go and chat.
 MYSTERY MALL.
+?What should I do with the ganksta?
+There is a bonus point, but it's the tattoo that matters.
+GOTS GAME can become...
+...LOTS LAME.
+?Could I have done anything else?
+Yes, a meaner insult would've gotten a bonus point.
+It's obscure slang, though, and also derivative of Ganksta.
+WHATTA WANKSTA.
+?Is the music worth listening to?
+You bet!
+It doesn't pay off right away, but it lets you solve puzzles later.
+?What about the music that replaces it?
+It gives you a bonus point.
+It's not quite in tune with the game, but the basic idea is similar.
+Tim T. Sims, Oi Mo ... there are twenty-six possibilities to get rid of it.
+DIMD.
+?What does Mean Moe's Clean Clothes do?
+You may figure what to do with it. You might not get the item of clothing you need to clean until later in the game.
+Perhaps there's some light that runs things?
+You need to GLEAN GLOWS.
+The item you need requires you to take the boat.
+It's the way woke clay cloak from Been Buggin'.
+?What's with this book that appeared once I flipped back?
+It provides a clue about the area beyond.
+The first word has two homonyms.
+Poor Ponder, For Fonder... and you're in History Hall...
+YORE YONDER.
+> GOT GEAR HOT HERE
+?Is the shawl useful?
+For a last lousy point and for lurking lump charges, yes.
+Otherwise, no.
+The learner indicates the "right" answer has a 3-letter word and an under 5-letter word.
+It is LIE LOL. There were a lot of other candidates, but I chose that one.
+?Why does it seem particularly boring in here?
+There's a way to get out and get a bonus point.
+Go far away.
+NOT NEAR.
+> VENDING VIBE
+?How do I deal with the trending tribe?
+They and the vending vibe want money, which you don't have.
+You need to get rid of that, for something that doesn't usually charge money.
+LENDING LIBE.
+?Can I take anything from here?
+Yes. You need an item that says you can check out books.
+A card.
+The cold card from the bold bard.
+?What is the random book list for?
+Entertainment.
+?What do I do with this book I have?
+We Whine Me Mine seems to have nothing practical for you.
+But if you read it right, it will describe the Crimes Crew Times Two's strategies and exploits.
+You need to SEE SIGN.
 > PIDDLING PAIN (EAST)
 >> VIOLENT VALE
 ?Can I make this place nicer?
