@@ -3496,11 +3496,12 @@ this is the shone-yet rule:
 to lean-and-mean:
 	say "[line break]";
 	if lean-lugged is true and mean-mugged is true:
-		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.'[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. He vanishes.";
+		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.'[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. He vanishes. Your mind clearer, you notice a wry wall you missed while focused inward.";
 		now player has clay cloak;
 		moot Dean Duggan;
 		move clumped cluster to Been Buggin';
 		phbt Been Buggin';
+		wall-refresh;
 	else:
 		say "'Not bad, but you can still do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 

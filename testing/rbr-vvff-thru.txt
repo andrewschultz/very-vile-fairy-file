@@ -404,7 +404,7 @@ You aren't up for dancing.
 
 ==t4
 >w
-west to Bold 'n Brave
+west to Fame Fort
 >w
 You already went west
 >e
@@ -1211,11 +1211,19 @@ Blaming your parents fails to help.
 > glow glad
 by one point
 
+==t4
+>s
+!south to Leaf Lake
+
 > mean muggin
 by one point
 
 > lean luggin
 by one point
+
+==t4
+>s
+south to Leaf Lake
 
 ==t5
 > teen tuggin
@@ -1422,8 +1430,11 @@ Now you mention it, you did feel a bit restricted here. Have a participation poi
 !FIT FOUND
 
 ==t4
->n
+> n
 !north to Straight Street
+> e
+!east to Bold 'n Brave
+
 
 > e
 
@@ -1448,6 +1459,10 @@ by one point
 
 > winding ways
 by one point
+
+==t4
+> e
+east to Bold 'n Brave
 
 ==t5
 > binding bays
