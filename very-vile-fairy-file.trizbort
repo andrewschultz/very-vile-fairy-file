@@ -283,6 +283,11 @@
 			<dock index="0" id="70" port="s" />
 			<dock index="1" id="103" port="n" />
 		</line>
+		<room id="105" name="Fun-Filled Gun Guild" subtitle="" x="672" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="106" name="" description="" style="dashed">
+			<dock index="0" id="70" port="n" />
+			<dock index="1" id="105" port="s" />
+		</line>
 	</map>
 	<settings>
 		<colors>

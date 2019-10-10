@@ -1214,6 +1214,8 @@ by one point
 ==t4
 >s
 !south to Leaf Lake
+>n
+!north to Fun-Filled Gun Guild
 
 > mean muggin
 by one point
@@ -1224,6 +1226,8 @@ by one point
 ==t4
 >s
 south to Leaf Lake
+>n
+north to Fun-Filled Gun Guild
 
 ==t5
 > teen tuggin

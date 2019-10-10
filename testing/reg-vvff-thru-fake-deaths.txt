@@ -182,6 +182,8 @@ by one point
 
 >s
 !south to Leaf Lake
+>n
+!north to Fun-Filled Gun Guild
 
 > mean muggin
 by one point
@@ -191,6 +193,8 @@ by one point
 
 >s
 south to Leaf Lake
+>n
+north to Fun-Filled Gun Guild
 
 > enter boat
 
