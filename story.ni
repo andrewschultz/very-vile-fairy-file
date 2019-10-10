@@ -2987,7 +2987,7 @@ found-fit is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true]You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true]You can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
 
 to say blazno:
 	if blaze-ways is false:
