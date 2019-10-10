@@ -2,7 +2,7 @@
 # sct.py : score tracker for Very Vile Fairy File
 #
 # this tracks not only walkthrough branching but also specific tests.
-# tests include death rooms and multiple commands (e.g. mining more|moor)
+# tests include death rooms and multiple commands (e.g. mining more|moor) and checks that clues in THINK appear/disappear as needed
 
 from shutil import copy
 from collections import defaultdict
