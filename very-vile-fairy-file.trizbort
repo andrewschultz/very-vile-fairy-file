@@ -19,15 +19,15 @@
 			<dock index="0" id="8" port="n" />
 			<dock index="1" id="19" port="s" />
 		</line>
-		<room id="12" name="Lake Lea" subtitle="" x="352" y="288" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="12" name="Lake Lea" subtitle="" x="352" y="288" w="96" h="64" region="Browsy Breaks" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="3" name="Violent Vale / Silent Sail" subtitle="" x="192" y="32" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="13" name="" description="" style="dashed">
 			<dock index="0" id="4" port="n" />
 			<dock index="1" id="40" port="s" />
 		</line>
 		<line id="7" name="" description="" style="dashed" midText="(boat)">
-			<dock index="0" id="3" port="se" />
-			<dock index="1" id="12" port="nw" />
+			<dock index="0" id="3" port="sse" />
+			<dock index="1" id="12" port="nnw" />
 		</line>
 		<line id="15" name="" description="" style="dashed">
 			<dock index="0" id="6" port="w" />
@@ -61,13 +61,13 @@
 		</line>
 		<room id="27" name="Done Dune" subtitle="" x="512" y="32" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="28" name="Capped Cone" subtitle="" x="192" y="288" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Zapped Zone" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="29" name="Fast Foi'd" subtitle="" x="512" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Vast Void" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="29" name="Fast Foi'd" subtitle="" x="352" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Vast Void" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="30" name="" description="" startText="down" endText="up">
-			<dock index="0" id="42" port="ne" />
-			<dock index="1" id="29" port="sw" />
+			<dock index="0" id="42" port="n" />
+			<dock index="1" id="29" port="s" />
 		</line>
 		<room id="31" name="Fortune Funnel" subtitle="" x="-288" y="-224" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Torchin' Tunnel" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="32" name="Bold 'n Brave" subtitle="" x="-128" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Golden Grave" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="32" name="Fame Fort" subtitle="" x="-128" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Golden Grave" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="33" name="" description="">
 			<dock index="0" id="4" port="w" />
 			<dock index="1" id="32" port="e" />
@@ -170,9 +170,9 @@
 			<dock index="0" id="3" port="e" />
 			<dock index="1" id="42" port="w" />
 		</line>
-		<room id="70" name="Been Buggin'" subtitle="" x="352" y="-96" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="70" name="Been Buggin'" subtitle="" x="672" y="32" w="96" h="64" region="Browsy Breaks" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="71" name="" description="" style="dashed">
-			<dock index="0" id="3" port="ne" />
+			<dock index="0" id="3" port="se" />
 			<dock index="1" id="70" port="sw" />
 		</line>
 		<room id="72" name="Blinding Blaze/Winding Ways" subtitle="" x="352" y="-224" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="&quot;Mo Mappin&quot;" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
@@ -184,7 +184,7 @@
 			<dock index="0" id="23" port="e" />
 			<dock index="1" id="72" port="w" />
 		</line>
-		<room id="74" name="Lake Lap" subtitle="" x="512" y="288" w="96" h="64" region="Piddling Pain" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="74" name="Lake Lap" subtitle="" x="512" y="288" w="96" h="64" region="Browsy Breaks" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="75" name="" description="">
 			<dock index="0" id="12" port="e" />
 			<dock index="1" id="74" port="w" />
@@ -273,6 +273,16 @@
 			<dock index="0" id="74" port="e" />
 			<dock index="1" id="99" port="w" />
 		</line>
+		<room id="101" name="Bold 'n Brave" subtitle="" x="512" y="-224" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="102" name="" description="" style="dashed">
+			<dock index="0" id="72" port="e" />
+			<dock index="1" id="101" port="w" />
+		</line>
+		<room id="103" name="Lake Leaf" subtitle="" x="672" y="160" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="104" name="" description="">
+			<dock index="0" id="70" port="s" />
+			<dock index="1" id="103" port="n" />
+		</line>
 	</map>
 	<settings>
 		<colors>
@@ -289,8 +299,9 @@
 			<endRoom>Red</endRoom>
 		</colors>
 		<regions>
+			<Browsy____Breaks Name="Browsy Breaks" TextColor="Black">Yellow</Browsy____Breaks>
 			<Get____a____Guess Name="Get a Guess" TextColor="MidnightBlue">White</Get____a____Guess>
-			<NoRegion Name="NoRegion" TextColor="White">Black</NoRegion>
+			<NoRegion Name="NoRegion" TextColor="Black">White</NoRegion>
 			<Piddling____Pain Name="Piddling Pain" TextColor="Black">Lime</Piddling____Pain>
 			<Poorly____Penned Name="Poorly Penned" TextColor="Black">#FF8000</Poorly____Penned>
 			<Vale____Verminous Name="Vale Verminous" TextColor="Black">Red</Vale____Verminous>
