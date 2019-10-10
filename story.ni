@@ -226,6 +226,8 @@ Worst Whew is a region. [first few]
 
 Piddling Pain is a region. [middling main]
 
+Browsy Breaks is a region. [lousy lakes]
+
 Poorly Penned is a region. [early end]
 
 Vale Verminous is a region. [terminal tale]
@@ -2840,22 +2842,24 @@ to decide whether goto-available:
 	yes.
 
 definition: a room (called rm) is available-from-here:
+	let mrrm be map region of rm;
 	if rm is unvisited, no;
-	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
-	if rm is Been Buggin', no;
+	if mrrm is Worst Whew, no;
+	if mrrm is Browsy Break, no;
 	yes;
 
 carry out gotoing:
 	if noun is location of player, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
-	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
-	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
+	if in-bull-chase is true, say "Sorry, GO TO is disabled during the beer bull chase." instead;
+	if mrlp is Browsy Break, say "Sorry, GO TO is disabled during this small side-quest. Sorry." instead;
+	if mrlp is vale verminous, say "There's no way back. You are so close to the end." instead;
 	if noun is available-from-here:
 		move player to noun;
 	else:
-		say "You can't get to [noun] from here.";
+		say "You can't walk to [noun] from here.";
 	the rule succeeds;
 
 section gotothinging
@@ -2934,7 +2938,7 @@ when play begins (this is the score and status tweak rule):
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[core-max][if core-max is max-poss]*[else]-[max-poss][end if]";
 	force-status;
-	now the left hand status line is "[location of the player]";
+	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 0;
 
 to wall-refresh: move the wry wall backdrop to all signable rooms;
@@ -3665,7 +3669,7 @@ this is the vc-bury-bile rule:
 	if mrlp is Worst Whew:
 		vcp "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.";
 		continue the action;
-	if mrlp is Piddling Pain:
+	if mrlp is Piddling Pain or mrlp is Browsy Breaks:
 		vcp "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
 		continue the action;
 	if player is in Airy Isle:
