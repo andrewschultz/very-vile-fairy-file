@@ -509,7 +509,7 @@ part Fun Fen 0,0
 Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tree-down is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
 check going in Fun Fen:
-	if noun is north and tree-down is false, say "You need a way through the murky bit to the north. Well, a much safer one." instead;
+	if noun is north and tree-down is false, say "A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
 section done den
@@ -926,12 +926,6 @@ check going inside when player is in violent vale:
 	if boring boat is touchable, try entering boring boat instead;
 	if flooring float is touchable, try entering flooring float instead;
 
-this is the boat-drift rule:
-	if beer bull is moot and jake g is moot:
-		say "[line break]After a moment, the boring boat floats off, perhaps to refuel from all the excitement.";
-		moot boring boat;
-	the rule succeeds;
-
 nap-no is a truth state that varies.
 
 hap-ho is a truth state that varies.
@@ -944,12 +938,11 @@ check entering boring boat:
 		now boat-reject is true;
 		the rule succeeds;
 	if player is in Been Buggin':
-		if player does not have way woke clay cloak, say "Dean Duggan stops you. You have not properly passed [if lean-lugged is false and mean-mugged is false]any[else]both[end if] of the tests you need yet." instead;
-		say "With your way woke clay cloak in hand, you return to [Violent Vale]. The boring boat floats off, perhaps needing to refuel after all that exhausting adventure.";
+		if player does not have way woke clay cloak, say "Dean Duggan stops you. You have not properly passed [if lean-lugged is false and mean-mugged is false]any[else]both[end if] of the tests you need yet. You need to face things now. Perhaps there is some slang involved, but sometimes you need to brute-force your way through problems." instead;
+		say "With your way woke clay cloak in hand, you return to [Violent Vale]. After a moment, the boring boat floats off, perhaps to refuel from all the excitement.";
 		moot boring boat;
 		if clumped cluster is not moot, max-down;
 		move player to violent vale;
-		abide by the boat-drift rule;
 		the rule succeeds;
 	if player is in lake lea:
 		say "You take the boring boat back to [Violent Vale].";
@@ -1539,17 +1532,20 @@ check taking inventory:
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
+	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
+	show-evidence-and-hats;
+	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
+	if lurking lump is moot, say "The lurking lump disappeared when you used it, but maybe with more good guesses, it will come back.";
+	check-injury;
+	the rule succeeds;
+
+to show-evidence-and-hats:
 	if my-hats > 0:
 		if jerk gel is moot:
 			say "You also have the extra cool cap you constructed.";
 		else:
 			say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
-	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
-	if evidence-pieces > 0, say "You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
-	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
-	if lurking lump is moot, say "The lurking lump disappeared when you used it, but maybe with more good guesses, it will come back.";
-	check-injury;
-	the rule succeeds;
+	if evidence-pieces > 0, say "[line break]You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
 
 to check-injury: if least-loss is true and healed-here is false, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
 
@@ -1592,7 +1588,7 @@ check attacking:
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	if noun is Bot Board, say "The bot board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
-	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]![one of] (NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][stopping]"
+	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]! [one of](NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][line break][stopping]"
 
 the block saying no rule is not listed in any rulebook.
 
@@ -1714,6 +1710,7 @@ check requesting the score:
 	now vc-dont-print is true;
 	say "You have scored a total of [score] out of [maximum score] points and need [core-max] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
 	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].[paragraph break]";
+	show-evidence-and-hats;
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0:
@@ -3317,6 +3314,10 @@ carry out jerkingjumping:
 		solve-bull-chase;
 		lump-minus;
 		the rule succeeds;
+	if all-hinted > 0:
+		say "The lump glistens weirdly. Perhaps you've forgotten something you can do. Use it anyway?";
+		unless the player yes-consents:
+			say "OK. You may wish to THINK to see what you can do." instead;
 	now vc-dont-print is true;
 	repeat through table of verb checks:
 		unless there is a core entry, next;
@@ -4661,7 +4662,7 @@ this is the vc-silent-sail rule:
 	the rule succeeds;
 
 this is the vr-silent-sail rule:
-	say "Suddenly from the watery depths, a flooring float pops up! It looks -- impractical for going anywhere, but man, is it aesthetic!";
+	say "Suddenly from the watery depths, a flooring float bursts forth! It looks -- impractical for going anywhere, but man, is it aesthetic.";
 	move flooring float to violent vale;
 	now silent-sale is true;
 	phbt violent vale;

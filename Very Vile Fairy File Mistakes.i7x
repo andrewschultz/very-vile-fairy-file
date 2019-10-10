@@ -263,7 +263,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "lean lass"	mass-near rule	false	5	5	--	"This isn't that sort of game."
 "goring goat"	boat-or-float rule	false	6	4	float-present rule	"You don't need an aggressive animal sidekick." [start violent vale]
 "storing stoat"	boat-or-float rule	false	6	4	float-present rule	"You can carry what you need. You don't need any Brian Jacques villains upsetting that."
-"mooring moat"	boat-or-float rule	false	6	4	float-present rule	"The seacraft seem to anchor themselves okay here." [?? need to delete this once the moat is officially scenery]
+"mooring moat/mote"	boat-or-float rule	false	6	4	float-present rule	"The [float-boat] seems to anchor itself okay here."
+"touring tote"	boat-or-float rule	false	6	4	float-present rule	"[if player has big bag]The big bag is good enough[else]Good idea, but try that with something in your inventory[end if]."
 "island ale/ail"	in-violent-vale rule	false	6	4	violent-not-silent rule	"No need to drink or get an island disease."
 "stet stood"	in-wet-wood rule	false	3	4	--	"No comment on if and where proofreading is necessary, here."
 "het hood"	in-wet-wood rule	false	3	4	--	"You consider the possibility of changing the Wet Wood to a Straight Pride parade, but decide against it, as you're worried you might get trampled by all of a dozen people."
@@ -280,13 +281,11 @@ section texts and decides
 
 to say bag-rag: say "[if player has big bag]big bag[else]zig zag rig rag[end if]"
 
+to say float-boat: say "[if flooring float is touchable]flooring float[else]boring boat[end if]"
+
 to say kind-of-paper: if vapor vile is moot, say ". Now you've organized the pile, maybe its details are more important to read or examine"
 
 to say shawl-lol: if lie-lol is false, say ". The shawl seems worthless to your quest, but maybe it's good for [one of][or]further [stopping]practice"
-
-to decide whether passed-1:
-	if word number 1 in the player's command is "passed", yes;
-	no;
 
 to say rift-need: say ". You just feel you could use another person's help, here"
 
