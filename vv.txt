@@ -14,14 +14,14 @@ It can become a...
 BIG BAG.
 ?What is the Leet Learner for?
 It is also a CHEAT CHURNER.
-You may notice different colors written on it.
+If it gives a reading, the needle goes to different places.
 You can use it to get hints about what sort of letter/pronunciation swaps you need to make.
-Blue means you need to add letters to both words (CONCEIT CONCERNER).
-Green means you add a letter to one word (CHEAT CHURNER).
+Left means you need to add letters to both words (CONCEIT CONCERNER).
+Center-left means you add a letter to one word (CHEAT CHURNER).
 Yellow is neutral. (MEET MOURNER).
-Orange means you need to subtract, partially (BEAT BURNER).
-Red means you need to subtract letters from two words (EAT EARNER).
-Brown means you need to add one letter and subtract another (TREAT TURNER).
+Center-right means you need to subtract, partially (BEAT BURNER).
+Right means you need to subtract letters from two words (EAT EARNER).
+All over the place means you need to add one letter and subtract another (TREAT TURNER).
 >>VINED VAULT
 ?I'm perfectly trapped! What to do?
 Look for a weakness.
@@ -37,11 +37,12 @@ You need to deal with the whole room first.
 It can boost your confidence.
 It fits in with the Po' Pit.
 GROW GRIT.
+There are other ways: SO SIT and OH IT. But I wanted to expose the player to a left reading on the learner.
 ?Okay, now I have confidence, how do I get past the trash trap?
 The cache cap is a bit ... off.
 If you use the learner on it, it is only partially negative (orange,) but the trash trap is fully negative (red.) That means one word is "cap" and another is less than five letters.
 Also, the gash gap is yellow. So that's four and three letters.
-MASH MAP works. BASH BAP is an alternate.
+MASH MAP works. BASH BAP is an alternate. So is RASH RAP.
 >>TRIM TRAM
 ?How can I find a fee? Or stop worrying?
 Look into yourself.
@@ -50,7 +51,7 @@ MIND ME.
 What rhymes alliteratively with trim tram?
 FLIM FLAM. One or two words.
 Alternatively, SKIM SCAM.
->PIDDLING PAIN
+>PIDDLING PAIN (INTRO)
 >>FUN FEN
 ?How I go back in the Done Den?
 You can't, and you don't need to.
@@ -73,7 +74,7 @@ LIE LOL.
 It is a bonus point.
 But it's one pretty far down in the game.
 And it's pretty obscure.
-You need the Wild Weed.
+You need the Wild Weed much later in the game.
 Then, SPARK SPLIFF.
 >>REAL REAR
 ?Can I enter the Sage Sea?
@@ -106,6 +107,122 @@ First, the Hard Hat.
 ?Summon something?! What does that mean?
 You can summon an important enemy based on the cross's name.
 The BEAST BOSS.
+But first you need some armor.
+You can get it from the Bold Bard.
+?How do I defeat the beast boss/bull beast?
+You need to come back at full strength.
+Where could you heal?
+Somewhere you've been helped before?
+HEAL HERE in Real Rear.
+Then come back.
+You have two options here.
+CULL CEASED or LUL LEAST.
+> PIDDLING PAIN (WEST)
+>>STARK STORE
+?There's nothing here! Should there be?
+Yes. Maybe something that could create passage.
+A door.
+A DARK DOOR.
+?Why can't I see the way west fully?
+You haven't observed it enough.
+Look at the dark door.
+MARK MORE.
+?Is there a passage through the weird way?
+Yes.
+It can become something more normal.
+CLEARED CLAY.
+>>HISTORY HALL
+?It's blank here. How can I make it more interesting?
+Well, you can make it a place where more people go and chat.
+MYSTERY MALL.
+> PIDDLING PAIN (EAST)
+>> VIOLENT VALE
+?Can I make this place nicer?
+Yes, there are two phrases--well, one, where the second word is a homonym.
+It would be less stressful if it were quieter.
+SILENT SALE or SILENT SAIL.
+?What do I do with the float?
+Nothing, except change it to something more navigable.
+BORING BOAT.
+?Why can't I bored, err, board the boat?
+You can't stay awake long enough to.
+There's no item that can prepare you physically.
+Mentally, yes. Have you been west yet?
+LISTEN in Mystery Mall. You should get clues now.
+Something rhymes with TOE TAPPIN and ROW RAPPIN.
+What could help you stay awake?
+NO NAPPIN.
+?Can I go anywhere else in the boat?
+Yes, once you and Jake G. complete the quest in the lakes area. You'll be kicked back.
+There's only one other place.
+> BROWSY BREAKS
+>>LAKE LEA
+?How can I get Jake G to notice me?
+He is sleeping.
+Un-sleep him.
+Err, wake him.
+Wake him cheerily!
+WAKE WHEE.
+?Jake G seems to want me to eat. How do I do so properly?
+Another rhyme of Jake G.
+This is an English word for food.
+TAKE TEA.
+?Jake G wants payment, or does he?
+You need to show a sense of humor. Pay him but not really.
+FAKE FEE.
+>> LAKE LAP
+?What do I do here?
+There are two things. You're a bit lost here.
+What's good when you're lost?
+MAKE MAP.
+?How do I make Jake feel like an equal?
+Toe Tappin' Row Rappin' has kicked in again, if you have that hint on.
+This one is a bit tricky, since it's a bit of slang and a shortened word.
+CO CAPN.
+?What's the hissing noise?
+An animal.
+You need to kill it or get rid of it.
+SNAKE SNAP.
+?Can I see Jake again, now that I got the cake cap?
+No. You won't need to. The boring boat now goes somewhere else.
+>> BEEN BUGGIN
+?How do I stop feeling way wrong?
+A double rhyme of WAY WRONG.
+There's only a couple that make sense.
+STAY STRONG.
+?How do I stop feeling so sad?
+A double rhyme of SO SAD works to make you happier.
+But wait! You may wish to pile on good tries for the lurking lump! There are nine.
+The right one is GLOW GLAD.
+?What does Dean Duggan want?
+Well, some of this may be a bit slangy.
+But you have two things to do. You may have to force it.
+You need to become physically stronger and look tougher.
+LEAN LUGGIN will improve you physically.
+MEAN MUGGIN will improve you mentally.
+?Is the clumped cluster important?
+For maximum points, yes.
+It has two solutions.
+You can uncover a DUMPED DUSTER or say BUMPED BUSTER.
+> PIDDLING PAIN (NORTH)
+>>SOFT SAND
+?What's with the place I can't reach in the west?
+You can, if the soft sand becomes something else.
+LOFT LAND.
+>>FOE FIELD SO SEALED
+?What can I do about the Pain Peasant?
+Annoying, isn't he?
+Get him to relax.
+Make him PLAIN PLEASANT.
+?How do I stop YO YIELD?
+You can figure out the command if you want right away, but you need a special item later in the game.
+You need to protect yourself.
+SHOW SHIELD.
+Unfortunately, you need the mold-marred gold guard.
+Okay, you need it upgraded...
+...and that's in Here Hull.
+Wait, you need one more upgrade...
+...finishing the Whining War will get you that.
 >VALE VERMINOUS
 >>GASSED GAP
 ?It seems like the gassed gap can be changed, but how do I do so?
@@ -132,9 +249,11 @@ You need help.
 A group of people, as well as a leader more capable than yourself.
 The Bot Board has rhyming cousins.
 The HOT HORDE will outnumber the board, but they are too unruly.
-So you need a leader that double-rhymes bot board.
-LOT LORD.
-But you need one more thing! A battle cry!
+?What's the sought sword for?
+It belongs to someone who has Leadership Skills.
+The LOT LORD.
+?How do I get everyone to work together to defeat the Bot Board?
+You need one more thing! A battle cry!
 GOT GORED.
 ?How do I get to the next area with the Bot Board defeated?
 The Go Gate looks pretty tempting to just enter.
