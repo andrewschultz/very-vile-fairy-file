@@ -2844,13 +2844,14 @@ definition: a room (called rm) is available-from-here:
 	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
-	if rm is Been Buggin', no;
+	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, no;
 	yes;
 
 carry out gotoing:
 	if noun is location of player, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
+	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, say "Sorry, GO TO is disabled during this side quest." instead;
 	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
 	if noun is available-from-here:
 		move player to noun;

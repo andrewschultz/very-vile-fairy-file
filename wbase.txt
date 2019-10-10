@@ -23,7 +23,9 @@ Because walkthroughs can be spoilers, I thought I'd offer some general hints up 
 
 You can do something with the zigzag rig rag, and it may be an even easier puzzle than getting out of the Wet Wood, but not right away. You won't need to be carrying that item through the Wet Wood. However, being able to guess what to do with the rig rag is a good exercise. If you figure what to do, you'll also be introduced to how the THINK command works.
 
-So let's leave the Wet Wood. It seems like there's no way out, with what you know. But if you listen carefully and pay attention to clues, you can decide what to do.
+Two things about good guesses: sometimes, you will be able to switch the word order. The game will always either allow this or tell you you are very close. Also, getting the lurking lump requires five good guesses. Each additional charge requires more: seven, nine, etc. And homonyms only count once, so DONT DEW and DONT DO don't give extra.
+
+We start in the Wet Wood, and it seems like there's no standard direction out. But if you listen carefully and pay attention to clues, you can decide what to do.
 
 > GET GOOD (1)
 
@@ -115,7 +117,7 @@ The hive heap is tough to search through, unless you ...
 
 > DIVE DEEP (1)
 
-Now the vapor (vile) needs to be removed.
+Now the vapor (vile) needs to be neutralized.
 
 > PAPER PILE (1)
 
