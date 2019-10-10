@@ -130,8 +130,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pun pen"	in-fun-fen rule	false	--	--	--	"You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me."
 "won when"	in-fun-fen rule	false	--	--	--	"Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst."
 "bark biff"	in-fun-fen rule	false	5	6	spliff-unsparked rule	"A cruel voice calls from the distance 'Hello, McFly? Hello!'" [?? this-faint]
-"gaper guile"	vile-or-pile rule	false	5	4	vapor-vile-vis rule	"You stare a bit but get no insight[kind-of-paper]."
-"taper/tapir tile"	vile-or-pile rule	false	5	4	vapor-vile-vis rule	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
+"gaper guile"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"You stare a bit but get no insight[kind-of-paper]."
+"taper/tapir tile"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
 "fast fap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here." [start gassed gap]
 "last lap"	in-gap-with-cap rule	false	4	3	cap-uncast rule	"It will be the last lap one day. But you need a different action to get to this finality."
 "massed/mast map"	in-gap-with-cap rule	false	4	3	cap-uncast rule	"You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here."
@@ -280,7 +280,7 @@ section texts and decides
 
 to say bag-rag: say "[if player has big bag]big bag[else]zig zag rig rag[end if]"
 
-to say kind-of-paper: if vapor vile is moot, say ". Now you've organized the pile, maybe its details are more important to read or examine"
+to say kind-of-paper: if vapor vial is moot, say ". Now you've organized the pile, maybe its details are more important to read or examine"
 
 to say shawl-lol: if lie-lol is false, say ". The shawl seems worthless to your quest, but maybe it's good for [one of][or]further [stopping]practice"
 
@@ -421,9 +421,9 @@ this is the skull-near rule: if screaming skull is touchable, the rule succeeds;
 
 this is the tram-first-puzzle rule: if player is in trim tram and me-minded is false, the rule succeeds;
 
-this is the vapor-vile-vis rule: if vapor vile is touchable, the rule succeeds;
+this is the vapor-vial-vis rule: if vapor vial is touchable, the rule succeeds;
 
-this is the vile-or-pile rule: if vapor vile is touchable or paper pile is touchable, the rule succeeds;
+this is the vial-or-pile rule: if vapor vial is touchable or paper pile is touchable, the rule succeeds;
 
 this is the violent-not-silent rule: if silent-sale is false, the rule succeeds;
 
