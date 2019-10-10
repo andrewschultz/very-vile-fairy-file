@@ -1,0 +1,64 @@
+Like Ailihphilia, I thought this would be a short game, or a part of a short game. I like making limericks in my spare time, and I must have stumbled on very/fairy and vile/file about the same time back in June 2018. The phrase 'very vile fairy file' amused me, but what could I do with it? I figured there couldn't be any rhymes where we changed the first sound...
+
+...oh, wait, there were. So I figured the final command at first. You could BURY BILE. And you could do so in the Merry Mile, or perhaps the Airy Isle. The character's name fell out, too. You could be Kerry Kyle. I'm not good with creating female characters, but the least I can do is try and not make the character obviously male, so this seemed like a good step forward. I didn't know how much else there could be, so maybe it would just be a one-room EctoComp game.
+
+With dual rhymes in my orbit, I slowly started peeling things off. Anything with an alliterative name, I went through the 44 English sounds to see if they could be fungible. Some things fell early, because they were straightforward, like GET GOOD in the wet wood. Some were a bit trickier. Some went nowhere despite having promise. And my favorites were the ones that seemed unlikely, but I wanted to give them a chance. FIND FAULT was a big example of this. It worked so perfectly that you could do so in a Vined Vault, and that made up an early puzzle. Another flyer gave me the idea for Fall Fest as a place to maybe start your game. That turned up a whole ton of rhymes!
+
+So I had my notes file, and I had a list of double-rhymes. And, like so many games, I thought I had some good introductory puzzles, and the ending puzzle took shape quickly. So did the penultimate puzzle, with the Bot Board. Board, Lord and Horde just seemed to be itching for another rhyme if I could find it. The Bot Board fell out from the working title of my game, The Problems Compound ("The Directors of Bored.") I loved it but could never quite justify it, and the Bot Bored feels like what they should've been. Summoning the Lot Lord and Hot Horde seemed perfect to take down the board. I actually didn't figure out the Sought Sword until a tester's clue very shortly before the deadline--I wrote in a Shot Sword with a month left, mentioning it looked slightly out of place, as a Sot Sword seemed a bit silly. I took forever to see the homonym.
+
+The middlegame was tricky, though! Last Lap was pretty clear, and I had a Hard Hat, but I wanted something more. I had some vague ideas for Creased Cross and the Beast Boss you needed to fight there. I wanted to have a distant land but couldn't figure anything with a boat. And I was still worried the hinting device just wasn't good enough. I sent the game off to a few people with a caveat that the middlegame was unfinished. Their efforts helped--I needed to work on the intro and the ending and the hinting. Also, the volume of good guesses quickly gave me confidence that people would have fun guessing wrong, and I wanted to reward them.
+
+As it turns out, I let myself run into a wall over hinting for a few months, but it was worth it. My early testers' efforts spurred me to create the Lurking Lump. It was in the back of my mind, and it was one of those "I'd do it if I found inspiration" things. Then one morning I wondered if I could do something with jump/lump. I could!
+
+The Leet Learner was originally color-based: yellow meant that the answer had the same number of letters in each word. Blue meant you added to the letters in each word, and green meant only one. Red and orange meant take away letters from each, or just from one. This was awkward, and my testers didn't figure it out, but I'm glad I had the foresight to define cheat-states as leteq, bothplus, oneplus, oneminus, and bothminus. Because when I realized it'd probably be better to have a needle swinging (partially) left or right, I only had to change one line of code. This was handy, two weeks before deadline. I had to clean up any text saying yellow/orange/green/red/blue, but that was not hard.
+
+The other big problem with hinting was this: a tester would guess one word right, but not another. I wanted to give them credit for this. I also ran into a problem where I exceeded the number of verbs the Z-machine could handle, both with valid verbs and good guesses. These two problems were related. I had to abuse the parser to fix this.
+
+Inform's usual syntax might be: understand "find fault" as findfaulting / carry out findfaulting, etc. This created too many verbs, and it didn't help me track half-right guesses. So instead I moved the code a parser-error function, and it was nice to have everything in one place.
+
+table of verb checks [xxvc]
+w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
+...
+"find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
+
+this is the vc-find-fault rule:
+	if player is not in Vined Vault, the rule fails;
+	if mean mass is in Vined Vault:
+		if print-why-fail, vcal "You already did, and things got worse. You'll have to try something else.";
+		continue the action;
+	the rule succeeds;
+
+this is the vr-find-fault rule:
+	loop-note "FIND FAULT";
+	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
+	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
+	move mean mass to Vined Vault;
+	moot mind malt;
+	phbt Vined Vault;
+
+There's some excess text here, but the basic idea is that the vc (verb check) rules make sure an action is valud, and a vr (verb result) rule executes that action. (If you're curious, OKFLIP means Fault Find is okay, CORE means the action must be done, and IDID checks if it's been done--so, for instance, you couldn't get infinite points for alternately typing SOFT SAND and LOFT LAND. wfull is useful for if there is more than one possible solution.) VCAL/VCP are for if you use the Lurking Lump. It checks through all the rules, so a simple "say" would print stuff that doesn't make sense.
+
+And if the command only matches one of w1 and w2, then the Leet Learner tracks that and prints out an "ooh! Close!" if half-detection is on, which it should be, by default. (I was proud of the toggle command, though. I always wanted to use "NAFF" in a game.)
+
+There were a lot more bugs in this mechanism than I thought, but they were worth working out. And it also played into one other thing: easier credit for good guesses. Since "understand X as a mistake" counted against verbs, I wondered if putting things in a table was worth it. It turns out they were, because I was able to simplify the leet learner cluing mechanism.
+
+table of mistake substitutions
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+...
+"binding bays/baize"	in-blaze-ways rule	false	7	4	blaze-before-maze rule	"You need to break free here, not get more tied up." [start blinding blaze]
+
+There's a lot to unpack in this row, but it describes all I needed to check. The mist-rule simply checks if you are in Blinding Blaze (later called Winding Ways and Grinding Grays.) If not, the mistake is not registered. The got-yet entry merely makes sure you don't double-dip to charge the lurking lump. This means "binding bays" and "binding baize" aren't different enough to give two guesses, but on the other hand, I give a lot of credit for homonyms.
+
+w1let and w2let track the letters you want and need. In this case, you need 7 and 4 to say Winding Ways or Minding Maze. (Finding Phase also works, but it has a different number of letters. It'd be confusing for the player to take this obscure--but sensible and creative--guess into account. I think allowing for alternate solutions is good, but having the Leet Learner account for all of them would be too awkward.) So the game knows that binding bays would give a center reading (7/4 vs 7/4) but binding baize would give a center-right reading (7/5 vs 7/4). The blaze-before-maze rule is the final bit. If you've already gotten rid of the blaze, a clue from the Leet Learner would be misleading. So that is the check for a clue after displaying the mist-txt.
+
+This made it easy to add good guesses my testers turned up. But it required a lot of programming on my own. Still, it was a rewarding bit of coding. I'd never really subverted the parser before, and 1. I think I had a good reason to and 2. subverting the parser made me realize how robust it was and how well it served for, well, games that didn't abuse the parser like VVFF did.
+
+I had fun imagining the responses to BURY BILE as the game went through. At first, you couldn't just say it, you had to live it and be a worthy hero. I wanted to play this angle more, and I'm not sure if I did, but I was thrilled I was able to allow the player to guess the winning command before scoring a single point. I'd played a lot of games where you could get a good ending, then replay and do something at the start to unlock something else perhaps even better, but I am not aware of any game that let you guess what to do right away.
+
+And I suppose there's some emotional component to all this. If you've ever heard "Ahh, deal with it," over something you were upset about--well, not being able to BURY BILE effectively until you've fought through that kind of flips that advice on its head. So I was pleased with that.
+
+I was worried I might not be able to connect the beginning with the ending, but slowly I started finding things to do. Somehow, Lake Lap was east of the Whining War, and so I pushed the war further east and the two lakes to an island. The hall/mall was just west of the Cross, until I thought "What if I throw in a store in back?" and realized it would work great in front. Then I realized it could open an area that made the bull chase most melodramatic.
+
+Other stuff wasn't in place until the final day. There was so much narrative I wanted to write in. I think I got most of it. I had problems with some puzzles that were horribly clued at first, so my testers had to use the walkthrough, which meant they couldn't use their energies for more interesting bugs. This happened with COUPLE CAPS, which was badly clued at first, so nobody tried it after getting all three caps. I clued it much better in response to testers having trouble, and the result was--COUPLE CAPS right after getting all three caps turned up a bug where you were sent back to Lake Lap instead of Been Buggin'. Since my main sanity-check walkthrough didn't COUPLE CAPS until the very end, well...ouch!
+
+So this is a cautionary tale about how bad hinting doesn't just annoy the judges, and even if you fix the bad hinting late on, there's still an increased chance of bugs. I know I did a lot of automated testing which helped a lot, but if I'd done more "hey, let's shake things up" walkthroughs instead of other time-wasting activities, I'd have caught things earlier.
