@@ -1216,6 +1216,8 @@ by one point
 !south to Leaf Lake
 >n
 !north to Fun-Filled Gun Guild
+>w
+!west to Trust Trail
 
 > mean muggin
 by one point
@@ -1228,6 +1230,9 @@ by one point
 south to Leaf Lake
 >n
 north to Fun-Filled Gun Guild
+>w
+west to Trust Trail
+
 
 ==t5
 > teen tuggin

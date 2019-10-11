@@ -3505,7 +3505,7 @@ to lean-and-mean:
 		moot Dean Duggan;
 		move clumped cluster to Been Buggin';
 		phbt Been Buggin';
-		wall-refresh;
+		wall-add Been Buggin';
 	else:
 		say "'Not bad, but you can still do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
