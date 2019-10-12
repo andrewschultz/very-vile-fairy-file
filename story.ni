@@ -3334,7 +3334,7 @@ carry out jerkingjumping:
 		solve-bull-chase;
 		lump-minus;
 		the rule succeeds;
-	if all-hinted > 0:
+	if doable-hinted > 0:
 		say "The lump glistens weirdly. Perhaps you've forgotten something you can do. Use it anyway?";
 		unless the player yes-consents:
 			say "OK. You may wish to THINK to see what you can do." instead;

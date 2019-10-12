@@ -360,7 +360,9 @@ to say rhyme-display:
 	else if mean mass is in Vined Vault:
 		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
 	else if player is in Vined Vault:
-		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
+		say "GET GOOD and GIFT GIVER just switched two letters from WET WOOD and RIFT RIVER, but maybe you need to change a bit more here. While still rhyming.";
+	else if player is in Rift River:
+		say "GET GOOD worked to leave the WET WOOD. Perhaps something similar will work here.";
 	else:
 		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
