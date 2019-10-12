@@ -1391,6 +1391,23 @@ volume verbs
 
 book standard modifications
 
+chapter eating
+
+procedural rule while eating something: ignore the carrying requirements rule.
+
+check eating:
+	if noun is a gaphat, say "Idioms are neat, but this is about rhyming." instead;
+	if noun is wild weed, say "That is not filed feed." instead;
+	if noun is full feast, say "Too much for one person. You need to move it somewhere everyone can enjoy it." instead;
+	say "You [if full feast is moot]already had a feast. [end if]You don't need to eat anything explicitly." instead;
+
+chapter drinking
+
+check drinking:
+	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
+	if noun is sage sea or noun is worst wave, say "Sea salt? Ee! Alt!" instead;
+	say "Drink dry? Sink ... sigh ...[one of] (you don't need to DRINK anything in this game.)[or][stopping]" instead;
+
 chapter wearing
 
 check wearing a gaphat: say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
@@ -2970,11 +2987,6 @@ chapter wildweeding
 the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
 
 the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
-
-check drinking:
-	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
-	if noun is sage sea or noun is worst wave, say "Sea salt? Ee! Alt!" instead;
-	say "Drink dry? Sink ... sigh ...[one of] (you don't need to DRINK anything in this game.)[or][stopping]" instead;
 
 part Pit Pound 1,3
 
