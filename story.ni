@@ -431,8 +431,6 @@ chapter Mind Malt
 
 a packet of Mind Malt is a thing. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus. [-> find fault]
 
-check eating Mind Malt: say "Worthless. It's empty." instead;
-
 Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]"
 
 to say my-notes:
@@ -1396,6 +1394,7 @@ chapter eating
 procedural rule while eating something: ignore the carrying requirements rule.
 
 check eating:
+	if noun is Mind Malt, say "Worthless. It's empty." instead;
 	if noun is a gaphat, say "Idioms are neat, but this is about rhyming." instead;
 	if noun is wild weed, say "That is not filed feed." instead;
 	if noun is full feast, say "Too much for one person. You need to move it somewhere everyone can enjoy it." instead;
@@ -4803,7 +4802,7 @@ this is the vc-strong-start rule:
 
 this is the vr-strong-start rule:
 	now started-strong is true;
-	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. Dunk on messed-up stuff too much may distract you from your goals, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
+	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. Dunking on messed-up stuff too much may distract you from your goals, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
 	moot wrong art;
 
 this is the vc-take-tea rule:
