@@ -2849,7 +2849,8 @@ definition: a room (called rm) is available-from-here:
 	yes;
 
 carry out gotoing:
-	if noun is location of player, say "Already there! Er, here." instead;
+	let rm be location of player;
+	if noun is rm, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
 	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, say "Sorry, GO TO is disabled during this side quest." instead;
@@ -3112,8 +3113,13 @@ to decide whether buggin-freeze:
 	if in-so-sad is true or in-way-wrong is true, yes;
 	no;
 
+table-to-scour is a table name that varies.
+
 Rule for printing a parser error (this is the clue half right words rule):
+	now table-to-scour is table of homonym rejections;
+	abide by the mistake-checker rule;
 	abide by the verb-checker rule;
+	now table-to-scour is table of mistake substitutions;
 	abide by the mistake-checker rule;
 	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
@@ -3249,7 +3255,7 @@ to check-lump-progress:
 a lurking lump is a boring thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump."
 
 this is the mistake-checker rule:
-	repeat through table of mistake substitutions:
+	repeat through table-to-scour:
 		if the player's command matches mist-cmd entry:
 			process the mist-rule entry;
 			if the rule succeeded:
@@ -4922,6 +4928,7 @@ volume beta testing - not for release
 the force tester wherever rule is listed last in the when play begins rulebook.
 
 when play begins (this is the force tester wherever rule):
+	now debug-state is true;
 	now in-beta is true;
 	if currently transcripting:
 		say "It looks like you restarted, and the transcript should still be running.";

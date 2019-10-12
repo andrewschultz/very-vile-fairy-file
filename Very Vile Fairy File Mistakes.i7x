@@ -72,8 +72,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
 "try tall"	signable-loc rule	false	--	--	--	"The wry wall does not grow."
 "cot cord"	bot-board-vis rule	false	3	5	--	"A pull down bed is not what you need now that the action is heating up!" [start airy isle]
-"got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homonym, here. You're close."
-"hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homonym, here. You're close."
 "pot poured"	bot-board-vis rule	false	3	5	--	"There's no time for coffee here!"
 "rot roared"	bot-board-vis rule	false	3	5	--	"A decent battle cry, but you sense there could a more violent action."
 "snot snored"	bot-board-vis rule	false	3	5	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
@@ -82,9 +80,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "foe fate"	go-gate-vis rule	false	4	4	--	"You are very near the end, but it's not that easy."
 "know/no nate"	go-gate-vis rule	false	4	4	--	"Nobody named Nate appears to help you through the go gate."
 "lo late"	go-gate-vis rule	false	4	4	--	"You feel you are on the right path to disabling the go gate."
-"mo mate"	go-gate-vis rule	false	4	4	--	"You remain alone."
 "oh ate"	go-gate-vis rule	false	4	4	--	"Nothing takes a bit out of the go gate."
-"woe/whoa/whoah weight"	go-gate-vis rule	false	4	4	--	"You wouldn't want to be crushed by a weight. But you've got the right idea."
 "ho had"	in-so-sad rule	false	4	4	--	"You're trying to feel less in the dumps, not more." [start been buggin]
 "mo mad"	in-so-sad rule	false	4	4	--	"Once the anger wore off, you might be even more lethargic."
 "co cad"	in-so-sad rule	false	4	4	--	"Nobody appears to commiserate with you."
@@ -274,8 +270,15 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "fining four"	in-whining-war rule	false	7	5	need-dining-door rule	"You don't need to summon people that may audit you."
 "lining lor/lore"	in-whining-war rule	false	7	5	need-dining-door rule	"Alas, nobody falls into line to tell stories of how they got here."
 
-[table of mistake substitutions (continued)
-mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt] [in case I have a bunch I need to dump and am too lazy to sort them right away]
+[this is for cases where we don't want the Leet Learner to light up, but we do want to say you are close.]
+
+table of homonym rejections
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"mo mate"	go-gate-vis rule	false	4	4	--	"You remain alone." [start airy isle]
+"got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homonym, here. You're close."
+"hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homonym, here. You're close."
+"woe/whoa/whoah weight"	go-gate-vis rule	false	4	4	--	"You wouldn't want to be crushed by a weight. But you've got the right idea."
+"mo mealed"	in-foe-field rule	false	6	6	shield-unshown rule	"Alas, no food magically appears. You [if gold guard is moot]did what you needed[else]need a more fighting stance[end if]." [start foe field so sealed]
 
 section texts and decides
 
@@ -436,37 +439,37 @@ section leet-only rules sorted alphabetically [note these may be more stringent 
 
 [xxleetrul]
 
+this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
+
 this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
 
 this is the if-grit-ungrown rule: if player is in po' pit and grit-grown is false, the rule succeeds;
 
 this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 
-this is the need-least-loss rule: if least-loss is false, the rule succeeds;
-
-this is the need-first-fave rule: if worst wave is not moot, the rule succeeds;
-
-this is the shield-unshown rule: if player is in foe field and gold guard is not moot, the rule succeeds;
-
-this is the shawl-unloled rule: if shy shawl is touchable and lie-lol is false, the rule succeeds;
+this is the need-cool-cap rule: if cool cap is off-stage, the rule succeeds; [e.g. you haven't gotten the cool cap yet]
 
 this is the need-dull-or-null rule: if bull-null is false, the rule succeeds; [? need boolean for dear-dull??]
 
-this is the need-find-fault rule: if player is in vined vault and mind malt is not moot, the rule succeeds;
-
 this is the need-fake-fee rule: if jake-fee is false, the rule succeeds;
 
-this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
+this is the need-fall-free rule: if tree-down is false, the rule succeeds;
+
+this is the need-find-fault rule: if player is in vined vault and mind malt is not moot, the rule succeeds;
+
+this is the need-first-fave rule: if worst wave is not moot, the rule succeeds;
+
+this is the need-least-loss rule: if least-loss is false, the rule succeeds;
 
 this is the need-loft-land rule: if ever-loft is false, the rule succeeds;
 
 this is the need-work-well rule: if player does not have jerk gel and jerk gel is not moot, the rule succeeds; [?? if jerk gel is in shirk shell]
 
-this is the need-cool-cap rule: if cool cap is off-stage, the rule succeeds; [e.g. you haven't gotten the cool cap yet]
-
-this is the need-fall-free rule: if tree-down is false, the rule succeeds;
-
 this is the not-fit-yet rule: if found-fit is false, the rule succeeds;
+
+this is the shawl-unloled rule: if shy shawl is touchable and lie-lol is false, the rule succeeds;
+
+this is the shield-unshown rule: if player is in foe field and gold guard is not moot, the rule succeeds;
 
 this is the spliff-unsparked rule: if wild weed is not moot, the rule succeeds;
 

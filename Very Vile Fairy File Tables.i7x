@@ -165,7 +165,6 @@ randtxt
 "Hole Hound Bowl Bound"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
-"Silly Signs[r], by Willy Wines and Tillie Tines"
 "Men, Messed, Been Best, by Ren Rest"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"
@@ -175,6 +174,7 @@ randtxt
 "One Wet Sunset"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
 "Self Centered Elf Entered"
+"Silly Signs[r], by Willy Wines and Tillie Tines"
 "So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
 "Why When My Men, by Ben"
