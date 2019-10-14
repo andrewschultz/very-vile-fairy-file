@@ -185,16 +185,16 @@ to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [s
 table of Wet Wood clues
 prof	randtxt
 False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
-False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood.  [not-leet of letminus]."
+False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood. [not-leet of letminus]."
 False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. [not-leet of leteq]."
-True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something slightly more distasteful.  [not-leet of leteq]." [pet pood]
+True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
 
 [leetclue of xxx]
 volume hints for later
 
 table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
+"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you're armed better."
 "BIG BAG"	false	vc-big-bag rule	false	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag. You can [once-now of vc-big-bag rule] you're in a more open area."
 "BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
@@ -348,7 +348,7 @@ this is the can-take-tea rule:
 this is the trivially false rule: the rule fails;
 this is the trivially true rule: the rule succeeds;
 
-to say rhyme-display:
+to say rhyme-display: [pok]
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if me-minded is true:

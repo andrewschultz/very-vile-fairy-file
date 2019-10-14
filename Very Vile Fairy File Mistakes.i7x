@@ -216,8 +216,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "urkel"	gel-or-shell rule	false	--	--	--	"You hear an annoying laugh in the distance." [?? test this special case. What if there is a mistaken rule we don't need and there are no numbers?]
 "urk/erk ell"	gel-or-shell rule	false	4	4	need-work-well rule	"The gel is messy, but odd interjections won't help you use it."
 "smirk smell"	gel-or-shell rule	false	4	4	need-work-well rule	"No, you don't want that."
-"turk tell"	gel-or-shell rule	false	4	4	need-work-well rule	"You wonder breifly how that automaton back in the 18th century played chess, anyway."
-"coughed canned"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try to suppress a cough while avoiding any sudden turndown in fortune." [start soft sand]
+"turk tell"	gel-or-shell rule	false	4	4	need-work-well rule	"You wonder briefly how that automaton back in the 18th century played chess, anyway."
+"coughed canned"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try to suppress a cough while avoiding any sudden downturn in fortune." [start soft sand]
 "scoffed scanned"	in-soft-sand rule	false	4	4	need-loft-land rule	"[soft sand] isn't much to look at, but it's not worth scorn."
 "lark lore"	in-stark-store rule	false	4	4	need-mark-more rule	"This is no time for jokes! Or bird-watching." [start stark store]
 "bark bore/boar"	in-stark-store rule	false	4	4	need-mark-more rule	"You don't need to make a tree or summon anything tiresome or porcine."
@@ -265,7 +265,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "stet stood"	in-wet-wood rule	false	3	4	--	"No comment on if and where proofreading is necessary, here."
 "het hood"	in-wet-wood rule	false	3	4	--	"You consider the possibility of changing the Wet Wood to a Straight Pride parade, but decide against it, as you're worried you might get trampled by all of a dozen people."
 "signing sore"	in-whining-war rule	false	7	5	need-dining-door rule	"You make a rude gesture, for whatever good it does." [start whining war] [?? this may need to be fixed]
-"spining spore"	in-whining-war rule	false	7	5	need-dining-door rule	"Your foray into speculative biology goes nowherre."
+"spining spore"	in-whining-war rule	false	7	5	need-dining-door rule	"Your foray into speculative biology goes nowhere."
 "pining pore/poor"	war-no-poor rule	false	7	5	--	"They'll come along later, if you do something else."
 "fining four"	in-whining-war rule	false	7	5	need-dining-door rule	"You don't need to summon people that may audit you."
 "lining lor/lore"	in-whining-war rule	false	7	5	need-dining-door rule	"Alas, nobody falls into line to tell stories of how they got here."
