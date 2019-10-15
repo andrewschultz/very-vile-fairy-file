@@ -79,7 +79,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "crow crate"	go-gate-vis rule	false	4	4	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize."
 "foe fate"	go-gate-vis rule	false	4	4	--	"You are very near the end, but it's not that easy."
 "know/no nate"	go-gate-vis rule	false	4	4	--	"Nobody named Nate appears to help you through the go gate."
-"lo late"	go-gate-vis rule	false	4	4	--	"You feel you are on the right path to disabling the go gate."
+"lo/low late"	go-gate-vis rule	false	4	4	--	"You feel you are on the right path to disabling the go gate."
 "oh ate"	go-gate-vis rule	false	4	4	--	"Nothing takes a bit out of the go gate."
 "ho had"	in-so-sad rule	false	4	4	--	"You're trying to feel less in the dumps, not more." [start been buggin]
 "mo mad"	in-so-sad rule	false	4	4	--	"Once the anger wore off, you might be even more lethargic."
@@ -160,7 +160,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cake cap"	lap-not-cap rule	false	4	3	--	"No edible headgear appears." [start lake lap] [?? how does this change?]
 "fake fap"	cap-or-lap rule	false	4	3	lap-not-cap rule	"You make a rude gesture, for whatever good it does."
 "woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence." [start history hall] [?? what about co capn, this is 2-4]
-"crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but [Toe] is versatile enough. And this game isn't THAT juvenile. I hope."
+"crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on [i]Poisoning Pigeons in the Park[r]. Eh, [Toe] is versatile enough."
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That would be handy in a more violent adventure, but not this one."
 "flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
 "low lappin"	have-toe-tappin rule	false	2	6	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus, [i]Chariots of Fire[r] works better, anyway."
