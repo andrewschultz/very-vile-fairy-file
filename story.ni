@@ -30,11 +30,11 @@ a thing can be abstract. a thing is usually not abstract.
 
 [dnc.py/icl.pl can/should toggle this]
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
 
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
 
 include undo output control by Erik Temple.
 
@@ -384,15 +384,9 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
 
-the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if].". [-> big bag]
-
-after examining zig zag rig rag when bag-hint is true:
-	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
-	continue the action;
+the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy, but maybe you can convert it to something more practical.". [-> big bag]
 
 the big bag is a thing. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!"
-
-bag-hint is a truth state that varies. [ this seems like duplicating the THINK command, but it's used for the bag description and makes for easier code. ]
 
 volume Worst Whew
 
@@ -437,8 +431,9 @@ a packet of Mind Malt is a thing. description is "It looks like there used to be
 Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]"
 
 to say my-notes:
+	if player has big bag, say "    RIG RAG to BIG BAG     = center.";
 	repeat through table of newnotes:
-		if there is a score-needed entry and score < score-needed entry, continue the action;
+		if there is a score-needed entry and core-score < score-needed entry, continue the action;
 		say "[note-to-give entry][line break]";
 
 table of newnotes
@@ -1267,7 +1262,7 @@ check going north in Gassed Gap:
 	isle-max-score;
 
 to isle-max-score:
-	now max-poss is isle-score + score;
+	now max-poss is isle-score + score + 1 - bag-point;
 
 to decide which number is evidence-pieces:
 	decide on boolval of sign-seen + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
@@ -1503,9 +1498,7 @@ check taking:
 	if player has zig zag rig rag and number of things enclosed by the player > 4:
 		alter the multiple object list to { };
 		add noun to multiple object list;
-		now bag-hint is true;
 		say "You're juggling too much! Maybe something you're carrying can be repurposed. Something you've found useless so far.";
-		if tried-yet of "BIG BAG", say "[line break]Like the zig zag rig rag. It could become a big bag now.";
 		the rule succeeds;
 
 chapter sleeping
@@ -1593,10 +1586,7 @@ to decide which number is carried-fungible:
 
 check taking when player does not have big bag (this is the need bag for lots of items rule):
 	if carried-fungible > 3:
-		say "You can't carry so much at once! ";
-		if tried-yet of "BIG BAG":
-			say "Perhaps now is a good time to change the zig zag rig rag to a big bag, as you tried before." instead;
-		say "Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
+		say "You can't carry so much at once! Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
 
 the need bag for lots of items rule is listed last in the check taking rulebook.
 
@@ -3648,18 +3638,12 @@ this is the vc-big-bag rule:
 	if player has big bag:
 		vcal "You already made the big bag.";
 		continue the action;
-	if Fun Fen is unvisited:
-		clue-later "BIG BAG";
-		vcp "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
-		continue the action;
 	the rule succeeds;
 
 this is the vr-big-bag rule:
 	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
 	moot zig zag rig rag;
 	now player has big bag;
-	now bag-hint is false;
-	clue-zap "BIG BAG";
 
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
@@ -5039,6 +5023,8 @@ understand "blow by" as blowbying.
 understand "flow fie" as blowbying.
 understand "slow sigh" as blowbying.
 
+to decide what number is bag-point: decide on boolval of whether or not player has big bag;
+
 carry out blowbying:
 	let cur-row be 1;
 	abide by the too-late-for-beta rule;
@@ -5048,8 +5034,8 @@ carry out blowbying:
 		if do-rule entry is vr-flim-flam rule, break;
 		increment cur-row;
 	process the any-warp rule;
-	now score is whew-score;
-	now core-score is whew-score;
+	now core-score is whew-score + bag-point;
+	now score is whew-score + cur-bonus + bag-point;
 	move player to fun fen;
 	moot mind malt;
 	now player has too totes new notes;
