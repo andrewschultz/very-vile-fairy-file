@@ -199,13 +199,15 @@ to say gh: say "https://github.com/andrews[hc]ultz/very-vile-fairy-file (current
 
 whew-score is a number that varies. whew-score is 8.
 
-core-max is a number that varies. core-max is 81.
+core-max is a number that varies. core-max is 81. [core-max is fixed. It is the number of point-scoring actions you need.]
+
+min-needed is a number that varies. min-needed is 81. [min-needed increases as you find LLPs.]
 
 max-bonus is a number that varies. max-bonus is 12.
 
-cur-bonus is a number that varies. cur-bonus is 0.
+cur-bonus is a number that varies. cur-bonus is 0. [we could define min-needed as core-max + cur-bonus I guess.]
 
-isle-score is a number that varies. isle-score is 7.
+isle-score is a number that varies. isle-score is 7. [this is the number of points in the endgame.]
 
 core-score is a number that varies. core-score is 0.
 
@@ -214,7 +216,7 @@ max-overall is a number that varies.
 max-poss is a number that varies.
 
 to up-min:
-	increment core-max;
+	increment min-needed;
 	increment the score;
 
 to up-reg:
@@ -1736,7 +1738,7 @@ to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
 
 check requesting the score:
 	now vc-dont-print is true;
-	say "You have scored a total of [score] out of [maximum score] points and need [core-max] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
+	say "You have scored a total of [score] out of [maximum score] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
 	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].[paragraph break]";
 	show-evidence-and-hats;
 	let dh be doable-hinted;
@@ -2873,7 +2875,19 @@ definition: a room (called rm) is available-from-here:
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
 	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, no;
+	if rm is Shirk Shell and jerk gel is not in Shirk Shell, no;
 	yes;
+
+to decide which room is fliproom of (rm - a room):
+	if mistmall is true:
+		if rm is got gear hot here, decide on History Hall;
+	else:
+		if rm is Y'Old Yard or rm is Vending Vibe, decide on History Hall;
+	if loft-land is true:
+		if rm is shirk shell, decide on Soft Sand;
+	else:
+		if rm is curst cave, decide on Soft Sand;
+	decide on Fun Fen;
 
 carry out gotoing:
 	let rm be location of player;
@@ -2883,6 +2897,10 @@ carry out gotoing:
 	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, say "Sorry, GO TO is disabled during this side quest." instead;
 	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
 	if noun is available-from-here:
+		let N be fliproom of noun;
+		say "[line break]You twiddle [N] back as you go.";
+		if N is History Hall, now mistmall is whether or not mistmall is false;
+		if N is Soft Sand, now loft-land is whether or not loft-land is false;
 		move player to noun;
 	else:
 		say "You can't get to [noun] from here.";
@@ -2960,9 +2978,9 @@ when play begins (this is the opening text rule):
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
 
 when play begins (this is the score and status tweak rule):
-	now the maximum score is core-max + max-bonus;
+	now the maximum score is min-needed + max-bonus;
 	now max-poss is the maximum score;
-	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[core-max][if core-max is max-poss]*[else]-[max-poss][end if]";
+	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if min-needed is max-poss]*[else]-[max-poss][end if]";
 	force-status;
 	now the left hand status line is "[location of the player]";
 	now the turn count is 0;
@@ -5077,10 +5095,8 @@ carry out climbclearing:
 	repeat through table of verb checks:
 		if there is a core entry and core entry is true, now idid entry is true;
 		if do-rule entry is vr-couple-caps rule, break;
-	now score is core-max - whew-score + max-bonus;
+	now score is min-needed - isle-score;
 	isle-max-score;
-	now core-score is score;
-	now max-poss is core-max + max-bonus;
 	the rule succeeds.
 
 volume map index

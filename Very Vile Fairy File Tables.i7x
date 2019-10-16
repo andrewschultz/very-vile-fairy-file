@@ -208,7 +208,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
 "FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
 "FLIM FLAM"	false	vc-flim-flam rule	false	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
+"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of can-full-feast rule] it's been vanquished."
 "GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
 "GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
 "GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
