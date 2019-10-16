@@ -203,7 +203,7 @@ core-max is a number that varies. core-max is 81. [core-max is fixed. It is the 
 
 min-needed is a number that varies. min-needed is 81. [min-needed increases as you find LLPs.]
 
-max-bonus is a number that varies. max-bonus is 12.
+max-bonus is a number that varies. max-bonus is 13.
 
 cur-bonus is a number that varies. cur-bonus is 0. [we could define min-needed as core-max + cur-bonus I guess.]
 
@@ -3109,6 +3109,7 @@ rule for showaltverbsing:
 showmissesing is an activity.
 
 rule for showmissesing:
+	if rolling-yet is false, say "At any time, you could've guessed my pen name was a riff on [b]REALLY ROLLING[r].";
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if appeal-appear is false, say "You could've figured the Peeling Pier's brand name as [b]APPEALING APPEAR[r].";
 	if gan-wan is false, say "You could've said [b]WHAT A or WHATTA WANKSTA[r] to the Gutta Ganksta before saying LOTS LAME in the mall.";
@@ -3406,8 +3407,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"
 "mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
 "flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"
-"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
-"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--
+"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	-- [start of Fun Fen]
 "strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
 "fall"	"free"	true	true	false	vc-fall-free rule	vr-fall-free rule	--
 "dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
@@ -3490,6 +3490,8 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
 "merry"	"mile"	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
+"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [two any-time things]
+"really"	"rolling"	true	false	false	vc-really-rolling rule	vr-really-rolling rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3579,6 +3581,8 @@ to vcp (t - text): [verb conditional print]
 to vcal (t - text): [verb conditional print]
 	now already-rhymed-this is true;
 	if vc-dont-print is false, say "[t][line break]";
+
+rolling-yet is a truth state that varies.
 
 section vc vr rules [xxvcvr]
 
@@ -4657,6 +4661,15 @@ this is the vr-pull-pieced rule:
 	moot dining door;
 	move player to Whining War, without printing a room description;
 	clue-zap "PULL PIECED";
+
+this is the vc-really-rolling rule:
+	if rolling-yet is false, the rule succeeds;
+	vcal "You already guessed the significance of my pen name.";
+	continue the action;
+
+this is the vr-really-rolling rule:
+	say "Have a small bonus for figuring the significance of my pen name.";
+	now rolling-yet is true;
 
 this is the vc-see-sign rule:
 	if player does not have We Whine, the rule fails;
