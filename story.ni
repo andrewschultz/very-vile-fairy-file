@@ -4466,17 +4466,11 @@ this is the vc-merry-mile rule:
 	if merry-mile is true:
 		vcal "You already did. And forcing cheeriness tends to backfire.";
 		continue the action;
-	clue-later "MERRY MILE";
-	if player is not in Tarry Tile:
-		vcp "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though.";
-		continue the action;
 	if player is in Airy Isle:
-		if bot board is moot:
-			vcp "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead.";
-			continue the action;
-		vcp "Hard to be happy with the Bot Board around.";
+		vcp "[if bot board is moot]You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead[else]Hard to be happy with the Bot Board around[end if].";
+		clue-later "MERRY MILE";
 		continue the action;
-	if player is in Tarry Tile and well worn hell horn is in Tarry Tile:
+	if well worn hell horn is not moot:
 		vcp "Not with the well worn hell horn making those un-merry noises.";
 		clue-later "MERRY MILE";
 		continue the action;
