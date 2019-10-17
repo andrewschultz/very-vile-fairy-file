@@ -85,6 +85,21 @@ to say your-rank:
 	else:
 		say "gold god[if core-score < core-max] (almost)[end if]";
 
+to seed-narratives:
+	let my-row be 0;
+	let tot-rows be number of rows in table of narratives;
+	repeat through table of narratives:
+		increment my-row;
+		now rank-num entry is (my-row * (core-max - 1)) / tot-rows;
+
+table of narratives
+rank-num	done-yet	rank-txt
+0	false	"'Falling for calling? Cor! Bawling bore!'"
+--	false	"Blare blame! Share shame!"
+--	false	"Smart smack. Heart? Hack!"
+--	false	"Sick, Sought Thick Thought."
+--	false	"Mock me, Jock? gee!"
+
 volume random tables
 
 table of mall songs [xxmall] [xxsongs]

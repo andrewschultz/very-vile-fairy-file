@@ -1759,6 +1759,11 @@ this is the score and thinking changes rule:
 	repeat through table of forlaters:
 		if ready-to-hint entry is true:
 			if is-done entry is true, now ready-to-hint entry is false;
+	if buggin-freeze, continue the action;
+	repeat through table of narratives:
+		if done-yet entry is false and core-score >= rank-num entry:
+			now done-yet entry is true;
+			say "[rank-txt entry][line break]";
 
 to decide which number is doable-hinted:
 	let temp be 0;
@@ -2955,6 +2960,7 @@ volume when play begins
 
 when play begins (this is the backdrop and score seeding rule):
 	seed-score-list; [this is in the table file]
+	seed-narratives; [so is this]
 	wall-refresh;
 
 when play begins (this is the randomize all the things rule):
@@ -3079,7 +3085,8 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see the points you [b]MISSED[r]"	true	"missed"	--	showmissesing
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
-"see the [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
+"see the point-based [b]RANK[r]s or [b]NARRATIVE[r]s"	true	"rank/ranks"	--	showranksing
+--	true	"narrative/narratives"	--	shownarring
 
 showranksing is an activity.
 
@@ -3089,6 +3096,12 @@ rule for showranksing:
 		say "[rank-name entry] is [if rank-max entry > 0][low-bound-score] to [end if][rank-max entry] points.";
 		now low-bound-score is rank-max entry + 1;
 	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.";
+
+shownarring is an activity
+
+rule for shownarring:
+	repeat through table of narratives:
+		say "At [rank-num entry] core score you get a narrative of [rank-txt entry][line break]";
 
 showaltverbsing is an activity.
 
