@@ -20,7 +20,7 @@ If it gives a reading, the needle goes to different places.
 You can use it to get hints about what sort of letter/pronunciation swaps you need to make.
 Left means you need to add letters to both words (CONCEIT CONCERNER).
 Center-left means you add a letter to one word (CHEAT CHURNER).
-Yellow is neutral. (MEET MOURNER).
+Center is neutral. (MEET MOURNER).
 Center-right means you need to subtract, partially (BEAT BURNER).
 Right means you need to subtract letters from two words (EAT EARNER).
 All over the place means you need to add one letter and subtract another (TREAT TURNER).
@@ -532,7 +532,8 @@ You may note you can use this command at any time. Maybe you already did.
 Or BURY BILE.
 >META QUESTIONS, ETC.
 ?What does Billy Boling mean?
-You get a bonus point for telling the game.
+You get a bonus point for telling the game you figured it out.
+Sure you don't want to guess on your own?
 REALLY ROLLING.
 ?What's the significance of room name changes, and which change names?
 Very little.
