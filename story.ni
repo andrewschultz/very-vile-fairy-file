@@ -30,11 +30,11 @@ a thing can be abstract. a thing is usually not abstract.
 
 [dnc.py/icl.pl can/should toggle this]
 
-[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
+include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
 
-[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
+include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
 
 include undo output control by Erik Temple.
 
