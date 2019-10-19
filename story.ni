@@ -30,11 +30,11 @@ a thing can be abstract. a thing is usually not abstract.
 
 [dnc.py/icl.pl can/should toggle this]
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
 
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
 
 include undo output control by Erik Temple.
 
@@ -825,7 +825,7 @@ the cold card is a thing. description is "It's useful for one very useless borin
 
 part Vending Vibe -2,1 a
 
-Vending Vibe is a room in Piddling Pain. "This isn't a very big place[if lending libe is off-stage]. And the 'vibe' here is a bit slangy[else if fussed folks is in Vending Vibe].A book called [fussed folks] lies here you [may-already] to check out something more substantial[end if]. You can only go back east."
+Vending Vibe is a room in Piddling Pain. "This isn't a very big place[if lending libe is off-stage]. And the 'vibe' here is a bit slangy[else if fussed folks is in Vending Vibe]. A book called [fussed folks] lies here you [may-already] to check out something more substantial[end if]. You can only go back east."
 
 to say may-already:
 	say "[if we whine is off-stage]may wish[else]managed[end if]"
@@ -2033,7 +2033,7 @@ rule for supplying a missing noun when lling:
 		say "You are so focused inward, you just point the learner at yourself.";
 		now the noun is the player;
 	else:
-		say "You wave the leet learner all around...";
+		say "You wave the leet learner all around [location of player]...";
 		now the noun is the location of the player;
 	continue the action;
 
@@ -2059,7 +2059,7 @@ carry out lling:
 	if noun is ceiling seer:
 		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
 		try lling location of player instead;
-	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].[if zap-weird-break is true][run paragraph on][end if]";
+	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on [the noun][end if].[if zap-weird-break is true][run paragraph on][end if]";
 	if noun is optional and ever-opt-scan is false:
 		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
@@ -3217,6 +3217,7 @@ to up-which (ts - a truth state):
 
 this is the verb-checker rule:
 	let local-ha-half be false;
+	let brightness be true;
 	repeat through the table of verb checks:
 		let my-count be 0;
 		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
@@ -3229,10 +3230,10 @@ this is the verb-checker rule:
 		[say "[ver-rule entry].";]
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
-				now my-count is 2;
+				now my-count is 3;
 			else if my-count is 2:
 				now wfull-fail is true;
-		if my-count is 2:
+		if my-count >= 2:
 			process the ver-rule entry;
 			if the rule failed:
 				next;
@@ -3240,7 +3241,7 @@ this is the verb-checker rule:
 				if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
 				if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
 				if okflip entry is false:
-					unless there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case]
+					unless my-count is 3 or there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case... and "my-count is 3" is a hack for FLIMFLAM]
 						say "You've got it backwards! Just flip things around, and it'll be okay.";
 						the rule succeeds;
 				if wfull-fail is true:
@@ -3270,9 +3271,10 @@ this is the verb-checker rule:
 			if already-rhymed-this is true, break;
 			now local-ha-half is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
+			now brightness is core entry;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner.";
+		say "The HA HALF button lights up on your Leet Learner[if brightness is false], but dimly[end if].";
 		the rule succeeds;
 
 already-rhymed-this is a truth state that varies.
