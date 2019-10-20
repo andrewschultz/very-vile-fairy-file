@@ -22,8 +22,6 @@ include Intro Restore Skip by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
-a thing can be abstract. a thing is usually not abstract.
-
 [a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game. Perhaps this is quixotic, but I enjoyed the programming exercise. Long story short: the mistakes and tables take up a ton of space I don't really need for testing. But they don't take up enough to threaten a beta build's z8-ness.]
 
 [include Property Checking for VVFF by Emily Short.] [modified version]
@@ -44,42 +42,43 @@ use MAX_ACTIONS of 210.
 
 section verb carnage
 
-understand the command "smell" as something new.
-understand the command "taste" as something new.
 understand the command "attach" as something new.
-understand the command "tie" as something new.
-understand the command "slice" as something new.
-understand the command "prune" as something new.
-understand the command "chop" as something new.
-understand the command "kiss" as something new.
-understand the command "hug" as something new.
-understand the command "embrace" as something new.
 understand the command "buy" as something new.
-understand the command "purchase" as something new.
-understand the command "light" as something new.
-understand the command "jump" as something new.
-understand the command "hop" as something new.
-understand the command "skip" as something new.
-understand the command "sip" as something new.
-understand the command "swallow" as something new.
-understand the command "shine" as something new.
-understand the command "polish" as something new.
-understand the command "sweep" as something new.
-understand the command "wipe" as something new.
-understand the command "scrub" as something new.
-understand the command "fight" as something new.
-understand the command "torture" as something new.
-understand the command "wreck" as something new.
+understand the command "chop" as something new.
 understand the command "crack" as something new.
-understand the command "murder" as something new.
-understand the command "kill" as something new.
-understand the command "punch" as something new.
-understand the command "thump" as something new.
-understand the command "sorry" as something new.
-understand the command "touch" as something new.
-understand the command "slice" as something new.
+understand the command "embrace" as something new.
+understand the command "fight" as something new.
+understand the command "hop" as something new.
+understand the command "hug" as something new.
 understand the command "insert" as something new.
+understand the command "jump" as something new.
+understand the command "kill" as something new.
+understand the command "kiss" as something new.
+understand the command "light" as something new.
+understand the command "murder" as something new.
+understand the command "polish" as something new.
+understand the command "prune" as something new.
+understand the command "punch" as something new.
+understand the command "purchase" as something new.
+understand the command "scrub" as something new.
+understand the command "shine" as something new.
+understand the command "sip" as something new.
+understand the command "skip" as something new.
+understand the command "slice" as something new.
+understand the command "slice" as something new.
+understand the command "smell" as something new.
+understand the command "sorry" as something new.
+understand the command "swallow" as something new.
+understand the command "sweep" as something new.
+understand the command "taste" as something new.
+understand the command "tell" as something new.
+understand the command "thump" as something new.
+understand the command "tie" as something new.
+understand the command "torture" as something new.
+understand the command "touch" as something new.
 understand the command "wave" as something new.
+understand the command "wipe" as something new.
+understand the command "wreck" as something new.
 
 section debug include values - not for release
 
