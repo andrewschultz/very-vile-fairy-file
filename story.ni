@@ -3578,7 +3578,7 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 to vcp (t - text): [verb conditional print]
 	if vc-dont-print is false, say "[t][line break]";
 
-to vcal (t - text): [verb conditional print]
+to vcal (t - text): [verb conditional print, flag already rhymed]
 	now already-rhymed-this is true;
 	if vc-dont-print is false, say "[t][line break]";
 
@@ -4263,7 +4263,7 @@ this is the vr-hot-horde rule:
 this is the vc-kneel-near rule:
 	if player is not in real rear, the rule fails;
 	if knelt-yet is true:
-		vcp "No need to kneel twice.";
+		vcal "No need to kneel twice.";
 		continue the action;
 	the rule succeeds;
 
@@ -4502,6 +4502,9 @@ this is the vc-mining-more rule:
 		vcp "You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
 		clue-later "MINING MORE";
 		continue the action;
+	if pining poor are moot:
+		vcal "Don't get greedy!";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-mining-more rule:
@@ -4608,7 +4611,7 @@ this is the vr-no-nappin rule:
 this is the vc-not-near rule:
 	if player is not in got gear hot here, the rule fails;
 	if trounce-track is true:
-		vcp "You already teleported for a bonus point.";
+		vcal "You already teleported for a bonus point.";
 		continue the action;
 	the rule succeeds;
 
@@ -4685,7 +4688,7 @@ this is the vr-shining-shore rule:
 
 this is the vc-show-shield rule:
 	if player is not in foe field, the rule fails;
-	if player does not have gold guard:
+	if gold guard is off-stage:
 		clue-later "SHOW SHIELD";
 		vcp "That seems right, but you have nothing that would guard you effectively. Maybe later.";
 		continue the action;
@@ -4949,6 +4952,9 @@ this is the vr-wood-one rule:
 
 this is the vc-work-well rule:
 	if jerk gel is not touchable, the rule fails;
+	if player has jerk gel:
+		vcal "You already did.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-work-well rule:
