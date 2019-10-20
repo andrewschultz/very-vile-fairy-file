@@ -40,15 +40,22 @@ The HA HALF button lights up on your Leet Learner.
 > get good
 by one point
 
-> gift iver
+> zgift giver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> ift giver
+> gift zgiver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 > gift giver
 by one point
+
+> zgift giver rule
+!DEBUG: vc-gift-giver rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> gift zgiver rule
+!DEBUG: vc-gift-giver rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zfind fault rule
 DEBUG: vc-find-fault rule tipped off the HA HALF button.
@@ -60,6 +67,13 @@ The HA HALF button lights up on your Leet Learner.
 > find fault
 by one point
 
+> zfind fault rule
+!DEBUG: vc-find-fault rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> find zfault rule
+!DEBUG: vc-find-fault rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zgreen grass rule
 DEBUG: vc-green-grass rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -69,6 +83,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > green grass
 by one point
+
+> zgreen grass rule
+!DEBUG: vc-green-grass rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> green zgrass rule
+!DEBUG: vc-green-grass rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zgrow grit rule
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
@@ -80,6 +101,13 @@ The HA HALF button lights up on your Leet Learner.
 > grow grit
 by one point
 
+> zgrow grit rule
+!DEBUG: vc-grow-grit rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> grow zgrit rule
+!DEBUG: vc-grow-grit rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zmash map rule
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -89,6 +117,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > mash map
 by one point
+
+> zmash map rule
+!DEBUG: vc-mash-map rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mash zmap rule
+!DEBUG: vc-mash-map rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zmind me rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
@@ -100,6 +135,13 @@ The HA HALF button lights up on your Leet Learner.
 > mind me
 by one point
 
+> zmind me rule
+!DEBUG: vc-mind-me rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mind zme rule
+!DEBUG: vc-mind-me rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zflim flam rule
 DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -110,8 +152,22 @@ The HA HALF button lights up on your Leet Learner.
 > flim flam
 by one point
 
+> zflim flam rule
+!DEBUG: vc-flim-flam rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> flim zflam rule
+!DEBUG: vc-flim-flam rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > big bag
 by one point
+
+> zbig bag rule
+!DEBUG: vc-big-bag rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> big zbag rule
+!DEBUG: vc-big-bag rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > s
 
@@ -125,6 +181,13 @@ The HA HALF button lights up on your Leet Learner.
 > kneel near
 by one point
 
+> zkneel near rule
+!DEBUG: vc-kneel-near rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> kneel znear rule
+!DEBUG: vc-kneel-near rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zfeel fear rule
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -134,6 +197,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > feel fear
 by one point
+
+> zfeel fear rule
+!DEBUG: vc-feel-fear rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> feel zfear rule
+!DEBUG: vc-feel-fear rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zdeal dear rule
 DEBUG: vc-deal-dear rule tipped off the HA HALF button.
@@ -145,12 +215,29 @@ The HA HALF button lights up on your Leet Learner.
 > deal dear
 by one point
 
+> zdeal dear rule
+!DEBUG: vc-deal-dear rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> deal zdear rule
+!DEBUG: vc-deal-dear rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zappealing appear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 > appealing zappear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+> appealing appear
+by one point
+
+> zappealing appear rule
+!DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> appealing zappear rule
+!DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > n
 
@@ -168,6 +255,16 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
+> strong start
+by one point
+
+> zstrong start rule
+!DEBUG: vc-strong-start rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> strong zstart rule
+!DEBUG: vc-strong-start rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+
 > zfall free rule
 DEBUG: vc-fall-free rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -177,6 +274,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > fall free
 by one point
+
+> zfall free rule
+!DEBUG: vc-fall-free rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> fall zfree rule
+!DEBUG: vc-fall-free rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zdive deep rule
 DEBUG: vc-dive-deep rule tipped off the HA HALF button.
@@ -188,6 +292,13 @@ The HA HALF button lights up on your Leet Learner.
 > dive deep
 by one point
 
+> zdive deep rule
+!DEBUG: vc-dive-deep rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> dive zdeep rule
+!DEBUG: vc-dive-deep rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zpaper pile rule
 DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -198,6 +309,13 @@ The HA HALF button lights up on your Leet Learner.
 > paper pile
 by one point
 
+> zpaper pile rule
+!DEBUG: vc-paper-pile rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> paper zpile rule
+!DEBUG: vc-paper-pile rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zbacked binder rule
 DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -207,6 +325,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > backed binder
 by one point
+
+> zbacked binder rule
+!DEBUG: vc-backed-binder rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> backed zbinder rule
+!DEBUG: vc-backed-binder rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > n
 
@@ -222,6 +347,13 @@ The HA HALF button lights up on your Leet Learner.
 > dark door
 by one point
 
+> zdark door rule
+!DEBUG: vc-dark-door rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> dark zdoor rule
+!DEBUG: vc-dark-door rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zmark more rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -232,6 +364,13 @@ The HA HALF button lights up on your Leet Learner.
 > mark more
 by one point
 
+> zmark more rule
+!DEBUG: vc-mark-more rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mark zmore rule
+!DEBUG: vc-mark-more rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zcleared clay rule
 DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -241,6 +380,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > cleared clay
 by one point
+
+> zcleared clay rule
+!DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> cleared zclay rule
+!DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > w
 
@@ -254,12 +400,29 @@ The HA HALF button lights up on your Leet Learner.
 > mystery mall
 by one point
 
+> zmystery mall rule
+!DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mystery zmall rule
+!DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zwhatta wanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 > whatta zwanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+> what a wanksta
+by one point
+
+> zwhatta wanksta rule
+!DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> whatta zwanksta rule
+!DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > listen
 
@@ -273,12 +436,31 @@ The HA HALF button lights up on your Leet Learner.
 > lots lame
 by one point
 
+> zlots lame rule
+!DEBUG: vc-lots-lame rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> lots zlame rule
+!DEBUG: vc-lots-lame rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 > ho zhappen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+> ho happen
+by one point
+> dimd
+by one point
+
+> zho happen rule
+!DEBUG: vc-ho-happen rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> ho zhappen rule
+!DEBUG: vc-ho-happen rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
@@ -290,6 +472,13 @@ The HA HALF button lights up on your Leet Learner.
 > no nappin
 by one point
 
+> zno nappin rule
+!DEBUG: vc-no-nappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> no znappin rule
+!DEBUG: vc-no-nappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > w
 
 > zlie lol rule
@@ -299,12 +488,32 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
+> lie lol
+by one point
+
+> zlie lol rule
+!DEBUG: vc-lie-lol rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> lie zlol rule
+!DEBUG: vc-lie-lol rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+
 > znot near rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 > not znear rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+> not near
+by one point
+
+> znot near rule
+!DEBUG: vc-not-near rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> not znear rule
+!DEBUG: vc-not-near rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > zhard hat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
@@ -315,6 +524,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > hard hat
 by one point
+
+> zhard hat rule
+!DEBUG: vc-hard-hat rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> hard zhat rule
+!DEBUG: vc-hard-hat rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 > e
@@ -332,6 +548,13 @@ The HA HALF button lights up on your Leet Learner.
 > work well
 by one point
 
+> zwork well rule
+!DEBUG: vc-work-well rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> work zwell rule
+!DEBUG: vc-work-well rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > e
 
 > zloft land rule
@@ -343,6 +566,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > loft land
 by one point
+
+> zloft land rule
+!DEBUG: vc-loft-land rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> loft zland rule
+!DEBUG: vc-loft-land rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > w
 
@@ -356,6 +586,13 @@ The HA HALF button lights up on your Leet Learner.
 > dreaming dull
 by one point
 
+> zdreaming dull rule
+!DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> dreaming zdull rule
+!DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zfirst fave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -366,6 +603,13 @@ The HA HALF button lights up on your Leet Learner.
 > first fave
 by one point
 
+> zfirst fave rule
+!DEBUG: vc-first-fave rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> first zfave rule
+!DEBUG: vc-first-fave rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zcool cap rule
 DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -375,6 +619,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > cool cap
 by one point
+
+> zcool cap rule
+!DEBUG: vc-cool-cap rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> cool zcap rule
+!DEBUG: vc-cool-cap rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 > s
@@ -390,6 +641,13 @@ The HA HALF button lights up on your Leet Learner.
 > silent sail
 by one point
 
+> zsilent sail rule
+!DEBUG: vc-silent-sail rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> silent zsail rule
+!DEBUG: vc-silent-sail rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zbrightening bridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -400,6 +658,13 @@ The HA HALF button lights up on your Leet Learner.
 > brightening bridge
 by one point
 
+> zbrightening bridge rule
+!DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> brightening zbridge rule
+!DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zboring boat rule
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -409,6 +674,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > boring boat
 by one point
+
+> zboring boat rule
+!DEBUG: vc-boring-boat rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> boring zboat rule
+!DEBUG: vc-boring-boat rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > enter boat
 
@@ -422,6 +694,13 @@ The HA HALF button lights up on your Leet Learner.
 > wake whee
 by one point
 
+> zwake whee rule
+!DEBUG: vc-wake-whee rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> wake zwhee rule
+!DEBUG: vc-wake-whee rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > ztake tea rule
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -432,12 +711,29 @@ The HA HALF button lights up on your Leet Learner.
 > take tea
 by one point
 
+> ztake tea rule
+!DEBUG: vc-take-tea rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> take ztea rule
+!DEBUG: vc-take-tea rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zbreak brie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 > break zbrie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+> break brie
+by one point
+
+> zbreak brie rule
+!DEBUG: vc-break-brie rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> break zbrie rule
+!DEBUG: vc-break-brie rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > zfake fee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
@@ -448,6 +744,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > fake fee
 by one point
+
+> zfake fee rule
+!DEBUG: vc-fake-fee rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> fake zfee rule
+!DEBUG: vc-fake-fee rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 
@@ -461,6 +764,13 @@ The HA HALF button lights up on your Leet Learner.
 > make map
 by one point
 
+> zmake map rule
+!DEBUG: vc-make-map rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> make zmap rule
+!DEBUG: vc-make-map rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -471,6 +781,13 @@ The HA HALF button lights up on your Leet Learner.
 > co capn
 by one point
 
+> zco capn rule
+!DEBUG: vc-co-capn rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> co zcapn rule
+!DEBUG: vc-co-capn rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zsnake snap rule
 DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -480,6 +797,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > snake snap
 by one point
+
+> zsnake snap rule
+!DEBUG: vc-snake-snap rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> snake zsnap rule
+!DEBUG: vc-snake-snap rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > enter boat
 
@@ -492,6 +816,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > stay strong
 
+> zstay strong rule
+!DEBUG: vc-stay-strong rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> stay zstrong rule
+!DEBUG: vc-stay-strong rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zglow glad rule
 DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -501,6 +832,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > glow glad
 by one point
+
+> zglow glad rule
+!DEBUG: vc-glow-glad rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> glow zglad rule
+!DEBUG: vc-glow-glad rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zmean muggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
@@ -519,8 +857,22 @@ The HA HALF button lights up on your Leet Learner.
 > mean muggin
 by one point
 
+> zmean muggin rule
+!DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mean zmuggin rule
+!DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > lean luggin
 by one point
+
+> zlean luggin rule
+!DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> lean zluggin rule
+!DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zbumped buster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
@@ -528,6 +880,16 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 > bumped zbuster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+> bumped buster
+by one point
+
+> zbumped buster rule
+!DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> bumped zbuster rule
+!DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > enter boat
 
@@ -545,6 +907,13 @@ The HA HALF button lights up on your Leet Learner.
 > glean glows
 by one point
 
+> zglean glows rule
+!DEBUG: vc-glean-glows rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> glean zglows rule
+!DEBUG: vc-glean-glows rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > history hall
 
 > zyoure yonder rule
@@ -557,6 +926,13 @@ The HA HALF button lights up on your Leet Learner.
 > youre yonder
 by one point
 
+> zyoure yonder rule
+!DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> youre zyonder rule
+!DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > out
 
 > zsmashing smoke rule
@@ -568,6 +944,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > smashing smoke
 by one point
+
+> zsmashing smoke rule
+!DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> smashing zsmoke rule
+!DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > in
 > w
@@ -582,6 +965,13 @@ The HA HALF button lights up on your Leet Learner.
 > lending libe
 by one point
 
+> zlending libe rule
+!DEBUG: vc-lending-libe rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> lending zlibe rule
+!DEBUG: vc-lending-libe rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zsee sign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -591,6 +981,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > see sign
 by one point
+
+> zsee sign rule
+!DEBUG: vc-see-sign rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> see zsign rule
+!DEBUG: vc-see-sign rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 > e
@@ -610,6 +1007,13 @@ The HA HALF button lights up on your Leet Learner.
 > plain pleasant
 by one point
 
+> zplain pleasant rule
+!DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> plain zpleasant rule
+!DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > w
 
 > zmoral mage rule
@@ -621,6 +1025,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > moral mage
 by one point
+
+> zmoral mage rule
+!DEBUG: vc-moral-mage rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> moral zmage rule
+!DEBUG: vc-moral-mage rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 > e
@@ -635,6 +1046,13 @@ The HA HALF button lights up on your Leet Learner.
 > sit sound
 by one point
 
+> zsit sound rule
+!DEBUG: vc-sit-sound rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> sit zsound rule
+!DEBUG: vc-sit-sound rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zfit found rule
 DEBUG: vc-fit-found rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -644,6 +1062,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > fit found
 by one point
+
+> zfit found rule
+!DEBUG: vc-fit-found rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> fit zfound rule
+!DEBUG: vc-fit-found rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 
@@ -657,6 +1082,13 @@ The HA HALF button lights up on your Leet Learner.
 > winding ways
 by one point
 
+> zwinding ways rule
+!DEBUG: vc-winding-ways rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> winding zways rule
+!DEBUG: vc-winding-ways rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -667,6 +1099,13 @@ The HA HALF button lights up on your Leet Learner.
 > mo mappin
 by one point
 
+> zmo mappin rule
+!DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mo zmappin rule
+!DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zluck lair rule
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -676,6 +1115,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > luck lair
 by one point
+
+> zluck lair rule
+!DEBUG: vc-luck-lair rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> luck zlair rule
+!DEBUG: vc-luck-lair rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > w
 > w
@@ -694,6 +1140,13 @@ The HA HALF button lights up on your Leet Learner.
 > tight tunnel
 by one point
 
+> ztight tunnel rule
+!DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> tight ztunnel rule
+!DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > w
 
 > zknives niche rule
@@ -705,6 +1158,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > knives niche
 by one point
+
+> zknives niche rule
+!DEBUG: vc-knives-niche rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> knives zniche rule
+!DEBUG: vc-knives-niche rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 > u
@@ -722,6 +1182,13 @@ The HA HALF button lights up on your Leet Learner.
 > dear dull
 by one point
 
+> zdear dull rule
+!DEBUG: vc-dear-dull rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> dear zdull rule
+!DEBUG: vc-dear-dull rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > znear null rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -731,6 +1198,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > near null
 by one point
+
+> znear null rule
+!DEBUG: vc-near-null rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> near znull rule
+!DEBUG: vc-near-null rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > w
 > s
@@ -749,6 +1223,13 @@ The HA HALF button lights up on your Leet Learner.
 > beast boss
 by one point
 
+> zbeast boss rule
+!DEBUG: vc-beast-boss rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> beast zboss rule
+!DEBUG: vc-beast-boss rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zleast loss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -759,6 +1240,14 @@ The HA HALF button lights up on your Leet Learner.
 > least loss
 by one point
 
+> zleast loss rule
+!DEBUG: vc-least-loss rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> least zloss rule
+!DEBUG: vc-least-loss rule tipped off the HA HALF button.
+#note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
+#!The HA HALF button lights up on your Leet Learner.
+
 > zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -766,7 +1255,27 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
+> wild weed
+by one point
+
+> zwild weed rule
+!DEBUG: vc-wild-weed rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> wild zweed rule
+!DEBUG: vc-wild-weed rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+
 > s
+
+> spark spliff
+by one point
+
+> zspark spliff rule
+!DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> spark zspliff rule
+!DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > s
 
@@ -779,6 +1288,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > heal here
 by one point
+
+> zheal here rule
+!DEBUG: vc-heal-here rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> heal zhere rule
+!DEBUG: vc-heal-here rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > n
 > n
@@ -793,6 +1309,13 @@ The HA HALF button lights up on your Leet Learner.
 > cull ceased
 by one point
 
+> zcull ceased rule
+!DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> cull zceased rule
+!DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zfull feast rule
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -802,6 +1325,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > full feast
 by one point
+
+> zfull feast rule
+!DEBUG: vc-full-feast rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> full zfeast rule
+!DEBUG: vc-full-feast rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > e
 > e
@@ -816,6 +1346,13 @@ The HA HALF button lights up on your Leet Learner.
 > so sappin
 by one point
 
+> zso sappin rule
+!DEBUG: vc-so-sappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> so zsappin rule
+!DEBUG: vc-so-sappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zshining shore rule
 DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -825,6 +1362,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > shining shore
 by one point
+
+> zshining shore rule
+!DEBUG: vc-shining-shore rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> shining zshore rule
+!DEBUG: vc-shining-shore rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zdining door rule
 DEBUG: vc-dining-door rule tipped off the HA HALF button.
@@ -836,6 +1380,13 @@ The HA HALF button lights up on your Leet Learner.
 > dining door
 by one point
 
+> zdining door rule
+!DEBUG: vc-dining-door rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> dining zdoor rule
+!DEBUG: vc-dining-door rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zpull pieced rule
 DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -846,6 +1397,13 @@ The HA HALF button lights up on your Leet Learner.
 > pull pieced
 by one point
 
+> zpull pieced rule
+!DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> pull zpieced rule
+!DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zmining more rule
 DEBUG: vc-mining-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -855,6 +1413,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > mining more
 by one point
+
+> zmining more rule
+!DEBUG: vc-mining-more rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mining zmore rule
+!DEBUG: vc-mining-more rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > w
 > w
@@ -871,6 +1436,13 @@ The HA HALF button lights up on your Leet Learner.
 > show shield
 by one point
 
+> zshow shield rule
+!DEBUG: vc-show-shield rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> show zshield rule
+!DEBUG: vc-show-shield rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > n
 
 > zgo gappin rule
@@ -883,6 +1455,13 @@ The HA HALF button lights up on your Leet Learner.
 > go gappin
 by one point
 
+> zgo gappin rule
+!DEBUG: vc-go-gappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> go zgappin rule
+!DEBUG: vc-go-gappin rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zcouple caps rule
 DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -893,6 +1472,13 @@ The HA HALF button lights up on your Leet Learner.
 > couple caps
 by one point
 
+> zcouple caps rule
+!DEBUG: vc-couple-caps rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> couple zcaps rule
+!DEBUG: vc-couple-caps rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zcast cap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -902,6 +1488,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > cast cap
 by one point
+
+> zcast cap rule
+!DEBUG: vc-cast-cap rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> cast zcap rule
+!DEBUG: vc-cast-cap rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zbeaker bustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
@@ -924,11 +1517,35 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+> beaker bustle
+by one point
+
+> zbeaker bustle rule
+!DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> beaker zbustle rule
+!DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+
 > meeker muscle
 by one point
 
+> zmeeker muscle rule
+!DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> meeker zmuscle rule
+!DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > wood one
 by one point
+
+> zwood one rule
+!DEBUG: vc-wood-one rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> wood zone rule
+!DEBUG: vc-wood-one rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > n
 
@@ -942,6 +1559,13 @@ The HA HALF button lights up on your Leet Learner.
 > hot horde
 by one point
 
+> zhot horde rule
+!DEBUG: vc-hot-horde rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> hot zhorde rule
+!DEBUG: vc-hot-horde rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zlot lord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -951,6 +1575,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > lot lord
 by one point
+
+> zlot lord rule
+!DEBUG: vc-lot-lord rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> lot zlord rule
+!DEBUG: vc-lot-lord rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > zgot gored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
@@ -962,6 +1593,13 @@ The HA HALF button lights up on your Leet Learner.
 > got gored
 by one point
 
+> zgot gored rule
+!DEBUG: vc-got-gored rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> got zgored rule
+!DEBUG: vc-got-gored rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zwhoa wait rule
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -971,6 +1609,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > whoa wait
 by one point
+
+> zwhoa wait rule
+!DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> whoa zwait rule
+!DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
 
 > ztell torn rule
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
@@ -982,6 +1627,13 @@ The HA HALF button lights up on your Leet Learner.
 > tell torn
 by one point
 
+> ztell torn rule
+!DEBUG: vc-tell-torn rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> tell ztorn rule
+!DEBUG: vc-tell-torn rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zmerry mile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -992,6 +1644,13 @@ The HA HALF button lights up on your Leet Learner.
 > merry mile
 by one point
 
+> zmerry mile rule
+!DEBUG: vc-merry-mile rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> merry zmile rule
+!DEBUG: vc-merry-mile rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 > zbury bile rule
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1001,4 +1660,6 @@ The HA HALF button lights up on your Leet Learner.
 
 > bury bile
 by one point
+
+!see the points you MISSED
 
