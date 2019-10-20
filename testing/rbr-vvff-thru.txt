@@ -110,6 +110,11 @@ You consider the possibility of changing the Wet Wood to a Straight Pride parade
 > get good
 by one point
 
+==t6
+> get good
+!by one point
+You already managed to GET GOOD.
+
 ==t3
 # test the reverse flip warning
 #okdup
@@ -140,6 +145,11 @@ You try fearing things different ways, but nobody comes to comfort you.
 
 > gift giver
 by one point
+
+==t6
+> gift giver
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zgift giver rule
@@ -183,6 +193,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > find fault
 by one point
+
+==t6
+> find fault
+!by one point
+You already did, and things got worse. You'll have to try something else.
 
 ==t6
 > zfind fault rule
@@ -233,6 +248,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > green grass
 by one point
+
+==t6
+> green grass
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zgreen grass rule
@@ -331,6 +351,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> grow grit
+!by one point
+You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.
+
+==t6
 > zgrow grit rule
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -403,6 +428,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> mash map
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zmash map rule
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -447,6 +477,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > mind me
 by one point
+
+==t6
+> mind me
+!by one point
+You already minded yourself.
 
 ==t6
 > zmind me rule
@@ -508,6 +543,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> flim flam
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zflim flam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -521,6 +561,12 @@ by one point
 
 > big bag
 by one point
+
+==t6
+> big bag
+!by one point
+You already made the big bag.
+
 
 ==t6
 > zbig bag rule
@@ -624,6 +670,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> kneel near
+!by one point
+No need to kneel twice.
+
+==t6
 > zkneel near rule
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -646,6 +697,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > feel fear
 by one point
+
+==t6
+> feel fear
+!by one point
+No need to overdo feeling fear.
 
 ==t6
 > zfeel fear rule
@@ -676,6 +732,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> deal dear
+!by one point
+Overdoing dealing with it is ... one way to show you might not be dealing with it.
+
+==t6
 > zdeal dear rule
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -698,6 +759,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 ==t1,6
 > appealing appear
 by one point
+
+==t6
+> appealing appear
+!by one point
+The peeling pier already looks better.
 
 ==t6
 > zappealing appear rule
@@ -741,6 +807,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 by one point
 
 ==t6
+> strong start
+!by one point
+You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.
+
+==t6
 > zstrong start rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -763,6 +834,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > fall free
 by one point
+
+==t6
+> fall free
+!by one point
+The tree is already fallen. It's in a good place.
 
 ==t6
 > zfall free rule
@@ -818,6 +894,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> dive deep
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zdive deep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -847,6 +928,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> paper pile
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zpaper pile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -872,6 +958,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > backed binder
 by one point
+
+==t6
+> backed binder
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zbacked binder rule
@@ -933,6 +1024,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> dark door
+!by one point
+You already made the dark door appear.
+
+==t6
 > zdark door rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -950,6 +1046,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > mark more
 by one point
+
+==t6
+> mark more
+!by one point
+You already saw what you could.
 
 ==t6
 > zmark more rule
@@ -1003,6 +1104,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> cleared clay
+!by one point
+The clay is cleared enough.
+
+==t6
 > zcleared clay rule
 !DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1022,6 +1128,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > mystery mall
 by one point
+
+==t6
+> mystery mall
+!by one point
+You've already flipped this area to the Mystery Mall.
 
 ==t6
 > zmystery mall rule
@@ -1052,6 +1163,11 @@ by one point
 ==t1,6
 > what a wanksta
 by one point
+
+==t6
+> whatta wanksta
+!by one point
+That insult only works once.
 
 ==t6
 > zwhatta wanksta rule
@@ -1113,6 +1229,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> lots lame
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zlots lame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1144,6 +1265,17 @@ by one point
 by one point
 
 ==t6
+> ho happen
+!by one point
+#?? for postcomp: TRY DOING
+You already said HO HAPPEN.
+
+==t6
+> dimd
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1161,6 +1293,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > no nappin
 by one point
+
+==t6
+> no nappin
+!by one point
+You already changed Toe Tappin Row Rappin that way.
 
 ==t6
 > zno nappin rule
@@ -1227,6 +1364,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 ==t1,5,6
 > lie lol
 by one point
+
+==t6
+> lie lol
+!by one point
+The shy shawl has taken enough abuse.
 
 ==t6
 > zlie lol rule
@@ -1311,6 +1453,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 by one point
 
 ==t6
+> not near
+!by one point
+You already teleported for a bonus point.
+
+==t6
 > znot near rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1328,6 +1475,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > hard hat
 by one point
+
+==t6
+> hard hat
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zhard hat rule
@@ -1389,6 +1541,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> work well
+!by one point
+You already did.
+
+==t6
 > zwork well rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1437,6 +1594,20 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> loft land
+!by one point
+You're already on the Loft Land.
+
+==t6
+> soft sand
+!by one point
+> soft sand
+!by one point
+You're already on the Soft Sand.
+> undo
+> undo
+
+==t6
 > zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1476,6 +1647,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> dreaming dull
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zdreaming dull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1498,6 +1674,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > first fave
 by one point
+
+==t6
+> first fave
+!by one point
+The curst cave is already a cheerier place.
 
 ==t6
 > zfirst fave rule
@@ -1543,6 +1724,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > cool cap
 by one point
+
+==t6
+> cool cap
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zcool cap rule
@@ -1595,6 +1781,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> silent sail
+!by one point
+You already called up the flooring float.
+
+==t6
 > zsilent sail rule
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1617,6 +1808,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > brightening bridge
 by one point
+
+==t6
+> brightening bridge
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zbrightening bridge rule
@@ -1650,6 +1846,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > boring boat
 by one point
+
+==t6
+> boring boat
+!by one point
+The boat is already boring and practical enough.
 
 ==t6
 > zboring boat rule
@@ -1701,6 +1902,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> wake whee
+!by one point
+He's already awake, Blake.
+
+==t6
 > zwake whee rule
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1728,6 +1934,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> take tea
+!by one point
+Don't get greedy. You have the sustenance needed to work with Jake G.
+
+==t6
 > ztake tea rule
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1752,6 +1963,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 by one point
 
 ==t6
+> break brie
+!by one point
+Hey! Don't get greedy, now.
+
+==t6
 > zbreak brie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1769,6 +1985,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > fake fee
 by one point
+
+==t6
+> fake fee
+!by one point
+That's over. Time to work with Jake!
 
 ==t6
 > zfake fee rule
@@ -1809,6 +2030,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> make map
+!by one point
+You already made a map.
+
+==t6
 > zmake map rule
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1841,6 +2067,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> co capn
+!by one point
+Jake already is.
+
+==t6
 > zco capn rule
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1862,6 +2093,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > snake snap
 by one point
+
+==t6
+> snake snap
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zsnake snap rule
@@ -1905,6 +2141,11 @@ DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 > stay strong
+
+==t6
+> stay strong
+!by one point
+You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling so sad.
 
 ==t6
 > zstay strong rule
@@ -1955,6 +2196,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> glow glad
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zglow glad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1971,15 +2217,20 @@ DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 ==t6
-> zlean luggin rule
-DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
-> lean zluggin rule
-DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+> lean luggin
+> lean luggin
+!by one point
+You already learned lean luggin'.
+> undo
+> undo
 
 > mean muggin
 by one point
+
+==t6
+> mean muggin
+!by one point
+You already learned mean muggin'.
 
 ==t6
 > zmean muggin rule
@@ -1989,8 +2240,24 @@ by one point
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+==t6
+> zlean luggin rule
+DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+> lean zluggin rule
+DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
 > lean luggin
 by one point
+
+==t6
+> lean luggin
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+> mean muggin
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zlean luggin rule
@@ -2047,6 +2314,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 by one point
 
 ==t6
+> bumped buster
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -2070,6 +2342,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > glean glows
 by one point
+
+==t6
+> glean glows
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zglean glows rule
@@ -2096,6 +2373,11 @@ SMASHING SMOKE
 > history hall
 
 ==t6
+> history hall
+!by one point
+You already flipped back to History Hall.
+
+==t6
 > zyoure yonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2113,6 +2395,11 @@ by one point
 
 > youre yonder
 by one point
+
+==t6
+> youre yonder
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zyoure yonder rule
@@ -2134,6 +2421,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > smashing smoke
 by one point
+
+==t6
+> smashing smoke
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 > zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
@@ -2167,6 +2459,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> lending libe
+!by one point
+Yes, It's a library now.
+
+==t6
 > zlending libe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2184,6 +2481,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > see sign
 by one point
+
+==t6
+> see sign
+!by one point
+You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
 
 ==t6
 > zsee sign rule
@@ -2242,6 +2544,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> plain pleasant
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zplain pleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2272,6 +2579,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > moral mage
 by one point
+
+==t6
+> moral mage
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zmoral mage rule
@@ -2323,6 +2635,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> sit sound
+!by one point
+You already sat sound. But maybe there's a way to feel more comfortable.
+
+==t6
 > zsit sound rule
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2345,6 +2662,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > fit found
 by one point
+
+==t6
+> fit found
+!by one point
+You already fit in.
 
 ==t6
 > zfit found rule
@@ -2403,6 +2725,13 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> winding ways
+!by one point
+#?? do better post comp
+You already did.
+
+
+==t6
 > zwinding ways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2434,6 +2763,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> mo mappin
+!by one point
+You're already in the mood to map. No need to overdo it.
+
+==t6
 > zmo mappin rule
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2462,6 +2796,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> luck lair
+!by one point
+You already got the snuck snare from the luck lair.
+
+==t6
 > zluck lair rule
 !DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2488,6 +2827,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> tight tunnel
+!by one point
+You already narrowed the funnel to a tunnel.
+
+==t6
 > ztight tunnel rule
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2511,6 +2855,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > knives niche
 by one point
+
+==t6
+> knives niche
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zknives niche rule
@@ -2552,6 +2901,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> dear dull
+!by one point
+You don't need to do any more taunting.
+
+==t6
 > zdear dull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2569,6 +2923,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > near null
 by one point
+
+==t6
+> near null
+!by one point
+You already reduced the bull's power!
 
 ==t6
 > znear null rule
@@ -2611,6 +2970,12 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> beast boss
+!by one point
+#?? summon beast boss = more explicit?
+You already did.
+
+==t6
 > zbeast boss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2634,6 +2999,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> least loss
+!by one point
+You already minimized your losses. Time to be more aggressive.
+
+==t6
 > zleast loss rule
 !DEBUG: vc-least-loss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2653,6 +3023,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 ==t1,6
 > wild weed
 by one point
+
+==t6
+> wild weed
+!by one point
+Greedy, to try for more.
 
 ==t6
 > zwild weed rule
@@ -2678,6 +3053,11 @@ Learner needle
 ==t1,6
 > spark spliff
 by one point
+
+==t6
+> spark spliff
+!by one point
+Whoah, dude. You already did.
 
 ==t6
 > zspark spliff rule
@@ -2709,6 +3089,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > heal here
 by one point
+
+==t6
+> heal here
+!by one point
+No need to heal further.
 
 ==t6
 > zheal here rule
@@ -2762,6 +3147,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> cull ceased
+!by one point
+Don't brag too much, now.
+
+==t6
 > zcull ceased rule
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2789,6 +3179,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > full feast
 by one point
+
+==t6
+> full feast
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zfull feast rule
@@ -2856,6 +3251,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> so sappin
+!by one point
+You already discouraged some whining. Bringing it up again might make you the whiny one.
+
+==t6
 > zso sappin rule
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2885,6 +3285,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> shining shore
+!by one point
+You already got (t)here.
+
+==t6
 > zshining shore rule
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2908,6 +3313,12 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> dining door
+!by one point
+#?? "That's already here."
+You already did.
+
+==t6
 > zdining door rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2929,6 +3340,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > pull pieced
 by one point
+
+==t6
+> pull pieced
+!by one point
+#?? this is a bit confusing
+You can't see any objects like that here.
 
 ==t6
 > zpull pieced rule
@@ -2957,6 +3374,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > mining more
 by one point
+
+==t6
+> mining more
+!by one point
+Don't get greedy!
 
 ==t6
 > zmining more rule
@@ -3001,6 +3423,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> show shield
+!by one point
+Your gold guard has done its duty.
+
+==t6
 > zshow shield rule
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3040,6 +3467,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > go gappin
 by one point
+
+==t6
+> go gappin
+!by one point
+#?? this is a dumb bug, but it still might be worth poking at.
+That noun did not make sense in this context.
 
 ==t6
 > zgo gappin rule
@@ -3090,6 +3523,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> couple caps
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zcouple caps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3111,6 +3549,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > cast cap
 by one point
+
+==t6
+> cast cap
+!by one point
+The cap has been cast.
 
 ==t6
 > zcast cap rule
@@ -3173,6 +3616,12 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> beaker bustle
+!by one point
+#?? better?
+You already did that!
+
+==t6
 > zbeaker bustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -3186,8 +3635,21 @@ west to Rattlin' Runs
 >e
 east to Hopping Hills
 
+==t6
+> wood one
+> wood one
+!by one point
+Russell's already disarmed, but he's still too strong.
+>undo
+>undo
+
 > meeker muscle
 by one point
+
+==t6
+> meeker muscle
+!by one point
+Russell's already meeker. Maybe disarm him?
 
 ==t6
 > zmeeker muscle rule
@@ -3199,6 +3661,11 @@ by one point
 
 > wood one
 by one point
+
+==t6
+> wood one
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zwood one rule
@@ -3250,6 +3717,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> hot horde
+!by one point
+You already summoned the Hot Horde.
+
+==t6
 > zhot horde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3269,6 +3741,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> lot lord
+!by one point
+You already summoned the Lot Lord.
+	
+==t6
 > zlot lord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3286,6 +3763,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > got gored
 by one point
+
+==t6
+> got gored
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
 
 ==t6
 > zgot gored rule
@@ -3358,6 +3840,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> whoa wait
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > zwhoa wait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3390,6 +3877,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ==t6
+> tell torn
+!by one point
+This isn't something you need to do here. VERBS has a list of standard verbs.
+
+==t6
 > ztell torn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3407,6 +3899,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > merry mile
 by one point
+
+==t6
+> merry mile
+!by one point
+You already did. And forcing cheeriness tends to backfire.
 
 ==t6
 > zmerry mile rule

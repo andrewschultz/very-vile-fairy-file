@@ -22,17 +22,27 @@ neg_range_tot = defaultdict(int)
 
 opt = defaultdict(bool)
 
+double_item_list = defaultdict(int)
+
 def usage():
     print("-p/-pf = print frequencies.")
     exit()
 
-def print_stuff(range_needed, range_starts, put_in_punc):
+def print_stuff(range_needed, range_starts, put_in_punc = False, double_test = False):
     my_punc = "!" if put_in_punc else ""
     temp_ary = [x for x in range_needed if x not in range_starts]
     temp_ary = sorted(temp_ary, key=range_needed.get)
     for x in temp_ary:
         ta2 = re.sub(" .*", "", x).split('-')
         try:
+            if double_test:
+                print()
+                print("==t6")
+                print("> {} {}".format(ta2[1], ta2[2]))
+                print("!by one point")
+                print("REPLACE TEXT HERE")
+                continue
+            if x == 'vc-dimd rule': continue
             half_light = "The HA HALF button lights up on your Leet Learner{}.".format("" if opt[x] else ", but dimly")
             print("==t6")
             print("> z{} {}".format(ta2[1], ta2[2]))
@@ -63,21 +73,23 @@ with open("story.ni") as file:
     for (line_count, line) in enumerate(file, 1):
         if line.startswith("table of verb checks"):
             in_verb_checks = True
-            print("Starting verb checks line", line_count)
+            print("Starting verb checks line", line_count, "in story.ni.")
             continue
         if not in_verb_checks: continue
         ary = line.strip().split("\t")
         if in_verb_checks and not line.strip(): break
-        if ary[3] == '--': continue # non point gainers like HISTORY HALL and SOFT SAND
         this_rule = 'vc-' + ary[6][3:]
         if ary[6].startswith("vr-"):
-            if 'dimd' in ary[6]: continue
-            need_range[this_rule] = line_count
+            #if 'dimd' in ary[6]: continue
             if 'bury' not in ary[0]: #There's nothing post successful BURY BILE, because that's the end of the game
                 neg_need_range[this_rule] = line_count
-        opt[this_rule] = (ary[3].lower() == 'true')            
+            if ary[3] == '--': continue # non point gainers like HISTORY HALL and SOFT SAND
+            need_range[this_rule] = line_count
+            opt[this_rule] = (ary[3].lower() == 'true')            
         if len(ary) < 7:
             sys.exit(ary)
+
+last_command = ""
 
 with open("rbr-vvff-thru.txt") as file:
     for (line_count, line) in enumerate(file, 1):
@@ -91,6 +103,13 @@ with open("rbr-vvff-thru.txt") as file:
             if my_arg not in neg_range_start: neg_range_start[my_arg] = line_count
             neg_range_end[my_arg] = line_count
             neg_range_tot[my_arg] += 1
+        if line.startswith(">"): last_command = re.sub("^> *", "", line.strip())
+        if "!by one point" in line:
+            rule_to_check = "vc-" + last_command.replace(" ", "-") + " rule"
+            if rule_to_check not in need_range:
+                print('Line', line_count, last_command, '/', rule_to_check, '=', 'unrecognized rule.')
+            else:
+                double_item_list[rule_to_check] = line_count
 
 if print_freq:
     for x in sorted(range_start, key=range_start.get):
@@ -101,3 +120,4 @@ if print_freq:
 print_stuff(need_range, range_start, False)
 print_stuff(neg_need_range, neg_range_start, True)
 
+print_stuff(neg_need_range, double_item_list, double_test = True)
