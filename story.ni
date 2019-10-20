@@ -3217,7 +3217,7 @@ to up-which (ts - a truth state):
 
 this is the verb-checker rule:
 	let local-ha-half be false;
-	let brightness be true;
+	let brightness be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
 		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
@@ -3271,7 +3271,7 @@ this is the verb-checker rule:
 			if already-rhymed-this is true, break;
 			now local-ha-half is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
-			now brightness is core entry;
+			if there is a core entry and core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
 		say "The HA HALF button lights up on your Leet Learner[if brightness is false], but dimly[end if].";
@@ -4804,9 +4804,12 @@ this is the vc-spark-spliff rule:
 	if wild weed is moot:
 		vcal "Whoah, dude. You already did.";
 		continue the action;
-	if player does not have wild weed, the rule fails;
+	if player does not have wild weed and player is not in Fun Fen, the rule fails;
 	if player is not in Fun Fen:
 		vcp "Not here, dude! No source of flame!";
+		continue the action;
+	if player does not have wild weed:
+		vcp "You have nothing to spark up, dude!";
 		continue the action;
 	the rule succeeds;
 
