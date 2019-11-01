@@ -8,7 +8,7 @@ import sys
 import hom
 import i7
 import re
-from mytools import nohy
+import mytools
 
 vvm = i7.hdr("vv", "mi")
 
@@ -46,7 +46,7 @@ with open(vvm) as file:
         if not cur_table: continue
         if line_count == cur_table_start: continue # get rid of header row
         ary = line.split("\t")
-        hom_cand = ary[0].replace('"', '')
+        hom_cand = ' '.join(ary[0].split('"')[1::2])
         a2 = hom_cand.split(" ")
         for q in a2:
             if q in hom.hom_list:
@@ -55,5 +55,8 @@ with open(vvm) as file:
                 count += 1
                 print("{}: {}{} <{}> line {} in <{}> may need homonyms: {}.".format(count, "(already got) " if q in already_got else "", q, bn, line_count, cur_table, ", ".join(hom.hom_list[q])))
                 already_got[q] = line_count
+                mytools.add_postopen_file_line(vvm, line_count)
 
 print("Summary of stuff to replace:", ', '.join(sorted(already_got)))
+
+mytools.postopen_files()
