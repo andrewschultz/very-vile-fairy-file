@@ -83,6 +83,7 @@ okay_next_dup = False
 in_mistakes = False
 
 rbr_file = "rbr-{}-thru.txt".format(my_proj)
+next_cmd_pass = True
 
 with open(rbr_file) as file:
     for (line_count, line) in enumerate(file, 1):
@@ -91,6 +92,9 @@ with open(rbr_file) as file:
             continue
         if '@mis' in line: in_mistakes = True
         if 'okdup' in line: okay_next_dup = True
+        if line.startswith("#next-cmd-pass"):
+            next_cmd_pass = True
+            continue
         if not line.strip():
             in_mistakes = False
             continue
@@ -102,16 +106,25 @@ with open(rbr_file) as file:
         line_cmd = re.sub("^> *", "", line.lower().strip())
         if line_cmd == 'undo': continue
         if line_cmd not in need_mistake_test:
-            print("Erroneous mistake command line {}: {}.".format(line_count, line_cmd))
+            if next_cmd_pass:
+                next_cmd_pass = True
+                continue
+            print("Erroneous mistake command {} line {}: {}.".format(rbr_file, line_count, line_cmd))
+            mt.add_postopen_file_line(rbr_file, line_count)
         elif line_cmd in got_mistake_test:
             if line_cmd not in need_leet_check:
-                print("Duplicate mistake try at line {}: {}.".format(line_count, line_cmd))
+                print("Duplicate mistake try at {} line {}: {}.".format(rbr_file, line_count, line_cmd))
+                mt.add_postopen_file_line(rbr_file, line_count)
             elif need_leet_check[line_cmd] == False:
-                print("Erroneous leet-check rule at line {}: {}.".format(line_count, line_cmd))
+                print("Erroneous leet-check rule at {} line {}: {}.".format(rbr_file, line_count, line_cmd))
+                mt.add_postopen_file_line(rbr_file, line_count)
             got_leet_check[line_cmd] = True
         got_mistake_test[line_cmd] = True
+        next_cmd_pass = False
 
 err_found = 0
+
+print("DETAILS ABOVE SUMMARY BELOW")
 
 y = [x for x in need_mistake_test if x not in got_mistake_test]
 
@@ -162,3 +175,4 @@ final_string = "{} total error{}".format(err_found, mt.plur(err_found)) if err_f
 
 mt.print_and_warn(final_string)
 
+mt.postopen_files()
