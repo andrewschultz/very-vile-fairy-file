@@ -3,6 +3,7 @@
 #
 # mistake vs test script checker
 
+import os
 import mytools as mt
 import sys
 from collections import defaultdict
@@ -18,7 +19,16 @@ got_mistake_test = defaultdict(bool)
 need_leet_check = defaultdict(bool)
 got_leet_check = defaultdict(bool)
 
-mist_file = i7.hdrfile('vv', 'mi')
+needed_text = "Learner needle"
+my_proj = i7.dir2proj(os.getcwd(), to_abbrev = True)
+
+if not my_proj or my_proj == 'vv': my_proj = "vvff"
+
+if my_proj == "qq":
+    my_proj = "qqnn"
+    needed_text = "sheep sheet"
+
+mist_file = i7.hdrfile(my_proj, 'mi')
 
 max_count = 15
 
@@ -54,7 +64,7 @@ with open(mist_file) as file:
             need_mistake_test[my_cmd] = True
             my_line[my_cmd] = line_count
             need_leet_check[my_cmd] = ary[5] != '--'
-            text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + "Learner needle\n" + noquo_single(i7.a2q(ary[6]))
+            text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + needed_text + "\n" + noquo_single(i7.a2q(ary[6]))
 
 cmd_count = 1
 while cmd_count < len(sys.argv):
@@ -72,19 +82,21 @@ okay_next_dup = False
 
 in_mistakes = False
 
-with open("rbr-vvff-thru.txt") as file:
+rbr_file = "rbr-{}-thru.txt".format(my_proj)
+
+with open(rbr_file) as file:
     for (line_count, line) in enumerate(file, 1):
         if okay_next_dup:
             okay_next_dup = False
             continue
-        if '==t5' in line: in_mistakes = True
+        if '@mis' in line: in_mistakes = True
         if 'okdup' in line: okay_next_dup = True
         if not line.strip():
             in_mistakes = False
             continue
         if not in_mistakes:
-            if 'Learner needle' in line:
-                print("Maybe errant needle message line {}.".format(line_count))
+            if needed_text in line:
+                print("Maybe errant cluing message line {}.".format(line_count))
             continue
         if not line.startswith(">"): continue
         line_cmd = re.sub("^> *", "", line.lower().strip())
