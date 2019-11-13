@@ -6,6 +6,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [use vmc.py to check for duplicates]
 [use mch.py to check to make sure everything in the mistakes file is in the rbr file]
+[use hgc.py for homophone/homonym guess checks--you may see <ok> at various places in the file. This tells HGC to ignore this line as homophones would not make quite enough sense.]
 
 [dbh.py shortens to the debug version]
 

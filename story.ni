@@ -1675,7 +1675,6 @@ to check-flip-verbs:
 	if player is in history hall and ever-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
 
 check thinking:
-	let thought-any be false;
 	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do.";
 	if all-hinted is 0:
 		say "[line break]But you don't have leads for any puzzles right now." instead;
@@ -1743,7 +1742,7 @@ check requesting the score:
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0:
-		say "You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready, and [if dh is 0][it-they of dh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
+		say "You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready, and [if dh is 0][it-they of fh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
 	else:
 		say "There are no tasks you have figured out but weren't quite ready.";
 	if lurking lump is not off-stage:
@@ -3303,17 +3302,19 @@ this is the mistake-checker rule:
 			process the mist-rule entry;
 			if the rule succeeded:
 				say "[mist-txt entry][line break]";
+				let see-leet-read be true;
 				if there is a leet-rule entry:
 					process the leet-rule entry;
-					unless the rule succeeded, the rule succeeds;
-				let d1 be -10;
-				let d2 be -10;
-				if there is a w1let entry:
-					now d1 is w1let entry - number of characters in word number 1 in the player's command;
-					if there is a w2let entry:
-						now d2 is w2let entry - number of characters in word number 2 in the player's command;
-					if d2 is -10, now d2 is d1;
-					say "[leetclue of cluecheat of d1 and d2].";
+					unless the rule succeeded, now see-leet-read is false;
+				if see-leet-read is true:
+					let d1 be -10;
+					let d2 be -10;
+					if there is a w1let entry:
+						now d1 is w1let entry - number of characters in word number 1 in the player's command;
+						if there is a w2let entry:
+							now d2 is w2let entry - number of characters in word number 2 in the player's command;
+						if d2 is -10, now d2 is d1;
+						say "[leetclue of cluecheat of d1 and d2].";
 				if got-yet entry is false:
 					check-lump-progress;
 				now got-yet entry is true;

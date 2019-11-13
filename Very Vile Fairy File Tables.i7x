@@ -172,6 +172,7 @@ randtxt
 "Near Null Fearful"
 "Oh, Trait So Straight"
 "One Wet Sunset"
+"Bane, Bones, Stain Stones[r], by Jane Jones"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
 "Self Centered Elf Entered"
 "Silly Signs[r], by Willy Wines and Tillie Tines"
@@ -410,7 +411,7 @@ table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of mall songs	0	false	0	"Songs after Tim T Sims"	--
 table of miscellaneous people	0	false	0	"Assorted randos"	--
-table of vvff books	0	false	0	"Books in the Lending Libe"	"Wow! So much to read, so little time. You're up to digesting more text right now, but not quite like that."
+table of vvff books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
