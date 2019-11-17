@@ -175,6 +175,10 @@ definition: a thing (called th) is quicknear:
 	if player carries th or th is in location of player, yes;
 	no;
 
+to bold-new-room (newrm - a room):
+	ifmove player to newrm, without printing a room description;
+	bold-my-room;
+
 to bold-my-room:
 	say "[b][location of player][r][line break]"
 
@@ -711,8 +715,8 @@ to solve-bull-chase:
 	now in-bull-chase is false;
 	moot beer bull;
 	now player has mild mead;
-	move player to Soft Sand, without printing a room description;
 	say "Man! I guess you could say you had ... one wound run-round."
+	bold-new-room Soft Sand;
 
 part Dives Ditch -3,2
 
@@ -821,7 +825,7 @@ talk-text of bold bard is "'Scold-scarred. Told. Tarred.' The bold bard clearly 
 
 chapter gold guard
 
-the mold marred gold guard is a thing. description is "[if mine-more is false]Could be sturdier, actually[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
+the mold marred gold guard is a thing. description is "[if mine-more is false]Could be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
 
 understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when mine-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
 
@@ -936,7 +940,7 @@ boat-reject is a truth state that varies.
 
 check entering boring boat:
 	if nap-no is false:
-		say "You try to enter the boat, but it seems so ... boring. Perhaps if you had some jaunty nautical tune stuck in your head to whistle, that'd be better.";
+		say "You try to enter the boat, but it seems so ... boring. If only you could get a jaunty tune stuck in your head to keep you alert!";
 		now boat-reject is true;
 		the rule succeeds;
 	if player is in Been Buggin':
@@ -1411,6 +1415,8 @@ chapter eating
 
 procedural rule while eating something: ignore the carrying requirements rule.
 
+the can't eat unless edible rule is not listed in any rulebook.
+
 check eating:
 	if noun is Mind Malt, say "Worthless. It's empty." instead;
 	if noun is a gaphat, say "Idioms are neat, but this is about rhyming." instead;
@@ -1419,6 +1425,8 @@ check eating:
 	say "You [if full feast is moot]already had a feast. [end if]You don't need to eat anything explicitly." instead;
 
 chapter drinking
+
+the block drinking rule is not listed in any rulebook.
 
 check drinking:
 	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
@@ -3064,7 +3072,7 @@ the stuck stair is fakeenter scenery. "It looks like you may have to figure wher
 
 chapter snuck snare
 
-the snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
+a snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
 
 [?? burned bower/turned tower]
 
@@ -3898,7 +3906,7 @@ this is the vc-cull-ceased rule:
 	the rule succeeds;
 
 this is the vr-cull-ceased rule:
-	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewardd! The Bull Beast, knowing it's in trouble, tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]The Bull BEast roars as you raise the spear. It's probably a good idea to make sure of things.[paragraph break]The Bull Beast now lies lifeless. Perhaps you can do something constructive with its dead body.";
+	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! The Bull Beast, knowing it's in trouble, tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]The Bull Beast roars as you raise the spear. It's probably a good idea to make sure of things.[paragraph break]The Bull Beast now lies lifeless. Perhaps you can do something constructive with its dead body.";
 	now cull-ceased is true;
 	now bull beast is boring; [?? what if dead]
 	now cht of bull beast is leteq; [bull beast->full feast]
@@ -4249,7 +4257,7 @@ this is the vc-hard-hat rule:
 	the rule succeeds;
 
 this is the vr-hard-hat rule:
-	say "Poof! The marred mat changes into a hard hat. A nice lightweight one. Light enough to wear, so you do.";
+	say "Poof! The marred mat changes into a hard hat. But it's a bit small to wear. Maybe you could combine it with something else.";
 	moot marred mat;
 	now player has hard hat;
 
@@ -4262,6 +4270,9 @@ this is the vc-heal-here rule:
 		clue-later "HEAL HERE";
 		vcp "You don't have anything to heal from, yet[seer-sez].";
 		continue the action;
+	if knelt-near is false:
+		clue-later "HEAL HERE";
+		vcp "You have not shown the Ceiling Seer the proper respect, yet.";
 	the rule succeeds;
 
 this is the vr-heal-here rule:
@@ -4287,11 +4298,9 @@ this is the vr-history-hall rule:
 	move-to-temp gutta ganksta;
 	move-to-temp Oi Mo;
 	now mistmall is false;
-	bold-my-room;
 	if ever-hall is false:
 		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
-	else:
-		say "[location of player][line break]";
+	bold-my-room;
 	now ever-hall is true;
 
 this is the vc-ho-happen rule:
@@ -4371,7 +4380,7 @@ this is the vr-least-loss rule:
 	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. As you stumble back to the familiar, safe Fun Fen, the Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
 	clue-zap "LEAST LOSS";
 	phbt Creased Cross;
-	move player to Fun Fen, without printing a room description;
+	bold-new-room Fun Fen;
 
 this is the vc-lending-libe rule:
 	if player is not in vending vibe, the rule fails;
@@ -4382,7 +4391,7 @@ this is the vc-lending-libe rule:
 
 this is the vr-lending-libe rule:
 	moot trending tribe;
-	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit. They run away screaming. The Vending Vibe goes away, replaced by a Lending Libe. A book even falls out: [fussed folks].";
+	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even worthless books boring people claim to read for fun. They run away screaming. The Vending Vibe goes away, replaced by a Lending Libe. A book even falls out: [fussed folks].";
 	now printed name of Vending Vibe is "Lending Libe";
 	move lending libe to Vending Vibe;
 	move fussed folks just jokes to Vending Vibe;
@@ -4712,7 +4721,7 @@ this is the vr-pull-pieced rule:
 	moot mild mead;
 	if wild weed is off-stage, max-down;
 	moot dining door;
-	move player to Whining War, without printing a room description;
+	bold-new-room Whining War;
 	clue-zap "PULL PIECED";
 
 this is the vc-really-rolling rule:
@@ -4837,7 +4846,7 @@ this is the vr-snake-snap rule:
 	now player has cake cap;
 	now snake-snap is true;
 	move boring boat to Violent Vale;
-	move player to Violent Vale, without printing a room description;
+	bold-new-room Violent Vale;
 	phbt Lake Lap;
 	clue-zap "SNAKE SNAP";
 
@@ -4954,7 +4963,7 @@ this is the vc-wake-whee rule:
 	the rule succeeds;
 
 this is the vr-wake-whee rule:
-	say "Jake G. wakes up.";
+	say "Jake G. wakes up. 'Man! I'm hungry! You hungry too?'";
 	now jake-woke is true;
 
 this is the vc-whatta-wanksta rule:
@@ -5066,6 +5075,18 @@ when play begins (this is the force tester wherever rule):
 
 this is the too-late-for-beta rule:
 	if fun fen is visited or airy isle is visited, say "It's too late to use the TRICK TRIP/BLOW BY commands." instead;
+
+chapter missesing
+
+missesing is an action applying to nothing.
+
+understand the command "misses" as something new.
+
+understand "misses" as missesing.
+
+carry out missesing:
+	try showmissesing;
+	the rule succeeds.
 
 chapter llaing
 
@@ -5195,7 +5216,7 @@ section altrooms
 index map with Vending Vibe mapped south of Po' Pit.
 index map with Curst Cave mapped south of Vined Vault.
 
-section metarooms [these are need to go somewhere]
+section metarooms [these need to go somewhere]
 
 index map with Gazy Gap mapped south of Trim Tram.
 index map with Hidey House mapped west of Gazy Gap.

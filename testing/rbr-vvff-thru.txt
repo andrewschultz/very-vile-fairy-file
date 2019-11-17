@@ -91,6 +91,7 @@ Nothing happens. The words are just settings
 Nothing happens. The words are just settings
 
 ==t2
+# the BIG BAG tests here are regression checking for when BIG BAG was part of the think-table
 > big bag
 \\
 > bury bile

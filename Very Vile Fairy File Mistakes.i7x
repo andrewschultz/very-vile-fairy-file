@@ -117,6 +117,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pool pap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You want something nice and useful to come out of the tap, not ... that."
 "mule map"	cap-or-tap rule	false	4	3	need-cool-cap rule	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
 "rule rap/wrap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You need something more substantial to come out of the cool cap."
+"right runnel"	in-fight-funnel rule	false	5	6	need-tight-tunnel rule	"No river appears. It might just make things even more crowded and messy, anyway."
+"trite trunnel"	in-fight-funnel rule	false	5	6	need-tight-tunnel rule	"You don't need anything as obscure as a wooden peg."
 "crane crescent"	peasant-around rule	false	5	8	--	"No bird or complex machinery drops by to sweep the pain peasant away." [start foe field]
 "fain pheasant"	peasant-around rule	false	5	8	--	"The pain peasant remains human."
 "stow steeled"	in-foe-field rule	false	5	8	shield-unshown rule	"You don't have anything steely to stow."
@@ -305,6 +307,10 @@ to decide what number is rear-progress:
 section mistake rules sorted alphabetically
 
 [xxmisrul]
+
+this is the in-tight-tunnel rule: if player is in fight funnel, the rule succeeds;
+
+this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
 
 this is the beer-bull-by rule: if beer bull is touchable, the rule succeeds;
 
