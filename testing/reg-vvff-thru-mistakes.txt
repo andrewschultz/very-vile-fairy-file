@@ -491,6 +491,7 @@ No, you'd like to move on through the Weird Way, somehow.
 by one point
 
 > w
+
 > mystery mall
 by one point
 
@@ -941,6 +942,7 @@ The clay cloak was free. No need to pay anything.
 > w
 > w
 > w
+
 > glean glows
 by one point
 
@@ -957,11 +959,13 @@ No genetically twisted tree appears.
 by one point
 
 > out
+
 > smashing smoke
 by one point
 
 > in
 > w
+
 > lending libe
 by one point
 
@@ -1081,10 +1085,12 @@ by one point
 > s
 > w
 > d
+
 > tight tunnel
 by one point
 
 > w
+
 > knives niche
 by one point
 
@@ -1132,6 +1138,7 @@ No, you can't bring the bull down with peer pressure.
 > d
 > w
 > s
+
 > beast boss
 by one point
 
@@ -1241,6 +1248,7 @@ Alas, nobody falls into line to tell stories of how they got here.
 > w
 > n
 > n
+
 > show shield
 by one point
 
@@ -1255,6 +1263,7 @@ You don't have anything steely to stow.
 Alas, no food magically appears. You did what you needed.
 
 > n
+
 > go gappin
 by one point
 
@@ -1386,3 +1395,21 @@ Yes, you have shown wary wile, and lots of it!
 > bury bile
 by one point
 
+* guess-overflow-check
+> z
+> brig brag
+!lump
+> swig swag
+!lump
+> jig jag
+!lump
+> tig tag
+!lump
+# checking for overflow on LLP
+> really rolling
+lump
+> undo
+# checking to make sure we really checked for overflow and not just a regular charge
+# e.g. if we change the level delta from 5 to 6, the lump should not appear
+> cig sag
+lump

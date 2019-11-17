@@ -1,10 +1,11 @@
 #-- rbr-vvff-thru.txt
 #-- main branch file for Very Vile Fairy File walkthroughs
 #--
-#-- [additional notes here]
+#-- use HHV.PY to verify ha-half
 #--
 
 files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
+~	mis	t5
 
 ## *FILE
 ## *FORK
@@ -54,7 +55,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > brig brag
 Good guys don't brag about if they
 Learner needle
@@ -75,7 +76,7 @@ Yes, you will need wary wile, and lots of it!
 >perking pump
 !Learner needle
 
-==t5
+@mis
 >treat turner
 Nothing happens. The words are just settings
 >conceit concerner
@@ -99,7 +100,7 @@ Nothing happens. The words are just settings
 BIG BAG
 BURY BILE
 
-==t5
+@mis
 > stet stood
 Learner needle
 No comment on if and where proofreading is necessary, here.
@@ -129,7 +130,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > lift liver
 Learner needle
 You gain no nutritious meat nor uplifting advice. But you must be close. You just feel you could use another person's help, here.
@@ -159,7 +160,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 #okdup
 > brig brag
 Good guys don't brag about being
@@ -172,7 +173,7 @@ Good guys don't brag about being
 by one point
 > undo
 
-==t5
+@mis
 > hind halt
 Learner needle
 You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.
@@ -207,7 +208,7 @@ You already did, and things got worse. You'll have to try something else.
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > hind halt
 !Learner needle
 You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.
@@ -221,7 +222,7 @@ A drinking buddy you can play practical jokes on won't be any help here.
 !Learner needle
 The mind malt is gone. You have to rely on yourself!
 
-==t5
+@mis
 > bean bass
 Learner needle
 You could use a delicious meal, but perhaps there is something even simpler the mean mass can become.
@@ -262,7 +263,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > cash cap
 Learner needle
 You need more than just a homonym here.
@@ -285,7 +286,7 @@ Perhaps more focused violence would work better.
 Learner needle
 You bang your fists against your pockets. It sort of helps, you guess.
 
-==t5
+@mis
 > snow snit
 Learner needle
 No bad weather blows in to be complained about.
@@ -363,7 +364,7 @@ You already did that. Grit is internalized in you. If you try to be grittier, yo
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > snow snit
 !Learner needle
 No bad weather blows in to be complained about.
@@ -447,7 +448,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > think
 FLIM FLAM
 
-==t5
+@mis
 > bind be
 Learner needle
 Your incantation fails. Perhaps something more straightforward and inward-looking would work better.
@@ -499,7 +500,7 @@ by one point
 by one point
 >undo
 
-==t5
+@mis
 > whim wham
 Learner needle
 Hmm, you try to figure a poetic way through, but perhaps you need something more worldly.
@@ -576,7 +577,7 @@ You already made the big bag.
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > brig brag
 Good guys don't brag about having been
 !Learner needle
@@ -607,7 +608,7 @@ east to Fate Farm
 
 > s
 
-==t5
+@mis
 > wheel weir
 Learner needle
 The Sage Sea is enough of a boundary.
@@ -624,7 +625,7 @@ Direct homonyms don't work here, and the steer would not fit in your bag.
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
 
-==t5
+@mis
 > cage key
 !Learner needle
 You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it.
@@ -775,7 +776,7 @@ The peeling pier already looks better.
 
 > n
 
-==t5
+@mis
 > one wen
 !Learner needle
 Your skin remains unblemished, despite you tempting fate.
@@ -819,7 +820,7 @@ You already did. You wouldn't want a stale start or a pale part. Why, you might 
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t5
+@mis
 > call cree
 Learner needle
 You need something simpler than an unusual language here.
@@ -848,12 +849,12 @@ The tree is already fallen. It's in a good place.
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > call cree
 !Learner needle
 You need something simpler than an unusual language here.
 
-==t5
+@mis
 # must be after the FALL FREE or FRY FALL gives an erroneous HA HALF.
 >cry call
 You lash out meaninglessly at the wry wall.
@@ -871,7 +872,7 @@ There is no hidden tomb under the wry wall.
 !Learner needle
 The wry wall does not grow.
 
-==t5
+@mis
 > live leap
 Learner needle
 The leap wouldn't be live for very long.
@@ -906,7 +907,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > gaper guile
 Learner needle
 You stare a bit but get no insight.
@@ -940,7 +941,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > gaper guile
 !Learner needle
 You stare a bit but get no insight. Now you've organized the pile, maybe its details are more important to read or examine.
@@ -974,7 +975,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 
 > n
 
-==t5
+@mis
 > ceased sauce
 Learner needle
 You'll need all the sauce you can get, literally or figuratively.
@@ -990,7 +991,7 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 
 > w
 
-==t5
+@mis
 > lark lore
 Learner needle
 This is no time for jokes! Or bird-watching.
@@ -1060,7 +1061,7 @@ You already saw what you could.
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > lark lore
 !Learner needle
 This is no time for jokes! Or bird-watching.
@@ -1081,7 +1082,7 @@ Biological warfare is probably dangerous.
 > think
 !MARK MORE
 
-==t5
+@mis
 > beard bay
 Learner needle
 No, the store is landlocked.
@@ -1179,7 +1180,7 @@ That insult only works once.
 
 > listen
 
-==t5
+@mis
 > woe whappin
 Learner needle
 You don't need an exhortation to violence.
@@ -1309,7 +1310,7 @@ You already changed Toe Tappin Row Rappin that way.
 
 > w
 
-==t5
+@mis
 > try trawl
 Learner needle
 You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
@@ -1378,7 +1379,7 @@ The shy shawl has taken enough abuse.
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t5
+@mis
 > try trawl
 !Learner needle
 You put in effort, and stuff.
@@ -1423,7 +1424,7 @@ You complain to nobody in particular about the number of dead ends in the mall.
 !Learner needle
 You feel overcome with emotion.
 
-==t5
+@mis
 > card cat
 Learner needle
 A card catalog certainly repels some folks, but you need something sturdier.
@@ -1489,7 +1490,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > card cat
 !Learner needle
 A card catalog certainly repels some folks, but you need something sturdier.
@@ -1512,7 +1513,7 @@ I'm not getting into issues like whether a powerful gun is actually for defense 
 > n
 > w
 
-==t5
+@mis
 > dirk dell
 Learner needle
 You don't need an olde tyme adventure with daggers and stuff.
@@ -1553,7 +1554,7 @@ You already did.
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > dirk dell
 !Learner needle
 You don't need an olde tyme adventure with daggers and stuff.
@@ -1574,7 +1575,7 @@ COUPLE CAPS
 
 > e
 
-==t5
+@mis
 > coughed canned
 Learner needle
 You try to suppress a cough while avoiding any sudden turndown in fortune.
@@ -1615,7 +1616,7 @@ You're already on the Soft Sand.
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > coughed canned
 !Learner needle
 You try to suppress a cough while avoiding any sudden turndown in fortune.
@@ -1630,7 +1631,7 @@ Loft Land isn't much to look at, but it's not worth scorn.
 > think
 FIRST FAVE
 
-==t5
+@mis
 > creaming cull
 Learner needle
 Less violence, more letters.
@@ -1659,7 +1660,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > nursed nave
 Learner needle
 You don't need to nurse a bad guy or a religious place.
@@ -1688,7 +1689,7 @@ The curst cave is already a cheerier place.
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > nursed nave
 !Learner needle
 You don't need to nurse a bad guy or a religious place.
@@ -1697,7 +1698,7 @@ You don't need to nurse a bad guy or a religious place.
 > think
 !FIRST FAVE
 
-==t5
+@mis
 > cruel crap
 Learner needle
 But you got rid of the skull. Also, swearing is naughty.
@@ -1738,7 +1739,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > cruel crap
 !Learner needle
 But you got rid of the skull. Also, swearing is naughty.
@@ -1759,7 +1760,7 @@ You need something more substantial to come out of the cool cap.
 > s
 > e
 
-==t5
+@mis
 > island ale
 Learner needle
 No need to drink or get an island disease.
@@ -1793,7 +1794,7 @@ You already called up the flooring float.
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > island ale
 !Learner needle
 No need to drink or get an island disease.
@@ -1822,7 +1823,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > goring goat
 Learner needle
 You don't need an aggressive animal sidekick.
@@ -1860,7 +1861,7 @@ The boat is already boring and practical enough.
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > goring goat
 !Learner needle
 You don't need an aggressive animal sidekick.
@@ -1873,7 +1874,7 @@ The boring boat seems to anchor itself okay here.
 
 > enter boat
 
-==t5
+@mis
 > cake key
 Learner needle
 Ooh! That'd be nice and tasty. But you don't need that right now.
@@ -1999,7 +2000,7 @@ That's over. Time to work with Jake!
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > cake key
 !Learner needle
 Ooh! That'd be nice and tasty. But you don't need that right now.
@@ -2010,7 +2011,7 @@ Ooh! That'd be nice and tasty. But you don't need that right now.
 
 > e
 
-==t5
+@mis
 > cake cap
 Learner needle
 No edible headgear appears.
@@ -2107,7 +2108,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > fake fap
 !Learner needle
 You make a rude gesture, for whatever good it does.
@@ -2127,7 +2128,7 @@ Been Buggin
 
 > enter boat
 
-==t5
+@mis
 > pay prong
 Learner needle
 Buying things won't improve your lack of self-worth.
@@ -2155,7 +2156,7 @@ You can't do much, but that doesn't seem like it. You sort of have to break out 
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > ho had
 Learner needle
 You're trying to feel less in the dumps, not more.
@@ -2267,7 +2268,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > teen tuggin
 Learner needle
 Dealing with the shame of having done, er, THAT is beyond the scope of this game.
@@ -2356,7 +2357,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > mashing moke
 Learner needle
 You need subtlety, not violence.
@@ -2427,6 +2428,7 @@ by one point
 !by one point
 This isn't something you need to do here. VERBS has a list of standard verbs.
 
+==t6
 > zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2510,7 +2512,7 @@ LEAST LOSS
 
 > n
 
-==t5
+@mis
 > crane crescent
 Learner needle
 No bird or complex machinery drops by to sweep the pain peasant away.
@@ -2558,7 +2560,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 
 > w
 
-==t5
+@mis
 > oral age
 Learner needle
 Someone here is really old-school. As if text adventures weren't retro enough!
@@ -2593,7 +2595,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > oral age
 !Learner needle
 Someone here is really old-school. As if text adventures weren't retro enough!
@@ -2607,7 +2609,7 @@ You sort of need the opposite. I suspect you know this and are just trying to se
 > e
 > e
 
-==t5
+@mis
 > mit mound
 Learner needle
 The hit hound won't need to go chasing after that.
@@ -2647,7 +2649,7 @@ You already sat sound. But maybe there's a way to feel more comfortable.
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 #okdup
 >grit ground
 You need to find some other way to feel comfortable here. You already showed grit in the Po' Pit, anyway.
@@ -2676,7 +2678,7 @@ You already fit in.
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > mit mound
 !Learner needle
 The pit pound doesn't need clutter like that.
@@ -2694,7 +2696,7 @@ Now you mention it, you did feel a bit restricted here. Have a participation poi
 
 > e
 
-==t5
+@mis
 > binding bays
 Learner needle
 You need to find your way here, not get more tied up.
@@ -2739,7 +2741,7 @@ You already did.
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > binding bays
 !Learner needle
 You need to find your way here, not get more tied up.
@@ -2875,7 +2877,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > n
 > e
 
-==t5
+@mis
 > mere mull
 Learner needle
 The beer bull is not impressed by thoughtfulness.
@@ -2937,7 +2939,7 @@ You already reduced the bull's power!
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > mere mull
 !Learner needle
 The beer bull is not impressed by thoughtfulness.
@@ -3045,7 +3047,7 @@ CULL CEASED
 
 > s
 
-==t5
+@mis
 > bark biff
 McFly
 Learner needle
@@ -3067,7 +3069,7 @@ Whoah, dude. You already did.
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t5
+@mis
 > bark biff
 McFly
 Learner needle
@@ -3103,7 +3105,7 @@ No need to heal further.
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > peel pear
 !Learner needle
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
@@ -3121,7 +3123,7 @@ The Ceiling Seer does not direct you to any wheel or any form of transportation.
 > n
 > n
 
-==t5
+@mis
 > teased toss
 A bit of taunting might work here, but you might need to be a bit harsher.
 
@@ -3163,7 +3165,7 @@ Don't brag too much, now.
 > think
 !CULL CEASED
 
-==t5
+@mis
 #okdup
 > teased toss
 !Learner needle
@@ -3193,7 +3195,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > ceased sauce
 !Learner needle
 You'll need all the sauce you can get, literally or figuratively.
@@ -3213,7 +3215,7 @@ PULL PIECED
 > e
 > e
 
-==t5
+@mis
 > signing sore
 Learner needle
 You make a rude gesture, for whatever good it does.
@@ -3388,7 +3390,7 @@ Don't get greedy!
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > signing sore
 !Learner needle
 You make a rude gesture, for whatever good it does.
@@ -3435,7 +3437,7 @@ Your gold guard has done its duty.
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > woe wield
 !Learner needle
 You didn't need a weapon but rather armor to repel the foe field.
@@ -3486,7 +3488,7 @@ That noun did not make sense in this context.
 > think
 !GO GAPPIN
 
-==t5
+@mis
 > fast fap
 Learner needle
 Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.
@@ -3563,7 +3565,7 @@ The cap has been cast.
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t5
+@mis
 > fast fap
 !Learner needle
 Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.
@@ -3677,7 +3679,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 
 > n
 
-==t5
+@mis
 > cot cord
 Learner needle
 A pull down bed is not what you need now that the action is heating up!
@@ -3781,7 +3783,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > think
 !GOT GORED
 
-==t5
+@mis
 > crow crate
 Learner needle
 No birds appear to fly you over the grate, nor does a box of crowbars materialize.
@@ -3857,7 +3859,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > think
 MERRY MILE
 
-==t5
+@mis
 > bell born
 Learner needle
 There's enough noise right now.
@@ -3917,7 +3919,7 @@ You already did. And forcing cheeriness tends to backfire.
 > think
 !MERRY MILE
 
-==t5
+@mis
 #okdup
 >wary wile
 Yes, you have shown wary wile, and lots of it!
@@ -3967,3 +3969,25 @@ MORAL MAGE
 > moral mage
 >think
 !MORAL MAGE
+
+@mis
+* guess-overflow-check
+#next-cmd-pass
+> z
+> brig brag
+!lump
+> swig swag
+!lump
+> jig jag
+!lump
+> tig tag
+!lump
+# checking for overflow on LLP
+#next-cmd-pass ?? delete this post-comp
+> really rolling
+lump
+> undo
+# checking to make sure we really checked for overflow and not just a regular charge
+# e.g. if we change the level delta from 5 to 6, the lump should not appear
+> cig sag
+lump
