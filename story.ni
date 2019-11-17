@@ -535,11 +535,15 @@ the hive heap is a thing. cht of hive heap is leteq. "The hive heap that was rel
 
 check taking hive heap: say "You might not get stung, but it's too unwieldy to carry[if player has big bag], even with your big bag[end if]." instead;
 
-section vapor vile
+section vapor vial
 
-the vapor vile is a thing. cht of vapor vile is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it.". description is "The vapor vile is noxious, so you can't get too near it. But perhaps if it condensed into a solid, you could deal with it more easily.". [-> paper pile]
+the vapor vial is a thing. cht of vapor vial is leteq. "A vapor vial fell out from the hive heap. Perhaps there is something inside it.". description is "The vapor vial may or may not be easy to shatter and release the toxic, err, vile vapor within. Perhaps there is a way to make it and its contents less toxic and more biodegradable.". [-> paper pile]
 
-check taking vapor vile: say "It's too ethereal to take." instead;
+understand "vapor vile" and "vile" and "vile vapor" as vapor vial when vapor vial is touchable.
+
+check opening vapor vial: say "It might be poisonous." instead;
+
+check taking vapor vial: say "It might break in its current form." instead;
 
 section paper pile
 
@@ -2479,7 +2483,7 @@ the thing-hint-rule of Too Totes New Notes is the too-totes-new-notes-hint rule.
 the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is cache-cap-hint rule.
 the thing-hint-rule of trending tribe is trending-tribe-hint rule.
-the thing-hint-rule of vapor vile is vapor-vile-hint rule.
+the thing-hint-rule of vapor vial is vapor-vial-hint rule.
 the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
 the thing-hint-rule of way woke clay cloak is the way-woke-clay-cloak-hint rule.
 the thing-hint-rule of We Whine ME MINE is the we-whine-me-mine-hint rule.
@@ -2794,8 +2798,8 @@ this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
 this is the trending-tribe-hint rule:
 	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
 
-this is the vapor-vile-hint rule:
-	say "[one of]It would be nice if the vapor vile became something more substantive.[or]It can become a PAPER PILE.[stopping]"
+this is the vapor-vial-hint rule:
+	say "[one of]It would be nice if the vapor vial became something more useful or at least less toxic.[or]It can become a PAPER PILE.[stopping]"
 
 this is the very-vile-fairy-file-hint rule:
 	if merry-mile is false:
@@ -3404,7 +3408,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
 "fall"	"free"	true	true	false	vc-fall-free rule	vr-fall-free rule	--
 "dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
-"paper"	"pile"	false	true	false	vc-paper-pile rule	vr-paper-pile rule	--
+"paper"	"pile"	true	true	false	vc-paper-pile rule	vr-paper-pile rule	--
 "backed"	"binder"	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--
 "appealing"	"appear"	true	false	false	vc-appealing-appear rule	vr-appealing-appear rule	-- [start of Real Rear]
 "kneel|kneeling"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	--
@@ -3916,9 +3920,9 @@ this is the vc-dive-deep rule:
 	the rule succeeds;
 
 this is the vr-dive-deep rule:
-	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
+	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over Cark Cliff or ripping them up until a vapor vial clatters out.";
 	moot hive heap;
-	bring-here vapor vile;
+	bring-here vapor vial;
 
 this is the vc-dreaming-dull rule:
 	if screaming skull is not touchable, the rule fails;
@@ -4609,12 +4613,12 @@ this is the vr-not-near rule:
 	now trounce-track is true;
 
 this is the vc-paper-pile rule:
-	if vapor vile is not touchable, the rule fails;
+	if vapor vial is not touchable, the rule fails;
 	the rule succeeds;
 
 this is the vr-paper-pile rule:
-	say "The vapor vile changes to a paper pile.";
-	moot vapor vile;
+	say "The vile vapor in the vapor vial swirls around, and the paper cracks. The vapor spreads over the ground and changes into a whole paper pile.";
+	moot vapor vial;
 	bring-here paper pile;
 
 this is the vc-plain-pleasant rule:
