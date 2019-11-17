@@ -289,7 +289,7 @@ this is the can-go-gappin rule:
 	the rule fails;
 
 this is the can-heal-here rule:
-	if least-loss is true, the rule succeeds;
+	if least-loss is true and knelt-yet is true, the rule succeeds;
 	the rule fails.
 
 this is the can-least-loss rule:

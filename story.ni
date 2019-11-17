@@ -176,7 +176,7 @@ definition: a thing (called th) is quicknear:
 	no;
 
 to bold-new-room (newrm - a room):
-	ifmove player to newrm, without printing a room description;
+	move player to newrm, without printing a room description;
 	bold-my-room;
 
 to bold-my-room:
@@ -274,13 +274,13 @@ a thing can be fakeenter. a thing is usually not fakeenter.
 rule for supplying a missing noun when entering: [?? yes, this is bad coding. I should define a property. But ... later.]
 	let TFE be number of touchable fakeenter things;
 	if TFE > 1:
-		say "While there's more than one thing you can logically enter here, you don't need to enter anything to win the game.";
+		say "There's more than one thing you can logically enter here. IN works better as a command.";
 		reject the player's command;
 	else if TFE is 0:
-		say "I didn't find anything to enter, but on the other hand, you need to enter anything to win the game.";
+		say "I didn't find anything to enter.";
 		reject the player's command;
 	now noun is a random touchable fakeenter thing;
-	say "([the noun])[line break][one of][line break]NOTE: you never need to enter anything to win the game.[or][stopping]";
+	say "([the noun])[line break][one of][line break]NOTE: IN is a substitute for trying to enter something, and you only need to do so with one object.[or][stopping]";
 
 section boring rules
 
@@ -715,7 +715,7 @@ to solve-bull-chase:
 	now in-bull-chase is false;
 	moot beer bull;
 	now player has mild mead;
-	say "Man! I guess you could say you had ... one wound run-round."
+	say "[line break]Man! I guess you could say you had ... one wound run-round.";
 	bold-new-room Soft Sand;
 
 part Dives Ditch -3,2
@@ -723,6 +723,12 @@ part Dives Ditch -3,2
 Dives Ditch is west of Fight Funnel. cht of Dives Ditch is partplus. Dives Ditch is in Piddling Pain. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap.[end if]". [-> knives niche]
 
 kni-ni is a truth state that varies.
+
+chapter mild mead and wild weed
+
+the mild mead is a thing. the indefinite article of mild mead is "some". description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
+
+the wild weed is a thing. the indefinite article of wild weed is "some". description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
 
 part History Hall -2,1
 
@@ -825,7 +831,7 @@ talk-text of bold bard is "'Scold-scarred. Told. Tarred.' The bold bard clearly 
 
 chapter gold guard
 
-the mold marred gold guard is a thing. description is "[if mine-more is false]Could be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
+the mold marred gold guard is a thing. description is "[if beer bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if mine-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
 
 understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when mine-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
 
@@ -867,7 +873,7 @@ sign-seen is a truth state that varies.
 
 chapter fussed folks
 
-Fussed Folks Just Jokes is scenery. "You read about [next-rand-txt of table of miscellaneous people]."
+Fussed Folks Just Jokes is scenery. "You read about [next-rand-txt of table of miscellaneous people].". printed name of Fussed Folks Just Jokes is "[i]Fussed Folks Just Jokes[r]".
 
 understand "book" as Fussed Folks when Fussed Folks is touchable.
 
@@ -1123,10 +1129,9 @@ Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is b
 gull-guard is a truth state that varies.
 
 to buff-gold-guard:
-	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal.'[wfak]";
+	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back.'[wfak]";
 	if tried-yet of "BEAST BOSS", say "[line break]You also feel more ready to face the beast boss, now.";
 	now gull-guard is true;
-	move player to Soft Sand;
 
 check going west in here hull:
 	if bull-null is false and in-bull-chase is true:
@@ -1139,7 +1144,7 @@ The Beer Bull is a person in Here Hull. cht of beer bull is leteq. talk-text is 
 check taking beer bull: say "You need to worry about the beer bull taking you." instead;
 
 to say bull-standby:
-	say "[if ever-bull-chase is false]A beer bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying DEAR DULL. It'd be interesting to see what[end if]"
+	say "[if ever-bull-chase is false]A beer bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying DEAR DULL. If only you could dispose of the bull, you could see what it is[end if]"
 
 bull-null is a truth state that varies.
 
@@ -1255,6 +1260,54 @@ check unlocking coral cage with: try opening coral cage instead;
 section Here Hip Queer Quip
 
 Here Hip Queer Quip is a proper-named thing. description is "It contains summaries of the Moral Mage's lecture."
+
+part Pit Pound 1,3
+
+Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
+
+A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
+
+check going east in Pit Pound:
+	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
+	if found-fit is false, say "It's weird. You don't feel like you belong in the pit pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
+
+found-fit is a truth state that varies.
+
+part Blinding Blaze 2,3
+
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
+
+to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
+
+to say blazno:
+	if blaze-ways is false:
+		say "You can't see any way other than back west";
+	else if stuck stair is off-stage:
+		say "You explore the minding maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgery of working through all the dead ends and to make it through smoothly and happily";
+	else:
+		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed";
+
+blaze-ways is a truth state that varies.
+
+maze-mapped is a truth state that varies.
+
+check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
+
+chapter minding maze
+
+the minding maze is fakeenter scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
+
+check entering minding maze: try going east instead;
+
+chapter stuck stair
+
+the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
+
+chapter snuck snare
+
+a snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
+
+[?? burned bower/turned tower]
 
 volume Vale Verminous
 
@@ -1419,10 +1472,10 @@ the can't eat unless edible rule is not listed in any rulebook.
 
 check eating:
 	if noun is Mind Malt, say "Worthless. It's empty." instead;
-	if noun is a gaphat, say "Idioms are neat, but this is about rhyming." instead;
+	if noun is a gaphat, say "Idioms are neat, but this adventure is about rhyming." instead;
 	if noun is wild weed, say "That is not filed feed." instead;
 	if noun is full feast, say "Too much for one person. You need to move it somewhere everyone can enjoy it." instead;
-	say "You [if full feast is moot]already had a feast. [end if]You don't need to eat anything explicitly." instead;
+	say "You [if full feast is moot]already had a feast. [end if]don't need to eat anything explicitly." instead;
 
 chapter drinking
 
@@ -1431,11 +1484,18 @@ the block drinking rule is not listed in any rulebook.
 check drinking:
 	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
 	if noun is sage sea or noun is worst wave, say "Sea salt? Ee! Alt!" instead;
-	say "Drink dry? Sink ... sigh ...[one of] (you don't need to DRINK anything in this game.)[or][stopping]" instead;
+	say "Drink dry? Sink ... sigh ... [one of] (you don't need to DRINK anything in this game.)[or][line break][stopping]" instead;
 
 chapter wearing
 
-check wearing a gaphat: say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
+procedural rule while wearing something: ignore the can't wear what's not held rule.
+
+the can't wear what's not clothing rule is not listed in any rulebook.
+
+check wearing:
+	if noun is a gaphat, say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
+	if noun is gold guard, say "You'll wear it when you need to." instead;
+	say "You never need to WEAR anything explicitly in this adventure." instead;
 
 chapter cleaning
 
@@ -1815,7 +1875,7 @@ definition: a thing (called th) is readable:
 read-exam-note is a truth state that varies.
 
 carry out reading:
-	if noun is evidencey, say "Yes, [the noun]'s details are important, but not to your quest specifically." instead;
+	if noun is evidencey, say "Yes, [the noun]'s details are important, but you've gotten enough." instead;
 	repeat through table of readables:
 		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
 	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
@@ -3022,60 +3082,6 @@ check quitting the game: say "You say to yourself, not fully convinced, 'Best bi
 
 volume unsorted
 
-chapter wildweeding
-
-the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
-
-the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
-
-part Pit Pound 1,3
-
-Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
-
-A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
-
-check going east in Pit Pound:
-	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
-	if found-fit is false, say "It's weird. You don't feel like you belong in the pit pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
-
-found-fit is a truth state that varies.
-
-part Blinding Blaze 2,3
-
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
-
-to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
-
-to say blazno:
-	if blaze-ways is false:
-		say "You can't see any way other than back west";
-	else if stuck stair is off-stage:
-		say "You explore the minding maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgery of working through all the dead ends and to make it through smoothly and happily";
-	else:
-		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed";
-
-blaze-ways is a truth state that varies.
-
-maze-mapped is a truth state that varies.
-
-check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
-
-chapter minding maze
-
-the minding maze is fakeenter scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
-
-check entering minding maze: try going east instead;
-
-chapter stuck stair
-
-the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
-
-chapter snuck snare
-
-a snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
-
-[?? burned bower/turned tower]
-
 volume Poorly Penned
 
 volume Get a Guess
@@ -3617,7 +3623,7 @@ this is the shone-yet rule:
 to lean-and-mean:
 	say "[line break]";
 	if lean-lugged is true and mean-mugged is true:
-		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.'[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. He vanishes.";
+		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.' He vanishes.[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere.";
 		now player has clay cloak;
 		moot Dean Duggan;
 		move clumped cluster to Been Buggin';
@@ -3906,7 +3912,7 @@ this is the vc-cull-ceased rule:
 	the rule succeeds;
 
 this is the vr-cull-ceased rule:
-	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! The Bull Beast, knowing it's in trouble, tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]The Bull Beast roars as you raise the spear. It's probably a good idea to make sure of things.[paragraph break]The Bull Beast now lies lifeless. Perhaps you can do something constructive with its dead body.";
+	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! The Bull Beast, knowing it's in trouble, tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]The Bull Beast roars as you raise the spear. It's probably a good idea to make sure of things. You do.[paragraph break]Perhaps you can do something constructive with the Bull Beast's dead body.";
 	now cull-ceased is true;
 	now bull beast is boring; [?? what if dead]
 	now cht of bull beast is leteq; [bull beast->full feast]
@@ -4270,9 +4276,10 @@ this is the vc-heal-here rule:
 		clue-later "HEAL HERE";
 		vcp "You don't have anything to heal from, yet[seer-sez].";
 		continue the action;
-	if knelt-near is false:
+	if knelt-yet is false:
 		clue-later "HEAL HERE";
 		vcp "You have not shown the Ceiling Seer the proper respect, yet.";
+		continue the action;
 	the rule succeeds;
 
 this is the vr-heal-here rule:
@@ -4301,6 +4308,7 @@ this is the vr-history-hall rule:
 	if ever-hall is false:
 		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
 	bold-my-room;
+	say "[description of history hall][line break]";
 	now ever-hall is true;
 
 this is the vc-ho-happen rule:
@@ -4704,7 +4712,11 @@ this is the vr-plain-pleasant rule:
 	moot pain peasant;
 
 this is the vc-pull-pieced rule:
-	if full feast is not in Creased Cross, the rule fails;
+	if full feast is not in Creased Cross and bull beast is not in creased cross, the rule fails;
+	if bull beast is in creased cross:
+		vcp "[if cull-ceased is true]The bull beast could be pulled, but in its current form, it wouldn't be usefu[else]You'd have to defeat the bull beast first[end if].";
+		clue-later "PULL PIECED";
+		continue the action;
 	if shore-shine is false:
 		vcp "You're not sure where you could pull the full feast to, yet.";
 		clue-later "PULL PIECED";
@@ -4721,7 +4733,7 @@ this is the vr-pull-pieced rule:
 	moot mild mead;
 	if wild weed is off-stage, max-down;
 	moot dining door;
-	bold-new-room Whining War;
+	if player is not in Whining War, bold-new-room Whining War;
 	clue-zap "PULL PIECED";
 
 this is the vc-really-rolling rule:
@@ -4730,7 +4742,7 @@ this is the vc-really-rolling rule:
 	continue the action;
 
 this is the vr-really-rolling rule:
-	say "Have a small bonus for figuring the significance of my pen name.";
+	say "Have a small bonus for figuring the significance of my pen name. Also, enjoy this trivia: looking back, I wish I'd been Parsin['] Pro Carson Crowe, instead. Eh, well!";
 	now rolling-yet is true;
 
 this is the vc-see-sign rule:
@@ -5085,7 +5097,7 @@ understand the command "misses" as something new.
 understand "misses" as missesing.
 
 carry out missesing:
-	try showmissesing;
+	carry out the showmissesing activity;
 	the rule succeeds.
 
 chapter llaing
