@@ -2,7 +2,15 @@
 # mch.py
 #
 # mistake vs test script checker
+#
+# checks/generates test cases for both when leet learner is necessary and when it is disabled via the leet-rule
+#
+# valid for both VVFF and QQNN
+#
+# symlinked from QQNN to VVFF
+#
 
+import os
 import mytools as mt
 import sys
 from collections import defaultdict
@@ -18,7 +26,16 @@ got_mistake_test = defaultdict(bool)
 need_leet_check = defaultdict(bool)
 got_leet_check = defaultdict(bool)
 
-mist_file = i7.hdrfile('vv', 'mi')
+needed_text = "Learner needle"
+my_proj = i7.dir2proj(os.getcwd(), to_abbrev = True)
+
+if not my_proj or my_proj == 'vv': my_proj = "vvff"
+
+if my_proj == "qq":
+    my_proj = "qqnn"
+    needed_text = "sheep sheet"
+
+mist_file = i7.hdrfile(my_proj, 'mi')
 
 max_count = 15
 
@@ -54,7 +71,12 @@ with open(mist_file) as file:
             need_mistake_test[my_cmd] = True
             my_line[my_cmd] = line_count
             need_leet_check[my_cmd] = ary[5] != '--'
-            text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + "Learner needle\n" + noquo_single(i7.a2q(ary[6]))
+            try:
+                text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + needed_text + "\n" + noquo_single(i7.a2q(ary[6]))
+            except:
+                print("Bad range error at line {} (needed 7 columns, got {}): {}".format(line_count, len(ary), line.rstrip()))
+                print('//'.join(ary))
+                sys.exit()
 
 cmd_count = 1
 while cmd_count < len(sys.argv):
@@ -71,35 +93,53 @@ while cmd_count < len(sys.argv):
 okay_next_dup = False
 
 in_mistakes = False
+in_cs_check = False
 
-with open("rbr-vvff-thru.txt") as file:
+rbr_file = "rbr-{}-thru.txt".format(my_proj)
+next_cmd_pass = False
+
+with open(rbr_file) as file:
     for (line_count, line) in enumerate(file, 1):
         if okay_next_dup:
             okay_next_dup = False
             continue
-        if '==t5' in line: in_mistakes = True
+        if '@mis' in line: in_mistakes = True
+        if '@cs' in line: in_cs_check = True
         if 'okdup' in line: okay_next_dup = True
-        if not line.strip():
-            in_mistakes = False
+        if line.startswith("#next-cmd-pass"):
+            next_cmd_pass = True
             continue
-        if not in_mistakes:
-            if 'Learner needle' in line:
-                print("Maybe errant needle message line {}.".format(line_count))
+        if not line.strip():
+            in_mistakes = in_cs_check = False
+            continue
+        if not in_mistakes and not in_cs_check:
+            if needed_text in line and not line.startswith(">"):
+                print("Possible errant cluing message line {}: make sure an @mis is above it.".format(line_count))
             continue
         if not line.startswith(">"): continue
+        if in_cs_check: continue
         line_cmd = re.sub("^> *", "", line.lower().strip())
-        if line_cmd == 'undo': continue
+        if line_cmd == 'undo' or line_cmd.startswith('cs'): continue
         if line_cmd not in need_mistake_test:
-            print("Erroneous mistake command line {}: {}.".format(line_count, line_cmd))
+            if next_cmd_pass:
+                next_cmd_pass = False
+                continue
+            print("Erroneous mistake command {} line {}: {}. Use #next-cmd-pass to flag this as okay.".format(rbr_file, line_count, line_cmd))
+            mt.add_postopen_file_line(rbr_file, line_count)
         elif line_cmd in got_mistake_test:
             if line_cmd not in need_leet_check:
-                print("Duplicate mistake try at line {}: {}.".format(line_count, line_cmd))
+                print("Duplicate mistake try at {} line {}: {}. Use #next-cmd-pass to flag this as okay.".format(rbr_file, line_count, line_cmd))
+                mt.add_postopen_file_line(rbr_file, line_count)
             elif need_leet_check[line_cmd] == False:
-                print("Erroneous leet-check rule at line {}: {}.".format(line_count, line_cmd))
+                print("Erroneous leet-check rule at {} line {}: {}. Use #next-cmd-pass to flag this as okay.".format(rbr_file, line_count, line_cmd))
+                mt.add_postopen_file_line(rbr_file, line_count)
             got_leet_check[line_cmd] = True
         got_mistake_test[line_cmd] = True
+        next_cmd_pass = False
 
 err_found = 0
+
+print("DETAILS ABOVE SUMMARY BELOW")
 
 y = [x for x in need_mistake_test if x not in got_mistake_test]
 
@@ -150,3 +190,4 @@ final_string = "{} total error{}".format(err_found, mt.plur(err_found)) if err_f
 
 mt.print_and_warn(final_string)
 
+mt.postopen_files()
