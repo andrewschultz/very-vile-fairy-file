@@ -64,6 +64,9 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "tig tag"	trivially true rule	false	3	3	mist-bag-hint rule	"But you already have one utterly childish game right in front of you. Do you really need any more?"
 "cig sag"	trivially true rule	false	3	3	mist-bag-hint rule	"You find no black market currency in the [bag-rag]."
 "jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing."
+"trilly trolling"	trivially true rule	false	--	--	--	"The Very Vile Fairy File probably has information on that, yes."
+"silly souling/soling"	trivially true rule	false	--	--	--	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
+"filly foaling"	trivially true rule	false	--	--	--	"Caring for young animals is a good thing but beyond this game's scope."
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
 "perking pump"	lump-known rule	false	--	--	--	"I don't want to know." [start general stuff]

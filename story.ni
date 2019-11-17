@@ -28,11 +28,11 @@ include Basic Screen Effects by Emily Short.
 
 [dnc.py/icl.pl can/should toggle this]
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
 
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
+include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
 
 include undo output control by Erik Temple.
 
@@ -202,7 +202,7 @@ core-max is a number that varies. core-max is 81. [core-max is fixed. It is the 
 
 min-needed is a number that varies. min-needed is 81. [min-needed increases as you find LLPs.]
 
-max-bonus is a number that varies. max-bonus is 12.
+max-bonus is a number that varies. max-bonus is 13.
 
 cur-bonus is a number that varies. cur-bonus is 0. [we could define min-needed as core-max + cur-bonus I guess.]
 
@@ -383,15 +383,9 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
 
-the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if].". [-> big bag]
-
-after examining zig zag rig rag when bag-hint is true:
-	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
-	continue the action;
+the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy, but maybe you can convert it to something more practical.". [-> big bag]
 
 the big bag is a thing. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!"
-
-bag-hint is a truth state that varies. [ this seems like duplicating the THINK command, but it's used for the bag description and makes for easier code. ]
 
 volume Worst Whew
 
@@ -436,8 +430,9 @@ a packet of Mind Malt is a thing. description is "It looks like there used to be
 Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]"
 
 to say my-notes:
+	if player has big bag, say "    RIG RAG to BIG BAG     = center.";
 	repeat through table of newnotes:
-		if there is a score-needed entry and score < score-needed entry, continue the action;
+		if there is a score-needed entry and core-score < score-needed entry, continue the action;
 		say "[note-to-give entry][line break]";
 
 table of newnotes
@@ -1266,7 +1261,7 @@ check going north in Gassed Gap:
 	isle-max-score;
 
 to isle-max-score:
-	now max-poss is isle-score + score;
+	now max-poss is isle-score + score + 1 - bag-point;
 
 to decide which number is evidence-pieces:
 	decide on boolval of sign-seen + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
@@ -1502,9 +1497,7 @@ check taking:
 	if player has zig zag rig rag and number of things enclosed by the player > 4:
 		alter the multiple object list to { };
 		add noun to multiple object list;
-		now bag-hint is true;
 		say "You're juggling too much! Maybe something you're carrying can be repurposed. Something you've found useless so far.";
-		if tried-yet of "BIG BAG", say "[line break]Like the zig zag rig rag. It could become a big bag now.";
 		the rule succeeds;
 
 chapter sleeping
@@ -1592,10 +1585,7 @@ to decide which number is carried-fungible:
 
 check taking when player does not have big bag (this is the need bag for lots of items rule):
 	if carried-fungible > 3:
-		say "You can't carry so much at once! ";
-		if tried-yet of "BIG BAG":
-			say "Perhaps now is a good time to change the zig zag rig rag to a big bag, as you tried before." instead;
-		say "Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
+		say "You can't carry so much at once! Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
 
 the need bag for lots of items rule is listed last in the check taking rulebook.
 
@@ -3108,6 +3098,7 @@ rule for showaltverbsing:
 showmissesing is an activity.
 
 rule for showmissesing:
+	if rolling-yet is false, say "At any time, you could've guessed my pen name was a riff on [b]REALLY ROLLING[r].";
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if appeal-appear is false, say "You could've figured the Peeling Pier's brand name as [b]APPEALING APPEAR[r].";
 	if gan-wan is false, say "You could've said [b]WHAT A or WHATTA WANKSTA[r] to the Gutta Ganksta before saying LOTS LAME in the mall.";
@@ -3409,8 +3400,7 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"
 "mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
 "flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"
-"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
-"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--
+"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	-- [start of Fun Fen]
 "strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
 "fall"	"free"	true	true	false	vc-fall-free rule	vr-fall-free rule	--
 "dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
@@ -3493,6 +3483,8 @@ w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
 "tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
 "merry"	"mile"	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--
 "bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
+"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [two any-time things]
+"really"	"rolling"	true	false	false	vc-really-rolling rule	vr-really-rolling rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3583,6 +3575,8 @@ to vcal (t - text): [verb conditional print, flag already rhymed]
 	now already-rhymed-this is true;
 	if vc-dont-print is false, say "[t][line break]";
 
+rolling-yet is a truth state that varies.
+
 section vc vr rules [xxvcvr]
 
 this is the vc-appealing-appear rule:
@@ -3647,18 +3641,12 @@ this is the vc-big-bag rule:
 	if player has big bag:
 		vcal "You already made the big bag.";
 		continue the action;
-	if Fun Fen is unvisited:
-		clue-later "BIG BAG";
-		vcp "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
-		continue the action;
 	the rule succeeds;
 
 this is the vr-big-bag rule:
 	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
 	moot zig zag rig rag;
 	now player has big bag;
-	now bag-hint is false;
-	clue-zap "BIG BAG";
 
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
@@ -4658,6 +4646,15 @@ this is the vr-pull-pieced rule:
 	move player to Whining War, without printing a room description;
 	clue-zap "PULL PIECED";
 
+this is the vc-really-rolling rule:
+	if rolling-yet is false, the rule succeeds;
+	vcal "You already guessed the significance of my pen name.";
+	continue the action;
+
+this is the vr-really-rolling rule:
+	say "Have a small bonus for figuring the significance of my pen name.";
+	now rolling-yet is true;
+
 this is the vc-see-sign rule:
 	if player does not have We Whine, the rule fails;
 	if sign-seen is true:
@@ -5032,6 +5029,8 @@ understand "blow by" as blowbying.
 understand "flow fie" as blowbying.
 understand "slow sigh" as blowbying.
 
+to decide what number is bag-point: decide on boolval of whether or not player has big bag;
+
 carry out blowbying:
 	let cur-row be 1;
 	abide by the too-late-for-beta rule;
@@ -5041,8 +5040,8 @@ carry out blowbying:
 		if do-rule entry is vr-flim-flam rule, break;
 		increment cur-row;
 	process the any-warp rule;
-	now score is whew-score;
-	now core-score is whew-score;
+	now core-score is whew-score + bag-point;
+	now score is whew-score + cur-bonus + bag-point;
 	move player to fun fen;
 	moot mind malt;
 	now player has too totes new notes;

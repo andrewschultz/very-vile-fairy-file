@@ -17,7 +17,7 @@
 
 > think
 
-BIG BAG
+!BIG BAG
 BURY BILE
 
 > get good
@@ -59,9 +59,6 @@ by one point
 
 > big bag
 by one point
-
-> think
-!BIG BAG
 
 > s
 

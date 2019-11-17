@@ -97,7 +97,7 @@ Nothing happens. The words are just settings
 \\
 > think
 \\
-BIG BAG
+!BIG BAG
 BURY BILE
 
 @mis
@@ -593,10 +593,6 @@ You find no black market currency in the big bag.
 >jig jag
 You aren't up for dancing.
 !Learner needle
-
-==t2
-> think
-!BIG BAG
 
 ==t4
 >w

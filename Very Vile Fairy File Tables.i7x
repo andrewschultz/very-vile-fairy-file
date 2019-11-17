@@ -61,7 +61,7 @@ to seed-score-list:
 	repeat through table of ranks:
 		increment my-row;
 		if there is a rank-max entry:
-			if rank-max entry is -1, now rank-max entry is whew-score; [keep initial rank until you get to Fun Fen]
+			if rank-max entry is -1, now rank-max entry is whew-score + 1; [keep initial rank until you get to Fun Fen. The +1 is because you can flip the big bag at any time.]
 			now min-forced-score is rank-max entry;
 			now last-forced-row is my-row;
 			now last-points is rank-max entry + 1;
@@ -196,7 +196,6 @@ volume hints for later
 table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you're armed better."
-"BIG BAG"	false	vc-big-bag rule	false	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag. You can [once-now of vc-big-bag rule] you're in a more open area."
 "BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
 "CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
