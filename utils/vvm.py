@@ -3,6 +3,8 @@
 #
 # very vile fairy file mistake guesser
 #
+# symlinked from QQNN to VVFF
+#
 
 from mytools import nohy
 import sys
@@ -14,12 +16,16 @@ from collections import defaultdict
 debug = False
 add_and_verify = True
 
-os.chdir(i7.sdir("vv"))
-mistake_cfg = os.path.join(i7.sdir("vv"), "vvm.txt")
-source_cfg = os.path.join(i7.sdir("vv"), "vvs.txt")
-my_src = i7.src("vv")
-mistake_file = i7.hdr("vvff", "mi")
-table_file = i7.hdr("vvff", "ta")
+my_proj = i7.dir2proj(to_abbrev=True)
+if my_proj != 'vv' and my_proj != 'qq':
+    sys.exit("You need to run this from the VVFF or QQNN source directory.")
+
+os.chdir(i7.sdir(my_proj))
+mistake_cfg = os.path.join(i7.sdir(my_proj), my_proj + "m.txt")
+source_cfg = os.path.join(i7.sdir(my_proj), my_proj + "s.txt")
+my_src = i7.src(my_proj)
+mistake_file = i7.hdr(my_proj, "mi")
+table_file = i7.hdr(my_proj, "ta")
 
 ignores = defaultdict(bool)
 should_be = defaultdict(str)
@@ -34,6 +40,11 @@ def usage(hdr="GENERAL USAGE"):
     print("e/ec/ce = edit config file")
     print("es/se = edit source file")
     exit()
+
+def settings_got(my_line):
+    if 'cht of ' not in my_line: return "<UNDEFINED>"
+    temp = re.sub(".*cht of .*(is|are) *", "", my_line.strip())
+    return re.sub("[\. ].*", "", temp)
 
 def read_rhymes_table():
     skip_next = False
@@ -231,7 +242,7 @@ def check_for_cht():
                 continue
             if cht_change(line):
                 if not re.search("\[([^\]])*->([^\]])*\]", line):
-                    if 'is phbt' in line or 'is usually phbt' in line: continue # phbt means disabling things, so we pass on that, or default definitions
+                    if 'is phbt' in line or 'is usually phbt' in line or line.startswith('to say ll-cheat of'): continue # phbt means disabling things, so we pass on that, or default definitions
                 # if not re.search("\[([^\]])*->(^[^\]])*\]", line):
                     need_arrow += 1
                     print(need_arrow, "Need [->] at line", line_count, line.strip())
@@ -243,7 +254,8 @@ def check_for_cht():
                     (my_from, my_to) = x
                     settings_needed = learner_shift(my_from, my_to)
                     if settings_needed in line: continue
-                    print(line_count, "Need", settings_needed, "have", my_from, "->", my_to, "for", line_count, "REPLACE" if 'cht' in line else "ADD")
+                    if 'is allover' in line: continue
+                    print(line_count, "Need {} have {} / {} -> {} at line {} {}".format(settings_needed, settings_got(line), my_from, my_to, line_count,  "REPLACE" if 'cht' in line else "ADD"))
                     if my_src not in file_open_after:
                         file_open_after[my_src] = line_count
                 continue

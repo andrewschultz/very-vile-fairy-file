@@ -10,6 +10,7 @@ import re
 import i7
 import sys
 import os
+import mytools as mt
 
 scores = defaultdict(int)
 got = defaultdict(int)
@@ -52,6 +53,48 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     print("u = update, nu/un = don't update")
     exit()
+
+def check_invisiclues_vs_walkthrough():
+    fname = "c:/writing/scripts/invis/vv.txt"
+    in_invisiclues = defaultdict(int)
+    first_invis = defaultdict(str)
+    dubs = 0
+    last_dup_comment = -1
+    with open(fname) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if "#duphint" in line: last_dup_comment = line_count
+            for q in list(got_detail['nec']) + list(got_detail['opt']):
+                if q.upper() in line:
+                    if q in in_invisiclues:
+                        if last_dup_comment == line_count - 1:
+                            last_dup_comment = -1
+                            continue
+                        if last_dup_comment != -1:
+                            print("Mistaken duphint line {} after {}.".format(line_count, last_dup_comment))
+                            mt.add_postopen_file_line(fname, line_count)
+                            continue
+                        dubs += 1
+                        print("Potential double {} {} {} vs {}: {} / {}".format(dubs, q.upper(), line_count, in_invisiclues[q], line.strip(), first_invis[q]))
+                        mt.add_postopen_file_line(fname, line_count)
+                    else:
+                        first_invis[q] = line.strip()
+                    in_invisiclues[q] = line_count
+            if last_dup_comment == line_count - 1:
+                print("Uh oh, had a duphint which didn't precede any point scoring command at line {}.".format(line_count))
+                mt.add_postopen_file_line(fname, line_count)
+    count = tot = 0
+    for x in got_detail['nec']:
+        if x not in in_invisiclues:
+            count += 1
+            tot += 1
+            print(count, tot, "Necessary command {} not found in invisiclues.".format(x.upper()))
+    count = 0
+    for x in got_detail['opt']:
+        if x not in in_invisiclues:
+            count += 1
+            tot += 1
+            print(count, tot, "Optional command {} not found in invisiclues.".format(x.upper()))
+    if last_dup_comment != -1: print("Unacknowledged duplicate comment at line {}.".format(last_dup_comment))
 
 def check_think_tests():
     think_needed = defaultdict(int)
@@ -476,8 +519,8 @@ def check_points():
         for (line_count, line) in enumerate(file, 1):
             temp_pass = False
             if line.startswith("core-max"):
-                if core_max: sys.exit("Core max / minimum score redefined at line {:d}.".format(line_count))
-                core_max = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+                if core_max: sys.exit("Core max / minimum score redefined at line {}.".format(line_count))
+                core_max = int(re.sub(".* is ", "", re.sub("\.( *\[.*?\])$", "", line.lower().strip())))
                 min_line = line_count
                 continue
             if line.startswith("table of verb checks"):
@@ -586,8 +629,6 @@ check_think_tests()
 check_bad_loc_tests()
 check_multiple_command_tests()
 
-if open_source_post:
-    if len(to_open) == 0: sys.exit("No files to open.")
-    for fi_open in to_open:
-        i7.npo(fi_open, to_open[fi_open], bail=False)
-    exit()
+check_invisiclues_vs_walkthrough()
+
+mt.postopen_files()
