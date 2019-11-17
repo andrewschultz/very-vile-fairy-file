@@ -61,7 +61,7 @@ to seed-score-list:
 	repeat through table of ranks:
 		increment my-row;
 		if there is a rank-max entry:
-			if rank-max entry is -1, now rank-max entry is whew-score; [keep initial rank until you get to Fun Fen]
+			if rank-max entry is -1, now rank-max entry is whew-score + 1; [keep initial rank until you get to Fun Fen. The +1 is because you can flip the big bag at any time.]
 			now min-forced-score is rank-max entry;
 			now last-forced-row is my-row;
 			now last-points is rank-max entry + 1;
@@ -165,7 +165,6 @@ randtxt
 "Hole Hound Bowl Bound"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
-"Silly Signs[r], by Willy Wines and Tillie Tines"
 "Men, Messed, Been Best, by Ren Rest"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"
@@ -173,8 +172,10 @@ randtxt
 "Near Null Fearful"
 "Oh, Trait So Straight"
 "One Wet Sunset"
+"Bane, Bones, Stain Stones[r], by Jane Jones"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
 "Self Centered Elf Entered"
+"Silly Signs[r], by Willy Wines and Tillie Tines"
 "So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
 "Why When My Men, by Ben"
@@ -185,17 +186,16 @@ to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [s
 table of Wet Wood clues
 prof	randtxt
 False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
-False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood.  [not-leet of letminus]."
+False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood. [not-leet of letminus]."
 False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. [not-leet of leteq]."
-True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something slightly more distasteful.  [not-leet of leteq]." [pet pood]
+True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
 
 [leetclue of xxx]
 volume hints for later
 
 table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
-"BIG BAG"	false	vc-big-bag rule	false	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag. You can [once-now of vc-big-bag rule] you're in a more open area."
+"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you're armed better."
 "BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
 "CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
@@ -208,7 +208,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
 "FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
 "FLIM FLAM"	false	vc-flim-flam rule	false	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
+"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of can-full-feast rule] it's been vanquished."
 "GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
 "GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
 "GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
@@ -348,7 +348,7 @@ this is the can-take-tea rule:
 this is the trivially false rule: the rule fails;
 this is the trivially true rule: the rule succeeds;
 
-to say rhyme-display:
+to say rhyme-display: [pok]
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if me-minded is true:
@@ -360,7 +360,9 @@ to say rhyme-display:
 	else if mean mass is in Vined Vault:
 		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
 	else if player is in Vined Vault:
-		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
+		say "GET GOOD and GIFT GIVER just switched two letters from WET WOOD and RIFT RIVER, but maybe you need to change a bit more here. While still rhyming.";
+	else if player is in Rift River:
+		say "GET GOOD worked to leave the WET WOOD. Perhaps something similar will work here.";
 	else:
 		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
@@ -408,7 +410,7 @@ table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of mall songs	0	false	0	"Songs after Tim T Sims"	--
 table of miscellaneous people	0	false	0	"Assorted randos"	--
-table of vvff books	0	false	0	"Books in the Lending Libe"	"Wow! So much to read, so little time. You're up to digesting more text right now, but not quite like that."
+table of vvff books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.

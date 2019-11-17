@@ -41,7 +41,14 @@ MIND ME
 by one point
 FLIM FLAM
 
+> z
+> jj
+by one point
+BIG BAG
+> undo
+
 # ok, we're in the main area now
+# we could have taken care of the lump at any time, but let's do so now
 
 > jj
 by one point
@@ -403,7 +410,7 @@ GOT GORED
 
 > jj
 by one point
-WHOAH WAIT
+WHOA WAIT
 
 > jj
 by one point
