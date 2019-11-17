@@ -575,7 +575,7 @@ to say seer-is:
 
 chapter ceiling seer
 
-the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-yet is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of something valuable[end if].".cht of ceiling seer is partminus.
+the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-yet is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of something valuable[end if].". [the seer is redirected to the rear]
 
 chapter Sage Sea
 
@@ -989,7 +989,7 @@ shore-shine is a truth state that varies.
 
 chapter pining poor
 
-the pining poor are plural-named people. talk-text of pining poor is "'Rich row niche? No! ... Which woe?'". description of pining poor is "They look [if full feast is not moot]hungry and exhausted[else]idle, waiting for work[end if].". "The pining poor, relics of the whining war, stand here, looking needy.". cht of pining poor is leteq.
+the pining poor are plural-named people. talk-text of pining poor is "'Rich row niche? No! ... Which woe?'". description of pining poor is "They look [if full feast is not moot]hungry and exhausted[else]idle, waiting for work[end if].". "The pining poor, relics of the whining war, stand here, looking needy.". cht of pining poor is leteq. [->dining door]
 
 chapter dining door
 
@@ -1226,7 +1226,7 @@ check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
 
 part Store All Stage -1,3
 
-Store All Stage is a room in Piddling Pain. It is west of Foe Field. cht of Store All Stage is letminus. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east."
+Store All Stage is a room in Piddling Pain. It is west of Foe Field. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east.".
 
 the coral cage is scenery in Store All Stage. "It looks locked, and it's too opaque to see who's there. You [if cage key is off-stage]have no way of opening it[else]could use the cage key on it, but you probably need to figure out who or what is inside[end if].". cht of coral cage is leteq. [-> moral mage]
 
@@ -2048,15 +2048,16 @@ to say ll-cheat of (th - a thing):
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
-	if cht of noun is phbt, say "The needle area of the leet learner stays dark when you scan [the noun][if noun is a room], so there's nothing you need to do with the room title[end if]." instead;
 	if noun is Here Hull:
 		say "Only the beer bull picks anything up.";
 		try lling beer bull instead;
 	if noun is Store All Stage and coral cage is not moot:
-		say "You suspect 'Store All' counts as one word for the learner's purposes.[paragraph break]";
+		say "Only the coral cage picks anything up.[paragraph break]";
+		try lling coral cage instead;
 	if noun is ceiling seer:
 		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
 		try lling location of player instead;
+	if cht of noun is phbt, say "The needle area of the leet learner stays dark when you scan [the noun][if noun is a room], so there's nothing you need to do with the room title[end if]." instead;
 	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on [the noun][end if].[if zap-weird-break is true][run paragraph on][end if]";
 	if noun is optional and ever-opt-scan is false:
 		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
@@ -3596,7 +3597,7 @@ this is the vr-appealing-appear rule:
 	now appeal-appear is true; [probably shouldn't zap this and replace with "peeling pier is optional" checks...]
 	now peeling pier is not optional;
 	if healed-here is false:
-		now cht of peeling pier is partminus;
+		now cht of peeling pier is partminus; [->heal here]
 	else:
 		phbt peeling pier;
 
