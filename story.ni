@@ -3084,6 +3084,53 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
 "see the [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
+"see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN for next table)"	true	"RAND [number]"	--	rling
+--	true	"RN"	--	rlning
+--	true	"RAND"	--	rl0ing
+
+chapter rling
+
+rlning is an activity.
+
+rule for rlning:
+	increment last-table-tried;
+	if last-table-tried > number of rows in table of all randoms:
+		say "(Cycling back to the first table)[paragraph break]";
+		now last-table-tried is 1;
+	try randlisting last-table-tried instead;
+
+rl0ing is an activity.
+
+rule for rl0ing: try randlisting 0 instead;
+
+rling is an activity.
+
+rule for rling: try randlisting number understood instead;
+
+randlisting is an action applying to one number.
+
+last-table-tried is a number that varies.
+
+carry out randlisting:
+	let count be 0;
+	say "[one of][line break]You can also rummage through Very Vile Fairy File Tables.i7x for details if you want.[or][stopping]";
+	if number understood is 0:
+		repeat through table of all randoms:
+			increment count;
+			say "[count]. [desc entry][line break]";
+		the rule succeeds;
+	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
+	now last-table-tried is number understood;
+	choose row number understood in table of all randoms;
+	let mytab be tabnam entry;
+	now count is 0;
+	say "All random text for [desc entry]:[line break]";
+	repeat through mytab:
+		increment count;
+		say "[randtxt entry][line break]";
+		if the remainder after dividing count by 20 is 0, wfak;
+
+chapter showranksing
 
 showranksing is an activity.
 
@@ -3093,6 +3140,8 @@ rule for showranksing:
 		say "[rank-name entry] is [if rank-max entry > 0][low-bound-score] to [end if][rank-max entry] points.";
 		now low-bound-score is rank-max entry + 1;
 	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.";
+
+chapter showaltverbsing
 
 showaltverbsing is an activity.
 
@@ -3110,6 +3159,8 @@ rule for showaltverbsing:
 	say "[2da][b]MINING MOOR/MORE[r] could give the pining poor employment.";
 	say "[2da][b]WHOA/WOE/WHOAH WAIT[r] were all acceptable by the Go Gate in Airy Isle.";
 
+chapter showmissesing
+
 showmissesing is an activity.
 
 rule for showmissesing:
@@ -3126,6 +3177,8 @@ rule for showmissesing:
 	if wild weed is off-stage, say "You could've made the mild mead into [b]WILD WEED[r].";
 	if wild weed is not moot, say "You could've tried to [b]SPARK SPLIFF[r] by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting, from the mild mead[else]the wild weed[end if].";
 	if beaker-yet is false, say "You could've given Reeker Russell [b]BEAKER BUSTLE[r] in the Gassed Gap/Last Lap.";
+
+chapter showdeathsing
 
 showdeathsing is an activity.
 
