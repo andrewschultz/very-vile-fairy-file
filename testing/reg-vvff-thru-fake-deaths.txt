@@ -38,7 +38,7 @@ by one point
 by one point
 
 >w
-west to Bold 'n Brave
+west to Fame Fort
 >w
 You already went west
 >e
@@ -181,11 +181,25 @@ by one point
 > glow glad
 by one point
 
+>s
+!south to Leaf Lake
+>n
+!north to Fun-Filled Gun Guild
+>w
+!west to Trust Trail
+
 > mean muggin
 by one point
 
 > lean luggin
 by one point
+
+>s
+south to Leaf Lake
+>n
+north to Fun-Filled Gun Guild
+>w
+west to Trust Trail
 
 > enter boat
 
@@ -245,13 +259,18 @@ by one point
 > fit found
 by one point
 
->n
+> n
 !north to Straight Street
+> e
+!east to Bold 'n Brave
 
 > e
 
 > winding ways
 by one point
+
+> e
+east to Bold 'n Brave
 
 >n
 north to Straight Street

@@ -163,6 +163,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "peer/pier pull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"No, you can't bring the bull down with peer pressure."
 "cake cap"	lap-not-cap rule	false	4	3	--	"No edible headgear appears." [start lake lap] [?? how does this change?]
 "fake fap"	cap-or-lap rule	false	4	3	lap-not-cap rule	"You make a rude gesture, for whatever good it does."
+"drowsy drakes"	in-lousy-lakes rule	false	--	--	--	"No sleepy ducks walk by."
 "woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence." [start history hall] [?? what about co capn, this is 2-4]
 "crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on [i]Poisoning Pigeons in the Park[r]. Eh, [Toe] is versatile enough."
 "slow slappin"	have-toe-tappin rule	false	2	6	--	"That would be handy in a more violent adventure, but not this one."
@@ -352,6 +353,8 @@ this is the hell-horn-near rule:
 this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
 
 this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
+
+this is the in-lousy-lakes rule: if mrlp is Browsy Breaks, the rule succeeds;
 
 this is the in-been-buggin rule: if player is in been buggin', the rule succeeds;
 
