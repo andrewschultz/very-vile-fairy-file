@@ -503,8 +503,14 @@ part Fun Fen 0,0
 
 Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tree-down is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
 
+to decide whether need-healing:
+	if least-loss is true and healed-here is false, yes;
+	no;
+
 check going in Fun Fen:
-	if noun is north and tree-down is false, say "A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+	if noun is north:
+		if tree-down is false, say "A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+		if need-healing, say "You're not ready to go back and confront the Bull Beast in your injured state yet." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
 section done den
@@ -607,6 +613,10 @@ healed-here is a truth state that varies.
 part Creased Cross 0,1
 
 Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if bull beast is moot]defeated the bull beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of creased cross is letminus. [-> beast boss] [-> least loss]
+
+after going from creased cross when healed-here is true and cull-ceased is false:
+	say "Hmm. The Bull Beast didn't chase you as you left. Maybe you were better equipped to dispose of it than you think.";
+	continue the action;
 
 to say beast-clue:
 	if bull beast is not moot:
@@ -2889,6 +2899,7 @@ carry out gotoing:
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
 	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, say "Sorry, GO TO is disabled during this side quest." instead;
 	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
+	if need-healing, say "You can't zoom around in your weakened state. But maybe what you need is close by." instead;
 	if noun is available-from-here:
 		let N be fliproom of noun;
 		say "[line break]You twiddle [N] back as you go.";
@@ -3834,7 +3845,7 @@ this is the vc-cull-ceased rule:
 	the rule succeeds;
 
 this is the vr-cull-ceased rule:
-	say "Your battle cry, coupled with your new improved healed self, is too much for the Bull Beast. It tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]Boy! You must've sounded authoritative![paragraph break]Over the Beast's death-rattle, you run through possible rhymes in your head. You're proud of dealing with bull much better than you expected, but it's exhausting, even when you know how to.";
+	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewardd! The Bull Beast, knowing it's in trouble, tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]The Bull BEast roars as you raise the spear. It's probably a good idea to make sure of things.[paragraph break]The Bull Beast now lies lifeless. Perhaps you can do something constructive with its dead body.";
 	now cull-ceased is true;
 	now bull beast is boring; [?? what if dead]
 	now cht of bull beast is leteq; [bull beast->full feast]
@@ -4304,9 +4315,10 @@ this is the vc-least-loss rule:
 this is the vr-least-loss rule:
 	now need-loss is false;
 	now least-loss is true;
-	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. The Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
+	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. As you stumble back to the familiar, safe Fun Fen, the Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
 	clue-zap "LEAST LOSS";
 	phbt Creased Cross;
+	move player to Fun Fen, without printing a room description;
 
 this is the vc-lending-libe rule:
 	if player is not in vending vibe, the rule fails;
