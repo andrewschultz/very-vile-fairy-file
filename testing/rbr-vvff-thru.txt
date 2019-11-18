@@ -597,7 +597,7 @@ You aren't up for dancing.
 
 ==t4
 >w
-west to Bold 'n Brave
+west to Fame Fort
 >w
 You already went west
 >e
@@ -2193,6 +2193,14 @@ The HA HALF button lights up on your Leet Learner.
 > glow glad
 by one point
 
+==t4
+>s
+!south to Leaf Lake
+>n
+!north to Fun-Filled Gun Guild
+>w
+!west to Trust Trail
+
 ==t6
 > glow glad
 !by one point
@@ -2248,6 +2256,15 @@ The HA HALF button lights up on your Leet Learner.
 
 > lean luggin
 by one point
+
+==t4
+>s
+south to Leaf Lake
+>n
+north to Fun-Filled Gun Guild
+>w
+west to Trust Trail
+
 
 ==t6
 > lean luggin
@@ -2688,8 +2705,11 @@ Now you mention it, you did feel a bit restricted here. Have a participation poi
 !FIT FOUND
 
 ==t4
->n
+> n
 !north to Straight Street
+> e
+!east to Bold 'n Brave
+
 
 > e
 
@@ -2723,12 +2743,15 @@ The HA HALF button lights up on your Leet Learner.
 > winding ways
 by one point
 
+==t4
+> e
+east to Bold 'n Brave
+
 ==t6
 > winding ways
 !by one point
 #?? do better post comp
 You already did.
-
 
 ==t6
 > zwinding ways rule

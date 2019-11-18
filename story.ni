@@ -232,6 +232,8 @@ Worst Whew is a region. [first few]
 
 Piddling Pain is a region. [middling main]
 
+Browsy Breaks is a region. [lousy lakes]
+
 Poorly Penned is a region. [early end]
 
 Vale Verminous is a region. [terminal tale]
@@ -2941,11 +2943,12 @@ to decide whether goto-available:
 	yes.
 
 definition: a room (called rm) is available-from-here:
+	let mrrm be map region of rm;
 	if rm is unvisited, no;
-	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
-	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, no;
+	if mrrm is Worst Whew, no;
+	if mrrm is Browsy Break, no;
 	if rm is Shirk Shell and jerk gel is not in Shirk Shell, no;
 	yes;
 
@@ -2964,9 +2967,9 @@ carry out gotoing:
 	let rm be location of player;
 	if noun is rm, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
-	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
-	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, say "Sorry, GO TO is disabled during this side quest." instead;
-	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
+	if in-bull-chase is true, say "Sorry, GO TO is disabled during the beer bull chase." instead;
+	if mrlp is Browsy Break, say "Sorry, GO TO is disabled during this side-quest." instead;
+	if mrlp is vale verminous, say "There's no way back. You are so close to the end." instead;
 	if need-healing, say "You can't zoom around in your weakened state. But maybe what you need is close by." instead;
 	if noun is available-from-here:
 		let N be fliproom of noun;
@@ -2975,7 +2978,7 @@ carry out gotoing:
 		if N is Soft Sand, now loft-land is whether or not loft-land is false;
 		move player to noun;
 	else:
-		say "You can't get to [noun] from here.";
+		say "You can't walk to [noun] from here.";
 	the rule succeeds;
 
 section gotothinging
@@ -3054,7 +3057,7 @@ when play begins (this is the score and status tweak rule):
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if min-needed is max-poss]*[else]-[max-poss][end if]";
 	force-status;
-	now the left hand status line is "[location of the player]";
+	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 0;
 
 to wall-refresh: move the wry wall backdrop to all signable rooms;
@@ -3082,6 +3085,63 @@ check quitting the game: say "You say to yourself, not fully convinced, 'Best bi
 
 volume unsorted
 
+<<<<<<< HEAD
+=======
+chapter wildweeding
+
+the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
+
+the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
+
+part Pit Pound 1,3
+
+Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
+
+A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
+
+check going east in Pit Pound:
+	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
+	if found-fit is false, say "It's weird. You don't feel like you belong in the pit pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
+
+found-fit is a truth state that varies.
+
+part Blinding Blaze 2,3
+
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
+
+to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
+
+to say blazno:
+	if blaze-ways is false:
+		say "You can't see any way other than back west";
+	else if stuck stair is off-stage:
+		say "You explore the minding maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgery of working through all the dead ends and to make it through smoothly and happily";
+	else:
+		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed";
+
+blaze-ways is a truth state that varies.
+
+maze-mapped is a truth state that varies.
+
+check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
+
+chapter minding maze
+
+the minding maze is fakeenter scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
+
+check entering minding maze: try going east instead;
+
+chapter stuck stair
+
+the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
+
+chapter snuck snare
+
+the snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
+
+[?? burned bower/turned tower]
+
+>>>>>>> ae03178c26f8863fef546fc46566ce16cb951ef3
 volume Poorly Penned
 
 volume Get a Guess
@@ -3623,11 +3683,16 @@ this is the shone-yet rule:
 to lean-and-mean:
 	say "[line break]";
 	if lean-lugged is true and mean-mugged is true:
+<<<<<<< HEAD
 		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.' He vanishes.[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere.";
+=======
+		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.'[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. He vanishes. Your mind clearer, you notice a wry wall you missed while focused inward.";
+>>>>>>> ae03178c26f8863fef546fc46566ce16cb951ef3
 		now player has clay cloak;
 		moot Dean Duggan;
 		move clumped cluster to Been Buggin';
 		phbt Been Buggin';
+		wall-add Been Buggin';
 	else:
 		say "'Not bad, but you can still do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
@@ -3791,7 +3856,7 @@ this is the vc-bury-bile rule:
 	if mrlp is Worst Whew:
 		vcp "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.";
 		continue the action;
-	if mrlp is Piddling Pain:
+	if mrlp is Piddling Pain or mrlp is Browsy Breaks:
 		vcp "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
 		continue the action;
 	if player is in Airy Isle:
