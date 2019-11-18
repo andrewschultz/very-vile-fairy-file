@@ -66,7 +66,6 @@ understand the command "sip" as something new.
 understand the command "skip" as something new.
 understand the command "slice" as something new.
 understand the command "slice" as something new.
-understand the command "smell" as something new.
 understand the command "sorry" as something new.
 understand the command "swallow" as something new.
 understand the command "sweep" as something new.
@@ -1712,6 +1711,15 @@ check swearing obscenely: say "Gee, gad! Be bad! 'Me, mad!'" instead;
 the block swearing mildly rule is not listed in any rulebook.
 
 check swearing mildly: try swearing obscenely instead;
+
+chapter smelling
+
+the block smelling rule is not listed in any rulebook.
+
+check smelling:
+	if noun is Reeker Russell, say "Stench-stained, drench-drained." instead;
+	if noun is Gassed Gap, try smelling Reeker Russell instead;
+	say "[one of]'Scent so went. Whoah!'[paragraph break][or][stopping]You don't need to SMELL anything." instead;
 
 chapter listening
 
