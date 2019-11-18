@@ -1675,8 +1675,13 @@ the need bag for lots of items rule is listed last in the check taking rulebook.
 
 chapter undoing
 
-report undoing an action:
-	say "Wiping one's typing ... TONS!";
+before undoing an action:
+	showme save undo state;
+	if save undo state is false:
+		say "You hear a voice booming 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
+		enable saving of undo state;
+	else:
+		say "Wiping one's typing ... TONS!";
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
@@ -3467,6 +3472,9 @@ carry out jerkingjumping:
 			skip upcoming rulebook break;
 			lump-minus;
 			now vc-dont-print is false;
+			showme save undo state;
+			disable saving of undo state;
+			showme save undo state;
 			the rule succeeds;
 	now vc-dont-print is false;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";

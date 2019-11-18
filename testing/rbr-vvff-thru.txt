@@ -3991,7 +3991,7 @@ MORAL MAGE
 !MORAL MAGE
 
 @mis
-* guess-overflow-check
+* guess-overflow-and-undo-check
 #next-cmd-pass
 > z
 > brig brag
@@ -4007,7 +4007,19 @@ MORAL MAGE
 > really rolling
 lump
 > undo
+Take two? Fake, foo'!
+rematerializes
 # checking to make sure we really checked for overflow and not just a regular charge
 # e.g. if we change the level delta from 5 to 6, the lump should not appear
 > cig sag
 lump
+>really rolling
+>blow by
+>call cree
+>strong start
+>s
+>appealing appear
+lump
+>undo
+Take two? Fake, foo'!
+grows bigger
