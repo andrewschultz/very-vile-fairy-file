@@ -309,7 +309,7 @@ section mistake rules sorted alphabetically
 
 [xxmisrul]
 
-this is the in-tight-tunnel rule: if player is in fight funnel, the rule succeeds;
+this is the in-fight-funnel rule: if player is in fight funnel, the rule succeeds;
 
 this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
 

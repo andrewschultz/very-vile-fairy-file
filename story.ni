@@ -8,7 +8,7 @@ the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 volume includes
 
-the release number is 1.
+the release number is 2.
 
 release along with a website.
 
@@ -28,11 +28,11 @@ include Basic Screen Effects by Emily Short.
 
 [dnc.py/icl.pl can/should toggle this]
 
-[include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]
+include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
 
-[include Very Vile Fairy File Tables by Andrew Schultz. [in beta]]
-include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]
+include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
+[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
 
 include undo output control by Erik Temple.
 
@@ -2948,7 +2948,7 @@ definition: a room (called rm) is available-from-here:
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and beer bull is moot, no;
 	if mrrm is Worst Whew, no;
-	if mrrm is Browsy Break, no;
+	if mrrm is Browsy Breaks, no;
 	if rm is Shirk Shell and jerk gel is not in Shirk Shell, no;
 	yes;
 
@@ -2968,7 +2968,7 @@ carry out gotoing:
 	if noun is rm, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the beer bull chase." instead;
-	if mrlp is Browsy Break, say "Sorry, GO TO is disabled during this side-quest." instead;
+	if mrlp is Browsy Breaks, say "Sorry, GO TO is disabled during this side-quest." instead;
 	if mrlp is vale verminous, say "There's no way back. You are so close to the end." instead;
 	if need-healing, say "You can't zoom around in your weakened state. But maybe what you need is close by." instead;
 	if noun is available-from-here:
@@ -3085,63 +3085,6 @@ check quitting the game: say "You say to yourself, not fully convinced, 'Best bi
 
 volume unsorted
 
-<<<<<<< HEAD
-=======
-chapter wildweeding
-
-the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
-
-the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
-
-part Pit Pound 1,3
-
-Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
-
-A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
-
-check going east in Pit Pound:
-	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
-	if found-fit is false, say "It's weird. You don't feel like you belong in the pit pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
-
-found-fit is a truth state that varies.
-
-part Blinding Blaze 2,3
-
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
-
-to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
-
-to say blazno:
-	if blaze-ways is false:
-		say "You can't see any way other than back west";
-	else if stuck stair is off-stage:
-		say "You explore the minding maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgery of working through all the dead ends and to make it through smoothly and happily";
-	else:
-		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed";
-
-blaze-ways is a truth state that varies.
-
-maze-mapped is a truth state that varies.
-
-check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
-
-chapter minding maze
-
-the minding maze is fakeenter scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
-
-check entering minding maze: try going east instead;
-
-chapter stuck stair
-
-the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
-
-chapter snuck snare
-
-the snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
-
-[?? burned bower/turned tower]
-
->>>>>>> ae03178c26f8863fef546fc46566ce16cb951ef3
 volume Poorly Penned
 
 volume Get a Guess
@@ -3382,12 +3325,12 @@ this is the verb-checker rule:
 				if there is a core entry and idid entry is false:
 					up-which core entry;
 					if core entry is false:
-						increase lump-count by 2;
-				if zap-core-entry is true:
+						increase lump-count by 1;
+				process the do-rule entry;
+				if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
 					blank out the core entry;
 					now zap-core-entry is false;
 				now idid entry is true;
-				process the do-rule entry;
 				process the notify score changes rule;
 				if there is a core entry and core entry is false, check-lump-progress;
 			process the note right guess wrong time rule;
@@ -3414,19 +3357,22 @@ already-rhymed-this is a truth state that varies.
 vc-dont-print is a truth state that varies.
 
 next-lump-level is a number that varies. next-lump-level is 5.
-next-lump-delta is a number that varies. next-lump-delta is 2.
+next-lump-delta is a number that varies. next-lump-delta is 1.
 lump-count is a number that varies. lump-count is 0.
 lump-charges is a number that varies. lump-charges is 0.
 lump-uses is a number that varies. lump-uses is 0.
+max-guesses-needed is a number that varies. max-guesses-needed is 10.
 
 to check-lump-progress:
 	increment lump-count;
+	if debug-state is true, say "count=[lump-count] level=[next-lump-level].";
 	if lump-count >= next-lump-level:
 		say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. Gazing at its dull shine, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj].[paragraph break]You take the lump[else if lurking lump is moot]Thwup! A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 		now player has lurking lump;
 		increment lump-charges;
 		decrease lump-count by next-lump-level;
 		increase next-lump-level by next-lump-delta;
+		if next-lump-level > max-guesses-needed, now next-lump-level is max-guesses-needed;
 
 a lurking lump is a boring thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump."
 
@@ -3683,11 +3629,7 @@ this is the shone-yet rule:
 to lean-and-mean:
 	say "[line break]";
 	if lean-lugged is true and mean-mugged is true:
-<<<<<<< HEAD
-		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.' He vanishes.[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere.";
-=======
-		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.'[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. He vanishes. Your mind clearer, you notice a wry wall you missed while focused inward.";
->>>>>>> ae03178c26f8863fef546fc46566ce16cb951ef3
+		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.' He vanishes.[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. Also, with your mind clearer, you notice a wry wall you missed before.";
 		now player has clay cloak;
 		moot Dean Duggan;
 		move clumped cluster to Been Buggin';
