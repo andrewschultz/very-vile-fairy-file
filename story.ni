@@ -3708,6 +3708,7 @@ this is the vr-backed-binder rule:
 	say "The papers labeled FACT FINDER should be useful. You find a way to glue them all together. They contain objective documentation of the Crimes Crew Times Two's exploits. You've been at the receiving end of some of their psychological tricks, and though you appreciate proof you weren't being oversensitive, you still shudder.";
 	now player has backed binder;
 	moot paper pile;
+	set the pronoun it to backed binder;
 
 this is the vc-beaker-bustle rule:
 	if reeker russell is not touchable, the rule fails;
@@ -3741,6 +3742,7 @@ this is the vr-beast-boss rule:
 	move Bull Beast to Creased Cross;
 	now need-loss is true;
 	clue-zap "BEAST BOSS";
+	set the pronoun it to Bull Beast;
 
 this is the vc-big-bag rule:
 	if player has big bag:
@@ -3752,6 +3754,7 @@ this is the vr-big-bag rule:
 	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
 	moot zig zag rig rag;
 	now player has big bag;
+	set the pronoun it to big bag;
 
 this is the vc-boring-boat rule:
 	if player is not in violent vale or flooring float is off-stage, the rule fails;
@@ -3768,6 +3771,7 @@ this is the vr-boring-boat rule:
 	moot flooring float;
 	move boring boat to Violent Vale;
 	clue-zap "BURY BILE";
+	set the pronoun it to boring boat;
 
 this is the vc-break-brie rule:
 	if jake is not touchable, the rule fails;
@@ -3854,6 +3858,7 @@ this is the vr-cast-cap rule:
 	move Reeker Russell to Gassed Gap;
 	phbt Gassed Gap;
 	clue-zap "CAST CAP";
+	set the pronoun him to reeker russell;
 
 this is the vc-cleared-clay rule:
 	if player is not in Stark Store, the rule fails;
@@ -3951,6 +3956,7 @@ this is the vc-dark-door rule:
 this is the vr-dark-door rule:
 	say "Hey, wait a minute! You have a closer look and notice the outline of a dark door. Now you've seen it, you can't un-see it. There we go!";
 	move dark door to Stark Store;
+	set the pronoun it to dark door;
 
 this is the vc-deal-dear rule:
 	if player is not in Real Rear, the rule fails;
@@ -4015,6 +4021,7 @@ this is the vr-dining-door rule:
 	move dining door to Whining War;
 	clue-zap "DINING DOOR";
 	phbt Whining War;
+	set the pronoun it to dining door;
 
 this is the vc-dive-deep rule:
 	if hive heap is not touchable, the rule fails;
@@ -4024,6 +4031,7 @@ this is the vr-dive-deep rule:
 	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over Cark Cliff or ripping them up until a vapor vial clatters out.";
 	moot hive heap;
 	bring-here vapor vial;
+	set the pronoun it to vapor vial;
 
 this is the vc-dreaming-dull rule:
 	if screaming skull is not touchable, the rule fails;
@@ -4067,6 +4075,7 @@ this is the vr-fall-free rule:
 	now tree-down is true;
 	phbt tall tree;
 	move hive heap to Fun Fen;
+	set the pronoun it to hive heap;
 
 this is the vc-feel-fear rule:
 	if player is not in Real Rear, the rule fails;
@@ -4098,6 +4107,7 @@ this is the vr-find-fault rule:
 	move mean mass to Vined Vault;
 	moot mind malt;
 	phbt Vined Vault;
+	set the pronoun it to mean mass;
 
 this is the vc-first-fave rule:
 	if player is not in curst cave, the rule fails;
@@ -4116,6 +4126,7 @@ this is the vr-first-fave rule:
 	move tool tap to Curst Cave;
 	moot worst wave;
 	clue-zap "FIRST FAVE";
+	set the pronoun it to tool tap;
 
 this is the vc-fit-found rule:
 	if player is not in pit pound, the rule fails;
@@ -4164,6 +4175,7 @@ this is the vr-full-feast rule:
 	moot Bull Beast;
 	move full feast to location of player;
 	clue-zap "FULL FEAST";
+	set the pronoun it to full feast;
 
 this is the vc-get-good rule:
 	if player is not in wet wood:
@@ -4187,6 +4199,8 @@ this is the vr-gift-giver rule:
 	now player has Too Totes New Notes;
 	now player has Mind Malt;
 	move player to Vined Vault;
+	set the pronoun it to Mined Malt;
+	set the pronoun them to Too Totes New Notes;
 	phbt Rift River;
 
 this is the vc-glean-glows rule:
@@ -4203,6 +4217,7 @@ this is the vr-glean-glows rule:
 	now player has clashing cloak;
 	moot Mean Moe's Clean Clothes;
 	clue-zap "GLEAN GLOWS";
+	set the pronoun it to clashing cloak;
 
 this is the vc-glow-glad rule:
 	if in-so-sad is false, the rule fails;
@@ -4256,6 +4271,7 @@ this is the vr-got-gored rule:
 	wall-add Airy Isle;
 	move go gate to Airy Isle;
 	clue-zap "GOT GORED";
+	set the pronoun it to go gate;
 
 this is the vc-green-grass rule:
 	if mean mass is in vined vault, the rule succeeds;
@@ -4289,6 +4305,7 @@ this is the vr-hard-hat rule:
 	say "Poof! The marred mat changes into a hard hat. But it's a bit small to wear. Maybe you could combine it with something else.";
 	moot marred mat;
 	now player has hard hat;
+	set the pronoun it to hard hat;
 
 this is the vc-heal-here rule:
 	if player is not in Real Rear, the rule fails;
@@ -4330,6 +4347,7 @@ this is the vr-history-hall rule:
 	now mistmall is false;
 	if ever-hall is false:
 		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
+		set the pronoun it to Poor Ponder;
 	bold-my-room;
 	say "[description of history hall][line break]";
 	now ever-hall is true;
@@ -4356,6 +4374,7 @@ this is the vr-hot-horde rule:
 	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
 	move hot horde to airy isle;
 	check-gored-clue;
+	set the pronoun them to Hot Horde;
 
 this is the vc-kneel-near rule:
 	if player is not in real rear, the rule fails;
@@ -4427,6 +4446,7 @@ this is the vr-lending-libe rule:
 	move lending libe to Vending Vibe;
 	move fussed folks just jokes to Vending Vibe;
 	process the card-and-libe rule;
+	set the pronoun it to Fussed Folks;
 
 this is the vc-lie-lol rule:
 	if player is not in Got Gear Hot Here, the rule fails;
@@ -4467,6 +4487,7 @@ this is the vr-lot-lord rule:
 	say "A man whirls in from above and touches down, looking slightly stunned.[paragraph break]'Ah! There it is! The sought sword! Not useful in combat, but it has ancient powers and lineage and stuff. Good for leadership and all that.' The sword glows as he takes it.";
 	moot sought sword;
 	check-gored-clue;
+	set the pronoun him to Lot Lord;
 
 this is the vc-lots-lame rule:
 	if gutta ganksta is not touchable, the rule fails;
@@ -4488,6 +4509,7 @@ this is the vr-luck-lair rule:
 	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.[paragraph break]Your surroundings dim. You doubt there's much else exciting to do here.";
 	moot stuck stair;
 	now player has snuck snare;
+	set the pronoun it to snuck snare;
 
 this is the vc-make-map rule:
 	if player is not in Lake Lap, the rule fails;
@@ -4611,6 +4633,7 @@ this is the vr-mining-more rule:
 	say "You help the pining poor find a moor to mine more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
 	moot pining poor;
 	clue-zap "MINING MORE";
+	set the pronoun it to gold guard;
 
 this is the vc-mo-mappin rule:
 	if stuck stair is moot:
@@ -4640,6 +4663,7 @@ this is the vr-mo-mappin rule:
 	clue-zap "MO MAPPIN";
 	moot minding maze;
 	process the check-sing-max rule;
+	set the pronoun it to stuck stair;
 
 this is the vc-moral-mage rule:
 	if coral cage is not touchable, the rule fails;
@@ -4656,6 +4680,7 @@ this is the vr-moral-mage rule:
 	phbt Store All Stage;
 	now player has Here Hip Queer Quip;
 	clue-zap "MORAL MAGE";
+	set the pronoun it to Here Hip Queer Quip;
 
 this is the vc-mystery-mall rule:
 	if player is not in History Hall, the rule fails;
@@ -4725,6 +4750,7 @@ this is the vr-paper-pile rule:
 	say "The vile vapor in the vapor vial swirls around, and the paper cracks. The vapor spreads over the ground and changes into a whole paper pile.";
 	moot vapor vial;
 	bring-here paper pile;
+	set the pronoun it to paper pile;
 
 this is the vc-plain-pleasant rule:
 	if pain peasant is not touchable, the rule fails;
@@ -4796,6 +4822,7 @@ this is the vr-shining-shore rule:
 	now shore-shine is true;
 	move pining poor to whining war;
 	clue-zap "SHINING SHORE";
+	set the pronoun them to Poor Ponder;
 
 this is the vc-show-shield rule:
 	if player is not in foe field, the rule fails;
@@ -4831,6 +4858,7 @@ this is the vr-silent-sail rule:
 	move flooring float to violent vale;
 	now silent-sale is true;
 	phbt violent vale;
+	set the pronoun it to flooring float;
 
 this is the vc-sit-sound rule:
 	if player is not in pit pound, the rule fails;
@@ -4862,6 +4890,7 @@ this is the vr-smashing-smoke rule:
 	now player has cold card;
 	now player has gold guard;
 	clue-zap "SMASHING SMOKE";
+	set the pronoun it to gold guard;
 
 this is the vc-snake-snap rule:
 	if player is not in Lake Lap, the rule fails;
@@ -4884,6 +4913,7 @@ this is the vr-snake-snap rule:
 	bold-new-room Violent Vale;
 	phbt Lake Lap;
 	clue-zap "SNAKE SNAP";
+	set the pronoun it to cake cap;
 
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if player does not have Toe Tappin Row Rappin, the rule fails;
@@ -5000,6 +5030,7 @@ this is the vc-wake-whee rule:
 this is the vr-wake-whee rule:
 	say "Jake G. wakes up. 'Man! I'm hungry! You hungry too?'";
 	now jake-woke is true;
+	set the pronoun him to jake g;
 
 this is the vc-whatta-wanksta rule:
 	if gutta ganksta is not touchable, the rule fails;
@@ -5019,6 +5050,7 @@ this is the vc-whoa-wait rule:
 this is the vr-whoa-wait rule:
 	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.[wfak]";
 	move player to Tarry Tile;
+	set the pronoun it to well worn hell horn;
 
 this is the vc-wild-weed rule:
 	if mild mead is not touchable, the rule fails;
@@ -5048,6 +5080,7 @@ this is the vr-winding-ways rule:
 			now e2 entry is north;
 			break;
 	wall-add Blinding Blaze;
+	set the pronoun it to minding maze;
 
 this is the vc-wood-one rule:
 	if reeker russell is not touchable, the rule fails;
@@ -5079,7 +5112,7 @@ this is the vc-youre-yonder rule:
 	the rule succeeds;
 
 this is the vr-youre-yonder rule:
-	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. The book itself, however, bursts into flames like any proper secret communication once you discover the secret passage.";
+	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. Leo Strauss would approve![paragraph break]The book itself, however, bursts into flames like any proper secret communication once you discover the secret passage.";
 	moot poor ponder;
 	now Y'Old Yard is mapped outside History Hall;
 	now History Hall is mapped inside Y'Old Yard;
