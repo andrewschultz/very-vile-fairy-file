@@ -32,7 +32,7 @@ verbose = True
 
 open_last_err = True
 
-print("NOTE do not run wdrop.py on its own--run rbr.py 4.")
+print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
 
 def usage(cmd="USAGE LIST"):
     print(cmd)

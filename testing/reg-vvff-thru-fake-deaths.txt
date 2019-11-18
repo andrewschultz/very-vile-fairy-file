@@ -2,7 +2,10 @@
 ## reg-vvff-thru-fake-deaths.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
+#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+#** interpreter: /home/andrew/prt/glulxe -q
+
+** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
 
 * main-thru
@@ -35,7 +38,7 @@ by one point
 by one point
 
 >w
-west to Bold
+west to Fame Fort
 >w
 You already went west
 >e
@@ -67,6 +70,7 @@ by one point
 by one point
 
 > n
+
 > w
 
 > dark door
@@ -79,13 +83,12 @@ by one point
 by one point
 
 > w
+
 > mystery mall
 by one point
 
-> stay strong
-by one point
-
 > listen
+
 > lots lame
 by one point
 
@@ -102,6 +105,7 @@ by one point
 > e
 > n
 > w
+
 > work well
 by one point
 
@@ -126,9 +130,6 @@ by one point
 > e
 
 > silent sail
-by one point
-
-> glow glad
 by one point
 
 > brightening bridge
@@ -156,8 +157,16 @@ by one point
 by one point
 
 > e
+
 > make map
 by one point
+
+>e
+east to Hi! Here, Buy Beer
+>s
+south to Rad Route
+>n
+north to See Some... Gee, Gum
 
 > co capn
 by one point
@@ -166,26 +175,48 @@ by one point
 by one point
 
 > enter boat
+
+> stay strong
+
+> glow glad
+by one point
+
+>s
+!south to Leaf Lake
+>n
+!north to Fun-Filled Gun Guild
+>w
+!west to Trust Trail
+
 > mean muggin
 by one point
 
 > lean luggin
 by one point
 
+>s
+south to Leaf Lake
+>n
+north to Fun-Filled Gun Guild
+>w
+west to Trust Trail
+
 > enter boat
 
 > w
 > w
 > w
+
 > glean glows
 by one point
 
 > history hall
 
-> yore yonder
+> youre yonder
 by one point
 
-> in
+> out
+
 > smashing smoke
 by one point
 
@@ -194,8 +225,9 @@ west to Faun Fen
 >s
 south to Lit Lawn
 
-> out
+> in
 > w
+
 > lending libe
 by one point
 
@@ -214,6 +246,7 @@ by one point
 by one point
 
 > w
+
 > moral mage
 by one point
 
@@ -226,12 +259,18 @@ by one point
 > fit found
 by one point
 
->n
+> n
 !north to Straight Street
+> e
+!east to Bold 'n Brave
 
 > e
-> minding maze
+
+> winding ways
 by one point
+
+> e
+east to Bold 'n Brave
 
 >n
 north to Straight Street
@@ -248,6 +287,7 @@ by one point
 > s
 > w
 > d
+
 > tight tunnel
 by one point
 
@@ -255,6 +295,7 @@ by one point
 north to Fortune Funnel
 
 > w
+
 > knives niche
 by one point
 
@@ -276,6 +317,7 @@ by one point
 > d
 > w
 > s
+
 > beast boss
 by one point
 
@@ -285,6 +327,7 @@ by one point
 > s
 
 > s
+
 > heal here
 by one point
 
@@ -324,10 +367,12 @@ by one point
 > w
 > n
 > n
+
 > show shield
 by one point
 
 > n
+
 > go gappin
 by one point
 
@@ -360,13 +405,20 @@ by one point
 by one point
 
 >d
+!down to Happy Hall
+>u
+!up to Hippy Hill
+>n
+!north to Earning Ridges
+
+>d
 down to Happy Hall
 >u
 up to Hippy Hill
 >n
 north to Earning Ridges
 
-> whoah wait
+> whoa wait
 by one point
 
 > tell torn

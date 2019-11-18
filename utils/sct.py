@@ -1,7 +1,8 @@
 #
 # sct.py : score tracker for Very Vile Fairy File
 #
-# todo: walkthrough branching, spoiler/nonspoiler
+# this tracks not only walkthrough branching but also specific tests.
+# tests include death rooms and multiple commands (e.g. mining more|moor)
 
 from shutil import copy
 from collections import defaultdict
@@ -9,8 +10,8 @@ import re
 import i7
 import sys
 import os
+import mytools as mt
 
-x_of_y = defaultdict(lambda: defaultdict(bool))
 scores = defaultdict(int)
 got = defaultdict(int)
 got_detail = defaultdict(lambda: defaultdict(int))
@@ -52,6 +53,255 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     print("u = update, nu/un = don't update")
     exit()
+
+def check_invisiclues_vs_walkthrough():
+    fname = "c:/writing/scripts/invis/vv.txt"
+    in_invisiclues = defaultdict(int)
+    first_invis = defaultdict(str)
+    dubs = 0
+    last_dup_comment = -1
+    with open(fname) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if "#duphint" in line: last_dup_comment = line_count
+            for q in list(got_detail['nec']) + list(got_detail['opt']):
+                if q.upper() in line:
+                    if q in in_invisiclues:
+                        if last_dup_comment == line_count - 1:
+                            last_dup_comment = -1
+                            continue
+                        if last_dup_comment != -1:
+                            print("Mistaken duphint line {} after {}.".format(line_count, last_dup_comment))
+                            mt.add_postopen_file_line(fname, line_count)
+                            continue
+                        dubs += 1
+                        print("Potential double {} {} {} vs {}: {} / {}".format(dubs, q.upper(), line_count, in_invisiclues[q], line.strip(), first_invis[q]))
+                        mt.add_postopen_file_line(fname, line_count)
+                    else:
+                        first_invis[q] = line.strip()
+                    in_invisiclues[q] = line_count
+            if last_dup_comment == line_count - 1:
+                print("Uh oh, had a duphint which didn't precede any point scoring command at line {}.".format(line_count))
+                mt.add_postopen_file_line(fname, line_count)
+    count = tot = 0
+    for x in got_detail['nec']:
+        if x not in in_invisiclues:
+            count += 1
+            tot += 1
+            print(count, tot, "Necessary command {} not found in invisiclues.".format(x.upper()))
+    count = 0
+    for x in got_detail['opt']:
+        if x not in in_invisiclues:
+            count += 1
+            tot += 1
+            print(count, tot, "Optional command {} not found in invisiclues.".format(x.upper()))
+    if last_dup_comment != -1: print("Unacknowledged duplicate comment at line {}.".format(last_dup_comment))
+
+def check_think_tests():
+    think_needed = defaultdict(int)
+    fin = i7.hdr('vv', 'ta')
+    ft = "rbr-vvff-thru.txt"
+    in_think_table = False
+    skip_header = False
+    with open(fin) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of forlaters"):
+                skip_header = True
+                in_think_table = True
+                continue
+            if skip_header:
+                skip_header = False
+                continue
+            if not line.strip():
+                in_think_table = False
+            if not in_think_table: continue
+            tary = line.split("\t")
+            tnq = tary[0].replace('"', '')
+            think_needed[tnq] = 0
+            think_needed["!" + tnq] = 0
+    in_think_test = False
+    prev_think = False
+    with open(ft) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("==t") and '2' in line:
+                in_think_test = True
+                continue
+            if in_think_test and not line.strip():
+                in_think_test = False
+            if not in_think_test:
+                if '>' in line and 'think' in line:
+                    print("Bad think test line {} {}".format(line_count, line))
+                    think_errs += 1
+                continue
+            prev_think = 'think' in line.lower() and '>' in line.lower()
+            if line.strip() in think_needed:
+                think_needed[line.strip()] += 1
+    think_errs = 0
+    for q in sorted(think_needed, key=lambda x: (re.sub("^!", "", x), "!" in x)):
+        if q == '!BURY BILE': continue #special case for final command
+        if think_needed[q] == 0:
+            print("Think test needed for", q)
+            think_errs += 1
+        elif think_needed[q] > 1:
+            print("Excess think test for", q)
+            think_errs += 1
+    if think_errs == 0: print("THINK ERR TESTS ALL IN PLACE")
+    else: print(think_errs, "THINK ERR tests to fix")
+
+def check_multiple_command_tests():
+    need_base_test = defaultdict(int)
+    need_mult_test = defaultdict(int)
+    fin = i7.src('vv')
+    skip_header = False
+    in_verb_table = False
+    with open(fin) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of verb checks"):
+                skip_header = True
+                in_verb_table = True
+                continue
+            if skip_header:
+                skip_header = False
+                continue
+            if not in_verb_table: continue
+            if not line.strip():
+                in_verb_table = False
+                continue
+            tary = line.strip().split("\t")
+            if True:
+                if tary[7].startswith('"'):
+                    lt = re.sub(" *\[.*?\]", "", tary[7])
+                    lt = lt.replace('" or "', "\t")
+                    lt = lt.replace('"', '')
+                    tary2 = lt.split("\t")
+                    got_first = False
+                    for q in tary2:
+                        for q0 in i7.topx2ary(q):
+                            #print("C8 {} Need to verify {}".format(line_count, q0))
+                            if got_first:
+                                need_mult_test[q0] = 0
+                            else:
+                                need_base_test[q0] = 0
+                            got_first = True
+                elif '|' in tary[0] or '|' in tary[1]:
+                    tz = tary[0] + " " + tary[1]
+                    got_first = False
+                    for q0 in i7.topx2ary(tz, div_char='|'):
+                        #print("C1/2 {} Need to verify {}".format(line_count, q0))
+                        if got_first:
+                            need_mult_test[q0] = 0
+                        else:
+                            need_base_test[q0] = 0
+                        got_first = True
+                #sys.exit("Uh oh bad table line read {} len={} {}.".format(line_count, len(tary), tary))
+    in_alt_verbs = False
+    skip_next = False
+    mult_err = 0
+    need_byone = False
+    need_undo = False
+    with open("rbr-vvff-thru.txt") as file:
+        for (line_count, line) in enumerate(file, 1):
+            if need_byone:
+                if not line.startswith('by one point'):
+                    print("Need -by one point- at line {}: {}.".format(line_count, line.strip()))
+                need_byone = False
+                need_undo = True
+                continue
+            if need_undo:
+                if not line.startswith(">") or 'undo' not in line:
+                    print("Need -undo- at line {}: {}.".format(line_count, line.strip()))
+                need_undo = False
+                continue
+            if 'okdup' in line:
+                skip_next = True
+                continue
+            if skip_next:
+                skip_next = False
+                continue
+            if line.startswith("==t3"):
+                in_alt_verbs = True
+                continue
+            if in_alt_verbs and not line.strip():
+                in_alt_verbs = False
+                continue
+            if not in_alt_verbs: continue
+            if not line.startswith(">"): continue
+            my_cmd = re.sub("^> *", "", line.strip().lower())
+            if my_cmd == 'undo' or my_cmd == 'z': continue
+            if my_cmd not in need_mult_test:
+                mult_err += 1
+                print(mult_err, "Bad command {} at line {}.".format(my_cmd, line_count))
+            else:
+                need_mult_test[my_cmd] += 1
+                need_byone = True
+    for x in sorted(need_mult_test):
+        if need_mult_test[x] == 0:
+            mult_err += 1
+            print(mult_err, "No mult-cmd test for", x)
+        elif need_mult_test[x] > 1:
+            mult_err += 1
+            print(mult_err, "Multiple mult-cmd test for", x)
+    if mult_err: print(mult_err, "total multiple command test file errors")
+    else: print("ALL MULTIPLE COMMANDS HAVE TEST CASE!")
+
+def check_bad_loc_tests():
+    death_moves = defaultdict(int)
+    fin = i7.hdr('vvff', 'ta')
+    ft = "rbr-vvff-thru.txt"
+    in_death_test = False
+    loc_errs = 0
+    skip_header = False
+    in_loc_table = False
+    with open(fin) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith("table of bad locs"):
+                skip_header = True
+                in_loc_table = True
+                continue
+            if skip_header:
+                skip_header = False
+                continue
+            if not line.strip():
+                in_loc_table = False
+            if not in_loc_table: continue
+            tary = line.split("\t")
+            try:
+                temp_string = tary[1] + " to " + i7.a2q(tary[4].replace('"', ''))
+            except:
+                sys.exit("Bad array {} line {}".format(tary, line_count))
+            death_moves[temp_string] = 0
+            if tary[2] == 'false':
+                temp_string = "!" + temp_string
+                death_moves[temp_string] = 0
+    got_main_yet = False
+    with open(ft) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith('==t') and '4' in line:
+                if not got_main_yet: continue
+                in_death_test = True
+                continue
+            if not got_main_yet:
+                if "* main-thru" in line: got_main_yet = True
+            if in_death_test and not line.strip():
+                in_death_test = False
+            if not in_death_test: continue
+            if line.startswith(">"): continue
+            ls = line.strip()
+            if ls.startswith("You already went"): continue
+            if ls.startswith("#"): continue
+            if ls not in death_moves:
+                print(os.path.basename(ft), "has bad death_moves line", line_count, line.strip())
+                loc_errs += 1
+            else:
+                death_moves[ls] += 1
+    for x in death_moves:
+        if death_moves[x] == 0:
+            print("Did not find test case for", x)
+            loc_errs += 1
+        elif death_moves[x] > 1:
+            print("Found excess test case for", x)
+            loc_errs += 1
+    if loc_errs: print(loc_errs, "total location test errors")
+    else: print("ALL DEATH LOCATIONS ARE TESTED!")
 
 def print_list_dif(dkey1, dkey2, descrip):
     x1 = list(set(list(dkey1)) - set(list(dkey2)))
@@ -269,8 +519,8 @@ def check_points():
         for (line_count, line) in enumerate(file, 1):
             temp_pass = False
             if line.startswith("core-max"):
-                if core_max: sys.exit("Core max / minimum score redefined at line {:d}.".format(line_count))
-                core_max = int(re.sub(".* is ", "", re.sub("\.$", "", line.lower().strip())))
+                if core_max: sys.exit("Core max / minimum score redefined at line {}.".format(line_count))
+                core_max = int(re.sub(".* is ", "", re.sub("\.( *\[.*?\])$", "", line.lower().strip())))
                 min_line = line_count
                 continue
             if line.startswith("table of verb checks"):
@@ -375,13 +625,10 @@ check_miss_rule()
 
 clue_hint_verify()
 
-for q in sorted(x_of_y.keys()):
-    xqs = sorted(x_of_y[q].keys())
-    xq = x_of_y[q]
-    print('X-of-Y puzzle for', q, ':', ', '.join(sorted([z for z in xqs if xq[z] == True])), '/', ', '.join(sorted([z for z in xqs if xq[z] == False])))
+check_think_tests()
+check_bad_loc_tests()
+check_multiple_command_tests()
 
-if open_source_post:
-    if len(to_open) == 0: sys.exit("No files to open.")
-    for fi_open in to_open:
-        i7.npo(fi_open, to_open[fi_open], bail=False)
-    exit()
+check_invisiclues_vs_walkthrough()
+
+mt.postopen_files()

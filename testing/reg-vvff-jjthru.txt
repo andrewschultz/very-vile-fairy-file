@@ -41,7 +41,14 @@ MIND ME
 by one point
 FLIM FLAM
 
+> z
+> jj
+by one point
+BIG BAG
+> undo
+
 # ok, we're in the main area now
+# we could have taken care of the lump at any time, but let's do so now
 
 > jj
 by one point
@@ -105,10 +112,6 @@ MYSTERY MALL
 
 > jj
 by one point
-STAY STRONG
-
-> jj
-by one point
 LOTS LAME
 
 > listen
@@ -161,10 +164,6 @@ BRIGHTENING BRIDGE
 
 > jj
 by one point
-GLOW GLAD
-
-> jj
-by one point
 SILENT SAIL
 
 > jj
@@ -198,6 +197,15 @@ by one point
 SNAKE SNAP
 
 > enter boat
+
+> jj
+by one point
+STAY STRONG
+
+> jj
+by one point
+GLOW GLAD
+
 > jj
 by one point
 MEAN MUGGIN
@@ -221,12 +229,13 @@ GLEAN GLOWS
 by one point
 YOURE YONDER
 
-> in
+> out
+
 > jj
 by one point
 SMASHING SMOKE
 
-> out
+> in
 > w
 > jj
 by one point
@@ -265,7 +274,7 @@ FIT FOUND
 > e
 > jj
 by one point
-MINDING MAZE
+WINDING WAYS
 
 > jj
 by one point
@@ -401,7 +410,7 @@ GOT GORED
 
 > jj
 by one point
-WHOAH WAIT
+WHOA WAIT
 
 > jj
 by one point

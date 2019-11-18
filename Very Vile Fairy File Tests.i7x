@@ -40,53 +40,49 @@ volume in-IDE tests
 
 chapter warps
 
-test qw with "gonear merry mile/bury bile"
-
 chapter walkthrough
 
-test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag".
-test w1r with "get good/gift giver/find fault/green grass/bash bap/grow grit/mash map/flim flam/mind me/skim scam/big bag". [this is the intro]
+test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag/s". [this is the intro.]
 
-test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder/n". [real rear 1st try, plus get to Creased Cross]
-test w3 with "w/dark door/mark more/cleared clay/w/mystery mall/listen/lots lame/w/hard hat/e/e/e/n/w/work well/e". [get jerk gel, clear shirk shell]
+test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]
 
-test w4 with "loft land/w/dreaming dull/first fave/cool cap/e/s/e/brightening bridge/silent sail/boring boat/no nappin". [get cap, take boat]
+test w3 with "n/w/dark door/mark more/cleared clay/w/mystery mall/listen" [get TTRR]
 
-test w5 with "enter boat/wake whee/take tea/fake fee/e/make map/co capn/snake snap/enter boat". [this is part 1 of the boat quest]
+test w3b with "whatta wanksta/ho happen/dimd" [bonus points: songs and get ganksta before gone]
 
-test w6 with "stay strong/glow glad/mean muggin/lean luggin/enter boat/w/w/w/glean glows/history hall/youre yonder/out/smashing smoke/in/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage". [release the moral mage. This part is a bit long because there were no good breaks and I wanted to start a test with the stay strong/glow glad verbs that were twiddled late in the release.]
+test w4 with "lots lame/w/hard hat" [get first hat]
 
-test w7 with "e/e/sit sound/fit found/e/winding ways/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/u/e/n/e". [set the trap for the bull]
+test w5 with "e/e/e/n/w/work well/e/loft land/w/dreaming dull/first fave/cool cap" [get 2nd cap]
 
-test w8 with "dear dull/near null/w/s/w/d/w/s/beast boss/least loss/s/s/heal here/n/n/cull ceased/full feast". [deal with the beer bull and beast boss]
+test w6 with "/e/s/e/brightening bridge/silent sail/boring boat/no nappin/enter boat/wake whee". [get cap, take boat]
 
-test w9 with "e/e/so sappin/shining shore/dining door/pull pieced/mining more". [get the hold hard gold guard]
+test w7 with "take tea/fake fee/e/make map/co capn/snake snap/enter boat". [this is part 1 of the boat quest]
 
-test w10 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap/meeker muscle/wood one/n". [enter airy isle]
+test w8 with "stay strong/glow glad/mean muggin/lean luggin"
 
-test w11 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile"..
+test w9 with "enter boat/w/w/w/glean glows/history hall/youre yonder/out/smashing smoke/in/w/lending libe/see sign/e/e/e/n/n/plain pleasant/w/moral mage". [release the moral mage. This part is a bit long because there were no good breaks and I wanted to start a test with the stay strong/glow glad verbs that were twiddled late in the release.]
 
-test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11".
+test w10 with "e/e/sit sound/fit found/e/winding ways/mo mappin/luck lair/w/w/s/s/w/d/tight tunnel/w/knives niche/u/e/n/e". [set the trap for the bull]
 
-chapter jumpthrough (should be commented out to save space--it is in a REG file anyway)
+test w11 with "dear dull/near null/w/s/w/d/w" [bye bye bull beast]
 
-[test w1j with "jj/jj/jj/jj/jj/jj/jj/jj/jj".
-test w2j with "s/jj/jj/jj/n/jj/jj/jj/jj/n". [real rear 1st try, plus get to Creased Cross]
-test w3j with "w/jj/jj/jj/w/jj/jj/listen/jj/jj/w/jj/e/e/e/n/w/jj/e".
-test w4j with "jj/w/jj/jj/jj/e/s/e/jj/jj/jj/jj".
-test w5j with "enter boat/jj/jj/jj/e/jj/jj/jj/enter boat/jj/jj/enter boat". [this is the boat quest]
-test w6j with "w/w/w/jj/history hall/jj/in/jj/out/w/jj/jj/e/e/e/n/n/jj/w/jj". [jj will give COUPLE CAPS if I don't spell out History Hall]
-test w7j with "e/e/jj/jj/e/jj/jj/jj/w/w/s/s/w/d/jj/w/jj/e/u/e/n/e". [set the trap for the bull]
-test w8j with "jj/jj/jj/s/jj/jj/s/s/jj/n/n/jj/jj". [deal with the beer bull and beast boss]
-test w9j with "e/e/jj/jj/jj/jj/jj". [get the hold hard gold guard]
-test w10j with "w/w/n/n/jj/n/jj/jj/jj/jj/jj/n". [enter airy isle]
-test w11j with "jj/jj/jj/jj/jj/jj/jj".]
+test w12 with "s/beast boss/least loss/s/s/heal here/n" [ready to defeat the beast boss]
+
+test w13 with "n/cull ceased/full feast/e/e/so sappin/shining shore/dining door/pull pieced/mining more". [get the hold hard gold guard]
+
+test w14 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap"
+
+test w15 with "meeker muscle/wood one/n". [enter airy isle]
+
+test w16 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile".
+
+[test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11/test w12/test w13/test w14/test w15/test w16".]
+
+[test wb with "test w1/appealing appear/test w2/strong start/test w3/test w4/lie lol/not near/test w5/test w6/break brie/test w7/test w8/bumped buster/test w9/test w10/test w11/test w12/wild weed/spark spliff/test w13/test w14/beaker bustle/test w15/test w16".]
 
 chapter beta jump
 
-test cc1 with "climb clear/got gored/test w11".
-
-test cc2 with "bury bile/climb clear/bury bile/got gored/lot lord/got gored/hot horde/got gored/woe wait/bury bile/tell torn/bury bile/merry mile/bury bile". [cc2 tests when we make mistakes and can't bury bile yet]
+test cc1 with "climb clear/got gored/test w16".
 
 volume odd property tests
 

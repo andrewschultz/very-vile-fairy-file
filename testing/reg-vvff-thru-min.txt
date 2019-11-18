@@ -3,6 +3,9 @@
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
 ## minimum walkthrough
+#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+#** interpreter: /home/andrew/prt/glulxe -q
+
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
 ** interpreter: /home/andrew/prt/dfrotz -m
 
@@ -61,6 +64,7 @@ by one point
 by one point
 
 > n
+
 > w
 
 > dark door
@@ -73,13 +77,12 @@ by one point
 by one point
 
 > w
+
 > mystery mall
 by one point
 
-> stay strong
-by one point
-
 > listen
+
 > lots lame
 by one point
 
@@ -96,6 +99,7 @@ by one point
 > e
 > n
 > w
+
 > work well
 by one point
 
@@ -122,9 +126,6 @@ by one point
 > silent sail
 by one point
 
-> glow glad
-by one point
-
 > brightening bridge
 by one point
 
@@ -143,6 +144,7 @@ by one point
 by one point
 
 > e
+
 > make map
 by one point
 
@@ -153,6 +155,12 @@ by one point
 by one point
 
 > enter boat
+
+> stay strong
+
+> glow glad
+by one point
+
 > mean muggin
 by one point
 
@@ -164,20 +172,23 @@ by one point
 > w
 > w
 > w
+
 > glean glows
 by one point
 
 > history hall
 
-> yore yonder
-by one point
-
-> in
-> smashing smoke
+> youre yonder
 by one point
 
 > out
+
+> smashing smoke
+by one point
+
+> in
 > w
+
 > lending libe
 by one point
 
@@ -196,6 +207,7 @@ by one point
 by one point
 
 > w
+
 > moral mage
 by one point
 
@@ -209,7 +221,8 @@ by one point
 by one point
 
 > e
-> minding maze
+
+> winding ways
 by one point
 
 > mo mappin
@@ -224,10 +237,12 @@ by one point
 > s
 > w
 > d
+
 > tight tunnel
 by one point
 
 > w
+
 > knives niche
 by one point
 
@@ -249,6 +264,7 @@ by one point
 > d
 > w
 > s
+
 > beast boss
 by one point
 
@@ -258,6 +274,7 @@ by one point
 > s
 
 > s
+
 > heal here
 by one point
 
@@ -292,10 +309,12 @@ by one point
 > w
 > n
 > n
+
 > show shield
 by one point
 
 > n
+
 > go gappin
 by one point
 
@@ -322,7 +341,7 @@ by one point
 > got gored
 by one point
 
-> whoah wait
+> whoa wait
 by one point
 
 > tell torn

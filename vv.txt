@@ -1,27 +1,39 @@
-out=very-vile-fairy-file-invisiclues.htm
+# Very Vile Fairy File HTML clues
+# sct.py will show which commands needed to win the game aren't in the InvisiClues.
 !Very Vile Fairy File HTML Clues
 ->c:/games/inform/very-vile-fairy-file Materials/Release
+out=very-vile-fairy-file-invisiclues.htm
+outraw=very-vile-fairy-file-invisiclues-raw.htm
 ==end header
 >WORST WHEW
 >>WET WOOD
 ?What do I do here?
 Regular directions don't work.
 ?What do I do with the zigzag rig rag?
-You can change it, but it might hold you back while you're trying to find your way through.
-If you find the right thing, the game will reject your command and file it away for later.
+You can change it. It's the simplest puzzle in the game, I think.
 The theme of the game is alliterative rhymes.
 It can become a...
 BIG BAG.
 ?What is the Leet Learner for?
 It is also a CHEAT CHURNER.
-You may notice different colors written on it.
+If it gives a reading, the needle goes to different places.
 You can use it to get hints about what sort of letter/pronunciation swaps you need to make.
-Blue means you need to add letters to both words (CONCEIT CONCERNER).
-Green means you add a letter to one word (CHEAT CHURNER).
-Yellow is neutral. (MEET MOURNER).
-Orange means you need to subtract, partially (BEAT BURNER).
-Red means you need to subtract letters from two words (EAT EARNER).
-Brown means you need to add one letter and subtract another (TREAT TURNER).
+Left means you need to add letters to both words (CONCEIT CONCERNER).
+Center-left means you add a letter to one word (CHEAT CHURNER).
+Center is neutral. (MEET MOURNER).
+Center-right means you need to subtract, partially (BEAT BURNER).
+Right means you need to subtract letters from two words (EAT EARNER).
+All over the place means you need to add one letter and subtract another (TREAT TURNER).
+?So how do I get out of the Wet Wood?
+You may notice the rhyme couplings everywhere.
+You need a word that rhymes with wet and a word that rhymes with wood.
+You can go through the letters of the alphabet to brute-force things.
+GET GOOD.
+>>RIFT RIVER
+?How do I get help to go further?
+You may need someone to help.
+You need another alliterative rhyme.
+Ask for a GIFT GIVER.
 >>VINED VAULT
 ?I'm perfectly trapped! What to do?
 Look for a weakness.
@@ -37,12 +49,20 @@ You need to deal with the whole room first.
 It can boost your confidence.
 It fits in with the Po' Pit.
 GROW GRIT.
+There are other ways: SO SIT and OH IT. But I wanted to expose the player to a left reading on the learner.
 ?Okay, now I have confidence, how do I get past the trash trap?
 The cache cap is a bit ... off.
 If you use the learner on it, it is only partially negative (orange,) but the trash trap is fully negative (red.) That means one word is "cap" and another is less than five letters.
 Also, the gash gap is yellow. So that's four and three letters.
-MASH MAP works. BASH BAP is an alternate.
+MASH MAP works. BASH BAP is an alternate. So is RASH RAP.
 >>TRIM TRAM
+?What do I do with the not nice lot lice?
+Observe and take action.
+What can you see?
+SPOT SPICE.
+But now you have to run circles around them.
+TROT TRICE.
+Or you would, if they appeared anywhere in the actual game.
 ?How can I find a fee? Or stop worrying?
 Look into yourself.
 MIND ME.
@@ -50,7 +70,7 @@ MIND ME.
 What rhymes alliteratively with trim tram?
 FLIM FLAM. One or two words.
 Alternatively, SKIM SCAM.
->PIDDLING PAIN
+>PIDDLING PAIN (INTRO)
 >>FUN FEN
 ?How I go back in the Done Den?
 You can't, and you don't need to.
@@ -61,19 +81,29 @@ It could provide a passage over the more treacherous parts of the fen.
 Have you played Trinity? Do you remember what a tree did?
 Of course, you can just note a rhyme, too...
 FALL FREE.
+?What do I do with the hive heap?
+There's something inside it, if you look carefully.
+You need to DIVE DEEP.
+?What do I do with the vapor vial?
+It can become something slightly exasperating but not phyiscally harmful.
+Something with information.
+PAPER PILE.
+?The paper pile isn't organized! How do I?
+Every paper is labeled FACT FINDER.
+What could organize a bunch of papers?
+A BACKED BINDER.
 ?What is the deal with going east or west?
 They are joke death rooms.
 I hope they are funny jokes.
-?Can I do anything with the Wry Wall?
-You don't need to.
-But there is a bonus point.
-You can expose it for its untruths.
-LIE LOL.
+?Why is there wrong art in the Fun Fen?
+It's a last lousy point.
+There's a reason it's so early in the game.
+It can help you make a STRONG START.
 ?What is the deal with Cark Cliff?
 It is a bonus point.
 But it's one pretty far down in the game.
 And it's pretty obscure.
-You need the Wild Weed.
+You need the Wild Weed much later in the game.
 Then, SPARK SPLIFF.
 >>REAL REAR
 ?Can I enter the Sage Sea?
@@ -86,26 +116,344 @@ They also provide an alternate solution, with "-ing" at the end.
 Also, you need something watching over you as you perform your actions.
 ?What do I do here?
 The leet learner will tell you not only how many letters are in the action(s) you need to perform but also if there are any left.
-There are three things to do. Two can be done right away.
-First, you need to FEEL FEAR.
-But now you're fearful, you need to get rid of that fear properly.
+There are four things to do. Three can be done right away, though they need to be done in a certain order.
+They relate to the real rear.
+First, you need to show respect.
+KNEEL NEAR.
+Next, you need to admit your shortcomings and worries and ask for help.
+FEEL FEAR.
+But now you're fearful, you need to get rid of that fear properly. You need to do for yourself, a bit.
 DEAL DEAR.
 The Sage Sea will give you a Cage Key.
-?What is the third action, and why can't I do it yet?
+?What is the fourth action, and why can't I perform it yet?
 You won't need it until a certain point.
-A point when you've been damaged.
+A point when you've been physically damaged.
 Then you'll need to regain stamina.
 I mean health.
 And HEAL HERE.
+?What is the deal with the peeling pier?
+It has a LLP, but an obscure one.
+It could look nicer, if you knew its brand name.
+APPEALING APPEAR.
+I told you it was obscure.
 >>CREASED CROSS
 ?Is there anything to do here?
 Maybe not right away.
 ?I tried to summon something, but it says I'm not protected enough yet!
-You need a few items.
-First, the Hard Hat.
+You need an item for protection.
 ?Summon something?! What does that mean?
 You can summon an important enemy based on the cross's name.
 The BEAST BOSS.
+But first you need some armor.
+You can get it from the Bold Bard.
+The mold-marred gold guard isn't quite enough. You need to upgrade it.
+Once you do so to the eat, you can summon something.
+You need to find what is behind the beer bull to the east.
+?How do I escape the beast without getting too injured?
+Another riff on the beast and the location.
+You need to lessen your damage...
+LEAST LOSS.
+?How do I defeat the beast boss/bull beast?
+You need to come back at full strength.
+Where could you heal?
+Somewhere you've been helped before?
+#duphint
+HEAL HERE in Real Rear.
+Then come back.
+You have two options here.
+CULL CEASED or LUL LEAST.
+?What can I do with the bull beast's corpse?
+It can't just go to waste.
+It wasn't human, so it's okay to make a meal out of it.
+Or a feast. FULL FEAST.
+?The corpse can't be moved.
+Not by you alone.
+This command won't work until you have friends post-Whining War.
+They will help you move the corpse, though it's still tough to move all at once.
+PULL PIECED.
+> PIDDLING PAIN (WEST)
+>>STARK STORE
+?There's nothing here! Should there be?
+Yes. Maybe something that could create passage.
+A door.
+A DARK DOOR.
+?Why can't I see the way west fully?
+You haven't observed it enough.
+Look at the dark door.
+MARK MORE.
+?Is there a passage through the weird way?
+Yes.
+It can become something more normal.
+CLEARED CLAY.
+>>FIGHT FUNNEL
+?Can I get rid of the fight in the funnel?
+You can turn it into something slightly less unnavigable.
+Make it a TIGHT TUNNEL.
+?Why can't I go west?
+You need something that organizes your inventory.
+You have something that could become an organizer.
+You've had it since the start of the game.
+The zig zag rig rag.
+#duphint
+It can become a BIG BAG.
+>>DIVES DITCH
+?Is there anything to do here?
+Yes, you can set a trap someone, or something, is more likely to set.
+KNIVES NICHE.
+?How do I set a trap?
+Don't continue until you have something resembling a trap. You should know it when you have it, but if not, the next clue tells you what you need.
+Something from behind the Blinding Blaze.
+The snuck snare from luck lair.
+When you enter, you will automatically have set it.
+?What's this mild mead I got from springing the trap?
+It will be used automatically at a banquet.
+It can peel off something more ... recreational.
+It's a last lousy point, because something like this shouldn't be required to win the game.
+WILD WEED.
+>>HISTORY HALL
+?It's blank here. How can I make it more interesting?
+Well, you can make it a place where more people go and chat.
+MYSTERY MALL.
+After this, you can turn the mall back.
+?What should I do with the ganksta?
+There is a bonus point, but it's the tattoo that matters.
+GOTS GAME can become...
+...LOTS LAME.
+?Could I have done anything else?
+Yes, a meaner insult would've gotten a bonus point.
+It's obscure slang, though, and also derivative of Ganksta.
+WHATTA WANKSTA.
+?Is the music worth listening to?
+You bet!
+It doesn't pay off right away, but it lets you solve puzzles later.
+?What about the music that replaces it?
+It gives you a bonus point.
+It's not quite in tune with the game, but the basic idea is similar.
+Tim T. Sims, Oi Mo ... there are twenty-six possibilities to get rid of it.
+DIMD.
+?What does Mean Moe's Clean Clothes do?
+You may figure what to do with it. You might not get the item of clothing you need to clean until later in the game.
+Perhaps there's some light that runs things?
+You need to GLEAN GLOWS.
+The item you need requires you to take the boat.
+It's the way woke clay cloak from Been Buggin'.
+?What's with this book that appeared once I flipped back?
+It provides a clue about the area beyond.
+The first word has two homonyms.
+Poor Ponder, For Fonder... and you're in History Hall...
+YOURE YONDER. (Yore and Your are also accepted.)
+> GOT GEAR HOT HERE
+?Is the shawl useful?
+For a last lousy point and for lurking lump charges, yes.
+Otherwise, no.
+The learner indicates the "right" answer has a 3-letter word and an under 5-letter word.
+It is LIE LOL. There were a lot of other candidates, but I chose that one.
+?Why does it seem particularly boring in here?
+There's a way to get out and get a bonus point.
+Go far away.
+NOT NEAR.
+?How can I make the marred mat useful?
+It is out of place in a clothing store.
+Maybe make it into something you could wear.
+HARD HAT.
+> VENDING VIBE
+?How do I deal with the trending tribe?
+They and the vending vibe want money, which you don't have.
+You need to get rid of that, for something that doesn't usually charge money.
+LENDING LIBE.
+?Can I take anything from here?
+Yes. You need an item that says you can check out books.
+A card.
+The cold card from the bold bard.
+You will get the book automatically when you have the card and enter the Lending Libe.
+?What is the random book list for?
+Entertainment.
+?What do I do with this book I have?
+We Whine Me Mine seems to have nothing practical for you.
+But if you read it right, it will describe the Crimes Crew Times Two's strategies and exploits.
+You need to SEE SIGN.
+>YORE YONDER
+?What does the bold bard need to get in the Shoaled Shard?
+Nothing rhyming with bold bard.
+The bold bard needs a distraction.
+You can make one from under your cloak.
+If you don't have the clay cloak or haven't cleaned it off yet, you won't be able to do what comes next.
+The clashing cloak can blind people a different way.
+SMASHING SMOKE.
+> PIDDLING PAIN (EAST)
+>> VIOLENT VALE
+?Can I make this place nicer?
+Yes, there are two phrases--well, one, where the second word is a homonym.
+It would be less stressful if it were quieter.
+SILENT SALE or SILENT SAIL.
+?What do I do with the float?
+Nothing, except change it to something more navigable.
+BORING BOAT.
+?Why can't I bored, err, board the boat?
+You can't stay awake long enough to.
+There's no item that can prepare you physically.
+Mentally, yes. Have you been west yet?
+LISTEN in Mystery Mall. You should get clues now.
+Something rhymes with TOE TAPPIN and ROW RAPPIN.
+What could help you stay awake?
+NO NAPPIN.
+?Can I go anywhere else in the boat?
+Yes, once you and Jake G. complete the quest in the lakes area. You'll be kicked back.
+There's only one other place.
+?Can I dispel the frightening fridge?
+Certainly. It can become something that allows passage elsewhere.
+A BRIGHTENING BRIDGE.
+>> WHINING WAR
+?How do I stop the whining?
+Toe Tappin' Row Rappin is bouncing around inside your head.
+You can make a double rhyme to disburse everyone's energy.
+SO SAPPIN.
+?How do I make the Whining War a nicer place?
+It can become brighter.
+A SHINING SHORE.
+?What do the pining poor want?
+Food and jobs.
+You can provide an atmosphere for food with some architecture.
+A DINING DOOR.
+?Why are the pining poor idle?
+They need something to do.
+Don't continue until you've all eaten.
+MINING MORE or MINING MOOR.
+Now your gold guard is upgraded!
+> BROWSY BREAKS
+>>LAKE LEA
+?How can I get Jake G to notice me?
+He is sleeping.
+Un-sleep him.
+Err, wake him.
+Wake him cheerily!
+WAKE WHEE.
+?Jake G seems to want me to eat. How do I do so properly?
+Another rhyme of Jake G.
+This is an English word for food.
+TAKE TEA.
+?Jake G wants payment, or does he?
+You need to show a sense of humor. Pay him but not really.
+FAKE FEE.
+>> LAKE LAP
+?What do I do here?
+There are two things. You're a bit lost here.
+What's good when you're lost?
+MAKE MAP.
+?How do I make Jake feel like an equal?
+Toe Tappin' Row Rappin' has kicked in again, if you have that hint on.
+This one is a bit tricky, since it's a bit of slang and a shortened word.
+CO CAPN.
+?What's the hissing noise?
+An animal.
+You need to kill it or get rid of it.
+SNAKE SNAP.
+?Can I see Jake again, now that I got the cake cap?
+No. You won't need to. The boring boat now goes somewhere else.
+?Did I miss anything? The possible score decreased by one.
+Yes. There was one more thing to do with Jake G.
+#duphint
+It relates to TAKE TEA.
+There was one sort of food Jake didn't like.
+BREAK BRIE.
+>> BEEN BUGGIN
+?How do I stop feeling way wrong?
+A double rhyme of WAY WRONG.
+There's only a couple that make sense.
+STAY STRONG.
+?How do I stop feeling so sad?
+A double rhyme of SO SAD works to make you happier.
+But wait! You may wish to pile on good tries for the lurking lump! There are nine.
+The right one is GLOW GLAD.
+?What does Dean Duggan want?
+Well, some of this may be a bit slangy.
+But you have two things to do. You may have to force it.
+You need to become physically stronger and look tougher.
+LEAN LUGGIN will improve you physically.
+MEAN MUGGIN will improve you mentally.
+?Is the clumped cluster important?
+For maximum points, yes.
+It has two solutions.
+You can uncover a DUMPED DUSTER or say BUMPED BUSTER.
+> PIDDLING PAIN (NORTH)
+>>SOFT SAND
+?What's with the place I can't reach in the west?
+You can, if the soft sand becomes something else.
+LOFT LAND.
+Toggling the soft sand allows you to visit the Shirk Shell or the Curst Cave.
+>SHIRK SHELL
+?How do I get the jerk gel? Do I need to?
+Well, you need to do the opposite of shirking.
+WORK WELL.
+?What do I do with the jerk gel?
+You may notice the brand is SUPPLE SAPS.
+When you have enough caps, you can COUPLE CAPS.
+>CURST CAVE
+?What do I do about the screaming skull?
+Maybe you can make it less intrusive and absorbing.
+DREAMING DULL.
+?The worst wave now seems to cover anything. How to get rid of it?
+"From worst to ..."
+FIRST FAVE makes it more pleasant.
+?What is inside the tool tap?
+Well, it's not a tool, but it's something that rhymes.
+You can get a COOL CAP.
+>HERE HULL
+?What is with the beer bull?
+You need to get behind it.
+It won't chase you unless you anger it.
+The best insult is DEAR DULL.
+?How can I make the beer bull less invincible?
+Make it closer to zero.
+Or NEAR NULL.
+>>FOE FIELD SO SEALED
+?What can I do about the Pain Peasant?
+Annoying, isn't he?
+Get him to relax.
+Make him PLAIN PLEASANT.
+?How do I stop YO YIELD?
+You can figure out the command if you want right away, but you need a special item later in the game.
+You need to protect yourself.
+SHOW SHIELD.
+Unfortunately, you need the mold-marred gold guard.
+Okay, you need it upgraded...
+...and that's in Here Hull.
+Wait, you need one more upgrade...
+...finishing the Whining War will get you that.
+>>STORE ALL STAGE
+?How do I open the coral cage?
+Well, you need a key.
+A cage key, to be precise.
+You get it from the Sage Sea.
+Perform three actions in the Real Rear and come back.
+You can't open it directly.
+You need to figure what, or who, is in there.
+Go through all the consonants for rhyming...
+You will get the MORAL MAGE.
+>>PIT POUND
+?The hit hound smells fear! What to do?
+You don't want to make any sudden movements.
+SIT SOUND.
+?Why don't I feel comfortable enough to go east?
+You don't feel like you really belong here.
+You need to see the Pit Pound differently.
+FIT FOUND.
+>>BLINDING BLAZE
+?How can I see my way through the blaze?
+You can make it clearer.
+There are three solutions. I'll go from least to most obscure. They are functionally equivalent.
+WINDING WAYS.
+In Winding Ways, you will find a MINDING MAZE.
+You can also have a FINDING PHASE.
+?How do I get through the <redacted> to the south?
+Toe Tappin' Row Rappin' may be in your head again.
+What's something you need to do to get through mazes?
+Mapping.
+MO MAPPIN.
+?The stuck stair won't open! How to free it?
+You need to guess where to go, or what's behind it.
+LUCK LAIR is what's below.
+Alternatively, STUCK STAIR.
 >VALE VERMINOUS
 >>GASSED GAP
 ?It seems like the gassed gap can be changed, but how do I do so?
@@ -114,6 +462,11 @@ You need to do something.
 There's an item that seems ideal for here.
 It isn't quite a double rhyme, but with the right verb, it could be.
 The cool cap.
+Well, you need to combine it with two other hats, or caps.
+The hard hat and cake cap.
+Once you have them, and the jerk gel, you can combine them, if you haven't.
+#duphint
+The Supple Saps gel lets you COUPLE CAPS.
 CAST CAP.
 ?How do I get by Wreaker Russell?
 There are two things you need to do.
@@ -123,18 +476,28 @@ What if it was made out of something not so good for shooting?
 WOOD ONE.
 Now what if Russell were not so strong?
 MEEKER MUSCLE.
+There's actually a chance for a bonus point here.
+You can make Russell even less suited for thuggery with ...
+... BEAKER BUSTLE.
 ?Does anything prevent me from going north once Russell is gone?
-No.
-You can even come back south until you dispose of the next bad guys.
+Yes. You need a way through. You need two things, actually.
+If you notice the song in your head, it's the last time you need to use Toe Tappin' Row Rappin.
+It will help you find a way across the gap.
+In other words, to GO GAPPIN'.
+?Why don't I have enough information to tackle the Very Vile Fairy File?
+You need three pieces of information. Three books you've found throughout the game.
+You need the backed binder from Fun Fen, Here Hip Queer Quip from the Moral Mage in Store-All Stage, and you need to decipher We Whine Me Mine from the Lending Libe.
 >>AIRY ISLE
 ?How do I get rid of the Bot Board?
 You need help.
 A group of people, as well as a leader more capable than yourself.
 The Bot Board has rhyming cousins.
 The HOT HORDE will outnumber the board, but they are too unruly.
-So you need a leader that double-rhymes bot board.
-LOT LORD.
-But you need one more thing! A battle cry!
+?What's the sought sword for?
+It belongs to someone who has Leadership Skills.
+The LOT LORD.
+?How do I get everyone to work together to defeat the Bot Board?
+You need one more thing! A battle cry!
 GOT GORED.
 ?How do I get to the next area with the Bot Board defeated?
 The Go Gate looks pretty tempting to just enter.
@@ -142,7 +505,8 @@ Did you? Oops.
 If you did, or you examined it, you know it has a Grow Grate.
 Entering right away is not cautious enough.
 You need to delay a bit. But Z or WAIT doesn't quite work.
-WHOAH WAIT.
+WHOA WAIT.
+Woe or Whoah work, too.
 ?Do I need to prep before jumping to the next area?
 No, unless you want to get all the points in the game.
 ?Can I come back once I move to the next area?
@@ -166,3 +530,34 @@ You're happy now, but you need to remove hate that dwells in you.
 Tuck it away in a corner, if you will.
 You may note you can use this command at any time. Maybe you already did.
 Or BURY BILE.
+>META QUESTIONS, ETC.
+?What does Billy Boling mean?
+You get a bonus point for telling the game you figured it out.
+Sure you don't want to guess on your own?
+REALLY ROLLING.
+?What's the significance of room name changes, and which change names?
+Very little.
+They're just a small neat reward for figuring out what to do.
+History Hall flips between Mystery Mall.
+Soft Sand flips between Loft Land.
+Gassed Gap becomes Last Lap.
+Vending Vibe becomes Lending Libe.
+Foe Field So Sealed becomes Foe Field Ho Healed.
+Whining War becomes Shining Shore.
+Violent Vale becomes Silent Sail.
+Tarry Tile becomes Merry Mile.
+Blinding Blaze becomes Winding Ways, then Grinding Grays.
+Pit Pound becomes Grit Ground.
+?What can I do with Toe Tappin' Row Rappin?
+#duphint
+NO NAPPIN gets you on the boring boat in Silent Sail.
+#duphint
+CO CAPN helps Jake G feel like an equal.
+#duphint
+SO SAPPIN in the Whining War.
+#duphint
+MO MAPPIN at Winding Ways.
+#duphint
+GO GAPPIN and it disappears at Gassed Gap.
+There is a bonus point, too.
+At any time, you can say HO HAPPEN.

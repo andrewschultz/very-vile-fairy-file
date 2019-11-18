@@ -6,15 +6,21 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
 volume core tables
 
+[run sct.py to verify deaths/thinks/alt good verbs file testing is up-to-date. Also, rbr-vvff-thru.txt / reg-vvff-thru-fake-deaths.txt / reg-vvff-thru-think.txt / reg-vvff-thru-alt.txt]
+
 [pest post / messed most / rest roast/ guest ghost / best boast]
 table of bad locs [xxloc] [xxbadloc]
 e1	e2	avail	been-here	fake-name	death-trap
 Airy Isle	north	false	false	"Earning Ridges"	"You figure you've got a right to profit as you have gotten this far. Why, there're some bridges to cross ahead, even brighter than the brightening bridge you made back in the Violent Vale! Everything seems lit so clearly as you walk across them, but too late, you realize that is because they are BURNING BRIDGES."
 Airy Isle	down	false	false	"Happy Hall"	"Man! You could use some cheer right now. The happy hall is spacious at first until you ... need to start crawling. You realize what this means."
 Airy Isle	up	false	false	"Hippy Hill"	"You are sure the Hippy Hill will be full of peace and love and goodness and be an appropriate end to all this ... until you hear noises. A drippy drill. Then you are caught by a grippy grill! You suddenly realize you lack ... skippy skill."
+Been Buggin'	north	false	false	"Fun-Filled Gun Guild"	"Boy, there just hasn't been enough violence so far. You need a change of pace. But since it's fun-filled, it obviously can't harm you! It might be just the thing to get (further) un-illed. But unfortunately, as you think 'I'm one willed...' the fun starts. Loud gunshots. You are stun-shilled, then spun, spilled and finally none, nilled. You should have shun-shilled!"
+Been Buggin'	south	false	false	"Leaf Lake"	"Ah, that's an easy one! You sure could use a brief break. You do your homework: Jefe Jake doesn't rhyme, and Chief Chake and Grief Grake make nonsense. You think you smell beef bake as you walk by what is a fief (fake) and hear a sheaf shake, but that's ha... 'TEEF?! TAKE!' booms a loud voice. You cover your mouth, but you're still pushed over. A giant grabs you and takes you to the sea as its servant. Your job? 'REEF! RAKE!'"
+Been Buggin'	west	false	false	"Trust Trail"	"You walk down the Trust Trail, shortly given a side quest. 'Must mail,' someone says, handing you a letter and pointing to Dust Dale. Everything goes well until a gust-gale sweeps you off your feet--you grasp at a rust rail which is torn from the ground--and deposits you in, well, just jail. With no way to bust bail! You mutter to yourself, fussed, 'FAIL.'"
+Blinding Blaze	east	false	false	"Bold [']n Brave"	"You feel like you can handle anything. Yes sir/ma'am! You are bold and brave! But shortly, you feel less warm. 'Cold ... and crave,' you think, slightly ungrammatically. Then an olden rave leaves you even more scared. You flee, until you tumble down and look up and realize you are trapped in a ...  golden grave!"
 Blinding Blaze	north	false	false	"Straight Street"	"Oh boy, a straight street is a lot better than a maze! You might even find a Great Greet, or at least a Mate Meet. It's getting a bit lonely. But of course, you run into a Bait Beat chock full of Hate Heat, where people cry 'Late! Leet?!' You wind up crushed by weight ... wheat. It's not the desired fate-feat."
 Fight Funnel	north	true	false	"Fortune Funnel"	"Boy oh boy! Enough of these rhymes. It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL.[paragraph break]Given where you started, you probably should've seen this, but it was worth a try."
-Fun Fen	west	true	false	"Bold [']n Brave"	"You feel like you can handle anything. Yes sir/ma'am! You are bold and brave! But shortly, you feel less warm. 'Cold ... and crave,' you think, slightly ungrammatically. Then an olden rave leaves you even more scared. You flee, until you tumble down and look up and realize you are trapped in a ...  golden grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
+Fun Fen	west	true	false	"Fame Fort"	"Hey, why not give it a chance? The place right after the intro, maybe there's a quick way through. I mean, what can they throw at you? A tame tort? Call you a 'same-sort?' It doesn't seem too difficult, until you hear 'Maim! Mort!' and remember Mort means death. Before you pass out, you see someone standing over you saying 'Shame, short.'"
 Fun Fen	east	true	false	"Fate Farm"	"You figure, why not get to my fate sooner rather than later? A farm can't be that bad. You hear an innocuous 'Mate?! Marm?!' as you walk down a road, then a dismayed 'DISARM!' Yup, pretty nonviolent...[paragraph break]Until you are faced with mass chanting of 'Hate, harm!' The rest is unspeakable."
 Gassed Gap	east	true	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS you buy from SHOPPING SHILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
 Gassed Gap	west	true	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
@@ -25,9 +31,9 @@ Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as 
 Lake Lea	west	true	false	"Capped Cone"	"What could possibly be dangerous about a cone? Nothing, until you get beyond it to the ... ZAPPED ZONE."
 Lake Lea	north	true	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
-Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
-Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible, and ultimately fatal, tauntin['] and conkin[']."
-Y'Old Yard	south	true	false	"Lit Lawn"	"Boy! The lit lawn seems nice and bright! A fit faun is frolicking alone! You ignore the voice yelling 'get gone' and are unaware of a pit pawn that grabs you from behind, making you sit, sawn"
+Whining War	north	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void. To you, it is classed cloyed."
+Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! You waltz easily past the pawn pen, an obvious trap. But soon you suffer horrible, and ultimately fatal, tauntin['] and conkin[']. Set to gongin[']. All a bit off-key, but effective."
+Y'Old Yard	south	true	false	"Lit Lawn"	"Boy! The lit lawn seems nice and bright! A fit faun is frolicking alone! You ignore the voice yelling 'get gone' and are unaware of a pit pawn and spit-spawn that grab you from behind, making you sit, sawn. You curse them with your last though, wondering if one was named Sean."
 
 table of ranks [xxranks]
 rank-max	rank-name
@@ -59,7 +65,7 @@ to seed-score-list:
 	repeat through table of ranks:
 		increment my-row;
 		if there is a rank-max entry:
-			if rank-max entry is -1, now rank-max entry is whew-score; [keep initial rank until you get to Fun Fen]
+			if rank-max entry is -1, now rank-max entry is whew-score + 1; [keep initial rank until you get to Fun Fen. The +1 is because you can flip the big bag at any time.]
 			now min-forced-score is rank-max entry;
 			now last-forced-row is my-row;
 			now last-points is rank-max entry + 1;
@@ -139,6 +145,7 @@ randtxt
 "Want what? Taunt, tut!"
 "Whoah! Words? No, nerds!"
 "Yale? You'll fail, fool!"
+"Zork?! Zero! Dork, Dear-oh!"
 
 table of vvff books [xxbooks]
 randtxt
@@ -169,8 +176,10 @@ randtxt
 "Near Null Fearful"
 "Oh, Trait So Straight"
 "One Wet Sunset"
+"Bane, Bones, Stain Stones[r], by Jane Jones"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
 "Self Centered Elf Entered"
+"Silly Signs[r], by Willy Wines and Tillie Tines"
 "So Seek Crow Creek"
 "Take Tess, Wake Wes, Make Mess"
 "Why When My Men, by Ben"
@@ -181,17 +190,16 @@ to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [s
 table of Wet Wood clues
 prof	randtxt
 False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
-False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood.  [not-leet of letminus]."
+False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood. [not-leet of letminus]."
 False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. [not-leet of leteq]."
-True	"You walk around and notice a small puddle where a pet peed, then a small mound where ... a pet did something slightly more distasteful.  [not-leet of leteq]." [pet pood]
+True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
 
 [leetclue of xxx]
 volume hints for later
 
 table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you can."
-"BIG BAG"	false	vc-big-bag rule	false	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag. You can [once-now of vc-big-bag rule] you're in a more open area."
+"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you're armed better."
 "BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
 "CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
 "CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
@@ -204,7 +212,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
 "FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
 "FLIM FLAM"	false	vc-flim-flam rule	false	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] once/now it's been vanquished."
+"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of can-full-feast rule] it's been vanquished."
 "GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
 "GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
 "GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
@@ -285,7 +293,7 @@ this is the can-go-gappin rule:
 	the rule fails;
 
 this is the can-heal-here rule:
-	if least-loss is true, the rule succeeds;
+	if least-loss is true and knelt-yet is true, the rule succeeds;
 	the rule fails.
 
 this is the can-least-loss rule:
@@ -312,7 +320,7 @@ this is the can-moral-mage rule:
 	the rule fails.
 
 this is the can-pull-pieced rule:
-	if full feast is moot, the rule succeeds;
+	if full feast is in creased cross and dining door is in whining war and pining poor are in whining war, the rule succeeds;
 	the rule fails;
 
 this is the can-shining-shore rule:
@@ -344,7 +352,7 @@ this is the can-take-tea rule:
 this is the trivially false rule: the rule fails;
 this is the trivially true rule: the rule succeeds;
 
-to say rhyme-display:
+to say rhyme-display: [pok]
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if me-minded is true:
@@ -356,7 +364,9 @@ to say rhyme-display:
 	else if mean mass is in Vined Vault:
 		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
 	else if player is in Vined Vault:
-		say "GET GOOD was just switching two letters from WET WOOD, but maybe you need to change a bit more here. While still rhyming.";
+		say "GET GOOD and GIFT GIVER just switched two letters from WET WOOD and RIFT RIVER, but maybe you need to change a bit more here. While still rhyming.";
+	else if player is in Rift River:
+		say "GET GOOD worked to leave the WET WOOD. Perhaps something similar will work here.";
 	else:
 		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
@@ -403,8 +413,8 @@ volume big meta table
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of mall songs	0	false	0	"Songs after Tim T Sims"	--
-table of miscellaneous people	0	false	0	"Assorted randos"	--
-table of vvff books	0	false	0	"Books in the Lending Libe"	"Wow! So much to read, so little time. You're up to digesting more text right now, but not quite like that."
+table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	--
+table of vvff books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
