@@ -824,7 +824,7 @@ the clashing cloak is a thing. description is "It seems suited for more than jus
 
 part Y'Old Yard -2,-1
 
-Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. [if bold bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if bold bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if]."
+Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. [if bold bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if bold bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)".
 
 The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a bold bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]"
 
@@ -1416,7 +1416,11 @@ the grow grate is part of the go gate. description is "The grow grate looks like
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. "You don't really see any way out, but you're pretty sure this is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all.". cht of Tarry Tile is leteq. [->merry mile]
+Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all.". cht of Tarry Tile is leteq. noway-text of Tarry Tile is "No way through the listless mist mess.". [->merry mile]
+
+section listless mist mess
+
+the listless mist mess is scenery in Tarry Tile. "It's very thick. No way through."
 
 chapter well worn hell horn
 
@@ -4199,7 +4203,7 @@ this is the vr-gift-giver rule:
 	now player has Too Totes New Notes;
 	now player has Mind Malt;
 	move player to Vined Vault;
-	set the pronoun it to Mined Malt;
+	set the pronoun it to Mind Malt;
 	set the pronoun them to Too Totes New Notes;
 	phbt Rift River;
 
