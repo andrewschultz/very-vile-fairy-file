@@ -335,6 +335,7 @@ ever-wry-wall is a truth state that varies.
 wry-wall-found is a number that varies. wry-wall-found is 0.
 
 check going nowhere (this is the look for bad locs rule):
+	say "[chase-pass]";
 	repeat through table of bad locs: [this is in the tables file]
 		if there is no e1 entry or there is no e2 entry:
 			if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";
@@ -1171,8 +1172,15 @@ check going when in-bull-chase is true:
 		reset-bull-chase;
 		the rule succeeds;
 
+chase-mulligan is a truth state that varies.
+
+to say chase-pass: if in-bull-chase is true, now chase-mulligan is true;
+
 every turn when in-bull-chase is true: [?? make this so that we track by last-bull-loc]
 	if action is procedural:
+		continue the action;
+	if chase-mulligan is true:
+		now chase-mulligan is false;
 		continue the action;
 	if beer bull is in location of player:
 		say "The beer bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats [if player is in here hull]into its corner[else]back to Here Hull[end if].[paragraph break]";
