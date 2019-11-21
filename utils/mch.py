@@ -17,6 +17,7 @@ from collections import defaultdict
 import re
 import i7
 
+hunt_mistake_alpha = True
 no_leet_checks = False
 
 my_line = defaultdict(int)
@@ -27,6 +28,12 @@ got_mistake_test = defaultdict(bool)
 
 need_leet_check = defaultdict(bool)
 got_leet_check = defaultdict(bool)
+
+look_leet_rules = defaultdict(bool)
+look_mist_rules = defaultdict(bool)
+
+in_leet_rules = defaultdict(bool)
+in_mist_rules = defaultdict(bool)
 
 needed_text = "Learner needle"
 my_proj = i7.dir2proj(os.getcwd(), to_abbrev = True)
@@ -40,9 +47,15 @@ if my_proj == "qq":
     needed_text = "sheep sheet"
     quote_col += 1
 
+leet_rule_col = quote_col - 1
+
 mist_file = i7.hdrfile(my_proj, 'mi')
 
 max_count = 15
+
+def the_rule(l):
+    l = re.sub("^this is the *", "", l)
+    return re.sub(" *:.*", "", l.strip())
 
 def err_print_and_bail():
     global err_found
@@ -64,6 +77,20 @@ def noquo(topic):
     the_ary = re.split("\" *or *\"", topic)
     return [first_slash(x) for x in the_ary]
 
+cmd_count = 1
+while cmd_count < len(sys.argv):
+    arg = sys.argv[cmd_count]
+    if arg == 'nl':
+        no_leet_checks = True
+    else:
+        try:
+            max_count = int(arg)
+            cmd_count += 1
+            continue
+        except:
+            sys.exit("Bad parameter {}.".format(arg))
+    cmd_count += 1
+
 with open(mist_file) as file:
     for (line_count, line) in enumerate(file, 1):
         if "\t" not in line: continue
@@ -76,6 +103,8 @@ with open(mist_file) as file:
             if ary[1] == '--': sys.exit("Fatal error line {} has no mistake rule.".format(line_count))
         except:
             sys.exit("Oops, misread line {}: {}.".format(line_count, line.strip()))
+        if ary[1] != '--': look_mist_rules[ary[1]] = True
+        if ary[leet_rule_col] != '--': look_leet_rules[ary[leet_rule_col]] = True
         if len(ary) != quote_col + 1:
             sys.exit("Bad number of tabs at line {}: {}.".format(line_count, line.strip()))
         for my_cmd in noquo(ary[0].lower()):
@@ -91,19 +120,45 @@ with open(mist_file) as file:
                 print('//'.join(ary))
                 sys.exit()
 
-cmd_count = 1
-while cmd_count < len(sys.argv):
-    arg = sys.argv[cmd_count]
-    if arg == 'nl':
-        no_leet_checks = True
+ever_mist = in_mist = ever_leet = in_leet = False
+
+mist_alph_err = 0
+
+if hunt_mistake_alpha:
+    with open(mist_file) as file:
+        for (line_count, line) in enumerate(file, 1):
+            if line.startswith('section'): in_mist = in_leet = False
+            if 'section mist-rules alphabetized' in line:
+                ever_mist = True
+                in_mist = True
+            elif 'section leet-rules alphabetized' in line:
+                ever_leet = True
+                in_leet = True
+            if in_mist:
+                if line.startswith("this is the"):
+                    in_mist_rules[the_rule(line)] = True
+            if in_leet:
+                if line.startswith("this is the"):
+                    in_leet_rules[the_rule(line)] = True
+        for x in sorted(look_mist_rules):
+            print("!" + x + "!")
+            if x not in in_mist_rules:
+                if 'trivially true rule' in x: continue
+                print("{} Need {} in the alpha mist rules.".format(mist_alph_err, x))
+                mist_alph_err += 1
+        for x in sorted(look_leet_rules):
+            if x in look_mist_rules: continue
+            if x not in in_leet_rules:
+                mist_alph_err += 1
+                print("{} Need {} in the alpha leet rules{}.".format(mist_alph_err, x, ', but it is in the mist rules' if x in in_mist_rules else ''))
+    if not ever_mist: print("Did not find mist-rules alphabetized line.")
+    if not ever_leet: print("Did not find leet-rules alphabetized line.")
+    if not mist_alph_err:
+        print("SUCCESS with mistake/leet classification")
     else:
-        try:
-            max_count = int(arg)
-            cmd_count += 1
-            continue
-        except:
-            sys.exit("Bad parameter {}.".format(arg))
-    cmd_count += 1
+        print(mist_alph_err, "error(s) found in mistake/leet classification.")
+    sys.exit()
+
 
 okay_next_dup = False
 

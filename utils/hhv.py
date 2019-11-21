@@ -91,9 +91,14 @@ with open("story.ni") as file:
 
 last_command = ""
 
+in_t6 = False
+
 with open("rbr-vvff-thru.txt") as file:
     for (line_count, line) in enumerate(file, 1):
+        if line.startswith("==t") and "6" in line: in_t6 = True
+        if not line.strip(): in_t6 = False
         if line.startswith("DEBUG") and 'tipped off the HA HALF button' in line:
+            if not in_t6: print("WARNING DEBUG/HA HALF check outside of ==t6 file branch at line {}.".format(line_count))
             my_arg = get_rule(line)
             if my_arg not in range_start: range_start[my_arg] = line_count
             range_end[my_arg] = line_count
