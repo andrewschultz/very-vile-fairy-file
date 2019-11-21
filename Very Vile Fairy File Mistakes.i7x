@@ -16,10 +16,6 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 ###############sage sea
 #################dive deep
 #################???? maybe future
-ball bee
-shawl she
-maul me
-call key
 ###################shy shawl
 ###################po' pit
 ##################clay cloak
@@ -32,10 +28,6 @@ call key
 ##################gassed gap
 ##################violent vale
 ##################random i dunno
-stooping stair
-looping lair
-whooping where
-hooping hare / space jam ain't i
 #################way wrong
 ################real rear
 #######################creased cross
@@ -58,18 +50,18 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mig mag"	trivially true rule	false	3	3	mist-bag-hint rule	"Fighter plane ammunition will not help you."
 "gig gag"	trivially true rule	false	3	3	mist-bag-hint rule	"There are enough gags in this adventure. I hope."
 "jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing." [this is referred to explicitly when you BIG BAG, so there is overlap.]
-"trilly trolling"	trivially true rule	false	--	--	--	"The Very Vile Fairy File probably has information on that, yes."
-"silly souling/soling"	trivially true rule	false	--	--	--	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
-"filly foaling"	trivially true rule	false	--	--	--	"Caring for young animals is a good thing but beyond this game's scope."
+"trilly trolling"	trivially true rule	false	6	7	rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
+"silly souling/soling"	trivially true rule	false	6	7	rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
+"filly foaling"	trivially true rule	false	6	7	rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
 "wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
-"perking pump"	lump-known rule	false	--	--	--	"I don't want to know." [start general stuff]
-"tough toll"	--	false	--	--	--	"You groan about how heavy your inventory is."
+"perking pump"	lump-known rule	false	--	--	--	"I don't want to know." [start weird inventory stuff rule]
+"tough toll"	trivially true rule	false	--	--	--	"You groan about how heavy your inventory is."
 "flu/flew floats"	has-too-totes rule	false	--	--	--	"No flying craft appears, but on the bright side, you fail to feel sick."
 "grew/grue groats"	has-too-totes rule	false	--	--	--	"No coins spring from the ground. A coin with a grue would be kind of creepy, anyway."
 "goo goats"	has-too-totes rule	false	--	--	--	"Ugh! Regular goats are messy enough."
 "coo coats"	has-too-totes rule	false	--	--	--	"No need for warmth."
-"do dotes"	has-too-totes rule	false	--	--	--	"Wowzers! What a neat document [too toes] is. Golly gee!"
+"do dotes"	has-too-totes rule	false	--	--	--	"Wowzers! What a neat document [too totes] is. Golly gee!"
 "rue rotes"	has-too-totes rule	false	--	--	--	"You fail to find yourself in a more straightforward adventure."
 "glue gloats"	has-too-totes rule	false	--	--	--	"What kind of person boasts about stockpiling glue?"
 "blew/blue bloats"	has-too-totes rule	false	--	--	--	"You thought you saw Violet Beauregarde roll by there for a minute."
@@ -96,8 +88,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "so sate"	go-gate-vis rule	false	--	--	--	"You aren't satisfied yet. Only finishing the job will fix that!"
 "greased gross"	in-creased-cross rule	false	5	5	need-least-loss rule	"The creased cross doesn't need to become ickier."
 "fleeced floss"	in-creased-cross rule	false	5	5	need-least-loss rule	"Dental hygiene is a good idea in general, but here, it's unnecessary."
-"teased toss"	in-creased-cross rule	false	5	5	need-least-loss rule	"[if bull beast is moot]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
-"teen tuggin"	in-been-buggin rule	false	4	6	--	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start been buggin]
+"teased toss"	in-creased-cross rule	false	5	5	need-least-loss rule	"[if cull-ceased is true]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
+ "teen tuggin"	in-been-buggin rule	false	4	6	--	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start been buggin]
 "jay joke"	have-clay-cloak rule	false	--	--	--	"You recall some off-color drug humor from your younger days."
 "ho had"	in-so-sad rule	false	4	4	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	4	4	--	"Once the anger wore off, you might be even more lethargic."
@@ -133,9 +125,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "shuck share"	stair-or-snare rule	false	4	4	no-snare-yet rule	"You have no share to shuck."
 "tuck tear"	stair-or-snare rule	false	4	4	no-snare-yet rule	"You see no way to refigure the [if stuck stair is touchable]stair[else]snare[end if]."
 "ceased sauce"	in-creased-cross rule	false	5	4	need-least-loss rule	"You'll need all the sauce you can get, literally or figuratively." [start creased cross]
-"greased gross"	in-creased-cross rule	false	5	5	need-least-loss rule	"The creased cross doesn't need to become ickier."
-"fleeced floss"	in-creased-cross rule	false	5	5	need-least-loss rule	"Dental hygiene is a good idea in general, but here, it's unnecessary."
-"teased toss"	in-creased-cross rule	false	5	5	need-least-loss rule	"[if cull-ceased is true]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
+Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
 "nursed nave/knave"	in-curst-cave rule	false	5	5	need-first-fave rule	"You don't need to nurse a bad guy or a religious place." [start curst cave]
 "creaming cull"	skull-near rule	false	8	5	--	"Less violence, more letters."
 "cruel crap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"But you got rid of the skull. Also, swearing is naughty."
@@ -164,7 +154,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "bark biff"	in-fun-fen rule	false	5	6	spliff-unsparked rule	"A cruel voice calls from the distance 'Hello, McFly? Hello!'" [?? this-faint]
 "gaper guile"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"You stare a bit but get no insight[kind-of-paper]."
 "taper/tapir tile"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
-"aper isle"	vial-or-pile rule	false	5	4	vapor-vile-vis rule	"You are not teleported to somewhere similar to the Fun Fen."
+"aper isle"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"You are not teleported to somewhere similar to the Fun Fen."
 "classed clap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug."
 "chaste chap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"Yes, you've been a model of morality. Yay, you."
 "fast fap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here." [start gassed gap]
@@ -198,7 +188,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "starred stat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Get ahold of yourself! There's no time for in-depth sabermetrics!"
 "guard gat"	hat-or-mat rule	false	4	3	no-hardhat rule	"I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though."
 "try trawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You put in effort, and stuff[shawl-lol]."
-"buy/by/bye ball/bawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You can only buy sporting goods here. No whining[shawl-lol]."
+"buy/by/bye ball/bawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You can only buy clothes, not sporting goods, here. Also, no whining[shawl-lol]."
 "fie fall"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"The shawl remains motionless, but you feel smarter for your guess[shawl-lol]."
 "die/dye doll"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"There are no dolls to manipulate in this game[shawl-lol]."
 "scry scrawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer[shawl-lol]."
@@ -209,7 +199,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "sigh sol/saul"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"No sunlight appears[shawl-lol]."
 "high hall"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You imagine yourself in a much more spacious megastore[shawl-lol]."
 "guy gall/gaul"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere[shawl-lol]."
-"buy ball"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You wonder what sort of mall this is, without a sports store[shawl-lol]."
 "pie paul/pall"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You bemoan the lack of a food court in the mall[shawl-lol]."
 "my mall/maul"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You show suitable ambition and aggression for an adventurer[shawl-lol]."
 "why wall"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You complain to nobody in particular about the number of dead ends in the mall[shawl-lol]."
@@ -280,7 +269,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "gnash/nash nap"	in-po-pit rule	false	4	3	--	"You need something more active."
 "sash sap"	in-po-pit rule	false	4	3	--	"You don't need to be dressed outlandishly to figure what to do."
 "flash flap"	in-po-pit rule	false	4	3	--	"Perhaps more focused violence would work better."
-"lash lap"	in-po-pit rule	false	4	4	--	"You bang your fists against your pockets. It sort of helps, you guess."
+"lash lap"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You bang your fists against your pockets. It sort of helps, you guess."
 "co kit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You receive no kit to help you throw, corporate or otherwise."
 "snow snit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"No bad weather blows in to be complained about."
 "crow crit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You wait for a little bird to give advice, but nothing happens."
@@ -297,7 +286,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mo/mow mitt"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Please proceed, adventurer."
 "so sit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You sit and pout. It doesn't help."
 "glow glit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here."
-"lash lap"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"You bang your fists against your pockets. It sort of helps, you guess."
 "woe/whoa/whoah wit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Clever complaining will make you feel better but won't do anything."
 "cage key"	key-or-rear rule	false	--	--	--	"[if cage key is off-stage]You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it. [cagekey-prog][else]You already got the key[end if]." [start real rear] [?? this seems bad, giving a lump point for something obvious]
 "wage wee/whee/wii"	key-or-rear rule	false	--	--	--	"Hey, now! You're not in it for the money! Or a handheld game console!"
@@ -385,7 +373,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "lining lor/lore"	in-whining-war rule	false	7	5	need-dining-door rule	"Alas, nobody falls into line to tell stories of how they got here."
 "polled pard"	in-yold-yard rule	false	--	--	--	"Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far." [start yold yard]
 "lold lard"	in-yold-yard rule	false	--	--	--	"Fat jokes aren't funny, self-depreciating or otherwise."
-"perking pump"	lump-known rule	false	--	--	--	"I don't want to know." [start zzz last stuff]
 
 [this is for cases where we don't want the Leet Learner to light up, but we do want to say you are close.]
 
@@ -420,27 +407,17 @@ to say cagekey-prog:
 to decide what number is rear-progress:
 	decide on boolval of knelt-yet + boolval of felt-fear + boolval of whether or not steel steer is moot;
 
-section mistake rules sorted alphabetically
+section mist-rules alphabetized
 
 [xxmisrul]
-
-this is the need-cocapn rule: if jake-cocapn is false, the rule succeeds;
-
-this is the has-too-totes rule: if player has too totes new notes, the rule succeeds;
-
-this is the in-fight-funnel rule: if player is in fight funnel, the rule succeeds;
-
-this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
 
 this is the beer-bull-by rule: if beer bull is touchable, the rule succeeds;
 
 this is the before-grays rule: if player is in blinding blaze and stuck stair is not moot, the rule succeeds;
 
-this is the blaze-before-maze rule: if player is in blinding blaze and blaze-ways is false, the rule succeeds;
-
 this is the boat-or-float rule: if flooring float is touchable or boring boat is touchable, the rule succeeds;
 
-this is the poor-ponder-near rule: if poor ponder for fonder is touchable, the rule succeeds;
+this is the bold-bard-near rule: if bold bard is touchable, the rule succeeds;
 
 this is the bot-board-vis rule: if bot board is touchable, the rule succeeds;
 
@@ -456,17 +433,17 @@ this is the cluster-near rule: if clumped cluster is touchable, the rule succeed
 
 this is the coral-cage-around rule: if coral cage is touchable, the rule succeeds;
 
-this is the good-gun-here rule: if good gun is touchable, the rule succeeds;
-
-this is the float-present rule: if flooring float is touchable, the rule succeeds;
-
 this is the ganksta-nearby rule: if gutta ganksta is touchable, the rule succeeds;
 
 this is the gel-or-shell rule: if player is in shirk shell or jerk gel is touchable, the rule succeeds;
 
 this is the go-gate-vis rule: if go gate is touchable, the rule succeeds;
 
+this is the good-gun-here rule: if good gun is touchable, the rule succeeds;
+
 this is the got-gear-hot-here rule: if player is in got gear hot here, the rule succeeds;
+
+this is the has-too-totes rule: if player has too totes new notes, the rule succeeds;
 
 this is the hat-or-mat rule: if hard hat is touchable or marred mat is touchable, the rule succeeds;
 
@@ -481,10 +458,6 @@ this is the hell-horn-near rule:
 
 this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
 
-this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
-
-this is the in-lousy-lakes rule: if mrlp is Browsy Breaks, the rule succeeds;
-
 this is the in-been-buggin rule: if player is in been buggin', the rule succeeds;
 
 this is the in-blaze-ways rule: if player is in Blinding Blaze, the rule succeeds;
@@ -492,6 +465,8 @@ this is the in-blaze-ways rule: if player is in Blinding Blaze, the rule succeed
 this is the in-creased-cross rule: if player is in creased cross, the rule succeeds;
 
 this is the in-curst-cave rule: if player is in curst cave, the rule succeeds;
+
+this is the in-fight-funnel rule: if player is in fight funnel, the rule succeeds;
 
 this is the in-foe-field rule: if player is in foe field, the rule succeeds;
 
@@ -504,6 +479,8 @@ this is the in-gassed-gap rule: if player is in Gassed Gap, the rule succeeds;
 this is the in-lake-lap rule: if player is in Lake Lap, the rule succeeds;
 
 this is the in-lakes rule: if player is in Lake Lap or player is in Lake Lea, the rule succeeds; [This means Jake G is hanging around Lake Lap or Lake Lea]
+
+this is the in-lousy-lakes rule: if mrlp is Browsy Breaks, the rule succeeds;
 
 this is the in-pit-pound rule: if player is in pit pound, the rule succeeds;
 
@@ -520,6 +497,8 @@ this is the in-soft-sand rule: if player is in soft sand, the rule succeeds;
 this is the in-stark-store rule: if player is in stark store, the rule succeeds;
 
 this is the in-storeall-stage rule: if player is in store all stage, the rule succeeds;
+
+this is the in-tarry-tile rule: if location of player is tarry tile, the rule succeeds;
 
 this is the in-trim-tram rule: if player is in trim tram, the rule succeeds;
 
@@ -543,19 +522,17 @@ this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds
 
 this is the mass-near rule: if mean mass is touchable, the rule succeeds;
 
+this is the mead-or-weed rule: if mild mead is touchable or wild weed is touchable, the rule succeeds;
+
 this is the mean-moes-by rule: if mean moe's is touchable, the rule succeeds;
 
-this is the need-dining-door rule: if player is in Whining War and dining door is off-stage, the rule succeeds; [NOTE: you may need to say SHINING SHORE, too. But this checks for needing either. ]
-
-this is the need-mark-more rule: if player is in stark store and dark door is not moot, the rule succeeds;
-
-this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
-
-this is the no-snare-yet rule: if snuck snare is off-stage, the rule succeeds;
+this is the meed-or-weed rule: if player carries mild mead or player carries wild weed, the rule succeeds;
 
 this is the peasant-around rule: if pain peasant is touchable, the rule succeeds;
 
 this is the pit-pound-unsolved rule: if player is in pit pound and found-fit is false, the rule succeeds;
+
+this is the poor-ponder-near rule: if poor ponder for fonder is touchable, the rule succeeds;
 
 this is the signable-loc rule: if location of player is signable, the rule succeeds;
 
@@ -567,39 +544,41 @@ this is the tool-tap-near rule: if tool tap is touchable, the rule succeeds;
 
 this is the tram-first-puzzle rule: if player is in trim tram and me-minded is false, the rule succeeds;
 
-this is the vapor-vial-vis rule: if vapor vial is touchable, the rule succeeds;
-
 this is the vial-or-pile rule: if vapor vial is touchable or paper pile is touchable, the rule succeeds;
-
-this is the violent-not-silent rule: if silent-sale is false, the rule succeeds;
 
 this is the war-no-poor rule: if player is in whining war and pining poor are off-stage, the rule succeeds;
 
 this is the we-whine-near rule: if player has we whine, the rule succeeds;
 
-this is the sign-unseen rule: if sign-seen is false, the rule succeeds;
-
 this is the weird-way-near rule: if weird way is touchable, the rule succeeds;
-
-this is the meed-or-weed rule: if player carries mild mead or player carries wild weed, the rule succeeds;
-
-this is the mead-near rule: if player carries mild mead, the rule succeeds;
 
 [zzmisrul]
 
-section leet-only rules sorted alphabetically [note these may be more stringent than they strictly need to be. For instance, the shawl-unloled rule *probably* doesn't fire unless the shawl is already touchable, but we need to make sure.]
+section leet-rules alphabetized [note these may be more stringent than they strictly need to be. For instance, the shawl-unloled rule *probably* doesn't fire unless the shawl is already touchable, but we need to make sure.]
 
 [xxleetrul]
 
+this is the blaze-before-maze rule: if player is in blinding blaze and blaze-ways is false, the rule succeeds;
+
 this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
+
+this is the float-present rule: if flooring float is touchable, the rule succeeds;
 
 this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
 
 this is the if-grit-ungrown rule: if player is in po' pit and grit-grown is false, the rule succeeds;
 
+this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
+
+this is the mead-near rule: if player carries mild mead, the rule succeeds;
+
 this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 
+this is the need-cocapn rule: if jake-cocapn is false, the rule succeeds;
+
 this is the need-cool-cap rule: if cool cap is off-stage, the rule succeeds; [e.g. you haven't gotten the cool cap yet]
+
+this is the need-dining-door rule: if player is in Whining War and dining door is off-stage, the rule succeeds; [NOTE: you may need to say SHINING SHORE, too. But this checks for needing either. ]
 
 this is the need-dull-or-null rule: if bull-null is false, the rule succeeds; [? need boolean for dear-dull??]
 
@@ -615,15 +594,33 @@ this is the need-least-loss rule: if least-loss is false, the rule succeeds;
 
 this is the need-loft-land rule: if ever-loft is false, the rule succeeds;
 
+this is the need-mark-more rule: if player is in stark store and dark door is not moot, the rule succeeds;
+
+this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
+
 this is the need-work-well rule: if player does not have jerk gel and jerk gel is not moot, the rule succeeds; [?? if jerk gel is in shirk shell]
 
+this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
+
+this is the no-snare-yet rule: if snuck snare is off-stage, the rule succeeds;
+
 this is the not-fit-yet rule: if found-fit is false, the rule succeeds;
+
+this is the not-near-yet rule: if trounce-track is false, the rule succeeds;
+
+this is the rolled-yet rule: if rolling-yet is true, the rule succeeds;
 
 this is the shawl-unloled rule: if shy shawl is touchable and lie-lol is false, the rule succeeds;
 
 this is the shield-unshown rule: if player is in foe field and gold guard is not moot, the rule succeeds;
 
+this is the sign-unseen rule: if sign-seen is false, the rule succeeds;
+
 this is the spliff-unsparked rule: if wild weed is not moot, the rule succeeds;
+
+this is the vapor-vial-vis rule: if vapor vial is touchable, the rule succeeds;
+
+this is the violent-not-silent rule: if silent-sale is false, the rule succeeds;
 
 [zzleetrul]
 
