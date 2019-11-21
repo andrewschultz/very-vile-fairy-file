@@ -17,6 +17,8 @@ from collections import defaultdict
 import re
 import i7
 
+no_leet_checks = False
+
 my_line = defaultdict(int)
 text_needed = defaultdict(str)
 
@@ -31,13 +33,22 @@ my_proj = i7.dir2proj(os.getcwd(), to_abbrev = True)
 
 if not my_proj or my_proj == 'vv': my_proj = "vvff"
 
+quote_col = 6
+
 if my_proj == "qq":
     my_proj = "qqnn"
     needed_text = "sheep sheet"
+    quote_col += 1
 
 mist_file = i7.hdrfile(my_proj, 'mi')
 
 max_count = 15
+
+def err_print_and_bail():
+    global err_found
+    final_string = "{} total error{}".format(err_found, mt.plur(err_found)) if err_found else "SUCCESS! The mistake file and test file match."
+    mt.print_and_warn(final_string)
+    mt.postopen_files()
 
 def first_slash(x):
     return re.sub("[\|/][a-zA-Z]+", "", x)
@@ -46,7 +57,7 @@ def noquo_single(top):
     top = i7.rmbrax(top, replace_string = "/")
     if top.startswith('"'): top = top[1:]
     return re.sub("\".*", "", top)
-    
+
 def noquo(topic):
     topic = re.sub("^\"", "", topic)
     topic = re.sub("\"$", "", topic)
@@ -65,6 +76,8 @@ with open(mist_file) as file:
             if ary[1] == '--': sys.exit("Fatal error line {} has no mistake rule.".format(line_count))
         except:
             sys.exit("Oops, misread line {}: {}.".format(line_count, line.strip()))
+        if len(ary) != quote_col + 1:
+            sys.exit("Bad number of tabs at line {}: {}.".format(line_count, line.strip()))
         for my_cmd in noquo(ary[0].lower()):
             if (ary[3] == '--') != (ary[4] == '--'):
                 sys.exit("w1 and w2 entries conflict--both or neither should be blank.")
@@ -72,7 +85,7 @@ with open(mist_file) as file:
             my_line[my_cmd] = line_count
             need_leet_check[my_cmd] = ary[5] != '--'
             try:
-                text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + needed_text + "\n" + noquo_single(i7.a2q(ary[6]))
+                text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + needed_text + "\n" + noquo_single(i7.a2q(ary[quote_col]))
             except:
                 print("Bad range error at line {} (needed 7 columns, got {}): {}".format(line_count, len(ary), line.rstrip()))
                 print('//'.join(ary))
@@ -81,13 +94,15 @@ with open(mist_file) as file:
 cmd_count = 1
 while cmd_count < len(sys.argv):
     arg = sys.argv[cmd_count]
-    try:
-        max_count = int(arg)
-        cmd_count += 1
-        continue
-    except:
-        pass
-    sys.exit("Can only define max_count with a number.")
+    if arg == 'nl':
+        no_leet_checks = True
+    else:
+        try:
+            max_count = int(arg)
+            cmd_count += 1
+            continue
+        except:
+            sys.exit("Bad parameter {}.".format(arg))
     cmd_count += 1
 
 okay_next_dup = False
@@ -163,6 +178,9 @@ if len(y):
     print("Extraneous mistake checks({}): {}".format(len(y), ', '.join(sorted(y, key=lambda x:my_line[x]))))
 else: print("No extraneous mistake checks.")
 
+if no_leet_checks:
+    err_print_and_bail()
+
 y = [x for x in need_leet_check if need_leet_check[x] and x not in got_leet_check]
 
 if len(y):
@@ -186,8 +204,4 @@ if len(y):
     print("Extraneous leet checks({}): {}".format(len(y), ', '.join(sorted(y, key=lambda x:my_line[x]))))
 else: print("No extraneous leet checks.")
 
-final_string = "{} total error{}".format(err_found, mt.plur(err_found)) if err_found else "SUCCESS! The mistake file and test file match."
-
-mt.print_and_warn(final_string)
-
-mt.postopen_files()
+err_print_and_bail()
