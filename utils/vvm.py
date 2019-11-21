@@ -5,6 +5,8 @@
 #
 # symlinked from QQNN to VVFF
 #
+# todo: i7.topx2ary so we can test multiple mistakes
+#
 
 from mytools import nohy
 import sys
