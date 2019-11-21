@@ -26,13 +26,9 @@ include Basic Screen Effects by Emily Short.
 
 [include Property Checking for VVFF by Emily Short.] [modified version]
 
-[dnc.py/icl.pl can/should toggle this]
+include Very Vile Fairy File Mistakes by Andrew Schultz.
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
-
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+include Very Vile Fairy File Tables by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
@@ -1340,6 +1336,8 @@ check going north in Gassed Gap:
 	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
 	isle-max-score;
 
+to decide what number is bag-point: decide on boolval of whether or not player has big bag;
+
 to isle-max-score:
 	now max-poss is isle-score + score + 1 - bag-point;
 
@@ -1424,7 +1422,7 @@ the grow grate is part of the go gate. description is "The grow grate looks like
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all.". cht of Tarry Tile is leteq. noway-text of Tarry Tile is "No way through the listless mist mess.". [->merry mile]
+Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. [->merry mile]
 
 section listless mist mess
 
@@ -1718,7 +1716,7 @@ to say yn-tell: say "[one of](you never need to answer yes/no questions unless s
 
 the block swearing obscenely rule is not listed in any rulebook.
 
-check swearing obscenely: say "Gee, gad! Be bad! 'Me, mad!'" instead;
+check swearing obscenely: say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
 
 the block swearing mildly rule is not listed in any rulebook.
 
@@ -4028,7 +4026,7 @@ this is the vc-dining-door rule:
 	the rule succeeds;
 
 this is the vr-dining-door rule:
-	say "Up from the ground, a dining door rumbles and appears. You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
+	say "Up from the ground, a dining door rumbles and appears. From behind, you hear a cheery song: 'Merry mood, fairy food, dairy dude.' You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
 	now dine-door is true;
 	move dining door to Whining War;
 	clue-zap "DINING DOOR";
@@ -4789,7 +4787,7 @@ this is the vc-pull-pieced rule:
 	the rule succeeds;
 
 this is the vr-pull-pieced rule:
-	say "With the help of the pining poor, you pull the full feast that was the bull beast to the Shining Shore. There, the dining door swings open. You enter and have a very good feast. As you leave, the dining door dissolves. The pining poor look ready for work, now they've been properly fed.";
+	say "With the help of the pining poor, you pull the full feast that was the bull beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
 	moot mild mead;
 	if wild weed is off-stage, max-down;
@@ -5198,8 +5196,6 @@ understand "blowby" as blowbying.
 understand "blow by" as blowbying.
 understand "flow fie" as blowbying.
 understand "slow sigh" as blowbying.
-
-to decide what number is bag-point: decide on boolval of whether or not player has big bag;
 
 carry out blowbying:
 	let cur-row be 1;
