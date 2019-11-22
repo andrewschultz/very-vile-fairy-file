@@ -108,7 +108,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "pay poke"	have-clay-cloak rule	false	--	--	--	"The clay cloak was free. No need to pay anything."
 "cray croak"	have-clay-cloak rule	false	--	--	--	"You make a weird noise. It doesn't help, but it doesn't hurt."
 "fay folk"	have-clay-cloak rule	false	--	--	--	"There's not enough magic in this game? Aww, rats."
-"trumped truster"	cluster-near rule	false	7	6	--	"The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests." [?? minor point]
+"trumped truster"	cluster-near rule	false	7	6	llp-trivial rule	"The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests." [?? minor point]
 "lumped luster/lustre"	cluster-near rule	false	7	6	--	"The cluster would still be in the way if it were shiny." [?? minor point]
 "binding bays/baize"	in-blaze-ways rule	false	7	4	blaze-before-maze rule	"You need to find your way here, not get more tied up." [start blinding blaze]
 "grinding grays"	before-grays rule	false	7	4	blaze-before-maze rule	"Even if it were duller, you'd still be left with a [if blaze-ways is false]hot blaze[else]tricky maze[end if]." [?? still when in winding ways]
@@ -206,7 +206,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "leer/lear lull/lul"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"The beer bull does not stop looking aggressively at you."
 "peer/pier pull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"No, you can't bring the bull down with peer pressure."
 "woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence." [start history hall]
-"butter/butta bankster/banksta"	ganksta-nearby rule	false	6	7	--	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of." [??alt solution, need the leet learner to be dim]
+"butter/butta bankster/banksta"	ganksta-nearby rule	false	6	7	no-wanksta rule	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of." [??alt solution, need the leet learner to be dim]
 "blots blame"	ganksta-nearby rule	false	4	4	--	"There's another way to insult the tattoo as bad art. You're very close."
 "clots claim"	ganksta-nearby rule	false	4	4	--	"You're trying to chase, not impress the ganksta."
 "cots came"	ganksta-nearby rule	false	4	4	--	"The gutta ganksta is unmoved by the prospect of a good night's sleep."
@@ -516,6 +516,8 @@ this is the key-or-rear rule: if player is in Real Rear or player has cage key, 
 
 this is the lap-not-cap rule: if player is in Lake Lap, the rule succeeds;
 
+this is the llp-trivial rule: the rule succeeds;
+
 this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds;
 
 this is the mass-near rule: if mean mass is touchable, the rule succeeds;
@@ -599,6 +601,8 @@ this is the need-work-well rule: if player does not have jerk gel and jerk gel i
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
 this is the no-snare-yet rule: if snuck snare is off-stage, the rule succeeds;
+
+this is the no-wanksta rule: if gan-wan is false, the rule succeeds;
 
 this is the not-fit-yet rule: if found-fit is false, the rule succeeds;
 

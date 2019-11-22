@@ -3427,7 +3427,7 @@ this is the mistake-checker rule:
 				if there is a leet-rule entry:
 					process the leet-rule entry;
 					if the rule succeeded:
-						if leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
+						if leet-rule entry is no-wanksta rule or leet-rule entry is llp-trivial rule or leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
 					else:
 						now see-leet-read is false;
 				if see-leet-read is true and there is a w1let entry:
