@@ -34,6 +34,20 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+> big bag
+by one point
+
+> zbig bag rule
+!DEBUG: vc-big-bag rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> big zbag rule
+!DEBUG: vc-big-bag rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
+> big bag
+!by one point
+You already made the big bag.
+
 > get good
 by one point
 
@@ -186,20 +200,6 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !The HA HALF button lights up on your Leet Learner.
 > flim zflam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-
-> big bag
-by one point
-
-> big bag
-!by one point
-You already made the big bag.
-
-> zbig bag rule
-!DEBUG: vc-big-bag rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-> big zbag rule
-!DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 > s

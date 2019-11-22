@@ -120,15 +120,56 @@ Nothing happens. The words are just settings
 >eat earner
 Nothing happens. The words are just settings
 
-==t2
-# the BIG BAG tests here are regression checking for when BIG BAG was part of the think-table
 > big bag
-\\
-> bury bile
-\\
+by one point
+
+@mis
+> wig wag
+!Learner needle
+If you're wearing a hairpiece, I don't want to know.
+> mig mag
+!Learner needle
+Fighter plane ammunition will not help you.
+> gig gag
+!Learner needle
+There are enough gags in this adventure. I hope.
+> brig brag
+Good guys don't brag about if they were ever
+!Learner needle
+>swig swag
+There's no time to be drinking here!
+!Learner needle
+>tig tag
+But you already have one utterly childish game right in front of you.
+!Learner needle
+>cig sag
+You find no black market currency in the big bag.
+!Learner needle
+>jig jag
+You aren't up for dancing.
+!Learner needle
+
+==t2
+# this is regression testing, as once upon a time, we blocked creating the big bag
 > think
-\\
 !BIG BAG
+
+==t6
+> zbig bag rule
+!DEBUG: vc-big-bag rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> big zbag rule
+!DEBUG: vc-big-bag rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
+==t6
+> big bag
+!by one point
+You already made the big bag.
+
+==t2
+> bury bile
+> think
 BURY BILE
 
 @mis
@@ -209,7 +250,7 @@ Ugh! Regular goats are messy enough.
 No need for warmth.
 > do dotes
 !Learner needle
-Wowzers! What a neat document/is. Golly gee!
+Wowzers! What a neat document Too Totes New Notes is. Golly gee!
 > rue rotes
 !Learner needle
 You fail to find yourself in a more straightforward adventure.
@@ -255,6 +296,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > find fault
 by one point
+
+@mis
+#next-cmd-pass 
+> brig brag
+Good guys don't brag about being
+!Learner needle
 
 ==t6
 > find fault
@@ -323,6 +370,12 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > green zgrass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+@mis
+#next-cmd-pass -- brig brag conditional text
+> brig brag
+Good guys don't brag about having been
+!Learner needle
 
 @mis
 > cash cap
@@ -416,9 +469,6 @@ You receive no kit to help you throw, corporate or otherwise.
 > mo mitt
 Learner needle
 Please proceed, adventurer.
-> so sit
-Learner needle
-You sit and pout. It doesn't help.
 > glow glit
 Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
@@ -438,9 +488,6 @@ You receive no kit to help you throw, corporate or otherwise.
 > mo mitt
 !Learner needle
 Please proceed, adventurer.
-> so sit
-!Learner needle
-You sit and pout. It doesn't help.
 > glow glit
 !Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
@@ -649,49 +696,6 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > think
 !FLIM FLAM
 
-> big bag
-by one point
-
-==t6
-> big bag
-!by one point
-You already made the big bag.
-
-
-==t6
-> zbig bag rule
-!DEBUG: vc-big-bag rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-> big zbag rule
-!DEBUG: vc-big-bag rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-
-@mis
-> wig wag
-!Learner needle
-If you're wearing a hairpiece, I don't want to know.
-> mig mag
-!Learner needle
-Fighter plane ammunition will not help you.
-> gig gag
-!Learner needle
-There are enough gags in this adventure. I hope.
-> brig brag
-Good guys don't brag about having been
-!Learner needle
->swig swag
-There's no time to be drinking here!
-!Learner needle
->tig tag
-But you already have one utterly childish game right in front of you.
-!Learner needle
->cig sag
-You find no black market currency in the big bag.
-!Learner needle
->jig jag
-You aren't up for dancing.
-!Learner needle
-
 ==t4
 >w
 west to Fame Fort
@@ -851,7 +855,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,6
+==t1,5,6
 > appealing appear
 by one point
 
@@ -897,7 +901,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,6
+==t1,5,6
 > strong start
 by one point
 
@@ -990,7 +994,7 @@ Learner needle
 Tearing apart the hive heap would get you stung before you found whatever's in there.
 > jive jeep
 Learner needle
-You acquire no wacky form of transport.
+No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
 
 ==t6
 > zdive deep rule
@@ -1150,15 +1154,18 @@ You pretend you've already done much harder things. It gives you confidence, or 
 > dark door
 by one point
 
-@mis #stark store after
+@mis #stark store middle
+#next-cmd-pass
 > arc ore
-!Learner needle
+Learner needle
 The store remains rectangular-ish. Probably for the best.
+#next-cmd-pass
 > hark whore
-!Learner needle
+Learner needle
 That's inappropriate. Logical, but inappropriate.
+#next-cmd-pass
 > snark snore
-!Learner needle
+Learner needle
 You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
 ==t6
@@ -1184,6 +1191,17 @@ The HA HALF button lights up on your Leet Learner.
 
 > mark more
 by one point
+
+@mis #stark store after
+> arc ore
+!Learner needle
+The store remains rectangular-ish. Probably for the best.
+> hark whore
+!Learner needle
+That's inappropriate. Logical, but inappropriate.
+> snark snore
+!Learner needle
+You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
 ==t6
 > mark more
@@ -1298,7 +1316,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 by one point
 > undo
 
-==t1,6
+==t1,5,6
 > what a wanksta
 by one point
 
@@ -1410,7 +1428,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,6
+==t1,5,6
 > ho happen
 by one point
 > dimd
@@ -1491,7 +1509,7 @@ Learner needle
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
 Learner needle
-You wonder what sort of mall this is, without a sports store.
+You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
 Learner needle
 You bemoan the lack of a food court in the mall.
@@ -1506,7 +1524,7 @@ Learner needle
 You feel overcome with emotion.
 >tie tall
 Learner needle
-You look for any way-too-long ties that might help you feel taller, or more 'Presidental,' or whatever. You find none, and you also receive no mispronounced title
+You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
 >sigh sol
 No sunlight appears.
 
@@ -1566,7 +1584,7 @@ You imagine yourself in a much more spacious megastore.
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
 !Learner needle
-You wonder what sort of mall this is, without a sports store.
+You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
 !Learner needle
 You bemoan the lack of a food court in the mall.
@@ -1584,7 +1602,7 @@ You feel overcome with emotion.
 You look for any way-too-long ties that might help you feel taller, or more
 > sigh sol
 !Learner needle
-No sunlight appears/.
+No sunlight appears.
 
 @mis
 > card cat
@@ -1642,7 +1660,7 @@ You turn up your nose at kids these days' terrible fashions.
 Learner needle
 You don't need ... cookware.
 
-==t1,6
+==t1,5,6
 > not near
 by one point
 
@@ -1765,13 +1783,13 @@ You don't need an olde tyme adventure with daggers and stuff.
 You hear an annoying laugh in the distance.
 > urk ell
 Learner needle
-The gel is messy, but odd interjections won't help you use it.
+The gel is messy, but odd interjections won't help you use it or put it back in the tube.
 > smirk smell
 Learner needle
 No, you don't want that.
 > turk tell
 Learner needle
-You wonder breifly how that automaton back in the 18th century played chess, anyway.
+You wonder briefly how that automaton back in the 18th century played chess, anyway.
 
 ==t6
 > zwork well rule
@@ -1803,13 +1821,13 @@ You already did.
 You don't need an olde tyme adventure with daggers and stuff.
 > urk ell
 !Learner needle
-The gel is messy, but odd interjections won't help you use it.
+The gel is messy, but odd interjections won't help you use it or put it back in the tube.
 > smirk smell
 !Learner needle
 No, you don't want that.
 > turk tell
 !Learner needle
-You wonder breifly how that automaton back in the 18th century played chess, anyway.
+You wonder briefly how that automaton back in the 18th century played chess, anyway.
 
 ==t2
 > couple caps
@@ -1821,7 +1839,7 @@ COUPLE CAPS
 @mis
 > coughed canned
 Learner needle
-You try to suppress a cough while avoiding any sudden turndown in fortune.
+You try to suppress a cough while avoiding any sudden downturn in fortune.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -1862,7 +1880,7 @@ You're already on the Soft Sand.
 @mis
 > coughed canned
 !Learner needle
-You try to suppress a cough while avoiding any sudden turndown in fortune.
+You try to suppress a cough while avoiding any sudden downturn in fortune.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -2121,13 +2139,13 @@ You can carry what you need. You don't need any Brian Jacques villains upsetting
 > mooring moat
 !Learner needle
 The boring boat seems to anchor itself okay here.
-> drowsy drakes
-!Learner needle
-No sleepy ducks walk by.
 
 > enter boat
 
 @mis
+> drowsy drakes
+!Learner needle
+No sleepy ducks walk by.
 > cake key
 Learner needle
 Ooh! That'd be nice and tasty. But you don't need that right now.
@@ -2223,20 +2241,9 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,6
+==t1,5,6
 > break brie
 by one point
-
-@mis #jake g after
-> shake she
-!Learner needle
-Jake has no horrible ex to avoid.
-> flake flee
-!Learner needle
-Be nice! You need Jake.
-> bake be
-!Learner needle
-This is not a cooking sim.
 
 ==t6
 > break brie
@@ -2259,8 +2266,33 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@mis #jake g mid
+#next-cmd-pass
+> shake she
+!Learner needle
+Jake has no horrible ex to avoid.
+#next-cmd-pass
+> flake flee
+!Learner needle
+Be nice! You need Jake.
+#next-cmd-pass
+> bake be
+!Learner needle
+This is not a cooking sim.
+
 > fake fee
 by one point
+
+@mis #jake g after
+> shake she
+!Learner needle
+Jake has no horrible ex to avoid.
+> flake flee
+!Learner needle
+Be nice! You need Jake.
+> bake be
+!Learner needle
+This is not a cooking sim.
 
 ==t6
 > fake fee
@@ -2641,7 +2673,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,6
+==t1,5,6
 > bumped buster
 by one point
 
@@ -2872,28 +2904,28 @@ The HA HALF button lights up on your Leet Learner.
 @mis #see sign before
 > bree brine
 Learner needle
-Less gross than what's in/, but no.
+Less gross than what's in We Whine: ME, MINE, but no.
 > fee fine
 Learner needle
-No, there's no charge on/.
+No, there's no charge on We Whine: ME, MINE.
 > flee flyin
 Learner needle
-/encourages thinking outside the box, but that's a bit far.
+We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
 > key kine
 Learner needle
-/already provides a figurative key to things.
+We Whine: ME, MINE already provides a figurative key to things.
 > knee nine
 Learner needle
-/is only about mental violence and nastiness to people
+We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 Learner needle
-/only blows figurative wind.
+We Whine: ME, MINE only blows figurative wind.
 > she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
 > tee tine
 Learner needle
-No golf tee provides a bookmark for/.
+No golf tee provides a bookmark for We Whine: ME, MINE.
 
 > see sign
 by one point
@@ -2901,28 +2933,28 @@ by one point
 @mis #see sign after
 > bree brine
 !Learner needle
-Less gross than what's in/, but no.
+Less gross than what's in We Whine: ME, MINE, but no.
 > fee fine
 !Learner needle
-No, there's no charge on/.
+No, there's no charge on We Whine: ME, MINE.
 > flee flyin
 !Learner needle
-/encourages thinking outside the box, but that's a bit far.
+We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
 > key kine
 !Learner needle
-/already provides a figurative key to things.
+We Whine: ME, MINE already provides a figurative key to things.
 > knee nine
 !Learner needle
-/is only about mental violence and nastiness to people
+We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 !Learner needle
-/only blows figurative wind.
+We Whine: ME, MINE only blows figurative wind.
 > she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
 > tee tine
 !Learner needle
-No golf tee provides a bookmark for/.
+No golf tee provides a bookmark for We Whine: ME, MINE.
 
 ==t6
 > see sign
@@ -3061,7 +3093,7 @@ Learner needle
 You need to find some other way to banish the hit hound and feel comfortable here. You already showed grit in the Po' Pit, anyway.
 > bit bound
 Learner needle
-Now you mention it, you do feel a bit restricted here. Have a participation point for sharing your feelings!
+Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
 ==t2
 > fit found
@@ -3149,7 +3181,7 @@ You already fit in.
 The pit pound doesn't need clutter like that.
 > bit bound
 !Learner needle
-Now you mention it, you did feel a bit restricted here. Have a participation point for sharing your feelings!
+Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
 ==t2
 > think
@@ -3605,7 +3637,7 @@ While chemical (ab)use can create pulsating literary works, your quest is more b
 Learner needle
 That would make for an odd golf course.
 
-==t1,6
+==t1,5,6
 > wild weed
 by one point
 
@@ -3653,7 +3685,7 @@ CULL CEASED
 McFly
 Learner needle
 
-==t1,6
+==t1,5,6
 > spark spliff
 by one point
 
@@ -3824,7 +3856,7 @@ Learner needle
 You make a rude gesture, for whatever good it does.
 > spining spore
 Learner needle
-Your foray into speculative biology goes nowherre.
+Your foray into speculative biology goes nowhere.
 > pining pore
 Learner needle
 They'll come along later, if you do something else.
@@ -3999,7 +4031,7 @@ Don't get greedy!
 You make a rude gesture, for whatever good it does.
 > spining spore
 !Learner needle
-Your foray into speculative biology goes nowherre.
+Your foray into speculative biology goes nowhere.
 > fining four
 !Learner needle
 You don't need to summon people that may audit you.
@@ -4242,7 +4274,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t1,6
+==t1,5,6
 > beaker bustle
 by one point
 
@@ -4340,7 +4372,7 @@ Learner needle
 Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
-A pull down bed is not what you need now that the action is heating up!
+The bot board never sleeps, so they're not likely to be fooled by a string attached to a cot.
 > got gourd
 Learner needle
 That worked in The Life of Brian, but ... try a homonym, here. You're close.
@@ -4604,7 +4636,7 @@ The last thing you need now is a hair appointment.
 > bury bile
 by one point
 
-==t1,6
+==t1,5,6
 !see the points you MISSED
 
 ==t2
@@ -4655,6 +4687,7 @@ MORAL MAGE
 #next-cmd-pass ?? delete this post-comp
 > really rolling
 lump
+>jj
 > undo
 Take two? Fake, foo'!
 rematerializes
@@ -4674,6 +4707,9 @@ lump
 #next-cmd-pass
 >appealing appear
 lump
+grows bigger
+#next-cmd-pass
+>jj
 >undo
 Take two? Fake, foo'!
 grows bigger

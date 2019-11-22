@@ -8,14 +8,15 @@
 
 * main-thru
 
-# the BIG BAG tests here are regression checking for when BIG BAG was part of the think-table
 > big bag
+by one point
+
+# this is regression testing, as once upon a time, we blocked creating the big bag
+> think
+!BIG BAG
 
 > bury bile
-
 > think
-
-!BIG BAG
 BURY BILE
 
 > get good
@@ -54,9 +55,6 @@ by one point
 
 > think
 !FLIM FLAM
-
-> big bag
-by one point
 
 > s
 

@@ -76,6 +76,34 @@ Nothing happens. The words are just settings
 >eat earner
 Nothing happens. The words are just settings
 
+> big bag
+by one point
+
+> wig wag
+!Learner needle
+If you're wearing a hairpiece, I don't want to know.
+> mig mag
+!Learner needle
+Fighter plane ammunition will not help you.
+> gig gag
+!Learner needle
+There are enough gags in this adventure. I hope.
+> brig brag
+Good guys don't brag about if they were ever
+!Learner needle
+>swig swag
+There's no time to be drinking here!
+!Learner needle
+>tig tag
+But you already have one utterly childish game right in front of you.
+!Learner needle
+>cig sag
+You find no black market currency in the big bag.
+!Learner needle
+>jig jag
+You aren't up for dancing.
+!Learner needle
+
 > stet stood
 Learner needle
 No comment on if and where proofreading is necessary, here.
@@ -119,7 +147,7 @@ Ugh! Regular goats are messy enough.
 No need for warmth.
 > do dotes
 !Learner needle
-Wowzers! What a neat document/is. Golly gee!
+Wowzers! What a neat document Too Totes New Notes is. Golly gee!
 > rue rotes
 !Learner needle
 You fail to find yourself in a more straightforward adventure.
@@ -148,6 +176,11 @@ A drinking buddy you can play practical jokes on won't be any help here.
 
 > find fault
 by one point
+
+#next-cmd-pass
+> brig brag
+Good guys don't brag about being
+!Learner needle
 
 > hind halt
 !Learner needle
@@ -180,6 +213,11 @@ This isn't that sort of game.
 
 > green grass
 by one point
+
+#next-cmd-pass -- brig brag conditional text
+> brig brag
+Good guys don't brag about having been
+!Learner needle
 
 > cash cap
 Learner needle
@@ -249,9 +287,6 @@ You receive no kit to help you throw, corporate or otherwise.
 > mo mitt
 Learner needle
 Please proceed, adventurer.
-> so sit
-Learner needle
-You sit and pout. It doesn't help.
 > glow glit
 Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
@@ -265,9 +300,6 @@ You receive no kit to help you throw, corporate or otherwise.
 > mo mitt
 !Learner needle
 Please proceed, adventurer.
-> so sit
-!Learner needle
-You sit and pout. It doesn't help.
 > glow glit
 !Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
@@ -371,34 +403,6 @@ That might be cool, to make the puzzle a slam dunk and lose the last few pounds,
 > flim flam
 by one point
 
-> big bag
-by one point
-
-> wig wag
-!Learner needle
-If you're wearing a hairpiece, I don't want to know.
-> mig mag
-!Learner needle
-Fighter plane ammunition will not help you.
-> gig gag
-!Learner needle
-There are enough gags in this adventure. I hope.
-> brig brag
-Good guys don't brag about having been
-!Learner needle
->swig swag
-There's no time to be drinking here!
-!Learner needle
->tig tag
-But you already have one utterly childish game right in front of you.
-!Learner needle
->cig sag
-You find no black market currency in the big bag.
-!Learner needle
->jig jag
-You aren't up for dancing.
-!Learner needle
-
 > s
 
 > wheel weir
@@ -445,6 +449,9 @@ by one point
 > deal dear
 by one point
 
+> appealing appear
+by one point
+
 > n
 
 > one wen
@@ -456,6 +463,9 @@ You find no way to reach behind the fourth wall and grab my pun pen. Besides, it
 > won when
 !Learner needle
 Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
+
+> strong start
+by one point
 
 > call cree
 Learner needle
@@ -508,7 +518,7 @@ Learner needle
 Tearing apart the hive heap would get you stung before you found whatever's in there.
 > jive jeep
 Learner needle
-You acquire no wacky form of transport.
+No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
 
 > dive deep
 by one point
@@ -587,6 +597,22 @@ You pretend you've already done much harder things. It gives you confidence, or 
 > dark door
 by one point
 
+#next-cmd-pass
+> arc ore
+Learner needle
+The store remains rectangular-ish. Probably for the best.
+#next-cmd-pass
+> hark whore
+Learner needle
+That's inappropriate. Logical, but inappropriate.
+#next-cmd-pass
+> snark snore
+Learner needle
+You pretend you've already done much harder things. It gives you confidence, or something close enough.
+
+> mark more
+by one point
+
 > arc ore
 !Learner needle
 The store remains rectangular-ish. Probably for the best.
@@ -596,9 +622,6 @@ That's inappropriate. Logical, but inappropriate.
 > snark snore
 !Learner needle
 You pretend you've already done much harder things. It gives you confidence, or something close enough.
-
-> mark more
-by one point
 
 > lark lore
 !Learner needle
@@ -632,6 +655,9 @@ by one point
 > w
 
 > mystery mall
+by one point
+
+> what a wanksta
 by one point
 
 > listen
@@ -689,6 +715,11 @@ The ganksta looks slightly upset but realizes it can't be childish to have a tat
 > lots lame
 by one point
 
+> ho happen
+by one point
+> dimd
+by one point
+
 > no nappin
 by one point
 
@@ -723,7 +754,7 @@ Learner needle
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
 Learner needle
-You wonder what sort of mall this is, without a sports store.
+You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
 Learner needle
 You bemoan the lack of a food court in the mall.
@@ -738,7 +769,7 @@ Learner needle
 You feel overcome with emotion.
 >tie tall
 Learner needle
-You look for any way-too-long ties that might help you feel taller, or more 'Presidental,' or whatever. You find none, and you also receive no mispronounced title
+You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
 >sigh sol
 No sunlight appears.
 
@@ -775,7 +806,7 @@ You imagine yourself in a much more spacious megastore.
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
 !Learner needle
-You wonder what sort of mall this is, without a sports store.
+You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
 !Learner needle
 You bemoan the lack of a food court in the mall.
@@ -793,7 +824,7 @@ You feel overcome with emotion.
 You look for any way-too-long ties that might help you feel taller, or more
 > sigh sol
 !Learner needle
-No sunlight appears/.
+No sunlight appears.
 
 > card cat
 Learner needle
@@ -840,6 +871,9 @@ You turn up your nose at kids these days' terrible fashions.
 > pot pier
 Learner needle
 You don't need ... cookware.
+
+> not near
+by one point
 
 > blot blear
 !Learner needle
@@ -920,13 +954,13 @@ You don't need an olde tyme adventure with daggers and stuff.
 You hear an annoying laugh in the distance.
 > urk ell
 Learner needle
-The gel is messy, but odd interjections won't help you use it.
+The gel is messy, but odd interjections won't help you use it or put it back in the tube.
 > smirk smell
 Learner needle
 No, you don't want that.
 > turk tell
 Learner needle
-You wonder breifly how that automaton back in the 18th century played chess, anyway.
+You wonder briefly how that automaton back in the 18th century played chess, anyway.
 
 > work well
 by one point
@@ -936,19 +970,19 @@ by one point
 You don't need an olde tyme adventure with daggers and stuff.
 > urk ell
 !Learner needle
-The gel is messy, but odd interjections won't help you use it.
+The gel is messy, but odd interjections won't help you use it or put it back in the tube.
 > smirk smell
 !Learner needle
 No, you don't want that.
 > turk tell
 !Learner needle
-You wonder breifly how that automaton back in the 18th century played chess, anyway.
+You wonder briefly how that automaton back in the 18th century played chess, anyway.
 
 > e
 
 > coughed canned
 Learner needle
-You try to suppress a cough while avoiding any sudden turndown in fortune.
+You try to suppress a cough while avoiding any sudden downturn in fortune.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -958,7 +992,7 @@ by one point
 
 > coughed canned
 !Learner needle
-You try to suppress a cough while avoiding any sudden turndown in fortune.
+You try to suppress a cough while avoiding any sudden downturn in fortune.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -1066,12 +1100,12 @@ You can carry what you need. You don't need any Brian Jacques villains upsetting
 > mooring moat
 !Learner needle
 The boring boat seems to anchor itself okay here.
-> drowsy drakes
-!Learner needle
-No sleepy ducks walk by.
 
 > enter boat
 
+> drowsy drakes
+!Learner needle
+No sleepy ducks walk by.
 > cake key
 Learner needle
 Ooh! That'd be nice and tasty. But you don't need that right now.
@@ -1092,6 +1126,25 @@ by one point
 > take tea
 by one point
 
+> break brie
+by one point
+
+#next-cmd-pass
+> shake she
+!Learner needle
+Jake has no horrible ex to avoid.
+#next-cmd-pass
+> flake flee
+!Learner needle
+Be nice! You need Jake.
+#next-cmd-pass
+> bake be
+!Learner needle
+This is not a cooking sim.
+
+> fake fee
+by one point
+
 > shake she
 !Learner needle
 Jake has no horrible ex to avoid.
@@ -1101,9 +1154,6 @@ Be nice! You need Jake.
 > bake be
 !Learner needle
 This is not a cooking sim.
-
-> fake fee
-by one point
 
 > cake key
 !Learner needle
@@ -1240,6 +1290,9 @@ There's not enough magic in this game? Aww, rats.
 !Learner needle
 Water might make the clay cloak even heavier and messier.
 
+> bumped buster
+by one point
+
 > enter boat
 
 > w
@@ -1328,56 +1381,56 @@ by one point
 
 > bree brine
 Learner needle
-Less gross than what's in/, but no.
+Less gross than what's in We Whine: ME, MINE, but no.
 > fee fine
 Learner needle
-No, there's no charge on/.
+No, there's no charge on We Whine: ME, MINE.
 > flee flyin
 Learner needle
-/encourages thinking outside the box, but that's a bit far.
+We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
 > key kine
 Learner needle
-/already provides a figurative key to things.
+We Whine: ME, MINE already provides a figurative key to things.
 > knee nine
 Learner needle
-/is only about mental violence and nastiness to people
+We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 Learner needle
-/only blows figurative wind.
+We Whine: ME, MINE only blows figurative wind.
 > she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
 > tee tine
 Learner needle
-No golf tee provides a bookmark for/.
+No golf tee provides a bookmark for We Whine: ME, MINE.
 
 > see sign
 by one point
 
 > bree brine
 !Learner needle
-Less gross than what's in/, but no.
+Less gross than what's in We Whine: ME, MINE, but no.
 > fee fine
 !Learner needle
-No, there's no charge on/.
+No, there's no charge on We Whine: ME, MINE.
 > flee flyin
 !Learner needle
-/encourages thinking outside the box, but that's a bit far.
+We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
 > key kine
 !Learner needle
-/already provides a figurative key to things.
+We Whine: ME, MINE already provides a figurative key to things.
 > knee nine
 !Learner needle
-/is only about mental violence and nastiness to people
+We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 !Learner needle
-/only blows figurative wind.
+We Whine: ME, MINE only blows figurative wind.
 > she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
 > tee tine
 !Learner needle
-No golf tee provides a bookmark for/.
+No golf tee provides a bookmark for We Whine: ME, MINE.
 
 > e
 > e
@@ -1445,7 +1498,7 @@ Learner needle
 You need to find some other way to banish the hit hound and feel comfortable here. You already showed grit in the Po' Pit, anyway.
 > bit bound
 Learner needle
-Now you mention it, you do feel a bit restricted here. Have a participation point for sharing your feelings!
+Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
 > wit wound
 Learner needle
@@ -1482,7 +1535,7 @@ You acquire no increased aptitude for removing an opponent's hit points. Which w
 The pit pound doesn't need clutter like that.
 > bit bound
 !Learner needle
-Now you mention it, you did feel a bit restricted here. Have a participation point for sharing your feelings!
+Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
 > e
 
@@ -1682,6 +1735,9 @@ While chemical (ab)use can create pulsating literary works, your quest is more b
 Learner needle
 That would make for an odd golf course.
 
+> wild weed
+by one point
+
 > dialed deed
 !Learner needle
 You don't need chemical stimulants to be dialed in to what you need to do.
@@ -1704,6 +1760,9 @@ That would make for an odd golf course.
 > bark biff
 McFly
 Learner needle
+
+> spark spliff
+by one point
 
 > bark biff
 McFly
@@ -1761,7 +1820,7 @@ Learner needle
 You make a rude gesture, for whatever good it does.
 > spining spore
 Learner needle
-Your foray into speculative biology goes nowherre.
+Your foray into speculative biology goes nowhere.
 > pining pore
 Learner needle
 They'll come along later, if you do something else.
@@ -1792,7 +1851,7 @@ by one point
 You make a rude gesture, for whatever good it does.
 > spining spore
 !Learner needle
-Your foray into speculative biology goes nowherre.
+Your foray into speculative biology goes nowhere.
 > fining four
 !Learner needle
 You don't need to summon people that may audit you.
@@ -1889,6 +1948,9 @@ There's enough bad music in this game if you know where to look.
 !Learner needle
 You look for someone who has recently lost an argument, but nobody turns up.
 
+> beaker bustle
+by one point
+
 > meeker muscle
 by one point
 
@@ -1927,7 +1989,7 @@ Learner needle
 Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
-A pull down bed is not what you need now that the action is heating up!
+The bot board never sleeps, so they're not likely to be fooled by a string attached to a cot.
 > got gourd
 Learner needle
 That worked in The Life of Brian, but ... try a homonym, here. You're close.
@@ -2011,6 +2073,8 @@ The last thing you need now is a hair appointment.
 > bury bile
 by one point
 
+!see the points you MISSED
+
 * guess-overflow-and-undo-check
 #next-cmd-pass
 > z
@@ -2026,6 +2090,7 @@ by one point
 #next-cmd-pass ?? delete this post-comp
 > really rolling
 lump
+>jj
 > undo
 Take two? Fake, foo'!
 rematerializes
@@ -2045,6 +2110,9 @@ lump
 #next-cmd-pass
 >appealing appear
 lump
+grows bigger
+#next-cmd-pass
+>jj
 >undo
 Take two? Fake, foo'!
 grows bigger

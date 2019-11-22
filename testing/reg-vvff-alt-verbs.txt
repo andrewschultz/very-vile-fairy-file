@@ -9,6 +9,9 @@
 
 > z
 
+> big bag
+by one point
+
 > get good
 by one point
 
@@ -67,9 +70,6 @@ by one point
 >undo
 
 > flim flam
-by one point
-
-> big bag
 by one point
 
 > s
