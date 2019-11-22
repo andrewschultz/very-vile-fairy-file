@@ -224,7 +224,7 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the pining poor are fully satisfied."
 "MO MAPPIN"	false	can-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
 "MORAL MAGE"	false	can-moral-mage rule	false	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
-"PULL PIECED"	false	can-pull-pieced rule	false	"You can [b]PULL PIECED[r] the bull beast [once-now of can-pull-pieced rule] you have more people willing to help you."
+"PULL PIECED"	false	can-pull-pieced rule	false	"You can [b]PULL PIECED[r] the Bull Beast [once-now of can-pull-pieced rule] you have more people willing to help you."
 "SHINING SHORE"	false	can-shining-shore rule	false	"You can make the [b]SHINING SHORE[r] [once-now of can-shining-shore rule] you dealt with the Whining War."
 "SHOW SHIELD"	false	can-show-shield rule	false	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
 "SMASHING SMOKE"	false	can-smashing-smoke rule	false	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
@@ -289,7 +289,7 @@ this is the can-glean-glows rule:
 	the rule fails;
 
 this is the can-go-gappin rule:
-	if gassed gap is visited, the rule succeeds;
+	if Gassed Gap is visited, the rule succeeds;
 	the rule fails;
 
 this is the can-heal-here rule:
@@ -320,7 +320,7 @@ this is the can-moral-mage rule:
 	the rule fails.
 
 this is the can-pull-pieced rule:
-	if full feast is in creased cross and dining door is in whining war and pining poor are in whining war, the rule succeeds;
+	if full feast is in Creased Cross and dining door is in Whining War and pining poor are in Whining War, the rule succeeds;
 	the rule fails;
 
 this is the can-shining-shore rule:
@@ -332,7 +332,7 @@ this is the can-show-shield rule:
 	the rule fails.
 
 this is the can-smashing-smoke rule:
-	if y'old yard is visited, the rule succeeds;
+	if Y'Old Yard is visited, the rule succeeds;
 	the rule fails;
 
 this is the can-snake-snap rule:
@@ -340,7 +340,7 @@ this is the can-snake-snap rule:
 	the rule fails;
 
 this is the can-so-sappin rule:
-	if whining war is visited, the rule succeeds;
+	if Whining War is visited, the rule succeeds;
 	the rule fails;
 
 this is the can-take-tea rule:
