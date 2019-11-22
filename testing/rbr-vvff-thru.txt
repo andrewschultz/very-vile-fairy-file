@@ -12,15 +12,8 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 
 TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
 
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-==t4,5
-** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
-** interpreter: /home/andrew/prt/dfrotz -m
-==!
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
@@ -2309,7 +2302,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis lake lap rhymes
+@mis #lake lap rhymes
 > crake crap
 Learner needle
 No bird droppings provide a trail.
@@ -3655,8 +3648,6 @@ Greedy, to try for more.
 !LEAST LOSS
 CULL CEASED
 
-> s
-
 @mis
 > bark biff
 McFly
@@ -3665,6 +3656,13 @@ Learner needle
 ==t1,6
 > spark spliff
 by one point
+
+@mis
+> bark biff
+McFly
+!Learner needle
+
+> s
 
 ==t6
 > spark spliff
@@ -3678,11 +3676,6 @@ Whoah, dude. You already did.
 > spark zspliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
-
-@mis
-> bark biff
-McFly
-Learner needle
 
 > s
 
@@ -4428,6 +4421,14 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+==t4
+>d
+!down to Happy Hall
+>u
+!up to Hippy Hill
+>n
+!north to Earning Ridges
+
 > got gored
 by one point
 
@@ -4476,14 +4477,6 @@ Nothing takes a bit out of the go gate.
 > woe weight
 Learner needle
 You wouldn't want to be crushed by a weight. But you've got the right idea.
-
-==t4
->d
-!down to Happy Hall
->u
-!up to Hippy Hill
->n
-!north to Earning Ridges
 
 ==t3
 > woe wait

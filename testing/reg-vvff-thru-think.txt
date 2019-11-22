@@ -3,21 +3,19 @@
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
 ## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
+# the BIG BAG tests here are regression checking for when BIG BAG was part of the think-table
 > big bag
 
 > bury bile
 
 > think
 
-BIG BAG
+!BIG BAG
 BURY BILE
 
 > get good
@@ -59,9 +57,6 @@ by one point
 
 > big bag
 by one point
-
-> think
-!BIG BAG
 
 > s
 

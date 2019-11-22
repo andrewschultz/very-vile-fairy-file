@@ -2,11 +2,8 @@
 ## reg-vvff-thru-ha-half.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
@@ -1566,10 +1563,10 @@ Greedy, to try for more.
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-> s
-
 > spark spliff
 by one point
+
+> s
 
 > spark spliff
 !by one point

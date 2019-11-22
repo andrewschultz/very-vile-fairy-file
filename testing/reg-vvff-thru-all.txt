@@ -3,13 +3,13 @@
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
 ## walkthrough with all points
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
+
+>really rolling
+by one point
 
 > get good
 by one point
@@ -300,10 +300,10 @@ by one point
 > wild weed
 by one point
 
-> s
-
 > spark spliff
 by one point
+
+> s
 
 > s
 

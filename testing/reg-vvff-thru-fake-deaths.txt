@@ -2,11 +2,8 @@
 ## reg-vvff-thru-fake-deaths.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
@@ -401,15 +398,15 @@ by one point
 > lot lord
 by one point
 
-> got gored
-by one point
-
 >d
 !down to Happy Hall
 >u
 !up to Hippy Hill
 >n
 !north to Earning Ridges
+
+> got gored
+by one point
 
 >d
 down to Happy Hall

@@ -2,14 +2,23 @@
 ## reg-vvff-thru-mistakes.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
+> whet wood
+Learner needle
+Homophones aren't quite right here.
+> wig wag
+Learner needle
+If you're wearing a hairpiece, I don't want to know.
+> mig mag
+Learner needle
+Fighter plane ammunition will not help you.
+> gig gag
+Learner needle
+There are enough gags in this adventure. I hope.
 > brig brag
 Good guys don't brag about if they
 Learner needle
@@ -29,7 +38,31 @@ You aren't up for dancing.
 Yes, you will need wary wile, and lots of it!
 >perking pump
 !Learner needle
+> trilly trolling
+Learner needle
+The Very Vile Fairy File probably has information on that, yes.
+> silly souling
+Learner needle
+Why yes, I'm sort of a silly soul. At least when I'm writing games.
+> filly foaling
+Learner needle
+Caring for young animals is a good thing but beyond this game's scope.
+> tough toll
+!Learner needle
+You groan about how heavy your inventory is.
 
+>really rolling
+by one point
+
+> trilly trolling
+!Learner needle
+The Very Vile Fairy File probably has information on that, yes.
+> silly souling
+!Learner needle
+Why yes, I'm sort of a silly soul. At least when I'm writing games.
+> filly foaling
+!Learner needle
+Caring for young animals is a good thing but beyond this game's scope.
 >treat turner
 Nothing happens. The words are just settings
 >conceit concerner
@@ -72,6 +105,36 @@ by one point
 #okdup
 > brig brag
 Good guys don't brag about being
+> flu floats
+!Learner needle
+No flying craft appears, but on the bright side, you fail to feel sick.
+> grew groats
+!Learner needle
+No coins spring from the ground. A coin with a grue would be kind of creepy, anyway.
+> goo goats
+!Learner needle
+Ugh! Regular goats are messy enough.
+> coo coats
+!Learner needle
+No need for warmth.
+> do dotes
+!Learner needle
+Wowzers! What a neat document/is. Golly gee!
+> rue rotes
+!Learner needle
+You fail to find yourself in a more straightforward adventure.
+> glue gloats
+!Learner needle
+What kind of person boasts about stockpiling glue?
+> blew bloats
+!Learner needle
+You thought you saw Violet Beauregarde roll by there for a minute.
+> stew stoats
+!Learner needle
+Badger, Mole and Rat would agree that's going too far. Even Toad.
+> shoo shoats
+!Learner needle
+There are no young pigs here to shoo.
 
 > hind halt
 Learner needle
@@ -180,8 +243,34 @@ Profanity doesn't work here. But perhaps there is a similar phrase to help you f
 Learner needle
 Clever complaining will make you feel better but won't do anything.
 
+> co kit
+Learner needle
+You receive no kit to help you throw, corporate or otherwise.
+> mo mitt
+Learner needle
+Please proceed, adventurer.
+> so sit
+Learner needle
+You sit and pout. It doesn't help.
+> glow glit
+Learner needle
+Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+
 > grow grit
 by one point
+
+> co kit
+!Learner needle
+You receive no kit to help you throw, corporate or otherwise.
+> mo mitt
+!Learner needle
+Please proceed, adventurer.
+> so sit
+!Learner needle
+You sit and pout. It doesn't help.
+> glow glit
+!Learner needle
+Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
 
 > snow snit
 !Learner needle
@@ -285,6 +374,15 @@ by one point
 > big bag
 by one point
 
+> wig wag
+!Learner needle
+If you're wearing a hairpiece, I don't want to know.
+> mig mag
+!Learner needle
+Fighter plane ammunition will not help you.
+> gig gag
+!Learner needle
+There are enough gags in this adventure. I hope.
 > brig brag
 Good guys don't brag about having been
 !Learner needle
@@ -362,6 +460,12 @@ Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
 > call cree
 Learner needle
 You need something simpler than an unusual language here.
+> ball brie
+Learner needle
+This game is cheesy-making, not cheese-making.
+> wall whee
+Learner needle
+You want to have fewer things in your way, not more. Just spitballing here.
 
 > fall free
 by one point
@@ -369,6 +473,12 @@ by one point
 > call cree
 !Learner needle
 You need something simpler than an unusual language here.
+> ball brie
+!Learner needle
+This game is cheesy-making, not cheese-making.
+> wall whee
+!Learner needle
+You want to have fewer things in your way, not more. Just spitballing here.
 
 # must be after the FALL FREE or FRY FALL gives an erroneous HA HALF.
 >cry call
@@ -387,6 +497,9 @@ There is no hidden tomb under the wry wall.
 !Learner needle
 The wry wall does not grow.
 
+> chive cheap
+Learner needle
+The hive heap, and this game, acquire no additional flavor.
 > live leap
 Learner needle
 The leap wouldn't be live for very long.
@@ -408,6 +521,9 @@ You stare a bit but get no insight.
 Learner needle
 No tile appears, but on the bright side, neither does a charging tapir.
 !the pile
+> aper isle
+Learner needle
+You are not teleported to somewhere similar to the Fun Fen.
 
 > paper pile
 by one point
@@ -418,6 +534,9 @@ You stare a bit but get no insight. Now you've organized the pile, maybe its det
 > taper tile
 !Learner needle
 No tile appears, but on the bright side, neither does a charging tapir. Now you've organized the pile, maybe its details are more important to read or examine.
+> aper isle
+!Learner needle
+You are not teleported to somewhere similar to the Fun Fen.
 
 > backed binder
 by one point
@@ -455,8 +574,28 @@ No, you don't need more danger here.
 Learner needle
 Biological warfare is probably dangerous.
 
+> arc ore
+Learner needle
+The store remains rectangular-ish. Probably for the best.
+> hark whore
+Learner needle
+That's inappropriate. Logical, but inappropriate.
+> snark snore
+Learner needle
+You pretend you've already done much harder things. It gives you confidence, or something close enough.
+
 > dark door
 by one point
+
+> arc ore
+!Learner needle
+The store remains rectangular-ish. Probably for the best.
+> hark whore
+!Learner needle
+That's inappropriate. Logical, but inappropriate.
+> snark snore
+!Learner needle
+You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
 > mark more
 by one point
@@ -497,6 +636,9 @@ by one point
 
 > listen
 
+> fo fappin
+Learner needle
+may not be highbrow, but it's not that low-class.
 > woe whappin
 Learner needle
 You don't need an exhortation to violence.
@@ -518,21 +660,31 @@ The ganksta will never have such a good job. Perhaps you can make fun of somethi
 > frotz frame
 Learner needle
 Anything as esoteric as text adventure vocabulary would go over the Gutta Ganksta's head. You need to be more brutal.
-> gene joes
+
+> blots blame
 Learner needle
-You don't need to visit another clothing store.
-> seen sos
+There's another way to insult the tattoo as bad art. You're very close.
+> clots claim
 Learner needle
-That must be about right, but it's not specific enough. You need to see something specific, and not quite see...
-> sheen shows
+You're trying to chase, not impress the ganksta.
+> cots came
 Learner needle
-That must be about right, but you need to do something to look and find a light, or lights.
-> bean bows
+The gutta ganksta is unmoved by the prospect of a good night's sleep.
+> dots dame
 Learner needle
-No bows pop up to garnish your current clothes.
-> green grows
+The gutta ganksta's fashion sense tends away from polka dots.
+> knots name
 Learner needle
-There's no gardening shop in the mall, but there doesn't need to be.
+You fail to tie the ganksta up in knots with well-timed
+> shots shame
+Learner needle
+The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun.
+> sots same
+Learner needle
+The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult.
+> tots tame
+Learner needle
+The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though.
 
 > lots lame
 by one point
@@ -584,6 +736,11 @@ You complain to nobody in particular about the number of dead ends in the mall.
 > cry crawl
 Learner needle
 You feel overcome with emotion.
+>tie tall
+Learner needle
+You look for any way-too-long ties that might help you feel taller, or more 'Presidental,' or whatever. You find none, and you also receive no mispronounced title
+>sigh sol
+No sunlight appears.
 
 > lie lol
 by one point
@@ -631,6 +788,12 @@ You complain to nobody in particular about the number of dead ends in the mall.
 > cry crawl
 !Learner needle
 You feel overcome with emotion.
+> tie tall
+!Learner needle
+You look for any way-too-long ties that might help you feel taller, or more
+> sigh sol
+!Learner needle
+No sunlight appears/.
 
 > card cat
 Learner needle
@@ -648,8 +811,84 @@ Get ahold of yourself! There's no time for in-depth sabermetrics!
 Learner needle
 I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
 
+> blot blear
+Learner needle
+You don't need to make this store more dreary.
+> bought beer
+Learner needle
+Alas, the mall has no license to buy or serve alcohol.
+> fought fear
+Learner needle
+With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
+> spot spear
+Learner needle
+You don't need a weapon.
+> dot dear
+Learner needle
+No Animaniacs appear to spout poetry. Probably a good thing.
+> drought drear
+Learner needle
+You thirst for an effective rhyme.
+> fraught freer
+You wish Got Gear Hot Hear led somewere else.
+> sought seer
+Learner needle
+Nobody, sober or otherwise, appears to give you advice about the future.
+> snot sneer
+Learner needle
+You turn up your nose at kids these days' terrible fashions.
+> pot pier
+Learner needle
+You don't need ... cookware.
+
+> blot blear
+!Learner needle
+You don't need to make this store more dreary.
+> bought beer
+!Learner needle
+Alas, the mall has no license to buy or serve alcohol.
+> fought fear
+!Learner needle
+With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
+
+> spot spear
+!Learner needle
+You don't need a weapon.
+> dot dear
+!Learner needle
+No Animaniacs appear to spout poetry. Probably a good thing.
+> drought drear
+!Learner needle
+You thirst for an effective rhyme.
+> fraught freer
+!Learner needle
+You wish Got Gear Hot Hear led somewere else.
+> sought seer
+!Learner needle
+Nobody, sober or otherwise, appears to give you advice about the future.
+> snot sneer
+!Learner needle
+You turn up your nose at kids these days' terrible fashions.
+> pot pier
+!Learner needle
+You don't need ... cookware.
+
+> lard lat
+!Learner needle
+You poke at your abs. Nah, you're doing okay.
+> pard pat
+!Learner needle
+You fail to enter a Western with a sidekick.
+
 > hard hat
 by one point
+
+> lard lat
+!Learner needle
+You poke at your abs. Nah, you're doing okay.
+> pard pat
+!Learner needle
+You fail to enter a Western with a sidekick.
 
 > card cat
 !Learner needle
@@ -806,12 +1045,17 @@ You can carry what you need. You don't need any Brian Jacques villains upsetting
 > mooring moat
 Learner needle
 The flooring float seems to anchor itself okay here.
-> mooring mote
+
+> touring tote
 Learner needle
-The flooring float seems to anchor itself okay here.
+The big bag is good enough
 
 > boring boat
 by one point
+
+> touring tote
+!Learner needle
+The big bag is good enough
 
 > goring goat
 !Learner needle
@@ -822,6 +1066,9 @@ You can carry what you need. You don't need any Brian Jacques villains upsetting
 > mooring moat
 !Learner needle
 The boring boat seems to anchor itself okay here.
+> drowsy drakes
+!Learner needle
+No sleepy ducks walk by.
 
 > enter boat
 
@@ -829,11 +1076,31 @@ The boring boat seems to anchor itself okay here.
 Learner needle
 Ooh! That'd be nice and tasty. But you don't need that right now.
 
+> shake she
+Learner needle
+Jake has no horrible ex to avoid.
+> flake flee
+Learner needle
+Be nice! You need Jake.
+> bake be
+Learner needle
+This is not a cooking sim.
+
 > wake whee
 by one point
 
 > take tea
 by one point
+
+> shake she
+!Learner needle
+Jake has no horrible ex to avoid.
+> flake flee
+!Learner needle
+Be nice! You need Jake.
+> bake be
+!Learner needle
+This is not a cooking sim.
 
 > fake fee
 by one point
@@ -851,11 +1118,38 @@ No edible headgear appears.
 Learner needle
 You make a rude gesture, for whatever good it does.
 
+> crake crap
+Learner needle
+No bird droppings provide a trail.
+> flake flap
+Learner needle
+Nobody starts blathering uselessly.
+> rake wrap
+Learner needle
+You probably don't want or need a rake to step on.
+> sake sap
+Learner needle
+No! You want more purpose, not less.
+> slake slap
+Learner needle
+You don't need to slap anyone here, hard or soft.
+> wake whap
+Learner needle
+You already woke Jake much more nicely.
+
 > make map
 by one point
 
+> co cappin
+Learner needle
+Close, but camaraderie, not violence.
+
 > co capn
 by one point
+
+> co cappin
+!Learner needle
+Close, but camaraderie, not violence.
 
 > snake snap
 by one point
@@ -936,12 +1230,46 @@ Some woke people like to self-immolate, but not you.
 > pay poke
 !Learner needle
 The clay cloak was free. No need to pay anything.
+> cray croak
+!Learner needle
+You make a weird noise. It doesn't help, but it doesn't hurt.
+> fay folk
+!Learner needle
+There's not enough magic in this game? Aww, rats.
+> say soak
+!Learner needle
+Water might make the clay cloak even heavier and messier.
 
 > enter boat
 
 > w
 > w
 > w
+
+> gene joes
+Learner needle
+You don't need to visit another clothing store.
+> seen sos
+Learner needle
+That must be about right, but it's not specific enough. You need to see something specific, and not quite see...
+> sheen shows
+Learner needle
+That must be about right, but you need to do something to look and find a light, or lights.
+> bean bows
+Learner needle
+No bows pop up to garnish your current clothes.
+> green grows
+Learner needle
+There's no gardening shop in the mall, but there doesn't need to be.
+> lean lows
+Learner needle
+You feel the blues for a second.
+> teen toes
+Learner needle
+Not sure I want to know.
+> wean woes
+Learner needle
+You take time to feel less awful about some horrid event in your past. The resulting inner peace cheers you even more than a Last Lousy Point would have!
 
 > glean glows
 by one point
@@ -955,10 +1283,39 @@ No genetically twisted tree appears.
 
 > history hall
 
+> war wander
+Learner needle
+You don't need to visit anything that drastic.
+> bore bonder
+Learner needle
+Something more archaic and interesting.
+
 > youre yonder
 by one point
 
 > out
+
+> stashing stoke
+Learner needle
+You don't need to start a fire or win this game on a rainy Tuesday.
+> mold marred
+!Learner needle
+You'll actually be getting that later!
+> gold guard
+!Learner needle
+You'll actually be getting that later!
+> cold card
+!Learner needle
+You'll actually be getting that later!
+> hold hard
+!Learner needle
+You'll actually be getting that later!
+> polled pard
+!Learner needle
+Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far.
+> lold lard
+!Learner needle
+Fat jokes aren't funny, self-depreciating or otherwise.
 
 > smashing smoke
 by one point
@@ -969,8 +1326,58 @@ by one point
 > lending libe
 by one point
 
+> bree brine
+Learner needle
+Less gross than what's in/, but no.
+> fee fine
+Learner needle
+No, there's no charge on/.
+> flee flyin
+Learner needle
+/encourages thinking outside the box, but that's a bit far.
+> key kine
+Learner needle
+/already provides a figurative key to things.
+> knee nine
+Learner needle
+/is only about mental violence and nastiness to people
+> lee line
+Learner needle
+/only blows figurative wind.
+> she shine
+Learner needle
+Why yes, pointless greed should not be limited to men only.
+> tee tine
+Learner needle
+No golf tee provides a bookmark for/.
+
 > see sign
 by one point
+
+> bree brine
+!Learner needle
+Less gross than what's in/, but no.
+> fee fine
+!Learner needle
+No, there's no charge on/.
+> flee flyin
+!Learner needle
+/encourages thinking outside the box, but that's a bit far.
+> key kine
+!Learner needle
+/already provides a figurative key to things.
+> knee nine
+!Learner needle
+/is only about mental violence and nastiness to people
+> lee line
+!Learner needle
+/only blows figurative wind.
+> she shine
+!Learner needle
+Why yes, pointless greed should not be limited to men only.
+> tee tine
+!Learner needle
+No golf tee provides a bookmark for/.
 
 > e
 > e
@@ -1010,6 +1417,9 @@ Someone not just wise but ethical is behind the coral cage. Besides, there's alr
 > immoral image
 Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
+> choral cage
+Learner needle
+A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
 
 > moral mage
 by one point
@@ -1037,6 +1447,16 @@ You need to find some other way to banish the hit hound and feel comfortable her
 Learner needle
 Now you mention it, you do feel a bit restricted here. Have a participation point for sharing your feelings!
 
+> wit wound
+Learner needle
+No need for unnecessary tension.
+> clit clowned
+Learner needle
+I mean, that WORKS, but geez.
+> crit crowned
+Learner needle
+You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
+
 > sit sound
 by one point
 
@@ -1046,6 +1466,16 @@ You need to find some other way to feel comfortable here. You already showed gri
 
 > fit found
 by one point
+
+> wit wound
+!Learner needle
+No need for unnecessary tension.
+> clit clowned
+!Learner needle
+I mean, that WORKS, but geez.
+> crit crowned
+!Learner needle
+You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
 
 > mit mound
 !Learner needle
@@ -1076,8 +1506,82 @@ Even if it were duller, you'd still be left with a tricky maze.
 > mo mappin
 by one point
 
+> buck bear
+Learner needle
+There are enough animals in this game that could maul you.
+> chuck chair
+Learner needle
+No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway.
+> duck dare
+Learner needle
+Too late for that. You took Kit Cohen's dare, and you're on a quest, now.
+> fuck fair
+Learner needle
+There are other games for that.
+> muck mare
+Learner needle
+No, it's something much cleaner than that.
+> puck pair
+Learner needle
+No time for hockey! You also aren't really dressed for the cold.
+> pluck player
+Learner needle
+Personal grooming can wait.
+> struck strayer
+Learner needle
+This game does not need or want to end in tragedy.
+> tuck tare
+Learner needle
+Alterations are not your Thing.
+> truck trayer
+Learner needle
+Manual labor is not very adventurous.
+> shuck share
+Learner needle
+You have no share to shuck.
+> tuck tear
+Learner needle
+You see no way to refigure the stair.
+
 > luck lair
 by one point
+
+> buck bear
+!Learner needle
+There are enough animals in this game that could maul you.
+> chuck chair
+!Learner needle
+No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway.
+> duck dare
+!Learner needle
+Too late for that. You took Kit Cohen's dare, and you're on a quest, now.
+> fuck fair
+!Learner needle
+There are other games for that.
+> muck mare
+!Learner needle
+No, it's something much cleaner than that.
+> puck pair
+!Learner needle
+No time for hockey! You also aren't really dressed for the cold.
+> pluck player
+!Learner needle
+Personal grooming can wait.
+> struck strayer
+!Learner needle
+This game does not need or want to end in tragedy.
+> tuck tare
+!Learner needle
+Alterations are not your Thing.
+> truck trayer
+!Learner needle
+Manual labor is not very adventurous.
+> shuck share
+!Learner needle
+You have no share to shuck.
+> tuck tear
+!Learner needle
+You see no way to refigure the snare.
 
 > w
 > w
@@ -1086,8 +1590,22 @@ by one point
 > w
 > d
 
+> right runnel
+Learner needle
+No river appears. It might just make things even more crowded and messy, anyway.
+> trite trunnel
+Learner needle
+You don't need anything as obscure as a wooden peg.
+
 > tight tunnel
 by one point
+
+> right runnel
+!Learner needle
+No river appears. It might just make things even more crowded and messy, anyway.
+> trite trunnel
+!Learner needle
+You don't need anything as obscure as a wooden peg.
 
 > w
 
@@ -1145,15 +1663,53 @@ by one point
 > least loss
 by one point
 
+> dialed deed
+Learner needle
+You don't need chemical stimulants to be dialed in to what you need to do.
+> filed feed
+Learner needle
+Nope. Can't quite categorize that as food.
+> siled seed
+Learner needle
+No time for farming.
+> styled steed
+Learner needle
+Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
+> riled reed
+Learner needle
+While chemical (ab)use can create pulsating literary works, your quest is more basic.
+> tiled teeed
+Learner needle
+That would make for an odd golf course.
+
+> dialed deed
+!Learner needle
+You don't need chemical stimulants to be dialed in to what you need to do.
+> filed feed
+!Learner needle
+Nope. Can't quite categorize that as food.
+> siled seed
+!Learner needle
+No time for farming.
+> styled steed
+!Learner needle
+Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
+> riled reed
+!Learner needle
+While chemical (ab)use can create pulsating literary works, your quest is more basic.
+> tiled teeed
+!Learner needle
+That would make for an odd golf course.
+
+> bark biff
+McFly
+Learner needle
+
+> bark biff
+McFly
+!Learner needle
+
 > s
-
-> bark biff
-McFly
-Learner needle
-
-> bark biff
-McFly
-Learner needle
 
 > s
 
@@ -1249,8 +1805,16 @@ Alas, nobody falls into line to tell stories of how they got here.
 > n
 > n
 
+> know kneeled
+Learner needle
+That is the wrong defensive posture for here.
+
 > show shield
 by one point
+
+> know kneeled
+!Learner needle
+That is the wrong defensive posture for here.
 
 > woe wield
 !Learner needle
@@ -1289,8 +1853,22 @@ You look for someone who has recently lost an argument, but nobody turns up.
 > couple caps
 by one point
 
+> classed clap
+Learner needle
+You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
+> chaste chap
+Learner needle
+Yes, you've been a model of morality. Yay, you.
+
 > cast cap
 by one point
+
+> classed clap
+!Learner needle
+You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
+> chaste chap
+!Learner needle
+Yes, you've been a model of morality. Yay, you.
 
 > fast fap
 !Learner needle
@@ -1314,12 +1892,40 @@ You look for someone who has recently lost an argument, but nobody turns up.
 > meeker muscle
 by one point
 
+> should shun
+Learner needle
+Gentle rebukes won't work. You need to make the gun less dangerous.
+> spud spun
+Learner needle
+Alas, potato-guns are still a thing.
+> stud stun
+Learner needle
+Unfortunately, that has an equal chance of stunning Russell or making Russell stun you.
+> bud bun
+Learner needle
+You have no bread to share, and Russell would probably want meat, anyway.
+> food fun
+Learner needle
+Sorry, no replacing a real fight with a food fight.
+> hood hun
+Learner needle
+Brilliant! Two enemies instead of one?
+> stood stun
+Learner needle
+If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned.
+> would won
+Learner needle
+You are in homophone territory, here.
+
 > wood one
 by one point
 
 > n
 
-> cot cord
+> bought board
+Learner needle
+Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
+> caught cord
 Learner needle
 A pull down bed is not what you need now that the action is heating up!
 > got gourd
@@ -1350,6 +1956,12 @@ by one point
 > got gored
 by one point
 
+> slow slate
+Learner needle
+No blackboard appears telling you EXACTLY the right move.
+> so sate
+Learner needle
+You aren't satisfied yet. Only finishing the job will fix that!
 > crow crate
 Learner needle
 No birds appear to fly you over the grate, nor does a box of crowbars materialize.
@@ -1392,10 +2004,15 @@ by one point
 >wary wile
 Yes, you have shown wary wile, and lots of it!
 
+> tryst tress
+!Learner needle
+The last thing you need now is a hair appointment.
+
 > bury bile
 by one point
 
-* guess-overflow-check
+* guess-overflow-and-undo-check
+#next-cmd-pass
 > z
 > brig brag
 !lump
@@ -1406,10 +2023,28 @@ by one point
 > tig tag
 !lump
 # checking for overflow on LLP
+#next-cmd-pass ?? delete this post-comp
 > really rolling
 lump
 > undo
+Take two? Fake, foo'!
+rematerializes
 # checking to make sure we really checked for overflow and not just a regular charge
 # e.g. if we change the level delta from 5 to 6, the lump should not appear
 > cig sag
 lump
+#next-cmd-pass
+>really rolling
+#next-cmd-pass
+>blow by
+>call cree
+#next-cmd-pass
+>strong start
+#next-cmd-pass
+>s
+#next-cmd-pass
+>appealing appear
+lump
+>undo
+Take two? Fake, foo'!
+grows bigger
