@@ -22,7 +22,7 @@ include Intro Restore Skip by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
-[a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game. Perhaps this is quixotic, but I enjoyed the programming exercise. Long story short: the mistakes and tables take up a ton of space I don't really need for testing. But they don't take up enough to threaten a beta build's z8-ness.]
+[a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game for the comp release. Perhaps this was quixotic, but I 1) enjoyed the programming exercise and 2) wanted to speed up testing, as z-machine's parser seemed to work faster than glulx's.  Long story short: I had severely shortened versions of the Mistakes and Tables, and they allowed me to make a z8 build until I added too many mistakes.]
 
 [include Property Checking for VVFF by Emily Short.] [modified version]
 
@@ -2172,13 +2172,13 @@ report lling:
 
 ever-leet-clue is a truth state that varies.
 
-to say leetclue of (x - a cheattype):
+to say leetclue of (x - a cheattype) and (isopt - a truth state):
 	if shut-scan is true, continue the action;
-	say "[line break]As you say/think this, the Leet Learner needle [scancol of x]";
+	say "[line break]As you say/think this, the Leet Learner[if isopt is true] dims a bit, and the[end if] needle [scancol of x]";
 	if fun fen is visited and ever-leet-clue is true, continue the action;
 	now ever-leet-clue is true;
 	if leetcool is 0:
-		say ". Once you figure out what to do, you may wish to remember how the words you saw or read combined with the Leet Learner reading";
+		say ". Once you do something that makes progress, you may wish to remember how the words you saw or read combined with the Leet Learner reading";
 		now leetcool is a random number between 3 and 6;
 	else:
 		decrement leetcool;
@@ -3423,18 +3423,22 @@ this is the mistake-checker rule:
 			if the rule succeeded:
 				say "[mist-txt entry][line break]";
 				let see-leet-read be true;
+				let is-opt be false;
 				if there is a leet-rule entry:
 					process the leet-rule entry;
-					unless the rule succeeded, now see-leet-read is false;
-				if see-leet-read is true:
+					if the rule succeeded:
+						if leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
+					else:
+						now see-leet-read is false;
+				if see-leet-read is true and there is a w1let entry:
 					let d1 be -10;
 					let d2 be -10;
-					if there is a w1let entry:
-						now d1 is w1let entry - number of characters in word number 1 in the player's command;
-						if there is a w2let entry:
-							now d2 is w2let entry - number of characters in word number 2 in the player's command;
-						if d2 is -10, now d2 is d1;
-						say "[leetclue of cluecheat of d1 and d2].";
+					now d1 is w1let entry - number of characters in word number 1 in the player's command;
+					if there is a w2let entry:
+						now d2 is w2let entry - number of characters in word number 2 in the player's command;
+					if d2 is -10, now d2 is d1;
+					let cc be cluecheat of d1 and d2;
+					say "[leetclue of cc and is-opt].";
 				if got-yet entry is false:
 					check-lump-progress;
 				now got-yet entry is true;

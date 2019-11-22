@@ -81,12 +81,15 @@ Yes, you will need wary wile, and lots of it!
 >perking pump
 !Learner needle
 > trilly trolling
+dims a bit
 Learner needle
 The Very Vile Fairy File probably has information on that, yes.
 > silly souling
+dims a bit
 Learner needle
 Why yes, I'm sort of a silly soul. At least when I'm writing games.
 > filly foaling
+dims a bit
 Learner needle
 Caring for young animals is a good thing but beyond this game's scope.
 > tough toll
@@ -1481,52 +1484,70 @@ You already changed Toe Tappin Row Rappin that way.
 
 @mis #lie lol before
 > try trawl
+dims a bit
 Learner needle
 You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
 > fie fall
+dims a bit
 Learner needle
 The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless to your quest, but maybe it's good for further practice.
 > die doll
+dims a bit
 Learner needle
 There are no dolls to manipulate in this game.
 > scry scrawl
+dims a bit
 Learner needle
 The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
+dims a bit
 > spry sprawl
 Learner needle
 The shy shawl fails to spread out all over the floor.
+dims a bit
 > sty stall
 Learner needle
+dims a bit
 You denigrate the condition of Got Gear Hot Here.
 > dry droll
 Learner needle
+dims a bit
 You make fun of the shy shawl subtly.
 > high hall
+dims a bit
 Learner needle
 You imagine yourself in a much more spacious megastore.
 > guy gall
+dims a bit
 Learner needle
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
+dims a bit
 Learner needle
 You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
+dims a bit
 Learner needle
 You bemoan the lack of a food court in the mall.
 > my mall
+dims a bit
 Learner needle
 You show suitable ambition and aggression for an adventurer.
 > why wall
+dims a bit
 Learner needle
 You complain to nobody in particular about the number of dead ends in the mall.
 > cry crawl
+dims a bit
 Learner needle
 You feel overcome with emotion.
 >tie tall
+dims a bit
 Learner needle
 You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
 >sigh sol
+dims a bit
 No sunlight appears.
+Learner needle
 
 ==t6
 > zlie lol rule
@@ -1631,32 +1652,43 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 
 @mis #not near after
 > blot blear
+dims a bit
 Learner needle
 You don't need to make this store more dreary.
 > bought beer
+dims a bit
 Learner needle
 Alas, the mall has no license to buy or serve alcohol.
 > fought fear
+dims a bit
 Learner needle
 With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
 > spot spear
+dims a bit
 Learner needle
 You don't need a weapon.
 > dot dear
+dims a bit
 Learner needle
 No Animaniacs appear to spout poetry. Probably a good thing.
 > drought drear
+dims a bit
 Learner needle
 You thirst for an effective rhyme.
 > fraught freer
+dims a bit
+Learner needle
 You wish Got Gear Hot Hear led somewere else.
 > sought seer
+dims a bit
 Learner needle
 Nobody, sober or otherwise, appears to give you advice about the future.
 > snot sneer
+dims a bit
 Learner needle
 You turn up your nose at kids these days' terrible fashions.
 > pot pier
+dims a bit
 Learner needle
 You don't need ... cookware.
 
@@ -3619,21 +3651,27 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 
 @mis #wild weed before
 > dialed deed
+dims a bit
 Learner needle
 You don't need chemical stimulants to be dialed in to what you need to do.
 > filed feed
+dims a bit
 Learner needle
 Nope. Can't quite categorize that as food.
 > siled seed
+dims a bit
 Learner needle
 No time for farming.
 > styled steed
+dims a bit
 Learner needle
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 > riled reed
+dims a bit
 Learner needle
 While chemical (ab)use can create pulsating literary works, your quest is more basic.
 > tiled teeed
+dims a bit
 Learner needle
 That would make for an odd golf course.
 
@@ -3682,6 +3720,7 @@ CULL CEASED
 
 @mis
 > bark biff
+dims a bit
 McFly
 Learner needle
 
