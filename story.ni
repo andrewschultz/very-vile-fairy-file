@@ -1339,7 +1339,7 @@ check going north in Gassed Gap:
 to decide what number is bag-point: decide on boolval of whether or not player has big bag;
 
 to isle-max-score:
-	now max-poss is isle-score + score + 1 - bag-point;
+	now max-poss is isle-score + score + 1 - bag-point + boolval of whether or not rolling-yet is false;
 
 to decide which number is evidence-pieces:
 	decide on boolval of sign-seen + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
@@ -2546,6 +2546,7 @@ the thing-hint-rule of grow grate is grow-grate-hint rule.
 the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
 the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of hard hat is all-caps-hint rule.
+the thing-hint-rule of Here Hip Queer Quip is the here-hip-queer-quip-hint rule.
 the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hot Horde is bot-board-hint rule.
@@ -2554,6 +2555,7 @@ the thing-hint-rule of jerk gel is jerk-gel-hint rule.
 the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is leet-learner-hint rule.
 the thing-hint-rule of Lending Libe is lending-libe-hint rule.
+the thing-hint-rule of listless mist mess is the listless-mist-mess-hint rule.
 the thing-hint-rule of Lot Lord is bot-board-hint rule.
 the thing-hint-rule of lurking lump is lurking-lump-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
@@ -2608,6 +2610,9 @@ ttnn-yet is a truth state that varies.
 
 ssh-yet is a truth state that varies.
 
+to say part-ev of (x - a thing):
+	say "You don't need to do anything with [the x]. It [if airy isle is visited]got you to the final area[else if gassed gap is visited]will get you past the gap[else]will help automatically unlock a passage later[end if]."
+
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
 
 this is the all-caps-hint rule:
@@ -2619,7 +2624,7 @@ this is the all-caps-hint rule:
 		say "You can use the jerk gel to glue the hats together, but you need the right command.";
 
 this is the backed-binder-hint rule:
-	say "[if gassed gap is unvisited]The backed binder is not useful immediately. But it is part of what you need to get to the final area[else]You will automatically use the backed binder to get past the gassed gap[end if].";
+	say "[part-ev of backed binder].";
 
 this is the beer-bull-hint rule:
 	if bull-null is false:
@@ -2753,6 +2758,9 @@ this is the gutta-ganksta-hint rule:
 this is the ha-half-nah-naff-hint rule:
 	say "HA HALF will tell you if one of your words is right. NAH NAFF hides that.";
 
+this is the here-hip-queer-quip-hint rule:
+	say "[part-ev of queer quip]."
+
 this is the hit-hound-hint rule:
 	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
 
@@ -2788,6 +2796,9 @@ this is the leet-learner-hint rule:
 
 this is the lending-libe-hint rule:
 	say "Now that you have the Lending Libe, you can take whatever books you need."
+
+this is the listless-mist-mess-hint rule:
+	say "The listless mist mess is just there to make it clear this is your final destination."
 
 this is the lurking-lump-hint rule:
 	say "The lurking lump can be used to bypass any available local puzzle with [jjj]. It gains charges when you make enough good guesses--some especially amusing guesses may count extra.";
@@ -3349,11 +3360,11 @@ this is the verb-checker rule:
 					up-which core entry;
 					if core entry is false:
 						increase lump-count by 1;
+				now idid entry is true;
 				process the do-rule entry;
 				if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
 					blank out the core entry;
 					now zap-core-entry is false;
-				now idid entry is true;
 				process the notify score changes rule;
 				if there is a core entry and core entry is false, check-lump-progress;
 			process the note right guess wrong time rule;
@@ -3388,7 +3399,7 @@ max-guesses-needed is a number that varies. max-guesses-needed is 10.
 
 to check-lump-progress:
 	increment lump-count;
-	if debug-state is true, say "count=[lump-count] level=[next-lump-level].";
+	if debug-state is true, say "DEBUG count=[lump-count] level=[next-lump-level].";
 	if lump-count >= next-lump-level:
 		say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. Gazing at its dull shine, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj].[paragraph break]You take the lump[else if lurking lump is moot]Thwup! A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 		now player has lurking lump;
@@ -3950,7 +3961,7 @@ this is the vc-cull-ceased rule:
 	the rule succeeds;
 
 this is the vr-cull-ceased rule:
-	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! The Bull Beast, knowing it's in trouble, tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]The Bull Beast roars as you raise the spear. It's probably a good idea to make sure of things. You do.[paragraph break]Perhaps you can do something constructive with the Bull Beast's dead body.";
+	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! Your words, which the spear translates into a few sharp slurps, groans and growls, cause the Bull Beast to run off in extreme psychological anguish before collapsing from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by so little.[paragraph break]You give chase, and it traps and lashes out at you. Reflexively, you block with the spear and strike back. Your first swipe is lethal.[paragraph break]Perhaps you can do something constructive with the Bull Beast's dead body.";
 	now cull-ceased is true;
 	now bull beast is boring; [?? what if dead]
 	now cht of bull beast is leteq; [bull beast->full feast]
@@ -4684,7 +4695,7 @@ this is the vc-moral-mage rule:
 	the rule succeeds;
 
 this is the vr-moral-mage rule:
-	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it'll be a sermon, but it fills interesting details about the Very Vile Fairy File, its powers, the Crimes Crew Times Two, how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase.[paragraph break]The moral mage nods and departs, leaving you with [here hip], a summary of the lecture. You realize that the knowledge passed on was a sort of magic in its own right, and you'd groan if it weren't so helpful.";
+	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it'll be a sermon, but it fills interesting details about the Very Vile Fairy File, its powers, the Crimes Crew Times Two, how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase.[paragraph break]The moral mage nods and departs, leaving you with [here hip], a summary of the lecture. You realize that the knowledge passed on was a sort of magic in its own right, and you'd groan at this sort of revelation if it weren't so helpful.";
 	moot coral cage;
 	moot cage key;
 	phbt Store All Stage;
@@ -5085,10 +5096,6 @@ this is the vr-winding-ways rule:
 	now blaze-ways is true;
 	move minding maze to blinding blaze;
 	phbt blinding blaze;
-	repeat through table of bad locs:
-		if e1 entry is Blinding Blaze:
-			now e2 entry is north;
-			break;
 	wall-add Blinding Blaze;
 	set the pronoun it to minding maze;
 
