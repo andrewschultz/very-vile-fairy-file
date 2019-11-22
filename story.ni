@@ -38,12 +38,15 @@ use MAX_ACTIONS of 210.
 
 section verb carnage
 
+[xxvvcarn]
+
 understand the command "attach" as something new.
 understand the command "buy" as something new.
 understand the command "chop" as something new.
 understand the command "crack" as something new.
 understand the command "embrace" as something new.
 understand the command "fight" as something new.
+understand the command "hold" as something new.
 understand the command "hop" as something new.
 understand the command "hug" as something new.
 understand the command "insert" as something new.
@@ -56,6 +59,7 @@ understand the command "polish" as something new.
 understand the command "prune" as something new.
 understand the command "punch" as something new.
 understand the command "purchase" as something new.
+understand the command "say" as something new.
 understand the command "scrub" as something new.
 understand the command "shine" as something new.
 understand the command "sip" as something new.
@@ -74,6 +78,8 @@ understand the command "touch" as something new.
 understand the command "wave" as something new.
 understand the command "wipe" as something new.
 understand the command "wreck" as something new.
+
+[zzvvcarn]
 
 section debug include values - not for release
 
@@ -1418,7 +1424,7 @@ check entering go gate:
 	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
 
-the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait] [?? what if there are homonyms: two too?]
+the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait]
 
 part Tarry Tile 1,5
 
@@ -2456,7 +2462,7 @@ this is the vending-vibe-hint rule:
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
-		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
+		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homophone that makes sense[or]You need to FIND FAULT[stopping].";
 	else:
 		say "[one of]The mean mass is a bit trickier. The leet learner swings to the left[or]If you've been observant, you may notice VINED VAULT and MIND MALT swung center-right and center-left, respectively, for FIND FAULT. This may help you guess what swinging left could mean[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
 	the rule succeeds;
@@ -3267,7 +3273,7 @@ to decide whether buggin-freeze:
 table-to-scour is a table name that varies.
 
 Rule for printing a parser error (this is the clue half right words rule):
-	now table-to-scour is table of homonym rejections;
+	now table-to-scour is table of first check rhymes;
 	abide by the mistake-checker rule;
 	abide by the verb-checker rule;
 	now table-to-scour is table of mistake substitutions;
@@ -4657,6 +4663,7 @@ this is the vr-mining-more rule:
 	set the pronoun it to gold guard;
 
 this is the vc-mo-mappin rule:
+	if player does not have Toe Tappin Row Rappin and player is not in blinding blaze, the rule fails;
 	if stuck stair is moot:
 		vcp "You did all the mapping you needed to.";
 		continue the action;
