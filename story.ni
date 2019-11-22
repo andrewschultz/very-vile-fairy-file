@@ -953,7 +953,7 @@ check entering boring boat:
 		say "You try to enter the boat, but it seems so ... boring. If only you could get a jaunty tune stuck in your head to keep you alert!";
 		now boat-reject is true;
 		the rule succeeds;
-	if player is in Been Buggin':
+	if player is in Been Buggin:
 		if player does not have way woke clay cloak, say "Dean Duggan stops you. You have not properly passed [if lean-lugged is false and mean-mugged is false]any[else]both[end if] of the tests you need yet. You need to face things now. Perhaps there is some slang involved, but sometimes you need to brute-force your way through problems." instead;
 		say "With your way woke clay cloak in hand, you return to [Violent Vale]. After a moment, the boring boat floats off, perhaps to refuel from all the excitement.";
 		moot boring boat;
@@ -968,8 +968,8 @@ check entering boring boat:
 	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
 	if cake cap is not off-stage:
 		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
-		move boring boat to Been Buggin';
-		move player to Been Buggin';
+		move boring boat to Been Buggin;
+		move player to Been Buggin;
 		the rule succeeds;
 	say "You take the boring boat [if Lake Lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
 	move boring boat to Lake Lea;
@@ -1033,7 +1033,9 @@ The cake cap is a gaphat. description is "The cake cap looks tasty and yet still
 
 part Been Buggin'
 
-Been Buggin' is a room in Browsy Breaks. cht of Been Buggin' is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin']. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". [->mean muggin]
+Been Buggin is a room in Browsy Breaks. cht of Been Buggin is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". [->mean muggin]
+
+printed name of Been Buggin is "Been Buggin[']".
 
 Dean Duggan is a person. "[one of]'Hi! I'm Dean Duggan. Congratulations on making it here. Well, sort of. If you have, you -- well, you've done well, but you still need help with life skills and stuff.'[or]Dean Duggan smiles here, ready to help you with whatever you need to ask about[bug-so-far].[stopping]". description of Dean Duggan is "Dean Duggan nods patiently. Though he mumbles motivational slang to himself, he's ready to help you, but you need to know what to ask for[bug-so-far].". talk-text is "'Teach tons, reach runs!' You don't need beach buns, but you probably need a specific phrase suitable to him, or this place. His lax demeanor suggests a bit of slang.". cht of Dean Duggan is leteq. [-> lean luggin]
 
@@ -1060,7 +1062,7 @@ chapter staystronging
 in-way-wrong is a truth state that varies.
 in-way-wronged is a truth state that varies.
 
-after looking in Been Buggin' for the first time:
+after looking in Been Buggin for the first time:
 	now in-way-wrong is true;
 	say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
 	now cht of the player is letplus; [way wrong->stay strong]
@@ -2274,7 +2276,7 @@ section hint room rule definitions
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
-room-hint-rule of Been Buggin' is been-buggin-hint rule.
+room-hint-rule of Been Buggin is been-buggin-hint rule.
 room-hint-rule of Blinding Blaze is blinding-blaze-hint rule.
 room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
@@ -3258,11 +3260,35 @@ volume parser stuff
 
 book command reading
 
+say-warn is a truth state that varies.
+
+no-punc-flag is a truth state that varies.
+
 after reading a command:
 	if the player's command matches the regular expression "^ *<\*;>":
 		if currently transcripting:
 			say "Noted.";
 			reject the player's command;
+	if the player's command matches the regular expression "<A-Z>":
+		let XX be the player's command;
+		change the text of the player's command to "[XX in lower case]";
+		if debug-state is true, say "(LOWERCASING) [XX][line break]";
+	if the player's command matches the regular expression "^say ":
+		if say-warn is false:
+			now say-warn is true;
+			say "NOTE: you never need to SAY anything. Just type it in. In other words, WHOAH is the same as SAY WHOAH. Ailihphilia will cut SAY off of the start of all commands.";
+			let XX be the player's command;
+			replace the regular expression "^say " in XX with "";
+			change the text of the player's command to XX;
+	if the player's command matches the regular expression "<^-\.a-z 0-9>":
+		if no-punc-flag is false:
+			say "(NOTE: you don't need to use anything but letters to get through the game. Even commas for addressing NPCs aren't necessary. The parser simply strips out non-alphabetic characters.)[paragraph break]";
+			now no-punc-flag is true;
+		let XX be the player's command;
+		replace the regular expression "-" in XX with " ";
+		replace the regular expression "<^-\.a-z 0-9>" in XX with "";
+		change the text of the player's command to XX;
+		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
 
 book parser errors
 
@@ -3679,9 +3705,9 @@ to lean-and-mean:
 		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.' He vanishes.[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. Also, with your mind clearer, you notice a wry wall you missed before.";
 		now player has clay cloak;
 		moot Dean Duggan;
-		move clumped cluster to Been Buggin';
-		phbt Been Buggin';
-		wall-add Been Buggin';
+		move clumped cluster to Been Buggin;
+		phbt Been Buggin;
+		wall-add Been Buggin;
 	else:
 		say "'Not bad, but you can still do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
@@ -4259,7 +4285,7 @@ this is the vr-glow-glad rule:
 	now in-so-sad is false;
 	now in-so-saded is true;
 	phbt Kerry Kyle;
-	move Dean Duggan to Been Buggin';
+	move Dean Duggan to Been Buggin;
 
 this is the vc-go-gappin rule:
 	if player does not have Toe Tappin, the rule fails;

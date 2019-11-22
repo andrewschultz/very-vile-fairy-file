@@ -456,7 +456,7 @@ this is the hell-horn-near rule:
 
 this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
 
-this is the in-been-buggin rule: if player is in Been Buggin', the rule succeeds;
+this is the in-been-buggin rule: if player is in Been Buggin, the rule succeeds;
 
 this is the in-blaze-ways rule: if player is in Blinding Blaze, the rule succeeds;
 
