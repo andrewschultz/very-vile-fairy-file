@@ -1780,7 +1780,7 @@ to check-flip-verbs:
 	if player is in History Hall and ever-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
 
 check thinking:
-	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do.";
+	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if].";
 	if all-hinted is 0:
 		say "[line break]But you don't have leads for any puzzles right now." instead;
 	now vc-dont-print is true;
@@ -3343,7 +3343,15 @@ the clue half right words rule is listed before the check for room name in playe
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
 	if debug-state is true, say "[the latest parser error].";
-	say "[one of]You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[or]This isn't something you need to do here. [b]VERBS[r] has a list of standard verbs.[stopping]";
+	if player is in Wet Wood:
+		increment oopsies;
+		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't neeed anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the wet wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
+	else if player is in Rift River:
+		say "Hmm. You managed to GET GOOD out of the Wet Wood, but you just need to meet someone now.";
+	else if player is in Vined Vault:
+		say "[if mean mass is off-stage]You probably don't need to GINED GALT. That's just nonsense. Maybe there's a small wrinkle with what you need to rhyme[else]You had to lose a letter from Vined. Maybe this time you need to add a letter to mean, or mass, or both[end if].";
+	else:
+		say "Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But [b]VERBS[r] will show what you can use.";
 
 ha-half is a truth state that varies.
 
