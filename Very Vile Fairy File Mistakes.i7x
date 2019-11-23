@@ -100,13 +100,13 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 
 table of dives ditch guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
-"fives fitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"A polecat (or several) would maul you, too[dives-surprise of 1]."
-"hives hitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"Whether that means a hive of bees or hives on your skin, that would affect anyone entering[dives-surprise of 2]."
-"lives lich/liche"	in-dives-ditch rule	false	6	5	niche-needed rule	"But the lich would surely wipe you out[dives-surprise of 3]."
-"stives stitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"We don't want a red-light-district sort of trap[dives-surprise of 4]."
-"strives stritch"	in-dives-ditch rule	false	6	5	niche-needed rule	"A screeching owl would only be annoying[dives-surprise of 5]."
-"wives witch"	in-dives-ditch rule	false	6	5	niche-needed rule	"The witch might be evil enough to wipe everyone out[dives-surprise of 6]."
-"chives chich"	in-dives-ditch rule	false	6	5	niche-needed rule	"This is no time for frou-frou vegetables!"
+"fives fitch"	in-dives-ditch rule	false	6	5	--	"A polecat (or several) would maul you, too[dives-surprise of 1]."
+"hives hitch"	in-dives-ditch rule	false	6	5	--	"Whether that means a hive of bees or hives on your skin, that would affect anyone entering[dives-surprise of 2]."
+"lives lich/liche"	in-dives-ditch rule	false	6	5	--	"But the lich would surely wipe you out[dives-surprise of 3]."
+"stives stitch"	in-dives-ditch rule	false	6	5	--	"We don't want a red-light-district sort of trap[dives-surprise of 4]."
+"strives stritch"	in-dives-ditch rule	false	6	5	--	"A screeching owl would only be annoying[dives-surprise of 5]."
+"wives witch"	in-dives-ditch rule	false	6	5	--	"The witch might be evil enough to wipe everyone out[dives-surprise of 6]."
+"chives chich"	in-dives-ditch rule	false	6	5	--	"This is no time for frou-frou vegetables!"
 
 table of fight funnel guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
@@ -221,8 +221,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 
 table of Pit Pound guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
-"mit/mitt mound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"[if Hit Hound is in Pit Pound]The Hit Hound won't need to go chasing after that[else]The Pit Pound doesn't need clutter like that[end if]." [start Pit Pound]
-"grit ground"	pit-pound-unsolved rule	false	3	5	--	"You need to find some other way to [if Hit Hound is in Pit Pound]banish the Hit Hound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway."
+"mit/mitt mound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"[if hit hound is in Pit Pound]The hit hound won't need to go chasing after that[else]The Pit Pound doesn't need clutter like that[end if]." [start Pit Pound]
+"grit ground"	pit-pound-unsolved rule	false	3	5	--	"You need to find some other way to [if hit hound is in Pit Pound]banish the hit hound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway."
 "bit bound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"Now you mention it, you [if found-fit is false]do[else]did[end if] feel a bit restricted here. Expressing your feelings helps a bit! You think."
 "wit/whit wound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"No need for unnecessary tension."
 "clit clowned"	in-pit-pound rule	false	3	5	not-fit-yet rule	"I mean, that WORKS, but geez."
@@ -407,7 +407,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cray croak"	have-clay-cloak rule	false	--	--	--	"You make a weird noise. It doesn't help, but it doesn't hurt."
 "fay folk"	have-clay-cloak rule	false	--	--	--	"There's not enough magic in this game? Aww, rats."
 
-table of cool cap tool tap guesss
+table of cool cap tool tap guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cruel crap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"But you got rid of the skull. Also, swearing is naughty." [start Curst Cave]
 "youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Is that an invitation to drone on endlessly? Why, thank you."
@@ -523,7 +523,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "tough toll"	trivially true rule	false	--	--	--	"You groan about how heavy your inventory is."
 "drowsy drakes"	in-lousy-lakes rule	false	--	--	--	"No sleepy ducks walk by."
 
-[this is for cases that may conflict with actual puzzles. Homonyms may apply as well.]
+[this is for cases that may conflict with actual puzzles. Homophones may apply as well.]
 
 table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
@@ -532,8 +532,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "choral cage"	coral-cage-around rule	false	5	4	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
 "co cappin"	have-toe-tappin rule	false	2	4	need-cocapn rule	"Close, but camaraderie, not violence."
 "bought board"	bot-board-vis rule	false	3	5	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]
-"got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homonym, here. You're close."
-"hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homonym, here. You're close."
+"got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homophone, here. You're close."
+"hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homophone, here. You're close."
 "woe/whoa/whoah weight"	go-gate-vis rule	false	4	4	--	"You wouldn't want to be crushed by a weight. But you've got the right idea."
 "would/wood won" or "would one"	good-gun-here rule	false	4	4	--	"You are in homophone territory, here."
 "whet wood"	in-wet-wood rule	false	3	4	--	"Homophones aren't quite right here." [start Wet Wood]
@@ -761,8 +761,6 @@ this is the need-mark-more rule: if player is in Stark Store and dark door is no
 this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
 
 this is the need-work-well rule: if player does not have jerk gel and jerk gel is not moot, the rule succeeds; [?? if jerk gel is in Shirk Shell]
-
-this is the niche-needed rule: if kni-ni is false, the rule succeeds;
 
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 

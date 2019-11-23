@@ -1064,7 +1064,7 @@ jake-snap is a truth state that varies.
 jake-map is a truth state that varies.
 snake-snap is a truth state that varies. [equivalent to "if cake cap is off-stage"]
 
-The cake cap is a gaphat. description is "The cake cap looks tasty and yet still incomplete and not quite wearable on its own."
+The cake cap is a gaphat. description is "The cake cap looks tasty and yet still incomplete and not quite wearable on its own.". guess-table of cake cap is table of lake lap guesses.
 
 part Been Buggin'
 
@@ -1262,17 +1262,17 @@ check taking screaming skull: say "You need to 'take' it figuratively." instead;
 to say tap-in-cave:
 	if tool tap is in Curst Cave, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]"
 
-the tool tap is boring scenery. "It looks stiff and unresponsive, but with the right word, something will come out. Something must come out of it. But what?". cht of tool tap is leteq. [->cool cap]
+the tool tap is a boring rhymable. it is scenery. "It looks stiff and unresponsive, but with the right word, something will come out. Something must come out of it. But what?". cht of tool tap is leteq. guess-table of tool tap is table of cool cap tool tap guesses. [->cool cap]
 
 bore-text of tool tap is "You can't see any way to operate the tool tap, not even the usual you'd expect for, well, a tap.".
 
-the cool cap is a gaphat. description is "The cool cap looks great[if jerk gel is moot], and boy, it feels great now you glued the other hats to it[else], but it doesn't seem functional, yet[end if]."
+the cool cap is a gaphat. description is "The cool cap looks great[if jerk gel is moot], and boy, it feels great now you glued the other hats to it[else], but it doesn't seem functional, yet[end if].". guess-table of cool cap is table of cool cap tool tap guesses.
 
 first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "Passages lead all four directions[if shield-shown is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. [->show shield]
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "Passages lead all four directions[if shield-shown is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. [->show shield]
 
 check going south in Foe Field So Sealed:
 	if Pain Peasant is in Foe Field, say "The Pain Peasant booms 'Go, gassed foe, fast!'" instead;
@@ -1313,10 +1313,10 @@ part Pit Pound 1,3
 
 Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west.". guess-table of Pit Pound is table of Pit Pound guesses. [->fit found]
 
-A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A Hit Hound paces menacingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
+A hit hound is a person in Pit Pound. cht of hit hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The hit hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
 
 check going east in Pit Pound:
-	if Hit Hound is in Pit Pound, say "Not with the Hit Hound guarding you, you aren't." instead;
+	if hit hound is in Pit Pound, say "Not with the hit hound guarding you, you aren't." instead;
 	if found-fit is false, say "It's weird. You don't feel like you belong in the Pit Pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
 
 found-fit is a truth state that varies.
@@ -2034,10 +2034,10 @@ carry out verbsing:
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints.";
-	check-flip-verbs;
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
+	check-flip-verbs;
 	the rule succeeds.
 
 to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
@@ -2429,9 +2429,9 @@ this is the lake-lea-hint rule:
 	the rule fails.
 
 this is the pit-pound-hint rule:
-	if Hit Hound is in Pit Pound:
-		say "The Hit Hound has your full attention here.";
-		try hintobjing Hit Hound instead;
+	if hit hound is in Pit Pound:
+		say "The hit hound has your full attention here.";
+		try hintobjing hit hound instead;
 	say "[one of]The Pit Pound still leaves you uncomfortable[or]Like you don't belong here[or]FIT FOUND[stopping]."
 
 this is the po-pit-hint rule:
@@ -2592,7 +2592,7 @@ the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
 the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of hard hat is all-caps-hint rule.
 the thing-hint-rule of Here Hip Queer Quip is the here-hip-queer-quip-hint rule.
-the thing-hint-rule of Hit Hound is hit-hound-hint rule.
+the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
 the thing-hint-rule of Hot Horde is bot-board-hint rule.
 the thing-hint-rule of Jake G is the jake-g-hint rule.
@@ -2807,7 +2807,7 @@ this is the here-hip-queer-quip-hint rule:
 	say "[part-ev of queer quip]."
 
 this is the hit-hound-hint rule:
-	say "[one of]The Hit Hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
+	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
 
 this is the hive-heap-hint rule:
 	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
@@ -3124,7 +3124,7 @@ when play begins (this is the opening text rule):
 	if the rule succeeded, continue the action;
 	if debug-state is false, ask-screenread;
 	say "[paragraph break]You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
-	say "'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
+	say "'Hey! Don't head to the Sit-So Inn! Get Goin[']! I can help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
@@ -3342,10 +3342,16 @@ Rule for printing a parser error (this is the clue half right words rule):
 		now table-to-scour is table of wry wall guesses;
 		abide by the mistake-checker rule;
 	unless guess-table of location of player is table of no good guesses:
+		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
 		now table-to-scour is guess-table of location of player;
 		abide by the mistake-checker rule;
 	repeat with tou running through touchable rhymables:
+		[if debug-state is true, say "DEBUG rhymable guesses: [tou], [guess-table of tou].";]
 		if tou is cage key and player is in real rear, next;
+		now table-to-scour is guess-table of tou;
+		abide by the mistake-checker rule;
+	repeat with tou running through touchable people:
+		[if debug-state is true, say "DEBUG people guesses: [tou], [guess-table of tou].";]
 		now table-to-scour is guess-table of tou;
 		abide by the mistake-checker rule;
 	abide by the verb-checker rule;
@@ -3416,6 +3422,7 @@ to up-which (ts - a truth state):
 this is the verb-checker rule:
 	let local-ha-half be false;
 	let brightness be false;
+	let progressive be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
 		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
@@ -3473,10 +3480,12 @@ this is the verb-checker rule:
 			if already-rhymed-this is true, break;
 			now local-ha-half is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
-			if there is a core entry and core entry is true, now brightness is true;
+			if there is a core entry:
+				now progressive is true;
+				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if brightness is false], but dimly[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you mustve mis-thought a word[else if brightness is false], but dimly[end if].";
 		the rule succeeds;
 
 already-rhymed-this is a truth state that varies.
@@ -3896,7 +3905,7 @@ this is the vr-boring-boat rule:
 this is the vc-break-brie rule:
 	if jake is not touchable, the rule fails;
 	if jake-woke is false:
-		say "This bonus point action won't work until Jake is conscious.";
+		vcp "This bonus point action won't work until Jake is conscious.";
 		continue the action;
 	if jake-brie is true:
 		vcal "Hey! Don't get greedy, now.";
@@ -4253,8 +4262,8 @@ this is the vc-fit-found rule:
 	if found-fit is true:
 		vcal "You already fit in.";
 		continue the action;
-	if Hit Hound is in Pit Pound:
-		vcp "Maybe later, but you can't focus on that with the Hit Hound around.";
+	if hit hound is in Pit Pound:
+		vcp "Maybe later, but you can't focus on that with the hit hound around.";
 		clue-later "FIT FOUND";
 		continue the action;
 	the rule succeeds;
@@ -4984,14 +4993,14 @@ this is the vr-silent-sail rule:
 
 this is the vc-sit-sound rule:
 	if player is not in Pit Pound, the rule fails;
-	if Hit Hound is not touchable:
+	if hit hound is not touchable:
 		vcal "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-sit-sound rule:
-	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
-	moot Hit Hound;
+	say "The hit hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the hit hound gives up and goes away.";
+	moot hit hound;
 
 this is the vc-smashing-smoke rule:
 	if player does not have clashing cloak, the rule fails;
