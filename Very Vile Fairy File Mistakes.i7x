@@ -241,6 +241,13 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "styled steed"	mead-or-weed rule	false	4	4	weed-offstage rule	"Too hard to implement. I mean, too fancy for this game. Too fancy, that's it."
 "riled reed/read"	mead-or-weed rule	false	4	4	weed-offstage rule	"Any controlled substances found in the course of your adventure are for relaxation."
 "tiled teed"	mead-or-weed rule	false	4	4	weed-offstage rule	"That would make for an odd golf course."
+"fives fitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"A polecat (or several) would maul you, too[dives-surprise of 1]."
+"hives hitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"Whether that means a hive of bees or hives on your skin, that would affect anyone entering[dives-surprise of 2]."
+"lives lich/liche"	in-dives-ditch rule	false	6	5	niche-needed rule	"But the lich would surely wipe you out[dives-surprise of 3]."
+"stives stitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"We don't want a red-light-district sort of trap[dives-surprise of 4]."
+"strives stritch"	in-dives-ditch rule	false	6	5	niche-needed rule	"A screeching owl would only be annoying[dives-surprise of 5]."
+"wives witch"	in-dives-ditch rule	false	6	5	niche-needed rule	"The witch might be evil enough to wipe everyone out[dives-surprise of 6]."
+"chives chich"	in-dives-ditch rule	false	6	5	niche-needed rule	"This is no time for frou-frou vegetables!"
 "cake cap"	lap-not-cap rule	false	4	3	--	"No edible headgear appears." [start Lake Lap] [?? how does this change?]
 "crake crap"	in-lake-lap rule	false	4	3	--	"No bird droppings provide a trail."
 "fake fap"	cap-or-lap rule	false	4	3	lap-not-cap rule	"You make a rude gesture, for whatever good it does."
@@ -389,6 +396,15 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 
 section texts and decides
 
+to say dives-surprise of (x - a number):
+	say ". You ";
+	if kni-ni is false:
+		say "need some sort of general ambush";
+		continue the action;
+	say "already prepared the knives niche, anyway";
+	choose row x in table of niche guesses;
+	now nitry entry is true;
+
 to say bag-rag: say "[if player has big bag]big bag[else]zig zag rig rag[end if]"
 
 to say kind-of-paper: if vapor vial is moot, say ". Now you've organized the pile, maybe its details are more important to read or examine"
@@ -463,6 +479,8 @@ this is the in-blaze-ways rule: if player is in Blinding Blaze, the rule succeed
 this is the in-creased-cross rule: if player is in Creased Cross, the rule succeeds;
 
 this is the in-curst-cave rule: if player is in Curst Cave, the rule succeeds;
+
+this is the in-dives-ditch rule: if player is in Dives Ditch, the rule succeeds;
 
 this is the in-fight-funnel rule: if player is in fight funnel, the rule succeeds;
 
@@ -597,6 +615,8 @@ this is the need-mark-more rule: if player is in Stark Store and dark door is no
 this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
 
 this is the need-work-well rule: if player does not have jerk gel and jerk gel is not moot, the rule succeeds; [?? if jerk gel is in Shirk Shell]
+
+this is the niche-needed rule: if kni-ni is false, the rule succeeds;
 
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 

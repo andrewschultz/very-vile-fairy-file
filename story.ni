@@ -724,7 +724,36 @@ to solve-bull-chase:
 
 part Dives Ditch -3,2
 
-Dives Ditch is west of Fight Funnel. cht of Dives Ditch is partplus. Dives Ditch is in Piddling Pain. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap.[end if]". [-> Knives Niche]
+Dives Ditch is west of Fight Funnel. cht of Dives Ditch is partplus. Dives Ditch is in Piddling Pain. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[traps-so-far].[end if]". [-> Knives Niche]
+
+to decide which number is niche-guesses:
+	let temp be 0;
+	repeat through table of niche guesses:
+		if nitry entry is true, increment temp;
+	decide on temp;
+
+table of niche guesses
+nitxt	nitry
+"fives fitch"	false
+"hives hitch"	false
+"lives lich"	false
+"stives stitch"	false
+"strives strich"	false
+"wives witch"	false
+
+to say traps-so-far:
+	let ng be niche-guesses;
+	if ng is 0, continue the action;
+	say ". You had [if niche-guesses is 1]a good guess[else]some good guesses[end if]: ";
+	let cur-niche be 0;
+	repeat through table of niche guesses:
+		if nitry entry is false, next;
+		increment cur-niche;
+		if cur-niche is ng and cur-niche > 1:
+			say " and ";
+		else if cur-niche > 1:
+			say ", ";
+		say "[nitxt entry]"
 
 kni-ni is a truth state that varies.
 
@@ -3340,6 +3369,8 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 the check for room name in player command rule is listed first in the for printing a parser error rulebook.
 
 the clue half right words rule is listed before the check for room name in player command rule in the for printing a parser error rulebook.
+
+oopsies is a number that varies.
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
 	if debug-state is true, say "[the latest parser error].";
