@@ -10,11 +10,13 @@ import i7
 import re
 import mytools
 
-vvm = i7.hdr("vv", "mi")
+my_proj = i7.dir2proj(to_abbrev=True)
+
+src = i7.src(my_proj)
+vvm = i7.hdr(my_proj, "mi")
 
 count = 0
-cur_table = ""
-hom_ignore = [ 'bark', 'me' ]
+hom_ignore = [ 'bark', 'me', 'whig', 'while' ]
 
 ignore_already_got = False
 already_got = defaultdict(int)
@@ -26,7 +28,9 @@ def usage(msg = "General usage"):
 
 cmd_count = 1
 
-def comb_one_file(file_name, tables_needed, cols_needed = [0])
+def comb_one_file(file_name, tables_needed, cols_needed = [0]):
+    count = 0
+    cur_table = ""
     tables_got = defaultdict(bool)
     for x in tables_needed: tables_got[x] = False
     bn = os.path.basename(file_name)
@@ -36,7 +40,7 @@ def comb_one_file(file_name, tables_needed, cols_needed = [0])
                 temp_table = re.sub(" *\[.*", "", line.strip())
                 if temp_table in tables_got:
                     if tables_got[temp_table]:
-                        print("WARNING duplicate table start", temp_table, bn, line_count
+                        print("WARNING duplicate table start", temp_table, bn, line_count)
                     cur_table = temp_table
                     cur_table_start = line_count + 1
                     tables_got[temp_table] = True
@@ -54,7 +58,7 @@ def comb_one_file(file_name, tables_needed, cols_needed = [0])
                         if q in hom_ignore: continue
                         if q in already_got and ignore_already_got: continue
                         count += 1
-                        print("{}: {}{} <{}> line {} in <{}> may need homonyms: {}.".format(count, "(already got) " if q in already_got else "", q, bn, line_count, cur_table, ", ".join(hom.hom_list[q])))
+                        print("{}: {}{} <{}> line {} in <{}>/{} may need homophone: {}.".format(count, "(already got) " if q in already_got else "", q, bn, line_count, cur_table, ary[0], ", ".join(hom.hom_list[q])))
                         already_got[q] = line_count
                         mytools.add_postopen_file_line(file_name, line_count)
     print("Summary of stuff to replace:", ', '.join(sorted(already_got)))
