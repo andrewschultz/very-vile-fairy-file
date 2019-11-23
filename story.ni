@@ -3349,7 +3349,6 @@ Rule for printing a parser error (this is the clue half right words rule):
 		now table-to-scour is guess-table of tou;
 		abide by the mistake-checker rule;
 	abide by the verb-checker rule;
-	the rule succeeds;
 	now table-to-scour is table of general good guesses;
 	abide by the mistake-checker rule;
 	if buggin-freeze:
@@ -3420,6 +3419,10 @@ this is the verb-checker rule:
 	repeat through the table of verb checks:
 		let my-count be 0;
 		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
+		now vc-dont-print is true;
+		process the ver-rule entry;
+		if the rule failed, next;
+		now vc-dont-print is false;
 		if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
 		if there is a w2 entry:
 			if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
@@ -3501,7 +3504,6 @@ to check-lump-progress:
 a lurking lump is a boring rhymable. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump.". guess-table of lurking lump is the table of lurking lump guesses.
 
 this is the mistake-checker rule:
-	if debug-state is true, say "DEBUG: [table-to-scour].";
 	repeat through table-to-scour:
 		if the player's command matches mist-cmd entry:
 			if there is a mist-rule entry:
