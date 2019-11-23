@@ -249,7 +249,11 @@ a room has a table name called guess-table. the guess-table of a room is usually
 
 a person has text called talk-text.
 
-a gaphat is a kind of thing.
+a rhymable is a kind of thing. a rhymable has a table name called guess-table. the guess-table of a rhymable is usually the Table of No Good Guesses.
+
+a person has a table name called guess-table. the guess-table of a person is usually the Table of No Good Guesses.
+
+a gaphat is a kind of rhymable.
 
 cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth.
 
@@ -309,7 +313,7 @@ the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][on
 
 nother-room is a room that varies.
 
-after looking in a signable room:
+after looking in a wallish room:
 	if nother-room is Wet Wood and player is not in Fun Fen:
 		now nother-room is location of player;
 	say "There's also [if player is in Fun Fen]a[else if location of player is nother-room]another[else]yet another[end if] wry wall here.";
@@ -326,7 +330,7 @@ to say sign-dir:
 	say "[run paragraph on]";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
-definition: a room (called rm) is signable:
+definition: a room (called rm) is wallish:
 	if rm is Airy Isle and Bot Board is in Airy Isle, no;
 	repeat through table of bad locs:
 		if avail entry is false, next;
@@ -393,9 +397,9 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
 
-the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy, but maybe you can convert it to something more practical.". [-> big bag]
+the zig zag rig rag is a rhymable. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy, but maybe you can convert it to something more practical.". guess-table of zig zag rig rag is the table of big bag zig zag rig rag guesses. [-> big bag]
 
-the big bag is a thing. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!"
+the big bag is a rhymable. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!". guess-table of big bag is the table of big bag zig zag rig rag guesses.
 
 volume Worst Whew
 
@@ -437,7 +441,7 @@ chapter Mind Malt
 
 a packet of Mind Malt is a thing. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus. [-> find fault]
 
-Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]"
+Too Totes New Notes is a rhymable. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]". guess-table of too totes new notes is the table of too totes new notes guesses.
 
 to say my-notes:
 	if player has big bag, say "    RIG RAG to BIG BAG     = center.";
@@ -594,7 +598,7 @@ the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around
 
 chapter Sage Sea
 
-the Sage Sea is scenery in Real Rear. "[if cage key is off-stage]You feel as though the Sage Sea must hold something, if you can prove yourself worthy[else]You've proved yourself worthy enough. The Sage Sea may hold other mysteries, but they are beyond the bounds of this quest[end if]."
+the Sage Sea is a rhymable in Real Rear. it is scenery. "[if cage key is off-stage]You feel as though the Sage Sea must hold something, if you can prove yourself worthy[else]You've proved yourself worthy enough. The Sage Sea may hold other mysteries, but they are beyond the bounds of this quest[end if].". guess-table of sage sea is the table of cage key sage sea guesses.
 
 check inserting into the Sage Sea: say "The Sage Sea is not a place to dump stuff." instead;
 
@@ -612,7 +616,7 @@ check taking steel steer: say "It is way too heavy to STEAL STEER." instead;
 
 chapter Cage Key
 
-the cage key is a thing. description is "It looks important. It must open something. There can only be so many cages around.".
+the cage key is a rhymable. description is "It looks important. It must open something. There can only be so many cages around.". guess-table of cage key is the table of cage key sage sea guesses.
 
 knelt-yet is a truth state that varies.
 
@@ -761,9 +765,9 @@ kni-ni is a truth state that varies.
 
 chapter mild mead and wild weed
 
-the mild mead is a thing. the indefinite article of mild mead is "some". description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
+the mild mead is a rhymable. the indefinite article of mild mead is "some". description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. guess-table of mild mead is the table of mild mead guesses. [->wild weed]
 
-the wild weed is a thing. the indefinite article of wild weed is "some". description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the Beer Bull's vitality went, instead of into the mead.".
+the wild weed is a rhymable. the indefinite article of wild weed is "some". description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the Beer Bull's vitality went, instead of into the mead.".
 
 part History Hall -2,1
 
@@ -812,7 +816,7 @@ after lling Gutta Ganksta:
 
 chapter Toe Tappin Row Rappin (M)
 
-Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replaced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SAVE SONG[r] and [b]RAVE WRONG[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
+Toe Tappin Row Rappin is rhymable. Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replaced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SAVE SONG[r] and [b]RAVE WRONG[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. guess-table of toe tappin row rappin is the table of toe tappin row rappin guesses. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
@@ -854,7 +858,7 @@ check inserting into Mean Moe's:
 
 chapter clashing cloak (M)
 
-the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do.". cht of clashing cloak is leteq. [-> smashing smoke]
+the clashing cloak is a rhymable. description is "It seems suited for more than just fashionable conflict, if you knew what to do.". cht of clashing cloak is leteq. guess-table of clashing cloak is the table of clashing cloak guesses. [-> smashing smoke]
 
 part Y'Old Yard -2,-1
 
@@ -898,7 +902,7 @@ this is the card-and-libe rule:
 		moot cold card;
 	continue the action;
 
-We Whine ME MINE is a thing. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sign-seen is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a careful reading would turn something up.[end if]". [-> see sign]
+We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sign-seen is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a careful reading would turn something up.[end if]". guess-table of we whine is the table of we whine guesses. [-> see sign]
 
 understand "book" as We Whine Me Mine when We Whine Me Mine is touchable.
 
@@ -922,11 +926,11 @@ trounce-track is a truth state that varies.
 
 chapter hard hat
 
-the marred mat is a thing in Got Gear Hot Here. description is "What is a marred mat doing in a clothing store? Either it's misplaced, or ... it's more appropriate in another form. It has a message, of course.". "You can't imagine what a marred mat is doing in a clothing store, but here it is.". cht of marred mat is partminus. [->hard hat]
+the marred mat is a rhymable in Got Gear Hot Here. description is "What is a marred mat doing in a clothing store? Either it's misplaced, or ... it's more appropriate in another form. It has a message, of course.". "You can't imagine what a marred mat is doing in a clothing store, but here it is.". cht of marred mat is partminus. guess-table of marred mat is the table of hard hat marred mat guesses. [->hard hat]
 
 check taking marred mat: say "It can't be useful in that form." instead;
 
-the hard hat is a gaphat. description is "The hard hat looks like it can protect you well enough, but it doesn't have a lot of flair, and it's not terribly lightweight.".
+the hard hat is a gaphat. description is "The hard hat looks like it can protect you well enough, but it doesn't have a lot of flair, and it's not terribly lightweight.". guess-table of hard hat is the table of hard hat marred mat guesses.
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
 
@@ -956,7 +960,7 @@ the frightening fridge is scenery in Violent Vale. cht of frightening fridge is 
 
 chapter flooring float
 
-the flooring float is a fakeenter thing. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!". [-> boring boat]
+the flooring float is a fakeenter rhymable. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!". guess-table of flooring float is the table of boring boat flooring float guesses. [-> boring boat]
 
 check taking flooring float: say "It's too heavy, and you can't take it anywhere. Maybe some other watercraft, though." instead;
 
@@ -964,7 +968,7 @@ check entering flooring float: say "It's there for decoration, not transport. Bu
 
 chapter boring boat
 
-the boring boat is a fakeenter thing. "A boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
+the boring boat is a fakeenter rhymable. "A boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if].". guess-table of boring boat is the table of boring boat flooring float guesses.
 
 does the player mean entering boring boat: it is very likely;
 
@@ -1015,7 +1019,7 @@ check going east in Lake Lea when Jake G is touchable:
 	if jake-woke is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if jake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else if jake-cocapn is false]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. [-> wake whee] [-> fake fee] [-> take tea]
+Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else if jake-cocapn is false]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. guess-table of jake g is the table of jake g guesses. [-> wake whee] [-> fake fee] [-> take tea]
 
 description of Jake G is "[if jake-woke is false]He's sleeping. You need a personalized, cheery greeting[else if jake-tea is false]Jake seems to be fiddling with utensils and snack packs[else if jake-fee is false]Jake rubs the fingers of one hand together but waves it off with the other[else if jake-map is false]Jake looks a little lost[else if jake-cocapn is false]Jake looks a little down here, as if he wants to feel equal to you, or he could use a song[else]Jake seems eager for battle[end if]."
 
@@ -1086,7 +1090,7 @@ to decide whether dean-done:
 	if mean-mugged is true and lean-lugged is true, yes;
 	no;
 
-the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
+the way woke clay cloak is a rhymable. description is "It's unwearable in its current state and may just bog you down.". guess-table of clay cloak is the table of clay cloak guesses.
 
 chapter staystronging
 
@@ -1161,7 +1165,7 @@ loft-land is a truth state that varies.
 
 part Here Hull 1,2
 
-Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [Soft Sand].". guess-table of Here Hull is table of Here Hull guesses.
+Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [Soft Sand].".
 
 gull-guard is a truth state that varies.
 
@@ -1176,7 +1180,7 @@ check going west in Here Hull:
 		reset-bull-chase;
 		the rule succeeds;
 
-The Beer Bull is a person in Here Hull. cht of Beer Bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is--but maybe you should've expected it, since BULL and HULL don't quite rhyme, anyway. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if]." [->dear dull] [->near null]
+The Beer Bull is a person in Here Hull. cht of Beer Bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is--but maybe you should've expected it, since BULL and HULL don't quite rhyme, anyway. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if].". guess-table of Beer Bull is the table of Beer Bull guesses. [->dear dull] [->near null]
 
 check taking Beer Bull: say "You need to worry about the Beer Bull taking you." instead;
 
@@ -1238,7 +1242,7 @@ check going east in Shirk Shell: if player has jerk gel, say "A smirk smell erup
 
 after printing the name of jerk gel while taking inventory: say " (brand name: SUPPLE SAPS)";
 
-the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[else]. A closer look indicates its ingredients include SUPPLE SAPS[end if].". cht of jerk gel is partplus. [-> work well]
+the tube of jerk gel is a rhymable in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[else]. A closer look indicates its ingredients include SUPPLE SAPS[end if].". cht of jerk gel is partplus. guess-table of jerk gel is the table of jerk gel guesses. [-> work well]
 
 understand "supple/saps" and "supple saps" as jerk gel.
 
@@ -1345,11 +1349,11 @@ check entering Minding Maze: try going east instead;
 
 chapter stuck stair
 
-the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
+the stuck stair is a fakeenter rhymable. it is scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. guess-table of stuck stair is the table of snuck snare stuck stair guesses. [-> luck lair]
 
 chapter snuck snare
 
-a snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
+a snuck snare is a rhymable. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.". guess-table of snuck snare is the table of snuck snare stuck stair guesses.
 
 [?? burned bower/turned tower]
 
@@ -3135,7 +3139,7 @@ when play begins (this is the score and status tweak rule):
 	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 0;
 
-to wall-refresh: move the wry wall backdrop to all signable rooms;
+to wall-refresh: move the wry wall backdrop to all wallish rooms;
 
 to wall-add (rm - a room):
 	repeat through table of bad locs:
@@ -3334,10 +3338,18 @@ table-to-scour is a table name that varies.
 Rule for printing a parser error (this is the clue half right words rule):
 	now table-to-scour is table of first check rhymes;
 	abide by the mistake-checker rule;
+	if location of player is wallish:
+		now table-to-scour is table of wry wall guesses;
+		abide by the mistake-checker rule;
 	unless guess-table of location of player is table of no good guesses:
 		now table-to-scour is guess-table of location of player;
 		abide by the mistake-checker rule;
+	repeat with tou running through touchable rhymables:
+		if tou is cage key and player is in real rear, next;
+		now table-to-scour is guess-table of tou;
+		abide by the mistake-checker rule;
 	abide by the verb-checker rule;
+	the rule succeeds;
 	now table-to-scour is table of general good guesses;
 	abide by the mistake-checker rule;
 	if buggin-freeze:
@@ -3486,36 +3498,38 @@ to check-lump-progress:
 		increase next-lump-level by next-lump-delta;
 		if next-lump-level > max-guesses-needed, now next-lump-level is max-guesses-needed;
 
-a lurking lump is a boring thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump."
+a lurking lump is a boring rhymable. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump.". guess-table of lurking lump is the table of lurking lump guesses.
 
 this is the mistake-checker rule:
+	if debug-state is true, say "DEBUG: [table-to-scour].";
 	repeat through table-to-scour:
 		if the player's command matches mist-cmd entry:
-			process the mist-rule entry;
-			if the rule succeeded:
-				say "[mist-txt entry][line break]";
-				let see-leet-read be true;
-				let is-opt be false;
-				if there is a leet-rule entry:
-					process the leet-rule entry;
-					if the rule succeeded:
-						if leet-rule entry is no-wanksta rule or leet-rule entry is llp-trivial rule or leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
-					else:
-						now see-leet-read is false;
-				if see-leet-read is true and there is a w1let entry:
-					let d1 be -10;
-					let d2 be -10;
-					now d1 is w1let entry - number of characters in word number 1 in the player's command;
-					if there is a w2let entry:
-						now d2 is w2let entry - number of characters in word number 2 in the player's command;
-					if d2 is -10, now d2 is d1;
-					let cc be cluecheat of d1 and d2;
-					say "[leetclue of cc and is-opt].";
-				if got-yet entry is false:
-					increment total-good-guesses;
-					check-lump-progress;
-				now got-yet entry is true;
-				the rule succeeds;
+			if there is a mist-rule entry:
+				process the mist-rule entry;
+				unless the rule succeeded, continue the action;
+			say "[mist-txt entry][line break]";
+			let see-leet-read be true;
+			let is-opt be false;
+			if there is a leet-rule entry:
+				process the leet-rule entry;
+				if the rule succeeded:
+					if leet-rule entry is no-wanksta rule or leet-rule entry is llp-trivial rule or leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
+				else:
+					now see-leet-read is false;
+			if see-leet-read is true and there is a w1let entry:
+				let d1 be -10;
+				let d2 be -10;
+				now d1 is w1let entry - number of characters in word number 1 in the player's command;
+				if there is a w2let entry:
+					now d2 is w2let entry - number of characters in word number 2 in the player's command;
+				if d2 is -10, now d2 is d1;
+				let cc be cluecheat of d1 and d2;
+				say "[leetclue of cc and is-opt].";
+			if got-yet entry is false:
+				increment total-good-guesses;
+				check-lump-progress;
+			now got-yet entry is true;
+			the rule succeeds;
 
 to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number):
 	if n2 > n1, decide on cluecheat of n2 and n1;
@@ -4885,6 +4899,7 @@ this is the vr-pull-pieced rule:
 	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
 	moot mild mead;
+	now guess-table of wild weed is table of mild mead guesses; [small hack so we don't go through the table twice]
 	if wild weed is off-stage, max-down;
 	moot dining door;
 	if player is not in Whining War, bold-new-room Whining War;
