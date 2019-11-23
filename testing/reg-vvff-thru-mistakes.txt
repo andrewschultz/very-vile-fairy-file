@@ -559,7 +559,7 @@ Learner needle
 You'll need all the sauce you can get, literally or figuratively.
 > greased gross
 Learner needle
-The creased cross doesn't need to become ickier.
+The Creased Cross doesn't need to become ickier.
 > fleeced floss
 Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
@@ -700,10 +700,10 @@ Learner needle
 You're trying to chase, not impress the ganksta.
 > cots came
 Learner needle
-The gutta ganksta is unmoved by the prospect of a good night's sleep.
+The Gutta Ganksta is unmoved by the prospect of a good night's sleep.
 > dots dame
 Learner needle
-The gutta ganksta's fashion sense tends away from polka dots.
+The Gutta Ganksta's fashion sense tends away from polka dots.
 > knots name
 Learner needle
 You fail to tie the ganksta up in knots with well-timed
@@ -1213,10 +1213,6 @@ Close, but camaraderie, not violence.
 > snake snap
 by one point
 
-> fake fap
-!Learner needle
-You make a rude gesture, for whatever good it does.
-
 > enter boat
 
 > pay prong
@@ -1451,16 +1447,16 @@ No golf tee provides a bookmark for We Whine: ME, MINE.
 
 > crane crescent
 Learner needle
-No bird or complex machinery drops by to sweep the pain peasant away.
+No bird or complex machinery drops by to sweep the Pain Peasant away.
 > fain pheasant
 Learner needle
-The pain peasant remains human.
+The Pain Peasant remains human.
 > stow steeled
 Learner needle
 You don't have anything steely to stow.
 > woe wield
 Learner needle
-You don't need a weapon but rather armor to repel the foe field.
+You don't need a weapon but rather armor to repel the Foe Field.
 > mo mealed
 Learner needle
 Alas, no food magically appears. You need a more fighting stance.
@@ -1541,7 +1537,7 @@ You acquire no increased aptitude for removing an opponent's hit points. Which w
 
 > mit mound
 !Learner needle
-The pit pound doesn't need clutter like that.
+The Pit Pound doesn't need clutter like that.
 > bit bound
 !Learner needle
 Now you mention it, you did feel a bit restricted here. Expressing your feelings helps a bit! You think.
@@ -1671,8 +1667,32 @@ You don't need anything as obscure as a wooden peg.
 
 > w
 
+> fives fitch
+Learner needle
+A polecat (or several) would maul you, too. You need some sort of general ambush.
+> hives hitch
+Learner needle
+Whether that means a hive of bees or hives on your skin, that would affect anyone entering. You need some sort of general ambush.
+> lives lich
+Learner needle
+But the lich would surely wipe you out. You need some sort of general ambush.
+> stives stitch
+Learner needle
+We don't want a red-light-district sort of trap. You need some sort of general ambush.
+> strives stritch
+Learner needle
+A screeching owl would only be annoying. You need some sort of general ambush.
+> wives witch
+Learner needle
+The witch might be evil enough to wipe everyone out. You need some sort of general ambush.
+> chives chich
+Learner needle
+This is no time for frou-frou vegetables!
+
 > knives niche
 by one point
+
+#no need to check mistakes after, since you are booted from the room
 
 > e
 > u
@@ -1682,13 +1702,13 @@ by one point
 
 > mere mull
 Learner needle
-The beer bull is not impressed by thoughtfulness.
+The Beer Bull is not impressed by thoughtfulness.
 > gear gull
 Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
 > leer lull
 Learner needle
-The beer bull does not stop looking aggressively at you.
+The Beer Bull does not stop looking aggressively at you.
 > peer pull
 Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -1701,13 +1721,13 @@ by one point
 
 > mere mull
 !Learner needle
-The beer bull is not impressed by thoughtfulness.
+The Beer Bull is not impressed by thoughtfulness.
 > gear gull
 !Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
 > leer lull
 !Learner needle
-The beer bull does not stop looking aggressively at you.
+The Beer Bull does not stop looking aggressively at you.
 > peer pull
 !Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -1727,27 +1747,21 @@ by one point
 
 > dialed deed
 the Leet Learner dims a bit, and
-Learner needle
 You don't need chemical stimulants to be dialed in to what you need to do.
 > filed feed
 the Leet Learner dims a bit, and
-Learner needle
 Nope. Can't quite categorize that as food.
 > riled reed
 the Leet Learner dims a bit, and
-Learner needle
 Any controlled substances found in the course of your adventure are for relaxation.
 > siled seed
 the Leet Learner dims a bit, and
-Learner needle
 No time for farming.
 > styled steed
 the Leet Learner dims a bit, and
-Learner needle
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 > tiled teed
 the Leet Learner dims a bit, and
-Learner needle
 That would make for an odd golf course.
 
 > wild weed
@@ -1822,7 +1836,7 @@ by one point
 You'll need all the sauce you can get, literally or figuratively.
 > greased gross
 !Learner needle
-The creased cross doesn't need to become ickier.
+The Creased Cross doesn't need to become ickier.
 > fleeced floss
 !Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
@@ -1892,7 +1906,7 @@ That is the wrong defensive posture for here.
 
 > woe wield
 !Learner needle
-You didn't need a weapon but rather armor to repel the foe field.
+You didn't need a weapon but rather armor to repel the Foe Field.
 > stow steeled
 !Learner needle
 You don't have anything steely to stow.
@@ -2007,7 +2021,7 @@ Learner needle
 Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
-The bot board never sleeps, so they're not likely to be fooled by a string attached to a cot.
+The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
 > got gourd
 Learner needle
 That worked in The Life of Brian, but ... try a homophone, here. You're close.
@@ -2106,23 +2120,28 @@ by one point
 !lump
 # checking for overflow on LLP
 #next-cmd-pass ?? delete this post-comp
+>z
+#next-cmd-pass ?? delete this post-comp
+>z
+> cig sag
+lump
+#next-cmd-pass ?? delete this post-comp
+>undo
 > really rolling
 lump
 #next-cmd-pass ?? delete this post-comp
+>z
+#next-cmd-pass ?? delete this post-comp
 >jj
-> undo
 > undo
 Take two? Fake, foo'!
 rematerializes
 # checking to make sure we really checked for overflow and not just a regular charge
 # e.g. if we change the level delta from 5 to 6, the lump should not appear
-> cig sag
-lump
-#next-cmd-pass
->really rolling
 #next-cmd-pass
 >blow by
 >call cree
+!lump
 #next-cmd-pass
 >strong start
 #next-cmd-pass

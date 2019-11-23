@@ -102,7 +102,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5
+==t1,5,6
 >really rolling
 by one point
 
@@ -113,6 +113,11 @@ by one point
 > really zrolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
+>really rolling
+!by one point
+You already guessed the significance of my pen name.
+
+@ha
 >really rolling
 !by one point
 You already guessed the significance of my pen name.
@@ -243,7 +248,7 @@ by one point
 @ha
 > gift giver
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's.
 
 @ha
 > zgift giver rule
@@ -382,7 +387,7 @@ by one point
 @ha
 > green grass
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zgreen grass rule
@@ -588,7 +593,7 @@ by one point
 @ha
 > mash map
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zmash map rule
@@ -703,7 +708,7 @@ by one point
 @ha
 > flim flam
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zflim flam rule
@@ -1031,7 +1036,7 @@ by one point
 @ha
 > dive deep
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zdive deep rule
@@ -1068,7 +1073,7 @@ by one point
 @ha
 > paper pile
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zpaper pile rule
@@ -1103,7 +1108,7 @@ by one point
 @ha
 > backed binder
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zbacked binder rule
@@ -1121,7 +1126,7 @@ Learner needle
 You'll need all the sauce you can get, literally or figuratively.
 > greased gross
 Learner needle
-The creased cross doesn't need to become ickier.
+The Creased Cross doesn't need to become ickier.
 > fleeced floss
 Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
@@ -1404,10 +1409,10 @@ Learner needle
 You're trying to chase, not impress the ganksta.
 > cots came
 Learner needle
-The gutta ganksta is unmoved by the prospect of a good night's sleep.
+The Gutta Ganksta is unmoved by the prospect of a good night's sleep.
 > dots dame
 Learner needle
-The gutta ganksta's fashion sense tends away from polka dots.
+The Gutta Ganksta's fashion sense tends away from polka dots.
 > knots name
 Learner needle
 You fail to tie the ganksta up in knots with well-timed
@@ -1427,7 +1432,7 @@ by one point
 @ha
 > lots lame
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zlots lame rule
@@ -1469,7 +1474,7 @@ You already said HO HAPPEN.
 @ha
 > dimd
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zho happen rule
@@ -1767,7 +1772,7 @@ You fail to enter a Western with a sidekick.
 @ha
 > hard hat
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zhard hat rule
@@ -1895,11 +1900,11 @@ You're already on the Soft Sand.
 > undo
 > undo
 > zsoft sand
-!DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+DEBUG: vc-soft-sand rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
 > soft zsand
-!DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+DEBUG: vc-soft-sand rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
 
 @ha
 > zloft land rule
@@ -1943,7 +1948,7 @@ by one point
 @ha
 > dreaming dull
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zdreaming dull rule
@@ -1972,7 +1977,7 @@ by one point
 @ha
 > first fave
 !by one point
-The curst cave is already a cheerier place.
+The Curst Cave is already a cheerier place.
 
 @ha
 > zfirst fave rule
@@ -2022,7 +2027,7 @@ by one point
 @ha
 > cool cap
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zcool cap rule
@@ -2106,7 +2111,7 @@ by one point
 @ha
 > brightening bridge
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zbrightening bridge rule
@@ -2469,7 +2474,7 @@ by one point
 @ha
 > snake snap
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zsnake snap rule
@@ -2478,11 +2483,6 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 > snake zsnap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@mis
-> fake fap
-!Learner needle
-You make a rude gesture, for whatever good it does.
 
 ==t2
 > think
@@ -2578,7 +2578,7 @@ by one point
 @ha
 > glow glad
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zglow glad rule
@@ -2643,10 +2643,10 @@ west to Trust Trail
 @ha
 > lean luggin
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 > mean muggin
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zlean luggin rule
@@ -2714,7 +2714,7 @@ by one point
 @ha
 > bumped buster
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zbumped buster rule
@@ -2770,7 +2770,7 @@ by one point
 @ha
 > glean glows
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zglean glows rule
@@ -2794,18 +2794,26 @@ No genetically twisted tree appears.
 !GLEAN GLOWS
 SMASHING SMOKE
 
+@ha
+> zhistory hall
+DEBUG: vc-history-hall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+> history zhall
+DEBUG: vc-history-hall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+
 > history hall
 
 @ha
+>zmystery mall
+DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+>mystery zmall
+DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
 > history hall
 !by one point
 You already flipped back to History Hall.
-> zhistory hall
-!DEBUG: vc-history-hall rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
-> history zhall
-!DEBUG: vc-history-hall rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
 
 @ha
 > zyoure yonder rule
@@ -2837,7 +2845,7 @@ by one point
 @ha
 > youre yonder
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zyoure yonder rule
@@ -2886,7 +2894,7 @@ by one point
 @ha
 > smashing smoke
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zsmashing smoke rule
@@ -3027,16 +3035,16 @@ LEAST LOSS
 @mis
 > crane crescent
 Learner needle
-No bird or complex machinery drops by to sweep the pain peasant away.
+No bird or complex machinery drops by to sweep the Pain Peasant away.
 > fain pheasant
 Learner needle
-The pain peasant remains human.
+The Pain Peasant remains human.
 > stow steeled
 Learner needle
 You don't have anything steely to stow.
 > woe wield
 Learner needle
-You don't need a weapon but rather armor to repel the foe field.
+You don't need a weapon but rather armor to repel the Foe Field.
 > mo mealed
 Learner needle
 Alas, no food magically appears. You need a more fighting stance.
@@ -3060,7 +3068,7 @@ by one point
 @ha
 > plain pleasant
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zplain pleasant rule
@@ -3100,7 +3108,7 @@ by one point
 @ha
 > moral mage
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zmoral mage rule
@@ -3148,7 +3156,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #pit pound before
+@mis #Pit Pound before
 > wit wound
 Learner needle
 No need for unnecessary tension.
@@ -3191,7 +3199,7 @@ The HA HALF button lights up on your Leet Learner.
 > fit found
 by one point
 
-@mis #pit pound after
+@mis #Pit Pound after
 > wit wound
 !Learner needle
 No need for unnecessary tension.
@@ -3218,7 +3226,7 @@ You already fit in.
 @mis
 > mit mound
 !Learner needle
-The pit pound doesn't need clutter like that.
+The Pit Pound doesn't need clutter like that.
 > bit bound
 !Learner needle
 Now you mention it, you did feel a bit restricted here. Expressing your feelings helps a bit! You think.
@@ -3513,36 +3521,16 @@ The witch might be evil enough to wipe everyone out. You need some sort of gener
 Learner needle
 This is no time for frou-frou vegetables!
 
+> knives niche
+by one point
+
+@mis
+#no need to check mistakes after, since you are booted from the room
+
 @ha
 > knives niche
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
-
-@mis
-> fives fitch
-!Learner needle
-A polecat (or several) would maul you, too. You already prepared the knives niche, anyway.
-> hives hitch
-!Learner needle
-Whether that means a hive of bees or hives on your skin, that would affect anyone entering. You already prepared the knives niche, anyway.
-> lives lich
-!Learner needle
-But the lich would surely wipe you out. You already prepared the knives niche, anyway.
-> stives stitch
-!Learner needle
-We don't want a red-light-district sort of trap. You already prepared the knives niche, anyway.
-> strives stritch
-!Learner needle
-A screeching owl would only be annoying. You already prepared the knives niche, anyway.
-> wives witch
-!Learner needle
-The witch might be evil enough to wipe everyone out. You already prepared the knives niche, anyway.
-> chives chich
-!Learner needle
-This is no time for frou-frou vegetables!
-
-> knives niche
-by one point
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zknives niche rule
@@ -3561,13 +3549,13 @@ by one point
 @mis
 > mere mull
 Learner needle
-The beer bull is not impressed by thoughtfulness.
+The Beer Bull is not impressed by thoughtfulness.
 > gear gull
 Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
 > leer lull
 Learner needle
-The beer bull does not stop looking aggressively at you.
+The Beer Bull does not stop looking aggressively at you.
 > peer pull
 Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -3623,13 +3611,13 @@ You already reduced the bull's power!
 @mis
 > mere mull
 !Learner needle
-The beer bull is not impressed by thoughtfulness.
+The Beer Bull is not impressed by thoughtfulness.
 > gear gull
 !Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
 > leer lull
 !Learner needle
-The beer bull does not stop looking aggressively at you.
+The Beer Bull does not stop looking aggressively at you.
 > peer pull
 !Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -3682,20 +3670,6 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @ha
-> least loss
-!by one point
-You already minimized your losses. Time to be more aggressive.
-
-@ha
-> zleast loss rule
-!DEBUG: vc-least-loss rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-> least zloss rule
-!DEBUG: vc-least-loss rule tipped off the HA HALF button.
-#note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
-#!The HA HALF button lights up on your Leet Learner.
-
-@ha
 > zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -3706,27 +3680,21 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 @mis #wild weed before
 > dialed deed
 the Leet Learner dims a bit, and
-Learner needle
 You don't need chemical stimulants to be dialed in to what you need to do.
 > filed feed
 the Leet Learner dims a bit, and
-Learner needle
 Nope. Can't quite categorize that as food.
 > riled reed
 the Leet Learner dims a bit, and
-Learner needle
 Any controlled substances found in the course of your adventure are for relaxation.
 > siled seed
 the Leet Learner dims a bit, and
-Learner needle
 No time for farming.
 > styled steed
 the Leet Learner dims a bit, and
-Learner needle
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 > tiled teed
 the Leet Learner dims a bit, and
-Learner needle
 That would make for an odd golf course.
 
 ==t1,5,6
@@ -3872,8 +3840,22 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@ha
+> least loss
+!by one point
+You already minimized your losses. Time to be more aggressive.
+
 > cull ceased
 by one point
+
+@ha
+> zleast loss rule
+!DEBUG: vc-least-loss rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> least zloss rule
+!DEBUG: vc-least-loss rule tipped off the HA HALF button.
+#note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
+#!The HA HALF button lights up on your Leet Learner.
 
 @ha
 > cull ceased
@@ -3912,7 +3894,7 @@ by one point
 @ha
 > full feast
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zfull feast rule
@@ -3928,7 +3910,7 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 You'll need all the sauce you can get, literally or figuratively.
 > greased gross
 !Learner needle
-The creased cross doesn't need to become ickier.
+The Creased Cross doesn't need to become ickier.
 > fleeced floss
 !Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
@@ -4177,7 +4159,7 @@ Your gold guard has done its duty.
 @mis
 > woe wield
 !Learner needle
-You didn't need a weapon but rather armor to repel the foe field.
+You didn't need a weapon but rather armor to repel the Foe Field.
 > stow steeled
 !Learner needle
 You don't have anything steely to stow.
@@ -4264,7 +4246,7 @@ by one point
 @ha
 > couple caps
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zcouple caps rule
@@ -4449,7 +4431,7 @@ by one point
 @ha
 > wood one
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zwood one rule
@@ -4467,7 +4449,7 @@ Learner needle
 Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
-The bot board never sleeps, so they're not likely to be fooled by a string attached to a cot.
+The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
 > got gourd
 Learner needle
 That worked in The Life of Brian, but ... try a homophone, here. You're close.
@@ -4562,7 +4544,7 @@ by one point
 @ha
 > got gored
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zgot gored rule
@@ -4635,7 +4617,7 @@ by one point
 @ha
 > whoa wait
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zwhoa wait rule
@@ -4672,7 +4654,7 @@ by one point
 @ha
 > tell torn
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > ztell torn rule
@@ -4780,23 +4762,28 @@ MORAL MAGE
 !lump
 # checking for overflow on LLP
 #next-cmd-pass ?? delete this post-comp
+>z
+#next-cmd-pass ?? delete this post-comp
+>z
+> cig sag
+lump
+#next-cmd-pass ?? delete this post-comp
+>undo
 > really rolling
 lump
 #next-cmd-pass ?? delete this post-comp
+>z
+#next-cmd-pass ?? delete this post-comp
 >jj
-> undo
 > undo
 Take two? Fake, foo'!
 rematerializes
 # checking to make sure we really checked for overflow and not just a regular charge
 # e.g. if we change the level delta from 5 to 6, the lump should not appear
-> cig sag
-lump
-#next-cmd-pass
->really rolling
 #next-cmd-pass
 >blow by
 >call cree
+!lump
 #next-cmd-pass
 >strong start
 #next-cmd-pass
