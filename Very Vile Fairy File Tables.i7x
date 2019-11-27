@@ -217,6 +217,8 @@ cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
 "GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
 "GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
 "HEAL HERE"	false	can-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-heal-here rule] you need to heal from something."
+"LEAN LUGGIN"	false	can-xean-xuggin rule	false	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of can-xean-xuggin rule] you've dealt with your temporary loss of faith."
+"MEAN MUGGIN"	false	can-xean-xuggin rule	false	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of can-xean-xuggin rule] you've dealt with your temporary loss of faith."
 "LEAST LOSS"	false	can-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
 "MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found something to mark [here-in of Stark Store]."
 "MASH MAP"	false	vc-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
@@ -346,6 +348,10 @@ this is the can-so-sappin rule:
 this is the can-take-tea rule:
 	if jake-woke is true, the rule succeeds;
 	the rule fails.
+
+this is the can-xean-xuggin rule:
+	if in-so-sad is false and in-way-wrong is false and player is in Been Buggin, the rule succeeds;
+	the rule fails;
 
 [zz4l8r]
 

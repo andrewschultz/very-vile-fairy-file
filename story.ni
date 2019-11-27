@@ -4531,15 +4531,20 @@ this is the vr-knives-niche rule:
 	process the drop-snare rule;
 
 this is the vc-lean-luggin rule:
-	if Dean Duggan is not touchable, the rule fails;
+	if player is not in Been Buggin, the rule fails;
 	if lean-lugged is true:
 		vcal "You already learned lean luggin['].";
+		continue the action;
+	if Dean Duggan is not touchable:
+		say "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		clue-later "LEAN LUGGIN";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-lean-luggin rule:
 	say "You ask Dean Duggan for help with carrying large awkward things.";
 	now lean-lugged is true;
+	clue-zap "LEAN LUGGIN";
 	lean-and-mean;
 
 this is the vc-least-loss rule:
@@ -4688,15 +4693,20 @@ this is the vr-mash-map rule:
 	clue-zap "MASH MAP";
 
 this is the vc-mean-muggin rule:
-	if Dean Duggan is not touchable, the rule fails;
+	if player is not in Been Buggin, the rule fails;
 	if mean-mugged is true:
 		vcal "You already learned mean muggin['].";
+		continue the action;
+	if Dean Duggan is not touchable:
+		say "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		clue-later "LEAN LUGGIN";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-mean-muggin rule:
 	say "You try some aggressive facial features. Dean Duggan helps you get things right.";
 	now mean-mugged is true;
+	clue-zap "MEAN MUGGIN";
 	lean-and-mean;
 
 this is the vc-meeker-muscle rule:
