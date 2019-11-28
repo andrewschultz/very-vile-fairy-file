@@ -1817,19 +1817,32 @@ ever-thought is a truth state that varies.
 
 the block thinking rule is not listed in any rulebook.
 
-to read-laters (ts - a truth state):
+a which-think is a kind of value. the which-thinks are no-details, doable-now, undoable-now. [ we could use 2 booleans for read-laters below, but that is awkward magic number stuff]
+
+to read-laters (wt - a which-think):
 	let thought-any be false;
-	repeat through table of forlaters:
-		if ready-to-hint entry is true:
-			if is-done entry is true:
-				if debug-state is true, say "(DEBUG NOTE) Somehow the [cmd-to-say entry] is-done entry didn't get wiped out after the score adjustments.";
-				now ready-to-hint entry is false;
-				next; [ this may duplicate code from the score and thinking changes rules but I'm still a bit nervous about it at the moment. This shuts the door 100%. ]
-			process the can-do-now entry; [?? surround with vc-dont-print being true then false ??]
+	repeat through table of verb checks:
+		if think-cue entry is true:
+			if idid entry is true:
+				say "DEBUG note--I forgot to clear [w1 entry] [w2 entry] somehow. It would be nice to know how and when this happened.";
+				now think-cue entry is false;
+				next;
+			let pre-bug be whether or not ver-rule entry is vc-mean-muggin rule or ver-rule entry is vc-lean-luggin rule;
+			if wt is no-details:
+				if there is a think-advice entry and not too-distracted, next;
+				if pre-bug is true, next;
+				if thought-any is false, say "[line break]";
+				now thought-any is true;
+				say "[if too-distracted]You are still too distracted to firure where and how to[else]You can probably now[end if] try [b][word number 1 in w1 entry in upper case][if there is a w2 entry] [word number 1 in w2 entry in upper case][end if][r].";
+				next;
+			if there is no think-advice entry or too-distracted:
+				unless pre-bug is true, next;
+			process the ver-rule entry; [?? surround with vc-dont-print being true then false ??]
 			let Q be whether or not the rule succeeded;
-			if Q is not ts, next;
+			let Z be whether or not wt is doable-now;
+			if Q is not Z, next;
 			if thought-any is false, say "[line break]";
-			if the rule succeeded, say "([b]CAN DO NOW[r]) ";
+			if Z is true, say "([b]CAN DO NOW[r]) ";
 			now thought-any is true;
 			say "[think-advice entry][line break]";
 
@@ -1843,8 +1856,9 @@ check thinking:
 		say "[line break]But you don't have leads for any puzzles right now." instead;
 	now vc-dont-print is true;
 	check-flip-verbs;
-	read-laters true;
-	read-laters false;
+	read-laters no-details;
+	read-laters doable-now;
+	read-laters undoable-now;
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
@@ -1856,42 +1870,24 @@ check thinking:
 	the rule succeeds;
 
 to decide whether tried-yet of (ct - text):
+	decide no; [??]
 	let tried-any be false;
-	repeat through table of forlaters:
-		if ct is cmd-to-say entry:
+	repeat through table of verb checks:
+		if ct is ct: [??]
 			now tried-any is true;
-			if ready-to-hint entry is true:
-				process the can-do-now entry;
+			if think-cue entry is true:
+				process the ver-rule entry;
 				if the rule succeeded, decide yes;
 	if tried-any is false, say "I tried to check if [ct] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
 	decide no;
 
 to clue-later (ct - text):
-	if vc-dont-print is true, continue the action;
-	repeat through table of forlaters:
-		if ct is cmd-to-say entry:
-			if debug-state is true and ready-to-hint entry is true, say "(DEBUG re-checking)[line break]";
-			if ready-to-hint entry is false, now think-clue-flag is true;
-			now ready-to-hint entry is true;
-			continue the action;
-	now think-clue-flag is true;
-	say "Oops. I tried to save [ct] in the THINK command for later, but failed[not-crit-but].";
+	continue the action; [??]
 
 to clue-zap (ct - text):
-	repeat through table of forlaters:
-		if ct is cmd-to-say entry:
-			now ready-to-hint entry is false;
-			continue the action;
-	say "Oops, I tried to de-hint [ct] in the THINK command for later but failed[not-crit-but].";
+	continue the action;
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
-
-think-clue-flag is a truth state that varies.
-
-every turn when think-clue-flag is true (this is the note right guess wrong time rule):
-	say "[line break][one of][b]NOTE[r]: this command will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command again saved to [b]THINK[r] for later reference.)[stopping]";
-	now think-clue-flag is false;
-	continue the action;
 
 chapter score
 
@@ -1916,31 +1912,34 @@ check requesting the score:
 	now vc-dont-print is false;
 	the rule succeeds;
 
-the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
-
-this is the score and thinking changes rule:
-	repeat through table of forlaters:
-		if ready-to-hint entry is true:
-			if is-done entry is true, now ready-to-hint entry is false;
+to decide which number is can-do-hint of (ts - a truth state):
+	let temp be 0;
+	now vc-dont-print is true;
+	repeat through the table of verb checks:
+		if think-cue entry is true:
+			process the ver-rule entry;
+			if the rule succeeded and there is a core entry, increment temp;
+	now vc-dont-print is false;
+	decide on temp;
 
 to decide which number is doable-hinted:
 	let temp be 0;
 	now vc-dont-print is true;
-	repeat through the table of forlaters:
-		if ready-to-hint entry is true:
-			process the can-do-now entry;
-			if the rule succeeded:
-				if is-done entry is false, increment temp;
+	repeat through the table of verb checks:
+		if think-cue entry is true:
+			process the ver-rule entry;
+			if the rule succeeded and there is a core entry, increment temp;
 	now vc-dont-print is false;
 	decide on temp;
 
 to decide which number is future-hinted:
 	let temp be 0;
 	now vc-dont-print is true;
-	repeat through the table of forlaters:
-		if ready-to-hint entry is true:
-			process the can-do-now entry;
-			unless the rule succeeded, increment temp;
+	repeat through the table of verb checks:
+		if think-cue entry is true:
+			process the ver-rule entry;
+			unless the rule succeeded:
+				if there is a core entry, increment temp;
 	now vc-dont-print is false;
 	decide on temp;
 
@@ -3357,6 +3356,11 @@ to decide whether buggin-freeze:
 	if in-so-sad is true or in-way-wrong is true, yes;
 	no;
 
+to decide whether too-distracted:
+	if buggin-freeze, yes;
+	if in-bull-chase is true, yes;
+	no;
+
 table-to-scour is a table name that varies.
 
 Rule for printing a parser error (this is the clue half right words rule):
@@ -3449,7 +3453,6 @@ this is the verb-checker rule:
 	let progressive be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
-		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
 		now vc-dont-print is true;
 		process the ver-rule entry;
 		if the rule failed, next;
@@ -3467,11 +3470,14 @@ this is the verb-checker rule:
 			else if my-count is 2:
 				now wfull-fail is true;
 		if my-count >= 2:
-			if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
-			if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
+			if debug-state is true, say "DEBUG: processing [ver-rule entry].";
 			process the ver-rule entry;
 			unless the rule succeeded:
-				process the note right guess wrong time rule;
+				if think-cue entry is false:
+					say "[line break][one of][b]NOTE[r]: this command will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command again saved to [b]THINK[r] for later reference.)[stopping]";
+					now think-cue entry is true;
+				else:
+					say "[line break]Hmm, that still doesn't quite work here and now. But it will, somewhere, some time.";
 				the rule succeeds;
 			if okflip entry is false:
 				unless my-count is 3 or there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case... and "my-count is 3" is a hack for FLIMFLAM]
@@ -3480,24 +3486,28 @@ this is the verb-checker rule:
 			if wfull-fail is true:
 				say "Ooh! You're close, but you juggled things up, somehow.";
 				the rule succeeds;
+			if in-so-sad is true or in-way-wrong is true:
+				say "Ugh! That should work, but you don't feel up to it. Maybe once your head is clearer, you'll figure where and why.";
+				now think-cue entry is true;
+				the rule succeeds;
 			if beer bull is touchable and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
 				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
 				let oldloc be location of player;
 				reset-bull-chase;
-				say "Okay ... again ... [b][the player's command in upper case][r] is worth doing[here-in of oldloc].";
+				now think-cue entry is true;
 				the rule succeeds;
 			if there is a core entry and idid entry is false:
 				up-which core entry;
 				if core entry is false:
 					increase lump-count by 1;
 			now idid entry is true;
+			now think-cue entry is false;
 			process the do-rule entry;
 			if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
 				blank out the core entry;
 				now zap-core-entry is false;
 			process the notify score changes rule;
 			if there is a core entry and core entry is false, check-lump-progress;
-			process the note right guess wrong time rule;
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
 			now vc-dont-print is true;
@@ -3647,108 +3657,6 @@ carry out jerkingjumping:
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.
 
-section verb check table
-
-[verb check and verb run rules. This is in approximate game-solve order.]
-
-table of verb checks [xxvc]
-w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
-"glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
-"stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	-- [must be at top for JJ]
-"get"	"good"	false	true	false	vc-get-good rule	vr-get-good rule	-- [start Intro]
-"gift"	"giver"	false	true	false	vc-gift-giver rule	vr-gift-giver rule	--
-"find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
-"green"	"grass"	false	true	false	vc-green-grass rule	vr-green-grass rule	--
-"grow|oh|so"	"grit|it|sit"	true	true	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"
-"mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"
-"mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
-"flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"
-"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	-- [start of Fun Fen]
-"strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
-"fall"	"free"	true	true	false	vc-fall-free rule	vr-fall-free rule	--
-"dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
-"paper"	"pile"	true	true	false	vc-paper-pile rule	vr-paper-pile rule	--
-"backed"	"binder"	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--
-"appealing"	"appear"	true	false	false	vc-appealing-appear rule	vr-appealing-appear rule	-- [start of Real Rear]
-"kneel|kneeling"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	--
-"feel|feeling"	"fear"	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--
-"deal|dealing"	"dear"	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--
-"heal|healing"	"here"	true	true	false	vc-heal-here rule	vr-heal-here rule	--
-"history"	"hall"	false	--	false	vc-history-hall rule	vr-history-hall rule	--
-"mystery"	"mall"	false	true	false	vc-mystery-mall rule	vr-mystery-mall rule	--
-"dark"	"door"	false	true	false	vc-dark-door rule	vr-dark-door rule	-- [start Stark Store]
-"mark"	"more"	false	true	false	vc-mark-more rule	vr-mark-more rule	--
-"cleared"	"clay"	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--
-"bumped|dumped"	"buster|duster"	true	false	false	vc-bumped-buster rule	vr-bumped-buster rule	"bumped buster" or "dumped duster"
-"tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
-"knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	-- [start dives ditch]
-"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--
-"lots"	"lame"	false	true	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
-"no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
-"ho"	"happen"	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--
-"dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule	--
-"whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
-"youre|your|yore"	"yonder"	false	true	false	vc-youre-yonder rule	vr-youre-yonder rule	--
-"glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
-"smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	-- [start Y'Old Yard]
-"lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start Vending Vibe]
-"see"	"sign"	false	true	false	vc-see-sign rule	vr-see-sign rule	--
-"hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start Got Gear Hot Here]
-"lie"	"lol"	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--
-"not"	"near"	true	false	false	vc-not-near rule	vr-not-near rule	--
-"beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
-"cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	"cull ceased" or "lul least"
-"full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
-"least"	"loss"	true	true	false	vc-least-loss rule	vr-least-loss rule	--
-"loft"	"land"	false	true	false	vc-loft-land rule	vr-loft-land rule	-- [start Soft Sand]
-"soft"	"sand"	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--
-"plain"	"pleasant"	true	true	false	vc-plain-pleasant rule	vr-plain-pleasant rule	-- [start Foe Field]
-"show"	"shield"	true	true	false	vc-show-shield rule	vr-show-shield rule	--
-"cool"	"cap"	true	true	false	vc-cool-cap rule	vr-cool-cap rule	-- [start Curst Cave]
-"dreaming"	"dull"	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--
-"first"	"fave"	false	true	false	vc-first-fave rule	vr-first-fave rule	--
-"moral"	"mage"	false	true	false	vc-moral-mage rule	vr-moral-mage rule	--
-"work"	"well"	true	true	false	vc-work-well rule	vr-work-well rule	-- [start Shirk Shell]
-"dear"	"dull"	true	true	false	vc-dear-dull rule	vr-dear-dull rule	-- [start Here Hull]
-"near"	"null"	true	true	false	vc-near-null rule	vr-near-null rule	--
-"sit"	"sound"	false	true	false	vc-sit-sound rule	vr-sit-sound rule	-- [start Pit Pound]
-"fit"	"found"	true	true	false	vc-fit-found rule	vr-fit-found rule	--
-"winding|minding|finding"	"ways|maze|phase|fays"	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays" [start Blinding Blaze]
-"mo"	"mappin"	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--
-"luck|snuck"	"lair|snare"	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
-"brightening"	"bridge"	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
-"silent"	"sail|sale"	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--
-"boring"	"boat"	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--
-"wake"	"whee|wee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
-"take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
-"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
-"break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
-"make"	"map"	false	true	false	vc-make-map rule	vr-make-map rule	-- [start Lake Lap]
-"snake"	"snap"	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--
-"co"	"capn"	false	true	false	vc-co-capn rule	vr-co-capn rule	--
-"so"	"sappin"	true	true	false	vc-so-sappin rule	vr-so-sappin rule	-- [start Whining War]
-"shining"	"shore"	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--
-"mining"	"more|moor"	true	true	false	vc-mining-more rule	vr-mining-more rule	--
-"dining"	"door"	false	true	false	vc-dining-door rule	vr-dining-door rule	--
-"mean"	"muggin"	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--
-"lean"	"luggin"	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--
-"pull"	"pieced"	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--
-"cast"	"cap"	false	true	false	vc-cast-cap rule	vr-cast-cap rule	-- [start Gassed Gap]
-"beaker"	"bustle"	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
-"meeker"	"muscle"	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--
-"wood"	"one"	false	true	false	vc-wood-one rule	vr-wood-one rule	--
-"go"	"gappin"	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--
-"couple"	"caps"	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--
-"lot"	"lord"	false	true	false	vc-lot-lord rule	vr-lot-lord rule	-- [start Airy Isle]
-"hot"	"horde"	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--
-"got"	"gored"	false	true	false	vc-got-gored rule	vr-got-gored rule	--
-"whoa|whoah|woe"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
-"tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start Tarry Tile/Merry Mile]
-"merry"	"mile"	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--
-"bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
-"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [two any-time things]
-"really"	"rolling"	true	false	false	vc-really-rolling rule	vr-really-rolling rule	--
-
 [ this is stuff for beta commands below ]
 
 in-test-loop is a truth state that varies.
@@ -3833,7 +3741,11 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 	continue the action;
 
 to vcp (t - text): [verb conditional print]
-	if vc-dont-print is false, say "[t][line break]";
+	if vc-dont-print is false:
+		if buggin-freeze:
+			say "That's got to be right somewhere, but you can't focus now. When your mind's less scrambled, you'll figure it out.";
+		else:
+			say "[t][line break]";
 
 to vcal (t - text): [verb conditional print, flag already rhymed]
 	now already-rhymed-this is true;
@@ -4566,8 +4478,7 @@ this is the vc-lean-luggin rule:
 		vcal "You already learned lean luggin['].";
 		continue the action;
 	if Dean Duggan is not touchable:
-		say "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
-		clue-later "LEAN LUGGIN";
+		vcp "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
 		continue the action;
 	the rule succeeds;
 
@@ -4728,7 +4639,7 @@ this is the vc-mean-muggin rule:
 		vcal "You already learned mean muggin['].";
 		continue the action;
 	if Dean Duggan is not touchable:
-		say "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		vcp "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
 		clue-later "LEAN LUGGIN";
 		continue the action;
 	the rule succeeds;

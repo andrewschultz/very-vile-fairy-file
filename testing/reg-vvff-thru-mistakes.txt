@@ -932,7 +932,7 @@ You fail to enter a Western with a sidekick.
 
 > card cat
 !Learner needle
-A card catalog certainly repels some folks, but you need something sturdier.
+A card catalog certainly repels some folks, but you have something sturdier.
 > charred chat
 !Learner needle
 No time for scorched-earth conversation, here.
