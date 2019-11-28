@@ -708,7 +708,7 @@ check going west in Fight Funnel:
 	process the drop-snare rule;
 	if Beer Bull is in location of player:
 		if snuck snare is moot:
-			say "You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! The Beer Bull's last words are 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
+			say "You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead, far less potent than whatever horrible alcohol the Beer Bull advertised.[paragraph break]You walk back to Here Hull, where a Gear Gull waits. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
 			solve-bull-chase;
 			the rule succeeds;
 		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
@@ -1001,6 +1001,10 @@ check entering boring boat:
 		move player to Violent Vale;
 		the rule succeeds;
 	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
+	if in-bull-chase is true:
+		say "Oh no! The boring boat shuts itself up as the bull beast gets close. I guess the boat can't take the beast's exciting-ness. The beast seems offended enough to take it out a bit extra on you.";
+		reset-bull-chase;
+		the rule succeeds;
 	if cake cap is not off-stage:
 		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
 		move boring boat to Been Buggin;
@@ -1197,6 +1201,10 @@ to decide whether hull-bull:
 	no;
 
 to reset-bull-chase:
+	if player is in Fight Funnel:
+		if player has zig zag big bag or funnel-to-tunnel is false:
+			say "The Bull Beast seemed slightly claustrophobic. Perhaps you could lure it further. What [if dives ditch is visited]can you do[else]could be[end if] to the west?";
+			continue the action;
 	say "You limp [if player is in Creased Cross]around[else]back to[end if] Creased Cross.";
 	move Beer Bull to Here Hull;
 	move player to Creased Cross;
@@ -1226,7 +1234,22 @@ every turn when in-bull-chase is true: [?? make this so that we track by last-bu
 		reset-bull-chase;
 		the rule succeeds;
 	if Beer Bull is not in location of player:
-		say "You hear the Beer Bull thunder behind you.";
+		if player is in real rear:
+		\	say "The Beer Bull roars at the relative peacefulness of the Real Rear and turns back. While you haven't actually defeated the Beer Bull, you managed to escape a mauling. Perhaps this place will help with an even tougher opponent in the future.";
+			move Beer Bull to Here Hull;
+			now in-bull-chase is false;
+			the rule succeeds;
+		say "The Beer Bull thunders just behind. ";
+		if player is in History Hall:
+			say "The Bull seems out of place here, but it's not particularly bothered by that.";
+		else if player is in Violent Vale and frightening fridge is in Violent Vale:
+			say "Oh no! Between the Beer Bull and the fridge, you feel trapped[if flooring float is touchable], and the float won't help you escape[else if boring boat is touchabke], and you'd get caught boarding the boat[end if].";
+		else if player is in Blinding Blaze:
+			say "[if blaze-ways is true]Bringing a half-bull to a maze is a bad idea without a ball of string. You have none in this game[else]Uh oh. You've trapped yourself with no easy visible way out[end if].";
+		else if player is in Whining War:
+			say "There's nowhere to go from here. The [if shore-shine is true]ex-whiners tremble in fear, not whining, but unable to bring themselves to help you[else]whiners aren't going to help you[end if].";
+		else:
+			say "You need to keep moving, or it will catch you."
 		now bull-from is location of Beer Bull;
 		move Beer Bull to location of player;
 
@@ -5060,6 +5083,10 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 	if player does not have Toe Tappin Row Rappin, the rule fails;
 	if war-sapped is true:
 		vcal "You already discouraged some whining. Bringing it up again might make you the whiny one.";
+		continue the action;
+	if beer bull is touchable:
+		vcp "That might work on people who understand songs and poetry. The Beer Bull does not. You need a stronger way to kill it off.";
+		clue-later "SO SAPPIN";
 		continue the action;
 	if player is not in Whining War:
 		vcp "That's an interesting riff, but it doesn't seem to work here.";
