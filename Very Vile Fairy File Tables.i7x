@@ -301,128 +301,8 @@ False	"You walk around and discover a cabin belonging to someone named Det. Dood
 True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
 
 [leetclue of xxx]
-volume hints for later
 
-[?? see about collapsing the below into rules from the story file proper e.g. vc-can-cull-ceased rule]
-
-[xx4l8r]
-
-this is the can-beast-boss rule:
-	if player has gold guard and gull-guard is true, the rule succeeds;
-	the rule fails.
-
-this is the can-cast-cap rule:
-	if player has cool cap, the rule succeeds;
-	the rule fails.
-
-this is the can-co-capn rule:
-	if jake-fee is true, the rule succeeds;
-	the rule fails;
-
-this is the can-couple-caps rule:
-	if my-hats is 3, the rule succeeds;
-	the rule fails;
-
-this is the can-cull-ceased rule:
-	if healed-here is true, the rule succeeds;
-	the rule fails;
-
-this is the can-deal-dear rule:
-	if felt-fear is true, the rule succeeds;
-	the rule fails.
-
-this is the can-dining-door rule:
-	if war-sapped is true, the rule succeeds;
-	the rule fails;
-
-this is the can-fake-fee rule:
-	if jake-tea is true, the rule succeeds;
-	the rule fails.
-
-this is the can-feel-fear rule:
-	if knelt-yet is true, the rule succeeds;
-	the rule fails.
-
-this is the can-first-fave rule:
-	if screaming skull is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-fit-found rule:
-	if Hit Hound is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-full-feast rule:
-	if cull-ceased is true, the rule succeeds;
-	the rule fails.
-
-this is the can-glean-glows rule:
-	if player has way woke clay cloak, the rule succeeds;
-	the rule fails;
-
-this is the can-go-gappin rule:
-	if Gassed Gap is visited, the rule succeeds;
-	the rule fails;
-
-this is the can-heal-here rule:
-	if least-loss is true and knelt-yet is true, the rule succeeds;
-	the rule fails.
-
-this is the can-least-loss rule:
-	if Bull Beast is in Creased Cross, the rule succeeds;
-	the rule fails.
-
-this is the can-mark-more rule:
-	if dark door is in Stark Store, the rule succeeds;
-	the rule fails;
-
-this is the can-merry-mile rule:
-	if well worn hell horn is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-mining-more rule:
-	if full feast is not moot, the rule fails;
-
-this is the can-mo-mappin rule:
-	if blaze-ways is true, the rule succeeds;
-	the rule fails;
-
-this is the can-moral-mage rule:
-	if player has cage key, the rule succeeds;
-	the rule fails.
-
-this is the can-pull-pieced rule:
-	if full feast is in Creased Cross and dining door is in Whining War and pining poor are in Whining War, the rule succeeds;
-	the rule fails;
-
-this is the can-shining-shore rule:
-	if war-sapped is true, the rule succeeds;
-	the rule fails.
-
-this is the can-show-shield rule:
-	if player has gold guard and mine-more is true, the rule succeeds;
-	the rule fails.
-
-this is the can-smashing-smoke rule:
-	if Y'Old Yard is visited, the rule succeeds;
-	the rule fails;
-
-this is the can-snake-snap rule:
-	if jake-cocapn is true, the rule succeeds;
-	the rule fails;
-
-this is the can-so-sappin rule:
-	if Whining War is visited, the rule succeeds;
-	the rule fails;
-
-this is the can-take-tea rule:
-	if jake-woke is true, the rule succeeds;
-	the rule fails.
-
-this is the can-xean-xuggin rule:
-	if in-so-sad is false and in-way-wrong is false and player is in Been Buggin, the rule succeeds;
-	the rule fails;
-
-[zz4l8r]
+volume miscellaneous hints and rules
 
 this is the trivially false rule: the rule fails;
 this is the trivially true rule: the rule succeeds;
@@ -445,7 +325,7 @@ to say rhyme-display: [pok]
 	else:
 		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
-volume the code
+volume random table code
 
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
