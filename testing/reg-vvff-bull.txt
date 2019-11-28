@@ -44,6 +44,7 @@ The Beer Bull, upset with your lack of action, charges and kicks you around for 
 >e
 >dear dull
 >w
+The Beer Bull thunders just behind. You need to keep moving, or it will catch you.
 >z
 The Beer Bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats back to Here Hull.
 You limp back to Creased Cross.
@@ -120,7 +121,7 @@ Oh no! Between the Beer Bull and the fridge, you feel trapped.
 Oh no! Between the Beer Bull and the fridge, you feel trapped, and the float won't help you escape.
 >z
 
-# test violeent vale with boat and entering
+# test violent vale with boat and entering
 >e
 >boring boat
 >w
@@ -145,11 +146,11 @@ Creased Cross
 >d
 >purloin snare
 >w
-WRONG
+You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
 >undo
 >undo
 >w
-You lead the beast bull into Dives Ditch but it corners you. Yet--you must be close!
+You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
 
 # test knives niche without snare
 >w
@@ -169,7 +170,7 @@ You lead the beast bull into Dives Ditch but it corners you. Yet--you must be cl
 The Bull Beast seemed slightly claustrophobic. Perhaps you could lure it further. What can you do to the west?
 >undo
 >w
-You lead the beast bull into Knives Niche but it corners you. Yet--you must be close!
+You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
 
 # setting the snare
 

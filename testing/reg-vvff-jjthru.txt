@@ -1,10 +1,11 @@
 # reg-vvff-jjthru.txt
 
 ## reg-vvff-jjthru.txt
-## GENERATOR FILE: walkthrough.txt + w2j.py
+## NO GENERATOR FILE, THOUGH I ORIGINALLY GOT THIS FROM THE FULL WALKTHROUGHT.
+## it roughly corresponds to reg-vvff-min-thru.txt.
 
 ## walkthrough with all points, jumping everywhere
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
+** game: /home/andrew/prt/debug-very-vile-fairy-file.gblorb
 ** interpreter: /home/andrew/prt/dfrotz -m
 
 * main-thru
