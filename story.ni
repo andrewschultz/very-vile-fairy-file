@@ -1824,7 +1824,7 @@ to read-laters (wt - a which-think):
 	repeat through table of verb checks:
 		if think-cue entry is true:
 			if idid entry is true:
-				say "DEBUG note--I forgot to clear [w1 entry] [w2 entry] somehow. It would be nice to know how and when this happened.";
+				say "DEBUG note--I forgot to clear [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if] somehow. It would be nice to know how and when this happened.";
 				now think-cue entry is false;
 				next;
 			let pre-bug be whether or not ver-rule entry is vc-mean-muggin rule or ver-rule entry is vc-lean-luggin rule;
@@ -1833,7 +1833,7 @@ to read-laters (wt - a which-think):
 				if pre-bug is true, next;
 				if thought-any is false, say "[line break]";
 				now thought-any is true;
-				say "[if too-distracted]You are still too distracted to firure where and how to[else]You can probably now[end if] try [b][word number 1 in w1 entry in upper case][if there is a w2 entry] [word number 1 in w2 entry in upper case][end if][r].";
+				say "[if too-distracted]You are still too distracted to firure where and how to[else]You can probably now[end if] try [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if][r].";
 				next;
 			if there is no think-advice entry or too-distracted:
 				unless pre-bug is true, next;
@@ -1880,12 +1880,6 @@ to decide whether tried-yet of (ct - text):
 				if the rule succeeded, decide yes;
 	if tried-any is false, say "I tried to check if [ct] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
 	decide no;
-
-to clue-later (ct - text):
-	continue the action; [??]
-
-to clue-zap (ct - text):
-	continue the action;
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
 
@@ -2503,7 +2497,7 @@ this is the store-all-stage-hint rule:
 
 this is the tarry-tile-hint rule:
 	if well worn hell horn is in Tarry Tile:
-		say "You can do something with this location [once-now of can-merry-mile rule] the well worn hell horn is dealt with.";
+		say "You can do something with this location [once-now of vc-merry-mile rule] the well worn hell horn is dealt with.";
 	else if merry-mile is false:
 		say "[one of]The Tarry Tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
 	else:
@@ -3447,6 +3441,10 @@ to up-which (ts - a truth state):
 		up-min;
 		increment cur-bonus
 
+to say first-of-ors of (x - indexed text):
+	replace the regular expression "\|.*" in x with "";
+	say "[x]";
+
 this is the verb-checker rule:
 	let local-ha-half be false;
 	let brightness be false;
@@ -3474,7 +3472,10 @@ this is the verb-checker rule:
 			process the ver-rule entry;
 			unless the rule succeeded:
 				if think-cue entry is false:
-					say "[line break][one of][b]NOTE[r]: this command will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command again saved to [b]THINK[r] for later reference.)[stopping]";
+					let X be indexed text;
+					now X is "[first-of-ors of w1 entry][if there is a w2 entry] [first-of-ors of w2 entry][end if]";
+					let exact-cmd be whether or not the player's command matches the text X, case insensitively;
+					say "[line break][one of][b]NOTE[r]: this command[if exact-cmd is false] (well, an equivalent, as there were alternate solutions)[end if] will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command[if exact-cmd is false] (or a functionally equivalent alternate solution)[end if] again saved to [b]THINK[r] for later reference.)[stopping]";
 					now think-cue entry is true;
 				else:
 					say "[line break]Hmm, that still doesn't quite work here and now. But it will, somewhere, some time.";
@@ -3687,7 +3688,6 @@ to win-the-game:
 	if score is maximum score:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
-	clue-zap "BURY BILE";
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
 	process the notify score changes rule;
@@ -3800,11 +3800,9 @@ this is the vc-beast-boss rule:
 		continue the action;
 	if player does not have gold guard:
 		vcp "You don't feel armed for that, yet.";
-		clue-later "BEAST BOSS";
 		continue the action;
 	if gull-guard is false:
 		vcp "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
-		clue-later "BEAST BOSS";
 		continue the action;
 	the rule succeeds;
 
@@ -3812,7 +3810,6 @@ this is the vr-beast-boss rule:
 	say "A Bull Beast appears to answer your summons. You hope you have done the right thing, as it roughs you up a bit. You'll need to minimize the damage, here!";
 	move Bull Beast to Creased Cross;
 	now need-loss is true;
-	clue-zap "BEAST BOSS";
 	set the pronoun it to Bull Beast;
 
 this is the vc-big-bag rule:
@@ -3841,7 +3838,6 @@ this is the vr-boring-boat rule:
 	say "The flooring float sinks and tips over slightly. Some of its excess cargo falls into the water, never to return. It becomes much leaner and more practical--a boring boat!";
 	moot flooring float;
 	move boring boat to Violent Vale;
-	clue-zap "BURY BILE";
 	set the pronoun it to boring boat;
 
 this is the vc-break-brie rule:
@@ -3879,13 +3875,10 @@ this is the vc-bury-bile rule:
 		if well worn hell horn is moot and merry-mile is true, the rule succeeds;
 		if well worn hell horn is in Tarry Tile:
 			vcp "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
-			clue-later "BURY BILE";
 			continue the action;
 		if merry-mile is false:
 			vcp "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
-			clue-later "BURY BILE";
 			continue the action;
-	clue-later "BURY BILE";
 	if mrlp is Worst Whew:
 		vcp "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.";
 		continue the action;
@@ -3919,7 +3912,6 @@ this is the vc-cast-cap rule:
 			vcp "The [list of gaphats enclosed by the player] aren't quite enough.";
 		else if N is 3:
 			vcp "Wow! Three hats! They would be great to cast! But if only there was a way to combine them into an extra-cool hat you could cast all at once!";
-		clue-later "CAST CAP";
 		continue the action;
 	the rule succeeds;
 
@@ -3928,7 +3920,6 @@ this is the vr-cast-cap rule:
 	moot cool cap;
 	move Reeker Russell to Gassed Gap;
 	phbt Gassed Gap;
-	clue-zap "CAST CAP";
 	set the pronoun him to Reeker Russell;
 
 this is the vc-cleared-clay rule:
@@ -3949,18 +3940,15 @@ this is the vc-co-capn rule:
 		continue the action;
 	if jake is not touchable:
 		vcp "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
-		clue-later "CO CAPN";
 		continue the action;
 	if jake-fee is false:
 		vcp "You haven't (yet) bonded with Jake G. enough for that.";
-		clue-later "CO CAPN";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-co-capn rule:
 	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
 	now jake-cocapn is true;
-	clue-zap "CO CAPN";
 	process the check-sing-max rule;
 
 this is the vc-cool-cap rule:
@@ -3981,7 +3969,6 @@ this is the vc-couple-caps rule:
 			vcp "You need at least one more hat to couple the CAPS.";
 		else:
 			vcp "You have no caps to couple. Maybe one day, though.";
-		clue-later "COUPLE CAPS";
 		continue the action;
 	the rule succeeds;
 
@@ -3992,17 +3979,14 @@ this is the vr-couple-caps rule:
 	moot jerk gel;
 	now printed name of cool cap is "extra cool cap";
 	now extra-cool-cap is true;
-	clue-zap "COUPLE CAPS";
 
 this is the vc-cull-ceased rule:
 	if Bull Beast is off-stage, the rule fails;
 	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
 	if player is not in Creased Cross:
-		clue-later "CULL CEASED";
 		vcp "You need to go back to Creased Cross.";
 		continue the action;
 	if healed-here is false:
-		clue-later "CULL CEASED";
 		vcp "You need to find a way to restore your health.";
 		continue the action;
 	if Bull Beast is boring:
@@ -4015,7 +3999,6 @@ this is the vr-cull-ceased rule:
 	now cull-ceased is true;
 	now Bull Beast is boring; [?? what if dead]
 	now cht of Bull Beast is leteq; [Bull Beast->full feast]
-	clue-zap "CULL CEASED";
 
 this is the vc-dark-door rule:
 	if player is not in Stark Store, the rule fails;
@@ -4032,7 +4015,6 @@ this is the vr-dark-door rule:
 this is the vc-deal-dear rule:
 	if player is not in Real Rear, the rule fails;
 	if felt-fear is false:
-		clue-later "DEAL DEAR";
 		vcp "You haven't found anything you need to deal with[seer-sez].";
 		continue the action;
 	if cage key is not off-stage:
@@ -4045,7 +4027,6 @@ this is the vr-deal-dear rule:
 	now player has cage key;
 	phbt Real Rear;
 	phbt steel steer;
-	clue-zap "DEAL DEAR";
 
 this is the vc-dear-dull rule:
 	if player is not in Here Hull, the rule fails;
@@ -4074,12 +4055,10 @@ this is the vr-dimd rule:
 this is the vc-dining-door rule:
 	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
 	if war-sapped is false:
-		clue-later "DINING DOOR";
 		vcp "You can't make a dining door with all this whining going on!";
 		continue the action;
 	if shore-shine is false:
 		vcp "You hear a rumbling, but it's still too dingy here for anything nice like a dining door.";
-		clue-later "DINING DOOR";
 		continue the action;
 	if dine-door is true:
 		vcal "You already did.";
@@ -4090,7 +4069,6 @@ this is the vr-dining-door rule:
 	say "Up from the ground, a dining door rumbles and appears. From behind, you hear a cheery song: 'Merry mood, fairy food, dairy dude.' You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
 	now dine-door is true;
 	move dining door to Whining War;
-	clue-zap "DINING DOOR";
 	phbt Whining War;
 	set the pronoun it to dining door;
 
@@ -4116,11 +4094,9 @@ this is the vc-fake-fee rule:
 	if jake is not touchable, the rule fails;
 	if jake-woke is false:
 		vcp "Maybe when Jake is awake.";
-		clue-later "FAKE FEE";
 		continue the action;
 	if jake-tea is false:
 		vcp "But Jake has given you nothing of value yet.";
-		clue-later "FAKE FEE";
 		continue the action;
 	if jake-fee is true:
 		vcal "That's over. Time to work with Jake!";
@@ -4132,7 +4108,6 @@ this is the vr-fake-fee rule:
 	now jake-fee is true;
 	now Jake G is optional;
 	now cht of Jake G is letplus; [->break brie]
-	clue-zap "FAKE FEE";
 
 this is the vc-fall-free rule:
 	if player is not in Fun Fen, the rule fails;
@@ -4151,7 +4126,6 @@ this is the vr-fall-free rule:
 this is the vc-feel-fear rule:
 	if player is not in Real Rear, the rule fails;
 	if knelt-yet is false:
-		clue-later "FEEL FEAR";
 		vcp "Fear isn't something you can, or want to, force[seer-sez].";
 		continue the action;
 	if felt-fear is true:
@@ -4162,7 +4136,6 @@ this is the vc-feel-fear rule:
 this is the vr-feel-fear rule:
 	say "You let yourself feel fear, both of physical harm and of being unable to figure a way to any secret areas. Admitting to this fear helps a bit, but somehow, you have to put your fear aside.";
 	now felt-fear is true;
-	clue-zap "FEEL FEAR";
 
 this is the vc-find-fault rule:
 	if player is not in Vined Vault, the rule fails;
@@ -4186,7 +4159,6 @@ this is the vc-first-fave rule:
 		vcal "The Curst Cave is already a cheerier place.";
 		continue the action;
 	if screaming skull is in Curst Cave:
-		clue-later "FIRST FAVE";
 		vcp "You can't like anything with that screaming skull around!";
 		continue the action;
 	the rule succeeds;
@@ -4196,7 +4168,6 @@ this is the vr-first-fave rule:
 	now first-fave is true;
 	move tool tap to Curst Cave;
 	moot worst wave;
-	clue-zap "FIRST FAVE";
 	set the pronoun it to tool tap;
 
 this is the vc-fit-found rule:
@@ -4206,14 +4177,12 @@ this is the vc-fit-found rule:
 		continue the action;
 	if hit hound is in Pit Pound:
 		vcp "Maybe later, but you can't focus on that with the hit hound around.";
-		clue-later "FIT FOUND";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-fit-found rule:
 	say "You feel comfortable here now. Comfortable enough to enter and leave as you please. Woohoo!";
 	now found-fit is true;
-	clue-zap "FIT FOUND";
 	phbt Pit Pound;
 
 this is the vc-flim-flam rule:
@@ -4221,7 +4190,6 @@ this is the vc-flim-flam rule:
 	if me-minded is false:
 		process the trimtramcmd rule;
 		vcp "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
-		clue-later "FLIM FLAM";
 		continue the action;
 	the rule succeeds;
 
@@ -4230,13 +4198,11 @@ this is the vr-flim-flam rule:
 	say "That does it! The tram moves off to a more open place...";
 	process the trimtramcmd rule;
 	move the player to Fun Fen;
-	clue-zap "FLIM FLAM";
 	phbt Trim Tram;
 
 this is the vc-full-feast rule:
 	if Bull Beast is not in location of player, the rule fails;
 	if Bull Beast is not boring:
-		clue-later "FULL FEAST";
 		vcp "That should work. It might work better if the Bull Beast were incapacitated.";
 		continue the action;
 	the rule succeeds;
@@ -4245,7 +4211,6 @@ this is the vr-full-feast rule:
 	say "BOOM! You managed to make a full feast of the Bull Beast. But there's a lot of it. It'll be hard to move all at once.";
 	moot Bull Beast;
 	move full feast to location of player;
-	clue-zap "FULL FEAST";
 	set the pronoun it to full feast;
 
 this is the vc-get-good rule:
@@ -4278,7 +4243,6 @@ this is the vc-glean-glows rule:
 	if player is not in History Hall or mean moe's is not in History Hall, the rule fails;
 	if player does not have clay cloak:
 		vcp "That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.";
-		clue-later "GLEAN GLOWS";
 		continue the action;
 	the rule succeeds;
 
@@ -4287,7 +4251,6 @@ this is the vr-glean-glows rule:
 	moot way woke clay cloak;
 	now player has clashing cloak;
 	moot Mean Moe's Clean Clothes;
-	clue-zap "GLEAN GLOWS";
 	set the pronoun it to clashing cloak;
 
 this is the vc-glow-glad rule:
@@ -4305,7 +4268,6 @@ this is the vc-go-gappin rule:
 	if player does not have Toe Tappin, the rule fails;
 	if player is not in Gassed Gap:
 		vcp "Hm! [Toe] could be tweaked like that to be useful in the right place[if Gassed Gap is visited], like the Gassed Gap[end if].";
-		clue-later "GO GAPPIN";
 		continue the action;
 	if gap-go is true:
 		vcal "The song already worked.";
@@ -4315,13 +4277,11 @@ this is the vc-go-gappin rule:
 this is the vr-go-gappin rule:
 	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
 	now gap-go is true;
-	clue-zap "GO GAPPIN";
 	process the check-sing-max rule;
 
 this is the vc-got-gored rule:
 	if player is not in Airy Isle or Bot Board is moot, the rule fails;
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, the rule succeeds;
-	clue-later "GOT GORED";
 	if Lot Lord is off-stage and Hot Horde is off-stage:
 		vcp "That sounds right, but it would just be your epitaph right now. With some organized help, though, it could be a potent rallying cry. You save the thought for later.";
 		continue the action;
@@ -4341,7 +4301,6 @@ this is the vr-got-gored rule:
 	moot Bot Board;
 	wall-add Airy Isle;
 	move go gate to Airy Isle;
-	clue-zap "GOT GORED";
 	set the pronoun it to go gate;
 
 this is the vc-green-grass rule:
@@ -4384,11 +4343,9 @@ this is the vc-heal-here rule:
 		vcal "No need to heal further.";
 		continue the action;
 	if least-loss is false:
-		clue-later "HEAL HERE";
 		vcp "You don't have anything to heal from, yet[seer-sez].";
 		continue the action;
 	if knelt-yet is false:
-		clue-later "HEAL HERE";
 		vcp "You have not shown the Ceiling Seer the proper respect, yet.";
 		continue the action;
 	the rule succeeds;
@@ -4396,7 +4353,6 @@ this is the vc-heal-here rule:
 this is the vr-heal-here rule:
 	say "You call on the Ceiling Seer once more. You worry you may hear 'Gee, Ill! Jeer,' but your faith is rewarded as you feel rejuvenated!";
 	now healed-here is true;
-	clue-zap "HEAL HERE";
 	phbt ceiling seer;
 	if appeal-appear is false, phbt peeling pier;
 
@@ -4485,13 +4441,11 @@ this is the vc-lean-luggin rule:
 this is the vr-lean-luggin rule:
 	say "You ask Dean Duggan for help with carrying large awkward things.";
 	now lean-lugged is true;
-	clue-zap "LEAN LUGGIN";
 	lean-and-mean;
 
 this is the vc-least-loss rule:
 	if player is not in Creased Cross, the rule fails;
 	if Bull Beast is off-stage:
-		clue-later "LEAST LOSS";
 		vcp "Not yet. You need to be in a fighting situation.";
 		continue the action;
 	if least-loss is true:
@@ -4503,7 +4457,6 @@ this is the vr-least-loss rule:
 	now need-loss is false;
 	now least-loss is true;
 	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. As you stumble back to the familiar, safe Fun Fen, the Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
-	clue-zap "LEAST LOSS";
 	phbt Creased Cross;
 	bold-new-room Fun Fen;
 
@@ -4601,7 +4554,6 @@ this is the vr-make-map rule:
 this is the vc-mark-more rule:
 	if player is not in Stark Store, the rule fails;
 	if dark door is off-stage:
-		clue-later "MARK MORE";
 		vcp "That'd work, if there was something to mark. There isn't, yet.";
 		continue the action;
 	if dark door is moot:
@@ -4614,7 +4566,6 @@ this is the vr-mark-more rule:
 	move weird way to Stark Store;
 	moot dark door;
 	phbt Stark Store;
-	clue-zap "MARK MORE";
 
 this is the vc-mash-map rule:
 	if player is not in Po' Pit, the rule fails;
@@ -4622,7 +4573,6 @@ this is the vc-mash-map rule:
 	if grit-grown is false:
 		process the ashap rule;
 		vcp "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
-		clue-later "MASH MAP";
 		continue the action;
 	the rule succeeds;
 
@@ -4631,7 +4581,6 @@ this is the vr-mash-map rule:
 	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
 	process the ashap rule;
 	move player to Trim Tram;
-	clue-zap "MASH MAP";
 
 this is the vc-mean-muggin rule:
 	if player is not in Been Buggin, the rule fails;
@@ -4640,14 +4589,12 @@ this is the vc-mean-muggin rule:
 		continue the action;
 	if Dean Duggan is not touchable:
 		vcp "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
-		clue-later "LEAN LUGGIN";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-mean-muggin rule:
 	say "You try some aggressive facial features. Dean Duggan helps you get things right.";
 	now mean-mugged is true;
-	clue-zap "MEAN MUGGIN";
 	lean-and-mean;
 
 this is the vc-meeker-muscle rule:
@@ -4670,18 +4617,15 @@ this is the vc-merry-mile rule:
 		continue the action;
 	if player is in Airy Isle:
 		vcp "[if Bot Board is moot]You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead[else]Hard to be happy with the Bot Board around[end if].";
-		clue-later "MERRY MILE";
 		continue the action;
 	if well worn hell horn is not moot:
 		vcp "Not with the well worn hell horn making those un-merry noises.";
-		clue-later "MERRY MILE";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-merry-mile rule:
 	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
 	now merry-mile is true;
-	clue-zap "MERRY MILE";
 	now cht of Tarry Tile is partminus; [Tarry Tile -> bury bile]
 
 this is the vc-mind-me rule:
@@ -4700,7 +4644,6 @@ this is the vc-mining-more rule:
 	if player is not in Whining War, the rule fails;
 	if full feast is not moot:
 		vcp "You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
-		clue-later "MINING MORE";
 		continue the action;
 	if pining poor are moot:
 		vcal "Don't get greedy!";
@@ -4712,7 +4655,6 @@ this is the vr-mining-more rule:
 	moot dining door;
 	say "You help the pining poor find a moor to mine more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
 	moot pining poor;
-	clue-zap "MINING MORE";
 	set the pronoun it to gold guard;
 
 this is the vc-mo-mappin rule:
@@ -4722,18 +4664,15 @@ this is the vc-mo-mappin rule:
 		continue the action;
 	if player is not in Blinding Blaze:
 		vcp "Maybe some other place could use mapping, but not here.";
-		clue-later "MO MAPPIN";
 		continue the action;
 	if blaze-ways is false:
 		vcp "The blaze isn't mappable, but maybe something that replaces it is.";
-		clue-later "MO MAPPIN";
 		continue the action;
 	if stuck stair is in Blinding Blaze:
 		vcal "You're already in the mood to map. No need to overdo it.";
 		continue the action;
 	if player does not have Toe Tappin Row Rappin:
 		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
-		clue-later "MO MAPPIN";
 		continue the action;
 	the rule succeeds;
 
@@ -4741,7 +4680,6 @@ this is the vr-mo-mappin rule:
 	say "Having a catchy tune like Toe Tappin Row Rappin in your head certainly helps you with tiring, repetitive activities such as mapping. And once you see the way through the maze, you don't forget it. At the end of the maze, there is a stuck stair. As you approach it, the maze walls collapse, and ... you find yourself very near the entrance. Convenient!";
 	move stuck stair to Blinding Blaze;
 	now maze-mapped is true;
-	clue-zap "MO MAPPIN";
 	moot Minding Maze;
 	process the check-sing-max rule;
 	set the pronoun it to stuck stair;
@@ -4749,7 +4687,6 @@ this is the vr-mo-mappin rule:
 this is the vc-moral-mage rule:
 	if coral cage is not touchable, the rule fails;
 	if player does not have cage key:
-		clue-later "MORAL MAGE";
 		vcp "That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.";
 		continue the action;
 	the rule succeeds;
@@ -4760,7 +4697,6 @@ this is the vr-moral-mage rule:
 	moot cage key;
 	phbt Store All Stage;
 	now player has Here Hip Queer Quip;
-	clue-zap "MORAL MAGE";
 	set the pronoun it to Here Hip Queer Quip;
 
 this is the vc-mystery-mall rule:
@@ -4845,14 +4781,11 @@ this is the vc-pull-pieced rule:
 	if full feast is not in Creased Cross and Bull Beast is not in Creased Cross, the rule fails;
 	if Bull Beast is in Creased Cross:
 		vcp "[if cull-ceased is true]The Bull Beast could be pulled, but in its current form, it wouldn't be usefu[else]You'd have to defeat the Bull Beast first[end if].";
-		clue-later "PULL PIECED";
 		continue the action;
 	if shore-shine is false:
 		vcp "You're not sure where you could pull the full feast to, yet.";
-		clue-later "PULL PIECED";
 		continue the action;
 	if dine-door is false:
-		clue-later "PULL PIECED";
 		vcp "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
 		continue the action;
 	the rule succeeds;
@@ -4865,7 +4798,6 @@ this is the vr-pull-pieced rule:
 	if wild weed is off-stage, max-down;
 	moot dining door;
 	if player is not in Whining War, bold-new-room Whining War;
-	clue-zap "PULL PIECED";
 
 this is the vc-really-rolling rule:
 	if rolling-yet is false, the rule succeeds;
@@ -4893,7 +4825,6 @@ this is the vc-shining-shore rule:
 		vcal "You already got (t)here.";
 		continue the action;
 	if war-sapped is false:
-		clue-later "SHINING SHORE";
 		vcp "It could be that way. But you need to get rid of the whining first.";
 		continue the action;
 	the rule succeeds;
@@ -4903,17 +4834,14 @@ this is the vr-shining-shore rule:
 	now cht of Whining War is letminus; [Shining Shore -> dining door] [Shining Shore -> mining more]
 	now shore-shine is true;
 	move pining poor to Whining War;
-	clue-zap "SHINING SHORE";
 	set the pronoun them to Poor Ponder;
 
 this is the vc-show-shield rule:
 	if player is not in Foe Field, the rule fails;
 	if gold guard is off-stage:
-		clue-later "SHOW SHIELD";
 		vcp "That seems right, but you have nothing that would guard you effectively. Maybe later.";
 		continue the action;
 	if mine-more is false:
-		clue-later "SHOW SHIELD";
 		vcp "Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements[if gull-guard is true] even beyond what the gull guard gave[end if].";
 		continue the action;
 	if gold guard is moot:
@@ -4925,7 +4853,6 @@ this is the vr-show-shield rule:
 	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down, and the YO YIELD vanishes. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You can go north now.";
 	now shield-shown is true;
 	moot gold guard;
-	clue-zap "SHOW SHIELD";
 	phbt Foe Field So Sealed;
 
 this is the vc-silent-sail rule:
@@ -4957,11 +4884,9 @@ this is the vc-smashing-smoke rule:
 	if player does not have clashing cloak, the rule fails;
 	if Beer Bull is in location of player:
 		vcp "That's not enough to distract the Beer Bull for good. The Beer Bull can smell you.";
-		clue-later "SMASHING SMOKE";
 		continue the action;
 	if player is not in Y'Old Yard:
 		vcp "Hmm, maybe that'd make a useful disturbance elsewhere, with someone to distract, but not here.";
-		clue-later "SMASHING SMOKE";
 		continue the action;
 	the rule succeeds;
 
@@ -4971,18 +4896,15 @@ this is the vr-smashing-smoke rule:
 	moot clashing cloak;
 	now player has cold card;
 	now player has gold guard;
-	clue-zap "SMASHING SMOKE";
 	set the pronoun it to gold guard;
 
 this is the vc-snake-snap rule:
 	if player is not in Lake Lap, the rule fails;
 	if jake-cocapn is false:
 		vcp "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
-		clue-later "SNAKE SNAP";
 		continue the action;
 	if jake-map is false:
 		vcp "There might be a snake here. But you'd have to find it, first.";
-		clue-later "SNAKE SNAP";
 		continue the action;
 	the rule succeeds;
 
@@ -4994,7 +4916,6 @@ this is the vr-snake-snap rule:
 	move boring boat to Violent Vale;
 	bold-new-room Violent Vale;
 	phbt Lake Lap;
-	clue-zap "SNAKE SNAP";
 	set the pronoun it to cake cap;
 
 this is the vc-so-sappin rule: [?? we need to make sure this works okay]
@@ -5004,18 +4925,15 @@ this is the vc-so-sappin rule: [?? we need to make sure this works okay]
 		continue the action;
 	if beer bull is touchable:
 		vcp "That might work on people who understand songs and poetry. The Beer Bull does not. You need a stronger way to kill it off.";
-		clue-later "SO SAPPIN";
 		continue the action;
 	if player is not in Whining War:
 		vcp "That's an interesting riff, but it doesn't seem to work here.";
-		clue-later "SO SAPPIN";
 		continue the action;
 	the rule succeeds;
 
 this is the vr-so-sappin rule:
 	say "Amazingly, as you filk [Toe], the whining grows less. People realize they're not being productive at all. It becomes much quieter here. Your passive-aggressiveness has trumped others[']! Hooray!";
 	now war-sapped is true;
-	clue-zap "SO SAPPIN";
 	process the check-sing-max rule;
 
 this is the vc-soft-sand rule:
@@ -5074,7 +4992,6 @@ this is the vc-take-tea rule:
 	if jake is not touchable, the rule fails;
 	if jake-woke is false:
 		vcp "Maybe when Jake is awake.";
-		clue-later "TAKE TEA";
 		continue the action;
 	if jake-tea is true:
 		vcal "Don't get greedy. You have the sustenance needed to work with Jake G.";
@@ -5084,7 +5001,6 @@ this is the vc-take-tea rule:
 this is the vr-take-tea rule:
 	say "You and Jake have a brief snack. It helps bring you together. But he looks awkwardly at you. He guesses he should expect payment, but he doesn't really want it.";
 	now jake-tea is true;
-	clue-zap "TAKE TEA";
 
 this is the vc-tell-torn rule:
 	if well worn hell horn is not touchable, the rule fails;
