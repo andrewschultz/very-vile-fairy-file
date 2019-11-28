@@ -1736,9 +1736,9 @@ to decide which number is toe-clued:
 
 to say toe-poss:
 	now vc-dont-print is true;
-	let tc be toe-clues;
+	let tc be toe-clued;
 	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if]";
-	if toe-clued > 0, say ". You also found [if toe-clued > 1]some riffs[else]a riff[end] that will be useful later";
+	if toe-clued > 0, say ". You also found [if toe-clued > 1]some riffs[else]a riff[end if] that will be useful later";
 	now vc-dont-print is false;
 
 to decide which number is carried-fungible:
@@ -3454,7 +3454,8 @@ this is the verb-checker rule:
 		let my-count be 0;
 		now vc-dont-print is true;
 		process the ver-rule entry;
-		if the rule failed, next;
+		let rb-out be the outcome of the rulebook;
+		if rb-out is the unavailable outcome, next;
 		now vc-dont-print is false;
 		if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
 		if there is a w2 entry:
@@ -3469,9 +3470,10 @@ this is the verb-checker rule:
 			else if my-count is 2:
 				now wfull-fail is true;
 		if my-count >= 2:
-			if debug-state is true, say "DEBUG: processing [ver-rule entry].";
+[			if debug-state is true, say "DEBUG: processing [ver-rule entry], outcome [if rb-out is unavailable outcome]UA[else if rb-out is not-yet outcome]NOT YET[else if rb-out is already-done outcome]already done[else]rady[end if].";]
 			process the ver-rule entry;
-			unless the rule succeeded:
+			if rb-out is the already-done outcome, the rule succeeds;
+			if rb-out is the not-yet outcome:
 				if think-cue entry is false:
 					let X be indexed text;
 					now X is "[first-of-ors of w1 entry][if there is a w2 entry] [first-of-ors of w2 entry][end if]";

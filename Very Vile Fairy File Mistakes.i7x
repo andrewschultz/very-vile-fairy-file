@@ -411,7 +411,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 table of cool cap tool tap guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cruel crap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"But you got rid of the skull. Also, swearing is naughty." [start Curst Cave]
-"youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Is that an invitation to drone on endlessly? Why, thank you."
+"youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!"
 "pool pap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You want something nice and useful to come out of the tap, not ... that."
 "mule map"	cap-or-tap rule	false	4	3	need-cool-cap rule	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
 "rule rap/wrap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You need something more substantial to come out of the cool cap."
