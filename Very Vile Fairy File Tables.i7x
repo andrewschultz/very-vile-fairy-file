@@ -105,6 +105,7 @@ randtxt
 "Pay, Pow, Hey, How"
 "Stern Stable Turn Table"
 "War Whistles, More Missiles"
+"You'll Yell Woo Well"
 
 table of miscellaneous people [xxpeople]
 randtxt

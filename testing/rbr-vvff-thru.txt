@@ -1871,6 +1871,9 @@ COUPLE CAPS
 > coughed canned
 Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+> offed and
+Learner needle
+You try for an impressive silence, but nobody is impressed.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -1918,6 +1921,9 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 > coughed canned
 !Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+> offed and
+!Learner needle
+You try for an impressive silence, but nobody is impressed.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -2470,6 +2476,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > snake snap
 by one point
+Silent Sail
+
+@mis
+> fake fap
+!Learner needle
+You make a rude gesture, for whatever good it does.
 
 @ha
 > snake snap
@@ -2498,6 +2510,16 @@ Been Buggin
 >undo
 
 > enter boat
+
+==t2
+>lean luggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>think
+LEAN LUGGIN
+>mean muggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>think
+MEAN MUGGIN
 
 @mis
 > pay prong
@@ -2566,6 +2588,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > glow glad
 by one point
+
+==t2
+>think
+You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
+You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 
 ==t4
 >s
@@ -2711,6 +2738,12 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 > bumped buster
 by one point
 
+==t2
+>think
+!LEAN LUGGIN
+!MEAN MUGGIN
+
+
 @ha
 > bumped buster
 !by one point
@@ -2797,20 +2830,20 @@ SMASHING SMOKE
 @ha
 > zhistory hall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 > history zhall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 
 > history hall
 
 @ha
 >zmystery mall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 >mystery zmall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 > history hall
 !by one point
 You already flipped back to History Hall.
