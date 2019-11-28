@@ -273,7 +273,7 @@ table of Soft Sand guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "coughed canned"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try to suppress a cough while avoiding any sudden downturn in fortune."
 "scoffed scanned"	in-soft-sand rule	false	4	4	need-loft-land rule	"[Soft Sand] isn't much to look at, but it's not worth scorn."
-"offed/oft and"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try for an impressive silence, but nobody is impressed."
+"offed/oft and"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try for an impressive anticipatory silence, but nobody is around to appreciate it."
 
 table of Stark Store guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt

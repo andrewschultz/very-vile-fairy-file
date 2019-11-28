@@ -41,18 +41,25 @@ my_proj = i7.dir2proj(os.getcwd(), to_abbrev = True)
 
 if not my_proj or my_proj == 'vv': my_proj = "vvff"
 
+ignorable_commands = [ 'gonear', 'n', 's', 'e', 'w', 'u', 'd', 'undo', 'cs' ]
+
 quote_col = 6
+leet_rule_col = quote_col - 1
 
 if my_proj == "qq":
     my_proj = "qqnn"
     needed_text = "sheep sheet"
     quote_col += 1
 
-leet_rule_col = quote_col - 1
-
 mist_file = i7.hdrfile(my_proj, 'mi')
 
 max_count = 15
+
+def whole_command(my_cmd):
+    return re.sub("^> *", "", my_cmd.strip().lower())
+
+def first_word(my_cmd):
+    return temp = re.sub("#.*", "", whole_command(my_cmd)).split(' ')[0]
 
 def valid_leet_rule(x):
     return x != '--' and x != 'llp-trivial rule'
@@ -209,9 +216,9 @@ with open(rbr_file) as file:
                 print("Possible errant cluing message line {}: make sure an @mis is above it.".format(line_count))
             continue
         if not line.startswith(">"): continue
+        if first_word(line) in ignorable_commands: continue
         if in_cs_check: continue
-        line_cmd = re.sub("^> *", "", line.lower().strip())
-        if line_cmd == 'undo' or line_cmd.startswith('cs'): continue
+        line_cmd = whole_command(line)
         if line_cmd not in need_mistake_test:
             if next_cmd_pass:
                 next_cmd_pass = False

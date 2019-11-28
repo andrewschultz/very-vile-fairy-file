@@ -8,7 +8,7 @@ the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 volume includes
 
-the release number is 2.
+the release number is 3.
 
 release along with a website.
 
@@ -3515,7 +3515,7 @@ this is the verb-checker rule:
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you mustve mis-thought a word[else if brightness is false], but dimly[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if].";
 		the rule succeeds;
 
 already-rhymed-this is a truth state that varies.
