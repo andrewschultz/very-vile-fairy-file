@@ -34,6 +34,30 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+> zreally rolling
+DEBUG: vc-really-rolling rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner, but dimly.
+> really zrolling
+DEBUG: vc-really-rolling rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner, but dimly.
+
+>really rolling
+by one point
+
+> zreally rolling
+!DEBUG: vc-really-rolling rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+> really zrolling
+!DEBUG: vc-really-rolling rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly.
+>really rolling
+!by one point
+You already guessed the significance of my pen name.
+
+>really rolling
+!by one point
+You already guessed the significance of my pen name.
+
 > big bag
 by one point
 
@@ -67,7 +91,7 @@ by one point
 
 > gift giver
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's.
 
 > zgift giver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
@@ -109,7 +133,7 @@ by one point
 
 > green grass
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zgreen grass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
@@ -151,7 +175,7 @@ by one point
 
 > mash map
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zmash map rule
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
@@ -193,7 +217,7 @@ by one point
 
 > flim flam
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zflim flam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
@@ -351,7 +375,7 @@ by one point
 
 > dive deep
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zdive deep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
@@ -372,7 +396,7 @@ by one point
 
 > paper pile
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zpaper pile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
@@ -393,7 +417,7 @@ by one point
 
 > backed binder
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zbacked binder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
@@ -527,7 +551,7 @@ by one point
 
 > lots lame
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zlots lame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
@@ -555,7 +579,7 @@ You already said HO HAPPEN.
 
 > dimd
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
@@ -641,7 +665,7 @@ by one point
 
 > hard hat
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zhard hat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
@@ -700,6 +724,12 @@ You're already on the Loft Land.
 You're already on the Soft Sand.
 > undo
 > undo
+> zsoft sand
+DEBUG: vc-soft-sand rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+> soft zsand
+DEBUG: vc-soft-sand rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
 
 > zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
@@ -722,7 +752,7 @@ by one point
 
 > dreaming dull
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zdreaming dull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
@@ -743,7 +773,7 @@ by one point
 
 > first fave
 !by one point
-The curst cave is already a cheerier place.
+The Curst Cave is already a cheerier place.
 
 > zfirst fave rule
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
@@ -764,7 +794,7 @@ by one point
 
 > cool cap
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zcool cap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
@@ -810,7 +840,7 @@ by one point
 
 > brightening bridge
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zbrightening bridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
@@ -979,10 +1009,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > snake snap
 by one point
+Silent Sail
 
 > snake snap
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zsnake snap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
@@ -1025,7 +1056,7 @@ by one point
 
 > glow glad
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zglow glad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
@@ -1074,10 +1105,10 @@ by one point
 
 > lean luggin
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 > mean muggin
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zlean luggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
@@ -1098,7 +1129,7 @@ by one point
 
 > bumped buster
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
@@ -1125,7 +1156,7 @@ by one point
 
 > glean glows
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zglean glows rule
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
@@ -1134,8 +1165,21 @@ This isn't something you need to do here. VERBS has a list of standard verbs.
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+> zhistory hall
+DEBUG: vc-history-hall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+> history zhall
+DEBUG: vc-history-hall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+
 > history hall
 
+>zmystery mall
+DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+>mystery zmall
+DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 > history hall
 !by one point
 You already flipped back to History Hall.
@@ -1152,7 +1196,7 @@ by one point
 
 > youre yonder
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zyoure yonder rule
 !DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
@@ -1175,7 +1219,7 @@ by one point
 
 > smashing smoke
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
@@ -1249,7 +1293,7 @@ by one point
 
 > plain pleasant
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zplain pleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
@@ -1272,7 +1316,7 @@ by one point
 
 > moral mage
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zmoral mage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
@@ -1434,7 +1478,7 @@ by one point
 
 > knives niche
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zknives niche rule
 !DEBUG: vc-knives-niche rule tipped off the HA HALF button.
@@ -1530,18 +1574,6 @@ The HA HALF button lights up on your Leet Learner.
 > least loss
 by one point
 
-> least loss
-!by one point
-You already minimized your losses. Time to be more aggressive.
-
-> zleast loss rule
-!DEBUG: vc-least-loss rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-> least zloss rule
-!DEBUG: vc-least-loss rule tipped off the HA HALF button.
-#note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
-#!The HA HALF button lights up on your Leet Learner.
-
 > zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1612,8 +1644,20 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+> least loss
+!by one point
+You already minimized your losses. Time to be more aggressive.
+
 > cull ceased
 by one point
+
+> zleast loss rule
+!DEBUG: vc-least-loss rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> least zloss rule
+!DEBUG: vc-least-loss rule tipped off the HA HALF button.
+#note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
+#!The HA HALF button lights up on your Leet Learner.
 
 > cull ceased
 !by one point
@@ -1638,7 +1682,7 @@ by one point
 
 > full feast
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zfull feast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
@@ -1819,7 +1863,7 @@ by one point
 
 > couple caps
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zcouple caps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
@@ -1911,7 +1955,7 @@ by one point
 
 > wood one
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zwood one rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
@@ -1976,7 +2020,7 @@ by one point
 
 > got gored
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zgot gored rule
 !DEBUG: vc-got-gored rule tipped off the HA HALF button.
@@ -1997,7 +2041,7 @@ by one point
 
 > whoa wait
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > zwhoa wait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
@@ -2018,7 +2062,7 @@ by one point
 
 > tell torn
 !by one point
-This isn't something you need to do here. VERBS has a list of standard verbs.
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 > ztell torn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.

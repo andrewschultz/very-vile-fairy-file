@@ -176,6 +176,7 @@ by one point
 
 > snake snap
 by one point
+Silent Sail
 
 > enter boat
 

@@ -105,6 +105,7 @@ randtxt
 "Pay, Pow, Hey, How"
 "Stern Stable Turn Table"
 "War Whistles, More Missiles"
+"You'll Yell Woo Well"
 
 table of miscellaneous people [xxpeople]
 randtxt
@@ -125,6 +126,7 @@ randtxt
 "Sure-Shank Burbank"
 "Trot Trice, Not-Nice Lot Lice"
 "Wig Wearin['] Big Baron"
+"Will-Work Bill Burke"
 "Work-Will Kirk Kill"
 "Would-Whirl Bud Burrell"
 
@@ -150,6 +152,7 @@ randtxt
 table of vvff books [xxbooks]
 randtxt
 "Ache or Make More Lake Lore"
+"Bane, Bones, Stain Stones[r], by Jane Jones"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
@@ -176,7 +179,6 @@ randtxt
 "Near Null Fearful"
 "Oh, Trait So Straight"
 "One Wet Sunset"
-"Bane, Bones, Stain Stones[r], by Jane Jones"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
 "Self Centered Elf Entered"
 "Silly Signs[r], by Willy Wines and Tillie Tines"
@@ -197,40 +199,42 @@ True	"You walk around and notice a distasteful small puddle where a pet peed, th
 [leetclue of xxx]
 volume hints for later
 
-table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
+table of forlaters
 cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you're armed better."
-"BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
-"CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
-"CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
-"COUPLE CAPS"	false	can-couple-caps rule	false	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of can-couple-caps rule] you've got enough caps to couple."
-"CULL CEASED"	false	can-cull-ceased rule	false	"You should be able to say [b][cul-lul][r] [once-now of can-cull-ceased rule] you're back to full strength."
-"DEAL DEAR"	false	can-deal-dear rule	false	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
-"DINING DOOR"	false	can-dining-door rule	false	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
-"FAKE FEE"	false	can-fake-fee rule	false	"You could give Jake G. a [b]FAKE FEE[r] [once-now of can-fake-fee rule] Jake G. has given you something of value."
-"FEEL FEAR"	false	can-feel-fear rule	false	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
-"FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
-"FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
+"BEAST BOSS"	false	vc-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of vc-beast-boss rule] you're armed better."
+"BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
+"CAST CAP"	false	vc-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of vc-cast-cap rule] rule you have a worthy one."
+"CO CAPN"	false	vc-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
+"COUPLE CAPS"	false	vc-couple-caps rule	false	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
+"CULL CEASED"	false	vc-cull-ceased rule	false	"You should be able to say [b][cul-lul][r] [once-now of vc-cull-ceased rule] you're back to full strength."
+"DEAL DEAR"	false	vc-deal-dear rule	false	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of vc-deal-dear rule] you have something you need to deal with."
+"DINING DOOR"	false	vc-dining-door rule	false	"You should be able to make a [b]DINING DOOR[r] [once-now of vc-dining-door rule] the Whining War has calmed down a bit."
+"FAKE FEE"	false	vc-fake-fee rule	false	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
+"FEEL FEAR"	false	vc-feel-fear rule	false	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of vc-feel-fear rule] you have help from above, it will work."
+"FIRST FAVE"	false	vc-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of vc-first-fave rule] the screaming skull is gone."
+"FIT FOUND"	false	vc-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of vc-fit-found rule] you've gotten rid of the Hit Hound."
 "FLIM FLAM"	false	vc-flim-flam rule	false	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of can-full-feast rule] it's been vanquished."
-"GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
-"GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
+"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of vc-full-feast rule] it's been vanquished."
+"GLEAN GLOWS"	false	vc-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of vc-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
+"GO GAPPIN"	false	vc-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
 "GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
-"HEAL HERE"	false	can-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-heal-here rule] you need to heal from something."
-"LEAST LOSS"	false	can-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
-"MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found something to mark [here-in of Stark Store]."
+"HEAL HERE"	false	vc-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of vc-heal-here rule] you need to heal from something."
+"LEAN LUGGIN"	false	vc-lean-luggin rule	false	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith."
+"LEAST LOSS"	false	vc-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of vc-least-loss rule] you have something to face [here-in of Creased Cross]."
+"MARK MORE"	false	vc-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of vc-mark-more rule] you've found something to mark [here-in of Stark Store]."
 "MASH MAP"	false	vc-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
-"MERRY MILE"	false	can-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
-"MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the pining poor are fully satisfied."
-"MO MAPPIN"	false	can-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
-"MORAL MAGE"	false	can-moral-mage rule	false	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
-"PULL PIECED"	false	can-pull-pieced rule	false	"You can [b]PULL PIECED[r] the Bull Beast [once-now of can-pull-pieced rule] you have more people willing to help you."
-"SHINING SHORE"	false	can-shining-shore rule	false	"You can make the [b]SHINING SHORE[r] [once-now of can-shining-shore rule] you dealt with the Whining War."
-"SHOW SHIELD"	false	can-show-shield rule	false	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
-"SMASHING SMOKE"	false	can-smashing-smoke rule	false	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
-"SNAKE SNAP"	false	can-snake-snap rule	false	"You can [b]SNAKE SNAP[r] [once-now of can-snake-snap rule] it's clear a snake is present."
-"SO SAPPIN"	false	can-so-sappin rule	false	"You can make things [b]SO SAPPIN[r] [once-now of can-so-sappin rule] you can find where people are using their energy fruitlessly."
-"TAKE TEA"	false	can-take-tea rule	false	"You could [b]TAKE TEA[r] with Jake G. [once-now of can-fake-fee rule] he's conscious."
+"MEAN MUGGIN"	false	vc-mean-muggin rule	false	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
+"MERRY MILE"	false	vc-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
+"MINING MORE"	false	vc-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of vc-mining-more rule] the pining poor are fully satisfied."
+"MO MAPPIN"	false	vc-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of vc-mo-mappin rule] you've found a suitable place to map."
+"MORAL MAGE"	false	vc-moral-mage rule	false	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
+"PULL PIECED"	false	vc-pull-pieced rule	false	"You can [b]PULL PIECED[r] the Bull Beast [once-now of vc-pull-pieced rule] you have more people willing to help you."
+"SHINING SHORE"	false	vc-shining-shore rule	false	"You can make the [b]SHINING SHORE[r] [once-now of vc-shining-shore rule] you dealt with the Whining War."
+"SHOW SHIELD"	false	vc-show-shield rule	false	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
+"SMASHING SMOKE"	false	vc-smashing-smoke rule	false	"You can make [b]SMASHING SMOKE[r] [once-now of vc-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
+"SNAKE SNAP"	false	vc-snake-snap rule	false	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
+"SO SAPPIN"	false	vc-so-sappin rule	false	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly."
+"TAKE TEA"	false	vc-take-tea rule	false	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
 
 [?? see about collapsing the below into rules from the story file proper e.g. vc-can-cull-ceased rule]
 
@@ -346,6 +350,10 @@ this is the can-so-sappin rule:
 this is the can-take-tea rule:
 	if jake-woke is true, the rule succeeds;
 	the rule fails.
+
+this is the can-xean-xuggin rule:
+	if in-so-sad is false and in-way-wrong is false and player is in Been Buggin, the rule succeeds;
+	the rule fails;
 
 [zz4l8r]
 

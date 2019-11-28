@@ -39,13 +39,13 @@ Yes, you will need wary wile, and lots of it!
 >perking pump
 !Learner needle
 > trilly trolling
-Learner needle
+the Leet Learner dims a bit, and the needle
 The Very Vile Fairy File probably has information on that, yes.
 > silly souling
-Learner needle
+the Leet Learner dims a bit, and the needle
 Why yes, I'm sort of a silly soul. At least when I'm writing games.
 > filly foaling
-Learner needle
+the Leet Learner dims a bit, and the needle
 Caring for young animals is a good thing but beyond this game's scope.
 > tough toll
 !Learner needle
@@ -55,13 +55,13 @@ You groan about how heavy your inventory is.
 by one point
 
 > trilly trolling
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 The Very Vile Fairy File probably has information on that, yes.
 > silly souling
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 Why yes, I'm sort of a silly soul. At least when I'm writing games.
 > filly foaling
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 Caring for young animals is a good thing but beyond this game's scope.
 >treat turner
 Nothing happens. The words are just settings
@@ -105,6 +105,7 @@ You aren't up for dancing.
 !Learner needle
 
 > stet stood
+!dims
 Learner needle
 No comment on if and where proofreading is necessary, here.
 > het hood
@@ -177,7 +178,7 @@ A drinking buddy you can play practical jokes on won't be any help here.
 > find fault
 by one point
 
-#next-cmd-pass
+#next-cmd-pass 
 > brig brag
 Good guys don't brag about being
 !Learner needle
@@ -221,7 +222,7 @@ Good guys don't brag about having been
 
 > cash cap
 Learner needle
-You need more than just a homonym here.
+You need more than just a homophone here.
 > clash clap
 Learner needle
 Your vehement applause goes unheeded. But perhaps other violence might be more productive.
@@ -416,7 +417,7 @@ You don't need an eel, or a piece of one, to electrify things right now.
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
 > steal steer
 Learner needle
-Direct homonyms don't work here, and the steer would not fit in your bag.
+Direct homophones don't work here, and the steer would not fit in your bag.
 > wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
@@ -558,7 +559,7 @@ Learner needle
 You'll need all the sauce you can get, literally or figuratively.
 > greased gross
 Learner needle
-The creased cross doesn't need to become ickier.
+The Creased Cross doesn't need to become ickier.
 > fleeced floss
 Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
@@ -657,6 +658,10 @@ by one point
 > mystery mall
 by one point
 
+> butter bankster
+the Leet Learner dims a bit, and the needle
+The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
+
 > what a wanksta
 by one point
 
@@ -670,7 +675,7 @@ Learner needle
 You don't need an exhortation to violence.
 > crow crappin
 Learner needle
-You plan out some filk called Bad Bird Had Heard, about Tad, but Toe Tappin' Row Rappin' is versatile enough. And this game isn't THAT juvenile. I hope.
+You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, Toe Tappin' Row Rappin' is versatile enough.
 > slow slappin
 Learner needle
 That would be handy in a more violent adventure, but not this one.
@@ -681,7 +686,7 @@ That might be funky to some, but you need something more practical.
 Learner needle
 You put your best-ever time for a mile run to Toe Tappin' Row Rappin', but you can't see how it will help here. Plus, Chariots of Fire works better, anyway.
 > butter bankster
-Learner needle
+!the Leet Learner dims a bit, and the needle
 The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
 > frotz frame
 Learner needle
@@ -695,10 +700,10 @@ Learner needle
 You're trying to chase, not impress the ganksta.
 > cots came
 Learner needle
-The gutta ganksta is unmoved by the prospect of a good night's sleep.
+The Gutta Ganksta is unmoved by the prospect of a good night's sleep.
 > dots dame
 Learner needle
-The gutta ganksta's fashion sense tends away from polka dots.
+The Gutta Ganksta's fashion sense tends away from polka dots.
 > knots name
 Learner needle
 You fail to tie the ganksta up in knots with well-timed
@@ -726,104 +731,105 @@ by one point
 > w
 
 > try trawl
-Learner needle
+the Leet Learner dims a bit, and the needle
 You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
 > fie fall
-Learner needle
+the Leet Learner dims a bit, and the needle
 The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless to your quest, but maybe it's good for further practice.
 > die doll
-Learner needle
+the Leet Learner dims a bit, and the needle
 There are no dolls to manipulate in this game.
 > scry scrawl
-Learner needle
+the Leet Learner dims a bit, and the needle
 The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
 > spry sprawl
-Learner needle
+the Leet Learner dims a bit, and the needle
 The shy shawl fails to spread out all over the floor.
 > sty stall
-Learner needle
+the Leet Learner dims a bit, and the needle
 You denigrate the condition of Got Gear Hot Here.
 > dry droll
-Learner needle
+the Leet Learner dims a bit, and the needle
 You make fun of the shy shawl subtly.
 > high hall
-Learner needle
+the Leet Learner dims a bit, and the needle
 You imagine yourself in a much more spacious megastore.
 > guy gall
-Learner needle
+the Leet Learner dims a bit, and the needle
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
-Learner needle
+the Leet Learner dims a bit, and the needle
 You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
-Learner needle
+the Leet Learner dims a bit, and the needle
 You bemoan the lack of a food court in the mall.
 > my mall
-Learner needle
+the Leet Learner dims a bit, and the needle
 You show suitable ambition and aggression for an adventurer.
 > why wall
-Learner needle
+the Leet Learner dims a bit, and the needle
 You complain to nobody in particular about the number of dead ends in the mall.
 > cry crawl
-Learner needle
+the Leet Learner dims a bit, and the needle
 You feel overcome with emotion.
 >tie tall
-Learner needle
+the Leet Learner dims a bit, and the needle
 You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
 >sigh sol
+the Leet Learner dims a bit, and the needle
 No sunlight appears.
 
 > lie lol
 by one point
 
 > try trawl
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You put in effort, and stuff.
 !further practice
 > fie fall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 The shawl remains motionless, but you feel smarter for your guess.
 > die doll
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 There are no dolls to manipulate in this game.
 > scry scrawl
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
 > spry sprawl
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 The shy shawl fails to spread out all over the floor.
 > sty stall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You denigrate the condition of Got Gear Hot Here.
 > dry droll
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You make fun of the shy shawl subtly.
 > high hall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You imagine yourself in a much more spacious megastore.
 > guy gall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
 > buy ball
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You can only buy clothes, not sporting goods, here. Also, no whining.
 > pie paul
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You bemoan the lack of a food court in the mall.
 > my mall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You show suitable ambition and aggression for an adventurer.
 > why wall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You complain to nobody in particular about the number of dead ends in the mall.
 > cry crawl
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You feel overcome with emotion.
 > tie tall
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You look for any way-too-long ties that might help you feel taller, or more
 > sigh sol
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 No sunlight appears.
 
 > card cat
@@ -843,75 +849,75 @@ Learner needle
 I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
 
 > blot blear
-Learner needle
+the Leet Learner dims a bit, and the needle
 You don't need to make this store more dreary.
 > bought beer
-Learner needle
+the Leet Learner dims a bit, and the needle
 Alas, the mall has no license to buy or serve alcohol.
 > fought fear
-Learner needle
+the Leet Learner dims a bit, and the needle
 With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
 > spot spear
-Learner needle
+the Leet Learner dims a bit, and the needle
 You don't need a weapon.
 > dot dear
-Learner needle
+the Leet Learner dims a bit, and the needle
 No Animaniacs appear to spout poetry. Probably a good thing.
 > drought drear
-Learner needle
+the Leet Learner dims a bit, and the needle
 You thirst for an effective rhyme.
 > fraught freer
+the Leet Learner dims a bit, and the needle
 You wish Got Gear Hot Hear led somewere else.
 > sought seer
-Learner needle
+the Leet Learner dims a bit, and the needle
 Nobody, sober or otherwise, appears to give you advice about the future.
 > snot sneer
-Learner needle
+the Leet Learner dims a bit, and the needle
 You turn up your nose at kids these days' terrible fashions.
 > pot pier
-Learner needle
+the Leet Learner dims a bit, and the needle
 You don't need ... cookware.
 
 > not near
 by one point
 
 > blot blear
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You don't need to make this store more dreary.
 > bought beer
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 Alas, the mall has no license to buy or serve alcohol.
 > fought fear
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
-
 > spot spear
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You don't need a weapon.
 > dot dear
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 No Animaniacs appear to spout poetry. Probably a good thing.
 > drought drear
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You thirst for an effective rhyme.
 > fraught freer
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You wish Got Gear Hot Hear led somewere else.
 > sought seer
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 Nobody, sober or otherwise, appears to give you advice about the future.
 > snot sneer
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You turn up your nose at kids these days' terrible fashions.
 > pot pier
-!Learner needle
+!the Leet Learner dims a bit, and the needle
 You don't need ... cookware.
 
 > lard lat
-!Learner needle
+Learner needle
 You poke at your abs. Nah, you're doing okay.
 > pard pat
-!Learner needle
+Learner needle
 You fail to enter a Western with a sidekick.
 
 > hard hat
@@ -983,6 +989,9 @@ You wonder briefly how that automaton back in the 18th century played chess, any
 > coughed canned
 Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+> offed and
+Learner needle
+You try for an impressive silence, but nobody is impressed.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -993,6 +1002,9 @@ by one point
 > coughed canned
 !Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+> offed and
+!Learner needle
+You try for an impressive silence, but nobody is impressed.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -1130,21 +1142,28 @@ by one point
 by one point
 
 #next-cmd-pass
+> cake key
+Learner needle
+Ooh! That'd be nice and tasty. But you don't need that right now.
+#next-cmd-pass
 > shake she
-!Learner needle
+Learner needle
 Jake has no horrible ex to avoid.
 #next-cmd-pass
 > flake flee
-!Learner needle
+Learner needle
 Be nice! You need Jake.
 #next-cmd-pass
 > bake be
-!Learner needle
+Learner needle
 This is not a cooking sim.
 
 > fake fee
 by one point
 
+> cake key
+!Learner needle
+Ooh! That'd be nice and tasty. But you don't need that right now.
 > shake she
 !Learner needle
 Jake has no horrible ex to avoid.
@@ -1154,10 +1173,6 @@ Be nice! You need Jake.
 > bake be
 !Learner needle
 This is not a cooking sim.
-
-> cake key
-!Learner needle
-Ooh! That'd be nice and tasty. But you don't need that right now.
 
 > e
 
@@ -1203,6 +1218,7 @@ Close, but camaraderie, not violence.
 
 > snake snap
 by one point
+Silent Sail
 
 > fake fap
 !Learner needle
@@ -1257,10 +1273,10 @@ by one point
 Learner needle
 Dealing with the shame of having done, er, THAT is beyond the scope of this game.
 > trumped truster
-Learner needle
+the Leet Learner dims a bit
 The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests.
 > lumped luster
-Learner needle
+the Leet Learner dims a bit
 The cluster would still be in the way if it were shiny.
 > jay joke
 !Learner needle
@@ -1442,16 +1458,16 @@ No golf tee provides a bookmark for We Whine: ME, MINE.
 
 > crane crescent
 Learner needle
-No bird or complex machinery drops by to sweep the pain peasant away.
+No bird or complex machinery drops by to sweep the Pain Peasant away.
 > fain pheasant
 Learner needle
-The pain peasant remains human.
+The Pain Peasant remains human.
 > stow steeled
 Learner needle
 You don't have anything steely to stow.
 > woe wield
 Learner needle
-You don't need a weapon but rather armor to repel the foe field.
+You don't need a weapon but rather armor to repel the Foe Field.
 > mo mealed
 Learner needle
 Alas, no food magically appears. You need a more fighting stance.
@@ -1532,10 +1548,10 @@ You acquire no increased aptitude for removing an opponent's hit points. Which w
 
 > mit mound
 !Learner needle
-The pit pound doesn't need clutter like that.
+The Pit Pound doesn't need clutter like that.
 > bit bound
 !Learner needle
-Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
+Now you mention it, you did feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
 > e
 
@@ -1662,8 +1678,32 @@ You don't need anything as obscure as a wooden peg.
 
 > w
 
+> fives fitch
+Learner needle
+A polecat (or several) would maul you, too. You need some sort of general ambush.
+> hives hitch
+Learner needle
+Whether that means a hive of bees or hives on your skin, that would affect anyone entering. You need some sort of general ambush.
+> lives lich
+Learner needle
+But the lich would surely wipe you out. You need some sort of general ambush.
+> stives stitch
+Learner needle
+We don't want a red-light-district sort of trap. You need some sort of general ambush.
+> strives stritch
+Learner needle
+A screeching owl would only be annoying. You need some sort of general ambush.
+> wives witch
+Learner needle
+The witch might be evil enough to wipe everyone out. You need some sort of general ambush.
+> chives chich
+Learner needle
+This is no time for frou-frou vegetables!
+
 > knives niche
 by one point
+
+#no need to check mistakes after, since you are booted from the room
 
 > e
 > u
@@ -1673,13 +1713,13 @@ by one point
 
 > mere mull
 Learner needle
-The beer bull is not impressed by thoughtfulness.
+The Beer Bull is not impressed by thoughtfulness.
 > gear gull
 Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
 > leer lull
 Learner needle
-The beer bull does not stop looking aggressively at you.
+The Beer Bull does not stop looking aggressively at you.
 > peer pull
 Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -1692,13 +1732,13 @@ by one point
 
 > mere mull
 !Learner needle
-The beer bull is not impressed by thoughtfulness.
+The Beer Bull is not impressed by thoughtfulness.
 > gear gull
 !Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
 > leer lull
 !Learner needle
-The beer bull does not stop looking aggressively at you.
+The Beer Bull does not stop looking aggressively at you.
 > peer pull
 !Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -1717,49 +1757,49 @@ by one point
 by one point
 
 > dialed deed
-Learner needle
+the Leet Learner dims a bit, and
 You don't need chemical stimulants to be dialed in to what you need to do.
 > filed feed
-Learner needle
+the Leet Learner dims a bit, and
 Nope. Can't quite categorize that as food.
+> riled reed
+the Leet Learner dims a bit, and
+Any controlled substances found in the course of your adventure are for relaxation.
 > siled seed
-Learner needle
+the Leet Learner dims a bit, and
 No time for farming.
 > styled steed
-Learner needle
+the Leet Learner dims a bit, and
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
-> riled reed
-Learner needle
-While chemical (ab)use can create pulsating literary works, your quest is more basic.
-> tiled teeed
-Learner needle
+> tiled teed
+the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
 > wild weed
 by one point
 
 > dialed deed
-!Learner needle
+!the Leet Learner dims a bit, and
 You don't need chemical stimulants to be dialed in to what you need to do.
 > filed feed
-!Learner needle
+!the Leet Learner dims a bit, and
 Nope. Can't quite categorize that as food.
+> riled reed
+!the Leet Learner dims a bit, and
+Any controlled substances found in the course of your adventure are for relaxation.
 > siled seed
-!Learner needle
+!the Leet Learner dims a bit, and
 No time for farming.
 > styled steed
-!Learner needle
+!the Leet Learner dims a bit, and
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
-> riled reed
-!Learner needle
-While chemical (ab)use can create pulsating literary works, your quest is more basic.
-> tiled teeed
-!Learner needle
+> tiled teed
+!the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
 > bark biff
+the Leet Learner dims a bit, and
 McFly
-Learner needle
 
 > spark spliff
 by one point
@@ -1780,7 +1820,7 @@ by one point
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
 > steal steer
 !Learner needle
-Direct homonyms don't work here, and the steer would not fit in your bag.
+Direct homophones don't work here, and the steer would not fit in your bag.
 > wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
@@ -1807,7 +1847,7 @@ by one point
 You'll need all the sauce you can get, literally or figuratively.
 > greased gross
 !Learner needle
-The creased cross doesn't need to become ickier.
+The Creased Cross doesn't need to become ickier.
 > fleeced floss
 !Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
@@ -1877,7 +1917,7 @@ That is the wrong defensive posture for here.
 
 > woe wield
 !Learner needle
-You didn't need a weapon but rather armor to repel the foe field.
+You didn't need a weapon but rather armor to repel the Foe Field.
 > stow steeled
 !Learner needle
 You don't have anything steely to stow.
@@ -1975,6 +2015,9 @@ Brilliant! Two enemies instead of one?
 > stood stun
 Learner needle
 If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned.
+> would one
+Learner needle
+You are in homophone territory, here.
 > would won
 Learner needle
 You are in homophone territory, here.
@@ -1989,13 +2032,13 @@ Learner needle
 Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
-The bot board never sleeps, so they're not likely to be fooled by a string attached to a cot.
+The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
 > got gourd
 Learner needle
-That worked in The Life of Brian, but ... try a homonym, here. You're close.
+That worked in The Life of Brian, but ... try a homophone, here. You're close.
 > hot hoard
 Learner needle
-You already hoarded enough inventory in your big bag. Try a homonym, here. You're close.
+You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
 > pot poured
 Learner needle
 There's no time for coffee here!
@@ -2041,7 +2084,7 @@ Learner needle
 You remain alone.
 > oh ate
 Learner needle
-Nothing takes a bit out of the go gate.
+Nothing takes a bite out of the go gate.
 > woe weight
 Learner needle
 You wouldn't want to be crushed by a weight. But you've got the right idea.
@@ -2088,21 +2131,28 @@ by one point
 !lump
 # checking for overflow on LLP
 #next-cmd-pass ?? delete this post-comp
+>z
+#next-cmd-pass ?? delete this post-comp
+>z
+> cig sag
+lump
+#next-cmd-pass ?? delete this post-comp
+>undo
 > really rolling
 lump
+#next-cmd-pass ?? delete this post-comp
+>z
+#next-cmd-pass ?? delete this post-comp
 >jj
 > undo
 Take two? Fake, foo'!
 rematerializes
 # checking to make sure we really checked for overflow and not just a regular charge
 # e.g. if we change the level delta from 5 to 6, the lump should not appear
-> cig sag
-lump
-#next-cmd-pass
->really rolling
 #next-cmd-pass
 >blow by
 >call cree
+!lump
 #next-cmd-pass
 >strong start
 #next-cmd-pass
@@ -2110,9 +2160,9 @@ lump
 #next-cmd-pass
 >appealing appear
 lump
-grows bigger
+pulses and grows
 #next-cmd-pass
 >jj
 >undo
 Take two? Fake, foo'!
-grows bigger
+still grows bigger

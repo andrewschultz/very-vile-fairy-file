@@ -18,6 +18,7 @@ import re
 import i7
 
 hunt_mistake_alpha = True
+only_mistake_alpha = False
 no_leet_checks = False
 
 my_line = defaultdict(int)
@@ -53,6 +54,9 @@ mist_file = i7.hdrfile(my_proj, 'mi')
 
 max_count = 15
 
+def valid_leet_rule(x):
+    return x != '--' and x != 'llp-trivial rule'
+
 def the_rule(l):
     l = re.sub("^this is the *", "", l)
     return re.sub(" *:.*", "", l.strip())
@@ -82,6 +86,12 @@ while cmd_count < len(sys.argv):
     arg = sys.argv[cmd_count]
     if arg == 'nl':
         no_leet_checks = True
+    elif arg == 'nh' or arg == 'hn':
+        hunt_mistake_alpha = False
+        only_mistake_alpha = False
+    elif arg == 'oh' or arg == 'ho':
+        hunt_mistake_alpha = True
+        only_mistake_alpha = True
     else:
         try:
             max_count = int(arg)
@@ -91,10 +101,14 @@ while cmd_count < len(sys.argv):
             sys.exit("Bad parameter {}.".format(arg))
     cmd_count += 1
 
+in_table = False
+
 with open(mist_file) as file:
     for (line_count, line) in enumerate(file, 1):
         if "\t" not in line: continue
-        if "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
+        if not line.strip(): in_table = False
+        if line.startswith("table of"): in_table = True
+        if in_table and "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
         ary = re.split("\t", line.strip())
         if "|" in ary[0]:
             mt.print_and_warn("Uh oh. We have a pipe instead of a slash for the topic {} in line {}.".format(ary[0], line_count))
@@ -104,7 +118,8 @@ with open(mist_file) as file:
         except:
             sys.exit("Oops, misread line {}: {}.".format(line_count, line.strip()))
         if ary[1] != '--': look_mist_rules[ary[1]] = True
-        if ary[leet_rule_col] != '--': look_leet_rules[ary[leet_rule_col]] = True
+        if valid_leet_rule(ary[leet_rule_col]):
+            look_leet_rules[ary[leet_rule_col]] = True
         if len(ary) != quote_col + 1:
             sys.exit("Bad number of tabs at line {}: {}.".format(line_count, line.strip()))
         for my_cmd in noquo(ary[0].lower()):
@@ -112,7 +127,7 @@ with open(mist_file) as file:
                 sys.exit("w1 and w2 entries conflict--both or neither should be blank.")
             need_mistake_test[my_cmd] = True
             my_line[my_cmd] = line_count
-            need_leet_check[my_cmd] = ary[5] != '--'
+            need_leet_check[my_cmd] = valid_leet_rule(ary[leet_rule_col])
             try:
                 text_needed[my_cmd] = ('!' if ary[3] == '--' else '') + needed_text + "\n" + noquo_single(i7.a2q(ary[quote_col]))
             except:
@@ -141,7 +156,6 @@ if hunt_mistake_alpha:
                 if line.startswith("this is the"):
                     in_leet_rules[the_rule(line)] = True
         for x in sorted(look_mist_rules):
-            print("!" + x + "!")
             if x not in in_mist_rules:
                 if 'trivially true rule' in x: continue
                 print("{} Need {} in the alpha mist rules.".format(mist_alph_err, x))
@@ -157,8 +171,7 @@ if hunt_mistake_alpha:
         print("SUCCESS with mistake/leet classification")
     else:
         print(mist_alph_err, "error(s) found in mistake/leet classification.")
-    sys.exit()
-
+    if only_mistake_alpha: sys.exit()
 
 okay_next_dup = False
 
@@ -167,6 +180,7 @@ in_cs_check = False
 
 rbr_file = "rbr-{}-thru.txt".format(my_proj)
 next_cmd_pass = False
+ignore_the_rest = False
 
 with open(rbr_file) as file:
     for (line_count, line) in enumerate(file, 1):
@@ -176,11 +190,19 @@ with open(rbr_file) as file:
         if '@mis' in line: in_mistakes = True
         if '@cs' in line: in_cs_check = True
         if 'okdup' in line: okay_next_dup = True
+        if line.startswith("#ignore-the-rest"):
+            if ignore_the_rest: print("WARNING superfluous ignore-the-rest at line", line_count)
+            ignore_the_rest = True
+            continue
+        if line.startswith("#unignore-the-rest"):
+            if not ignore_the_rest: print("WARNING superfluous unignore-the-rest at line", line_count)
+            ignore_the_rest = False
+            continue
         if line.startswith("#next-cmd-pass"):
             next_cmd_pass = True
             continue
         if not line.strip():
-            in_mistakes = in_cs_check = False
+            ignore_the_rest = in_mistakes = in_cs_check = False
             continue
         if not in_mistakes and not in_cs_check:
             if needed_text in line and not line.startswith(">"):

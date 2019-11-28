@@ -1202,7 +1202,7 @@ to decide whether hull-bull:
 
 to reset-bull-chase:
 	if player is in Fight Funnel:
-		if player has zig zag rig rag or funnel-to-tunnel is false:
+		if player has zig zag big bag or funnel-to-tunnel is false:
 			say "The Bull Beast seemed slightly claustrophobic. Perhaps you could lure it further. What [if dives ditch is visited]can you do[else]could be[end if] to the west?";
 			continue the action;
 	say "You limp [if player is in Creased Cross]around[else]back to[end if] Creased Cross.";
@@ -1235,7 +1235,7 @@ every turn when in-bull-chase is true: [?? make this so that we track by last-bu
 		the rule succeeds;
 	if Beer Bull is not in location of player:
 		if player is in real rear:
-			say "The Beer Bull roars at the relative peacefulness of the Real Rear and turns back. While you haven't actually defeated the Beer Bull, you managed to escape a mauling. Perhaps this place will help with an even tougher opponent in the future.";
+		\	say "The Beer Bull roars at the relative peacefulness of the Real Rear and turns back. While you haven't actually defeated the Beer Bull, you managed to escape a mauling. Perhaps this place will help with an even tougher opponent in the future.";
 			move Beer Bull to Here Hull;
 			now in-bull-chase is false;
 			the rule succeeds;
@@ -1243,13 +1243,13 @@ every turn when in-bull-chase is true: [?? make this so that we track by last-bu
 		if player is in History Hall:
 			say "The Bull seems out of place here, but it's not particularly bothered by that.";
 		else if player is in Violent Vale and frightening fridge is in Violent Vale:
-			say "Oh no! Between the Beer Bull and the fridge, you feel trapped[if flooring float is touchable], and the float won't help you escape[else if boring boat is touchable], and you'd get caught boarding the boat[end if].";
+			say "Oh no! Between the Beer Bull and the fridge, you feel trapped[if flooring float is touchable], and the float won't help you escape[else if boring boat is touchabke], and you'd get caught boarding the boat[end if].";
 		else if player is in Blinding Blaze:
 			say "[if blaze-ways is true]Bringing a half-bull to a maze is a bad idea without a ball of string. You have none in this game[else]Uh oh. You've trapped yourself with no easy visible way out[end if].";
 		else if player is in Whining War:
 			say "There's nowhere to go from here. The [if shore-shine is true]ex-whiners tremble in fear, not whining, but unable to bring themselves to help you[else]whiners aren't going to help you[end if].";
 		else:
-			say "You need to keep moving, or it will catch you.";
+			say "You need to keep moving, or it will catch you."
 		now bull-from is location of Beer Bull;
 		move Beer Bull to location of player;
 
@@ -3469,10 +3469,6 @@ this is the verb-checker rule:
 		if my-count >= 2:
 			if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
 			if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
-			process the ver-rule entry;
-			unless the rule succeeded:
-				process the note right guess wrong time rule;
-				the rule succeeds;
 			if okflip entry is false:
 				unless my-count is 3 or there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case... and "my-count is 3" is a hack for FLIMFLAM]
 					say "You've got it backwards! Just flip things around, and it'll be okay.";

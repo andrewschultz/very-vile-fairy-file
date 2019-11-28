@@ -26,7 +26,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 ###############Loft Land
 ###################tall tree
 ##################Gassed Gap
-##################violent vale
+##################Violent Vale
 ##################random i dunno
 #################way wrong
 ################Real Rear
@@ -40,44 +40,22 @@ volume what you start with
 
 [the mist-rule tells if the mist-txt should be printed out. The leet-rule tells if a leet-clue should be printed out. If there is no w1let or w2let, nothing is printed out, either.]
 
-table of mistake substitutions
+section generic table
+
+table of no good guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
-"brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in Vined Vault]being[else if Vined Vault is visited]having been[else]if they were ever[end if] in jail!" [start 1 general mistakes]
-"swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
-"tig tag"	trivially true rule	false	3	3	mist-bag-hint rule	"But you already have one utterly childish game right in front of you. Do you really need any more?"
-"wig wag"	trivially true rule	false	3	3	mist-bag-hint rule	"If you're wearing a hairpiece, I don't want to know."
-"cig sag"	trivially true rule	false	3	3	mist-bag-hint rule	"You find no black market currency in the [bag-rag]."
-"mig mag"	trivially true rule	false	3	3	mist-bag-hint rule	"Fighter plane ammunition will not help you."
-"gig gag"	trivially true rule	false	3	3	mist-bag-hint rule	"There are enough gags in this adventure. I hope."
-"jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing." [this is referred to explicitly when you BIG BAG, so there is overlap.]
-"trilly trolling"	trivially true rule	false	6	7	not-rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
-"silly souling/soling"	trivially true rule	false	6	7	not-rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
-"filly foaling"	trivially true rule	false	6	7	not-rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
-"wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
-"treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
-"perking pump"	lump-known rule	false	--	--	--	"I don't want to know." [start weird inventory stuff rule]
-"tough toll"	trivially true rule	false	--	--	--	"You groan about how heavy your inventory is."
-"flu/flew floats"	has-too-totes rule	false	--	--	--	"No flying craft appears, but on the bright side, you fail to feel sick."
-"grew/grue groats"	has-too-totes rule	false	--	--	--	"No coins spring from the ground. A coin with a grue would be kind of creepy, anyway."
-"goo goats"	has-too-totes rule	false	--	--	--	"Ugh! Regular goats are messy enough."
-"coo coats"	has-too-totes rule	false	--	--	--	"No need for warmth."
-"do dotes"	has-too-totes rule	false	--	--	--	"Wowzers! What a neat document [too totes] is. Golly gee!"
-"rue rotes"	has-too-totes rule	false	--	--	--	"You fail to find yourself in a more straightforward adventure."
-"glue gloats"	has-too-totes rule	false	--	--	--	"What kind of person boasts about stockpiling glue?"
-"blew/blue bloats"	has-too-totes rule	false	--	--	--	"You thought you saw Violet Beauregarde roll by there for a minute."
-"stew stoats"	has-too-totes rule	false	--	--	--	"Badger, Mole and Rat would agree that's going too far. Even Toad."
-"shoo shoats"	has-too-totes rule	false	--	--	--	"There are no young pigs here to shoo."
-"cry call"	signable-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start 2 wry wall mistakes]
-"dry doll"	signable-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
-"fry fall"	signable-loc rule	false	--	--	--	"The wry wall remains upright."
-"pry pall"	signable-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
-"try tall"	signable-loc rule	false	--	--	--	"The wry wall does not grow."
-"caught/cot cord"	bot-board-vis rule	false	3	5	--	"The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot." [start Airy Isle]
-"pot poured"	bot-board-vis rule	false	3	5	--	"There's no time for coffee here!"
-"rot roared"	bot-board-vis rule	false	3	5	--	"A decent battle cry, but you sense there could a more violent action."
-"caught cord"	bot-board-vis rule	false	3	5	--	"You might be able to trip one of the Bot Board with a cord, but not all of them."
-"snot snored"	bot-board-vis rule	false	3	5	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
-"fought ford"	bot-board-vis rule	false	3	5	--	"The battle is ahead, not in the past."
+a topic	a rule	a truth state	a number	a number	a rule	text
+
+book guesses by room, alphabetical
+
+table of Airy Isle guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"caught/cot cord"	trivially true rule	false	3	5	--	"The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot." [start Airy Isle]
+"pot poured"	trivially true rule	false	3	5	--	"There's no time for coffee here!"
+"rot roared"	trivially true rule	false	3	5	--	"A decent battle cry, but you sense there could a more violent action."
+"caught cord"	trivially true rule	false	3	5	--	"You might be able to trip one of the Bot Board with a cord, but not all of them."
+"snot snored"	trivially true rule	false	3	5	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
+"fought ford"	trivially true rule	false	3	5	--	"The battle is ahead, not in the past."
 "crow crate"	go-gate-vis rule	false	4	4	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize."
 "foe fate"	go-gate-vis rule	false	4	4	--	"You are very near the end, but it's not that easy."
 "know/no nate"	go-gate-vis rule	false	4	4	--	"Nobody named Nate appears to help you through the go gate."
@@ -85,10 +63,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "oh ate"	go-gate-vis rule	false	4	4	--	"Nothing takes a bite out of the go gate."
 "slow slate"	go-gate-vis rule	false	4	4	--	"No blackboard appears telling you EXACTLY the right move."
 "so sate"	go-gate-vis rule	false	4	4	--	"You aren't satisfied yet. Only finishing the job will fix that!"
-"greased gross"	in-creased-cross rule	false	5	5	need-least-loss rule	"The Creased Cross doesn't need to become ickier."
-"fleeced floss"	in-creased-cross rule	false	5	5	need-least-loss rule	"Dental hygiene is a good idea in general, but here, it's unnecessary."
-"teased toss"	in-creased-cross rule	false	5	5	need-least-loss rule	"[if cull-ceased is true]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
- "teen tuggin"	in-been-buggin rule	false	4	6	--	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
+
+table of Been Buggin guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"teen tuggin"	in-been-buggin rule	false	4	6	--	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
 "jay joke"	have-clay-cloak rule	false	--	--	--	"You recall some off-color drug humor from your younger days."
 "ho had"	in-so-sad rule	false	4	4	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	4	4	--	"Once the anger wore off, you might be even more lethargic."
@@ -100,45 +78,51 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "foe/fo fad"	in-so-sad rule	false	4	4	--	"You try to convince yourself it's a passing phase, but it doesn't work."
 "doh dad"	in-so-sad rule	false	4	4	--	"Blaming your parents fails to help."
 "pay prong"	in-way-wrong rule	false	4	4	--	"Buying things won't improve your lack of self-worth."
-"stay stoke"	have-clay-cloak rule	false	--	--	--	"You take a slightly ungrammatical approach to keeping your spirits up."
-"bray broke"	have-clay-cloak rule	false	--	--	--	"You try a poor-righteous-teacher approach with the clay cloak."
-"k coke"	have-clay-cloak rule	false	--	--	--	"No fizzy beverage (or anything less healthy) appears."
-"say soak"	have-clay-cloak rule	false	--	--	--	"Water might make the clay cloak even heavier and messier."
-"yay yoke/yolk"	have-clay-cloak rule	false	--	--	--	"Some woke people like to self-immolate, but not you."
-"pay poke"	have-clay-cloak rule	false	--	--	--	"The clay cloak was free. No need to pay anything."
-"cray croak"	have-clay-cloak rule	false	--	--	--	"You make a weird noise. It doesn't help, but it doesn't hurt."
-"fay folk"	have-clay-cloak rule	false	--	--	--	"There's not enough magic in this game? Aww, rats."
 "trumped truster"	cluster-near rule	false	7	6	llp-trivial rule	"The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests." [?? minor point]
 "lumped luster/lustre"	cluster-near rule	false	7	6	llp-trivial rule	"The cluster would still be in the way if it were shiny." [?? minor point]
+
+table of Blinding Blaze guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "binding bays/baize"	in-blaze-ways rule	false	7	4	blaze-before-maze rule	"You need to find your way here, not get more tied up." [start Blinding Blaze]
 "grinding grays"	before-grays rule	false	7	4	blaze-before-maze rule	"Even if it were duller, you'd still be left with a [if blaze-ways is false]hot blaze[else]tricky maze[end if]." [?? still when in Winding Ways]
-"buck bear/bare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"There are enough animals in this game that could maul you."
-"chuck chair"	stair-or-snare rule	false	4	4	no-snare-yet rule	"No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway." [note losing the h's is doable, but it's vile and vulgar enough, I can't find a funny response.]
-"duck dare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Too late for that. You took Kit Cohen's dare, and you're on a quest, now."
-"fuck fair/fare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"There are other games for that."
-"muck mare/mere/mayor"	stair-or-snare rule	false	4	4	no-snare-yet rule	"No, it's something much cleaner than that."
-"puck pair/pare/pere/payer"	stair-or-snare rule	false	4	4	no-snare-yet rule	"No time for hockey! You also aren't really dressed for the cold."
-"pluck player"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Personal grooming can wait."
-"struck strayer"	stair-or-snare rule	false	4	4	no-snare-yet rule	"This game does not need or want to end in tragedy."
-"tuck tare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Alterations are not your Thing."
-"truck trayer"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Manual labor is not very adventurous."
-"shuck share"	stair-or-snare rule	false	4	4	no-snare-yet rule	"You have no share to shuck."
-"tuck tear"	stair-or-snare rule	false	4	4	no-snare-yet rule	"You see no way to refigure the [if stuck stair is touchable]stair[else]snare[end if]."
-"ceased sauce"	in-creased-cross rule	false	5	4	need-least-loss rule	"You'll need all the sauce you can get, literally or figuratively." [start Creased Cross]
+
+table of Creased Cross guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"ceased sauce"	in-creased-cross rule	false	5	4	need-least-loss rule	"You'll need all the sauce you can get, literally or figuratively."
+"fleeced floss"	in-creased-cross rule	false	5	5	need-least-loss rule	"Dental hygiene is a good idea in general, but here, it's unnecessary."
+"greased gross"	in-creased-cross rule	false	5	5	need-least-loss rule	"The Creased Cross doesn't need to become ickier."
+"teased toss"	in-creased-cross rule	false	5	5	need-least-loss rule	"[if cull-ceased is true]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
+
+table of Curst Cave guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "nursed nave/knave"	in-curst-cave rule	false	5	5	need-first-fave rule	"You don't need to nurse a bad guy or a religious place." [start Curst Cave]
 "creaming cull"	skull-near rule	false	8	5	--	"Less violence, more letters."
-"cruel crap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"But you got rid of the skull. Also, swearing is naughty."
-"youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Is that an invitation to drone on endlessly? Why, thank you."
-"pool pap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You want something nice and useful to come out of the tap, not ... that."
-"mule map"	cap-or-tap rule	false	4	3	need-cool-cap rule	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
-"rule rap/wrap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You need something more substantial to come out of the cool cap."
+
+table of dives ditch guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"fives fitch"	in-dives-ditch rule	false	6	5	--	"A polecat (or several) would maul you, too[dives-surprise of 1]."
+"hives hitch"	in-dives-ditch rule	false	6	5	--	"Whether that means a hive of bees or hives on your skin, that would affect anyone entering[dives-surprise of 2]."
+"lives lich/liche"	in-dives-ditch rule	false	6	5	--	"But the lich would surely wipe you out[dives-surprise of 3]."
+"stives stitch"	in-dives-ditch rule	false	6	5	--	"We don't want a red-light-district sort of trap[dives-surprise of 4]."
+"strives stritch"	in-dives-ditch rule	false	6	5	--	"A screeching owl would only be annoying[dives-surprise of 5]."
+"wives witch"	in-dives-ditch rule	false	6	5	--	"The witch might be evil enough to wipe everyone out[dives-surprise of 6]."
+"chives chich"	in-dives-ditch rule	false	6	5	--	"This is no time for frou-frou vegetables!"
+
+table of fight funnel guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "right runnel"	in-fight-funnel rule	false	5	6	need-tight-tunnel rule	"No river appears. It might just make things even more crowded and messy, anyway."
 "trite trunnel"	in-fight-funnel rule	false	5	6	need-tight-tunnel rule	"You don't need anything as obscure as a wooden peg."
-"crane crescent"	peasant-around rule	false	5	8	--	"No bird or complex machinery drops by to sweep the Pain Peasant away." [start Foe Field]
-"fain pheasant"	peasant-around rule	false	5	8	--	"The Pain Peasant remains human."
+
+table of Foe Field guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "know/no kneeled"	in-foe-field rule	false	6	6	shield-unshown rule	"That is the wrong defensive posture for here."
 "stow steeled"	in-foe-field rule	false	5	8	shield-unshown rule	"You don't have anything steely to stow."
 "woe/whoah/whoa wield"	in-foe-field rule	false	4	6	shield-unshown rule	"You [if gold guard is moot]didn't[else]don't[end if] need a weapon but rather armor to repel the Foe Field."
+"crane crescent"	peasant-around rule	false	5	8	--	"No bird or complex machinery drops by to sweep the Pain Peasant away." [start Foe Field]
+"fain pheasant"	peasant-around rule	false	5	8	--	"The Pain Peasant remains human."
+
+table of Fun Fen guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "chive cheap"	hive-heap-near rule	false	4	4	--	"The hive heap, and this game, acquire no additional flavor." [start Fun Fen]
 "live leap"	hive-heap-near rule	false	4	4	--	"The leap wouldn't be live for very long."
 "jive jeep"	hive-heap-near rule	false	4	4	--	"No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate."
@@ -153,9 +137,12 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "gaper guile"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"You stare a bit but get no insight[kind-of-paper]."
 "taper/tapir tile"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
 "aper isle"	vial-or-pile rule	false	5	4	vapor-vial-vis rule	"You are not teleported to somewhere similar to the Fun Fen."
-"classed clap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug."
+
+table of Gassed Gap guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"classed clap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug." [start Gassed Gap]
 "chaste chap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"Yes, you've been a model of morality. Yay, you."
-"fast fap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here." [start Gassed Gap]
+"fast fap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here."
 "last lap"	in-gap-with-cap rule	false	4	3	cap-uncast rule	"It will be the last lap one day. But you need a different action to get to this finality."
 "massed/mast map"	in-gap-with-cap rule	false	4	3	cap-uncast rule	"You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here."
 "passed/past pap"	in-gassed-gap rule	false	4	3	cap-uncast rule	"You don't need to look back on what a trashy adventure this has been. Well, not in front of me." [?? cap cast yet?]
@@ -168,6 +155,9 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "food fun"	good-gun-here rule	false	4	3	--	"Sorry, no replacing a real fight with a food fight."
 "hood hun"	good-gun-here rule	false	4	3	--	"Brilliant! Two enemies instead of one?"
 "stood stun"	good-gun-here rule	false	4	3	--	"If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned."
+
+table of Got Gear Hot Here guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "blot blear"	got-gear-hot-here rule	false	4	4	not-near-yet rule	"You don't need to make this store more dreary." [start Got Gear Hot Here]
 "bought/bot beer"	got-gear-hot-here rule	false	4	4	not-near-yet rule	"Alas, the mall has no license to buy or serve alcohol."
 "fought fear"	got-gear-hot-here rule	false	4	4	not-near-yet rule	"With nobody around to kibitz, you reflect on the barriers you've broken through to get this far."
@@ -178,13 +168,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "sought/sot seer"	got-gear-hot-here rule	false	4	4	not-near-yet rule	"Nobody, sober or otherwise, appears to give you advice about the future."
 "snot sneer"	got-gear-hot-here rule	false	4	4	not-near-yet rule	"You turn up your nose at kids these days['] terrible fashions."
 "pot pier/peer"	got-gear-hot-here rule	false	4	4	not-near-yet rule	"You don't need ... cookware."
-"barred/bard bat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You don't need a pet or a weapon. Especially not a potentially evil one."
-"card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"A card catalog certainly repels some folks, but you need something sturdier."
-"charred chat"	hat-or-mat rule	false	4	3	no-hardhat rule	"No time for scorched-earth conversation, here."
-"lard lat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You poke at your abs. Nah, you're doing okay."
-"pard pat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You fail to enter a Western with a sidekick."
-"starred stat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Get ahold of yourself! There's no time for in-depth sabermetrics!"
-"guard gat"	hat-or-mat rule	false	4	3	no-hardhat rule	"I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though."
 "try trawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You put in effort, and stuff[shawl-lol]."
 "buy/by/bye ball/bawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You can only buy clothes, not sporting goods, here. Also, no whining[shawl-lol]."
 "fie fall"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"The shawl remains motionless, but you feel smarter for your guess[shawl-lol]."
@@ -201,12 +184,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "my mall/maul"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You show suitable ambition and aggression for an adventurer[shawl-lol]."
 "why wall"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You complain to nobody in particular about the number of dead ends in the mall[shawl-lol]."
 "cry crawl"	got-gear-hot-here rule	false	3	3	shawl-unloled rule	"You feel overcome with emotion[shawl-lol]."
-"mere mull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"The Beer Bull is not impressed by thoughtfulness." [start Here Hull]
-"gear gull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"Spoiler: once you get rid of the bull, a gear gull will appear."
-"leer/lear lull/lul"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"The Beer Bull does not stop looking aggressively at you."
-"peer/pier pull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"No, you can't bring the bull down with peer pressure."
-"woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence." [start History Hall]
-"butter/butta bankster/banksta"	ganksta-nearby rule	false	6	7	no-wanksta rule	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of." [??alt solution, need the leet learner to be dim]
+
+table of History Hall guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"butter/butta bankster/banksta"	ganksta-nearby rule	false	6	7	no-wanksta rule	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of." [start History Hall]
 "blots blame"	ganksta-nearby rule	false	4	4	--	"There's another way to insult the tattoo as bad art. You're very close."
 "clots claim"	ganksta-nearby rule	false	4	4	--	"You're trying to chase, not impress the ganksta."
 "cots came"	ganksta-nearby rule	false	4	4	--	"The Gutta Ganksta is unmoved by the prospect of a good night's sleep."
@@ -215,11 +196,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "shots shame"	ganksta-nearby rule	false	4	4	--	"The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun."
 "sots same"	ganksta-nearby rule	false	4	4	--	"The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult."
 "tots tame"	ganksta-nearby rule	false	4	4	--	"The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though."
-"crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, [toe] is versatile enough."
-"slow slappin"	have-toe-tappin rule	false	2	6	--	"That would be handy in a more violent adventure, but not this one."
-"flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
-"low lappin"	have-toe-tappin rule	false	2	6	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus, [i]Chariots of Fire[r] works better, anyway."
-"fo/foe fappin"	have-toe-tappin rule	false	2	6	--	"[Toe] may not be highbrow, but it's not that low-class."
 "frotz frame"	ganksta-nearby rule	false	4	4	--	"Anything as esoteric as text adventure vocabulary would go over the Gutta Ganksta's head. You need to be more brutal."
 "gene/jean joes"	mean-moes-by rule	false	5	5	--	"You don't need to visit another clothing store."
 "seen/scene sos/sews"	mean-moes-by rule	false	5	5	--	"That must be about right, but it's not specific enough. You need to see something specific, and not quite see..."
@@ -229,25 +205,11 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "lean lows"	mean-moes-by rule	false	5	5	--	"You feel the blues for a second."
 "teen toes"	mean-moes-by rule	false	5	5	--	"Not sure I want to know."
 "wean woes"	mean-moes-by rule	false	5	5	--	"You take time to feel less awful about some horrid event in your past. The resulting inner peace cheers you even more than a Last Lousy Point would have!"
-"mashing moke"	have-clashing-cloak rule	false	8	5	--	"You need subtlety, not violence."
-"ashing oak"	have-clashing-cloak rule	false	8	5	--	"No genetically twisted tree appears."
-"stashing stoke"	have-clashing-cloak rule	false	8	5	--	"You don't need to start a fire or win this game on a rainy Tuesday."
 "war wander"	poor-ponder-near rule	false	4	6	--	"You don't need to visit anything that drastic."
 "bore/boar bonder"	poor-ponder-near rule	false	4	6	--	"Something more archaic and interesting."
-"mold marred" or "gold guard" or "cold card" or "hold hard"	bold-bard-near rule	false	--	--	--	"You'll actually be getting that later!"
-"dialed deed"	mead-or-weed rule	false	4	4	weed-offstage rule	"You don't need chemical stimulants to be dialed in to what you need to do." [start Knives Niche]
-"filed feed"	mead-or-weed rule	false	4	4	weed-offstage rule	"Nope. Can't quite categorize that as food."
-"siled seed"	mead-or-weed rule	false	4	4	weed-offstage rule	"No time for farming."
-"styled steed"	mead-or-weed rule	false	4	4	weed-offstage rule	"Too hard to implement. I mean, too fancy for this game. Too fancy, that's it."
-"riled reed/read"	mead-or-weed rule	false	4	4	weed-offstage rule	"Any controlled substances found in the course of your adventure are for relaxation."
-"tiled teed"	mead-or-weed rule	false	4	4	weed-offstage rule	"That would make for an odd golf course."
-"fives fitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"A polecat (or several) would maul you, too[dives-surprise of 1]."
-"hives hitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"Whether that means a hive of bees or hives on your skin, that would affect anyone entering[dives-surprise of 2]."
-"lives lich/liche"	in-dives-ditch rule	false	6	5	niche-needed rule	"But the lich would surely wipe you out[dives-surprise of 3]."
-"stives stitch"	in-dives-ditch rule	false	6	5	niche-needed rule	"We don't want a red-light-district sort of trap[dives-surprise of 4]."
-"strives stritch"	in-dives-ditch rule	false	6	5	niche-needed rule	"A screeching owl would only be annoying[dives-surprise of 5]."
-"wives witch"	in-dives-ditch rule	false	6	5	niche-needed rule	"The witch might be evil enough to wipe everyone out[dives-surprise of 6]."
-"chives chich"	in-dives-ditch rule	false	6	5	niche-needed rule	"This is no time for frou-frou vegetables!"
+
+table of Lake Lap guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cake cap"	lap-not-cap rule	false	4	3	--	"No edible headgear appears." [start Lake Lap] [?? how does this change?]
 "crake crap"	in-lake-lap rule	false	4	3	--	"No bird droppings provide a trail."
 "fake fap"	cap-or-lap rule	false	4	3	lap-not-cap rule	"You make a rude gesture, for whatever good it does."
@@ -256,19 +218,20 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "sake sap"	in-lake-lap rule	false	4	3	--	"No! You want more purpose, not less."
 "slake slap"	in-lake-lap rule	false	4	3	--	"You don't need to slap anyone here, hard or soft."
 "wake whap"	in-lake-lap rule	false	4	3	--	"You already woke Jake much more nicely." [here is a definite problem with word lengths. It should be 4-3 to 5-3 once you made the map. ??]
-"drowsy drakes"	in-lousy-lakes rule	false	--	--	--	"No sleepy ducks walk by."
-"cake key"	in-lakes rule	false	4	3	need-fake-fee rule	"Ooh! That'd be nice and tasty. But you don't need that right now." [start Lake Lea] [?? what about multiple]
-"shake she"	in-lakes rule	false	4	3	need-fake-fee rule	"Jake has no horrible ex to avoid."
-"flake flee"	in-lakes rule	false	4	3	need-fake-fee rule	"Be nice! You need Jake."
-"bake be/bee"	in-lakes rule	false	4	3	need-fake-fee rule	"This is not a cooking sim."
-"mit/mitt mound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"[if Hit Hound is in Pit Pound]The Hit Hound won't need to go chasing after that[else]The Pit Pound doesn't need clutter like that[end if]." [start Pit Pound]
-"grit ground"	pit-pound-unsolved rule	false	3	5	--	"You need to find some other way to [if Hit Hound is in Pit Pound]banish the Hit Hound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway."
+
+table of Pit Pound guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"mit/mitt mound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"[if hit hound is in Pit Pound]The hit hound won't need to go chasing after that[else]The Pit Pound doesn't need clutter like that[end if]." [start Pit Pound]
+"grit ground"	pit-pound-unsolved rule	false	3	5	--	"You need to find some other way to [if hit hound is in Pit Pound]banish the hit hound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway."
 "bit bound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"Now you mention it, you [if found-fit is false]do[else]did[end if] feel a bit restricted here. Expressing your feelings helps a bit! You think."
 "wit/whit wound"	in-pit-pound rule	false	3	5	not-fit-yet rule	"No need for unnecessary tension."
 "clit clowned"	in-pit-pound rule	false	3	5	not-fit-yet rule	"I mean, that WORKS, but geez."
 "crit crowned"	in-pit-pound rule	false	3	5	not-fit-yet rule	"You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game."
+
+table of po pit guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cash cap"	in-po-pit rule	true	4	3	--	"You need more than just a homophone here."
-"clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded. But perhaps other violence might be more productive." [start Po' Pit] [?? all this needs to be tested a lot]
+"clash clap"	in-po-pit rule	false	4	3	--	"Your vehement applause goes unheeded. But perhaps other violence might be more productive."
 "crash crap"	in-po-pit rule	false	4	3	--	"Profanity isn't necessary, here. Even minor ones."
 "gnash/nash nap"	in-po-pit rule	false	4	3	--	"You need something more active."
 "sash sap"	in-po-pit rule	false	4	3	--	"You don't need to be dressed outlandishly to figure what to do."
@@ -290,29 +253,31 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mo/mow mitt"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Please proceed, adventurer."
 "glow glit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here."
 "woe/whoa/whoah wit"	in-po-pit rule	false	4	4	if-grit-ungrown rule	"Clever complaining will make you feel better but won't do anything."
-"cage key"	key-or-rear rule	false	--	--	--	"[if cage key is off-stage]You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it. [cagekey-prog][else]You already got the key[end if]." [start Real Rear] [?? this seems bad, giving a lump point for something obvious]
-"wage wee/whee/wii"	key-or-rear rule	false	--	--	--	"Hey, now! You're not in it for the money! Or a handheld game console!"
-"phage fee"	key-or-rear rule	false	--	--	--	"Biological warfare is too expensive."
-"mage me"	key-or-rear rule	false	--	--	--	"[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do."
-"page pea/pee/p"	key-or-rear rule	false	4	5	--	"You don't need to skip around a book or summon anything."
-"beige bee"	key-or-rear rule	false	4	5	--	"[if player is in Real Rear]This isn't a[else]This adventure has no[end if] nature retreat."
+
+table of Real Rear guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "wheel/wheeling weir"	in-real-rear rule	false	4	5	--	"The Sage Sea is enough of a boundary."
 "eel ear/ere"	in-real-rear rule	false	--	--	--	"You don't need an eel, or a piece of one, to electrify things right now."
 "peel pear"	in-real-rear rule	false	--	--	if-rear-undone rule	"You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy."
 "steal steer"	in-real-rear rule	false	4	4	if-rear-undone rule	"Direct homophones don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
+
+table of Rift River guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "lift liver"	in-rift-river rule	false	4	5	--	"You gain no nutritious meat nor uplifting advice. But you must be close[rift-need]." [start Rift River]
 "sift siever"	in-rift-river rule	false	4	5	--	"That would be a good tool in a cooking simulation, but the Leet Learner is more useful[rift-need]."
 "drift driver"	in-rift-river rule	false	4	5	--	"No vehicle comes to take you across the river. And that doesn't quite rhyme, anyway[rift-need]."
 "shift shiver"	in-rift-river rule	false	4	5	--	"You try fearing things different ways, but nobody comes to comfort you."
-"dirk dell"	gel-or-shell rule	false	4	4	need-work-well rule	"You don't need an olde tyme adventure with daggers and stuff." [start Shirk Shell]
-"urkel"	gel-or-shell rule	false	--	--	--	"You hear an annoying laugh in the distance." [?? test this special case. What if there is a mistaken rule we don't need and there are no numbers?]
-"urk/erk ell"	gel-or-shell rule	false	4	4	need-work-well rule	"The gel is messy, but odd interjections won't help you use it or put it back in the tube."
-"smirk smell"	gel-or-shell rule	false	4	4	need-work-well rule	"No, you don't want that."
-"turk tell"	gel-or-shell rule	false	4	4	need-work-well rule	"You wonder briefly how that automaton back in the 18th century played chess, anyway."
-"coughed canned"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try to suppress a cough while avoiding any sudden downturn in fortune." [start Soft Sand]
+
+table of Soft Sand guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"coughed canned"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try to suppress a cough while avoiding any sudden downturn in fortune."
 "scoffed scanned"	in-soft-sand rule	false	4	4	need-loft-land rule	"[Soft Sand] isn't much to look at, but it's not worth scorn."
-"lark lore"	in-stark-store rule	false	4	4	need-mark-more rule	"This is no time for jokes! Or bird-watching." [start Stark Store]
+"offed/oft and"	in-soft-sand rule	false	4	4	need-loft-land rule	"You try for an impressive silence, but nobody is impressed."
+
+table of Stark Store guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"lark lore"	in-stark-store rule	false	4	4	need-mark-more rule	"This is no time for jokes! Or bird-watching."
 "arc ore/oar/or"	in-stark-store rule	false	4	4	need-mark-more rule	"The store remains rectangular-ish. Probably for the best."
 "bark bore/boar"	in-stark-store rule	false	4	4	need-mark-more rule	"You don't need to make a tree or summon anything tiresome or porcine."
 "hark whore"	in-stark-store rule	false	4	4	need-mark-more rule	"That's inappropriate. Logical, but inappropriate."
@@ -323,20 +288,21 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "beard bay"	weird-way-near rule	false	7	4	--	"No, the store is landlocked."
 "feared fay"	weird-way-near rule	false	7	4	--	"No, there is enough fearful magic."
 "steered stay"	weird-way-near rule	false	7	4	--	"No, you'd like to move on through the Weird Way, somehow."
-"oral age"	in-storeall-stage rule	false	5	4	coral-cage-around rule	"Someone here is really old-school. As if text adventures weren't retro enough!" [start Store All Stage]
+
+table of Store All Stage guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"oral age"	in-storeall-stage rule	false	5	4	coral-cage-around rule	"Someone here is really old-school. As if text adventures weren't retro enough!"
 "sorel/sorrel sage"	in-storeall-stage rule	false	5	4	coral-cage-around rule	"Someone not just wise but ethical is behind the coral cage[if Real Rear is visited]. Besides, there's already the sage sea[end if]."
 "immoral image"	in-storeall-stage rule	false	5	4	coral-cage-around rule	"You sort of need the opposite. I suspect you know this and are just trying to see what happens."
-"bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now." [start Tarry Tile]
+
+table of Tarry Tile guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"bell born"	hell-horn-near rule	false	4	4	--	"There's enough noise right now."
 "swell sworn"	hell-horn-near rule	false	4	4	--	"That might augment the hell horn."
 "tryst tress"	in-tarry-tile rule	false	--	--	--	"The last thing you need now is a hair appointment."
-"bree brine"	we-whine-near rule	false	3	4	sign-unseen rule	"Less gross than what's in [we whine], but no." [start Trending Tribe]
-"fee fine"	we-whine-near rule	false	3	4	sign-unseen rule	"No, there's no charge on [we whine]."
-"flee flyin"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] encourages thinking outside the box, but that's a bit far."
-"key kine"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] already provides a figurative key to things."
-"knee nine"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] is only about mental violence and nastiness to people 'beneath' you, not physical."
-"lee/lea line"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] only blows figurative wind."
-"she shine"	we-whine-near rule	false	3	4	sign-unseen rule	"Why yes, pointless greed should not be limited to men only."
-"tee tine"	we-whine-near rule	false	3	4	sign-unseen rule	"No golf tee provides a bookmark for [we whine]."
+
+table of Trim Tram guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "bind be"	tram-first-puzzle rule	false	4	2	--	"Your incantation fails. Perhaps something more straightforward and inward-looking would work better." [start Trim Tram] [?? get rid of MIND ME so this doesn't pop up]
 "bind bee"	tram-first-puzzle rule	false	4	2	--	"If there were a bee, it might distract you from being, well, you."
 "wined/wind whee/we"	tram-first-puzzle rule	false	4	2	--	"Whether or not you are more or less tense, or more or less exciting, you need to focus on you the right way here."
@@ -353,7 +319,10 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "him ham"	in-trim-tram rule	false	4	4	--	"Pigs, male or female, aren't allowed on public transport."
 "prim pram"	in-trim-tram rule	false	4	4	--	"That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse."
 "slim slam"	in-trim-tram rule	false	4	4	--	"That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though."
-"bean bass"	mass-near rule	false	5	5	--	"You could use a delicious meal, but perhaps there is something even simpler the mean mass can become." [start Vined Vault]
+
+table of Vined Vault guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"bean bass"	mass-near rule	false	5	5	--	"You could use a delicious meal, but perhaps there is something even simpler the mean mass can become."
 "hind halt"	in-vined-vault rule	false	4	5	need-find-fault rule	"You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop."
 "signed salt"	in-vined-vault rule	false	4	5	need-find-fault rule	"Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though."
 "wined/wind walt"	in-vined-vault rule	false	4	5	need-find-fault rule	"A drinking buddy you can play practical jokes on won't be any help here."
@@ -362,22 +331,200 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "clean class"	mass-near rule	false	5	5	--	"You can't help but feel the mean mass could be more wholesome, but that's not quite the right way to do things. It doesn't feel quite natural enough."
 "glean glass"	mass-near rule	false	5	5	--	"No, there's no hidden window you overlooked."
 "lean lass"	mass-near rule	false	5	5	--	"This isn't that sort of game."
-"goring goat"	boat-or-float rule	false	6	4	float-present rule	"You don't need an aggressive animal sidekick." [start violent vale]
-"storing stoat"	boat-or-float rule	false	6	4	float-present rule	"You can carry what you need. You don't need any Brian Jacques villains upsetting that."
-"mooring moat/mote"	boat-or-float rule	false	6	4	float-present rule	"The [float-boat] seems to anchor itself okay here."
-"touring tote"	boat-or-float rule	false	6	4	float-present rule	"[if player has big bag]The big bag is good enough[else]Good idea, but try that with something in your inventory[end if]."
+
+table of Violent Vale guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "island ale/ail"	in-violent-vale rule	false	6	4	violent-not-silent rule	"No need to drink or get an island disease."
+
+table of Wet Wood guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "stet stood"	in-wet-wood rule	false	3	4	--	"No comment on if and where proofreading is necessary, here."
 "het hood"	in-wet-wood rule	false	3	4	--	"You consider the possibility of changing the Wet Wood to a Straight Pride parade, but decide against it, as you're worried you might get trampled by all of a dozen people."
+
+table of Whining War guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "signing sore"	in-whining-war rule	false	7	5	need-dining-door rule	"You make a rude gesture, for whatever good it does." [?? this may need to be fixed shore/poor] [start Whining War]
 "spining spore"	in-whining-war rule	false	7	5	need-dining-door rule	"Your foray into speculative biology goes nowhere."
 "pining pore/poor"	war-no-poor rule	false	7	5	--	"They'll come along later, if you do something else."
 "fining four"	in-whining-war rule	false	7	5	need-dining-door rule	"You don't need to summon people that may audit you."
 "lining lor/lore"	in-whining-war rule	false	7	5	need-dining-door rule	"Alas, nobody falls into line to tell stories of how they got here."
+
+table of yold yard guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "polled pard"	in-yold-yard rule	false	--	--	--	"Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far." [start yold yard]
 "lold lard"	in-yold-yard rule	false	--	--	--	"Fat jokes aren't funny, self-depreciating or otherwise."
+"mold marred" or "gold guard" or "cold card" or "hold hard"	bold-bard-near rule	false	--	--	--	"You'll actually be getting that later!"
 
-[this is for cases that may conflict with actual puzzles. Homonyms may apply as well.]
+book guesses by item, alphabetized
+
+table of Beer Bull guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"mere mull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"The Beer Bull is not impressed by thoughtfulness." [start Here Hull]
+"gear gull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"Spoiler: once you get rid of the bull, a gear gull will appear."
+"leer/lear lull/lul"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"The Beer Bull does not stop looking aggressively at you."
+"peer/pier pull"	beer-bull-by rule	false	4	4	need-dull-or-null rule	"No, you can't bring the bull down with peer pressure."
+
+table of big bag zig zag rig rag guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"brig brag"	trivially true rule	false	3	3	mist-bag-hint rule	"Good guys don't brag about [if player is in Vined Vault]being[else if Vined Vault is visited]having been[else]if they were ever[end if] in jail!"
+"swig swag"	trivially true rule	false	3	3	mist-bag-hint rule	"There's no time to be drinking here!"
+"tig tag"	trivially true rule	false	3	3	mist-bag-hint rule	"But you already have one utterly childish game right in front of you. Do you really need any more?"
+"wig wag"	trivially true rule	false	3	3	mist-bag-hint rule	"If you're wearing a hairpiece, I don't want to know."
+"cig sag"	trivially true rule	false	3	3	mist-bag-hint rule	"You find no black market currency in the [bag-rag]."
+"mig mag"	trivially true rule	false	3	3	mist-bag-hint rule	"Fighter plane ammunition will not help you."
+"gig gag"	trivially true rule	false	3	3	mist-bag-hint rule	"There are enough gags in this adventure. I hope."
+"jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing." [this is referred to explicitly when you BIG BAG, so there is overlap.]
+
+table of boring boat flooring float guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"goring goat"	boat-or-float rule	false	6	4	float-present rule	"You don't need an aggressive animal sidekick." [start Violent Vale] [these should be upgraded to the table for the boat/float]
+"storing stoat"	boat-or-float rule	false	6	4	float-present rule	"You can carry what you need. You don't need any Brian Jacques villains upsetting that."
+"mooring moat/mote"	boat-or-float rule	false	6	4	float-present rule	"The [float-boat] seems to anchor itself okay here."
+"touring tote"	boat-or-float rule	false	6	4	float-present rule	"[if player has big bag]The big bag is good enough[else]Good idea, but try that with something in your inventory[end if]."
+
+table of cage key sage sea guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"cage key"	key-or-rear rule	false	--	--	--	"[if cage key is off-stage]You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it. [cagekey-prog][else]You already got the key[end if]." [start Real Rear] [?? this seems bad, giving a lump point for something obvious]
+"wage wee/whee/wii"	key-or-rear rule	false	--	--	--	"Hey, now! You're not in it for the money! Or a handheld game console!"
+"phage fee"	key-or-rear rule	false	--	--	--	"Biological warfare is too expensive."
+"mage me"	key-or-rear rule	false	--	--	--	"[if player is in Real Rear]One look at the Sage Sea and y[else]Y[end if]ou remember mastering real magic takes training and practice. You'll find enough silly magic to do."
+"page pea/pee/p"	key-or-rear rule	false	4	5	--	"You don't need to skip around a book or summon anything."
+"beige bee"	key-or-rear rule	false	4	5	--	"[if player is in Real Rear]This isn't a[else]This adventure has no[end if] nature retreat."
+
+table of clashing cloak guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"mashing moke"	have-clashing-cloak rule	false	8	5	--	"You need subtlety, not violence."
+"ashing oak"	have-clashing-cloak rule	false	8	5	--	"No genetically twisted tree appears."
+"stashing stoke"	have-clashing-cloak rule	false	8	5	--	"You don't need to start a fire or win this game on a rainy Tuesday."
+
+table of clay cloak guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"stay stoke"	have-clay-cloak rule	false	--	--	--	"You take a slightly ungrammatical approach to keeping your spirits up." [start Been Buggin]
+"bray broke"	have-clay-cloak rule	false	--	--	--	"You try a poor-righteous-teacher approach with the clay cloak."
+"k coke"	have-clay-cloak rule	false	--	--	--	"No fizzy beverage (or anything less healthy) appears."
+"say soak"	have-clay-cloak rule	false	--	--	--	"Water might make the clay cloak even heavier and messier."
+"yay yoke/yolk"	have-clay-cloak rule	false	--	--	--	"Some woke people like to self-immolate, but not you."
+"pay poke"	have-clay-cloak rule	false	--	--	--	"The clay cloak was free. No need to pay anything."
+"cray croak"	have-clay-cloak rule	false	--	--	--	"You make a weird noise. It doesn't help, but it doesn't hurt."
+"fay folk"	have-clay-cloak rule	false	--	--	--	"There's not enough magic in this game? Aww, rats."
+
+table of cool cap tool tap guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"cruel crap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"But you got rid of the skull. Also, swearing is naughty." [start Curst Cave]
+"youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Is that an invitation to drone on endlessly? Why, thank you."
+"pool pap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You want something nice and useful to come out of the tap, not ... that."
+"mule map"	cap-or-tap rule	false	4	3	need-cool-cap rule	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
+"rule rap/wrap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You need something more substantial to come out of the cool cap."
+
+table of hard hat marred mat guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"barred/bard bat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You don't need a pet or a weapon. Especially not a potentially evil one." [start Got Gear Hot Here]
+"card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"A card catalog certainly repels some folks, but you need something sturdier."
+"charred chat"	hat-or-mat rule	false	4	3	no-hardhat rule	"No time for scorched-earth conversation, here."
+"lard lat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You poke at your abs. Nah, you're doing okay."
+"pard pat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You fail to enter a Western with a sidekick."
+"starred stat"	hat-or-mat rule	false	4	3	no-hardhat rule	"Get ahold of yourself! There's no time for in-depth sabermetrics!"
+"guard gat"	hat-or-mat rule	false	4	3	no-hardhat rule	"I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though."
+
+table of jake g guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"cake key"	in-lakes rule	false	4	3	need-fake-fee rule	"Ooh! That'd be nice and tasty. But you don't need that right now." [start Lake Lea] [?? what about multiple] [these are technically Jake G rules]
+"shake she"	in-lakes rule	false	4	3	need-fake-fee rule	"Jake has no horrible ex to avoid."
+"flake flee"	in-lakes rule	false	4	3	need-fake-fee rule	"Be nice! You need Jake."
+"bake be/bee"	in-lakes rule	false	4	3	need-fake-fee rule	"This is not a cooking sim."
+
+table of jerk gel guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"dirk dell"	gel-or-shell rule	false	4	4	need-work-well rule	"You don't need an olde tyme adventure with daggers and stuff." [start Shirk Shell]
+"urkel"	gel-or-shell rule	false	--	--	--	"You hear an annoying laugh in the distance." [?? test this special case. What if there is a mistaken rule we don't need and there are no numbers?]
+"urk/erk ell"	gel-or-shell rule	false	4	4	need-work-well rule	"The gel is messy, but odd interjections won't help you use it or put it back in the tube."
+"smirk smell"	gel-or-shell rule	false	4	4	need-work-well rule	"No, you don't want that."
+"turk tell"	gel-or-shell rule	false	4	4	need-work-well rule	"You wonder briefly how that automaton back in the 18th century played chess, anyway."
+
+table of lurking lump guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"perking pump"	lump-known rule	false	--	--	--	"I don't want to know."
+
+table of mild mead guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"dialed deed"	mead-or-weed rule	false	4	4	weed-offstage rule	"You don't need chemical stimulants to be dialed in to what you need to do." [start Knives Niche]
+"filed feed"	mead-or-weed rule	false	4	4	weed-offstage rule	"Nope. Can't quite categorize that as food."
+"siled seed"	mead-or-weed rule	false	4	4	weed-offstage rule	"No time for farming."
+"styled steed"	mead-or-weed rule	false	4	4	weed-offstage rule	"Too hard to implement. I mean, too fancy for this game. Too fancy, that's it."
+"riled reed/read"	mead-or-weed rule	false	4	4	weed-offstage rule	"Any controlled substances found in the course of your adventure are for relaxation."
+"tiled teed"	mead-or-weed rule	false	4	4	weed-offstage rule	"That would make for an odd golf course."
+
+table of snuck snare stuck stair guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"buck bear/bare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"There are enough animals in this game that could maul you." [start Blinding Blaze]
+"chuck chair"	stair-or-snare rule	false	4	4	no-snare-yet rule	"No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway." [note losing the h's is doable, but it's vile and vulgar enough, I can't find a funny response.]
+"duck dare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Too late for that. You took Kit Cohen's dare, and you're on a quest, now."
+"fuck fair/fare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"There are other games for that."
+"muck mare/mere/mayor"	stair-or-snare rule	false	4	4	no-snare-yet rule	"No, it's something much cleaner than that."
+"puck pair/pare/pere/payer"	stair-or-snare rule	false	4	4	no-snare-yet rule	"No time for hockey! You also aren't really dressed for the cold."
+"pluck player"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Personal grooming can wait."
+"struck strayer"	stair-or-snare rule	false	4	4	no-snare-yet rule	"This game does not need or want to end in tragedy."
+"tuck tare"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Alterations are not your Thing."
+"truck trayer"	stair-or-snare rule	false	4	4	no-snare-yet rule	"Manual labor is not very adventurous."
+"shuck share"	stair-or-snare rule	false	4	4	no-snare-yet rule	"You have no share to shuck."
+"tuck tear"	stair-or-snare rule	false	4	4	no-snare-yet rule	"You see no way to refigure the [if stuck stair is touchable]stair[else]snare[end if]."
+
+table of toe tappin row rappin guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"woe/whoa/whoah whappin"	have-toe-tappin rule	false	2	6	--	"You don't need an exhortation to violence." [start History Hall]
+"crow crappin"	have-toe-tappin rule	false	2	6	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, [toe] is versatile enough."
+"slow slappin"	have-toe-tappin rule	false	2	6	--	"That would be handy in a more violent adventure, but not this one."
+"flow flappin"	have-toe-tappin rule	false	2	6	--	"That might be funky to some, but you need something more practical."
+"low lappin"	have-toe-tappin rule	false	2	6	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus, [i]Chariots of Fire[r] works better, anyway."
+"fo/foe fappin"	have-toe-tappin rule	false	2	6	--	"[Toe] may not be highbrow, but it's not that low-class."
+
+table of we whine guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"bree brine"	we-whine-near rule	false	3	4	sign-unseen rule	"Less gross than what's in [we whine], but no." [start Trending Tribe]
+"fee fine"	we-whine-near rule	false	3	4	sign-unseen rule	"No, there's no charge on [we whine]."
+"flee flyin"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] encourages thinking outside the box, but that's a bit far."
+"key kine"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] already provides a figurative key to things."
+"knee nine"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] is only about mental violence and nastiness to people 'beneath' you, not physical."
+"lee/lea line"	we-whine-near rule	false	3	4	sign-unseen rule	"[we whine] only blows figurative wind."
+"she shine"	we-whine-near rule	false	3	4	sign-unseen rule	"Why yes, pointless greed should not be limited to men only."
+"tee tine"	we-whine-near rule	false	3	4	sign-unseen rule	"No golf tee provides a bookmark for [we whine]."
+
+table of too totes new notes guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"flu/flew floats"	has-too-totes rule	false	--	--	--	"No flying craft appears, but on the bright side, you fail to feel sick."
+"grew/grue groats"	has-too-totes rule	false	--	--	--	"No coins spring from the ground. A coin with a grue would be kind of creepy, anyway."
+"goo goats"	has-too-totes rule	false	--	--	--	"Ugh! Regular goats are messy enough."
+"coo coats"	has-too-totes rule	false	--	--	--	"No need for warmth."
+"do dotes"	has-too-totes rule	false	--	--	--	"Wowzers! What a neat document [too totes] is. Golly gee!"
+"rue rotes"	has-too-totes rule	false	--	--	--	"You fail to find yourself in a more straightforward adventure."
+"glue gloats"	has-too-totes rule	false	--	--	--	"What kind of person boasts about stockpiling glue?"
+"blew/blue bloats"	has-too-totes rule	false	--	--	--	"You thought you saw Violet Beauregarde roll by there for a minute."
+"stew stoats"	has-too-totes rule	false	--	--	--	"Badger, Mole and Rat would agree that's going too far. Even Toad."
+"shoo shoats"	has-too-totes rule	false	--	--	--	"There are no young pigs here to shoo."
+
+book wallish guesses
+
+table of wry wall guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"cry call"	wallish-loc rule	false	--	--	--	"You lash out meaninglessly at the wry wall." [start 2 wry wall mistakes]
+"dry doll"	wallish-loc rule	false	--	--	--	"The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway."
+"fry fall"	wallish-loc rule	false	--	--	--	"The wry wall remains upright."
+"pry pall"	wallish-loc rule	false	--	--	--	"There is no hidden tomb under the wry wall."
+"try tall"	wallish-loc rule	false	--	--	--	"The wry wall does not grow."
+
+book general guesses
+
+table of general good guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"trilly trolling"	trivially true rule	false	6	7	not-rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
+"silly souling/soling"	trivially true rule	false	6	7	not-rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
+"filly foaling"	trivially true rule	false	6	7	not-rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
+"wary wile"	trivially true rule	false	4	4	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
+"treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
+"tough toll"	trivially true rule	false	--	--	--	"You groan about how heavy your inventory is."
+"drowsy drakes"	in-lousy-lakes rule	false	--	--	--	"No sleepy ducks walk by."
+
+[this is for cases that may conflict with actual puzzles. Homophones may apply as well.]
 
 table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
@@ -386,8 +533,8 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "choral cage"	coral-cage-around rule	false	5	4	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
 "co cappin"	have-toe-tappin rule	false	2	4	need-cocapn rule	"Close, but camaraderie, not violence."
 "bought board"	bot-board-vis rule	false	3	5	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]
-"got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homonym, here. You're close."
-"hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homonym, here. You're close."
+"got gourd"	bot-board-vis rule	false	3	5	--	"That worked in The Life of Brian, but ... try a homophone, here. You're close."
+"hot hoard"	bot-board-vis rule	false	3	5	--	"You already hoarded enough inventory in your big bag. Try a homophone, here. You're close."
 "woe/whoa/whoah weight"	go-gate-vis rule	false	4	4	--	"You wouldn't want to be crushed by a weight. But you've got the right idea."
 "would/wood won" or "would one"	good-gun-here rule	false	4	4	--	"You are in homophone territory, here."
 "whet wood"	in-wet-wood rule	false	3	4	--	"Homophones aren't quite right here." [start Wet Wood]
@@ -401,7 +548,7 @@ to say dives-surprise of (x - a number):
 	if kni-ni is false:
 		say "need some sort of general ambush";
 		continue the action;
-	say "already prepared the knives niche, anyway";
+	say "already prepared the Knives Niche, anyway";
 	choose row x in table of niche guesses;
 	now nitry entry is true;
 
@@ -520,7 +667,7 @@ this is the in-trim-tram rule: if player is in Trim Tram, the rule succeeds;
 
 this is the in-vined-vault rule: if player is in Vined Vault, the rule succeeds;
 
-this is the in-violent-vale rule: if player is in violent vale, the rule succeeds;
+this is the in-violent-vale rule: if player is in Violent Vale, the rule succeeds;
 
 this is the in-way-wrong rule: if in-way-wrong is true, the rule succeeds;
 
@@ -550,8 +697,6 @@ this is the pit-pound-unsolved rule: if player is in Pit Pound and found-fit is 
 
 this is the poor-ponder-near rule: if poor ponder for fonder is touchable, the rule succeeds;
 
-this is the signable-loc rule: if location of player is signable, the rule succeeds;
-
 this is the skull-near rule: if screaming skull is touchable, the rule succeeds;
 
 this is the stair-or-snare rule: if player has snuck snare or stuck stair is touchable, the rule succeeds;
@@ -561,6 +706,8 @@ this is the tool-tap-near rule: if tool tap is touchable, the rule succeeds;
 this is the tram-first-puzzle rule: if player is in Trim Tram and me-minded is false, the rule succeeds;
 
 this is the vial-or-pile rule: if vapor vial is touchable or paper pile is touchable, the rule succeeds;
+
+this is the wallish-loc rule: if location of player is wallish, the rule succeeds;
 
 this is the war-no-poor rule: if player is in Whining War and pining poor are off-stage, the rule succeeds;
 
@@ -615,8 +762,6 @@ this is the need-mark-more rule: if player is in Stark Store and dark door is no
 this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
 
 this is the need-work-well rule: if player does not have jerk gel and jerk gel is not moot, the rule succeeds; [?? if jerk gel is in Shirk Shell]
-
-this is the niche-needed rule: if kni-ni is false, the rule succeeds;
 
 this is the no-hardhat rule: if player does not have hard hat, the rule succeeds;
 
