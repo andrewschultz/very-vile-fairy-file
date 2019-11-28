@@ -848,7 +848,7 @@ chapter Mean Moe's (M)
 Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to discover the lights and bells and whistles that make it tick.". cht of Mean Moe's Clean Clothes is letboth. [-> glean glows]
 
 to decide whether can-glean:
-	if tried-yet of "GLEAN GLOWS", yes;
+	if tried-yet of vc-glean-glows rule, yes;
 	no;
 
 check entering Mean Moe's: say "It is too small to do anything to accept clothes." instead;
@@ -1175,7 +1175,7 @@ gull-guard is a truth state that varies.
 
 to buff-gold-guard:
 	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back.'[wfak]";
-	if tried-yet of "BEAST BOSS", say "[line break]You also feel more ready to face the beast boss, now.";
+	if tried-yet of vc-beast-boss rule, say "[line break]You also feel more ready to face the beast boss, now.";
 	now gull-guard is true;
 
 check going west in Here Hull:
@@ -1728,14 +1728,18 @@ to check-injury: if least-loss is true and healed-here is false, say "[line brea
 
 to decide which number is toe-clued:
 	let temp be 0;
-	if tried-yet of "SO SAPPIN", increment temp;
-	if tried-yet of "CO CAPN", increment temp;
-	if tried-yet of "GO GAPPIN", increment temp;
-	if tried-yet of "MO MAPPIN", increment temp;
+	if tried-yet of vc-so-sappin rule, increment temp;
+	if tried-yet of vc-co-capn rule, increment temp;
+	if tried-yet of vc-go-gappin rule, increment temp;
+	if tried-yet of vc-mo-mappin rule, increment temp;
 	decide on temp;
 
 to say toe-poss:
-	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if][if toe-clued > 0]. You also found a riff you weren't ready for yet[end if]"
+	now vc-dont-print is true;
+	let tc be toe-clues;
+	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if]";
+	if toe-clued > 0, say ". You also found [if toe-clued > 1]some riffs[else]a riff[end] that will be useful later";
+	now vc-dont-print is false;
 
 to decide which number is carried-fungible:
 	let temp be number of things enclosed by player;
@@ -1869,16 +1873,13 @@ check thinking:
 	now vc-dont-print is false;
 	the rule succeeds;
 
-to decide whether tried-yet of (ct - text):
-	decide no; [??]
+to decide whether tried-yet of (vc - a rule):
 	let tried-any be false;
 	repeat through table of verb checks:
-		if ct is ct: [??]
+		if vc is ver-rule entry:
 			now tried-any is true;
-			if think-cue entry is true:
-				process the ver-rule entry;
-				if the rule succeeded, decide yes;
-	if tried-any is false, say "I tried to check if [ct] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
+			if think-cue entry is true and idid entry is false, decide yes;
+	if tried-any is false, say "I tried to check if [vc] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
 	decide no;
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
@@ -2720,9 +2721,9 @@ this is the bot-board-hint rule:
 
 this is the bull-beast-hint rule:
 	if need-loss is true:
-		if tried-yet of "LEAST LOSS", say "Now is the time to go in for LEAST LOSS." instead;
+		if tried-yet of vc-least-loss rule, say "Now is the time to go in for LEAST LOSS." instead;
 		say "[one of]The Beast Boss/Bull Beast is going to hurt you, no question. But you want to minimize the damage[or]LEAST LOSS[stopping]." instead;
-	if tried-yet of "CULL CEASED", say "You already tried to say CULL CEASED. Now, it will work!" instead; [?? what if LUL LEAST??]
+	if tried-yet of vc-cull-ceased rule, say "You already tried to say CULL CEASED. Now, it will work!" instead; [?? what if LUL LEAST??]
 	say "[one of]You need to say or do something that will put the Bull Beast down[or]There are two ways to nail the Bull Beast[or][one of]CULL CEASED tells the Bull Beast its rampaging days are over[or]LUL LEAST is a put-down that leaves the beast in shame[stopping][stopping].";
 
 this is the cache-cap-hint rule:
@@ -2743,7 +2744,7 @@ this is the ceiling-seer-hint rule:
 	say "The Ceiling Seer is just there to reinforce what you need to do in the Real Rear. The -ing in each act is superfluous.";
 
 this is the clashing-cloak-hint rule:
-	if tried-yet of "SMASHING SMOKE":
+	if tried-yet of vc-smashing-smoke rule:
 		say "You know what to do with the cloak, but the question is, where?";
 		if poor ponder is not moot:
 			say "You haven't unlocked the room, yet. You need to look at [poor ponder] [here-in of History Hall].";
@@ -2791,7 +2792,7 @@ this is the frightening-fridge-hint rule:
 	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
 
 this is the full-feast-hint rule:
-	if tried-yet of "PULL PIECED":
+	if tried-yet of vc-pull-pieced rule:
 		say "You know what to do with the full feast. Nobody's ready for it yet." instead;
 	say "[one of]The full feast is too much to carry by yourself all at once[or]You can bring the full feast over a bit at a time[or]PULL PIECED[stopping].";
 
@@ -3700,7 +3701,7 @@ to check-gored-clue:
 	say "[line break]";
 	if Hot Horde is in Airy Isle and Lot Lord is in Airy Isle:
 		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
-		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
+		if tried-yet of vc-got-gored rule, say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
 	else if Hot Horde is in Airy Isle:
 		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
 	else:
