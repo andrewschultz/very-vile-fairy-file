@@ -178,7 +178,7 @@ A drinking buddy you can play practical jokes on won't be any help here.
 > find fault
 by one point
 
-#next-cmd-pass
+#next-cmd-pass 
 > brig brag
 Good guys don't brag about being
 !Learner needle
@@ -989,6 +989,9 @@ You wonder briefly how that automaton back in the 18th century played chess, any
 > coughed canned
 Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+> offed and
+Learner needle
+You try for an impressive silence, but nobody is impressed.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -999,6 +1002,9 @@ by one point
 > coughed canned
 !Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+> offed and
+!Learner needle
+You try for an impressive silence, but nobody is impressed.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -1212,6 +1218,11 @@ Close, but camaraderie, not violence.
 
 > snake snap
 by one point
+Silent Sail
+
+> fake fap
+!Learner needle
+You make a rude gesture, for whatever good it does.
 
 > enter boat
 

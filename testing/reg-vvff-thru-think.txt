@@ -234,6 +234,7 @@ by one point
 
 > snake snap
 by one point
+Silent Sail
 
 > think
 !SNAKE SNAP
@@ -248,16 +249,33 @@ Been Buggin
 
 > enter boat
 
+>lean luggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>think
+LEAN LUGGIN
+>mean muggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>think
+MEAN MUGGIN
+
 > stay strong
 
 > glow glad
 by one point
+
+>think
+You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
+You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 
 > mean muggin
 by one point
 
 > lean luggin
 by one point
+
+>think
+!LEAN LUGGIN
+!MEAN MUGGIN
 
 > enter boat
 

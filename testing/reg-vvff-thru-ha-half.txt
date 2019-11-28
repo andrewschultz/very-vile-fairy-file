@@ -1009,6 +1009,7 @@ The HA HALF button lights up on your Leet Learner.
 
 > snake snap
 by one point
+Silent Sail
 
 > snake snap
 !by one point
@@ -1164,17 +1165,24 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+> zhistory hall
+DEBUG: vc-history-hall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+> history zhall
+DEBUG: vc-history-hall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+
 > history hall
 
+>zmystery mall
+DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+>mystery zmall
+DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 > history hall
 !by one point
 You already flipped back to History Hall.
-> zhistory hall
-!DEBUG: vc-history-hall rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
-> history zhall
-!DEBUG: vc-history-hall rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
 
 > zyoure yonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.

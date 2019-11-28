@@ -4,7 +4,7 @@
 #-- use HHV.PY to verify ha-half
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
 ~	mis	t5
 ~	ha	t6
 
