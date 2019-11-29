@@ -932,7 +932,7 @@ You fail to enter a Western with a sidekick.
 
 > card cat
 !Learner needle
-A card catalog certainly repels some folks, but you need something sturdier.
+A card catalog certainly repels some folks, but you have something sturdier.
 > charred chat
 !Learner needle
 No time for scorched-earth conversation, here.
@@ -991,7 +991,7 @@ Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
 > offed and
 Learner needle
-You try for an impressive silence, but nobody is impressed.
+You try for an impressive anticipatory silence, but nobody is around to appreciate it.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -1004,7 +1004,7 @@ by one point
 You try to suppress a cough while avoiding any sudden downturn in fortune.
 > offed and
 !Learner needle
-You try for an impressive silence, but nobody is impressed.
+You try for an impressive anticipatory silence, but nobody is around to appreciate it.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -1034,7 +1034,7 @@ Learner needle
 But you got rid of the skull. Also, swearing is naughty.
 > youll yap
 Learner needle
-Is that an invitation to drone on endlessly? Why, thank you.
+Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
 > pool pap
 Learner needle
 You want something nice and useful to come out of the tap, not ... that.
@@ -1053,7 +1053,7 @@ by one point
 But you got rid of the skull. Also, swearing is naughty.
 > youll yap
 !Learner needle
-Is that an invitation to drone on endlessly? Why, thank you.
+Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
 > pool pap
 !Learner needle
 You want something nice and useful to come out of the tap, not ... that.

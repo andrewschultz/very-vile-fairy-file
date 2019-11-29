@@ -42,6 +42,8 @@ chapter warps
 
 chapter walkthrough
 
+test qbug with "purloin toe/gonear violent vale/purloin cake cap/silent sail/boring boat/no nappin/enter boat/mo mappin/ho happen/lean luggin/mean muggin"
+
 test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag/s". [this is the intro.]
 
 test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]

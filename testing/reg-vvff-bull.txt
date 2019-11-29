@@ -4,8 +4,8 @@
 ## NO GENERATOR FILE, JUST BULL CHASE TEST CASES
 
 ## walkthrough with all points, jumping everywhere
-** game: /home/andrew/prt/debug-very-vile-fairy-file.gblorb
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
@@ -37,7 +37,7 @@ The Beer Bull catches you doubling back! What follows is ... not pretty.
 >e
 >dear dull
 >z
-The Beer Bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats into its corner.
+The Beer Bull catches up to you! It charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats into its corner.
 
 # test general time wasting outside of Here Hull
 >n
@@ -46,7 +46,7 @@ The Beer Bull, upset with your lack of action, charges and kicks you around for 
 >w
 The Beer Bull thunders just behind. You need to keep moving, or it will catch you.
 >z
-The Beer Bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats back to Here Hull.
+The Beer Bull catches up to you! It charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats back to Here Hull.
 You limp back to Creased Cross.
 
 # test general time wasting in Creased Cross
@@ -58,25 +58,55 @@ You limp back to Creased Cross.
 >z
 You limp around Creased Cross.
 
+# test avoiding the Bull in Real Rear
+
+>n
+>e
+>dear dull
+>w
+>s
+>s
+>s
+escape a mauling
+>n
+# make sure the bull isn't sneakily waiting
+!Beer Bull
+>n
+#aaaand back to Creased Cross
+
 # test making a rhyme with Beer Bull present.
 >n
 >e
+>dear dull
 >w
 >s
 >w
 >cleared clay
 The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.
-Okay ... again ... CLEARED CLAY is worth doing.
+!by one point
+
+>think
+You can probably now try CLEARED CLAY, but you may have to go back to the right place.
 
 # not a test case but a detour to clear up some new test cases
 >w
+>think
+You can probably now try CLEARED CLAY.
+
 >cleared clay
+by one point
+>think
+!CLEARED CLAY
+# make sure "oops forgot to erase things" debug text is gone
+!cleared-clay
+
 >d
 >tight tunnel
->big bag
 >u
 >w
+>mystery mall
 >listen
+>e
 >e
 
 # test singing and history hall clue(s)
@@ -90,12 +120,13 @@ That might work on people who understand songs and poetry. The Beer Bull does no
 >w
 >d
 >z
-The Bull Beast seemed slightly claustrophobic. Perhaps you could lure it further. What could be to the west?
+Whoah! The Beer Bull seemed to run out of Tight Tunnel quickly. Perhaps you could lure it further. What could be to the west?
 >undo
 >undo
 >w
 The Bull seems out of place here, but it's not particularly bothered by that.
 >z
+>big bag
 
 # test Violent Vale without boat/float
 >n
@@ -105,7 +136,6 @@ The Bull seems out of place here, but it's not particularly bothered by that.
 >s
 >e
 Oh no! Between the Beer Bull and the fridge, you feel trapped.
-!, and
 >z
 
 # test violent vale with float
@@ -146,17 +176,18 @@ Creased Cross
 >d
 >purloin snare
 >w
-You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
+You lead the Beer Bull into Dives Ditch, where it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
 >undo
 >undo
 >w
-You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
+You lead the Beer Bull into Dives Ditch, where it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
 
 # test knives niche without snare
 >w
 >d
 >w
 >knives niche
+>e
 >u
 >e
 >n
@@ -167,10 +198,10 @@ You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering yo
 >w
 >d
 >z
-The Bull Beast seemed slightly claustrophobic. Perhaps you could lure it further. What can you do to the west?
+Whoah! The Beer Bull seemed to run out of Tight Tunnel quickly. Perhaps you could lure it further. What can you do to the west?
 >undo
 >w
-You lead the Beer Bull into Dives Ditch, and it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
+You lead the Beer Bull into Knives Niche, where it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.
 
 # setting the snare
 
@@ -195,7 +226,8 @@ Oh no! You don't have the time to place the snare AND distract the Bull Beast at
 >w
 >d
 >w
-You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: "TRICK! TRAP! SICK SAP!" before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.
+You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: "TRICK! TRAP! SICK SAP!" before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead, far less potent than whatever horrible alcohol the Beer Bull advertised.
+/^You walk back to Here Hull, where a Gear Gull waits. "Thank you for freeing me from the Beer Bull. I would like to do you a favor in return." The Gear Gull inspects you.
 
 "I see no armor I could help improve. Come back when you find it. But for now, I need time to reorganize my domain."
 
@@ -204,12 +236,13 @@ You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not 
 >undo
 >purloin gold guard
 >w
-The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back.'
+The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, "I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back."
+
 !You also feel more ready to face the beast boss, now.
 >undo
 >gonear creased cross
 >beast boss
 >gonear tight tunnel
 >w
-The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back.'
+The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, "I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back."
 You also feel more ready to face the beast boss, now.

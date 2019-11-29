@@ -1,5 +1,5 @@
 
-## reg-vvff-alt-verbs.txt
+## reg-vvff-thru-alt-verbs.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx

@@ -411,7 +411,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 table of cool cap tool tap guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "cruel crap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"But you got rid of the skull. Also, swearing is naughty." [start Curst Cave]
-"youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Is that an invitation to drone on endlessly? Why, thank you."
+"youll yap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!"
 "pool pap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You want something nice and useful to come out of the tap, not ... that."
 "mule map"	cap-or-tap rule	false	4	3	need-cool-cap rule	"It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try."
 "rule rap/wrap"	cap-or-tap rule	false	4	3	need-cool-cap rule	"You need something more substantial to come out of the cool cap."
@@ -419,7 +419,7 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 table of hard hat marred mat guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "barred/bard bat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You don't need a pet or a weapon. Especially not a potentially evil one." [start Got Gear Hot Here]
-"card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"A card catalog certainly repels some folks, but you need something sturdier."
+"card cat"	hat-or-mat rule	false	4	3	no-hardhat rule	"A card catalog certainly repels some folks, but you [if player has hard hat]have[else]need[end if] something sturdier."
 "charred chat"	hat-or-mat rule	false	4	3	no-hardhat rule	"No time for scorched-earth conversation, here."
 "lard lat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You poke at your abs. Nah, you're doing okay."
 "pard pat"	hat-or-mat rule	false	4	3	no-hardhat rule	"You fail to enter a Western with a sidekick."

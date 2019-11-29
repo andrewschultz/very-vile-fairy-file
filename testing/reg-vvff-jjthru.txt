@@ -5,11 +5,12 @@
 ## it roughly corresponds to reg-vvff-min-thru.txt.
 
 ## walkthrough with all points, jumping everywhere
-** game: /home/andrew/prt/debug-very-vile-fairy-file.gblorb
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
+>z
 > jj
 by one point
 GET GOOD
@@ -26,11 +27,15 @@ FIND FAULT
 by one point
 GREEN GRASS
 
+>z
+>mash map
+
 > jj
 by one point
 GROW GRIT
 
 > jj
+The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. (THINK should give details.) Use it anyway?
 by one point
 MASH MAP
 
@@ -42,18 +47,8 @@ MIND ME
 by one point
 FLIM FLAM
 
-> z
-> jj
-by one point
-BIG BAG
-> undo
-
 # ok, we're in the main area now
 # we could have taken care of the lump at any time, but let's do so now
-
-> jj
-by one point
-BIG BAG
 
 # clean up real rear for the moment
 
@@ -197,6 +192,10 @@ CO CAPN
 by one point
 SNAKE SNAP
 
+> jj
+by one point
+COUPLE CAPS
+
 > enter boat
 
 > jj
@@ -209,11 +208,11 @@ GLOW GLAD
 
 > jj
 by one point
-MEAN MUGGIN
+LEAN LUGGIN
 
 > jj
 by one point
-LEAN LUGGIN
+MEAN MUGGIN
 
 # get the gold guard, rescue the mage
 
@@ -295,6 +294,10 @@ LUCK LAIR
 by one point
 TIGHT TUNNEL
 
+> jj
+by one point
+BIG BAG
+
 > w
 > jj
 by one point
@@ -316,7 +319,11 @@ by one point
 NEAR NULL
 
 > jj
-The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the beer bull into running into the trap you set.
+The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the Beer Bull into running into the trap you set. You head back to the Gear Gull in Here Hull.
+
+The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, "I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back."
+
+Man! I guess you could say you had ... one wound run-round.
 
 # beat the bull beast/beast boss
 
@@ -378,14 +385,6 @@ SHOW SHIELD
 > n
 > jj
 by one point
-GO GAPPIN
-
-> jj
-by one point
-COUPLE CAPS
-
-> jj
-by one point
 CAST CAP
 
 > jj
@@ -395,6 +394,10 @@ MEEKER MUSCLE
 > jj
 by one point
 WOOD ONE
+
+> jj
+by one point
+GO GAPPIN
 
 > n
 > jj
