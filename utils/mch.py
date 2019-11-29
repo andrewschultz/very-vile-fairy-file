@@ -59,7 +59,7 @@ def whole_command(my_cmd):
     return re.sub("^> *", "", my_cmd.strip().lower())
 
 def first_word(my_cmd):
-    return temp = re.sub("#.*", "", whole_command(my_cmd)).split(' ')[0]
+    return re.sub("#.*", "", whole_command(my_cmd)).split(' ')[0]
 
 def valid_leet_rule(x):
     return x != '--' and x != 'llp-trivial rule'

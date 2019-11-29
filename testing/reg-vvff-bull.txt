@@ -4,8 +4,8 @@
 ## NO GENERATOR FILE, JUST BULL CHASE TEST CASES
 
 ## walkthrough with all points, jumping everywhere
-** game: /home/andrew/prt/debug-very-vile-fairy-file.gblorb
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
@@ -61,6 +61,7 @@ You limp around Creased Cross.
 # test making a rhyme with Beer Bull present.
 >n
 >e
+>dear dull
 >w
 >s
 >w

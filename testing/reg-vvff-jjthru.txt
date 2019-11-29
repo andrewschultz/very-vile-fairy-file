@@ -5,8 +5,8 @@
 ## it roughly corresponds to reg-vvff-min-thru.txt.
 
 ## walkthrough with all points, jumping everywhere
-** game: /home/andrew/prt/debug-very-vile-fairy-file.gblorb
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
