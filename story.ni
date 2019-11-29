@@ -1755,7 +1755,6 @@ the need bag for lots of items rule is listed last in the check taking rulebook.
 chapter undoing
 
 before undoing an action:
-	showme save undo state;
 	if save undo state is false:
 		say "You hear a voice booming 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
 		enable saving of undo state;
@@ -1842,11 +1841,11 @@ to read-laters (wt - a which-think):
 			if there is no think-advice entry or too-distracted:
 				unless pre-bug is true, next;
 			process the ver-rule entry; [?? surround with vc-dont-print being true then false ??]
-			let Q be whether or not the rule succeeded;
-			let Z be whether or not wt is doable-now;
-			if Q is not Z, next;
+			let rb-out be the outcome of the rulebook;
+			if wt is doable-now and rb-out is the not-yet outcome, next;
+			if wt is undoable-now and rb-out is the ready outcome, next;
 			if thought-any is false, say "[line break]";
-			if Z is true, say "([b]CAN DO NOW[r]) ";
+			if rb-out is the ready outcome, say "([b]CAN DO NOW[r]) ";
 			now thought-any is true;
 			say "[think-advice entry][line break]";
 
@@ -1913,30 +1912,19 @@ to decide which number is can-do-hint of (ts - a truth state):
 	repeat through the table of verb checks:
 		if think-cue entry is true:
 			process the ver-rule entry;
-			if the rule succeeded and there is a core entry, increment temp;
+			let rb-out be the outcome of the rulebook;
+			if ts is true:
+				if rb-out is the ready outcome, increment temp;
+			else if rb-out is the not-yet outcome:
+				increment temp;
 	now vc-dont-print is false;
 	decide on temp;
 
 to decide which number is doable-hinted:
-	let temp be 0;
-	now vc-dont-print is true;
-	repeat through the table of verb checks:
-		if think-cue entry is true:
-			process the ver-rule entry;
-			if the rule succeeded and there is a core entry, increment temp;
-	now vc-dont-print is false;
-	decide on temp;
+	decide on can-do-hint of true;
 
 to decide which number is future-hinted:
-	let temp be 0;
-	now vc-dont-print is true;
-	repeat through the table of verb checks:
-		if think-cue entry is true:
-			process the ver-rule entry;
-			unless the rule succeeded:
-				if there is a core entry, increment temp;
-	now vc-dont-print is false;
-	decide on temp;
+	decide on can-do-hint of false;
 
 to decide which number is all-hinted: decide on doable-hinted + future-hinted;
 
@@ -3490,10 +3478,11 @@ this is the verb-checker rule:
 			if wfull-fail is true:
 				say "Ooh! You're close, but you juggled things up, somehow.";
 				the rule succeeds;
-			if in-so-sad is true or in-way-wrong is true:
-				say "Ugh! That should work, but you don't feel up to it. Maybe once your head is clearer, you'll figure where and why.";
-				now think-cue entry is true;
-				the rule succeeds;
+			if buggin-freeze:
+				if ver-rule entry is not vc-glow-glad rule and ver-rule entry is not vc-stay-strong rule:
+					say "Ugh! That should work, but you don't feel up to it. Maybe once your head is clearer, you'll figure where and why.";
+					now think-cue entry is true;
+					the rule succeeds;
 			if beer bull is touchable and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
 				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
 				let oldloc be location of player;
@@ -3633,7 +3622,7 @@ carry out jerkingjumping:
 		lump-minus;
 		the rule succeeds;
 	if doable-hinted > 0:
-		say "The lump glistens weirdly. Perhaps you've forgotten something you can do. Use it anyway?";
+		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. (THINK should give details.) Use it anyway?";
 		unless the player yes-consents:
 			say "OK. You may wish to THINK to see what you can do." instead;
 	now vc-dont-print is true;
@@ -3642,7 +3631,8 @@ carry out jerkingjumping:
 		if core entry is false, next;
 		if idid entry is true, next;
 		process the ver-rule entry;
-		if the rule succeeded:
+		let vr be the outcome of the rulebook;
+		if vr is the ready outcome:
 			say "After some thought, you consider the right way forward: [firstor of w1 entry] [firstor of w2 entry]...";
 			now idid entry is true; [this is so BURY BILE gets processed. We already checked IDID above.]
 			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
@@ -3652,10 +3642,9 @@ carry out jerkingjumping:
 				now zap-core-entry is false;
 			skip upcoming rulebook break;
 			lump-minus;
+			now think-cue entry is false;
 			now vc-dont-print is false;
-			showme save undo state;
 			disable saving of undo state;
-			showme save undo state;
 			the rule succeeds;
 	now vc-dont-print is false;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";

@@ -19,7 +19,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "find"	"fault"	false	true	true	false	vc-find-fault rule	vr-find-fault rule	--	--
 "green"	"grass"	false	false	true	false	vc-green-grass rule	vr-green-grass rule	--	--
 "grow|oh|so"	"grit|it|sit"	false	true	true	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
-"mash|bash|rash|slash"	"map|bap|rap|slap"	false	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
+"mash|bash|rash|slash"	"map|bap|rap|slap"	false	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
 "mind"	"me"	false	false	true	false	vc-mind-me rule	vr-mind-me rule	--	--
 "flim|skim"	"flam|scam"	false	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
 "spark"	"spliff"	false	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--	-- [start of Fun Fen]
@@ -1612,11 +1612,13 @@ randtxt
 "Catcall: at ALL!"
 "Dark day! Hark, hey!"
 "Fie! Face my mace!"
+"Fry, freak-guy(?)-geek!"
 "Gonna go off! Shun a show-off!"
 "Look leading?! Book beating!"
 "Mock me? Sock, SEE?!"
 "'My magic try: TRAGIC!'"
 "Rotten role: gotten goal?"
+"Sly, sleek? Shy, chic? Why, weak!"
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
 "Whoah! Words? No, nerds!"
