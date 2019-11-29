@@ -1836,7 +1836,7 @@ by one point
 @ha
 > work well
 !by one point
-You already did.
+Any further futzing might undo your previous good work.
 
 @ha
 > zwork well rule
@@ -1873,7 +1873,7 @@ Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
 > offed and
 Learner needle
-You try for an impressive silence, but nobody is impressed.
+You try for an impressive anticipatory silence, but nobody is around to appreciate it.
 > scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -1904,10 +1904,10 @@ You're already on the Soft Sand.
 > undo
 > zsoft sand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 > soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 
 @ha
 > zloft land rule
@@ -1923,7 +1923,7 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 You try to suppress a cough while avoiding any sudden downturn in fortune.
 > offed and
 !Learner needle
-You try for an impressive silence, but nobody is impressed.
+You try for an impressive anticipatory silence, but nobody is around to appreciate it.
 > scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
@@ -2008,7 +2008,7 @@ Learner needle
 But you got rid of the skull. Also, swearing is naughty.
 > youll yap
 Learner needle
-Is that an invitation to drone on endlessly? Why, thank you.
+Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
 > pool pap
 Learner needle
 You want something nice and useful to come out of the tap, not ... that.
@@ -2049,7 +2049,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 But you got rid of the skull. Also, swearing is naughty.
 > youll yap
 !Learner needle
-Is that an invitation to drone on endlessly? Why, thank you.
+Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
 > pool pap
 !Learner needle
 You want something nice and useful to come out of the tap, not ... that.
@@ -2623,14 +2623,6 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@ha
-> lean luggin
-> lean luggin
-!by one point
-You already learned lean luggin'.
-> undo
-> undo
-
 > mean muggin
 by one point
 
@@ -2658,6 +2650,12 @@ The HA HALF button lights up on your Leet Learner.
 > lean luggin
 by one point
 
+@ha
+> lean luggin
+!by one point
+You already learned lean luggin'.
+> undo
+
 ==t4
 >s
 south to Leaf Lake
@@ -2665,15 +2663,6 @@ south to Leaf Lake
 north to Fun-Filled Gun Guild
 >w
 west to Trust Trail
-
-
-@ha
-> lean luggin
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-> mean muggin
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 > zlean luggin rule
@@ -3314,8 +3303,7 @@ east to Bold 'n Brave
 @ha
 > winding ways
 !by one point
-#?? do better post comp
-You already did.
+You already made it out of the Blinding Blaze.
 
 @ha
 > zwinding ways rule
@@ -3676,8 +3664,7 @@ by one point
 @ha
 > beast boss
 !by one point
-#?? summon beast boss = more explicit?
-You already did.
+You already summoned the Bull Beast.
 
 @ha
 > zbeast boss rule
@@ -3792,7 +3779,7 @@ McFly
 @ha
 > spark spliff
 !by one point
-Whoah, dude. You already did.
+Whoah, dude! Jonesing for more already?
 
 @ha
 > zspark spliff rule
@@ -4059,8 +4046,7 @@ by one point
 @ha
 > dining door
 !by one point
-#?? "That's already here."
-You already did.
+The dining door is already here.
 
 @ha
 > zdining door rule
@@ -4088,8 +4074,7 @@ by one point
 @ha
 > pull pieced
 !by one point
-#?? this is a bit confusing
-You can't see any objects like that here.
+You don't need to pull anything other than the full feast.
 
 @ha
 > zpull pieced rule
@@ -4122,7 +4107,7 @@ by one point
 @ha
 > mining more
 !by one point
-Don't get greedy!
+You've gotten all the mined materials you need. Wasting them might cause another whining war.
 
 @ha
 > zmining more rule
@@ -4388,8 +4373,7 @@ by one point
 @ha
 > beaker bustle
 !by one point
-#?? better?
-You already did that!
+Russell's moment of interest in the sciences has passed.
 
 @ha
 > zbeaker bustle rule

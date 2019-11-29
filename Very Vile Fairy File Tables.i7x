@@ -143,7 +143,7 @@ this is the vr-backed-binder rule:
 a goodrhyme rule (this is the vc-beaker-bustle rule) :
 	if Reeker Russell is not touchable, unavailable;
 	if beaker-yet is true:
-		vcal "You already did that!";
+		vcal "Russell's moment of interest in the sciences has passed.";
 		already-done;
 	ready;
 
@@ -155,7 +155,7 @@ this is the vr-beaker-bustle rule:
 a goodrhyme rule (this is the vc-beast-boss rule) :
 	if player is not in Creased Cross, unavailable;
 	if Bull Beast is not off-stage:
-		vcal "You already did.";
+		vcal "You already summoned the Bull Beast.";
 		already-done;
 	if player does not have gold guard:
 		vcp "You don't feel armed for that, yet.";
@@ -420,7 +420,7 @@ a goodrhyme rule (this is the vc-dining-door rule) :
 		vcp "You hear a rumbling, but it's still too dingy here for anything nice like a dining door.";
 		not-yet;
 	if dine-door is true:
-		vcal "You already did.";
+		vcal "The dining door is already here.";
 		already-done;
 	ready;
 
@@ -793,7 +793,7 @@ a goodrhyme rule (this is the vc-lean-luggin rule) :
 		vcal "You already learned lean luggin['].";
 		already-done;
 	if Dean Duggan is not touchable:
-		vcp "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		vcpforce "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
 		not-yet;
 	ready;
 
@@ -947,7 +947,7 @@ a goodrhyme rule (this is the vc-mean-muggin rule) :
 		vcal "You already learned mean muggin['].";
 		already-done;
 	if Dean Duggan is not touchable:
-		vcp "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		vcpforce "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
 		not-yet;
 	ready;
 
@@ -1005,7 +1005,7 @@ a goodrhyme rule (this is the vc-mining-more rule) :
 		vcp "You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
 		not-yet;
 	if pining poor are moot:
-		vcal "You can't use any more mined materials!";
+		vcal "You've gotten all the mined materials you need. Wasting them might cause another whining war.";
 		already-done;
 	ready;
 
@@ -1309,7 +1309,7 @@ this is the vr-soft-sand rule:
 
 a goodrhyme rule (this is the vc-spark-spliff rule) :
 	if wild weed is moot:
-		vcal "Whoah, dude. You already did.";
+		vcal "Whoah, dude! Jonesing for more already?";
 		already-done;
 	if player does not have wild weed and player is not in Fun Fen, unavailable;
 	if player is not in Fun Fen:
@@ -1427,7 +1427,7 @@ this is the vr-wild-weed rule:
 a goodrhyme rule (this is the vc-winding-ways rule) :
 	if player is not in Blinding Blaze, unavailable;
 	if blaze-ways is true:
-		vcal "You already did.";
+		vcal "You already made it out of the Blinding Blaze.";
 		already-done;
 	ready;
 
@@ -1454,7 +1454,7 @@ this is the vr-wood-one rule:
 a goodrhyme rule (this is the vc-work-well rule) :
 	if jerk gel is not touchable, unavailable;
 	if player has jerk gel:
-		vcal "You already did.";
+		vcal "Any further futzing might undo your previous good work.";
 		already-done;
 	ready;
 

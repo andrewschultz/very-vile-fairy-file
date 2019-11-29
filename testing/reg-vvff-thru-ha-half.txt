@@ -692,7 +692,7 @@ by one point
 
 > work well
 !by one point
-You already did.
+Any further futzing might undo your previous good work.
 
 > zwork well rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
@@ -726,10 +726,10 @@ You're already on the Soft Sand.
 > undo
 > zsoft sand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 > soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you mustve mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 
 > zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
@@ -1072,13 +1072,6 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> lean luggin
-> lean luggin
-!by one point
-You already learned lean luggin'.
-> undo
-> undo
-
 > mean muggin
 by one point
 
@@ -1105,10 +1098,8 @@ by one point
 
 > lean luggin
 !by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-> mean muggin
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+You already learned lean luggin'.
+> undo
 
 > zlean luggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
@@ -1384,8 +1375,7 @@ by one point
 
 > winding ways
 !by one point
-#?? do better post comp
-You already did.
+You already made it out of the Blinding Blaze.
 
 > zwinding ways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
@@ -1554,8 +1544,7 @@ by one point
 
 > beast boss
 !by one point
-#?? summon beast boss = more explicit?
-You already did.
+You already summoned the Bull Beast.
 
 > zbeast boss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
@@ -1602,7 +1591,7 @@ by one point
 
 > spark spliff
 !by one point
-Whoah, dude. You already did.
+Whoah, dude! Jonesing for more already?
 
 > zspark spliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
@@ -1748,8 +1737,7 @@ by one point
 
 > dining door
 !by one point
-#?? "That's already here."
-You already did.
+The dining door is already here.
 
 > zdining door rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
@@ -1770,8 +1758,7 @@ by one point
 
 > pull pieced
 !by one point
-#?? this is a bit confusing
-You can't see any objects like that here.
+You don't need to pull anything other than the full feast.
 
 > zpull pieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
@@ -1792,7 +1779,7 @@ by one point
 
 > mining more
 !by one point
-Don't get greedy!
+You've gotten all the mined materials you need. Wasting them might cause another whining war.
 
 > zmining more rule
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
@@ -1919,8 +1906,7 @@ by one point
 
 > beaker bustle
 !by one point
-#?? better?
-You already did that!
+Russell's moment of interest in the sciences has passed.
 
 > zbeaker bustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.

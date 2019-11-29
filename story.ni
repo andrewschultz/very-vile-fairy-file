@@ -686,13 +686,15 @@ part Fight Funnel -2,2
 
 Fight Funnel is below Stark Store. It is in Piddling Pain. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if Beer Bull is moot]. You don't need to go west now you trapped the Beer Bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[else]. You can probably just fit west[end if].". guess-table of fight funnel is table of fight funnel guesses. [-> Tight Tunnel]
 
+understand "tight/tunnel" and "tight tunnel" as fight funnel when funnel-to-tunnel is true.
+
 funnel-to-tunnel is a truth state that varies.
 
 this is the drop-snare rule:
 	if player has snuck snare and kni-ni is true:
 		moot snuck snare;
 		phbt dives ditch;
-		if Bull Beast is in fight funnel:
+		if in-bull-chase is true:
 			say "Oh no! You don't have the time to place the snare AND distract the Bull Beast at once! Sorry about that. On the bright side, you managed to place the snare, though, and the Bull Beast was so busy beating you up, it didn't notice you setting a trap. So it's probably no problem just to come back here, now.";
 			reset-bull-chase;
 		else:
@@ -711,7 +713,7 @@ check going west in Fight Funnel:
 			say "You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead, far less potent than whatever horrible alcohol the Beer Bull advertised.[paragraph break]You walk back to Here Hull, where a Gear Gull waits. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
 			solve-bull-chase;
 			the rule succeeds;
-		say "You lead the Beer Bull into [the room west of Fight Funnel] but it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.";
+		say "You lead the Beer Bull into [the room west of Fight Funnel], where it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.";
 		reset-bull-chase;
 		the rule succeeds;
 	if Beer Bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
@@ -984,6 +986,10 @@ hap-ho is a truth state that varies.
 boat-reject is a truth state that varies.
 
 check entering boring boat:
+	if in-bull-chase is true:
+		say "Oh no! The boring boat shuts itself up as the bull beast gets close. I guess the boat can't take the beast's exciting-ness. The beast seems offended enough to take it out a bit extra on you.";
+		reset-bull-chase;
+		the rule succeeds;
 	if nap-no is false:
 		say "You try to enter the boat, but it seems so ... boring. If only you could get a jaunty tune stuck in your head to keep you alert!";
 		now boat-reject is true;
@@ -1001,10 +1007,6 @@ check entering boring boat:
 		move player to Violent Vale;
 		the rule succeeds;
 	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
-	if in-bull-chase is true:
-		say "Oh no! The boring boat shuts itself up as the bull beast gets close. I guess the boat can't take the beast's exciting-ness. The beast seems offended enough to take it out a bit extra on you.";
-		reset-bull-chase;
-		the rule succeeds;
 	if cake cap is not off-stage:
 		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
 		move boring boat to Been Buggin;
@@ -1202,9 +1204,8 @@ to decide whether hull-bull:
 
 to reset-bull-chase:
 	if player is in Fight Funnel:
-		if player has zig zag rig rag or funnel-to-tunnel is false:
-			say "The Bull Beast seemed slightly claustrophobic. Perhaps you could lure it further. What [if dives ditch is visited]can you do[else]could be[end if] to the west?";
-			continue the action;
+		say "[line break]Whoah! The Beer Bull seemed to run out of [fight funnel] quickly. Perhaps you could lure it further. What [if dives ditch is visited]can you do[else]could be[end if] to the west?";
+		say "[line break]";
 	say "You limp [if player is in Creased Cross]around[else]back to[end if] Creased Cross.";
 	move Beer Bull to Here Hull;
 	move player to Creased Cross;
@@ -1230,7 +1231,7 @@ every turn when in-bull-chase is true: [?? make this so that we track by last-bu
 		now chase-mulligan is false;
 		continue the action;
 	if Beer Bull is in location of player:
-		say "The Beer Bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats [if player is in Here Hull]into its corner[else]back to Here Hull[end if].[paragraph break]";
+		say "The Beer Bull catches up to you! It charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats [if player is in Here Hull]into its corner[else]back to Here Hull[end if].[paragraph break]";
 		reset-bull-chase;
 		the rule succeeds;
 	if Beer Bull is not in location of player:
@@ -1830,18 +1831,18 @@ to read-laters (wt - a which-think):
 				say "DEBUG note--I forgot to clear [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if] somehow. It would be nice to know how and when this happened.";
 				now think-cue entry is false;
 				next;
+			process the ver-rule entry;
+			let rb-out be the outcome of the rulebook;
 			let pre-bug be whether or not ver-rule entry is vc-mean-muggin rule or ver-rule entry is vc-lean-luggin rule;
 			if wt is no-details:
 				if there is a think-advice entry and not too-distracted, next;
 				if pre-bug is true, next;
 				if thought-any is false, say "[line break]";
 				now thought-any is true;
-				say "[if too-distracted]You are still too distracted to firure where and how to[else]You can probably now[end if] try [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if][r].";
+				say "[if too-distracted]You are still too distracted to figure where and how to[else]You can probably now[end if] try [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if][r][if rb-out is the unavailable outcome], but you may have to go back to the right place[end if].";
 				next;
 			if there is no think-advice entry or too-distracted:
 				unless pre-bug is true, next;
-			process the ver-rule entry; [?? surround with vc-dont-print being true then false ??]
-			let rb-out be the outcome of the rulebook;
 			if wt is doable-now and rb-out is the not-yet outcome, next;
 			if wt is undoable-now and rb-out is the ready outcome, next;
 			if thought-any is false, say "[line break]";
@@ -1914,7 +1915,7 @@ to decide which number is can-do-hint of (ts - a truth state):
 			process the ver-rule entry;
 			let rb-out be the outcome of the rulebook;
 			if ts is true:
-				if rb-out is the ready outcome, increment temp;
+				if rb-out is the ready outcome or rb-out is the unavailable outcome, increment temp; [the reason for "unavailable" is because we also want to track when the beer bull distracts us. That is the only way we can both be unavailable and the think-cue entry is true.]
 			else if rb-out is the not-yet outcome:
 				increment temp;
 	now vc-dont-print is false;
@@ -3389,13 +3390,18 @@ Rule for printing a parser error (this is the check for room name in player comm
 				say "Okay. ";
 			else:
 				say "It looks like you may have tried to refer to the room name, or part of it. ";
-			say "You never need to use the room name directly.";
+			say "You often ned to riff on the room name, but you never need to use the room name directly.";
 			the rule succeeds;
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
+	let wn1 be word number 1 in the player's command;
 	if player is in Lake Lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
 	if player is in Wet Wood and word number 1 in the player's command is "get", continue the action;
+	if wn1 is "pull":
+		if full feast is moot, say "You don't need to pull anything other than the full feast." instead;
+		if beer bull is touchable, say "You don't need to pull the Beer Bull for it to follow you." instead;
+		if full feast is touchable or bull beast is touchable, continue the action;
 	say "You can't see any objects like that here.";
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
@@ -3484,10 +3490,11 @@ this is the verb-checker rule:
 					now think-cue entry is true;
 					the rule succeeds;
 			if beer bull is touchable and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
+				now think-cue entry is true;
+				if debug-state is true, say "[ver-rule entry] set to true.";
 				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
 				let oldloc be location of player;
 				reset-bull-chase;
-				now think-cue entry is true;
 				the rule succeeds;
 			if there is a core entry and idid entry is false:
 				up-which core entry;
@@ -3624,7 +3631,7 @@ carry out jerkingjumping:
 	if doable-hinted > 0:
 		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. (THINK should give details.) Use it anyway?";
 		unless the player yes-consents:
-			say "OK. You may wish to THINK to see what you can do." instead;
+			say "OK. Again, THINKing should show what you can do now." instead;
 	now vc-dont-print is true;
 	repeat through table of verb checks:
 		unless there is a core entry, next;
@@ -3731,6 +3738,9 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 		say "Jake G follows behind.";
 		move Jake G to location of player;
 	continue the action;
+
+to vcpforce (t - text): [this is for the -very- special case of when you are in Been Buggin and haven't coped yet]
+	if vc-dont-print is false, say "[t][line break]";
 
 to vcp (t - text): [verb conditional print]
 	if vc-dont-print is false:
