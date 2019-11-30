@@ -3549,6 +3549,16 @@ to check-lump-progress:
 
 a lurking lump is a boring rhymable. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump.". guess-table of lurking lump is the table of lurking lump guesses.
 
+to decide which number is variable-scan-length of (mynum - a number):
+	if mynum is 100: [Jake G]
+		if jake-woke is false, decide on 44; [WAKE WHEE]
+		if jake-tea is false, decide on 43; [TAKE TEA]
+		if jake-fee is false, decide on 43; [FAKE FEE]
+		if jake-brie is false, decide on -54; [BREAK BRIE, optional]
+		decide on 0;
+	say "BUG: no variable-scan-length for [mynum]. Please let me know what you typed.";
+	decide on 44;
+
 a rhymeguess rule for a table name (called tn) (this is the rhyme-guess-checker rule):
 	repeat through tn:
 		if the player's command matches mist-cmd entry:
@@ -3564,15 +3574,21 @@ a rhymeguess rule for a table name (called tn) (this is the rhyme-guess-checker 
 					if leet-rule entry is no-wanksta rule or leet-rule entry is llp-trivial rule or leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
 				else:
 					now see-leet-read is false;
-			if see-leet-read is true and there is a w1let entry:
-				let d1 be -10;
-				let d2 be -10;
-				now d1 is w1let entry - number of characters in word number 1 in the player's command;
-				if there is a w2let entry:
-					now d2 is w2let entry - number of characters in word number 2 in the player's command;
-				if d2 is -10, now d2 is d1;
-				let cc be cluecheat of d1 and d2;
-				say "[leetclue of cc and is-opt].";
+			if see-leet-read is true and there is a magicnum entry: [see mistakes file for explanations of magic numbers]
+				let Q be magicnum entry;
+				if Q >= 100: [Just to make sure we start with a number that's out of bounds]
+					now Q is variable-scan-length of Q;
+					if debug-state is true, say "DEBUG: dynamic magic number directed us to [Q / 10] / [the remainder after dividing Q by 10].";
+				if Q < 0:
+					now is-opt is true;
+					now Q is 0 - Q;
+				if Q is not 0:
+					let d1 be Q / 10;
+					let d2 be the remainder after dividing Q by 10;
+					decrease d1 by number of characters in word number 1 in the player's command;
+					decrease d2 by number of characters in word number 2 in the player's command;
+					let cc be cluecheat of d1 and d2;
+					say "[leetclue of cc and is-opt].";
 			if got-yet entry is false:
 				increment total-good-guesses;
 				check-lump-progress;
