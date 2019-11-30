@@ -1153,7 +1153,6 @@ this is the vr-pull-pieced rule:
 	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
 	moot mild mead;
-	now guess-table of wild weed is table of mild mead guesses; [small hack so we don't go through the table twice]
 	if wild weed is off-stage, max-down;
 	moot dining door;
 	if player is not in Whining War, bold-new-room Whining War;
@@ -1469,7 +1468,7 @@ a goodrhyme rule (this is the vc-youre-yonder rule) :
 	ready;
 
 this is the vr-youre-yonder rule:
-	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. Leo Strauss would approve![paragraph break]The book itself, however, bursts into flames like any proper secret communication once you discover the secret passage.";
+	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. Leo Strauss would approve![paragraph break]The book itself, however, bursts into flames like any proper secret communication now you've discovered the secret passage.";
 	moot poor ponder;
 	now Y'Old Yard is mapped outside History Hall;
 	now History Hall is mapped inside Y'Old Yard;

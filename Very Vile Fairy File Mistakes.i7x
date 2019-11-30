@@ -351,8 +351,6 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 
 table of yold yard guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
-"polled pard"	in-yold-yard rule	false	--	--	--	"Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far." [start yold yard]
-"lold lard"	in-yold-yard rule	false	--	--	--	"Fat jokes aren't funny, self-depreciating or otherwise."
 "mold marred" or "gold guard" or "cold card" or "hold hard"	bold-bard-near rule	false	--	--	--	"You'll actually be getting that later!"
 
 book guesses by item, alphabetized
@@ -374,6 +372,12 @@ mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
 "mig mag"	trivially true rule	false	3	3	mist-bag-hint rule	"Fighter plane ammunition will not help you."
 "gig gag"	trivially true rule	false	3	3	mist-bag-hint rule	"There are enough gags in this adventure. I hope."
 "jig jag"	trivially true rule	false	3	3	mist-bag-hint rule	"You aren't up for dancing." [this is referred to explicitly when you BIG BAG, so there is overlap.]
+
+table of bold bard guesses
+mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
+"polled pard"	bard-card-guard rule	false	--	--	--	"Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far." [start yold yard]
+"lold lard"	bard-card-guard rule	false	--	--	--	"Fat jokes aren't funny, self-depreciating or otherwise."
+"old ard"	bard-card-guard rule	false	--	--	--	"Nobody needs to feel like a grizzled veteran here."
 
 table of boring boat flooring float guesses
 mist-cmd(topic)	mist-rule	got-yet	w1let	w2let	leet-rule	mist-txt
@@ -571,6 +575,8 @@ to decide what number is rear-progress:
 section mist-rules alphabetized
 
 [xxmisrul]
+
+this is the bard-card-guard rule: if bold bard is touchable or cold card is touchable or gold guard is touchable, the rule succeeds;
 
 this is the beer-bull-by rule: if Beer Bull is touchable, the rule succeeds;
 
