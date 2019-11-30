@@ -769,7 +769,7 @@ chapter mild mead and wild weed
 
 the mild mead is a rhymable. the indefinite article of mild mead is "some". description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. guess-table of mild mead is the table of mild mead guesses. [->wild weed]
 
-the wild weed is a rhymable. the indefinite article of wild weed is "some". description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the Beer Bull's vitality went, instead of into the mead.".
+the wild weed is a rhymable. the indefinite article of wild weed is "some". description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the Beer Bull's vitality went, instead of into the mead.". guess-table of wild weed is the table of mild mead guesses.
 
 part History Hall -2,1
 
@@ -866,13 +866,13 @@ part Y'Old Yard -2,-1
 
 Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. [if Bold Bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if Bold Bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)". guess-table of Y'Old Yard is table of Yold Yard guesses.
 
-The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a Bold Bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]"
+The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a Bold Bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]". guess-table of Bold Bard is the table of Bold Bard guesses.
 
 talk-text of Bold Bard is "'Scold-scarred. Told. Tarred.' The Bold Bard clearly wants to get into the Shoaled Shard but probably got thrown out by now-watchful guards. You both decide some sort of sneak attack or diversion would be best. If rhyming had worked, the Bold Bard would've found one that went old-ard.".
 
 chapter gold guard
 
-the mold marred gold guard is a thing. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if mine-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
+the mold marred gold guard is a rhymable. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if mine-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard". guess-table of gold guard is the table of Bold Bard guesses.
 
 understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when mine-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
 
@@ -880,7 +880,7 @@ chapter shoaled shard
 
 the Shoaled Shard is scenery in Y'Old Yard. "It's intimidating and obviously well-guarded, but it could be breached with the right distraction."
 
-the cold card is a thing. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.".
+the cold card is a boring rhymable. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.". guess-table of cold card is the table of Bold Bard guesses. bore-text of cold card is "You guess you'll know what to do with the cold card when the time comes. You hope."
 
 part Vending Vibe -2,1 a
 
@@ -3345,30 +3345,27 @@ to decide whether too-distracted:
 	if in-bull-chase is true, yes;
 	no;
 
-table-to-scour is a table name that varies.
+the rhymeguess rules are a table name based rulebook.
 
 Rule for printing a parser error (this is the clue half right words rule):
-	now table-to-scour is table of first check rhymes;
-	abide by the mistake-checker rule;
-	if location of player is wallish:
-		now table-to-scour is table of wry wall guesses;
-		abide by the mistake-checker rule;
+	abide by the rhyme-guess-checker rule for the table of first check rhymes;
+	if location of player is wallish, abide by the rhyme-guess-checker rule for the table of wry wall guesses;
 	unless guess-table of location of player is table of no good guesses:
 		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
-		now table-to-scour is guess-table of location of player;
-		abide by the mistake-checker rule;
+		abide by the rhyme-guess-checker rule for guess-table of location of player;
+	let table-list be a list of table names;
 	repeat with tou running through touchable rhymables:
-		[if debug-state is true, say "DEBUG rhymable guesses: [tou], [guess-table of tou].";]
-		if tou is cage key and player is in real rear, next;
-		now table-to-scour is guess-table of tou;
-		abide by the mistake-checker rule;
+		let gtt be guess-table of tou;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
 	repeat with tou running through touchable people:
-		[if debug-state is true, say "DEBUG people guesses: [tou], [guess-table of tou].";]
-		now table-to-scour is guess-table of tou;
-		abide by the mistake-checker rule;
+		let gtt be guess-table of tou;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
+	repeat with cur-guess-table running through table-list:
+		abide by the rhyme-guess-checker rule for cur-guess-table;
 	abide by the verb-checker rule;
-	now table-to-scour is table of general good guesses;
-	abide by the mistake-checker rule;
+	abide by the rhyme-guess-checker rule for table of general good guesses;
 	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 		the rule succeeds;
@@ -3414,7 +3411,7 @@ the clue half right words rule is listed before the check for room name in playe
 oopsies is a number that varies.
 
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
-	if debug-state is true, say "[the latest parser error].";
+[	if debug-state is true, say "[the latest parser error].";]
 	if player is in Wet Wood:
 		increment oopsies;
 		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't neeed anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
@@ -3552,8 +3549,18 @@ to check-lump-progress:
 
 a lurking lump is a boring rhymable. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump.". guess-table of lurking lump is the table of lurking lump guesses.
 
-this is the mistake-checker rule:
-	repeat through table-to-scour:
+to decide which number is variable-scan-length of (mynum - a number):
+	if mynum is 100: [Jake G]
+		if jake-woke is false, decide on 44; [WAKE WHEE]
+		if jake-tea is false, decide on 43; [TAKE TEA]
+		if jake-fee is false, decide on 43; [FAKE FEE]
+		if jake-brie is false, decide on -54; [BREAK BRIE, optional]
+		decide on 0;
+	say "BUG: no variable-scan-length for [mynum]. Please let me know what you typed.";
+	decide on 44;
+
+a rhymeguess rule for a table name (called tn) (this is the rhyme-guess-checker rule):
+	repeat through tn:
 		if the player's command matches mist-cmd entry:
 			if there is a mist-rule entry:
 				process the mist-rule entry;
@@ -3563,19 +3570,22 @@ this is the mistake-checker rule:
 			let is-opt be false;
 			if there is a leet-rule entry:
 				process the leet-rule entry;
-				if the rule succeeded:
-					if leet-rule entry is no-wanksta rule or leet-rule entry is llp-trivial rule or leet-rule entry is not-near-yet rule or leet-rule entry is not-rolled-yet rule or leet-rule entry is spliff-unsparked rule or leet-rule entry is weed-offstage rule or leet-rule entry is shawl-unloled rule, now is-opt is true; [this is a convoluted if statement. But it is easier than keeping track of yet another column in the table of rhymes. The point is to track if we are acting on an LLP item.]
-				else:
-					now see-leet-read is false;
-			if see-leet-read is true and there is a w1let entry:
-				let d1 be -10;
-				let d2 be -10;
-				now d1 is w1let entry - number of characters in word number 1 in the player's command;
-				if there is a w2let entry:
-					now d2 is w2let entry - number of characters in word number 2 in the player's command;
-				if d2 is -10, now d2 is d1;
-				let cc be cluecheat of d1 and d2;
-				say "[leetclue of cc and is-opt].";
+				unless the rule succeeded, now see-leet-read is false;
+			if see-leet-read is true and there is a magicnum entry: [see mistakes file for explanations of magic numbers]
+				let Q be magicnum entry;
+				if Q >= 100: [Just to make sure we start with a number that's out of bounds]
+					now Q is variable-scan-length of Q;
+					if debug-state is true, say "DEBUG: dynamic magic number directed us to [Q / 10] / [the remainder after dividing Q by 10].";
+				if Q < 0:
+					now is-opt is true;
+					now Q is 0 - Q;
+				if Q is not 0:
+					let d1 be Q / 10;
+					let d2 be the remainder after dividing Q by 10;
+					decrease d1 by number of characters in word number 1 in the player's command;
+					decrease d2 by number of characters in word number 2 in the player's command;
+					let cc be cluecheat of d1 and d2;
+					say "[leetclue of cc and is-opt].";
 			if got-yet entry is false:
 				increment total-good-guesses;
 				check-lump-progress;
