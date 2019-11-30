@@ -3345,33 +3345,27 @@ to decide whether too-distracted:
 	if in-bull-chase is true, yes;
 	no;
 
-table-to-scour is a table name that varies.
+the rhymeguess rules are a table name based rulebook.
 
 Rule for printing a parser error (this is the clue half right words rule):
-	now table-to-scour is table of first check rhymes;
-	abide by the mistake-checker rule;
-	if location of player is wallish:
-		now table-to-scour is table of wry wall guesses;
-		abide by the mistake-checker rule;
+	abide by the rhyme-guess-checker rule for the table of first check rhymes;
+	if location of player is wallish, abide by the rhyme-guess-checker rule for the table of wry wall guesses;
 	unless guess-table of location of player is table of no good guesses:
 		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
-		now table-to-scour is guess-table of location of player;
-		abide by the mistake-checker rule;
+		abide by the rhyme-guess-checker rule for guess-table of location of player;
 	let table-list be a list of table names;
 	repeat with tou running through touchable rhymables:
 		let gtt be guess-table of tou;
 		if gtt is table of no good guesses or gtt is listed in table-list, next;
 		add gtt to table-list;
-	repeat with cur-guess-table running through table-list:
-		now table-to-scour is cur-guess-table;
-		abide by the mistake-checker rule;
 	repeat with tou running through touchable people:
-		[if debug-state is true, say "DEBUG people guesses: [tou], [guess-table of tou].";]
-		now table-to-scour is guess-table of tou;
-		abide by the mistake-checker rule;
+		let gtt be guess-table of tou;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
+	repeat with cur-guess-table running through table-list:
+		abide by the rhyme-guess-checker rule for cur-guess-table;
 	abide by the verb-checker rule;
-	now table-to-scour is table of general good guesses;
-	abide by the mistake-checker rule;
+	abide by the rhyme-guess-checker rule for table of general good guesses;
 	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 		the rule succeeds;
@@ -3555,8 +3549,8 @@ to check-lump-progress:
 
 a lurking lump is a boring rhymable. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump.". guess-table of lurking lump is the table of lurking lump guesses.
 
-this is the mistake-checker rule:
-	repeat through table-to-scour:
+a rhymeguess rule for a table name (called tn) (this is the rhyme-guess-checker rule):
+	repeat through tn:
 		if the player's command matches mist-cmd entry:
 			if there is a mist-rule entry:
 				process the mist-rule entry;
