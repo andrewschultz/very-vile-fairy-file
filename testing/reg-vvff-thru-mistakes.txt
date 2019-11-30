@@ -2118,8 +2118,30 @@ by one point
 
 !see the points you MISSED
 
+* variable-guess-check
+# Jake G is the big one. Let's check him!
+> gonear jake g
+> shake she
+DEBUG: dynamic magic number directed us to 4 / 4.
+As you say/think this, the Leet Learner needle bounces back and forth
+> wake whee
+> shake she
+DEBUG: dynamic magic number directed us to 4 / 3.
+As you say/think this, the Leet Learner needle slides center-right.
+> take tea
+> shake she
+DEBUG: dynamic magic number directed us to 4 / 3.
+As you say/think this, the Leet Learner needle slides center-right.
+> fake fee
+> shake she
+DEBUG: dynamic magic number directed us to -5 / -4.
+As you say/think this, the Leet Learner dims a bit, and the needle slides center-left.
+>break brie
+> shake she
+!As you say/think this
+
 * guess-overflow-and-undo-check
-#next-cmd-pass
+#ignore-the-rest
 > z
 > brig brag
 !lump
@@ -2130,38 +2152,28 @@ by one point
 > tig tag
 !lump
 # checking for overflow on LLP
-#next-cmd-pass ?? delete this post-comp
 >z
-#next-cmd-pass ?? delete this post-comp
 >z
 > cig sag
 lump
-#next-cmd-pass ?? delete this post-comp
 >undo
 > really rolling
 lump
-#next-cmd-pass ?? delete this post-comp
 >z
-#next-cmd-pass ?? delete this post-comp
 >jj
 > undo
 Take two? Fake, foo'!
 rematerializes
 # checking to make sure we really checked for overflow and not just a regular charge
 # e.g. if we change the level delta from 5 to 6, the lump should not appear
-#next-cmd-pass
 >blow by
 >call cree
 !lump
-#next-cmd-pass
 >strong start
-#next-cmd-pass
 >s
-#next-cmd-pass
 >appealing appear
 lump
 pulses and grows
-#next-cmd-pass
 >jj
 >undo
 Take two? Fake, foo'!

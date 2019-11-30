@@ -82,8 +82,8 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "foe/fo fad"	in-so-sad rule	false	44	--	"You try to convince yourself it's a passing phase, but it doesn't work."
 "doh dad"	in-so-sad rule	false	44	--	"Blaming your parents fails to help."
 "pay prong"	in-way-wrong rule	false	44	--	"Buying things won't improve your lack of self-worth."
-"trumped truster"	cluster-near rule	false	76	llp-trivial rule	"The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests." [?? minor point]
-"lumped luster/lustre"	cluster-near rule	false	76	llp-trivial rule	"The cluster would still be in the way if it were shiny." [?? minor point]
+"trumped truster"	cluster-near rule	false	-76	--	"The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests." [?? minor point]
+"lumped luster/lustre"	cluster-near rule	false	-76	--	"The cluster would still be in the way if it were shiny." [?? minor point]
 
 table of Blinding Blaze guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -137,7 +137,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "one wen"	in-fun-fen rule	false	--	--	"Your skin remains unblemished, despite you tempting fate."
 "pun pen"	in-fun-fen rule	false	--	--	"You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me."
 "won when"	in-fun-fen rule	false	--	--	"Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst."
-"bark biff"	in-fun-fen rule	false	56	spliff-unsparked rule	"A cruel voice calls from the distance 'Hello, McFly? Hello!'" [?? this-faint]
+"bark biff"	in-fun-fen rule	false	-56	spliff-unsparked rule	"A cruel voice calls from the distance 'Hello, McFly? Hello!'" [?? this-faint]
 "gaper guile"	vial-or-pile rule	false	54	vapor-vial-vis rule	"You stare a bit but get no insight[kind-of-paper]."
 "taper/tapir tile"	vial-or-pile rule	false	54	vapor-vial-vis rule	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
 "aper isle"	vial-or-pile rule	false	54	vapor-vial-vis rule	"You are not teleported to somewhere similar to the Fun Fen."
@@ -162,36 +162,36 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of Got Gear Hot Here guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"blot blear"	got-gear-hot-here rule	false	44	not-near-yet rule	"You don't need to make this store more dreary." [start Got Gear Hot Here]
-"bought/bot beer"	got-gear-hot-here rule	false	44	not-near-yet rule	"Alas, the mall has no license to buy or serve alcohol."
-"fought fear"	got-gear-hot-here rule	false	44	not-near-yet rule	"With nobody around to kibitz, you reflect on the barriers you've broken through to get this far."
-"spot spear"	got-gear-hot-here rule	false	44	not-near-yet rule	"You don't need a weapon."
-"dot dear/deer"	got-gear-hot-here rule	false	44	not-near-yet rule	"No Animaniacs appear to spout poetry. Probably a good thing."
-"drought drear"	got-gear-hot-here rule	false	44	not-near-yet rule	"You thirst for an effective rhyme."
-"fraught freer"	got-gear-hot-here rule	false	44	not-near-yet rule	"You wish Got Gear Hot Hear led somewere else."
-"sought/sot seer"	got-gear-hot-here rule	false	44	not-near-yet rule	"Nobody, sober or otherwise, appears to give you advice about the future."
-"snot sneer"	got-gear-hot-here rule	false	44	not-near-yet rule	"You turn up your nose at kids these days['] terrible fashions."
-"pot pier/peer"	got-gear-hot-here rule	false	44	not-near-yet rule	"You don't need ... cookware."
-"try trawl"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You put in effort, and stuff[shawl-lol]."
-"buy/by/bye ball/bawl"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You can only buy clothes, not sporting goods, here. Also, no whining[shawl-lol]."
-"fie fall"	got-gear-hot-here rule	false	33	shawl-unloled rule	"The shawl remains motionless, but you feel smarter for your guess[shawl-lol]."
-"die/dye doll"	got-gear-hot-here rule	false	33	shawl-unloled rule	"There are no dolls to manipulate in this game[shawl-lol]."
-"scry scrawl"	got-gear-hot-here rule	false	33	shawl-unloled rule	"The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer[shawl-lol]."
-"spry sprawl"	got-gear-hot-here rule	false	33	shawl-unloled rule	"The shy shawl fails to spread out all over the floor[shawl-lol]."
-"sty stall"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You denigrate the condition of Got Gear Hot Here[shawl-lol]."
-"dry droll/drawl"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You make fun of the shy shawl subtly[shawl-lol]."
-"tie tall"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You look for any way-too-long ties that might help you feel taller, or more 'Presidental,' or whatever. You find none, and you also receive no mispronounced title[shawl-lol]."
-"sigh sol/saul"	got-gear-hot-here rule	false	33	shawl-unloled rule	"No sunlight appears[shawl-lol]."
-"high hall"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You imagine yourself in a much more spacious megastore[shawl-lol]."
-"guy gall/gaul"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere[shawl-lol]."
-"pie paul/pall"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You bemoan the lack of a food court in the mall[shawl-lol]."
-"my mall/maul"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You show suitable ambition and aggression for an adventurer[shawl-lol]."
-"why wall"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You complain to nobody in particular about the number of dead ends in the mall[shawl-lol]."
-"cry crawl"	got-gear-hot-here rule	false	33	shawl-unloled rule	"You feel overcome with emotion[shawl-lol]."
+"blot blear"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You don't need to make this store more dreary." [start Got Gear Hot Here]
+"bought/bot beer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"Alas, the mall has no license to buy or serve alcohol."
+"fought fear"	got-gear-hot-here rule	false	-44	not-near-yet rule	"With nobody around to kibitz, you reflect on the barriers you've broken through to get this far."
+"spot spear"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You don't need a weapon."
+"dot dear/deer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"No Animaniacs appear to spout poetry. Probably a good thing."
+"drought drear"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You thirst for an effective rhyme."
+"fraught freer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You wish Got Gear Hot Hear led somewere else."
+"sought/sot seer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"Nobody, sober or otherwise, appears to give you advice about the future."
+"snot sneer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You turn up your nose at kids these days['] terrible fashions."
+"pot pier/peer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You don't need ... cookware."
+"try trawl"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You put in effort, and stuff[shawl-lol]."
+"buy/by/bye ball/bawl"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You can only buy clothes, not sporting goods, here. Also, no whining[shawl-lol]."
+"fie fall"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"The shawl remains motionless, but you feel smarter for your guess[shawl-lol]."
+"die/dye doll"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"There are no dolls to manipulate in this game[shawl-lol]."
+"scry scrawl"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer[shawl-lol]."
+"spry sprawl"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"The shy shawl fails to spread out all over the floor[shawl-lol]."
+"sty stall"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You denigrate the condition of Got Gear Hot Here[shawl-lol]."
+"dry droll/drawl"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You make fun of the shy shawl subtly[shawl-lol]."
+"tie tall"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You look for any way-too-long ties that might help you feel taller, or more 'Presidental,' or whatever. You find none, and you also receive no mispronounced title[shawl-lol]."
+"sigh sol/saul"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"No sunlight appears[shawl-lol]."
+"high hall"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You imagine yourself in a much more spacious megastore[shawl-lol]."
+"guy gall/gaul"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere[shawl-lol]."
+"pie paul/pall"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You bemoan the lack of a food court in the mall[shawl-lol]."
+"my mall/maul"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You show suitable ambition and aggression for an adventurer[shawl-lol]."
+"why wall"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You complain to nobody in particular about the number of dead ends in the mall[shawl-lol]."
+"cry crawl"	got-gear-hot-here rule	false	-33	shawl-unloled rule	"You feel overcome with emotion[shawl-lol]."
 
 table of History Hall guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"butter/butta bankster/banksta"	ganksta-nearby rule	false	67	no-wanksta rule	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of." [start History Hall]
+"butter/butta bankster/banksta"	ganksta-nearby rule	false	-67	no-wanksta rule	"The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of." [start History Hall]
 "blots blame"	ganksta-nearby rule	false	44	--	"There's another way to insult the tattoo as bad art. You're very close."
 "clots claim"	ganksta-nearby rule	false	44	--	"You're trying to chase, not impress the ganksta."
 "cots came"	ganksta-nearby rule	false	44	--	"The Gutta Ganksta is unmoved by the prospect of a good night's sleep."
@@ -436,10 +436,10 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of jake g guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"cake key"	in-lakes rule	false	100	need-fake-fee rule	"Ooh! That'd be nice and tasty. But you don't need that right now." [start Lake Lea] [?? what about multiple] [these are technically Jake G rules]
-"shake she"	in-lakes rule	false	100	need-fake-fee rule	"Jake has no horrible ex to avoid."
-"flake flee"	in-lakes rule	false	100	need-fake-fee rule	"Be nice! You need Jake."
-"bake be/bee"	in-lakes rule	false	100	need-fake-fee rule	"This is not a cooking sim."
+"cake key"	in-lakes rule	false	100	fee-or-brie-still rule	"Ooh! That'd be nice and tasty. But you don't need that right now." [start Lake Lea] [?? what about multiple] [these are technically Jake G rules]
+"shake she"	in-lakes rule	false	100	fee-or-brie-still rule	"Jake has no horrible ex to avoid."
+"flake flee"	in-lakes rule	false	100	fee-or-brie-still rule	"Be nice! You need Jake."
+"bake be/bee"	in-lakes rule	false	100	fee-or-brie-still rule	"This is not a cooking sim."
 
 table of jerk gel guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -455,12 +455,12 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of mild mead guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"dialed deed"	mead-or-weed rule	false	44	weed-offstage rule	"You don't need chemical stimulants to be dialed in to what you need to do." [start Knives Niche]
-"filed feed"	mead-or-weed rule	false	44	weed-offstage rule	"Nope. Can't quite categorize that as food."
-"siled seed"	mead-or-weed rule	false	44	weed-offstage rule	"No time for farming."
-"styled steed"	mead-or-weed rule	false	44	weed-offstage rule	"Too hard to implement. I mean, too fancy for this game. Too fancy, that's it."
-"riled reed/read"	mead-or-weed rule	false	44	weed-offstage rule	"Any controlled substances found in the course of your adventure are for relaxation."
-"tiled teed"	mead-or-weed rule	false	44	weed-offstage rule	"That would make for an odd golf course."
+"dialed deed"	mead-or-weed rule	false	-44	weed-offstage rule	"You don't need chemical stimulants to be dialed in to what you need to do." [start Knives Niche]
+"filed feed"	mead-or-weed rule	false	-44	weed-offstage rule	"Nope. Can't quite categorize that as food."
+"siled seed"	mead-or-weed rule	false	-44	weed-offstage rule	"No time for farming."
+"styled steed"	mead-or-weed rule	false	-44	weed-offstage rule	"Too hard to implement. I mean, too fancy for this game. Too fancy, that's it."
+"riled reed/read"	mead-or-weed rule	false	-44	weed-offstage rule	"Any controlled substances found in the course of your adventure are for relaxation."
+"tiled teed"	mead-or-weed rule	false	-44	weed-offstage rule	"That would make for an odd golf course."
 
 table of snuck snare stuck stair guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -524,9 +524,9 @@ book general guesses
 
 table of general good guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"trilly trolling"	trivially true rule	false	67	not-rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
-"silly souling/soling"	trivially true rule	false	67	not-rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
-"filly foaling"	trivially true rule	false	67	not-rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
+"trilly trolling"	trivially true rule	false	-67	not-rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
+"silly souling/soling"	trivially true rule	false	-67	not-rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
+"filly foaling"	trivially true rule	false	-67	not-rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
 "wary wile"	trivially true rule	false	44	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
 "tough toll"	trivially true rule	false	--	--	"You groan about how heavy your inventory is."
@@ -735,6 +735,8 @@ this is the blaze-before-maze rule: if player is in Blinding Blaze and blaze-way
 
 this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
 
+this is the fee-or-brie-still rule: if jake-fee is false or jake-brie is false, the rule succeeds;
+
 this is the float-present rule: if flooring float is touchable, the rule succeeds;
 
 this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
@@ -742,8 +744,6 @@ this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
 this is the if-grit-ungrown rule: if player is in Po' Pit and grit-grown is false, the rule succeeds;
 
 this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
-
-this is the llp-trivial rule: the rule succeeds;
 
 this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 
@@ -754,8 +754,6 @@ this is the need-cool-cap rule: if cool cap is off-stage, the rule succeeds; [e.
 this is the need-dining-door rule: if player is in Whining War and dining door is off-stage, the rule succeeds; [NOTE: you may need to say SHINING SHORE, too. But this checks for needing either. ]
 
 this is the need-dull-or-null rule: if bull-null is false, the rule succeeds; [? need boolean for dear-dull??]
-
-this is the need-fake-fee rule: if jake-fee is false, the rule succeeds;
 
 this is the need-fall-free rule: if tree-down is false, the rule succeeds;
 
