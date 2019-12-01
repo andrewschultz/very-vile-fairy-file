@@ -1804,7 +1804,7 @@ understand "no narr" as narrnoing.
 
 carry out narrnoing:
 	now ever-toggle-narr is true;
-	say "Point scoring narratives are [if narr-on is false]already[else]now[end if] inactive[one of]. NOTE: toggling the option back on later may cause a backlog of narratives[or[[stopping].";
+	say "Point scoring narratives are [if narr-on is false]already[else]now[end if] inactive[one of]. NOTE: toggling the option back on later may cause a backlog of narratives[or][stopping].";
 	the rule succeeds.
 
 chapter wherewhoaing

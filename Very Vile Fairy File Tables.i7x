@@ -104,7 +104,8 @@ to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]N
 table of narratives
 rank-num	done-yet	rank-txt
 0	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro[if ever-toggle-narr is false].[paragraph break]NOTE: y[narr-toggle][end if]."
---	false	"A memory from the past, well sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve."
+--	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve."
+--	false	"A disembodied voice: 'Raking rhyme?! Making mime!' You feel discouraged, knowing if you slow up, a voice will boom 'Taking times?'[paragraph break]The [very vile]'s reach is wide indeed. If it can mix up these taunts on you, what can it do to others?"
 --	false	"Blare blame! Share shame!"
 --	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
