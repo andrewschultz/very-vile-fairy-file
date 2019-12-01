@@ -1,27 +1,12 @@
-#-- rbr-vvff-thru.txt
-#-- main branch file for Very Vile Fairy File walkthroughs
-#--
-#-- use HHV.PY to verify ha-half
-#--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
-~	mis	t5
-~	ha	t6
-
-## *FILE
-## *FORK
-
-TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
+## reg-vvff-thru-ha-half.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
-==t3
-> z
-
-@ha
 > zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -49,52 +34,6 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis
-> whet wood
-Learner needle
-Homophones aren't quite right here.
-> wig wag
-Learner needle
-If you're wearing a hairpiece, I don't want to know.
-> mig mag
-Learner needle
-Fighter plane ammunition will not help you.
-> gig gag
-Learner needle
-There are enough gags in this adventure. I hope.
-> brig brag
-Good guys don't brag about if they
-Learner needle
->swig swag
-There's no time to be drinking here!
-Learner needle
->tig tag
-But you already have one utterly childish game right in front of you.
-Learner needle
->cig sag
-You find no black market currency in the zig zag rig rag.
-Learner needle
->jig jag
-Learner needle
-You aren't up for dancing.
->wary wile
-Yes, you will need wary wile, and lots of it!
->perking pump
-!Learner needle
-> trilly trolling
-the Leet Learner dims a bit, and the needle
-The Very Vile Fairy File probably has information on that, yes.
-> silly souling
-the Leet Learner dims a bit, and the needle
-Why yes, I'm sort of a silly soul. At least when I'm writing games.
-> filly foaling
-the Leet Learner dims a bit, and the needle
-Caring for young animals is a good thing but beyond this game's scope.
-> tough toll
-!Learner needle
-You groan about how heavy your inventory is.
-
-@ha
 > zreally rolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -102,11 +41,9 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 >really rolling
 by one point
 
-@ha
 > zreally rolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -117,69 +54,13 @@ by one point
 !by one point
 You already guessed the significance of my pen name.
 
-@ha
 >really rolling
 !by one point
 You already guessed the significance of my pen name.
-
-@mis
-> trilly trolling
-!the Leet Learner dims a bit, and the needle
-The Very Vile Fairy File probably has information on that, yes.
-> silly souling
-!the Leet Learner dims a bit, and the needle
-Why yes, I'm sort of a silly soul. At least when I'm writing games.
-> filly foaling
-!the Leet Learner dims a bit, and the needle
-Caring for young animals is a good thing but beyond this game's scope.
->treat turner
-Nothing happens. The words are just settings
->conceit concerner
-Nothing happens. The words are just settings
->cheat churner
-Nothing happens. The words are just settings
->meet mourner
-Nothing happens. The words are just settings
->beat burner
-Nothing happens. The words are just settings
->eat earner
-Nothing happens. The words are just settings
 
 > big bag
 by one point
 
-@mis
-> wig wag
-!Learner needle
-If you're wearing a hairpiece, I don't want to know.
-> mig mag
-!Learner needle
-Fighter plane ammunition will not help you.
-> gig gag
-!Learner needle
-There are enough gags in this adventure. I hope.
-> brig brag
-Good guys don't brag about if they were ever
-!Learner needle
->swig swag
-There's no time to be drinking here!
-!Learner needle
->tig tag
-But you already have one utterly childish game right in front of you.
-!Learner needle
->cig sag
-You find no black market currency in the big bag.
-!Learner needle
->jig jag
-You aren't up for dancing.
-!Learner needle
-
-==t2
-# this is regression testing, as once upon a time, we blocked creating the big bag
-> think
-!BIG BAG
-
-@ha
 > zbig bag rule
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -187,40 +68,17 @@ You aren't up for dancing.
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > big bag
 !by one point
 You already made the big bag.
 
-==t2
-> bury bile
-> think
-BURY BILE
-
-@mis
-> stet stood
-!dims
-Learner needle
-No comment on if and where proofreading is necessary, here.
-> het hood
-Learner needle
-You consider the possibility of changing the Wet Wood to a Straight Pride parade, but decide against it, as you're worried you might get trampled by all of a dozen people.
-
 > get good
 by one point
 
-@ha
 > get good
 !by one point
 You already managed to GET GOOD.
 
-==t3
-# test the reverse flip warning
-#okdup
-> giver gift
-You've got it backwards! Just flip things around, and it'll be okay.
-
-@ha
 > zgift giver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -228,29 +86,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis
-> lift liver
-Learner needle
-You gain no nutritious meat nor uplifting advice. But you must be close. You just feel you could use another person's help, here.
-> sift siever
-Learner needle
-That would be a good tool in a cooking simulation, but the Leet Learner is more useful. You just feel you could use another person's help, here.
-> drift driver
-Learner needle
-No vehicle comes to take you across the river. And that doesn't quite rhyme, anyway. You just feel you could use another person's help, here.
-> shift shiver
-Learner needle
-You try fearing things different ways, but nobody comes to comfort you.
-
 > gift giver
 by one point
 
-@ha
 > gift giver
 !by one point
 That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's.
 
-@ha
 > zgift giver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -258,61 +100,6 @@ That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-#okdup
-> brig brag
-Good guys don't brag about being
-> flu floats
-!Learner needle
-No flying craft appears, but on the bright side, you fail to feel sick.
-> grew groats
-!Learner needle
-No coins spring from the ground. A coin with a grue would be kind of creepy, anyway.
-> goo goats
-!Learner needle
-Ugh! Regular goats are messy enough.
-> coo coats
-!Learner needle
-No need for warmth.
-> do dotes
-!Learner needle
-Wowzers! What a neat document Too Totes New Notes is. Golly gee!
-> rue rotes
-!Learner needle
-You fail to find yourself in a more straightforward adventure.
-> glue gloats
-!Learner needle
-What kind of person boasts about stockpiling glue?
-> blew bloats
-!Learner needle
-You thought you saw Violet Beauregarde roll by there for a minute.
-> stew stoats
-!Learner needle
-Badger, Mole and Rat would agree that's going too far. Even Toad.
-> shoo shoats
-!Learner needle
-There are no young pigs here to shoo.
-
-==t3
-# test the reverse flip works
-> z
-#okdup
-> fault find
-by one point
-> undo
-
-@mis
-> hind halt
-Learner needle
-You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.
-> signed salt
-Learner needle
-Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though.
-> wined walt
-Learner needle
-A drinking buddy you can play practical jokes on won't be any help here.
-
-@ha
 > zfind fault rule
 DEBUG: vc-find-fault rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -323,18 +110,10 @@ The HA HALF button lights up on your Leet Learner.
 > find fault
 by one point
 
-@mis
-#next-cmd-pass 
-> brig brag
-Good guys don't brag about being
-!Learner needle
-
-@ha
 > find fault
 !by one point
 You already did, and things got worse. You'll have to try something else.
 
-@ha
 > zfind fault rule
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -342,38 +121,6 @@ You already did, and things got worse. You'll have to try something else.
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> hind halt
-!Learner needle
-You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.
-> signed salt
-!Learner needle
-Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though.
-> wined walt
-!Learner needle
-A drinking buddy you can play practical jokes on won't be any help here.
-> mind malt
-!Learner needle
-The mind malt is gone. You have to rely on yourself!
-
-@mis
-> bean bass
-Learner needle
-You could use a delicious meal, but perhaps there is something even simpler the mean mass can become.
-> seen sass
-Learner needle
-You worry any sass you direct at the mean mass would be spun back at you. But there must be a way to change the mean mass!
-> clean class
-Learner needle
-You can't help but feel the mean mass could be more wholesome, but that's not quite the right way to do things. It doesn't feel quite natural enough.
-> glean glass
-Learner needle
-No, there's no hidden window you overlooked.
-> lean lass
-Learner needle
-This isn't that sort of game.
-
-@ha
 > zgreen grass rule
 DEBUG: vc-green-grass rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -384,12 +131,10 @@ The HA HALF button lights up on your Leet Learner.
 > green grass
 by one point
 
-@ha
 > green grass
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zgreen grass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -397,90 +142,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-#next-cmd-pass -- brig brag conditional text
-> brig brag
-Good guys don't brag about having been
-!Learner needle
-
-@mis
-> cash cap
-Learner needle
-You need more than just a homophone here.
-> clash clap
-Learner needle
-Your vehement applause goes unheeded. But perhaps other violence might be more productive.
-> crash crap
-Learner needle
-Profanity isn't necessary, here. Even minor ones.
-> gnash nap
-Learner needle
-You need something more active.
-> sash sap
-Learner needle
-You don't need to be dressed outlandishly to figure what to do.
-> flash flap
-Learner needle
-Perhaps more focused violence would work better.
-> lash lap
-Learner needle
-You bang your fists against your pockets. It sort of helps, you guess.
-
-@mis
-> snow snit
-Learner needle
-No bad weather blows in to be complained about.
-> crow crit
-Learner needle
-You wait for a little bird to give advice, but nothing happens.
-> flow flit
-Learner needle
-You don't need your mind to wander further. You need to focus on a solution.
-> foe fit
-Learner needle
-Complaining and speculation about who or what put you there won't help.
-> go get
-Learner needle
-You have no-one to order around, not that it'd do any good.
-> ho hit
-Learner needle
-You half-heartedly consider violence, but you probably need thinking, instead.
-> lo lit
-Learner needle
-You wonder if the dark, or a racy novel, will help. Probably not.
-> bo bit
-Learner needle
-There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though.
-> slow slit
-Learner needle
-You can't see where to make a cut, and you have nothing to make a cut with.
-> bro brit
-Learner needle
-You don't need a sidekick. Well, right now, you don't. Hard to summon them, anyway.
-> know knit
-Learner needle
-You look for details to understand, but you might want to go in for a bigger picture.
-> show shit
-Learner needle
-Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
-> woe wit
-Learner needle
-Clever complaining will make you feel better but won't do anything.
-
-==t2
-> mash map
-> think
-MASH MAP
-
-==t3
-> so sit
-by one point
-> undo
-> oh it
-by one point
-> undo
-
-@ha
 > zgrow grit rule
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -488,37 +149,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #grow grit before
-> co kit
-Learner needle
-You receive no kit to help you throw, corporate or otherwise.
-> mo mitt
-Learner needle
-Please proceed, adventurer.
-> glow glit
-Learner needle
-Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
-
 > grow grit
 by one point
 
-@ha
 > grow grit
 !by one point
 You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.
 
-@mis #grow grit after
-> co kit
-!Learner needle
-You receive no kit to help you throw, corporate or otherwise.
-> mo mitt
-!Learner needle
-Please proceed, adventurer.
-> glow glit
-!Learner needle
-Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
-
-@ha
 > zgrow grit rule
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -526,59 +163,6 @@ Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> snow snit
-!Learner needle
-No bad weather blows in to be complained about.
-> crow crit
-!Learner needle
-You wait for a little bird to give advice, but nothing happens.
-> flow flit
-!Learner needle
-You don't need your mind to wander further. You need to focus on a solution.
-> foe fit
-!Learner needle
-Complaining and speculation about who or what put you there won't help.
-> go get
-!Learner needle
-You have no-one to order around, not that it'd do any good.
-> ho hit
-!Learner needle
-You half-heartedly consider violence, but you probably need thinking, instead.
-> lo lit
-!Learner needle
-You wonder if the dark, or a racy novel, will help. Probably not.
-> bo bit
-!Learner needle
-There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though.
-> slow slit
-!Learner needle
-You can't see where to make a cut, and you have nothing to make a cut with.
-> bro brit
-!Learner needle
-You don't need a sidekick. Well, right now, you don't. Hard to summon them, anyway.
-> know knit
-!Learner needle
-You look for details to understand, but you might want to go in for a bigger picture.
-> show shit
-!Learner needle
-Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
-> woe wit
-!Learner needle
-Clever complaining will make you feel better but won't do anything.
-
-==t3
-> rash rap
-by one point
-> undo
-> bash bap
-by one point
-> undo
-> slash slap
-by one point
-> undo
-
-@ha
 > zmash map rule
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -586,16 +170,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-
 > mash map
 by one point
 
-@ha
 > mash map
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zmash map rule
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -603,34 +184,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!MASH MAP
-> flim flam
-> think
-FLIM FLAM
-
-@mis
-> bind be
-Learner needle
-Your incantation fails. Perhaps something more straightforward and inward-looking would work better.
-> bind bee
-Learner needle
-If there were a bee, it might distract you from being, well, you.
-> wined whee
-Learner needle
-Whether or not you are more or less tense, or more or less exciting, you need to focus on you the right way here.
-> signed see
-Learner needle
-There's nobody to see any forged signature. Look within.
-> tined tee
-Learner needle
-You don't have time for silly games like golf now!
-> kind key
-Learner needle
-Oh, it won't be that easy. Someone won't drop a key for you. But you can do for yourself.
-
-@ha
 > zmind me rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -641,12 +194,10 @@ The HA HALF button lights up on your Leet Learner.
 > mind me
 by one point
 
-@ha
 > mind me
 !by one point
 You already minded yourself.
 
-@ha
 > zmind me rule
 !DEBUG: vc-mind-me rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -654,47 +205,6 @@ You already minded yourself.
 !DEBUG: vc-mind-me rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t3
-> skim scam
-by one point
->undo
-> flimflam
-by one point
->undo
-
-@mis
-> whim wham
-Learner needle
-Hmm, you try to figure a poetic way through, but perhaps you need something more worldly.
-> grim gram
-Learner needle
-No elder appears to upbraid you, which is all for the better.
-> jim jam
-Learner needle
-No pajamas appear. It's much too early for rest, anyway.
-> dim dam
-Learner needle
-You need fewer blockages and/or minor curses, not more.
-> swim swam
-Learner needle
-You don't need to fall in the water here.
-> rim ram
-Learner needle
-Banging on the walls won't help.
-> shim sham
-Learner needle
-Hmm. Interesting. But you might need to fake something besides a shim.
-> him ham
-Learner needle
-Pigs, male or female, aren't allowed on public transport.
-> prim pram
-Learner needle
-That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse.
-> slim slam
-Learner needle
-That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though.
-
-@ha
 > zflim flam rule
 DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -705,12 +215,10 @@ The HA HALF button lights up on your Leet Learner.
 > flim flam
 by one point
 
-@ha
 > flim flam
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zflim flam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -718,72 +226,8 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!FLIM FLAM
-
-==t4
->w
-west to Fame Fort
->w
-You already went west
->e
-east to Fate Farm
-
 > s
 
-@mis
-> wheel weir
-Learner needle
-The Sage Sea is enough of a boundary.
-> eel ear
-!Learner needle
-You don't need an eel, or a piece of one, to electrify things right now.
-> peel pear
-!Learner needle
-You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
-> steal steer
-Learner needle
-Direct homophones don't work here, and the steer would not fit in your bag.
-> wheel where
-!Learner needle
-The Ceiling Seer does not direct you to any wheel or any form of transportation.
-
-@mis
-> cage key
-!Learner needle
-You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it.
-> wage wee
-!Learner needle
-Hey, now! You're not in it for the money! Or a handheld game console!
-> phage fee
-!Learner needle
-Biological warfare is too expensive.
-> mage me
-!Learner needle
-One look at the Sage Sea and you remember mastering real magic takes training and practice. You'll find enough silly magic to do.
-> page pea
-Learner needle
-You don't need to skip around a book or summon anything.
-> beige bee
-Learner needle
-This isn't a nature retreat.
-
-==t2
-> feel fear
-> deal dear
-> heal here
-> think
-FEEL FEAR
-DEAL DEAR
-HEAL HERE
-
-==t3
-> kneeling near
-by one point
-> undo
-
-@ha
 > zkneel near rule
 DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -794,12 +238,10 @@ The HA HALF button lights up on your Leet Learner.
 > kneel near
 by one point
 
-@ha
 > kneel near
 !by one point
 No need to kneel twice.
 
-@ha
 > zkneel near rule
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -807,12 +249,6 @@ No need to kneel twice.
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t3
-> feeling fear
-by one point
-> undo
-
-@ha
 > zfeel fear rule
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -823,12 +259,10 @@ The HA HALF button lights up on your Leet Learner.
 > feel fear
 by one point
 
-@ha
 > feel fear
 !by one point
 No need to overdo feeling fear.
 
-@ha
 > zfeel fear rule
 !DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -836,16 +270,6 @@ No need to overdo feeling fear.
 !DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!FEEL FEAR
-
-==t3
-> dealing dear
-by one point
-> undo
-
-@ha
 > zdeal dear rule
 DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -856,12 +280,10 @@ The HA HALF button lights up on your Leet Learner.
 > deal dear
 by one point
 
-@ha
 > deal dear
 !by one point
 Overdoing dealing with it is ... one way to show you might not be dealing with it.
 
-@ha
 > zdeal dear rule
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -869,11 +291,6 @@ Overdoing dealing with it is ... one way to show you might not be dealing with i
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!DEAL DEAR
-
-@ha
 > zappealing appear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -881,16 +298,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 > appealing appear
 by one point
 
-@ha
 > appealing appear
 !by one point
 The peeling pier already looks better.
 
-@ha
 > zappealing appear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -900,18 +314,6 @@ The peeling pier already looks better.
 
 > n
 
-@mis
-> one wen
-!Learner needle
-Your skin remains unblemished, despite you tempting fate.
-> pun pen
-!Learner needle
-You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me.
-> won when
-!Learner needle
-Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
-
-@ha
 > zspark spliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -919,7 +321,6 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-@ha
 > zstrong start rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -927,16 +328,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 > strong start
 by one point
 
-@ha
 > strong start
 !by one point
 You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.
 
-@ha
 > zstrong start rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -944,18 +342,6 @@ You already did. You wouldn't want a stale start or a pale part. Why, you might 
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-@mis #fall free before
-> call cree
-Learner needle
-You need something simpler than an unusual language here.
-> ball brie
-Learner needle
-This game is cheesy-making, not cheese-making.
-> wall whee
-Learner needle
-You want to have fewer things in your way, not more. Just spitballing here.
-
-@ha
 > zfall free rule
 DEBUG: vc-fall-free rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -966,12 +352,10 @@ The HA HALF button lights up on your Leet Learner.
 > fall free
 by one point
 
-@ha
 > fall free
 !by one point
 The tree is already fallen. It's in a good place.
 
-@ha
 > zfall free rule
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -979,50 +363,6 @@ The tree is already fallen. It's in a good place.
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis #fall free after
-> call cree
-!Learner needle
-You need something simpler than an unusual language here.
-> ball brie
-!Learner needle
-This game is cheesy-making, not cheese-making.
-> wall whee
-!Learner needle
-You want to have fewer things in your way, not more. Just spitballing here.
-
-@mis
-# must be after the FALL FREE or FRY FALL gives an erroneous HA HALF.
->cry call
-You lash out meaninglessly at the wry wall.
-!Learner needle
->dry doll
-The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.
-!Learner needle
->fry fall
-!Learner needle
-The wry wall remains upright.
->pry pall
-!Learner needle
-There is no hidden tomb under the wry wall.
->try tall
-!Learner needle
-The wry wall does not grow.
-
-@mis
-> chive cheap
-Learner needle
-The hive heap, and this game, acquire no additional flavor.
-> live leap
-Learner needle
-The leap wouldn't be live for very long.
-> rive reap
-Learner needle
-Tearing apart the hive heap would get you stung before you found whatever's in there.
-> jive jeep
-Learner needle
-No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
-
-@ha
 > zdive deep rule
 DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1033,12 +373,10 @@ The HA HALF button lights up on your Leet Learner.
 > dive deep
 by one point
 
-@ha
 > dive deep
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zdive deep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1046,20 +384,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> gaper guile
-Learner needle
-You stare a bit but get no insight.
-!the pile
-> taper tile
-Learner needle
-No tile appears, but on the bright side, neither does a charging tapir.
-!the pile
-> aper isle
-Learner needle
-You are not teleported to somewhere similar to the Fun Fen.
-
-@ha
 > zpaper pile rule
 DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1070,12 +394,10 @@ The HA HALF button lights up on your Leet Learner.
 > paper pile
 by one point
 
-@ha
 > paper pile
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zpaper pile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1083,18 +405,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> gaper guile
-!Learner needle
-You stare a bit but get no insight. Now you've organized the pile, maybe its details are more important to read or examine.
-> taper tile
-!Learner needle
-No tile appears, but on the bright side, neither does a charging tapir. Now you've organized the pile, maybe its details are more important to read or examine.
-> aper isle
-!Learner needle
-You are not teleported to somewhere similar to the Fun Fen.
-
-@ha
 > zbacked binder rule
 DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1105,12 +415,10 @@ The HA HALF button lights up on your Leet Learner.
 > backed binder
 by one point
 
-@ha
 > backed binder
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zbacked binder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1120,45 +428,8 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > n
 
-@mis
-> ceased sauce
-Learner needle
-You'll need all the sauce you can get, literally or figuratively.
-> greased gross
-Learner needle
-The Creased Cross doesn't need to become ickier.
-> fleeced floss
-Learner needle
-Dental hygiene is a good idea in general, but here, it's unnecessary.
-> teased toss
-Learner needle
-A bit of taunting might work here, but you might need to be a bit harsher.
-
 > w
 
-@mis
-> lark lore
-Learner needle
-This is no time for jokes! Or bird-watching.
-> bark bore
-Learner needle
-You don't need to make a tree or summon anything tiresome or porcine.
-> park pore
-Learner needle
-The store cannot become outdoorsy. Or a parking lot.
-> shark shore
-Learner needle
-No, you don't need more danger here.
-> spark spore
-Learner needle
-Biological warfare is probably dangerous.
-
-==t2
-> mark more
-> think
-MARK MORE
-
-@ha
 > zdark door rule
 DEBUG: vc-dark-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1166,40 +437,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-dark-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #stark store before
-> arc ore
-Learner needle
-The store remains rectangular-ish. Probably for the best.
-> hark whore
-Learner needle
-That's inappropriate. Logical, but inappropriate.
-> snark snore
-Learner needle
-You pretend you've already done much harder things. It gives you confidence, or something close enough.
-
 > dark door
 by one point
 
-@mis #stark store middle
-#next-cmd-pass
-> arc ore
-Learner needle
-The store remains rectangular-ish. Probably for the best.
-#next-cmd-pass
-> hark whore
-Learner needle
-That's inappropriate. Logical, but inappropriate.
-#next-cmd-pass
-> snark snore
-Learner needle
-You pretend you've already done much harder things. It gives you confidence, or something close enough.
-
-@ha
 > dark door
 !by one point
 You already made the dark door appear.
 
-@ha
 > zdark door rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1207,7 +451,6 @@ You already made the dark door appear.
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zmark more rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1218,23 +461,10 @@ The HA HALF button lights up on your Leet Learner.
 > mark more
 by one point
 
-@mis #stark store after
-> arc ore
-!Learner needle
-The store remains rectangular-ish. Probably for the best.
-> hark whore
-!Learner needle
-That's inappropriate. Logical, but inappropriate.
-> snark snore
-!Learner needle
-You pretend you've already done much harder things. It gives you confidence, or something close enough.
-
-@ha
 > mark more
 !by one point
 You already saw what you could.
 
-@ha
 > zmark more rule
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1242,39 +472,6 @@ You already saw what you could.
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> lark lore
-!Learner needle
-This is no time for jokes! Or bird-watching.
-> bark bore
-!Learner needle
-You don't need to make a tree or summon anything tiresome or porcine.
-> park pore
-!Learner needle
-The store cannot become outdoorsy. Or a parking lot.
-> shark shore
-!Learner needle
-No, you don't need more danger here.
-> spark spore
-!Learner needle
-Biological warfare is probably dangerous.
-
-==t2
-> think
-!MARK MORE
-
-@mis
-> beard bay
-Learner needle
-No, the store is landlocked.
-> feared fay
-Learner needle
-No, there is enough fearful magic.
-> steered stay
-Learner needle
-No, you'd like to move on through the Weird Way, somehow.
-
-@ha
 > zcleared clay rule
 DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1285,12 +482,10 @@ The HA HALF button lights up on your Leet Learner.
 > cleared clay
 by one point
 
-@ha
 > cleared clay
 !by one point
 The clay is cleared enough.
 
-@ha
 > zcleared clay rule
 !DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1300,7 +495,6 @@ The clay is cleared enough.
 
 > w
 
-@ha
 > zmystery mall rule
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1311,12 +505,10 @@ The HA HALF button lights up on your Leet Learner.
 > mystery mall
 by one point
 
-@ha
 > mystery mall
 !by one point
 You've already flipped this area to the Mystery Mall.
 
-@ha
 > zmystery mall rule
 !DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1324,12 +516,6 @@ You've already flipped this area to the Mystery Mall.
 !DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> glean glows
-> think
-GLEAN GLOWS
-
-@ha
 > zwhatta wanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1337,26 +523,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t3
-> whatta wanksta
-by one point
-> undo
-
-@mis
-> butter bankster
-the Leet Learner dims a bit, and the needle
-The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
-
-==t1,5,6
 > what a wanksta
 by one point
 
-@ha
 > whatta wanksta
 !by one point
 That insult only works once.
 
-@ha
 > zwhatta wanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1366,75 +539,20 @@ That insult only works once.
 
 > listen
 
-@mis
-> fo fappin
-Learner needle
-may not be highbrow, but it's not that low-class.
-> woe whappin
-Learner needle
-You don't need an exhortation to violence.
-> crow crappin
-Learner needle
-You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, Toe Tappin' Row Rappin' is versatile enough.
-> slow slappin
-Learner needle
-That would be handy in a more violent adventure, but not this one.
-> flow flappin
-Learner needle
-That might be funky to some, but you need something more practical.
-> low lappin
-Learner needle
-You put your best-ever time for a mile run to Toe Tappin' Row Rappin', but you can't see how it will help here. Plus, Chariots of Fire works better, anyway.
-> butter bankster
-!the Leet Learner dims a bit, and the needle
-The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
-> frotz frame
-Learner needle
-Anything as esoteric as text adventure vocabulary would go over the Gutta Ganksta's head. You need to be more brutal.
-
-@ha
 > zlots lame rule
 DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > lots zlame rule
 DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #lots lame before (no after)
-> blots blame
-Learner needle
-There's another way to insult the tattoo as bad art. You're very close.
-> clots claim
-Learner needle
-You're trying to chase, not impress the ganksta.
-> cots came
-Learner needle
-The Gutta Ganksta is unmoved by the prospect of a good night's sleep.
-> dots dame
-Learner needle
-The Gutta Ganksta's fashion sense tends away from polka dots.
-> knots name
-Learner needle
-You fail to tie the ganksta up in knots with well-timed
-> shots shame
-Learner needle
-The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun.
-> sots same
-Learner needle
-The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult.
-> tots tame
-Learner needle
-The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though.
 
 > lots lame
 by one point
 
-@ha
 > lots lame
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zlots lame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1442,16 +560,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> co capn
-> so sappin
-> mo mappin
-> THINK
-MO MAPPIN
-SO SAPPIN
-CO CAPN
-
-@ha
 > zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1459,24 +567,20 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 > ho happen
 by one point
 > dimd
 by one point
 
-@ha
 > ho happen
 !by one point
 #?? for postcomp: TRY DOING
 You already said HO HAPPEN.
 
-@ha
 > dimd
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1484,7 +588,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-@ha
 > zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1495,12 +598,10 @@ The HA HALF button lights up on your Leet Learner.
 > no nappin
 by one point
 
-@ha
 > no nappin
 !by one point
 You already changed Toe Tappin Row Rappin that way.
 
-@ha
 > zno nappin rule
 !DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1510,57 +611,6 @@ You already changed Toe Tappin Row Rappin that way.
 
 > w
 
-@mis #lie lol before
-> try trawl
-the Leet Learner dims a bit, and the needle
-You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
-> fie fall
-the Leet Learner dims a bit, and the needle
-The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless to your quest, but maybe it's good for further practice.
-> die doll
-the Leet Learner dims a bit, and the needle
-There are no dolls to manipulate in this game.
-> scry scrawl
-the Leet Learner dims a bit, and the needle
-The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
-> spry sprawl
-the Leet Learner dims a bit, and the needle
-The shy shawl fails to spread out all over the floor.
-> sty stall
-the Leet Learner dims a bit, and the needle
-You denigrate the condition of Got Gear Hot Here.
-> dry droll
-the Leet Learner dims a bit, and the needle
-You make fun of the shy shawl subtly.
-> high hall
-the Leet Learner dims a bit, and the needle
-You imagine yourself in a much more spacious megastore.
-> guy gall
-the Leet Learner dims a bit, and the needle
-You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
-> buy ball
-the Leet Learner dims a bit, and the needle
-You can only buy clothes, not sporting goods, here. Also, no whining.
-> pie paul
-the Leet Learner dims a bit, and the needle
-You bemoan the lack of a food court in the mall.
-> my mall
-the Leet Learner dims a bit, and the needle
-You show suitable ambition and aggression for an adventurer.
-> why wall
-the Leet Learner dims a bit, and the needle
-You complain to nobody in particular about the number of dead ends in the mall.
-> cry crawl
-the Leet Learner dims a bit, and the needle
-You feel overcome with emotion.
->tie tall
-the Leet Learner dims a bit, and the needle
-You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
->sigh sol
-the Leet Learner dims a bit, and the needle
-No sunlight appears.
-
-@ha
 > zlie lol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1568,16 +618,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 > lie lol
 by one point
 
-@ha
 > lie lol
 !by one point
 The shy shawl has taken enough abuse.
 
-@ha
 > zlie lol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1585,75 +632,6 @@ The shy shawl has taken enough abuse.
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-@mis #lie lol after
-> try trawl
-!the Leet Learner dims a bit, and the needle
-You put in effort, and stuff.
-!further practice
-> fie fall
-!the Leet Learner dims a bit, and the needle
-The shawl remains motionless, but you feel smarter for your guess.
-> die doll
-!the Leet Learner dims a bit, and the needle
-There are no dolls to manipulate in this game.
-> scry scrawl
-!the Leet Learner dims a bit, and the needle
-The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
-> spry sprawl
-!the Leet Learner dims a bit, and the needle
-The shy shawl fails to spread out all over the floor.
-> sty stall
-!the Leet Learner dims a bit, and the needle
-You denigrate the condition of Got Gear Hot Here.
-> dry droll
-!the Leet Learner dims a bit, and the needle
-You make fun of the shy shawl subtly.
-> high hall
-!the Leet Learner dims a bit, and the needle
-You imagine yourself in a much more spacious megastore.
-> guy gall
-!the Leet Learner dims a bit, and the needle
-You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
-> buy ball
-!the Leet Learner dims a bit, and the needle
-You can only buy clothes, not sporting goods, here. Also, no whining.
-> pie paul
-!the Leet Learner dims a bit, and the needle
-You bemoan the lack of a food court in the mall.
-> my mall
-!the Leet Learner dims a bit, and the needle
-You show suitable ambition and aggression for an adventurer.
-> why wall
-!the Leet Learner dims a bit, and the needle
-You complain to nobody in particular about the number of dead ends in the mall.
-> cry crawl
-!the Leet Learner dims a bit, and the needle
-You feel overcome with emotion.
-> tie tall
-!the Leet Learner dims a bit, and the needle
-You look for any way-too-long ties that might help you feel taller, or more
-> sigh sol
-!the Leet Learner dims a bit, and the needle
-No sunlight appears.
-
-@mis
-> card cat
-Learner needle
-A card catalog certainly repels some folks, but you need something sturdier.
-> charred chat
-Learner needle
-No time for scorched-earth conversation, here.
-> barred bat
-Learner needle
-You don't need a pet or a weapon. Especially not a potentially evil one.
-> starred stat
-Learner needle
-Get ahold of yourself! There's no time for in-depth sabermetrics!
-> guard gat
-Learner needle
-I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
-
-@ha
 > znot near rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1661,80 +639,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-@mis #not near before
-> blot blear
-the Leet Learner dims a bit, and the needle
-You don't need to make this store more dreary.
-> bought beer
-the Leet Learner dims a bit, and the needle
-Alas, the mall has no license to buy or serve alcohol.
-> fought fear
-the Leet Learner dims a bit, and the needle
-With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
-> spot spear
-the Leet Learner dims a bit, and the needle
-You don't need a weapon.
-> dot dear
-the Leet Learner dims a bit, and the needle
-No Animaniacs appear to spout poetry. Probably a good thing.
-> drought drear
-the Leet Learner dims a bit, and the needle
-You thirst for an effective rhyme.
-> fraught freer
-the Leet Learner dims a bit, and the needle
-You wish Got Gear Hot Hear led somewere else.
-> sought seer
-the Leet Learner dims a bit, and the needle
-Nobody, sober or otherwise, appears to give you advice about the future.
-> snot sneer
-the Leet Learner dims a bit, and the needle
-You turn up your nose at kids these days' terrible fashions.
-> pot pier
-the Leet Learner dims a bit, and the needle
-You don't need ... cookware.
-
-==t1,5,6
 > not near
 by one point
 
-@ha
 > not near
 !by one point
 You already teleported for a bonus point.
 
-@mis #not near after
-> blot blear
-!the Leet Learner dims a bit, and the needle
-You don't need to make this store more dreary.
-> bought beer
-!the Leet Learner dims a bit, and the needle
-Alas, the mall has no license to buy or serve alcohol.
-> fought fear
-!the Leet Learner dims a bit, and the needle
-With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
-> spot spear
-!the Leet Learner dims a bit, and the needle
-You don't need a weapon.
-> dot dear
-!the Leet Learner dims a bit, and the needle
-No Animaniacs appear to spout poetry. Probably a good thing.
-> drought drear
-!the Leet Learner dims a bit, and the needle
-You thirst for an effective rhyme.
-> fraught freer
-!the Leet Learner dims a bit, and the needle
-You wish Got Gear Hot Hear led somewere else.
-> sought seer
-!the Leet Learner dims a bit, and the needle
-Nobody, sober or otherwise, appears to give you advice about the future.
-> snot sneer
-!the Leet Learner dims a bit, and the needle
-You turn up your nose at kids these days' terrible fashions.
-> pot pier
-!the Leet Learner dims a bit, and the needle
-You don't need ... cookware.
-
-@ha
 > znot near rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -1742,62 +653,26 @@ You don't need ... cookware.
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-@ha
 > zhard hat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > hard zhat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #before
-> lard lat
-Learner needle
-You poke at your abs. Nah, you're doing okay.
-> pard pat
-Learner needle
-You fail to enter a Western with a sidekick.
 
 > hard hat
 by one point
 
-@mis #after
-> lard lat
-!Learner needle
-You poke at your abs. Nah, you're doing okay.
-> pard pat
-!Learner needle
-You fail to enter a Western with a sidekick.
-
-@ha
 > hard hat
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zhard hat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 > hard zhat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@mis
-> card cat
-!Learner needle
-A card catalog certainly repels some folks, but you have something sturdier.
-> charred chat
-!Learner needle
-No time for scorched-earth conversation, here.
-> barred bat
-!Learner needle
-You don't need a pet or a weapon. Especially not a potentially evil one.
-> starred stat
-!Learner needle
-Get ahold of yourself! There's no time for in-depth sabermetrics!
-> guard gat
-!Learner needle
-I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
 
 > e
 > e
@@ -1805,24 +680,6 @@ I'm not getting into issues like whether a powerful gun is actually for defense 
 > n
 > w
 
-@mis
-> dirk dell
-Learner needle
-You don't need an olde tyme adventure with daggers and stuff.
-> urkel
-!Learner needle
-You hear an annoying laugh in the distance.
-> urk ell
-Learner needle
-The gel is messy, but odd interjections won't help you use it or put it back in the tube.
-> smirk smell
-Learner needle
-No, you don't want that.
-> turk tell
-Learner needle
-You wonder briefly how that automaton back in the 18th century played chess, anyway.
-
-@ha
 > zwork well rule
 DEBUG: vc-work-well rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1833,12 +690,10 @@ The HA HALF button lights up on your Leet Learner.
 > work well
 by one point
 
-@ha
 > work well
 !by one point
 Any further futzing might undo your previous good work.
 
-@ha
 > zwork well rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1846,39 +701,8 @@ Any further futzing might undo your previous good work.
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> dirk dell
-!Learner needle
-You don't need an olde tyme adventure with daggers and stuff.
-> urk ell
-!Learner needle
-The gel is messy, but odd interjections won't help you use it or put it back in the tube.
-> smirk smell
-!Learner needle
-No, you don't want that.
-> turk tell
-!Learner needle
-You wonder briefly how that automaton back in the 18th century played chess, anyway.
-
-==t2
-> couple caps
-> think
-COUPLE CAPS
-
 > e
 
-@mis
-> coughed canned
-Learner needle
-You try to suppress a cough while avoiding any sudden downturn in fortune.
-> offed and
-Learner needle
-You try for an impressive anticipatory silence, but nobody is around to appreciate it.
-> scoffed scanned
-Learner needle
-Soft Sand isn't much to look at, but it's not worth scorn.
-
-@ha
 > zloft land rule
 DEBUG: vc-loft-land rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1889,12 +713,10 @@ The HA HALF button lights up on your Leet Learner.
 > loft land
 by one point
 
-@ha
 > loft land
 !by one point
 You're already on the Loft Land.
 
-@ha
 > soft sand
 !by one point
 > soft sand
@@ -1909,7 +731,6 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
 
-@ha
 > zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1917,30 +738,8 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> coughed canned
-!Learner needle
-You try to suppress a cough while avoiding any sudden downturn in fortune.
-> offed and
-!Learner needle
-You try for an impressive anticipatory silence, but nobody is around to appreciate it.
-> scoffed scanned
-!Learner needle
-Loft Land isn't much to look at, but it's not worth scorn.
-
 > w
 
-==t2
-> first fave
-> think
-FIRST FAVE
-
-@mis
-> creaming cull
-Learner needle
-Less violence, more letters.
-
-@ha
 > zdreaming dull rule
 DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1951,12 +750,10 @@ The HA HALF button lights up on your Leet Learner.
 > dreaming dull
 by one point
 
-@ha
 > dreaming dull
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zdreaming dull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1964,12 +761,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> nursed nave
-Learner needle
-You don't need to nurse a bad guy or a religious place.
-
-@ha
 > zfirst fave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1980,12 +771,10 @@ The HA HALF button lights up on your Leet Learner.
 > first fave
 by one point
 
-@ha
 > first fave
 !by one point
 The Curst Cave is already a cheerier place.
 
-@ha
 > zfirst fave rule
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1993,33 +782,6 @@ The Curst Cave is already a cheerier place.
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> nursed nave
-!Learner needle
-You don't need to nurse a bad guy or a religious place.
-
-==t2
-> think
-!FIRST FAVE
-
-@mis
-> cruel crap
-Learner needle
-But you got rid of the skull. Also, swearing is naughty.
-> youll yap
-Learner needle
-Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
-> pool pap
-Learner needle
-You want something nice and useful to come out of the tap, not ... that.
-> mule map
-Learner needle
-It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try.
-> rule rap
-Learner needle
-You need something more substantial to come out of the cool cap.
-
-@ha
 > zcool cap rule
 DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2030,51 +792,21 @@ The HA HALF button lights up on your Leet Learner.
 > cool cap
 by one point
 
-@ha
 > cool cap
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zcool cap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 > cool zcap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@mis
-> cruel crap
-!Learner needle
-But you got rid of the skull. Also, swearing is naughty.
-> youll yap
-!Learner needle
-Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
-> pool pap
-!Learner needle
-You want something nice and useful to come out of the tap, not ... that.
-> mule map
-!Learner needle
-It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try.
-> rule rap
-!Learner needle
-You need something more substantial to come out of the cool cap.
 
 > e
 > s
 > e
 
-@mis
-> island ale
-Learner needle
-No need to drink or get an island disease.
-
-==t3
-> silent sale
-by one point
->undo
-
-@ha
 > zsilent sail rule
 DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2085,12 +817,10 @@ The HA HALF button lights up on your Leet Learner.
 > silent sail
 by one point
 
-@ha
 > silent sail
 !by one point
 You already called up the flooring float.
 
-@ha
 > zsilent sail rule
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2098,12 +828,6 @@ You already called up the flooring float.
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> island ale
-!Learner needle
-No need to drink or get an island disease.
-
-@ha
 > zbrightening bridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2114,12 +838,10 @@ The HA HALF button lights up on your Leet Learner.
 > brightening bridge
 by one point
 
-@ha
 > brightening bridge
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zbrightening bridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2127,18 +849,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> goring goat
-Learner needle
-You don't need an aggressive animal sidekick.
-> storing stoat
-Learner needle
-You can carry what you need. You don't need any Brian Jacques villains upsetting that.
-> mooring moat
-Learner needle
-The flooring float seems to anchor itself okay here.
-
-@ha
 > zboring boat rule
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2146,25 +856,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #boring boat before
-> touring tote
-Learner needle
-The big bag is good enough
-
 > boring boat
 by one point
 
-@mis #boring boat after
-> touring tote
-!Learner needle
-The big bag is good enough
-
-@ha
 > boring boat
 !by one point
 The boat is already boring and practical enough.
 
-@ha
 > zboring boat rule
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2172,40 +870,8 @@ The boat is already boring and practical enough.
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> goring goat
-!Learner needle
-You don't need an aggressive animal sidekick.
-> storing stoat
-!Learner needle
-You can carry what you need. You don't need any Brian Jacques villains upsetting that.
-> mooring moat
-!Learner needle
-The boring boat seems to anchor itself okay here.
-
 > enter boat
 
-@mis
-> drowsy drakes
-!Learner needle
-No sleepy ducks walk by.
-> cake key
-Learner needle
-Ooh! That'd be nice and tasty. But you don't need that right now.
-
-==t2
->take tea
->fake fee
->think
-TAKE TEA
-FAKE FEE
-
-==t3
-> wake wee
-by one point
-> undo
-
-@ha
 > zwake whee rule
 DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2213,26 +879,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #jake g general before
-> shake she
-Learner needle
-Jake has no horrible ex to avoid.
-> flake flee
-Learner needle
-Be nice! You need Jake.
-> bake be
-Learner needle
-This is not a cooking sim.
-
 > wake whee
 by one point
 
-@ha
 > wake whee
 !by one point
 He's already awake, Blake.
 
-@ha
 > zwake whee rule
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2240,15 +893,6 @@ He's already awake, Blake.
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
->w
-west to Capped Cone
->s
-south to Blest Bloom
->n
-north to Mo Main Low Lane
-
-@ha
 > ztake tea rule
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2259,12 +903,10 @@ The HA HALF button lights up on your Leet Learner.
 > take tea
 by one point
 
-@ha
 > take tea
 !by one point
 Don't get greedy. You have the sustenance needed to work with Jake G.
 
-@ha
 > ztake tea rule
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2272,11 +914,6 @@ Don't get greedy. You have the sustenance needed to work with Jake G.
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
->think
-!TAKE TEA
-
-@ha
 > zbreak brie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -2284,16 +921,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 > break brie
 by one point
 
-@ha
 > break brie
 !by one point
 Hey! Don't get greedy, now.
 
-@ha
 > zbreak brie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -2301,7 +935,6 @@ Hey! Don't get greedy, now.
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-@ha
 > zfake fee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2309,47 +942,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #jake g mid
-#next-cmd-pass
-> cake key
-Learner needle
-Ooh! That'd be nice and tasty. But you don't need that right now.
-#next-cmd-pass
-> shake she
-Learner needle
-Jake has no horrible ex to avoid.
-#next-cmd-pass
-> flake flee
-Learner needle
-Be nice! You need Jake.
-#next-cmd-pass
-> bake be
-Learner needle
-This is not a cooking sim.
-
 > fake fee
 by one point
 
-@mis #jake g after
-> cake key
-!Learner needle
-Ooh! That'd be nice and tasty. But you don't need that right now.
-> shake she
-!Learner needle
-Jake has no horrible ex to avoid.
-> flake flee
-!Learner needle
-Be nice! You need Jake.
-> bake be
-!Learner needle
-This is not a cooking sim.
-
-@ha
 > fake fee
 !by one point
 That's over. Time to work with Jake!
 
-@ha
 > zfake fee rule
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2357,21 +956,8 @@ That's over. Time to work with Jake!
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
->think
-!FAKE FEE
-
 > e
 
-@mis
-> cake cap
-Learner needle
-No edible headgear appears.
-> fake fap
-Learner needle
-You make a rude gesture, for whatever good it does.
-
-@ha
 > zmake map rule
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2379,35 +965,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #lake lap rhymes
-> crake crap
-Learner needle
-No bird droppings provide a trail.
-> flake flap
-Learner needle
-Nobody starts blathering uselessly.
-> rake wrap
-Learner needle
-You probably don't want or need a rake to step on.
-> sake sap
-Learner needle
-No! You want more purpose, not less.
-> slake slap
-Learner needle
-You don't need to slap anyone here, hard or soft.
-> wake whap
-Learner needle
-You already woke Jake much more nicely.
-
 > make map
 by one point
 
-@ha
 > make map
 !by one point
 You already made a map.
 
-@ha
 > zmake map rule
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2415,46 +979,20 @@ You already made a map.
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
->e
-east to Hi! Here, Buy Beer
->s
-south to Rad Route
->n
-north to See Some... Gee, Gum
-
-==t2
-> snake snap
-> think
-SNAKE SNAP
-
-@ha
 > zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > co zcapn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #co capn before
-> co cappin
-Learner needle
-Close, but camaraderie, not violence.
 
 > co capn
 by one point
 
-@mis #co capn after
-> co cappin
-!Learner needle
-Close, but camaraderie, not violence.
-
-@ha
 > co capn
 !by one point
 Jake already is.
 
-@ha
 > zco capn rule
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2462,11 +1000,6 @@ Jake already is.
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
->think
-!CO CAPN
-
-@ha
 > zsnake snap rule
 DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2478,17 +1011,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 Silent Sail
 
-@mis
-> fake fap
-!Learner needle
-You make a rude gesture, for whatever good it does.
-
-@ha
 > snake snap
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zsnake snap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2496,37 +1022,8 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!SNAKE SNAP
-
-==t2
-# test bug found in-comp
-\\
->couple caps
->enter boat
-Been Buggin
->undo
->undo
-
 > enter boat
 
-==t2
->lean luggin
-You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
->think
-LEAN LUGGIN
->mean muggin
-You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
->think
-MEAN MUGGIN
-
-@mis
-> pay prong
-Learner needle
-Buying things won't improve your lack of self-worth.
-
-@ha
 > zstay strong rule
 DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2536,12 +1033,10 @@ The HA HALF button lights up on your Leet Learner.
 
 > stay strong
 
-@ha
 > stay strong
 !by one point
 You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling so sad.
 
-@ha
 > zstay strong rule
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2549,36 +1044,6 @@ You can't do much, but that doesn't seem like it. You sort of have to break out 
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> ho had
-Learner needle
-You're trying to feel less in the dumps, not more.
-> mo mad
-Learner needle
-Once the anger wore off, you might be even more lethargic.
-> co cad
-Learner needle
-Nobody appears to commiserate with you.
-> grow grad
-Learner needle
-You acquire no diploma.
-> po pad
-Learner needle
-You don't need a depressing place to live.
-> lo lad
-Learner needle
-Recalling a condescending adult's advice to you (or others) fails to help.
-> go gad
-Learner needle
-Trying to shock yourself into action fails.
-> foe fad
-Learner needle
-You try to convince yourself it's a passing phase, but it doesn't work.
-> doh dad
-Learner needle
-Blaming your parents fails to help.
-
-@ha
 > zglow glad rule
 DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2589,25 +1054,10 @@ The HA HALF button lights up on your Leet Learner.
 > glow glad
 by one point
 
-==t2
->think
-You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
-You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
-
-==t4
->s
-!south to Leaf Lake
->n
-!north to Fun-Filled Gun Guild
->w
-!west to Trust Trail
-
-@ha
 > glow glad
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zglow glad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2615,7 +1065,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zmean muggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2626,12 +1075,10 @@ The HA HALF button lights up on your Leet Learner.
 > mean muggin
 by one point
 
-@ha
 > mean muggin
 !by one point
 You already learned mean muggin'.
 
-@ha
 > zmean muggin rule
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2639,7 +1086,6 @@ You already learned mean muggin'.
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zlean luggin rule
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2650,21 +1096,11 @@ The HA HALF button lights up on your Leet Learner.
 > lean luggin
 by one point
 
-@ha
 > lean luggin
 !by one point
 You already learned lean luggin'.
 > undo
 
-==t4
->s
-south to Leaf Lake
->n
-north to Fun-Filled Gun Guild
->w
-west to Trust Trail
-
-@ha
 > zlean luggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2672,50 +1108,6 @@ west to Trust Trail
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis #buggin guesses
-> teen tuggin
-Learner needle
-Dealing with the shame of having done, er, THAT is beyond the scope of this game.
-> trumped truster
-the Leet Learner dims a bit
-The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests.
-> lumped luster
-the Leet Learner dims a bit
-The cluster would still be in the way if it were shiny.
-> jay joke
-!Learner needle
-You recall some off-color drug humor from your younger days.
-> stay stoke
-!Learner needle
-You take a slightly ungrammatical approach to keeping your spirits up.
-> bray broke
-!Learner needle
-You try a poor-righteous-teacher approach with the clay cloak.
-> k coke
-!Learner needle
-No fizzy beverage (or anything less healthy) appears.
-> yay yoke
-!Learner needle
-Some woke people like to self-immolate, but not you.
-> pay poke
-!Learner needle
-The clay cloak was free. No need to pay anything.
-> cray croak
-!Learner needle
-You make a weird noise. It doesn't help, but it doesn't hurt.
-> fay folk
-!Learner needle
-There's not enough magic in this game? Aww, rats.
-> say soak
-!Learner needle
-Water might make the clay cloak even heavier and messier.
-
-==t3
-> dumped duster
-by one point
-> undo
-
-@ha
 > zbumped buster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -2723,22 +1115,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t1,5,6
 > bumped buster
 by one point
 
-==t2
->think
-!LEAN LUGGIN
-!MEAN MUGGIN
-
-
-@ha
 > bumped buster
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -2752,49 +1135,20 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > w
 > w
 
-@ha
 > zglean glows rule
 DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > glean zglows rule
 DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #glean glows before
-> gene joes
-Learner needle
-You don't need to visit another clothing store.
-> seen sos
-Learner needle
-That must be about right, but it's not specific enough. You need to see something specific, and not quite see...
-> sheen shows
-Learner needle
-That must be about right, but you need to do something to look and find a light, or lights.
-> bean bows
-Learner needle
-No bows pop up to garnish your current clothes.
-> green grows
-Learner needle
-There's no gardening shop in the mall, but there doesn't need to be.
-> lean lows
-Learner needle
-You feel the blues for a second.
-> teen toes
-Learner needle
-Not sure I want to know.
-> wean woes
-Learner needle
-You take time to feel less awful about some horrid event in your past. The resulting inner peace cheers you even more than a Last Lousy Point would have!
 
 > glean glows
 by one point
 
-@ha
 > glean glows
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zglean glows rule
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2802,21 +1156,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> mashing moke
-Learner needle
-You need subtlety, not violence.
-> ashing oak
-Learner needle
-No genetically twisted tree appears.
-
-==t2
-> smashing smoke
-> think
-!GLEAN GLOWS
-SMASHING SMOKE
-
-@ha
 > zhistory hall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
@@ -2826,7 +1165,6 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 
 > history hall
 
-@ha
 >zmystery mall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
@@ -2837,7 +1175,6 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 !by one point
 You already flipped back to History Hall.
 
-@ha
 > zyoure yonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2845,31 +1182,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t3
-> your yonder
-by one point
-> undo
-> yore yonder
-by one point
-> undo
-
-@mis #youre yonder before (no after)
-> war wander
-Learner needle
-You don't need to visit anything that drastic.
-> bore bonder
-Learner needle
-Something more archaic and interesting.
-
 > youre yonder
 by one point
 
-@ha
 > youre yonder
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zyoure yonder rule
 !DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2879,67 +1198,30 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > out
 
-@ha
 > zsmashing smoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > smashing zsmoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #before smashing smoke and generic Old Ard
-> stashing stoke
-Learner needle
-You don't need to start a fire or win this game on a rainy Tuesday.
-> mold marred
-!Learner needle
-You'll actually be getting that later!
-> gold guard
-!Learner needle
-You'll actually be getting that later!
-> cold card
-!Learner needle
-You'll actually be getting that later!
-> hold hard
-!Learner needle
-You'll actually be getting that later!
-> polled pard
-!Learner needle
-Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far.
-> lold lard
-!Learner needle
-Fat jokes aren't funny, self-depreciating or otherwise.
 
 > smashing smoke
 by one point
 
-@ha
 > smashing smoke
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 > smashing zsmoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-==t2
-> think
-!SMASHING SMOKE
-
-==t4
->w
-west to Faun Fen
->s
-south to Lit Lawn
 
 > in
 > w
 
-@ha
 > zlending libe rule
 DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2950,12 +1232,10 @@ The HA HALF button lights up on your Leet Learner.
 > lending libe
 by one point
 
-@ha
 > lending libe
 !by one point
 Yes, It's a library now.
 
-@ha
 > zlending libe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2963,75 +1243,20 @@ Yes, It's a library now.
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zsee sign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > see zsign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #see sign before
-> bree brine
-Learner needle
-Less gross than what's in We Whine: ME, MINE, but no.
-> fee fine
-Learner needle
-No, there's no charge on We Whine: ME, MINE.
-> flee flyin
-Learner needle
-We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
-> key kine
-Learner needle
-We Whine: ME, MINE already provides a figurative key to things.
-> knee nine
-Learner needle
-We Whine: ME, MINE is only about mental violence and nastiness to people
-> lee line
-Learner needle
-We Whine: ME, MINE only blows figurative wind.
-> she shine
-Learner needle
-Why yes, pointless greed should not be limited to men only.
-> tee tine
-Learner needle
-No golf tee provides a bookmark for We Whine: ME, MINE.
 
 > see sign
 by one point
 
-@mis #see sign after
-> bree brine
-!Learner needle
-Less gross than what's in We Whine: ME, MINE, but no.
-> fee fine
-!Learner needle
-No, there's no charge on We Whine: ME, MINE.
-> flee flyin
-!Learner needle
-We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
-> key kine
-!Learner needle
-We Whine: ME, MINE already provides a figurative key to things.
-> knee nine
-!Learner needle
-We Whine: ME, MINE is only about mental violence and nastiness to people
-> lee line
-!Learner needle
-We Whine: ME, MINE only blows figurative wind.
-> she shine
-!Learner needle
-Why yes, pointless greed should not be limited to men only.
-> tee tine
-!Learner needle
-No golf tee provides a bookmark for We Whine: ME, MINE.
-
-@ha
 > see sign
 !by one point
 You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
 
-@ha
 > zsee sign rule
 !DEBUG: vc-see-sign rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3043,40 +1268,10 @@ You've seen enough signs. Overkill might leave you demoralized or too analytical
 > e
 > e
 
-==t2
-> beast boss
-> least loss
-> think
-BEAST BOSS
-LEAST LOSS
-
 > n
 
 > n
 
-@mis
-> crane crescent
-Learner needle
-No bird or complex machinery drops by to sweep the Pain Peasant away.
-> fain pheasant
-Learner needle
-The Pain Peasant remains human.
-> stow steeled
-Learner needle
-You don't have anything steely to stow.
-> woe wield
-Learner needle
-You don't need a weapon but rather armor to repel the Foe Field.
-> mo mealed
-Learner needle
-Alas, no food magically appears. You need a more fighting stance.
-
-==t2
-> show shield
-> think
-SHOW SHIELD
-
-@ha
 > zplain pleasant rule
 DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3087,12 +1282,10 @@ The HA HALF button lights up on your Leet Learner.
 > plain pleasant
 by one point
 
-@ha
 > plain pleasant
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zplain pleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3102,21 +1295,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > w
 
-@mis
-> oral age
-Learner needle
-Someone here is really old-school. As if text adventures weren't retro enough!
-> sorel sage
-Learner needle
-Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
-> immoral image
-Learner needle
-You sort of need the opposite. I suspect you know this and are just trying to see what happens.
-> choral cage
-Learner needle
-A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
-
-@ha
 > zmoral mage rule
 DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3127,12 +1305,10 @@ The HA HALF button lights up on your Leet Learner.
 > moral mage
 by one point
 
-@ha
 > moral mage
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zmoral mage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3140,37 +1316,9 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> oral age
-!Learner needle
-Someone here is really old-school. As if text adventures weren't retro enough!
-> sorel sage
-!Learner needle
-Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
-> immoral image
-!Learner needle
-You sort of need the opposite. I suspect you know this and are just trying to see what happens.
-
 > e
 > e
 
-@mis
-> mit mound
-Learner needle
-The hit hound won't need to go chasing after that.
-> grit ground
-Learner needle
-You need to find some other way to banish the hit hound and feel comfortable here. You already showed grit in the Po' Pit, anyway.
-> bit bound
-Learner needle
-Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
-
-==t2
-> fit found
-> think
-FIT FOUND
-
-@ha
 > zsit sound rule
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3178,26 +1326,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #Pit Pound before
-> wit wound
-Learner needle
-No need for unnecessary tension.
-> clit clowned
-Learner needle
-I mean, that WORKS, but geez.
-> crit crowned
-Learner needle
-You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
-
 > sit sound
 by one point
 
-@ha
 > sit sound
 !by one point
 You already sat sound. But maybe there's a way to feel more comfortable.
 
-@ha
 > zsit sound rule
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3205,12 +1340,6 @@ You already sat sound. But maybe there's a way to feel more comfortable.
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-#okdup
->grit ground
-You need to find some other way to feel comfortable here. You already showed grit in the Po' Pit, anyway.
-
-@ha
 > zfit found rule
 DEBUG: vc-fit-found rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3221,23 +1350,10 @@ The HA HALF button lights up on your Leet Learner.
 > fit found
 by one point
 
-@mis #Pit Pound after
-> wit wound
-!Learner needle
-No need for unnecessary tension.
-> clit clowned
-!Learner needle
-I mean, that WORKS, but geez.
-> crit crowned
-!Learner needle
-You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
-
-@ha
 > fit found
 !by one point
 You already fit in.
 
-@ha
 > zfit found rule
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3245,47 +1361,8 @@ You already fit in.
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> mit mound
-!Learner needle
-The Pit Pound doesn't need clutter like that.
-> bit bound
-!Learner needle
-Now you mention it, you did feel a bit restricted here. Expressing your feelings helps a bit! You think.
-
-==t2
-> think
-!FIT FOUND
-
-==t4
-> n
-!north to Straight Street
-> e
-!east to Bold 'n Brave
-
-
 > e
 
-@mis
-> binding bays
-Learner needle
-You need to find your way here, not get more tied up.
-> grinding grays
-Learner needle
-Even if it were duller, you'd still be left with a hot blaze.
-
-==t3
-> finding phase
-by one point
->undo
-> finding fays
-by one point
->undo
-> minding maze
-by one point
->undo
-
-@ha
 > zwinding ways rule
 DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3296,16 +1373,10 @@ The HA HALF button lights up on your Leet Learner.
 > winding ways
 by one point
 
-==t4
-> e
-east to Bold 'n Brave
-
-@ha
 > winding ways
 !by one point
 You already made it out of the Blinding Blaze.
 
-@ha
 > zwinding ways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3313,19 +1384,6 @@ You already made it out of the Blinding Blaze.
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> binding bays
-!Learner needle
-You need to find your way here, not get more tied up.
-> grinding grays
-!Learner needle
-Even if it were duller, you'd still be left with a tricky maze.
-
-==t4
->n
-north to Straight Street
-
-@ha
 > zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3336,12 +1394,10 @@ The HA HALF button lights up on your Leet Learner.
 > mo mappin
 by one point
 
-@ha
 > mo mappin
 !by one point
 You're already in the mood to map. No need to overdo it.
 
-@ha
 > zmo mappin rule
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3349,16 +1405,6 @@ You're already in the mood to map. No need to overdo it.
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!MO MAPPIN
-
-==t3
-> snuck snare
-by one point
->undo
-
-@ha
 > zluck lair rule
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3366,91 +1412,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #snuck snare guesses
-> buck bear
-Learner needle
-There are enough animals in this game that could maul you.
-> chuck chair
-Learner needle
-No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway.
-> duck dare
-Learner needle
-Too late for that. You took Kit Cohen's dare, and you're on a quest, now.
-> fuck fair
-Learner needle
-There are other games for that.
-> muck mare
-Learner needle
-No, it's something much cleaner than that.
-> puck pair
-Learner needle
-No time for hockey! You also aren't really dressed for the cold.
-> pluck player
-Learner needle
-Personal grooming can wait.
-> struck strayer
-Learner needle
-This game does not need or want to end in tragedy.
-> tuck tare
-Learner needle
-Alterations are not your Thing.
-> truck trayer
-Learner needle
-Manual labor is not very adventurous.
-> shuck share
-Learner needle
-You have no share to shuck.
-> tuck tear
-Learner needle
-You see no way to refigure the stair.
-
 > luck lair
 by one point
 
-@mis #snuck snare guesses when you have it
-> buck bear
-!Learner needle
-There are enough animals in this game that could maul you.
-> chuck chair
-!Learner needle
-No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway.
-> duck dare
-!Learner needle
-Too late for that. You took Kit Cohen's dare, and you're on a quest, now.
-> fuck fair
-!Learner needle
-There are other games for that.
-> muck mare
-!Learner needle
-No, it's something much cleaner than that.
-> puck pair
-!Learner needle
-No time for hockey! You also aren't really dressed for the cold.
-> pluck player
-!Learner needle
-Personal grooming can wait.
-> struck strayer
-!Learner needle
-This game does not need or want to end in tragedy.
-> tuck tare
-!Learner needle
-Alterations are not your Thing.
-> truck trayer
-!Learner needle
-Manual labor is not very adventurous.
-> shuck share
-!Learner needle
-You have no share to shuck.
-> tuck tear
-!Learner needle
-You see no way to refigure the snare.
-
-@ha
 > luck lair
 !by one point
 You already got the snuck snare from the luck lair.
 
-@ha
 > zluck lair rule
 !DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3465,15 +1433,6 @@ You already got the snuck snare from the luck lair.
 > w
 > d
 
-@mis #fight funnel pre
-> right runnel
-Learner needle
-No river appears. It might just make things even more crowded and messy, anyway.
-> trite trunnel
-Learner needle
-You don't need anything as obscure as a wooden peg.
-
-@ha
 > ztight tunnel rule
 DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3484,20 +1443,10 @@ The HA HALF button lights up on your Leet Learner.
 > tight tunnel
 by one point
 
-@mis #fight funnel post
-> right runnel
-!Learner needle
-No river appears. It might just make things even more crowded and messy, anyway.
-> trite trunnel
-!Learner needle
-You don't need anything as obscure as a wooden peg.
-
-@ha
 > tight tunnel
 !by one point
 You already narrowed the funnel to a tunnel.
 
-@ha
 > ztight tunnel rule
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3505,13 +1454,8 @@ You already narrowed the funnel to a tunnel.
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
->n
-north to Fortune Funnel
-
 > w
 
-@ha
 > zknives niche rule
 DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3519,41 +1463,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis
-> fives fitch
-Learner needle
-A polecat (or several) would maul you, too. You need some sort of general ambush.
-> hives hitch
-Learner needle
-Whether that means a hive of bees or hives on your skin, that would affect anyone entering. You need some sort of general ambush.
-> lives lich
-Learner needle
-But the lich would surely wipe you out. You need some sort of general ambush.
-> stives stitch
-Learner needle
-We don't want a red-light-district sort of trap. You need some sort of general ambush.
-> strives stritch
-Learner needle
-A screeching owl would only be annoying. You need some sort of general ambush.
-> wives witch
-Learner needle
-The witch might be evil enough to wipe everyone out. You need some sort of general ambush.
-> chives chich
-Learner needle
-This is no time for frou-frou vegetables!
-
 > knives niche
 by one point
 
-@mis
-#no need to check mistakes after, since you are booted from the room
-
-@ha
 > knives niche
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zknives niche rule
 !DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3567,21 +1483,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > n
 > e
 
-@mis
-> mere mull
-Learner needle
-The Beer Bull is not impressed by thoughtfulness.
-> gear gull
-Learner needle
-Spoiler: once you get rid of the bull, a gear gull will appear.
-> leer lull
-Learner needle
-The Beer Bull does not stop looking aggressively at you.
-> peer pull
-Learner needle
-No, you can't bring the bull down with peer pressure.
-
-@ha
 > zdear dull rule
 DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3592,12 +1493,10 @@ The HA HALF button lights up on your Leet Learner.
 > dear dull
 by one point
 
-@ha
 > dear dull
 !by one point
 You don't need to do any more taunting.
 
-@ha
 > zdear dull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3605,7 +1504,6 @@ You don't need to do any more taunting.
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > znear null rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3616,32 +1514,16 @@ The HA HALF button lights up on your Leet Learner.
 > near null
 by one point
 
-@ha
 > near null
 !by one point
 You already reduced the bull's power!
 
-@ha
 > znear null rule
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 > near znull rule
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@mis
-> mere mull
-!Learner needle
-The Beer Bull is not impressed by thoughtfulness.
-> gear gull
-!Learner needle
-Spoiler: once you get rid of the bull, a gear gull will appear.
-> leer lull
-!Learner needle
-The Beer Bull does not stop looking aggressively at you.
-> peer pull
-!Learner needle
-No, you can't bring the bull down with peer pressure.
 
 > w
 > s
@@ -3650,7 +1532,6 @@ No, you can't bring the bull down with peer pressure.
 > w
 > s
 
-@ha
 > zbeast boss rule
 DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3661,12 +1542,10 @@ The HA HALF button lights up on your Leet Learner.
 > beast boss
 by one point
 
-@ha
 > beast boss
 !by one point
 You already summoned the Bull Beast.
 
-@ha
 > zbeast boss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3674,11 +1553,6 @@ You already summoned the Bull Beast.
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!BEAST BOSS
-
-@ha
 > zleast loss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3689,7 +1563,6 @@ The HA HALF button lights up on your Leet Learner.
 > least loss
 by one point
 
-@ha
 > zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -3697,56 +1570,13 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-@mis #wild weed before
-> dialed deed
-the Leet Learner dims a bit, and
-You don't need chemical stimulants to be dialed in to what you need to do.
-> filed feed
-the Leet Learner dims a bit, and
-Nope. Can't quite categorize that as food.
-> riled reed
-the Leet Learner dims a bit, and
-Any controlled substances found in the course of your adventure are for relaxation.
-> siled seed
-the Leet Learner dims a bit, and
-No time for farming.
-> styled steed
-the Leet Learner dims a bit, and
-Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
-> tiled teed
-the Leet Learner dims a bit, and
-That would make for an odd golf course.
-
-==t1,5,6
 > wild weed
 by one point
 
-@mis #wild weed before
-> dialed deed
-!the Leet Learner dims a bit, and
-You don't need chemical stimulants to be dialed in to what you need to do.
-> filed feed
-!the Leet Learner dims a bit, and
-Nope. Can't quite categorize that as food.
-> riled reed
-!the Leet Learner dims a bit, and
-Any controlled substances found in the course of your adventure are for relaxation.
-> siled seed
-!the Leet Learner dims a bit, and
-No time for farming.
-> styled steed
-!the Leet Learner dims a bit, and
-Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
-> tiled teed
-!the Leet Learner dims a bit, and
-That would make for an odd golf course.
-
-@ha
 > wild weed
 !by one point
 Greedy, to try for more.
 
-@ha
 > zwild weed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -3754,34 +1584,15 @@ Greedy, to try for more.
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t2
-> cull ceased
-> think
-!LEAST LOSS
-CULL CEASED
-
-@mis
-> bark biff
-the Leet Learner dims a bit, and
-McFly
-
-==t1,5,6
 > spark spliff
 by one point
 
-@mis
-> bark biff
-McFly
-!Learner needle
-
 > s
 
-@ha
 > spark spliff
 !by one point
 Whoah, dude! Jonesing for more already?
 
-@ha
 > zspark spliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -3791,12 +1602,6 @@ Whoah, dude! Jonesing for more already?
 
 > s
 
-==t3
-> healing here
-by one point
-> undo
-
-@ha
 > zheal here rule
 DEBUG: vc-heal-here rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3807,12 +1612,10 @@ The HA HALF button lights up on your Leet Learner.
 > heal here
 by one point
 
-@ha
 > heal here
 !by one point
 No need to heal further.
 
-@ha
 > zheal here rule
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3820,39 +1623,9 @@ No need to heal further.
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> peel pear
-!Learner needle
-You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
-> steal steer
-!Learner needle
-Direct homophones don't work here, and the steer would not fit in your bag.
-> wheel where
-!Learner needle
-The Ceiling Seer does not direct you to any wheel or any form of transportation.
-
-==t2
-> think
-!HEAL HERE
-
 > n
 > n
 
-@mis
-> teased toss
-A bit of taunting might work here, but you might need to be a bit harsher.
-
-==t2
-> full feast
-> think
-FULL FEAST
-
-==t3
-> lul least
-by one point
-> undo
-
-@ha
 > zcull ceased rule
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3860,7 +1633,6 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@ha
 > least loss
 !by one point
 You already minimized your losses. Time to be more aggressive.
@@ -3868,7 +1640,6 @@ You already minimized your losses. Time to be more aggressive.
 > cull ceased
 by one point
 
-@ha
 > zleast loss rule
 !DEBUG: vc-least-loss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3877,12 +1648,10 @@ by one point
 #note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
 #!The HA HALF button lights up on your Leet Learner.
 
-@ha
 > cull ceased
 !by one point
 Don't brag too much, now.
 
-@ha
 > zcull ceased rule
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3890,17 +1659,6 @@ Don't brag too much, now.
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!CULL CEASED
-
-@mis
-#okdup
-> teased toss
-!Learner needle
-You imagine yourself cleverly insulting the Crimes Crew Times Two.
-
-@ha
 > zfull feast rule
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3911,12 +1669,10 @@ The HA HALF button lights up on your Leet Learner.
 > full feast
 by one point
 
-@ha
 > full feast
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zfull feast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3924,53 +1680,9 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> ceased sauce
-!Learner needle
-You'll need all the sauce you can get, literally or figuratively.
-> greased gross
-!Learner needle
-The Creased Cross doesn't need to become ickier.
-> fleeced floss
-!Learner needle
-Dental hygiene is a good idea in general, but here, it's unnecessary.
-
-==t2
-> pull pieced
-> think
-!FULL FEAST
-PULL PIECED
-
 > e
 > e
 
-@mis
-> signing sore
-Learner needle
-You make a rude gesture, for whatever good it does.
-> spining spore
-Learner needle
-Your foray into speculative biology goes nowhere.
-> pining pore
-Learner needle
-They'll come along later, if you do something else.
-> fining four
-Learner needle
-You don't need to summon people that may audit you.
-> lining lor
-Learner needle
-Alas, nobody falls into line to tell stories of how they got here.
-
-==t2
-> shining shore
-> mining more
-> dining door
-> think
-SHINING SHORE
-MINING MORE
-DINING DOOR
-
-@ha
 > zso sappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -3981,12 +1693,10 @@ The HA HALF button lights up on your Leet Learner.
 > so sappin
 by one point
 
-@ha
 > so sappin
 !by one point
 You already discouraged some whining. Bringing it up again might make you the whiny one.
 
-@ha
 > zso sappin rule
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -3994,17 +1704,6 @@ You already discouraged some whining. Bringing it up again might make you the wh
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
->e
-east to Done Dune
->d
-down to Fast Foi'd
-
-==t2
-> think
-!SO SAPPIN
-
-@ha
 > zshining shore rule
 DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4015,12 +1714,10 @@ The HA HALF button lights up on your Leet Learner.
 > shining shore
 by one point
 
-@ha
 > shining shore
 !by one point
 You already got (t)here.
 
-@ha
 > zshining shore rule
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4028,11 +1725,6 @@ You already got (t)here.
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!SHINING SHORE
-
-@ha
 > zdining door rule
 DEBUG: vc-dining-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4043,12 +1735,10 @@ The HA HALF button lights up on your Leet Learner.
 > dining door
 by one point
 
-@ha
 > dining door
 !by one point
 The dining door is already here.
 
-@ha
 > zdining door rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4056,11 +1746,6 @@ The dining door is already here.
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!DINING DOOR
-
-@ha
 > zpull pieced rule
 DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4071,12 +1756,10 @@ The HA HALF button lights up on your Leet Learner.
 > pull pieced
 by one point
 
-@ha
 > pull pieced
 !by one point
 You don't need to pull anything other than the full feast.
 
-@ha
 > zpull pieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4084,16 +1767,6 @@ You don't need to pull anything other than the full feast.
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!PULL PIECED
-
-==t3
-> mining moor
-by one point
->undo
-
-@ha
 > zmining more rule
 DEBUG: vc-mining-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4104,12 +1777,10 @@ The HA HALF button lights up on your Leet Learner.
 > mining more
 by one point
 
-@ha
 > mining more
 !by one point
 You've gotten all the mined materials you need. Wasting them might cause another whining war.
 
-@ha
 > zmining more rule
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4117,56 +1788,25 @@ You've gotten all the mined materials you need. Wasting them might cause another
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> signing sore
-!Learner needle
-You make a rude gesture, for whatever good it does.
-> spining spore
-!Learner needle
-Your foray into speculative biology goes nowhere.
-> fining four
-!Learner needle
-You don't need to summon people that may audit you.
-> lining lor
-!Learner needle
-Alas, nobody falls into line to tell stories of how they got here.
-
-==t2
-> think
-!MINING MORE
-
 > w
 > w
 > n
 > n
 
-@ha
 > zshow shield rule
 DEBUG: vc-show-shield rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > show zshield rule
 DEBUG: vc-show-shield rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #foe field before
-> know kneeled
-Learner needle
-That is the wrong defensive posture for here.
 
 > show shield
 by one point
 
-@mis #foe field after
-> know kneeled
-!Learner needle
-That is the wrong defensive posture for here.
-
-@ha
 > show shield
 !by one point
 Your gold guard has done its duty.
 
-@ha
 > zshow shield rule
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4174,29 +1814,8 @@ Your gold guard has done its duty.
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> woe wield
-!Learner needle
-You didn't need a weapon but rather armor to repel the Foe Field.
-> stow steeled
-!Learner needle
-You don't have anything steely to stow.
-> mo mealed
-!Learner needle
-Alas, no food magically appears. You did what you needed.
-
-==t2
-> think
-!SHOW SHIELD
-
-==t2
-> go gappin
-> think
-GO GAPPIN
-
 > n
 
-@ha
 > zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4207,13 +1826,11 @@ The HA HALF button lights up on your Leet Learner.
 > go gappin
 by one point
 
-@ha
 > go gappin
 !by one point
 #?? this is a dumb bug, but it still might be worth poking at.
 That noun did not make sense in this context.
 
-@ha
 > zgo gappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4221,36 +1838,6 @@ That noun did not make sense in this context.
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!GO GAPPIN
-
-@mis
-> fast fap
-Learner needle
-Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.
-> last lap
-Learner needle
-It will be the last lap one day. But you need a different action to get to this finality.
-> massed map
-Learner needle
-You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here.
-> passed pap
-Learner needle
-You don't need to look back on what a trashy adventure this has been. Well, not in front of me.
-> razzed rap
-Learner needle
-There's enough bad music in this game if you know where to look.
-> sassed sap
-Learner needle
-You look for someone who has recently lost an argument, but nobody turns up.
-
-==t2
-> cast cap
-> think
-CAST CAP
-
-@ha
 > zcouple caps rule
 DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4261,12 +1848,10 @@ The HA HALF button lights up on your Leet Learner.
 > couple caps
 by one point
 
-@ha
 > couple caps
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zcouple caps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4274,43 +1859,20 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!COUPLE CAPS
-
-@ha
 > zcast cap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 > cast zcap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@mis #cast cap before
-> classed clap
-Learner needle
-You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
-> chaste chap
-Learner needle
-Yes, you've been a model of morality. Yay, you.
 
 > cast cap
 by one point
 
-@mis #cast cap after
-> classed clap
-!Learner needle
-You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
-> chaste chap
-!Learner needle
-Yes, you've been a model of morality. Yay, you.
-
-@ha
 > cast cap
 !by one point
 The cap has been cast.
 
-@ha
 > zcast cap rule
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4318,31 +1880,6 @@ The cap has been cast.
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis
-> fast fap
-!Learner needle
-Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.
-> last lap
-!Learner needle
-It will be the last lap one day. But you need a different action to get to this finality.
-> massed map
-!Learner needle
-You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here.
-> passed pap
-!Learner needle
-You don't need to look back on what a trashy adventure this has been. Well, not in front of me.
-> razzed rap
-!Learner needle
-There's enough bad music in this game if you know where to look.
-> sassed sap
-!Learner needle
-You look for someone who has recently lost an argument, but nobody turns up.
-
-==t2
-> think
-!CAST CAP
-
-@ha
 > zbeaker bustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
@@ -4350,7 +1887,6 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-@ha
 > zmeeker muscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4358,7 +1894,6 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zwood one rule
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4366,16 +1901,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t1,5,6
 > beaker bustle
 by one point
 
-@ha
 > beaker bustle
 !by one point
 Russell's moment of interest in the sciences has passed.
 
-@ha
 > zbeaker bustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
@@ -4383,13 +1915,6 @@ Russell's moment of interest in the sciences has passed.
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t4
->w
-west to Rattlin' Runs
->e
-east to Hopping Hills
-
-@ha
 > wood one
 > wood one
 !by one point
@@ -4400,12 +1925,10 @@ Russell's already disarmed, but he's still too strong.
 > meeker muscle
 by one point
 
-@ha
 > meeker muscle
 !by one point
 Russell's already meeker. Maybe disarm him?
 
-@ha
 > zmeeker muscle rule
 !DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4413,44 +1936,13 @@ Russell's already meeker. Maybe disarm him?
 !DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@mis #wood one before
-> should shun
-Learner needle
-Gentle rebukes won't work. You need to make the gun less dangerous.
-> spud spun
-Learner needle
-Alas, potato-guns are still a thing.
-> stud stun
-Learner needle
-Unfortunately, that has an equal chance of stunning Russell or making Russell stun you.
-> bud bun
-Learner needle
-You have no bread to share, and Russell would probably want meat, anyway.
-> food fun
-Learner needle
-Sorry, no replacing a real fight with a food fight.
-> hood hun
-Learner needle
-Brilliant! Two enemies instead of one?
-> stood stun
-Learner needle
-If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned.
-> would one
-Learner needle
-You are in homophone territory, here.
-> would won
-Learner needle
-You are in homophone territory, here.
-
 > wood one
 by one point
 
-@ha
 > wood one
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zwood one rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4460,38 +1952,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > n
 
-@mis
-> bought board
-Learner needle
-Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
-> caught cord
-Learner needle
-The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
-> got gourd
-Learner needle
-That worked in The Life of Brian, but ... try a homophone, here. You're close.
-> hot hoard
-Learner needle
-You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
-> pot poured
-Learner needle
-There's no time for coffee here!
-> rot roared
-Learner needle
-A decent battle cry, but you sense there could a more violent action.
-> snot snored
-Learner needle
-While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral.
-> fought ford
-Learner needle
-The battle is ahead, not in the past.
-
-==t2
-> got gored
-> think
-GOT GORED
-
-@ha
 > zhot horde rule
 DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4502,12 +1962,10 @@ The HA HALF button lights up on your Leet Learner.
 > hot horde
 by one point
 
-@ha
 > hot horde
 !by one point
 You already summoned the Hot Horde.
 
-@ha
 > zhot horde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4515,7 +1973,6 @@ You already summoned the Hot Horde.
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zlot lord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4526,12 +1983,10 @@ The HA HALF button lights up on your Leet Learner.
 > lot lord
 by one point
 
-@ha
 > lot lord
 !by one point
 You already summoned the Lot Lord.
-	
-@ha
+
 > zlot lord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4539,7 +1994,6 @@ You already summoned the Lot Lord.
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zgot gored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4547,23 +2001,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t4
->d
-!down to Happy Hall
->u
-!up to Hippy Hill
->n
-!north to Earning Ridges
-
 > got gored
 by one point
 
-@ha
 > got gored
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zgot gored rule
 !DEBUG: vc-got-gored rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4571,56 +2015,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-got-gored rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!GOT GORED
-
-@mis #airy isle no-leet
-> slow slate
-Learner needle
-No blackboard appears telling you EXACTLY the right move.
-> so sate
-Learner needle
-You aren't satisfied yet. Only finishing the job will fix that!
-> crow crate
-Learner needle
-No birds appear to fly you over the grate, nor does a box of crowbars materialize.
-> foe fate
-Learner needle
-You are very near the end, but it's not that easy.
-> know nate
-Learner needle
-Nobody named Nate appears to help you through the go gate.
-> lo late
-Learner needle
-You feel you are on the right path to disabling the go gate.
-> mo mate
-Learner needle
-You remain alone.
-> oh ate
-Learner needle
-Nothing takes a bite out of the go gate.
-> woe weight
-Learner needle
-You wouldn't want to be crushed by a weight. But you've got the right idea.
-
-==t3
-> woe wait
-by one point
-> undo
-> whoah wait
-by one point
->undo
-
-==t4
->d
-down to Happy Hall
->u
-up to Hippy Hill
->n
-north to Earning Ridges
-
-@ha
 > zwhoa wait rule
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4631,12 +2025,10 @@ The HA HALF button lights up on your Leet Learner.
 > whoa wait
 by one point
 
-@ha
 > whoa wait
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > zwhoa wait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4644,20 +2036,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> merry mile
-> think
-MERRY MILE
-
-@mis
-> bell born
-Learner needle
-There's enough noise right now.
-> swell sworn
-Learner needle
-That might augment the hell horn.
-
-@ha
 > ztell torn rule
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4668,12 +2046,10 @@ The HA HALF button lights up on your Leet Learner.
 > tell torn
 by one point
 
-@ha
 > tell torn
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-@ha
 > ztell torn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4681,7 +2057,6 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-@ha
 > zmerry mile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4692,12 +2067,10 @@ The HA HALF button lights up on your Leet Learner.
 > merry mile
 by one point
 
-@ha
 > merry mile
 !by one point
 You already did. And forcing cheeriness tends to backfire.
 
-@ha
 > zmerry mile rule
 !DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -4705,16 +2078,6 @@ You already did. And forcing cheeriness tends to backfire.
 !DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t2
-> think
-!MERRY MILE
-
-@mis
-#okdup
->wary wile
-Yes, you have shown wary wile, and lots of it!
-
-@ha
 > zbury bile rule
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -4722,108 +2085,8 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #final bit
-> tryst tress
-!Learner needle
-The last thing you need now is a hair appointment.
-
 > bury bile
 by one point
 
-==t1,5,6
 !see the points you MISSED
 
-==t2
-* moral-mage-check
-\\
-# while technically I could have rolled this into the walkthrough, 1) it would have clashed with the general traceable quick way through, and 2) it's a bit out of the way, and it doesn't take long, anyway.
-\\
-> blow by
-> fall free
-> n
-> n
-> n
-> plain pleasant
-> w
-> moral mage
-> think
-MORAL MAGE
->e
->s
->s
->s
->s
->kneel near
->feel fear
->deal dear
->n
->n
->n
->n
->w
-> moral mage
->think
-!MORAL MAGE
-
-@mis
-* variable-guess-check
-# Jake G is the big one. Let's check him!
-> gonear jake g
-> shake she
-DEBUG: dynamic magic number directed us to 4 / 4.
-As you say/think this, the Leet Learner needle bounces back and forth
-> wake whee
-> shake she
-DEBUG: dynamic magic number directed us to 4 / 3.
-As you say/think this, the Leet Learner needle slides center-right.
-> take tea
-> shake she
-DEBUG: dynamic magic number directed us to 4 / 3.
-As you say/think this, the Leet Learner needle slides center-right.
-> fake fee
-> shake she
-DEBUG: dynamic magic number directed us to -5 / -4.
-As you say/think this, the Leet Learner dims a bit, and the needle slides center-left.
->break brie
-> shake she
-!As you say/think this
-
-@mis
-* guess-overflow-and-undo-check
-#ignore-the-rest
-> z
-> brig brag
-!lump
-> swig swag
-!lump
-> jig jag
-!lump
-> tig tag
-!lump
-# checking for overflow on LLP
->z
->z
-> cig sag
-lump
->undo
-> really rolling
-lump
->z
->jj
-> undo
-Take two? Fake, foo'!
-rematerializes
-# checking to make sure we really checked for overflow and not just a regular charge
-# e.g. if we change the level delta from 5 to 6, the lump should not appear
->blow by
->call cree
-!lump
->strong start
->s
->appealing appear
-lump
-pulses and grows
->jj
->undo
-Take two? Fake, foo'!
-still grows bigger

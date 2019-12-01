@@ -42,6 +42,8 @@ chapter warps
 
 chapter walkthrough
 
+test qbug with "purloin toe/gonear violent vale/purloin cake cap/silent sail/boring boat/no nappin/enter boat/mo mappin/ho happen/lean luggin/mean muggin"
+
 test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag/s". [this is the intro.]
 
 test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]
@@ -76,9 +78,9 @@ test w15 with "meeker muscle/wood one/n". [enter airy isle]
 
 test w16 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile".
 
-[test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11/test w12/test w13/test w14/test w15/test w16".]
+test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11/test w12/test w13/test w14/test w15/test w16".
 
-[test wb with "test w1/appealing appear/test w2/strong start/test w3/test w4/lie lol/not near/test w5/test w6/break brie/test w7/test w8/bumped buster/test w9/test w10/test w11/test w12/wild weed/spark spliff/test w13/test w14/beaker bustle/test w15/test w16".]
+test wb with "really rolling/test w1/appealing appear/test w2/strong start/test w3/test w3b/test w4/lie lol/not near/test w5/test w6/break brie/test w7/test w8/bumped buster/test w9/test w10/test w11/test w12/wild weed/spark spliff/test w13/test w14/beaker bustle/test w15/test w16".
 
 chapter beta jump
 

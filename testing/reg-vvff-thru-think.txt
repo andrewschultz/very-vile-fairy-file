@@ -3,21 +3,20 @@
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
 ## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
 > big bag
+by one point
+
+# this is regression testing, as once upon a time, we blocked creating the big bag
+> think
+!BIG BAG
 
 > bury bile
-
 > think
-
-BIG BAG
 BURY BILE
 
 > get good
@@ -56,12 +55,6 @@ by one point
 
 > think
 !FLIM FLAM
-
-> big bag
-by one point
-
-> think
-!BIG BAG
 
 > s
 
@@ -123,6 +116,7 @@ by one point
 by one point
 
 > w
+
 > mystery mall
 by one point
 
@@ -240,6 +234,7 @@ by one point
 
 > snake snap
 by one point
+Silent Sail
 
 > think
 !SNAKE SNAP
@@ -254,10 +249,23 @@ Been Buggin
 
 > enter boat
 
+>lean luggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>think
+LEAN LUGGIN
+>mean muggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>think
+MEAN MUGGIN
+
 > stay strong
 
 > glow glad
 by one point
+
+>think
+You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
+You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 
 > mean muggin
 by one point
@@ -265,11 +273,16 @@ by one point
 > lean luggin
 by one point
 
+>think
+!LEAN LUGGIN
+!MEAN MUGGIN
+
 > enter boat
 
 > w
 > w
 > w
+
 > glean glows
 by one point
 
@@ -284,6 +297,7 @@ SMASHING SMOKE
 by one point
 
 > out
+
 > smashing smoke
 by one point
 
@@ -292,6 +306,7 @@ by one point
 
 > in
 > w
+
 > lending libe
 by one point
 
@@ -360,10 +375,12 @@ by one point
 > s
 > w
 > d
+
 > tight tunnel
 by one point
 
 > w
+
 > knives niche
 by one point
 
@@ -385,6 +402,7 @@ by one point
 > d
 > w
 > s
+
 > beast boss
 by one point
 
@@ -475,6 +493,7 @@ by one point
 > w
 > n
 > n
+
 > show shield
 by one point
 
@@ -486,6 +505,7 @@ by one point
 GO GAPPIN
 
 > n
+
 > go gappin
 by one point
 
@@ -581,3 +601,4 @@ MORAL MAGE
 > moral mage
 >think
 !MORAL MAGE
+

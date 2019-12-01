@@ -2,13 +2,13 @@
 
 [?? run through all possible directions you can't go in various areas]
 
-[note that arrows in comments are for the vvm.py script to detect that, yes, the clues indeed work right. So don't delete them!]
+[note that arrows in comments are for the vvm.py script to detect that, yes, the clues indeed work right. So don't delete them, future me!]
 
 the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 volume includes
 
-the release number is 1.
+the release number is 3.
 
 release along with a website.
 
@@ -22,19 +22,13 @@ include Intro Restore Skip by Andrew Schultz.
 
 include Basic Screen Effects by Emily Short.
 
-a thing can be abstract. a thing is usually not abstract.
-
-[a lot of stuff is commented out here because I wanted to keep VVFF as a z-machine game. Perhaps this is quixotic, but I enjoyed the programming exercise. Long story short: the mistakes and tables take up a ton of space I don't really need for testing. But they don't take up enough to threaten a beta build's z8-ness.]
+[a lot of stuff is/was commented out here because I wanted to keep VVFF as a z-machine game for the comp release. Perhaps this was quixotic, but I 1) enjoyed the programming exercise and 2) wanted to speed up testing, as z-machine's parser seemed to work faster than glulx's.  Long story short: I had severely shortened versions of the Mistakes and Tables, and they allowed me to make a z8 build until I added too much new stuff. Then I figured what was slowing Glulx down, like, a day or two later.]
 
 [include Property Checking for VVFF by Emily Short.] [modified version]
 
-[dnc.py/icl.pl can/should toggle this]
+include Very Vile Fairy File Mistakes by Andrew Schultz.
 
-include Very Vile Fairy File Mistakes by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Mistakes by Andrew Schultz. [no beta]]
-
-include Very Vile Fairy File Tables by Andrew Schultz. [in beta]
-[include Very Vile Fairy File Debug Tables by Andrew Schultz. [no beta]]
+include Very Vile Fairy File Tables by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
@@ -44,42 +38,48 @@ use MAX_ACTIONS of 210.
 
 section verb carnage
 
-understand the command "smell" as something new.
-understand the command "taste" as something new.
+[xxvvcarn]
+
 understand the command "attach" as something new.
-understand the command "tie" as something new.
-understand the command "slice" as something new.
-understand the command "prune" as something new.
-understand the command "chop" as something new.
-understand the command "kiss" as something new.
-understand the command "hug" as something new.
-understand the command "embrace" as something new.
 understand the command "buy" as something new.
-understand the command "purchase" as something new.
-understand the command "light" as something new.
-understand the command "jump" as something new.
-understand the command "hop" as something new.
-understand the command "skip" as something new.
-understand the command "sip" as something new.
-understand the command "swallow" as something new.
-understand the command "shine" as something new.
-understand the command "polish" as something new.
-understand the command "sweep" as something new.
-understand the command "wipe" as something new.
-understand the command "scrub" as something new.
-understand the command "fight" as something new.
-understand the command "torture" as something new.
-understand the command "wreck" as something new.
+understand the command "chop" as something new.
 understand the command "crack" as something new.
-understand the command "murder" as something new.
-understand the command "kill" as something new.
-understand the command "punch" as something new.
-understand the command "thump" as something new.
-understand the command "sorry" as something new.
-understand the command "touch" as something new.
-understand the command "slice" as something new.
+understand the command "embrace" as something new.
+understand the command "fight" as something new.
+understand the command "hold" as something new.
+understand the command "hop" as something new.
+understand the command "hug" as something new.
 understand the command "insert" as something new.
+understand the command "jump" as something new.
+understand the command "kill" as something new.
+understand the command "kiss" as something new.
+understand the command "light" as something new.
+understand the command "murder" as something new.
+understand the command "polish" as something new.
+understand the command "prune" as something new.
+understand the command "punch" as something new.
+understand the command "purchase" as something new.
+understand the command "say" as something new.
+understand the command "scrub" as something new.
+understand the command "shine" as something new.
+understand the command "sip" as something new.
+understand the command "skip" as something new.
+understand the command "slice" as something new.
+understand the command "slice" as something new.
+understand the command "sorry" as something new.
+understand the command "swallow" as something new.
+understand the command "sweep" as something new.
+understand the command "taste" as something new.
+understand the command "tell" as something new.
+understand the command "thump" as something new.
+understand the command "tie" as something new.
+understand the command "torture" as something new.
+understand the command "touch" as something new.
 understand the command "wave" as something new.
+understand the command "wipe" as something new.
+understand the command "wreck" as something new.
+
+[zzvvcarn]
 
 section debug include values - not for release
 
@@ -176,6 +176,10 @@ definition: a thing (called th) is quicknear:
 	if player carries th or th is in location of player, yes;
 	no;
 
+to bold-new-room (newrm - a room):
+	move player to newrm, without printing a room description;
+	bold-my-room;
+
 to bold-my-room:
 	say "[b][location of player][r][line break]"
 
@@ -203,7 +207,7 @@ core-max is a number that varies. core-max is 81. [core-max is fixed. It is the 
 
 min-needed is a number that varies. min-needed is 81. [min-needed increases as you find LLPs.]
 
-max-bonus is a number that varies. max-bonus is 12.
+max-bonus is a number that varies. max-bonus is 13.
 
 cur-bonus is a number that varies. cur-bonus is 0. [we could define min-needed as core-max + cur-bonus I guess.]
 
@@ -229,6 +233,8 @@ Worst Whew is a region. [first few]
 
 Piddling Pain is a region. [middling main]
 
+Browsy Breaks is a region. [lousy lakes]
+
 Poorly Penned is a region. [early end]
 
 Vale Verminous is a region. [terminal tale]
@@ -239,9 +245,15 @@ book properties
 
 a room has text called noway-text.
 
+a room has a table name called guess-table. the guess-table of a room is usually the Table of No Good Guesses.
+
 a person has text called talk-text.
 
-a gaphat is a kind of thing.
+a rhymable is a kind of thing. a rhymable has a table name called guess-table. the guess-table of a rhymable is usually the Table of No Good Guesses.
+
+a person has a table name called guess-table. the guess-table of a person is usually the Table of No Good Guesses.
+
+a gaphat is a kind of rhymable.
 
 cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth.
 
@@ -271,13 +283,13 @@ a thing can be fakeenter. a thing is usually not fakeenter.
 rule for supplying a missing noun when entering: [?? yes, this is bad coding. I should define a property. But ... later.]
 	let TFE be number of touchable fakeenter things;
 	if TFE > 1:
-		say "While there's more than one thing you can logically enter here, you don't need to enter anything to win the game.";
+		say "There's more than one thing you can logically enter here. IN works better as a command.";
 		reject the player's command;
 	else if TFE is 0:
-		say "I didn't find anything to enter, but on the other hand, you need to enter anything to win the game.";
+		say "I didn't find anything to enter.";
 		reject the player's command;
 	now noun is a random touchable fakeenter thing;
-	say "([the noun])[line break][one of][line break]NOTE: you never need to enter anything to win the game.[or][stopping]";
+	say "([the noun])[line break][one of][line break]NOTE: IN is a substitute for trying to enter something, and you only need to do so with one object.[or][stopping]";
 
 section boring rules
 
@@ -301,7 +313,7 @@ the wry wall is a boring backdrop. "The wry wall reads:[line break][sign-dir][on
 
 nother-room is a room that varies.
 
-after looking in a signable room:
+after looking in a wallish room:
 	if nother-room is Wet Wood and player is not in Fun Fen:
 		now nother-room is location of player;
 	say "There's also [if player is in Fun Fen]a[else if location of player is nother-room]another[else]yet another[end if] wry wall here.";
@@ -318,8 +330,8 @@ to say sign-dir:
 	say "[run paragraph on]";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
-definition: a room (called rm) is signable:
-	if rm is airy isle and bot board is in airy isle, no;
+definition: a room (called rm) is wallish:
+	if rm is Airy Isle and Bot Board is in Airy Isle, no;
 	repeat through table of bad locs:
 		if avail entry is false, next;
 		if rm is e1 entry, yes;
@@ -331,6 +343,7 @@ ever-wry-wall is a truth state that varies.
 wry-wall-found is a number that varies. wry-wall-found is 0.
 
 check going nowhere (this is the look for bad locs rule):
+	say "[chase-pass]";
 	repeat through table of bad locs: [this is in the tables file]
 		if there is no e1 entry or there is no e2 entry:
 			if debug-state is true, say "(DEBUG) Fill in location/direction for [fake-name entry].";
@@ -353,7 +366,7 @@ check going nowhere (this is the look for bad locs rule):
 
 definition: a direction (called d) is viable:
 	if the room d of location of the player is nowhere, no;
-	if player is in history hall and mistmall is true and d is outside, no;
+	if player is in History Hall and mistmall is true and d is outside, no;
 	yes;
 
 definition: a direction (called d) is viable-gone:
@@ -384,21 +397,15 @@ volume you
 
 Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My mumble: 'Hi!' Humble.". description of Kerry Kyle is "You're you! Bore! Boo! Or ... ooh..."
 
-the zig zag rig rag is a thing. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy but impractical[if bag-hint is true]. Maybe if it were more basic and simpler, it could help you more in your quest[end if].". [-> big bag]
+the zig zag rig rag is a rhymable. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy, but maybe you can convert it to something more practical.". guess-table of zig zag rig rag is the table of big bag zig zag rig rag guesses. [-> big bag]
 
-after examining zig zag rig rag when bag-hint is true:
-	say "[if Fun Fen is visited]You can probably change it to a BIG BAG, now[else]You don't feel this is the place to change it to a BIG BAG, yet[end if].";
-	continue the action;
-
-the big bag is a thing. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!"
-
-bag-hint is a truth state that varies. [ this seems like duplicating the THINK command, but it's used for the bag description and makes for easier code. ]
+the big bag is a rhymable. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!". guess-table of big bag is the table of big bag zig zag rig rag guesses.
 
 volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of wet wood is leteq. [-> get good]
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of Wet Wood is leteq. guess-table of Wet Wood is table of Wet Wood guesses. [-> get good]
 
 to say how-better:
 	say "[one of]You'd like a simple way to become better[or]Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve[or]You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started[cycling]"
@@ -428,17 +435,18 @@ after looking in Wet Wood for the first time:
 
 part Rift River
 
-Rift River is a room in Worst Whew. "The rift river blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of rift river is leteq. noway-text of Rift River is "Directions don't seem to work here. You feel like a guide would be helpful.". [-> gift giver]
+Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. noway-text of Rift River is "Directions don't seem to work here. You feel like a guide would be helpful.". guess-table of Rift River is table of Rift River guesses. [-> gift giver]
 
 chapter Mind Malt
 
 a packet of Mind Malt is a thing. description is "It looks like there used to be Mind Malt, or powder that could make Mind Malt, here. Pity. It could've helped you figure what to do!". cht of Mind Malt is partplus. [-> find fault]
 
-Too Totes New Notes is a thing. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]"
+Too Totes New Notes is a rhymable. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]". guess-table of too totes new notes is the table of too totes new notes guesses.
 
 to say my-notes:
+	if player has big bag, say "    RIG RAG to BIG BAG     = center.";
 	repeat through table of newnotes:
-		if there is a score-needed entry and score < score-needed entry, continue the action;
+		if there is a score-needed entry and core-score < score-needed entry, continue the action;
 		say "[note-to-give entry][line break]";
 
 table of newnotes
@@ -464,7 +472,7 @@ to say cul-lul: say "[if lul-clue is true]LUL LEAST[else]CULL CEASED[end if]"
 
 part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, so there's a way out.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in vined vault] again[end if].". cht of vined vault is partminus. [-> find fault]
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, so there's a way out.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in Vined Vault] again[end if].". cht of Vined Vault is partminus. guess-table of Vined Vault is table of Vined Vault guesses. [-> find fault]
 
 chapter mean mass
 
@@ -472,7 +480,7 @@ The mean mass is a thing. "The mean mass continues to pulse and block the way ou
 
 part Po' Pit 2,-1
 
-Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap[if grit-grown is false]. But right now you feel too immature and jumpy to have a revelation how to even start. You suspect there is more than one way, and that's frustrating[end if].". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht of po' pit is letplus. [-> grow grit]
+Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap[if grit-grown is false]. But right now you feel too immature and jumpy to have a revelation how to even start. You suspect there is more than one way, and that's frustrating[end if].". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht of Po' Pit is letplus. guess-table of po' pit is table of po pit guesses. [-> grow grit]
 
 the row writ is scenery in Po' Pit. "[if grit-grown is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
 
@@ -493,7 +501,7 @@ grit-grown is a truth state that varies.
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht of trim tram is leteq. [-> flim flam]
+Trim Tram is a room in Worst Whew. "[if me-minded is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht of Trim Tram is leteq. guess-table of Trim Tram is table of Trim Tram guesses. [-> flim flam]
 
 FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. "FIND FEE is plastered everywhere. [if me-minded is true]But you can shrug it off now[else]You wish you could find something a bit different to do[end if].". [-> mind me]
 
@@ -507,10 +515,16 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tree-down is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if tree-down is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". guess-table of Fun Fen is table of Fun Fen guesses.
+
+to decide whether need-healing:
+	if least-loss is true and healed-here is false, yes;
+	no;
 
 check going in Fun Fen:
-	if noun is north and tree-down is false, say "A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+	if noun is north:
+		if tree-down is false, say "A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+		if need-healing, say "You're not ready to go back and confront the Bull Beast in your injured state yet." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
 section done den
@@ -541,11 +555,15 @@ the hive heap is a thing. cht of hive heap is leteq. "The hive heap that was rel
 
 check taking hive heap: say "You might not get stung, but it's too unwieldy to carry[if player has big bag], even with your big bag[end if]." instead;
 
-section vapor vile
+section vapor vial
 
-the vapor vile is a thing. cht of vapor vile is leteq. "A vapor vile has sprouted from the hive heap. Perhaps there is something inside it.". description is "The vapor vile is noxious, so you can't get too near it. But perhaps if it condensed into a solid, you could deal with it more easily.". [-> paper pile]
+the vapor vial is a thing. cht of vapor vial is leteq. "A vapor vial fell out from the hive heap. Perhaps there is something inside it.". description is "The vapor vial may or may not be easy to shatter and release the toxic, err, vile vapor within. Perhaps there is a way to make it and its contents less toxic and more biodegradable.". [-> paper pile]
 
-check taking vapor vile: say "It's too ethereal to take." instead;
+understand "vapor vile" and "vile" and "vile vapor" as vapor vial when vapor vial is touchable.
+
+check opening vapor vial: say "It might be poisonous." instead;
+
+check taking vapor vial: say "It might break in its current form." instead;
 
 section paper pile
 
@@ -563,24 +581,24 @@ understand "paper/pile" and "paper pile" as backed binder when paper pile is moo
 
 chapter Cark Cliff
 
-Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht of cark cliff is letplus. [-> spark spliff]
+Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]You don't feel so worried about Cark Cliff now[else]It's intimidating, but it would be neat if it weren't[end if].". cht of Cark Cliff is letplus. [-> spark spliff]
 
 tree-down is a truth state that varies.
 
 part Real Rear 0,-1
 
-Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of real rear is partplus. [-> kneel near]
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of Real Rear is partplus. guess-table of Real Rear is table of Real Rear guesses. [-> kneel near]
 
 to say seer-is:
 	say "[if healed-here is true]You're glad it's there, even though you don't need it any more[else if knelt-yet is false]You don't feel it's paying attention to you, yet[else if felt-fear is false]Perhaps you should confide, somehow[else if cage key is off-stage]You remember the fear you felt, and you just need to show you can do something for yourself, now[else]Perhaps the Seer can do a bit more for you, if you ask right[end if]";
 
 chapter ceiling seer
 
-the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-yet is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of something valuable[end if].".cht of ceiling seer is partminus.
+the ceiling seer is boring scenery in Real Rear. "The Ceiling Seer is all around. You can't do anything with it, [if healed-here is true]and it's given enough[else if knelt-yet is true]. though you may be able to gain more favors[else]though if you do the right thing, you may be worthy of something valuable[end if].". [the seer is redirected to the rear]
 
 chapter Sage Sea
 
-the Sage Sea is scenery in Real Rear. "[if cage key is off-stage]You feel as though the Sage Sea must hold something, if you can prove yourself worthy[else]You've proved yourself worthy enough. The Sage Sea may hold other mysteries, but they are beyond the bounds of this quest[end if]."
+the Sage Sea is a rhymable in Real Rear. it is scenery. "[if cage key is off-stage]You feel as though the Sage Sea must hold something, if you can prove yourself worthy[else]You've proved yourself worthy enough. The Sage Sea may hold other mysteries, but they are beyond the bounds of this quest[end if].". guess-table of sage sea is the table of cage key sage sea guesses.
 
 check inserting into the Sage Sea: say "The Sage Sea is not a place to dump stuff." instead;
 
@@ -598,7 +616,7 @@ check taking steel steer: say "It is way too heavy to STEAL STEER." instead;
 
 chapter Cage Key
 
-the cage key is a thing. description is "It looks important. It must open something. There can only be so many cages around.".
+the cage key is a rhymable. description is "It looks important. It must open something. There can only be so many cages around.". guess-table of cage key is the table of cage key sage sea guesses.
 
 knelt-yet is a truth state that varies.
 
@@ -608,11 +626,15 @@ healed-here is a truth state that varies.
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if bull beast is moot]defeated the bull beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of creased cross is letminus. [-> beast boss] [-> least loss]
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if Bull Beast is moot]defeated the Bull Beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of Creased Cross is letminus. guess-table of Creased Cross is table of Creased Cross guesses. [-> beast boss] [-> least loss]
+
+after going from Creased Cross when healed-here is true and cull-ceased is false:
+	say "Hmm. The Bull Beast didn't chase you as you left. Maybe you were better equipped to dispose of it than you think.";
+	continue the action;
 
 to say beast-clue:
-	if bull beast is not moot:
-		say "[if healed-here is true]You get the feeling the right cry could bring the bull beast out[else if least-loss is true]The bull beast must be waiting in the shadows[end if]";
+	if Bull Beast is not moot:
+		say "[if healed-here is true]You get the feeling the right cry could bring the Bull Beast out[else if least-loss is true]The Bull Beast must be waiting in the shadows[end if]";
 
 need-loss is a truth state that varies.
 
@@ -622,7 +644,7 @@ instead of doing something when need-loss is true:
 
 chapter Bull Beast
 
-The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here. Perhaps one phrase would dispel it--maybe a weird one, but it IS a beast boss, after all[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if cull-ceased is true]Dead. Perhaps it can be remade into something nicer[else if healed-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].". cht of bull beast is partplus. [bull beast->cull ceased]
+The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here. Perhaps one phrase would dispel it--maybe a weird one, but it IS a beast boss, after all[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if cull-ceased is true]Dead. Perhaps it can be remade into something nicer[else if healed-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].". cht of Bull Beast is partplus. [Bull Beast->cull ceased]
 
 cull-ceased is a truth state that varies.
 
@@ -630,13 +652,13 @@ least-loss is a truth state that varies.
 
 chapter full feast
 
-The full feast is a thing. "A full feast lies here. You can't eat it all by yourself, and you have no way to move it on your own.". description is "It's what remains of the bull beast, and it's surprisingly tasty looking. Pre-cooked, too! Because you sure burned it with your magic words, there. Ahaha.". cht of full feast is partplus. [->pull pieced]
+The full feast is a thing. "A full feast lies here. You can't eat it all by yourself, and you have no way to move it on your own.". description is "It's what remains of the Bull Beast, and it's surprisingly tasty looking. Pre-cooked, too! Because you sure burned it with your magic words, there. Ahaha.". cht of full feast is partplus. [->pull pieced]
 
 check taking the full feast: say "Too much at once." instead;
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of stark store is letminus. Stark Store is in Piddling Pain. "[if dark door is in stark store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]It's far too empty here! You can't have hit a dead end so soon[end if][if weird way is in stark store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". noway-text of Stark Store is "It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.". [-> dark door]
+Stark Store is west of Creased Cross. cht of Stark Store is letminus. Stark Store is in Piddling Pain. "[if dark door is in Stark Store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]It's far too empty here! You can't have hit a dead end so soon[end if][if weird way is in Stark Store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". noway-text of Stark Store is "It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.". guess-table of Stark Store is table of Stark Store guesses. [-> dark door]
 
 check going west in Stark Store:
 	if dark door is off-stage, say "Maybe there's something there. This can't just be a dead end." instead;
@@ -662,7 +684,9 @@ the Weird Way is boring scenery. cht of Weird Way is letplus. "You can't see a w
 
 part Fight Funnel -2,2
 
-Fight Funnel is below Stark Store. It is in Piddling Pain. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if beer bull is moot]. You don't need to go west now you trapped the beer bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[else]. You can probably just fit west[end if].". [-> tight tunnel]
+Fight Funnel is below Stark Store. It is in Piddling Pain. cht of Fight Funnel is leteq. printed name is "[if funnel-to-tunnel is true]Tight Tunnel[else]Fight Funnel[end if]". "This is a narrow east-west passage[if funnel-to-tunnel is false], but you're not going further west past the fight[else if player does not have big bag], but it tapers to the west and you won't be able to fit with all your possessions scattered about you. The Leet Learner alone is too unwieldy, and you don't want to let go of it. You might need some simple organization to go west[else if Beer Bull is moot]. You don't need to go west now you trapped the Beer Bull[else if snare is moot]. You set a trap west, so you probably don't want to go there unless you're trying to catch someone[else]. You can probably just fit west[end if].". guess-table of fight funnel is table of fight funnel guesses. [-> Tight Tunnel]
+
+understand "tight/tunnel" and "tight tunnel" as fight funnel when funnel-to-tunnel is true.
 
 funnel-to-tunnel is a truth state that varies.
 
@@ -670,8 +694,8 @@ this is the drop-snare rule:
 	if player has snuck snare and kni-ni is true:
 		moot snuck snare;
 		phbt dives ditch;
-		if bull beast is in fight funnel:
-			say "Oh no! You don't have the time to place the snare AND distract the bull beast at once! Sorry about that. On the bright side, you managed to place the snare, though, and the bull beast was so busy beating you up, it didn't notice you setting a trap. So it's probably no problem just to come back here, now.";
+		if in-bull-chase is true:
+			say "Oh no! You don't have the time to place the snare AND distract the Bull Beast at once! Sorry about that. On the bright side, you managed to place the snare, though, and the Bull Beast was so busy beating you up, it didn't notice you setting a trap. So it's probably no problem just to come back here, now.";
 			reset-bull-chase;
 		else:
 			say "As you go [if player is in fight funnel]west[else]look around[end if], you realize the snuck snare would be quite nice for trapping someone unsuspecting, somewhere, somehow. So you place it and return.";
@@ -682,54 +706,89 @@ check going west in Fight Funnel:
 	if funnel-to-tunnel is false, say "You're not getting past the fight." instead;
 	if big bag is off-stage:
 		say "You don't have enough space. You need to organize your possessions first. Maybe your inventory can be simplified--perhaps one item, changed, could hold the others, for convenience." instead;
-	if snuck snare is moot and beer bull is not in location of player, say "Not now. You've prepared the trap. Let someone, or something, else walk into it." instead;
+	if snuck snare is moot and Beer Bull is not in location of player, say "Not now. You've prepared the trap. Let someone, or something, else walk into it." instead;
 	process the drop-snare rule;
-	if beer bull is in location of player:
+	if Beer Bull is in location of player:
 		if snuck snare is moot:
-			say "You crawl through the Fight Funnel and roll off to the side. The beer bull, not knowing better, springs the snare! Aigh! The Beer Bull's last words are 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead. You walk back to Here Hull, where a Gear Gull rests. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
+			say "You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead, far less potent than whatever horrible alcohol the Beer Bull advertised.[paragraph break]You walk back to Here Hull, where a Gear Gull waits. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
 			solve-bull-chase;
 			the rule succeeds;
-		say "You lead the beast bull into [the room west of Fight Funnel] but it corners you. Yet--you must be close!";
+		say "You lead the Beer Bull into [the room west of Fight Funnel], where it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.";
 		reset-bull-chase;
 		the rule succeeds;
-	if beer bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
+	if Beer Bull is moot, say "You don't need to set or trigger the Knives Niche again." instead;
 
 to solve-bull-chase:
 	if player has gold guard:
 		buff-gold-guard;
 	else:
 		say "[line break]'I see no armor I could help improve. Come back when you find it. But for now, I need time to reorganize my domain.'";
-	up-reg; [+beat beer bull]
+	up-reg; [+beat Beer Bull]
 	now in-bull-chase is false;
-	moot beer bull;
+	moot Beer Bull;
 	now player has mild mead;
-	move player to Soft Sand, without printing a room description;
-	say "Man! I guess you could say you had ... one wound run-round."
+	say "[line break]Man! I guess you could say you had ... one wound run-round.";
+	bold-new-room Soft Sand;
 
 part Dives Ditch -3,2
 
-Dives Ditch is west of Fight Funnel. cht of Dives Ditch is partplus. Dives Ditch is in Piddling Pain. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap.[end if]". [-> knives niche]
+Dives Ditch is west of Fight Funnel. cht of Dives Ditch is partplus. Dives Ditch is in Piddling Pain. printed name is "[if kni-ni is true]Knives Niche[else]Dives Ditch[end if]". "[if kni-ni is true]You've set a trap, but for whom?[else]The dives ditch seems to recount many people lured, somehow, to their death. Perhaps you could construct a sneakier trap[traps-so-far].[end if]". guess-table of dives ditch is table of dives ditch guesses. [-> Knives Niche]
+
+to decide which number is niche-guesses:
+	let temp be 0;
+	repeat through table of niche guesses:
+		if nitry entry is true, increment temp;
+	decide on temp;
+
+table of niche guesses
+nitxt	nitry
+"fives fitch"	false
+"hives hitch"	false
+"lives lich"	false
+"stives stitch"	false
+"strives strich"	false
+"wives witch"	false
+
+to say traps-so-far:
+	let ng be niche-guesses;
+	if ng is 0, continue the action;
+	say ". You had [if niche-guesses is 1]a good guess[else]some good guesses[end if]: ";
+	let cur-niche be 0;
+	repeat through table of niche guesses:
+		if nitry entry is false, next;
+		increment cur-niche;
+		if cur-niche is ng and cur-niche > 1:
+			say " and ";
+		else if cur-niche > 1:
+			say ", ";
+		say "[nitxt entry]"
 
 kni-ni is a truth state that varies.
 
+chapter mild mead and wild weed
+
+the mild mead is a rhymable. the indefinite article of mild mead is "some". description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. guess-table of mild mead is the table of mild mead guesses. [->wild weed]
+
+the wild weed is a rhymable. the indefinite article of wild weed is "some". description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the Beer Bull's vitality went, instead of into the mead.". guess-table of wild weed is the table of mild mead guesses.
+
 part History Hall -2,1
 
-History Hall is west of Stark Store. cht of history hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if mistmall is true][mystdesc][else][histdesc][end if].[paragraph break]You can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if ever-mall is true], and there's a store west[end if][if ever-mall is true]. Or you could just shift back to [mist-hist of false][end if].". [-> mystery mall] [mystery mall->history hall]
+History Hall is west of Stark Store. cht of History Hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if mistmall is true][mystdesc][else][histdesc][end if].[paragraph break]You can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if ever-mall is true], and there's a store west[end if][if ever-mall is true]. Or you could just shift back to [mist-hist of false][end if].". guess-table of History Hall is table of History Hall guesses. [-> Mystery Mall] [Mystery Mall->History Hall]
 
-check going outside in history hall:
+check going outside in History Hall:
 	if mistmall is true and poor ponder is moot, say "You'd have to switch back to History Hall to try that." instead;
 
 to say mist-hist of (ts - a truth state): say "[if mistmall is ts]Mystery Mall[else]History Hall[end if]"
 
 to say mystdesc:
-	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]. [if oi mo is in History Hall]There's a horrible song providing atmosphere[else if toe tappin is in History Hall]There's mall music in the air you can LISTEN to[else]You can LISTEN to random music if you want, too[end if][if mean moe's is in history hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
+	say "[if ever-mall is false]The wall to the west seems hollow[else if mistmall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]. [if oi mo is in History Hall]There's a horrible song providing atmosphere[else if toe tappin is in History Hall]There's mall music in the air you can LISTEN to[else]You can LISTEN to random music if you want, too[end if][if mean moe's is in History Hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
 
 to say histdesc:
 	say "[if poor ponder is in History Hall][Poor Ponder] lies here seeming, or trying to seem, more important[else if ever-mall is false]It's pretty empty in here. Perhaps it could become something more modern. Or less ancient[else]History Hall is empty once again[end if]"
 
-check going west in History Hall: [gutta ganksta blocks you]
+check going west in History Hall: [Gutta Ganksta blocks you]
 	if ever-mall is true:
-		if gutta ganksta is in history hall, say "The gutta ganksta pushes you back. Maybe you can win a quick diss war to, well, displace the ganksta." instead;
+		if Gutta Ganksta is in History Hall, say "The Gutta Ganksta pushes you back. Maybe you can win a quick diss war to, well, displace the ganksta." instead;
 		continue the action;
 	say "[if ever-mall is true]You'll have to change back to History Hall[else]Thud! But a hollow thud. Maybe shifted around a bit, [location of player] might afford passage west[end if]." instead;
 
@@ -745,13 +804,13 @@ gan-wan is a truth state that varies. [have we called the ganksta a rude name?]
 
 chapter Gutta Ganksta (M)
 
-the Gutta Ganksta is an optional person. "A Gutta Ganksta with a tattoo chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of gutta ganksta is partplus. [-> whatta wanksta]
+the Gutta Ganksta is an optional person. "A Gutta Ganksta with a tattoo chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of Gutta Ganksta is partplus. [-> whatta wanksta]
 
 understand "tattoo" as GOTS GAME when Gutta Ganksta is quicknear.
 
 GOTS GAME is part of the Gutta Ganksta. cht of gots game is leteq. description is "It's pretty bad, as tattoos go. It has so much wrong with it. Perhaps you could point it out, without being too hurtful.". [-> lots lame]
 
-after lling gutta ganksta:
+after lling Gutta Ganksta:
 	if cht of gots game is leteq:
 		say "But the GOTS GAME tattoo is worth scanning, too, so you do so.";
 		try lling gots game;
@@ -759,7 +818,7 @@ after lling gutta ganksta:
 
 chapter Toe Tappin Row Rappin (M)
 
-Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replaced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SAVE SONG[r] and [b]RAVE WRONG[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
+Toe Tappin Row Rappin is rhymable. Toe Tappin Row Rappin is scenery. printed name is "[i]Toe Tappin['] Row Rappin['][r]". "You [one of]listen a bit. The song is [Toe], and it's actually pretty catchy and good even a bit self-conscious with the 'Yo, Yappin' start. It might help you in the future, in the right place or places. Lateral thinking and all that. It's stuck in your head now, and that's not all bad, because what replaced it is even worse.[paragraph break]Now that [Toe] is in your head, it may help you in places where the usual rhymes don't work. Use [b]SAVE SONG[r] and [b]RAVE WRONG[r] to toggle this help, which is on by default[or]already have the song in your head. The 'Yo, Yappin[']' bit at the start suggests it is flexible and may help you do or see things another way[stopping].". cht of Toe Tappin Row Rappin is partminus. guess-table of toe tappin row rappin is the table of toe tappin row rappin guesses. [-> no nappin] [-> ho happen] [?? LL TOE needs to break down into specific cases]
 
 understand "song" as toe tappin row rappin when player is in History Hall and oi mo is in History Hall.
 
@@ -791,7 +850,7 @@ chapter Mean Moe's (M)
 Mean Moe's Clean Clothes is scenery. "It's some sort of machine you could use to clean something that needed it. But it's not that easy. You probably need to discover the lights and bells and whistles that make it tick.". cht of Mean Moe's Clean Clothes is letboth. [-> glean glows]
 
 to decide whether can-glean:
-	if tried-yet of "GLEAN GLOWS", yes;
+	if tried-yet of vc-glean-glows rule, yes;
 	no;
 
 check entering Mean Moe's: say "It is too small to do anything to accept clothes." instead;
@@ -801,19 +860,19 @@ check inserting into Mean Moe's:
 
 chapter clashing cloak (M)
 
-the clashing cloak is a thing. description is "It seems suited for more than just fashionable conflict, if you knew what to do.". cht of clashing cloak is leteq. [-> smashing smoke]
+the clashing cloak is a rhymable. description is "It seems suited for more than just fashionable conflict, if you knew what to do.". cht of clashing cloak is leteq. guess-table of clashing cloak is the table of clashing cloak guesses. [-> smashing smoke]
 
 part Y'Old Yard -2,-1
 
-Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. [if bold bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if bold bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if]."
+Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. [if Bold Bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if Bold Bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)". guess-table of Y'Old Yard is table of Yold Yard guesses.
 
-The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a bold bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]"
+The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a Bold Bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]". guess-table of Bold Bard is the table of Bold Bard guesses.
 
-talk-text of bold bard is "'Scold-scarred. Told. Tarred.' The bold bard clearly wants to get into the Shoaled Shard but probably got thrown out by now-watchful guards. You both decide some sort of sneak attack or diversion would be best. If rhyming had worked, the bold bard would've found one that went old-ard.".
+talk-text of Bold Bard is "'Scold-scarred. Told. Tarred.' The Bold Bard clearly wants to get into the Shoaled Shard but probably got thrown out by now-watchful guards. You both decide some sort of sneak attack or diversion would be best. If rhyming had worked, the Bold Bard would've found one that went old-ard.".
 
 chapter gold guard
 
-the mold marred gold guard is a thing. description is "[if mine-more is false]Could be sturdier, actually[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard"
+the mold marred gold guard is a rhymable. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if mine-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if mine-more is true]hold-hard [end if]gold guard". guess-table of gold guard is the table of Bold Bard guesses.
 
 understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when mine-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
 
@@ -821,16 +880,16 @@ chapter shoaled shard
 
 the Shoaled Shard is scenery in Y'Old Yard. "It's intimidating and obviously well-guarded, but it could be breached with the right distraction."
 
-the cold card is a thing. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.".
+the cold card is a boring rhymable. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.". guess-table of cold card is the table of Bold Bard guesses. bore-text of cold card is "You guess you'll know what to do with the cold card when the time comes. You hope."
 
 part Vending Vibe -2,1 a
 
-Vending Vibe is a room in Piddling Pain. "This isn't a very big place[if lending libe is off-stage]. And the 'vibe' here is a bit slangy[else if fussed folks is in Vending Vibe].A book called [fussed folks] lies here you [may-already] to check out something more substantial[end if]. You can only go back east."
+Vending Vibe is a room in Piddling Pain. "This isn't a very big place[if Lending Libe is off-stage]. And the 'vibe' here is a bit slangy[else if fussed folks is in Vending Vibe]. A book called [fussed folks] lies here you [may-already] to check out something more substantial[end if]. You can only go back east."
 
 to say may-already:
 	say "[if we whine is off-stage]may wish[else]managed[end if]"
 
-The Trending Tribe are plural-named people in Vending Vibe. cht of trending tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> lending libe]
+The Trending Tribe are plural-named people in Vending Vibe. cht of Trending Tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> Lending Libe]
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
 
@@ -839,13 +898,13 @@ after going to Vending Vibe:
 	continue the action;
 
 this is the card-and-libe rule:
-	if trending tribe is moot and player has cold card:
+	if Trending Tribe is moot and player has cold card:
 		say "[line break]You look at your cold card for a minute. You realize that it's actually a library card! In fact, it has a book on hold! Unfortunately, the book is [We Whine], about how to be a jerk for profit and excitement. And you don't need that, being a hero. Still, you take it.";
 		now player has We Whine ME MINE;
 		moot cold card;
 	continue the action;
 
-We Whine ME MINE is a thing. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sign-seen is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a careful reading would turn something up.[end if]". [-> see sign]
+We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sign-seen is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a careful reading would turn something up.[end if]". guess-table of we whine is the table of we whine guesses. [-> see sign]
 
 understand "book" as We Whine Me Mine when We Whine Me Mine is touchable.
 
@@ -855,7 +914,7 @@ sign-seen is a truth state that varies.
 
 chapter fussed folks
 
-Fussed Folks Just Jokes is scenery. "You read about [next-rand-txt of table of miscellaneous people]."
+Fussed Folks Just Jokes is scenery. "You read about [next-rand-txt of table of miscellaneous people].". printed name of Fussed Folks Just Jokes is "[i]Fussed Folks Just Jokes[r]".
 
 understand "book" as Fussed Folks when Fussed Folks is touchable.
 
@@ -863,17 +922,17 @@ check taking Fussed Folks: say "It's pretty obviously got nothing concrete to he
 
 part Got Gear Hot Here -2,1 b
 
-Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if trounce-track is false], but there may be another useless silly way to leave[end if]."
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if trounce-track is false], but there may be another useless silly way to leave[end if].". guess-table of Got Gear Hot Here is table of Got Gear Hot Here guesses.
 
 trounce-track is a truth state that varies.
 
 chapter hard hat
 
-the marred mat is a thing in Got Gear Hot Here. description is "What is a marred mat doing in a clothing store? Either it's misplaced, or ... it's more appropriate in another form. It has a message, of course.". "You can't imagine what a marred mat is doing in a clothing store, but here it is.". cht of marred mat is partminus. [->hard hat]
+the marred mat is a rhymable in Got Gear Hot Here. description is "What is a marred mat doing in a clothing store? Either it's misplaced, or ... it's more appropriate in another form. It has a message, of course.". "You can't imagine what a marred mat is doing in a clothing store, but here it is.". cht of marred mat is partminus. guess-table of marred mat is the table of hard hat marred mat guesses. [->hard hat]
 
 check taking marred mat: say "It can't be useful in that form." instead;
 
-the hard hat is a gaphat. description is "The hard hat looks like it can protect you well enough, but it doesn't have a lot of flair, and it's not terribly lightweight.".
+the hard hat is a gaphat. description is "The hard hat looks like it can protect you well enough, but it doesn't have a lot of flair, and it's not terribly lightweight.". guess-table of hard hat is the table of hard hat marred mat guesses.
 
 check taking off hard hat: say "No. Something will come out of nowhere to conk you on the head, and then you'd be sorry. If you were conscious enough to be sorry." instead;
 
@@ -887,7 +946,7 @@ lie-lol is a truth state that varies.
 
 part Violent Vale 1,1
 
-Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if silent-sale is false]It's scary here--there must be some way to get rid of the oppression! [end if][if fridge is in Vale]A frightening fridge towers over you to the east[duz-help][else]The way east is clear with the frightening fridge gone[end if][if boring boat is moot]. There's just a faint memory of how violent it was[else if silent-sale is true]. It's not really violent here at all any more[end if].". [-> silent sail]
+Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if silent-sale is false]It's scary here--there must be some way to get rid of the oppression! [end if][if fridge is in Vale]A frightening fridge towers over you to the east[duz-help][else]The way east is clear with the frightening fridge gone[end if][if boring boat is moot]. There's just a faint memory of how violent it was[else if silent-sale is true]. It's not really violent here at all any more[end if].". guess-table of Violent Vale is table of Violent Vale guesses. [-> Silent Sail]
 
 silent-sale is a truth state that varies.
 
@@ -903,7 +962,7 @@ the frightening fridge is scenery in Violent Vale. cht of frightening fridge is 
 
 chapter flooring float
 
-the flooring float is a fakeenter thing. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!". [-> boring boat]
+the flooring float is a fakeenter rhymable. cht of flooring float is letminus. "A flooring float bobs here.". description is "The flooring float is too impractical to ride or sail anywhere you might need. But it's impressive and gaudy!". guess-table of flooring float is the table of boring boat flooring float guesses. [-> boring boat]
 
 check taking flooring float: say "It's too heavy, and you can't take it anywhere. Maybe some other watercraft, though." instead;
 
@@ -911,7 +970,7 @@ check entering flooring float: say "It's there for decoration, not transport. Bu
 
 chapter boring boat
 
-the boring boat is a fakeenter thing. "A boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]."
+the boring boat is a fakeenter rhymable. "A boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if snake-snap is true], but it seems sturdy enough for more adventure[else if nap-no is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if].". guess-table of boring boat is the table of boring boat flooring float guesses.
 
 does the player mean entering boring boat: it is very likely;
 
@@ -927,42 +986,46 @@ hap-ho is a truth state that varies.
 boat-reject is a truth state that varies.
 
 check entering boring boat:
+	if in-bull-chase is true:
+		say "Oh no! The boring boat shuts itself up as the bull beast gets close. I guess the boat can't take the beast's exciting-ness. The beast seems offended enough to take it out a bit extra on you.";
+		reset-bull-chase;
+		the rule succeeds;
 	if nap-no is false:
-		say "You try to enter the boat, but it seems so ... boring. Perhaps if you had some jaunty nautical tune stuck in your head to whistle, that'd be better.";
+		say "You try to enter the boat, but it seems so ... boring. If only you could get a jaunty tune stuck in your head to keep you alert!";
 		now boat-reject is true;
 		the rule succeeds;
-	if player is in Been Buggin':
+	if player is in Been Buggin:
 		if player does not have way woke clay cloak, say "Dean Duggan stops you. You have not properly passed [if lean-lugged is false and mean-mugged is false]any[else]both[end if] of the tests you need yet. You need to face things now. Perhaps there is some slang involved, but sometimes you need to brute-force your way through problems." instead;
 		say "With your way woke clay cloak in hand, you return to [Violent Vale]. After a moment, the boring boat floats off, perhaps to refuel from all the excitement.";
 		moot boring boat;
 		if clumped cluster is not moot, max-down;
-		move player to violent vale;
+		move player to Violent Vale;
 		the rule succeeds;
-	if player is in lake lea:
+	if player is in Lake Lea:
 		say "You take the boring boat back to [Violent Vale].";
-		move boring boat to violent vale;
-		move player to violent vale;
+		move boring boat to Violent Vale;
+		move player to Violent Vale;
 		the rule succeeds;
 	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
 	if cake cap is not off-stage:
 		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
-		move boring boat to Been Buggin';
-		move player to Been Buggin';
+		move boring boat to Been Buggin;
+		move player to Been Buggin;
 		the rule succeeds;
-	say "You take the boring boat [if lake lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
+	say "You take the boring boat [if Lake Lea is unvisited]somewhere new[else]back to Lake Lea[end if].";
 	move boring boat to Lake Lea;
 	move player to Lake Lea;
 	the rule succeeds;
 
 part Lake Lea 3,2
 
-Lake Lea is a room. It is in Piddling Pain. "You're on the Lake Lea, which borders on Lake Lap to the east.".
+Lake Lea is a room. It is in Browsy Breaks. "You're on the Lake Lea, which borders on Lake Lap to the east.".
 
 check going east in Lake Lea when Jake G is touchable:
 	if jake-woke is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if jake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else if jake-cocapn is false]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. [-> wake whee] [-> fake fee] [-> take tea]
+Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if jake-woke is false]dozes here[else if jake-tea is false]seems to be waiting to give you hospitality[else if jake-fee is false]seems to want payment, but not really[else if jake-cocapn is false]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if jake-woke is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. guess-table of jake g is the table of jake g guesses. [-> wake whee] [-> fake fee] [-> take tea]
 
 description of Jake G is "[if jake-woke is false]He's sleeping. You need a personalized, cheery greeting[else if jake-tea is false]Jake seems to be fiddling with utensils and snack packs[else if jake-fee is false]Jake rubs the fingers of one hand together but waves it off with the other[else if jake-map is false]Jake looks a little lost[else if jake-cocapn is false]Jake looks a little down here, as if he wants to feel equal to you, or he could use a song[else]Jake seems eager for battle[end if]."
 
@@ -973,9 +1036,9 @@ jake-brie is a truth state that varies.
 
 part Whining War 2,1
 
-Whining War is east of Violent Vale. It is in Piddling Pain. "[if war-sapped is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if shore-shine is false]It's less whiny here, but it's still a bit too dull.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in whining war][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage] But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot] With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of whining war is partplus. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> shining shore]
+Whining War is east of Violent Vale. It is in Piddling Pain. "[if war-sapped is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if shore-shine is false]It's less whiny here, but it's still a bit too dull.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in Whining War][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage] But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot] With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of Whining War is partplus. guess-table of Whining War is table of Whining War guesses. printed name of Whining War is "[if shore-shine is true]Shining Shore[else]Whining War[end if]". [-> Shining Shore]
 
-[Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another whining war.]
+[Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another Whining War.]
 [mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
 
 [??mining more / dining door]
@@ -990,7 +1053,7 @@ shore-shine is a truth state that varies.
 
 chapter pining poor
 
-the pining poor are plural-named people. talk-text of pining poor is "'Rich row niche? No! ... Which woe?'". description of pining poor is "They look [if full feast is not moot]hungry and exhausted[else]idle, waiting for work[end if].". "The pining poor, relics of the whining war, stand here, looking needy.". cht of pining poor is leteq.
+the pining poor are plural-named people. talk-text of pining poor is "'Rich row niche? No! ... Which woe?'". description of pining poor is "They look [if full feast is not moot]hungry and exhausted[else]idle, waiting for work[end if].". "The pining poor, relics of the Whining War, stand here, looking needy.". cht of pining poor is leteq. [->dining door]
 
 chapter dining door
 
@@ -1000,18 +1063,20 @@ check entering dining door: say "It doesn't seem to budge. Perhaps you need to p
 
 part Lake Lap ??,??
 
-Lake Lap is east of Lake Lea. It is in Piddling Pain. "You could go back west to Lake Lea, but you have a feeling that, whatever you need to do with Jake G., it's here[if jake-map is true]. You hear a hissing noise[end if].". cht of Lake Lap is leteq. [->make map]
+Lake Lap is east of Lake Lea. It is in Browsy Breaks. "You could go back west to Lake Lea, but you have a feeling that, whatever you need to do with Jake G., it's here[if jake-map is true]. You hear a hissing noise[end if].". cht of Lake Lap is leteq. guess-table of Lake Lap is table of Lake Lap guesses. [->make map]
 
 jake-cocapn is a truth state that varies.
 jake-snap is a truth state that varies.
 jake-map is a truth state that varies.
 snake-snap is a truth state that varies. [equivalent to "if cake cap is off-stage"]
 
-The cake cap is a gaphat. description is "The cake cap looks tasty and yet still incomplete and not quite wearable on its own."
+The cake cap is a gaphat. description is "The cake cap looks tasty and yet still incomplete and not quite wearable on its own.". guess-table of cake cap is table of lake lap guesses.
 
 part Been Buggin'
 
-Been Buggin' is a room in Piddling Pain. cht of Been Buggin' is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin']. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". [->mean muggin]
+Been Buggin is a room in Browsy Breaks. cht of Been Buggin is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". guess-table is table of Been Buggin guesses. [->mean muggin]
+
+printed name of Been Buggin is "Been Buggin[']".
 
 Dean Duggan is a person. "[one of]'Hi! I'm Dean Duggan. Congratulations on making it here. Well, sort of. If you have, you -- well, you've done well, but you still need help with life skills and stuff.'[or]Dean Duggan smiles here, ready to help you with whatever you need to ask about[bug-so-far].[stopping]". description of Dean Duggan is "Dean Duggan nods patiently. Though he mumbles motivational slang to himself, he's ready to help you, but you need to know what to ask for[bug-so-far].". talk-text is "'Teach tons, reach runs!' You don't need beach buns, but you probably need a specific phrase suitable to him, or this place. His lax demeanor suggests a bit of slang.". cht of Dean Duggan is leteq. [-> lean luggin]
 
@@ -1031,14 +1096,14 @@ to decide whether dean-done:
 	if mean-mugged is true and lean-lugged is true, yes;
 	no;
 
-the way woke clay cloak is a thing. description is "It's unwearable in its current state and may just bog you down."
+the way woke clay cloak is a rhymable. description is "It's unwearable in its current state and may just bog you down.". guess-table of clay cloak is the table of clay cloak guesses.
 
 chapter staystronging
 
 in-way-wrong is a truth state that varies.
 in-way-wronged is a truth state that varies.
 
-after looking in Been Buggin' for the first time:
+after looking in Been Buggin for the first time:
 	now in-way-wrong is true;
 	say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
 	now cht of the player is letplus; [way wrong->stay strong]
@@ -1065,12 +1130,12 @@ instead of doing something when in-so-sad is true:
 
 part Soft Sand 0,2
 
-Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of soft sand is leteq. "You can go all four directions here[check-hull][if ever-loft is true]. Or you can change back to [soft-loft of false][else]. But ... well, it also feels a bit low. It seems like there's something way high above to the west[end if].". [-> loft land] [loft land->soft sand]
+Soft Sand is a room in Piddling Pain. Soft Sand is north of Creased Cross. cht of Soft Sand is leteq. "You can go all four directions here[check-hull][if ever-loft is true]. Or you can change back to [soft-loft of false][else]. But ... well, it also feels a bit low. It seems like there's something way high above to the west[end if].". guess-table of Soft Sand is table of Soft Sand guesses. [-> Loft Land] [Loft Land->Soft Sand]
 
 to say check-hull:
 	if gull-guard is true:
 		say ", though you're done to the east";
-	else if beer bull is moot:
+	else if Beer Bull is moot:
 		say ", and you remember the Gear Gull waits east in Here Hull to help with [if player has gold guard]your gold guard[else]any armor you find[end if]"
 
 to say soft-loft of (ts - a truth state): say "[if loft-land is ts]Loft Land[else]Soft Sand[end if]".
@@ -1079,9 +1144,9 @@ printed name of Soft Sand is "[soft-loft of true]".
 
 to say soft-or-loft:
 	if loft-land is false:
-		say "[if ever-loft is false]The sand feels unstable, not like it's going to swallow you up, but like it could become something else. There's also something to the west you can't reach by flying. It's just--up there[else]Or you could bring back the loft land[end if]";
+		say "[if ever-loft is false]The sand feels unstable, not like it's going to swallow you up, but like it could become something else. There's also something to the west you can't reach by flying. It's just--up there[else]Or you could bring back the Loft Land[end if]";
 	else:
-		say "The cave you couldn't reach in the soft sand is now easily accessible to the west"
+		say "The cave you couldn't reach in the Soft Sand is now easily accessible to the west"
 
 ever-loft is a truth state that varies.
 
@@ -1092,7 +1157,7 @@ check going west in Soft Sand:
 
 check going east in Soft Sand:
 	if gull-guard is true, say "You already got what you wanted from Here Hull and the Gear Gull. You must confront things more ... fearful." instead;
-	if beer bull is moot:
+	if Beer Bull is moot:
 		if player has gold guard:
 			say "As you go east, the Gear Gull inspects your mold-marred gold guard. 'I can do something now.'";
 			buff-gold-guard;
@@ -1106,28 +1171,27 @@ loft-land is a truth state that varies.
 
 part Here Hull 1,2
 
-Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [soft sand]."
+Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [Soft Sand].".
 
 gull-guard is a truth state that varies.
 
 to buff-gold-guard:
-	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal.'[wfak]";
-	if tried-yet of "BEAST BOSS", say "[line break]You also feel more ready to face the beast boss, now.";
+	say "[line break]The Gear Gull breaks out some polish. It doesn't just remove the mold but thickens the gold guard without making it heavier. You smile, but the Gear Gull says, 'I can only make the gold guard so strong. There are materials that can do more. You must find them to be able to reach your goal. You are done here--no need to come back.'[wfak]";
+	if tried-yet of vc-beast-boss rule, say "[line break]You also feel more ready to face the beast boss, now.";
 	now gull-guard is true;
-	move player to Soft Sand;
 
-check going west in here hull:
+check going west in Here Hull:
 	if bull-null is false and in-bull-chase is true:
 		say "The bull is too fast and strong. It tears you up. Maybe there was some way to weaken it. At least it slinks back to where it was, maybe saving another beating for later.[paragraph break]";
 		reset-bull-chase;
 		the rule succeeds;
 
-The Beer Bull is a person in Here Hull. cht of beer bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is--but maybe you should've expected it, since BULL and HULL don't quite rhyme, anyway. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if]." [->dear dull] [->near null]
+The Beer Bull is a person in Here Hull. cht of Beer Bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is--but maybe you should've expected it, since BULL and HULL don't quite rhyme, anyway. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if].". guess-table of Beer Bull is the table of Beer Bull guesses. [->dear dull] [->near null]
 
-check taking beer bull: say "You need to worry about the beer bull taking you." instead;
+check taking Beer Bull: say "You need to worry about the Beer Bull taking you." instead;
 
 to say bull-standby:
-	say "[if ever-bull-chase is false]A beer bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying DEAR DULL. It'd be interesting to see what[end if]"
+	say "[if ever-bull-chase is false]A Beer Bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying DEAR DULL. If only you could dispose of the bull, you could see what it is[end if]"
 
 bull-null is a truth state that varies.
 
@@ -1135,12 +1199,15 @@ in-bull-chase is a truth state that varies.
 ever-bull-chase is a truth state that varies.
 
 to decide whether hull-bull:
-	if player is in Here Hull or beer bull is in location of player, yes;
+	if player is in Here Hull or Beer Bull is in location of player, yes;
 	no;
 
 to reset-bull-chase:
-	say "You limp [if player is in creased cross]around[else]back to[end if] Creased Cross.";
-	move beer bull to here hull;
+	if player is in Fight Funnel:
+		say "[line break]Whoah! The Beer Bull seemed to run out of [fight funnel] quickly. Perhaps you could lure it further. What [if dives ditch is visited]can you do[else]could be[end if] to the west?";
+		say "[line break]";
+	say "You limp [if player is in Creased Cross]around[else]back to[end if] Creased Cross.";
+	move Beer Bull to Here Hull;
 	move player to Creased Cross;
 	now in-bull-chase is false;
 	now bull-from is Here Hull;
@@ -1149,21 +1216,43 @@ bull-from is a room that varies. bull-from is Here Hull.
 
 check going when in-bull-chase is true:
 	if the room noun of location of player is bull-from:
-		say "The beer bull catches you doubling back! What follows is ... not pretty.[paragraph break]";
+		say "The Beer Bull catches you doubling back! What follows is ... not pretty.[paragraph break]";
 		reset-bull-chase;
 		the rule succeeds;
+
+chase-mulligan is a truth state that varies.
+
+to say chase-pass: if in-bull-chase is true, now chase-mulligan is true;
 
 every turn when in-bull-chase is true: [?? make this so that we track by last-bull-loc]
 	if action is procedural:
 		continue the action;
-	if beer bull is in location of player:
-		say "The beer bull, upset with your lack of action, charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats [if player is in here hull]into its corner[else]back to Here Hull[end if].[paragraph break]";
+	if chase-mulligan is true:
+		now chase-mulligan is false;
+		continue the action;
+	if Beer Bull is in location of player:
+		say "The Beer Bull catches up to you! It charges and kicks you around for a while. Some part of it realizes if it does too much damage, it won't have a chance to kick you around again, so it retreats [if player is in Here Hull]into its corner[else]back to Here Hull[end if].[paragraph break]";
 		reset-bull-chase;
 		the rule succeeds;
-	if beer bull is not in location of player:
-		say "You hear the Beer Bull thunder behind you.";
-		now bull-from is location of beer bull;
-		move beer bull to location of player;
+	if Beer Bull is not in location of player:
+		if player is in real rear:
+			say "The Beer Bull roars at the relative peacefulness of the Real Rear and turns back. While you haven't actually defeated the Beer Bull, you managed to escape a mauling. Perhaps this place will help with an even tougher opponent in the future.";
+			move Beer Bull to Here Hull;
+			now in-bull-chase is false;
+			the rule succeeds;
+		say "The Beer Bull thunders just behind. ";
+		if player is in History Hall:
+			say "The Bull seems out of place here, but it's not particularly bothered by that.";
+		else if player is in Violent Vale and frightening fridge is in Violent Vale:
+			say "Oh no! Between the Beer Bull and the fridge, you feel trapped[if flooring float is touchable], and the float won't help you escape[else if boring boat is touchable], and you'd get caught boarding the boat[end if].";
+		else if player is in Blinding Blaze:
+			say "[if blaze-ways is true]Bringing a half-bull to a maze is a bad idea without a ball of string. You have none in this game[else]Uh oh. You've trapped yourself with no easy visible way out[end if].";
+		else if player is in Whining War:
+			say "There's nowhere to go from here. The [if shore-shine is true]ex-whiners tremble in fear, not whining, but unable to bring themselves to help you[else]whiners aren't going to help you[end if].";
+		else:
+			say "You need to keep moving, or it will catch you.";
+		now bull-from is location of Beer Bull;
+		move Beer Bull to location of player;
 
 to start-bull-chase:
 	now ever-bull-chase is true;
@@ -1171,13 +1260,13 @@ to start-bull-chase:
 
 part Shirk Shell -1,2 a
 
-Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact.". cht of shirk shell is letminus. [->work well]
+Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like there's not a lot to do here in the Shirk Shell. Nothing to do except go back east, in fact.". cht of Shirk Shell is letminus. [->work well]
 
-check going east in shirk shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
+check going east in Shirk Shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
 
 after printing the name of jerk gel while taking inventory: say " (brand name: SUPPLE SAPS)";
 
-the tube of jerk gel is a thing in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[else]. A closer look indicates its ingredients include SUPPLE SAPS[end if].". cht of jerk gel is partplus. [-> work well]
+the tube of jerk gel is a rhymable in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[else]. A closer look indicates its ingredients include SUPPLE SAPS[end if].". cht of jerk gel is partplus. guess-table of jerk gel is the table of jerk gel guesses. [-> work well]
 
 understand "supple/saps" and "supple saps" as jerk gel.
 
@@ -1186,7 +1275,7 @@ check taking jerk gel when jerk gel is in Shirk Shell:
 
 part Curst Cave -1,2 b
 
-Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-cave][if worst wave is in curst cave]. A worst wave rushes about, leaving you feeling terrible[end if]."
+Curst Cave is a room in Piddling Pain. "You can only go back east[tap-in-cave][if worst wave is in Curst Cave]. A worst wave rushes about, leaving you feeling terrible[end if].". guess-table of Curst Cave is table of Curst Cave guesses.
 
 the worst wave is scenery in Curst Cave. cht of worst wave is leteq. "Whoah! It's not terribly friendly or welcoming. Perhaps you can make it more likable.". [->first fave]
 
@@ -1197,22 +1286,22 @@ check taking screaming skull: say "You need to 'take' it figuratively." instead;
 to say tap-in-cave:
 	if tool tap is in Curst Cave, say ". A tool tap sits where the worst wave used to be[if cool cap is not off-stage], but you already got something from it[else], and you haven't gotten anything interesting from it yet[end if]"
 
-the tool tap is boring scenery. "It looks stiff and unresponsive, but with the right word, something will come out. Something must come out of it. But what?". cht of tool tap is leteq. [->cool cap]
+the tool tap is a boring rhymable. it is scenery. "It looks stiff and unresponsive, but with the right word, something will come out. Something must come out of it. But what?". cht of tool tap is leteq. guess-table of tool tap is table of cool cap tool tap guesses. [->cool cap]
 
 bore-text of tool tap is "You can't see any way to operate the tool tap, not even the usual you'd expect for, well, a tap.".
 
-the cool cap is a gaphat. description is "The cool cap looks great[if jerk gel is moot], and boy, it feels great now you glued the other hats to it[else], but it doesn't seem functional, yet[end if]."
+the cool cap is a gaphat. description is "The cool cap looks great[if jerk gel is moot], and boy, it feels great now you glued the other hats to it[else], but it doesn't seem functional, yet[end if].". guess-table of cool cap is table of cool cap tool tap guesses.
 
 first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if pain peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "Passages lead all four directions[if shield-shown is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. [->show shield]
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if shield-shown is true]: Ho, HEALED[end if]". "Passages lead all four directions[if shield-shown is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. [->show shield]
 
 check going south in Foe Field So Sealed:
-	if pain peasant is in Foe Field, say "The pain peasant booms 'Go, gassed foe, fast!'" instead;
+	if Pain Peasant is in Foe Field, say "The Pain Peasant booms 'Go, gassed foe, fast!'" instead;
 
-check going north in Foe Field So Sealed: if shield-shown is false and pain peasant is moot, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
+check going north in Foe Field So Sealed: if shield-shown is false and Pain Peasant is moot, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
@@ -1220,14 +1309,14 @@ shield-shown is a truth state that varies.
 
 chapter Pain Peasant
 
-the Pain Peasant is a person in Foe Field. description is "Pretty simple looking, really. But clearly Upset about Stuff enough to push you back out of spite.". "A pain peasant paces back and forth, looking nervously east and west.". cht of pain peasant is letplus. [-> plain pleasant]
+the Pain Peasant is a person in Foe Field. description is "Pretty simple looking, really. But clearly Upset about Stuff enough to push you back out of spite.". "A Pain Peasant paces back and forth, looking nervously east and west.". cht of Pain Peasant is letplus. [-> plain pleasant]
 
 check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
 	say "The Pain Peasant blocks you, saying 'It is even worse there than in here! Trust me!' Geez, what a pain!" instead; [?? fain pheasant]
 
 part Store All Stage -1,3
 
-Store All Stage is a room in Piddling Pain. It is west of Foe Field. cht of Store All Stage is letminus. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east."
+Store All Stage is a room in Piddling Pain. It is west of Foe Field. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east.". guess-table of store all stage is table of Store All Stage guesses.
 
 the coral cage is scenery in Store All Stage. "It looks locked, and it's too opaque to see who's there. You [if cage key is off-stage]have no way of opening it[else]could use the cage key on it, but you probably need to figure out who or what is inside[end if].". cht of coral cage is leteq. [-> moral mage]
 
@@ -1244,13 +1333,61 @@ section Here Hip Queer Quip
 
 Here Hip Queer Quip is a proper-named thing. description is "It contains summaries of the Moral Mage's lecture."
 
+part Pit Pound 1,3
+
+Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west.". guess-table of Pit Pound is table of Pit Pound guesses. [->fit found]
+
+A hit hound is a person in Pit Pound. cht of hit hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The hit hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
+
+check going east in Pit Pound:
+	if hit hound is in Pit Pound, say "Not with the hit hound guarding you, you aren't." instead;
+	if found-fit is false, say "It's weird. You don't feel like you belong in the Pit Pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
+
+found-fit is a truth state that varies.
+
+part Blinding Blaze 2,3
+
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno].". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
+
+to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
+
+to say blazno:
+	if blaze-ways is false:
+		say "You can't see any way other than back west";
+	else if stuck stair is off-stage:
+		say "You explore the Minding Maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgery of working through all the dead ends and to make it through smoothly and happily";
+	else:
+		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed";
+
+blaze-ways is a truth state that varies.
+
+maze-mapped is a truth state that varies.
+
+check going down in Blinding Blaze when stuck stair is in Blinding Blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
+
+chapter Minding Maze
+
+the Minding Maze is fakeenter scenery. "The Minding Maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
+
+check entering Minding Maze: try going east instead;
+
+chapter stuck stair
+
+the stuck stair is a fakeenter rhymable. it is scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. guess-table of stuck stair is the table of snuck snare stuck stair guesses. [-> luck lair]
+
+chapter snuck snare
+
+a snuck snare is a rhymable. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.". guess-table of snuck snare is the table of snuck snare stuck stair guesses.
+
+[?? burned bower/turned tower]
+
 volume Vale Verminous
 
 part Gassed Gap 0,4
 
 Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It looks like there should be a way to the north, but it's too hazy. You may need to do something to break things up[else]There's a way to the north, now that you cast your cap[end if]. [if evidence-pieces < 3]However, it's still too intimidating[else]You feel confident you can make it through[end if].". cht of Gassed Gap is partminus. [-> cast cap]
 
-Gassed Gap is north of Foe Field. cht of gassed gap is partminus. [-> last lap]
+Gassed Gap is north of Foe Field. cht of Gassed Gap is partminus. guess-table of Gassed Gap is table of Gassed Gap guesses. [-> Last Lap]
 
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
@@ -1266,8 +1403,10 @@ check going north in Gassed Gap:
 	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
 	isle-max-score;
 
+to decide what number is bag-point: decide on boolval of whether or not player has big bag;
+
 to isle-max-score:
-	now max-poss is isle-score + score;
+	now max-poss is isle-score + score + 1 - bag-point + boolval of whether or not rolling-yet is false;
 
 to decide which number is evidence-pieces:
 	decide on boolval of sign-seen + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
@@ -1296,10 +1435,10 @@ to check-russell-go:
 
 to adjust-russell:
 	if beaker-yet is false and meeker-yet is true:
-		phbt reeker russell;
-		now reeker russell is not optional;
+		phbt Reeker Russell;
+		now Reeker Russell is not optional;
 	else if beaker-yet is false:
-		now reeker russell is optional;
+		now Reeker Russell is optional;
 
 beaker-yet is a truth state that varies.
 
@@ -1307,7 +1446,7 @@ meeker-yet is a truth state that varies.
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if lot lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if]."
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses.
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
@@ -1316,8 +1455,8 @@ check going south in Airy Isle:
 for printing a locale paragraph about a person (called per) in Airy Isle:
 	now per is mentioned;
 	if per is not Bot Board, continue the action;
-	say "[one of]A Bot Board stands here, impassive, emotionless, not looking for a fight but looking extremely hard to budge[or]The Bot Board stands here, unrattled[if lot lord is in airy isle or hot horde is in airy isle] despite your having summoned help[end if][stopping].";
-	if lot lord is off-stage and hot horde is off-stage, continue the action;
+	say "[one of]A Bot Board stands here, impassive, emotionless, not looking for a fight but looking extremely hard to budge[or]The Bot Board stands here, unrattled[if Lot Lord is in Airy Isle or Hot Horde is in Airy Isle] despite your having summoned help[end if][stopping].";
+	if Lot Lord is off-stage and Hot Horde is off-stage, continue the action;
 	say "[line break]";
 	if Lot Lord is off-stage:
 		say "A Hot Horde rambles around aimlessly here. Maybe they could take down the Bot Board, but they need discipline and leadership and order.";
@@ -1326,15 +1465,15 @@ for printing a locale paragraph about a person (called per) in Airy Isle:
 	else:
 		say "The Lot Lord and Hot Horde mumble amongst themselves. The right battle cry, and they will be fully jazzed to take down the Bot Board!";
 
-the Bot Board are plural-named people in Airy Isle. talk-text is "'Meep, mate! Heap hate! Weep, wait!'". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own. NOT [']NORED is etched on each of their chests.". cht of Bot Board is leteq. [->got gored] [-> hot horde]
+the Bot Board are plural-named people in Airy Isle. talk-text is "'Meep, mate! Heap hate! Weep, wait!'". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own. NOT [']NORED is etched on each of their chests.". cht of Bot Board is leteq. [->got gored] [-> Hot Horde]
 
-the sought sword is scenery in Airy Isle. "It looks important, much better than a sot sword, shot sword, or swat sword, but it's intimidating. It says PROPERTY OF ... Man, maybe if you figured out who owned it, they might be able to help you.". cht of sought sword is letminus. [-> lot lord]
+the sought sword is scenery in Airy Isle. "It looks important, much better than a sot sword, shot sword, or swat sword, but it's intimidating. It says PROPERTY OF ... Man, maybe if you figured out who owned it, they might be able to help you.". cht of sought sword is letminus. [-> Lot Lord]
 
 check taking the sought sword: say "You can't get near it. It must be someone else's. But who?" instead;
 
-the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?". description is "The Lot Lord's authority as a battle leader is unquestionable. Yet he needs [if hot horde is off-stage]followers[else]a battle cry for his followers--he doesn't seem much of a poet[end if].". cht of Lot Lord is partplus. [->got gored]
+the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?". description is "The Lot Lord's authority as a battle leader is unquestionable. Yet he needs [if Hot Horde is off-stage]followers[else]a battle cry for his followers--he doesn't seem much of a poet[end if].". cht of Lot Lord is partplus. [->got gored]
 
-the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.". description is "The Hot Horde are all over the place. [if lot lord is off-stage]Even with the Lot Lord's leadership, they need something like a battle cry to unify them fully[else]They need a leader, and you're not tough enough. No offense[end if].". cht of Hot Horde is leteq. [-> got gored]
+the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.". description is "The Hot Horde are all over the place. [if Lot Lord is off-stage]Even with the Lot Lord's leadership, they need something like a battle cry to unify them fully[else]They need a leader, and you're not tough enough. No offense[end if].". cht of Hot Horde is leteq. [-> got gored]
 
 book go gate
 
@@ -1346,11 +1485,15 @@ check entering go gate:
 	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
 
-the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait] [?? what if there are homonyms: two too?]
+the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait]
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. "You don't really see any way out, but you're pretty sure this is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text is "No. Your destiny is here. You must deal with the Very Vile Fairy File, once and for all.". cht of Tarry Tile is leteq. [->merry mile]
+Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
+
+section listless mist mess
+
+the listless mist mess is scenery in Tarry Tile. "It's very thick. No way through."
 
 chapter well worn hell horn
 
@@ -1358,7 +1501,7 @@ the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell h
 
 chapter Very Vile Fairy File
 
-the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of very vile fairy file is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
+the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
 
 description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless."
 
@@ -1403,23 +1546,34 @@ chapter eating
 
 procedural rule while eating something: ignore the carrying requirements rule.
 
+the can't eat unless edible rule is not listed in any rulebook.
+
 check eating:
 	if noun is Mind Malt, say "Worthless. It's empty." instead;
-	if noun is a gaphat, say "Idioms are neat, but this is about rhyming." instead;
+	if noun is a gaphat, say "Idioms are neat, but this adventure is about rhyming." instead;
 	if noun is wild weed, say "That is not filed feed." instead;
 	if noun is full feast, say "Too much for one person. You need to move it somewhere everyone can enjoy it." instead;
-	say "You [if full feast is moot]already had a feast. [end if]You don't need to eat anything explicitly." instead;
+	say "You [if full feast is moot]already had a feast. [end if]don't need to eat anything explicitly." instead;
 
 chapter drinking
+
+the block drinking rule is not listed in any rulebook.
 
 check drinking:
 	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
 	if noun is sage sea or noun is worst wave, say "Sea salt? Ee! Alt!" instead;
-	say "Drink dry? Sink ... sigh ...[one of] (you don't need to DRINK anything in this game.)[or][stopping]" instead;
+	say "Drink dry? Sink ... sigh ... [one of] (you don't need to DRINK anything in this game.)[or][line break][stopping]" instead;
 
 chapter wearing
 
-check wearing a gaphat: say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
+procedural rule while wearing something: ignore the can't wear what's not held rule.
+
+the can't wear what's not clothing rule is not listed in any rulebook.
+
+check wearing:
+	if noun is a gaphat, say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
+	if noun is gold guard, say "You'll wear it when you need to." instead;
+	say "You never need to WEAR anything explicitly in this adventure." instead;
 
 chapter cleaning
 
@@ -1468,11 +1622,11 @@ every turn when sing-clue is true:
 	if song-clue, say "[Toe] bounces around in your head a bit.";
 
 to decide whether song-clue:
-	if player is in violent vale and boring boat is in violent vale and nap-no is false, yes; [now cht of toe tappin is partminus] [->no nappin]
-	if player is in gassed gap and gap-go is false, yes; [now cht of toe tappin is partminus] [now cht of toe tappin is partminus] [->go gappin]
-	if jake g is touchable and jake-fee is true and jake-cocapn is false, yes; [now cht of toe tappin is letminus] [->co capn]
-	if maze-mapped is false and player is in blinding blaze and blaze-ways is true, yes; [now cht of toe tappin is partminus] [->mo mappin]
-	if player is in whining war and war-sapped is false, yes; [now cht of toe tappin is partminus] [->so sappin]
+	if player is in Violent Vale and boring boat is in Violent Vale and nap-no is false, yes; [now cht of toe tappin is partminus] [->no nappin]
+	if player is in Gassed Gap and gap-go is false, yes; [now cht of toe tappin is partminus] [now cht of toe tappin is partminus] [->go gappin]
+	if Jake G is touchable and jake-fee is true and jake-cocapn is false, yes; [now cht of toe tappin is letminus] [->co capn]
+	if maze-mapped is false and player is in Blinding Blaze and blaze-ways is true, yes; [now cht of toe tappin is partminus] [->mo mappin]
+	if player is in Whining War and war-sapped is false, yes; [now cht of toe tappin is partminus] [->so sappin]
 	no;
 
 sing-clues is a number that varies.
@@ -1503,9 +1657,7 @@ check taking:
 	if player has zig zag rig rag and number of things enclosed by the player > 4:
 		alter the multiple object list to { };
 		add noun to multiple object list;
-		now bag-hint is true;
 		say "You're juggling too much! Maybe something you're carrying can be repurposed. Something you've found useless so far.";
-		if tried-yet of "BIG BAG", say "[line break]Like the zig zag rig rag. It could become a big bag now.";
 		the rule succeeds;
 
 chapter sleeping
@@ -1577,14 +1729,18 @@ to check-injury: if least-loss is true and healed-here is false, say "[line brea
 
 to decide which number is toe-clued:
 	let temp be 0;
-	if tried-yet of "SO SAPPIN", increment temp;
-	if tried-yet of "CO CAPN", increment temp;
-	if tried-yet of "GO GAPPIN", increment temp;
-	if tried-yet of "MO MAPPIN", increment temp;
+	if tried-yet of vc-so-sappin rule, increment temp;
+	if tried-yet of vc-co-capn rule, increment temp;
+	if tried-yet of vc-go-gappin rule, increment temp;
+	if tried-yet of vc-mo-mappin rule, increment temp;
 	decide on temp;
 
 to say toe-poss:
-	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if][if toe-clued > 0]. You also found a riff you weren't ready for yet[end if]"
+	now vc-dont-print is true;
+	let tc be toe-clued;
+	say "[if sing-clues is 0]The title just seems so fungible[else if sing-clues is 1]Yes, beyond what you found to start[else if sing-clues is 2]Even more than what you've seen[else if sing-clues is 4]Well, maybe just one more[end if]";
+	if toe-clued > 0, say ". You also found [if toe-clued > 1]some riffs[else]a riff[end if] that will be useful later";
+	now vc-dont-print is false;
 
 to decide which number is carried-fungible:
 	let temp be number of things enclosed by player;
@@ -1593,17 +1749,18 @@ to decide which number is carried-fungible:
 
 check taking when player does not have big bag (this is the need bag for lots of items rule):
 	if carried-fungible > 3:
-		say "You can't carry so much at once! ";
-		if tried-yet of "BIG BAG":
-			say "Perhaps now is a good time to change the zig zag rig rag to a big bag, as you tried before." instead;
-		say "Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
+		say "You can't carry so much at once! Maybe you can finagle, or create, a container that'll let you hold as much as you want." instead;
 
 the need bag for lots of items rule is listed last in the check taking rulebook.
 
 chapter undoing
 
-report undoing an action:
-	say "Wiping one's typing ... TONS!";
+before undoing an action:
+	if save undo state is false:
+		say "You hear a voice booming 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
+		enable saving of undo state;
+	else:
+		say "Wiping one's typing ... TONS!";
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
@@ -1613,7 +1770,7 @@ the block attacking rule is not listed in any rulebook.
 check attacking:
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
-	if noun is Bot Board, say "The bot board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
+	if noun is Bot Board, say "The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
 	if noun is Bull Beast or noun is Beer Bull, say "You'd get a triple-tough cripple-cuff in return. You must fight with words." instead;
 	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]! [one of](NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][line break][stopping]"
 
@@ -1629,11 +1786,20 @@ to say yn-tell: say "[one of](you never need to answer yes/no questions unless s
 
 the block swearing obscenely rule is not listed in any rulebook.
 
-check swearing obscenely: say "Gee, gad! Be bad! 'Me, mad!'" instead;
+check swearing obscenely: say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
 
 the block swearing mildly rule is not listed in any rulebook.
 
 check swearing mildly: try swearing obscenely instead;
+
+chapter smelling
+
+the block smelling rule is not listed in any rulebook.
+
+check smelling:
+	if noun is Reeker Russell, say "Stench-stained, drench-drained." instead;
+	if noun is Gassed Gap, try smelling Reeker Russell instead;
+	say "[one of]'Scent so went. Whoah!'[paragraph break][or][stopping]You don't need to SMELL anything." instead;
 
 chapter listening
 
@@ -1641,7 +1807,7 @@ the block listening rule is not listed in any rulebook.
 
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
-	if player is in whining war, say "[if war-sapped is false]Boy! The whining is pretty intense and constant! You don't see how you could change the whining by itself. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
+	if player is in Whining War, say "[if war-sapped is false]Boy! The whining is pretty intense and constant! You don't see how you could change the whining by itself. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
 	if player is in History Hall and mistmall is true:
 		if Toe is in History Hall, try examining Toe Tappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
@@ -1655,86 +1821,74 @@ ever-thought is a truth state that varies.
 
 the block thinking rule is not listed in any rulebook.
 
-to read-laters (ts - a truth state):
+a which-think is a kind of value. the which-thinks are no-details, doable-now, undoable-now. [ we could use 2 booleans for read-laters below, but that is awkward magic number stuff]
+
+to read-laters (wt - a which-think):
 	let thought-any be false;
-	repeat through table of forlaters:
-		if ready-to-hint entry is true:
-			if is-done entry is true:
-				if debug-state is true, say "(DEBUG NOTE) Somehow the [cmd-to-say entry] is-done entry didn't get wiped out after the score adjustments.";
-				now ready-to-hint entry is false;
-				next; [ this may duplicate code from the score and thinking changes rules but I'm still a bit nervous about it at the moment. This shuts the door 100%. ]
-			process the can-do-now entry; [?? surround with vc-dont-print being true then false ??]
-			let Q be whether or not the rule succeeded;
-			if Q is not ts, next;
+	repeat through table of verb checks:
+		if think-cue entry is true:
+			if idid entry is true:
+				say "DEBUG note--I forgot to clear [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if] somehow. It would be nice to know how and when this happened.";
+				now think-cue entry is false;
+				next;
+			process the ver-rule entry;
+			let rb-out be the outcome of the rulebook;
+			let pre-bug be whether or not ver-rule entry is vc-mean-muggin rule or ver-rule entry is vc-lean-luggin rule;
+			if wt is no-details:
+				if there is a think-advice entry and not too-distracted, next;
+				if pre-bug is true, next;
+				if thought-any is false, say "[line break]";
+				now thought-any is true;
+				say "[if too-distracted]You are still too distracted to figure where and how to[else]You can probably now[end if] try [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if][r][if rb-out is the unavailable outcome], but you may have to go back to the right place[end if].";
+				next;
+			if there is no think-advice entry or too-distracted:
+				unless pre-bug is true, next;
+			if wt is doable-now and rb-out is the not-yet outcome, next;
+			if wt is undoable-now and rb-out is the ready outcome, next;
 			if thought-any is false, say "[line break]";
-			if the rule succeeded, say "([b]CAN DO NOW[r]) ";
+			if rb-out is the ready outcome, say "([b]CAN DO NOW[r]) ";
 			now thought-any is true;
 			say "[think-advice entry][line break]";
 
 to check-flip-verbs:
-	if player is in soft sand and ever-loft is true, say "[line break]You can switch between LOFT LAND and SOFT SAND freely.";
-	if player is in history hall and ever-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
+	if player is in Soft Sand and ever-loft is true, say "[line break]You can switch between LOFT LAND and SOFT SAND freely.";
+	if player is in History Hall and ever-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
 
 check thinking:
-	let thought-any be false;
-	say "Here's general information you know from your experience so far: [rhyme-display][line break]You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do.";
+	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if].";
 	if all-hinted is 0:
 		say "[line break]But you don't have leads for any puzzles right now." instead;
 	now vc-dont-print is true;
 	check-flip-verbs;
-	read-laters true;
-	read-laters false;
+	read-laters no-details;
+	read-laters doable-now;
+	read-laters undoable-now;
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
-	if boat-reject is true and nap-no is true and lake lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
+	if boat-reject is true and nap-no is true and Lake Lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
 	if number of optional-noted things > 0:
 		say "You also know several things that are optional to figure out: [list of optional-noted things].";
 	check-injury;
 	now vc-dont-print is false;
 	the rule succeeds;
 
-to decide whether tried-yet of (ct - text):
+to decide whether tried-yet of (vc - a rule):
 	let tried-any be false;
-	repeat through table of forlaters:
-		if ct is cmd-to-say entry:
+	repeat through table of verb checks:
+		if vc is ver-rule entry:
 			now tried-any is true;
-			if ready-to-hint entry is true:
-				process the can-do-now entry;
-				if the rule succeeded, decide yes;
-	if tried-any is false, say "I tried to check if [ct] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
+			if think-cue entry is true and idid entry is false, decide yes;
+	if tried-any is false, say "I tried to check if [vc] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
 	decide no;
 
-to clue-later (ct - text):
-	if vc-dont-print is true, continue the action;
-	repeat through table of forlaters:
-		if ct is cmd-to-say entry:
-			if debug-state is true and ready-to-hint entry is true, say "(DEBUG re-checking)[line break]";
-			if ready-to-hint entry is false, now think-clue-flag is true;
-			now ready-to-hint entry is true;
-			continue the action;
-	now think-clue-flag is true;
-	say "Oops. I tried to save [ct] in the THINK command for later, but failed[not-crit-but].";
-
-to clue-zap (ct - text):
-	repeat through table of forlaters:
-		if ct is cmd-to-say entry:
-			now ready-to-hint entry is false;
-			continue the action;
-	say "Oops, I tried to de-hint [ct] in the THINK command for later but failed[not-crit-but].";
-
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
-
-think-clue-flag is a truth state that varies.
-
-every turn when think-clue-flag is true (this is the note right guess wrong time rule):
-	say "[line break][one of][b]NOTE[r]: this command will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command again saved to [b]THINK[r] for later reference.)[stopping]";
-	now think-clue-flag is false;
-	continue the action;
 
 chapter score
 
 to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
+
+total-good-guesses is a number that varies.
 
 check requesting the score:
 	now vc-dont-print is true;
@@ -1744,12 +1898,12 @@ check requesting the score:
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0:
-		say "You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready, and [if dh is 0][it-they of dh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
+		say "You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready, and [if dh is 0][it-they of fh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
 	else:
 		say "There are no tasks you have figured out but weren't quite ready.";
 	if lurking lump is not off-stage:
 		let gguess be next-lump-level - lump-count;
-		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing.";
+		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
 	now vc-dont-print is false;
 	the rule succeeds;
 
@@ -1767,26 +1921,25 @@ this is the score and thinking changes rule:
 			now done-yet entry is true;
 			say "[line break][rank-txt entry][line break]";
 
-to decide which number is doable-hinted:
+to decide which number is can-do-hint of (ts - a truth state):
 	let temp be 0;
 	now vc-dont-print is true;
-	repeat through the table of forlaters:
-		if ready-to-hint entry is true:
-			process the can-do-now entry;
-			if the rule succeeded:
-				if is-done entry is false, increment temp;
+	repeat through the table of verb checks:
+		if think-cue entry is true:
+			process the ver-rule entry;
+			let rb-out be the outcome of the rulebook;
+			if ts is true:
+				if rb-out is the ready outcome or rb-out is the unavailable outcome, increment temp; [the reason for "unavailable" is because we also want to track when the beer bull distracts us. That is the only way we can both be unavailable and the think-cue entry is true.]
+			else if rb-out is the not-yet outcome:
+				increment temp;
 	now vc-dont-print is false;
 	decide on temp;
 
+to decide which number is doable-hinted:
+	decide on can-do-hint of true;
+
 to decide which number is future-hinted:
-	let temp be 0;
-	now vc-dont-print is true;
-	repeat through the table of forlaters:
-		if ready-to-hint entry is true:
-			process the can-do-now entry;
-			unless the rule succeeded, increment temp;
-	now vc-dont-print is false;
-	decide on temp;
+	decide on can-do-hint of false;
 
 to decide which number is all-hinted: decide on doable-hinted + future-hinted;
 
@@ -1870,7 +2023,7 @@ definition: a thing (called th) is readable:
 read-exam-note is a truth state that varies.
 
 carry out reading:
-	if noun is evidencey, say "Yes, [the noun]'s details are important, but not to your quest specifically." instead;
+	if noun is evidencey, say "Yes, [the noun]'s details are important, but you've gotten enough." instead;
 	repeat through table of readables:
 		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
 	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
@@ -1956,12 +2109,12 @@ carry out verbsing:
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really. The verb should never involve proper names, though clever or sensible guesses may help you gain a hint/spoiler item.";
 	say "[b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da][b]ABOUT[r] and [b]CREDITS[r] give general information.";
-	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
-	check-flip-verbs;
-	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
+	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
+	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
 	say "Finally, [2da]OPTS lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
+	check-flip-verbs;
 	the rule succeeds.
 
 to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
@@ -2112,7 +2265,7 @@ rule for supplying a missing noun when lling:
 		say "You are so focused inward, you just point the learner at yourself.";
 		now the noun is the player;
 	else:
-		say "You wave the leet learner all around...";
+		say "You wave the leet learner all around [location of player]...";
 		now the noun is the location of the player;
 	continue the action;
 
@@ -2129,16 +2282,17 @@ to say ll-cheat of (th - a thing):
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
-	if cht of noun is phbt, say "The needle area of the leet learner stays dark when you scan [the noun][if noun is a room], so there's nothing you need to do with the room title[end if]." instead;
 	if noun is Here Hull:
-		say "Only the beer bull picks anything up.";
-		try lling beer bull instead;
+		say "Only the Beer Bull picks anything up.";
+		try lling Beer Bull instead;
 	if noun is Store All Stage and coral cage is not moot:
-		say "You suspect 'Store All' counts as one word for the learner's purposes.[paragraph break]";
+		say "Only the coral cage picks anything up.[paragraph break]";
+		try lling coral cage instead;
 	if noun is ceiling seer:
 		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
 		try lling location of player instead;
-	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on[end if] [the noun].[if zap-weird-break is true][run paragraph on][end if]";
+	if cht of noun is phbt, say "The needle area of the leet learner stays dark when you scan [the noun][if noun is a room], so there's nothing you need to do with the room title[end if]." instead;
+	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on [the noun][end if].[if zap-weird-break is true][run paragraph on][end if]";
 	if noun is optional and ever-opt-scan is false:
 		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
 		now ever-opt-scan is true;
@@ -2149,13 +2303,13 @@ report lling:
 
 ever-leet-clue is a truth state that varies.
 
-to say leetclue of (x - a cheattype):
+to say leetclue of (x - a cheattype) and (isopt - a truth state):
 	if shut-scan is true, continue the action;
-	say "[line break]As you say/think this, the Leet Learner needle [scancol of x]";
-	if fun fen is visited and ever-leet-clue is true, continue the action;
+	say "[line break]As you say/think this, the Leet Learner[if isopt is true] dims a bit, and the[end if] needle [scancol of x]";
+	if Fun Fen is visited and ever-leet-clue is true, continue the action;
 	now ever-leet-clue is true;
 	if leetcool is 0:
-		say ". Once you figure out what to do, you may wish to remember how the words you saw or read combined with the Leet Learner reading";
+		say ". Once you do something that makes progress, you may wish to remember how the words you saw or read combined with the Leet Learner reading";
 		now leetcool is a random number between 3 and 6;
 	else:
 		decrement leetcool;
@@ -2228,10 +2382,10 @@ to say sorry-bull: say ". Sorry. But you can try as often as you need"
 carry out hinting:
 	abide by the welp-wow-check rule;
 	if in-bull-chase is true:
-		if player does not have snuck snare, say "You don't have what you need to neutralize the beer bull yet[sorry-bull]." instead;
-		if dives ditch is unvisited, say "You haven't found the place to take the beer bull too, yet. Sorry. But you can try as often as you need[sorry-bull].";
-		if snuck snare is not moot, say "[one of]You won't have time to place the snuck snare AND sucker the bull beast this chase, but you will be able to place the snare. HINT again to see where to put the snare[or]You will automatically put the snare in [dives ditch] once you get there[if kni-ni is false], though you need to change the name, first[end if][stopping]." instead;
-		say "You need to lure the beer bull to [dives ditch] now you've placed the snare." instead;
+		if player does not have snuck snare, say "You don't have what you need to neutralize the Beer Bull yet[sorry-bull]." instead;
+		if dives ditch is unvisited, say "You haven't found the place to take the Beer Bull too, yet. Sorry. But you can try as often as you need[sorry-bull].";
+		if snuck snare is not moot, say "[one of]You won't have time to place the snuck snare AND sucker the Bull Beast this chase, but you will be able to place the snare. HINT again to see where to put the snare[or]You will automatically put the snare in [dives ditch] once you get there[if kni-ni is false], though you need to change the name, first[end if][stopping]." instead;
+		say "You need to lure the Beer Bull to [dives ditch] now you've placed the snare." instead;
 	process room-hint-rule of location of player;
 	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but you can still hint specific things in [location of player] with HINT (object).";
 	the rule succeeds.
@@ -2251,7 +2405,7 @@ section hint room rule definitions
 a room has a rule called room-hint-rule. room-hint-rule of a room is usually trivially false rule. [postalf]
 
 room-hint-rule of Airy Isle is airy-isle-hint rule.
-room-hint-rule of Been Buggin' is been-buggin-hint rule.
+room-hint-rule of Been Buggin is been-buggin-hint rule.
 room-hint-rule of Blinding Blaze is blinding-blaze-hint rule.
 room-hint-rule of Creased Cross is creased-cross-hint rule.
 room-hint-rule of Curst Cave is curst-cave-hint rule.
@@ -2294,14 +2448,14 @@ this is the been-buggin-hint rule:
 		the rule fails;
 	if buggin-score is 0, say "[one of]There are two things to do, and they can be done in any order, so I picked one at random.[or][stopping]";
 	if should-mug-first:
-		say "[one of]You need to look a bit tougher, since you've been buggin['][or]You need to change your facial expression[or]Change your facial expression with [b]MEAN MUGGIN[r][stopping].";
+		say "[one of]You need to look a bit tougher, since you've Been Buggin['][or]You need to change your facial expression[or]Change your facial expression with [b]MEAN MUGGIN[r][stopping].";
 	else:
 		say "[one of]You need to be able to carry more weight.[or]You need to be stronger and, not quite thinner, but ...[or]...leaner.[or]LEAN LUGGIN.[stopping]";
 	the rule succeeds;
 
 this is the blinding-blaze-hint rule:
 	if blaze-ways is true, the rule fails;
-	say "[one of]The blinding blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become WINDING WAYS. There are actually three acceptable answers here[or]WINDING WAYS, MINDING MAZE or FINDING PHASE[stopping].";
+	say "[one of]The Blinding Blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become WINDING WAYS. There are actually three acceptable answers here[or]WINDING WAYS, MINDING MAZE or FINDING PHASE[stopping].";
 	the rule succeeds;
 
 this is the creased-cross-hint rule:
@@ -2349,11 +2503,11 @@ this is the got-gear-hot-here-hint rule:
 	say "You need to change the marred mat."
 
 this is the here-hull-hint rule:
-	if beer bull is moot, the rule fails;
+	if Beer Bull is moot, the rule fails;
 	say "You need to dispose of the Beer Bull, here. There are hints for it, if you need them.";
 
 this is the history-hall-hint rule:
-	if mean moe's is moot and gutta ganksta is moot and poor ponder is moot, the rule fails;
+	if mean moe's is moot and Gutta Ganksta is moot and poor ponder is moot, the rule fails;
 	if ever-mall is true:
 		say "You can pretty much twiddle the Mystery Mall and History Hall as you want. There are plenty of things to hint in each of them.";
 	else:
@@ -2367,10 +2521,10 @@ this is the lake-lea-hint rule:
 	the rule fails.
 
 this is the pit-pound-hint rule:
-	if hit hound is in pit pound:
+	if hit hound is in Pit Pound:
 		say "The hit hound has your full attention here.";
 		try hintobjing hit hound instead;
-	say "[one of]The pit pound still leaves you uncomfortable[or]Like you don't belong here[or]FIT FOUND[stopping]."
+	say "[one of]The Pit Pound still leaves you uncomfortable[or]Like you don't belong here[or]FIT FOUND[stopping]."
 
 this is the po-pit-hint rule:
 	if grit-grown is false:
@@ -2419,7 +2573,7 @@ this is the store-all-stage-hint rule:
 
 this is the tarry-tile-hint rule:
 	if well worn hell horn is in Tarry Tile:
-		say "You can do something with this location [once-now of can-merry-mile rule] the well worn hell horn is dealt with.";
+		say "You can do something with this location [once-now of vc-merry-mile rule] the well worn hell horn is dealt with.";
 	else if merry-mile is false:
 		say "[one of]The Tarry Tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
 	else:
@@ -2433,13 +2587,13 @@ this is the trim-tram-hint rule:
 		say "[one of]You can't get FIND FEE out of your head. It distracts you from thinking of you.[or]Wait, 'you' is the wrong pronoun from your perspective.[or]What can you do to ME?[or]MIND ME.[stopping]";
 
 this is the vending-vibe-hint rule:
-	if trending tribe is moot, the rule fails;
-	say "You can deal with the trending tribe here.";
+	if Trending Tribe is moot, the rule fails;
+	say "You can deal with the Trending Tribe here.";
 	process the trending-tribe-hint rule;
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
-		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
+		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homophone that makes sense[or]You need to FIND FAULT[stopping].";
 	else:
 		say "[one of]The mean mass is a bit trickier. The leet learner swings to the left[or]If you've been observant, you may notice VINED VAULT and MIND MALT swung center-right and center-left, respectively, for FIND FAULT. This may help you guess what swinging left could mean[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
 	the rule succeeds;
@@ -2449,7 +2603,7 @@ this is the violent-vale-hint rule:
 		say "You've done all you need to here.";
 		the rule fails;
 	if float is off-stage:
-		say "[one of]You need to make the violent vale less violent[or]Quieter, perhaps[or]SILENT SAIL (or SALE)[stopping].";
+		say "[one of]You need to make the Violent Vale less violent[or]Quieter, perhaps[or]SILENT SAIL (or SALE)[stopping].";
 		the rule succeeds;
 	if fridge is not moot:
 		say "Have a look at the fridge, for the moment.";
@@ -2494,17 +2648,41 @@ section thing hint rule definitions
 
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
-the thing-hint-rule of backed binder is backed-binder-hint rule.
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
-the thing-hint-rule of big bag is big-bag-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
-the thing-hint-rule of boring boat is the boring-boat-hint rule.
 the thing-hint-rule of Bot Board is bot-board-hint rule.
 the thing-hint-rule of Bull Beast is the bull-beast-hint rule.
+the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
+the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
+the thing-hint-rule of FIND FEE is find-fee-hint rule.
+the thing-hint-rule of Fussed Folks Just Jokes is fussed-folks-just-jokes-hint rule.
+the thing-hint-rule of GOTS GAME is gots-game-hint rule.
+the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
+the thing-hint-rule of Here Hip Queer Quip is the here-hip-queer-quip-hint rule.
+the thing-hint-rule of Hot Horde is bot-board-hint rule.
+the thing-hint-rule of Jake G is the jake-g-hint rule.
+the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
+the thing-hint-rule of Lending Libe is lending-libe-hint rule.
+the thing-hint-rule of Lot Lord is bot-board-hint rule.
+the thing-hint-rule of Mean Moe's Clean Clothes is the mean-moes-clean-clothes-hint rule.
+the thing-hint-rule of Minding Maze is minding-maze-hint rule.
+the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
+the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
+the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
+the thing-hint-rule of Sage Sea is sage-sea-hint rule.
+the thing-hint-rule of Shoaled Shard is the shoaled-shard-hint rule.
+the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
+the thing-hint-rule of Too Totes New Notes is the too-totes-new-notes-hint rule.
+the thing-hint-rule of Trending Tribe is trending-tribe-hint rule.
+the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
+the thing-hint-rule of We Whine ME MINE is the we-whine-me-mine-hint rule.
+the thing-hint-rule of Weird Way is the weird-way-hint rule.
+the thing-hint-rule of backed binder is backed-binder-hint rule.
+the thing-hint-rule of big bag is big-bag-hint rule.
+the thing-hint-rule of boring boat is the boring-boat-hint rule.
 the thing-hint-rule of cache cap is cache-cap-hint rule.
 the thing-hint-rule of cage key is cage-key-hint rule.
 the thing-hint-rule of cake cap is all-caps-hint rule.
-the thing-hint-rule of Cark Cliff is cark-cliff-hint rule.
 the thing-hint-rule of ceiling seer is ceiling-seer-hint rule.
 the thing-hint-rule of clashing cloak is the clashing-cloak-hint rule.
 the thing-hint-rule of clumped cluster is the clumped-cluster-hint rule.
@@ -2512,68 +2690,46 @@ the thing-hint-rule of cold card is the cold-card-hint rule.
 the thing-hint-rule of cool cap is all-caps-hint rule.
 the thing-hint-rule of coral cage is coral-cage-hint rule.
 the thing-hint-rule of dark door is the dark-door-hint rule.
-the thing-hint-rule of Dean Duggan is dean-duggan-hint rule.
 the thing-hint-rule of dining door is dining-door-hint rule.
 the thing-hint-rule of done den is done-den-hint rule.
-the thing-hint-rule of FIND FEE is find-fee-hint rule.
 the thing-hint-rule of flooring float is the flooring-float-hint rule.
 the thing-hint-rule of frightening fridge is frightening-fridge-hint rule.
 the thing-hint-rule of full feast is the full-feast-hint rule.
-the thing-hint-rule of Fussed Folks Just Jokes is fussed-folks-just-jokes-hint rule.
 the thing-hint-rule of gash gap is cache-cap-hint rule.
 the thing-hint-rule of go gate is go-gate-hint rule.
 the thing-hint-rule of gold guard is gold-guard-hint rule.
 the thing-hint-rule of good gun is good-gun-hint rule.
-the thing-hint-rule of GOTS GAME is gots-game-hint rule.
 the thing-hint-rule of grow grate is grow-grate-hint rule.
-the thing-hint-rule of Gutta Ganksta is gutta-ganksta-hint rule.
 the thing-hint-rule of ha half nah naff is ha-half-nah-naff-hint rule.
 the thing-hint-rule of hard hat is all-caps-hint rule.
 the thing-hint-rule of hit hound is hit-hound-hint rule.
 the thing-hint-rule of hive heap is hive-heap-hint rule.
-the thing-hint-rule of Hot Horde is bot-board-hint rule.
-the thing-hint-rule of Jake G is the jake-g-hint rule.
 the thing-hint-rule of jerk gel is jerk-gel-hint rule.
-the thing-hint-rule of Kerry Kyle is kerry-kyle-hint rule.
 the thing-hint-rule of leet learner is leet-learner-hint rule.
-the thing-hint-rule of Lending Libe is lending-libe-hint rule.
-the thing-hint-rule of Lot Lord is bot-board-hint rule.
+the thing-hint-rule of listless mist mess is the listless-mist-mess-hint rule.
 the thing-hint-rule of lurking lump is lurking-lump-hint rule.
 the thing-hint-rule of marred mat is marred-mat-hint rule.
 the thing-hint-rule of mean mass is mean-mass-hint rule.
-the thing-hint-rule of Mean Moe's Clean Clothes is the mean-moes-clean-clothes-hint rule.
 the thing-hint-rule of mild mead is mild-mead-hint rule.
 the thing-hint-rule of mind malt is mind-malt-hint rule.
-the thing-hint-rule of minding maze is minding-maze-hint rule.
 the thing-hint-rule of needle is leet-learner-hint rule.
-the thing-hint-rule of Oi Mo by Tim T Sims Pimp is oi-mo-hint rule.
-the thing-hint-rule of Pain Peasant is pain-peasant-hint rule.
 the thing-hint-rule of paper pile is paper-pile-hint rule.
 the thing-hint-rule of peeling pier is peeling-pier-hint rule.
 the thing-hint-rule of pining poor is dining-door-hint rule. [pining poor and dining door both map to mining more]
 the thing-hint-rule of poor ponder for fonder is poor-ponder-for-fonder rule.
 the thing-hint-rule of prong part is prong-part-hint rule.
-the thing-hint-rule of Reeker Russell is reeker-russell-hint rule.
 the thing-hint-rule of row writ is row-writ-hint rule.
-the thing-hint-rule of Sage Sea is sage-sea-hint rule.
 the thing-hint-rule of screaming skull is screaming-skull-hint rule.
-the thing-hint-rule of Shoaled Shard is the shoaled-shard-hint rule.
 the thing-hint-rule of shy shawl is the shy-shawl-hint rule.
 the thing-hint-rule of snuck snare is the snuck-snare-hint rule.
 the thing-hint-rule of sought sword is sought-sword-hint rule.
 the thing-hint-rule of steel steer is steel-steer-hint rule.
 the thing-hint-rule of stuck stair is the stuck-stair-hint rule.
 the thing-hint-rule of tall tree is tall-tree-hint rule.
-the thing-hint-rule of Toe Tappin Row Rappin is toe-tappin-row-rappin-hint rule.
-the thing-hint-rule of Too Totes New Notes is the too-totes-new-notes-hint rule.
 the thing-hint-rule of tool tap is tool-tap-hint rule.
 the thing-hint-rule of trash trap is cache-cap-hint rule.
-the thing-hint-rule of trending tribe is trending-tribe-hint rule.
-the thing-hint-rule of vapor vile is vapor-vile-hint rule.
-the thing-hint-rule of Very Vile Fairy File is very-vile-fairy-file-hint rule.
+the thing-hint-rule of vapor vial is vapor-vial-hint rule.
 the thing-hint-rule of way woke clay cloak is the way-woke-clay-cloak-hint rule.
-the thing-hint-rule of We Whine ME MINE is the we-whine-me-mine-hint rule.
-the thing-hint-rule of Weird Way is the weird-way-hint rule.
 the thing-hint-rule of well worn hell horn is well-worn-hell-horn-hint rule.
 the thing-hint-rule of wild weed is wild-weed-hint rule.
 the thing-hint-rule of worst wave is worst-wave-hint rule.
@@ -2591,6 +2747,9 @@ ttnn-yet is a truth state that varies.
 
 ssh-yet is a truth state that varies.
 
+to say part-ev of (x - a thing):
+	say "You don't need to do anything with [the x]. It [if Airy Isle is visited]got you to the final area[else if Gassed Gap is visited]will get you past the gap[else]will help automatically unlock a passage later[end if]."
+
 section thing hint rules [xxthr] [??general problems with what if you already know a certain command and the hints may not know this]
 
 this is the all-caps-hint rule:
@@ -2602,11 +2761,11 @@ this is the all-caps-hint rule:
 		say "You can use the jerk gel to glue the hats together, but you need the right command.";
 
 this is the backed-binder-hint rule:
-	say "[if gassed gap is unvisited]The backed binder is not useful immediately. But it is part of what you need to get to the final area[else]You will automatically use the backed binder to get past the gassed gap[end if].";
+	say "[part-ev of backed binder].";
 
 this is the beer-bull-hint rule:
 	if bull-null is false:
-		say "[one of]The beer bull is too powerful in its present form! You have to lessen its power a bit. A pretty simple rhyme will work[or]NEAR NULL[stopping]." instead;
+		say "[one of]The Beer Bull is too powerful in its present form! You have to lessen its power a bit. A pretty simple rhyme will work[or]NEAR NULL[stopping]." instead;
 	if ever-bull-chase is false, say "[one of]You need to provoke the Beer Bull to chase you[or]There's a phrase that might insult something or someone who is part of something as exciting as alcohol advertising[or]DEAR DULL[stopping]." instead;
 	if in-bull-chase is false
 	, say "You can say DEAR DULL to get the bull to chase you again." instead;
@@ -2637,9 +2796,9 @@ this is the bot-board-hint rule:
 
 this is the bull-beast-hint rule:
 	if need-loss is true:
-		if tried-yet of "LEAST LOSS", say "Now is the time to go in for LEAST LOSS." instead;
+		if tried-yet of vc-least-loss rule, say "Now is the time to go in for LEAST LOSS." instead;
 		say "[one of]The Beast Boss/Bull Beast is going to hurt you, no question. But you want to minimize the damage[or]LEAST LOSS[stopping]." instead;
-	if tried-yet of "CULL CEASED", say "You already tried to say CULL CEASED. Now, it will work!" instead; [?? what if LUL LEAST??]
+	if tried-yet of vc-cull-ceased rule, say "You already tried to say CULL CEASED. Now, it will work!" instead; [?? what if LUL LEAST??]
 	say "[one of]You need to say or do something that will put the Bull Beast down[or]There are two ways to nail the Bull Beast[or][one of]CULL CEASED tells the Bull Beast its rampaging days are over[or]LUL LEAST is a put-down that leaves the beast in shame[stopping][stopping].";
 
 this is the cache-cap-hint rule:
@@ -2660,11 +2819,11 @@ this is the ceiling-seer-hint rule:
 	say "The Ceiling Seer is just there to reinforce what you need to do in the Real Rear. The -ing in each act is superfluous.";
 
 this is the clashing-cloak-hint rule:
-	if tried-yet of "SMASHING SMOKE":
+	if tried-yet of vc-smashing-smoke rule:
 		say "You know what to do with the cloak, but the question is, where?";
 		if poor ponder is not moot:
 			say "You haven't unlocked the room, yet. You need to look at [poor ponder] [here-in of History Hall].";
-		else if y'old yard is unvisited:
+		else if Y'Old Yard is unvisited:
 			say "You haven't visited beyond [poor ponder].";
 		else:
 			say "Using the cloak in Y'Old Yard will help the Bold Bard.";
@@ -2676,7 +2835,7 @@ this is the clumped-cluster-hint rule:
 	say "[one of]The clumped cluster can be moved two ways. Either is equivalent[or]You can use an order to move the cluster or find an item[or][one of]BUMPED BUSTER is one way[or]DUMPED DUSTER is one way[cycling] to clear the clumped cluster[stopping].";
 
 this is the cold-card-hint rule:
-	say "You need to bring the cold card somewhere as a voucher[one of]. Hint again to see where[or]. [if the room east of vending vibe is nowhere]You will need to change Mystery Mall back, first[else if vending vibe is unvisited]You need to visit west of Mystery Mall[else if trending tribe is moot]The Lending Libe[else]The Vending Vibe, but first you must deal with the Trending Tribe[end if][stopping]."
+	say "You need to bring the cold card somewhere as a voucher[one of]. Hint again to see where[or]. [if the room east of Vending Vibe is nowhere]You will need to change Mystery Mall back, first[else if Vending Vibe is unvisited]You need to visit west of Mystery Mall[else if Trending Tribe is moot]The Lending Libe[else]The Vending Vibe, but first you must deal with the Trending Tribe[end if][stopping]."
 
 this is the coral-cage-hint rule:
 	if player does not have cage key:
@@ -2708,7 +2867,7 @@ this is the frightening-fridge-hint rule:
 	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
 
 this is the full-feast-hint rule:
-	if tried-yet of "PULL PIECED":
+	if tried-yet of vc-pull-pieced rule:
 		say "You know what to do with the full feast. Nobody's ready for it yet." instead;
 	say "[one of]The full feast is too much to carry by yourself all at once[or]You can bring the full feast over a bit at a time[or]PULL PIECED[stopping].";
 
@@ -2731,10 +2890,13 @@ this is the grow-grate-hint rule:
 	process the go-gate-hint rule;
 
 this is the gutta-ganksta-hint rule:
-	say "[one of]This is a tricky one. The gutta ganksta's tattoo is/was more important.[or]Calling the gutta ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
+	say "[one of]This is a tricky one. The Gutta Ganksta's tattoo is/was more important.[or]Calling the Gutta Ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
 
 this is the ha-half-nah-naff-hint rule:
 	say "HA HALF will tell you if one of your words is right. NAH NAFF hides that.";
+
+this is the here-hip-queer-quip-hint rule:
+	say "[part-ev of queer quip]."
 
 this is the hit-hound-hint rule:
 	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
@@ -2772,6 +2934,9 @@ this is the leet-learner-hint rule:
 this is the lending-libe-hint rule:
 	say "Now that you have the Lending Libe, you can take whatever books you need."
 
+this is the listless-mist-mess-hint rule:
+	say "The listless mist mess is just there to make it clear this is your final destination."
+
 this is the lurking-lump-hint rule:
 	say "The lurking lump can be used to bypass any available local puzzle with [jjj]. It gains charges when you make enough good guesses--some especially amusing guesses may count extra.";
 	say "[line break][one of]HINT the lump again to see the mechanics of when you get a good guess[or]The lump drops after the first [next-lump-level in words] good guesses, then the next [(next-lump-level + next-lump-delta) in words], then [(next-lump-level + (2 * next-lump-delta)) in words], and so on. Particularly good guesses (author's discretion,) or bonus points, count double[stopping]."
@@ -2800,7 +2965,7 @@ this is the mind-malt-hint rule: say "The mind malt is just there to give anothe
 
 this is the minding-maze-hint rule:
 	if toe tappin row rappin is not acquired, say "You don't have what you need yet to get through the maze. You need a riff on another item." instead;
-	say "[one of]You need to think outside the box, or the maze, for the minding maze.[or]If you have Toe Tappin in your head, well, you may have a clue you need to use it.[or]What do you need to do to get through a maze?[or]You need to MAP it. A lot.[or]You can only map a bit if you just use your head.[or]MO MAPPIN will make mapping the maze go faster.[stopping]";
+	say "[one of]You need to think outside the box, or the maze, for the Minding Maze.[or]If you have Toe Tappin in your head, well, you may have a clue you need to use it.[or]What do you need to do to get through a maze?[or]You need to MAP it. A lot.[or]You can only map a bit if you just use your head.[or]MO MAPPIN will make mapping the maze go faster.[stopping]";
 
 this is the oi-mo-hint rule:
 	say "[one of]Oi Mo['] is a bad song, but there may be a way to tune it out.[or]This is a bit tricky, because it relies on something different than the usual mechanic. That's why it's an optional point.[or]Everything is in the XimX format.[or]DIMD will turn the volume down.[stopping]"
@@ -2837,7 +3002,7 @@ this is the sage-sea-hint rule:
 this is the screaming-skull-hint rule: say "[one of]If there only were a way to make the screaming skull less imposing![or]Maybe there is a way the skull can make less noise as well.[or]DREAMING DULL.[stopping]"
 
 this is the shoaled-shard-hint rule:
-	say "The Shoaled Shard is just the place the Bold Bard need[if bold bard is moot]s[else]ed[end if] to get to. It's irrelevant on its own."
+	say "The Shoaled Shard is just the place the Bold Bard need[if Bold Bard is moot]s[else]ed[end if] to get to. It's irrelevant on its own."
 
 this is the shy-shawl-hint rule:
 	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]The shawl looks silly and stupid and wrong. There's a right way to make light of this, spoiled if you HINT again[or]LIE LOL[stopping]."
@@ -2882,10 +3047,10 @@ this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
 	say "[one of]You can request something from the tool tap.[or]It might not be a tool, but who knows when it comes in handy.[or]Summon a COOL CAP.[stopping]"
 
 this is the trending-tribe-hint rule:
-	say "[one of]The trending tribe seems very focused on money.[or]What is something that would be free that might disappoint the trending tribe?[or]LENDING LIBE.[stopping]"
+	say "[one of]The Trending Tribe seems very focused on money.[or]What is something that would be free that might disappoint the Trending Tribe?[or]LENDING LIBE.[stopping]"
 
-this is the vapor-vile-hint rule:
-	say "[one of]It would be nice if the vapor vile became something more substantive.[or]It can become a PAPER PILE.[stopping]"
+this is the vapor-vial-hint rule:
+	say "[one of]It would be nice if the vapor vial became something more useful or at least less toxic.[or]It can become a PAPER PILE.[stopping]"
 
 this is the very-vile-fairy-file-hint rule:
 	if merry-mile is false:
@@ -2949,32 +3114,34 @@ to decide whether goto-available:
 	yes.
 
 definition: a room (called rm) is available-from-here:
+	let mrrm be map region of rm;
 	if rm is unvisited, no;
-	if map region of rm is Worst Whew, no;
 	if player is in Tarry Tile, no;
-	if rm is Here Hull and beer bull is moot, no;
-	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, no;
+	if rm is Here Hull and Beer Bull is moot, no;
+	if mrrm is Worst Whew, no;
+	if mrrm is Browsy Breaks, no;
 	if rm is Shirk Shell and jerk gel is not in Shirk Shell, no;
 	yes;
 
 to decide which room is fliproom of (rm - a room):
 	if mistmall is true:
-		if rm is got gear hot here, decide on History Hall;
+		if rm is Got Gear Hot Here, decide on History Hall;
 	else:
 		if rm is Y'Old Yard or rm is Vending Vibe, decide on History Hall;
 	if loft-land is true:
-		if rm is shirk shell, decide on Soft Sand;
+		if rm is Shirk Shell, decide on Soft Sand;
 	else:
-		if rm is curst cave, decide on Soft Sand;
+		if rm is Curst Cave, decide on Soft Sand;
 	decide on Fun Fen;
 
 carry out gotoing:
 	let rm be location of player;
 	if noun is rm, say "Already there! Er, here." instead;
 	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
-	if in-bull-chase is true, say "Sorry, GO TO is disabled during the bull chase." instead;
-	if rm is Been Buggin' or rm is Lake Lea or rm is Lake Lap, say "Sorry, GO TO is disabled during this side quest." instead;
-	if mrlp is verminous vale, say "There's no way back. You are so close to the end." instead;
+	if in-bull-chase is true, say "Sorry, GO TO is disabled during the Beer Bull chase." instead;
+	if mrlp is Browsy Breaks, say "Sorry, GO TO is disabled during this side-quest." instead;
+	if mrlp is Vale Verminous, say "There's no way back. You are so close to the end." instead;
+	if need-healing, say "You can't zoom around in your weakened state. But maybe what you need is close by." instead;
 	if noun is available-from-here:
 		let N be fliproom of noun;
 		say "[line break]You twiddle [N] back as you go.";
@@ -2982,7 +3149,7 @@ carry out gotoing:
 		if N is Soft Sand, now loft-land is whether or not loft-land is false;
 		move player to noun;
 	else:
-		say "You can't get to [noun] from here.";
+		say "You can't walk to [noun] from here.";
 	the rule succeeds;
 
 section gotothinging
@@ -3047,10 +3214,11 @@ when play begins (this is the opening text rule):
 	now the left hand status line is "West Wall";
 	force-status;
 	process the check-skip-intro rule;
-	if the rule succeeded, continue the action;
+	let skip-stuff be whether or not the rule succeeded;
 	if debug-state is false, ask-screenread;
+	if skip-stuff is true, continue the action;
 	say "[paragraph break]You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
-	say "'So, you want to get goin[']? Well, I might be able to help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
+	say "'Hey! Don't head to the Sit-So Inn! Get Goin[']! I can help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
 	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
@@ -3062,10 +3230,10 @@ when play begins (this is the score and status tweak rule):
 	now max-poss is the maximum score;
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if min-needed is max-poss]*[else]-[max-poss][end if]";
 	force-status;
-	now the left hand status line is "[location of the player]";
+	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 0;
 
-to wall-refresh: move the wry wall backdrop to all signable rooms;
+to wall-refresh: move the wry wall backdrop to all wallish rooms;
 
 to wall-add (rm - a room):
 	repeat through table of bad locs:
@@ -3088,71 +3256,17 @@ book meta verbs
 
 check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
-volume unsorted
+volume Ending activities and tables
 
-chapter wildweeding
+[a Capped Cone is a scenery.] [?? where? It leads to the Zapped Zone]
 
-the wild weed is a thing. description is "You can't tell how potent it is by looking at it. It could be very weak, paralleling the mild mead, or very strong, because that's where all the beer bull's vitality went, instead of into the mead.".
-
-the mild mead is a thing. description is "It probably tastes gross and is not very psychoactive, either. But perhaps it will do, for a nice quiet victory celebration.". cht of mild mead is leteq. [->wild weed]
-
-part Pit Pound 1,3
-
-Pit Pound is east of Foe Field. It is in Piddling Pain. cht of Pit Pound is leteq. printed name of Pit Pound is "[if found-fit is false]Pit Pound[else]Grit Ground[end if]". description of Pit Pound is "[if found-fit is false]You feel like you don't belong here, yet[else]You finally feel comfortable here[end if]. [if blaze-ways is false]There's a blaze to the east that may be trickier to visit, though[else if stuck stair is moot]There's not much left east[else]Why, you could even deal with the maze to the east[end if]. You can also go back west." [->fit found]
-
-A Hit Hound is a person in Pit Pound. cht of Hit Hound is leteq. "A hit hound paces menacingly back and forth here.". description is "The Hit Hound seems attuned to your slightest moves. It doesn't strike, but it certainly leaves you fidgeting!". talk-text is "Yowl. Yip. Growl. Grip?". [->sit sound]
-
-check going east in Pit Pound:
-	if hit hound is in pit pound, say "Not with the hit hound guarding you, you aren't." instead;
-	if found-fit is false, say "It's weird. You don't feel like you belong in the pit pound enough to go further east beyond it. Maybe you need a little more mental preparation, more than just to sit sound." instead;
-
-found-fit is a truth state that varies.
-
-part Blinding Blaze 2,3
-
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if blaze-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if blaze-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if maze-mapped is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if blaze-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno]." [-> minding maze]
-
-to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
-
-to say blazno:
-	if blaze-ways is false:
-		say "You can't see any way other than back west";
-	else if stuck stair is off-stage:
-		say "You explore the minding maze a bit, but you get frustrated quickly. You need some emotional support, support from inside you and not related to this location, to negate the drudgery of working through all the dead ends and to make it through smoothly and happily";
-	else:
-		say "You found a way through the maze[if stuck stair is not moot], but you now need to figure how to operate the stuck stair[end if]. No directions except exiting back west were, or are, needed";
-
-blaze-ways is a truth state that varies.
-
-maze-mapped is a truth state that varies.
-
-check going down in Blinding Blaze when stuck stair is in blinding blaze: say "It's not that easy. The stair's stuck. Maybe if you knew where to go or what you wanted to do, it'd be easier." instead;
-
-chapter minding maze
-
-the minding maze is fakeenter scenery. "The minding maze looks complicated. Perhaps you could find a way to make exploring it a little more whimsical. Some art, or something. Or a variation on said art."
-
-check entering minding maze: try going east instead;
-
-chapter stuck stair
-
-the stuck stair is fakeenter scenery. "It looks like you may have to figure where the stair might go to use it.". cht of stuck stair is letminus. [-> luck lair]
-
-chapter snuck snare
-
-the snuck snare is a thing. description is "You feel lucky enough that you'll know where to put the snuck snare when the time is right.";
-
-[?? burned bower/turned tower]
-
-volume Poorly Penned
-
-volume Get a Guess
+chapter final questions table
 
 [this is a sort of fake region. There are fake rooms you can't visit.]
 
 [a capped cone is a scenery.] [?? where? It leads to the Zapped Zone]
 
-volume Vale Verminous
+volume Ending activities and tables
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
@@ -3161,6 +3275,53 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
 "see the point-based [b]RANK[r]s or [b]NARRATIVE[r]s"	true	"rank/ranks"	--	showranksing
 --	true	"narrative/narratives"	--	shownarring
+"see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN for next table)"	true	"RAND [number]"	--	rling
+--	true	"RN"	--	rlning
+--	true	"RAND"	--	rl0ing
+
+chapter rling
+
+rlning is an activity.
+
+rule for rlning:
+	increment last-table-tried;
+	if last-table-tried > number of rows in table of all randoms:
+		say "(Cycling back to the first table)[paragraph break]";
+		now last-table-tried is 1;
+	try randlisting last-table-tried instead;
+
+rl0ing is an activity.
+
+rule for rl0ing: try randlisting 0 instead;
+
+rling is an activity.
+
+rule for rling: try randlisting number understood instead;
+
+randlisting is an action applying to one number.
+
+last-table-tried is a number that varies.
+
+carry out randlisting:
+	let count be 0;
+	say "[one of][line break]You can also rummage through Very Vile Fairy File Tables.i7x for details if you want.[or][stopping]";
+	if number understood is 0:
+		repeat through table of all randoms:
+			increment count;
+			say "[count]. [desc entry][line break]";
+		the rule succeeds;
+	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
+	now last-table-tried is number understood;
+	choose row number understood in table of all randoms;
+	let mytab be tabnam entry;
+	now count is 0;
+	say "All random text for [desc entry]:[line break]";
+	repeat through mytab:
+		increment count;
+		say "[randtxt entry][line break]";
+		if the remainder after dividing count by 20 is 0, wfak;
+
+chapter showranksing
 
 showranksing is an activity.
 
@@ -3171,11 +3332,15 @@ rule for showranksing:
 		now low-bound-score is rank-max entry + 1;
 	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.";
 
+chapter shownarring
+
 shownarring is an activity
 
 rule for shownarring:
 	repeat through table of narratives:
 		say "At [rank-num entry] core score you get a narrative of [rank-txt entry][line break]";
+
+chapter showaltverbsing
 
 showaltverbsing is an activity.
 
@@ -3193,9 +3358,12 @@ rule for showaltverbsing:
 	say "[2da][b]MINING MOOR/MORE[r] could give the pining poor employment.";
 	say "[2da][b]WHOA/WOE/WHOAH WAIT[r] were all acceptable by the Go Gate in Airy Isle.";
 
+chapter showmissesing
+
 showmissesing is an activity.
 
 rule for showmissesing:
+	if rolling-yet is false, say "At any time, you could've guessed my pen name was a riff on [b]REALLY ROLLING[r].";
 	if started-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if appeal-appear is false, say "You could've figured the Peeling Pier's brand name as [b]APPEALING APPEAR[r].";
 	if gan-wan is false, say "You could've said [b]WHAT A or WHATTA WANKSTA[r] to the Gutta Ganksta before saying LOTS LAME in the mall.";
@@ -3208,6 +3376,8 @@ rule for showmissesing:
 	if wild weed is off-stage, say "You could've made the mild mead into [b]WILD WEED[r].";
 	if wild weed is not moot, say "You could've tried to [b]SPARK SPLIFF[r] by Cark Cliff [if player has wild weed]with[else]once you had[end if] [if wild weed is off-stage]something worth lighting, from the mild mead[else]the wild weed[end if].";
 	if beaker-yet is false, say "You could've given Reeker Russell [b]BEAKER BUSTLE[r] in the Gassed Gap/Last Lap.";
+
+chapter showdeathsing
 
 showdeathsing is an activity.
 
@@ -3230,11 +3400,35 @@ volume parser stuff
 
 book command reading
 
+say-warn is a truth state that varies.
+
+no-punc-flag is a truth state that varies.
+
 after reading a command:
 	if the player's command matches the regular expression "^ *<\*;>":
 		if currently transcripting:
 			say "Noted.";
 			reject the player's command;
+	if the player's command matches the regular expression "<A-Z>":
+		let XX be the player's command;
+		change the text of the player's command to "[XX in lower case]";
+		if debug-state is true, say "(LOWERCASING) [XX][line break]";
+	if the player's command matches the regular expression "^say ":
+		if say-warn is false:
+			now say-warn is true;
+			say "NOTE: you never need to SAY anything. Just type it in. In other words, WHOAH is the same as SAY WHOAH. Ailihphilia will cut SAY off of the start of all commands.";
+			let XX be the player's command;
+			replace the regular expression "^say " in XX with "";
+			change the text of the player's command to XX;
+	if the player's command matches the regular expression "<^-\.a-z 0-9>":
+		if no-punc-flag is false:
+			say "(NOTE: you don't need to use anything but letters to get through the game. Even commas for addressing NPCs aren't necessary. The parser simply strips out non-alphabetic characters.)[paragraph break]";
+			now no-punc-flag is true;
+		let XX be the player's command;
+		replace the regular expression "-" in XX with " ";
+		replace the regular expression "<^-\.a-z 0-9>" in XX with "";
+		change the text of the player's command to XX;
+		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
 
 book parser errors
 
@@ -3242,14 +3436,32 @@ to decide whether buggin-freeze:
 	if in-so-sad is true or in-way-wrong is true, yes;
 	no;
 
-table-to-scour is a table name that varies.
+to decide whether too-distracted:
+	if buggin-freeze, yes;
+	if in-bull-chase is true, yes;
+	no;
+
+the rhymeguess rules are a table name based rulebook.
 
 Rule for printing a parser error (this is the clue half right words rule):
-	now table-to-scour is table of homonym rejections;
-	abide by the mistake-checker rule;
+	abide by the rhyme-guess-checker rule for the table of first check rhymes;
+	if location of player is wallish, abide by the rhyme-guess-checker rule for the table of wry wall guesses;
+	unless guess-table of location of player is table of no good guesses:
+		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
+		abide by the rhyme-guess-checker rule for guess-table of location of player;
+	let table-list be a list of table names;
+	repeat with tou running through touchable rhymables:
+		let gtt be guess-table of tou;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
+	repeat with tou running through touchable people:
+		let gtt be guess-table of tou;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
+	repeat with cur-guess-table running through table-list:
+		abide by the rhyme-guess-checker rule for cur-guess-table;
 	abide by the verb-checker rule;
-	now table-to-scour is table of mistake substitutions;
-	abide by the mistake-checker rule;
+	abide by the rhyme-guess-checker rule for table of general good guesses;
 	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
 		the rule succeeds;
@@ -3271,13 +3483,18 @@ Rule for printing a parser error (this is the check for room name in player comm
 				say "Okay. ";
 			else:
 				say "It looks like you may have tried to refer to the room name, or part of it. ";
-			say "You never need to use the room name directly.";
+			say "You often ned to riff on the room name, but you never need to use the room name directly.";
 			the rule succeeds;
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
-	if player is in lake lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
-	if player is in wet wood and word number 1 in the player's command is "get", continue the action;
+	let wn1 be word number 1 in the player's command;
+	if player is in Lake Lea and jake-tea is false and word number 1 in the player's command is "take", continue the action;
+	if player is in Wet Wood and word number 1 in the player's command is "get", continue the action;
+	if wn1 is "pull":
+		if full feast is moot, say "You don't need to pull anything other than the full feast." instead;
+		if beer bull is touchable, say "You don't need to pull the Beer Bull for it to follow you." instead;
+		if full feast is touchable or bull beast is touchable, continue the action;
 	say "You can't see any objects like that here.";
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
@@ -3287,9 +3504,19 @@ the check for room name in player command rule is listed first in the for printi
 
 the clue half right words rule is listed before the check for room name in player command rule in the for printing a parser error rulebook.
 
+oopsies is a number that varies.
+
 Rule for printing a parser error when the latest parser error is the didn't understand error or the latest parser error is the not a verb I recognise error:
-	if debug-state is true, say "[the latest parser error].";
-	say "[one of]You may have used an unrecognized verb, or a verb in the wrong context. Or maybe you just guessed the wrong action to solve a puzzle, and it wasn't close enough that I could offer a hint--if you feel I should add something, write to [email]. Or perhaps you poked at some scenery I neglected to implement or describe as unimportant to progress.[paragraph break][b]VERBS[r] can show you a list used in this game. More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[or]This isn't something you need to do here. [b]VERBS[r] has a list of standard verbs.[stopping]";
+[	if debug-state is true, say "[the latest parser error].";]
+	if player is in Wet Wood:
+		increment oopsies;
+		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't neeed anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
+	else if player is in Rift River:
+		say "Hmm. You managed to GET GOOD out of the Wet Wood, but you just need to meet someone now.";
+	else if player is in Vined Vault:
+		say "[if mean mass is off-stage]That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's[else]You had to lose a letter from Vined. Maybe this time you need to add a letter to mean, or mass, or both[end if].";
+	else:
+		say "Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But [b]VERBS[r] will show what you can use.";
 
 ha-half is a truth state that varies.
 
@@ -3302,11 +3529,21 @@ to up-which (ts - a truth state):
 		up-min;
 		increment cur-bonus
 
+to say first-of-ors of (x - indexed text):
+	replace the regular expression "\|.*" in x with "";
+	say "[x]";
+
 this is the verb-checker rule:
 	let local-ha-half be false;
+	let brightness be false;
+	let progressive be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
-		if buggin-freeze and ver-rule entry is vc-get-good rule, break;
+		now vc-dont-print is true;
+		process the ver-rule entry;
+		let rb-out be the outcome of the rulebook;
+		if rb-out is the unavailable outcome, next;
+		now vc-dont-print is false;
 		if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
 		if there is a w2 entry:
 			if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
@@ -3316,35 +3553,54 @@ this is the verb-checker rule:
 		[say "[ver-rule entry].";]
 		if there is a wfull entry:
 			if the player's command matches the wfull entry:
-				now my-count is 2;
+				now my-count is 3;
 			else if my-count is 2:
 				now wfull-fail is true;
-		if my-count is 2:
+		if my-count >= 2:
+[			if debug-state is true, say "DEBUG: processing [ver-rule entry], outcome [if rb-out is unavailable outcome]UA[else if rb-out is not-yet outcome]NOT YET[else if rb-out is already-done outcome]already done[else]rady[end if].";]
 			process the ver-rule entry;
-			if the rule failed:
-				next;
-			else if the rule succeeded:
-				if in-so-sad is true and do-rule entry is not vr-glow-glad rule, say "Maybe later, when you're not feeling so sad ... so sad ..." instead;
-				if in-way-wrong is true and do-rule entry is not vr-stay-strong rule, say "Maybe later, when you're not feeling way wrong ... way wrong ..." instead;
-				if okflip entry is false:
-					unless there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case]
-						say "You've got it backwards! Just flip things around, and it'll be okay.";
-						the rule succeeds;
-				if wfull-fail is true:
-					say "Ooh! You're close, but you juggled things up, somehow.";
+			if rb-out is the already-done outcome, the rule succeeds;
+			if rb-out is the not-yet outcome:
+				if think-cue entry is false:
+					let X be indexed text;
+					now X is "[first-of-ors of w1 entry][if there is a w2 entry] [first-of-ors of w2 entry][end if]";
+					let exact-cmd be whether or not the player's command matches the text X, case insensitively;
+					say "[line break][one of][b]NOTE[r]: this command[if exact-cmd is false] (well, an equivalent, as there were alternate solutions)[end if] will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command[if exact-cmd is false] (or a functionally equivalent alternate solution)[end if] again saved to [b]THINK[r] for later reference.)[stopping]";
+					now think-cue entry is true;
+				else:
+					say "[line break]Hmm, that still doesn't quite work here and now. But it will, somewhere, some time.";
+				the rule succeeds;
+			if okflip entry is false:
+				unless my-count is 3 or there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case... and "my-count is 3" is a hack for FLIMFLAM]
+					say "You've got it backwards! Just flip things around, and it'll be okay.";
 					the rule succeeds;
-				if there is a core entry and idid entry is false:
-					up-which core entry;
-					if core entry is false:
-						increase lump-count by 2;
-				if zap-core-entry is true:
-					blank out the core entry;
-					now zap-core-entry is false;
-				now idid entry is true;
-				process the do-rule entry;
+			if wfull-fail is true:
+				say "Ooh! You're close, but you juggled things up, somehow.";
+				the rule succeeds;
+			if buggin-freeze:
+				if ver-rule entry is not vc-glow-glad rule and ver-rule entry is not vc-stay-strong rule:
+					say "Ugh! That should work, but you don't feel up to it. Maybe once your head is clearer, you'll figure where and why.";
+					now think-cue entry is true;
+					the rule succeeds;
+			if beer bull is touchable and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
+				now think-cue entry is true;
+				if debug-state is true, say "[ver-rule entry] set to true.";
+				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
+				let oldloc be location of player;
+				reset-bull-chase;
+				the rule succeeds;
+			if there is a core entry and idid entry is false:
+				up-which core entry;
+				if core entry is false:
+					increase lump-count by 1;
+			now idid entry is true;
+			now think-cue entry is false;
+			process the do-rule entry;
+			if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
+				blank out the core entry;
+				now zap-core-entry is false;
 				process the score and thinking changes rule;
-				if there is a core entry and core entry is false, check-lump-progress;
-			process the note right guess wrong time rule;
+			if there is a core entry and core entry is false, check-lump-progress;
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
 			now vc-dont-print is true;
@@ -3357,9 +3613,12 @@ this is the verb-checker rule:
 			if already-rhymed-this is true, break;
 			now local-ha-half is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
+			if there is a core entry:
+				now progressive is true;
+				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner.";
+		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if].";
 		the rule succeeds;
 
 already-rhymed-this is a truth state that varies.
@@ -3367,43 +3626,67 @@ already-rhymed-this is a truth state that varies.
 vc-dont-print is a truth state that varies.
 
 next-lump-level is a number that varies. next-lump-level is 5.
-next-lump-delta is a number that varies. next-lump-delta is 2.
+next-lump-delta is a number that varies. next-lump-delta is 1.
 lump-count is a number that varies. lump-count is 0.
 lump-charges is a number that varies. lump-charges is 0.
 lump-uses is a number that varies. lump-uses is 0.
+max-guesses-needed is a number that varies. max-guesses-needed is 10.
 
 to check-lump-progress:
 	increment lump-count;
+	if debug-state is true, say "DEBUG count=[lump-count] level=[next-lump-level].";
 	if lump-count >= next-lump-level:
 		say "[line break][if lurking lump is off-stage]Thwup! You hear a sound...and notice a lurking lump has fallen. Gazing at its dull shine, you realize it could help you move ahead on a tricky rhyme, at the right place at the right time, with [jjj].[paragraph break]You take the lump[else if lurking lump is moot]Thwup! A lurking lump appears again. You take it[else]The lurking lump pulses and grows. All your guesses have paid off[end if].";
 		now player has lurking lump;
 		increment lump-charges;
 		decrease lump-count by next-lump-level;
 		increase next-lump-level by next-lump-delta;
+		if next-lump-level > max-guesses-needed, now next-lump-level is max-guesses-needed;
 
-a lurking lump is a boring thing. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump."
+a lurking lump is a boring rhymable. description is "The lurking lump shines dully. It looks to have [lump-charges in words] charge[plur of lump-charges] for you to make a JERKING JUMP (JJ) if anything is baffling you.". bore-text of lurking lump is "You can only JERKING JUMP (JJ) with the lurking lump.". guess-table of lurking lump is the table of lurking lump guesses.
 
-this is the mistake-checker rule:
-	repeat through table-to-scour:
+to decide which number is variable-scan-length of (mynum - a number):
+	if mynum is 100: [Jake G]
+		if jake-woke is false, decide on 44; [WAKE WHEE]
+		if jake-tea is false, decide on 43; [TAKE TEA]
+		if jake-fee is false, decide on 43; [FAKE FEE]
+		if jake-brie is false, decide on -54; [BREAK BRIE, optional]
+		decide on 0;
+	say "BUG: no variable-scan-length for [mynum]. Please let me know what you typed.";
+	decide on 44;
+
+a rhymeguess rule for a table name (called tn) (this is the rhyme-guess-checker rule):
+	repeat through tn:
 		if the player's command matches mist-cmd entry:
-			process the mist-rule entry;
-			if the rule succeeded:
-				say "[mist-txt entry][line break]";
-				if there is a leet-rule entry:
-					process the leet-rule entry;
-					unless the rule succeeded, the rule succeeds;
-				let d1 be -10;
-				let d2 be -10;
-				if there is a w1let entry:
-					now d1 is w1let entry - number of characters in word number 1 in the player's command;
-					if there is a w2let entry:
-						now d2 is w2let entry - number of characters in word number 2 in the player's command;
-					if d2 is -10, now d2 is d1;
-					say "[leetclue of cluecheat of d1 and d2].";
-				if got-yet entry is false:
-					check-lump-progress;
-				now got-yet entry is true;
-				the rule succeeds;
+			if there is a mist-rule entry:
+				process the mist-rule entry;
+				unless the rule succeeded, continue the action;
+			say "[mist-txt entry][line break]";
+			let see-leet-read be true;
+			let is-opt be false;
+			if there is a leet-rule entry:
+				process the leet-rule entry;
+				unless the rule succeeded, now see-leet-read is false;
+			if see-leet-read is true and there is a magicnum entry: [see mistakes file for explanations of magic numbers]
+				let Q be magicnum entry;
+				if Q >= 100: [Just to make sure we start with a number that's out of bounds]
+					now Q is variable-scan-length of Q;
+					if debug-state is true, say "DEBUG: dynamic magic number directed us to [Q / 10] / [the remainder after dividing Q by 10].";
+				if Q < 0:
+					now is-opt is true;
+					now Q is 0 - Q;
+				if Q is not 0:
+					let d1 be Q / 10;
+					let d2 be the remainder after dividing Q by 10;
+					decrease d1 by number of characters in word number 1 in the player's command;
+					decrease d2 by number of characters in word number 2 in the player's command;
+					let cc be cluecheat of d1 and d2;
+					say "[leetclue of cc and is-opt].";
+			if got-yet entry is false:
+				increment total-good-guesses;
+				check-lump-progress;
+			now got-yet entry is true;
+			the rule succeeds;
 
 to decide which cheattype is the cluecheat of (n1 - a number) and (n2 - a number):
 	if n2 > n1, decide on cluecheat of n2 and n1;
@@ -3447,21 +3730,22 @@ carry out jerkingjumping:
 	now in-jerk-jump is true;
 	if in-bull-chase is true and bull-null is true:
 		if snuck snare is not moot, say "The lurking lump remains immovable. Perhaps you can't quite outrun or outsmart the Beer Bull, yet, and you'll have to take your lumps. Which is a hint in its own way, I guess." instead;
-		say "The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the beer bull into running into the trap you set. You head back to the Gear Gull in Here Hull.";
+		say "The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the Beer Bull into running into the trap you set. You head back to the Gear Gull in Here Hull.";
 		solve-bull-chase;
 		lump-minus;
 		the rule succeeds;
 	if doable-hinted > 0:
-		say "The lump glistens weirdly. Perhaps you've forgotten something you can do. Use it anyway?";
+		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. (THINK should give details.) Use it anyway?";
 		unless the player yes-consents:
-			say "OK. You may wish to THINK to see what you can do." instead;
+			say "OK. Again, THINKing should show what you can do now." instead;
 	now vc-dont-print is true;
 	repeat through table of verb checks:
 		unless there is a core entry, next;
 		if core entry is false, next;
 		if idid entry is true, next;
 		process the ver-rule entry;
-		if the rule succeeded:
+		let vr be the outcome of the rulebook;
+		if vr is the ready outcome:
 			say "After some thought, you consider the right way forward: [firstor of w1 entry] [firstor of w2 entry]...";
 			now idid entry is true; [this is so BURY BILE gets processed. We already checked IDID above.]
 			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
@@ -3471,112 +3755,13 @@ carry out jerkingjumping:
 				now zap-core-entry is false;
 			skip upcoming rulebook break;
 			lump-minus;
+			now think-cue entry is false;
 			now vc-dont-print is false;
+			disable saving of undo state;
 			the rule succeeds;
 	now vc-dont-print is false;
 	say "The lurking lump remains immovable. I guess you've done all you need, here.";
 	the rule succeeds.
-
-section verb check table
-
-[verb check and verb run rules. This is in approximate game-solve order.]
-
-table of verb checks [xxvc]
-w1 (text)	w2 (text)	okflip	core	idid	ver-rule	do-rule	wfull (topic)
-"glow"	"glad"	true	true	false	vc-glow-glad rule	vr-glow-glad rule	-- [start interlude-y]
-"stay"	"strong"	false	true	false	vc-stay-strong rule	vr-stay-strong rule	-- [must be at top for JJ]
-"get"	"good"	false	true	false	vc-get-good rule	vr-get-good rule	-- [start Intro]
-"gift"	"giver"	false	true	false	vc-gift-giver rule	vr-gift-giver rule	--
-"find"	"fault"	true	true	false	vc-find-fault rule	vr-find-fault rule	--
-"green"	"grass"	false	true	false	vc-green-grass rule	vr-green-grass rule	--
-"grow|oh|so"	"grit|it|sit"	true	true	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"
-"mash|bash|rash|slash"	"map|bap|rap|slap"	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"
-"mind"	"me"	false	true	false	vc-mind-me rule	vr-mind-me rule	--
-"flim|skim"	"flam|scam"	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"
-"big"	"bag"	true	true	false	vc-big-bag rule	vr-big-bag rule	-- [start of Fun Fen]
-"spark"	"spliff"	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--
-"strong"	"start"	true	false	false	vc-strong-start rule	vr-strong-start rule	--
-"fall"	"free"	true	true	false	vc-fall-free rule	vr-fall-free rule	--
-"dive"	"deep"	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--
-"paper"	"pile"	false	true	false	vc-paper-pile rule	vr-paper-pile rule	--
-"backed"	"binder"	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--
-"appealing"	"appear"	true	false	false	vc-appealing-appear rule	vr-appealing-appear rule	-- [start of Real Rear]
-"kneel|kneeling"	"near"	false	true	false	vc-kneel-near rule	vr-kneel-near rule	--
-"feel|feeling"	"fear"	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--
-"deal|dealing"	"dear"	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--
-"heal|healing"	"here"	true	true	false	vc-heal-here rule	vr-heal-here rule	--
-"history"	"hall"	false	--	false	vc-history-hall rule	vr-history-hall rule	--
-"mystery"	"mall"	false	true	false	vc-mystery-mall rule	vr-mystery-mall rule	--
-"dark"	"door"	false	true	false	vc-dark-door rule	vr-dark-door rule	-- [start stark store]
-"mark"	"more"	false	true	false	vc-mark-more rule	vr-mark-more rule	--
-"cleared"	"clay"	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--
-"bumped|dumped"	"buster|duster"	true	false	false	vc-bumped-buster rule	vr-bumped-buster rule	"bumped buster" or "dumped duster"
-"tight"	"tunnel"	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	-- [start fight funnel]
-"knives"	"niche"	false	true	false	vc-knives-niche rule	vr-knives-niche rule	-- [start dives ditch]
-"wild"	"weed"	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--
-"lots"	"lame"	false	true	false	vc-lots-lame rule	vr-lots-lame rule	-- [start Mystery Mall]
-"no"	"nappin"	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--
-"ho"	"happen"	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--
-"dimd"	--	false	false	false	vc-dimd rule	vr-dimd rule	--
-"whatta"	"wanksta"	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"
-"youre|your|yore"	"yonder"	false	true	false	vc-youre-yonder rule	vr-youre-yonder rule	--
-"glean"	"glows"	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--
-"smashing"	"smoke"	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	-- [start Y'Old Yard]
-"lending"	"libe"	false	true	false	vc-lending-libe rule	vr-lending-libe rule	-- [start vending vibe]
-"see"	"sign"	false	true	false	vc-see-sign rule	vr-see-sign rule	--
-"hard"	"hat"	false	true	false	vc-hard-hat rule	vr-hard-hat rule	-- [start got gear hot here]
-"lie"	"lol"	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--
-"not"	"near"	true	false	false	vc-not-near rule	vr-not-near rule	--
-"beast"	"boss"	true	true	false	vc-beast-boss rule	vr-beast-boss rule	-- [start Creased Cross]
-"cull|lul"	"ceased|least"	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	"cull ceased" or "lul least"
-"full"	"feast"	true	true	false	vc-full-feast rule	vr-full-feast rule	--
-"least"	"loss"	true	true	false	vc-least-loss rule	vr-least-loss rule	--
-"loft"	"land"	false	true	false	vc-loft-land rule	vr-loft-land rule	-- [start soft sand]
-"soft"	"sand"	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--
-"plain"	"pleasant"	true	true	false	vc-plain-pleasant rule	vr-plain-pleasant rule	-- [start foe field]
-"show"	"shield"	true	true	false	vc-show-shield rule	vr-show-shield rule	--
-"cool"	"cap"	true	true	false	vc-cool-cap rule	vr-cool-cap rule	-- [start curst cave]
-"dreaming"	"dull"	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--
-"first"	"fave"	false	true	false	vc-first-fave rule	vr-first-fave rule	--
-"moral"	"mage"	false	true	false	vc-moral-mage rule	vr-moral-mage rule	--
-"work"	"well"	true	true	false	vc-work-well rule	vr-work-well rule	-- [start shirk shell]
-"dear"	"dull"	true	true	false	vc-dear-dull rule	vr-dear-dull rule	-- [start here hull]
-"near"	"null"	true	true	false	vc-near-null rule	vr-near-null rule	--
-"sit"	"sound"	false	true	false	vc-sit-sound rule	vr-sit-sound rule	-- [start pit pound]
-"fit"	"found"	true	true	false	vc-fit-found rule	vr-fit-found rule	--
-"winding|minding|finding"	"ways|maze|phase|fays"	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays" [start blinding blaze]
-"mo"	"mappin"	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--
-"luck|snuck"	"lair|snare"	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"
-"brightening"	"bridge"	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	-- [start Violent Vale]
-"silent"	"sail|sale"	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--
-"boring"	"boat"	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--
-"wake"	"whee|wee"	true	true	false	vc-wake-whee rule	vr-wake-whee rule	-- [start Lake Lea]
-"take"	"tea"	false	true	false	vc-take-tea rule	vr-take-tea rule	--
-"fake"	"fee"	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--
-"break"	"brie"	false	false	false	vc-break-brie rule	vr-break-brie rule	--
-"make"	"map"	false	true	false	vc-make-map rule	vr-make-map rule	-- [start Lake Lap]
-"snake"	"snap"	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--
-"co"	"capn"	false	true	false	vc-co-capn rule	vr-co-capn rule	--
-"so"	"sappin"	true	true	false	vc-so-sappin rule	vr-so-sappin rule	-- [start whining war]
-"shining"	"shore"	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--
-"mining"	"more|moor"	true	true	false	vc-mining-more rule	vr-mining-more rule	--
-"dining"	"door"	false	true	false	vc-dining-door rule	vr-dining-door rule	--
-"mean"	"muggin"	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--
-"lean"	"luggin"	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--
-"pull"	"pieced"	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--
-"cast"	"cap"	false	true	false	vc-cast-cap rule	vr-cast-cap rule	-- [start gassed gap]
-"beaker"	"bustle"	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--
-"meeker"	"muscle"	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--
-"wood"	"one"	false	true	false	vc-wood-one rule	vr-wood-one rule	--
-"go"	"gappin"	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--
-"couple"	"caps"	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--
-"lot"	"lord"	false	true	false	vc-lot-lord rule	vr-lot-lord rule	-- [start airy isle]
-"hot"	"horde"	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--
-"got"	"gored"	false	true	false	vc-got-gored rule	vr-got-gored rule	--
-"whoa|whoah|woe"	"wait"	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--
-"tell"	"torn"	false	true	false	vc-tell-torn rule	vr-tell-torn rule	-- [start tarry tile/merry mile]
-"merry"	"mile"	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--
-"bury"	"bile"	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--
 
 [ this is stuff for beta commands below ]
 
@@ -3608,7 +3793,6 @@ to win-the-game:
 	if score is maximum score:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
-	clue-zap "BURY BILE";
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
 	process the score and thinking changes rule;
@@ -3621,7 +3805,7 @@ to check-gored-clue:
 	say "[line break]";
 	if Hot Horde is in Airy Isle and Lot Lord is in Airy Isle:
 		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
-		if tried-yet of "GOT GORED", say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
+		if tried-yet of vc-got-gored rule, say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
 	else if Hot Horde is in Airy Isle:
 		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
 	else:
@@ -3633,11 +3817,12 @@ this is the shone-yet rule:
 to lean-and-mean:
 	say "[line break]";
 	if lean-lugged is true and mean-mugged is true:
-		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.'[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. He vanishes.";
+		say "Dean Duggan applauds you. 'You have learned two profound lessons from me. You are ready to wear this way woke clay cloak.' But it doesn't seem to fit, quite. 'Hmm. Well, with my training, you're worthy to carry it, at least. I've helped you all I can. Oh, if you want to give a bit back, can you take care of that clumped cluster over there? No obligation, no reward, just...well, it'd be nice.' He vanishes.[paragraph break]Hmm. Maybe you will find the way to make the clay cloak wearable elsewhere. Also, with your mind clearer, you notice a wry wall you missed before.";
 		now player has clay cloak;
 		moot Dean Duggan;
-		move clumped cluster to Been Buggin';
-		phbt Been Buggin';
+		move clumped cluster to Been Buggin;
+		phbt Been Buggin;
+		wall-add Been Buggin;
 	else:
 		say "'Not bad, but you can still do a bit more,' says Dean Duggan. 'You need to both look and feel tough.'"
 
@@ -3660,1402 +3845,21 @@ every turn when player is in Lake Lea or player is in Lake Lap:
 		move Jake G to location of player;
 	continue the action;
 
-to vcp (t - text): [verb conditional print]
+to vcpforce (t - text): [this is for the -very- special case of when you are in Been Buggin and haven't coped yet]
 	if vc-dont-print is false, say "[t][line break]";
 
-to vcal (t - text): [verb conditional print]
+to vcp (t - text): [verb conditional print]
+	if vc-dont-print is false:
+		if buggin-freeze:
+			say "That's got to be right somewhere, but you can't focus now. When your mind's less scrambled, you'll figure it out.";
+		else:
+			say "[t][line break]";
+
+to vcal (t - text): [verb conditional print, flag already rhymed]
 	now already-rhymed-this is true;
 	if vc-dont-print is false, say "[t][line break]";
 
-section vc vr rules [xxvcvr]
-
-this is the vc-appealing-appear rule:
-	if player is not in real rear, the rule fails;
-	if appeal-appear is true:
-		vcal "The peeling pier already looks better.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-appealing-appear rule:
-	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
-	now appeal-appear is true; [probably shouldn't zap this and replace with "peeling pier is optional" checks...]
-	now peeling pier is not optional;
-	if healed-here is false:
-		now cht of peeling pier is partminus;
-	else:
-		phbt peeling pier;
-
-this is the vc-backed-binder rule:
-	if paper pile is not touchable or player has the backed binder, the rule fails;
-	the rule succeeds;
-
-this is the vr-backed-binder rule:
-	say "The papers labeled FACT FINDER should be useful. You find a way to glue them all together. They contain objective documentation of the Crimes Crew Times Two's exploits. You've been at the receiving end of some of their psychological tricks, and though you appreciate proof you weren't being oversensitive, you still shudder.";
-	now player has backed binder;
-	moot paper pile;
-
-this is the vc-beaker-bustle rule:
-	if reeker russell is not touchable, the rule fails;
-	if beaker-yet is true:
-		vcal "You already did that!";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-beaker-bustle rule:
-	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
-	now beaker-yet is true;
-	adjust-russell;
-
-this is the vc-beast-boss rule:
-	if player is not in Creased Cross, the rule fails;
-	if Bull Beast is not off-stage:
-		vcal "You already did.";
-		continue the action;
-	if player does not have gold guard:
-		vcp "You don't feel armed for that, yet.";
-		clue-later "BEAST BOSS";
-		continue the action;
-	if gull-guard is false:
-		vcp "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
-		clue-later "BEAST BOSS";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-beast-boss rule:
-	say "A Bull Beast appears to answer your summons. You hope you have done the right thing, as it roughs you up a bit. You'll need to minimize the damage, here!";
-	move Bull Beast to Creased Cross;
-	now need-loss is true;
-	clue-zap "BEAST BOSS";
-
-this is the vc-big-bag rule:
-	if player has big bag:
-		vcal "You already made the big bag.";
-		continue the action;
-	if Fun Fen is unvisited:
-		clue-later "BIG BAG";
-		vcp "That would be a good idea, once you had possessions to carry around. But right now, you don't have enough that would need a big bag.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-big-bag rule:
-	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
-	moot zig zag rig rag;
-	now player has big bag;
-	now bag-hint is false;
-	clue-zap "BIG BAG";
-
-this is the vc-boring-boat rule:
-	if player is not in violent vale or flooring float is off-stage, the rule fails;
-	if boring boat is moot:
-		vcal "You don't need to bring the boring boat back.";
-		continue the action;
-	if boring boat is in violent vale:
-		vcal "The boat is already boring and practical enough.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-boring-boat rule:
-	say "The flooring float sinks and tips over slightly. Some of its excess cargo falls into the water, never to return. It becomes much leaner and more practical--a boring boat!";
-	moot flooring float;
-	move boring boat to Violent Vale;
-	clue-zap "BURY BILE";
-
-this is the vc-break-brie rule:
-	if jake is not touchable, the rule fails;
-	if jake-woke is false:
-		say "This bonus point action won't work until Jake is conscious.";
-		continue the action;
-	if jake-brie is true:
-		vcal "Hey! Don't get greedy, now.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-break-brie rule:
-	say "'Ooh, good one! I almost forgot I had it. I don't like it. Here, have it all.' This might not help in the end, but yay free food.";
-	now jake-brie is true;
-
-this is the vc-brightening-bridge rule:
-	if frightening fridge is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-brightening-bridge rule:
-	say "The fridge collapses and flattens and provides a secure passage to the east!";
-	moot frightening fridge;
-
-this is the vc-bumped-buster rule:
-	if clumped cluster is touchable, the rule succeeds;
-	the rule fails;
-
-this is the vr-bumped-buster rule:
-	say "You start pushing and kicking at the clumped cluster. Parts of it break off, but not very quickly until you start chanting 'Bumped, buster.' And what do you know? You find a dumped duster that makes your browsing through the clumped cluster easier. The rest of the cleanup is easy. Your only reward for your hard work is -- satisfaction of a job well done and that anyone who wrote the Very Vile Fairy File would be upset indeed to see someone doing nice stuff, just because. You hope Dean Duggan is happy.";
-	moot clumped cluster;
-
-this is the vc-bury-bile rule:
-	if player is in Tarry Tile:
-		if well worn hell horn is moot and merry-mile is true, the rule succeeds;
-		if well worn hell horn is in Tarry Tile:
-			vcp "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
-			clue-later "BURY BILE";
-			continue the action;
-		if merry-mile is false:
-			vcp "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
-			clue-later "BURY BILE";
-			continue the action;
-	clue-later "BURY BILE";
-	if mrlp is Worst Whew:
-		vcp "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.";
-		continue the action;
-	if mrlp is Piddling Pain:
-		vcp "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
-		continue the action;
-	if player is in Airy Isle:
-		vcp "You'd like to do that, but not here with so many distractions, during perhaps the big last fight.";
-		continue the action;
-	if mrlp is Vale Verminous:
-		vcp "It must be about the right time. But you are not quite there, yet.";
-		continue the action;
-	the rule fails;
-
-this is the vr-bury-bile rule:
-	now bile-buried is true;
-	win-the-game;
-
-this is the vc-cast-cap rule:
-	if player is not in gassed gap, the rule fails;
-	if cool cap is moot:
-		vcal "The cap has been cast.";
-		continue the action;
-	if extra-cool-cap is false:
-		let N be my-hats;
-		if N is 0:
-			vcp "You don't have any caps to cast.";
-		else if N is 1:
-			vcp "The [random gaphat enclosed by the player] isn't enough on its own.";
-		else if N is 2:
-			vcp "The [list of gaphats enclosed by the player] aren't quite enough.";
-		else if N is 3:
-			vcp "Wow! Three hats! They would be great to cast! But if only there was a way to combine them into an extra-cool hat you could cast all at once!";
-		clue-later "CAST CAP";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-cast-cap rule:
-	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
-	moot cool cap;
-	move Reeker Russell to Gassed Gap;
-	phbt Gassed Gap;
-	clue-zap "CAST CAP";
-
-this is the vc-cleared-clay rule:
-	if player is not in Stark Store, the rule fails;
-	if weird way is moot:
-		vcal "The clay is cleared enough.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-cleared-clay rule:
-		say "You concentrate on the weird way, which is, uh, weirder than trying to clear it with actual hard physical work. But it's effective! The clay crumbles and sinks into the ground. You can go down now!";
-	moot weird way;
-
-this is the vc-co-capn rule:
-	if player does not have toe tappin or snake-snap is true, the rule fails;
-	if jake-cocapn is true:
-		vcal "Jake already is[if jake is not touchable] and will be when you return to see him[end if].";
-		continue the action;
-	if jake is not touchable:
-		vcp "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
-		clue-later "CO CAPN";
-		continue the action;
-	if jake-fee is false:
-		vcp "You haven't (yet) bonded with Jake G. enough for that.";
-		clue-later "CO CAPN";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-co-capn rule:
-	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
-	now jake-cocapn is true;
-	clue-zap "CO CAPN";
-	process the check-sing-max rule;
-
-this is the vc-cool-cap rule:
-	if tool tap is not touchable, the rule fails;
-	the rule succeeds;  [?? YOULL YAP / CRUEL CRAP !!!!!]
-
-this is the vr-cool-cap rule:
-	say "Whoah! A cool cap must REALLY have been stuck in the tool tap. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips. The tool tap explodes and vaporizes from the effort of having squeezed out the cool cap.";
-	now player has cool cap;
-	moot tool tap;
-
-this is the vc-couple-caps rule:
-	if player does not have jerk gel, the rule fails;
-	if my-hats < 3: [this seems a bit awkward, but I put it this way so vc.py can detect CONTINUE THE ACTION as appropriate]
-		if my-hats is 2:
-			vcp "You'd think if you're coupling, you'd only need two hats or caps, but after some fiddling, you realize you need one more. Bummer!";
-		else if my-hats is 1:
-			vcp "You need at least one more hat to couple the CAPS.";
-		else:
-			vcp "You have no caps to couple. Maybe one day, though.";
-		clue-later "COUPLE CAPS";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-couple-caps rule:
-	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
-	moot hard hat;
-	moot cake cap;
-	moot jerk gel;
-	now printed name of cool cap is "extra cool cap";
-	now extra-cool-cap is true;
-	clue-zap "COUPLE CAPS";
-
-this is the vc-cull-ceased rule:
-	if bull beast is off-stage, the rule fails;
-	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
-	if player is not in Creased Cross:
-		clue-later "CULL CEASED";
-		vcp "You need to go back to Creased Cross.";
-		continue the action;
-	if healed-here is false:
-		clue-later "CULL CEASED";
-		vcp "You need to find a way to restore your health.";
-		continue the action;
-	if bull beast is boring:
-		vcal "Don't brag too much, now.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-cull-ceased rule:
-	say "Your battle cry, coupled with your new improved healed self, is too much for the Bull Beast. It tries to runs off in extreme psychological anguish but collapses from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by two small words.[paragraph break]Boy! You must've sounded authoritative![paragraph break]Over the Beast's death-rattle, you run through possible rhymes in your head. You're proud of dealing with bull much better than you expected, but it's exhausting, even when you know how to.";
-	now cull-ceased is true;
-	now bull beast is boring; [?? what if dead]
-	now cht of bull beast is leteq; [bull beast->full feast]
-	clue-zap "CULL CEASED";
-
-this is the vc-dark-door rule:
-	if player is not in stark store, the rule fails;
-	if dark door is not off-stage:
-		vcal "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if].";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-dark-door rule:
-	say "Hey, wait a minute! You have a closer look and notice the outline of a dark door. Now you've seen it, you can't un-see it. There we go!";
-	move dark door to Stark Store;
-
-this is the vc-deal-dear rule:
-	if player is not in Real Rear, the rule fails;
-	if felt-fear is false:
-		clue-later "DEAL DEAR";
-		vcp "You haven't found anything you need to deal with[seer-sez].";
-		continue the action;
-	if cage key is not off-stage:
-		vcal "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-deal-dear rule:
-	say "You reflect and have faith in yourself. Help will come at a good time, when you do not feel too desperate. And wait! It's coming now! The Sage Sea calms and parts briefly to reveal a cage key. You step in, not worried it may engulf you, because you've practiced your serenity. You retrieve the key with no problems.";
-	now player has cage key;
-	phbt Real Rear;
-	phbt steel steer;
-	clue-zap "DEAL DEAR";
-
-this is the vc-dear-dull rule:
-	if player is not in here hull, the rule fails;
-	if beer bull is moot:
-		vcal "Yeah, easy to say with the beer bull gone for good.";
-		continue the action;
-	if in-bull-chase is true:
-		vcal "You don't need to do any more taunting.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-dear-dull rule:
-	now zap-core-entry is true;
-	say "The beer bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
-	start-bull-chase;
-
-this is the vc-dimd rule:
-	if oi mo is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-dimd rule:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or flip flop to [i]Tip Top Hip Hop[r], but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
-	if gutta ganksta is in history hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
-	moot oi mo;
-
-this is the vc-dining-door rule:
-	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
-	if war-sapped is false:
-		clue-later "DINING DOOR";
-		vcp "You can't make a dining door with all this whining going on!";
-		continue the action;
-	if shore-shine is false:
-		vcp "You hear a rumbling, but it's still too dingy here for anything nice like a dining door.";
-		clue-later "DINING DOOR";
-		continue the action;
-	if dine-door is true:
-		vcal "You already did.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-dining-door rule:
-	say "Up from the ground, a dining door rumbles and appears. You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
-	now dine-door is true;
-	move dining door to Whining War;
-	clue-zap "DINING DOOR";
-	phbt Whining War;
-
-this is the vc-dive-deep rule:
-	if hive heap is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-dive-deep rule:
-	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over until ... well, a vapor, vile, is released.";
-	moot hive heap;
-	bring-here vapor vile;
-
-this is the vc-dreaming-dull rule:
-	if screaming skull is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-dreaming-dull rule:
-	moot screaming skull;
-	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse.[paragraph break]The whining outlasts your own empathy and interest, both real and (later) feigned. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
-
-this is the vc-fake-fee rule:
-	if jake is not touchable, the rule fails;
-	if jake-woke is false:
-		vcp "Maybe when Jake is awake.";
-		clue-later "FAKE FEE";
-		continue the action;
-	if jake-tea is false:
-		vcp "But Jake has given you nothing of value yet.";
-		clue-later "FAKE FEE";
-		continue the action;
-	if jake-fee is true:
-		vcal "That's over. Time to work with Jake!";
-		the continue the action;
-	the rule succeeds;
-
-this is the vr-fake-fee rule:
-	say "You and Jake have a laugh about how you'd like to pay, and he'd like payment, but that's not really what's important here. Jake is ready to work with you off to the east!";
-	now jake-fee is true;
-	now jake g is optional;
-	now cht of jake g is letplus; [->break brie]
-	clue-zap "FAKE FEE";
-
-this is the vc-fall-free rule:
-	if player is not in Fun Fen, the rule fails;
-	if tree-down is true:
-		vcal "The tree is already fallen. It's in a good place.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-fall-free rule:
-	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
-	now tree-down is true;
-	phbt tall tree;
-	move hive heap to Fun Fen;
-
-this is the vc-feel-fear rule:
-	if player is not in Real Rear, the rule fails;
-	if knelt-yet is false:
-		clue-later "FEEL FEAR";
-		vcp "Fear isn't something you can, or want to, force[seer-sez].";
-		continue the action;
-	if felt-fear is true:
-		vcal "No need to overdo feeling fear.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-feel-fear rule:
-	say "You let yourself feel fear, both of physical harm and of being unable to figure a way to any secret areas. Admitting to this fear helps a bit, but somehow, you have to put your fear aside.";
-	now felt-fear is true;
-	clue-zap "FEEL FEAR";
-
-this is the vc-find-fault rule:
-	if player is not in Vined Vault, the rule fails;
-	if mean mass is in Vined Vault:
-		if print-why-fail, vcal "You already did, and things got worse. You'll have to try something else.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-find-fault rule:
-	loop-note "FIND FAULT";
-	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
-	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
-	move mean mass to Vined Vault;
-	moot mind malt;
-	phbt Vined Vault;
-
-this is the vc-first-fave rule:
-	if player is not in curst cave, the rule fails;
-	if first-fave is true:
-		vcal "The curst cave is already a cheerier place.";
-		continue the action;
-	if screaming skull is in Curst Cave:
-		clue-later "FIRST FAVE";
-		vcp "You can't like anything with that screaming skull around!";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-first-fave rule:
-	say "Suddenly, the worst wave isn't very bad or evil at all. In fact, with a bit of time, it recedes to reveal a tool tap.";
-	now first-fave is true;
-	move tool tap to Curst Cave;
-	moot worst wave;
-	clue-zap "FIRST FAVE";
-
-this is the vc-fit-found rule:
-	if player is not in pit pound, the rule fails;
-	if found-fit is true:
-		vcal "You already fit in.";
-		continue the action;
-	if hit hound is in pit pound:
-		vcp "Maybe later, but you can't focus on that with the Hit Hound around.";
-		clue-later "FIT FOUND";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-fit-found rule:
-	say "You feel comfortable here now. Comfortable enough to enter and leave as you please. Woohoo!";
-	now found-fit is true;
-	clue-zap "FIT FOUND";
-	phbt pit pound;
-
-this is the vc-flim-flam rule:
-	if player is not in trim tram, the rule fails;
-	if me-minded is false:
-		process the trimtramcmd rule;
-		vcp "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
-		clue-later "FLIM FLAM";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-flim-flam rule:
-	loop-note "FLIM FLAM/SKIM SCAM";
-	say "That does it! The tram moves off to a more open place...";
-	process the trimtramcmd rule;
-	move the player to Fun Fen;
-	clue-zap "FLIM FLAM";
-	phbt Trim Tram;
-
-this is the vc-full-feast rule:
-	if Bull Beast is not in location of player, the rule fails;
-	if Bull Beast is not boring:
-		clue-later "FULL FEAST";
-		vcp "That should work. It might work better if the Bull Beast were incapacitated.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-full-feast rule:
-	say "BOOM! You managed to make a full feast of the Bull Beast. But there's a lot of it. It'll be hard to move all at once.";
-	moot Bull Beast;
-	move full feast to location of player;
-	clue-zap "FULL FEAST";
-
-this is the vc-get-good rule:
-	if player is not in wet wood:
-		if print-why-fail, vcal "You already managed to GET GOOD.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-get-good rule:
-	loop-note "GET GOOD";
-	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]So many questions! On leaving the wood, you find yourself blocked by water.";
-	move player to Rift River;
-	phbt Wet Wood;
-
-this is the vc-gift-giver rule:
-	if player is not in rift river, the rule fails;
-	the rule succeeds;
-
-this is the vr-gift-giver rule:
-	loop-note "GIFT GIVER";
-	say "Someone appears from the distance. 'Here! Take this. It will help you with a future puzzle or puzzles.' It's a packet of Mind Malt, whatever that is. And ... it's empty. You open your mouth to protest, but their hand goes up. 'The best sort of magic helps you help yourself.'[paragraph break]You stifle a hmph. 'Oh,' they continue, 'Also some Too-Totes-New Notes. They will tell you what your Leet Learner would've scanned for the puzzles you face at the start. Though you may wish to keep track of things by yourself. If you wish, you can DROP it to solve things the hard way.'[paragraph break]That's a bit better. They walk away. You grumble and putter around, wondering where you should go next. You put your hand on a tree, which has sick sap on it. You walk around, trying to get it off, and you fall into a ... TRICK TRAP.";
-	now player has Too Totes New Notes;
-	now player has Mind Malt;
-	move player to Vined Vault;
-	phbt Rift River;
-
-this is the vc-glean-glows rule:
-	if player is not in history hall or mean moe's is not in history hall, the rule fails;
-	if player does not have clay cloak:
-		vcp "That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.";
-		clue-later "GLEAN GLOWS";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-glean-glows rule:
-	say "You figure how Mean Moe's Clean Clothes works. You lump the way woke clay cloak in, and after some beeping and coughing, out comes ... a clashing cloak! It's much less bulky than the way woke clay cloak, and it feels more versatile.";
-	moot way woke clay cloak;
-	now player has clashing cloak;
-	moot Mean Moe's Clean Clothes;
-	clue-zap "GLEAN GLOWS";
-
-this is the vc-glow-glad rule:
-	if in-so-sad is false, the rule fails;
-	the rule succeeds;
-
-this is the vr-glow-glad rule:
-	say "Okay! You're really ready to face things now. Someone comes into view, congratulates you on fighting off your inner demons, and introduces himself as Dean Duggan. 'I have a couple more things I can teach you, but you'll have to ask me specifically.'";
-	now in-so-sad is false;
-	now in-so-saded is true;
-	phbt Kerry Kyle;
-	move Dean Duggan to Been Buggin';
-
-this is the vc-go-gappin rule:
-	if player does not have Toe Tappin, the rule fails;
-	if player is not in gassed gap:
-		vcp "Hm! [Toe] could be tweaked like that to be useful in the right place[if gassed gap is visited], like the Gassed Gap[end if].";
-		clue-later "GO GAPPIN";
-		continue the action;
-	if gap-go is true:
-		vcal "The song already worked.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-go-gappin rule:
-	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
-	now gap-go is true;
-	clue-zap "GO GAPPIN";
-	process the check-sing-max rule;
-
-this is the vc-got-gored rule:
-	if player is not in airy isle or bot board is moot, the rule fails;
-	if lot lord is in airy isle and hot horde is in airy isle, the rule succeeds;
-	clue-later "GOT GORED";
-	if lot lord is off-stage and hot horde is off-stage:
-		vcp "That sounds right, but it would just be your epitaph right now. With some organized help, though, it could be a potent rallying cry. You save the thought for later.";
-		continue the action;
-	if lot lord is off-stage:
-		vcp "The Hot Horde needs more than a battle cry. It needs a leader.";
-		continue the action;
-	if hot horde is off-stage:
-		vcp "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work.";
-		continue the action;
-	say "Uh oh. This is a BUG case. This should not have happened, but you can still win the game."; [oksay]
-	continue the action;
-
-this is the vr-got-gored rule:
-	say "YES! That's the cheer the Hot Horde needs, even if there's no gore inside the Bot Board. No need for a ham-handed 'BAM! BANDED!' as they coalesce and organize under the Lot Lord's leadership.[paragraph break]As things calm down, you realize a wry wall points you three ways, and there is now a go gate ahead! You must be close now.";
-	moot Hot Horde;
-	moot Lot Lord;
-	moot Bot Board;
-	wall-add Airy Isle;
-	move go gate to Airy Isle;
-	clue-zap "GOT GORED";
-
-this is the vc-green-grass rule:
-	if mean mass is in vined vault, the rule succeeds;
-	the rule fails;
-
-this is the vr-green-grass rule:
-	loop-note "GREEN GRASS";
-	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
-	move player to Po' Pit;
-	moot mean mass;
-
-this is the vc-grow-grit rule:
-	if player is not in po' pit, the rule fails;
-	if grit-grown is true:
-		if print-why-fail, vcal "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-grow-grit rule:
-	loop-note "GROW GRIT";
-	say "'So, sit,' you say to yourself. You ponder a bit before saying 'Oh ... it ...'. You realize you have managed to grow grit![paragraph break]The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
-	now grit-grown is true;
-	phbt row writ;
-	phbt Po' Pit;
-
-this is the vc-hard-hat rule:
-	if marred mat is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-hard-hat rule:
-	say "Poof! The marred mat changes into a hard hat. A nice lightweight one. Light enough to wear, so you do.";
-	moot marred mat;
-	now player has hard hat;
-
-this is the vc-heal-here rule:
-	if player is not in Real Rear, the rule fails;
-	if healed-here is true:
-		vcal "No need to heal further.";
-		continue the action;
-	if least-loss is false:
-		clue-later "HEAL HERE";
-		vcp "You don't have anything to heal from, yet[seer-sez].";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-heal-here rule:
-	say "You call on the Ceiling Seer once more. You worry you may hear 'Gee, Ill! Jeer,' but your faith is rewarded as you feel rejuvenated!";
-	now healed-here is true;
-	clue-zap "HEAL HERE";
-	phbt ceiling seer;
-	if appeal-appear is false, phbt peeling pier;
-
-this is the vc-history-hall rule:
-	if player is not in History Hall, the rule fails;
-	if mistmall is false:
-		vcal "You already [if ever-mall is true]flipped back to[else]are in[end if] History Hall.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-history-hall rule:
-	move-to-temp gutta ganksta;
-	move-to-temp Mean Moe's Clean Clothes;
-	now Vending Vibe is mapped west of History Hall;
-	now History Hall is mapped east of Vending Vibe;
-	move-from-temp Poor Ponder;
-	move-to-temp gutta ganksta;
-	move-to-temp Oi Mo;
-	now mistmall is false;
-	bold-my-room;
-	if ever-hall is false:
-		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
-	else:
-		say "[location of player][line break]";
-	now ever-hall is true;
-
-this is the vc-ho-happen rule:
-	if player does not have Toe Tappin, the rule fails;
-	if hap-ho is true:
-		vcal "You already said HO HAPPEN.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-ho-happen rule:
-	say "While nothing immediately happens, you feel more motivated to try new stuff--[Toe] may be more versatile than you think!";
-	now hap-ho is true;
-
-this is the vc-hot-horde rule:
-	if player is not in airy isle, the rule fails;
-	if Hot Horde is not off-stage:
-		vcal "You already summoned the Hot Horde.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-hot-horde rule:
-	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
-	move hot horde to airy isle;
-	check-gored-clue;
-
-this is the vc-kneel-near rule:
-	if player is not in real rear, the rule fails;
-	if knelt-yet is true:
-		vcp "No need to kneel twice.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-kneel-near rule:
-	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you. Perhaps you can be more open with your feelings now, and the Ceiling Seer will be more receptive.";
-	now knelt-yet is true; [?? track difference]
-	now cht of Real Rear is leteq; [->feel fear] [-> deal dear] [->heal here]
-	now cht of steel steer is letminus; [steel steer->feel fear]
-
-this is the vc-knives-niche rule:
-	if player is not in dives ditch, the rule fails;
-	if kni-ni is true:
-		vcal "You already changed the dives ditch.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-knives-niche rule:
-	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
-	now kni-ni is true;
-	process the drop-snare rule;
-
-this is the vc-lean-luggin rule:
-	if Dean Duggan is not touchable, the rule fails;
-	if lean-lugged is true:
-		vcal "You already learned lean luggin['].";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-lean-luggin rule:
-	say "You ask Dean Duggan for help with carrying large awkward things.";
-	now lean-lugged is true;
-	lean-and-mean;
-
-this is the vc-least-loss rule:
-	if player is not in creased cross, the rule fails;
-	if Bull Beast is off-stage:
-		clue-later "LEAST LOSS";
-		vcp "Not yet. You need to be in a fighting situation.";
-		continue the action;
-	if least-loss is true:
-		vcal "You already minimized your losses. Time to be more aggressive.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-least-loss rule:
-	now need-loss is false;
-	now least-loss is true;
-	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. The Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
-	clue-zap "LEAST LOSS";
-	phbt Creased Cross;
-
-this is the vc-lending-libe rule:
-	if player is not in vending vibe, the rule fails;
-	if trending tribe is moot:
-		vcal "Yes, It's a library now.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-lending-libe rule:
-	moot trending tribe;
-	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even books that don't help you profit. They run away screaming. The Vending Vibe goes away, replaced by a Lending Libe. A book even falls out: [fussed folks].";
-	now printed name of Vending Vibe is "Lending Libe";
-	move lending libe to Vending Vibe;
-	move fussed folks just jokes to Vending Vibe;
-	process the card-and-libe rule;
-
-this is the vc-lie-lol rule:
-	if player is not in Got Gear Hot Here, the rule fails;
-	if lie-lol is true:
-		vcal "The shy shawl has taken enough abuse.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-lie-lol rule:
-	say "You snicker a bit at the message on the shy shawl. But not too much! You don't want to become like the Very Vile Fairy File writers you're trying to defeat!";
-	now lie-lol is true;
-
-this is the vc-loft-land rule:
-	if player is not in soft sand, the rule fails;
-	if loft-land is true:
-		vcal "You're already on the Loft Land.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-loft-land rule:
-	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping]. You can now reach [if curst cave is visited]the Curst Cave again[else]that new cave west that you couldn't in the Soft Sand[end if].";
-	now zap-core-entry is true;
-	if ever-loft is false:
-		now ever-loft is true;
-	now loft-land is true;
-	now Curst Cave is mapped west of Soft Sand;
-	now Soft Sand is mapped east of Curst Cave;
-
-this is the vc-lot-lord rule:
-	if player is not in airy isle, the rule fails;
-	if Lot Lord is not off-stage:
-		vcal "You already summoned the Lot Lord.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-lot-lord rule:
-	move lot lord to airy isle;
-	say "A man whirls in from above and touches down, looking slightly stunned.[paragraph break]'Ah! There it is! The sought sword! Not useful in combat, but it has ancient powers and lineage and stuff. Good for leadership and all that.' The sword glows as he takes it.";
-	moot sought sword;
-	check-gored-clue;
-
-this is the vc-lots-lame rule:
-	if gutta ganksta is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-lots-lame rule:
-	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for a massive mall to perhaps hassle some poor soul named Passive Paul.";
-	moot gutta ganksta;
-	if gan-wan is false, max-down; [can't WHATTA WANKSTA]
-
-this is the vc-luck-lair rule:
-	if player is not in blinding blaze or stuck stair is off-stage, the rule fails;
-	if stuck stair is moot:
-		vcal "You already got the snuck snare from the luck lair.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-luck-lair rule:
-	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.[paragraph break]Your surroundings dim. You doubt there's much else exciting to do here.";
-	moot stuck stair;
-	now player has snuck snare;
-
-this is the vc-make-map rule:
-	if player is not in Lake Lap, the rule fails;
-	if jake-map is true:
-		vcal "You already made a map.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-make-map rule:
-	say "You make a map. As you do, you hear a hissing noise, as from a dangerous snake.";
-	now jake-map is true;
-	now cht of lake lap is letplus; [->snake snap]
-
-this is the vc-mark-more rule:
-	if player is not in stark store, the rule fails;
-	if dark door is off-stage:
-		clue-later "MARK MORE";
-		vcp "That'd work, if there was something to mark. There isn't, yet.";
-		continue the action;
-	if dark door is moot:
-		vcal "You already saw what you could.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mark-more rule:
-	say "Yes, there's more to the stark store than the dark door. You notice things about it--as well as how to take it off its hinges! And what's more, you also uncover a weird way off to the side.";
-	move weird way to Stark Store;
-	moot dark door;
-	phbt Stark Store;
-	clue-zap "MARK MORE";
-
-this is the vc-mash-map rule:
-	if player is not in po' pit, the rule fails;
-	process the ashap rule; [to determine what was the first word]
-	if grit-grown is false:
-		process the ashap rule;
-		vcp "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
-		clue-later "MASH MAP";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mash-map rule:
-	loop-note "MASH MAP";
-	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
-	process the ashap rule;
-	move player to Trim Tram;
-	clue-zap "MASH MAP";
-
-this is the vc-mean-muggin rule:
-	if Dean Duggan is not touchable, the rule fails;
-	if mean-mugged is true:
-		vcal "You already learned mean muggin['].";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mean-muggin rule:
-	say "You try some aggressive facial features. Dean Duggan helps you get things right.";
-	now mean-mugged is true;
-	lean-and-mean;
-
-this is the vc-meeker-muscle rule:
-	if reeker russell is not touchable, the rule fails;
-	if meeker-yet is true:
-		vcal "Russell's already meeker. Maybe disarm him?";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-meeker-muscle rule:
-	now meeker-yet is true;
-	say "Russell becomes noticeably less muscular.";
-	check-russell-go; [nec]
-	adjust-russell;
-
-this is the vc-merry-mile rule:
-	if mrlp is not Vale Verminous, the rule fails;
-	if merry-mile is true:
-		vcal "You already did. And forcing cheeriness tends to backfire.";
-		continue the action;
-	clue-later "MERRY MILE";
-	if player is not in Tarry Tile:
-		vcp "This doesn't seem to be the place to rename the Merry Mile. Maybe somewhere else, though.";
-		continue the action;
-	if player is in Airy Isle:
-		if bot board is moot:
-			vcp "You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead.";
-			continue the action;
-		vcp "Hard to be happy with the Bot Board around.";
-		continue the action;
-	if player is in Tarry Tile and well worn hell horn is in Tarry Tile:
-		vcp "Not with the well worn hell horn making those un-merry noises.";
-		clue-later "MERRY MILE";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-merry-mile rule:
-	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
-	now merry-mile is true;
-	clue-zap "MERRY MILE";
-	now cht of tarry tile is partminus; [tarry tile -> bury bile]
-
-this is the vc-mind-me rule:
-	if player is not in trim tram, the rule fails;
-	if me-minded is true:
-		if print-why-fail, vcal "You already minded yourself.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mind-me rule:
-	loop-note "MIND ME";
-	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
-	now me-minded is true;
-
-this is the vc-mining-more rule:
-	if player is not in Whining War, the rule fails;
-	if full feast is not moot:
-		vcp "You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
-		clue-later "MINING MORE";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mining-more rule:
-	now mine-more is true;
-	moot dining door;
-	say "You help the pining poor find a moor to mine more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
-	moot pining poor;
-	clue-zap "MINING MORE";
-
-this is the vc-mo-mappin rule:
-	if stuck stair is moot:
-		vcp "You did all the mapping you needed to.";
-		continue the action;
-	if player is not in blinding blaze:
-		vcp "Maybe some other place could use mapping, but not here.";
-		clue-later "MO MAPPIN";
-		continue the action;
-	if blaze-ways is false:
-		vcp "The blaze isn't mappable, but maybe something that replaces it is.";
-		clue-later "MO MAPPIN";
-		continue the action;
-	if stuck stair is in blinding blaze:
-		vcal "You're already in the mood to map. No need to overdo it.";
-		continue the action;
-	if player does not have Toe Tappin Row Rappin:
-		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
-		clue-later "MO MAPPIN";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mo-mappin rule:
-	say "Having a catchy tune like Toe Tappin Row Rappin in your head certainly helps you with tiring, repetitive activities such as mapping. And once you see the way through the maze, you don't forget it. At the end of the maze, there is a stuck stair. As you approach it, the maze walls collapse, and ... you find yourself very near the entrance. Convenient!";
-	move stuck stair to blinding blaze;
-	now maze-mapped is true;
-	clue-zap "MO MAPPIN";
-	moot minding maze;
-	process the check-sing-max rule;
-
-this is the vc-moral-mage rule:
-	if coral cage is not touchable, the rule fails;
-	if player does not have cage key:
-		clue-later "MORAL MAGE";
-		vcp "That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-moral-mage rule:
-	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it'll be a sermon, but it fills interesting details about the Very Vile Fairy File, its powers, the Crimes Crew Times Two, how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase.[paragraph break]The moral mage nods and departs, leaving you with [here hip], a summary of the lecture. You realize that the knowledge passed on was a sort of magic in its own right, and you'd groan if it weren't so helpful.";
-	moot coral cage;
-	moot cage key;
-	phbt Store All Stage;
-	now player has Here Hip Queer Quip;
-	clue-zap "MORAL MAGE";
-
-this is the vc-mystery-mall rule:
-	if player is not in History Hall, the rule fails;
-	if mistmall is true:
-		vcal "You've already flipped this area to the Mystery Mall.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-mystery-mall rule:
-	move-from-temp gutta ganksta;
-	if Toe Tappin is not moot:
-		move-from-temp Toe Tappin;
-	else if Oi Mo is not moot:
-		move-from-temp Oi Mo;
-	move-from-temp Mean Moe's Clean Clothes;
-	now Got Gear Hot Here is mapped west of History Hall;
-	now mistmall is true;
-	if ever-mall is false:
-		say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksta 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to LISTEN to, as well.";
-	else:
-		bold-my-room;
-		say "[description of history hall][line break]";
-	now ever-mall is true;
-	now zap-core-entry is true;
-
-this is the vc-near-null rule:
-	if beer bull is not touchable, the rule fails;
-	if bull-null is true:
-		vcal "You already reduced the bull's power!";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-near-null rule:
-	now zap-core-entry is true;
-	say "The beer bull writhes and roars. It's still plenty powerful, but it's not supercharged.";
-	now bull-null is true;
-
-this is the vc-no-nappin rule:
-	if toe tappin row rappin is not touchable, the rule fails;
-	if nap-no is true:
-		vcal "You already changed Toe Tappin Row Rappin that way.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-no-nappin rule:
-	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
-	say "[line break][if boat-reject is true and lake lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
-	now nap-no is true;
-	process the check-sing-max rule;
-
-this is the vc-not-near rule:
-	if player is not in got gear hot here, the rule fails;
-	if trounce-track is true:
-		vcp "You already teleported for a bonus point.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-not-near rule:
-	say "You feel pulled from the ground, and you pass through the walls without feeling anything. You are teleported to the TROUNCE TRACK, where you are set upon but what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. You're doing well enough here.";
-	now trounce-track is true;
-
-this is the vc-paper-pile rule:
-	if vapor vile is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-paper-pile rule:
-	say "The vapor vile changes to a paper pile.";
-	moot vapor vile;
-	bring-here paper pile;
-
-this is the vc-plain-pleasant rule:
-	if pain peasant is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-plain-pleasant rule:
-	say "How about that? A few nice words, and the Pain Peasant forgets what the matter was. Apparently, with the Very Vile Fairy File's influence, that happens a lot. People lash out at whomever, just because. A lesson learned!";
-	moot pain peasant;
-
-this is the vc-pull-pieced rule:
-	if full feast is not in Creased Cross, the rule fails;
-	if shore-shine is false:
-		vcp "You're not sure where you could pull the full feast to, yet.";
-		clue-later "PULL PIECED";
-		continue the action;
-	if dine-door is false:
-		clue-later "PULL PIECED";
-		vcp "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-pull-pieced rule:
-	say "With the help of the pining poor, you pull the full feast that was the bull beast to the Shining Shore. There, the dining door swings open. You enter and have a very good feast. As you leave, the dining door dissolves. The pining poor look ready for work, now they've been properly fed.";
-	moot full feast;
-	moot mild mead;
-	if wild weed is off-stage, max-down;
-	moot dining door;
-	move player to Whining War, without printing a room description;
-	clue-zap "PULL PIECED";
-
-this is the vc-see-sign rule:
-	if player does not have We Whine, the rule fails;
-	if sign-seen is true:
-		vcal "You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-see-sign rule:
-	say "A closer reading of [We Whine] reveals that you don't need to be a jerk to learn from it. Whether that was the authors['] intent is unclear, but you realize you can learn about the games jerks play and how to expect and deflect them even before they become obvious jerks. It seems like grappling with this sort of thing without fighting it would be useful for dealing with the Very Vile Fairy File, and you now feel more worthy and prepared to do so.";
-	now sign-seen is true;
-
-this is the vc-shining-shore rule:
-	if player is not in Whining War, the rule fails; [?? big problem with what replaces Violent Vale]
-	if shore-shine is true:
-		vcal "You already got (t)here.";
-		continue the action;
-	if war-sapped is false:
-		clue-later "SHINING SHORE";
-		vcp "It could be that way. But you need to get rid of the whining first.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-shining-shore rule:
-	say "The Whining War dissipates, leaving a shining shore! It's not total paradise or anything, but it's much brighter here. You feel there may be something else to find here. The combatants turn into ... the pining poor.";
-	now cht of Whining War is letminus; [shining shore -> dining door] [shining shore -> mining more]
-	now shore-shine is true;
-	move pining poor to whining war;
-	clue-zap "SHINING SHORE";
-
-this is the vc-show-shield rule:
-	if player is not in foe field, the rule fails;
-	if player does not have gold guard:
-		clue-later "SHOW SHIELD";
-		vcp "That seems right, but you have nothing that would guard you effectively. Maybe later.";
-		continue the action;
-	if mine-more is false:
-		clue-later "SHOW SHIELD";
-		vcp "Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements[if gull-guard is true] even beyond what the gull guard gave[end if].";
-		continue the action;
-	if gold guard is moot:
-		vcal "Your gold guard has done its duty.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-show-shield rule:
-	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down, and the YO YIELD vanishes. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You can go north now.";
-	now shield-shown is true;
-	moot gold guard;
-	clue-zap "SHOW SHIELD";
-	phbt Foe Field So Sealed;
-
-this is the vc-silent-sail rule:
-	if player is not in violent vale, the rule fails;
-	if flooring float is not off-stage:
-		vcal "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if].";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-silent-sail rule:
-	say "Suddenly from the watery depths, a flooring float bursts forth! It looks -- impractical for going anywhere, but man, is it aesthetic.";
-	move flooring float to violent vale;
-	now silent-sale is true;
-	phbt violent vale;
-
-this is the vc-sit-sound rule:
-	if player is not in pit pound, the rule fails;
-	if hit hound is not touchable:
-		vcal "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-sit-sound rule:
-	say "The Hit Hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the Hit Hound gives up and goes away.";
-	moot Hit Hound;
-
-this is the vc-smashing-smoke rule:
-	if player does not have clashing cloak, the rule fails;
-	if beer bull is in location of player:
-		vcp "That's not enough to distract the Beer Bull for good. The Beer Bull can smell you.";
-		clue-later "SMASHING SMOKE";
-		continue the action;
-	if player is not in Y'Old Yard:
-		vcp "Hmm, maybe that'd make a useful disturbance elsewhere, with someone to distract, but not here.";
-		clue-later "SMASHING SMOKE";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-smashing-smoke rule:
-	say "The Bold Bard tosses you a cold card quickly as thanks before making his way into the Shoaled Shard in the confusion! You hear shouting in there. The Bard has -- certainly made an impression. You hope it is a good one. Your clashing cloak went up in the smoke, but eh, it was sort of tacky anyway. As the smoke lifts, you notice a mold-marred gold guard. It could be useful, repaired. You take it.";
-	moot bold bard;
-	moot clashing cloak;
-	now player has cold card;
-	now player has gold guard;
-	clue-zap "SMASHING SMOKE";
-
-this is the vc-snake-snap rule:
-	if player is not in Lake Lap, the rule fails;
-	if jake-cocapn is false:
-		vcp "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
-		clue-later "SNAKE SNAP";
-		continue the action;
-	if jake-map is false:
-		vcp "There might be a snake here. But you'd have to find it, first.";
-		clue-later "SNAKE SNAP";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-snake-snap rule:
-	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale. It seems sturdy enough for another journey, if you want to go.";
-	if jake-brie is false, max-down; [can't BREAK BRIE any more]
-	now player has cake cap;
-	now snake-snap is true;
-	move boring boat to Violent Vale;
-	move player to Violent Vale, without printing a room description;
-	phbt Lake Lap;
-	clue-zap "SNAKE SNAP";
-
-this is the vc-so-sappin rule: [?? we need to make sure this works okay]
-	if player does not have Toe Tappin Row Rappin, the rule fails;
-	if war-sapped is true:
-		vcal "You already discouraged some whining. Bringing it up again might make you the whiny one.";
-		continue the action;
-	if player is not in whining war:
-		vcp "That's an interesting riff, but it doesn't seem to work here.";
-		clue-later "SO SAPPIN";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-so-sappin rule:
-	say "Amazingly, as you filk [Toe], the whining grows less. People realize they're not being productive at all. It becomes much quieter here. Your passive-aggressiveness has trumped others[']! Hooray!";
-	now war-sapped is true;
-	clue-zap "SO SAPPIN";
-	process the check-sing-max rule;
-
-this is the vc-soft-sand rule:
-	if player is not in soft sand or ever-loft is false, the rule fails;
-	if loft-land is false:
-		vcal "You're already on the Soft Sand.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-soft-sand rule:
-	say "The loft land reverts to the Soft Sand, revealing the old passage west[if shirk shell is visited] to the Shirk Shell[end if].";
-	now loft-land is false;
-	now Shirk Shell is mapped west of Soft Sand;
-
-this is the vc-spark-spliff rule:
-	if wild weed is moot:
-		vcal "Whoah, dude. You already did.";
-		continue the action;
-	if player does not have wild weed, the rule fails;
-	if player is not in Fun Fen:
-		vcp "Not here, dude! No source of flame!";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-spark-spliff rule:
-	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without a bong bunch and long lunch.";
-	moot wild weed;
-
-this is the vc-stay-strong rule:
-	if in-way-wrong is false, the rule fails;
-	the rule succeeds;
-
-this is the vr-stay-strong rule:
-	say "That's ... well, it helps a little! You've overcome a bit, but you still feel so sad ... so sad.";
-	now in-way-wrong is false;
-	now in-way-wronged is true;
-	now in-so-sad is true;
-	now cht of the player is letplus; [so sad->glow glad]
-
-this is the vc-strong-start rule:
-	if player is not in Fun Fen, the rule fails;
-	if started-strong is true:
-		vcal "You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-strong-start rule:
-	now started-strong is true;
-	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. Dunking on messed-up stuff too much may distract you from your goals, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and creased cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
-	moot wrong art;
-
-this is the vc-take-tea rule:
-	if jake is not touchable, the rule fails;
-	if jake-woke is false:
-		vcp "Maybe when Jake is awake.";
-		clue-later "TAKE TEA";
-		continue the action;
-	if jake-tea is true:
-		vcal "Don't get greedy. You have the sustenance needed to work with Jake G.";
-		the continue the action;
-	the rule succeeds;
-
-this is the vr-take-tea rule:
-	say "You and Jake have a brief snack. It helps bring you together. But he looks awkwardly at you. He guesses he should expect payment, but he doesn't really want it.";
-	now jake-tea is true;
-	clue-zap "TAKE TEA";
-
-this is the vc-tell-torn rule:
-	if well worn hell horn is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-tell-torn rule:
-	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
-	moot well worn hell horn;
-
-this is the vc-tight-tunnel rule:
-	if player is not in fight funnel, the rule fails;
-	if funnel-to-tunnel is true:
-		vcal "You already narrowed the funnel to a tunnel.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-tight-tunnel rule:
-	say "The fighting quiets down and moves off to the north. You can now go west!";
-	now funnel-to-tunnel is true;
-	phbt Fight Funnel;
-
-this is the vc-wake-whee rule:
-	if jake g is not touchable, the rule fails;
-	if jake-woke is true:
-		vcal "He's already awake, Blake.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-wake-whee rule:
-	say "Jake G. wakes up.";
-	now jake-woke is true;
-
-this is the vc-whatta-wanksta rule:
-	if gutta ganksta is not touchable, the rule fails;
-	if gan-wan is true:
-		vcal "That insult only works once.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-whatta-wanksta rule:
-	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, because the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
-	now gan-wan is true;
-
-this is the vc-whoa-wait rule:
-	unless player is in airy isle and go gate is in airy isle, the rule fails;
-	the rule succeeds;
-
-this is the vr-whoa-wait rule:
-	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.[wfak]";
-	move player to Tarry Tile;
-
-this is the vc-wild-weed rule:
-	if mild mead is not touchable, the rule fails;
-	if wild weed is not off-stage:
-		vcal "Greedy, to try for more.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-wild-weed rule:
-	say "Bingo! Some of the mild mead tumbles off to the ground and becomes wild weed. Which is totally unnecessary for the game, but hey.";
-	now player has wild weed;
-
-this is the vc-winding-ways rule:
-	if player is not in blinding blaze, the rule fails;
-	if blaze-ways is true:
-		vcal "You already did.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-winding-ways rule:
-	say "The blaze swirls but dies down. In its place are winding ways leading to a huge minding maze that will surely bust your brain and require a finding phase. And hey, that wry wall pops up too!";
-	now blaze-ways is true;
-	move minding maze to blinding blaze;
-	phbt blinding blaze;
-	repeat through table of bad locs:
-		if e1 entry is Blinding Blaze:
-			now e2 entry is north;
-			break;
-	wall-add Blinding Blaze;
-
-this is the vc-wood-one rule:
-	if reeker russell is not touchable, the rule fails;
-	if good gun is moot:
-		vcal "Russell's already disarmed, but he's still too strong.";
-		continue the action;
-	the rule succeeds;
-
-this is the vr-wood-one rule:
-	say "The good gun turns into a wood one in Reeker Russell's hands! He throws it away in disgust.";
-	moot good gun;
-	check-russell-go; [nec]
-
-this is the vc-work-well rule:
-	if jerk gel is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-work-well rule:
-	say "You work to put all the jerk gel back in. You don't get it all in, but there's enough to use later.";
-	now the player has the jerk gel;
-	now cht of Shirk Shell is phbt;
-	now cht of jerk gel is leteq; [supple saps->couple caps]
-
-this is the vc-youre-yonder rule:
-	if poor ponder is not touchable, the rule fails;
-	the rule succeeds;
-
-this is the vr-youre-yonder rule:
-	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. The book itself, however, bursts into flames like any proper secret communication once you discover the secret passage.";
-	moot poor ponder;
-	now Y'Old Yard is mapped outside History Hall;
-	now History Hall is mapped inside Y'Old Yard;
-
-[zzvcvr]
+rolling-yet is a truth state that varies.
 
 volume beta testing - not for release
 
@@ -5073,14 +3877,26 @@ when play begins (this is the force tester wherever rule):
 		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
 	if debug-state is false:
 		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
-		if fun fen is unvisited:
+		if Fun Fen is unvisited:
 			say "[line break]You can [b]SLOW SIGH or BLOW BY or FLOW FLY[r] to jump to the nonlinear part and avoid the introduction.[paragraph break]You can [b]TRICK TRIP or SLICK SLIP[r] before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.";
-		if airy isle is unvisited:
+		if Airy Isle is unvisited:
 			say "[line break]Also, you can [b]CLIMB CLEAR[r] to jump to the (relatively brief) endgame, and LLA leet-learns everything in sight.";
 	continue the action;
 
 this is the too-late-for-beta rule:
-	if fun fen is visited or airy isle is visited, say "It's too late to use the TRICK TRIP/BLOW BY commands." instead;
+	if Fun Fen is visited or Airy Isle is visited, say "It's too late to use the TRICK TRIP/BLOW BY commands." instead;
+
+chapter missesing
+
+missesing is an action applying to nothing.
+
+understand the command "misses" as something new.
+
+understand "misses" as missesing.
+
+carry out missesing:
+	carry out the showmissesing activity;
+	the rule succeeds.
 
 chapter llaing
 
@@ -5122,9 +3938,9 @@ carry out blowbying:
 		if do-rule entry is vr-flim-flam rule, break;
 		increment cur-row;
 	process the any-warp rule;
-	now score is whew-score;
-	now core-score is whew-score;
-	move player to fun fen;
+	now core-score is whew-score + bag-point;
+	now score is whew-score + cur-bonus + bag-point;
+	move player to Fun Fen;
 	moot mind malt;
 	now player has too totes new notes;
 	the rule succeeds.
@@ -5208,7 +4024,7 @@ section altrooms
 index map with Vending Vibe mapped south of Po' Pit.
 index map with Curst Cave mapped south of Vined Vault.
 
-section metarooms [these are need to go somewhere]
+section metarooms [these need to go somewhere]
 
 index map with Gazy Gap mapped south of Trim Tram.
 index map with Hidey House mapped west of Gazy Gap.

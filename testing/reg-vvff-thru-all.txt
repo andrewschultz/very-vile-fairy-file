@@ -3,13 +3,16 @@
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
 ## walkthrough with all points
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/debug-very-vile-fairy-file.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
+
+>really rolling
+by one point
+
+> big bag
+by one point
 
 > get good
 by one point
@@ -35,9 +38,6 @@ by one point
 > flim flam
 by one point
 
-> big bag
-by one point
-
 > s
 
 > kneel near
@@ -50,6 +50,7 @@ by one point
 by one point
 
 > appealing appear
+by one point
 
 > n
 
@@ -82,6 +83,7 @@ by one point
 by one point
 
 > w
+
 > mystery mall
 by one point
 
@@ -174,6 +176,7 @@ by one point
 
 > snake snap
 by one point
+Silent Sail
 
 > enter boat
 
@@ -196,6 +199,7 @@ by one point
 > w
 > w
 > w
+
 > glean glows
 by one point
 
@@ -205,11 +209,13 @@ by one point
 by one point
 
 > out
+
 > smashing smoke
 by one point
 
 > in
 > w
+
 > lending libe
 by one point
 
@@ -258,10 +264,12 @@ by one point
 > s
 > w
 > d
+
 > tight tunnel
 by one point
 
 > w
+
 > knives niche
 by one point
 
@@ -283,6 +291,7 @@ by one point
 > d
 > w
 > s
+
 > beast boss
 by one point
 
@@ -292,10 +301,10 @@ by one point
 > wild weed
 by one point
 
-> s
-
 > spark spliff
 by one point
+
+> s
 
 > s
 
@@ -333,10 +342,12 @@ by one point
 > w
 > n
 > n
+
 > show shield
 by one point
 
 > n
+
 > go gappin
 by one point
 

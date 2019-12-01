@@ -2,13 +2,13 @@
 ## reg-vvff-thru-fake-deaths.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-#** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
-#** interpreter: /home/andrew/prt/glulxe -q
-
-** game: /home/andrew/prt/beta-Very Vile Fairy File.z8
-** interpreter: /home/andrew/prt/dfrotz -m
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
+
+> big bag
+by one point
 
 > get good
 by one point
@@ -34,11 +34,8 @@ by one point
 > flim flam
 by one point
 
-> big bag
-by one point
-
 >w
-west to Bold 'n Brave
+west to Fame Fort
 >w
 You already went west
 >e
@@ -83,6 +80,7 @@ by one point
 by one point
 
 > w
+
 > mystery mall
 by one point
 
@@ -172,6 +170,7 @@ by one point
 
 > snake snap
 by one point
+Silent Sail
 
 > enter boat
 
@@ -180,17 +179,32 @@ by one point
 > glow glad
 by one point
 
+>s
+!south to Leaf Lake
+>n
+!north to Fun-Filled Gun Guild
+>w
+!west to Trust Trail
+
 > mean muggin
 by one point
 
 > lean luggin
 by one point
 
+>s
+south to Leaf Lake
+>n
+north to Fun-Filled Gun Guild
+>w
+west to Trust Trail
+
 > enter boat
 
 > w
 > w
 > w
+
 > glean glows
 by one point
 
@@ -200,6 +214,7 @@ by one point
 by one point
 
 > out
+
 > smashing smoke
 by one point
 
@@ -210,6 +225,7 @@ south to Lit Lawn
 
 > in
 > w
+
 > lending libe
 by one point
 
@@ -241,13 +257,18 @@ by one point
 > fit found
 by one point
 
->n
+> n
 !north to Straight Street
+> e
+!east to Bold 'n Brave
 
 > e
 
 > winding ways
 by one point
+
+> e
+east to Bold 'n Brave
 
 >n
 north to Straight Street
@@ -264,6 +285,7 @@ by one point
 > s
 > w
 > d
+
 > tight tunnel
 by one point
 
@@ -271,6 +293,7 @@ by one point
 north to Fortune Funnel
 
 > w
+
 > knives niche
 by one point
 
@@ -292,6 +315,7 @@ by one point
 > d
 > w
 > s
+
 > beast boss
 by one point
 
@@ -341,10 +365,12 @@ by one point
 > w
 > n
 > n
+
 > show shield
 by one point
 
 > n
+
 > go gappin
 by one point
 
@@ -373,15 +399,15 @@ by one point
 > lot lord
 by one point
 
-> got gored
-by one point
-
 >d
 !down to Happy Hall
 >u
 !up to Hippy Hill
 >n
 !north to Earning Ridges
+
+> got gored
+by one point
 
 >d
 down to Happy Hall

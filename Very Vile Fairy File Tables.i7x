@@ -6,6 +6,1477 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
 volume core tables
 
+chapter the verb check table
+
+[verb check and verb run rules. This is in approximate game-solve order.]
+
+table of verb checks [xxvc]
+w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	think-advice
+"glow"	"glad"	false	true	true	false	vc-glow-glad rule	vr-glow-glad rule	--	text	[start interlude-y]
+"stay"	"strong"	false	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--	-- [must be at top for JJ]
+"get"	"good"	false	false	true	false	vc-get-good rule	vr-get-good rule	--	-- [start Intro]
+"gift"	"giver"	false	false	true	false	vc-gift-giver rule	vr-gift-giver rule	--	--
+"find"	"fault"	false	true	true	false	vc-find-fault rule	vr-find-fault rule	--	--
+"green"	"grass"	false	false	true	false	vc-green-grass rule	vr-green-grass rule	--	--
+"grow|oh|so"	"grit|it|sit"	false	true	true	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
+"mash|bash|rash|slash"	"map|bap|rap|slap"	false	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
+"mind"	"me"	false	false	true	false	vc-mind-me rule	vr-mind-me rule	--	--
+"flim|skim"	"flam|scam"	false	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
+"spark"	"spliff"	false	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--	-- [start of Fun Fen]
+"strong"	"start"	false	true	false	false	vc-strong-start rule	vr-strong-start rule	--	--
+"fall"	"free"	false	true	true	false	vc-fall-free rule	vr-fall-free rule	--	--
+"dive"	"deep"	false	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--	--
+"paper"	"pile"	false	true	true	false	vc-paper-pile rule	vr-paper-pile rule	--	--
+"backed"	"binder"	false	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--	--
+"appealing"	"appear"	false	true	false	false	vc-appealing-appear rule	vr-appealing-appear rule	--	-- [start of Real Rear]
+"kneel|kneeling"	"near"	false	false	true	false	vc-kneel-near rule	vr-kneel-near rule	--	--
+"feel|feeling"	"fear"	false	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of vc-feel-fear rule] you have help from above, it will work."
+"deal|dealing"	"dear"	false	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of vc-deal-dear rule] you have something you need to deal with."
+"heal|healing"	"here"	false	true	true	false	vc-heal-here rule	vr-heal-here rule	--	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of vc-heal-here rule] you need to heal from something."
+"history"	"hall"	false	false	--	false	vc-history-hall rule	vr-history-hall rule	--	--
+"mystery"	"mall"	false	false	true	false	vc-mystery-mall rule	vr-mystery-mall rule	--	--
+"dark"	"door"	false	false	true	false	vc-dark-door rule	vr-dark-door rule	--	-- [start Stark Store]
+"mark"	"more"	false	false	true	false	vc-mark-more rule	vr-mark-more rule	--	"You'll want to [b]MARK MORE[r] [once-now of vc-mark-more rule]you've found something to mark [here-in of Stark Store]."
+"cleared"	"clay"	false	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--	--
+"bumped|dumped"	"buster|duster"	false	true	false	false	vc-bumped-buster rule	vr-bumped-buster rule	"bumped buster" or "dumped duster"	--
+"tight"	"tunnel"	false	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	--	-- [start fight funnel]
+"knives"	"niche"	false	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--	-- [start dives ditch]
+"wild"	"weed"	false	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--	--
+"lots"	"lame"	false	false	true	false	vc-lots-lame rule	vr-lots-lame rule	--	-- [start Mystery Mall]
+"no"	"nappin"	false	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--	--
+"ho"	"happen"	false	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--	--
+"dimd"	--	false	false	false	false	vc-dimd rule	vr-dimd rule	--	--
+"whatta"	"wanksta"	false	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"	--
+"youre|your|yore"	"yonder"	false	false	true	false	vc-youre-yonder rule	vr-youre-yonder rule	--	--
+"glean"	"glows"	false	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--	"You'll want to [b]GLEAN GLOWS[r] [once-now of vc-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
+"smashing"	"smoke"	false	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	--	"You can make [b]SMASHING SMOKE[r] [once-now of vc-smashing-smoke rule] you've found someone or something that could use a suitable diversion." [start Y'Old Yard]
+"lending"	"libe"	false	false	true	false	vc-lending-libe rule	vr-lending-libe rule	--	-- [start Vending Vibe]
+"see"	"sign"	false	false	true	false	vc-see-sign rule	vr-see-sign rule	--	--
+"hard"	"hat"	false	false	true	false	vc-hard-hat rule	vr-hard-hat rule	--	-- [start Got Gear Hot Here]
+"lie"	"lol"	false	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--	--
+"not"	"near"	false	true	false	false	vc-not-near rule	vr-not-near rule	--	--
+"beast"	"boss"	false	true	true	false	vc-beast-boss rule	vr-beast-boss rule	--	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of vc-beast-boss rule] you're armed better."[start Creased Cross]
+"cull|lul"	"ceased|least"	false	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	"cull ceased" or "lul least"	"You should be able to say [b][cul-lul][r] [once-now of vc-cull-ceased rule] you're back to full strength."
+"full"	"feast"	false	true	true	false	vc-full-feast rule	vr-full-feast rule	--	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of vc-full-feast rule] it's been vanquished."
+"least"	"loss"	false	true	true	false	vc-least-loss rule	vr-least-loss rule	--	"You could say [b]LEAST LOSS[r] [once-now of vc-least-loss rule] you have something to face [here-in of Creased Cross]."
+"loft"	"land"	false	false	true	false	vc-loft-land rule	vr-loft-land rule	--	-- [start Soft Sand]
+"soft"	"sand"	false	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly."
+"plain"	"pleasant"	false	true	true	false	vc-plain-pleasant rule	vr-plain-pleasant rule	--	-- [start Foe Field]
+"show"	"shield"	false	true	true	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
+"cool"	"cap"	false	true	true	false	vc-cool-cap rule	vr-cool-cap rule	--	-- [start Curst Cave]
+"dreaming"	"dull"	false	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--	--
+"first"	"fave"	false	false	true	false	vc-first-fave rule	vr-first-fave rule	--	"You could say [b]FIRST FAVE[r] [once-now of vc-first-fave rule] the screaming skull is gone."
+"moral"	"mage"	false	false	true	false	vc-moral-mage rule	vr-moral-mage rule	--	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
+"work"	"well"	false	true	true	false	vc-work-well rule	vr-work-well rule	--	-- [start Shirk Shell]
+"dear"	"dull"	false	true	true	false	vc-dear-dull rule	vr-dear-dull rule	--	-- [start Here Hull]
+"near"	"null"	false	true	true	false	vc-near-null rule	vr-near-null rule	--	--
+"sit"	"sound"	false	false	true	false	vc-sit-sound rule	vr-sit-sound rule	--	-- [start Pit Pound]
+"fit"	"found"	false	true	true	false	vc-fit-found rule	vr-fit-found rule	--	"You can declare a [b]FIT FOUND[r] [once-now of vc-fit-found rule] you've gotten rid of the Hit Hound."
+"winding|minding|finding"	"ways|maze|phase|fays"	false	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays"	-- [start Blinding Blaze]
+"mo"	"mappin"	false	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--	"You can try [b]MO MAPPIN[r] [once-now of vc-mo-mappin rule] you've found a suitable place to map."
+"luck|snuck"	"lair|snare"	false	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"	--
+"brightening"	"bridge"	false	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	--	-- [start Violent Vale]
+"silent"	"sail|sale"	false	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--	--
+"boring"	"boat"	false	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--	--
+"wake"	"whee|wee"	false	true	true	false	vc-wake-whee rule	vr-wake-whee rule	--	-- [start Lake Lea]
+"take"	"tea"	false	false	true	false	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
+"fake"	"fee"	false	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
+"break"	"brie"	false	false	false	false	vc-break-brie rule	vr-break-brie rule	--	--
+"make"	"map"	false	false	true	false	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
+"co"	"capn"	false	false	true	false	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
+"snake"	"snap"	false	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
+"lean"	"luggin"	false	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
+"mean"	"muggin"	false	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
+"so"	"sappin"	false	true	true	false	vc-so-sappin rule	vr-so-sappin rule	--	-- [start Whining War]
+"shining"	"shore"	false	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--	"You can make the [b]SHINING SHORE[r] [once-now of vc-shining-shore rule] you dealt with the Whining War."
+"mining"	"more|moor"	false	true	true	false	vc-mining-more rule	vr-mining-more rule	--	"You should be able to perform [b]MINING MORE[r] [once-now of vc-mining-more rule] the pining poor are fully satisfied."
+"dining"	"door"	false	false	true	false	vc-dining-door rule	vr-dining-door rule	--	"You should be able to make a [b]DINING DOOR[r] [once-now of vc-dining-door rule] the Whining War has calmed down a bit."
+"pull"	"pieced"	false	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--	"You can [b]PULL PIECED[r] the Bull Beast [once-now of vc-pull-pieced rule] you have more people willing to help you."
+"cast"	"cap"	false	false	true	false	vc-cast-cap rule	vr-cast-cap rule	--	"You can [b]CAST CAP[r] [once-now of vc-cast-cap rule] rule you have a worthy one." [start Gassed Gap]
+"beaker"	"bustle"	false	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--	--
+"meeker"	"muscle"	false	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--	--
+"wood"	"one"	false	false	true	false	vc-wood-one rule	vr-wood-one rule	--	--
+"go"	"gappin"	false	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
+"couple"	"caps"	false	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
+"lot"	"lord"	false	false	true	false	vc-lot-lord rule	vr-lot-lord rule	--	-- [start Airy Isle]
+"hot"	"horde"	false	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--	--
+"got"	"gored"	false	false	true	false	vc-got-gored rule	vr-got-gored rule	--	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
+"whoa|whoah|woe"	"wait"	false	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--	--
+"tell"	"torn"	false	false	true	false	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
+"merry"	"mile"	false	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
+"bury"	"bile"	false	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
+"big"	"bag"	false	true	true	false	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
+"really"	"rolling"	false	true	false	false	vc-really-rolling rule	vr-really-rolling rule	--	--
+
+section vc- and vr- rule definitions
+
+the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailable, not-yet, already-done and ready.
+
+section vc- and vr- rules [xxvcvr]
+
+a goodrhyme rule (this is the vc-appealing-appear rule) :
+	if player is not in Real Rear, unavailable;
+	if appeal-appear is true:
+		vcal "The peeling pier already looks better.";
+		already-done;
+	ready;
+
+this is the vr-appealing-appear rule:
+	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
+	now appeal-appear is true; [probably shouldn't zap this and replace with "peeling pier is optional" checks...]
+	now peeling pier is not optional;
+	if healed-here is false:
+		now cht of peeling pier is partminus; [->heal here]
+	else:
+		phbt peeling pier;
+
+a goodrhyme rule (this is the vc-backed-binder rule) :
+	if paper pile is not touchable or player has the backed binder, unavailable;
+	ready;
+
+this is the vr-backed-binder rule:
+	say "The papers labeled FACT FINDER should be useful. You find a way to glue them all together. They contain objective documentation of the Crimes Crew Times Two's exploits. You've been at the receiving end of some of their psychological tricks, and though you appreciate proof you weren't being oversensitive, you still shudder.";
+	now player has backed binder;
+	moot paper pile;
+	set the pronoun it to backed binder;
+
+a goodrhyme rule (this is the vc-beaker-bustle rule) :
+	if Reeker Russell is not touchable, unavailable;
+	if beaker-yet is true:
+		vcal "Russell's moment of interest in the sciences has passed.";
+		already-done;
+	ready;
+
+this is the vr-beaker-bustle rule:
+	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
+	now beaker-yet is true;
+	adjust-russell;
+
+a goodrhyme rule (this is the vc-beast-boss rule) :
+	if player is not in Creased Cross, unavailable;
+	if Bull Beast is not off-stage:
+		vcal "You already summoned the Bull Beast.";
+		already-done;
+	if player does not have gold guard:
+		vcp "You don't feel armed for that, yet.";
+		not-yet;
+	if gull-guard is false:
+		vcp "You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.";
+		not-yet;
+	ready;
+
+this is the vr-beast-boss rule:
+	say "A Bull Beast appears to answer your summons. You hope you have done the right thing, as it roughs you up a bit. You'll need to minimize the damage, here!";
+	move Bull Beast to Creased Cross;
+	now need-loss is true;
+	set the pronoun it to Bull Beast;
+
+a goodrhyme rule (this is the vc-big-bag rule) :
+	if player has big bag:
+		vcal "You already made the big bag.";
+		already-done;
+	ready;
+
+this is the vr-big-bag rule:
+	say "The zig-zag rig rag does a little wig-wag (I guess what you'd call it,) and it transforms into a much more useful big bag!";
+	moot zig zag rig rag;
+	now player has big bag;
+	set the pronoun it to big bag;
+
+a goodrhyme rule (this is the vc-boring-boat rule) :
+	if player is not in Violent Vale or flooring float is off-stage, unavailable;
+	if boring boat is moot:
+		vcal "You don't need to bring the boring boat back.";
+		already-done;
+	if boring boat is in Violent Vale:
+		vcal "The boat is already boring and practical enough.";
+		already-done;
+	ready;
+
+this is the vr-boring-boat rule:
+	say "The flooring float sinks and tips over slightly. Some of its excess cargo falls into the water, never to return. It becomes much leaner and more practical--a boring boat!";
+	moot flooring float;
+	move boring boat to Violent Vale;
+	set the pronoun it to boring boat;
+
+a goodrhyme rule (this is the vc-break-brie rule) :
+	if jake is not touchable, unavailable;
+	if jake-woke is false:
+		vcp "This bonus point action won't work until Jake is conscious.";
+		not-yet;
+	if jake-brie is true:
+		vcal "Hey! Don't get greedy, now.";
+		already-done;
+	ready;
+
+this is the vr-break-brie rule:
+	say "'Ooh, good one! I almost forgot I had it. I don't like it. Here, have it all.' This might not help in the end, but yay free food.";
+	now jake-brie is true;
+
+a goodrhyme rule (this is the vc-brightening-bridge rule) :
+	if frightening fridge is not touchable, unavailable;
+	ready;
+
+this is the vr-brightening-bridge rule:
+	say "The fridge collapses and flattens and provides a secure passage to the east!";
+	moot frightening fridge;
+
+a goodrhyme rule (this is the vc-bumped-buster rule) :
+	if clumped cluster is touchable, ready;
+	unavailable;
+
+this is the vr-bumped-buster rule:
+	say "You start pushing and kicking at the clumped cluster. Parts of it break off, but not very quickly until you start chanting 'Bumped, buster.' And what do you know? You find a dumped duster that makes your browsing through the clumped cluster easier. The rest of the cleanup is easy. Your only reward for your hard work is -- satisfaction of a job well done and that anyone who wrote the Very Vile Fairy File would be upset indeed to see someone doing nice stuff, just because. You hope Dean Duggan is happy.";
+	moot clumped cluster;
+
+a goodrhyme rule (this is the vc-bury-bile rule) :
+	if player is in Tarry Tile:
+		if well worn hell horn is moot and merry-mile is true, ready;
+		if well worn hell horn is in Tarry Tile:
+			vcp "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
+			not-yet;
+		if merry-mile is false:
+			vcp "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
+			not-yet;
+	if mrlp is Worst Whew:
+		vcp "You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.";
+		not-yet;
+	if mrlp is Piddling Pain or mrlp is Browsy Breaks:
+		vcp "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
+		not-yet;
+	if player is in Airy Isle:
+		vcp "You'd like to do that, but not here with so many distractions, during perhaps the big last fight.";
+		not-yet;
+	if mrlp is Vale Verminous:
+		vcp "It must be about the right time. But you are not quite there, yet.";
+		not-yet;
+	unavailable;
+
+this is the vr-bury-bile rule:
+	now bile-buried is true;
+	win-the-game;
+
+a goodrhyme rule (this is the vc-cast-cap rule) :
+	if player is not in Gassed Gap, unavailable;
+	if cool cap is moot:
+		vcal "The cap has been cast.";
+		already-done;
+	if extra-cool-cap is false:
+		let N be my-hats;
+		if N is 0:
+			vcp "You don't have any caps to cast.";
+		else if N is 1:
+			vcp "The [random gaphat enclosed by the player] isn't enough on its own.";
+		else if N is 2:
+			vcp "The [list of gaphats enclosed by the player] aren't quite enough.";
+		else if N is 3:
+			vcp "Wow! Three hats! They would be great to cast! But if only there was a way to combine them into an extra-cool hat you could cast all at once!";
+		not-yet;
+	ready;
+
+this is the vr-cast-cap rule:
+	say "You cast your cap, and the haze to the north disappears. You can see the way! But you can also see someone big and mean: you know it must be (W)re(a/e)ker Russell!";
+	moot cool cap;
+	move Reeker Russell to Gassed Gap;
+	phbt Gassed Gap;
+	set the pronoun him to Reeker Russell;
+
+a goodrhyme rule (this is the vc-cleared-clay rule) :
+	if player is not in Stark Store, unavailable;
+	if weird way is moot:
+		vcal "The clay is cleared enough.";
+		already-done;
+	ready;
+
+this is the vr-cleared-clay rule:
+		say "You concentrate on the weird way, which is, uh, weirder than trying to clear it with actual hard physical work. But it's effective! The clay crumbles and sinks into the ground. You can go down now!";
+	moot weird way;
+
+a goodrhyme rule (this is the vc-co-capn rule) :
+	if player does not have toe tappin or snake-snap is true, unavailable;
+	if jake-cocapn is true:
+		vcal "Jake already is[if jake is not touchable] and will be when you return to see him[end if].";
+		already-done;
+	if jake is not touchable:
+		vcp "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
+		not-yet;
+	if jake-fee is false:
+		vcp "You haven't (yet) bonded with Jake G. enough for that.";
+		not-yet;
+	ready;
+
+this is the vr-co-capn rule:
+	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
+	now jake-cocapn is true;
+	process the check-sing-max rule;
+
+a goodrhyme rule (this is the vc-cool-cap rule) :
+	if tool tap is not touchable, unavailable;
+	ready;  [?? YOULL YAP / CRUEL CRAP !!!!!]
+
+this is the vr-cool-cap rule:
+	say "Whoah! A cool cap must REALLY have been stuck in the tool tap. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips. The tool tap explodes and vaporizes from the effort of having squeezed out the cool cap.";
+	now player has cool cap;
+	moot tool tap;
+
+a goodrhyme rule (this is the vc-couple-caps rule) :
+	if player does not have jerk gel, unavailable;
+	if my-hats < 3: [this seems a bit awkward, but I put it this way so vc.py can detect CONTINUE THE ACTION as appropriate]
+		if my-hats is 2:
+			vcp "You'd think if you're coupling, you'd only need two hats or caps, but after some fiddling, you realize you need one more. Bummer!";
+		else if my-hats is 1:
+			vcp "You need at least one more hat to couple the CAPS.";
+		else:
+			vcp "You have no caps to couple. Maybe one day, though.";
+		not-yet;
+	ready;
+
+this is the vr-couple-caps rule:
+	say "Surprisingly, you don't need instructions to combine the hard hat, cool cap and cake cap into, well, an extra-cool cap. It's--well, it's got to be good for something dramatic!";
+	moot hard hat;
+	moot cake cap;
+	moot jerk gel;
+	now printed name of cool cap is "extra cool cap";
+	now extra-cool-cap is true;
+
+a goodrhyme rule (this is the vc-cull-ceased rule) :
+	if Bull Beast is off-stage, unavailable;
+	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
+	if player is not in Creased Cross:
+		vcp "You need to go back to Creased Cross.";
+		not-yet;
+	if healed-here is false:
+		vcp "You need to find a way to restore your health.";
+		not-yet;
+	if Bull Beast is boring:
+		vcal "Don't brag too much, now.";
+		already-done;
+	ready;
+
+this is the vr-cull-ceased rule:
+	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! Your words, which the spear translates into a few sharp slurps, groans and growls, cause the Bull Beast to run off in extreme psychological anguish before collapsing from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by so little.[paragraph break]You give chase, and it traps and lashes out at you. Reflexively, you block with the spear and strike back. Your first swipe is lethal.[paragraph break]Perhaps you can do something constructive with the Bull Beast's dead body.";
+	now cull-ceased is true;
+	now Bull Beast is boring; [?? what if dead]
+	now cht of Bull Beast is leteq; [Bull Beast->full feast]
+
+a goodrhyme rule (this is the vc-dark-door rule) :
+	if player is not in Stark Store, unavailable;
+	if dark door is not off-stage:
+		vcal "You already made the dark door appear[if dark door is moot] and disappear to create a passage[end if].";
+		already-done;
+	ready;
+
+this is the vr-dark-door rule:
+	say "Hey, wait a minute! You have a closer look and notice the outline of a dark door. Now you've seen it, you can't un-see it. There we go!";
+	move dark door to Stark Store;
+	set the pronoun it to dark door;
+
+a goodrhyme rule (this is the vc-deal-dear rule) :
+	if player is not in Real Rear, unavailable;
+	if felt-fear is false:
+		vcp "You haven't found anything you need to deal with[seer-sez].";
+		not-yet;
+	if cage key is not off-stage:
+		vcal "Overdoing dealing with it is ... one way to show you might not be dealing with it.";
+		already-done;
+	ready;
+
+this is the vr-deal-dear rule:
+	say "You reflect and have faith in yourself. Help will come at a good time, when you do not feel too desperate. And wait! It's coming now! The Sage Sea calms and parts briefly to reveal a cage key. You step in, not worried it may engulf you, because you've practiced your serenity. You retrieve the key with no problems.";
+	now player has cage key;
+	phbt Real Rear;
+	phbt steel steer;
+
+a goodrhyme rule (this is the vc-dear-dull rule) :
+	if player is not in Here Hull, unavailable;
+	if Beer Bull is moot:
+		vcal "Yeah, easy to say with the Beer Bull gone for good.";
+		already-done;
+	if in-bull-chase is true:
+		vcal "You don't need to do any more taunting.";
+		already-done;
+	ready;
+
+this is the vr-dear-dull rule:
+	now zap-core-entry is true;
+	say "The Beer Bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
+	start-bull-chase;
+
+a goodrhyme rule (this is the vc-dimd rule) :
+	if oi mo is not touchable, unavailable;
+	ready;
+
+this is the vr-dimd rule:
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or flip flop to [i]Tip Top Hip Hop[r], but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
+	if Gutta Ganksta is in History Hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
+	moot oi mo;
+
+a goodrhyme rule (this is the vc-dining-door rule) :
+	if player is not in Whining War, unavailable; [?? big problem with what replaces Violent Vale]
+	if war-sapped is false:
+		vcp "You can't make a dining door with all this whining going on!";
+		not-yet;
+	if shore-shine is false:
+		vcp "You hear a rumbling, but it's still too dingy here for anything nice like a dining door.";
+		not-yet;
+	if dine-door is true:
+		vcal "The dining door is already here.";
+		already-done;
+	ready;
+
+this is the vr-dining-door rule:
+	say "Up from the ground, a dining door rumbles and appears. From behind, you hear a cheery song: 'Merry mood, fairy food, dairy dude.' You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
+	now dine-door is true;
+	move dining door to Whining War;
+	phbt Whining War;
+	set the pronoun it to dining door;
+
+a goodrhyme rule (this is the vc-dive-deep rule) :
+	if hive heap is not touchable, unavailable;
+	ready;
+
+this is the vr-dive-deep rule:
+	say "You look through the hive heap. You don't hear buzzing. You keep throwing hives over Cark Cliff or ripping them up until a vapor vial clatters out.";
+	moot hive heap;
+	bring-here vapor vial;
+	set the pronoun it to vapor vial;
+
+a goodrhyme rule (this is the vc-dreaming-dull rule) :
+	if screaming skull is not touchable, unavailable;
+	ready;
+
+this is the vr-dreaming-dull rule:
+	moot screaming skull;
+	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse.[paragraph break]The whining outlasts your own empathy and interest, both real and (later) feigned. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
+
+a goodrhyme rule (this is the vc-fake-fee rule) :
+	if jake is not touchable, unavailable;
+	if jake-woke is false:
+		vcp "Maybe when Jake is awake.";
+		not-yet;
+	if jake-tea is false:
+		vcp "But Jake has given you nothing of value yet.";
+		not-yet;
+	if jake-fee is true:
+		vcal "That's over. Time to work with Jake!";
+		already-done;
+	ready;
+
+this is the vr-fake-fee rule:
+	say "You and Jake have a laugh about how you'd like to pay, and he'd like payment, but that's not really what's important here. Jake is ready to work with you off to the east!";
+	now jake-fee is true;
+	now Jake G is optional;
+	now cht of Jake G is letplus; [->break brie]
+
+a goodrhyme rule (this is the vc-fall-free rule) :
+	if player is not in Fun Fen, unavailable;
+	if tree-down is true:
+		vcal "The tree is already fallen. It's in a good place.";
+		already-done;
+	ready;
+
+this is the vr-fall-free rule:
+	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
+	now tree-down is true;
+	phbt tall tree;
+	move hive heap to Fun Fen;
+	set the pronoun it to hive heap;
+
+a goodrhyme rule (this is the vc-feel-fear rule) :
+	if player is not in Real Rear, unavailable;
+	if knelt-yet is false:
+		vcp "Fear isn't something you can, or want to, force[seer-sez].";
+		not-yet;
+	if felt-fear is true:
+		vcal "No need to overdo feeling fear.";
+		already-done;
+	ready;
+
+this is the vr-feel-fear rule:
+	say "You let yourself feel fear, both of physical harm and of being unable to figure a way to any secret areas. Admitting to this fear helps a bit, but somehow, you have to put your fear aside.";
+	now felt-fear is true;
+
+a goodrhyme rule (this is the vc-find-fault rule) :
+	if player is not in Vined Vault, unavailable;
+	if mean mass is in Vined Vault:
+		if print-why-fail, vcal "You already did, and things got worse. You'll have to try something else.";
+		already-done;
+	ready;
+
+this is the vr-find-fault rule:
+	loop-note "FIND FAULT";
+	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
+	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
+	move mean mass to Vined Vault;
+	moot mind malt;
+	phbt Vined Vault;
+	set the pronoun it to mean mass;
+
+a goodrhyme rule (this is the vc-first-fave rule) :
+	if player is not in Curst Cave, unavailable;
+	if first-fave is true:
+		vcal "The Curst Cave is already a cheerier place.";
+		already-done;
+	if screaming skull is in Curst Cave:
+		vcp "You can't like anything with that screaming skull around!";
+		not-yet;
+	ready;
+
+this is the vr-first-fave rule:
+	say "Suddenly, the worst wave isn't very bad or evil at all. In fact, with a bit of time, it recedes to reveal a tool tap.";
+	now first-fave is true;
+	move tool tap to Curst Cave;
+	moot worst wave;
+	set the pronoun it to tool tap;
+
+a goodrhyme rule (this is the vc-fit-found rule) :
+	if player is not in Pit Pound, unavailable;
+	if found-fit is true:
+		vcal "You already fit in.";
+		already-done;
+	if hit hound is in Pit Pound:
+		vcp "Maybe later, but you can't focus on that with the hit hound around.";
+		not-yet;
+	ready;
+
+this is the vr-fit-found rule:
+	say "You feel comfortable here now. Comfortable enough to enter and leave as you please. Woohoo!";
+	now found-fit is true;
+	phbt Pit Pound;
+
+a goodrhyme rule (this is the vc-flim-flam rule) :
+	if player is not in Trim Tram, unavailable;
+	if me-minded is false:
+		process the trimtramcmd rule;
+		vcp "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
+		not-yet;
+	ready;
+
+this is the vr-flim-flam rule:
+	loop-note "FLIM FLAM/SKIM SCAM";
+	say "That does it! The tram moves off to a more open place...";
+	process the trimtramcmd rule;
+	move the player to Fun Fen;
+	phbt Trim Tram;
+
+a goodrhyme rule (this is the vc-full-feast rule) :
+	if Bull Beast is not in location of player, unavailable;
+	if Bull Beast is not boring:
+		vcp "That should work. It might work better if the Bull Beast were incapacitated.";
+		not-yet;
+	ready;
+
+this is the vr-full-feast rule:
+	say "BOOM! You managed to make a full feast of the Bull Beast. But there's a lot of it. It'll be hard to move all at once.";
+	moot Bull Beast;
+	move full feast to location of player;
+	set the pronoun it to full feast;
+
+a goodrhyme rule (this is the vc-get-good rule) :
+	if player is not in Wet Wood:
+		if print-why-fail, vcal "You already managed to GET GOOD.";
+		already-done;
+	ready;
+
+this is the vr-get-good rule:
+	loop-note "GET GOOD";
+	say "You realize you can reason your way out of the Wet Wood. You feel so good about it, even musing 'good guy's wood wise!' But this brings up a question: if you need to work on rhymes, does it matter if they are spelled identically? Will that make things easier or harder in the long run?[paragraph break]So many questions! On leaving the wood, you find yourself blocked by water.";
+	move player to Rift River;
+	phbt Wet Wood;
+
+a goodrhyme rule (this is the vc-gift-giver rule) :
+	if player is not in Rift River, unavailable;
+	ready;
+
+this is the vr-gift-giver rule:
+	loop-note "GIFT GIVER";
+	say "Someone appears from the distance. 'Here! Take this. It will help you with a future puzzle or puzzles.' It's a packet of Mind Malt, whatever that is. And ... it's empty. You open your mouth to protest, but their hand goes up. 'The best sort of magic helps you help yourself.'[paragraph break]You stifle a hmph. 'Oh,' they continue, 'Also some Too-Totes-New Notes. They will tell you what your Leet Learner would've scanned for the puzzles you face at the start. Though you may wish to keep track of things by yourself. If you wish, you can DROP it to solve things the hard way.'[paragraph break]That's a bit better. They walk away. You grumble and putter around, wondering where you should go next. You put your hand on a tree, which has sick sap on it. You walk around, trying to get it off, and you fall into a ... TRICK TRAP.";
+	now player has Too Totes New Notes;
+	now player has Mind Malt;
+	move player to Vined Vault;
+	set the pronoun it to Mind Malt;
+	set the pronoun them to Too Totes New Notes;
+	phbt Rift River;
+
+a goodrhyme rule (this is the vc-glean-glows rule) :
+	if player is not in History Hall or mean moe's is not in History Hall, unavailable;
+	if player does not have clay cloak:
+		vcp "That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.";
+		not-yet;
+	ready;
+
+this is the vr-glean-glows rule:
+	say "You figure how Mean Moe's Clean Clothes works. You lump the way woke clay cloak in, and after some beeping and coughing, out comes ... a clashing cloak! It's much less bulky than the way woke clay cloak, and it feels more versatile.";
+	moot way woke clay cloak;
+	now player has clashing cloak;
+	moot Mean Moe's Clean Clothes;
+	set the pronoun it to clashing cloak;
+
+a goodrhyme rule (this is the vc-glow-glad rule) :
+	if in-so-sad is false, unavailable;
+	ready;
+
+this is the vr-glow-glad rule:
+	say "Okay! You're really ready to face things now. Someone comes into view, congratulates you on fighting off your inner demons, and introduces himself as Dean Duggan. 'I have a couple more things I can teach you, but you'll have to ask me specifically.'";
+	now in-so-sad is false;
+	now in-so-saded is true;
+	phbt Kerry Kyle;
+	move Dean Duggan to Been Buggin;
+
+a goodrhyme rule (this is the vc-go-gappin rule) :
+	if player does not have Toe Tappin, unavailable;
+	if player is not in Gassed Gap:
+		vcp "Hm! [Toe] could be tweaked like that to be useful in the right place[if Gassed Gap is visited], like the Gassed Gap[end if].";
+		not-yet;
+	if gap-go is true:
+		vcal "The song already worked.";
+		already-done;
+	ready;
+
+this is the vr-go-gappin rule:
+	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
+	now gap-go is true;
+	process the check-sing-max rule;
+
+a goodrhyme rule (this is the vc-got-gored rule) :
+	if player is not in Airy Isle or Bot Board is moot, unavailable;
+	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle, ready;
+	if Lot Lord is off-stage and Hot Horde is off-stage:
+		vcp "That sounds right, but it would just be your epitaph right now. With some organized help, though, it could be a potent rallying cry. You save the thought for later.";
+		not-yet;
+	if Lot Lord is off-stage:
+		vcp "The Hot Horde needs more than a battle cry. It needs a leader.";
+		not-yet;
+	if Hot Horde is off-stage:
+		vcp "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work.";
+		not-yet;
+	say "Uh oh. This is a BUG case. This should not have happened, but you can still win the game."; [oksay]
+	ready;
+
+this is the vr-got-gored rule:
+	say "YES! That's the cheer the Hot Horde needs, even if there's no gore inside the Bot Board. No need for a ham-handed 'BAM! BANDED!' as they coalesce and organize under the Lot Lord's leadership.[paragraph break]As things calm down, you realize a wry wall points you three ways, and there is now a go gate ahead! You must be close now.";
+	moot Hot Horde;
+	moot Lot Lord;
+	moot Bot Board;
+	wall-add Airy Isle;
+	move go gate to Airy Isle;
+	set the pronoun it to go gate;
+
+a goodrhyme rule (this is the vc-green-grass rule) :
+	if mean mass is in Vined Vault, ready;
+	unavailable;
+
+this is the vr-green-grass rule:
+	loop-note "GREEN GRASS";
+	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
+	move player to Po' Pit;
+	moot mean mass;
+
+a goodrhyme rule (this is the vc-grow-grit rule) :
+	if player is not in Po' Pit, unavailable;
+	if grit-grown is true:
+		if print-why-fail, vcal "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
+		already-done;
+	ready;
+
+this is the vr-grow-grit rule:
+	loop-note "GROW GRIT";
+	say "'So, sit,' you say to yourself. You ponder a bit before saying 'Oh ... it ...'. You realize you have managed to grow grit![paragraph break]The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
+	now grit-grown is true;
+	phbt row writ;
+	phbt Po' Pit;
+
+a goodrhyme rule (this is the vc-hard-hat rule) :
+	if marred mat is not touchable, unavailable;
+	ready;
+
+this is the vr-hard-hat rule:
+	say "Poof! The marred mat changes into a hard hat. But it's a bit small to wear. Maybe you could combine it with something else.";
+	moot marred mat;
+	now player has hard hat;
+	set the pronoun it to hard hat;
+
+a goodrhyme rule (this is the vc-heal-here rule) :
+	if player is not in Real Rear, unavailable;
+	if healed-here is true:
+		vcal "No need to heal further.";
+		already-done;
+	if least-loss is false:
+		vcp "You don't have anything to heal from, yet[seer-sez].";
+		not-yet;
+	if knelt-yet is false:
+		vcp "You have not shown the Ceiling Seer the proper respect, yet.";
+		not-yet;
+	ready;
+
+this is the vr-heal-here rule:
+	say "You call on the Ceiling Seer once more. You worry you may hear 'Gee, Ill! Jeer,' but your faith is rewarded as you feel rejuvenated!";
+	now healed-here is true;
+	phbt ceiling seer;
+	if appeal-appear is false, phbt peeling pier;
+
+a goodrhyme rule (this is the vc-history-hall rule) :
+	if player is not in History Hall, unavailable;
+	if mistmall is false:
+		vcal "You already [if ever-mall is true]flipped back to[else]are in[end if] History Hall.";
+		already-done;
+	ready;
+
+this is the vr-history-hall rule:
+	move-to-temp Gutta Ganksta;
+	move-to-temp Mean Moe's Clean Clothes;
+	now Vending Vibe is mapped west of History Hall;
+	now History Hall is mapped east of Vending Vibe;
+	move-from-temp Poor Ponder;
+	move-to-temp Gutta Ganksta;
+	move-to-temp Oi Mo;
+	now mistmall is false;
+	if ever-hall is false:
+		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
+		set the pronoun it to Poor Ponder;
+	bold-my-room;
+	say "[description of History Hall][line break]";
+	now ever-hall is true;
+
+a goodrhyme rule (this is the vc-ho-happen rule) :
+	if player does not have Toe Tappin, unavailable;
+	if hap-ho is true:
+		vcal "You already said HO HAPPEN.";
+		already-done;
+	ready;
+
+this is the vr-ho-happen rule:
+	say "While nothing immediately happens, you feel more motivated to try new stuff--[Toe] may be more versatile than you think!";
+	now hap-ho is true;
+
+a goodrhyme rule (this is the vc-hot-horde rule) :
+	if player is not in Airy Isle, unavailable;
+	if Hot Horde is not off-stage:
+		vcal "You already summoned the Hot Horde.";
+		already-done;
+	ready;
+
+this is the vr-hot-horde rule:
+	say "The legendary Hot Horde rumbles in from ... goodness, how'd they get here so fast? Especially since they're such a disorganized bunch!";
+	move Hot Horde to Airy Isle;
+	check-gored-clue;
+	set the pronoun them to Hot Horde;
+
+a goodrhyme rule (this is the vc-kneel-near rule) :
+	if player is not in Real Rear, unavailable;
+	if knelt-yet is true:
+		vcal "No need to kneel twice.";
+		already-done;
+	ready;
+
+this is the vr-kneel-near rule:
+	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you. Perhaps you can be more open with your feelings now, and the Ceiling Seer will be more receptive.";
+	now knelt-yet is true; [?? track difference]
+	now cht of Real Rear is leteq; [->feel fear] [-> deal dear] [->heal here]
+	now cht of steel steer is letminus; [steel steer->feel fear]
+
+a goodrhyme rule (this is the vc-knives-niche rule) :
+	if player is not in dives ditch, unavailable;
+	if kni-ni is true:
+		vcal "You already changed the dives ditch.";
+		already-done;
+	ready;
+
+this is the vr-knives-niche rule:
+	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
+	now kni-ni is true;
+	process the drop-snare rule;
+
+a goodrhyme rule (this is the vc-lean-luggin rule) :
+	if player is not in Been Buggin, unavailable;
+	if lean-lugged is true:
+		vcal "You already learned lean luggin['].";
+		already-done;
+	if Dean Duggan is not touchable:
+		vcpforce "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		not-yet;
+	ready;
+
+this is the vr-lean-luggin rule:
+	say "You ask Dean Duggan for help with carrying large awkward things.";
+	now lean-lugged is true;
+	lean-and-mean;
+
+a goodrhyme rule (this is the vc-least-loss rule) :
+	if player is not in Creased Cross, unavailable;
+	if Bull Beast is off-stage:
+		vcp "Not yet. You need to be in a fighting situation.";
+		not-yet;
+	if least-loss is true:
+		vcal "You already minimized your losses. Time to be more aggressive.";
+		already-done;
+	ready;
+
+this is the vr-least-loss rule:
+	now need-loss is false;
+	now least-loss is true;
+	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. As you stumble back to the familiar, safe Fun Fen, the Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
+	phbt Creased Cross;
+	bold-new-room Fun Fen;
+
+a goodrhyme rule (this is the vc-lending-libe rule) :
+	if player is not in Vending Vibe, unavailable;
+	if Trending Tribe is moot:
+		vcal "Yes, It's a library now.";
+		already-done;
+	ready;
+
+this is the vr-lending-libe rule:
+	moot Trending Tribe;
+	say "The Trending Tribe is appalled by the possibility of people getting something for free. Even worthless books boring people claim to read for fun. They run away screaming. The Vending Vibe goes away, replaced by a Lending Libe. A book even falls out: [fussed folks].";
+	now printed name of Vending Vibe is "Lending Libe";
+	move Lending Libe to Vending Vibe;
+	move fussed folks just jokes to Vending Vibe;
+	process the card-and-libe rule;
+	set the pronoun it to Fussed Folks;
+
+a goodrhyme rule (this is the vc-lie-lol rule) :
+	if player is not in Got Gear Hot Here, unavailable;
+	if lie-lol is true:
+		vcal "The shy shawl has taken enough abuse.";
+		already-done;
+	ready;
+
+this is the vr-lie-lol rule:
+	say "You snicker a bit at the message on the shy shawl. But not too much! You don't want to become like the Very Vile Fairy File writers you're trying to defeat!";
+	now lie-lol is true;
+
+a goodrhyme rule (this is the vc-loft-land rule) :
+	if player is not in Soft Sand, unavailable;
+	if loft-land is true:
+		vcal "You're already on the Loft Land.";
+		already-done;
+	ready;
+
+this is the vr-loft-land rule:
+	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping]. You can now reach [if Curst Cave is visited]the Curst Cave again[else]that new cave west that you couldn't in the Soft Sand[end if].";
+	now zap-core-entry is true;
+	if ever-loft is false:
+		now ever-loft is true;
+	now loft-land is true;
+	now Curst Cave is mapped west of Soft Sand;
+	now Soft Sand is mapped east of Curst Cave;
+
+a goodrhyme rule (this is the vc-lot-lord rule) :
+	if player is not in Airy Isle, unavailable;
+	if Lot Lord is not off-stage:
+		vcal "You already summoned the Lot Lord.";
+		already-done;
+	ready;
+
+this is the vr-lot-lord rule:
+	move Lot Lord to Airy Isle;
+	say "A man whirls in from above and touches down, looking slightly stunned.[paragraph break]'Ah! There it is! The sought sword! Not useful in combat, but it has ancient powers and lineage and stuff. Good for leadership and all that.' The sword glows as he takes it.";
+	moot sought sword;
+	check-gored-clue;
+	set the pronoun him to Lot Lord;
+
+a goodrhyme rule (this is the vc-lots-lame rule) :
+	if Gutta Ganksta is not touchable, unavailable;
+	ready;
+
+this is the vr-lots-lame rule:
+	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for a massive mall to perhaps hassle some poor soul named Passive Paul.";
+	moot Gutta Ganksta;
+	if gan-wan is false, max-down; [can't WHATTA WANKSTA]
+
+a goodrhyme rule (this is the vc-luck-lair rule) :
+	if player is not in Blinding Blaze or stuck stair is off-stage, unavailable;
+	if stuck stair is moot:
+		vcal "You already got the snuck snare from the luck lair.";
+		already-done;
+	ready;
+
+this is the vr-luck-lair rule:
+	say "You try and make your own luck, and you do! The stuck stair flips down. Inside the luck lair there is nothing, except ... well, since you feel lucky, you find the snuck snare without it going off. You'll probably know where to put the snuck snare once you see it. Because, well, you still feel a bit lucky.[paragraph break]Your surroundings dim. You doubt there's much else exciting to do here.";
+	moot stuck stair;
+	now player has snuck snare;
+	set the pronoun it to snuck snare;
+
+a goodrhyme rule (this is the vc-make-map rule) :
+	if player is not in Lake Lap, unavailable;
+	if jake-map is true:
+		vcal "You already made a map.";
+		already-done;
+	ready;
+
+this is the vr-make-map rule:
+	say "You make a map. As you do, you hear a hissing noise, as from a dangerous snake.";
+	now jake-map is true;
+	now cht of Lake Lap is letplus; [->snake snap]
+
+a goodrhyme rule (this is the vc-mark-more rule) :
+	if player is not in Stark Store, unavailable;
+	if dark door is off-stage:
+		vcp "That'd work, if there was something to mark. There isn't, yet.";
+		not-yet;
+	if dark door is moot:
+		vcal "You already saw what you could.";
+		already-done;
+	ready;
+
+this is the vr-mark-more rule:
+	say "Yes, there's more to the Stark Store than the dark door. You notice things about it--as well as how to take it off its hinges! And what's more, you also uncover a weird way off to the side.";
+	move weird way to Stark Store;
+	moot dark door;
+	phbt Stark Store;
+
+a goodrhyme rule (this is the vc-mash-map rule) :
+	if player is not in Po' Pit, unavailable;
+	process the ashap rule; [to determine what was the first word]
+	if grit-grown is false:
+		process the ashap rule;
+		vcp "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
+		not-yet;
+	ready;
+
+this is the vr-mash-map rule:
+	loop-note "MASH MAP";
+	say "The heck with this! You just don't trust the trash trap to tell you the way through. You maul what passes for a map on the cache cap--you realize parts of it don't make sense. And you make it past the gash gap... only to tumble into some sort of vehicle that seals shut.";
+	process the ashap rule;
+	move player to Trim Tram;
+
+a goodrhyme rule (this is the vc-mean-muggin rule) :
+	if player is not in Been Buggin, unavailable;
+	if mean-mugged is true:
+		vcal "You already learned mean muggin['].";
+		already-done;
+	if Dean Duggan is not touchable:
+		vcpforce "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
+		not-yet;
+	ready;
+
+this is the vr-mean-muggin rule:
+	say "You try some aggressive facial features. Dean Duggan helps you get things right.";
+	now mean-mugged is true;
+	lean-and-mean;
+
+a goodrhyme rule (this is the vc-meeker-muscle rule) :
+	if Reeker Russell is not touchable, unavailable;
+	if meeker-yet is true:
+		vcal "Russell's already meeker. Maybe disarm him?";
+		already-done;
+	ready;
+
+this is the vr-meeker-muscle rule:
+	now meeker-yet is true;
+	say "Russell becomes noticeably less muscular.";
+	check-russell-go; [nec]
+	adjust-russell;
+
+a goodrhyme rule (this is the vc-merry-mile rule) :
+	if mrlp is not Vale Verminous, unavailable;
+	if merry-mile is true:
+		vcal "You already did. And forcing cheeriness tends to backfire.";
+		already-done;
+	if player is in Airy Isle:
+		vcp "[if Bot Board is moot]You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead[else]Hard to be happy with the Bot Board around[end if].";
+		not-yet;
+	if well worn hell horn is not moot:
+		vcp "Not with the well worn hell horn making those un-merry noises.";
+		not-yet;
+	ready;
+
+this is the vr-merry-mile rule:
+	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
+	now merry-mile is true;
+	now cht of Tarry Tile is partminus; [Tarry Tile -> bury bile]
+
+a goodrhyme rule (this is the vc-mind-me rule) :
+	if player is not in Trim Tram, unavailable;
+	if me-minded is true:
+		if print-why-fail, vcal "You already minded yourself.";
+		already-done;
+	ready;
+
+this is the vr-mind-me rule:
+	loop-note "MIND ME";
+	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
+	now me-minded is true;
+
+a goodrhyme rule (this is the vc-mining-more rule) :
+	if player is not in Whining War, unavailable;
+	if full feast is not moot:
+		vcp "You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.";
+		not-yet;
+	if pining poor are moot:
+		vcal "You've gotten all the mined materials you need. Wasting them might cause another whining war.";
+		already-done;
+	ready;
+
+this is the vr-mining-more rule:
+	now mine-more is true;
+	moot dining door;
+	say "You help the pining poor find a moor to mine more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
+	moot pining poor;
+	set the pronoun it to gold guard;
+
+a goodrhyme rule (this is the vc-mo-mappin rule) :
+	if player does not have Toe Tappin Row Rappin and player is not in Blinding Blaze, unavailable;
+	if stuck stair is moot:
+		vcp "You did all the mapping you needed to.";
+		not-yet;
+	if player is not in Blinding Blaze:
+		vcp "Maybe some other place could use mapping, but not here.";
+		not-yet;
+	if blaze-ways is false:
+		vcp "The blaze isn't mappable, but maybe something that replaces it is.";
+		not-yet;
+	if stuck stair is in Blinding Blaze:
+		vcal "You're already in the mood to map. No need to overdo it.";
+		already-done;
+	if player does not have Toe Tappin Row Rappin:
+		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
+		not-yet;
+	ready;
+
+this is the vr-mo-mappin rule:
+	say "Having a catchy tune like Toe Tappin Row Rappin in your head certainly helps you with tiring, repetitive activities such as mapping. And once you see the way through the maze, you don't forget it. At the end of the maze, there is a stuck stair. As you approach it, the maze walls collapse, and ... you find yourself very near the entrance. Convenient!";
+	move stuck stair to Blinding Blaze;
+	now maze-mapped is true;
+	moot Minding Maze;
+	process the check-sing-max rule;
+	set the pronoun it to stuck stair;
+
+a goodrhyme rule (this is the vc-moral-mage rule) :
+	if coral cage is not touchable, unavailable;
+	if player does not have cage key:
+		vcp "That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.";
+		not-yet;
+	ready;
+
+this is the vr-moral-mage rule:
+	say "The inner bars of the coral cage crumble, followed by the cage itself and the key with it. The moral mage thanks you and begins a lecture. You're worried it'll be a sermon, but it fills interesting details about the Very Vile Fairy File, its powers, the Crimes Crew Times Two, how and why they are effective, and how to deflect their worst attacks. You even relate their meanness to people in your past who had baited you, and you feel your resolve increase.[paragraph break]The moral mage nods and departs, leaving you with [here hip], a summary of the lecture. You realize that the knowledge passed on was a sort of magic in its own right, and you'd groan at this sort of revelation if it weren't so helpful.";
+	moot coral cage;
+	moot cage key;
+	phbt Store All Stage;
+	now player has Here Hip Queer Quip;
+	set the pronoun it to Here Hip Queer Quip;
+
+a goodrhyme rule (this is the vc-mystery-mall rule) :
+	if player is not in History Hall, unavailable;
+	if mistmall is true:
+		vcal "You've already flipped this area to the Mystery Mall.";
+		already-done;
+	ready;
+
+this is the vr-mystery-mall rule:
+	move-from-temp Gutta Ganksta;
+	if Toe Tappin is not moot:
+		move-from-temp Toe Tappin;
+	else if Oi Mo is not moot:
+		move-from-temp Oi Mo;
+	move-from-temp Mean Moe's Clean Clothes;
+	now Got Gear Hot Here is mapped west of History Hall;
+	now mistmall is true;
+	if ever-mall is false:
+		say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksta 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to LISTEN to, as well.";
+	else:
+		bold-my-room;
+		say "[description of History Hall][line break]";
+	now ever-mall is true;
+	now zap-core-entry is true;
+
+a goodrhyme rule (this is the vc-near-null rule) :
+	if Beer Bull is not touchable, unavailable;
+	if bull-null is true:
+		vcal "You already reduced the bull's power!";
+		already-done;
+	ready;
+
+this is the vr-near-null rule:
+	now zap-core-entry is true;
+	say "The Beer Bull writhes and roars. It's still plenty powerful, but it's not supercharged.";
+	now bull-null is true;
+
+a goodrhyme rule (this is the vc-no-nappin rule) :
+	if toe tappin row rappin is not touchable, unavailable;
+	if nap-no is true:
+		vcal "You already changed Toe Tappin Row Rappin that way.";
+		already-done;
+	ready;
+
+this is the vr-no-nappin rule:
+	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
+	say "[line break][if boat-reject is true and Lake Lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
+	now nap-no is true;
+	process the check-sing-max rule;
+
+a goodrhyme rule (this is the vc-not-near rule) :
+	if player is not in Got Gear Hot Here, unavailable;
+	if trounce-track is true:
+		vcal "You already teleported for a bonus point.";
+		already-done;
+	ready;
+
+this is the vr-not-near rule:
+	say "You feel pulled from the ground, and you pass through the walls without feeling anything. You are teleported to the TROUNCE TRACK, where you are set upon but what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. You're doing well enough here.";
+	now trounce-track is true;
+
+a goodrhyme rule (this is the vc-paper-pile rule) :
+	if vapor vial is not touchable, unavailable;
+	ready;
+
+this is the vr-paper-pile rule:
+	say "The vile vapor in the vapor vial swirls around, and the paper cracks. The vapor spreads over the ground and changes into a whole paper pile.";
+	moot vapor vial;
+	bring-here paper pile;
+	set the pronoun it to paper pile;
+
+a goodrhyme rule (this is the vc-plain-pleasant rule) :
+	if Pain Peasant is not touchable, unavailable;
+	ready;
+
+this is the vr-plain-pleasant rule:
+	say "How about that? A few nice words, and the Pain Peasant forgets what the matter was. Apparently, with the Very Vile Fairy File's influence, that happens a lot. People lash out at whomever, just because. A lesson learned!";
+	moot Pain Peasant;
+
+a goodrhyme rule (this is the vc-pull-pieced rule) :
+	if full feast is not in Creased Cross and Bull Beast is not in Creased Cross, unavailable;
+	if Bull Beast is in Creased Cross:
+		vcp "[if cull-ceased is true]The Bull Beast could be pulled, but in its current form, it wouldn't be usefu[else]You'd have to defeat the Bull Beast first[end if].";
+		not-yet;
+	if shore-shine is false:
+		vcp "You're not sure where you could pull the full feast to, yet.";
+		not-yet;
+	if dine-door is false:
+		vcp "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
+		not-yet;
+	ready;
+
+this is the vr-pull-pieced rule:
+	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
+	moot full feast;
+	moot mild mead;
+	if wild weed is off-stage, max-down;
+	moot dining door;
+	if player is not in Whining War, bold-new-room Whining War;
+
+a goodrhyme rule (this is the vc-really-rolling rule) :
+	if rolling-yet is false, ready;
+	vcal "You already guessed the significance of my pen name.";
+	already-done;
+
+this is the vr-really-rolling rule:
+	say "Have a small bonus for figuring the significance of my pen name. Also, enjoy this trivia: looking back, I wish I'd been Parsin['] Pro Carson Crowe, instead. Eh, well!";
+	now rolling-yet is true;
+
+a goodrhyme rule (this is the vc-see-sign rule) :
+	if player does not have We Whine, unavailable;
+	if sign-seen is true:
+		vcal "You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.";
+		already-done;
+	ready;
+
+this is the vr-see-sign rule:
+	say "A closer reading of [We Whine] reveals that you don't need to be a jerk to learn from it. Whether that was the authors['] intent is unclear, but you realize you can learn about the games jerks play and how to expect and deflect them even before they become obvious jerks. It seems like grappling with this sort of thing without fighting it would be useful for dealing with the Very Vile Fairy File, and you now feel more worthy and prepared to do so.";
+	now sign-seen is true;
+
+a goodrhyme rule (this is the vc-shining-shore rule) :
+	if player is not in Whining War, unavailable; [?? big problem with what replaces Violent Vale]
+	if shore-shine is true:
+		vcal "You already got (t)here.";
+		already-done;
+	if war-sapped is false:
+		vcp "It could be that way. But you need to get rid of the whining first.";
+		not-yet;
+	ready;
+
+this is the vr-shining-shore rule:
+	say "The Whining War dissipates, leaving a Shining Shore! It's not total paradise or anything, but it's much brighter here. You feel there may be something else to find here. The combatants turn into ... the pining poor.";
+	now cht of Whining War is letminus; [Shining Shore -> dining door] [Shining Shore -> mining more]
+	now shore-shine is true;
+	move pining poor to Whining War;
+	set the pronoun them to Poor Ponder;
+
+a goodrhyme rule (this is the vc-show-shield rule) :
+	if player is not in Foe Field, unavailable;
+	if gold guard is off-stage:
+		vcp "That seems right, but you have nothing that would guard you effectively. Maybe later.";
+		not-yet;
+	if mine-more is false:
+		vcp "Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements[if gull-guard is true] even beyond what the gull guard gave[end if].";
+		not-yet;
+	if gold guard is moot:
+		vcal "Your gold guard has done its duty.";
+		already-done;
+	ready;
+
+this is the vr-show-shield rule:
+	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down, and the YO YIELD vanishes. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You can go north now.";
+	now shield-shown is true;
+	moot gold guard;
+	phbt Foe Field So Sealed;
+
+a goodrhyme rule (this is the vc-silent-sail rule) :
+	if player is not in Violent Vale, unavailable;
+	if flooring float is not off-stage:
+		vcal "You already called up the flooring float[if boring boat is not off-stage] and boring boat[end if].";
+		already-done;
+	ready;
+
+this is the vr-silent-sail rule:
+	say "Suddenly from the watery depths, a flooring float bursts forth! It looks -- impractical for going anywhere, but man, is it aesthetic.";
+	move flooring float to Violent Vale;
+	now silent-sale is true;
+	phbt Violent Vale;
+	set the pronoun it to flooring float;
+
+a goodrhyme rule (this is the vc-sit-sound rule) :
+	if player is not in Pit Pound, unavailable;
+	if hit hound is not touchable:
+		vcal "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
+		already-done;
+	ready;
+
+this is the vr-sit-sound rule:
+	say "The hit hound can smell fear, but it can also smell a lack of fear. You manage to sit sound, and the hit hound gives up and goes away.";
+	moot hit hound;
+
+a goodrhyme rule (this is the vc-smashing-smoke rule) :
+	if player does not have clashing cloak, unavailable;
+	if Beer Bull is in location of player:
+		vcp "That's not enough to distract the Beer Bull for good. The Beer Bull can smell you.";
+		not-yet;
+	if player is not in Y'Old Yard:
+		vcp "Hmm, maybe that'd make a useful disturbance elsewhere, with someone to distract, but not here.";
+		not-yet;
+	ready;
+
+this is the vr-smashing-smoke rule:
+	say "The Bold Bard tosses you a cold card quickly as thanks before making his way into the Shoaled Shard in the confusion! You hear shouting in there. The Bard has -- certainly made an impression. You hope it is a good one. Your clashing cloak went up in the smoke, but eh, it was sort of tacky anyway. As the smoke lifts, you notice a mold-marred gold guard. It could be useful, repaired. You take it.";
+	moot Bold Bard;
+	moot clashing cloak;
+	now player has cold card;
+	now player has gold guard;
+	set the pronoun it to gold guard;
+
+a goodrhyme rule (this is the vc-snake-snap rule) :
+	if player is not in Lake Lap, unavailable;
+	if jake-cocapn is false:
+		vcp "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
+		not-yet;
+	if jake-map is false:
+		vcp "There might be a snake here. But you'd have to find it, first.";
+		not-yet;
+	ready;
+
+this is the vr-snake-snap rule:
+	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale. It seems sturdy enough for another journey, if you want to go.";
+	if jake-brie is false, max-down; [can't BREAK BRIE any more]
+	now player has cake cap;
+	now snake-snap is true;
+	move boring boat to Violent Vale;
+	bold-new-room Violent Vale;
+	phbt Lake Lap;
+	set the pronoun it to cake cap;
+
+a goodrhyme rule (this is the vc-so-sappin rule) : [?? we need to make sure this works okay]
+	if player does not have Toe Tappin Row Rappin, unavailable;
+	if war-sapped is true:
+		vcal "You already discouraged some whining. Bringing it up again might make you the whiny one.";
+		already-done;
+	if beer bull is touchable:
+		vcp "That might work on people who understand songs and poetry. The Beer Bull does not. You need a stronger way to kill it off.";
+		not-yet;
+	if player is not in Whining War:
+		vcp "That's an interesting riff, but it doesn't seem to work here.";
+		not-yet;
+	ready;
+
+this is the vr-so-sappin rule:
+	say "Amazingly, as you filk [Toe], the whining grows less. People realize they're not being productive at all. It becomes much quieter here. Your passive-aggressiveness has trumped others[']! Hooray!";
+	now war-sapped is true;
+	process the check-sing-max rule;
+
+a goodrhyme rule (this is the vc-soft-sand rule) :
+	if player is not in Soft Sand or ever-loft is false, unavailable;
+	if loft-land is false:
+		vcal "You're already on the Soft Sand.";
+		already-done;
+	ready;
+
+this is the vr-soft-sand rule:
+	say "The Loft Land reverts to the Soft Sand, revealing the old passage west[if Shirk Shell is visited] to the Shirk Shell[end if].";
+	now loft-land is false;
+	now Shirk Shell is mapped west of Soft Sand;
+
+a goodrhyme rule (this is the vc-spark-spliff rule) :
+	if wild weed is moot:
+		vcal "Whoah, dude! Jonesing for more already?";
+		already-done;
+	if player does not have wild weed and player is not in Fun Fen, unavailable;
+	if player is not in Fun Fen:
+		vcp "Not here, dude! No source of flame!";
+		not-yet;
+	if player does not have wild weed:
+		vcp "You have nothing to spark up, dude!";
+		not-yet;
+	ready;
+
+this is the vr-spark-spliff rule:
+	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without a bong bunch and long lunch.";
+	moot wild weed;
+
+a goodrhyme rule (this is the vc-stay-strong rule) :
+	if in-way-wrong is false, unavailable;
+	ready;
+
+this is the vr-stay-strong rule:
+	say "That's ... well, it helps a little! You've overcome a bit, but you still feel so sad ... so sad.";
+	now in-way-wrong is false;
+	now in-way-wronged is true;
+	now in-so-sad is true;
+	now cht of the player is letplus; [so sad->glow glad]
+
+a goodrhyme rule (this is the vc-strong-start rule) :
+	if player is not in Fun Fen, unavailable;
+	if started-strong is true:
+		vcal "You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
+		already-done;
+	ready;
+
+this is the vr-strong-start rule:
+	now started-strong is true;
+	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. Dunking on messed-up stuff too much may distract you from your goals, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and Creased Cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
+	moot wrong art;
+
+a goodrhyme rule (this is the vc-take-tea rule) :
+	if jake is not touchable, unavailable;
+	if jake-woke is false:
+		vcp "Maybe when Jake is awake.";
+		not-yet;
+	if jake-tea is true:
+		vcal "Don't get greedy. You have the sustenance needed to work with Jake G.";
+		already-done;
+	ready;
+
+this is the vr-take-tea rule:
+	say "You and Jake have a brief snack. It helps bring you together. But he looks awkwardly at you. He guesses he should expect payment, but he doesn't really want it.";
+	now jake-tea is true;
+
+a goodrhyme rule (this is the vc-tell-torn rule) :
+	if well worn hell horn is not touchable, unavailable;
+	ready;
+
+this is the vr-tell-torn rule:
+	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
+	moot well worn hell horn;
+
+a goodrhyme rule (this is the vc-tight-tunnel rule) :
+	if player is not in fight funnel, unavailable;
+	if funnel-to-tunnel is true:
+		vcal "You already narrowed the funnel to a tunnel.";
+		already-done;
+	ready;
+
+this is the vr-tight-tunnel rule:
+	say "The fighting quiets down and moves off to the north. You can now go west!";
+	now funnel-to-tunnel is true;
+	phbt Fight Funnel;
+
+a goodrhyme rule (this is the vc-wake-whee rule) :
+	if Jake G is not touchable, unavailable;
+	if jake-woke is true:
+		vcal "He's already awake, Blake.";
+		already-done;
+	ready;
+
+this is the vr-wake-whee rule:
+	say "Jake G. wakes up. 'Man! I'm hungry! You hungry too?'";
+	now jake-woke is true;
+	set the pronoun him to Jake G;
+
+a goodrhyme rule (this is the vc-whatta-wanksta rule) :
+	if Gutta Ganksta is not touchable, unavailable;
+	if gan-wan is true:
+		vcal "That insult only works once.";
+		already-done;
+	ready;
+
+this is the vr-whatta-wanksta rule:
+	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, because the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
+	now gan-wan is true;
+
+a goodrhyme rule (this is the vc-whoa-wait rule) :
+	unless player is in Airy Isle and go gate is in Airy Isle, unavailable;
+	ready;
+
+this is the vr-whoa-wait rule:
+	say "You decide not to run in right away. The grow grate inside the go grate crumbles. You take another peek to make sure there's nothing else. There isn't. You walk through.[wfak]";
+	move player to Tarry Tile;
+	set the pronoun it to well worn hell horn;
+
+a goodrhyme rule (this is the vc-wild-weed rule) :
+	if mild mead is not touchable, unavailable;
+	if wild weed is not off-stage:
+		vcal "Greedy, to try for more.";
+		already-done;
+	ready;
+
+this is the vr-wild-weed rule:
+	say "Bingo! Some of the mild mead tumbles off to the ground and becomes wild weed. Which is totally unnecessary for the game, but hey.";
+	now player has wild weed;
+
+a goodrhyme rule (this is the vc-winding-ways rule) :
+	if player is not in Blinding Blaze, unavailable;
+	if blaze-ways is true:
+		vcal "You already made it out of the Blinding Blaze.";
+		already-done;
+	ready;
+
+this is the vr-winding-ways rule:
+	say "The blaze swirls but dies down. In its place are Winding Ways leading to a huge Minding Maze that will surely bust your brain and require a finding phase. And hey, that wry wall pops up too!";
+	now blaze-ways is true;
+	move Minding Maze to Blinding Blaze;
+	phbt Blinding Blaze;
+	wall-add Blinding Blaze;
+	set the pronoun it to Minding Maze;
+
+a goodrhyme rule (this is the vc-wood-one rule) :
+	if Reeker Russell is not touchable, unavailable;
+	if good gun is moot:
+		vcal "Russell's already disarmed, but he's still too strong.";
+		already-done;
+	ready;
+
+this is the vr-wood-one rule:
+	say "The good gun turns into a wood one in Reeker Russell's hands! He throws it away in disgust.";
+	moot good gun;
+	check-russell-go; [nec]
+
+a goodrhyme rule (this is the vc-work-well rule) :
+	if jerk gel is not touchable, unavailable;
+	if player has jerk gel:
+		vcal "Any further futzing might undo your previous good work.";
+		already-done;
+	ready;
+
+this is the vr-work-well rule:
+	say "You work to put all the jerk gel back in. You don't get it all in, but there's enough to use later.";
+	now the player has the jerk gel;
+	now cht of Shirk Shell is phbt;
+	now cht of jerk gel is leteq; [supple saps->couple caps]
+
+a goodrhyme rule (this is the vc-youre-yonder rule) :
+	if poor ponder is not touchable, unavailable;
+	ready;
+
+this is the vr-youre-yonder rule:
+	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. Leo Strauss would approve![paragraph break]The book itself, however, bursts into flames like any proper secret communication now you've discovered the secret passage.";
+	moot poor ponder;
+	now Y'Old Yard is mapped outside History Hall;
+	now History Hall is mapped inside Y'Old Yard;
+
+[zzvcvr]
+
+chapter joke death ends
+
 [run sct.py to verify deaths/thinks/alt good verbs file testing is up-to-date. Also, rbr-vvff-thru.txt / reg-vvff-thru-fake-deaths.txt / reg-vvff-thru-think.txt / reg-vvff-thru-alt.txt]
 
 [pest post / messed most / rest roast/ guest ghost / best boast]
@@ -14,9 +1485,13 @@ e1	e2	avail	been-here	fake-name	death-trap
 Airy Isle	north	false	false	"Earning Ridges"	"You figure you've got a right to profit as you have gotten this far. Why, there're some bridges to cross ahead, even brighter than the brightening bridge you made back in the Violent Vale! Everything seems lit so clearly as you walk across them, but too late, you realize that is because they are BURNING BRIDGES."
 Airy Isle	down	false	false	"Happy Hall"	"Man! You could use some cheer right now. The happy hall is spacious at first until you ... need to start crawling. You realize what this means."
 Airy Isle	up	false	false	"Hippy Hill"	"You are sure the Hippy Hill will be full of peace and love and goodness and be an appropriate end to all this ... until you hear noises. A drippy drill. Then you are caught by a grippy grill! You suddenly realize you lack ... skippy skill."
+Been Buggin	north	false	false	"Fun-Filled Gun Guild"	"Boy, there just hasn't been enough violence so far. You need a change of pace. But since it's fun-filled, it obviously can't harm you! It might be just the thing to get (further) un-illed. But unfortunately, as you think 'I'm one willed...' the fun starts. Loud gunshots. You are stun-shilled, then spun, spilled and finally none, nilled. You should have shun-shilled!"
+Been Buggin	south	false	false	"Leaf Lake"	"Ah, that's an easy one! You sure could use a brief break. You do your homework: Jefe Jake doesn't rhyme, and Chief Chake and Grief Grake make nonsense. You think you smell beef bake as you walk by what is a fief (fake) and hear a sheaf shake, but that's ha... 'TEEF?! TAKE!' booms a loud voice. You cover your mouth, but you're still pushed over. A giant grabs you and takes you to the sea as its servant. Your job? 'REEF! RAKE!'"
+Been Buggin	west	false	false	"Trust Trail"	"You walk down the Trust Trail, shortly given a side quest. 'Must mail,' someone says, handing you a letter and pointing to Dust Dale. Everything goes well until a gust-gale sweeps you off your feet--you grasp at a rust rail which is torn from the ground--and deposits you in, well, just jail. With no way to bust bail! You mutter to yourself, fussed, 'FAIL.'"
+Blinding Blaze	east	false	false	"Bold [']n Brave"	"You feel like you can handle anything. Yes sir/ma'am! You are bold and brave! But shortly, you feel less warm. 'Cold ... and crave,' you think, slightly ungrammatically. Then an olden rave leaves you even more scared. You flee, until you tumble down and look up and realize you are trapped in a ...  golden grave!"
 Blinding Blaze	north	false	false	"Straight Street"	"Oh boy, a straight street is a lot better than a maze! You might even find a Great Greet, or at least a Mate Meet. It's getting a bit lonely. But of course, you run into a Bait Beat chock full of Hate Heat, where people cry 'Late! Leet?!' You wind up crushed by weight ... wheat. It's not the desired fate-feat."
 Fight Funnel	north	true	false	"Fortune Funnel"	"Boy oh boy! Enough of these rhymes. It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL.[paragraph break]Given where you started, you probably should've seen this, but it was worth a try."
-Fun Fen	west	true	false	"Bold [']n Brave"	"You feel like you can handle anything. Yes sir/ma'am! You are bold and brave! But shortly, you feel less warm. 'Cold ... and crave,' you think, slightly ungrammatically. Then an olden rave leaves you even more scared. You flee, until you tumble down and look up and realize you are trapped in a ...  golden grave!" [?? this is a bad place to put it but I want to test a sign with 2 entries]
+Fun Fen	west	true	false	"Fame Fort"	"Hey, why not give it a chance? The place right after the intro, maybe there's a quick way through. I mean, what can they throw at you? A tame tort? Call you a 'same-sort?' It doesn't seem too difficult, until you hear 'Maim! Mort!' and remember Mort means death. Before you pass out, you see someone standing over you saying 'Shame, short.'"
 Fun Fen	east	true	false	"Fate Farm"	"You figure, why not get to my fate sooner rather than later? A farm can't be that bad. You hear an innocuous 'Mate?! Marm?!' as you walk down a road, then a dismayed 'DISARM!' Yup, pretty nonviolent...[paragraph break]Until you are faced with mass chanting of 'Hate, harm!' The rest is unspeakable."
 Gassed Gap	east	true	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS you buy from SHOPPING SHILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
 Gassed Gap	west	true	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
@@ -27,9 +1502,11 @@ Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as 
 Lake Lea	west	true	false	"Capped Cone"	"What could possibly be dangerous about a cone? Nothing, until you get beyond it to the ... ZAPPED ZONE."
 Lake Lea	north	true	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
-Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void."
-Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! Unfortunately, as you begin to waltz through, you suffer horrible, and ultimately fatal, tauntin['] and conkin[']."
-Y'Old Yard	south	true	false	"Lit Lawn"	"Boy! The lit lawn seems nice and bright! A fit faun is frolicking alone! You ignore the voice yelling 'get gone' and are unaware of a pit pawn that grabs you from behind, making you sit, sawn"
+Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void. To you, it is classed cloyed."
+Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! You waltz easily past the pawn pen, an obvious trap. But soon you suffer horrible, and ultimately fatal, tauntin['] and conkin[']. Set to gongin[']. All a bit off-key, but effective."
+Y'Old Yard	south	true	false	"Lit Lawn"	"Boy! The lit lawn seems nice and bright! A fit faun is frolicking alone! You ignore the voice yelling 'get gone' and are unaware of a pit pawn and spit-spawn that grab you from behind, making you sit, sawn. You curse them with your last though, wondering if one was named Sean."
+
+volume rank stuff
 
 table of ranks [xxranks]
 rank-max	rank-name
@@ -61,7 +1538,7 @@ to seed-score-list:
 	repeat through table of ranks:
 		increment my-row;
 		if there is a rank-max entry:
-			if rank-max entry is -1, now rank-max entry is whew-score; [keep initial rank until you get to Fun Fen]
+			if rank-max entry is -1, now rank-max entry is whew-score + 1; [keep initial rank until you get to Fun Fen. The +1 is because you can flip the big bag at any time.]
 			now min-forced-score is rank-max entry;
 			now last-forced-row is my-row;
 			now last-points is rank-max entry + 1;
@@ -128,6 +1605,7 @@ randtxt
 "Pay, Pow, Hey, How"
 "Stern Stable Turn Table"
 "War Whistles, More Missiles"
+"You'll Yell Woo Well"
 
 table of miscellaneous people [xxpeople]
 randtxt
@@ -149,6 +1627,7 @@ randtxt
 "Sure-Shank Burbank"
 "Trot Trice, Not-Nice Lot Lice"
 "Wig Wearin['] Big Baron"
+"Will-Work Bill Burke"
 "Work-Will Kirk Kill"
 "Would-Whirl Bud Burrell"
 
@@ -160,11 +1639,13 @@ randtxt
 "Catcall: at ALL!"
 "Dark day! Hark, hey!"
 "Fie! Face my mace!"
+"Fry, freak-guy(?)-geek!"
 "Gonna go off! Shun a show-off!"
 "Look leading?! Book beating!"
 "Mock me? Sock, SEE?!"
 "'My magic try: TRAGIC!'"
 "Rotten role: gotten goal?"
+"Sly, sleek? Shy, chic? Why, weak!"
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
 "Whoah! Words? No, nerds!"
@@ -174,6 +1655,7 @@ randtxt
 table of vvff books [xxbooks]
 randtxt
 "Ache or Make More Lake Lore"
+"Bane, Bones, Stain Stones[r], by Jane Jones"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
@@ -218,160 +1700,8 @@ False	"You walk around and discover a cabin belonging to someone named Det. Dood
 True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
 
 [leetclue of xxx]
-volume hints for later
 
-table of forlaters [the CAN rules need to remain for the most part, because they are about if you can move around to do something.]
-cmd-to-say	ready-to-hint	can-do-now	is-done	think-advice
-"BEAST BOSS"	false	can-beast-boss rule	false	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of can-beast-boss rule] you're armed better."
-"BIG BAG"	false	vc-big-bag rule	false	"You tried to make a [b]BIG BAG[r] from the zig zag rig rag. You can [once-now of vc-big-bag rule] you're in a more open area."
-"BURY BILE"	false	vc-bury-bile rule	false	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. Maybe somewhere else[if Airy Isle is unvisited]. And maybe you need to find the Very Vile Fairy File first[end if]."
-"CAST CAP"	false	can-cast-cap rule	false	"You can [b]CAST CAP[r] [once-now of can-cast-cap rule] rule you have a worthy one."
-"CO CAPN"	false	can-co-capn rule	false	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of can-co-capn rule] there's a worthy comrade."
-"COUPLE CAPS"	false	can-couple-caps rule	false	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of can-couple-caps rule] you've got enough caps to couple."
-"CULL CEASED"	false	can-cull-ceased rule	false	"You should be able to say [b][cul-lul][r] [once-now of can-cull-ceased rule] you're back to full strength."
-"DEAL DEAR"	false	can-deal-dear rule	false	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of can-deal-dear rule] you have something you need to deal with."
-"DINING DOOR"	false	can-dining-door rule	false	"You should be able to make a [b]DINING DOOR[r] [once-now of can-dining-door rule] the Whining War has calmed down a bit."
-"FAKE FEE"	false	can-fake-fee rule	false	"You could give Jake G. a [b]FAKE FEE[r] [once-now of can-fake-fee rule] Jake G. has given you something of value."
-"FEEL FEAR"	false	can-feel-fear rule	false	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of can-feel-fear rule] you have help from above, you could."
-"FIRST FAVE"	false	can-first-fave rule	false	"You could say [b]FIRST FAVE[r] [once-now of can-first-fave rule] the screaming skull is gone."
-"FIT FOUND"	false	can-fit-found rule	false	"You can declare a [b]FIT FOUND[r] [once-now of can-fit-found rule] you've gotten rid of the Hit Hound."
-"FLIM FLAM"	false	vc-flim-flam rule	false	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"FULL FEAST"	false	can-full-feast rule	false	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of can-full-feast rule] it's been vanquished."
-"GLEAN GLOWS"	false	can-glean-glows rule	false	"You'll want to [b]GLEAN GLOWS[r] [once-now of can-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
-"GO GAPPIN"	false	can-go-gappin rule	false	"You'll want to [b]GO GAPPIN[r] [once-now of can-go-gappin rule] you've found a gap to go over."
-"GOT GORED"	false	vc-got-gored rule	false	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
-"HEAL HERE"	false	can-heal-here rule	false	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of can-heal-here rule] you need to heal from something."
-"LEAST LOSS"	false	can-least-loss rule	false	"You could say [b]LEAST LOSS[r] [once-now of can-least-loss rule] you have something to face [here-in of Creased Cross]."
-"MARK MORE"	false	can-mark-more rule	false	"You'll want to [b]MARK MORE[r] [once-now of can-mark-more rule] you've found something to mark [here-in of Stark Store]."
-"MASH MAP"	false	vc-mash-map rule	false	"You tried to [b][ash-ap][r], [if grit-grown is true]and maybe now you were able to [b]GROW GRIT[r], it will work[else]but sadly, you still believe it is the only thing that could help you through, and you don't have the guts[end if]."
-"MERRY MILE"	false	can-merry-mile rule	false	"You can call for a [b]MERRY MILE[r] [once-now of can-merry-mile rule] things have calmed down."
-"MINING MORE"	false	can-mining-more rule	false	"You should be able to perform [b]MINING MORE[r] [once-now of can-mining-more rule] the pining poor are fully satisfied."
-"MO MAPPIN"	false	can-mo-mappin rule	false	"You can try [b]MO MAPPIN[r] [once-now of can-mo-mappin rule] you've found a suitable place to map."
-"MORAL MAGE"	false	can-moral-mage rule	false	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
-"PULL PIECED"	false	can-pull-pieced rule	false	"You can [b]PULL PIECED[r] the bull beast [once-now of can-pull-pieced rule] you have more people willing to help you."
-"SHINING SHORE"	false	can-shining-shore rule	false	"You can make the [b]SHINING SHORE[r] [once-now of can-shining-shore rule] you dealt with the Whining War."
-"SHOW SHIELD"	false	can-show-shield rule	false	"You'll want to [b]SHOW SHIELD[r] [once-now of can-show-shield rule] you've found something that can protect you in the Foe Field."
-"SMASHING SMOKE"	false	can-smashing-smoke rule	false	"You can make [b]SMASHING SMOKE[r] [once-now of can-smashing-smoke rule] you've found someone or something that could use a suitable diversion."
-"SNAKE SNAP"	false	can-snake-snap rule	false	"You can [b]SNAKE SNAP[r] [once-now of can-snake-snap rule] it's clear a snake is present."
-"SO SAPPIN"	false	can-so-sappin rule	false	"You can make things [b]SO SAPPIN[r] [once-now of can-so-sappin rule] you can find where people are using their energy fruitlessly."
-"TAKE TEA"	false	can-take-tea rule	false	"You could [b]TAKE TEA[r] with Jake G. [once-now of can-fake-fee rule] he's conscious."
-
-[?? see about collapsing the below into rules from the story file proper e.g. vc-can-cull-ceased rule]
-
-[xx4l8r]
-
-this is the can-beast-boss rule:
-	if player has gold guard and gull-guard is true, the rule succeeds;
-	the rule fails.
-
-this is the can-cast-cap rule:
-	if player has cool cap, the rule succeeds;
-	the rule fails.
-
-this is the can-co-capn rule:
-	if jake-fee is true, the rule succeeds;
-	the rule fails;
-
-this is the can-couple-caps rule:
-	if my-hats is 3, the rule succeeds;
-	the rule fails;
-
-this is the can-cull-ceased rule:
-	if healed-here is true, the rule succeeds;
-	the rule fails;
-
-this is the can-deal-dear rule:
-	if felt-fear is true, the rule succeeds;
-	the rule fails.
-
-this is the can-dining-door rule:
-	if war-sapped is true, the rule succeeds;
-	the rule fails;
-
-this is the can-fake-fee rule:
-	if jake-tea is true, the rule succeeds;
-	the rule fails.
-
-this is the can-feel-fear rule:
-	if knelt-yet is true, the rule succeeds;
-	the rule fails.
-
-this is the can-first-fave rule:
-	if screaming skull is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-fit-found rule:
-	if Hit Hound is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-full-feast rule:
-	if cull-ceased is true, the rule succeeds;
-	the rule fails.
-
-this is the can-glean-glows rule:
-	if player has way woke clay cloak, the rule succeeds;
-	the rule fails;
-
-this is the can-go-gappin rule:
-	if gassed gap is visited, the rule succeeds;
-	the rule fails;
-
-this is the can-heal-here rule:
-	if least-loss is true, the rule succeeds;
-	the rule fails.
-
-this is the can-least-loss rule:
-	if Bull Beast is in Creased Cross, the rule succeeds;
-	the rule fails.
-
-this is the can-mark-more rule:
-	if dark door is in Stark Store, the rule succeeds;
-	the rule fails;
-
-this is the can-merry-mile rule:
-	if well worn hell horn is moot, the rule succeeds;
-	the rule fails.
-
-this is the can-mining-more rule:
-	if full feast is not moot, the rule fails;
-
-this is the can-mo-mappin rule:
-	if blaze-ways is true, the rule succeeds;
-	the rule fails;
-
-this is the can-moral-mage rule:
-	if player has cage key, the rule succeeds;
-	the rule fails.
-
-this is the can-pull-pieced rule:
-	if full feast is in creased cross and dining door is in whining war and pining poor are in whining war, the rule succeeds;
-	the rule fails;
-
-this is the can-shining-shore rule:
-	if war-sapped is true, the rule succeeds;
-	the rule fails.
-
-this is the can-show-shield rule:
-	if player has gold guard and mine-more is true, the rule succeeds;
-	the rule fails.
-
-this is the can-smashing-smoke rule:
-	if y'old yard is visited, the rule succeeds;
-	the rule fails;
-
-this is the can-snake-snap rule:
-	if jake-cocapn is true, the rule succeeds;
-	the rule fails;
-
-this is the can-so-sappin rule:
-	if whining war is visited, the rule succeeds;
-	the rule fails;
-
-this is the can-take-tea rule:
-	if jake-woke is true, the rule succeeds;
-	the rule fails.
-
-[zz4l8r]
+volume miscellaneous hints and rules
 
 this is the trivially false rule: the rule fails;
 this is the trivially true rule: the rule succeeds;
@@ -394,7 +1724,7 @@ to say rhyme-display: [pok]
 	else:
 		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
 
-volume the code
+volume random table code
 
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
@@ -437,8 +1767,8 @@ volume big meta table
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of mall songs	0	false	0	"Songs after Tim T Sims"	--
-table of miscellaneous people	0	false	0	"Assorted randos"	--
-table of vvff books	0	false	0	"Books in the Lending Libe"	"Wow! So much to read, so little time. You're up to digesting more text right now, but not quite like that."
+table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	--
+table of vvff books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.

@@ -11,7 +11,12 @@ import mytools as mt
 mist_done = defaultdict(int)
 mist_sec = defaultdict(str)
 
-mi = i7.hdr('vv', 'mi')
+my_proj = i7.dir2proj(to_abbrev=True)
+if my_proj != 'vv' and my_proj != 'qq':
+    sys.exit("You need to run this from the VVFF or QQNN source directory.")
+
+
+mi = i7.hdr(my_proj, 'mi')
 errs_table = errs_todo = mist_table = mist_todo = mists = 0
 total_errs = 0
 
@@ -67,6 +72,8 @@ with open(mi) as file:
             subsection = re.sub("^#*", "", line.lower().strip())
             continue
         if not in_table: continue
+        if "[start" in line:
+            subsection = re.sub(".*\[start (of )?", "", line.strip())
         if not line.strip() or line.strip == ']':
             in_table = False
             cur_sec = "<BLANK>"
@@ -86,7 +93,7 @@ with open(mi) as file:
             mist_array = [mist_quote]
         for x in mist_array:
             if x in mist_done:
-                print("<{}>".format(mist_quote), x, "in line", line_count, "section", cur_sec, "is duplicated from", mist_done[x], "section", mist_sec[x] + ("/" + subsection if subsection else ""))
+                print("<{}>".format(mist_quote), x, "in line", line_count, "section", cur_sec + ("/" + subsection if subsection else "") , "is duplicated from", mist_done[x], "section", mist_sec[x])
                 mt.add_postopen_file_line(mi, line_count, rewrite = False)
                 total_errs += 1
                 if cur_sec == 'TO-DO':
@@ -95,7 +102,7 @@ with open(mi) as file:
                     errs_table += 1
             else:
                 mist_done[x] = line_count
-                mist_sec[x] = cur_sec
+                mist_sec[x] = cur_sec + ("/" + subsection if subsection else "")
 
 cmd_count = 1
 while cmd_count < len(sys.argv):
@@ -106,9 +113,9 @@ while cmd_count < len(sys.argv):
         exit()
     cmd_count += 1
 
-print("Gauged", mists, "total mistakes,", mist_table, "in table and", mist_todo, "in todo.")
+print("Gauged", mists, "total good guesses,", mist_table, "in table and", mist_todo, "in todo.")
 
-if not total_errs: print("Hooray! No mistakes!")
+if not total_errs: print("Hooray! No mistakes in the, um, mistakes!")
 else:
     print("Duplicates:", errs_table, "in table and", errs_todo, "in todo.")
 
