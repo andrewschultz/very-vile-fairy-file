@@ -1907,6 +1907,20 @@ check requesting the score:
 	now vc-dont-print is false;
 	the rule succeeds;
 
+the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
+
+this is the score and thinking changes rule:
+	process the notify score changes rule;
+	repeat through table of forlaters:
+		if ready-to-hint entry is true:
+			if is-done entry is true, now ready-to-hint entry is false;
+	if buggin-freeze, continue the action;
+	if narr-on is false, continue the action;
+	repeat through table of narratives:
+		if done-yet entry is false and core-score >= rank-num entry:
+			now done-yet entry is true;
+			say "[line break][rank-txt entry][line break]";
+
 to decide which number is can-do-hint of (ts - a truth state):
 	let temp be 0;
 	now vc-dont-print is true;
@@ -1930,6 +1944,64 @@ to decide which number is future-hinted:
 to decide which number is all-hinted: decide on doable-hinted + future-hinted;
 
 [see header file for table of ranks]
+
+chapter narrnoing
+
+narrnoing is an action applying to nothing.
+
+understand the command "narr no" as something new.
+understand the command "no narr" as something new.
+
+understand "narr no" as narrnoing.
+understand "no narr" as narrnoing.
+
+carry out narrnoing:
+	now ever-toggle-narr is true;
+	say "Point scoring narratives are [if narr-on is false]already[else]now[end if] inactive[one of]. NOTE: toggling the option back on later may cause a backlog of narratives[or][stopping].";
+	the rule succeeds.
+
+chapter wherewhoaing
+
+wherewhoaing is an action applying to nothing.
+
+understand the command "where whoa" as something new.
+understand the command "where whoah" as something new.
+understand the command "whoah where" as something new.
+understand the command "whoa where" as something new.
+
+understand "where whoa" as wherewhoaing.
+understand "where whoah" as wherewhoaing.
+understand "whoah where" as wherewhoaing.
+understand "whoa where" as wherewhoaing.
+
+carry out wherewhoaing:
+	now ever-toggle-narr is true;
+	say "Point scoring narratives are [if narr-on is true]already[else]now[end if] active[if narr-on is false][narrative-backlog][end if].";
+	the rule succeeds.
+
+ever-toggle-narr is a truth state that varies.
+
+definite-backlog-warned is a truth state that varies. [?? havent got a definitive case. I need more rows in the table.]
+
+to say narrative-backlog:
+	let temp be 0;
+	if definite-backlog-warned is false:
+		repeat through table of narratives:
+			if done-yet entry is false and rank-num entry < core-score, increment temp;
+		if temp > 1:
+			now definite-backlog-warned is true;
+			say ". NOTE: you'll be seeing more frequent narratives for a bit, since there is a backlog from when you previously switched this option";
+	if narrative-overload, say ". You also might not see all the entries in-game, but once you win, you can see all the ranks"
+
+to decide whether narrative-overload:
+	if core-max - core-score < narratives-left, yes;
+	no;
+
+to decide which number is narratives-left:
+	let temp be 0;
+	repeat through table of narratives:
+		if done-yet entry is false, increment temp;
+	decide on temp;
 
 book nonstandard but general verbs
 
@@ -2035,18 +2107,32 @@ understand "verbs" as verbsing.
 carry out verbsing:
 	say "[one of]NOTE: More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[paragraph break][or][stopping]";
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really. The verb should never involve proper names, though clever or sensible guesses may help you gain a hint/spoiler item.";
-	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
+	say "[b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da][b]ABOUT[r] and [b]CREDITS[r] give general information.";
-	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
-	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
-	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints.";
-	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
+	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
+	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
+	say "Finally, [2da]OPTS lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
 	check-flip-verbs;
 	the rule succeeds.
 
 to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
+
+chapter optsing
+
+optsing is an action applying to nothing.
+
+understand the command "opts" as something new.
+
+understand "opts" as optsing.
+
+carry out optsing:
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
+	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
+	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
+	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
+	the rule succeeds.
 
 chapter soundsing
 
@@ -3115,6 +3201,7 @@ volume when play begins
 
 when play begins (this is the backdrop and score seeding rule):
 	seed-score-list; [this is in the table file]
+	seed-narratives; [so is this]
 	wall-refresh;
 
 when play begins (this is the randomize all the things rule):
@@ -3169,24 +3256,25 @@ book meta verbs
 
 check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
-volume unsorted
-
-volume Poorly Penned
-
-volume Get a Guess
-
-[this is a sort of fake region. There are fake rooms you can't visit.]
+volume Ending activities and tables
 
 [a Capped Cone is a scenery.] [?? where? It leads to the Zapped Zone]
 
-volume Vale Verminous
+chapter final questions table
+
+[this is a sort of fake region. There are fake rooms you can't visit.]
+
+[a capped cone is a scenery.] [?? where? It leads to the Zapped Zone]
+
+volume Ending activities and tables
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
 "see the points you [b]MISSED[r]"	true	"missed"	--	showmissesing
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
-"see the [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
+"see the point-based [b]RANK[r]s or [b]NARRATIVE[r]s"	true	"rank/ranks"	--	showranksing
+--	true	"narrative/narratives"	--	shownarring
 "see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN for next table)"	true	"RAND [number]"	--	rling
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
@@ -3243,6 +3331,14 @@ rule for showranksing:
 		say "[rank-name entry] is [if rank-max entry > 0][low-bound-score] to [end if][rank-max entry] points.";
 		now low-bound-score is rank-max entry + 1;
 	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.";
+
+chapter shownarring
+
+shownarring is an activity
+
+rule for shownarring:
+	repeat through table of narratives:
+		say "At [rank-num entry] core score you get a narrative of [rank-txt entry][line break]";
 
 chapter showaltverbsing
 
@@ -3503,7 +3599,7 @@ this is the verb-checker rule:
 			if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
 				blank out the core entry;
 				now zap-core-entry is false;
-			process the notify score changes rule;
+				process the score and thinking changes rule;
 			if there is a core entry and core entry is false, check-lump-progress;
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
@@ -3623,7 +3719,7 @@ to lump-minus:
 	if lump-charges is 0, moot lurking lump;
 	now in-jerk-jump is false;
 	increment lump-uses;
-	process the notify score changes rule;
+	process the score and thinking changes rule;
 
 carry out jerkingjumping:
 	if debug-state is false:
@@ -3699,7 +3795,7 @@ to win-the-game:
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
-	process the notify score changes rule;
+	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
 	end the story finally saying "DEAL'S DONE: FEELS FUN!";
