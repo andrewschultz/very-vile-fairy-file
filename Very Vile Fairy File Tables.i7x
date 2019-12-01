@@ -1572,17 +1572,19 @@ to seed-narratives:
 			next;
 		now rank-num entry is ((my-row - 1) * (core-max - 1)) / (tot-rows - 1);
 		increment rank-num entry;
-		if debug-state is true, say "DEBUG: new narrative when you score [rank-num entry] points.";
+		if debug-state is true, say "DEBUG: new narrative when you score [my-row - 1] * [core-max - 1] / [tot-rows - 1] + 1 = [rank-num entry] points.";
 
 narr-on is a truth state that varies. narr-on is true.
 
 to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]NO NARR[r] or turn them back on with [b]WHOA(H) WHERE[r]"
 
-table of narratives
+table of narratives [xxton]
 rank-num	done-yet	rank-txt
 0	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro[if ever-toggle-narr is false].[paragraph break]NOTE: y[narr-toggle][end if]."
---	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve."
---	false	"A disembodied voice: 'Raking rhyme?! Making mime!' You feel discouraged, knowing if you slow up, a voice will boom 'Taking times?'[paragraph break]The [very vile]'s reach is wide indeed. If it can mix up these taunts on you, what can it do to others?"
+--	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
+--	false	"A disembodied voice that can only be from the [very vile] booms: 'High hope nigh? Nope!' You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible."
+--	false	"That disembodied voice again: 'Raking rhyme?! Making mime!' You feel discouraged, knowing if you slow up, a voice will boom 'Taking times?'[paragraph break]The [very vile]'s reach is wide indeed. If it can mix up these taunts on you, what can it do to others?"
+--	false	"Despite your success, a memory: 'Rad? Wrong! Gad! Gong! Bad! BBOONNGG!' You remember all the times you felt guilty getting things right for the wrong reason, as well as the times you were mocked for knowing things too well."
 --	false	"Blare blame! Share shame!"
 --	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
@@ -1643,11 +1645,14 @@ randtxt
 "Gonna go off! Shun a show-off!"
 "Look leading?! Book beating!"
 "Mock me? Sock, SEE?!"
-"'My magic try: TRAGIC!'"
+"My magic try: TRAGIC!"
 "Rotten role: gotten goal?"
 "Sly, sleek? Shy, chic? Why, weak!"
+"Stout stud? Doubt, dud!"
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
+"War wish? Poor, pish!"
+"Weep, wild cheap child!"
 "Whoah! Words? No, nerds!"
 "Yale? You'll fail, fool!"
 "Zork?! Zero! Dork, Dear-oh!"
@@ -1671,8 +1676,10 @@ randtxt
 "Good Girl Would Whirl"
 "Greater Gravel Traitor Travel"
 "Grepping: Groan? STEPPING STONE"
+"Heave, Hogs, Leave Logs[r], by Maeve Moggs"
 "Him, Her, Dim, Durr[r], by Kim Kerr"
 "Hole Hound Bowl Bound"
+"Lay [']Lone, May Mone[r], by Ray Rhone"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
 "Men, Messed, Been Best, by Ren Rest"
@@ -1686,8 +1693,10 @@ randtxt
 "Self Centered Elf Entered"
 "Silly Signs[r], by Willy Wines and Tillie Tines"
 "So Seek Crow Creek"
+"Stark Steeds['] Dark Deeds[r], by Mark Meeds"
 "Take Tess, Wake Wes, Make Mess"
 "Why When My Men, by Ben"
+"Yo, Yet Go Get Mo['] Met[r], by Joe Jett"
 "Your Be-Yays: Derby Days[r], by Herbie Hayes"
 
 to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [scancol of x]"

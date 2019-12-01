@@ -1911,9 +1911,8 @@ the score and thinking changes rule is listed instead of the notify score change
 
 this is the score and thinking changes rule:
 	process the notify score changes rule;
-	repeat through table of forlaters:
-		if ready-to-hint entry is true:
-			if is-done entry is true, now ready-to-hint entry is false;
+	repeat through table of verb checks:
+		if think-cue entry is true and idid entry is true, now think-cue entry is false;
 	if buggin-freeze, continue the action;
 	if narr-on is false, continue the action;
 	repeat through table of narratives:
