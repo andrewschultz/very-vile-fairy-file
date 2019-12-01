@@ -97,9 +97,13 @@ to seed-narratives:
 		increment rank-num entry;
 		if debug-state is true, say "DEBUG: new narrative when you score [rank-num entry] points.";
 
+narr-on is a truth state that varies. narr-on is true.
+
+to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]NO NARR[r] or turn them back on with [b]WHOA(H) WHERE[r]"
+
 table of narratives
 rank-num	done-yet	rank-txt
-0	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
+0	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro[if ever-toggle-narr is false].[paragraph break]NOTE: y[narr-toggle][end if]."
 --	false	"A memory from the past, well sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve."
 --	false	"Blare blame! Share shame!"
 --	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"

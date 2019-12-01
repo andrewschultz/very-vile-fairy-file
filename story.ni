@@ -1761,6 +1761,7 @@ this is the score and thinking changes rule:
 		if ready-to-hint entry is true:
 			if is-done entry is true, now ready-to-hint entry is false;
 	if buggin-freeze, continue the action;
+	if narr-on is false, continue the action;
 	repeat through table of narratives:
 		if done-yet entry is false and core-score >= rank-num entry:
 			now done-yet entry is true;
@@ -1790,6 +1791,64 @@ to decide which number is future-hinted:
 to decide which number is all-hinted: decide on doable-hinted + future-hinted;
 
 [see header file for table of ranks]
+
+chapter narrnoing
+
+narrnoing is an action applying to nothing.
+
+understand the command "narr no" as something new.
+understand the command "no narr" as something new.
+
+understand "narr no" as narrnoing.
+understand "no narr" as narrnoing.
+
+carry out narrnoing:
+	now ever-toggle-narr is true;
+	say "Point scoring narratives are [if narr-on is false]already[else]now[end if] inactive[one of]. NOTE: toggling the option back on later may cause a backlog of narratives[or[[stopping].";
+	the rule succeeds.
+
+chapter wherewhoaing
+
+wherewhoaing is an action applying to nothing.
+
+understand the command "where whoa" as something new.
+understand the command "where whoah" as something new.
+understand the command "whoah where" as something new.
+understand the command "whoa where" as something new.
+
+understand "where whoa" as wherewhoaing.
+understand "where whoah" as wherewhoaing.
+understand "whoah where" as wherewhoaing.
+understand "whoa where" as wherewhoaing.
+
+carry out wherewhoaing:
+	now ever-toggle-narr is true;
+	say "Point scoring narratives are [if narr-on is true]already[else]now[end if] active[if narr-on is false][narrative-backlog][end if].";
+	the rule succeeds.
+
+ever-toggle-narr is a truth state that varies.
+
+definite-backlog-warned is a truth state that varies. [?? havent got a definitive case. I need more rows in the table.]
+
+to say narrative-backlog:
+	let temp be 0;
+	if definite-backlog-warned is false:
+		repeat through table of narratives:
+			if done-yet entry is false and rank-num entry < core-score, increment temp;
+		if temp > 1:
+			now definite-backlog-warned is true;
+			say ". NOTE: you'll be seeing more frequent narratives for a bit, since there is a backlog from when you previously switched this option";
+	if narrative-overload, say ". You also might not see all the entries in-game, but once you win, you can see all the ranks"
+
+to decide whether narrative-overload:
+	if core-max - core-score < narratives-left, yes;
+	no;
+
+to decide which number is narratives-left:
+	let temp be 0;
+	repeat through table of narratives:
+		if done-yet entry is false, increment temp;
+	decide on temp;
 
 book nonstandard but general verbs
 
@@ -1895,18 +1954,32 @@ understand "verbs" as verbsing.
 carry out verbsing:
 	say "[one of]NOTE: More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[paragraph break][or][stopping]";
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really. The verb should never involve proper names, though clever or sensible guesses may help you gain a hint/spoiler item.";
-	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how]. [b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
+	say "[b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da][b]ABOUT[r] and [b]CREDITS[r] give general information.";
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
-	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
-	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints.";
 	check-flip-verbs;
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	say "[2da][b]EXITS[r] lists exits available.";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
+	say "Finally, [2da]OPTS lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
 	the rule succeeds.
 
 to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
+
+chapter optsing
+
+optsing is an action applying to nothing.
+
+understand the command "opts" as something new.
+
+understand "opts" as optsing.
+
+carry out optsing:
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
+	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
+	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
+	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
+	the rule succeeds.
 
 chapter soundsing
 
