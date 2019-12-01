@@ -90,15 +90,22 @@ to seed-narratives:
 	let tot-rows be number of rows in table of narratives;
 	repeat through table of narratives:
 		increment my-row;
-		now rank-num entry is (my-row * (core-max - 1)) / tot-rows;
+		if my-row is 1:
+			now rank-num entry is 1;
+			next;
+		now rank-num entry is ((my-row - 1) * (core-max - 1)) / (tot-rows - 1);
+		increment rank-num entry;
+		if debug-state is true, say "DEBUG: new narrative when you score [rank-num entry] points.";
 
 table of narratives
 rank-num	done-yet	rank-txt
-0	false	"'Falling for calling? Cor! Bawling bore!'"
+0	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
+--	false	"A memory from the past, well sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve."
 --	false	"Blare blame! Share shame!"
---	false	"Smart smack. Heart? Hack!"
+--	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
---	false	"Mock me, Jock? gee!"
+--	false	"'So seedy! Grow greedy! No, needy!' a voice calls. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!"
+--	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
 
 volume random tables
 
@@ -119,6 +126,7 @@ randtxt
 
 table of miscellaneous people [xxpeople]
 randtxt
+"Big Baddy Pig Paddy"
 "Blue Blood Stu, Stud"
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"

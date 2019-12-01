@@ -1753,9 +1753,10 @@ check requesting the score:
 	now vc-dont-print is false;
 	the rule succeeds;
 
-the score and thinking changes rule is listed after the notify score changes rule in the turn sequence rulebook.
+the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
 
 this is the score and thinking changes rule:
+	process the notify score changes rule;
 	repeat through table of forlaters:
 		if ready-to-hint entry is true:
 			if is-done entry is true, now ready-to-hint entry is false;
@@ -1763,7 +1764,7 @@ this is the score and thinking changes rule:
 	repeat through table of narratives:
 		if done-yet entry is false and core-score >= rank-num entry:
 			now done-yet entry is true;
-			say "[rank-txt entry][line break]";
+			say "[line break][rank-txt entry][line break]";
 
 to decide which number is doable-hinted:
 	let temp be 0;
@@ -3268,7 +3269,7 @@ this is the verb-checker rule:
 					now zap-core-entry is false;
 				now idid entry is true;
 				process the do-rule entry;
-				process the notify score changes rule;
+				process the score and thinking changes rule;
 				if there is a core entry and core entry is false, check-lump-progress;
 			process the note right guess wrong time rule;
 			the rule succeeds;
@@ -3362,7 +3363,7 @@ to lump-minus:
 	if lump-charges is 0, moot lurking lump;
 	now in-jerk-jump is false;
 	increment lump-uses;
-	process the notify score changes rule;
+	process the score and thinking changes rule;
 
 carry out jerkingjumping:
 	if debug-state is false:
@@ -3537,7 +3538,7 @@ to win-the-game:
 	clue-zap "BURY BILE";
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
-	process the notify score changes rule;
+	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
 	end the story finally saying "DEAL'S DONE: FEELS FUN!";
