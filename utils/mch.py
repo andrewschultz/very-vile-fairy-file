@@ -43,7 +43,7 @@ if not my_proj or my_proj == 'vv': my_proj = "vvff"
 
 ignorable_commands = [ 'gonear', 'n', 's', 'e', 'w', 'u', 'd', 'undo', 'cs' ]
 
-quote_col = 6
+quote_col = 5
 leet_rule_col = quote_col - 1
 
 if my_proj == "qq":
@@ -108,14 +108,19 @@ while cmd_count < len(sys.argv):
             sys.exit("Bad parameter {}.".format(arg))
     cmd_count += 1
 
-in_table = False
+in_table = ''
 
 with open(mist_file) as file:
     for (line_count, line) in enumerate(file, 1):
-        if "\t" not in line: continue
-        if not line.strip(): in_table = False
-        if line.startswith("table of"): in_table = True
-        if in_table and "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
+        if not line.strip():
+            in_table = ''
+            continue
+        if line.startswith("table of"):
+            in_table = line.strip()
+            print("Opening", in_table, "line", line_count)
+        if not in_table: continue
+        if "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
+        if 'sheet spoilers' in in_table: continue
         ary = re.split("\t", line.strip())
         if "|" in ary[0]:
             mt.print_and_warn("Uh oh. We have a pipe instead of a slash for the topic {} in line {}.".format(ary[0], line_count))
@@ -125,13 +130,15 @@ with open(mist_file) as file:
         except:
             sys.exit("Oops, misread line {}: {}.".format(line_count, line.strip()))
         if ary[1] != '--': look_mist_rules[ary[1]] = True
-        if valid_leet_rule(ary[leet_rule_col]):
-            look_leet_rules[ary[leet_rule_col]] = True
+        try:
+            if valid_leet_rule(ary[leet_rule_col]):
+                look_leet_rules[ary[leet_rule_col]] = True
+        except:
+            print("{} Line {} didn't have column {}: {}".format(in_table.upper(), line_count, leet_rule_col, ary))
         if len(ary) != quote_col + 1:
-            sys.exit("Bad number of tabs at line {}: {}.".format(line_count, line.strip()))
+            print(ary)
+            sys.exit("{} bad number of tabs (have {}, should be {}) at line {}: {}.".format(in_table.upper(), len(ary), quote_col + 1, line_count, line.strip()))
         for my_cmd in noquo(ary[0].lower()):
-            if (ary[3] == '--') != (ary[4] == '--'):
-                sys.exit("w1 and w2 entries conflict--both or neither should be blank.")
             need_mistake_test[my_cmd] = True
             my_line[my_cmd] = line_count
             need_leet_check[my_cmd] = valid_leet_rule(ary[leet_rule_col])
