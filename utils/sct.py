@@ -21,6 +21,8 @@ to_open = defaultdict(int)
 
 open_source_post = True
 
+core_column = 4
+topic_column = 8
 
 min_line = 0
 max_line = 0
@@ -28,6 +30,7 @@ max_line = 0
 max_sco = 0
 core_max = 0
 
+verbose_code = True
 verbose = False
 
 print_forlaters = False
@@ -150,7 +153,7 @@ def check_think_tests():
 def check_multiple_command_tests():
     need_base_test = defaultdict(int)
     need_mult_test = defaultdict(int)
-    fin = i7.src('vv')
+    fin = i7.hdr('vv', 'ta')
     skip_header = False
     in_verb_table = False
     with open(fin) as file:
@@ -168,24 +171,22 @@ def check_multiple_command_tests():
                 continue
             tary = line.strip().split("\t")
             if True:
-                if tary[7].startswith('"'):
-                    lt = re.sub(" *\[.*?\]", "", tary[7])
-                    lt = lt.replace('" or "', "\t")
-                    lt = lt.replace('"', '')
-                    tary2 = lt.split("\t")
+                if tary[topic_column].startswith('"'):
                     got_first = False
-                    for q in tary2:
-                        for q0 in i7.topx2ary(q):
-                            #print("C8 {} Need to verify {}".format(line_count, q0))
-                            if got_first:
-                                need_mult_test[q0] = 0
-                            else:
-                                need_base_test[q0] = 0
-                            got_first = True
+                    if '|' in tary[topic_column]: sys.exit("OOPS need / not | at line {}".format(line_count))
+                    for q0 in i7.topx2ary(tary[topic_column]):
+                        #print("C8 {} Need to verify {}".format(line_count, q0))
+                        if got_first:
+                            need_mult_test[q0] = 0
+                        else:
+                            need_base_test[q0] = 0
+                        got_first = True
                 elif '|' in tary[0] or '|' in tary[1]:
-                    tz = tary[0] + " " + tary[1]
+                    tz = (tary[0] + " " + tary[1]).replace('"', '')
+                    if '/' in tz: sys.exit("OOPS need | not / at line {}".format(line_count))
                     got_first = False
-                    for q0 in i7.topx2ary(tz, div_char='|'):
+                    temp = i7.topx2ary(tz, div_char='|')
+                    for q0 in temp:
                         #print("C1/2 {} Need to verify {}".format(line_count, q0))
                         if got_first:
                             need_mult_test[q0] = 0
@@ -198,7 +199,8 @@ def check_multiple_command_tests():
     mult_err = 0
     need_byone = False
     need_undo = False
-    with open("rbr-vvff-thru.txt") as file:
+    rbr = i7.rbr()
+    with open(rbr) as file:
         for (line_count, line) in enumerate(file, 1):
             if need_byone:
                 if not line.startswith('by one point'):
@@ -229,14 +231,17 @@ def check_multiple_command_tests():
             if my_cmd == 'undo' or my_cmd == 'z': continue
             if my_cmd not in need_mult_test:
                 mult_err += 1
-                print(mult_err, "Bad command {} at line {}.".format(my_cmd, line_count))
+                print(mult_err, "Bad command {} at {} line {}.".format(my_cmd, rbr, line_count))
             else:
                 need_mult_test[my_cmd] += 1
                 need_byone = True
     for x in sorted(need_mult_test):
         if need_mult_test[x] == 0:
             mult_err += 1
-            print(mult_err, "No mult-cmd test for", x)
+            if verbose_code:
+                print("@alt\n> {}\nby one point\n>undo".format(x))
+            else:
+                print(mult_err, "No mult-cmd test for", x)
         elif need_mult_test[x] > 1:
             mult_err += 1
             print(mult_err, "Multiple mult-cmd test for", x)
@@ -310,6 +315,7 @@ def print_list_dif(dkey1, dkey2, descrip):
     else:
         print("CLUE VERIFICATION:", descrip, "all matches up.")
 
+# deprecated now that I merged table of forlaters and table of verb checks
 def clue_hint_verify():
     found_table = False
     in_forlaters = False
@@ -343,7 +349,7 @@ def clue_hint_verify():
                 q = re.sub("\";.*", "", line.strip())
                 q = re.sub(".*\"", "", q)
                 cmd_zaps[q] = line_count
-    if not found_table: sys.exit("Did not find table of forlaters in", file_name)
+    if not found_table: sys.exit("Did not find table of forlaters in {}.".format(file_name))
     x1 = list(set(list(cmd_laters)) - set(list(for_laters)))
     if len(x1):
         x1s = sorted(x1)
@@ -483,10 +489,10 @@ def check_points():
             score_list = line.split("\t")
             if cmd_type == "QUEST":
                 core_points += 1
-            elif score_list[3] == 'true':
+            elif score_list[core_column] == 'true':
                 core_points += 1
                 cmd_type = "CORE"
-            elif score_list[3] == 'false':
+            elif score_list[core_column] == 'false':
                 opt_points += 1
                 cmd_type = "OPT"
             else:
@@ -515,7 +521,8 @@ def check_points():
     global max_line
     in_verb_checks = False
     skip_next = False
-    with open("story.ni") as file:
+    got_verb_checks = False
+    with open(i7.hdr('vv', 'ta')) as file:
         for (line_count, line) in enumerate(file, 1):
             temp_pass = False
             if line.startswith("core-max"):
@@ -526,8 +533,9 @@ def check_points():
             if line.startswith("table of verb checks"):
                 in_verb_checks = True
                 skip_next = True
+                got_verb_checks = True
                 continue
-            if 'up-reg' in line and '[+' in line:
+            if 'up-reg' in line and '[+' in line and 0:
                 temp_pass = True
                 base_cmd = re.sub(".*\[\+", "", line.lower().strip())
                 base_cmd = re.sub("\].*", "", base_cmd)
@@ -545,13 +553,14 @@ def check_points():
                 c = qpeel(a[1])
                 base_cmd = "{} {}".format(qpeel(a[0]), qpeel(a[1])).strip()
                 try:
-                    pt_type = 'nec' if a[3].lower() == 'true' else 'opt' if a[3].lower() == 'false' else 'skip'
+                    pt_type = 'nec' if a[4].lower() == 'true' else 'opt' if a[4].lower() == 'false' else 'skip'
                 except:
                     print("Bad value for 3rd column at line {}: {}".format(line_count, line.strip()))
                 if pt_type == 'skip': continue
             if verbose: print("Command: {}".format(base_cmd))
             scores[pt_type] += 1
             if not temp_pass: got_detail[pt_type][base_cmd] = True
+    if not got_verb_checks: sys.exit("Did not find table of verb checks.")
 
 def read_cmd_line():
     global show_nec
@@ -581,6 +590,8 @@ def read_cmd_line():
         elif arg == 'p' or arg == 'yp' or arg == 'py': open_source_post = True
         elif arg == 'pn' or arg == 'np': open_source_post = False
         elif arg == 'pfl': print_forlaters = True
+        elif arg == 'vc': verbose_code = True
+        elif arg == 'vn' or arg == 'nv': verbose_code = False
         elif arg == '?': usage()
         else: usage("Bad option {:s}".format(arg))
         cmd_count += 1
@@ -621,9 +632,9 @@ else: print("MAXIMUM SCORES MATCH IN SOURCE!")
 if len(got_detail['bug']):
     print("SCORING COMMAND (up-min/up-reg backwards) BUG: ", ', '.join(["{:s} at line {:d}".format(x, got[x]) for x in sorted(got_detail['bug'], key=lambda x:got[x])]))
 
-check_miss_rule()
+#check_miss_rule()
 
-clue_hint_verify()
+#clue_hint_verify()
 
 check_think_tests()
 check_bad_loc_tests()
