@@ -922,7 +922,7 @@ check taking Fussed Folks: say "It's pretty obviously got nothing concrete to he
 
 part Got Gear Hot Here -2,1 b
 
-Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if trounce-track is false], but there may be another useless silly way to leave[end if].". guess-table of Got Gear Hot Here is table of Got Gear Hot Here guesses.
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if trounce-track is false], but there may be another useless silly way to leave[end if].". guess-table of Got Gear Hot Here is table of Got Gear Hot Here guesses. [?? find the shoe store that isn't ... somewhere in my recent notes]
 
 trounce-track is a truth state that varies.
 

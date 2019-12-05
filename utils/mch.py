@@ -110,6 +110,7 @@ while cmd_count < len(sys.argv):
 
 in_table = ''
 
+print("Opening", mist_file)
 with open(mist_file) as file:
     for (line_count, line) in enumerate(file, 1):
         if not line.strip():
@@ -118,8 +119,11 @@ with open(mist_file) as file:
         if line.startswith("table of"):
             in_table = line.strip()
             print("Opening", in_table, "line", line_count)
+            continue
         if not in_table: continue
         if "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
+        if '  ' in line or '\t' not in line:
+            print("WARNING check line {} for spaces/lack of tabs.".format(line_count))
         if 'sheet spoilers' in in_table: continue
         ary = re.split("\t", line.strip())
         if "|" in ary[0]:

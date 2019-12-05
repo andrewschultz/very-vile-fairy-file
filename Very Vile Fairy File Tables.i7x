@@ -182,6 +182,12 @@ this is the vr-big-bag rule:
 	moot zig zag rig rag;
 	now player has big bag;
 	set the pronoun it to big bag;
+	if mrlp is worst whew:
+		repeat through table of readables:
+			if rank-num entry <= whew-score:
+				increment rank-num entry;
+			else:
+				break;
 
 a goodrhyme rule (this is the vc-boring-boat rule) :
 	if player is not in Violent Vale or flooring float is off-stage, unavailable;
@@ -1115,7 +1121,7 @@ a goodrhyme rule (this is the vc-not-near rule) :
 	ready;
 
 this is the vr-not-near rule:
-	say "You feel pulled from the ground, and you pass through the walls without feeling anything. You are teleported to the TROUNCE TRACK, where you are set upon but what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. You're doing well enough here.";
+	say "You feel pulled from the ground, and you zoom through the walls without feeling anything. After the Too Top Shoe Shop flew ... flop. You black out and wake up at a TROUNCE TRACK.[paragraph break]There you are set upon by what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. This adventure's enough.";
 	now trounce-track is true;
 
 a goodrhyme rule (this is the vc-paper-pile rule) :
@@ -1562,17 +1568,28 @@ to say your-rank:
 	else:
 		say "gold god[if core-score < core-max] (almost)[end if]";
 
+range-bottom is a number that varies. range-bottom is 0.
+range-top is a number that varies. range-top is 0.
+
 to seed-narratives:
+	let any-blank-yet be false;
 	let my-row be 0;
-	let tot-rows be number of rows in table of narratives;
+	let total-blank-rows be 0;
 	repeat through table of narratives:
-		increment my-row;
-		if my-row is 1:
-			now rank-num entry is 1;
-			next;
-		now rank-num entry is ((my-row - 1) * (core-max - 1)) / (tot-rows - 1);
-		increment rank-num entry;
-		if debug-state is true, say "DEBUG: new narrative when you score [my-row - 1] * [core-max - 1] / [tot-rows - 1] + 1 = [rank-num entry] points.";
+		if there is no rank-num entry, increment total-blank-rows;
+		if any-blank-yet is false:
+			if there is a rank-num entry:
+				now range-bottom is rank-num entry + 1;
+			else:
+				now any-blank-yet is true;
+		else if there is a rank-num entry and range-top is 0:
+			now range-top is rank-num entry - 1;
+	let current-blank-rows be 0;
+	repeat through table of narratives:
+		if there is a rank-num entry, next;
+		increment current-blank-rows;
+		now rank-num entry is (((range-top - range-bottom) * current-blank-rows) / total-blank-rows) + range-bottom;
+		if debug-state is true, say "DEBUG: new narrative when you score [range-top - range-bottom] * [current-blank-rows] / [total-blank-rows] + [range-bottom] = [rank-num entry] points.";
 
 narr-on is a truth state that varies. narr-on is true.
 
@@ -1580,7 +1597,11 @@ to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]N
 
 table of narratives [xxton]
 rank-num	done-yet	rank-txt
-0	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro[if ever-toggle-narr is false].[paragraph break]NOTE: y[narr-toggle][end if]."
+0	false	"A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out 'Bright! Broader!'[paragraph break]The book's cover slowly becomes colored in. It is the [very vile]."
+1	false	"The plotters from your previous vision remark how it is not just a guide to manipulation, but something that can affect people from afar. Its one weakness: if someone gets too close and is legitimately happy and forgiving around it, its spell will break.[paragraph break]They leave it by the Real Rot/Feel Fought Spiel Spot, because they have other evil to delegate, elsewhere. Small relief--facing them would've been too much[if ever-toggle-narr is false].[paragraph break]NOTE: y[narr-toggle][end if]."
+2	false	"Another vision![wfak][paragraph break]A bunch of seedy looking hoodlums approach the shrine where the [very vile] was left. You know they must be the Crimes Crrew Times Two Kit Cohen told you about. While the general consensus is 'What an unusually stupid looking book,' they nonetheless play rock-paper-scissors to decide the poor sap who has to read it."
+3	false	"The loser of the rock paper scissors game's eyes open wide as they realize the [very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel the [very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
+--	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
 --	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
 --	false	"A disembodied voice that can only be from the [very vile] booms: 'High hope nigh? Nope!' You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible."
 --	false	"That disembodied voice again: 'Raking rhyme?! Making mime!' You feel discouraged, knowing if you slow up, a voice will boom 'Taking times?'[paragraph break]The [very vile]'s reach is wide indeed. If it can mix up these taunts on you, what can it do to others?"
@@ -1589,7 +1610,9 @@ rank-num	done-yet	rank-txt
 --	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
 --	false	"'So seedy! Grow greedy! No, needy!' a voice calls. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!"
---	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
+73	false	"'How hot NOW?! Not!' booms the voice. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
+77	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close.
+80	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
 
 volume random tables
 
@@ -1611,12 +1634,14 @@ randtxt
 
 table of miscellaneous people [xxpeople]
 randtxt
+"Be-Bought Lee Lott"
 "Big Baddy Pig Paddy"
 "Blue Blood Stu, Stud"
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
 "Fart Face Mart Mayes"
 "Hefty Hata['] Lefty Leda"
+"Hey-His-Way Wiz"
 "Hunter Hoke, Blunter Bloke"
 "Hurt-Hell Burt Bell"
 "Lair Level Daredevil Bear Bevell"
@@ -1626,8 +1651,11 @@ randtxt
 "Pill-Perk Bill Burke"
 "Quite Quick Knight Nick"
 "Rude Rave Dude Dave"
+"Sick Sad Thick Thad"
 "Sure-Shank Burbank"
+"Ted-Talk Sed Salk"
 "Trot Trice, Not-Nice Lot Lice"
+"Whew-Worst-Cue-Curst Hugh Hurst"
 "Wig Wearin['] Big Baron"
 "Will-Work Bill Burke"
 "Work-Will Kirk Kill"
@@ -1649,6 +1677,7 @@ randtxt
 "Rotten role: gotten goal?"
 "Sly, sleek? Shy, chic? Why, weak!"
 "Stout stud? Doubt, dud!"
+"Town tip: down, dip!"
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
 "War wish? Poor, pish!"
@@ -1689,6 +1718,7 @@ randtxt
 "Near Null Fearful"
 "Oh, Trait So Straight"
 "One Wet Sunset"
+"Rude Right Food Fight/Nude Night"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
 "Self Centered Elf Entered"
 "Silly Signs[r], by Willy Wines and Tillie Tines"
