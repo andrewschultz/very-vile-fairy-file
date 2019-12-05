@@ -1586,7 +1586,9 @@ to seed-narratives:
 			now range-top is rank-num entry - 1;
 	let current-blank-rows be 0;
 	repeat through table of narratives:
-		if there is a rank-num entry, next;
+		if there is a rank-num entry:
+			if rank-num entry < 0, increase rank-num entry by core-max;
+			next;
 		increment current-blank-rows;
 		now rank-num entry is (((range-top - range-bottom) * current-blank-rows) / total-blank-rows) + range-bottom;
 		if debug-state is true, say "DEBUG: new narrative when you score [range-top - range-bottom] * [current-blank-rows] / [total-blank-rows] + [range-bottom] = [rank-num entry] points.";
@@ -1610,9 +1612,9 @@ rank-num	done-yet	rank-txt
 --	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
 --	false	"'So seedy! Grow greedy! No, needy!' a voice calls. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!"
-73	false	"'How hot NOW?! Not!' booms the voice. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
-77	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close.
-80	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
+-8	false	"'How hot NOW?! Not!' booms the voice. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
+-4	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close."
+-1	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
 
 volume random tables
 
@@ -1655,6 +1657,7 @@ randtxt
 "Sure-Shank Burbank"
 "Ted-Talk Sed Salk"
 "Trot Trice, Not-Nice Lot Lice"
+"Wes Well-Yes-Yell"
 "Whew-Worst-Cue-Curst Hugh Hurst"
 "Wig Wearin['] Big Baron"
 "Will-Work Bill Burke"
