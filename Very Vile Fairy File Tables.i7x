@@ -43,7 +43,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "knives"	"niche"	false	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--	-- [start dives ditch]
 "wild"	"weed"	false	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--	--
 "lots"	"lame"	false	false	true	false	vc-lots-lame rule	vr-lots-lame rule	--	-- [start Mystery Mall]
-"no"	"nappin"	false	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--	--
+"no"	"nappin|napping"	false	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--	--
 "ho"	"happen"	false	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--	--
 "dimd"	--	false	false	false	false	vc-dimd rule	vr-dimd rule	--	--
 "whatta"	"wanksta"	false	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"	--
@@ -62,7 +62,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "loft"	"land"	false	false	true	false	vc-loft-land rule	vr-loft-land rule	--	-- [start Soft Sand]
 "soft"	"sand"	false	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly."
 "plain"	"pleasant"	false	true	true	false	vc-plain-pleasant rule	vr-plain-pleasant rule	--	-- [start Foe Field]
-"show"	"shield"	false	true	true	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
+"show/sho"	"shield"	false	true	true	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
 "cool"	"cap"	false	true	true	false	vc-cool-cap rule	vr-cool-cap rule	--	-- [start Curst Cave]
 "dreaming"	"dull"	false	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--	--
 "first"	"fave"	false	false	true	false	vc-first-fave rule	vr-first-fave rule	--	"You could say [b]FIRST FAVE[r] [once-now of vc-first-fave rule] the screaming skull is gone."
@@ -72,8 +72,8 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "near"	"null"	false	true	true	false	vc-near-null rule	vr-near-null rule	--	--
 "sit"	"sound"	false	false	true	false	vc-sit-sound rule	vr-sit-sound rule	--	-- [start Pit Pound]
 "fit"	"found"	false	true	true	false	vc-fit-found rule	vr-fit-found rule	--	"You can declare a [b]FIT FOUND[r] [once-now of vc-fit-found rule] you've gotten rid of the Hit Hound."
-"winding|minding|finding"	"ways|maze|phase|fays"	false	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays"	-- [start Blinding Blaze]
-"mo"	"mappin"	false	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--	"You can try [b]MO MAPPIN[r] [once-now of vc-mo-mappin rule] you've found a suitable place to map."
+"winding|minding|finding"	"ways|maze|phase|fays|feys"	false	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays/feys"	-- [start Blinding Blaze]
+"mo|mow"	"mappin|mapping"	false	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--	"You can try [b]MO MAPPIN[r] [once-now of vc-mo-mappin rule] you've found a suitable place to map."
 "luck|snuck"	"lair|snare"	false	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"	--
 "brightening"	"bridge"	false	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	--	-- [start Violent Vale]
 "silent"	"sail|sale"	false	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--	--
@@ -83,11 +83,11 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "fake"	"fee"	false	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
 "break"	"brie"	false	false	false	false	vc-break-brie rule	vr-break-brie rule	--	--
 "make"	"map"	false	false	true	false	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
-"co"	"capn"	false	false	true	false	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
+"co"	"capn|cappin"	false	false	true	false	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
 "snake"	"snap"	false	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
-"lean"	"luggin"	false	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
-"mean"	"muggin"	false	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
-"so"	"sappin"	false	true	true	false	vc-so-sappin rule	vr-so-sappin rule	--	-- [start Whining War]
+"lean"	"luggin|lugging"	false	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
+"mean"	"muggin|mugging"	false	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
+"so"	"sappin|sapping"	false	true	true	false	vc-so-sappin rule	vr-so-sappin rule	--	-- [start Whining War]
 "shining"	"shore"	false	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--	"You can make the [b]SHINING SHORE[r] [once-now of vc-shining-shore rule] you dealt with the Whining War."
 "mining"	"more|moor"	false	true	true	false	vc-mining-more rule	vr-mining-more rule	--	"You should be able to perform [b]MINING MORE[r] [once-now of vc-mining-more rule] the pining poor are fully satisfied."
 "dining"	"door"	false	false	true	false	vc-dining-door rule	vr-dining-door rule	--	"You should be able to make a [b]DINING DOOR[r] [once-now of vc-dining-door rule] the Whining War has calmed down a bit."
@@ -96,7 +96,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "beaker"	"bustle"	false	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--	--
 "meeker"	"muscle"	false	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--	--
 "wood"	"one"	false	false	true	false	vc-wood-one rule	vr-wood-one rule	--	--
-"go"	"gappin"	false	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
+"go"	"gappin|gapping"	false	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
 "couple"	"caps"	false	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
 "lot"	"lord"	false	false	true	false	vc-lot-lord rule	vr-lot-lord rule	--	-- [start Airy Isle]
 "hot"	"horde"	false	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--	--

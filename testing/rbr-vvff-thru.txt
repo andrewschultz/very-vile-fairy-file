@@ -5,6 +5,7 @@
 #--
 
 files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
+~	alt	t3
 ~	mis	t5
 ~	ha	t6
 
@@ -18,7 +19,7 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 
 * main-thru
 
-==t3
+@alt
 > z
 
 @ha
@@ -214,7 +215,7 @@ by one point
 !by one point
 You already managed to GET GOOD.
 
-==t3
+@alt
 # test the reverse flip warning
 #okdup
 > giver gift
@@ -293,7 +294,7 @@ Badger, Mole and Rat would agree that's going too far. Even Toad.
 !Learner needle
 There are no young pigs here to shoo.
 
-==t3
+@alt
 # test the reverse flip works
 > z
 #okdup
@@ -472,7 +473,7 @@ Clever complaining will make you feel better but won't do anything.
 > think
 MASH MAP
 
-==t3
+@alt
 > so sit
 by one point
 > undo
@@ -567,7 +568,7 @@ Profanity doesn't work here. But perhaps there is a similar phrase to help you f
 !Learner needle
 Clever complaining will make you feel better but won't do anything.
 
-==t3
+@alt
 > rash rap
 by one point
 > undo
@@ -654,7 +655,7 @@ You already minded yourself.
 !DEBUG: vc-mind-me rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t3
+@alt
 > skim scam
 by one point
 >undo
@@ -778,7 +779,7 @@ FEEL FEAR
 DEAL DEAR
 HEAL HERE
 
-==t3
+@alt
 > kneeling near
 by one point
 > undo
@@ -807,7 +808,7 @@ No need to kneel twice.
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t3
+@alt
 > feeling fear
 by one point
 > undo
@@ -840,7 +841,7 @@ No need to overdo feeling fear.
 > think
 !FEEL FEAR
 
-==t3
+@alt
 > dealing dear
 by one point
 > undo
@@ -1337,7 +1338,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t3
+@alt
 > whatta wanksta
 by one point
 > undo
@@ -1491,6 +1492,11 @@ The HA HALF button lights up on your Leet Learner.
 > no znappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+@alt
+> no napping
+by one point
+>undo
 
 > no nappin
 by one point
@@ -2069,7 +2075,7 @@ You need something more substantial to come out of the cool cap.
 Learner needle
 No need to drink or get an island disease.
 
-==t3
+@alt
 > silent sale
 by one point
 >undo
@@ -2200,7 +2206,7 @@ Ooh! That'd be nice and tasty. But you don't need that right now.
 TAKE TEA
 FAKE FEE
 
-==t3
+@alt
 > wake wee
 by one point
 > undo
@@ -2441,6 +2447,11 @@ The HA HALF button lights up on your Leet Learner.
 Learner needle
 Close, but camaraderie, not violence.
 
+@alt
+> co cappin
+by one point
+>undo
+
 > co capn
 by one point
 
@@ -2647,6 +2658,14 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@alt
+> lean lugging
+by one point
+>undo
+> mean mugging
+by one point
+>undo
+
 > lean luggin
 by one point
 
@@ -2710,7 +2729,7 @@ There's not enough magic in this game? Aww, rats.
 !Learner needle
 Water might make the clay cloak even heavier and messier.
 
-==t3
+@alt
 > dumped duster
 by one point
 > undo
@@ -2845,7 +2864,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t3
+@alt
 > your yonder
 by one point
 > undo
@@ -3274,11 +3293,14 @@ You need to find your way here, not get more tied up.
 Learner needle
 Even if it were duller, you'd still be left with a hot blaze.
 
-==t3
+@alt
 > finding phase
 by one point
 >undo
 > finding fays
+by one point
+>undo
+> finding feys
 by one point
 >undo
 > minding maze
@@ -3333,6 +3355,17 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@alt
+> mo mapping
+by one point
+>undo
+> mow mappin
+by one point
+>undo
+> mow mapping
+by one point
+>undo
+
 > mo mappin
 by one point
 
@@ -3353,7 +3386,7 @@ You're already in the mood to map. No need to overdo it.
 > think
 !MO MAPPIN
 
-==t3
+@alt
 > snuck snare
 by one point
 >undo
@@ -3791,7 +3824,7 @@ Whoah, dude! Jonesing for more already?
 
 > s
 
-==t3
+@alt
 > healing here
 by one point
 > undo
@@ -3847,7 +3880,7 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 > think
 FULL FEAST
 
-==t3
+@alt
 > lul least
 by one point
 > undo
@@ -3978,6 +4011,11 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@alt
+> so sapping
+by one point
+>undo
+
 > so sappin
 by one point
 
@@ -4088,7 +4126,7 @@ You don't need to pull anything other than the full feast.
 > think
 !PULL PIECED
 
-==t3
+@alt
 > mining moor
 by one point
 >undo
@@ -4203,6 +4241,11 @@ The HA HALF button lights up on your Leet Learner.
 > go zgappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+@alt
+> go gapping
+by one point
+>undo
 
 > go gappin
 by one point
@@ -4604,7 +4647,7 @@ Nothing takes a bite out of the go gate.
 Learner needle
 You wouldn't want to be crushed by a weight. But you've got the right idea.
 
-==t3
+@alt
 > woe wait
 by one point
 > undo

@@ -219,7 +219,7 @@ def check_multiple_command_tests():
             if skip_next:
                 skip_next = False
                 continue
-            if line.startswith("==t3"):
+            if line.startswith("==t3") or line.startswith("@alt"):
                 in_alt_verbs = True
                 continue
             if in_alt_verbs and not line.strip():

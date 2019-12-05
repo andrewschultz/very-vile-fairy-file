@@ -136,6 +136,10 @@ by one point
 > lots lame
 by one point
 
+> no napping
+by one point
+>undo
+
 > no nappin
 by one point
 
@@ -206,6 +210,10 @@ by one point
 > make map
 by one point
 
+> co cappin
+by one point
+>undo
+
 > co capn
 by one point
 
@@ -222,6 +230,13 @@ by one point
 
 > mean muggin
 by one point
+
+> lean lugging
+by one point
+>undo
+> mean mugging
+by one point
+>undo
 
 > lean luggin
 by one point
@@ -298,12 +313,25 @@ by one point
 > finding fays
 by one point
 >undo
+> finding feys
+by one point
+>undo
 > minding maze
 by one point
 >undo
 
 > winding ways
 by one point
+
+> mo mapping
+by one point
+>undo
+> mow mappin
+by one point
+>undo
+> mow mapping
+by one point
+>undo
 
 > mo mappin
 by one point
@@ -382,6 +410,10 @@ by one point
 > e
 > e
 
+> so sapping
+by one point
+>undo
+
 > so sappin
 by one point
 
@@ -410,6 +442,10 @@ by one point
 by one point
 
 > n
+
+> go gapping
+by one point
+>undo
 
 > go gappin
 by one point

@@ -538,6 +538,7 @@ table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "mo mealed"	in-foe-field rule	false	46	shield-unshown rule	"Alas, no food magically appears. You [if gold guard is moot]did what you needed[else]need a more fighting stance[end if]." [start Foe Field]
 "mo mate"	go-gate-vis rule	false	44	--	"You remain alone." [start Gassed Gap]
+"see sine"	have-toe-tappin rule	false	26	--	"[we whine] is too practical for stuffy advanced math contests."	[start History Hall]
 "choral cage"	coral-cage-around rule	false	54	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
 "co cappin"	have-toe-tappin rule	false	24	need-cocapn rule	"Close, but camaraderie, not violence."
 "bought board"	bot-board-vis rule	false	35	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]
