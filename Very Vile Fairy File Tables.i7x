@@ -104,7 +104,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	th
 "whoa|whoah|woe"	"wait"	false	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--	--
 "tell"	"torn"	false	false	true	false	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
 "merry"	"mile"	false	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
-"bury"	"bile"	false	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
+"bury"	"bile"	false	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
 "big"	"bag"	false	true	true	false	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
 "really"	"rolling"	false	true	false	false	vc-really-rolling rule	vr-really-rolling rule	--	--
 
@@ -116,16 +116,16 @@ section vc- and vr- rules [xxvcvr]
 
 a goodrhyme rule (this is the vc-appealing-appear rule) :
 	if player is not in Real Rear, unavailable;
-	if appeal-appear is true:
+	if sco-appealing-appear is true:
 		vcal "The peeling pier already looks better.";
 		already-done;
 	ready;
 
 this is the vr-appealing-appear rule:
 	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
-	now appeal-appear is true; [probably shouldn't zap this and replace with "peeling pier is optional" checks...]
+	now sco-appealing-appear is true; [probably shouldn't zap this and replace with "peeling pier is optional" checks...]
 	now peeling pier is not optional;
-	if healed-here is false:
+	if sco-heal-here is false:
 		now cht of peeling pier is partminus; [->heal here]
 	else:
 		phbt peeling pier;
@@ -142,14 +142,14 @@ this is the vr-backed-binder rule:
 
 a goodrhyme rule (this is the vc-beaker-bustle rule) :
 	if Reeker Russell is not touchable, unavailable;
-	if beaker-yet is true:
+	if sco-beaker-bustle is true:
 		vcal "Russell's moment of interest in the sciences has passed.";
 		already-done;
 	ready;
 
 this is the vr-beaker-bustle rule:
 	say "You have a vision of a much nerdier version of Reeker Russell going around and performing weird experiments. But you quickly snap back to reality. Still, it's good to be able to laugh at things.";
-	now beaker-yet is true;
+	now sco-beaker-bustle is true;
 	adjust-russell;
 
 a goodrhyme rule (this is the vc-beast-boss rule) :
@@ -168,7 +168,7 @@ a goodrhyme rule (this is the vc-beast-boss rule) :
 this is the vr-beast-boss rule:
 	say "A Bull Beast appears to answer your summons. You hope you have done the right thing, as it roughs you up a bit. You'll need to minimize the damage, here!";
 	move Bull Beast to Creased Cross;
-	now need-loss is true;
+	now sco-beast-boss is true;
 	set the pronoun it to Bull Beast;
 
 a goodrhyme rule (this is the vc-big-bag rule) :
@@ -207,17 +207,17 @@ this is the vr-boring-boat rule:
 
 a goodrhyme rule (this is the vc-break-brie rule) :
 	if jake is not touchable, unavailable;
-	if jake-woke is false:
+	if sco-wake-whee is false:
 		vcp "This bonus point action won't work until Jake is conscious.";
 		not-yet;
-	if jake-brie is true:
+	if sco-break-brie is true:
 		vcal "Hey! Don't get greedy, now.";
 		already-done;
 	ready;
 
 this is the vr-break-brie rule:
 	say "'Ooh, good one! I almost forgot I had it. I don't like it. Here, have it all.' This might not help in the end, but yay free food.";
-	now jake-brie is true;
+	now sco-break-brie is true;
 
 a goodrhyme rule (this is the vc-brightening-bridge rule) :
 	if frightening fridge is not touchable, unavailable;
@@ -237,11 +237,11 @@ this is the vr-bumped-buster rule:
 
 a goodrhyme rule (this is the vc-bury-bile rule) :
 	if player is in Tarry Tile:
-		if well worn hell horn is moot and merry-mile is true, ready;
+		if well worn hell horn is moot and sco-merry-mile is true, ready;
 		if well worn hell horn is in Tarry Tile:
 			vcp "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
 			not-yet;
-		if merry-mile is false:
+		if sco-merry-mile is false:
 			vcp "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
 			not-yet;
 	if mrlp is Worst Whew:
@@ -259,7 +259,6 @@ a goodrhyme rule (this is the vc-bury-bile rule) :
 	unavailable;
 
 this is the vr-bury-bile rule:
-	now bile-buried is true;
 	win-the-game;
 
 a goodrhyme rule (this is the vc-cast-cap rule) :
@@ -267,7 +266,7 @@ a goodrhyme rule (this is the vc-cast-cap rule) :
 	if cool cap is moot:
 		vcal "The cap has been cast.";
 		already-done;
-	if extra-cool-cap is false:
+	if sco-couple-caps is false:
 		let N be my-hats;
 		if N is 0:
 			vcp "You don't have any caps to cast.";
@@ -299,21 +298,21 @@ this is the vr-cleared-clay rule:
 	moot weird way;
 
 a goodrhyme rule (this is the vc-co-capn rule) :
-	if player does not have toe tappin or snake-snap is true, unavailable;
-	if jake-cocapn is true:
+	if player does not have toe tappin or sco-snake-snap is true, unavailable;
+	if sco-co-capn is true:
 		vcal "Jake already is[if jake is not touchable] and will be when you return to see him[end if].";
 		already-done;
 	if jake is not touchable:
 		vcp "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
 		not-yet;
-	if jake-fee is false:
+	if sco-fake-fee is false:
 		vcp "You haven't (yet) bonded with Jake G. enough for that.";
 		not-yet;
 	ready;
 
 this is the vr-co-capn rule:
 	say "Jake smiles as you pronounce him an equal partner in whatever you find.";
-	now jake-cocapn is true;
+	now sco-co-capn is true;
 	process the check-sing-max rule;
 
 a goodrhyme rule (this is the vc-cool-cap rule) :
@@ -343,7 +342,7 @@ this is the vr-couple-caps rule:
 	moot cake cap;
 	moot jerk gel;
 	now printed name of cool cap is "extra cool cap";
-	now extra-cool-cap is true;
+	now sco-couple-caps is true;
 
 a goodrhyme rule (this is the vc-cull-ceased rule) :
 	if Bull Beast is off-stage, unavailable;
@@ -351,7 +350,7 @@ a goodrhyme rule (this is the vc-cull-ceased rule) :
 	if player is not in Creased Cross:
 		vcp "You need to go back to Creased Cross.";
 		not-yet;
-	if healed-here is false:
+	if sco-heal-here is false:
 		vcp "You need to find a way to restore your health.";
 		not-yet;
 	if Bull Beast is boring:
@@ -361,7 +360,7 @@ a goodrhyme rule (this is the vc-cull-ceased rule) :
 
 this is the vr-cull-ceased rule:
 	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! Your words, which the spear translates into a few sharp slurps, groans and growls, cause the Bull Beast to run off in extreme psychological anguish before collapsing from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by so little.[paragraph break]You give chase, and it traps and lashes out at you. Reflexively, you block with the spear and strike back. Your first swipe is lethal.[paragraph break]Perhaps you can do something constructive with the Bull Beast's dead body.";
-	now cull-ceased is true;
+	now sco-cull-ceased is true;
 	now Bull Beast is boring; [?? what if dead]
 	now cht of Bull Beast is leteq; [Bull Beast->full feast]
 
@@ -379,7 +378,7 @@ this is the vr-dark-door rule:
 
 a goodrhyme rule (this is the vc-deal-dear rule) :
 	if player is not in Real Rear, unavailable;
-	if felt-fear is false:
+	if sco-felt-fear is false:
 		vcp "You haven't found anything you need to deal with[seer-sez].";
 		not-yet;
 	if cage key is not off-stage:
@@ -405,7 +404,7 @@ a goodrhyme rule (this is the vc-dear-dull rule) :
 
 this is the vr-dear-dull rule:
 	now zap-core-entry is true;
-	say "The Beer Bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if bull-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
+	say "The Beer Bull twitches[one of][or] again[stopping]. One thing it can't abide is being called dull! It's going to be chasing after you for a bit[if sco-near-null is false]. Watch out--it's super-charged. Maybe you can find some way to make it a little less terrifying[end if].";
 	start-bull-chase;
 
 a goodrhyme rule (this is the vc-dimd rule) :
@@ -419,20 +418,20 @@ this is the vr-dimd rule:
 
 a goodrhyme rule (this is the vc-dining-door rule) :
 	if player is not in Whining War, unavailable; [?? big problem with what replaces Violent Vale]
-	if war-sapped is false:
+	if sco-so-sappin is false:
 		vcp "You can't make a dining door with all this whining going on!";
 		not-yet;
-	if shore-shine is false:
+	if sco-shining-shore is false:
 		vcp "You hear a rumbling, but it's still too dingy here for anything nice like a dining door.";
 		not-yet;
-	if dine-door is true:
+	if sco-dining-door is true:
 		vcal "The dining door is already here.";
 		already-done;
 	ready;
 
 this is the vr-dining-door rule:
 	say "Up from the ground, a dining door rumbles and appears. From behind, you hear a cheery song: 'Merry mood, fairy food, dairy dude.' You try to open it but fail. Perhaps it will open when the time is right, and things are taken care of.";
-	now dine-door is true;
+	now sco-dining-door is true;
 	move dining door to Whining War;
 	phbt Whining War;
 	set the pronoun it to dining door;
@@ -457,50 +456,50 @@ this is the vr-dreaming-dull rule:
 
 a goodrhyme rule (this is the vc-fake-fee rule) :
 	if jake is not touchable, unavailable;
-	if jake-woke is false:
+	if sco-wake-whee is false:
 		vcp "Maybe when Jake is awake.";
 		not-yet;
-	if jake-tea is false:
+	if sco-take-tea is false:
 		vcp "But Jake has given you nothing of value yet.";
 		not-yet;
-	if jake-fee is true:
+	if sco-fake-fee is true:
 		vcal "That's over. Time to work with Jake!";
 		already-done;
 	ready;
 
 this is the vr-fake-fee rule:
 	say "You and Jake have a laugh about how you'd like to pay, and he'd like payment, but that's not really what's important here. Jake is ready to work with you off to the east!";
-	now jake-fee is true;
+	now sco-fake-fee is true;
 	now Jake G is optional;
 	now cht of Jake G is letplus; [->break brie]
 
 a goodrhyme rule (this is the vc-fall-free rule) :
 	if player is not in Fun Fen, unavailable;
-	if tree-down is true:
+	if sco-fall-free is true:
 		vcal "The tree is already fallen. It's in a good place.";
 		already-done;
 	ready;
 
 this is the vr-fall-free rule:
 	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
-	now tree-down is true;
+	now sco-fall-free is true;
 	phbt tall tree;
 	move hive heap to Fun Fen;
 	set the pronoun it to hive heap;
 
 a goodrhyme rule (this is the vc-feel-fear rule) :
 	if player is not in Real Rear, unavailable;
-	if knelt-yet is false:
+	if sco-kneel-near is false:
 		vcp "Fear isn't something you can, or want to, force[seer-sez].";
 		not-yet;
-	if felt-fear is true:
+	if sco-felt-fear is true:
 		vcal "No need to overdo feeling fear.";
 		already-done;
 	ready;
 
 this is the vr-feel-fear rule:
 	say "You let yourself feel fear, both of physical harm and of being unable to figure a way to any secret areas. Admitting to this fear helps a bit, but somehow, you have to put your fear aside.";
-	now felt-fear is true;
+	now sco-felt-fear is true;
 
 a goodrhyme rule (this is the vc-find-fault rule) :
 	if player is not in Vined Vault, unavailable;
@@ -520,7 +519,7 @@ this is the vr-find-fault rule:
 
 a goodrhyme rule (this is the vc-first-fave rule) :
 	if player is not in Curst Cave, unavailable;
-	if first-fave is true:
+	if sco-first-fave is true:
 		vcal "The Curst Cave is already a cheerier place.";
 		already-done;
 	if screaming skull is in Curst Cave:
@@ -530,14 +529,14 @@ a goodrhyme rule (this is the vc-first-fave rule) :
 
 this is the vr-first-fave rule:
 	say "Suddenly, the worst wave isn't very bad or evil at all. In fact, with a bit of time, it recedes to reveal a tool tap.";
-	now first-fave is true;
+	now sco-first-fave is true;
 	move tool tap to Curst Cave;
 	moot worst wave;
 	set the pronoun it to tool tap;
 
 a goodrhyme rule (this is the vc-fit-found rule) :
 	if player is not in Pit Pound, unavailable;
-	if found-fit is true:
+	if sco-fit-found is true:
 		vcal "You already fit in.";
 		already-done;
 	if hit hound is in Pit Pound:
@@ -547,12 +546,12 @@ a goodrhyme rule (this is the vc-fit-found rule) :
 
 this is the vr-fit-found rule:
 	say "You feel comfortable here now. Comfortable enough to enter and leave as you please. Woohoo!";
-	now found-fit is true;
+	now sco-fit-found is true;
 	phbt Pit Pound;
 
 a goodrhyme rule (this is the vc-flim-flam rule) :
 	if player is not in Trim Tram, unavailable;
-	if me-minded is false:
+	if sco-mind-me is false:
 		process the trimtramcmd rule;
 		vcp "That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.";
 		not-yet;
@@ -625,7 +624,7 @@ a goodrhyme rule (this is the vc-glow-glad rule) :
 this is the vr-glow-glad rule:
 	say "Okay! You're really ready to face things now. Someone comes into view, congratulates you on fighting off your inner demons, and introduces himself as Dean Duggan. 'I have a couple more things I can teach you, but you'll have to ask me specifically.'";
 	now in-so-sad is false;
-	now in-so-saded is true;
+	now sco-glow-glad is true;
 	phbt Kerry Kyle;
 	move Dean Duggan to Been Buggin;
 
@@ -634,14 +633,14 @@ a goodrhyme rule (this is the vc-go-gappin rule) :
 	if player is not in Gassed Gap:
 		vcp "Hm! [Toe] could be tweaked like that to be useful in the right place[if Gassed Gap is visited], like the Gassed Gap[end if].";
 		not-yet;
-	if gap-go is true:
+	if sco-go-gappin is true:
 		vcal "The song already worked.";
 		already-done;
 	ready;
 
 this is the vr-go-gappin rule:
 	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
-	now gap-go is true;
+	now sco-go-gappin is true;
 	process the check-sing-max rule;
 
 a goodrhyme rule (this is the vc-got-gored rule) :
@@ -680,7 +679,7 @@ this is the vr-green-grass rule:
 
 a goodrhyme rule (this is the vc-grow-grit rule) :
 	if player is not in Po' Pit, unavailable;
-	if grit-grown is true:
+	if sco-grow-grit is true:
 		if print-why-fail, vcal "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
 		already-done;
 	ready;
@@ -688,7 +687,7 @@ a goodrhyme rule (this is the vc-grow-grit rule) :
 this is the vr-grow-grit rule:
 	loop-note "GROW GRIT";
 	say "'So, sit,' you say to yourself. You ponder a bit before saying 'Oh ... it ...'. You realize you have managed to grow grit![paragraph break]The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
-	now grit-grown is true;
+	now sco-grow-grit is true;
 	phbt row writ;
 	phbt Po' Pit;
 
@@ -704,27 +703,27 @@ this is the vr-hard-hat rule:
 
 a goodrhyme rule (this is the vc-heal-here rule) :
 	if player is not in Real Rear, unavailable;
-	if healed-here is true:
+	if sco-heal-here is true:
 		vcal "No need to heal further.";
 		already-done;
-	if least-loss is false:
+	if sco-least-loss is false:
 		vcp "You don't have anything to heal from, yet[seer-sez].";
 		not-yet;
-	if knelt-yet is false:
+	if sco-kneel-near is false:
 		vcp "You have not shown the Ceiling Seer the proper respect, yet.";
 		not-yet;
 	ready;
 
 this is the vr-heal-here rule:
 	say "You call on the Ceiling Seer once more. You worry you may hear 'Gee, Ill! Jeer,' but your faith is rewarded as you feel rejuvenated!";
-	now healed-here is true;
+	now sco-heal-here is true;
 	phbt ceiling seer;
-	if appeal-appear is false, phbt peeling pier;
+	if sco-appealing-appear is false, phbt peeling pier;
 
 a goodrhyme rule (this is the vc-history-hall rule) :
 	if player is not in History Hall, unavailable;
-	if mistmall is false:
-		vcal "You already [if ever-mall is true]flipped back to[else]are in[end if] History Hall.";
+	if in-mystery-mall is false:
+		vcal "You already [if sco-mystery-mall is true]flipped back to[else]are in[end if] History Hall.";
 		already-done;
 	ready;
 
@@ -736,7 +735,7 @@ this is the vr-history-hall rule:
 	move-from-temp Poor Ponder;
 	move-to-temp Gutta Ganksta;
 	move-to-temp Oi Mo;
-	now mistmall is false;
+	now in-mystery-mall is false;
 	if ever-hall is false:
 		say "Weird! The way west seems to change from a store to ... something else, still sort of a store, actually. Also, History Hall seems a little fuller. There's a book called [poor ponder].";
 		set the pronoun it to Poor Ponder;
@@ -746,14 +745,14 @@ this is the vr-history-hall rule:
 
 a goodrhyme rule (this is the vc-ho-happen rule) :
 	if player does not have Toe Tappin, unavailable;
-	if hap-ho is true:
+	if sco-ho-happen is true:
 		vcal "You already said HO HAPPEN.";
 		already-done;
 	ready;
 
 this is the vr-ho-happen rule:
 	say "While nothing immediately happens, you feel more motivated to try new stuff--[Toe] may be more versatile than you think!";
-	now hap-ho is true;
+	now sco-ho-happen is true;
 
 a goodrhyme rule (this is the vc-hot-horde rule) :
 	if player is not in Airy Isle, unavailable;
@@ -770,32 +769,32 @@ this is the vr-hot-horde rule:
 
 a goodrhyme rule (this is the vc-kneel-near rule) :
 	if player is not in Real Rear, unavailable;
-	if knelt-yet is true:
+	if sco-kneel-near is true:
 		vcal "No need to kneel twice.";
 		already-done;
 	ready;
 
 this is the vr-kneel-near rule:
 	say "You kneel at the pier, facing away from the Steel Steer to avoid any semblance of idolatry that might cause the Ceiling Seer to strike you down. You feel peace and acceptance and potential and ability wash over you. Perhaps you can be more open with your feelings now, and the Ceiling Seer will be more receptive.";
-	now knelt-yet is true; [?? track difference]
+	now sco-kneel-near is true; [?? track difference]
 	now cht of Real Rear is leteq; [->feel fear] [-> deal dear] [->heal here]
 	now cht of steel steer is letminus; [steel steer->feel fear]
 
 a goodrhyme rule (this is the vc-knives-niche rule) :
 	if player is not in dives ditch, unavailable;
-	if kni-ni is true:
+	if sco-knives-niche is true:
 		vcal "You already changed the dives ditch.";
 		already-done;
 	ready;
 
 this is the vr-knives-niche rule:
 	say "The dives ditch folds up, and now you see a trap on the wall where knives will be released on an unsuspecting interloper.";
-	now kni-ni is true;
+	now sco-knives-niche is true;
 	process the drop-snare rule;
 
 a goodrhyme rule (this is the vc-lean-luggin rule) :
 	if player is not in Been Buggin, unavailable;
-	if lean-lugged is true:
+	if sco-lean-luggin is true:
 		vcal "You already learned lean luggin['].";
 		already-done;
 	if Dean Duggan is not touchable:
@@ -805,7 +804,7 @@ a goodrhyme rule (this is the vc-lean-luggin rule) :
 
 this is the vr-lean-luggin rule:
 	say "You ask Dean Duggan for help with carrying large awkward things.";
-	now lean-lugged is true;
+	now sco-lean-luggin is true;
 	lean-and-mean;
 
 a goodrhyme rule (this is the vc-least-loss rule) :
@@ -813,14 +812,14 @@ a goodrhyme rule (this is the vc-least-loss rule) :
 	if Bull Beast is off-stage:
 		vcp "Not yet. You need to be in a fighting situation.";
 		not-yet;
-	if least-loss is true:
+	if sco-least-loss is true:
 		vcal "You already minimized your losses. Time to be more aggressive.";
 		already-done;
 	ready;
 
 this is the vr-least-loss rule:
-	now need-loss is false;
-	now least-loss is true;
+	now sco-beast-boss is false;
+	now sco-least-loss is true;
 	say "You spend a lot of time ducking and rolling around and hoping you exhaust the Beast Boss/Bull Beast. It seems to be getting tired and, upset it did less damage than expected, fails to finish the job. You're definitely hurt, but you can survive. As you stumble back to the familiar, safe Fun Fen, the Bull Beast skulks back to the shadows, ostensibly to plan a worse humiliation for later. Perhaps if you came back fully fit, you could demoralize it.";
 	phbt Creased Cross;
 	bold-new-room Fun Fen;
@@ -843,18 +842,18 @@ this is the vr-lending-libe rule:
 
 a goodrhyme rule (this is the vc-lie-lol rule) :
 	if player is not in Got Gear Hot Here, unavailable;
-	if lie-lol is true:
+	if sco-lie-lol is true:
 		vcal "The shy shawl has taken enough abuse.";
 		already-done;
 	ready;
 
 this is the vr-lie-lol rule:
 	say "You snicker a bit at the message on the shy shawl. But not too much! You don't want to become like the Very Vile Fairy File writers you're trying to defeat!";
-	now lie-lol is true;
+	now sco-lie-lol is true;
 
 a goodrhyme rule (this is the vc-loft-land rule) :
 	if player is not in Soft Sand, unavailable;
-	if loft-land is true:
+	if in-loft-land is true:
 		vcal "You're already on the Loft Land.";
 		already-done;
 	ready;
@@ -862,9 +861,9 @@ a goodrhyme rule (this is the vc-loft-land rule) :
 this is the vr-loft-land rule:
 	say "Boom! The Soft Sand rises up and becomes the Loft Land[one of][or] again[stopping]. You can now reach [if Curst Cave is visited]the Curst Cave again[else]that new cave west that you couldn't in the Soft Sand[end if].";
 	now zap-core-entry is true;
-	if ever-loft is false:
-		now ever-loft is true;
-	now loft-land is true;
+	if sco-loft-land is false:
+		now sco-loft-land is true;
+	now in-loft-land is true;
 	now Curst Cave is mapped west of Soft Sand;
 	now Soft Sand is mapped east of Curst Cave;
 
@@ -889,7 +888,7 @@ a goodrhyme rule (this is the vc-lots-lame rule) :
 this is the vr-lots-lame rule:
 	say "Exposed, the [ganksta] turns red. It just can't face you any more and runs off for a massive mall to perhaps hassle some poor soul named Passive Paul.";
 	moot Gutta Ganksta;
-	if gan-wan is false, max-down; [can't WHATTA WANKSTA]
+	if sco-whatta-wanksta is false, max-down; [can't WHATTA WANKSTA with the Ganksta gone]
 
 a goodrhyme rule (this is the vc-luck-lair rule) :
 	if player is not in Blinding Blaze or stuck stair is off-stage, unavailable;
@@ -906,14 +905,14 @@ this is the vr-luck-lair rule:
 
 a goodrhyme rule (this is the vc-make-map rule) :
 	if player is not in Lake Lap, unavailable;
-	if jake-map is true:
+	if sco-make-map is true:
 		vcal "You already made a map.";
 		already-done;
 	ready;
 
 this is the vr-make-map rule:
 	say "You make a map. As you do, you hear a hissing noise, as from a dangerous snake.";
-	now jake-map is true;
+	now sco-make-map is true;
 	now cht of Lake Lap is letplus; [->snake snap]
 
 a goodrhyme rule (this is the vc-mark-more rule) :
@@ -935,7 +934,7 @@ this is the vr-mark-more rule:
 a goodrhyme rule (this is the vc-mash-map rule) :
 	if player is not in Po' Pit, unavailable;
 	process the ashap rule; [to determine what was the first word]
-	if grit-grown is false:
+	if sco-grow-grit is false:
 		process the ashap rule;
 		vcp "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
 		not-yet;
@@ -949,7 +948,7 @@ this is the vr-mash-map rule:
 
 a goodrhyme rule (this is the vc-mean-muggin rule) :
 	if player is not in Been Buggin, unavailable;
-	if mean-mugged is true:
+	if sco-mean-muggin is true:
 		vcal "You already learned mean muggin['].";
 		already-done;
 	if Dean Duggan is not touchable:
@@ -959,25 +958,25 @@ a goodrhyme rule (this is the vc-mean-muggin rule) :
 
 this is the vr-mean-muggin rule:
 	say "You try some aggressive facial features. Dean Duggan helps you get things right.";
-	now mean-mugged is true;
+	now sco-mean-muggin is true;
 	lean-and-mean;
 
 a goodrhyme rule (this is the vc-meeker-muscle rule) :
 	if Reeker Russell is not touchable, unavailable;
-	if meeker-yet is true:
+	if sco-meeker-muscle is true:
 		vcal "Russell's already meeker. Maybe disarm him?";
 		already-done;
 	ready;
 
 this is the vr-meeker-muscle rule:
-	now meeker-yet is true;
+	now sco-meeker-muscle is true;
 	say "Russell becomes noticeably less muscular.";
 	check-russell-go; [nec]
 	adjust-russell;
 
 a goodrhyme rule (this is the vc-merry-mile rule) :
 	if mrlp is not Vale Verminous, unavailable;
-	if merry-mile is true:
+	if sco-merry-mile is true:
 		vcal "You already did. And forcing cheeriness tends to backfire.";
 		already-done;
 	if player is in Airy Isle:
@@ -990,12 +989,12 @@ a goodrhyme rule (this is the vc-merry-mile rule) :
 
 this is the vr-merry-mile rule:
 	say "You're much happier now! You are ready to deal with the Very Vile Fairy File fully, now.";
-	now merry-mile is true;
+	now sco-merry-mile is true;
 	now cht of Tarry Tile is partminus; [Tarry Tile -> bury bile]
 
 a goodrhyme rule (this is the vc-mind-me rule) :
 	if player is not in Trim Tram, unavailable;
-	if me-minded is true:
+	if sco-mind-me is true:
 		if print-why-fail, vcal "You already minded yourself.";
 		already-done;
 	ready;
@@ -1003,7 +1002,7 @@ a goodrhyme rule (this is the vc-mind-me rule) :
 this is the vr-mind-me rule:
 	loop-note "MIND ME";
 	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
-	now me-minded is true;
+	now sco-mind-me is true;
 
 a goodrhyme rule (this is the vc-mining-more rule) :
 	if player is not in Whining War, unavailable;
@@ -1016,7 +1015,7 @@ a goodrhyme rule (this is the vc-mining-more rule) :
 	ready;
 
 this is the vr-mining-more rule:
-	now mine-more is true;
+	now sco-mining-more is true;
 	moot dining door;
 	say "You help the pining poor find a moor to mine more. You uncover great metal riches, and stuff. As a reward, they give you an alloy that smiths the gold guard into ... a HOLD HARD GOLD GUARD! They thank you for giving their lives purpose before drifting away."; [note: the player is assured of having the gold guard because they need it to beat the Beast Boss and make the Feast.]
 	moot pining poor;
@@ -1030,7 +1029,7 @@ a goodrhyme rule (this is the vc-mo-mappin rule) :
 	if player is not in Blinding Blaze:
 		vcp "Maybe some other place could use mapping, but not here.";
 		not-yet;
-	if blaze-ways is false:
+	if sco-winding-ways is false:
 		vcp "The blaze isn't mappable, but maybe something that replaces it is.";
 		not-yet;
 	if stuck stair is in Blinding Blaze:
@@ -1044,7 +1043,7 @@ a goodrhyme rule (this is the vc-mo-mappin rule) :
 this is the vr-mo-mappin rule:
 	say "Having a catchy tune like Toe Tappin Row Rappin in your head certainly helps you with tiring, repetitive activities such as mapping. And once you see the way through the maze, you don't forget it. At the end of the maze, there is a stuck stair. As you approach it, the maze walls collapse, and ... you find yourself very near the entrance. Convenient!";
 	move stuck stair to Blinding Blaze;
-	now maze-mapped is true;
+	now sco-mo-mappin is true;
 	moot Minding Maze;
 	process the check-sing-max rule;
 	set the pronoun it to stuck stair;
@@ -1066,7 +1065,7 @@ this is the vr-moral-mage rule:
 
 a goodrhyme rule (this is the vc-mystery-mall rule) :
 	if player is not in History Hall, unavailable;
-	if mistmall is true:
+	if in-mystery-mall is true:
 		vcal "You've already flipped this area to the Mystery Mall.";
 		already-done;
 	ready;
@@ -1079,18 +1078,18 @@ this is the vr-mystery-mall rule:
 		move-from-temp Oi Mo;
 	move-from-temp Mean Moe's Clean Clothes;
 	now Got Gear Hot Here is mapped west of History Hall;
-	now mistmall is true;
-	if ever-mall is false:
+	now in-mystery-mall is true;
+	if sco-mystery-mall is false:
 		say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksta 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to LISTEN to, as well.";
 	else:
 		bold-my-room;
 		say "[description of History Hall][line break]";
-	now ever-mall is true;
+	now sco-mystery-mall is true;
 	now zap-core-entry is true;
 
 a goodrhyme rule (this is the vc-near-null rule) :
 	if Beer Bull is not touchable, unavailable;
-	if bull-null is true:
+	if sco-near-null is true:
 		vcal "You already reduced the bull's power!";
 		already-done;
 	ready;
@@ -1098,11 +1097,11 @@ a goodrhyme rule (this is the vc-near-null rule) :
 this is the vr-near-null rule:
 	now zap-core-entry is true;
 	say "The Beer Bull writhes and roars. It's still plenty powerful, but it's not supercharged.";
-	now bull-null is true;
+	now sco-near-null is true;
 
 a goodrhyme rule (this is the vc-no-nappin rule) :
 	if toe tappin row rappin is not touchable, unavailable;
-	if nap-no is true:
+	if sco-no-nappin is true:
 		vcal "You already changed Toe Tappin Row Rappin that way.";
 		already-done;
 	ready;
@@ -1110,19 +1109,19 @@ a goodrhyme rule (this is the vc-no-nappin rule) :
 this is the vr-no-nappin rule:
 	say "Sometimes you don't need a perfectly sensible way to keep alert. No Nappin does that for you. It will do that for you.";
 	say "[line break][if boat-reject is true and Lake Lap is unvisited]Hey! I bet you could see about the boring boat, now[else]Whatever you need to make more interesting, your riff on Toe Tappin will see you through. You won't forget it[end if].";
-	now nap-no is true;
+	now sco-no-nappin is true;
 	process the check-sing-max rule;
 
 a goodrhyme rule (this is the vc-not-near rule) :
 	if player is not in Got Gear Hot Here, unavailable;
-	if trounce-track is true:
+	if sco-not-near is true:
 		vcal "You already teleported for a bonus point.";
 		already-done;
 	ready;
 
 this is the vr-not-near rule:
 	say "You feel pulled from the ground, and you zoom through the walls without feeling anything. After the Too Top Shoe Shop flew ... flop. You black out and wake up at a TROUNCE TRACK.[paragraph break]There you are set upon by what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. This adventure's enough.";
-	now trounce-track is true;
+	now sco-not-near is true;
 
 a goodrhyme rule (this is the vc-paper-pile rule) :
 	if vapor vial is not touchable, unavailable;
@@ -1145,12 +1144,12 @@ this is the vr-plain-pleasant rule:
 a goodrhyme rule (this is the vc-pull-pieced rule) :
 	if full feast is not in Creased Cross and Bull Beast is not in Creased Cross, unavailable;
 	if Bull Beast is in Creased Cross:
-		vcp "[if cull-ceased is true]The Bull Beast could be pulled, but in its current form, it wouldn't be usefu[else]You'd have to defeat the Bull Beast first[end if].";
+		vcp "[if sco-cull-ceased is true]The Bull Beast could be pulled, but in its current form, it wouldn't be useful[else]You'd have to defeat the Bull Beast first[end if].";
 		not-yet;
-	if shore-shine is false:
+	if sco-shining-shore is false:
 		vcp "You're not sure where you could pull the full feast to, yet.";
 		not-yet;
-	if dine-door is false:
+	if sco-dining-door is false:
 		vcp "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
 		not-yet;
 	ready;
@@ -1164,31 +1163,31 @@ this is the vr-pull-pieced rule:
 	if player is not in Whining War, bold-new-room Whining War;
 
 a goodrhyme rule (this is the vc-really-rolling rule) :
-	if rolling-yet is false, ready;
+	if sco-really-rolling is false, ready;
 	vcal "You already guessed the significance of my pen name.";
 	already-done;
 
 this is the vr-really-rolling rule:
 	say "Have a small bonus for figuring the significance of my pen name. Also, enjoy this trivia: looking back, I wish I'd been Parsin['] Pro Carson Crowe, instead. Eh, well!";
-	now rolling-yet is true;
+	now sco-really-rolling is true;
 
 a goodrhyme rule (this is the vc-see-sign rule) :
 	if player does not have We Whine, unavailable;
-	if sign-seen is true:
+	if sco-see-sign is true:
 		vcal "You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.";
 		already-done;
 	ready;
 
 this is the vr-see-sign rule:
 	say "A closer reading of [We Whine] reveals that you don't need to be a jerk to learn from it. Whether that was the authors['] intent is unclear, but you realize you can learn about the games jerks play and how to expect and deflect them even before they become obvious jerks. It seems like grappling with this sort of thing without fighting it would be useful for dealing with the Very Vile Fairy File, and you now feel more worthy and prepared to do so.";
-	now sign-seen is true;
+	now sco-see-sign is true;
 
 a goodrhyme rule (this is the vc-shining-shore rule) :
 	if player is not in Whining War, unavailable; [?? big problem with what replaces Violent Vale]
-	if shore-shine is true:
+	if sco-shining-shore is true:
 		vcal "You already got (t)here.";
 		already-done;
-	if war-sapped is false:
+	if sco-so-sappin is false:
 		vcp "It could be that way. But you need to get rid of the whining first.";
 		not-yet;
 	ready;
@@ -1196,7 +1195,7 @@ a goodrhyme rule (this is the vc-shining-shore rule) :
 this is the vr-shining-shore rule:
 	say "The Whining War dissipates, leaving a Shining Shore! It's not total paradise or anything, but it's much brighter here. You feel there may be something else to find here. The combatants turn into ... the pining poor.";
 	now cht of Whining War is letminus; [Shining Shore -> dining door] [Shining Shore -> mining more]
-	now shore-shine is true;
+	now sco-shining-shore is true;
 	move pining poor to Whining War;
 	set the pronoun them to Poor Ponder;
 
@@ -1205,7 +1204,7 @@ a goodrhyme rule (this is the vc-show-shield rule) :
 	if gold guard is off-stage:
 		vcp "That seems right, but you have nothing that would guard you effectively. Maybe later.";
 		not-yet;
-	if mine-more is false:
+	if sco-mining-more is false:
 		vcp "Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements[if gull-guard is true] even beyond what the gull guard gave[end if].";
 		not-yet;
 	if gold guard is moot:
@@ -1215,7 +1214,7 @@ a goodrhyme rule (this is the vc-show-shield rule) :
 
 this is the vr-show-shield rule:
 	say "You flash your gold guard, and bam, the voice that says YO YIELD quiets down, and the YO YIELD vanishes. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You can go north now.";
-	now shield-shown is true;
+	now sco-show-shield is true;
 	moot gold guard;
 	phbt Foe Field So Sealed;
 
@@ -1229,14 +1228,14 @@ a goodrhyme rule (this is the vc-silent-sail rule) :
 this is the vr-silent-sail rule:
 	say "Suddenly from the watery depths, a flooring float bursts forth! It looks -- impractical for going anywhere, but man, is it aesthetic.";
 	move flooring float to Violent Vale;
-	now silent-sale is true;
+	now sco-silent-sail is true;
 	phbt Violent Vale;
 	set the pronoun it to flooring float;
 
 a goodrhyme rule (this is the vc-sit-sound rule) :
 	if player is not in Pit Pound, unavailable;
 	if hit hound is not touchable:
-		vcal "You already sat sound[if found-fit is false]. But maybe there's a way to feel more comfortable[end if].";
+		vcal "You already sat sound[if sco-fit-found is false]. But maybe there's a way to feel more comfortable[end if].";
 		already-done;
 	ready;
 
@@ -1264,19 +1263,19 @@ this is the vr-smashing-smoke rule:
 
 a goodrhyme rule (this is the vc-snake-snap rule) :
 	if player is not in Lake Lap, unavailable;
-	if jake-cocapn is false:
+	if sco-co-capn is false:
 		vcp "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
 		not-yet;
-	if jake-map is false:
+	if sco-make-map is false:
 		vcp "There might be a snake here. But you'd have to find it, first.";
 		not-yet;
 	ready;
 
 this is the vr-snake-snap rule:
 	say "And that does it! You and Jake, with the help of the map, subdue the snake. One of you baits it, the other kills it. A take-tap pours out items on a small island. You find a cake cap, a flake flap and some rake wrap. You take the cap, and Jake takes the flap and wrap. It's a nice haul. You take your boring boat back to Violent Vale. It seems sturdy enough for another journey, if you want to go.";
-	if jake-brie is false, max-down; [can't BREAK BRIE any more]
+	if sco-break-brie is false, max-down; [can't BREAK BRIE any more]
 	now player has cake cap;
-	now snake-snap is true;
+	now sco-snake-snap is true;
 	move boring boat to Violent Vale;
 	bold-new-room Violent Vale;
 	phbt Lake Lap;
@@ -1284,7 +1283,7 @@ this is the vr-snake-snap rule:
 
 a goodrhyme rule (this is the vc-so-sappin rule) : [?? we need to make sure this works okay]
 	if player does not have Toe Tappin Row Rappin, unavailable;
-	if war-sapped is true:
+	if sco-so-sappin is true:
 		vcal "You already discouraged some whining. Bringing it up again might make you the whiny one.";
 		already-done;
 	if beer bull is touchable:
@@ -1297,19 +1296,19 @@ a goodrhyme rule (this is the vc-so-sappin rule) : [?? we need to make sure this
 
 this is the vr-so-sappin rule:
 	say "Amazingly, as you filk [Toe], the whining grows less. People realize they're not being productive at all. It becomes much quieter here. Your passive-aggressiveness has trumped others[']! Hooray!";
-	now war-sapped is true;
+	now sco-so-sappin is true;
 	process the check-sing-max rule;
 
 a goodrhyme rule (this is the vc-soft-sand rule) :
-	if player is not in Soft Sand or ever-loft is false, unavailable;
-	if loft-land is false:
+	if player is not in Soft Sand or sco-loft-land is false, unavailable;
+	if in-loft-land is false:
 		vcal "You're already on the Soft Sand.";
 		already-done;
 	ready;
 
 this is the vr-soft-sand rule:
 	say "The Loft Land reverts to the Soft Sand, revealing the old passage west[if Shirk Shell is visited] to the Shirk Shell[end if].";
-	now loft-land is false;
+	now in-loft-land is false;
 	now Shirk Shell is mapped west of Soft Sand;
 
 a goodrhyme rule (this is the vc-spark-spliff rule) :
@@ -1336,35 +1335,35 @@ a goodrhyme rule (this is the vc-stay-strong rule) :
 this is the vr-stay-strong rule:
 	say "That's ... well, it helps a little! You've overcome a bit, but you still feel so sad ... so sad.";
 	now in-way-wrong is false;
-	now in-way-wronged is true;
+	now sco-stay-strong is true;
 	now in-so-sad is true;
 	now cht of the player is letplus; [so sad->glow glad]
 
 a goodrhyme rule (this is the vc-strong-start rule) :
 	if player is not in Fun Fen, unavailable;
-	if started-strong is true:
+	if sco-start-strong is true:
 		vcal "You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.";
 		already-done;
 	ready;
 
 this is the vr-strong-start rule:
-	now started-strong is true;
+	now sco-start-strong is true;
 	say "Boom! Yes, you mangle and destroy the wrong art, both physically and mentally. Dunking on messed-up stuff too much may distract you from your goals, but in this case, you gain confidence you know what you are doing, and the exercise is nice, too. That is a way to get a strong start[if score > 11 and Creased Cross is visited], even if you aren't really starting any more[else if score > 30], because it's always good to start anew, or try to, to get a perspective on things[end if]. You throw the wrong art over Cark Cliff, now that you feel confident fully dismissing it.";
 	moot wrong art;
 
 a goodrhyme rule (this is the vc-take-tea rule) :
 	if jake is not touchable, unavailable;
-	if jake-woke is false:
+	if sco-wake-whee is false:
 		vcp "Maybe when Jake is awake.";
 		not-yet;
-	if jake-tea is true:
+	if sco-take-tea is true:
 		vcal "Don't get greedy. You have the sustenance needed to work with Jake G.";
 		already-done;
 	ready;
 
 this is the vr-take-tea rule:
 	say "You and Jake have a brief snack. It helps bring you together. But he looks awkwardly at you. He guesses he should expect payment, but he doesn't really want it.";
-	now jake-tea is true;
+	now sco-take-tea is true;
 
 a goodrhyme rule (this is the vc-tell-torn rule) :
 	if well worn hell horn is not touchable, unavailable;
@@ -1376,38 +1375,38 @@ this is the vr-tell-torn rule:
 
 a goodrhyme rule (this is the vc-tight-tunnel rule) :
 	if player is not in fight funnel, unavailable;
-	if funnel-to-tunnel is true:
+	if sco-tight-tunnel is true:
 		vcal "You already narrowed the funnel to a tunnel.";
 		already-done;
 	ready;
 
 this is the vr-tight-tunnel rule:
 	say "The fighting quiets down and moves off to the north. You can now go west!";
-	now funnel-to-tunnel is true;
+	now sco-tight-tunnel is true;
 	phbt Fight Funnel;
 
 a goodrhyme rule (this is the vc-wake-whee rule) :
 	if Jake G is not touchable, unavailable;
-	if jake-woke is true:
+	if sco-wake-whee is true:
 		vcal "He's already awake, Blake.";
 		already-done;
 	ready;
 
 this is the vr-wake-whee rule:
 	say "Jake G. wakes up. 'Man! I'm hungry! You hungry too?'";
-	now jake-woke is true;
+	now sco-wake-whee is true;
 	set the pronoun him to Jake G;
 
 a goodrhyme rule (this is the vc-whatta-wanksta rule) :
 	if Gutta Ganksta is not touchable, unavailable;
-	if gan-wan is true:
+	if sco-whatta-wanksta is true:
 		vcal "That insult only works once.";
 		already-done;
 	ready;
 
 this is the vr-whatta-wanksta rule:
 	say "The Gutta Ganksta suddenly feels dissed. Not enough to move out of the way, because the Gutta Ganksta feels clever for knowing a word like 'wanksta' and affirming that it is a bit derivative of 'ganksta.'";
-	now gan-wan is true;
+	now sco-whatta-wanksta is true;
 
 a goodrhyme rule (this is the vc-whoa-wait rule) :
 	unless player is in Airy Isle and go gate is in Airy Isle, unavailable;
@@ -1431,14 +1430,14 @@ this is the vr-wild-weed rule:
 
 a goodrhyme rule (this is the vc-winding-ways rule) :
 	if player is not in Blinding Blaze, unavailable;
-	if blaze-ways is true:
+	if sco-winding-ways is true:
 		vcal "You already made it out of the Blinding Blaze.";
 		already-done;
 	ready;
 
 this is the vr-winding-ways rule:
 	say "The blaze swirls but dies down. In its place are Winding Ways leading to a huge Minding Maze that will surely bust your brain and require a finding phase. And hey, that wry wall pops up too!";
-	now blaze-ways is true;
+	now sco-winding-ways is true;
 	move Minding Maze to Blinding Blaze;
 	phbt Blinding Blaze;
 	wall-add Blinding Blaze;
@@ -1751,7 +1750,7 @@ this is the trivially true rule: the rule succeeds;
 to say rhyme-display: [pok]
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
-	else if me-minded is true:
+	else if sco-mind-me is true:
 		say "You managed to MIND ME, but now you need to evade the trash trap.";
 	else if player is in Trim Tram:
 		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";

@@ -88,14 +88,14 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 table of Blinding Blaze guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "binding bays/baize"	in-blaze-ways rule	false	74	blaze-before-maze rule	"You need to find your way here, not get more tied up." [start Blinding Blaze]
-"grinding grays"	before-grays rule	false	74	blaze-before-maze rule	"Even if it were duller, you'd still be left with a [if blaze-ways is false]hot blaze[else]tricky maze[end if]." [?? still when in Winding Ways]
+"grinding grays"	before-grays rule	false	74	blaze-before-maze rule	"Even if it were duller, you'd still be left with a [if sco-winding-ways is false]hot blaze[else]tricky maze[end if]." [?? still when in Winding Ways]
 
 table of Creased Cross guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "ceased sauce"	in-creased-cross rule	false	54	need-least-loss rule	"You'll need all the sauce you can get, literally or figuratively."
 "fleeced floss"	in-creased-cross rule	false	55	need-least-loss rule	"Dental hygiene is a good idea in general, but here, it's unnecessary."
 "greased gross"	in-creased-cross rule	false	55	need-least-loss rule	"The Creased Cross doesn't need to become ickier."
-"teased toss"	in-creased-cross rule	false	55	need-least-loss rule	"[if cull-ceased is true]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
+"teased toss"	in-creased-cross rule	false	55	need-least-loss rule	"[if sco-cull-ceased is true]You imagine yourself cleverly insulting the Crimes Crew Times Two[else]A bit of taunting might work here, but you might need to be a bit harsher[end if]."
 
 table of Curst Cave guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -227,7 +227,7 @@ table of Pit Pound guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "mit/mitt mound"	in-pit-pound rule	false	35	not-fit-yet rule	"[if hit hound is in Pit Pound]The hit hound won't need to go chasing after that[else]The Pit Pound doesn't need clutter like that[end if]." [start Pit Pound]
 "grit ground"	pit-pound-unsolved rule	false	35	--	"You need to find some other way to [if hit hound is in Pit Pound]banish the hit hound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway."
-"bit bound"	in-pit-pound rule	false	35	not-fit-yet rule	"Now you mention it, you [if found-fit is false]do[else]did[end if] feel a bit restricted here. Expressing your feelings helps a bit! You think."
+"bit bound"	in-pit-pound rule	false	35	not-fit-yet rule	"Now you mention it, you [if sco-fit-found is false]do[else]did[end if] feel a bit restricted here. Expressing your feelings helps a bit! You think."
 "wit/whit wound"	in-pit-pound rule	false	35	not-fit-yet rule	"No need for unnecessary tension."
 "clit clowned"	in-pit-pound rule	false	35	not-fit-yet rule	"I mean, that WORKS, but geez."
 "crit crowned"	in-pit-pound rule	false	35	not-fit-yet rule	"You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game."
@@ -361,10 +361,10 @@ book guesses by item, alphabetized
 
 table of Beer Bull guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"mere mull"	beer-bull-by rule	false	44	need-dull-or-null rule	"The Beer Bull is not impressed by thoughtfulness." [start Here Hull]
-"gear gull"	beer-bull-by rule	false	44	need-dull-or-null rule	"Spoiler: once you get rid of the bull, a gear gull will appear."
-"leer/lear lull/lul"	beer-bull-by rule	false	44	need-dull-or-null rule	"The Beer Bull does not stop looking aggressively at you."
-"peer/pier pull"	beer-bull-by rule	false	44	need-dull-or-null rule	"No, you can't bring the bull down with peer pressure."
+"mere mull"	beer-bull-by rule	false	44	need-near-null rule	"The Beer Bull is not impressed by thoughtfulness." [start Here Hull]
+"gear gull"	beer-bull-by rule	false	44	need-near-null rule	"Spoiler: once you get rid of the bull, a gear gull will appear."
+"leer/lear lull/lul"	beer-bull-by rule	false	44	need-near-null rule	"The Beer Bull does not stop looking aggressively at you."
+"peer/pier pull"	beer-bull-by rule	false	44	need-near-null rule	"No, you can't bring the bull down with peer pressure."
 
 table of big bag zig zag rig rag guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -554,7 +554,7 @@ section texts and decides
 
 to say dives-surprise of (x - a number):
 	say ". You ";
-	if kni-ni is false:
+	if sco-knives-niche is false:
 		say "need some sort of general ambush";
 		continue the action;
 	say "already prepared the Knives Niche, anyway";
@@ -567,7 +567,7 @@ to say kind-of-paper: if vapor vial is moot, say ". Now you've organized the pil
 
 to say float-boat: say "[if flooring float is touchable]flooring float[else]boring boat[end if]"
 
-to say shawl-lol: if lie-lol is false, say ". The shawl seems worthless to your quest, but maybe it's good for [one of][or]further [stopping]practice"
+to say shawl-lol: if sco-lie-lol is false, say ". The shawl seems worthless to your quest, but maybe it's good for [one of][or]further [stopping]practice"
 
 to say rift-need: say ". You just feel you could use another person's help, here"
 
@@ -575,7 +575,7 @@ to say cagekey-prog:
 	say "[if rear-progress is 0]Perhaps some humility would be in order[else if rear-progress is 1]You may need to be open about your worries[else]You may need to show you can handle your worries[end if]"
 
 to decide what number is rear-progress:
-	decide on boolval of knelt-yet + boolval of felt-fear + boolval of whether or not steel steer is moot;
+	decide on boolval of sco-kneel-near + boolval of sco-felt-fear + boolval of whether or not steel steer is moot;
 
 section mist-rules alphabetized
 
@@ -704,7 +704,7 @@ this is the meed-or-weed rule: if player carries mild mead or player carries wil
 
 this is the peasant-around rule: if Pain Peasant is touchable, the rule succeeds;
 
-this is the pit-pound-unsolved rule: if player is in Pit Pound and found-fit is false, the rule succeeds;
+this is the pit-pound-unsolved rule: if player is in Pit Pound and sco-fit-found is false, the rule succeeds;
 
 this is the poor-ponder-near rule: if poor ponder for fonder is touchable, the rule succeeds;
 
@@ -714,7 +714,7 @@ this is the stair-or-snare rule: if player has snuck snare or stuck stair is tou
 
 this is the tool-tap-near rule: if tool tap is touchable, the rule succeeds;
 
-this is the tram-first-puzzle rule: if player is in Trim Tram and me-minded is false, the rule succeeds;
+this is the tram-first-puzzle rule: if player is in Trim Tram and sco-mind-me is false, the rule succeeds;
 
 this is the vial-or-pile rule: if vapor vial is touchable or paper pile is touchable, the rule succeeds;
 
@@ -732,43 +732,43 @@ section leet-rules alphabetized [note these may be more stringent than they stri
 
 [xxleetrul]
 
-this is the blaze-before-maze rule: if player is in Blinding Blaze and blaze-ways is false, the rule succeeds;
+this is the blaze-before-maze rule: if player is in Blinding Blaze and sco-winding-ways is false, the rule succeeds;
 
 this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
 
-this is the fee-or-brie-still rule: if jake-fee is false or jake-brie is false, the rule succeeds;
+this is the fee-or-brie-still rule: if sco-fake-fee is false or sco-break-brie is false, the rule succeeds;
 
 this is the float-present rule: if flooring float is touchable, the rule succeeds;
 
 this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
 
-this is the if-grit-ungrown rule: if player is in Po' Pit and grit-grown is false, the rule succeeds;
+this is the if-grit-ungrown rule: if player is in Po' Pit and sco-grow-grit is false, the rule succeeds;
 
-this is the if-rear-undone rule: if healed-here is false, the rule succeeds;
+this is the if-rear-undone rule: if sco-heal-here is false, the rule succeeds;
 
 this is the mist-bag-hint rule: if big bag is off-stage, the rule succeeds;
 
-this is the need-cocapn rule: if jake-cocapn is false, the rule succeeds;
+this is the need-cocapn rule: if sco-co-capn is false, the rule succeeds;
 
 this is the need-cool-cap rule: if cool cap is off-stage, the rule succeeds; [e.g. you haven't gotten the cool cap yet]
 
 this is the need-dining-door rule: if player is in Whining War and dining door is off-stage, the rule succeeds; [NOTE: you may need to say SHINING SHORE, too. But this checks for needing either. ]
 
-this is the need-dull-or-null rule: if bull-null is false, the rule succeeds; [? need boolean for dear-dull??]
-
-this is the need-fall-free rule: if tree-down is false, the rule succeeds;
+this is the need-fall-free rule: if sco-fall-free is false, the rule succeeds;
 
 this is the need-find-fault rule: if player is in Vined Vault and mind malt is not moot, the rule succeeds;
 
 this is the need-first-fave rule: if worst wave is not moot, the rule succeeds;
 
-this is the need-least-loss rule: if least-loss is false, the rule succeeds;
+this is the need-least-loss rule: if sco-least-loss is false, the rule succeeds;
 
-this is the need-loft-land rule: if ever-loft is false, the rule succeeds;
+this is the need-loft-land rule: if sco-loft-land is false, the rule succeeds;
 
 this is the need-mark-more rule: if player is in Stark Store and dark door is not moot, the rule succeeds;
 
-this is the need-tight-tunnel rule: if funnel-to-tunnel is false, the rule succeeds;
+this is the need-near-null rule: if sco-near-null is false, the rule succeeds;
+
+this is the need-tight-tunnel rule: if sco-tight-tunnel is false, the rule succeeds;
 
 this is the need-work-well rule: if player does not have jerk gel and jerk gel is not moot, the rule succeeds; [?? if jerk gel is in Shirk Shell]
 
@@ -776,25 +776,25 @@ this is the no-hardhat rule: if player does not have hard hat, the rule succeeds
 
 this is the no-snare-yet rule: if snuck snare is off-stage, the rule succeeds;
 
-this is the no-wanksta rule: if gan-wan is false, the rule succeeds;
+this is the no-wanksta rule: if sco-whatta-wanksta is false, the rule succeeds;
 
-this is the not-fit-yet rule: if found-fit is false, the rule succeeds;
+this is the not-fit-yet rule: if sco-fit-found is false, the rule succeeds;
 
-this is the not-near-yet rule: if trounce-track is false, the rule succeeds;
+this is the not-near-yet rule: if sco-not-near is false, the rule succeeds;
 
-this is the not-rolled-yet rule: if rolling-yet is false, the rule succeeds;
+this is the not-rolled-yet rule: if sco-really-rolling is false, the rule succeeds;
 
-this is the shawl-unloled rule: if shy shawl is touchable and lie-lol is false, the rule succeeds;
+this is the shawl-unloled rule: if shy shawl is touchable and sco-lie-lol is false, the rule succeeds;
 
 this is the shield-unshown rule: if player is in Foe Field and gold guard is not moot, the rule succeeds;
 
-this is the sign-unseen rule: if sign-seen is false, the rule succeeds;
+this is the sign-unseen rule: if sco-see-sign is false, the rule succeeds;
 
 this is the spliff-unsparked rule: if wild weed is not moot, the rule succeeds;
 
 this is the vapor-vial-vis rule: if vapor vial is touchable, the rule succeeds;
 
-this is the violent-not-silent rule: if silent-sale is false, the rule succeeds;
+this is the violent-not-silent rule: if sco-silent-sail is false, the rule succeeds;
 
 this is the weed-offstage rule: if wild weed is off-stage, the rule succeeds;
 
