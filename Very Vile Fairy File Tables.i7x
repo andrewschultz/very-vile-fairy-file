@@ -22,7 +22,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	songy	ver-rule	do-rule	wfull (top
 "mash|bash|rash|slash"	"map|bap|rap|slap"	false	true	true	false	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
 "mind"	"me"	false	false	true	false	false	vc-mind-me rule	vr-mind-me rule	--	--
 "flim|skim"	"flam|scam"	false	false	true	false	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"spark"	"spliff"	false	true	false	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--	-- [start of Fun Fen]
+"spark"	"spliff"	false	true	false	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--	"You can [b]SPARK SPLIFF[r] [once-now of vc-spark-spliff rule] you've brought something combustible [here-to of Fun Fen]." [start of Fun Fen]
 "strong"	"start"	false	true	false	false	false	vc-strong-start rule	vr-strong-start rule	--	--
 "fall"	"free"	false	true	true	false	false	vc-fall-free rule	vr-fall-free rule	--	--
 "dive"	"deep"	false	true	true	false	false	vc-dive-deep rule	vr-dive-deep rule	--	--
@@ -62,7 +62,7 @@ w1 (text)	w2 (text)	think-cue	okflip	core	idid	songy	ver-rule	do-rule	wfull (top
 "loft"	"land"	false	false	true	false	false	vc-loft-land rule	vr-loft-land rule	--	-- [start Soft Sand]
 "soft"	"sand"	false	false	--	false	false	vc-soft-sand rule	vr-soft-sand rule	--	--
 "plain"	"pleasant"	false	true	true	false	false	vc-plain-pleasant rule	vr-plain-pleasant rule	--	-- [start Foe Field]
-"show/sho"	"shield"	false	true	true	false	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
+"show|sho"	"shield"	false	true	true	false	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
 "cool"	"cap"	false	true	true	false	false	vc-cool-cap rule	vr-cool-cap rule	--	-- [start Curst Cave]
 "dreaming"	"dull"	false	true	true	false	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--	--
 "first"	"fave"	false	false	true	false	false	vc-first-fave rule	vr-first-fave rule	--	"You could say [b]FIRST FAVE[r] [once-now of vc-first-fave rule] the screaming skull is gone."
@@ -1324,7 +1324,7 @@ a goodrhyme rule (this is the vc-spark-spliff rule) :
 	ready;
 
 this is the vr-spark-spliff rule:
-	say "Whoah, dude! You totally discover not only a hidden spliff but two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without a bong bunch and long lunch.";
+	say "Whoah, dude! You totally discover not only some discarded rolling papers but also two pieces of flint ideal for creating a flame to light it. It only takes 15 minutes, and it is totally worth it, even without a bong bunch and long lunch. Fun Fen really is fun for the next few hours!";
 	moot wild weed;
 
 a goodrhyme rule (this is the vc-stay-strong rule) :

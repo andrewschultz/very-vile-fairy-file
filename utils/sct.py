@@ -156,6 +156,7 @@ def check_multiple_command_tests():
     fin = i7.hdr('vv', 'ta')
     skip_header = False
     in_verb_table = False
+    fatal_error = 0
     with open(fin) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("table of verb checks"):
@@ -173,7 +174,9 @@ def check_multiple_command_tests():
             if True:
                 if tary[topic_column].startswith('"'):
                     got_first = False
-                    if '|' in tary[topic_column]: sys.exit("OOPS need / not | at line {}".format(line_count))
+                    if '|' in tary[topic_column]:
+                        print("OOPS need / not | at line {}".format(line_count))
+                        sys.exit()
                     for q0 in i7.topx2ary(tary[topic_column]):
                         #print("C8 {} Need to verify {}".format(line_count, q0))
                         if got_first:
@@ -181,6 +184,11 @@ def check_multiple_command_tests():
                         else:
                             need_base_test[q0] = 0
                         got_first = True
+                elif '/' in tary[0] or '/' in tary[1]:
+                    print("UH OH fatal error: need | and not / at line {} for {} and {}".format(line_count, tary[0], tary[1]))
+                    fatal_error = 1
+                    mt.add_postopen_file_line(fin, line_count)
+                    continue
                 elif '|' in tary[0] or '|' in tary[1]:
                     tz = (tary[0] + " " + tary[1]).replace('"', '')
                     if '/' in tz: sys.exit("OOPS need | not / at line {}".format(line_count))
@@ -194,6 +202,8 @@ def check_multiple_command_tests():
                             need_base_test[q0] = 0
                         got_first = True
                 #sys.exit("Uh oh bad table line read {} len={} {}.".format(line_count, len(tary), tary))
+    if fatal_error:
+        mt.postopen_files()
     in_alt_verbs = False
     skip_next = False
     mult_err = 0

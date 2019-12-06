@@ -155,11 +155,14 @@ definition: a thing (called th) is acquired:
 
 to say here-in of (rm - a room): say "[if rm is location of player]here[else]in [rm][end if]"
 
+to say here-to of (rm - a room): say "[if rm is location of player]here[else]to [rm][end if]"
+
 to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
 
 to say once-now of (ru - a rule):
 	process ru;
-	say "[if the rule succeeded]now[else]once[end if]"
+	let rbo be the outcome of the rulebook;
+	say "[if rbo is the ready outcome]now[else]once[end if]"
 
 to bring-here (th - a thing): move th to location of player.
 
@@ -1101,6 +1104,10 @@ the way woke clay cloak is a rhymable. description is "It's unwearable in its cu
 
 chapter staystronging
 
+to decide whether in-way-wrong:
+	if player is in Been Buggin and sco-glow-glad is false and sco-stay-strong is false, yes;
+	no;
+
 sco-stay-strong is a truth state that varies.
 
 after looking in Been Buggin for the first time:
@@ -1111,21 +1118,17 @@ after looking in Been Buggin for the first time:
 every turn when in-way-wrong:
 	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
-instead of doing something when in-way-wrong:
+instead of doing something when in-way-wrong and player was in Been Buggin:
 	if action is procedural, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter glowglading
 
 to decide whether in-so-sad:
-	if player is in Been Buggin and sco-glow-glad is false, yes;
+	if player is in Been Buggin and sco-glow-glad is false and sco-stay-strong is true, yes;
 	no;
 
-to decide whether in-way-wrong:
-	if player is in Been Buggin and sco-glow-glad is true and sco-stay-strong is false, yes;
-
 sco-glow-glad is a truth state that varies.
-sco-stay-strong is a truth state that varies.
 
 every turn when in-so-sad:
 	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
@@ -1407,11 +1410,13 @@ check going north in Gassed Gap:
 	if sco-go-gappin is false, say "You whistle in fear. You need some sort of motivation. One last song, maybe" instead;
 	unless evidence-pieces is 3, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
 	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
-	isle-max-score;
+	isle-adjust-score-think;
 
 to decide what number is bag-point: decide on boolval of whether or not player has big bag;
 
-to isle-max-score:
+to isle-adjust-score-think:
+	repeat through table of verb checks:
+		if think-cue entry is true, now think-cue entry is false; [SPARK SPLIFF, for instance, can no longer be done, along with other LLPs(?) ]
 	now max-poss is isle-score + score + 1 - bag-point + boolval of whether or not sco-really-rolling is false;
 
 to decide which number is evidence-pieces:
@@ -1849,14 +1854,15 @@ to read-laters (wt - a which-think):
 				next;
 			if there is no think-advice entry or too-distracted:
 				unless pre-bug is true, next;
-			if wt is doable-now and rb-out is the not-yet outcome, next;
+			if wt is doable-now and rb-out is not the ready outcome, next;
 			if wt is undoable-now and rb-out is the ready outcome, next;
 			if thought-any is false, say "[line break]";
+			if there is a core entry and core entry is false, say "([b]OPTIONAL[r]) ";
 			if rb-out is the ready outcome, say "([b]CAN DO NOW[r]) ";
 			now thought-any is true;
 			say "[think-advice entry][line break]";
 
-to check-flip-verbs:
+to check-reversible-rooms:
 	if player is in Soft Sand and sco-loft-land is true, say "[line break]You can switch between LOFT LAND and SOFT SAND freely.";
 	if player is in History Hall and sco-mystery-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
 
@@ -1865,7 +1871,7 @@ check thinking:
 	if all-hinted is 0:
 		say "[line break]But you don't have leads for any puzzles right now." instead;
 	now vc-dont-print is true;
-	check-flip-verbs;
+	check-reversible-rooms;
 	read-laters no-details;
 	read-laters doable-now;
 	read-laters undoable-now;
@@ -1934,7 +1940,7 @@ to decide which number is can-do-hint of (ts - a truth state):
 			process the ver-rule entry;
 			let rb-out be the outcome of the rulebook;
 			if ts is true:
-				if rb-out is the ready outcome or rb-out is the unavailable outcome, increment temp; [the reason for "unavailable" is because we also want to track when the beer bull distracts us. That is the only way we can both be unavailable and the think-cue entry is true.]
+				if rb-out is the ready outcome or there is no think-advice entry, increment temp; [the reason for "no think-advice entry" is because we also want to track when the beer bull distracts us. If there is no think-advice entry, there are no normal barriers to a certain command.]
 			else if rb-out is the not-yet outcome:
 				increment temp;
 	now vc-dont-print is false;
@@ -1946,7 +1952,11 @@ to decide which number is doable-hinted:
 to decide which number is future-hinted:
 	decide on can-do-hint of false;
 
-to decide which number is all-hinted: decide on doable-hinted + future-hinted;
+to decide which number is all-hinted:
+	let temp be 0;
+	repeat through table of verb checks:
+		if think-cue entry is true, increment temp;
+	decide on temp;
 
 [see header file for table of ranks]
 
@@ -2119,7 +2129,7 @@ carry out verbsing:
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
 	say "Finally, [2da]OPTS lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
-	check-flip-verbs;
+	check-reversible-rooms;
 	the rule succeeds.
 
 to say jjj: say "[b]JJ[r] or [r]JERKING JUMP[r]"
@@ -4013,7 +4023,7 @@ carry out climbclearing:
 		if there is a core entry and core entry is true, now idid entry is true;
 		if do-rule entry is vr-couple-caps rule, break;
 	now score is min-needed - isle-score;
-	isle-max-score;
+	isle-adjust-score-think;
 	the rule succeeds.
 
 volume map index
