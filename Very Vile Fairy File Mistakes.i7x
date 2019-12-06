@@ -479,12 +479,12 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of toe tappin row rappin guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"woe/whoa/whoah whappin"	have-toe-tappin rule	false	26	--	"You don't need an exhortation to violence." [start History Hall]
-"crow crappin"	have-toe-tappin rule	false	26	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, [toe] is versatile enough."
-"slow slappin"	have-toe-tappin rule	false	26	--	"That would be handy in a more violent adventure, but not this one."
-"flow flappin"	have-toe-tappin rule	false	26	--	"That might be funky to some, but you need something more practical."
-"low lappin"	have-toe-tappin rule	false	26	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus, [i]Chariots of Fire[r] works better, anyway."
-"fo/foe fappin"	have-toe-tappin rule	false	26	--	"[Toe] may not be highbrow, but it's not that low-class."
+"woe/whoa/whoah whappin"	have-toe-tappin rule	false	101	--	"You don't need an exhortation to violence." [start History Hall]
+"crow crappin"	have-toe-tappin rule	false	101	--	"You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, [toe] is versatile enough."
+"slow slappin"	have-toe-tappin rule	false	101	--	"That would be handy in a more violent adventure, but not this one."
+"flow flappin"	have-toe-tappin rule	false	101	--	"That might be funky to some, but you need something more practical."
+"low lappin"	have-toe-tappin rule	false	101	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus, [i]Chariots of Fire[r] works better, anyway."
+"fo/foe fappin"	have-toe-tappin rule	false	101	--	"[Toe] may not be highbrow, but it's not that low-class."
 
 table of we whine guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -538,7 +538,7 @@ table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "mo mealed"	in-foe-field rule	false	46	shield-unshown rule	"Alas, no food magically appears. You [if gold guard is moot]did what you needed[else]need a more fighting stance[end if]." [start Foe Field]
 "mo mate"	go-gate-vis rule	false	44	--	"You remain alone." [start Gassed Gap]
-"see sine"	have-toe-tappin rule	false	26	--	"[we whine] is too practical for stuffy advanced math contests."	[start History Hall]
+"see sine"	have-toe-tappin rule	false	34	--	"[we whine] is too practical for stuffy advanced math contests."	[start History Hall]
 "choral cage"	coral-cage-around rule	false	54	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
 "co cappin"	have-toe-tappin rule	false	24	need-cocapn rule	"Close, but camaraderie, not violence."
 "bought board"	bot-board-vis rule	false	35	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]

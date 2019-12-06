@@ -3651,6 +3651,14 @@ to decide which number is variable-scan-length of (mynum - a number):
 		if jake-fee is false, decide on 43; [FAKE FEE]
 		if jake-brie is false, decide on -54; [BREAK BRIE, optional]
 		decide on 0;
+	else if mynum is 101: [Toe Tappin' Row Rappin]
+		if player is in whining war and war-sapped is false, decide on 26; [so sappin]
+		if player is in violent vale and boring boat is touchable and nap-no is false, decide on 26; [no nappin]
+		if player is in gassed gap and gap-go is false, decide on 26; [go gappin]
+		if player is in blinding blaze and maze-mapped is false and blaze-ways is true, decide on 26; [mo mappin]
+		if player is in lake lap and jake-cocapn is false, decide on 24; [co capn]
+		if hap-ho is false, decide on -26;
+		decide on 0;
 	say "BUG: no variable-scan-length for [mynum]. Please let me know what you typed.";
 	decide on 44;
 
