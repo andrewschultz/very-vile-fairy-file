@@ -1101,34 +1101,36 @@ the way woke clay cloak is a rhymable. description is "It's unwearable in its cu
 
 chapter staystronging
 
-in-way-wrong is a truth state that varies.
 sco-stay-strong is a truth state that varies.
 
 after looking in Been Buggin for the first time:
-	now in-way-wrong is true;
 	say "Everything feels pointless. You're sick of these silly rhymes. They feel way wrong, way wrong.";
 	now cht of the player is letplus; [way wrong->stay strong]
 	continue the action;
 
-every turn when in-way-wrong is true:
+every turn when in-way-wrong:
 	say "Way wrong ... way wrong ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
-instead of doing something when in-way-wrong is true:
+instead of doing something when in-way-wrong:
 	if action is procedural, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter glowglading
 
-in-so-sad is a truth state that varies.
-in-so-saded is a truth state that varies.
+to decide whether in-so-sad:
+	if player is in Been Buggin and sco-glow-glad is false, yes;
+	no;
+
+to decide whether in-way-wrong:
+	if player is in Been Buggin and sco-glow-glad is true and sco-stay-strong is false, yes;
 
 sco-glow-glad is a truth state that varies.
 sco-stay-strong is a truth state that varies.
 
-every turn when in-so-sad is true:
+every turn when in-so-sad:
 	say "So sad ... so sad ... you feel so depressed and upset. Maybe there's an easy way out of this, but you wouldn't feel accomplished. And if there's a hard way out of this, it's too hard.";
 
-instead of doing something when in-so-sad is true:
+instead of doing something when in-so-sad:
 	if action is procedural, continue the action;
 	say "You can't. You just feel ... so sad. Mo['] mad.";
 
@@ -2923,9 +2925,9 @@ this is the jerk-gel-hint rule:
 		say "You need to find whom to use the jerk gel on.";
 
 this is the kerry-kyle-hint rule:
-	if in-so-sad is true:
+	if in-so-sad:
 		say "[one of]You need to make yourself happier, from being so sad.[or]Become shiny and happy.[or]GLOW GLAD.[stopping]";
-	else if in-way-wrong is true:
+	else if in-way-wrong:
 		say "[one of]You feel not just wrong but weak. Things are slipping away.[or]How to keep things from slipping away?[or]STAY STRONG.[stopping]";
 	else:
 		say "Woohoo! There's nothing wrong with you right now!"
@@ -3436,7 +3438,7 @@ after reading a command:
 book parser errors
 
 to decide whether buggin-freeze:
-	if in-so-sad is true or in-way-wrong is true, yes;
+	if player is in Been Buggin and sco-glow-glad is false, yes;
 	no;
 
 to decide whether too-distracted:
@@ -3466,7 +3468,7 @@ Rule for printing a parser error (this is the clue half right words rule):
 	abide by the verb-checker rule;
 	abide by the rhyme-guess-checker rule for table of general good guesses;
 	if buggin-freeze:
-		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad is true]so sad[else]way wrong[end if].";
+		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad]so sad[else]way wrong[end if].";
 		the rule succeeds;
 	continue the action;
 
@@ -3540,6 +3542,7 @@ this is the verb-checker rule:
 	let local-ha-half be false;
 	let brightness be false;
 	let progressive be false;
+	let is-song be false;
 	repeat through the table of verb checks:
 		let my-count be 0;
 		now vc-dont-print is true;
@@ -3602,7 +3605,7 @@ this is the verb-checker rule:
 			if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
 				blank out the core entry;
 				now zap-core-entry is false;
-				process the score and thinking changes rule;
+			process the score and thinking changes rule;
 			if there is a core entry and core entry is false, check-lump-progress;
 			the rule succeeds;
 		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
@@ -3615,13 +3618,14 @@ this is the verb-checker rule:
 			now vc-dont-print is false;
 			if already-rhymed-this is true, break;
 			now local-ha-half is true;
+			if sing-clue is true, now is-song is whether or not songy entry is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
 			if there is a core entry:
 				now progressive is true;
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if].";
 		the rule succeeds;
 
 already-rhymed-this is a truth state that varies.
@@ -4004,7 +4008,6 @@ carry out climbclearing:
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is likely hosed now. Your object is just to get through the rest of the game. You also should not be able to go back south in this testing environment.";
 	now climb-clear is true;
 	now sco-stay-strong is true;
-	now in-so-saded is true;
 	move player to Airy Isle;
 	repeat through table of verb checks:
 		if there is a core entry and core entry is true, now idid entry is true;

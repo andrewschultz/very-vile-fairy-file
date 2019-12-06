@@ -11,102 +11,102 @@ chapter the verb check table
 [verb check and verb run rules. This is in approximate game-solve order.]
 
 table of verb checks [xxvc]
-w1 (text)	w2 (text)	think-cue	okflip	core	idid	ver-rule	do-rule	wfull (topic)	think-advice
-"glow"	"glad"	false	true	true	false	vc-glow-glad rule	vr-glow-glad rule	--	text	[start interlude-y]
-"stay"	"strong"	false	false	true	false	vc-stay-strong rule	vr-stay-strong rule	--	-- [must be at top for JJ]
-"get"	"good"	false	false	true	false	vc-get-good rule	vr-get-good rule	--	-- [start Intro]
-"gift"	"giver"	false	false	true	false	vc-gift-giver rule	vr-gift-giver rule	--	--
-"find"	"fault"	false	true	true	false	vc-find-fault rule	vr-find-fault rule	--	--
-"green"	"grass"	false	false	true	false	vc-green-grass rule	vr-green-grass rule	--	--
-"grow|oh|so"	"grit|it|sit"	false	true	true	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
-"mash|bash|rash|slash"	"map|bap|rap|slap"	false	true	true	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
-"mind"	"me"	false	false	true	false	vc-mind-me rule	vr-mind-me rule	--	--
-"flim|skim"	"flam|scam"	false	false	true	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
-"spark"	"spliff"	false	true	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--	-- [start of Fun Fen]
-"strong"	"start"	false	true	false	false	vc-strong-start rule	vr-strong-start rule	--	--
-"fall"	"free"	false	true	true	false	vc-fall-free rule	vr-fall-free rule	--	--
-"dive"	"deep"	false	true	true	false	vc-dive-deep rule	vr-dive-deep rule	--	--
-"paper"	"pile"	false	true	true	false	vc-paper-pile rule	vr-paper-pile rule	--	--
-"backed"	"binder"	false	false	true	false	vc-backed-binder rule	vr-backed-binder rule	--	--
-"appealing"	"appear"	false	true	false	false	vc-appealing-appear rule	vr-appealing-appear rule	--	-- [start of Real Rear]
-"kneel|kneeling"	"near"	false	false	true	false	vc-kneel-near rule	vr-kneel-near rule	--	--
-"feel|feeling"	"fear"	false	false	true	false	vc-feel-fear rule	vr-feel-fear rule	--	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of vc-feel-fear rule] you have help from above, it will work."
-"deal|dealing"	"dear"	false	true	true	false	vc-deal-dear rule	vr-deal-dear rule	--	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of vc-deal-dear rule] you have something you need to deal with."
-"heal|healing"	"here"	false	true	true	false	vc-heal-here rule	vr-heal-here rule	--	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of vc-heal-here rule] you need to heal from something."
-"history"	"hall"	false	false	--	false	vc-history-hall rule	vr-history-hall rule	--	--
-"mystery"	"mall"	false	false	true	false	vc-mystery-mall rule	vr-mystery-mall rule	--	--
-"dark"	"door"	false	false	true	false	vc-dark-door rule	vr-dark-door rule	--	-- [start Stark Store]
-"mark"	"more"	false	false	true	false	vc-mark-more rule	vr-mark-more rule	--	"You'll want to [b]MARK MORE[r] [once-now of vc-mark-more rule]you've found something to mark [here-in of Stark Store]."
-"cleared"	"clay"	false	true	true	false	vc-cleared-clay rule	vr-cleared-clay rule	--	--
-"bumped|dumped"	"buster|duster"	false	true	false	false	vc-bumped-buster rule	vr-bumped-buster rule	"bumped buster" or "dumped duster"	--
-"tight"	"tunnel"	false	false	true	false	vc-tight-tunnel rule	vr-tight-tunnel rule	--	-- [start fight funnel]
-"knives"	"niche"	false	false	true	false	vc-knives-niche rule	vr-knives-niche rule	--	-- [start dives ditch]
-"wild"	"weed"	false	true	false	false	vc-wild-weed rule	vr-wild-weed rule	--	--
-"lots"	"lame"	false	false	true	false	vc-lots-lame rule	vr-lots-lame rule	--	-- [start Mystery Mall]
-"no"	"nappin|napping"	false	true	true	false	vc-no-nappin rule	vr-no-nappin rule	--	--
-"ho"	"happen"	false	true	false	false	vc-ho-happen rule	vr-ho-happen rule	--	--
-"dimd"	--	false	false	false	false	vc-dimd rule	vr-dimd rule	--	--
-"whatta"	"wanksta"	false	true	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"	--
-"youre|your|yore"	"yonder"	false	false	true	false	vc-youre-yonder rule	vr-youre-yonder rule	--	--
-"glean"	"glows"	false	false	true	false	vc-glean-glows rule	vr-glean-glows rule	--	"You'll want to [b]GLEAN GLOWS[r] [once-now of vc-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
-"smashing"	"smoke"	false	false	true	false	vc-smashing-smoke rule	vr-smashing-smoke rule	--	"You can make [b]SMASHING SMOKE[r] [once-now of vc-smashing-smoke rule] you've found someone or something that could use a suitable diversion." [start Y'Old Yard]
-"lending"	"libe"	false	false	true	false	vc-lending-libe rule	vr-lending-libe rule	--	-- [start Vending Vibe]
-"see"	"sign"	false	false	true	false	vc-see-sign rule	vr-see-sign rule	--	--
-"hard"	"hat"	false	false	true	false	vc-hard-hat rule	vr-hard-hat rule	--	-- [start Got Gear Hot Here]
-"lie"	"lol"	false	true	false	false	vc-lie-lol rule	vr-lie-lol rule	--	--
-"not"	"near"	false	true	false	false	vc-not-near rule	vr-not-near rule	--	--
-"beast"	"boss"	false	true	true	false	vc-beast-boss rule	vr-beast-boss rule	--	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of vc-beast-boss rule] you're armed better."[start Creased Cross]
-"cull|lul"	"ceased|least"	false	true	true	false	vc-cull-ceased rule	vr-cull-ceased rule	"cull ceased" or "lul least"	"You should be able to say [b][cul-lul][r] [once-now of vc-cull-ceased rule] you're back to full strength."
-"full"	"feast"	false	true	true	false	vc-full-feast rule	vr-full-feast rule	--	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of vc-full-feast rule] it's been vanquished."
-"least"	"loss"	false	true	true	false	vc-least-loss rule	vr-least-loss rule	--	"You could say [b]LEAST LOSS[r] [once-now of vc-least-loss rule] you have something to face [here-in of Creased Cross]."
-"loft"	"land"	false	false	true	false	vc-loft-land rule	vr-loft-land rule	--	-- [start Soft Sand]
-"soft"	"sand"	false	false	--	false	vc-soft-sand rule	vr-soft-sand rule	--	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly."
-"plain"	"pleasant"	false	true	true	false	vc-plain-pleasant rule	vr-plain-pleasant rule	--	-- [start Foe Field]
-"show/sho"	"shield"	false	true	true	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
-"cool"	"cap"	false	true	true	false	vc-cool-cap rule	vr-cool-cap rule	--	-- [start Curst Cave]
-"dreaming"	"dull"	false	true	true	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--	--
-"first"	"fave"	false	false	true	false	vc-first-fave rule	vr-first-fave rule	--	"You could say [b]FIRST FAVE[r] [once-now of vc-first-fave rule] the screaming skull is gone."
-"moral"	"mage"	false	false	true	false	vc-moral-mage rule	vr-moral-mage rule	--	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
-"work"	"well"	false	true	true	false	vc-work-well rule	vr-work-well rule	--	-- [start Shirk Shell]
-"dear"	"dull"	false	true	true	false	vc-dear-dull rule	vr-dear-dull rule	--	-- [start Here Hull]
-"near"	"null"	false	true	true	false	vc-near-null rule	vr-near-null rule	--	--
-"sit"	"sound"	false	false	true	false	vc-sit-sound rule	vr-sit-sound rule	--	-- [start Pit Pound]
-"fit"	"found"	false	true	true	false	vc-fit-found rule	vr-fit-found rule	--	"You can declare a [b]FIT FOUND[r] [once-now of vc-fit-found rule] you've gotten rid of the Hit Hound."
-"winding|minding|finding"	"ways|maze|phase|fays|feys"	false	false	true	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays/feys"	-- [start Blinding Blaze]
-"mo|mow"	"mappin|mapping"	false	true	true	false	vc-mo-mappin rule	vr-mo-mappin rule	--	"You can try [b]MO MAPPIN[r] [once-now of vc-mo-mappin rule] you've found a suitable place to map."
-"luck|snuck"	"lair|snare"	false	false	true	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"	--
-"brightening"	"bridge"	false	false	true	false	vc-brightening-bridge rule	vr-brightening-bridge rule	--	-- [start Violent Vale]
-"silent"	"sail|sale"	false	false	true	false	vc-silent-sail rule	vr-silent-sail rule	--	--
-"boring"	"boat"	false	false	true	false	vc-boring-boat rule	vr-boring-boat rule	--	--
-"wake"	"whee|wee"	false	true	true	false	vc-wake-whee rule	vr-wake-whee rule	--	-- [start Lake Lea]
-"take"	"tea"	false	false	true	false	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
-"fake"	"fee"	false	false	true	false	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
-"break"	"brie"	false	false	false	false	vc-break-brie rule	vr-break-brie rule	--	--
-"make"	"map"	false	false	true	false	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
-"co"	"capn|cappin"	false	false	true	false	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
-"snake"	"snap"	false	true	true	false	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
-"lean"	"luggin|lugging"	false	false	true	false	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
-"mean"	"muggin|mugging"	false	false	true	false	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
-"so"	"sappin|sapping"	false	true	true	false	vc-so-sappin rule	vr-so-sappin rule	--	-- [start Whining War]
-"shining"	"shore"	false	false	true	false	vc-shining-shore rule	vr-shining-shore rule	--	"You can make the [b]SHINING SHORE[r] [once-now of vc-shining-shore rule] you dealt with the Whining War."
-"mining"	"more|moor"	false	true	true	false	vc-mining-more rule	vr-mining-more rule	--	"You should be able to perform [b]MINING MORE[r] [once-now of vc-mining-more rule] the pining poor are fully satisfied."
-"dining"	"door"	false	false	true	false	vc-dining-door rule	vr-dining-door rule	--	"You should be able to make a [b]DINING DOOR[r] [once-now of vc-dining-door rule] the Whining War has calmed down a bit."
-"pull"	"pieced"	false	true	true	false	vc-pull-pieced rule	vr-pull-pieced rule	--	"You can [b]PULL PIECED[r] the Bull Beast [once-now of vc-pull-pieced rule] you have more people willing to help you."
-"cast"	"cap"	false	false	true	false	vc-cast-cap rule	vr-cast-cap rule	--	"You can [b]CAST CAP[r] [once-now of vc-cast-cap rule] rule you have a worthy one." [start Gassed Gap]
-"beaker"	"bustle"	false	true	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--	--
-"meeker"	"muscle"	false	true	true	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--	--
-"wood"	"one"	false	false	true	false	vc-wood-one rule	vr-wood-one rule	--	--
-"go"	"gappin|gapping"	false	false	true	false	vc-go-gappin rule	vr-go-gappin rule	--	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
-"couple"	"caps"	false	false	true	false	vc-couple-caps rule	vr-couple-caps rule	--	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
-"lot"	"lord"	false	false	true	false	vc-lot-lord rule	vr-lot-lord rule	--	-- [start Airy Isle]
-"hot"	"horde"	false	false	true	false	vc-hot-horde rule	vr-hot-horde rule	--	--
-"got"	"gored"	false	false	true	false	vc-got-gored rule	vr-got-gored rule	--	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
-"whoa|whoah|woe"	"wait"	false	true	true	false	vc-whoa-wait rule	vr-whoa-wait rule	--	--
-"tell"	"torn"	false	false	true	false	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
-"merry"	"mile"	false	false	true	false	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
-"bury"	"bile"	false	false	true	false	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
-"big"	"bag"	false	true	true	false	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
-"really"	"rolling"	false	true	false	false	vc-really-rolling rule	vr-really-rolling rule	--	--
+w1 (text)	w2 (text)	think-cue	okflip	core	idid	songy	ver-rule	do-rule	wfull (topic)	think-advice
+"glow"	"glad"	false	true	true	false	false	vc-glow-glad rule	vr-glow-glad rule	--	text	[start interlude-y]
+"stay"	"strong"	false	false	true	false	false	vc-stay-strong rule	vr-stay-strong rule	--	-- [must be at top for JJ]
+"get"	"good"	false	false	true	false	false	vc-get-good rule	vr-get-good rule	--	-- [start Intro]
+"gift"	"giver"	false	false	true	false	false	vc-gift-giver rule	vr-gift-giver rule	--	--
+"find"	"fault"	false	true	true	false	false	vc-find-fault rule	vr-find-fault rule	--	--
+"green"	"grass"	false	false	true	false	false	vc-green-grass rule	vr-green-grass rule	--	--
+"grow|oh|so"	"grit|it|sit"	false	true	true	false	false	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
+"mash|bash|rash|slash"	"map|bap|rap|slap"	false	true	true	false	false	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
+"mind"	"me"	false	false	true	false	false	vc-mind-me rule	vr-mind-me rule	--	--
+"flim|skim"	"flam|scam"	false	false	true	false	false	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
+"spark"	"spliff"	false	true	false	false	false	vc-spark-spliff rule	vr-spark-spliff rule	--	-- [start of Fun Fen]
+"strong"	"start"	false	true	false	false	false	vc-strong-start rule	vr-strong-start rule	--	--
+"fall"	"free"	false	true	true	false	false	vc-fall-free rule	vr-fall-free rule	--	--
+"dive"	"deep"	false	true	true	false	false	vc-dive-deep rule	vr-dive-deep rule	--	--
+"paper"	"pile"	false	true	true	false	false	vc-paper-pile rule	vr-paper-pile rule	--	--
+"backed"	"binder"	false	false	true	false	false	vc-backed-binder rule	vr-backed-binder rule	--	--
+"appealing"	"appear"	false	true	false	false	false	vc-appealing-appear rule	vr-appealing-appear rule	--	-- [start of Real Rear]
+"kneel|kneeling"	"near"	false	false	true	false	false	vc-kneel-near rule	vr-kneel-near rule	--	--
+"feel|feeling"	"fear"	false	false	true	false	false	vc-feel-fear rule	vr-feel-fear rule	--	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of vc-feel-fear rule] you have help from above, it will work."
+"deal|dealing"	"dear"	false	true	true	false	false	vc-deal-dear rule	vr-deal-dear rule	--	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of vc-deal-dear rule] you have something you need to deal with."
+"heal|healing"	"here"	false	true	true	false	false	vc-heal-here rule	vr-heal-here rule	--	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of vc-heal-here rule] you need to heal from something."
+"history"	"hall"	false	false	--	false	false	vc-history-hall rule	vr-history-hall rule	--	--
+"mystery"	"mall"	false	false	true	false	false	vc-mystery-mall rule	vr-mystery-mall rule	--	--
+"dark"	"door"	false	false	true	false	false	vc-dark-door rule	vr-dark-door rule	--	-- [start Stark Store]
+"mark"	"more"	false	false	true	false	false	vc-mark-more rule	vr-mark-more rule	--	"You'll want to [b]MARK MORE[r] [once-now of vc-mark-more rule]you've found something to mark [here-in of Stark Store]."
+"cleared"	"clay"	false	true	true	false	false	vc-cleared-clay rule	vr-cleared-clay rule	--	--
+"bumped|dumped"	"buster|duster"	false	true	false	false	false	vc-bumped-buster rule	vr-bumped-buster rule	"bumped buster" or "dumped duster"	--
+"tight"	"tunnel"	false	false	true	false	false	vc-tight-tunnel rule	vr-tight-tunnel rule	--	-- [start fight funnel]
+"knives"	"niche"	false	false	true	false	false	vc-knives-niche rule	vr-knives-niche rule	--	-- [start dives ditch]
+"wild"	"weed"	false	true	false	false	false	vc-wild-weed rule	vr-wild-weed rule	--	--
+"lots"	"lame"	false	false	true	false	false	vc-lots-lame rule	vr-lots-lame rule	--	-- [start Mystery Mall]
+"no"	"nappin|napping"	false	true	true	false	true	vc-no-nappin rule	vr-no-nappin rule	--	--
+"ho"	"happen"	false	true	false	false	true	vc-ho-happen rule	vr-ho-happen rule	--	--
+"dimd"	--	false	false	false	false	false	vc-dimd rule	vr-dimd rule	--	--
+"whatta"	"wanksta"	false	true	false	false	false	vc-whatta-wanksta rule	vr-whatta-wanksta rule	"what a wanksta" or "whatta wanksta"	--
+"youre|your|yore"	"yonder"	false	false	true	false	false	vc-youre-yonder rule	vr-youre-yonder rule	--	--
+"glean"	"glows"	false	false	true	false	false	vc-glean-glows rule	vr-glean-glows rule	--	"You'll want to [b]GLEAN GLOWS[r] [once-now of vc-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
+"smashing"	"smoke"	false	false	true	false	false	vc-smashing-smoke rule	vr-smashing-smoke rule	--	"You can make [b]SMASHING SMOKE[r] [once-now of vc-smashing-smoke rule] you've found someone or something that could use a suitable diversion." [start Y'Old Yard]
+"lending"	"libe"	false	false	true	false	false	vc-lending-libe rule	vr-lending-libe rule	--	-- [start Vending Vibe]
+"see"	"sign"	false	false	true	false	false	vc-see-sign rule	vr-see-sign rule	--	--
+"hard"	"hat"	false	false	true	false	false	vc-hard-hat rule	vr-hard-hat rule	--	-- [start Got Gear Hot Here]
+"lie"	"lol"	false	true	false	false	false	vc-lie-lol rule	vr-lie-lol rule	--	--
+"not"	"near"	false	true	false	false	false	vc-not-near rule	vr-not-near rule	--	--
+"beast"	"boss"	false	true	true	false	false	vc-beast-boss rule	vr-beast-boss rule	--	"You tried to summon the [b]BEAST BOSS[r] [here-in of Creased Cross] but need to try again [once-now of vc-beast-boss rule] you're armed better."[start Creased Cross]
+"cull|lul"	"ceased|least"	false	true	true	false	false	vc-cull-ceased rule	vr-cull-ceased rule	"cull ceased" or "lul least"	"You should be able to say [b][cul-lul][r] [once-now of vc-cull-ceased rule] you're back to full strength."
+"full"	"feast"	false	true	true	false	false	vc-full-feast rule	vr-full-feast rule	--	"You could make the Bull Beast a [b]FULL FEAST[r] [once-now of vc-full-feast rule] it's been vanquished."
+"least"	"loss"	false	true	true	false	false	vc-least-loss rule	vr-least-loss rule	--	"You could say [b]LEAST LOSS[r] [once-now of vc-least-loss rule] you have something to face [here-in of Creased Cross]."
+"loft"	"land"	false	false	true	false	false	vc-loft-land rule	vr-loft-land rule	--	-- [start Soft Sand]
+"soft"	"sand"	false	false	--	false	false	vc-soft-sand rule	vr-soft-sand rule	--	--
+"plain"	"pleasant"	false	true	true	false	false	vc-plain-pleasant rule	vr-plain-pleasant rule	--	-- [start Foe Field]
+"show/sho"	"shield"	false	true	true	false	false	vc-show-shield rule	vr-show-shield rule	--	"You'll want to [b]SHOW SHIELD[r] [once-now of vc-show-shield rule] you've found something that can protect you in the Foe Field."
+"cool"	"cap"	false	true	true	false	false	vc-cool-cap rule	vr-cool-cap rule	--	-- [start Curst Cave]
+"dreaming"	"dull"	false	true	true	false	false	vc-dreaming-dull rule	vr-dreaming-dull rule	--	--
+"first"	"fave"	false	false	true	false	false	vc-first-fave rule	vr-first-fave rule	--	"You could say [b]FIRST FAVE[r] [once-now of vc-first-fave rule] the screaming skull is gone."
+"moral"	"mage"	false	false	true	false	false	vc-moral-mage rule	vr-moral-mage rule	--	"You tried to find the [b]MORAL MAGE[r], but you couldn't open the coral cage yet."
+"work"	"well"	false	true	true	false	false	vc-work-well rule	vr-work-well rule	--	-- [start Shirk Shell]
+"dear"	"dull"	false	true	true	false	false	vc-dear-dull rule	vr-dear-dull rule	--	-- [start Here Hull]
+"near"	"null"	false	true	true	false	false	vc-near-null rule	vr-near-null rule	--	--
+"sit"	"sound"	false	false	true	false	false	vc-sit-sound rule	vr-sit-sound rule	--	-- [start Pit Pound]
+"fit"	"found"	false	true	true	false	false	vc-fit-found rule	vr-fit-found rule	--	"You can declare a [b]FIT FOUND[r] [once-now of vc-fit-found rule] you've gotten rid of the Hit Hound."
+"winding|minding|finding"	"ways|maze|phase|fays|feys"	false	false	true	false	false	vc-winding-ways rule	vr-winding-ways rule	"winding ways" or "minding maze" or "finding phase/fays/feys"	-- [start Blinding Blaze]
+"mo|mow"	"mappin|mapping"	false	true	true	false	true	vc-mo-mappin rule	vr-mo-mappin rule	--	"You can try [b]MO MAPPIN[r] [once-now of vc-mo-mappin rule] you've found a suitable place to map."
+"luck|snuck"	"lair|snare"	false	false	true	false	false	vc-luck-lair rule	vr-luck-lair rule	"luck lair" or "snuck snare"	--
+"brightening"	"bridge"	false	false	true	false	false	vc-brightening-bridge rule	vr-brightening-bridge rule	--	-- [start Violent Vale]
+"silent"	"sail|sale"	false	false	true	false	false	vc-silent-sail rule	vr-silent-sail rule	--	--
+"boring"	"boat"	false	false	true	false	false	vc-boring-boat rule	vr-boring-boat rule	--	--
+"wake"	"whee|wee"	false	true	true	false	false	vc-wake-whee rule	vr-wake-whee rule	--	-- [start Lake Lea]
+"take"	"tea"	false	false	true	false	false	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
+"fake"	"fee"	false	false	true	false	false	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
+"break"	"brie"	false	false	false	false	false	vc-break-brie rule	vr-break-brie rule	--	--
+"make"	"map"	false	false	true	false	false	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
+"co"	"capn|cappin"	false	false	true	false	true	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
+"snake"	"snap"	false	true	true	false	false	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
+"lean"	"luggin|lugging"	false	false	true	false	false	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
+"mean"	"muggin|mugging"	false	false	true	false	false	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
+"so"	"sappin|sapping"	false	true	true	false	true	vc-so-sappin rule	vr-so-sappin rule	--	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly." [start Whining War]
+"shining"	"shore"	false	false	true	false	false	vc-shining-shore rule	vr-shining-shore rule	--	"You can make the [b]SHINING SHORE[r] [once-now of vc-shining-shore rule] you dealt with the Whining War."
+"mining"	"more|moor"	false	true	true	false	false	vc-mining-more rule	vr-mining-more rule	--	"You should be able to perform [b]MINING MORE[r] [once-now of vc-mining-more rule] the pining poor are fully satisfied."
+"dining"	"door"	false	false	true	false	false	vc-dining-door rule	vr-dining-door rule	--	"You should be able to make a [b]DINING DOOR[r] [once-now of vc-dining-door rule] the Whining War has calmed down a bit."
+"pull"	"pieced"	false	true	true	false	false	vc-pull-pieced rule	vr-pull-pieced rule	--	"You can [b]PULL PIECED[r] the Bull Beast [once-now of vc-pull-pieced rule] you have more people willing to help you."
+"cast"	"cap"	false	false	true	false	false	vc-cast-cap rule	vr-cast-cap rule	--	"You can [b]CAST CAP[r] [once-now of vc-cast-cap rule] rule you have a worthy one." [start Gassed Gap]
+"beaker"	"bustle"	false	true	false	false	false	vc-beaker-bustle rule	vr-beaker-bustle rule	--	--
+"meeker"	"muscle"	false	true	true	false	false	vc-meeker-muscle rule	vr-meeker-muscle rule	--	--
+"wood"	"one"	false	false	true	false	false	vc-wood-one rule	vr-wood-one rule	--	--
+"go"	"gappin|gapping"	false	false	true	false	true	vc-go-gappin rule	vr-go-gappin rule	--	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
+"couple"	"caps"	false	false	true	false	false	vc-couple-caps rule	vr-couple-caps rule	--	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
+"lot"	"lord"	false	false	true	false	false	vc-lot-lord rule	vr-lot-lord rule	--	-- [start Airy Isle]
+"hot"	"horde"	false	false	true	false	false	vc-hot-horde rule	vr-hot-horde rule	--	--
+"got"	"gored"	false	false	true	false	false	vc-got-gored rule	vr-got-gored rule	--	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
+"whoa|whoah|woe"	"wait"	false	true	true	false	false	vc-whoa-wait rule	vr-whoa-wait rule	--	--
+"tell"	"torn"	false	false	true	false	false	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
+"merry"	"mile"	false	false	true	false	false	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
+"bury"	"bile"	false	false	true	false	false	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
+"big"	"bag"	false	true	true	false	false	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
+"really"	"rolling"	false	true	false	false	false	vc-really-rolling rule	vr-really-rolling rule	--	--
 
 section vc- and vr- rule definitions
 
@@ -618,12 +618,11 @@ this is the vr-glean-glows rule:
 	set the pronoun it to clashing cloak;
 
 a goodrhyme rule (this is the vc-glow-glad rule) :
-	if in-so-sad is false, unavailable;
+	unless in-so-sad, unavailable;
 	ready;
 
 this is the vr-glow-glad rule:
 	say "Okay! You're really ready to face things now. Someone comes into view, congratulates you on fighting off your inner demons, and introduces himself as Dean Duggan. 'I have a couple more things I can teach you, but you'll have to ask me specifically.'";
-	now in-so-sad is false;
 	now sco-glow-glad is true;
 	phbt Kerry Kyle;
 	move Dean Duggan to Been Buggin;
@@ -1329,14 +1328,12 @@ this is the vr-spark-spliff rule:
 	moot wild weed;
 
 a goodrhyme rule (this is the vc-stay-strong rule) :
-	if in-way-wrong is false, unavailable;
+	unless in-way-wrong, unavailable;
 	ready;
 
 this is the vr-stay-strong rule:
 	say "That's ... well, it helps a little! You've overcome a bit, but you still feel so sad ... so sad.";
-	now in-way-wrong is false;
 	now sco-stay-strong is true;
-	now in-so-sad is true;
 	now cht of the player is letplus; [so sad->glow glad]
 
 a goodrhyme rule (this is the vc-strong-start rule) :
@@ -1583,7 +1580,9 @@ to seed-narratives:
 				now any-blank-yet is true;
 		else if there is a rank-num entry and range-top is 0:
 			now range-top is rank-num entry - 1;
+			if range-top < 0, increase range-top by core-max;
 	let current-blank-rows be 0;
+	if debug-state is true, say "DEBUG: range = [range-bottom] to [range-top].";
 	repeat through table of narratives:
 		if there is a rank-num entry:
 			if rank-num entry < 0, increase rank-num entry by core-max;

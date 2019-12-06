@@ -664,7 +664,7 @@ this is the in-real-rear rule: if player is in Real Rear, the rule succeeds;
 
 this is the in-rift-river rule: if player is in Rift River, the rule succeeds;
 
-this is the in-so-sad rule: if in-so-sad is true, the rule succeeds;
+this is the in-so-sad rule: if in-so-sad, the rule succeeds;
 
 this is the in-soft-sand rule: if player is in Soft Sand, the rule succeeds;
 
@@ -680,7 +680,7 @@ this is the in-vined-vault rule: if player is in Vined Vault, the rule succeeds;
 
 this is the in-violent-vale rule: if player is in Violent Vale, the rule succeeds;
 
-this is the in-way-wrong rule: if in-way-wrong is true, the rule succeeds;
+this is the in-way-wrong rule: if in-way-wrong, the rule succeeds;
 
 this is the in-wet-wood rule: if player is in Wet Wood, the rule succeeds;
 
