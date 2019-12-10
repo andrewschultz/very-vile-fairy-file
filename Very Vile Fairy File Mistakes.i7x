@@ -302,6 +302,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 table of Tarry Tile guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "bell born"	hell-horn-near rule	false	44	--	"There's enough noise right now."
+"shell shorn"	hell-horn-near rule	false	44	--	"You must be on the right track. But perhaps the shell that is shorn might make the [hell horn] more effective."
 "swell sworn"	hell-horn-near rule	false	44	--	"That might augment the hell horn."
 "tryst tress"	in-tarry-tile rule	false	--	--	"The last thing you need now is a hair appointment."
 

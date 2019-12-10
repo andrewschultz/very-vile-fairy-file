@@ -84,6 +84,8 @@ test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/te
 
 test wb with "really rolling/test w1/appealing appear/test w2/strong start/test w3/test w3b/test w4/lie lol/not near/test w5/test w6/break brie/test w7/test w8/bumped buster/test w9/test w10/test w11/test w12/wild weed/spark spliff/test w13/test w14/beaker bustle/test w15/test w16".
 
+test qw with "gonear tarry tile/tell torn/merry mile/bury bile".
+
 chapter beta jump
 
 test cc1 with "climb clear/got gored/test w16".

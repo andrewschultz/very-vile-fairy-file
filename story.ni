@@ -232,6 +232,10 @@ to up-reg:
 
 to max-down: decrement max-poss;
 
+to decide which number is max-main: decide on min-needed - isle-score;
+
+book region definitions
+
 Worst Whew is a region. [first few]
 
 Piddling Pain is a region. [middling main]
@@ -1679,7 +1683,7 @@ check sleeping: say "Lie late, my mate? Why wait?" instead;
 
 chapter waiting
 
-check waiting: say "[one of]Hi ho! Lie low[or]Woo! Will stew, still[cycling]." instead;
+check waiting: say "[one of]Hi ho! Lie low[or]D'oh! Deed? No need[or]Woo! Will stew, still[cycling]." instead;
 
 chapter talking
 
@@ -3288,11 +3292,57 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see the points you [b]MISSED[r]"	true	"missed"	--	showmissesing
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
-"see the point-based [b]RANK[r]s or [b]NARRATIVE[r]s"	true	"rank/ranks"	--	showranksing
---	true	"narrative/narratives"	--	shownarring
+"see the point-based [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
 "see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN for next table)"	true	"RAND [number]"	--	rling
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
+"see [b]NARR[r]atives for [narr-end-opts]"	true	"narr a/b/e/m/" or "narr"	--	narring
+
+to say narr-end-opts: say "(B)eginning, (M)iddle, (E)nd, or some combination, or (A)ll"
+
+chapter narring
+
+narring is an activity.
+
+rule for narring:
+	let see-beginning be false;
+	let see-middle be false;
+	let see-end be false;
+	if number of words in the player's command is 1:
+		now see-beginning is true;
+		now see-middle is true;
+		now see-end is true;
+	else:
+		let Q be indexed text;
+		now Q is "[word number 2 in the player's command]";
+		if Q matches the text "a":
+			now see-beginning is true;
+			now see-middle is true;
+			now see-end is true;
+		else if Q matches the text "b":
+			now see-beginning is true;
+		else if Q matches the text "e":
+			now see-end is true;
+		else if Q matches the text "m":
+			now see-middle is true;
+	if see-beginning is false and see-end is false and see-middle is false:
+		say "You need to choose [narr-end-opts].";
+	else:
+		if see-beginning is true:
+			repeat through table of narratives:
+				if rank-num entry > whew-score, break;
+				say "[rank-num entry]. [rank-txt entry][line break]";
+		if see-middle is true:
+			if see-beginning is true, say "[wfak]";
+			repeat through table of narratives:
+				if rank-num entry <= whew-score, next;
+				if rank-num entry > max-main, break;
+				say "[rank-num entry]. [rank-txt entry][line break]";
+		if see-end is true:
+			if see-beginning is true or see-middle is true, say "[wfak]";
+			repeat through table of narratives:
+				if rank-num entry <= max-main, next;
+				say "[rank-num entry]. [rank-txt entry][line break]";
 
 chapter rling
 
