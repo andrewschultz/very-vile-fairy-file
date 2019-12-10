@@ -4,6 +4,8 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
 [dbh.py shortens to the debug version]
 
+[sct.py checks for a lot of things including the Table of Bad Locs]
+
 volume core tables
 
 chapter the verb check table
@@ -1498,6 +1500,7 @@ Fun Fen	east	true	false	"Fate Farm"	"You figure, why not get to my fate sooner r
 Gassed Gap	east	true	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS you buy from SHOPPING SHILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
 Gassed Gap	west	true	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
 Lake Lap	east	true	false	"Hi! Here, Buy Beer"	"You don't have any cash, but so what? Maybe someone will recognize your adventuring exploits so far and give you some, free. You ignore that silly voice saying 'Fie! Fear!' It's probably from a sigh-seer or someone with a lie-leer, as it's to dry, drear. Passing shops called My Mere Guy Gear, Tie Teer and Pie Pier, you have a feeling something is nigh, near. The last words you and Jake hear are, of course, 'Die, dear' as you simultaneously feel an impact of a spy-spear and are run over by a sty-steer. And your last thought is 'Why? We're ...'"
+Lake Lap	down	true	false	"Lake Light"	"Oh hey! Another lake to visit! What's the worst that could happen? A fake fight? Things do seem to break bright at first. Until you hear a voice: 'WAKE, WIGHT!' You try to run, but it-s a ... flake flight. You wind up in Bake Bight."
 Lake Lap	south	true	false	"Rad Route"	"Oh, it starts off okay. The lad lout is no problem. You walk cheerily by Stade Stout and Pad Pout, giving yourself a tad tout. But at the end, you run into people with clad clout, and it's a bad bout."
 Lake Lap	north	true	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. You hear a voice (and oh, what a best boom it is) intone 'DEST.: DOOM!' You realize you have wound up in ... a TEST TOMB."

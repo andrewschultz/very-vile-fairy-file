@@ -4191,6 +4191,11 @@ The HA HALF button lights up on your Leet Learner.
 Learner needle
 That is the wrong defensive posture for here.
 
+@alt
+>sho shield
+by one point
+>undo
+
 > show shield
 by one point
 

@@ -22,7 +22,7 @@ to_open = defaultdict(int)
 open_source_post = True
 
 core_column = 4
-topic_column = 8
+topic_column = 9
 
 min_line = 0
 max_line = 0
@@ -260,6 +260,7 @@ def check_multiple_command_tests():
 
 def check_bad_loc_tests():
     death_moves = defaultdict(int)
+    death_orig = defaultdict(str)
     fin = i7.hdr('vvff', 'ta')
     ft = "rbr-vvff-thru.txt"
     in_death_test = False
@@ -284,6 +285,7 @@ def check_bad_loc_tests():
             except:
                 sys.exit("Bad array {} line {}".format(tary, line_count))
             death_moves[temp_string] = 0
+            death_orig[temp_string] = tary[0]
             if tary[2] == 'false':
                 temp_string = "!" + temp_string
                 death_moves[temp_string] = 0
@@ -310,10 +312,10 @@ def check_bad_loc_tests():
                 death_moves[ls] += 1
     for x in death_moves:
         if death_moves[x] == 0:
-            print("Did not find test case for", x)
+            print("Did not find death-room test case {} {}.".format(death_orig[x], x))
             loc_errs += 1
         elif death_moves[x] > 1:
-            print("Found excess test case for", x)
+            print("Did not find death-room test case {} {}.".format(death_orig[x], x))
             loc_errs += 1
     if loc_errs: print(loc_errs, "total location test errors")
     else: print("ALL DEATH LOCATIONS ARE TESTED!")
@@ -532,24 +534,27 @@ def check_points():
     in_verb_checks = False
     skip_next = False
     got_verb_checks = False
-    with open(i7.hdr('vv', 'ta')) as file:
+    with open("story.ni") as file:
         for (line_count, line) in enumerate(file, 1):
-            temp_pass = False
             if line.startswith("core-max"):
                 if core_max: sys.exit("Core max / minimum score redefined at line {}.".format(line_count))
                 core_max = int(re.sub(".* is ", "", re.sub("\.( *\[.*?\])$", "", line.lower().strip())))
                 min_line = line_count
                 continue
+            if 'up-reg' in line and '[+' in line:
+                temp_pass = True
+                base_cmd = re.sub(".*\[\+", "", line.lower().strip())
+                base_cmd = re.sub("\].*", "", base_cmd)
+                pt_type = 'nec'
+                scores[pt_type] += 1
+    with open(i7.hdr('vv', 'ta')) as file:
+        for (line_count, line) in enumerate(file, 1):
+            temp_pass = False
             if line.startswith("table of verb checks"):
                 in_verb_checks = True
                 skip_next = True
                 got_verb_checks = True
                 continue
-            if 'up-reg' in line and '[+' in line and 0:
-                temp_pass = True
-                base_cmd = re.sub(".*\[\+", "", line.lower().strip())
-                base_cmd = re.sub("\].*", "", base_cmd)
-                pt_type = 'nec'
             if not in_verb_checks and not temp_pass: continue
             if skip_next:
                 skip_next = False
