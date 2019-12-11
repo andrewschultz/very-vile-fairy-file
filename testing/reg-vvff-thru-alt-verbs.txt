@@ -438,6 +438,10 @@ by one point
 > n
 > n
 
+>sho shield
+by one point
+>undo
+
 > show shield
 by one point
 

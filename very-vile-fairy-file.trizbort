@@ -298,6 +298,11 @@
 			<dock index="0" id="74" port="se" />
 			<dock index="1" id="109" port="nw" />
 		</line>
+		<room id="111" name="Bore Bay" subtitle="" x="192" y="416" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="112" name="" description="" startText="down" endText="up">
+			<dock index="0" id="12" port="sw" />
+			<dock index="1" id="111" port="ne" />
+		</line>
 	</map>
 	<settings>
 		<colors>

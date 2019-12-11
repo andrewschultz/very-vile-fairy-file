@@ -1505,6 +1505,7 @@ Lake Lap	south	true	false	"Rad Route"	"Oh, it starts off okay. The lad lout is n
 Lake Lap	north	true	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. You hear a voice (and oh, what a best boom it is) intone 'DEST.: DOOM!' You realize you have wound up in ... a TEST TOMB."
 Lake Lea	west	true	false	"Capped Cone"	"What could possibly be dangerous about a cone? Nothing, until you get beyond it to the ... ZAPPED ZONE."
+Lake Lea	down	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]AFter a night in the Store Stay, you try to leave. But a sore-say voice booms 'POOR?! PAY!' You can't. "NOR? ... NAY!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
 Lake Lea	north	true	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
 Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void. To you, it is classed cloyed."
@@ -1617,6 +1618,7 @@ rank-num	done-yet	rank-txt
 --	false	"'So seedy! Grow greedy! No, needy!' a voice calls. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!"
 --	false	"'Hi, hi! Why, why? My, my! Sigh, sigh!' There was a time when you thought you didn't even deserve complex insults. But here--surely the [very vile] is running out of steam? There's only one way to find out. Keep going!"
 -7	false	"'How hot NOW?! Not!' booms the voice. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
+-5	false	"You hear a voice boom, 'Blast[']er blind, master mind!' You must be very close.
 -4	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close."
 -1	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
 
@@ -1643,6 +1645,7 @@ randtxt
 "Be-Bought Lee Lott"
 "Big Baddy Pig Paddy"
 "Blue Blood Stu, Stud"
+"Po['] Punk Joe Junk"
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
 "Fart Face Mart Mayes"
@@ -1697,6 +1700,8 @@ randtxt
 table of vvff books [xxbooks]
 randtxt
 "Ache or Make More Lake Lore"
+"Talk, Tell, Walk Well"
+"Gain Goals, Sane Souls"
 "Bane, Bones, Stain Stones[r], by Jane Jones"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"

@@ -2253,6 +2253,8 @@ west to Capped Cone
 south to Blest Bloom
 >n
 north to Mo Main Low Lane
+>d
+down to Bore Bay
 
 @ha
 > ztake tea rule
