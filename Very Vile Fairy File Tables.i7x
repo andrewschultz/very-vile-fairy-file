@@ -185,7 +185,7 @@ this is the vr-big-bag rule:
 	now player has big bag;
 	set the pronoun it to big bag;
 	if mrlp is worst whew:
-		repeat through table of readables:
+		repeat through table of narratives:
 			if rank-num entry <= whew-score:
 				increment rank-num entry;
 			else:
@@ -1505,8 +1505,9 @@ Lake Lap	south	true	false	"Rad Route"	"Oh, it starts off okay. The lad lout is n
 Lake Lap	north	true	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. You hear a voice (and oh, what a best boom it is) intone 'DEST.: DOOM!' You realize you have wound up in ... a TEST TOMB."
 Lake Lea	west	true	false	"Capped Cone"	"What could possibly be dangerous about a cone? Nothing, until you get beyond it to the ... ZAPPED ZONE."
-Lake Lea	down	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]AFter a night in the Store Stay, you try to leave. But a sore-say voice booms 'POOR?! PAY!' You can't. "NOR? ... NAY!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
+Lake Lea	west	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]AFter a night in the Store Stay, you try to leave. But a sore-say voice booms 'POOR?! PAY!' You can't. 'NOR? ... NAY!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
 Lake Lea	north	true	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
+Lake Lea	up	true	false	"Top Tower"	"Anyone with ambition should want to visit the Top Tower! And along the way, there's no glop (glower,) but there's a run through the Shop Shower reminds you of running through sprinklers as a kid, and you stop to sniff a lovely flop-flower. You've even prepared to run 'Cop, COWER' at a rogue policeman, but you never get the chance. Unfortunately, the top tower isn't a very welcoming place. Everyone's trying to prove they're not a sop. Sour. 'Pop! Power!' they yell as they fight. You are pulled into the Op-Hour competition and meet your doom in your first contest, at the bop-bower. The last you hear is 'Plop! Plow [']er!' before you are fed to ... the chop-chower."
 Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
 Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void. To you, it is classed cloyed."
 Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! You waltz easily past the pawn pen, an obvious trap. But soon you suffer horrible, and ultimately fatal, tauntin['] and conkin[']. Set to gongin[']. All a bit off-key, but effective."
@@ -1645,7 +1646,6 @@ randtxt
 "Be-Bought Lee Lott"
 "Big Baddy Pig Paddy"
 "Blue Blood Stu, Stud"
-"Po['] Punk Joe Junk"
 "Bo, Better Go-Getter"
 "Broken-Brain Jokin['] Jane"
 "Fart Face Mart Mayes"
@@ -1659,6 +1659,7 @@ randtxt
 "Madman Tad Tan"
 "Not Noble Scott Scoble"
 "Pill-Perk Bill Burke"
+"Po['] Punk Joe Junk"
 "Quite Quick Knight Nick"
 "Rude Rave Dude Dave"
 "Sick Sad Thick Thad"
@@ -1700,8 +1701,6 @@ randtxt
 table of vvff books [xxbooks]
 randtxt
 "Ache or Make More Lake Lore"
-"Talk, Tell, Walk Well"
-"Gain Goals, Sane Souls"
 "Bane, Bones, Stain Stones[r], by Jane Jones"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
@@ -1715,6 +1714,7 @@ randtxt
 "Fall For Stall Store"
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
+"Gain Goals, Sane Souls"
 "Good Girl Would Whirl"
 "Greater Gravel Traitor Travel"
 "Grepping: Groan? STEPPING STONE"
@@ -1738,6 +1738,7 @@ randtxt
 "So Seek Crow Creek"
 "Stark Steeds['] Dark Deeds[r], by Mark Meeds"
 "Take Tess, Wake Wes, Make Mess"
+"Talk, Tell, Walk Well"
 "Why When My Men, by Ben"
 "Yo, Yet Go Get Mo['] Met[r], by Joe Jett"
 "Your Be-Yays: Derby Days[r], by Herbie Hayes"

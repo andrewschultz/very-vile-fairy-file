@@ -653,7 +653,7 @@ instead of doing something when need-loss:
 
 chapter Bull Beast
 
-The Bull Beast is a person. talk-text is "'Tame? Tush! Maim! Mush!'". "[if sco-cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here. Perhaps one phrase would dispel it--maybe a weird one, but it IS a beast boss, after all[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if sco-cull-ceased is true]Dead. Perhaps it can be remade into something nicer[else if sco-heal-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].". cht of Bull Beast is partplus. [Bull Beast->cull ceased]
+The Bull Beast is a person. talk-text is "If it could talk, it'd say 'Tame? Tush! Maim! Mush!'". "[if sco-cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here. Perhaps one phrase would dispel it--maybe a weird one, but it IS a beast boss, after all[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if sco-cull-ceased is true]Dead. Perhaps it can be remade into something nicer[else if sco-heal-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].". cht of Bull Beast is partplus. [Bull Beast->cull ceased]
 
 sco-cull-ceased is a truth state that varies.
 
@@ -1822,7 +1822,7 @@ the block listening rule is not listed in any rulebook.
 
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
-	if player is in Whining War, say "[if sco-so-sappin is false]Boy! The whining is pretty intense and constant! You don't see how you could change the whining by itself. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
+	if player is in Whining War, say "[if sco-so-sappin is false]It's more 'HEAD, HURT' than 'DEAD DIRT', but it's draining. Reason alone won't dispel itMaybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
 	if player is in History Hall and in-mystery-mall is true:
 		if Toe is in History Hall, try examining Toe Tappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;

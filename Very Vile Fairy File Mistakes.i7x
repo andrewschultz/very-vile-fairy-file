@@ -70,7 +70,8 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of Been Buggin guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"teen tuggin"	in-been-buggin rule	false	46	--	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
+"teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
+"glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is touchable]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
 "jay joke"	have-clay-cloak rule	false	--	--	"You recall some off-color drug humor from your younger days."
 "ho had"	in-so-sad rule	false	44	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	44	--	"Once the anger wore off, you might be even more lethargic."
@@ -528,6 +529,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "trilly trolling"	trivially true rule	false	-67	not-rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
 "silly souling/soling"	trivially true rule	false	-67	not-rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
 "filly foaling"	trivially true rule	false	-67	not-rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
+"dairy/darey dial"	trivially true rule	44	--	"No dial appears to give you more excitement or milk products. Rats."
 "wary wile"	trivially true rule	false	44	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
 "tough toll"	trivially true rule	false	--	--	"You groan about how heavy your inventory is."

@@ -60,7 +60,7 @@
 			<dock index="1" id="25" port="w" />
 		</line>
 		<room id="27" name="Done Dune" subtitle="" x="512" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Gun Goon" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<room id="28" name="Capped Cone" subtitle="" x="192" y="288" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Zapped Zone" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<room id="28" name="Top Tower" subtitle="" x="192" y="416" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Zapped Zone" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<room id="29" name="Fast Foi'd" subtitle="" x="352" y="-96" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="Vast Void" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="30" name="" description="" startText="down" endText="up">
 			<dock index="0" id="42" port="n" />
@@ -239,9 +239,9 @@
 			<dock index="0" id="19" port="n" />
 			<dock index="1" id="38" port="s" />
 		</line>
-		<line id="88" name="" description="">
-			<dock index="0" id="12" port="w" />
-			<dock index="1" id="28" port="e" />
+		<line id="88" name="" description="" startText="up" endText="down">
+			<dock index="0" id="12" port="sw" />
+			<dock index="1" id="28" port="ne" />
 		</line>
 		<room id="89" name="Blest Bloom" subtitle="" x="352" y="416" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
 		<line id="90" name="" description="">
@@ -298,10 +298,10 @@
 			<dock index="0" id="74" port="se" />
 			<dock index="1" id="109" port="nw" />
 		</line>
-		<room id="111" name="Bore Bay" subtitle="" x="192" y="416" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
-		<line id="112" name="" description="" startText="down" endText="up">
-			<dock index="0" id="12" port="sw" />
-			<dock index="1" id="111" port="ne" />
+		<room id="111" name="Bore Bay" subtitle="" x="192" y="288" w="96" h="64" region="Poorly Penned" handDrawn="yes" allcornersequal="yes" ellipse="no" roundedCorners="no" octagonal="no" cornerTopLeft="15" cornerTopRight="15" cornerBottomLeft="15" cornerBottomRight="15" borderstyle="Solid" description="" roomFill="" secondFill="" secondFillLocation="Bottom" roomBorder="" roomLargeText="" roomSubtitleColor="" roomSmallText="" ZOrder="0" />
+		<line id="112" name="" description="">
+			<dock index="0" id="12" port="w" />
+			<dock index="1" id="111" port="e" />
 		</line>
 	</map>
 	<settings>
