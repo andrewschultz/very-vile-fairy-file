@@ -2155,7 +2155,10 @@ understand "opts" as optsing.
 
 carry out optsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
-	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r].";
+	if vined vault is not visited:
+		say "The Leet Learner has options to toggle, but it would spoil things to list them now.";
+	else:
+		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homophone detection on and off.";
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
 	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
 	the rule succeeds.
@@ -2204,6 +2207,10 @@ understand "about" as abouting.
 carry out abouting:
 	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break][b]OTHERS[r] will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
 	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
+	say "[line break]Release 1 was at the end of September 2019.";
+	say "Release 2 was November 22, 2019. It featured bug fixes, LLPs, and general player conveniences.";
+	say "Release 3 was December 12, 2019. It featured code speedup, a small narrative based on point scores, and checking for homonyms, along with other small improvements.";
+	say "[line break]And finally, if you enjoyed VVFF, Quite Queer Night Near is on itch.io at https://andrewschultz.itch.io/quite-queer-night-near. VVFF is at https://andrewschultz.itch.io/very-vile-fairy-file.";
 	the rule succeeds;
 
 chapter othersing
@@ -4009,61 +4016,16 @@ to vcal (t - text): [verb conditional print, flag already rhymed]
 
 sco-really-rolling is a truth state that varies.
 
-volume beta testing - not for release
+volume warp commands
 
-the force tester wherever rule is listed last in the when play begins rulebook.
+warp-warn-yet is a truth state that varies.
 
-when play begins (this is the force tester wherever rule):
-	now debug-state is true;
-	now in-beta is true;
-	if currently transcripting:
-		say "It looks like you restarted, and the transcript should still be running.";
-	else if debug-state is false:
-		say "Note: I like to make sure beta testers have a transcript working. It's a big help to me. So, after you press a key, you'll be asked to save a file.";
-		wfak;
-		try switching the story transcript on;
-		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
-	if debug-state is false:
-		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
-		if Fun Fen is unvisited:
-			say "[line break]You can [b]SLOW SIGH or BLOW BY or FLOW FLY[r] to jump to the nonlinear part and avoid the introduction.[paragraph break]You can [b]TRICK TRIP or SLICK SLIP[r] before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.";
-		if Airy Isle is unvisited:
-			say "[line break]Also, you can [b]CLIMB CLEAR[r] to jump to the (relatively brief) endgame, and LLA leet-learns everything in sight.";
-	continue the action;
-
-this is the too-late-for-beta rule:
-	if Fun Fen is visited or Airy Isle is visited, say "It's too late to use the TRICK TRIP/BLOW BY commands." instead;
-
-chapter missesing
-
-missesing is an action applying to nothing.
-
-understand the command "misses" as something new.
-
-understand "misses" as missesing.
-
-carry out missesing:
-	carry out the showmissesing activity;
-	the rule succeeds.
-
-chapter llaing
-
-llaing is an action applying to nothing.
-
-understand the command "lla" as something new.
-
-understand "lla" as llaing.
-
-definition: a thing (called th) is llable:
-	if th is touchable, yes;
-	no;
-
-carry out llaing:
-	try lling the location of the player;
-	repeat with Q running through llable things:
-		say "====Leet-learning [Q]:";
-		try lling Q;
-	the rule succeeds.
+this is the warp-warn rule:
+	if warp-warn-yet is false:
+		now warp-warn-yet is true;
+		say "You've typed a warp command that is only referred to on the release sheet. This nag will only appear once, but I want to check to make sure this is what you want.";
+		if the player yes-consents, continue the action;
+		say "Okay. You can warp later if you like, unless of course you get too far along in the game.";
 
 chapter blowbying
 
@@ -4079,7 +4041,7 @@ understand "slow sigh" as blowbying.
 
 carry out blowbying:
 	let cur-row be 1;
-	abide by the too-late-for-beta rule;
+	abide by the warp-warn rule;
 	repeat through table of verb checks:
 		if cur-row > 2: [we need to skip GLOW GLAD/STAY STRONG]
 			now idid entry is true;
@@ -4106,7 +4068,7 @@ understand "slick slip" as tricktriping.
 understand "trick trip" as tricktriping.
 
 carry out tricktriping:
-	abide by the too-late-for-beta rule;
+	abide by the warp-warn rule;
 	say "You utter a, uh, QUICK QUIP. You feel enlightened.";
 	let prev-blowby-score be the score;
 	now in-test-loop is true;
@@ -4147,6 +4109,59 @@ carry out climbclearing:
 		if do-rule entry is vr-couple-caps rule, break;
 	now score is min-needed - isle-score;
 	isle-adjust-score-think;
+	the rule succeeds.
+
+volume beta testing - not for release
+
+the force tester wherever rule is listed last in the when play begins rulebook.
+
+when play begins (this is the force tester wherever rule):
+	now debug-state is true;
+	now in-beta is true;
+	if currently transcripting:
+		say "It looks like you restarted, and the transcript should still be running.";
+	else if debug-state is false:
+		say "Note: I like to make sure beta testers have a transcript working. It's a big help to me. So, after you press a key, you'll be asked to save a file.";
+		wfak;
+		try switching the story transcript on;
+		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
+	if debug-state is false:
+		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
+		if Fun Fen is unvisited:
+			say "[line break]You can [b]SLOW SIGH or BLOW BY or FLOW FLY[r] to jump to the nonlinear part and avoid the introduction.[paragraph break]You can [b]TRICK TRIP or SLICK SLIP[r] before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.";
+		if Airy Isle is unvisited:
+			say "[line break]Also, you can [b]CLIMB CLEAR[r] to jump to the (relatively brief) endgame, and LLA leet-learns everything in sight.";
+	continue the action;
+
+chapter missesing
+
+missesing is an action applying to nothing.
+
+understand the command "misses" as something new.
+
+understand "misses" as missesing.
+
+carry out missesing:
+	carry out the showmissesing activity;
+	the rule succeeds.
+
+chapter llaing
+
+llaing is an action applying to nothing.
+
+understand the command "lla" as something new.
+
+understand "lla" as llaing.
+
+definition: a thing (called th) is llable:
+	if th is touchable, yes;
+	no;
+
+carry out llaing:
+	try lling the location of the player;
+	repeat with Q running through llable things:
+		say "====Leet-learning [Q]:";
+		try lling Q;
 	the rule succeeds.
 
 volume map index
