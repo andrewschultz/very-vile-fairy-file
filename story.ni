@@ -1854,7 +1854,12 @@ to read-laters (wt - a which-think):
 				if pre-bug is true, next;
 				if thought-any is false, say "[line break]";
 				now thought-any is true;
-				say "[if too-distracted]You are still too distracted to figure where and how to[else]You can probably now[end if] try [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if][r][if rb-out is the unavailable outcome], but you may have to go back to the right place[end if].";
+				let desired-command be indexed text;
+				now desired-command is "[first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if]";
+				if too-distracted:
+					say "You tried to [b][desired-command][r], which should've worked, but you were and still are too distracted.";
+				else:
+					say "Now you're not too distracted, you can probably [b][desired-command][r][if there is a best-room entry and location of player is best-room entry] [here-in of best-room entry][end if].";
 				next;
 			if there is no think-advice entry or too-distracted:
 				unless pre-bug is true, next;
@@ -3293,7 +3298,7 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
 "see the point-based [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
-"see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for specific table, RN for next table)"	true	"RAND [number]"	--	rling
+"see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for a specific table, RN for next table)"	true	"RAND [number]"	--	rling
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
 "see [b]NARR[r]atives for [narr-end-opts]"	true	"narr a/b/e/m/" or "narr"	--	narring
@@ -3651,7 +3656,7 @@ this is the verb-checker rule:
 			if beer bull is touchable and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
 				now think-cue entry is true;
 				if debug-state is true, say "[ver-rule entry] set to true.";
-				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
+				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. While you're distracted, it slaps you around a bit.[paragraph break]Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
 				let oldloc be location of player;
 				reset-bull-chase;
 				the rule succeeds;
