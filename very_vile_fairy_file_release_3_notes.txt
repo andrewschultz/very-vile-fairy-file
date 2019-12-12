@@ -1,0 +1,14 @@
+Release 3 of Very Vile Fairy File provides:
+
+--sped up parser error code
+--homonym detection
+--THINK now cues you better to what you already knew/did
+--narratives follow when you achieve X points
+--new fake death rooms
+--more accurate cluing for variable length answers, e.g. with Jake G and with some songs
+
+You have two warp commands I will not list in the game proper.
+
+CLIMB CLEAR sends you to the Airy Isle and the endgame.
+BLOW BY skips to the Fun Fen, if you're not already there.
+TRICK TRIP or SLICK SLIP gets you through an initial puzzle.

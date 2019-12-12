@@ -414,7 +414,7 @@ a goodrhyme rule (this is the vc-dimd rule) :
 	ready;
 
 this is the vr-dimd rule:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or flip flop to [i]Tip Top Hip Hop[r], but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or the crushingly simplistic dut [b]Hey Hey Bay-Bay[r] by Jay-Jay and Neneh, but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
 	if Gutta Ganksta is in History Hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
 	moot oi mo;
 
@@ -1631,8 +1631,10 @@ volume random tables
 table of mall songs [xxmall] [xxsongs]
 randtxt
 "Be Bop: See, Sop"
+"Big Bang Gig Gang[r], by Sig Sang"
 "Blue Blood Crew? Crud"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
+"Doom Doc's Boom-Box Room Rocks"
 "Fit Fo['] Wit, Whoah" [show]
 "Get Got, Net Naught"
 "Good Gang? Dud, Dang"
@@ -1664,8 +1666,10 @@ randtxt
 "Pill-Perk Bill Burke"
 "Po['] Punk Joe Junk"
 "Quite Quick Knight Nick"
+"Rat Race Fat Face Pat Pace"
 "Rude Rave Dude Dave"
 "Sick Sad Thick Thad"
+"Still-Starin['] Bill Barron"
 "Sure-Shank Burbank"
 "Ted-Talk Sed Salk"
 "Trot Trice, Not-Nice Lot Lice"
@@ -1822,8 +1826,8 @@ volume big meta table
 
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
-table of mall songs	0	false	0	"Songs after Tim T Sims"	--
-table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	--
+table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
+table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry ends the list with a whimper."
 table of vvff books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
