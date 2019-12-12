@@ -141,13 +141,13 @@ by one point
 by one point
 
 >w
-west to Capped Cone
+west to Bore Bay
 >s
 south to Blest Bloom
 >n
 north to Mo Main Low Lane
->d
-down to Bore Bay
+>u
+up to Top Tower
 
 > take tea
 by one point

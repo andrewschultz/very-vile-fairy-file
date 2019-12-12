@@ -529,7 +529,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "trilly trolling"	trivially true rule	false	-67	not-rolled-yet rule	"The Very Vile Fairy File probably has information on that, yes."
 "silly souling/soling"	trivially true rule	false	-67	not-rolled-yet rule	"Why yes, I'm sort of a silly soul. At least when I'm writing games."
 "filly foaling"	trivially true rule	false	-67	not-rolled-yet rule	"Caring for young animals is a good thing but beyond this game's scope."
-"dairy/darey dial"	trivially true rule	44	--	"No dial appears to give you more excitement or milk products. Rats."
+"dairy/darey dial"	trivially true rule	false	44	--	"No dial appears to give you more excitement or milk products. Rats."
 "wary wile"	trivially true rule	false	44	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
 "tough toll"	trivially true rule	false	--	--	"You groan about how heavy your inventory is."
@@ -541,15 +541,20 @@ table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "mo mealed"	in-foe-field rule	false	46	shield-unshown rule	"Alas, no food magically appears. You [if gold guard is moot]did what you needed[else]need a more fighting stance[end if]." [start Foe Field]
 "mo mate"	go-gate-vis rule	false	44	--	"You remain alone." [start Gassed Gap]
-"see sine"	have-toe-tappin rule	false	34	--	"[we whine] is too practical for stuffy advanced math contests."	[start History Hall]
+"see sine"	have-toe-tappin rule	false	34	--	"[we whine] is too practical for stuffy advanced math contests." [start History Hall]
 "choral cage"	coral-cage-around rule	false	54	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
-"co cappin"	have-toe-tappin rule	false	24	need-cocapn rule	"Close, but camaraderie, not violence."
+"co cappin"	have-toe-tappin rule	false	24	need-cocapn rule	"[if sco-co-capn is true]You don't need guns[else]Close, but camaraderie, not firepower[end if]."
 "bought board"	bot-board-vis rule	false	35	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]
 "got gourd"	bot-board-vis rule	false	35	--	"That worked in The Life of Brian, but ... try a homophone, here. You're close."
 "hot hoard"	bot-board-vis rule	false	35	--	"You already hoarded enough inventory in your big bag. Try a homophone, here. You're close."
 "woe/whoa/whoah weight"	go-gate-vis rule	false	44	--	"You wouldn't want to be crushed by a weight. But you've got the right idea."
 "would/wood won" or "would one"	good-gun-here rule	false	44	--	"You are in homophone territory, here."
-"whet wood"	in-wet-wood rule	false	34	--	"Homophones aren't quite right here." [start Wet Wood]
+"mined malt"	need-find-fault rule	false	45	--	"Almost. There's nobody here to fine or be fined." [start vined vault]
+"poe pit"	in-po-pit rule	false	44	if-grit-ungrown rule	"You don't need a pendulum about to cut you." [start po pit]
+
+["hoe happen"	have-toe-tappin rule	false	26	ho-happen-undone rule	"No garden tool appears in your hand. You expected something else?"
+"sea sign/sine"	we-whine-near rule
+"lye loll/lol"	]
 
 [?? check MOs earlier and later]
 
@@ -738,6 +743,8 @@ section leet-rules alphabetized [note these may be more stringent than they stri
 this is the blaze-before-maze rule: if player is in Blinding Blaze and sco-winding-ways is false, the rule succeeds;
 
 this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
+
+this is the dean-duggan-near rule: if dean duggan is touchable, the rule succeeds;
 
 this is the fee-or-brie-still rule: if sco-fake-fee is false or sco-break-brie is false, the rule succeeds;
 

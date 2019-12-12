@@ -7,9 +7,10 @@
 
 * main-thru
 
+#next-cmd-pass
 > whet wood
-Learner needle
-Homophones aren't quite right here.
+!Learner needle
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here.
 > wig wag
 Learner needle
 If you're wearing a hairpiece, I don't want to know.
@@ -34,6 +35,9 @@ Learner needle
 >jig jag
 Learner needle
 You aren't up for dancing.
+> dairy dial
+Learner needle
+No dial appears to give you more excitement or milk products. Rats.
 >wary wile
 Yes, you will need wary wile, and lots of it!
 >perking pump
@@ -174,6 +178,9 @@ Alas, the walls of the vault do not turn to salt. Perhaps they still have a stru
 > wined walt
 Learner needle
 A drinking buddy you can play practical jokes on won't be any help here.
+> mined malt
+Learner needle
+Almost. There's nobody here to fine or be fined.
 
 > find fault
 by one point
@@ -291,6 +298,9 @@ Please proceed, adventurer.
 > glow glit
 Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+> poe pit
+Learner needle
+You don't need a pendulum about to cut you.
 
 > grow grit
 by one point
@@ -304,6 +314,9 @@ Please proceed, adventurer.
 > glow glit
 !Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+> poe pit
+!Learner needle
+You don't need a pendulum about to cut you.
 
 > snow snit
 !Learner needle
@@ -668,22 +681,22 @@ by one point
 > listen
 
 > fo fappin
-Learner needle
+Learner dims a bit
 may not be highbrow, but it's not that low-class.
 > woe whappin
-Learner needle
+Learner dims a bit
 You don't need an exhortation to violence.
 > crow crappin
-Learner needle
+Learner dims a bit
 You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, Toe Tappin' Row Rappin' is versatile enough.
 > slow slappin
-Learner needle
+Learner dims a bit
 That would be handy in a more violent adventure, but not this one.
 > flow flappin
-Learner needle
+Learner dims a bit
 That might be funky to some, but you need something more practical.
 > low lappin
-Learner needle
+Learner dims a bit
 You put your best-ever time for a mile run to Toe Tappin' Row Rappin', but you can't see how it will help here. Plus, Chariots of Fire works better, anyway.
 > butter bankster
 !the Leet Learner dims a bit, and the needle
@@ -1207,14 +1220,14 @@ by one point
 
 > co cappin
 Learner needle
-Close, but camaraderie, not violence.
+Close, but camaraderie, not firepower.
 
 > co capn
 by one point
 
 > co cappin
 !Learner needle
-Close, but camaraderie, not violence.
+You don't need guns.
 
 > snake snap
 by one point
@@ -1229,6 +1242,9 @@ You make a rude gesture, for whatever good it does.
 > pay prong
 Learner needle
 Buying things won't improve your lack of self-worth.
+> glean gluggin
+!Learner needle
+You don't need to drink, or have a drinking buddy.
 
 > stay strong
 
@@ -1263,14 +1279,23 @@ Blaming your parents fails to help.
 > glow glad
 by one point
 
+>glean gluggin
+Dean is not a secret drinker.
+> teen tuggin
+Learner needle
+Dealing with the shame of having done, er, THAT is beyond the scope of this game.
+
 > mean muggin
 by one point
 
 > lean luggin
 by one point
 
+>glean gluggin
+After all you've done, you don't need alcohol to help you get by.
+
 > teen tuggin
-Learner needle
+!Learner needle
 Dealing with the shame of having done, er, THAT is beyond the scope of this game.
 > trumped truster
 the Leet Learner dims a bit
@@ -1385,6 +1410,9 @@ Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are
 > lold lard
 !Learner needle
 Fat jokes aren't funny, self-depreciating or otherwise.
+> old ard
+!Learner needle
+Nobody needs to feel like a grizzled veteran here.
 
 > smashing smoke
 by one point
@@ -1395,6 +1423,9 @@ by one point
 > lending libe
 by one point
 
+> see sine
+Learner needle
+We Whine: ME, MINE is too practical for stuffy advanced math contests.
 > bree brine
 Learner needle
 Less gross than what's in We Whine: ME, MINE, but no.
@@ -2098,6 +2129,9 @@ There's enough noise right now.
 > swell sworn
 Learner needle
 That might augment the hell horn.
+> shell shorn
+Learner needle
+You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
 
 > tell torn
 by one point
@@ -2124,18 +2158,22 @@ by one point
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 4.
 As you say/think this, the Leet Learner needle bounces back and forth
+#next-cmd-pass
 > wake whee
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
+#next-cmd-pass
 > take tea
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
+#next-cmd-pass
 > fake fee
 > shake she
 DEBUG: dynamic magic number directed us to -5 / -4.
 As you say/think this, the Leet Learner dims a bit, and the needle slides center-left.
+#next-cmd-pass
 >break brie
 > shake she
 !As you say/think this

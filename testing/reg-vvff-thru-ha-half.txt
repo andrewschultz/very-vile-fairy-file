@@ -562,10 +562,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly, and the Leet Learner emits a tune, as well.
 > ho zhappen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly, and the Leet Learner emits a tune, as well.
 
 > ho happen
 by one point
@@ -590,10 +590,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > no znappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 > no nappin
 by one point
@@ -981,10 +981,10 @@ You already made a map.
 
 > zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > co zcapn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 > co capn
 by one point
@@ -1386,10 +1386,10 @@ You already made it out of the Blinding Blaze.
 
 > zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > mo zmappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 > mo mappin
 by one point
@@ -1685,10 +1685,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > zso sappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > so zsappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 > so sappin
 by one point
@@ -1818,10 +1818,10 @@ Your gold guard has done its duty.
 
 > zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > go zgappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 > go gappin
 by one point

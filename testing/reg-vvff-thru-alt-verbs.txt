@@ -210,10 +210,6 @@ by one point
 > make map
 by one point
 
-> co cappin
-by one point
->undo
-
 > co capn
 by one point
 
@@ -228,15 +224,15 @@ Silent Sail
 > glow glad
 by one point
 
-> mean muggin
-by one point
-
 > lean lugging
 by one point
 >undo
 > mean mugging
 by one point
 >undo
+
+> mean muggin
+by one point
 
 > lean luggin
 by one point

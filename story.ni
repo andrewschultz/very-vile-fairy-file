@@ -1861,7 +1861,7 @@ to read-laters (wt - a which-think):
 				if too-distracted:
 					say "You tried to [b][desired-command][r], which should've worked, but you were and still are too distracted.";
 				else:
-					say "Now you're not too distracted, you can probably [b][desired-command][r][if there is a best-room entry and location of player is best-room entry] [here-in of best-room entry][end if].";
+					say "Now you're not too distracted, [b][desired-command][r] will probably work[if there is a best-room entry] [here-in of best-room entry][end if].";
 				next;
 			if there is no think-advice entry or too-distracted:
 				unless pre-bug is true, next;
@@ -2222,7 +2222,7 @@ carry out othersing:
 
 book hinting
 
-the leet learner is a thing. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]."
+the leet learner is a thing. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]. There's another toggle between [b]TWO TOO[r] (on) and [b]DO DUE[r] (off)[if core-score > 1] for homophone detection[end if]."
 
 the needle is part of the leet learner. it is boring. description is "The needle will move (or not) whenever you SCAN something.". bore-text of needle is "You can't really operate the needle, and you don't need to.".
 
@@ -3548,7 +3548,10 @@ Rule for printing a parser error (this is the clue half right words rule):
 
 zap-weird-break is a truth state that varies.
 
-Rule for printing a parser error (this is the check for room name and homonyms in player command rule):
+Rule for printing a parser error (this is the check for room name and homophones in player command rule):
+	if homreg of location of player is not empty and the player's command matches the regular expression "(^|\W)([homreg of location of player])($|\W)", case insensitively:
+		say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.";
+		the rule succeeds;
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
 			if word number 1 in the player's command is "ll":
@@ -3562,11 +3565,8 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 				say "Okay. ";
 			else:
 				say "It looks like you may have tried to refer to the room name, or part of it. ";
-			say "You often ned to riff on the room name, but you never need to use the room name directly.";
+			say "You often need to riff on the room name, but you never need to use the room name directly.";
 			the rule succeeds;
-	if homreg of location of player is not empty and the player's command matches the regular expression "(^|\W)([homreg of location of player])($|\W)", case insensitively:
-		say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here.";
-		the rule succeeds;
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
@@ -3582,9 +3582,9 @@ Rule for printing a parser error when the latest parser error is the can't see a
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "Blank blather? Rank! Rather!"
 
-the check for room name and homonyms in player command rule is listed first in the for printing a parser error rulebook.
+the check for room name and homophones in player command rule is listed first in the for printing a parser error rulebook.
 
-the clue half right words rule is listed before the check for room name and homonyms in player command rule in the for printing a parser error rulebook.
+the clue half right words rule is listed before the check for room name and homophones in player command rule in the for printing a parser error rulebook.
 
 oopsies is a number that varies.
 

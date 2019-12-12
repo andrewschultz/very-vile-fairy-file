@@ -51,9 +51,10 @@ DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 @mis
+#next-cmd-pass
 > whet wood
-Learner needle
-Homophones aren't quite right here.
+!Learner needle
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here.
 > wig wag
 Learner needle
 If you're wearing a hairpiece, I don't want to know.
@@ -78,6 +79,9 @@ Learner needle
 >jig jag
 Learner needle
 You aren't up for dancing.
+> dairy dial
+Learner needle
+No dial appears to give you more excitement or milk products. Rats.
 >wary wile
 Yes, you will need wary wile, and lots of it!
 >perking pump
@@ -312,6 +316,9 @@ Alas, the walls of the vault do not turn to salt. Perhaps they still have a stru
 > wined walt
 Learner needle
 A drinking buddy you can play practical jokes on won't be any help here.
+> mined malt
+Learner needle
+Almost. There's nobody here to fine or be fined.
 
 @ha
 > zfind fault rule
@@ -499,6 +506,9 @@ Please proceed, adventurer.
 > glow glit
 Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+> poe pit
+Learner needle
+You don't need a pendulum about to cut you.
 
 > grow grit
 by one point
@@ -518,6 +528,9 @@ Please proceed, adventurer.
 > glow glit
 !Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+> poe pit
+!Learner needle
+You don't need a pendulum about to cut you.
 
 @ha
 > zgrow grit rule
@@ -1455,10 +1468,10 @@ CO CAPN
 @ha
 > zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly, and the Leet Learner emits a tune, as well.
 > ho zhappen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly, and the Leet Learner emits a tune, as well.
 
 ==t1,5,6
 > ho happen
@@ -1488,10 +1501,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @ha
 > zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > no znappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 @alt
 > no napping
@@ -2248,13 +2261,13 @@ He's already awake, Blake.
 
 ==t4
 >w
-west to Capped Cone
+west to Bore Bay
 >s
 south to Blest Bloom
 >n
 north to Mo Main Low Lane
->d
-down to Bore Bay
+>u
+up to Top Tower
 
 @ha
 > ztake tea rule
@@ -2439,20 +2452,15 @@ SNAKE SNAP
 @ha
 > zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > co zcapn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 @mis #co capn before
 > co cappin
 Learner needle
-Close, but camaraderie, not violence.
-
-@alt
-> co cappin
-by one point
->undo
+Close, but camaraderie, not firepower.
 
 > co capn
 by one point
@@ -2460,7 +2468,7 @@ by one point
 @mis #co capn after
 > co cappin
 !Learner needle
-Close, but camaraderie, not violence.
+You don't need guns.
 
 @ha
 > co capn
@@ -2538,6 +2546,9 @@ MEAN MUGGIN
 > pay prong
 Learner needle
 Buying things won't improve your lack of self-worth.
+> glean gluggin
+!Learner needle
+You don't need to drink, or have a drinking buddy.
 
 @ha
 > zstay strong rule
@@ -2602,6 +2613,13 @@ The HA HALF button lights up on your Leet Learner.
 > glow glad
 by one point
 
+@mis
+>glean gluggin
+Dean is not a secret drinker.
+> teen tuggin
+Learner needle
+Dealing with the shame of having done, er, THAT is beyond the scope of this game.
+
 ==t2
 >think
 You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
@@ -2636,6 +2654,14 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@alt
+> lean lugging
+by one point
+>undo
+> mean mugging
+by one point
+>undo
+
 > mean muggin
 by one point
 
@@ -2660,16 +2686,12 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@alt
-> lean lugging
-by one point
->undo
-> mean mugging
-by one point
->undo
-
 > lean luggin
 by one point
+
+@mis
+>glean gluggin
+After all you've done, you don't need alcohol to help you get by.
 
 @ha
 > lean luggin
@@ -2695,7 +2717,7 @@ west to Trust Trail
 
 @mis #buggin guesses
 > teen tuggin
-Learner needle
+!Learner needle
 Dealing with the shame of having done, er, THAT is beyond the scope of this game.
 > trumped truster
 the Leet Learner dims a bit
@@ -2930,6 +2952,9 @@ Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are
 > lold lard
 !Learner needle
 Fat jokes aren't funny, self-depreciating or otherwise.
+> old ard
+!Learner needle
+Nobody needs to feel like a grizzled veteran here.
 
 > smashing smoke
 by one point
@@ -2993,6 +3018,9 @@ DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 @mis #see sign before
+> see sine
+Learner needle
+We Whine: ME, MINE is too practical for stuffy advanced math contests.
 > bree brine
 Learner needle
 Less gross than what's in We Whine: ME, MINE, but no.
@@ -3352,10 +3380,10 @@ north to Straight Street
 @ha
 > zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > mo zmappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 @alt
 > mo mapping
@@ -4008,10 +4036,10 @@ DINING DOOR
 @ha
 > zso sappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > so zsappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 @alt
 > so sapping
@@ -4244,10 +4272,10 @@ GO GAPPIN
 @ha
 > zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 > go zgappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
 @alt
 > go gapping
@@ -4706,6 +4734,9 @@ There's enough noise right now.
 > swell sworn
 Learner needle
 That might augment the hell horn.
+> shell shorn
+Learner needle
+You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
 
 @ha
 > ztell torn rule
@@ -4822,18 +4853,22 @@ MORAL MAGE
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 4.
 As you say/think this, the Leet Learner needle bounces back and forth
+#next-cmd-pass
 > wake whee
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
+#next-cmd-pass
 > take tea
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
+#next-cmd-pass
 > fake fee
 > shake she
 DEBUG: dynamic magic number directed us to -5 / -4.
 As you say/think this, the Leet Learner dims a bit, and the needle slides center-left.
+#next-cmd-pass
 >break brie
 > shake she
 !As you say/think this

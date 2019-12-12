@@ -41,7 +41,7 @@ my_proj = i7.dir2proj(os.getcwd(), to_abbrev = True)
 
 if not my_proj or my_proj == 'vv': my_proj = "vvff"
 
-ignorable_commands = [ 'gonear', 'n', 's', 'e', 'w', 'u', 'd', 'undo', 'cs' ]
+ignorable_commands = [ 'gonear', 'n', 's', 'e', 'w', 'u', 'd', 'z', 'undo', 'cs' ]
 
 quote_col = 5
 leet_rule_col = quote_col - 1
@@ -118,7 +118,7 @@ with open(mist_file) as file:
             continue
         if line.startswith("table of"):
             in_table = line.strip()
-            print("Opening", in_table, "line", line_count)
+            #print("Opening", in_table, "line", line_count)
             continue
         if not in_table: continue
         if "\t\t" in line: sys.exit("Double tabs line {}".format(line_count))
@@ -226,6 +226,7 @@ with open(rbr_file) as file:
             if needed_text in line and not line.startswith(">"):
                 print("Possible errant cluing message line {}: make sure an @mis is above it.".format(line_count))
             continue
+        if ignore_the_rest: continue
         if not line.startswith(">"): continue
         if first_word(line) in ignorable_commands: continue
         if in_cs_check: continue

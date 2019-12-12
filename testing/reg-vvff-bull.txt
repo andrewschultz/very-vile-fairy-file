@@ -82,16 +82,17 @@ escape a mauling
 >s
 >w
 >cleared clay
-The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. Such a shame ... you should probably come back ASAP and do things without the bull chasing you.
+The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. While you're distracted, it slaps you around a bit.
+Such a shame ... you should probably come back ASAP and do things without the bull chasing you.
 !by one point
 
 >think
-You can probably now try CLEARED CLAY, but you may have to go back to the right place.
+Now you're not too distracted, CLEARED CLAY will probably work in Stark Store.
 
 # not a test case but a detour to clear up some new test cases
 >w
 >think
-You can probably now try CLEARED CLAY.
+Now you're not too distracted, CLEARED CLAY will probably work here.
 
 >cleared clay
 by one point
