@@ -2230,16 +2230,22 @@ after printing the name of leet learner while taking inventory: say " ([off-on o
 
 understand "ll" and "cc" as leet learner.
 
-ha-half is a truth state that varies.
-
 to say will-wont of (ts - a truth state):
 	say "[if ts is true]will[else]won't[end if]"
 
-chapter ha half button
+chapter two too functionality
+
+two-too is a truth state that varies.
+
+chapter ha half functionality
+
+section ha half button
+
+ha-half is a truth state that varies.
 
 the ha half nah naff button is part of the leet learner. description is "It is set [on-off of ha-half], meaning if you get a guess half-right, the Leet Learner [will-wont of ha-half] alert you."
 
-chapter halfing
+section halfing
 
 halfing is an action applying to nothing.
 
@@ -2254,7 +2260,7 @@ carry out halfing:
 	now ha-half is true;
 	the rule succeeds.
 
-chapter nahnaffing
+section nahnaffing
 
 nahnaffing is an action applying to nothing.
 
@@ -3235,6 +3241,7 @@ when play begins (this is the randomize all the things rule):
 
 when play begins (this is the opening text rule):
 	now ha-half is true;
+	now two-too is true;
 	now the left hand status line is "West Wall";
 	force-status;
 	process the check-skip-intro rule;
@@ -3605,6 +3612,7 @@ to say first-of-ors of (x - indexed text):
 
 this is the verb-checker rule:
 	let local-ha-half be false;
+	let local-post-hom be false;
 	let brightness be false;
 	let progressive be false;
 	let is-song be false;
@@ -3673,7 +3681,10 @@ this is the verb-checker rule:
 			process the score and thinking changes rule;
 			if there is a core entry and core entry is false, check-lump-progress;
 			the rule succeeds;
-		if ha-half is true and my-count is 1: [there is a bug here with, say, DEAL DIER instead of DEAL DEAR. It prints something extra.]
+		if two-too is true:
+			if there is a posthom entry:
+				if the player's command matches the regular expression "[posthom entry]", now local-post-hom is true;
+		if ha-half is true and my-count is 1:
 			now vc-dont-print is true;
 			now already-rhymed-this is false;
 			process the ver-rule entry;
@@ -3690,7 +3701,10 @@ this is the verb-checker rule:
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if][if local-post-hom is true]. The button's really bright. Your word must be very close, indeed[end if].";
+		the rule succeeds;
+	if local-post-hom is true:
+		say "The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't THINK it right.";
 		the rule succeeds;
 
 already-rhymed-this is a truth state that varies.
