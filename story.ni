@@ -2235,9 +2235,48 @@ understand "ll" and "cc" as leet learner.
 to say will-wont of (ts - a truth state):
 	say "[if ts is true]will[else]won't[end if]"
 
+ll-flip-warn is a truth state that varies.
+
+this is the wait-after-intro rule:
+	if player is in wet wood, say "I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait [if player is in wet wood]a couple rooms[else]until you get to the next room[end if]." instead;
+	if trim tram is not visited and ll-flip-warn is false:
+		now ll-flip-warn is true;
+		say "It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?";
+		if the player yes-consents, continue the action;
+		say "OK. This nag won't appear again.";
+
 chapter two too functionality
 
 two-too is a truth state that varies.
+
+section twotooing
+
+twotooing is an action applying to nothing.
+
+understand the command "two too" as something new.
+
+understand "two too" as twotooing.
+
+carry out twotooing:
+	say "[if two-too is true]Homonym detection is already[else]You set homonym detection[end if] to on.";
+	now two-too is false;
+	the rule succeeds.
+
+chapter dueing
+
+dueing is an action applying to nothing.
+
+understand the command "do due" as something new.
+understand the command "due do" as something new.
+
+understand "due do" as dueing.
+understand "do due" as dueing.
+
+carry out dueing:
+	abide by the wait-after-intro rule;
+	say "[if two-too is false]Homonym detection is already[else]You set homonym detection[end if] to off.";
+	now two-too is false;
+	the rule succeeds.
 
 chapter ha half functionality
 
@@ -2273,6 +2312,7 @@ understand "naff" as nahnaffing.
 understand "nn" as nahnaffing.
 
 carry out nahnaffing:
+	abide by the wait-after-intro rule;
 	say "[if ha-half is false]The Leet Learner is already set[else]You set the Leet Learner[end if] to Nah Naff.";
 	now ha-half is false;
 	the rule succeeds.
@@ -2370,9 +2410,9 @@ understand "shut scan" as shutscaning.
 shut-scan is a truth state that varies.
 
 carry out shutscaning:
-	if shut-scan is true, say "The Leet Learner is already off." instead;
-	now shut-scan is true;
-	say "You turn the Leet Learner off. You can turn it on again with [llon-cmd].";
+	abide by the wait-after-intro rule;
+	say "[if shut-scan is false]The Leet Learner is already[else]You turn the Leet Learner[end if] off. You can turn it on with [llon-cmd].";
+	now shut-scan is false;
 	the rule succeeds.
 
 to say llon-cmd: say "[b]HUT CAN[r] or [b]LL ON[r] or [b]CC ON[r]"
@@ -2390,9 +2430,8 @@ understand "ll on" as hutcaning.
 understand "hut can" as hutcaning.
 
 carry out hutcaning:
-	if shut-scan is false, say "The Leet Learner is already on." instead;
+	say "[if shut-scan is true]The Leet Learner is already[else]You turn the Leet Learner[end if] on. You can turn it on with [llon-cmd].";
 	now shut-scan is false;
-	say "You turn the Leet Learner on. You can turn it off again with [lloff-cmd].";
 	the rule succeeds.
 
 to say lloff-cmd: say "[b]SHUT SCAN[r] or [b]LL OFF[r] or [b]CC OFF[r]"
