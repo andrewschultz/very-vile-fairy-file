@@ -33,8 +33,8 @@ w1 (text)	w2 (text)	posthom (text)	think-cue	okflip	core	idid	songy	best-room	ve
 "appealing"	"appear"	--	false	true	false	false	false	Real Rear	vc-appealing-appear rule	vr-appealing-appear rule	--	-- [start of Real Rear]
 "kneel|kneeling"	"near"	"neal"	false	false	true	false	false	Real Rear	vc-kneel-near rule	vr-kneel-near rule	--	--
 "feel|feeling"	"fear"	--	false	false	true	false	false	Real Rear	vc-feel-fear rule	vr-feel-fear rule	--	"You tried to [b]FEEL FEAR[r] [here-in of Real Rear], but [once-now of vc-feel-fear rule] you have help from above, it will work."
-"deal|dealing"	"dear"	--	false	true	true	false	false	Real Rear	vc-deal-dear rule	vr-deal-dear rule	--	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of vc-deal-dear rule] you have something you need to deal with."
-"heal|healing"	"here"	"heel"	false	true	true	false	false	Real Rear	vc-heal-here rule	vr-heal-here rule	--	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of vc-heal-here rule] you need to heal from something."
+"deal|dealing"	"dear"	"deer"	false	true	true	false	false	Real Rear	vc-deal-dear rule	vr-deal-dear rule	--	"You tried to say [b]DEAL DEAR[r] [here-in of Real Rear], which will work [once-now of vc-deal-dear rule] you have something you need to deal with."
+"heal|healing"	"here"	"heel|hear"	false	true	true	false	false	Real Rear	vc-heal-here rule	vr-heal-here rule	--	"You tried to [b]HEAL HERE[r] [here-in of Real Rear], which will be handy [once-now of vc-heal-here rule] you need to heal from something."
 "history"	"hall"	"haul"	false	false	--	false	false	--	vc-history-hall rule	vr-history-hall rule	--	--
 "mystery"	"mall"	"maul"	false	false	true	false	false	History Hall	vc-mystery-mall rule	vr-mystery-mall rule	--	--
 "dark"	"door"	--	false	false	true	false	false	Stark Store	vc-dark-door rule	vr-dark-door rule	--	-- [start Stark Store]
@@ -81,29 +81,29 @@ w1 (text)	w2 (text)	posthom (text)	think-cue	okflip	core	idid	songy	best-room	ve
 "silent"	"sail|sale"	--	false	false	true	false	false	Violent Vale	vc-silent-sail rule	vr-silent-sail rule	--	--
 "boring"	"boat"	--	false	false	true	false	false	Violent Vale	vc-boring-boat rule	vr-boring-boat rule	--	--
 "wake"	"whee|wee"	"we"	false	true	true	false	false	Lake Lea	vc-wake-whee rule	vr-wake-whee rule	--	-- [start Lake Lea]
-"take"	"tea"	"t/tee"	false	false	true	false	false	Lake Lea	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
+"take"	"tea"	"t|tee"	false	false	true	false	false	Lake Lea	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
 "fake"	"fee"	--	false	false	true	false	false	Lake Lea	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
 "break"	"brie"	"brake"	false	false	false	false	false	--	vc-break-brie rule	vr-break-brie rule	--	--
 "make"	"map"	--	false	false	true	false	false	--	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
 "co"	"capn|cappin"	--	false	false	true	false	true	--	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
 "snake"	"snap"	--	false	true	true	false	false	--	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
-"lean"	"luggin|lugging"	--	false	false	true	false	false	--	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
-"mean"	"muggin|mugging"	--	false	false	true	false	false	--	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
-"so"	"sappin|sapping"	"sew"	false	true	true	false	true	Whining War	vc-so-sappin rule	vr-so-sappin rule	--	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly." [start Whining War]
+"lean"	"luggin|lugging"	"lien"	false	false	true	false	false	--	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
+"mean"	"muggin|mugging"	"mien"	false	false	true	false	false	--	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
+"so"	"sappin|sapping"	"sew|sow"	false	true	true	false	true	Whining War	vc-so-sappin rule	vr-so-sappin rule	--	"You can make things [b]SO SAPPIN[r] [once-now of vc-so-sappin rule] you can find where people are using their energy fruitlessly." [start Whining War]
 "shining"	"shore"	--	false	false	true	false	false	Whining War	vc-shining-shore rule	vr-shining-shore rule	--	"You can make the [b]SHINING SHORE[r] [once-now of vc-shining-shore rule] you dealt with the Whining War."
 "mining"	"more|moor"	--	false	true	true	false	false	Whining War	vc-mining-more rule	vr-mining-more rule	--	"You should be able to perform [b]MINING MORE[r] [once-now of vc-mining-more rule] the pining poor are fully satisfied."
 "dining"	"door"	--	false	false	true	false	false	Whining War	vc-dining-door rule	vr-dining-door rule	--	"You should be able to make a [b]DINING DOOR[r] [once-now of vc-dining-door rule] the Whining War has calmed down a bit."
 "pull"	"pieced"	--	false	true	true	false	false	Whining War	vc-pull-pieced rule	vr-pull-pieced rule	--	"You can [b]PULL PIECED[r] the Bull Beast [once-now of vc-pull-pieced rule] you have more people willing to help you."
-"cast"	"cap"	--	false	false	true	false	false	Gassed Gap	vc-cast-cap rule	vr-cast-cap rule	--	"You can [b]CAST CAP[r] [once-now of vc-cast-cap rule] rule you have a worthy one." [start Gassed Gap]
+"cast"	"cap"	"caste"	false	false	true	false	false	Gassed Gap	vc-cast-cap rule	vr-cast-cap rule	--	"You can [b]CAST CAP[r] [once-now of vc-cast-cap rule] rule you have a worthy one." [start Gassed Gap]
 "beaker"	"bustle"	--	false	true	false	false	false	Gassed Gap	vc-beaker-bustle rule	vr-beaker-bustle rule	--	--
-"meeker"	"muscle"	--	false	true	true	false	false	Gassed Gap	vc-meeker-muscle rule	vr-meeker-muscle rule	--	--
+"meeker"	"muscle"	"mussel"	false	true	true	false	false	Gassed Gap	vc-meeker-muscle rule	vr-meeker-muscle rule	--	--
 "wood"	"one"	"won|would"	false	false	true	false	false	Gassed Gap	vc-wood-one rule	vr-wood-one rule	--	--
 "go"	"gappin|gapping"	--	false	false	true	false	true	Gassed Gap	vc-go-gappin rule	vr-go-gappin rule	--	"You'll want to [b]GO GAPPIN[r] [once-now of vc-go-gappin rule] you've found a gap to go over."
 "couple"	"caps"	--	false	false	true	false	false	--	vc-couple-caps rule	vr-couple-caps rule	--	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
 "lot"	"lord"	--	false	false	true	false	false	Airy Isle	vc-lot-lord rule	vr-lot-lord rule	--	-- [start Airy Isle]
 "hot"	"horde"	"hoard"	false	false	true	false	false	Airy Isle	vc-hot-horde rule	vr-hot-horde rule	--	--
 "got"	"gored"	--	false	false	true	false	false	Airy Isle	vc-got-gored rule	vr-got-gored rule	--	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
-"whoa|whoah|woe"	"wait"	--	false	true	true	false	false	Airy Isle	vc-whoa-wait rule	vr-whoa-wait rule	--	--
+"whoa|whoah|woe"	"wait"	"weight"	false	true	true	false	false	Airy Isle	vc-whoa-wait rule	vr-whoa-wait rule	--	--
 "tell"	"torn"	--	false	false	true	false	false	Tarry Tile	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
 "merry"	"mile"	"marry"	false	false	true	false	false	Tarry Tile	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
 "bury"	"bile"	"berry"	false	false	true	false	false	Tarry Tile	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."

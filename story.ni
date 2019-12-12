@@ -3683,7 +3683,7 @@ this is the verb-checker rule:
 			the rule succeeds;
 		if two-too is true:
 			if there is a posthom entry:
-				if the player's command matches the regular expression "[posthom entry]", now local-post-hom is true;
+				if the player's command matches the regular expression "(^|\W)[posthom entry](\W|$)", now local-post-hom is true;
 		if ha-half is true and my-count is 1:
 			now vc-dont-print is true;
 			now already-rhymed-this is false;
