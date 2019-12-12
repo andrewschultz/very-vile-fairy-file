@@ -903,6 +903,7 @@ this is the vr-luck-lair rule:
 	moot stuck stair;
 	now player has snuck snare;
 	set the pronoun it to snuck snare;
+	now homreg of Blinding Blaze is "graze";
 
 a goodrhyme rule (this is the vc-make-map rule) :
 	if player is not in Lake Lap, unavailable;
@@ -1087,6 +1088,7 @@ this is the vr-mystery-mall rule:
 		say "[description of History Hall][line break]";
 	now sco-mystery-mall is true;
 	now zap-core-entry is true;
+	now homreg of History Hall is "haul|maul";
 
 a goodrhyme rule (this is the vc-near-null rule) :
 	if Beer Bull is not touchable, unavailable;
@@ -1608,6 +1610,7 @@ rank-num	done-yet	rank-txt
 3	false	"The loser of the rock paper scissors game's eyes open wide as they realize the [very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel the [very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
 8	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
 --	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
+--	false	"You remember saying 'War, why?' with the response: 'BORE, BYE!'"
 --	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
 --	false	"'Blue blood? Boo, bud!' Standard demoralizing fare. You feel a slight flu-flood."
 --	false	"A disembodied voice that can only be from the [very vile] booms: 'High hope nigh? Nope!' You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible."

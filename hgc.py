@@ -8,7 +8,7 @@ import sys
 import hom
 import i7
 import re
-import mytools
+import mytools as mt
 
 my_proj = i7.dir2proj(to_abbrev=True)
 
@@ -36,8 +36,9 @@ def read_ignores():
                 hom_ignore[q] = True
                 
 def usage(msg = "General usage"):
+    print(msg)
+    print("=" * 50)
     print("ia = ignore homonyms we already got, ni/in/nia/ian = don't ignore.")
-    print(usage)
     exit()
 
 cmd_count = 1
@@ -89,13 +90,28 @@ def comb_one_file(file_name, tables_needed, cols_needed = [0]):
     for x in tables_got:
         if not tables_got[x]: print("Did not find", x, "in", bn)
 
+homs = []
+tried_hom = False
+
 while cmd_count < len(sys.argv):
-    arg = nohy(sys.argv[1:])
+    arg = mt.nohy(sys.argv[cmd_count])
     if arg == 'ia': ignore_already_got = True
     elif arg == 'ni' or arg == 'in' or arg == 'nia' or arg == 'ian': ignore_already_got = False
     elif arg == '?': usage()
+    elif ',' in arg or len(arg) > 2:
+        tary = arg.split(",")
+        for t in tary:
+            homs.extend(list(hom.hom_list[t]))
+        tried_hom = True
     else: usage("Bad argument {}".format(arg))
     cmd_count += 1
+
+if tried_hom:
+    if len(homs):
+        print("Homophones:", ', '.join(homs))
+    else:
+        print("No homophones found.")
+    sys.exit()
 
 read_ignores()
 comb_one_file(vvt, ["table of verb checks"], [0, 1])
