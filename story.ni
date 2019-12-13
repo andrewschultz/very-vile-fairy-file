@@ -2209,7 +2209,7 @@ carry out abouting:
 	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
 	say "[line break]Release 1 was at the end of September 2019.";
 	say "Release 2 was November 22, 2019. It featured bug fixes, LLPs, and general player conveniences.";
-	say "Release 3 was December 12, 2019. It featured code speedup, a small narrative based on point scores, and checking for homonyms, along with other small improvements.";
+	say "Release 3 was December 12, 2019. It featured code speedup, a small narrative based on point scores, and checking for homophones, along with other small improvements.";
 	say "[line break]And finally, if you enjoyed VVFF, Quite Queer Night Near is on itch.io at https://andrewschultz.itch.io/quite-queer-night-near. VVFF is at https://andrewschultz.itch.io/very-vile-fairy-file.";
 	the rule succeeds;
 
@@ -2246,7 +2246,7 @@ ll-flip-warn is a truth state that varies.
 
 this is the wait-after-intro rule:
 	if player is in wet wood, say "I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait [if player is in wet wood]a couple rooms[else]until you get to the next room[end if]." instead;
-	if trim tram is not visited and ll-flip-warn is false:
+	if fun fen is not visited and ll-flip-warn is false:
 		now ll-flip-warn is true;
 		say "It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?";
 		if the player yes-consents, continue the action;
@@ -2265,8 +2265,8 @@ understand the command "two too" as something new.
 understand "two too" as twotooing.
 
 carry out twotooing:
-	say "[if two-too is true]Homonym detection is already[else]You set homonym detection[end if] to on.";
-	now two-too is false;
+	say "[if two-too is true]Homophone detection is already set[else]You set homophone detection[end if] to on.";
+	now two-too is true;
 	the rule succeeds.
 
 chapter dueing
@@ -2281,7 +2281,7 @@ understand "do due" as dueing.
 
 carry out dueing:
 	abide by the wait-after-intro rule;
-	say "[if two-too is false]Homonym detection is already[else]You set homonym detection[end if] to off.";
+	say "[if two-too is false]Homophone detection is already set[else]You set homophone detection[end if] to off.";
 	now two-too is false;
 	the rule succeeds.
 
@@ -2361,6 +2361,7 @@ to say ll-cheat of (th - a thing):
 carry out lling:
 	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
 	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
+	if shut-scan is true, say "You turned the Leet Learner off, so nothing shows up." instead;
 	if noun is Here Hull:
 		say "Only the Beer Bull picks anything up.";
 		try lling Beer Bull instead;
@@ -2418,8 +2419,8 @@ shut-scan is a truth state that varies.
 
 carry out shutscaning:
 	abide by the wait-after-intro rule;
-	say "[if shut-scan is false]The Leet Learner is already[else]You turn the Leet Learner[end if] off. You can turn it on with [llon-cmd].";
-	now shut-scan is false;
+	say "[if shut-scan is true]The Leet Learner is already[else]You turn the Leet Learner[end if] off. You can turn it on with [llon-cmd].";
+	now shut-scan is true;
 	the rule succeeds.
 
 to say llon-cmd: say "[b]HUT CAN[r] or [b]LL ON[r] or [b]CC ON[r]"
@@ -2437,7 +2438,7 @@ understand "ll on" as hutcaning.
 understand "hut can" as hutcaning.
 
 carry out hutcaning:
-	say "[if shut-scan is true]The Leet Learner is already[else]You turn the Leet Learner[end if] on. You can turn it on with [llon-cmd].";
+	say "[if shut-scan is false]The Leet Learner is already[else]You turn the Leet Learner[end if] on. You can turn it on with [llon-cmd].";
 	now shut-scan is false;
 	the rule succeeds.
 
@@ -3568,6 +3569,12 @@ to decide whether too-distracted:
 
 the rhymeguess rules are a table name based rulebook.
 
+Rule for printing a parser error:
+	if the latest parser error is the only understood as far as error:
+		say "The first word was okay, but what came after didn't quite work. You may wish to type in only the first word, or use the up arrow and delete.";
+		the rule succeeds;
+	continue the action;
+
 Rule for printing a parser error (this is the clue half right words rule):
 	abide by the rhyme-guess-checker rule for the table of first check rhymes;
 	if location of player is wallish, abide by the rhyme-guess-checker rule for the table of wry wall guesses;
@@ -3596,7 +3603,7 @@ zap-weird-break is a truth state that varies.
 
 Rule for printing a parser error (this is the check for room name and homophones in player command rule):
 	if homreg of location of player is not empty and the player's command matches the regular expression "(^|\W)([homreg of location of player])($|\W)", case insensitively:
-		say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.";
+		say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
 		the rule succeeds;
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
@@ -3613,6 +3620,7 @@ Rule for printing a parser error (this is the check for room name and homophones
 				say "It looks like you may have tried to refer to the room name, or part of it. ";
 			say "You often need to riff on the room name, but you never need to use the room name directly.";
 			the rule succeeds;
+	if debug-state is true, say "DEBUG: [the latest parser error].";
 	continue the action;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
@@ -3732,6 +3740,7 @@ this is the verb-checker rule:
 			process the score and thinking changes rule;
 			if there is a core entry and core entry is false, check-lump-progress;
 			the rule succeeds;
+		if shut-scan is true, next;
 		if two-too is true:
 			if there is a posthom entry:
 				if ver-rule entry is vc-history-hall rule and in-mystery-mall is false:

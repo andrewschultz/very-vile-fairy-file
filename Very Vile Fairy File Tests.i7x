@@ -76,6 +76,8 @@ test w13 with "n/cull ceased/full feast/e/e/so sappin/shining shore/dining door/
 
 test w14 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap"
 
+test togap with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11/test w12/test w13/test w14".
+
 test w15 with "meeker muscle/wood one/n". [enter airy isle]
 
 test w16 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile".
