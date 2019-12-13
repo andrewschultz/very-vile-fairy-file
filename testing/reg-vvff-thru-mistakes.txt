@@ -10,7 +10,7 @@
 #next-cmd-pass
 > whet wood
 !Learner needle
-You feel ... something. But not enough. Homonyms must not quite be the way to go, here.
+You feel ... something. But not enough. Homophones must not quite be the way to go, here.
 > wig wag
 Learner needle
 If you're wearing a hairpiece, I don't want to know.

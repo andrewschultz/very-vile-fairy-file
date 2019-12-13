@@ -7,6 +7,20 @@
 
 * main-thru
 
+#this is very basic option testing
+>hut can
+The Leet Learner is already on. You can turn it on with HUT CAN or LL ON or CC ON.
+>shut scan
+I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+>ha half
+The Leet Learner is already set to Ha Half.
+>nah naff
+I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+>two too
+Homophone detection is already set to on.
+>do due
+I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+
 > zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -16,17 +30,6 @@ The HA HALF button lights up on your Leet Learner.
 > zgood get
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
->ha half
-The Leet Learner is already set to Ha Half.
->nah naff
-You set the Leet Learner to Nah Naff.
->nah naff
-The Leet Learner is already set to Nah Naff.
->zgood get
-!DEBUG: vc-get-good rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
->ha half
-You set the Leet Learner to Ha Half.
 >zbig bag
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -190,6 +193,60 @@ The HA HALF button lights up on your Leet Learner.
 > mind zme rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+# now we look at the actual options
+>due do
+It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
+You set homophone detection to off.
+>undo
+>shut scan
+It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
+You turn the Leet Learner off. You can turn it on with HUT CAN or LL ON or CC ON.
+>undo
+> nah naff
+It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
+You set the Leet Learner to Nah Naff.
+>nah naff
+The Leet Learner is already set to Nah Naff.
+> zmind me
+!DEBUG: vc-grow-grit rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+> mind zme
+!DEBUG: vc-grow-grit rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+>ha half
+You set the Leet Learner to Ha Half.
+>ha half
+The Leet Learner is already set to Ha Half.
+>due do
+You set homophone detection to off.
+>due do
+Homophone detection is already set to off.
+>mined me
+The HA HALF button lights up on your Leet Learner.
+!The button's really bright. Your word must be very close, indeed.
+>two too
+You set homophone detection to on.
+>two too
+Homophone detection is already set to on.
+>mined me
+The HA HALF button lights up on your Leet Learner. The button's really bright. Your word must be very close, indeed.
+>shut scan
+You turn the Leet Learner off. You can turn it on with HUT CAN or LL ON or CC ON.
+>shut scan
+The Leet Learner is already off. You can turn it on with HUT CAN or LL ON or CC ON.
+>ll
+You wave the leet learner all around Trim Tram...
+You turned the Leet Learner off, so nothing shows up.
+!The leet learner needle lights up. Then it stays at the center as you wave it around.
+>hut can
+You turn the Leet Learner on. You can turn it on with HUT CAN or LL ON or CC ON.
+>hut can
+The Leet Learner is already on. You can turn it on with HUT CAN or LL ON or CC ON.
+>ll
+You wave the leet learner all around Trim Tram...
+!You turned the Leet Learner off, so nothing shows up.
+The leet learner needle lights up. Then it stays at the center as you wave it around.
 
 > mind me
 by one point
