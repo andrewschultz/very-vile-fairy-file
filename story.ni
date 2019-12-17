@@ -222,6 +222,8 @@ max-overall is a number that varies.
 
 max-poss is a number that varies.
 
+to decide what number is isle-min: decide on core-max - isle-score. [the minimum score you need to reach the endgame]
+
 to up-min:
 	increment min-needed;
 	increment the score;
@@ -247,6 +249,10 @@ Poorly Penned is a region. [early end]
 Vale Verminous is a region. [terminal tale]
 
 there is a region called Get a Guess. [meta mess]
+
+to decide whether in-middlegame:
+	if mrlp is Browsy Breaks or mrlp is Piddling Pain, yes;
+	no;
 
 book properties
 
@@ -2020,12 +2026,18 @@ to say narrative-backlog:
 	if narrative-overload, say ". You also might not see all the entries in-game, but once you win, you can see all the ranks"
 
 to decide whether narrative-overload:
-	if core-max - core-score < narratives-left, yes;
+	if airy isle is unvisited:
+		if isle-min - core-score < narratives-left, yes;
+	else if fun fen is unvisited:
+		if core-max - core-score < narratives-left, yes;
 	no;
 
 to decide which number is narratives-left:
 	let temp be 0;
 	repeat through table of narratives:
+		if mrlp is worst whew and rank-num entry > whew-score, next;
+		if in-middlegame and rank-num entry <= whew-score and rank-num entry > isle-min, next;
+		if mrlp is vale verminous and rank-num entry <= isle-min, next;
 		if done-yet entry is false, increment temp;
 	decide on temp;
 
@@ -3386,24 +3398,27 @@ rule for narring:
 			now see-end is true;
 		else if Q matches the text "m":
 			now see-middle is true;
+	let see-all be false;
+	if see-beginning is true and see-end is true and see-middle is true:
+		now see-all is true;
 	if see-beginning is false and see-end is false and see-middle is false:
 		say "You need to choose [narr-end-opts].";
 	else:
 		if see-beginning is true:
 			repeat through table of narratives:
 				if rank-num entry > whew-score, break;
-				say "[rank-num entry]. [rank-txt entry][line break]";
+				say "[if see-all is true][relreg of rank-num entry] [end if][rank-num entry]. [rank-txt entry][line break]";
 		if see-middle is true:
 			if see-beginning is true, say "[wfak]";
 			repeat through table of narratives:
 				if rank-num entry <= whew-score, next;
 				if rank-num entry > max-main, break;
-				say "[rank-num entry]. [rank-txt entry][line break]";
+				say "[if see-all is true][relreg of rank-num entry] [end if][rank-num entry]. [rank-txt entry][line break]";
 		if see-end is true:
 			if see-beginning is true or see-middle is true, say "[wfak]";
 			repeat through table of narratives:
 				if rank-num entry <= max-main, next;
-				say "[rank-num entry]. [rank-txt entry][line break]";
+				say "[if see-all is true][relreg of rank-num entry] [end if][rank-num entry]. [rank-txt entry][line break]";
 
 chapter rling
 
@@ -3462,9 +3477,12 @@ chapter shownarring
 
 shownarring is an activity
 
+to say relreg of (x - a number):
+	say "([if x <= whew-score]INTRO[else if x <= isle-min]MIDDLEGAME[else]ENDGAME[end if])";
+
 rule for shownarring:
 	repeat through table of narratives:
-		say "At [rank-num entry] core score you get a narrative of [rank-txt entry][line break]";
+		say "[relreg of rank-num entry] [rank-num entry] narrative: [rank-txt entry][line break]";
 
 chapter showaltverbsing
 
@@ -4110,6 +4128,7 @@ carry out climbclearing:
 	if Airy Isle is visited, say "You're already in the endgame." instead;
 	process the any-warp rule;
 	say "You bolt ahead, booming 'I'm [']ere!'[paragraph break]Note that stuff like the score is likely hosed now. Your object is just to get through the rest of the game. You also should not be able to go back south in this testing environment.";
+	now fun fen is visited; [this is a small hack for cases when we jump from the beginning but still need the appearance that the player worked through the game]
 	now climb-clear is true;
 	now sco-stay-strong is true;
 	move player to Airy Isle;

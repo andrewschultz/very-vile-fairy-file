@@ -483,7 +483,7 @@ a goodrhyme rule (this is the vc-fall-free rule) :
 	ready;
 
 this is the vr-fall-free rule:
-	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but this is good enough.";
+	say "The tree, already tipping over a bit, leans and ... falls over, creating safe passage to the north. Also, a hive heap falls from the tree and lands nearby. It seems worth a look.[paragraph break]You get greedy for a second wishing it was a teal tree so you could feel free, too, but you think 'Me, monk,' and plea-plunk 'See sunk tree trunk' so you don't trip over the trunk later.";
 	now sco-fall-free is true;
 	phbt tall tree;
 	move hive heap to Fun Fen;
@@ -1713,6 +1713,7 @@ randtxt
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
+"Bumpkin, Buy Pumpkin Pie"
 "Crew Came Grew Game"
 "Dandy Dyin['] Sandy, Sighin[r], by Randy Ryan"
 "Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
