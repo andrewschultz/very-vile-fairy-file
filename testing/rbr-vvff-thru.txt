@@ -2,10 +2,13 @@
 #-- main branch file for Very Vile Fairy File walkthroughs
 #--
 #-- use HHV.PY to verify ha-half
+#-- use MCH.PY to verify mistake checking code
+#-- use SCT.PY to verify alternate verb solutions
 #--
 
 files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
 ~	alt	t3
+~	dea	t4
 ~	mis	t5
 ~	ha	t6
 
@@ -84,6 +87,9 @@ Learner needle
 >jig jag
 Learner needle
 You aren't up for dancing.
+> pairy pile
+Learner needle
+No, we don't need the Very Vile Fairy File splitting and reproducing.
 > dairy dial
 Learner needle
 No dial appears to give you more excitement or milk products. Rats.
@@ -796,7 +802,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > think
 !FLIM FLAM
 
-==t4
+@dea
 >w
 west to Fame Fort
 >w
@@ -2319,7 +2325,7 @@ He's already awake, Blake.
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
+@dea
 >w
 west to Bore Bay
 >s
@@ -2496,13 +2502,15 @@ You already made a map.
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
+@dea
 >e
 east to Hi! Here, Buy Beer
 >s
 south to Rad Route
 >n
 north to See Some... Gee, Gum
+>d
+down to Lake Light
 
 ==t2
 > snake snap
@@ -2685,7 +2693,7 @@ Dealing with the shame of having done, er, THAT is beyond the scope of this game
 You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 
-==t4
+@dea
 >s
 !south to Leaf Lake
 >n
@@ -2759,7 +2767,7 @@ After all you've done, you don't need alcohol to help you get by.
 You already learned lean luggin'.
 > undo
 
-==t4
+@dea
 >s
 south to Leaf Lake
 >n
@@ -3036,7 +3044,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > think
 !SMASHING SMOKE
 
-==t4
+@dea
 >w
 west to Faun Fen
 >s
@@ -3366,7 +3374,7 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 > think
 !FIT FOUND
 
-==t4
+@dea
 > n
 !north to Straight Street
 > e
@@ -3408,7 +3416,7 @@ The HA HALF button lights up on your Leet Learner.
 > winding ways
 by one point
 
-==t4
+@dea
 > e
 east to Bold 'n Brave
 
@@ -3433,7 +3441,7 @@ You need to find your way here, not get more tied up.
 !Learner needle
 Even if it were duller, you'd still be left with a tricky maze.
 
-==t4
+@dea
 >n
 north to Straight Street
 
@@ -3628,7 +3636,7 @@ You already narrowed the funnel to a tunnel.
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
+@dea
 >n
 north to Fortune Funnel
 
@@ -4122,7 +4130,7 @@ You already discouraged some whining. Bringing it up again might make you the wh
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-==t4
+@dea
 >e
 east to Done Dune
 >d
@@ -4521,7 +4529,7 @@ Russell's moment of interest in the sciences has passed.
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
-==t4
+@dea
 >w
 west to Rattlin' Runs
 >e
@@ -4685,7 +4693,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-==t4
+@dea
 >d
 !down to Happy Hall
 >u
@@ -4750,7 +4758,7 @@ by one point
 by one point
 >undo
 
-==t4
+@dea
 >d
 down to Happy Hall
 >u

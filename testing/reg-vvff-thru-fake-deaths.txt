@@ -166,6 +166,8 @@ east to Hi! Here, Buy Beer
 south to Rad Route
 >n
 north to See Some... Gee, Gum
+>d
+down to Lake Light
 
 > co capn
 by one point
