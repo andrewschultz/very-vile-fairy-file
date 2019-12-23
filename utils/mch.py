@@ -43,15 +43,15 @@ if not my_proj or my_proj == 'vv': my_proj = "vvff"
 
 ignorable_commands = [ 'gonear', 'n', 's', 'e', 'w', 'u', 'd', 'z', 'undo', 'cs' ]
 
-quote_col = 5
-leet_rule_col = quote_col - 1
-
 if my_proj == "qq":
     my_proj = "qqnn"
     needed_text = "sheep sheet"
-    quote_col += 1
 
 mist_file = i7.hdrfile(my_proj, 'mi')
+
+quote_col = i7.column_from_file(mist_file, "table of first check rhymes", "mist-txt")
+leet_rule_col = i7.column_from_file(mist_file, "table of first check rhymes", "leet-rule")
+magic_num_col = i7.column_from_file(mist_file, "table of first check rhymes", "magicnum")
 
 max_count = 15
 
@@ -231,10 +231,10 @@ with open(rbr_file) as file:
         if first_word(line) in ignorable_commands: continue
         if in_cs_check: continue
         line_cmd = whole_command(line)
+        if next_cmd_pass:
+            next_cmd_pass = False
+            continue
         if line_cmd not in need_mistake_test:
-            if next_cmd_pass:
-                next_cmd_pass = False
-                continue
             print("Erroneous mistake command {} line {}: {}. Use #next-cmd-pass to flag this as okay.".format(rbr_file, line_count, line_cmd))
             mt.add_postopen_file_line(rbr_file, line_count)
         elif line_cmd in got_mistake_test:
