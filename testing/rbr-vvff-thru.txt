@@ -343,7 +343,7 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @mis
-#next-cmd-pass 
+#next-cmd-pass
 > brig brag
 Good guys don't brag about being
 !Learner needle
@@ -4676,7 +4676,7 @@ by one point
 > lot lord
 !by one point
 You already summoned the Lot Lord.
-	
+
 @ha
 > zlot lord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.

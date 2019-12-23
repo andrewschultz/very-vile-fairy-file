@@ -188,7 +188,7 @@ Almost. There's nobody here to fine or be fined.
 > find fault
 by one point
 
-#next-cmd-pass 
+#next-cmd-pass
 > brig brag
 Good guys don't brag about being
 !Learner needle
