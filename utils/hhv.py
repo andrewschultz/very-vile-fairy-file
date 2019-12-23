@@ -9,7 +9,7 @@ import re
 from collections import defaultdict
 import mytools as mt
 
-ignores = defaultdict(int)
+ignore_post = defaultdict(int)
 need_range = defaultdict(int)
 range_start = defaultdict(int)
 range_end = defaultdict(int)
@@ -26,13 +26,15 @@ opt = defaultdict(bool)
 
 double_item_list = defaultdict(int)
 
+fin = i7.hdr('vv', 'ta')
+
 def usage():
     print("-p/-pf = print frequencies.")
     exit()
 
 def print_stuff(test_name, range_needed, range_starts, put_in_punc = False, double_test = False):
     my_punc = "!" if put_in_punc else ""
-    temp_ary = [x for x in range_needed if x not in range_starts and x != 'vc-dimd rule']
+    temp_ary = [x for x in range_needed if x not in range_starts and x != 'vc-dimd rule' and x not in ignore_post]
     temp_ary = sorted(temp_ary, key=range_needed.get)
     for x in temp_ary:
         ta2 = re.sub(" .*", "", x).split('-')
@@ -57,6 +59,11 @@ def print_stuff(test_name, range_needed, range_starts, put_in_punc = False, doub
             print("OH NO botched with", x)
     print(test_name, "failed" if len(temp_ary) else "passed" , len(temp_ary))
 
+def needs_negative_check(my_ary):
+    temp = ' '.join(my_ary).replace('"', '').lower()
+    if temp == 'told tale' or temp == 'bury bile' or temp == 'get good': return False
+    return True
+
 def get_rule(x):
     x = re.sub(" rule.*", " rule", x.strip())
     x = re.sub(".*: *", "", x)
@@ -71,7 +78,9 @@ while cmd_count < len(sys.argv):
 
 in_verb_checks = False
 
-with open("story.ni") as file:
+(core_column, vc_column, dorule_column) = tuple(i7.column_from_file(fin, "verb checks", ["core", "ver-rule", "do-rule"]))
+
+with open(fin) as file:
     for (line_count, line) in enumerate(file, 1):
         if line.startswith("table of verb checks"):
             in_verb_checks = True
@@ -80,18 +89,16 @@ with open("story.ni") as file:
         if not in_verb_checks: continue
         ary = line.strip().split("\t")
         if in_verb_checks and not line.strip(): break
-        this_rule = 'vc-' + ary[6][3:]
-        if ary[6].startswith("vr-"):
+        this_rule = 'vc-' + ary[dorule_column][3:]
+        if ary[dorule_column].startswith("vr-"):
             #if 'dimd' in ary[6]: continue
-            if 'bury' not in ary[0] and 'told' not in ary[0]: #There's nothing post successful BURY BILE/TOLD TALE, because that's the end of the games
+            if needs_negative_check(ary[:2]):
                 neg_need_range[this_rule] = line_count
-            if ary[3] == '--':
-                ignores[ary[5]] = True
-                continue # non point gainers like HISTORY HALL and SOFT SAND
             need_range[this_rule] = line_count
-            opt[this_rule] = (ary[3].lower() == 'true')            
-        if len(ary) < 7:
-            sys.exit(ary)
+            if ary[core_column] == '--':
+                ignore_post[ary[vc_column]] = True
+                continue # non point gainers like HISTORY HALL and SOFT SAND
+            opt[this_rule] = (ary[core_column].lower() == 'true')            
 
 last_command = ""
 
@@ -122,7 +129,7 @@ with open(rbr_file) as file:
         if line.startswith(">"): last_command = re.sub("^> *", "", line.strip())
         if "!by one point" in line:
             rule_to_check = "vc-" + last_command.replace(" ", "-") + " rule"
-            if rule_to_check not in need_range and rule_to_check not in ignores:
+            if rule_to_check not in need_range and rule_to_check not in ignore_post:
                 print('Line', line_count, rbr_file, last_command, '/', rule_to_check, '=', 'unrecognized rule.')
             else:
                 double_item_list[rule_to_check] = line_count
