@@ -987,7 +987,10 @@ check entering flooring float: say "It's there for decoration, not transport. Bu
 
 chapter boring boat
 
-the boring boat is a fakeenter rhymable. "A boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if sco-snake-snap is true], but it seems sturdy enough for more adventure[else if sco-no-nappin is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if].". guess-table of boring boat is the table of boring boat flooring float guesses.
+the boring boat is a fakeenter rhymable. "[if buggin-freeze]That boring boat is here, but you don't have the energy to operate it[else][bore-boat-desc][end if].". guess-table of boring boat is the table of boring boat flooring float guesses.
+
+to say bore-boat-desc:
+	say "[if lake lea is visited]Your[else]A[end if] boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if sco-snake-snap is true], but it seems sturdy enough for more adventure[else if sco-no-nappin is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]"
 
 does the player mean entering boring boat: it is very likely;
 
@@ -1012,6 +1015,7 @@ check entering boring boat:
 		now boat-reject is true;
 		the rule succeeds;
 	if player is in Been Buggin:
+		if Dean Duggan is off-stage, say "Nah ... you're too bummed even to double back." instead;
 		if player does not have way woke clay cloak, say "Dean Duggan stops you. You have not properly passed [if sco-lean-luggin is false and sco-mean-muggin is false]any[else]both[end if] of the tests you need yet. You need to face things now. Perhaps there is some slang involved, but sometimes you need to brute-force your way through problems." instead;
 		say "With your way woke clay cloak in hand, you return to [Violent Vale]. After a moment, the boring boat floats off, perhaps to refuel from all the excitement.";
 		moot boring boat;
@@ -1025,7 +1029,7 @@ check entering boring boat:
 		the rule succeeds;
 	if player has clay cloak, say "The boat shouldn't be here, but you don't need it any more." instead;
 	if cake cap is not off-stage:
-		say "The boring boat takes a slightly different path this time. You go somewhere new, somewhere interesting... but when you get there, well, it feels like a tough new challenge.";
+		say "The boring boat takes a markedly different path this time. On the way, you are mentally drained by moans of 'Bold bum's doldrums' and 'Cold crumb's doldrums.' You are too tired even to kick yourself for trusting a boring boat, of all things, to take you somewhere interesting. Well, immediately interesting, at any rate.";
 		move boring boat to Been Buggin;
 		move player to Been Buggin;
 		the rule succeeds;
@@ -1132,6 +1136,7 @@ every turn when in-way-wrong:
 
 instead of doing something when in-way-wrong and player was in Been Buggin:
 	if action is procedural, continue the action;
+	if current action is entering boring boat, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter glowglading
@@ -1799,7 +1804,7 @@ check attacking:
 
 the block saying no rule is not listed in any rulebook.
 
-check saying no: say "No-no? Hoho, dodo! [yn-tell]" instead;
+check saying no: say "Hi-ho! Why woe? [yn-tell]" instead;
 
 the block saying yes rule is not listed in any rulebook.
 
