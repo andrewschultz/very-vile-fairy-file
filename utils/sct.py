@@ -22,8 +22,8 @@ to_open = defaultdict(int)
 open_source_post = True
 
 fin = i7.hdr('vv', 'ta')
-core_column = i7.column_from_file(fin, "table of verb checks", "core")
-topic_column = i7.column_from_file(fin, "table of verb checks", "wfull")
+(core_column, topic_column) = i7.column_from_file(fin, "table of verb checks", ["core", "wfull"])
+print(core_column, topic_column)
 
 min_line = 0
 max_line = 0

@@ -98,7 +98,7 @@ with open(fin) as file:
             if ary[core_column] == '--':
                 ignore_post[ary[vc_column]] = True
                 continue # non point gainers like HISTORY HALL and SOFT SAND
-            opt[this_rule] = (ary[core_column].lower() == 'true')            
+            opt[this_rule] = (ary[core_column].lower() == 'true')
 
 last_command = ""
 

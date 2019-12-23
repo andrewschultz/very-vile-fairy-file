@@ -49,9 +49,7 @@ if my_proj == "qq":
 
 mist_file = i7.hdrfile(my_proj, 'mi')
 
-quote_col = i7.column_from_file(mist_file, "table of first check rhymes", "mist-txt")
-leet_rule_col = i7.column_from_file(mist_file, "table of first check rhymes", "leet-rule")
-magic_num_col = i7.column_from_file(mist_file, "table of first check rhymes", "magicnum")
+(quote_col, leet_rule_col, magic_num_col) = i7.column_from_file(mist_file, "table of first check rhymes", ["mist-txt", "leet-rule", "magicnum"])
 
 max_count = 15
 
