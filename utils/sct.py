@@ -21,8 +21,9 @@ to_open = defaultdict(int)
 
 open_source_post = True
 
-core_column = 4
-topic_column = 9
+fin = i7.hdr('vv', 'ta')
+core_column = i7.column_from_file(fin, "table of verb checks", "core")
+topic_column = i7.column_from_file(fin, "table of verb checks", "wfull")
 
 min_line = 0
 max_line = 0
@@ -101,18 +102,17 @@ def check_invisiclues_vs_walkthrough():
 
 def check_think_tests():
     think_needed = defaultdict(int)
-    fin = i7.hdr('vv', 'ta')
     ft = "rbr-vvff-thru.txt"
     in_think_table = False
-    skip_header = False
+    skip_cols = False
     with open(fin) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("table of forlaters"):
-                skip_header = True
+                skip_cols = True
                 in_think_table = True
                 continue
-            if skip_header:
-                skip_header = False
+            if skip_cols:
+                skip_cols = False
                 continue
             if not line.strip():
                 in_think_table = False
@@ -153,18 +153,17 @@ def check_think_tests():
 def check_multiple_command_tests():
     need_base_test = defaultdict(int)
     need_mult_test = defaultdict(int)
-    fin = i7.hdr('vv', 'ta')
-    skip_header = False
+    skip_cols = False
     in_verb_table = False
     fatal_error = 0
     with open(fin) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("table of verb checks"):
-                skip_header = True
+                skip_cols = True
                 in_verb_table = True
                 continue
-            if skip_header:
-                skip_header = False
+            if skip_cols:
+                skip_cols = False
                 continue
             if not in_verb_table: continue
             if not line.strip():
@@ -261,27 +260,28 @@ def check_multiple_command_tests():
 def check_bad_loc_tests():
     death_moves = defaultdict(int)
     death_orig = defaultdict(str)
-    fin = i7.hdr('vvff', 'ta')
     ft = "rbr-vvff-thru.txt"
     in_death_test = False
     loc_errs = 0
-    skip_header = False
+    skip_cols = False
     in_loc_table = False
+    read_header_for_cols = False
     with open(fin) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("table of bad locs"):
-                skip_header = True
+                read_header_for_cols = True
                 in_loc_table = True
                 continue
-            if skip_header:
-                skip_header = False
+            if read_header_for_cols:
+                fake_name_col = i7.column_from_header_line("fake-name", line, fin, line_count)
+                read_header_for_cols = False
                 continue
             if not line.strip():
                 in_loc_table = False
             if not in_loc_table: continue
             tary = line.split("\t")
             try:
-                temp_string = tary[1] + " to " + i7.a2q(tary[4].replace('"', ''))
+                temp_string = tary[1] + " to " + i7.a2q(tary[fake_name_col].replace('"', ''))
             except:
                 sys.exit("Bad array {} line {}".format(tary, line_count))
             death_moves[temp_string] = 0
@@ -293,6 +293,8 @@ def check_bad_loc_tests():
     with open(ft) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith('==t') and '4' in line:
+                print("WARNING convert ==t4 to DEA if possible: line {}.".format(line_count))
+            if line.startswith('@dea'):
                 if not got_main_yet: continue
                 in_death_test = True
                 continue
@@ -568,9 +570,9 @@ def check_points():
                 c = qpeel(a[1])
                 base_cmd = "{} {}".format(qpeel(a[0]), qpeel(a[1])).strip()
                 try:
-                    pt_type = 'nec' if a[4].lower() == 'true' else 'opt' if a[4].lower() == 'false' else 'skip'
+                    pt_type = 'nec' if a[core_column].lower() == 'true' else 'opt' if a[core_column].lower() == 'false' else 'skip'
                 except:
-                    print("Bad value for 3rd column at line {}: {}".format(line_count, line.strip()))
+                    print("Bad value for core column {} column at line {}: {}".format(core_column, line_count, line.strip()))
                 if pt_type == 'skip': continue
             if verbose: print("Command: {}".format(base_cmd))
             scores[pt_type] += 1
