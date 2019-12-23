@@ -48,7 +48,7 @@ test qbug with "purloin toe/gonear violent vale/purloin cake cap/silent sail/bor
 
 test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag/s". [this is the intro.]
 
-test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]
+test w2 with "kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]
 
 test w3 with "n/w/dark door/mark more/cleared clay/w/mystery mall/listen" [get TTRR]
 
@@ -58,7 +58,7 @@ test w4 with "lots lame/w/hard hat" [get first hat]
 
 test w5 with "e/e/e/n/w/work well/e/loft land/w/dreaming dull/first fave/cool cap" [get 2nd cap]
 
-test w6 with "/e/s/e/brightening bridge/silent sail/boring boat/no nappin/enter boat/wake whee". [get cap, take boat]
+test w6 with "e/s/e/brightening bridge/silent sail/boring boat/no nappin/enter boat/wake whee". [get cap, take boat]
 
 test w7 with "take tea/fake fee/e/make map/co capn/snake snap/enter boat". [this is part 1 of the boat quest]
 
@@ -80,7 +80,7 @@ test togap with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8
 
 test w15 with "meeker muscle/wood one/n". [enter airy isle]
 
-test w16 with "hot horde/lot lord/got gored/whoah wait/tell torn/merry mile/bury bile".
+test w16 with "hot horde/lot lord/got gored/whoa wait/tell torn/merry mile/bury bile".
 
 test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11/test w12/test w13/test w14/test w15/test w16".
 
