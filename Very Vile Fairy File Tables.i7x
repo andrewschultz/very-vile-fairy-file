@@ -1609,16 +1609,20 @@ rank-num	done-yet	rank-txt
 3	false	"Another vision![wfak][paragraph break]A bunch of seedy looking hoodlums approach the shrine where the [very vile] was left. You know they must be the Crimes Crrew Times Two Kit Cohen told you about. While the general consensus is 'What an unusually stupid looking book,' they nonetheless play rock-paper-scissors to decide the poor sap who has to read it."
 4	false	"The loser of the rock paper scissors game's eyes open wide as they realize the [very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel the [very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
 5	false	"You recall harsh words from an alleged friend, Chum Chilly Bum Billy: 'Some silly? Dumb, dilly.'"
+6	false	"You remember a depressing holiday season. 'Blear, Blue? Near New Year, You! We're ... WOO!' But you're having more fun now. You hope."
+7	false	"A voice says 'Sigh. Say hi, hey?' But you ignore it. Ply, play, you think. Gotta focus."
 8	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
 --	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
 --	false	"'Surly? Soften early, often!' a random voice booms. Probably some burly boffin. The [fairy file]'s bait is smart."
 --	false	"You remember saying 'War, why?' with the response: 'BORE, BYE!'"
+--	false	"You picture yourself in a sales job. 'Cold call? Fold, fall.' You fail and are exiled to the Hold Hall."
 --	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
 --	false	"'Blue blood? Boo, bud!' Standard demoralizing fare. You feel a slight flu-flood."
 --	false	"A disembodied voice that can only be from the [very vile] booms: 'High hope nigh? Nope!' You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible."
 --	false	"That disembodied voice again: 'Raking rhyme?! Making mime!' You feel discouraged, knowing if you slow up, a voice will boom 'Taking times?'[paragraph break]The [very vile]'s reach is wide indeed. If it can mix up these taunts on you, what can it do to others?"
 --	false	"Despite your success, a memory: 'Rad? Wrong! Gad! Gong! Bad! BBOONNGG!' You remember all the times you felt guilty getting things right for the wrong reason, as well as the times you were mocked for knowing things too well."
 --	false	"Blare blame! Share shame!"
+--	false	"'Wet willy set? Silly! Bet, Billy!' A reminder of tormentors from your past."
 --	false	"'Sing-song ding-dong!' a voice calls out, as if the double-rhyme puzzles you solved were your fault. It does slightly ... ring wrong. But at least you are not trampled by King Kong or beaten badly at Ping Pong." [?? if postmortem 4, expound on this. It was an original double rhyme before VVFF.]
 --	false	"You almost started feeling good about things, but a voice whispers 'Smart smack. Heart? Hack!' Oh, [very vile], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
@@ -1637,6 +1641,7 @@ volume random tables
 table of mall songs [xxmall] [xxsongs]
 randtxt
 "Be Bop: See, Sop"
+"Gloom Gang: Bloom, Bang (Flume, Fang)"
 "Big Bang Gig Gang[r], by Sig Sang"
 "Blue Blood Crew? Crud"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
@@ -1648,6 +1653,7 @@ randtxt
 "Guy Gets High Hits"
 "Hata['] Heft Data, Deft"
 "Lo Love Show Shove"
+"Beatbox Fleet Flocks"
 "Mercy Me, Jersey G[r], by Versy V & Percy P"
 "My, Mo['] Sly, Slow"
 "Pay, Pow, Hey, How"
@@ -1675,6 +1681,7 @@ randtxt
 "Lair Level Daredevil Bear Bevell"
 "Madman Chad Chan"
 "Madman Tad Tan"
+"All Anger Bawl Banger Saul Sanger"
 "Naughty/Nice Toddy Tice"
 "Not Noble Scott Scoble"
 "Pill-Perk Bill Burke"
@@ -1687,6 +1694,7 @@ randtxt
 "Sure-Shank Burbank"
 "Sweet-Sour Pete Power"
 "Tart Tyke Mart-Mike"
+"Brief-Bray-Grief Gray"
 "Ted-Talk Sed Salk"
 "Trot Trice, Not-Nice Lot Lice"
 "Wes Well-Yes-Yell"
@@ -1701,6 +1709,7 @@ table of vvff digs [xxtaunts] [xxdigs] [xxmean]
 randtxt
 "Blue blood? Do? Dud! Boo, bud!"
 "Bud, bug? Dud, dig!"
+"Wild? Weak! Mild! Meek!"
 "But, but?! Tut, tut!"
 "Catcall: at ALL!"
 "Dark day! Hark, hey!"
@@ -1717,16 +1726,21 @@ randtxt
 "Try to Fry, Foo[']! Die, do!"
 "Want what? Taunt, tut!"
 "War wish? Poor, pish!"
+"Bad bid, cad kid!"
 "Weep, wild cheap child!"
 "Whoah! Words? No, nerds!"
+"Lard! Left hard heft!"
 "Yale? You'll fail, fool!"
 "You yearn: oo, earn? Boo, burn!"
 "Zork?! Zero! Dork, Dear-oh!"
 
-table of vvff books [xxbooks]
+table of random books [xxbooks]
 randtxt
 "Ache or Make More Lake Lore"
 "Bane, Bones, Stain Stones[r], by Jane Jones"
+"How High? Wow, Why"
+"Still Stay? Will, Way[r], by Jill Jay"
+"Nosy Nan, Dozy Dan[r], by Rosie Rann"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
@@ -1742,6 +1756,7 @@ randtxt
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
 "Gain Goals, Sane Souls"
+"Skull Skit Pulpit"
 "Good Girl Would Whirl"
 "Gray Grill, Stay Still[r], by Jay-Jill Hayhill"
 "Greater Gravel Traitor Travel"
@@ -1750,6 +1765,7 @@ randtxt
 "Him, Her, Dim, Durr[r], by Kim Kerr"
 "Hole Hound Bowl Bound"
 "Lay [']Lone, May Mone[r], by Ray Rhone"
+"Meet Meg, Pete, Peg"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
 "Men, Messed, Been Best, by Ren Rest"
@@ -1852,7 +1868,7 @@ table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
 table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
 table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry ends the list with a whimper."
-table of vvff books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
+table of random books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
 table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
