@@ -3647,6 +3647,14 @@ Rule for printing a parser error (this is the check for room name and homophones
 					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
 				the rule succeeds;
 			break;
+	repeat through table of thing homonyms:
+		if mything entry is touchable:
+			if the player's command includes myhom entry:
+				if there is a myrej entry:
+					say "[myrej entry]. Homonyms aren't quite the way to go, here.";
+				else:
+					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
+				the rule succeeds;
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
 			if word number 1 in the player's command is "ll":

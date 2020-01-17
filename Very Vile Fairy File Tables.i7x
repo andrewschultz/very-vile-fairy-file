@@ -1808,6 +1808,15 @@ True	"You walk around and notice a distasteful small puddle where a pet peed, th
 
 volume homonym rejections
 
+chapter thing homonyms
+
+table of thing homonyms
+mything	myhom (topic)	myrej (text)
+bot board	"bored"	"Sadly, the bot board is unable to feel bored of sitting around and being repressive."
+hot horde	"hoard"	"The horde is after victories, not treasure."
+pain peasant	"pane"	"Broken person, broken window, eh?"
+vapor vial	"vile"	"You need to change the vial into something more pleasant and constructive."
+
 chapter room homonyms
 
 table of room homonyms
