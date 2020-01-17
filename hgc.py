@@ -10,6 +10,9 @@ import i7
 import re
 import mytools as mt
 
+comb_source_files = False
+comb_text_files = True
+
 my_proj = i7.dir2proj(to_abbrev=True)
 
 hom_ignore = defaultdict(int)
@@ -32,7 +35,7 @@ def read_ignores():
             for q in ary:
                 if q in hom_ignore:
                     print("Duplicate word to ignore {} at line {}.".format(q, line_count))
-                    mytools.add_postopen_file("hgc.txt", line_count)
+                    mt.add_postopen_file("hgc.txt", line_count)
                 hom_ignore[q] = True
                 
 def usage(msg = "General usage"):
@@ -43,7 +46,16 @@ def usage(msg = "General usage"):
 
 cmd_count = 1
 
-def comb_one_file(file_name, tables_needed, cols_needed = [0]):
+def comb_text(x):
+    print("##hgc.py reading", x)
+    with open(x) as file:
+        for (line_count, line) in enumerate(file, 1):
+            q = line.lower().strip().split(' ')
+            for r in q:
+                if r in hom.hom_list:
+                    print(line_count, line.lower().strip(), ":", r, "~=", hom.hom_list[r])
+
+def comb_source(file_name, tables_needed, cols_needed = [0]):
     count = 0
     cur_table = ""
     tables_got = defaultdict(bool)
@@ -85,7 +97,7 @@ def comb_one_file(file_name, tables_needed, cols_needed = [0]):
                             count += 1
                             print("{}: {}{} <{}> line {} col {} in <{}>/{} may need homophone: {}.".format(count, "(already got) " if q in already_got else "", q, bn, line_count, col, cur_table, ary[col], ", ".join(err_list)))
                             already_got[q] = line_count
-                            mytools.add_postopen_file_line(file_name, line_count)
+                            mt.add_postopen_file_line(file_name, line_count)
     print("Summary of stuff to replace:", ', '.join(sorted(already_got)))
     for x in tables_got:
         if not tables_got[x]: print("Did not find", x, "in", bn)
@@ -114,7 +126,12 @@ if tried_hom:
     sys.exit()
 
 read_ignores()
-comb_one_file(vvt, ["table of verb checks"], [0, 1])
-comb_one_file(vvm, ["table of mistake substitutions", "table of homonym rejections"], [0])
+
+if comb_source_files:
+    comb_source(vvt, ["table of verb checks"], [0, 1])
+    comb_source(vvm, ["table of mistake substitutions", "table of homonym rejections"], [0])
+
+if comb_text_files:
+    comb_text("vv-things-list.txt") # this is the list of things
 
 mytools.postopen_files()
