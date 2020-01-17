@@ -259,6 +259,11 @@ book properties
 a room has text called noway-text.
 
 a room has text called homreg.
+a room has a topic called homlist.
+
+table of room homonyms
+loc	top (topic)
+wet wood	"whet/would"
 
 a room has a table name called guess-table. the guess-table of a room is usually the Table of No Good Guesses.
 
@@ -421,6 +426,8 @@ volume Worst Whew
 part Wet Wood 3,0
 
 Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of Wet Wood is leteq. guess-table of Wet Wood is table of Wet Wood guesses. homreg of Wet Wood is "whet|would". [-> get good]
+
+homlist of Wet Wood is "whet/would".
 
 to say how-better:
 	say "[one of]You'd like a simple way to become better[or]Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve[or]You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started[cycling]"
@@ -792,6 +799,10 @@ part History Hall -2,1
 
 History Hall is west of Stark Store. cht of History Hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if in-mystery-mall is true][mystdesc][else][histdesc][end if].[paragraph break]You can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if sco-mystery-mall is true], and there's a store west[end if][if sco-mystery-mall is true]. Or you could just shift back to [mist-hist of false][end if].". guess-table of History Hall is table of History Hall guesses. homreg of history hall is "haul". [-> Mystery Mall] [Mystery Mall->History Hall]
 
+check going up in history hall:
+	if ever-hall is true, continue the action;
+	say "[if in-mystery-mall is true]You go up and browse Mystery Mall for a while. One store that clearly has nothing you want is[else]There's nothing up there since you're in History Hall. Anyway, you wouldn't want to visit, say,[end if] [next-rand-txt of table of mall shops]." instead;
+
 check going outside in History Hall:
 	if in-mystery-mall is true and poor ponder is moot, say "You'd have to switch back to History Hall to try that." instead;
 
@@ -908,7 +919,7 @@ to say may-already:
 
 The Trending Tribe are plural-named people in Vending Vibe. cht of Trending Tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> Lending Libe]
 
-the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of vvff books][r]. This locational libe has no vocational vibe.";
+the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of books][r]. This locational libe has no vocational vibe.";
 
 after going to Vending Vibe:
 	process the card-and-libe rule;
@@ -1058,6 +1069,8 @@ sco-break-brie is a truth state that varies.
 part Whining War 2,1
 
 Whining War is east of Violent Vale. It is in Piddling Pain. "[if sco-so-sappin is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if sco-shining-shore is false]It's less whiny here, but it's still a bit too dull.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in Whining War][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage] But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot] With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of Whining War is partplus. guess-table of Whining War is table of Whining War guesses. printed name of Whining War is "[if sco-shining-shore is true]Shining Shore[else]Whining War[end if]". homreg of whining war is "wining|wore". [-> Shining Shore]
+
+homlist of whining war is "wining/wore".
 
 [Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another Whining War.]
 [mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
@@ -3625,9 +3638,19 @@ Rule for printing a parser error (this is the clue half right words rule):
 zap-weird-break is a truth state that varies.
 
 Rule for printing a parser error (this is the check for room name and homophones in player command rule):
-	if homreg of location of player is not empty and the player's command matches the regular expression "(^|\W)([homreg of location of player])($|\W)", case insensitively:
-		say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
-		the rule succeeds;
+	if the player's command includes "whet":
+		say "1.";
+	if the player's command includes "would":
+		say "2.";
+	if the player's command includes "whet/would":
+		say "3.";
+	repeat through table of room homonyms:
+		if location of player is loc entry:
+			say "1.";
+			if the player's command includes top entry:
+				say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
+				the rule succeeds;
+			break;
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
 			if word number 1 in the player's command is "ll":
@@ -3982,6 +4005,8 @@ to win-the-game:
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
+	wfak;
+	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the mud. It's been left a while: 'FUN FAIR WON WEAR.' Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
