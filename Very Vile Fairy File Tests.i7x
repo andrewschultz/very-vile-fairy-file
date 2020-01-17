@@ -135,6 +135,8 @@ carry out nowaying:
 
 volume quaint questin' taint testin' (Ha! Ha!)
 
+chapter end of game CHT test check
+
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
 "track CHT of each room"	true	"cht"	--	chttracking
@@ -151,6 +153,22 @@ rule for chttracking:
 			increment phbts;
 			say "[phbts]. [X] should be phbt but is [cht of X].";
 	if phbts is 0, say "Hooray! All rooms have been reduced to PHBT.";
+
+chapter table cycle check
+
+chapter tcting
+
+tcting is an action applying to nothing.
+
+understand the command "tct" as something new.
+
+understand "tct" as tcting.
+
+carry out tcting:
+	repeat through table of all randoms:
+		now tabidx entry is number of rows in tabnam entry - 1;
+		say "[tabnam entry] index set to [tabidx entry].";
+	the rule succeeds.
 
 volume monty stuff
 
