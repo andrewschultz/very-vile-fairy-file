@@ -1,0 +1,60 @@
+# reg-vvff-rand.txt
+
+## reg-vvff-rand.txt
+## NO GENERATOR FILE, JUST RANDOM SHUFFLED TEXT TEST CASES
+
+## this should not be confused with a walkthrough. It is a unit test of all the random texts available.
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+# point tables to the end
+>tct
+
+#RANDTEST table of mall shops
+>gonear history hall
+>u
+It feels like there could be something up there. Maybe not very important, but it's there. You just feel as though History Hall isn't defined enough, yet.
+>mystery mall
+>u
+>history hall
+>u
+
+
+#RANDTEST table of mall songs
+> mystery mall
+> lots lame
+> listen
+> dimd
+> listen
+A random song plays briefly: (Cycling)
+Oh man, this one's really good! Tip Top Hip Hop! You stay until you hear the playlist, um, flip flop.
+>listen
+Whoah...that sounds familiar! Fourth wall note: you've circled to the start of a random table after going through it. Thanks for being interested enough to look through it! There are commands at the game's end to see other tables.
+
+# the two books in the Lending Libe: the libe itself and Fussed Folks
+> history hall
+> purloin cold card
+> w
+> lending libe
+#RANDTEST table of books
+> x lending libe
+Looking in, you see one book labeled (Cycling)
+This locational libe has no vocational vibe.
+> x lending libe
+Looking in, you see one book labeled
+!Cycling
+!This locational libe has no vocational vibe.
+#RANDTEST table of miscellaneous people
+> x fussed folks
+You read about Hazy Hairy Lazy Larry, who ends the list with a whimper.
+
+
+#RANDTEST table of vvff digs
+>gonear tarry tile
+>x vvff
+READ it.
+>read vvff
+>x vvff
+READ it again.

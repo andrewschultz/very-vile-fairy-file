@@ -3,7 +3,7 @@
 ## reg-vvff-bull.txt
 ## NO GENERATOR FILE, JUST BULL CHASE TEST CASES
 
-## walkthrough with all points, jumping everywhere
+## this should not be confused with a walkthrough. It has unit tests of many bull chases.
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
