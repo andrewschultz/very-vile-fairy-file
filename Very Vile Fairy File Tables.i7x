@@ -1090,6 +1090,7 @@ this is the vr-mystery-mall rule:
 	now sco-mystery-mall is true;
 	now zap-core-entry is true;
 	now homreg of History Hall is "haul|maul";
+	now ever-hall is true;
 
 a goodrhyme rule (this is the vc-near-null rule) :
 	if Beer Bull is not touchable, unavailable;
@@ -1606,7 +1607,7 @@ table of narratives [xxton]
 rank-num	done-yet	rank-txt
 1	false	"A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out 'Bright! Broader!'[paragraph break]The book's cover slowly becomes colored in. It is the [very vile]."
 2	false	"The plotters from your previous vision remark how it is not just a guide to manipulation, but something that can affect people from afar. Its one weakness: if someone gets too close and is legitimately happy and forgiving around it, its spell will break.[paragraph break]They leave it by the Real Rot/Feel Fought Spiel Spot, because they have other evil to delegate, elsewhere. Small relief--facing them would've been too much[if ever-toggle-narr is false].[paragraph break]NOTE: y[narr-toggle][end if]."
-3	false	"Another vision![wfak][paragraph break]A bunch of seedy looking hoodlums approach the shrine where the [very vile] was left. You know they must be the Crimes Crrew Times Two Kit Cohen told you about. While the general consensus is 'What an unusually stupid looking book,' they nonetheless play rock-paper-scissors to decide the poor sap who has to read it."
+3	false	"Another vision![wfak][paragraph break]A bunch of seedy looking hoodlums approach the shrine where the [very vile] was left. You know they must be the Crimes Crew Times Two Kit Cohen told you about. While the general consensus is 'What an unusually stupid looking book,' they nonetheless play rock-paper-scissors to decide the poor sap who has to read it."
 4	false	"The loser of the rock paper scissors game's eyes open wide as they realize the [very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel the [very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
 5	false	"You recall harsh words from an alleged friend, Chum Chilly Bum Billy: 'Some silly? Dumb, dilly.'"
 6	false	"You remember a depressing holiday season. 'Blear, Blue? Near New Year, You! We're ... WOO!' But you're having more fun now. You hope."
@@ -1615,6 +1616,7 @@ rank-num	done-yet	rank-txt
 --	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
 --	false	"'Surly? Soften early, often!' a random voice booms. Probably some burly boffin. The [fairy file]'s bait is smart."
 --	false	"You remember saying 'War, why?' with the response: 'BORE, BYE!'"
+--	false	"You are quasi-catcalled as 'Some super-dumb duper.' You immediately wonder if you're too dumb to remember HOW you tried to dupe anyone, but after a moment's thought, you brush the insult off with 'Um, oop, err...'"
 --	false	"You picture yourself in a sales job. 'Cold call? Fold, fall.' You fail and are exiled to the Hold Hall."
 --	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
 --	false	"'Blue blood? Boo, bud!' Standard demoralizing fare. You feel a slight flu-flood."
@@ -1834,14 +1836,18 @@ volume random table code
 to next-rand (t - a table name):
 	choose row with tabnam of t in table of all randoms;
 	increment tabidx entry;
+	let lb be lbrk entry;
 	if tabidx entry > number of rows in tabnam entry:
 		if debug-state is true, say "(Cycling) ";
-		now tabidx entry is 1;
 		if thru-yet entry is 0:
 			now thru-yet entry is 1;
-			now rand-cycle is true;
+		if there is a cycle-note entry:
+			say "[cycle-note entry][if lb is true][line break][else][no line break][end if]";
+			now tabidx entry is 0;
+			continue the action;
+		now tabidx entry is 1;
+	if thru-yet entry is 1 and tabidx entry is 1, now rand-cycle is true;
 	let Q be tabidx entry;
-	let lb be lbrk entry;
 	choose row Q in tabnam entry;
 	say "[randtxt entry][if lb is true][line break][else][no line break][end if]";
 
@@ -1856,14 +1862,14 @@ every turn (this is the notify cycling rule):
 		let tables-found be 0;
 		now rand-cycle is false;
 		repeat through table of all randoms:
-			if thru-yet entry is 1:
+			if thru-yet entry is 1 and tabidx entry is 1:
 				now thru-yet entry is 2;
 				increment tables-found;
 				if debug-state is true, say "DEBUG NOTE: [tabnam entry].";
 				if tables-found is 1:
-					say "[line break][if there is a cycle-note entry][cycle-note entry][line break][else]Whoah...that sounds familiar. You suspect the dialogue will loop again.[end if]";
+					say "Whoah...that sounds familiar! Fourth wall note: you've circled to the start of [one of]a random table after going through it. Thanks for being interested enough to look through it! There are commands at the game's end to see other tables[or]another random table[stopping].";
 				else if tables-found is 2:
-					say "This is a further note to say you've done so more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
+					say "[line break]This is a further note to say you've cycled a random table more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
 		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
 		the rule succeeds;
 

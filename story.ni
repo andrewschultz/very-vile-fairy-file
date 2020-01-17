@@ -797,11 +797,11 @@ the wild weed is a rhymable. the indefinite article of wild weed is "some". desc
 
 part History Hall -2,1
 
-History Hall is west of Stark Store. cht of History Hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if in-mystery-mall is true][mystdesc][else][histdesc][end if].[paragraph break]You can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if sco-mystery-mall is true], and there's a store west[end if][if sco-mystery-mall is true]. Or you could just shift back to [mist-hist of false][end if].". guess-table of History Hall is table of History Hall guesses. homreg of history hall is "haul". [-> Mystery Mall] [Mystery Mall->History Hall]
+History Hall is west of Stark Store. cht of History Hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if in-mystery-mall is true][mystdesc][else][histdesc][end if].[paragraph break]You [if ever-hall is false]see a misty passage up[else]could waste a bit of time wandering above[end if], and you can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if sco-mystery-mall is true], and there's a store west[end if][if sco-mystery-mall is true]. Or you could just shift back to [mist-hist of false][end if].". guess-table of History Hall is table of History Hall guesses. homreg of history hall is "haul". [-> Mystery Mall] [Mystery Mall->History Hall]
 
 check going up in history hall:
-	if ever-hall is true, continue the action;
-	say "[if in-mystery-mall is true]You go up and browse Mystery Mall for a while. One store that clearly has nothing you want is[else]There's nothing up there since you're in History Hall. Anyway, you wouldn't want to visit, say,[end if] [next-rand-txt of table of mall shops]." instead;
+	if ever-hall is false, say "It feels like there could be something up there. Maybe not very important, but it's there. You just feel as though History Hall isn't defined enough, yet." instead;
+	say "[if in-mystery-mall is true]You go up and browse Mystery Mall for a while. One store that clearly has nothing you want is[else]You don't have the time to study history, even though it might be more useful than a store like[end if] [next-rand-txt of table of mall shops]." instead;
 
 check going outside in History Hall:
 	if in-mystery-mall is true and poor ponder is moot, say "You'd have to switch back to History Hall to try that." instead;
@@ -919,7 +919,7 @@ to say may-already:
 
 The Trending Tribe are plural-named people in Vending Vibe. cht of Trending Tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> Lending Libe]
 
-the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of books][r]. This locational libe has no vocational vibe.";
+the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of books][r][one of]. This locational libe has no vocational vibe[or][stopping].";
 
 after going to Vending Vibe:
 	process the card-and-libe rule;
@@ -1543,6 +1543,8 @@ the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell h
 chapter Very Vile Fairy File
 
 the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
+
+understand "vv/ff" and "vvff" as Very Vile Fairy File.
 
 description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless."
 
@@ -4006,7 +4008,7 @@ to win-the-game:
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
 	wfak;
-	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the mud. It's been left a while: 'FUN FAIR WON WEAR.' Good enough.";
+	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. It captures some of the more memorable parts of your journey. The tag on the back of the neck says 'FUN FAIR WON WEAR.' Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
