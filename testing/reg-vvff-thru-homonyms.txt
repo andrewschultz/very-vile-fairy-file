@@ -1,0 +1,430 @@
+
+## reg-vvff-thru-homonyms.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+> wet woo
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+> we would
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> big bag
+by one point
+
+> get good
+by one point
+
+>riffed rrr
+No, you rhymed to get out of the Wet Wood. But homonyms aren't quite the way to go, here.
+
+> gift giver
+by one point
+
+> find fault
+by one point
+
+> green grass
+by one point
+
+> grow grit
+by one point
+
+> mash map
+by one point
+
+> mind me
+by one point
+
+> flim flam
+by one point
+
+> phun phen
+Organic chemistry is much too complex, here.
+
+> s
+
+> reel reer
+The Sage Sea is not for fishing.
+
+> kneel near
+by one point
+
+> feel fear
+by one point
+
+> deal dear
+by one point
+
+> n
+
+> fall free
+by one point
+
+> dive deep
+by one point
+
+> paper pile
+by one point
+
+> backed binder
+by one point
+
+> n
+
+>craws crews
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> w
+
+> dark door
+by one point
+
+> mark more
+by one point
+
+> cleared clay
+by one point
+
+> w
+
+>long haul
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>long maul
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> mystery mall
+by one point
+
+>long haul
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>long maul
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> listen
+
+> lots lame
+by one point
+
+> no nappin
+by one point
+
+> w
+
+>hear hear
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> hard hat
+by one point
+
+> e
+> e
+> e
+> n
+> w
+
+> work well
+by one point
+
+> e
+
+> loft land
+by one point
+
+> w
+
+> dreaming dull
+by one point
+
+> first fave
+by one point
+
+> cool cap
+by one point
+
+> e
+> s
+> e
+
+>vicki veil
+You need to get rid of the violence, not put a veil over it.
+
+> silent sail
+by one point
+
+> brightening bridge
+by one point
+
+> boring boat
+by one point
+
+> enter boat
+
+>lee smith
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> wake whee
+by one point
+
+> take tea
+by one point
+
+> fake fee
+by one point
+
+> e
+
+> make map
+by one point
+
+> co capn
+by one point
+
+> snake snap
+by one point
+Silent Sail
+
+> enter boat
+
+>bin xxx
+You do sort of need to bin your shortcomings.
+
+> stay strong
+
+> glow glad
+by one point
+
+> mean muggin
+by one point
+
+> lean luggin
+by one point
+
+> enter boat
+
+> w
+> w
+> w
+
+> glean glows
+by one point
+
+> history hall
+
+> youre yonder
+by one point
+
+> out
+
+> smashing smoke
+by one point
+
+> in
+> w
+
+> lending libe
+by one point
+
+> see sign
+by one point
+
+> e
+> e
+> e
+
+> n
+
+> n
+
+> sew zzz
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+> sow zzz
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> plain pleasant
+by one point
+
+>sow see
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> w
+
+>awl righty
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> moral mage
+by one point
+
+> e
+> e
+
+> sit sound
+by one point
+
+> fit found
+by one point
+
+> e
+
+>graze xxx
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>grace xxx
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> winding ways
+by one point
+
+> mo mappin
+by one point
+
+> luck lair
+by one point
+
+>graze xxx
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>grace xxx
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> w
+> w
+> s
+> s
+> w
+> d
+
+> tight tunnel
+by one point
+
+> w
+
+> knives niche
+by one point
+
+> e
+> u
+> e
+> n
+> e
+
+>hear hull
+You can just listen, if you need to.
+
+> dear dull
+by one point
+
+> near null
+by one point
+
+> w
+> s
+> w
+> d
+> w
+> s
+
+> beast boss
+by one point
+
+> least loss
+by one point
+
+> s
+
+> s
+
+> heal here
+by one point
+
+> n
+> n
+
+> cull ceased
+by one point
+
+> full feast
+by one point
+
+> e
+> e
+
+> wining dining
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+> wore more
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
+> so sappin
+by one point
+
+> shining shore
+by one point
+
+> dining door
+by one point
+
+> pull pieced
+by one point
+
+> mining more
+by one point
+
+> w
+> w
+> n
+> n
+
+> show shield
+by one point
+
+> n
+
+> go gappin
+by one point
+
+> couple caps
+by one point
+
+> cast cap
+by one point
+
+> meeker muscle
+by one point
+
+> wood one
+by one point
+
+> n
+
+>erry xxx
+The Airy Isle can't really be changed.
+>aerie xxx
+The Airy Isle can't really be changed.
+>aisle xxx
+The Airy Isle can't really be changed.
+
+> hot horde
+by one point
+
+> lot lord
+by one point
+
+> got gored
+by one point
+
+> whoa wait
+by one point
+
+>terry crews
+Nobody named Terry appears, nor does any terry cloth.
+
+> tell torn
+by one point
+
+> merry mile
+by one point
+
+> bury bile
+by one point
+

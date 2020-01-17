@@ -1811,10 +1811,10 @@ volume homonym rejections
 chapter room homonyms
 
 table of room homonyms
-loc	check-rule	top (topic)	room-msg (text)
-airy isle	--	"erry/aisle"	"The Airy Isle can't really be changed."
+loc	check-rule (a rule)	top (topic)	room-msg (text)
+airy isle	--	"aerie/erry/aisle"	"The Airy Isle can't really be changed."
 been buggin	--	"bin"	"You do sort of need to bin your shortcomings."
-blinding blaze	blaze-is-grays rule	"graze"
+blinding blaze	blaze-is-grays rule	"grace/graze"
 creased cross	--	"craws"
 foe field	peasant-around rule	"sew/sow"
 fun fen	--	"phen"	"Organic chemistry is much too complex, here."

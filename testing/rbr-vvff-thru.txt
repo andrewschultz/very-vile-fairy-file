@@ -6,11 +6,12 @@
 #-- use SCT.PY to verify alternate verb solutions
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt
 ~	alt	t3
 ~	dea	t4
 ~	mis	t5
 ~	ha	t6
+~	hom	t7
 
 ## *FILE
 ## *FORK
@@ -24,6 +25,12 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 
 @alt
 > z
+
+@hom
+> wet woo
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+> we would
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @ha
 #this is very basic option testing
@@ -224,6 +231,10 @@ You consider the possibility of changing the Wet Wood to a Straight Pride parade
 
 > get good
 by one point
+
+@hom
+>riffed rrr
+No, you rhymed to get out of the Wet Wood. But homonyms aren't quite the way to go, here.
 
 @ha
 > get good
@@ -785,6 +796,10 @@ The HA HALF button lights up on your Leet Learner.
 > flim flam
 by one point
 
+@hom
+> phun phen
+Organic chemistry is much too complex, here.
+
 @ha
 > flim flam
 !by one point
@@ -811,6 +826,10 @@ You already went west
 east to Fate Farm
 
 > s
+
+@hom
+> reel reer
+The Sage Sea is not for fishing.
 
 @mis
 > wheel weir
@@ -1200,6 +1219,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > n
 
+@hom
+>craws crews
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
 @mis
 > ceased sauce
 Learner needle
@@ -1380,6 +1403,12 @@ The clay is cleared enough.
 
 > w
 
+@hom
+>long haul
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>long maul
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
 @ha
 > zmystery mall rule
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
@@ -1390,6 +1419,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > mystery mall
 by one point
+
+@hom
+>long haul
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>long maul
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @ha
 > mystery mall
@@ -1594,6 +1629,10 @@ You already changed Toe Tappin Row Rappin that way.
 !The HA HALF button lights up on your Leet Learner.
 
 > w
+
+@hom
+>hear hear
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis #lie lol before
 > try trawl
@@ -2149,6 +2188,10 @@ You need something more substantial to come out of the cool cap.
 > s
 > e
 
+@hom
+>vicki veil
+You need to get rid of the violence, not put a veil over it.
+
 @mis
 > island ale
 Learner needle
@@ -2269,6 +2312,10 @@ You can carry what you need. You don't need any Brian Jacques villains upsetting
 The boring boat seems to anchor itself okay here.
 
 > enter boat
+
+@hom
+>lee smith
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > drowsy drakes
@@ -2599,6 +2646,10 @@ Been Buggin
 >undo
 
 > enter boat
+
+@hom
+>bin xxx
+You do sort of need to bin your shortcomings.
 
 ==t2
 >lean luggin
@@ -3171,6 +3222,12 @@ LEAST LOSS
 
 > n
 
+@hom
+> sew zzz
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+> sow zzz
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
 @mis
 > crane crescent
 Learner needle
@@ -3204,6 +3261,10 @@ The HA HALF button lights up on your Leet Learner.
 > plain pleasant
 by one point
 
+@hom
+>sow see
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+
 @ha
 > plain pleasant
 !by one point
@@ -3218,6 +3279,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !The HA HALF button lights up on your Leet Learner.
 
 > w
+
+@hom
+>awl righty
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > oral age
@@ -3380,8 +3445,13 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 > e
 !east to Bold 'n Brave
 
-
 > e
+
+@hom
+>graze xxx
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>grace xxx
+!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > binding bays
@@ -3537,6 +3607,12 @@ You see no way to refigure the stair.
 
 > luck lair
 by one point
+
+@hom
+>graze xxx
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+>grace xxx
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis #snuck snare guesses when you have it
 > buck bear
@@ -3697,6 +3773,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > e
 > n
 > e
+
+@hom
+>hear hull
+You can just listen, if you need to.
 
 @mis
 > mere mull
@@ -4074,6 +4154,12 @@ PULL PIECED
 
 > e
 > e
+
+@hom
+> wining dining
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+> wore more
+You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > signing sore
@@ -4606,6 +4692,14 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > n
 
+@hom
+>erry xxx
+The Airy Isle can't really be changed.
+>aerie xxx
+The Airy Isle can't really be changed.
+>aisle xxx
+The Airy Isle can't really be changed.
+
 @mis
 > bought board
 Learner needle
@@ -4776,6 +4870,10 @@ The HA HALF button lights up on your Leet Learner.
 
 > whoa wait
 by one point
+
+@hom
+>terry crews
+Nobody named Terry appears, nor does any terry cloth.
 
 @ha
 > whoa wait

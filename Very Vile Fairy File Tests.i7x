@@ -166,9 +166,11 @@ understand "tct" as tcting.
 
 carry out tcting:
 	repeat through table of all randoms:
-		now tabidx entry is number of rows in tabnam entry - 1;
+		now tabidx entry is number of rows in tabnam entry;
 		say "[tabnam entry] index set to [tabidx entry].";
 	the rule succeeds.
+
+test cycles with "tct/gonear history hall/mystery mall/u/lots lame/listen/dimd/listen/history hall/purloin cold card/w/lending libe/x libe/x fussed/gonear tarry tile/read vvff".
 
 volume monty stuff
 
