@@ -1881,7 +1881,7 @@ table of books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tau
 table of mall shops	0	false	0	"Mystery Mall fake shops"	--
 table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
 table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry ends the list with a whimper."
-table of vvff digs	0	true	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']!'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
+table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
 

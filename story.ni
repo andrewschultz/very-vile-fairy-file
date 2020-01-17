@@ -8,7 +8,7 @@ the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 volume includes
 
-the release number is 3.
+the release number is 4.
 
 release along with a website.
 
@@ -1546,7 +1546,9 @@ the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy F
 
 understand "vv/ff" and "vvff" as Very Vile Fairy File.
 
-description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless."
+ever-read-vvff is a truth state that varies.
+
+description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless. You may or may not wish to READ it[if ever-read-vvff is true] again[end if]."
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -2074,9 +2076,11 @@ understand "r [thing]" as reading.
 understand "read [thing]" as reading.
 
 definition: a thing (called th) is readable:
-	if th is Very Vile Fairy File, yes;
-	if th is leet learner, yes;
+	if th is a read-thing listed in the table of readables, yes;
 	no;
+
+does the player mean reading a readable thing: it is very likely.
+does the player mean reading the leet learner: it is likely.
 
 read-exam-note is a truth state that varies.
 
@@ -2088,9 +2092,11 @@ carry out reading:
 	now read-exam-note is true;
 	try examining the noun instead;
 
+to say read-vvff: now ever-read-vvff is true;
+
 table of readables
 read-thing	read-txt
-Very Vile Fairy File	"The file contains advice and catch-phrases to seem like an alpha male or whatever. One is [i][next-rand-txt of table of vvff digs][r]"
+Very Vile Fairy File	"[read-vvff]The [fairy file] contains advice and catch-phrases to seem like an alpha male or demoralize others you feel you need to demoralize. One is [i][next-rand-txt of table of vvff digs][r]"
 leet learner	"Some text matches up with where the needle nose might spin. It's a bit of a stretch, in some cases, but you figure the more help the better.[paragraph break][table-of-needle-hints][run paragraph on]"
 marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 paper pile	"It's too disorganized to read any details. You do notice FACT FINDER is stamped on pretty much every single page, though."
