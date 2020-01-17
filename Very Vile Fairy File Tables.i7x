@@ -904,7 +904,6 @@ this is the vr-luck-lair rule:
 	moot stuck stair;
 	now player has snuck snare;
 	set the pronoun it to snuck snare;
-	now homreg of Blinding Blaze is "graze";
 
 a goodrhyme rule (this is the vc-make-map rule) :
 	if player is not in Lake Lap, unavailable;
@@ -1089,7 +1088,6 @@ this is the vr-mystery-mall rule:
 		say "[description of History Hall][line break]";
 	now sco-mystery-mall is true;
 	now zap-core-entry is true;
-	now homreg of History Hall is "haul|maul";
 	now ever-hall is true;
 
 a goodrhyme rule (this is the vc-near-null rule) :
@@ -1808,6 +1806,43 @@ True	"You walk around and notice a distasteful small puddle where a pet peed, th
 
 [leetclue of xxx]
 
+volume homonym rejections
+
+chapter room homonyms
+
+table of room homonyms
+loc	check-rule	top (topic)	room-msg (text)
+airy isle	--	"erry/aisle"	"The Airy Isle can't really be changed."
+been buggin	--	"bin"	"You do sort of need to bin your shortcomings."
+blinding blaze	blaze-is-grays rule	"graze"
+creased cross	--	"craws"
+foe field	peasant-around rule	"sew/sow"
+fun fen	--	"phen"	"Organic chemistry is much too complex, here."
+got gear hot here	--	"hear"
+here hull	--	"hear"	"You can just listen."
+history hall	in-history-hall rule	"haul"
+history hall	in-mystery-mall rule	"maul"
+lake lea	--	"lee"
+real rear	--	"reel"	"The Sage Sea is not for fishing."
+rift river	a rule	"riffed"	"No, you rhymed to get out of the Wet Wood."
+store all stage	--	"awl"
+tarry tile	--	"terry"	"Nobody named Terry appears, nor does any terry cloth."
+violent vale	violent-not-silent rule	"veil"	"You need to get rid the violence, not put a veil over it."
+wet wood	--	"whet/would"	--
+whining war	in-whining-war rule	"wining/wore"
+
+this is the blaze-is-grays rule:
+	if stuck stair is moot, the rule succeeds;
+
+this is the in-history-hall rule:
+	if in-mystery-mall is false, the rule succeeds;
+
+this is the in-mystery-mall rule:
+	if in-mystery-mall is true, the rule succeeds;
+
+this is the whining-not-shining rule:
+	if sco-shining-shore is false, the rule succeeds;
+
 volume miscellaneous hints and rules
 
 this is the trivially false rule: the rule fails;
@@ -1881,7 +1916,7 @@ table of books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tau
 table of mall shops	0	false	0	"Mystery Mall fake shops"	--
 table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
 table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry ends the list with a whimper."
-table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]That's all. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
+table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
 

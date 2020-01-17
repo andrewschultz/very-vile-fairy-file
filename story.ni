@@ -258,13 +258,6 @@ book properties
 
 a room has text called noway-text.
 
-a room has text called homreg.
-a room has a topic called homlist.
-
-table of room homonyms
-loc	top (topic)
-wet wood	"whet/would"
-
 a room has a table name called guess-table. the guess-table of a room is usually the Table of No Good Guesses.
 
 a person has text called talk-text.
@@ -425,9 +418,7 @@ volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of Wet Wood is leteq. guess-table of Wet Wood is table of Wet Wood guesses. homreg of Wet Wood is "whet|would". [-> get good]
-
-homlist of Wet Wood is "whet/would".
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of Wet Wood is leteq. guess-table of Wet Wood is table of Wet Wood guesses. [-> get good]
 
 to say how-better:
 	say "[one of]You'd like a simple way to become better[or]Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve[or]You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started[cycling]"
@@ -457,7 +448,7 @@ after looking in Wet Wood for the first time:
 
 part Rift River
 
-Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. noway-text of Rift River is "Directions don't seem to work here. You feel like a guide would be helpful.". guess-table of Rift River is table of Rift River guesses. homreg of Rift River is "riffed". [-> gift giver]
+Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. noway-text of Rift River is "Directions don't seem to work here. You feel like a guide would be helpful.". guess-table of Rift River is table of Rift River guesses. [-> gift giver]
 
 chapter Mind Malt
 
@@ -537,7 +528,7 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if sco-fall-free is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". guess-table of Fun Fen is table of Fun Fen guesses. homreg of Fun Fen is "phen".
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if sco-fall-free is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". guess-table of Fun Fen is table of Fun Fen guesses.
 
 to decide whether need-healing:
 	if sco-least-loss is true and sco-heal-here is false, yes;
@@ -607,7 +598,7 @@ Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]Y
 
 part Real Rear 0,-1
 
-Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of Real Rear is partplus. guess-table of Real Rear is table of Real Rear guesses. homreg of Real Rear is "reel". [-> kneel near]
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of Real Rear is partplus. guess-table of Real Rear is table of Real Rear guesses. [-> kneel near]
 
 to say seer-is:
 	say "[if sco-heal-here is true]You're glad it's there, even though you don't need it any more[else if sco-kneel-near is false]You don't feel it's paying attention to you, yet[else if sco-felt-fear is false]Perhaps you should confide, somehow[else if cage key is off-stage]You remember the fear you felt, and you just need to show you can do something for yourself, now[else]Perhaps the Seer can do a bit more for you, if you ask right[end if]";
@@ -646,7 +637,7 @@ sco-heal-here is a truth state that varies.
 
 part Creased Cross 0,1
 
-Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if Bull Beast is moot]defeated the Bull Beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of Creased Cross is letminus. guess-table of Creased Cross is table of Creased Cross guesses. homreg of Creased Cross is "craws". [-> beast boss] [-> least loss]
+Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if Bull Beast is moot]defeated the Bull Beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of Creased Cross is letminus. guess-table of Creased Cross is table of Creased Cross guesses. [-> beast boss] [-> least loss]
 
 after going from Creased Cross when sco-heal-here is true and sco-cull-ceased is false:
 	say "Hmm. The Bull Beast didn't chase you as you left. Maybe you were better equipped to dispose of it than you think.";
@@ -797,7 +788,7 @@ the wild weed is a rhymable. the indefinite article of wild weed is "some". desc
 
 part History Hall -2,1
 
-History Hall is west of Stark Store. cht of History Hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if in-mystery-mall is true][mystdesc][else][histdesc][end if].[paragraph break]You [if ever-hall is false]see a misty passage up[else]could waste a bit of time wandering above[end if], and you can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if sco-mystery-mall is true], and there's a store west[end if][if sco-mystery-mall is true]. Or you could just shift back to [mist-hist of false][end if].". guess-table of History Hall is table of History Hall guesses. homreg of history hall is "haul". [-> Mystery Mall] [Mystery Mall->History Hall]
+History Hall is west of Stark Store. cht of History Hall is leteq. History Hall is in Piddling Pain. printed name of History Hall is "[mist-hist of true]". "[if in-mystery-mall is true][mystdesc][else][histdesc][end if].[paragraph break]You [if ever-hall is false]see a misty passage up[else]could waste a bit of time wandering above[end if], and you can go back east[if the room outside of History Hall is Y'Old Yard], or you can go outside[end if][if sco-mystery-mall is true], and there's a store west[end if][if sco-mystery-mall is true]. Or you could just shift back to [mist-hist of false][end if].". guess-table of History Hall is table of History Hall guesses. [-> Mystery Mall] [Mystery Mall->History Hall]
 
 check going up in history hall:
 	if ever-hall is false, say "It feels like there could be something up there. Maybe not very important, but it's there. You just feel as though History Hall isn't defined enough, yet." instead;
@@ -950,7 +941,7 @@ check taking Fussed Folks: say "It's pretty obviously got nothing concrete to he
 
 part Got Gear Hot Here -2,1 b
 
-Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if sco-not-near is false], but there may be another useless silly way to leave[end if].". guess-table of Got Gear Hot Here is table of Got Gear Hot Here guesses. homreg of Got Gear Hot Here is "hear".
+Got Gear Hot Here is a room in Piddling Pain. It is west of History Hall. "A dilapidated store. The only obvious exit is back east[if sco-not-near is false], but there may be another useless silly way to leave[end if].". guess-table of Got Gear Hot Here is table of Got Gear Hot Here guesses.
 
 sco-not-near is a truth state that varies.
 
@@ -974,7 +965,7 @@ sco-lie-lol is a truth state that varies.
 
 part Violent Vale 1,1
 
-Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if sco-silent-sail is false]It's scary here--there must be some way to get rid of the oppression! [end if][if fridge is in Vale]A frightening fridge towers over you to the east[duz-help][else]The way east is clear with the frightening fridge gone[end if][if boring boat is moot]. There's just a faint memory of how violent it was[else if sco-silent-sail is true]. It's not really violent here at all any more[end if].". guess-table of Violent Vale is table of Violent Vale guesses. homreg of Violent Vale is "veil". [-> Silent Sail]
+Violent Vale is east of Creased Cross. It is in Piddling Pain. cht of Violent Vale is partminus. "Creased Cross is back west, and it's sort of watery to the north or south. [if sco-silent-sail is false]It's scary here--there must be some way to get rid of the oppression! [end if][if fridge is in Vale]A frightening fridge towers over you to the east[duz-help][else]The way east is clear with the frightening fridge gone[end if][if boring boat is moot]. There's just a faint memory of how violent it was[else if sco-silent-sail is true]. It's not really violent here at all any more[end if].". guess-table of Violent Vale is table of Violent Vale guesses. [-> Silent Sail]
 
 sco-silent-sail is a truth state that varies.
 
@@ -1051,7 +1042,7 @@ check entering boring boat:
 
 part Lake Lea 3,2
 
-Lake Lea is a room. It is in Browsy Breaks. "You're on the Lake Lea, which borders on Lake Lap to the east.". homreg of Lake Lea is "lee".
+Lake Lea is a room. It is in Browsy Breaks. "You're on the Lake Lea, which borders on Lake Lap to the east.".
 
 check going east in Lake Lea when Jake G is touchable:
 	if sco-wake-whee is false, say "You have a feeling you may need Jake G.[']s guidance.";
@@ -1068,9 +1059,7 @@ sco-break-brie is a truth state that varies.
 
 part Whining War 2,1
 
-Whining War is east of Violent Vale. It is in Piddling Pain. "[if sco-so-sappin is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if sco-shining-shore is false]It's less whiny here, but it's still a bit too dull.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in Whining War][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage] But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot] With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of Whining War is partplus. guess-table of Whining War is table of Whining War guesses. printed name of Whining War is "[if sco-shining-shore is true]Shining Shore[else]Whining War[end if]". homreg of whining war is "wining|wore". [-> Shining Shore]
-
-homlist of whining war is "wining/wore".
+Whining War is east of Violent Vale. It is in Piddling Pain. "[if sco-so-sappin is false]You can't get a close enough view of the war, but you can sure hear it. Maybe there's a way to make people tired of fighting, with a song or something.[else if sco-shining-shore is false]It's less whiny here, but it's still a bit too dull.[else]It's quieter and brighter here now than when you started. Yay![end if][if dining door is in Whining War][paragraph break]Also, the dining door you summoned is still here. How can you provide a banquet to celebrate the war's end?[else if dining door is off-stage] But it's too barren. Maybe there's some scenery that's appropriate here?[else if pining poor are moot] With the dining door and pining poor gone, you feel there's little more to do here.[end if]". cht of Whining War is partplus. guess-table of Whining War is table of Whining War guesses. printed name of Whining War is "[if sco-shining-shore is true]Shining Shore[else]Whining War[end if]". [-> Shining Shore]
 
 [Lining, Lor'! Fining Four: well, it's a weird name, but if you whined about it, that might cause another Whining War.]
 [mild mead from Bull Beast will help them do something. The Bull Beast's carcass as well. Once you have the big party, it is all over.]
@@ -1107,7 +1096,7 @@ The cake cap is a gaphat. description is "The cake cap looks tasty and yet still
 
 part Been Buggin'
 
-Been Buggin is a room in Browsy Breaks. cht of Been Buggin is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". guess-table is table of Been Buggin guesses. homreg of Been Buggin is "bin". [->mean muggin]
+Been Buggin is a room in Browsy Breaks. cht of Been Buggin is leteq. "An isolated island too small to explore[if clumped cluster is in Been Buggin]. A clumped cluster lies in the corner. It doesn't need to be cleaned up, but it might be fun or therapeutic to[end if].". guess-table is table of Been Buggin guesses. [->mean muggin]
 
 printed name of Been Buggin is "Been Buggin[']".
 
@@ -1210,7 +1199,7 @@ loft-land is a truth state that varies.
 
 part Here Hull 1,2
 
-Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [Soft Sand].". homreg of Here Hull is "hear".
+Here Hull is east of Soft Sand. It is in Piddling Pain. "The only exit here is back west to [Soft Sand].".
 
 gull-guard is a truth state that varies.
 
@@ -1335,7 +1324,7 @@ sco-first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if sco-show-shield is true]: Ho, HEALED[end if]". "Passages lead all four directions[if sco-show-shield is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. homreg of Foe Field So Sealed is "sew|sow". [->show shield]
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if sco-show-shield is true]: Ho, HEALED[end if]". "Passages lead all four directions[if sco-show-shield is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. [->show shield]
 
 check going south in Foe Field So Sealed:
 	if Pain Peasant is in Foe Field, say "The Pain Peasant booms 'Go, gassed foe, fast!'" instead;
@@ -1355,7 +1344,7 @@ check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
 
 part Store All Stage -1,3
 
-Store All Stage is a room in Piddling Pain. It is west of Foe Field. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east.". guess-table of store all stage is table of Store All Stage guesses. homreg of Store All Stage is "awl".
+Store All Stage is a room in Piddling Pain. It is west of Foe Field. "'All' probably refers more to potential than anything else. Lots could fit here, but [if coral cage is in Store All Stage]there's only a coral cage[else]even the coral cage is gone now[end if].[paragraph break]You can really only go back east.". guess-table of store all stage is table of Store All Stage guesses.
 
 the coral cage is scenery in Store All Stage. "It looks locked, and it's too opaque to see who's there. You [if cage key is off-stage]have no way of opening it[else]could use the cage key on it, but you probably need to figure out who or what is inside[end if].". cht of coral cage is leteq. [-> moral mage]
 
@@ -1487,7 +1476,7 @@ sco-meeker-muscle is a truth state that varies.
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses. homreg of airy isle is "erry|aisle".
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses.
 
 check going south in Airy Isle:
 	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
@@ -1530,7 +1519,7 @@ the grow grate is part of the go gate. description is "The grow grate looks like
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. homreg of tarry tile is "terry". [->Merry Mile]
+Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
 
 section listless mist mess
 
@@ -3646,17 +3635,16 @@ Rule for printing a parser error (this is the clue half right words rule):
 zap-weird-break is a truth state that varies.
 
 Rule for printing a parser error (this is the check for room name and homophones in player command rule):
-	if the player's command includes "whet":
-		say "1.";
-	if the player's command includes "would":
-		say "2.";
-	if the player's command includes "whet/would":
-		say "3.";
 	repeat through table of room homonyms:
 		if location of player is loc entry:
-			say "1.";
+			if there is a check-rule entry:
+				process the check-rule entry;
+				if the rule failed, next;
 			if the player's command includes top entry:
-				say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
+				if there is a room-msg entry:
+					say "[room-msg entry] But homonyms aren't quite the way to go, here.";
+				else:
+					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
 				the rule succeeds;
 			break;
 	repeat with X running from 1 to the number of words in the player's command:
