@@ -12,7 +12,7 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 ~	mis	t5
 ~	ha	t6
 ~	hom	t7
-~	ver	t7
+~	ver	t8
 
 ## *FILE
 ## *FORK
@@ -291,7 +291,6 @@ by one point
 
 @ver
 > eat mind malt
-VERB TEST CASE SPECIFIC eating Mind Malt 7 
 
 @ha
 > gift giver
@@ -1272,6 +1271,8 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 
 > w
 
+###newloc stark store
+
 @mis
 > lark lore
 Learner needle
@@ -1315,6 +1316,11 @@ You pretend you've already done much harder things. It gives you confidence, or 
 
 > dark door
 by one point
+
+###newitm dark door
+@ver
+>open dark door
+You can't find a way off-hand. It doesn't even seem to have a handle. Perhaps careful observation will turn something up.
 
 @mis #stark store middle
 #next-cmd-pass
@@ -2281,6 +2287,10 @@ The HA HALF button lights up on your Leet Learner.
 > brightening zbridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+@ver
+>open frightening fridge
+You're scared to. There must be a better way to get rid of the fridge.
 
 > brightening bridge
 by one point
@@ -3323,6 +3333,17 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > w
 
+###newloc store all stage
+###newitm coral cage
+
+@ver
+>open coral cage
+The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage.
+>abstract cage key to fun fen
+>open coral cage
+You have nothing that opens the coral cage.
+>purloin cage key
+
 @hom
 >awl righty
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
@@ -4183,6 +4204,12 @@ The HA HALF button lights up on your Leet Learner.
 > full feast
 by one point
 
+###newitm full feast
+
+@ver
+>eat full feast
+Too much for one person. You need to move it somewhere everyone can enjoy it.
+
 @ha
 > full feast
 !by one point
@@ -4325,6 +4352,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > dining door
 by one point
+
+###newitm dining door
+
+@ver
+> open dining door
+You'd need a big banquet around before doing that.
 
 @ha
 > dining door
@@ -4954,6 +4987,7 @@ by one point
 
 ###newloc tarry tile
 
+@ver
 >attack vvff
 You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room.
 

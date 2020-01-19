@@ -1,0 +1,431 @@
+
+## reg-vvff-thru-verbs.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+>yes
+Yay! Yep! Hey, hep! (you never need to answer yes/no questions unless specifically prompted.)
+>yes
+Yay! Yep! Hey, hep!
+!(you never need to answer yes/no questions unless specifically prompted.)
+>no
+Hi-ho! Why woe?
+!(you never need to answer yes/no questions unless specifically prompted.)
+>no
+Hi-ho! Why woe?
+>t rig rag
+You can only talk to living things, and the zig zag rig rag doesn't qualify.
+
+> big bag
+by one point
+
+> get good
+by one point
+
+> gift giver
+by one point
+
+> eat mind malt
+
+> find fault
+by one point
+
+> green grass
+by one point
+
+> grow grit
+by one point
+
+> mash map
+by one point
+
+> mind me
+by one point
+
+> flim flam
+by one point
+
+> n
+A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one.
+>  d
+> Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
+
+> s
+
+>drink sage sea
+Sea salt? Ee! Alt!
+
+> kneel near
+by one point
+
+> feel fear
+by one point
+
+> deal dear
+by one point
+
+> n
+
+> fall free
+by one point
+
+> dive deep
+by one point
+
+> paper pile
+by one point
+
+> backed binder
+by one point
+
+> n
+
+> w
+
+> dark door
+by one point
+
+>open dark door
+You can't find a way off-hand. It doesn't even seem to have a handle. Perhaps careful observation will turn something up.
+
+> mark more
+by one point
+
+> cleared clay
+by one point
+
+> w
+
+> mystery mall
+by one point
+
+> listen
+
+> lots lame
+by one point
+
+> no nappin
+by one point
+
+> w
+
+> hard hat
+by one point
+
+> eat hard hat
+Idioms are neat, but this adventure is about rhyming.
+> wear hard hat
+Somehow, the hard hat isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion.
+
+> e
+> e
+> e
+> n
+> w
+
+> work well
+by one point
+
+> e
+
+> loft land
+by one point
+
+> w
+
+> dreaming dull
+by one point
+
+>drink worst wave
+Sea salt? Ee! Alt!
+
+> first fave
+by one point
+
+> cool cap
+by one point
+
+> e
+> s
+> e
+
+> silent sail
+by one point
+
+>open frightening fridge
+You're scared to. There must be a better way to get rid of the fridge.
+
+> brightening bridge
+by one point
+
+> boring boat
+by one point
+
+> enter boat
+
+> wake whee
+by one point
+
+> take tea
+by one point
+
+> fake fee
+by one point
+
+> e
+
+> make map
+by one point
+
+> co capn
+by one point
+
+> snake snap
+by one point
+Silent Sail
+
+> enter boat
+
+> stay strong
+
+> glow glad
+by one point
+
+> mean muggin
+by one point
+
+> lean luggin
+by one point
+
+> enter boat
+
+> w
+> w
+> w
+
+> glean glows
+by one point
+
+> history hall
+
+> youre yonder
+by one point
+
+> out
+
+> smashing smoke
+by one point
+
+> in
+> w
+
+> lending libe
+by one point
+
+> see sign
+by one point
+
+> e
+> e
+> e
+
+> n
+
+> n
+
+> plain pleasant
+by one point
+
+> w
+
+>open coral cage
+The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage.
+>abstract cage key to fun fen
+>open coral cage
+You have nothing that opens the coral cage.
+>purloin cage key
+
+> moral mage
+by one point
+
+> e
+> e
+
+> sit sound
+by one point
+
+> fit found
+by one point
+
+> e
+
+> winding ways
+by one point
+
+> mo mappin
+by one point
+
+> luck lair
+by one point
+
+> w
+> w
+> s
+> s
+> w
+> d
+
+> tight tunnel
+by one point
+
+> w
+
+> knives niche
+by one point
+
+> e
+> u
+> e
+> n
+> e
+
+> attack beer bull
+You'd get a triple-tough cripple-cuff in return. You must fight with words.
+
+> dear dull
+by one point
+
+> near null
+by one point
+
+> w
+> s
+> w
+> d
+> w
+> s
+
+> eat wild weed
+That is not filed feed.
+> drink mild mead
+It's too much mead for one person. You need to share it, with something to eat.
+> wear gold guard
+You'll wear it when you need to.
+
+> beast boss
+by one point
+
+> attack bull beast
+You'd get a triple-tough cripple-cuff in return. You must fight with words.
+
+> least loss
+by one point
+
+> s
+
+> s
+
+> heal here
+by one point
+
+> n
+> n
+
+> cull ceased
+by one point
+
+> full feast
+by one point
+
+>eat full feast
+Too much for one person. You need to move it somewhere everyone can enjoy it.
+
+> e
+> e
+
+> so sappin
+by one point
+
+> shining shore
+by one point
+
+> dining door
+by one point
+
+> open dining door
+You'd need a big banquet around before doing that.
+
+> pull pieced
+by one point
+
+> mining more
+by one point
+
+> w
+> w
+> n
+> n
+
+> show shield
+by one point
+
+> n
+
+>attack russell
+But he'd become Rager Russell. With major muscle.
+> smell reeker russell
+Stench-stained, drench-drained.
+> smell
+ try smelling Reeker Russell
+
+> go gappin
+by one point
+
+> couple caps
+by one point
+
+> cast cap
+by one point
+
+> meeker muscle
+by one point
+
+> wood one
+by one point
+
+> n
+
+> attack bot board
+The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get.
+
+> hot horde
+by one point
+
+> lot lord
+by one point
+
+> got gored
+by one point
+
+> attack go gate
+Ho! Hate!
+
+> whoa wait
+by one point
+
+>attack vvff
+You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room.
+
+> tell torn
+by one point
+
+> merry mile
+by one point
+
+> bury bile
+by one point
+
