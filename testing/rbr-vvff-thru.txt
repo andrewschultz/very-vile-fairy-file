@@ -6,12 +6,13 @@
 #-- use SCT.PY to verify alternate verb solutions
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt,reg-vvff-thru-verbs.txt
 ~	alt	t3
 ~	dea	t4
 ~	mis	t5
 ~	ha	t6
 ~	hom	t7
+~	ver	t7
 
 ## *FILE
 ## *FORK
@@ -22,6 +23,20 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
+
+@ver
+>yes
+Yay! Yep! Hey, hep! (you never need to answer yes/no questions unless specifically prompted.)
+>yes
+Yay! Yep! Hey, hep!
+!(you never need to answer yes/no questions unless specifically prompted.)
+>no
+Hi-ho! Why woe?
+!(you never need to answer yes/no questions unless specifically prompted.)
+>no
+Hi-ho! Why woe?
+>t rig rag
+You can only talk to living things, and the zig zag rig rag doesn't qualify.
 
 @alt
 > z
@@ -271,6 +286,12 @@ You try fearing things different ways, but nobody comes to comfort you.
 
 > gift giver
 by one point
+
+###newloc vined vault
+
+@ver
+> eat mind malt
+VERB TEST CASE SPECIFIC eating Mind Malt 7 
 
 @ha
 > gift giver
@@ -800,6 +821,12 @@ by one point
 > phun phen
 Organic chemistry is much too complex, here.
 
+@ver
+> n
+A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one.
+>  d
+> Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
+
 @ha
 > flim flam
 !by one point
@@ -826,6 +853,12 @@ You already went west
 east to Fate Farm
 
 > s
+
+###newloc real rear
+
+@ver
+>drink sage sea
+Sea salt? Ee! Alt!
 
 @hom
 > reel reer
@@ -1885,6 +1918,12 @@ You fail to enter a Western with a sidekick.
 > hard hat
 by one point
 
+@ver
+> eat hard hat
+Idioms are neat, but this adventure is about rhyming.
+> wear hard hat
+Somehow, the hard hat isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion.
+
 @mis #after
 > lard lat
 !Learner needle
@@ -2100,6 +2139,10 @@ The HA HALF button lights up on your Leet Learner.
 > first zfave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+@ver
+>drink worst wave
+Sea salt? Ee! Alt!
 
 > first fave
 by one point
@@ -3774,6 +3817,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > n
 > e
 
+###newloc here hull
+
+@ver
+> attack beer bull
+You'd get a triple-tough cripple-cuff in return. You must fight with words.
+
 @hom
 >hear hull
 You can just listen, if you need to.
@@ -3861,6 +3910,14 @@ No, you can't bring the bull down with peer pressure.
 > w
 > s
 
+@ver
+> eat wild weed
+That is not filed feed.
+> drink mild mead
+It's too much mead for one person. You need to share it, with something to eat.
+> wear gold guard
+You'll wear it when you need to.
+
 @ha
 > zbeast boss rule
 DEBUG: vc-beast-boss rule tipped off the HA HALF button.
@@ -3871,6 +3928,10 @@ The HA HALF button lights up on your Leet Learner.
 
 > beast boss
 by one point
+
+@ver
+> attack bull beast
+You'd get a triple-tough cripple-cuff in return. You must fight with words.
 
 @ha
 > beast boss
@@ -4423,6 +4484,16 @@ GO GAPPIN
 
 > n
 
+###newloc gassed gap
+
+@ver
+>attack russell
+But he'd become Rager Russell. With major muscle.
+> smell reeker russell
+Stench-stained, drench-drained.
+> smell
+ try smelling Reeker Russell
+
 @ha
 > zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
@@ -4692,6 +4763,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > n
 
+###newloc airy isle
+
+@ver
+> attack bot board
+The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get.
+
 @hom
 >erry xxx
 The Airy Isle can't really be changed.
@@ -4844,6 +4921,10 @@ Nothing takes a bite out of the go gate.
 Learner needle
 You wouldn't want to be crushed by a weight. But you've got the right idea.
 
+@ver
+> attack go gate
+Ho! Hate!
+
 @alt
 > woe wait
 by one point
@@ -4870,6 +4951,11 @@ The HA HALF button lights up on your Leet Learner.
 
 > whoa wait
 by one point
+
+###newloc tarry tile
+
+>attack vvff
+You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room.
 
 @hom
 >terry crews
