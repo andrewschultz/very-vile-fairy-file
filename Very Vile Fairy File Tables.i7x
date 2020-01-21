@@ -53,7 +53,7 @@ w1 (text)	w2 (text)	posthom (text)	think-cue	okflip	core	idid	songy	best-room	ve
 "glean"	"glows"	"gloze"	false	false	true	false	false	History Hall	vc-glean-glows rule	vr-glean-glows rule	--	"You'll want to [b]GLEAN GLOWS[r] [once-now of vc-glean-glows rule] you've found something Mean Moe's Clean Clothes can clean."
 "smashing"	"smoke"	--	false	false	true	false	false	Y'Old Yard	vc-smashing-smoke rule	vr-smashing-smoke rule	--	"You can make [b]SMASHING SMOKE[r] [once-now of vc-smashing-smoke rule] you've found someone or something that could use a suitable diversion." [start Y'Old Yard]
 "lending"	"libe"	--	false	false	true	false	false	Vending Vibe	vc-lending-libe rule	vr-lending-libe rule	--	-- [start Vending Vibe]
-"see"	"sign"	"sea"	false	false	true	false	false	--	vc-see-sign rule	vr-see-sign rule	--	--
+"see"	"sign"	"sea|sine"	false	false	true	false	false	--	vc-see-sign rule	vr-see-sign rule	--	--
 "hard"	"hat"	--	false	false	true	false	false	Got Gear Hot Here	vc-hard-hat rule	vr-hard-hat rule	--	-- [start Got Gear Hot Here]
 "lie"	"lol"	"lye|loll"	false	true	false	false	false	Got Gear Hot Here	vc-lie-lol rule	vr-lie-lol rule	--	--
 "not"	"near"	"knot"	false	true	false	false	false	Got Gear Hot Here	vc-not-near rule	vr-not-near rule	--	--
@@ -1629,9 +1629,9 @@ rank-num	done-yet	rank-txt
 --	false	"'Wonder-weary? Blunder-bleary!' you think to yourself. No. Keep positive. Things must be ending soon."
 --	false	"'So seedy! Grow greedy! No, needy!' a voice calls. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!"
 --	false	"'Hi, hi! Why, why? My, my! Sigh, sigh!' There was a time when you thought you didn't even deserve complex insults. But here--surely the [very vile] is running out of steam? There's only one way to find out. Keep going!"
--7	false	"Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
+-7	false	"Something in you snaps. You've made it this far. The [fairy file] must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
 -6	false	"'How hot NOW?! Not!' booms the voice. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
--5	false	"You hear a voice boom, 'Blast[']er blind, master mind!' You must be very close."
+-5	false	"You hear a voice boom, 'Blast[']er blind, master mind!' The [fairy file]'s power must be cracking. And you must be very close."
 -4	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close."
 -3	false	"Another howl from the [fairy file]: 'Gonna go off! Shun a show-off!'"
 -1	false	"'More make war! Wake!' booms a voice from the [very vile]. IT's stil scary and all, but ... nobody shows up."
@@ -1659,6 +1659,7 @@ randtxt
 "Find Fame, Mind, Maim"
 "Gain Goals, Sane Souls"
 "Good Girl Would Whirl"
+"Good Guys Would: Wise"
 "Gray Grill, Stay Still[r], by Jay-Jill Hayhill"
 "Greater Gravel Traitor Travel"
 "Grepping: Groan? STEPPING STONE"
@@ -1673,11 +1674,14 @@ randtxt
 "Men, Messed, Been Best, by Ren Rest"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"
+"My Mod Guy God"
 "Nag? No: Brag, Bro"
 "Near Null Fearful"
 "Nosy Nan, Dozy Dan[r], by Rosie Rann"
 "Oh, Trait So Straight"
+"Oh, Uh, Lola[r], by Nona Sosa-Doda"
 "One Wet Sunset"
+"One Wise Son Sighs: RUN, RISE"
 "Quick Quest: Pick Pest[r], by Rick Rest"
 "Rude Right Food Fight/Nude Night"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
@@ -1810,27 +1814,31 @@ volume homonym rejections
 
 chapter thing homonyms
 
+[this should not be alphabetized as otherwise Inform will assume from thhe first entry, the Bot Board, that everything is a person.]
+[how to fix this?]
+
 table of thing homonyms
 mything	myhom (topic)	myrej (text)
+vapor vial	"vile"	"You need to change the vial into something more pleasant and constructive."
 bot board	"bored"	"Sadly, the bot board is unable to feel bored of sitting around and being repressive."
 hot horde	"hoard"	"The horde is after victories, not treasure."
 pain peasant	"pane"	"Broken person, broken window, eh?"
-vapor vial	"vile"	"You need to change the vial into something more pleasant and constructive."
 
 chapter room homonyms
+
+[the room homonyms work as follows: if we have a rule with multiple room states/possibilities and no topic, then we skip the topic. If we have a rule and a topic, we print the room-msg if the rule and topic match. Otherwise, we print the room-msg for a generic error if the topic matches. So that is why the topic or rule can be blank.]
 
 table of room homonyms
 loc	check-rule (a rule)	top (topic)	room-msg (text)
 airy isle	--	"aerie/erry/aisle"	"The Airy Isle can't really be changed."
 been buggin	--	"bin"	"You do sort of need to bin your shortcomings."
-blinding blaze	blaze-is-grays rule	"grace/graze"
+blinding blaze	blaze-ways-grays rule	--	--
 creased cross	--	"craws"
 foe field	peasant-around rule	"sew/sow"
 fun fen	--	"phen"	"Organic chemistry is much too complex, here."
 got gear hot here	--	"hear"
 here hull	--	"hear"	"You can just listen."
-history hall	in-history-hall rule	"haul"
-history hall	in-mystery-mall rule	"maul"
+history hall	hall-mall-homonym rule	--	--
 lake lea	--	"lee"
 real rear	--	"reel"	"The Sage Sea is not for fishing."
 rift river	a rule	"riffed"	"No, you rhymed to get out of the Wet Wood."
@@ -1838,19 +1846,23 @@ store all stage	--	"awl"
 tarry tile	--	"terry"	"Nobody named Terry appears, nor does any terry cloth."
 violent vale	violent-not-silent rule	"veil"	"You need to get rid the violence, not put a veil over it."
 wet wood	--	"whet/would"	--
-whining war	in-whining-war rule	"wining/wore"
+whining war	wining-wore rule	--	--
 
-this is the blaze-is-grays rule:
-	if stuck stair is moot, the rule succeeds;
+to say basic-homonym-reject: say "Homonyms aren't the way to go, here."
 
-this is the in-history-hall rule:
-	if in-mystery-mall is false, the rule succeeds;
+this is the blaze-ways-grays rule:
+	if sco-winding-ways is true and stuck stair is not moot:
+		if the player's command includes "wheys", say "[basic-homonym-reject]" instead;
+	if stuck stair is moot:
+		if the player's command includes "grays" or the player's command includes "grace", say "[basic-homonym-reject]" instead;
 
-this is the in-mystery-mall rule:
-	if in-mystery-mall is true, the rule succeeds;
+this is the hall-mall-homonym rule:
+	if in-mystery-mall is true and the player's command matches "maul", say "[basic-homonym-reject]" instead;
+	if in-mystery-mall is false and the player's command matches "haul", say "[basic-homonym-reject]" instead;
 
-this is the whining-not-shining rule:
-	if sco-shining-shore is false, the rule succeeds;
+this is the wining-wore rule:
+	if sco-shining-shore is false:
+		if the player's command matches "wining" or the player's command matches "wore", say "[basic-homonym-reject]" instead;
 
 volume miscellaneous hints and rules
 
