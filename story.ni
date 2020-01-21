@@ -1533,6 +1533,8 @@ chapter Very Vile Fairy File
 
 the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
 
+check taking very vile fairy file: say "A voice from the [fairy file]: 'Oh, ick! So sick!' You should've expected that, really." instead;
+
 understand "vv/ff" and "vvff" as Very Vile Fairy File.
 
 ever-read-vvff is a truth state that varies.
@@ -1802,6 +1804,7 @@ chapter trivial pointless but amusing verbs
 the block attacking rule is not listed in any rulebook.
 
 check attacking:
+	if noun is very vile fairy file: say "You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room." instead;
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	if noun is Bot Board, say "The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;

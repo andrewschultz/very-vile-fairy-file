@@ -13,6 +13,7 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 ~	ha	t6
 ~	hom	t7
 ~	ver	t8
+#--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 
 ## *FILE
 ## *FORK
@@ -25,6 +26,14 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 * main-thru
 
 @ver
+>sleep
+Lie late, my mate? Why wait?
+>damn
+Dang, dude rang RUDE!
+>damn
+Gee, gad! Be bad! "Me, mad!"
+>blast
+Gee, gad! Be bad! "Me, mad!"
 >yes
 Yay! Yep! Hey, hep! (you never need to answer yes/no questions unless specifically prompted.)
 >yes
@@ -33,8 +42,6 @@ Yay! Yep! Hey, hep!
 >no
 Hi-ho! Why woe?
 !(you never need to answer yes/no questions unless specifically prompted.)
->no
-Hi-ho! Why woe?
 >t rig rag
 You can only talk to living things, and the zig zag rig rag doesn't qualify.
 
@@ -3218,6 +3225,12 @@ Why yes, pointless greed should not be limited to men only.
 Learner needle
 No golf tee provides a bookmark for We Whine: ME, MINE.
 
+@hom
+> sea syne
+The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't THINK it right.
+> seee sine
+The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't THINK it right.
+
 > see sign
 by one point
 
@@ -4988,8 +5001,10 @@ by one point
 ###newloc tarry tile
 
 @ver
->attack vvff
+> attack vvff
 You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room.
+> take vvff
+A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expected that, really.
 
 @hom
 >terry crews

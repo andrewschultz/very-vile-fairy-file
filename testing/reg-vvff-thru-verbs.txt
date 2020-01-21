@@ -7,6 +7,14 @@
 
 * main-thru
 
+>sleep
+Lie late, my mate? Why wait?
+>damn
+Dang, dude rang RUDE!
+>damn
+Gee, gad! Be bad! "Me, mad!"
+>blast
+Gee, gad! Be bad! "Me, mad!"
 >yes
 Yay! Yep! Hey, hep! (you never need to answer yes/no questions unless specifically prompted.)
 >yes
@@ -15,8 +23,6 @@ Yay! Yep! Hey, hep!
 >no
 Hi-ho! Why woe?
 !(you never need to answer yes/no questions unless specifically prompted.)
->no
-Hi-ho! Why woe?
 >t rig rag
 You can only talk to living things, and the zig zag rig rag doesn't qualify.
 
@@ -417,8 +423,10 @@ Ho! Hate!
 > whoa wait
 by one point
 
->attack vvff
+> attack vvff
 You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room.
+> take vvff
+A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expected that, really.
 
 > tell torn
 by one point
