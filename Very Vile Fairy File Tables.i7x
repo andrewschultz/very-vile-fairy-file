@@ -1663,6 +1663,7 @@ randtxt
 "Gray Grill, Stay Still[r], by Jay-Jill Hayhill"
 "Greater Gravel Traitor Travel"
 "Grepping: Groan? STEPPING STONE"
+"Grin, Gritty Sin City[r], by Lyn Litty"
 "Heave, Hogs, Leave Logs[r], by Maeve Moggs"
 "Him, Her, Dim, Durr[r], by Kim Kerr"
 "Hole Hound Bowl Bound"
@@ -1685,6 +1686,7 @@ randtxt
 "Quick Quest: Pick Pest[r], by Rick Rest"
 "Rude Right Food Fight/Nude Night"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
+"See Sauce, Be Boss[r], by Dee Doss"
 "Self Centered Elf Entered"
 "Silly Signs[r], by Willy Wines and Tillie Tines"
 "Skull Skit Pulpit"
@@ -1713,6 +1715,7 @@ randtxt
 "Clear Classed Beer Blast"
 "Doom Doc's Boom-Box Room Rocks"
 "Fit Fo['] Wit, Whoah" [show]
+"Fo['] Flow So Slow"
 "Get Got, Net Naught"
 "Gloom Gang: Bloom, Bang (Flume, Fang)"
 "Good Gang? Dud, Dang"

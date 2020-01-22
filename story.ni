@@ -1505,7 +1505,7 @@ the Lot Lord is a person. talk-text is "'Eeg, not ig-nored.' Ugh?". description 
 
 the Hot Horde are plural-named people. talk-text is "Lots of rot roared right now.". description is "The Hot Horde are all over the place. [if Lot Lord is off-stage]Even with the Lot Lord's leadership, they need something like a battle cry to unify them fully[else]They need a leader, and you're not tough enough. No offense[end if].". cht of Hot Horde is leteq. [-> got gored]
 
-book go gate
+section go gate
 
 there is a thing called the go gate. it is fakeenter. "A go gate stands here. You can just walk through it ... or can you?". description is "The go gate isn't just one piece. On further inspection, you see a grow grate.". cht of go gate is partplus. [->whoa wait]
 
@@ -1517,13 +1517,17 @@ check entering go gate:
 
 the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait]
 
-part Tarry Tile 1,5
-
-Tarry Tile is a room in Vale Verminous. "A listless mist-mess surrounds you on all sides. Yup. This is where you're supposed to be.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
-
 section listless mist mess
 
-the listless mist mess is scenery in Tarry Tile. "It's very thick. No way through."
+the listless mist mess is scenery in Airy Isle. "It's very thick. You don't know what's behind there, other than the hints the wry wall gives you. [if go gate is off-stage]There must be another way forward[else]The go gate seems more worth exploring[end if]."
+
+part Tarry Tile 1,5
+
+Tarry Tile is a room in Vale Verminous. "Spite-spaced white waste surrounds you on all sides. Running away would do no good.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
+
+section spite spaced white waste
+
+the spite spaced white waste is scenery in Tarry Tile. "It stretches out endlessly, or at least long enough to crush your endurance."
 
 chapter well worn hell horn
 
@@ -4013,7 +4017,7 @@ to win-the-game:
 	phbt Tarry Tile;
 	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
 	wfak;
-	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. It captures some of the more memorable parts of your journey. The tag on the back of the neck says 'FUN FAIR WON WEAR.' Good enough.";
+	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. It captures some of the more memorable parts of your journey. The tag on the back of the neck says 'FUN FAIR WON WEAR.' There's a bracelet, too, perhaps a bit too optimistic: LIFE LONG STRIFE-STRONG. Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
