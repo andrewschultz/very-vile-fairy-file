@@ -60,7 +60,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "caught cord"	trivially true rule	false	35	--	"You might be able to trip one of the Bot Board with a cord, but not all of them."
 "snot snored"	trivially true rule	false	35	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
 "fought ford"	trivially true rule	false	35	--	"The battle is ahead, not in the past."
-"tryst tress"	trivially true rule rule	false	--	--	"The last thing you need now is a hair appointment."
+"tryst tress"	trivially true rule	false	--	--	"The last thing you need now is a hair appointment."
 "crow crate"	go-gate-vis rule	false	44	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize."
 "foe fate"	go-gate-vis rule	false	44	--	"You are very near the end, but it's not that easy."
 "know/no nate"	go-gate-vis rule	false	44	--	"Nobody named Nate appears to help you through the go gate."
@@ -303,9 +303,9 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of Tarry Tile guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"bright braced"	trivially true rule	--	--	"If you needed to get through the [spite spaced], that would work. But you don't. You need to defeat the [fairy file]."
-"light laced"	trivially true rule	--	--	"Perhaps the [spite spaced] will become light-laced once you dispel the [fairy file]."
-"tight taste/tased"	trivially true rule	--	--	"No, you don't want a taste of being tased."
+"bright braced"	trivially true rule	false	--	--	"If you needed to get through the [spite spaced], that would work. But you don't. You need to defeat the [fairy file]."
+"light laced"	trivially true rule	false	--	--	"Perhaps the [spite spaced] will become light-laced once you dispel the [fairy file]."
+"tight taste/tased"	trivially true rule	false	--	--	"No, you don't want a taste of being tased."
 "bell born"	hell-horn-near rule	false	44	--	"There's enough noise right now."
 "shell shorn"	hell-horn-near rule	false	44	--	"You must be on the right track. But perhaps the shell that is shorn might make the [hell horn] more effective."
 "swell sworn"	hell-horn-near rule	false	44	--	"That might augment the hell horn."

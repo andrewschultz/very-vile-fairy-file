@@ -1613,6 +1613,7 @@ rank-num	done-yet	rank-txt
 8	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
 --	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
 --	false	"'Surly? Soften early, often!' a random voice booms. Probably some burly boffin. The [fairy file]'s bait is smart."
+--	false	"'Fame fast? Lame, last!' a voice calls. You ... you were just looking for a way out. You think. But nobody thinks they're too proud. Right?"
 --	false	"You remember saying 'War, why?' with the response: 'BORE, BYE!'"
 --	false	"You are quasi-catcalled as 'Some super-dumb duper.' You immediately wonder if you're too dumb to remember HOW you tried to dupe anyone, but after a moment's thought, you brush the insult off with 'Um, oop, err...'"
 --	false	"You picture yourself in a sales job. 'Cold call? Fold, fall.' You fail and are exiled to the Hold Hall."
@@ -1714,6 +1715,7 @@ randtxt
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Clear Classed Beer Blast"
 "Doom Doc's Boom-Box Room Rocks"
+"Eh, Un-Gay Gun"
 "Fit Fo['] Wit, Whoah" [show]
 "Fo['] Flow So Slow"
 "Get Got, Net Naught"
@@ -1823,9 +1825,31 @@ chapter thing homonyms
 table of thing homonyms
 mything	myhom (topic)	myrej (text)
 vapor vial	"vile"	"You need to change the vial into something more pleasant and constructive."
+bold bard	"bowled"
 bot board	"bored"	"Sadly, the bot board is unable to feel bored of sitting around and being repressive."
+bot board	"bored"
+coral cage	"choral"
+grow grate	"great"
 hot horde	"hoard"	"The horde is after victories, not treasure."
+hot horde	"hoard"
+mind malt	"mined"	"Rhyming's moved you ahead so far. Maybe try it again."
+mist mess	"missed"
 pain peasant	"pane"	"Broken person, broken window, eh?"
+pain peasant	"pane"
+peeling pier	"peer"
+poor ponder	"pore"
+sought sword	"sot"
+steel steer	"steal"
+stuck stair	"stare"
+toe tappin	"roe"
+way woke	"whey"
+we whine	"whee/wine"
+weird way	"whey"
+well worn hell horn	"warn"
+white waste	"waist"
+worst wave	"wurst"
+wry wall	"rye"
+
 
 chapter room homonyms
 
