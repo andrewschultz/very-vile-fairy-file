@@ -4,9 +4,10 @@
 #-- use HHV.PY to verify ha-half
 #-- use MCH.PY to verify mistake checking code
 #-- use SCT.PY to verify alternate verb solutions
+#-- use HCH.PY to verify room/thing homonyms
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt,reg-vvff-thru-verbs.txt
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt,reg-vvff-thru-verbs.txt,reg-vvff-thru-goto.txt
 ~	min	t0
 ~	all	t1
 ~	thi	t2
@@ -16,6 +17,7 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 ~	ha	t6
 ~	hom	t7
 ~	ver	t8
+~	goto,gt.go	t9
 #--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 
@@ -48,6 +50,16 @@ Hi-ho! Why woe?
 !(you never need to answer yes/no questions unless specifically prompted.)
 >t rig rag
 You can only talk to living things, and the zig zag rig rag doesn't qualify.
+
+@gt
+> gt rift river
+The action was okay, but I couldn't recognize the object.
+> gt vined vault
+The action was okay, but I couldn't recognize the object.
+> gt trim tram
+The action was okay, but I couldn't recognize the object.
+> gt fun fen
+The action was okay, but I couldn't recognize the object.
 
 @alt
 > z
@@ -258,6 +270,12 @@ You consider the possibility of changing the Wet Wood to a Straight Pride parade
 > get good
 by one point
 
+##newloc rift river
+
+@gt
+> gt wet wood
+You don't need to go back.
+
 @hom
 >riffed rrr
 No, you rhymed to get out of the Wet Wood. But homonyms aren't quite the way to go, here.
@@ -299,6 +317,10 @@ You try fearing things different ways, but nobody comes to comfort you.
 by one point
 
 ###newloc vined vault
+
+@gt
+> gt rift river
+You don't need to go back.
 
 @ver
 > eat mind malt
@@ -444,6 +466,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > green grass
 by one point
+
+###newloc trim tram
+
+@gt
+> gt vined vault
+You don't need to go back.
 
 @ha
 > green grass
@@ -827,6 +855,8 @@ The HA HALF button lights up on your Leet Learner.
 > flim flam
 by one point
 
+###newloc fun fen
+
 @hom
 > phun phen
 Organic chemistry is much too complex, here.
@@ -1180,6 +1210,11 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+@hom
+#homonym test thing-vapor vial
+> vaper vile
+WRONG
+
 @ha
 > zdive deep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
@@ -1262,7 +1297,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > n
 
+###newloc creased cross
+
 @hom
+#homonym test room-creased cross
 >craws crews
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -1453,7 +1491,10 @@ The clay is cleared enough.
 
 > w
 
+###newloc history hall
+
 @hom
+#homonym test room-history hall
 >long haul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
@@ -1470,7 +1511,10 @@ The HA HALF button lights up on your Leet Learner.
 > mystery mall
 by one point
 
+###newloc mystery mall
+
 @hom
+#homonym retest room-history hall
 >long haul
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
@@ -1680,7 +1724,10 @@ You already changed Toe Tappin Row Rappin that way.
 
 > w
 
+###newloc got gear hot here
+
 @hom
+#homonym test room-got gear hot here
 >hear hear
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -1983,7 +2030,12 @@ I'm not getting into issues like whether a powerful gun is actually for defense 
 > e
 > e
 > n
+
+###newloc soft sand
+
 > w
+
+###newloc shirk shell
 
 @mis
 > dirk dell
@@ -2069,6 +2121,8 @@ The HA HALF button lights up on your Leet Learner.
 > loft land
 by one point
 
+###newloc loft land
+
 @ha
 > loft land
 !by one point
@@ -2109,6 +2163,8 @@ You try for an impressive anticipatory silence, but nobody is around to apprecia
 Loft Land isn't much to look at, but it's not worth scorn.
 
 > w
+
+###ewloc curst cave
 
 @thi
 > first fave
@@ -2248,7 +2304,10 @@ You need something more substantial to come out of the cool cap.
 > s
 > e
 
+###newloc violent vale
+
 @hom
+#homonym test room-violent vale
 >vicki veil
 You need to get rid of the violence, not put a veil over it.
 
@@ -2272,6 +2331,8 @@ The HA HALF button lights up on your Leet Learner.
 
 > silent sail
 by one point
+
+###newloc silent sail
 
 @ha
 > silent sail
@@ -2377,7 +2438,10 @@ The boring boat seems to anchor itself okay here.
 
 > enter boat
 
+###newloc lake lea
+
 @hom
+#homonym test room-violent vale
 >lee smith
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -2561,6 +2625,8 @@ That's over. Time to work with Jake!
 
 > e
 
+###newloc lake lap
+
 @mis
 > cake cap
 Learner needle
@@ -2711,7 +2777,10 @@ Been Buggin
 
 > enter boat
 
+###newloc been buggin
+
 @hom
+#homonym test room-been buggin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
@@ -2958,7 +3027,6 @@ by one point
 !LEAN LUGGIN
 !MEAN MUGGIN
 
-
 @ha
 > bumped buster
 !by one point
@@ -3105,6 +3173,9 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 > out
 
+###newloc y'old yard
+###newloc yold yard
+
 @ha
 > zsmashing smoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
@@ -3168,6 +3239,8 @@ south to Lit Lawn
 > in
 > w
 
+###newloc vending vibe
+
 @ha
 > zlending libe rule
 DEBUG: vc-lending-libe rule tipped off the HA HALF button.
@@ -3178,6 +3251,8 @@ The HA HALF button lights up on your Leet Learner.
 
 > lending libe
 by one point
+
+###newloc lending libe
 
 @ha
 > lending libe
@@ -3292,7 +3367,10 @@ LEAST LOSS
 
 > n
 
+###newloc foe field so sealed
+
 @hom
+#homonym test room-foe field
 > sew zzz
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > sow zzz
@@ -3332,6 +3410,7 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @hom
+#homonym retest room-foe field
 >sow see
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -3362,6 +3441,7 @@ You have nothing that opens the coral cage.
 >purloin cage key
 
 @hom
+#homonym test room-store all stage
 >awl righty
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -3416,6 +3496,8 @@ You sort of need the opposite. I suspect you know this and are just trying to se
 
 > e
 > e
+
+###newloc pit pound
 
 @mis
 > mit mound
@@ -3484,6 +3566,8 @@ The HA HALF button lights up on your Leet Learner.
 > fit found
 by one point
 
+###newloc grit ground
+
 @mis #Pit Pound after
 > wit wound
 !Learner needle
@@ -3528,7 +3612,10 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 
 > e
 
+###newloc blinding blaze
+
 @hom
+#homonym test room-blinding blaze
 >graze xxx
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -3566,6 +3653,8 @@ The HA HALF button lights up on your Leet Learner.
 
 > winding ways
 by one point
+
+###newloc winding ways
 
 @dea
 > e
@@ -3689,7 +3778,10 @@ You see no way to refigure the stair.
 > luck lair
 by one point
 
+###newloc grinding grays
+
 @hom
+#homonym retest room-blinding blaze
 >graze xxx
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -3753,6 +3845,8 @@ You already got the snuck snare from the luck lair.
 > w
 > d
 
+###newloc fight funnel
+
 @mis #fight funnel pre
 > right runnel
 Learner needle
@@ -3771,6 +3865,8 @@ The HA HALF button lights up on your Leet Learner.
 
 > tight tunnel
 by one point
+
+###newloc tight tunnel
 
 @mis #fight funnel post
 > right runnel
@@ -3798,6 +3894,8 @@ You already narrowed the funnel to a tunnel.
 north to Fortune Funnel
 
 > w
+
+###newloc dives ditch
 
 @ha
 > zknives niche rule
@@ -3833,6 +3931,8 @@ This is no time for frou-frou vegetables!
 > knives niche
 by one point
 
+###newloc knives niche
+
 @mis
 #no need to check mistakes after, since you are booted from the room
 
@@ -3862,6 +3962,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 You'd get a triple-tough cripple-cuff in return. You must fight with words.
 
 @hom
+#homonym test room-here hull
 >hear hull
 You can just listen, if you need to.
 
@@ -4260,7 +4361,10 @@ PULL PIECED
 > e
 > e
 
+###newloc whining war
+
 @hom
+#homonym test room-whining war
 > wining dining
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > wore more
@@ -4341,6 +4445,8 @@ The HA HALF button lights up on your Leet Learner.
 
 > shining shore
 by one point
+
+###newloc shining shore
 
 @ha
 > shining shore
@@ -4820,6 +4926,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get.
 
 @hom
+#homonym test room-airy isle
 >erry xxx
 The Airy Isle can't really be changed.
 >aerie xxx
@@ -5077,6 +5184,8 @@ The HA HALF button lights up on your Leet Learner.
 
 > merry mile
 by one point
+
+###newloc merry mile
 
 @ha
 > merry mile

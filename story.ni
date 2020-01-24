@@ -1808,7 +1808,7 @@ chapter trivial pointless but amusing verbs
 the block attacking rule is not listed in any rulebook.
 
 check attacking:
-	if noun is very vile fairy file: say "You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room." instead;
+	if noun is very vile fairy file, say "You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room." instead;
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	if noun is Bot Board, say "The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
@@ -1827,7 +1827,9 @@ to say yn-tell: say "[one of](you never need to answer yes/no questions unless s
 
 the block swearing obscenely rule is not listed in any rulebook.
 
-check swearing obscenely: say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
+check swearing obscenely:
+	if player is in Tarry Tile, say "A voice from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown."
+	say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
 
 the block swearing mildly rule is not listed in any rulebook.
 
@@ -3216,7 +3218,7 @@ understand the command "go to" as something new.
 
 understand "go to [any available-from-here room]" as gotoing.
 understand "goto [any available-from-here room]" as gotoing.
-understand "gt [any available-from-here room]" as gotoing.
+understand "gt [any visited room]" as gotoing.
 understand "gr [any available-from-here room]" as gotoing.
 understand "go [any available-from-here room]" as gotoing.
 
@@ -3227,14 +3229,19 @@ to decide whether goto-available:
 	yes.
 
 definition: a room (called rm) is available-from-here:
-	let mrrm be map region of rm;
+	if rm is location of player, yes;
 	if rm is unvisited, no;
+	let mrrm be map region of rm;
 	if player is in Tarry Tile, no;
 	if rm is Here Hull and Beer Bull is moot, no;
 	if mrrm is Worst Whew, no;
 	if mrrm is Browsy Breaks, no;
 	if rm is Shirk Shell and jerk gel is not in Shirk Shell, no;
 	yes;
+
+does the player mean gotoing location of player: it is unlikely.
+
+every turn: say "DEBUG list of goto-able places: [list of available-from-here rooms].";
 
 to decide which room is fliproom of (rm - a room):
 	if in-mystery-mall is true:
@@ -3250,7 +3257,7 @@ to decide which room is fliproom of (rm - a room):
 carry out gotoing:
 	let rm be location of player;
 	if noun is rm, say "Already there! Er, here." instead;
-	if noun is unvisited, say "You've tried to GT a room you haven't seen yet." instead;
+	if noun is in Worst Whew, say "You don't need to go back[if mrlp is not Worst Whew]. The introductory bit is over[end if]." instead;
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the Beer Bull chase." instead;
 	if mrlp is Browsy Breaks, say "Sorry, GO TO is disabled during this side-quest." instead;
 	if mrlp is Vale Verminous, say "There's no way back. You are so close to the end." instead;
@@ -3634,6 +3641,12 @@ Rule for printing a parser error (this is the clue half right words rule):
 		abide by the rhyme-guess-checker rule for cur-guess-table;
 	abide by the verb-checker rule;
 	abide by the rhyme-guess-checker rule for table of general good guesses;
+	now table-list is {};
+	[repeat through table of potential homonyms:
+		if hom-thing entry is touchable:
+			if the player's command matches hom-words entry:
+				say "[if there is a special-text entry][special-text entry][else]Homonyms aren't quite the way to go, here.[end if]";
+				the rule succeeds;]
 	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad]so sad[else]way wrong[end if].";
 		the rule succeeds;
@@ -3692,6 +3705,9 @@ Rule for printing a parser error when the latest parser error is the can't see a
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
 	say "Blank blather? Rank! Rather!"
+
+Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
+	say "The action was okay, but I couldn't recognize the object."
 
 the check for room name and homophones in player command rule is listed first in the for printing a parser error rulebook.
 
