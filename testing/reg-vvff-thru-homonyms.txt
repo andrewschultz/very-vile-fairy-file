@@ -67,6 +67,10 @@ by one point
 > dive deep
 by one point
 
+#homonym test thing-vapor vial
+> vaper vile
+WRONG
+
 > paper pile
 by one point
 
@@ -75,6 +79,7 @@ by one point
 
 > n
 
+#homonym test room-creased cross
 >craws crews
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -91,6 +96,7 @@ by one point
 
 > w
 
+#homonym test room-history hall
 >long haul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
@@ -99,6 +105,7 @@ You feel ... something. But not enough. Homophones must not quite be the way to 
 > mystery mall
 by one point
 
+#homonym retest room-history hall
 >long haul
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
@@ -114,6 +121,7 @@ by one point
 
 > w
 
+#homonym test room-got gear hot here
 >hear hear
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -149,6 +157,7 @@ by one point
 > s
 > e
 
+#homonym test room-violent vale
 >vicki veil
 You need to get rid of the violence, not put a veil over it.
 
@@ -163,6 +172,7 @@ by one point
 
 > enter boat
 
+#homonym test room-violent vale
 >lee smith
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -189,6 +199,7 @@ Silent Sail
 
 > enter boat
 
+#homonym test room-been buggin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
@@ -244,6 +255,7 @@ by one point
 
 > n
 
+#homonym test room-foe field
 > sew zzz
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > sow zzz
@@ -252,11 +264,13 @@ You feel ... something. But not enough. Homophones must not quite be the way to 
 > plain pleasant
 by one point
 
+#homonym retest room-foe field
 >sow see
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > w
 
+#homonym test room-store all stage
 >awl righty
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -274,6 +288,7 @@ by one point
 
 > e
 
+#homonym test room-blinding blaze
 >graze xxx
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -288,6 +303,7 @@ by one point
 > luck lair
 by one point
 
+#homonym retest room-blinding blaze
 >graze xxx
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -314,6 +330,7 @@ by one point
 > n
 > e
 
+#homonym test room-here hull
 >hear hull
 You can just listen, if you need to.
 
@@ -355,6 +372,7 @@ by one point
 > e
 > e
 
+#homonym test room-whining war
 > wining dining
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > wore more
@@ -402,6 +420,7 @@ by one point
 
 > n
 
+#homonym test room-airy isle
 >erry xxx
 The Airy Isle can't really be changed.
 >aerie xxx

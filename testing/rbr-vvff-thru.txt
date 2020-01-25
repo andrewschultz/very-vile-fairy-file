@@ -17,7 +17,7 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 ~	ha	t6
 ~	hom	t7
 ~	ver	t8
-~	goto,gt.go	t9
+~	goto,gt,go	t9
 #--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 
@@ -2030,9 +2030,7 @@ I'm not getting into issues like whether a powerful gun is actually for defense 
 > e
 > e
 > n
-
 ###newloc soft sand
-
 > w
 
 ###newloc shirk shell
@@ -2164,7 +2162,7 @@ Loft Land isn't much to look at, but it's not worth scorn.
 
 > w
 
-###ewloc curst cave
+###newloc curst cave
 
 @thi
 > first fave
@@ -3240,6 +3238,12 @@ south to Lit Lawn
 > w
 
 ###newloc vending vibe
+
+@gt
+>e
+>mystery mall
+>gt 
+t
 
 @ha
 > zlending libe rule
@@ -4921,6 +4925,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 ###newloc airy isle
 
+@gt
+> gt gassed gap
+There's no way back. You are so close to the end.
+
 @ver
 > attack bot board
 The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get.
@@ -5110,6 +5118,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newloc tarry tile
+
+@gt
+>gt airy isle
+You are at the final confrontation.
+!!!
 
 @ver
 > attack vvff

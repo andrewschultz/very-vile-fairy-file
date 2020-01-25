@@ -1,0 +1,382 @@
+
+## reg-vvff-thru-goto.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+> gt rift river
+The action was okay, but I couldn't recognize the object.
+> gt vined vault
+The action was okay, but I couldn't recognize the object.
+> gt trim tram
+The action was okay, but I couldn't recognize the object.
+> gt fun fen
+The action was okay, but I couldn't recognize the object.
+
+> big bag
+by one point
+
+> get good
+by one point
+
+> gt wet wood
+You don't need to go back.
+
+> gift giver
+by one point
+
+> gt rift river
+You don't need to go back.
+
+> find fault
+by one point
+
+> green grass
+by one point
+
+> gt vined vault
+You don't need to go back.
+
+> grow grit
+by one point
+
+> mash map
+by one point
+
+> mind me
+by one point
+
+> flim flam
+by one point
+
+> s
+
+> kneel near
+by one point
+
+> feel fear
+by one point
+
+> deal dear
+by one point
+
+> n
+
+> fall free
+by one point
+
+> dive deep
+by one point
+
+> paper pile
+by one point
+
+> backed binder
+by one point
+
+> n
+
+> w
+
+> dark door
+by one point
+
+> mark more
+by one point
+
+> cleared clay
+by one point
+
+> w
+
+> mystery mall
+by one point
+
+> listen
+
+> lots lame
+by one point
+
+> no nappin
+by one point
+
+> w
+
+> hard hat
+by one point
+
+> e
+> e
+> e
+> n
+> w
+
+> work well
+by one point
+
+> e
+
+> loft land
+by one point
+
+> w
+
+> dreaming dull
+by one point
+
+> first fave
+by one point
+
+> cool cap
+by one point
+
+> e
+> s
+> e
+
+> silent sail
+by one point
+
+> brightening bridge
+by one point
+
+> boring boat
+by one point
+
+> enter boat
+
+> wake whee
+by one point
+
+> take tea
+by one point
+
+> fake fee
+by one point
+
+> e
+
+> make map
+by one point
+
+> co capn
+by one point
+
+> snake snap
+by one point
+Silent Sail
+
+> enter boat
+
+> stay strong
+
+> glow glad
+by one point
+
+> mean muggin
+by one point
+
+> lean luggin
+by one point
+
+> enter boat
+
+> w
+> w
+> w
+
+> glean glows
+by one point
+
+> history hall
+
+> youre yonder
+by one point
+
+> out
+
+> smashing smoke
+by one point
+
+> in
+> w
+
+>e
+>mystery mall
+>gt 
+t
+
+> lending libe
+by one point
+
+> see sign
+by one point
+
+> e
+> e
+> e
+
+> n
+
+> n
+
+> plain pleasant
+by one point
+
+> w
+
+> moral mage
+by one point
+
+> e
+> e
+
+> sit sound
+by one point
+
+> fit found
+by one point
+
+> e
+
+> winding ways
+by one point
+
+> mo mappin
+by one point
+
+> luck lair
+by one point
+
+> w
+> w
+> s
+> s
+> w
+> d
+
+> tight tunnel
+by one point
+
+> w
+
+> knives niche
+by one point
+
+> e
+> u
+> e
+> n
+> e
+
+> dear dull
+by one point
+
+> near null
+by one point
+
+> w
+> s
+> w
+> d
+> w
+> s
+
+> beast boss
+by one point
+
+> least loss
+by one point
+
+> s
+
+> s
+
+> heal here
+by one point
+
+> n
+> n
+
+> cull ceased
+by one point
+
+> full feast
+by one point
+
+> e
+> e
+
+> so sappin
+by one point
+
+> shining shore
+by one point
+
+> dining door
+by one point
+
+> pull pieced
+by one point
+
+> mining more
+by one point
+
+> w
+> w
+> n
+> n
+
+> show shield
+by one point
+
+> n
+
+> go gappin
+by one point
+
+> couple caps
+by one point
+
+> cast cap
+by one point
+
+> meeker muscle
+by one point
+
+> wood one
+by one point
+
+> n
+
+> gt gassed gap
+There's no way back. You are so close to the end.
+
+> hot horde
+by one point
+
+> lot lord
+by one point
+
+> got gored
+by one point
+
+> whoa wait
+by one point
+
+>gt airy isle
+You are at the final confrontation.
+!!!
+
+> tell torn
+by one point
+
+> merry mile
+by one point
+
+> bury bile
+by one point
+
