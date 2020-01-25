@@ -1643,6 +1643,13 @@ table of books [xxbooks]
 randtxt
 "Ache or Make More Lake Lore"
 "Bane, Bones, Stain Stones[r], by Jane Jones"
+"Caring Kirk, Daring Dirk"
+"Hale Hen, Mailmen"
+"Jail Jen, Bail Ben"
+"Wail When, Pale Pen"
+"Nail [']Nuff: Bail, Buff"
+Page Punk Stage Stunk, Mage Monk"
+"Tale: Tough Stale Stuff[r], by Dale Duff"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
@@ -1736,6 +1743,7 @@ table of miscellaneous people [xxpeople]
 randtxt
 "All Anger Bawl Banger Saul Sanger"
 "Be-Bought Lee Lott"
+"Dozy Doofus Rosy Rufus"
 "Big Baddy Pig Paddy"
 "Blue Blood Stu, Stud"
 "Bo, Better Go-Getter"

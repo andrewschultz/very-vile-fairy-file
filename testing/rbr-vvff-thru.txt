@@ -52,6 +52,8 @@ Hi-ho! Why woe?
 You can only talk to living things, and the zig zag rig rag doesn't qualify.
 
 @gt
+> gt wet wood
+Already there. Er, here.
 > gt rift river
 The action was okay, but I couldn't recognize the object.
 > gt vined vault
@@ -856,6 +858,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newloc fun fen
+
+@gt
+>gt wet wood
+You don't need to go back. The introductory bit is over.
 
 @hom
 > phun phen
@@ -2121,6 +2127,24 @@ by one point
 
 ###newloc loft land
 
+@gt
+>e
+>gt shirk shell
+flip
+Shirk Shell
+>e
+>gt shirk shell
+!flip
+Shirk Shell
+>e
+>gt curst cave
+flip
+Curst Cave
+>e
+>gt curst cave
+!flip
+Curst Cave
+
 @ha
 > loft land
 !by one point
@@ -2438,6 +2462,10 @@ The boring boat seems to anchor itself okay here.
 
 ###newloc lake lea
 
+@gt
+>gt silent sail
+Sorry, but GO TO is disabled here in the lakes.
+
 @hom
 #homonym test room-violent vale
 >lee smith
@@ -2625,6 +2653,18 @@ That's over. Time to work with Jake!
 
 ###newloc lake lap
 
+@gt
+>w
+>enter boat
+>gt lake lea
+You'll need to take the boat from here to get back there.
+>w
+>gt lake lap
+You'll need to take the boat from Silent Sail to get back there.
+>e
+>enter boat
+>e
+
 @mis
 > cake cap
 Learner needle
@@ -2776,6 +2816,18 @@ Been Buggin
 > enter boat
 
 ###newloc been buggin
+
+@gt
+>gt silent sail
+You're too bummed to make big trips.
+
+@gt
+>gt silent sail
+Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be.
+
+@gt
+>gt silent sail
+Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
 
 @hom
 #homonym test room-been buggin
@@ -3240,10 +3292,25 @@ south to Lit Lawn
 ###newloc vending vibe
 
 @gt
+#here we test flipping MM/HH
 >e
 >mystery mall
->gt 
-t
+>gt got gear hot here
+flip
+Got Gear Hot Here
+>e
+>gt got gear hot here
+!flip
+Got Gear Hot Here
+>e
+>gt vending vibe
+flip
+Vending Vibe
+>e
+>gt vending vibe
+!flip
+Vending Vibe
+
 
 @ha
 > zlending libe rule
@@ -3995,6 +4062,10 @@ The HA HALF button lights up on your Leet Learner.
 > dear dull
 by one point
 
+@gt
+>gt tight tunnel
+Sorry, GO TO is disabled during the Beer Bull chase.
+
 @ha
 > dear dull
 !by one point
@@ -4071,6 +4142,10 @@ The HA HALF button lights up on your Leet Learner.
 
 > beast boss
 by one point
+
+@gt
+>gt stark store
+You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast.
 
 @ver
 > attack bull beast
@@ -4279,6 +4354,10 @@ The HA HALF button lights up on your Leet Learner.
 > least loss
 !by one point
 You already minimized your losses. Time to be more aggressive.
+
+@gt
+>gt stark store
+You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast.
 
 > cull ceased
 by one point
@@ -4645,6 +4724,15 @@ GO GAPPIN
 > n
 
 ###newloc gassed gap
+
+@gt
+# test places you can't go back to
+>gt here hull
+You don't need to go back to Here Hull.
+>gt been buggin
+You don't need or want to revisit that.
+>gt lake lea
+You already did that.
 
 @ver
 >attack russell
@@ -5121,8 +5209,9 @@ by one point
 
 @gt
 >gt airy isle
-You are at the final confrontation.
-!!!
+You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh.
+>gt tarry tile
+The action was okay, but I couldn't recognize the object.
 
 @ver
 > attack vvff
@@ -5173,6 +5262,10 @@ The HA HALF button lights up on your Leet Learner.
 
 > tell torn
 by one point
+
+@gt
+>gt merry mile
+Already there! Er, here.
 
 @ha
 > tell torn
