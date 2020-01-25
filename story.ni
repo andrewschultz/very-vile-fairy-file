@@ -639,6 +639,8 @@ part Creased Cross 0,1
 
 Creased Cross is north of Fun Fen. Creased Cross is in Piddling Pain. "This feels like a boring old intersection, but you [if Bull Beast is moot]defeated the Bull Beast here, which was exciting[else]sense it could be so much more, later[end if]. You can go in all four directions here[beast-clue].". cht of Creased Cross is letminus. guess-table of Creased Cross is table of Creased Cross guesses. [-> beast boss] [-> least loss]
 
+check going in Creased Cross when sco-beast-boss is true and sco-least-loss is false: say "You are too weakened right now. You need to limit damages somehow." instead; [??]
+
 after going from Creased Cross when sco-heal-here is true and sco-cull-ceased is false:
 	say "Hmm. The Bull Beast didn't chase you as you left. Maybe you were better equipped to dispose of it than you think.";
 	continue the action;
@@ -1828,7 +1830,7 @@ to say yn-tell: say "[one of](you never need to answer yes/no questions unless s
 the block swearing obscenely rule is not listed in any rulebook.
 
 check swearing obscenely:
-	if player is in Tarry Tile, say "A voice from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown."
+	if player is in Tarry Tile, say "A voice from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown.";
 	say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
 
 the block swearing mildly rule is not listed in any rulebook.
@@ -3216,14 +3218,15 @@ understand the command "gt" as something new.
 understand the command "goto" as something new.
 understand the command "go to" as something new.
 
-understand "go to [any available-from-here room]" as gotoing.
-understand "goto [any available-from-here room]" as gotoing.
+understand "go to [any visited room]" as gotoing.
+understand "goto [any visited room]" as gotoing.
 understand "gt [any visited room]" as gotoing.
-understand "gr [any available-from-here room]" as gotoing.
-understand "go [any available-from-here room]" as gotoing.
+understand "gr [any visited room]" as gotoing.
+understand "go [any visited room]" as gotoing.
 
 does the player mean gotoing a room:
-	if noun is available-from-here, it is very likely.
+	if noun is visited, it is very likely;
+	if noun is available-from-here, it is likely;
 
 to decide whether goto-available:
 	yes.
@@ -3245,32 +3248,61 @@ every turn: say "DEBUG list of goto-able places: [list of available-from-here ro
 
 to decide which room is fliproom of (rm - a room):
 	if in-mystery-mall is true:
-		if rm is Got Gear Hot Here, decide on History Hall;
-	else:
 		if rm is Y'Old Yard or rm is Vending Vibe, decide on History Hall;
+	else:
+		if rm is Got Gear Hot Here, decide on History Hall;
 	if in-loft-land is true:
 		if rm is Shirk Shell, decide on Soft Sand;
 	else:
 		if rm is Curst Cave, decide on Soft Sand;
 	decide on Fun Fen;
 
-carry out gotoing:
+this is the flag bad goto from rule:
 	let rm be location of player;
 	if noun is rm, say "Already there! Er, here." instead;
-	if noun is in Worst Whew, say "You don't need to go back[if mrlp is not Worst Whew]. The introductory bit is over[end if]." instead;
-	if in-bull-chase is true, say "Sorry, GO TO is disabled during the Beer Bull chase." instead;
-	if mrlp is Browsy Breaks, say "Sorry, GO TO is disabled during this side-quest." instead;
 	if mrlp is Vale Verminous, say "There's no way back. You are so close to the end." instead;
-	if need-healing, say "You can't zoom around in your weakened state. But maybe what you need is close by." instead;
+	if noun is in Worst Whew, say "You don't need to go back[if mrlp is not Worst Whew]. The introductory bit is over[end if]." instead; [okay, maybe this should be in the other rule if we go by names. But it's a big case we want to have up front.]
+	if in-bull-chase is true, say "Sorry, GO TO is disabled during the Beer Bull chase." instead;
+	if player is in Creased Cross and Bull Beast is in Creased Cross, say "You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast." instead;
+	if player is in Been Buggin, say "Sorry, you need to leave [Been Buggin] to use GO TO." instead;
+	if mrlp is Browsy Breaks, say "Sorry, GO TO is disabled here in the lakes." instead;
+	if need-healing, say "You can't zoom around in your weakened state. The Bull Beast will push you back. But with so few places to go, maybe what you need is close by." instead;
+
+this is the flag bad goto to rule:
+	if noun is shirk shell and jerk gel is not in shirk shell, say "You got the jerk gel already." instead;
+	if noun is here hull and Beer Bull is moot, say "You don't need to go back to Here Hull." instead;
+	if noun is Been Buggin, say "You don't need to revisit that." instead;
+	if noun is Lake Lea or noun is Lake Lap:
+		if sco-snake-snap is true, say "You already did that." instead;
+		say "You'll need to take the boat from [here-in of Violent Vale] to get back there." instead;
+
+to decide whether need-to-flip of (rm - a room):
+	if rm is Vending Vibe or rm is Y'Old Yard:
+		if in-mystery-mall is true, yes;
+	if rm is Got Gear Hot Here and in-mystery-mall is false, yes;
+	if rm is Curst Cave and in-loft-land is false, yes;
+	if rm is Shirk Shell and in-loft-land is true, yes;
+	no;
+
+carry out gotoing:
+	abide by the flag bad goto from rule;
+	abide by the flag bad goto to rule;
 	if noun is available-from-here:
 		let N be fliproom of noun;
-		say "[line break]You twiddle [N] back as you go.";
-		if N is History Hall, now in-mystery-mall is whether or not in-mystery-mall is false;
-		if N is Soft Sand, now in-loft-land is whether or not in-loft-land is false;
+		if N is not Fun Fen, say "[line break][name-twiddle of N].";
 		move player to noun;
 	else:
 		say "You can't walk to [noun] from here.";
 	the rule succeeds;
+
+to say name-twiddle of (rm - a room):
+	say "You flip [rm] back to ";
+	twiddle-my-room rm;
+	say "[rm] as you go";
+
+to twiddle-my-room (rm - a room):
+	if rm is History Hall, now in-mystery-mall is whether or not in-mystery-mall is false;
+	if rm is Soft Sand, now in-loft-land is whether or not in-loft-land is false;
 
 section gotothinging
 
@@ -3582,6 +3614,7 @@ after reading a command:
 		if currently transcripting:
 			say "Noted.";
 			reject the player's command;
+	let XX be indexed text;
 	if the player's command matches the regular expression "<A-Z>":
 		let XX be the player's command;
 		change the text of the player's command to "[XX in lower case]";
@@ -3599,7 +3632,7 @@ after reading a command:
 			now no-punc-flag is true;
 		let XX be the player's command;
 		replace the regular expression "-" in XX with " ";
-		replace the regular expression "<^-\.a-z 0-9>" in XX with "";
+		replace the regular expression "<^a-z0-9\.>" in XX with "";
 		change the text of the player's command to XX;
 		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
 
@@ -3660,6 +3693,7 @@ Rule for printing a parser error (this is the check for room name and homophones
 			if there is a check-rule entry:
 				process the check-rule entry;
 				if the rule failed, next;
+				if there is no top entry, next;
 			if the player's command includes top entry:
 				if there is a room-msg entry:
 					say "[room-msg entry] But homonyms aren't quite the way to go, here.";
