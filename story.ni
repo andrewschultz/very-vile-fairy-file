@@ -340,6 +340,7 @@ to say sign-dir:
 			now got-wry is true;
 			say "[b][fake-name entry][r]: [e2 entry].";
 	if player is in Fun Fen, say "[b]CARK CLIFF: straight down.[r]";
+	if player is in Y'Old Yard, say "[b]RANDOM PLACES: east or north.[r]";
 	say "[run paragraph on]";
 	if got-wry is false, say " (NOTHING) -- that's a bug.";
 
@@ -885,7 +886,7 @@ the clashing cloak is a rhymable. description is "It seems suited for more than 
 
 part Y'Old Yard -2,-1
 
-Y'Old Yard is a room in Piddling Pain. "The Shoaled Shard, a forbidding fortress indeed, surrounds you on all sides. [if Bold Bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if Bold Bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)". guess-table of Y'Old Yard is table of Yold Yard guesses.
+Y'Old Yard is a room in Piddling Pain. "This is a very wide-open place. While you can try (and fail) to go INSIDE to the Shoaled Shard, all sorts of random places lie in every direction. [if Bold Bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if Bold Bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)". guess-table of Y'Old Yard is table of Yold Yard guesses.
 
 The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a Bold Bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]". guess-table of Bold Bard is the table of Bold Bard guesses.
 
@@ -893,13 +894,15 @@ talk-text of Bold Bard is "'Scold-scarred. Told. Tarred.' The Bold Bard clearly 
 
 chapter gold guard
 
-the mold marred gold guard is a rhymable. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if sco-mining-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if sco-mining-more is true]hold-hard [end if]gold guard". guess-table of gold guard is the table of Bold Bard guesses.
+the mold marred gold guard is a rhymable. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if sco-mining-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if sco-mining-more is true]hold-hard [end if]gold guard". guess-table of gold guard is the table of Bold Bard guesses. noway-text of Y'Old Yard is "You wander around for a while before discovering [next-rand-txt of table of silly locations]. An interesting detour, but not useful."
 
 understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when sco-mining-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
 
 chapter shoaled shard
 
-the Shoaled Shard is scenery in Y'Old Yard. "It's intimidating and obviously well-guarded, but it could be breached with the right distraction."
+the Shoaled Shard is scenery in Y'Old Yard. "It's intimidating and obviously well-guarded, but it could be breached with the right distraction.".
+
+check entering Shoaled Shard: say "You have no business there. [if bold bard is in y'old yard]But the Bold Bard might, with your help[else]You helped the Bold Bard get in[end if]." instead;
 
 the cold card is a boring rhymable. description is "It's useful for one very useless boring ... hmm. It's blurred. You can't see.". guess-table of cold card is the table of Bold Bard guesses. bore-text of cold card is "You guess you'll know what to do with the cold card when the time comes. You hope."
 
@@ -1538,6 +1541,10 @@ the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell h
 chapter Very Vile Fairy File
 
 the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
+
+check opening very vile fairy file: try closing very vile fairy file instead;
+
+check closing very vile fairy file: say "You will need to close the book on the [fairy file] with what you've been doing all game." instead;
 
 check taking very vile fairy file: say "A voice from the [fairy file]: 'Oh, ick! So sick!' You should've expected that, really." instead;
 
@@ -3260,18 +3267,19 @@ to decide which room is fliproom of (rm - a room):
 this is the flag bad goto from rule:
 	let rm be location of player;
 	if noun is rm, say "Already there! Er, here." instead;
-	if mrlp is Vale Verminous, say "There's no way back. You are so close to the end." instead;
+	if player is in Airy Isle, say "There's no way back. You are so close to the end." instead;
+	if player is in Tarry Tile, say "You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh." instead;
 	if noun is in Worst Whew, say "You don't need to go back[if mrlp is not Worst Whew]. The introductory bit is over[end if]." instead; [okay, maybe this should be in the other rule if we go by names. But it's a big case we want to have up front.]
 	if in-bull-chase is true, say "Sorry, GO TO is disabled during the Beer Bull chase." instead;
 	if player is in Creased Cross and Bull Beast is in Creased Cross, say "You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast." instead;
-	if player is in Been Buggin, say "Sorry, you need to leave [Been Buggin] to use GO TO." instead;
-	if mrlp is Browsy Breaks, say "Sorry, GO TO is disabled here in the lakes." instead;
+	if player is in Been Buggin, say "[if dean duggan is off-stage]You're too bummed to make big trips.[else]Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be[else]Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now[end if]." instead;
+	if mrlp is Browsy Breaks, say "Sorry, but GO TO is disabled here in the lakes." instead;
 	if need-healing, say "You can't zoom around in your weakened state. The Bull Beast will push you back. But with so few places to go, maybe what you need is close by." instead;
 
 this is the flag bad goto to rule:
 	if noun is shirk shell and jerk gel is not in shirk shell, say "You got the jerk gel already." instead;
 	if noun is here hull and Beer Bull is moot, say "You don't need to go back to Here Hull." instead;
-	if noun is Been Buggin, say "You don't need to revisit that." instead;
+	if noun is Been Buggin, say "You don't need or want to revisit that." instead;
 	if noun is Lake Lea or noun is Lake Lap:
 		if sco-snake-snap is true, say "You already did that." instead;
 		say "You'll need to take the boat from [here-in of Violent Vale] to get back there." instead;

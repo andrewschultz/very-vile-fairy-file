@@ -17,10 +17,12 @@
 >u
 It feels like there could be something up there. Maybe not very important, but it's there. You just feel as though History Hall isn't defined enough, yet.
 >mystery mall
+You go up and browse Mystery Mall for a while.
+WRONG
+Need special: figure it out! Look in backpack!
 >u
 >history hall
 >u
-
 
 #RANDTEST table of mall songs
 > mystery mall
@@ -50,6 +52,14 @@ Looking in, you see one book labeled
 > x fussed folks
 You read about Hazy Hairy Lazy Larry, who ends the list with a whimper.
 
+#RANDTEST table of silly locations
+>gonear yard
+>n
+You wander around for a while before discovering clues you'll never make it to Worthwhile Birth-Bile Earth Isle. An interesting detour, but not useful
+>e
+Cycling
+>e
+!Cycling
 
 #RANDTEST table of vvff digs
 >gonear tarry tile
