@@ -3784,14 +3784,22 @@ to say first-of-ors of (x - indexed text):
 	replace the regular expression "\|.*" in x with "";
 	say "[x]";
 
+[these have to be defined as globals as otherwise inform throws a "too many local variables" error]
+global-row-check is a number that varies.
+my-count is a number that varies.
+
 this is the verb-checker rule:
 	let local-ha-half be false;
 	let local-post-hom be false;
 	let brightness be false;
 	let progressive be false;
 	let is-song be false;
+	now global-row-check is 0;
+	let hom-row be 0;
+	now my-count is 0;
 	repeat through the table of verb checks:
-		let my-count be 0;
+		increment global-row-check;
+		now my-count is 0;
 		now vc-dont-print is true;
 		process the ver-rule entry;
 		let rb-out be the outcome of the rulebook;
@@ -3869,6 +3877,7 @@ this is the verb-checker rule:
 				else if the player's command matches the regular expression "(^|\W)[posthom entry](\W|$)":
 					if debug-state is true, say "POSTHOM match for [posthom entry].";
 					now local-post-hom is true;
+					if there is a hom-txt-rule entry, now hom-row is global-row-check;
 		if ha-half is true and my-count is 1:
 			now vc-dont-print is true;
 			now already-rhymed-this is false;
@@ -3889,6 +3898,9 @@ this is the verb-checker rule:
 		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if][if local-post-hom is true]. The button's really bright. Your word must be very close, indeed[end if].";
 		the rule succeeds;
 	if local-post-hom is true:
+		if hom-row > 0:
+			choose row hom-row in table of verb checks;
+			abide by the hom-txt-rule entry;
 		say "The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't THINK it right.";
 		the rule succeeds;
 

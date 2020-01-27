@@ -12,7 +12,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [the magic numbers column deserves an explanation. Usually it will be (10*expected length of first word) + (expected length of second word). However, in some cases, this is variable. Then we have a magic number from -10 to 10. This is converted, via variable-scan-length, to a two-digit number as above, possibly negative.
 
-Also, if a final number is negative, that means what you almost rhymed is optional.]
+The reason a number is negative is that whatever you rhymed is an optional point. For instance, -67 for guessing what the author's name means.]
 
 [stuff I haven't sorted yet:
 ##############unsorted
