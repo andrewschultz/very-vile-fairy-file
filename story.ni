@@ -3874,8 +3874,7 @@ this is the verb-checker rule:
 					do nothing;
 				else if ver-rule entry is vc-soft-sand rule and in-loft-land is false:
 					do nothing;
-				else if the player's command matches the regular expression "(^|\W)[posthom entry](\W|$)":
-					if debug-state is true, say "POSTHOM match for [posthom entry].";
+				else if the player's command includes the posthom entry:
 					now local-post-hom is true;
 					if there is a hom-txt-rule entry, now hom-row is global-row-check;
 		if ha-half is true and my-count is 1:

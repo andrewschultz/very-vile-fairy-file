@@ -84,7 +84,9 @@ with open(f) as file:
                 continue
         if table_name == 'verb':
             test_case = "{}-{}".format(table_name, re.sub(" .*", "", lary[10][3:]))
-            test_subcases = lary[2].replace('"', '').split("|")
+            if "|" in lary[2]:
+                print("Replace | with / at line", line_count, "of", f)
+            test_subcases = lary[2].replace('"', '').split("/")
         else:
             test_case = "{}-{}".format(table_name, lary[0])
         if create_bookmarks:
