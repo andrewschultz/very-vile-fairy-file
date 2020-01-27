@@ -670,7 +670,7 @@ this is the in-lousy-lakes rule: if mrlp is Browsy Breaks, the rule succeeds;
 
 this is the in-pit-pound rule: if player is in Pit Pound, the rule succeeds;
 
-this is the in-po-pit rule: if player is in Po' Pit, the rule succeeds;
+this is the in-po-pit rule: if player is in Po Pit, the rule succeeds;
 
 this is the in-real-rear rule: if player is in Real Rear, the rule succeeds;
 
@@ -756,7 +756,7 @@ this is the float-present rule: if flooring float is touchable, the rule succeed
 
 this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
 
-this is the if-grit-ungrown rule: if player is in Po' Pit and sco-grow-grit is false, the rule succeeds;
+this is the if-grit-ungrown rule: if player is in Po Pit and sco-grow-grit is false, the rule succeeds;
 
 this is the if-rear-undone rule: if sco-heal-here is false, the rule succeeds;
 

@@ -494,19 +494,19 @@ The mean mass is a thing. "The mean mass continues to pulse and block the way ou
 
 part Po' Pit 2,-1
 
-Po' Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap[if sco-grow-grit is false]. But right now you feel too immature and jumpy to have a revelation how to even start. You suspect there is more than one way, and that's frustrating[end if].". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht of Po' Pit is letplus. guess-table of po' pit is table of po pit guesses. [-> grow grit]
+Po Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap[if sco-grow-grit is false]. But right now you feel too immature and jumpy to have a revelation how to even start. You suspect there is more than one way, and that's frustrating[end if].". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht of Po Pit is letplus. guess-table of Po Pit is table of po pit guesses. printed name of Po Pit is "Po['] Pit". [-> grow grit]
 
-the row writ is scenery in Po' Pit. "[if sco-grow-grit is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
+the row writ is scenery in Po Pit. "[if sco-grow-grit is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
 
-the trash trap is boring scenery in Po' Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. bore-text of trash trap is "You want to NOT do anything with the trash trap. You don't know what could set it off.". [-> mash map]
+the trash trap is boring scenery in Po Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. bore-text of trash trap is "You want to NOT do anything with the trash trap. You don't know what could set it off.". [-> mash map]
 
-the cache cap is a boring thing in Po' Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if sco-grow-grit is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht of cache cap is partminus. bore-text of cache cap is "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit.". bore-rule of cache cap is bore-cache-cap rule. [-> mash map]
+the cache cap is a boring thing in Po Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if sco-grow-grit is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht of cache cap is partminus. bore-text of cache cap is "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit.". bore-rule of cache cap is bore-cache-cap rule. [-> mash map]
 
-the gash gap is boring scenery in Po' Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht of gash gap is leteq. bore-text of gash gap is "The gash gap is an obstacle you need to find a special way around.". [-> mash map]
+the gash gap is boring scenery in Po Pit. "It looks intimidating, but who knows? Maybe you can figure a way across.". cht of gash gap is leteq. bore-text of gash gap is "The gash gap is an obstacle you need to find a special way around.". [-> mash map]
 
 bap-map-rap is a number that varies.
 
-understand "map" as trash trap when player is in Po' Pit.
+understand "map" as trash trap when player is in Po Pit.
 
 this is the bore-cache-cap rule:
 	if current action is taking, say "No, the cache cap is too tacky. Perhaps it can help you in other ways." instead;
@@ -2544,7 +2544,7 @@ room-hint-rule of History Hall is history-hall-hint rule.
 room-hint-rule of Lake Lap is lake-lap-hint rule.
 room-hint-rule of Lake Lea is lake-lea-hint rule.
 room-hint-rule of Pit Pound is pit-pound-hint rule.
-room-hint-rule of Po' Pit is po-pit-hint rule.
+room-hint-rule of Po Pit is po-pit-hint rule.
 room-hint-rule of Real Rear is real-rear-hint rule.
 room-hint-rule of Rift River is rift-river-hint rule.
 room-hint-rule of Shirk Shell is shirk-shell-hint rule.
@@ -4299,8 +4299,8 @@ carry out llaing:
 volume map index
 
 index map with Trim Tram mapped east of Real Rear.
-index map with Po' Pit mapped east of Trim Tram.
-index map with Vined Vault mapped east of Po' Pit.
+index map with Po Pit mapped east of Trim Tram.
+index map with Vined Vault mapped east of Po Pit.
 index map with Vined Vault mapped south of Wet Wood.
 
 index map with Fight Funnel mapped north of History Hall.
@@ -4315,7 +4315,7 @@ index map with Tarry Tile mapped north of Airy Isle.
 
 section altrooms
 
-index map with Vending Vibe mapped south of Po' Pit.
+index map with Vending Vibe mapped south of Po Pit.
 index map with Curst Cave mapped south of Vined Vault.
 
 section metarooms [these need to go somewhere]

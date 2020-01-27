@@ -20,8 +20,8 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "gift"	"giver"	--	--	false	false	true	false	false	Rift River	vc-gift-giver rule	vr-gift-giver rule	--	--
 "find"	"fault"	"fined"	vh-find-fault rule	false	true	true	false	false	Vined Vault	vc-find-fault rule	vr-find-fault rule	--	--
 "green"	"grass"	--	--	false	false	true	false	false	Vined Vault	vc-green-grass rule	vr-green-grass rule	--	--
-"grow|oh|so"	"grit|it|sit"	"owe"	vh-grow-grit rule	false	true	true	false	false	Po' Pit	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
-"mash|bash|rash|slash"	"map|bap|rap|slap"	--	--	false	true	true	false	false	Po' Pit	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
+"grow|oh|so"	"grit|it|sit"	"owe"	vh-grow-grit rule	false	true	true	false	false	Po Pit	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
+"mash|bash|rash|slash"	"map|bap|rap|slap"	--	--	false	true	true	false	false	Po Pit	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
 "mind"	"me"	"mined"	--	false	false	true	false	false	Trim Tram	vc-mind-me rule	vr-mind-me rule	--	--
 "flim|skim"	"flam|scam"	--	--	false	false	true	false	false	Trim Tram	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
 "spark"	"spliff"	--	--	false	true	false	false	false	Fun Fen	vc-spark-spliff rule	vr-spark-spliff rule	--	"You can [b]SPARK SPLIFF[r] [once-now of vc-spark-spliff rule] you've brought something combustible [here-to of Fun Fen]." [start of Fun Fen]
@@ -684,11 +684,11 @@ a goodrhyme rule (this is the vc-green-grass rule) :
 this is the vr-green-grass rule:
 	loop-note "GREEN GRASS";
 	say "The mean mass collapses into much safer green grass. You walk by and arrive at...";
-	move player to Po' Pit;
+	move player to Po Pit;
 	moot mean mass;
 
 a goodrhyme rule (this is the vc-grow-grit rule) :
-	if player is not in Po' Pit, unavailable;
+	if player is not in Po Pit, unavailable;
 	if sco-grow-grit is true:
 		if print-why-fail, vcal "You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.";
 		already-done;
@@ -699,7 +699,7 @@ this is the vr-grow-grit rule:
 	say "'So, sit,' you say to yourself. You ponder a bit before saying 'Oh ... it ...'. You realize you have managed to grow grit![paragraph break]The trash trap looks less yucky now. Okay, it still looks pretty yucky, but it's almost bearable. You just have to make sure you don't trip anything horrible. You need a safe way through!";
 	now sco-grow-grit is true;
 	phbt row writ;
-	phbt Po' Pit;
+	phbt Po Pit;
 
 a goodrhyme rule (this is the vc-hard-hat rule) :
 	if marred mat is not touchable, unavailable;
@@ -942,7 +942,7 @@ this is the vr-mark-more rule:
 	phbt Stark Store;
 
 a goodrhyme rule (this is the vc-mash-map rule) :
-	if player is not in Po' Pit, unavailable;
+	if player is not in Po Pit, unavailable;
 	process the ashap rule; [to determine what was the first word]
 	if sco-grow-grit is false:
 		process the ashap rule;
@@ -1934,7 +1934,7 @@ to say rhyme-display: [pok]
 		say "You managed to MIND ME, but now you need to evade the trash trap.";
 	else if player is in Trim Tram:
 		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
-	else if player is in Po' Pit:
+	else if player is in Po Pit:
 		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant. You're not likely to find a fee, but maybe you can do something else.";
 	else if mean mass is in Vined Vault:
 		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
