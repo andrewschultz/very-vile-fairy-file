@@ -1804,6 +1804,7 @@ randtxt
 "Fivefold Hive Hold"
 "Low Key Louse Hokey House"
 "Mighty Mole's Hidey Holes"
+"Whee-Will-He Hill"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
 table of vvff digs [xxtaunts] [xxdigs] [xxmean]

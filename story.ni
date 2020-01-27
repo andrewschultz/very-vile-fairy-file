@@ -3785,8 +3785,6 @@ to say first-of-ors of (x - indexed text):
 	say "[x]";
 
 [these have to be defined as globals as otherwise inform throws a "too many local variables" error]
-global-row-check is a number that varies.
-my-count is a number that varies.
 
 this is the verb-checker rule:
 	let local-ha-half be false;
@@ -3794,9 +3792,9 @@ this is the verb-checker rule:
 	let brightness be false;
 	let progressive be false;
 	let is-song be false;
-	now global-row-check is 0;
+	let global-row-check be 0;
 	let hom-row be 0;
-	now my-count is 0;
+	let my-count be 0;
 	repeat through the table of verb checks:
 		increment global-row-check;
 		now my-count is 0;
@@ -3805,38 +3803,35 @@ this is the verb-checker rule:
 		let rb-out be the outcome of the rulebook;
 		if rb-out is the unavailable outcome, next;
 		now vc-dont-print is false;
-		if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
-		if there is a w2 entry:
-			if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
-		else if my-count > 0:
-			increment my-count;
-		let wfull-fail be false;
 		[say "[ver-rule entry].";]
-		if there is a wfull entry:
-			if the player's command matches the wfull entry:
-				now my-count is 3;
-			else if my-count is 2:
-				now wfull-fail is true;
+		if there is a wfull entry and the player's command matches the wfull entry:
+			now my-count is 4; [ 4 = topic match, 3 = mix up alt solutions, 2 = 2 word match (or DIMD). This is a magic number to get rid of a boolean, so we can have all non global variables inside one rule, because Inform only allows 15 local variables. ]
+		else:
+			if the player's command matches the regular expression "(^|\W)([w1 entry])($|\W)", increment my-count;
+			if there is a w2 entry:
+				if the player's command matches the regular expression "(^|\W)([w2 entry])($|\W)", increment my-count;
+			else if my-count > 0:
+				increment my-count;
+			if there is a wfull entry and my-count is 2:
+				increment my-count;
 		if my-count >= 2:
 [			if debug-state is true, say "DEBUG: processing [ver-rule entry], outcome [if rb-out is unavailable outcome]UA[else if rb-out is not-yet outcome]NOT YET[else if rb-out is already-done outcome]already done[else]rady[end if].";]
 			process the ver-rule entry;
 			if rb-out is the already-done outcome, the rule succeeds;
 			if rb-out is the not-yet outcome:
+				let exact-cmd be whether or not the player's command matches the text "[first-of-ors of w1 entry][if there is a w2 entry] [first-of-ors of w2 entry][end if]", case insensitively;
 				if think-cue entry is false:
-					let X be indexed text;
-					now X is "[first-of-ors of w1 entry][if there is a w2 entry] [first-of-ors of w2 entry][end if]";
-					let exact-cmd be whether or not the player's command matches the text X, case insensitively;
 					say "[line break][one of][b]NOTE[r]: this command[if exact-cmd is false] (well, an equivalent, as there were alternate solutions)[end if] will be useful later, but you aren't ready to use it, yet. You can track commands like this by typing [b]THINK[r], which will also clue you if they now work.[or](useful command[if exact-cmd is false] (or a functionally equivalent alternate solution)[end if] again saved to [b]THINK[r] for later reference.)[stopping]";
 					now think-cue entry is true;
 				else:
-					say "[line break]Hmm, that still doesn't quite work here and now. But it will, somewhere, some time.";
+					say "[line break]Hmm, that [if exact-cmd is false](or a functionally equivalent alternate solution) [end if]still doesn't quite work here and now. But it will, somewhere, some time.";
 				the rule succeeds;
 			if okflip entry is false:
-				unless my-count is 3 or there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [this is for the DIM'D test case... and "my-count is 3" is a hack for FLIMFLAM]
+				unless my-count is 4 or there is no w2 entry or the player's command matches the regular expression "^([w1 entry])\W": [using only w1 is  is for the DIM'D test case... and "my-count is 4" is a hack for FLIMFLAM]
 					say "You've got it backwards! Just flip things around, and it'll be okay.";
 					the rule succeeds;
-			if wfull-fail is true:
-				say "Ooh! You're close, but you juggled things up, somehow.";
+			if my-count is 3:
+				say "Ooh! You're close. You've probably juggled two valid solutions.";
 				the rule succeeds;
 			if buggin-freeze:
 				if ver-rule entry is not vc-glow-glad rule and ver-rule entry is not vc-stay-strong rule:
@@ -4084,8 +4079,7 @@ to win-the-game:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	phbt Tarry Tile;
-	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.";
-	wfak;
+	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.[wfak]";
 	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. It captures some of the more memorable parts of your journey. The tag on the back of the neck says 'FUN FAIR WON WEAR.' There's a bracelet, too, perhaps a bit too optimistic: LIFE LONG STRIFE-STRONG. Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
