@@ -26,6 +26,16 @@ def name_to_row(tabname): # this could be in a dict but there are so few argumen
     if tabname == 'verb' : return 2
     return -1
 
+def shake_out_unused(my_dict, descrip):
+    retval = 0
+    for x in my_dict:
+        if my_dict[x] == -1:
+            retval += 1
+            left = "#homonyms {} test {}".format(descrip, x)
+            right = "{:02d}/{:02d} {}".format(retval, retval + count, test_notes[x])
+            print("{:50s}{}".format(left, right))
+    return retval
+
 def check_any_or_dupe(my_line, my_dict, search_string, line_count):
     if not my_line.startswith("#" + search_string + " "): return False
     my_test = re.sub(".*?test +", "", my_line.strip())
@@ -49,6 +59,8 @@ create_bookmarks = False
 in_table = False
 skip_line = False
 table_name = "<NONE>"
+descriptor = "<UNDEFINED>"
+descriptor = 'close' if table_name == 'verb' else 'basic'
 
 with open(f) as file:
     for (line_count, line) in enumerate (file, 1):
@@ -67,12 +79,21 @@ with open(f) as file:
             table_name = "<NONE>"
             continue
         lary = line.lower().split("\t")
-        test_case = "{}-{}".format(table_name, lary[0])
+        if table_name == 'verb':
+            if lary[match_row] == '--' or not lary[match_row]:
+                continue
+        if table_name == 'verb':
+            test_case = "{}-{}".format(table_name, re.sub(" .*", "", lary[10][3:]))
+        else:
+            test_case = "{}-{}".format(table_name, lary[0])
         if create_bookmarks:
             #print("#homonym test {}".format(test_case))
             pass
         else:
-            basic_to_check[test_case] = -1
+            if table_name == 'verb':
+                close_to_check[test_case] = -1
+            else:
+                basic_to_check[test_case] = -1
             test_notes[test_case] = lary[match_row].replace('"', '').strip()
 
 rbr = i7.rbr('vv')
@@ -98,9 +119,7 @@ with open(rbr) as file:
 
 count = 0
 
-for x in basic_to_check:
-    if basic_to_check[x] == -1:
-        count += 1
-        print("#homonym test {} {} needed: {}.".format(x, count, test_notes[x]))
+count += shake_out_unused(basic_to_check, "basic")
+count += shake_out_unused(close_to_check, "close")
 
 mt.postopen_files()
