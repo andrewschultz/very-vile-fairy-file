@@ -7,6 +7,22 @@
 
 * main-thru
 
+#homonyms basic test room-wet wood
+>whet would
+You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+>whet wud
+You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+>wett would
+You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+#homonyms close test verb-get-good-git
+>git goob
+You don't need source control, but you're close, here.
+>git good
+brightly
+!don't need source control
+>goat goat git
+You don't need source control, but you're close, here.
+
 > wet woo
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > we would
@@ -18,11 +34,19 @@ by one point
 > get good
 by one point
 
+#homonyms basic test room-rift river
+>riffed riffer
+You need to have riffed, but with rhyming, as you did in the Wet Wood.
+
 >riffed rrr
 No, you rhymed to get out of the Wet Wood. But homonyms aren't quite the way to go, here.
 
 > gift giver
 by one point
+
+#homonyms close test verb-find-fault-fined
+>fined falt
+WRONG
 
 > find fault
 by one point
@@ -30,11 +54,19 @@ by one point
 > green grass
 by one point
 
+#homonyms close test verb-grow-grit-owe
+>owe oit
+WRONG
+
 > grow grit
 by one point
 
 > mash map
 by one point
+
+#homonyms close test verb-mind-me-mined
+>mined moo
+WRONG
 
 > mind me
 by one point
@@ -42,10 +74,30 @@ by one point
 > flim flam
 by one point
 
+#homonyms basic test room-fun fen
+>fun phen
+Organic chemistry is much too complex, here.
+
 > phun phen
 Organic chemistry is much too complex, here.
 
 > s
+
+#homonyms close test verb-kneel-near-neal
+>neal neyer
+WRONG
+#homonyms close test verb-deal-dear-deer
+>deel deer
+WRONG
+#homonyms close test verb-heal-here-heel
+>heel heer
+WRONG
+#homonyms close test verb-heal-here-hear
+>hael hear
+WRONG
+#homonyms basic test room-real rear
+>reel reer
+The Sage Sea is not for fishing.
 
 > reel reer
 The Sage Sea is not for fishing.
@@ -67,7 +119,7 @@ by one point
 > dive deep
 by one point
 
-#homonym test thing-vapor vial
+#homonyms basic test thing-vapor vial
 > vaper vile
 WRONG
 
@@ -79,11 +131,15 @@ by one point
 
 > n
 
-#homonym test room-creased cross
+#homonyms basic test room-creased cross
 >craws crews
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > w
+
+#homonyms close test verb-mark-more-moor
+>murk moor
+WRONG
 
 > dark door
 by one point
@@ -96,7 +152,13 @@ by one point
 
 > w
 
-#homonym test room-history hall
+#homonyms close test verb-history-hall-haul
+>hiss haul
+WRONG
+#homonyms close test verb-mystery-mall-maul
+>miss maul
+WRONG
+#homonyms basic test room-history hall
 >long haul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
@@ -105,13 +167,20 @@ You feel ... something. But not enough. Homophones must not quite be the way to 
 > mystery mall
 by one point
 
-#homonym retest room-history hall
+#homonyms basic retest room-history hall
 >long haul
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+#homonyms close test verb-glean-glows-gloze
+>gleen gloze
+WRONG
 
 > listen
+
+#homonyms close test verb-ho-happen-hoe
+>hoe hoppin
+WRONG
 
 > lots lame
 by one point
@@ -121,7 +190,16 @@ by one point
 
 > w
 
-#homonym test room-got gear hot here
+#homonyms close test verb-lie-lol-lye
+>lye lawwal
+WRONG
+#homonyms close test verb-lie-lol-loll
+>ly loll
+WRONG
+#homonyms close test verb-not-near-knot
+>knot kneer
+WRONG
+#homonyms basic test room-got gear hot here
 >hear hear
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -157,7 +235,7 @@ by one point
 > s
 > e
 
-#homonym test room-violent vale
+#homonyms basic test room-violent vale
 >vicki veil
 You need to get rid of the violence, not put a veil over it.
 
@@ -172,15 +250,30 @@ by one point
 
 > enter boat
 
-#homonym test room-violent vale
+#homonyms close test verb-wake-whee-we
+>waik we
+WRONG
+
+#homonyms basic test room-lake lea
 >lee smith
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > wake whee
 by one point
 
+#homonyms close test verb-take-tea-t
+>taik t
+WRONG
+#homonyms close test verb-take-tea-tee
+>taik tee
+WRONG
+
 > take tea
 by one point
+
+#homonyms close test verb-break-brie-brake
+>brake breee
+WRONG
 
 > fake fee
 by one point
@@ -199,7 +292,14 @@ Silent Sail
 
 > enter boat
 
-#homonym test room-been buggin
+#homonyms close test verb-lean-luggin-lien
+>lien loggin
+WRONG
+#homonyms close test verb-mean-muggin-mien
+>mien moggin
+WRONG
+
+#homonyms basic test room-been buggin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
@@ -239,6 +339,15 @@ by one point
 > lending libe
 by one point
 
+#homonyms close test verb-see-sign-sea
+>sea syne
+WRONG
+#homonyms close test verb-see-sign-sine
+>see sine
+WRONG
+>sea sine
+WRONG
+
 > sea syne
 The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't THINK it right.
 > seee sine
@@ -255,7 +364,16 @@ by one point
 
 > n
 
-#homonym test room-foe field
+#homonyms close test verb-plain-pleasant-plane
+>plane present
+WRONG
+#homonyms close test verb-show-shield-fo
+>fo feeled
+WRONG
+#homonyms close test verb-show-shield-sew
+>sew seeled
+WRONG
+#homonyms basic test room-foe field
 > sew zzz
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > sow zzz
@@ -264,13 +382,17 @@ You feel ... something. But not enough. Homophones must not quite be the way to 
 > plain pleasant
 by one point
 
-#homonym retest room-foe field
+#homonyms basic retest room-foe field
 >sow see
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > w
 
-#homonym test room-store all stage
+#homonyms close test verb-moral-mage-morel
+>morel may
+WRONG
+
+#homonyms basic test room-store all stage
 >awl righty
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -288,7 +410,7 @@ by one point
 
 > e
 
-#homonym test room-blinding blaze
+#homonyms basic test room-blinding blaze
 >graze xxx
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -303,7 +425,7 @@ by one point
 > luck lair
 by one point
 
-#homonym retest room-blinding blaze
+#homonyms basic retest room-blinding blaze
 >graze xxx
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -330,7 +452,11 @@ by one point
 > n
 > e
 
-#homonym test room-here hull
+#homonyms close test verb-dear-dull-deer
+>deer doll
+WRONG
+
+#homonyms basic test room-here hull
 >hear hull
 You can just listen, if you need to.
 
@@ -372,7 +498,14 @@ by one point
 > e
 > e
 
-#homonym test room-whining war
+#homonyms close test verb-so-sappin-sew
+>sew soppin
+WRONG
+#homonyms close test verb-so-sappin-sow
+>sow soppin
+WRONG
+
+#homonyms basic test room-whining war
 > wining dining
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > wore more
@@ -403,6 +536,10 @@ by one point
 
 > n
 
+#homonyms close test verb-cast-cap-caste
+>caste kap
+WRONG
+
 > go gappin
 by one point
 
@@ -412,6 +549,16 @@ by one point
 > cast cap
 by one point
 
+#homonyms close test verb-wood-one-won
+>whud won
+WRONG
+#homonyms close test verb-wood-one-would
+>would wun
+WRONG
+#homonyms close test verb-meeker-muscle-mussel
+>meaker mussel
+WRONG
+
 > meeker muscle
 by one point
 
@@ -420,7 +567,7 @@ by one point
 
 > n
 
-#homonym test room-airy isle
+#homonyms basic test room-airy isle
 >erry xxx
 The Airy Isle can't really be changed.
 >aerie xxx
@@ -431,14 +578,25 @@ The Airy Isle can't really be changed.
 > hot horde
 by one point
 
+#homonyms close test verb-hot-horde-hoard
+>hoard haught
+WRONG
+
 > lot lord
 by one point
 
 > got gored
 by one point
 
+#homonyms close test verb-whoa-wait-weight
+>woo weight
+WRONG
+
 > whoa wait
 by one point
+
+#homonyms basic test room-tarry tile
+Nobody named Terry appears, nor does any terry cloth.
 
 >terry crews
 Nobody named Terry appears, nor does any terry cloth.
@@ -446,8 +604,20 @@ Nobody named Terry appears, nor does any terry cloth.
 > tell torn
 by one point
 
+#homonyms close test verb-merry-mile-marry
+>myill marry
+WRONG
+
 > merry mile
 by one point
+
+#homonyms basic retest room-tarry tile
+>terry tyle
+!Nobody named Terry appears, nor does any terry cloth.
+
+#homonyms close test verb-bury-bile-berry
+>buyall berry
+WRONG
 
 > bury bile
 by one point

@@ -31,6 +31,23 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 
 * main-thru
 
+@hom
+#homonyms basic test room-wet wood
+>whet would
+You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+>whet wud
+You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+>wett would
+You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+#homonyms close test verb-get-good-git
+>git goob
+You don't need source control, but you're close, here.
+>git good
+brightly
+!don't need source control
+>goat goat git
+You don't need source control, but you're close, here.
+
 @ver
 >sleep
 Lie late, my mate? Why wait?
@@ -274,6 +291,11 @@ by one point
 
 ##newloc rift river
 
+@hom
+#homonyms basic test room-rift river
+>riffed riffer
+You need to have riffed, but with rhyming, as you did in the Wet Wood.
+
 @gt
 > gt wet wood
 You don't need to go back.
@@ -319,6 +341,11 @@ You try fearing things different ways, but nobody comes to comfort you.
 by one point
 
 ###newloc vined vault
+
+@hom
+#homonyms close test verb-find-fault-fined
+>fined falt
+WRONG
 
 @gt
 > gt rift river
@@ -469,7 +496,12 @@ The HA HALF button lights up on your Leet Learner.
 > green grass
 by one point
 
-###newloc trim tram
+###newloc po pit
+
+@hom
+#homonyms close test verb-grow-grit-owe
+>owe oit
+WRONG
 
 @gt
 > gt vined vault
@@ -683,9 +715,15 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-
 > mash map
 by one point
+
+###newloc trim tram
+
+@hom
+#homonyms close test verb-mind-me-mined
+>mined moo
+WRONG
 
 @ha
 > mash map
@@ -859,6 +897,11 @@ by one point
 
 ###newloc fun fen
 
+@hom
+#homonyms basic test room-fun fen
+>fun phen
+Organic chemistry is much too complex, here.
+
 @gt
 >gt wet wood
 You don't need to go back. The introductory bit is over.
@@ -901,6 +944,23 @@ east to Fate Farm
 > s
 
 ###newloc real rear
+
+@hom
+#homonyms close test verb-kneel-near-neal
+>neal neyer
+WRONG
+#homonyms close test verb-deal-dear-deer
+>deel deer
+WRONG
+#homonyms close test verb-heal-here-heel
+>heel heer
+WRONG
+#homonyms close test verb-heal-here-hear
+>hael hear
+WRONG
+#homonyms basic test room-real rear
+>reel reer
+The Sage Sea is not for fishing.
 
 @ver
 >drink sage sea
@@ -1217,7 +1277,7 @@ by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @hom
-#homonym test thing-vapor vial
+#homonyms basic test thing-vapor vial
 > vaper vile
 WRONG
 
@@ -1306,7 +1366,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 ###newloc creased cross
 
 @hom
-#homonym test room-creased cross
+#homonyms basic test room-creased cross
 >craws crews
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -1327,6 +1387,11 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 > w
 
 ###newloc stark store
+
+@hom
+#homonyms close test verb-mark-more-moor
+>murk moor
+WRONG
 
 @mis
 > lark lore
@@ -1500,7 +1565,13 @@ The clay is cleared enough.
 ###newloc history hall
 
 @hom
-#homonym test room-history hall
+#homonyms close test verb-history-hall-haul
+>hiss haul
+WRONG
+#homonyms close test verb-mystery-mall-maul
+>miss maul
+WRONG
+#homonyms basic test room-history hall
 >long haul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
@@ -1518,13 +1589,17 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newloc mystery mall
+###newitm mean moe's clean clothes
 
 @hom
-#homonym retest room-history hall
+#homonyms basic retest room-history hall
 >long haul
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >long maul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+#homonyms close test verb-glean-glows-gloze
+>gleen gloze
+WRONG
 
 @ha
 > mystery mall
@@ -1580,6 +1655,13 @@ That insult only works once.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
 > listen
+
+###newitm toe tappin row rappin
+
+@hom
+#homonyms close test verb-ho-happen-hoe
+>hoe hoppin
+WRONG
 
 @mis
 > fo fappin
@@ -1733,7 +1815,16 @@ You already changed Toe Tappin Row Rappin that way.
 ###newloc got gear hot here
 
 @hom
-#homonym test room-got gear hot here
+#homonyms close test verb-lie-lol-lye
+>lye lawwal
+WRONG
+#homonyms close test verb-lie-lol-loll
+>ly loll
+WRONG
+#homonyms close test verb-not-near-knot
+>knot kneer
+WRONG
+#homonyms basic test room-got gear hot here
 >hear hear
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -2329,7 +2420,7 @@ You need something more substantial to come out of the cool cap.
 ###newloc violent vale
 
 @hom
-#homonym test room-violent vale
+#homonyms basic test room-violent vale
 >vicki veil
 You need to get rid of the violence, not put a veil over it.
 
@@ -2462,12 +2553,17 @@ The boring boat seems to anchor itself okay here.
 
 ###newloc lake lea
 
+@hom
+#homonyms close test verb-wake-whee-we
+>waik we
+WRONG
+
 @gt
 >gt silent sail
 Sorry, but GO TO is disabled here in the lakes.
 
 @hom
-#homonym test room-violent vale
+#homonyms basic test room-lake lea
 >lee smith
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -2544,6 +2640,14 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@hom
+#homonyms close test verb-take-tea-t
+>taik t
+WRONG
+#homonyms close test verb-take-tea-tee
+>taik tee
+WRONG
+
 > take tea
 by one point
 
@@ -2571,6 +2675,11 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 > break zbrie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
+
+@hom
+#homonyms close test verb-break-brie-brake
+>brake breee
+WRONG
 
 @all,mis,ha
 > break brie
@@ -2817,6 +2926,14 @@ Been Buggin
 
 ###newloc been buggin
 
+@hom
+#homonyms close test verb-lean-luggin-lien
+>lien loggin
+WRONG
+#homonyms close test verb-mean-muggin-mien
+>mien moggin
+WRONG
+
 @gt
 >gt silent sail
 You're too bummed to make big trips.
@@ -2830,7 +2947,7 @@ Don't ditch Dean! He has valuable training. You can brute-force your way through
 Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
 
 @hom
-#homonym test room-been buggin
+#homonyms basic test room-been buggin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
@@ -3324,6 +3441,17 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newloc lending libe
+###newitm we whine me mine
+
+@hom
+#homonyms close test verb-see-sign-sea
+>sea syne
+WRONG
+#homonyms close test verb-see-sign-sine
+>see sine
+WRONG
+>sea sine
+WRONG
 
 @ha
 > lending libe
@@ -3441,7 +3569,16 @@ LEAST LOSS
 ###newloc foe field so sealed
 
 @hom
-#homonym test room-foe field
+#homonyms close test verb-plain-pleasant-plane
+>plane present
+WRONG
+#homonyms close test verb-show-shield-fo
+>fo feeled
+WRONG
+#homonyms close test verb-show-shield-sew
+>sew seeled
+WRONG
+#homonyms basic test room-foe field
 > sew zzz
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > sow zzz
@@ -3481,7 +3618,7 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @hom
-#homonym retest room-foe field
+#homonyms basic retest room-foe field
 >sow see
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -3503,6 +3640,11 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 ###newloc store all stage
 ###newitm coral cage
 
+@hom
+#homonyms close test verb-moral-mage-morel
+>morel may
+WRONG
+
 @ver
 >open coral cage
 The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage.
@@ -3512,7 +3654,7 @@ You have nothing that opens the coral cage.
 >purloin cage key
 
 @hom
-#homonym test room-store all stage
+#homonyms basic test room-store all stage
 >awl righty
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -3686,7 +3828,7 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 ###newloc blinding blaze
 
 @hom
-#homonym test room-blinding blaze
+#homonyms basic test room-blinding blaze
 >graze xxx
 !You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -3852,7 +3994,7 @@ by one point
 ###newloc grinding grays
 
 @hom
-#homonym retest room-blinding blaze
+#homonyms basic retest room-blinding blaze
 >graze xxx
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 >grace xxx
@@ -4028,12 +4170,17 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 ###newloc here hull
 
+@hom
+#homonyms close test verb-dear-dull-deer
+>deer doll
+WRONG
+
 @ver
 > attack beer bull
 You'd get a triple-tough cripple-cuff in return. You must fight with words.
 
 @hom
-#homonym test room-here hull
+#homonyms basic test room-here hull
 >hear hull
 You can just listen, if you need to.
 
@@ -4447,7 +4594,15 @@ PULL PIECED
 ###newloc whining war
 
 @hom
-#homonym test room-whining war
+#homonyms close test verb-so-sappin-sew
+>sew soppin
+WRONG
+#homonyms close test verb-so-sappin-sow
+>sow soppin
+WRONG
+
+@hom
+#homonyms basic test room-whining war
 > wining dining
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 > wore more
@@ -4725,6 +4880,11 @@ GO GAPPIN
 
 ###newloc gassed gap
 
+@hom
+#homonyms close test verb-cast-cap-caste
+>caste kap
+WRONG
+
 @gt
 # test places you can't go back to
 >gt here hull
@@ -4847,6 +5007,20 @@ Yes, you've been a model of morality. Yay, you.
 
 > cast cap
 by one point
+
+###newnpc reeker russell
+###newitm good gun
+
+@hom
+#homonyms close test verb-wood-one-won
+>whud won
+WRONG
+#homonyms close test verb-wood-one-would
+>would wun
+WRONG
+#homonyms close test verb-meeker-muscle-mussel
+>meaker mussel
+WRONG
 
 @mis #cast cap after
 > classed clap
@@ -5022,7 +5196,7 @@ There's no way back. You are so close to the end.
 The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get.
 
 @hom
-#homonym test room-airy isle
+#homonyms basic test room-airy isle
 >erry xxx
 The Airy Isle can't really be changed.
 >aerie xxx
@@ -5071,6 +5245,13 @@ The HA HALF button lights up on your Leet Learner.
 
 > hot horde
 by one point
+
+###newitm hot horde
+
+@hom
+#homonyms close test verb-hot-horde-hoard
+>hoard haught
+WRONG
 
 @ha
 > hot horde
@@ -5127,6 +5308,14 @@ The HA HALF button lights up on your Leet Learner.
 
 > got gored
 by one point
+
+###newitm go gate
+###newitm grow grate
+
+@hom
+#homonyms close test verb-whoa-wait-weight
+>woo weight
+WRONG
 
 @ha
 > got gored
@@ -5207,6 +5396,10 @@ by one point
 
 ###newloc tarry tile
 
+@hom
+#homonyms basic test room-tarry tile
+Nobody named Terry appears, nor does any terry cloth.
+
 @gt
 >gt airy isle
 You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh.
@@ -5263,6 +5456,11 @@ The HA HALF button lights up on your Leet Learner.
 > tell torn
 by one point
 
+@hom
+#homonyms close test verb-merry-mile-marry
+>myill marry
+WRONG
+
 @gt
 >gt merry mile
 Already there! Er, here.
@@ -5292,6 +5490,12 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newloc merry mile
+
+@hom
+#homonyms basic retest room-tarry tile
+>terry tyle
+!Nobody named Terry appears, nor does any terry cloth.
+
 
 @ha
 > merry mile
@@ -5327,6 +5531,11 @@ The HA HALF button lights up on your Leet Learner.
 > tryst tress
 !Learner needle
 The last thing you need now is a hair appointment.
+
+@hom
+#homonyms close test verb-bury-bile-berry
+>buyall berry
+WRONG
 
 > bury bile
 by one point

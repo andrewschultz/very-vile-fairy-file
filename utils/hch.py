@@ -84,6 +84,7 @@ with open(f) as file:
                 continue
         if table_name == 'verb':
             test_case = "{}-{}".format(table_name, re.sub(" .*", "", lary[10][3:]))
+            test_subcases = lary[2].replace('"', '').split("|")
         else:
             test_case = "{}-{}".format(table_name, lary[0])
         if create_bookmarks:
@@ -91,10 +92,12 @@ with open(f) as file:
             pass
         else:
             if table_name == 'verb':
-                close_to_check[test_case] = -1
+                for q in test_subcases:
+                    close_to_check[test_case + "-" + q] = -1
+                    test_notes[test_case + "-" + q] = q
             else:
                 basic_to_check[test_case] = -1
-            test_notes[test_case] = lary[match_row].replace('"', '').strip()
+                test_notes[test_case] = lary[match_row].replace('"', '').strip()
 
 rbr = i7.rbr('vv')
 
