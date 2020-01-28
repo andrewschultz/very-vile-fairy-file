@@ -1889,6 +1889,7 @@ randtxt
 "My magic try: TRAGIC!"
 "No-no! Ho-ho, dodo!"
 "Rotten role: gotten goal?"
+"Slum slave crumb. Crave? Come, CAVE!"
 "Sly, sleek? Shy, chic? Why, weak!"
 "Stout stud? Doubt, dud!"
 "Town tip: down, dip!"
@@ -1952,39 +1953,39 @@ this is the hom-toe-tappin-to-co-capn rule:
 	unless jake g is touchable and toe tappin row rappin is touchable, the rule fails;
 	if sco-co-capn is true, the rule fails;
 	say "You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.";
-	the rule fails;
+	the rule succeeds;
 
 this is the hom-bold-bard-to-bowled-barred rule:
 	if the player's command includes "bowled":
 		say "Cricket isn't cricket right now, old chap!";
-		the rule fails;
+		the rule succeeds;
 	if the player's command includes "barred":
 		say "The bold bard sort of is, already, and you're trying to fix that.";
-		the rule fails;
+		the rule succeeds;
 
 this is the hom-bot-board-to-bought-bored rule:
 	if the player's command includes "bored":
 		say "Sadly, the bot board is unable to feel bored of sitting around and being repressive.";
-		the rule fails;
+		the rule succeeds;
 	if the player's command includes "bought":
-		say "Perhaps their soulless corporate overlords would be interested in a quick buck, but Bot Board isn't.";
-		the rule fails;
+		say "Perhaps their soulless corporate overlords would be interested in a quick buck, but the Bot Board isn't.";
+		the rule succeeds;
 
 this is the hom-toe-tappin-to-roe-tow rule:
 	if the player's command includes "roe":
 		say "You don't need fish or homonyms.";
-		the rule fails;
+		the rule succeeds;
 	if the player's command includes "roe":
 		say "You don't need a tow truck or homonyms.";
-		the rule fails;
+		the rule succeeds;
 
 this is the hom-we-whine-to-whee-wine rule:
 	if the player's command includes "whee":
 		say "That'd be a heel turn, actually liking [we whine].";
-		the rule fails;
+		the rule succeeds;
 	if the player's command includes "wine":
 		say "[we whine] may drive moral people to drink, but you don't need that. Or homonyms.";
-		the rule fails;
+		the rule succeeds;
 
 
 [zzthr]
@@ -2020,26 +2021,26 @@ section room homonym rules [xxrhr]
 this is the hom-history-hall-to-haul-maul rule:
 	if in-mystery-mall is true and the player's command matches "maul":
 		say "[basic-homonym-reject]";
-		the rule fails;
+		the rule succeeds;
 	if in-mystery-mall is false and the player's command matches "haul":
 		say "[basic-homonym-reject]";
-		the rule fails;
+		the rule succeeds;
 
 this is the hom-blinding-blaze-to-wheys-grace-graze rule:
 	if sco-winding-ways is true and stuck stair is not moot:
 		if the player's command includes "wheys":
 			say "[basic-homonym-reject]";
-			the rule fails;
+			the rule succeeds;
 	if stuck stair is moot:
 		if the player's command includes "grays" or the player's command includes "grace":
 			say "[basic-homonym-reject]";
-			the rule fails;
+			the rule succeeds;
 
 this is the hom-whining-war-to-wining-wore rule:
 	if sco-shining-shore is false:
 		if the player's command matches "wining" or the player's command matches "wore":
 			say "[basic-homonym-reject]";
-			the rule fails;
+			the rule succeeds;
 
 [zzrhr]
 

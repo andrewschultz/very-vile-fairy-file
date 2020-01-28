@@ -3389,7 +3389,7 @@ when play begins (this is the opening text rule):
 when play begins (this is the score and status tweak rule):
 	now the maximum score is min-needed + max-bonus;
 	now max-poss is the maximum score;
-	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if min-needed is max-poss]*[else]-[max-poss][end if]";
+	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-poss]*[else]-[max-poss][end if]";
 	force-status;
 	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 0;
@@ -3414,6 +3414,8 @@ Gazy Gap is a room in Get a Guess. [crazy crap]
 Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporarily gone]
 
 book meta verbs
+
+check saving the game for the first time: "A mocking disembodied voice teases you, 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if Dave is a better name for a hero than Kerry Kyle.";
 
 check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
@@ -3682,12 +3684,6 @@ Rule for printing a parser error (this is the clue half right words rule):
 		abide by the rhyme-guess-checker rule for cur-guess-table;
 	abide by the verb-checker rule;
 	abide by the rhyme-guess-checker rule for table of general good guesses;
-	now table-list is {};
-	[repeat through table of potential homonyms:
-		if hom-thing entry is touchable:
-			if the player's command matches hom-words entry:
-				say "[if there is a special-text entry][special-text entry][else]Homonyms aren't quite the way to go, here.[end if]";
-				the rule succeeds;]
 	if buggin-freeze:
 		say "You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling [if in-so-sad]so sad[else]way wrong[end if].";
 		the rule succeeds;
@@ -3700,7 +3696,8 @@ Rule for printing a parser error (this is the check for room name and homophones
 		if location of player is loc entry:
 			if there is a hom-rule entry:
 				process the hom-rule entry;
-				if the rule failed, next;
+				if the rule failed, break;
+				if the rule succeeded, the rule succeeds;
 				if there is no myhom entry, next;
 			if the player's command includes myhom entry:
 				if there is a custom-msg entry:
@@ -3709,11 +3706,13 @@ Rule for printing a parser error (this is the check for room name and homophones
 					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
 				the rule succeeds;
 			break;
-	repeat through table of thing homonyms:
+	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can'r quite combine the code.]
 		if mything entry is touchable:
 			if there is a hom-rule entry:
 				process the hom-rule entry;
 				if the rule failed, next;
+				if the rule succeeded, the rule succeeds;
+				if there is no myhom entry, next;
 			if the player's command includes myhom entry:
 				if there is a custom-msg entry:
 					say "[custom-msg entry]. Homonyms aren't quite the way to go, here.";
