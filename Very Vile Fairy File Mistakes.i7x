@@ -549,12 +549,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "choral cage"	coral-cage-around rule	false	54	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
 "co cappin"	have-toe-tappin rule	false	24	need-cocapn rule	"[if sco-co-capn is true]You don't need guns[else]Close, but camaraderie, not firepower[end if]."
 "bought board"	bot-board-vis rule	false	35	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]
-"got gourd"	bot-board-vis rule	false	35	--	"That worked in The Life of Brian, but ... try a homophone, here. You're close."
-"hot hoard"	bot-board-vis rule	false	35	--	"You already hoarded enough inventory in your big bag. Try a homophone, here. You're close."
-"woe/whoa/whoah weight"	go-gate-vis rule	false	44	--	"You wouldn't want to be crushed by a weight. But you've got the right idea."
-"would/wood won" or "would one"	good-gun-here rule	false	44	--	"You are in homophone territory, here."
 "mined malt"	need-find-fault rule	false	45	--	"Almost. There's nobody here to fine or be fined." [start vined vault]
-"poe pit"	in-po-pit rule	false	44	if-grit-ungrown rule	"You don't need a pendulum about to cut you." [start po pit]
 
 ["hoe happen"	have-toe-tappin rule	false	26	ho-happen-undone rule	"No garden tool appears in your hand. You expected something else?"
 "sea sign/sine"	we-whine-near rule

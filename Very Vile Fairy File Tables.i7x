@@ -102,7 +102,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "couple"	"caps"	--	--	false	false	true	false	false	--	vc-couple-caps rule	vr-couple-caps rule	--	"You tried to [b]COUPLE CAPS[r] earlier, but that'll work [once-now of vc-couple-caps rule] you've got enough caps to couple."
 "lot"	"lord"	--	--	false	false	true	false	false	Airy Isle	vc-lot-lord rule	vr-lot-lord rule	--	-- [start Airy Isle]
 "hot"	"horde"	"hoard"	--	false	false	true	false	false	Airy Isle	vc-hot-horde rule	vr-hot-horde rule	--	--
-"got"	"gored"	--	--	false	false	true	false	false	Airy Isle	vc-got-gored rule	vr-got-gored rule	--	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
+"got"	"gored"	"gourd"	--	false	false	true	false	false	Airy Isle	vc-got-gored rule	vr-got-gored rule	--	"The battle cry [b]GOT GORED[r] should work [once-now of vc-got-gored rule] you have a full army and its leader."
 "whoa|whoah|woe"	"wait"	"weight"	--	false	true	true	false	false	Airy Isle	vc-whoa-wait rule	vr-whoa-wait rule	--	--
 "tell"	"torn"	--	--	false	false	true	false	false	Tarry Tile	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
 "merry"	"mile"	"marry"	--	false	false	true	false	false	Tarry Tile	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
@@ -121,6 +121,69 @@ this is the vh-find-fault rule: say "Sort of close, but you don't need to make t
 this is the vh-get-good rule: say "You don't need source control, but you're close, here." instead;
 
 this is the vh-grow-grit rule: say "Not quite OWE ... but you sense there are several ways to toughen up." instead;
+
+this is the vh-mind-me rule: say "You need to take care of, not booby-trap, yourself." instead;
+
+this is the vh-kneel-near rule: say "You don't need to call anyone by their first names. It would be disrespectful to try, with the Ceiling Seer." instead;
+
+this is the vh-deal-dear rule: say "You don't need to populate this area with wildlife. It's the right amount of peaceful." instead;
+
+this is the vh-heal-here rule:
+	if the player's command matches "hear", say "A bit too bossy for the Ceiling Seer." instead;
+	if the player's command matches "heel", say "The Ceiling Seer only helps the good guys." instead;
+
+this is the vh-history-hall rule: say "You don't need THAT much stuff." instead;
+
+this is the vh-mystery-mall rule: say "You don't need to destroy anything." instead;
+
+this is the vh-mark-more rule: say "Close, but what would a moor be doing near a store?" instead;
+
+this is the vh-ho-happen rule: say "Keep farming, you'll get the right homonym." instead;
+
+this is the vh-got-gored rule: say "That worked in The Life of Brian, but ... well, you need something with more oomph. You're close." instead
+
+this is the vh-glean-glows rule: say "You shouldn't be fishing for flattery." instead;
+
+this is the vh-see-sign rule:
+	if the player's command matches "sea", say "You remain landlocked." instead;
+	if the player's command matches "sine", say "The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK!" instead;
+
+this is the vh-lie-lol rule:
+	if the player's command matches "lye", say "Lye poisoning is a serious matter." instead;
+	if the player's command matches "loll", say "Instead of lolling, why not have more fun?" instead;
+
+this is the vh-not-near rule: say "Homonyms will tie you up in knots in this game." instead;
+
+this is the vh-plain-pleasant rule: say "The peasant acquires no magical transportation." instead;
+
+this is the vh-moral-mage rule: say "You don't need a plantomancer." instead;
+
+this is the vh-dear-dull rule: say "But the beer bull might maul the deer." instead;
+
+this is the vh-wake-whee rule: say "You are already awake. You need to make Jake ache to be awake." instead;
+
+this is the vh-take-tea rule: say "You need to, um, tee up something more positive." instead;
+
+this is the vh-break-brie rule: say "You get the feeling you can, but don't have to, change things up just a bit." instead;
+
+this is the vh-lean-luggin rule: say "Whoah! Close, but tax stuff is too complicated and bloated." instead;
+
+this is the vh-mean-muggin rule: say "Something similar, but much tougher, if not tougher to spell, than mien." instead;
+
+this is the vh-so-sappin rule: say "Three letters is too much! You need to keep it simple." instead;
+
+this is the vh-cast-cap rule: say "You don't have to show anyone you're better. Well, not [i]before[r] you make a challenge." instead;
+
+this is the vh-meeker-muscle rule: say "Ooh! You're on the right track, but you don't quite need to turn Russell into seafood." instead;
+
+this is the vh-wood-one rule: say "The good gun seems to bend a bit. You must be close to a concrete way to change it." instead;
+
+this is the vh-hot-horde rule: ["hoard"]
+this is the vh-whoa-wait rule: say "You wouldn't want to be crushed by a weight. But you've got the right idea." instead;
+
+this is the vh-merry-mile rule: say "It's debatable whether marriage makes things happier or not. Tweak this for assurance." instead;
+
+this is the vh-bury-bile rule: say "You need to do the opposite of eat something." instead;
 
 [zzvhr]
 
@@ -1865,6 +1928,7 @@ bot board	hom-bot-board-to-bought-bored rule	--
 coral cage	--	"choral"	"You don't need the cage to sing. You need to figure who's in there."
 grow grate	--	"great"	"But you want to lessen the grate/gate's influence."
 hot horde	--	"hoard"	"The horde is after victories, not treasure."
+jake g	hom-toe-tappin-to-co-capn rule	"cappin"
 mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again."
 mist mess	--	"missed"	"You can miss the mess more productively by figuring your way through Airy Isle."
 pain peasant	--	"pane"	"Broken person, broken window, eh?"
@@ -1884,6 +1948,12 @@ wry wall	--	"rye"	"The wall remains inorganic. You can't really do anything to i
 
 section thing homonym rules [xxthr]
 
+this is the hom-toe-tappin-to-co-capn rule:
+	unless jake g is touchable and toe tappin row rappin is touchable, the rule fails;
+	if sco-co-capn is true, the rule fails;
+	say "You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.";
+	the rule fails;
+
 this is the hom-bold-bard-to-bowled-barred rule:
 	if the player's command includes "bowled":
 		say "Cricket isn't cricket right now, old chap!";
@@ -1897,7 +1967,7 @@ this is the hom-bot-board-to-bought-bored rule:
 		say "Sadly, the bot board is unable to feel bored of sitting around and being repressive.";
 		the rule fails;
 	if the player's command includes "bought":
-		say "Bribing emotionless machines won't work.";
+		say "Perhaps their soulless corporate overlords would be interested in a quick buck, but Bot Board isn't.";
 		the rule fails;
 
 this is the hom-toe-tappin-to-roe-tow rule:
@@ -1915,7 +1985,7 @@ this is the hom-we-whine-to-whee-wine rule:
 	if the player's command includes "wine":
 		say "[we whine] may drive moral people to drink, but you don't need that. Or homonyms.";
 		the rule fails;
-	
+
 
 [zzthr]
 
