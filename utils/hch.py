@@ -20,11 +20,17 @@ def is_hom_table(x):
         return True
     return False
 
-def name_to_row(tabname): # this could be in a dict but there are so few arguments
+def name_to_row(tabname): # this could be in a dict but there are so few arguments. Also, all values are 2 but just in case a table changes...
     if tabname == 'room': return 2
-    if tabname == 'thing': return 1
+    if tabname == 'thing': return 2
     if tabname == 'verb' : return 2
     return -1
+
+def after_to(rule_name):
+    tary = re.sub(" rule$", "", rule_name).split("-")
+    xx = tary.index("to")
+    test_subcases = tary[xx+1:]
+    return test_subcases
 
 def shake_out_unused(my_dict, descrip):
     retval = 0
@@ -78,7 +84,7 @@ with open(f) as file:
             in_table = False
             table_name = "<NONE>"
             continue
-        lary = line.lower().split("\t")
+        lary = line.lower().strip().split("\t")
         if table_name == 'verb':
             if lary[match_row] == '--' or not lary[match_row]:
                 continue
@@ -86,9 +92,13 @@ with open(f) as file:
             test_case = "{}-{}".format(table_name, re.sub(" .*", "", lary[10][3:]))
             if "|" in lary[2]:
                 print("Replace | with / at line", line_count, "of", f)
-            test_subcases = lary[2].replace('"', '').split("/")
+            test_subcases = lary[2].replace('"', '').strip().split("/")
         else:
             test_case = "{}-{}".format(table_name, lary[0])
+            if lary[2] == '--':
+                test_subcases = after_to(lary[1])
+            else:
+                test_subcases = lary[match_row].replace('"', '').strip().split("/")
         if create_bookmarks:
             #print("#homonym test {}".format(test_case))
             pass
@@ -98,8 +108,9 @@ with open(f) as file:
                     close_to_check[test_case + "-" + q] = -1
                     test_notes[test_case + "-" + q] = q
             else:
-                basic_to_check[test_case] = -1
-                test_notes[test_case] = lary[match_row].replace('"', '').strip()
+                for q in test_subcases:
+                    basic_to_check[test_case + "-" + q] = -1
+                    test_notes[test_case + "-" + q] = q
 
 rbr = i7.rbr('vv')
 
@@ -126,5 +137,7 @@ count = 0
 
 count += shake_out_unused(basic_to_check, "basic")
 count += shake_out_unused(close_to_check, "close")
+
+if not count: print("Everything worked! Hooray!")
 
 mt.postopen_files()
