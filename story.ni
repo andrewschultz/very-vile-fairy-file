@@ -3698,22 +3698,25 @@ zap-weird-break is a truth state that varies.
 Rule for printing a parser error (this is the check for room name and homophones in player command rule):
 	repeat through table of room homonyms:
 		if location of player is loc entry:
-			if there is a check-rule entry:
-				process the check-rule entry;
+			if there is a hom-rule entry:
+				process the hom-rule entry;
 				if the rule failed, next;
-				if there is no top entry, next;
-			if the player's command includes top entry:
-				if there is a room-msg entry:
-					say "[room-msg entry] But homonyms aren't quite the way to go, here.";
+				if there is no myhom entry, next;
+			if the player's command includes myhom entry:
+				if there is a custom-msg entry:
+					say "[custom-msg entry] But homonyms aren't quite the way to go, here.";
 				else:
 					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
 				the rule succeeds;
 			break;
 	repeat through table of thing homonyms:
 		if mything entry is touchable:
+			if there is a hom-rule entry:
+				process the hom-rule entry;
+				if the rule failed, next;
 			if the player's command includes myhom entry:
-				if there is a myrej entry:
-					say "[myrej entry]. Homonyms aren't quite the way to go, here.";
+				if there is a custom-msg entry:
+					say "[custom-msg entry]. Homonyms aren't quite the way to go, here.";
 				else:
 					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
 				the rule succeeds;
