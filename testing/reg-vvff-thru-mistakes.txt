@@ -1233,6 +1233,7 @@ Buying things won't improve your lack of self-worth.
 You don't need to drink, or have a drinking buddy.
 
 > stay strong
+by one point
 
 > ho had
 Learner needle
@@ -1266,6 +1267,7 @@ Blaming your parents fails to help.
 by one point
 
 >glean gluggin
+Learner needle
 Dean is not a secret drinker.
 > teen tuggin
 Learner needle
@@ -1278,6 +1280,7 @@ by one point
 by one point
 
 >glean gluggin
+!Learner needle
 After all you've done, you don't need alcohol to help you get by.
 
 > teen tuggin
@@ -1792,6 +1795,7 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
+# maybe this should be !min?
 > wild weed
 by one point
 

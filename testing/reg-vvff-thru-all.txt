@@ -181,6 +181,7 @@ Silent Sail
 > enter boat
 
 > stay strong
+by one point
 
 > glow glad
 by one point
@@ -298,6 +299,7 @@ by one point
 > least loss
 by one point
 
+# maybe this should be !min?
 > wild weed
 by one point
 

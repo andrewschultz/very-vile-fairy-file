@@ -537,7 +537,7 @@ to decide whether need-healing:
 
 check going in Fun Fen:
 	if noun is north:
-		if sco-fall-free is false, say "A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+		if sco-fall-free is false, say "A voice booms in your head: 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
 		if need-healing, say "You're not ready to go back and confront the Bull Beast in your injured state yet." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
@@ -658,6 +658,8 @@ sco-beast-boss is a truth state that varies.
 
 instead of doing something when need-loss:
 	if action is procedural, continue the action;
+	if current action is attacking or current action is talktoing, continue the action;
+	if current action is going, say "You don't have the energy to flee. But the right words..." instead;
 	say "You need to do something ... no chance of winning, but you can't be routed here.";
 
 chapter Bull Beast
@@ -928,7 +930,7 @@ this is the card-and-libe rule:
 		moot cold card;
 	continue the action;
 
-We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want. [if sco-see-sign is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now.[else]Why would you want to know that? Maybe a careful reading would turn something up.[end if]". guess-table of we whine is the table of we whine guesses. [-> see sign]
+We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want, a companion tome to the mercifully unavailable [i]Sell So Well, Whoah[r]. [if sco-see-sign is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now[else]Why would you want to know that? Maybe a careful reading would turn something up[end if].". guess-table of we whine is the table of we whine guesses. [-> see sign]
 
 understand "book" as We Whine Me Mine when We Whine Me Mine is touchable.
 
@@ -1540,7 +1542,11 @@ the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell h
 
 chapter Very Vile Fairy File
 
-the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". [-> bury bile]
+the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". bore-rule of Very Vile Fairy File is bore-vvff rule. [-> bury bile]
+
+this is the bore-vvff rule:
+	if current action is talktoing, say "'THUMP THAT CHUMP-CHAT!' booms a loud voice from inside the [fairy file]." instead;
+	if current action is closing or current action is opening or current action is taking or current action is attacking, now skip-bore-text is true;
 
 check opening very vile fairy file: try closing very vile fairy file instead;
 
@@ -1818,6 +1824,7 @@ the block attacking rule is not listed in any rulebook.
 
 check attacking:
 	if noun is very vile fairy file, say "You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room." instead;
+	if noun is Kerry Kyle, say "Maim-me aim? Eeee..." instead;
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	if noun is Bot Board, say "The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
@@ -1850,7 +1857,9 @@ the block smelling rule is not listed in any rulebook.
 
 check smelling:
 	if noun is Reeker Russell, say "Stench-stained, drench-drained." instead;
-	if noun is Gassed Gap, try smelling Reeker Russell instead;
+	if noun is Gassed Gap and Reeker Russell is in Gassed Gap:
+		say "(Russell... his smell is overpowering)[paragraph break]";
+		try smelling Reeker Russell instead;
 	say "[one of]'Scent so went. Whoah!'[paragraph break][or][stopping]You don't need to SMELL anything." instead;
 
 chapter listening
@@ -3415,7 +3424,7 @@ Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporari
 
 book meta verbs
 
-check saving the game for the first time: "A mocking disembodied voice teases you, 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if Dave is a better name for a hero than Kerry Kyle.";
+check saving the game for the first time: say "A mocking disembodied voice teases you, 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if Dave is a better name for a hero than Kerry Kyle.";
 
 check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
@@ -3848,6 +3857,9 @@ this is the verb-checker rule:
 				reset-bull-chase;
 				the rule succeeds;
 			if there is a core entry and idid entry is false:
+				if core entry is true and number of words in the player's command > 2:
+					say "You may have used too many words. Any necessary command just needs two words, no more, no less. I put this in to make sure you can't just spam guesses. It's a bit strict, but ... I wanted some cursory protection, as well as simple guidance to narrow down what you should guess.";
+					the rule fails;
 				up-which core entry;
 				if core entry is false:
 					increase lump-count by 1;
@@ -4081,7 +4093,7 @@ to win-the-game:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	phbt Tarry Tile;
-	say "Yes. You know what to do. As you bury the bile -- yours for others you have met in the game and in the past, the Very Vile Fairy File itself dissolves. The Merry Mile changes significantly. A puffed portal appears, and you give a chuffed chortle as you walk through. Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board! There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.[wfak]";
+	say "Yes. You know what to do. And after your journey, you are ready. As you bury the bile -- yours for others you have met in the game and in the past, and even for your own faults -- you toss the [fairy file] a sad, pitying smile, and it begins to dissolve. Final futile protests of 'Flame? Flee Lamely!' and a final 'Same! SEE!' fail, before it winks out with a cryptic 'Dame Dee, shame she...'.[paragraph break]The Merry Mile changes significantly. A puffed portal appears, which you can't enter until you give a chuffed chortle--you've earned it! Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board, now reformed as the more benign Plot-Planned Bot Band![paragraph break]There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.[wfak]";
 	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. It captures some of the more memorable parts of your journey. The tag on the back of the neck says 'FUN FAIR WON WEAR.' There's a bracelet, too, perhaps a bit too optimistic: LIFE LONG STRIFE-STRONG. Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:

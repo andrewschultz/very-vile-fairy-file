@@ -1089,6 +1089,7 @@ DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 > stay strong
+by one point
 
 > stay strong
 !by one point
@@ -1627,6 +1628,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly.
 
+# maybe this should be !min?
 > wild weed
 by one point
 

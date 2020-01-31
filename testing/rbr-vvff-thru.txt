@@ -20,6 +20,7 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 ~	goto,gt,go	t9
 #--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
+OK-APOSTROPHE:Bold 'n Brave
 
 ## *FILE
 ## *FORK
@@ -50,14 +51,16 @@ brightly
 You don't need source control, but you're close, here.
 
 @ver
+>attack me
+Maim-me aim? Eeee...
 >sleep
 Lie late, my mate? Why wait?
+>shit
+/Dang, dude rang RUDE!|Gee, gad! Be bad! "Me, mad!"
 >damn
-Dang, dude rang RUDE!
->damn
-Gee, gad! Be bad! "Me, mad!"
->blast
-Gee, gad! Be bad! "Me, mad!"
+/Dang, dude rang RUDE!|Gee, gad! Be bad! "Me, mad!"
+>bother
+/Dang, dude rang RUDE!|Gee, gad! Be bad! "Me, mad!"
 >yes
 Yay! Yep! Hey, hep! (you never need to answer yes/no questions unless specifically prompted.)
 >yes
@@ -921,7 +924,7 @@ Organic chemistry is much too complex, here.
 
 @ver
 > n
-A voice booms in your head 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one.
+A voice booms in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
 >  d
 > Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
@@ -3009,6 +3012,7 @@ DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 > stay strong
+by one point
 
 @ha
 > stay strong
@@ -3063,8 +3067,15 @@ The HA HALF button lights up on your Leet Learner.
 > glow glad
 by one point
 
+###newnpc dean duggan
+
+@ver
+> t dean duggan
+"Teach tons, reach runs!" You don't need beach buns, but you probably need a specific phrase suitable to him, or this place. His lax demeanor suggests a bit of slang.
+
 @mis
 >glean gluggin
+Learner needle
 Dean is not a secret drinker.
 > teen tuggin
 Learner needle
@@ -3149,6 +3160,7 @@ WRONG
 
 @mis
 >glean gluggin
+!Learner needle
 After all you've done, you don't need alcohol to help you get by.
 
 @ha
@@ -3460,6 +3472,11 @@ south to Lit Lawn
 > w
 
 ###newloc vending vibe
+###newitm trending tribe
+
+@ver
+> t trending tribe
+"Bam, burning! Am earning!"
 
 @gt
 #here we test flipping MM/HH
@@ -3766,6 +3783,11 @@ You sort of need the opposite. I suspect you know this and are just trying to se
 > e
 
 ###newloc pit pound
+###newnpc hit hound
+
+@ver
+> t hit hound
+Yowl. Yip. Growl. Grip?
 
 @mis
 > mit mound
@@ -4245,6 +4267,8 @@ WRONG
 @ver
 > attack beer bull
 You'd get a triple-tough cripple-cuff in return. You must fight with words.
+> t beer bull
+It can't speak, but its look says "Real rude? Deal, dude!"
 
 @hom
 #homonyms basic test room-here hull-hear
@@ -4339,8 +4363,6 @@ No, you can't bring the bull down with peer pressure.
 > s
 
 @ver
-> eat wild weed
-That is not filed feed.
 > drink mild mead
 It's too much mead for one person. You need to share it, with something to eat.
 > wear gold guard
@@ -4364,6 +4386,10 @@ You could run off, but you need to deal with the Bull Beast. You can deal with t
 @ver
 > attack bull beast
 You'd get a triple-tough cripple-cuff in return. You must fight with words.
+> t bull beast
+If it could talk, it'd say "Tame? Tush! Maim! Mush!"
+>s
+You don't have the energy
 
 @ha
 > beast boss
@@ -4421,9 +4447,14 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
-@all,mis,ha
+@all,mis,ha,ver
+# maybe this should be !min?
 > wild weed
 by one point
+
+@ver
+> eat wild weed
+That is not filed feed.
 
 @mis #wild weed before
 > dialed deed
@@ -4962,14 +4993,6 @@ You don't need or want to revisit that.
 >gt lake lea
 You already did that.
 
-@ver
->attack russell
-But he'd become Rager Russell. With major muscle.
-> smell reeker russell
-Stench-stained, drench-drained.
-> smell
- try smelling Reeker Russell
-
 @ha
 > zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
@@ -5089,6 +5112,19 @@ WRONG
 #homonyms close test verb-meeker-muscle-mussel
 >meaker mussel
 WRONG
+#homonyms basic test thing-reeker russell-wreaker
+>wreaker wrussle
+This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action.
+
+@ver
+>attack russell
+But he'd become Rager Russell. With major muscle.
+> smell reeker russell
+Stench-stained, drench-drained.
+> smell
+(Russell... his smell is overpowering)
+> t reeker russell
+"My mood: DIE, dude!"
 
 @mis #cast cap after
 > classed clap
@@ -5276,7 +5312,9 @@ There's no way back. You are so close to the end.
 
 @ver
 > attack bot board
-The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get.
+The Bot Board intones "Pif-paf? Riff-raff!" That's about as close to a joke as they'll get.
+> t bot board
+"Meep, mate! Heap hate! Weep, wait!"
 
 @hom
 #homonyms basic test room-airy isle-erry
@@ -5334,6 +5372,10 @@ by one point
 >hoard haught
 WRONG
 
+@ver
+> t hot horde
+Lots of rot roared right now.
+
 @ha
 > hot horde
 !by one point
@@ -5357,6 +5399,12 @@ The HA HALF button lights up on your Leet Learner.
 
 > lot lord
 by one point
+
+###newnpc lot lord
+
+@ver
+> t lot lord
+"Eeg, not ig-nored." Ugh?
 
 @ha
 > lot lord
@@ -5478,6 +5526,8 @@ by one point
 WRONG
 
 ###newloc tarry tile
+###newitm very vile fairy file
+###newitm fairy file
 
 @hom
 #homonyms basic test thing-white waste-waist
@@ -5490,6 +5540,12 @@ Nobody named Terry appears, nor does any terry cloth.
 >warn warn
 WRONG
 
+@ver
+>t fairy file
+"THUMP THAT CHUMP-CHAT!" booms a loud voice from inside the Very Vile Fairy File.
+>shit
+A voice from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
+
 @gt
 >gt airy isle
 You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh.
@@ -5498,7 +5554,7 @@ The action was okay, but I couldn't recognize the object.
 
 @ver
 > attack vvff
-You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room.
+You imagine a voice saying "Big boom! Dig doom!" You step back and, err, rig room.
 > take vvff
 A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expected that, really.
 

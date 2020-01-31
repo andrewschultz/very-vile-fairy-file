@@ -346,6 +346,7 @@ WRONG
 You do sort of need to bin your shortcomings.
 
 > stay strong
+by one point
 
 > glow glad
 by one point
@@ -628,6 +629,9 @@ WRONG
 #homonyms close test verb-meeker-muscle-mussel
 >meaker mussel
 WRONG
+#homonyms basic test thing-reeker russell-wreaker
+>wreaker wrussle
+This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action.
 
 > meeker muscle
 by one point
