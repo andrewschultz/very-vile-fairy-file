@@ -178,7 +178,8 @@ this is the vh-meeker-muscle rule: say "Ooh! You're on the right track, but you 
 
 this is the vh-wood-one rule: say "The good gun seems to bend a bit. You must be close to a concrete way to change it." instead;
 
-this is the vh-hot-horde rule: ["hoard"]
+this is the vh-hot-horde rule: say "You are after virtue[if hot horde is touchable], and so is the hot horde[end if]. They seem to need [if lot lord is off-stage]a leader[else]a battle cry, instead[end if]." instead;
+
 this is the vh-whoa-wait rule: say "You wouldn't want to be crushed by a weight. But you've got the right idea." instead;
 
 this is the vh-merry-mile rule: say "It's debatable whether marriage makes things happier or not. Tweak this for assurance." instead;
@@ -1721,8 +1722,9 @@ randtxt
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
 "Briny Brims Tiny Tim's Whiny Whims"
 "Bumpkin, Buy Pumpkin Pie"
-"Caring Kirk, Daring Dirk"
+"Car Curst Far First[r], by Gar Gerst"
 "Crew Came Grew Game"
+"Cropping Crews['] Shopping Shoes"
 "Dandy Dyin['] Sandy, Sighin[r], by Randy Ryan"
 "Dare, Dream, Stare, Stream[r], by Bear Bream"
 "Do Dance, Poo Pants[r], by Lou Lance and Stu Stantz"
@@ -1751,6 +1753,7 @@ randtxt
 "Meet Me Leetly"
 "Meet Meg, Pete, Peg"
 "Men, Messed, Been Best, by Ren Rest"
+"Mind, Mull: Find Full"
 "Must Mean Just Gene"
 "My Man? Fie, Fan"
 "My Mod Guy God"
@@ -1758,11 +1761,14 @@ randtxt
 "Nail [']Nuff: Bail, Buff"
 "Near Null Fearful"
 "Nosy Nan, Dozy Dan[r], by Rosie Rann"
+"[']Nuff Nerd Stuff Stirred"
+"Numb Nude Dumb Dude"
 "Oh, Trait So Straight"
 "Oh, Uh, Lola[r], by Nona Sosa-Doda"
 "One Wet Sunset"
 "One Wise Son Sighs: RUN, RISE"
 "Page Punk Stage Stunk, Mage Monk"
+"Pan, Pot, Plan, Plot[r], by Stan Stott"
 "Quick Quest: Pick Pest[r], by Rick Rest"
 "Rude Right Food Fight/Nude Night"
 "Sane Sorts['] Pain Ports[r], by Wayne Wortz and Cain Kortz"
@@ -1779,14 +1785,18 @@ randtxt
 "Wail When, Pale Pen"
 "Warm Wit: Form, Fit[r], by Storm Stitt"
 "Wayne, One Sane Son[r], by Dane Dunn"
+"Wearing Work: Caring Kirk, Daring Dirk"
 "Why When My Men, by Ben"
 "Yo, Yet Go Get Mo['] Met[r], by Joe Jett"
 "Your Be-Yays: Derby Days[r], by Herbie Hayes"
 
 table of mall shops [xxshops]
 randtxt
+"Bold Bud's Doled Duds"
 "Cold Crude Bold Brewed"
 "Musty Mike's Trusty Trikes"
+"There-They-Wear Way"
+"Trench Tries French Fries"
 
 table of mall songs [xxmall] [xxsongs]
 randtxt
@@ -1796,6 +1806,7 @@ randtxt
 "Blue Blood Crew? Crud"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Clear Classed Beer Blast"
+"Deal Dope?! Heal! Hope!"
 "Doom Doc's Boom-Box Room Rocks"
 "Eh, Un-Gay Gun"
 "Fit Fo['] Wit, Whoah" [show]
@@ -1826,10 +1837,11 @@ randtxt
 "Bo, Better Go-Getter"
 "Brief-Bray-Grief Gray"
 "Broken-Brain Jokin['] Jane"
+"Cold Carin['] Bold Baron"
 "Dozy Doofus Rosy Rufus"
 "Fart Face Mart Mayes"
 "Faye Feared-Way-Weird"
-"Form Fixin' Norm Nixon"
+"Form Fixin['] Norm Nixon"
 "Ham-Hand Sam Sand"
 "Hefty Hata['] Lefty Leda"
 "Hex-Hone Rex Roan"
@@ -1841,11 +1853,15 @@ randtxt
 "Madman Tad Tan"
 "Naughty/Nice Toddy Tice"
 "Not Noble Scott Scoble"
+"Pale Penman Dale Denman"
+"Peevin['] Putz Steven Stutz"
 "Phat Fly Brat Bri"
 "Pill-Perk Bill Burke"
 "Po['] Punk Joe Junk"
 "Quite Quick Knight Nick"
 "Rat Race Fat Face Pat Pace"
+"Ray Really-Say-Silly"
+"Rougher Rolled Duffer Dold"
 "Rude Rave Dude Dave"
 "Sick Sad Thick Thad"
 "Still-Starin['] Bill Barron"
@@ -1868,8 +1884,10 @@ randtxt
 "Fighty Foals['] Hidey Holes"
 "Final-Fail Vinyl Vale"
 "Fivefold Hive Hold"
+"Great Grouse Hate House"
 "Low Key Louse Hokey House"
 "Mighty Mole's Hidey Holes"
+"Numb Gnomes' Dumb Domes"
 "Whee-Will-He Hill"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
@@ -1883,6 +1901,7 @@ randtxt
 "Dark day! Hark, hey!"
 "Fie! Face my mace!"
 "Fry, freak-guy(?)-geek!"
+"Gosh, go wash, whoa!"
 "Lard! Left hard heft!"
 "Look leading?! Book beating!"
 "Mock me? Sock, SEE?!"
@@ -1930,7 +1949,7 @@ coral cage	--	"choral"	"You don't need the cage to sing. You need to figure who'
 grow grate	--	"great"	"But you want to lessen the grate/gate's influence."
 hot horde	--	"hoard"	"The horde is after victories, not treasure."
 jake g	hom-toe-tappin-to-co-capn rule	"cappin"
-mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again."
+mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault..."
 mist mess	--	"missed"	"You can miss the mess more productively by figuring your way through Airy Isle."
 pain peasant	--	"pane"	"Broken person, broken window, eh?"
 peeling pier	--	"peer"	"You could just L or X or LOOK for that. The pier is more flexible than that."
@@ -2000,12 +2019,13 @@ airy isle	--	"aerie/erry/aisle"	"The Airy Isle can't really be changed."
 been buggin	--	"bin"	"You do sort of need to bin your shortcomings."
 blinding blaze	hom-blinding-blaze-to-wheys-grace-graze rule	--	--
 creased cross	--	"craws"
-foe field	peasant-around rule	"sew/sow"
+foe field	peasant-around rule	"sew/sow" [ALTRULE hom-foe-field-to-sew-sow rule]
 fun fen	--	"phen"	"Organic chemistry is much too complex, here."
 got gear hot here	--	"hear"
 here hull	--	"hear"	"You can just listen."
 history hall	hom-history-hall-to-haul-maul rule	--	--
 lake lea	--	"lee"
+po pit	--	"poe"	"You don't need a pendulum about to cut you."
 real rear	--	"reel"	"The Sage Sea is not for fishing."
 rift river	a rule	"riffed"	"You need to have riffed, but with rhyming, as you did in the Wet Wood."
 store all stage	--	"awl"

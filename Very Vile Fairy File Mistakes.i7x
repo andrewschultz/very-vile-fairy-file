@@ -499,6 +499,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "key kine"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] already provides a figurative key to things."
 "knee nine"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] is only about mental violence and nastiness to people 'beneath' you, not physical."
 "lee/lea line"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] only blows figurative wind."
+"pee pine"	we-whine-near rule	false	34	sign-unseen rule	"There probably is a section in [we whine] about figuratively marking your territory, but it's probably [fairy file]-approved, so no."
 "she shine"	we-whine-near rule	false	34	sign-unseen rule	"Why yes, pointless greed should not be limited to men only."
 "tee tine"	we-whine-near rule	false	34	sign-unseen rule	"No golf tee provides a bookmark for [we whine]."
 
@@ -545,17 +546,6 @@ table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "mo mealed"	in-foe-field rule	false	46	shield-unshown rule	"Alas, no food magically appears. You [if gold guard is moot]did what you needed[else]need a more fighting stance[end if]." [start Foe Field]
 "mo mate"	go-gate-vis rule	false	44	--	"You remain alone." [start Gassed Gap]
-"see sine"	have-toe-tappin rule	false	34	--	"[we whine] is too practical for stuffy advanced math contests." [start History Hall]
-"choral cage"	coral-cage-around rule	false	54	--	"A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it." [start Store All Stage]
-"co cappin"	have-toe-tappin rule	false	24	need-cocapn rule	"[if sco-co-capn is true]You don't need guns[else]Close, but camaraderie, not firepower[end if]."
-"bought board"	bot-board-vis rule	false	35	--	"Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't." [start Airy Isle]
-"mined malt"	need-find-fault rule	false	45	--	"Almost. There's nobody here to fine or be fined." [start vined vault]
-
-["hoe happen"	have-toe-tappin rule	false	26	ho-happen-undone rule	"No garden tool appears in your hand. You expected something else?"
-"sea sign/sine"	we-whine-near rule
-"lye loll/lol"	]
-
-[?? check MOs earlier and later]
 
 section texts and decides
 
@@ -609,8 +599,6 @@ this is the cap-or-lap rule: if player has cake cap or player is in Lake Lap, th
 this is the cap-or-tap rule: if tool tap is touchable or cool cap is touchable, the rule succeeds;
 
 this is the cluster-near rule: if clumped cluster is touchable, the rule succeeds;
-
-this is the coral-cage-around rule: if coral cage is touchable, the rule succeeds;
 
 this is the ganksta-nearby rule: if Gutta Ganksta is touchable, the rule succeeds;
 
@@ -742,6 +730,8 @@ section leet-rules alphabetized [note these may be more stringent than they stri
 this is the blaze-before-maze rule: if player is in Blinding Blaze and sco-winding-ways is false, the rule succeeds;
 
 this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
+
+this is the coral-cage-around rule: if coral cage is touchable, the rule succeeds;
 
 this is the dean-duggan-near rule: if dean duggan is touchable, the rule succeeds;
 
