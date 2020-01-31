@@ -658,7 +658,7 @@ sco-beast-boss is a truth state that varies.
 
 instead of doing something when need-loss:
 	if action is procedural, continue the action;
-	if current action is attacking or current action is talktoing, continue the action;
+	if current action is attacking or current action is talktoing or current action is gotoing or current action is gotothinging, continue the action;
 	if current action is going, say "You don't have the energy to flee. But the right words..." instead;
 	say "You need to do something ... no chance of winning, but you can't be routed here.";
 
@@ -980,6 +980,8 @@ to say duz-help: if sco-silent-sail is false, say ", and getting rid of it might
 
 printed name of Violent Vale is "[if sco-silent-sail is false]Violent Vale[else]Silent Sail[end if]"
 
+understand "silent sale/sail" and "sale/sail" and "silent" as Violent Vale when sco-silent-sail is true.
+
 check going east in Violent Vale: if frightening fridge is not moot, say "Not with the frightening fridge blocking the way!" instead;
 
 chapter frightening fridge
@@ -1145,7 +1147,7 @@ every turn when in-way-wrong:
 
 instead of doing something when in-way-wrong and player was in Been Buggin:
 	if action is procedural, continue the action;
-	if current action is entering boring boat, continue the action;
+	if current action is entering boring boat or current action is gotoing or current action is gotothinging, continue the action;
 	say "You can't. Everything feels ... way wrong. You feel so weak!";
 
 chapter glowglading
@@ -1531,6 +1533,8 @@ the listless mist mess is scenery in Airy Isle. "It's very thick. You don't know
 part Tarry Tile 1,5
 
 Tarry Tile is a room in Vale Verminous. "Spite-spaced white waste surrounds you on all sides. Running away would do no good.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
+
+understand "merry/mile" and "merry mile" as tarry tile when sco-merry-mile is true.
 
 section spite spaced white waste
 
@@ -3260,8 +3264,6 @@ definition: a room (called rm) is available-from-here:
 
 does the player mean gotoing location of player: it is unlikely.
 
-every turn: say "DEBUG list of goto-able places: [list of available-from-here rooms].";
-
 to decide which room is fliproom of (rm - a room):
 	if in-mystery-mall is true:
 		if rm is Y'Old Yard or rm is Vending Vibe, decide on History Hall;
@@ -3279,9 +3281,9 @@ this is the flag bad goto from rule:
 	if player is in Airy Isle, say "There's no way back. You are so close to the end." instead;
 	if player is in Tarry Tile, say "You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh." instead;
 	if noun is in Worst Whew, say "You don't need to go back[if mrlp is not Worst Whew]. The introductory bit is over[end if]." instead; [okay, maybe this should be in the other rule if we go by names. But it's a big case we want to have up front.]
-	if in-bull-chase is true, say "Sorry, GO TO is disabled during the Beer Bull chase." instead;
+	if in-bull-chase is true, say "[chase-pass]Sorry, GO TO is disabled during the Beer Bull chase." instead;
 	if player is in Creased Cross and Bull Beast is in Creased Cross, say "You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast." instead;
-	if player is in Been Buggin, say "[if dean duggan is off-stage]You're too bummed to make big trips.[else]Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be[else]Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now[end if]." instead;
+	if player is in Been Buggin, say "[if dean duggan is off-stage]You're too bummed to make big trips.[else if dean duggan is in been buggin]Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be[else]Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now[end if]." instead;
 	if mrlp is Browsy Breaks, say "Sorry, but GO TO is disabled here in the lakes." instead;
 	if need-healing, say "You can't zoom around in your weakened state. The Bull Beast will push you back. But with so few places to go, maybe what you need is close by." instead;
 
@@ -3291,7 +3293,7 @@ this is the flag bad goto to rule:
 	if noun is Been Buggin, say "You don't need or want to revisit that." instead;
 	if noun is Lake Lea or noun is Lake Lap:
 		if sco-snake-snap is true, say "You already did that." instead;
-		say "You'll need to take the boat from [here-in of Violent Vale] to get back there." instead;
+		say "You'll need to take the boring boat [here-in of Violent Vale] to get back there." instead;
 
 to decide whether need-to-flip of (rm - a room):
 	if rm is Vending Vibe or rm is Y'Old Yard:

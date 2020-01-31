@@ -8,7 +8,7 @@
 * main-thru
 
 > gt wet wood
-Already there. Er, here.
+Already there! Er, here.
 > gt rift river
 The action was okay, but I couldn't recognize the object.
 > gt vined vault
@@ -119,14 +119,12 @@ by one point
 > n
 > w
 
-> work well
-by one point
-
 > e
 
 > loft land
 by one point
 
+>w
 >e
 >gt shirk shell
 flip
@@ -135,6 +133,8 @@ Shirk Shell
 >gt shirk shell
 !flip
 Shirk Shell
+>work well
+by one point
 >e
 >gt curst cave
 flip
@@ -143,6 +143,9 @@ Curst Cave
 >gt curst cave
 !flip
 Curst Cave
+>e
+>gt shirk shell
+You got the jerk gel already.
 
 > w
 
@@ -187,10 +190,10 @@ by one point
 >w
 >enter boat
 >gt lake lea
-You'll need to take the boat from here to get back there.
+You'll need to take the boring boat here to get back there.
 >w
 >gt lake lap
-You'll need to take the boat from Silent Sail to get back there.
+You'll need to take the boring boat in Silent Sail to get back there.
 >e
 >enter boat
 >e
@@ -210,23 +213,23 @@ Silent Sail
 >gt silent sail
 You're too bummed to make big trips.
 
->gt silent sail
-Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be.
-
->gt silent sail
-Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
-
 > stay strong
 by one point
 
 > glow glad
 by one point
 
+>gt silent sail
+Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be.
+
 > mean muggin
 by one point
 
 > lean luggin
 by one point
+
+>gt silent sail
+Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
 
 > enter boat
 
@@ -252,7 +255,6 @@ by one point
 
 #here we test flipping MM/HH
 >e
->mystery mall
 >gt got gear hot here
 flip
 Got Gear Hot Here
@@ -447,16 +449,19 @@ by one point
 >gt airy isle
 You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh.
 >gt tarry tile
-The action was okay, but I couldn't recognize the object.
+Already there! Er, here.
 
 > tell torn
 by one point
 
 >gt merry mile
-Already there! Er, here.
+!Already there! Er, here.
 
 > merry mile
 by one point
+
+>gt merry mile
+Already there! Er, here.
 
 > bury bile
 by one point

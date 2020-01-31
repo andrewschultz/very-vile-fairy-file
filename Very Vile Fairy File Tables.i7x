@@ -1817,6 +1817,7 @@ randtxt
 "Good Gang? Dud, Dang"
 "Guy Gets High Hits"
 "Hata['] Heft Data, Deft"
+"Hey, Hang, Gay Gang"
 "Lo Love Show Shove"
 "Mercy Me, Jersey G[r], by Versy V & Percy P"
 "My, Mo['] Sly, Slow"
@@ -1958,7 +1959,7 @@ reeker russell	--	"wreaker"	"This game doesn't want homonyms, and that's probabl
 sought sword	--	"sot"	"No, it wasn't lost by some drunk."
 steel steer	--	"steal"	"The ceiling seer would not approve!"
 stuck stair	--	"stare"	"You need to figure what the stair would hold. Staring may help, or it may not."
-toe tappin	hom-toe-tappin-to-roe-tow rule	"roe/tow"
+toe tappin	hom-toe-tappin-to-roe-tow rule	"roe/tow"	"You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway."
 way woke	--	"whey"	"It's woke to eat whey, probably, but you can transform the cloak better with something else."
 we whine	hom-we-whine-to-whee-wine rule	"whee/wine"
 weird way	--	"whey"	"Yes, whey is weird to eat."
@@ -1972,8 +1973,6 @@ section thing homonym rules [xxthr]
 this is the hom-toe-tappin-to-co-capn rule:
 	unless jake g is touchable and toe tappin row rappin is touchable, the rule fails;
 	if sco-co-capn is true, the rule fails;
-	say "You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.";
-	the rule succeeds;
 
 this is the hom-bold-bard-to-bowled-barred rule:
 	if the player's command includes "bowled":

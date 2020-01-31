@@ -74,7 +74,7 @@ You can only talk to living things, and the zig zag rig rag doesn't qualify.
 
 @gt
 > gt wet wood
-Already there. Er, here.
+Already there! Er, here.
 > gt rift river
 The action was okay, but I couldn't recognize the object.
 > gt vined vault
@@ -2191,6 +2191,9 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-work-well rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+###the below is a quirk where the efficient walkthrough conflicts with the "go to" testing. We need to test "go to" before getting the jerk gel.
+
+@!gt
 > work well
 by one point
 
@@ -2253,6 +2256,7 @@ by one point
 ###newloc loft land
 
 @gt
+>w
 >e
 >gt shirk shell
 flip
@@ -2261,6 +2265,8 @@ Shirk Shell
 >gt shirk shell
 !flip
 Shirk Shell
+>work well
+by one point
 >e
 >gt curst cave
 flip
@@ -2269,6 +2275,9 @@ Curst Cave
 >gt curst cave
 !flip
 Curst Cave
+>e
+>gt shirk shell
+You got the jerk gel already.
 
 @ha
 > loft land
@@ -2805,10 +2814,10 @@ That's over. Time to work with Jake!
 >w
 >enter boat
 >gt lake lea
-You'll need to take the boat from here to get back there.
+You'll need to take the boring boat here to get back there.
 >w
 >gt lake lap
-You'll need to take the boat from Silent Sail to get back there.
+You'll need to take the boring boat in Silent Sail to get back there.
 >e
 >enter boat
 >e
@@ -2972,14 +2981,6 @@ WRONG
 >gt silent sail
 You're too bummed to make big trips.
 
-@gt
->gt silent sail
-Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be.
-
-@gt
->gt silent sail
-Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
-
 @hom
 #homonyms basic test room-been buggin-bin
 >bin xxx
@@ -3123,6 +3124,10 @@ by one point
 by one point
 >undo
 
+@gt
+>gt silent sail
+Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be.
+
 > mean muggin
 by one point
 
@@ -3149,6 +3154,10 @@ The HA HALF button lights up on your Leet Learner.
 
 > lean luggin
 by one point
+
+@gt
+>gt silent sail
+Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
 
 ###newitm clay cloak
 ###newitm way woke
@@ -3481,7 +3490,6 @@ south to Lit Lawn
 @gt
 #here we test flipping MM/HH
 >e
->mystery mall
 >gt got gear hot here
 flip
 Got Gear Hot Here
@@ -5550,7 +5558,7 @@ A voice from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied 
 >gt airy isle
 You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh.
 >gt tarry tile
-The action was okay, but I couldn't recognize the object.
+Already there! Er, here.
 
 @ver
 > attack vvff
@@ -5614,7 +5622,7 @@ WRONG
 
 @gt
 >gt merry mile
-Already there! Er, here.
+!Already there! Er, here.
 
 @ha
 > tell torn
@@ -5687,6 +5695,10 @@ The last thing you need now is a hair appointment.
 #homonyms close test verb-bury-bile-berry
 >buyall berry
 WRONG
+
+@gt
+>gt merry mile
+Already there! Er, here.
 
 > bury bile
 by one point
