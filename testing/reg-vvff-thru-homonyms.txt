@@ -48,6 +48,8 @@ by one point
 #homonyms close test verb-find-fault-fined
 >fined falt
 WRONG
+> mined malt
+Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
 
 > find fault
 by one point
@@ -62,6 +64,9 @@ by one point
 #homonyms close test verb-grow-grit-owe
 >owe oit
 WRONG
+#homonyms basic test room-po pit-poe
+> poe pit
+You don't need a pendulum about to cut you.
 
 > grow grit
 by one point
@@ -316,6 +321,10 @@ by one point
 > make map
 by one point
 
+#homonyms basic test thing-jake g-cappin
+> co cappin
+You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
+
 > co capn
 by one point
 
@@ -388,17 +397,18 @@ by one point
 by one point
 
 #homonyms basic test thing-we whine-whee
->whee xxx
+> whee xxx
 WRONG
 #homonyms basic test thing-we whine-wine
->wine xxx
+> wine xxx
 WRONG
 #homonyms close test verb-see-sign-sea
->sea syne
+> sea syne
 WRONG
 #homonyms close test verb-see-sign-sine
->see sine
-WRONG
+> see sine
+> see sine
+We Whine: ME, MINE is too practical for stuffy advanced math contests.
 >sea sine
 WRONG
 
@@ -419,12 +429,6 @@ WRONG
 #homonyms close test verb-plain-pleasant-plane
 >plane present
 WRONG
-#homonyms close test verb-show-shield-fo
->fo feeled
-WRONG
-#homonyms close test verb-show-shield-sew
->sew seeled
-WRONG
 #homonyms basic test room-foe field-sew
 > sew zzz
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
@@ -443,7 +447,7 @@ by one point
 
 #homonyms basic test thing-coral cage-choral
 >choral xxx
-WRONG
+A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
 #homonyms close test verb-moral-mage-morel
 >morel may
 WRONG
@@ -641,10 +645,15 @@ WRONG
 WRONG
 #homonyms basic test thing-bot board-bought
 >bought xxxx
-WRONG
+Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 #homonyms basic test thing-bot board-bored
 >bought xxx
 WRONG
+#homonyms close test verb-got-gored-gourd
+> xxx gourd
+That worked in The Life of Brian, but ... try a homophone, here. You're close.
+> xxx hoard
+You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
 
 #homonyms basic test room-airy isle-erry
 >erry xxx
@@ -656,10 +665,14 @@ The Airy Isle can't really be changed.
 >aisle xxx
 The Airy Isle can't really be changed.
 
+#homonyms close test verb-hot-horde-hoard
+>hoard haught
+WRONG
+
 > hot horde
 by one point
 
-#homonyms close test verb-hot-horde-hoard
+#homonyms basic test thing-hot horde-hoard
 >hoard haught
 WRONG
 
@@ -686,7 +699,7 @@ WRONG
 #homonyms basic test room-tarry tile-terry
 >terry crews
 Nobody named Terry appears, nor does any terry cloth.
-#homonyms basic test thing-well worn hell horn-war
+#homonyms basic test thing-well worn hell horn-warn
 >warn warn
 WRONG
 

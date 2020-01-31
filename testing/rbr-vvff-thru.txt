@@ -343,10 +343,14 @@ by one point
 
 ###newloc vined vault
 
+###newitm mined malt
+
 @hom
 #homonyms close test verb-find-fault-fined
 >fined falt
 WRONG
+> mined malt
+Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
 
 @gt
 > gt rift river
@@ -421,9 +425,6 @@ Alas, the walls of the vault do not turn to salt. Perhaps they still have a stru
 > wined walt
 Learner needle
 A drinking buddy you can play practical jokes on won't be any help here.
-> mined malt
-Learner needle
-Almost. There's nobody here to fine or be fined.
 
 @ha
 > zfind fault rule
@@ -510,6 +511,9 @@ by one point
 #homonyms close test verb-grow-grit-owe
 >owe oit
 WRONG
+#homonyms basic test room-po pit-poe
+> poe pit
+You don't need a pendulum about to cut you.
 
 @gt
 > gt vined vault
@@ -621,9 +625,6 @@ Please proceed, adventurer.
 > glow glit
 Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
-> poe pit
-Learner needle
-You don't need a pendulum about to cut you.
 
 @ha
 > zgrow grit rule
@@ -651,9 +652,6 @@ Please proceed, adventurer.
 > glow glit
 !Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
-> poe pit
-!Learner needle
-You don't need a pendulum about to cut you.
 
 @ha
 > zgrow grit rule
@@ -2887,18 +2885,13 @@ The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a 
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
 
-@mis #co capn before
+@hom #co cappin before
+#homonyms basic test thing-jake g-cappin
 > co cappin
-Learner needle
-Close, but camaraderie, not firepower.
+You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
 
 > co capn
 by one point
-
-@mis #co capn after
-> co cappin
-!Learner needle
-You don't need guns.
 
 @ha
 > co capn
@@ -3505,17 +3498,18 @@ by one point
 
 @hom
 #homonyms basic test thing-we whine-whee
->whee xxx
+> whee xxx
 WRONG
 #homonyms basic test thing-we whine-wine
->wine xxx
+> wine xxx
 WRONG
 #homonyms close test verb-see-sign-sea
->sea syne
+> sea syne
 WRONG
 #homonyms close test verb-see-sign-sine
->see sine
-WRONG
+> see sine
+> see sine
+We Whine: ME, MINE is too practical for stuffy advanced math contests.
 >sea sine
 WRONG
 
@@ -3541,9 +3535,6 @@ DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 @mis #see sign before
-> see sine
-Learner needle
-We Whine: ME, MINE is too practical for stuffy advanced math contests.
 > bree brine
 Learner needle
 Less gross than what's in We Whine: ME, MINE, but no.
@@ -3562,6 +3553,9 @@ We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 Learner needle
 We Whine: ME, MINE only blows figurative wind.
+> pee pine
+Learner needle
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
 > she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -3591,6 +3585,9 @@ We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 !Learner needle
 We Whine: ME, MINE only blows figurative wind.
+> pee pine
+!Learner needle
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
 > she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -3634,12 +3631,6 @@ LEAST LOSS
 WRONG
 #homonyms close test verb-plain-pleasant-plane
 >plane present
-WRONG
-#homonyms close test verb-show-shield-fo
->fo feeled
-WRONG
-#homonyms close test verb-show-shield-sew
->sew seeled
 WRONG
 #homonyms basic test room-foe field-sew
 > sew zzz
@@ -3707,7 +3698,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms basic test thing-coral cage-choral
 >choral xxx
-WRONG
+A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
 #homonyms close test verb-moral-mage-morel
 >morel may
 WRONG
@@ -3735,9 +3726,6 @@ Someone not just wise but ethical is behind the coral cage. Besides, there's alr
 > immoral image
 Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
-> choral cage
-Learner needle
-A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
 
 @ha
 > zmoral mage rule
@@ -5240,12 +5228,6 @@ Brilliant! Two enemies instead of one?
 > stood stun
 Learner needle
 If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned.
-> would one
-Learner needle
-You are in homophone territory, here.
-> would won
-Learner needle
-You are in homophone territory, here.
 
 > wood one
 by one point
@@ -5277,10 +5259,16 @@ WRONG
 WRONG
 #homonyms basic test thing-bot board-bought
 >bought xxxx
-WRONG
+Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 #homonyms basic test thing-bot board-bored
 >bought xxx
 WRONG
+#homonyms close test verb-got-gored-gourd
+> xxx gourd
+That worked in The Life of Brian, but ... try a homophone, here. You're close.
+> xxx hoard
+You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
+
 
 @gt
 > gt gassed gap
@@ -5302,18 +5290,9 @@ The Airy Isle can't really be changed.
 The Airy Isle can't really be changed.
 
 @mis
-> bought board
-Learner needle
-Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
 The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
-> got gourd
-Learner needle
-That worked in The Life of Brian, but ... try a homophone, here. You're close.
-> hot hoard
-Learner needle
-You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
 > pot poured
 Learner needle
 There's no time for coffee here!
@@ -5461,9 +5440,6 @@ You remain alone.
 > oh ate
 Learner needle
 Nothing takes a bite out of the go gate.
-> woe weight
-Learner needle
-You wouldn't want to be crushed by a weight. But you've got the right idea.
 
 @ver
 > attack go gate
@@ -5554,6 +5530,15 @@ That might augment the hell horn.
 > shell shorn
 Learner needle
 You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
+> bright braced
+!Learner needle
+If you needed to get through the spite spaced white waste, that would work. But you don't. You need to defeat the Very Vile Fairy File.
+> light laced
+!Learner needle
+Perhaps the [spite spaced white waste] will become light-laced once you dispel the Very Vile Fairy File.
+> tight taste
+!Learner needle
+No, you don't want a taste of being tased.
 
 @ha
 > ztell torn rule

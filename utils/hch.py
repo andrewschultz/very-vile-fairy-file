@@ -27,7 +27,7 @@ def name_to_row(tabname): # this could be in a dict but there are so few argumen
     return -1
 
 def after_to(rule_name):
-    tary = re.sub(" rule$", "", rule_name).split("-")
+    tary = re.sub(" rule(\])?$", "", rule_name).split("-")
     xx = tary.index("to")
     test_subcases = tary[xx+1:]
     return test_subcases
@@ -95,7 +95,9 @@ with open(f) as file:
             test_subcases = lary[2].replace('"', '').strip().split("/")
         else:
             test_case = "{}-{}".format(table_name, lary[0])
-            if lary[2] == '--':
+            if '[ALTRULE' in line:
+                test_subcases = after_to(re.sub(".*ALTRULE ", "", line.lower().strip()))
+            elif lary[2] == '--':
                 test_subcases = after_to(lary[1])
             else:
                 test_subcases = lary[match_row].replace('"', '').strip().split("/")
@@ -137,6 +139,8 @@ count = 0
 
 count += shake_out_unused(basic_to_check, "basic")
 count += shake_out_unused(close_to_check, "close")
+
+count += i7.audit_table_rows(f, only_glob = 'vh-')
 
 if not count: print("Everything worked! Hooray!")
 

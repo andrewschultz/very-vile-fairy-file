@@ -222,7 +222,7 @@ with open(rbr_file) as file:
             continue
         if not in_mistakes and not in_cs_check:
             if needed_text in line and not line.startswith(">"):
-                print("Possible errant cluing message line {}: make sure an @mis is above it.".format(line_count))
+                print("Possible errant clue-device ({}) message line {}: make sure an @mis is above it.".format(needed_text, line_count))
             continue
         if ignore_the_rest: continue
         if not line.startswith(">"): continue

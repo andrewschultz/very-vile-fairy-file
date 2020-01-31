@@ -181,9 +181,6 @@ Alas, the walls of the vault do not turn to salt. Perhaps they still have a stru
 > wined walt
 Learner needle
 A drinking buddy you can play practical jokes on won't be any help here.
-> mined malt
-Learner needle
-Almost. There's nobody here to fine or be fined.
 
 > find fault
 by one point
@@ -301,9 +298,6 @@ Please proceed, adventurer.
 > glow glit
 Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
-> poe pit
-Learner needle
-You don't need a pendulum about to cut you.
 
 > grow grit
 by one point
@@ -317,9 +311,6 @@ Please proceed, adventurer.
 > glow glit
 !Learner needle
 Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
-> poe pit
-!Learner needle
-You don't need a pendulum about to cut you.
 
 > snow snit
 !Learner needle
@@ -1221,16 +1212,8 @@ You already woke Jake much more nicely.
 > make map
 by one point
 
-> co cappin
-Learner needle
-Close, but camaraderie, not firepower.
-
 > co capn
 by one point
-
-> co cappin
-!Learner needle
-You don't need guns.
 
 > snake snap
 by one point
@@ -1426,9 +1409,6 @@ by one point
 > lending libe
 by one point
 
-> see sine
-Learner needle
-We Whine: ME, MINE is too practical for stuffy advanced math contests.
 > bree brine
 Learner needle
 Less gross than what's in We Whine: ME, MINE, but no.
@@ -1447,6 +1427,9 @@ We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 Learner needle
 We Whine: ME, MINE only blows figurative wind.
+> pee pine
+Learner needle
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
 > she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -1475,6 +1458,9 @@ We Whine: ME, MINE is only about mental violence and nastiness to people
 > lee line
 !Learner needle
 We Whine: ME, MINE only blows figurative wind.
+> pee pine
+!Learner needle
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
 > she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -1520,9 +1506,6 @@ Someone not just wise but ethical is behind the coral cage. Besides, there's alr
 > immoral image
 Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
-> choral cage
-Learner needle
-A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
 
 > moral mage
 by one point
@@ -2049,30 +2032,15 @@ Brilliant! Two enemies instead of one?
 > stood stun
 Learner needle
 If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned.
-> would one
-Learner needle
-You are in homophone territory, here.
-> would won
-Learner needle
-You are in homophone territory, here.
 
 > wood one
 by one point
 
 > n
 
-> bought board
-Learner needle
-Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
 > caught cord
 Learner needle
 The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
-> got gourd
-Learner needle
-That worked in The Life of Brian, but ... try a homophone, here. You're close.
-> hot hoard
-Learner needle
-You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
 > pot poured
 Learner needle
 There's no time for coffee here!
@@ -2119,9 +2087,6 @@ You remain alone.
 > oh ate
 Learner needle
 Nothing takes a bite out of the go gate.
-> woe weight
-Learner needle
-You wouldn't want to be crushed by a weight. But you've got the right idea.
 
 > whoa wait
 by one point
@@ -2135,6 +2100,15 @@ That might augment the hell horn.
 > shell shorn
 Learner needle
 You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
+> bright braced
+!Learner needle
+If you needed to get through the spite spaced white waste, that would work. But you don't. You need to defeat the Very Vile Fairy File.
+> light laced
+!Learner needle
+Perhaps the [spite spaced white waste] will become light-laced once you dispel the Very Vile Fairy File.
+> tight taste
+!Learner needle
+No, you don't want a taste of being tased.
 
 > tell torn
 by one point
