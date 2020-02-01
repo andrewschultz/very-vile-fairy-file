@@ -3778,7 +3778,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 	else if player is in Rift River:
 		say "Hmm. You managed to GET GOOD out of the Wet Wood, but you just need to meet someone now.";
 	else if player is in Vined Vault:
-		say "[if mean mass is off-stage]That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's[else]You had to lose a letter from Vined. Maybe this time you need to add a letter to mean, or mass, or both[end if].";
+		say "[if mean mass is off-stage]That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's[else]You had to lose a letter from Vined to find fault. Maybe this time you need to add a letter to mean, or mass, or both[end if].";
 	else:
 		say "Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But [b]VERBS[r] will show what you can use.";
 
@@ -3905,7 +3905,7 @@ this is the verb-checker rule:
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if][if local-post-hom is true]. The button's really bright. Your word must be very close, indeed[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if][if local-post-hom is true].[paragraph break]The button's really bright. Your rhyme must be very close, indeed[end if].";
 		the rule succeeds;
 	if local-post-hom is true:
 		if hom-row > 0:
