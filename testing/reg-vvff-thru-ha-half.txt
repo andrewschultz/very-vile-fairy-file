@@ -632,7 +632,7 @@ by one point
 > ho happen
 !by one point
 #?? for postcomp: TRY DOING
-You already said HO HAPPEN.
+You already said HO HAPPEN. Now you have to make things happen!
 
 > dimd
 !by one point
@@ -783,10 +783,10 @@ You're already on the Soft Sand.
 > undo
 > zsoft sand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 > soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
 > zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
@@ -1887,8 +1887,7 @@ by one point
 
 > go gappin
 !by one point
-#?? this is a dumb bug, but it still might be worth poking at.
-That noun did not make sense in this context.
+The action was okay, but I couldn't recognize the object.
 
 > zgo gappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
@@ -1975,6 +1974,7 @@ Russell's moment of interest in the sciences has passed.
 !The HA HALF button lights up on your Leet Learner, but dimly.
 
 > wood one
+by one point
 > wood one
 !by one point
 Russell's already disarmed, but he's still too strong.

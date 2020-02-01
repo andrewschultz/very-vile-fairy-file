@@ -2018,7 +2018,7 @@ chapter room homonyms
 [the room homonyms work as follows: if we have a rule with multiple room states/possibilities and no topic, then we skip the topic. If we have a rule and a topic, we print the custom-msg if the rule and topic match. Otherwise, we print the custom-msg for a generic error if the topic matches. So that is why the topic or rule can be blank.]
 
 to say hom-not: say ". Homonyms aren't quite the way to go, here"
- 
+
 table of room homonyms
 loc	hom-rule (a rule)	myhom (topic)	custom-msg (text)
 airy isle	--	"aerie/erry/aisle"	"The Airy Isle can't really be changed."

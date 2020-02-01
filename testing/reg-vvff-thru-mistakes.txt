@@ -7,10 +7,6 @@
 
 * main-thru
 
-#next-cmd-pass
-> whet wood
-!Learner needle
-You feel ... something. But not enough. Homophones must not quite be the way to go, here.
 > wig wag
 Learner needle
 If you're wearing a hairpiece, I don't want to know.
@@ -37,7 +33,7 @@ Learner needle
 You aren't up for dancing.
 > pairy pile
 Learner needle
-No, we don't need the Very Vile Fairy File splitting and reproducing.
+Goodness, no, we don't need the Very Vile Fairy File splitting and reproducing.
 > dairy dial
 Learner needle
 No dial appears to give you more excitement or milk products. Rats.
@@ -1432,7 +1428,7 @@ Learner needle
 We Whine: ME, MINE only blows figurative wind.
 > pee pine
 Learner needle
-There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably Very Vile Fairy File-approved, so no.
 > she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -1463,7 +1459,7 @@ We Whine: ME, MINE is only about mental violence and nastiness to people
 We Whine: ME, MINE only blows figurative wind.
 > pee pine
 !Learner needle
-There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably Very Vile Fairy File-approved, so no.
 > she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -2057,6 +2053,9 @@ While snot and snoring may gross some people out, they won't scare armies away. 
 > fought ford
 Learner needle
 The battle is ahead, not in the past.
+> tryst tress
+!Learner needle
+The last thing you need now is a hair appointment.
 
 > hot horde
 by one point
@@ -2109,7 +2108,7 @@ You must be on the right track. But perhaps the shell that is shorn might make t
 If you needed to get through the spite spaced white waste, that would work. But you don't. You need to defeat the Very Vile Fairy File.
 > light laced
 !Learner needle
-Perhaps the [spite spaced white waste] will become light-laced once you dispel the Very Vile Fairy File.
+Perhaps the spite spaced white waste will become light-laced once you dispel the Very Vile Fairy File.
 > tight taste
 !Learner needle
 No, you don't want a taste of being tased.
@@ -2124,10 +2123,6 @@ by one point
 >wary wile
 Yes, you have shown wary wile, and lots of it!
 
-> tryst tress
-!Learner needle
-The last thing you need now is a hair appointment.
-
 > bury bile
 by one point
 
@@ -2141,21 +2136,25 @@ DEBUG: dynamic magic number directed us to 4 / 4.
 As you say/think this, the Leet Learner needle bounces back and forth
 #next-cmd-pass
 > wake whee
+by one point
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
 #next-cmd-pass
 > take tea
+by one point
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
 #next-cmd-pass
 > fake fee
+by one point
 > shake she
 DEBUG: dynamic magic number directed us to -5 / -4.
 As you say/think this, the Leet Learner dims a bit, and the needle slides center-left.
 #next-cmd-pass
 >break brie
+by one point
 > shake she
 !As you say/think this
 
@@ -2189,6 +2188,7 @@ rematerializes
 >call cree
 !lump
 >strong start
+by one point
 >s
 >appealing appear
 lump

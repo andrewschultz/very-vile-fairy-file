@@ -19,15 +19,10 @@ You need something a little more than homonyms to leave the Wet Wood. It feels l
 >git goob
 You don't need source control, but you're close, here.
 >git good
-brightly
+The button's really bright. Your rhyme must be very close, indeed.
 !don't need source control
 >goat goat git
 You don't need source control, but you're close, here.
-
-> wet woo
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-> we would
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > big bag
 by one point
@@ -39,31 +34,29 @@ by one point
 >riffed riffer
 You need to have riffed, but with rhyming, as you did in the Wet Wood.
 
->riffed rrr
-No, you rhymed to get out of the Wet Wood. But homonyms aren't quite the way to go, here.
-
 > gift giver
 by one point
 
 #homonyms close test verb-find-fault-fined
 >fined falt
-WRONG
+Pretty close, but you don't need to make this a debtor's prison. You need to make it easier to get out of.
+#homonyms basic test thing-mind malt-mined
 > mined malt
 Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
 
 > find fault
 by one point
 
-#homonyms basic test thing-mind malt-mined
+#homonyms basic retest thing-mind malt-mined
 >mined xxx
-WRONG
+You had to lose a letter from Vined to find fault. Maybe this time you need to add a letter to mean, or mass, or both.
 
 > green grass
 by one point
 
 #homonyms close test verb-grow-grit-owe
 >owe oit
-WRONG
+Not quite OWE ... but you sense there are several ways to toughen up.
 #homonyms basic test room-po pit-poe
 > poe pit
 You don't need a pendulum about to cut you.
@@ -76,7 +69,7 @@ by one point
 
 #homonyms close test verb-mind-me-mined
 >mined moo
-WRONG
+You need to take care of, not booby-trap, yourself.
 
 > mind me
 by one point
@@ -86,7 +79,7 @@ by one point
 
 #homonyms basic test thing-wry wall-rye
 >rye xxx
-WRONG
+The wall remains inorganic. You can't really do anything to it.. Homonyms aren't quite the way to go, here.
 #homonyms basic test room-fun fen-phen
 >fun phen
 Organic chemistry is much too complex, here.
@@ -98,22 +91,23 @@ Organic chemistry is much too complex, here.
 
 #homonyms basic test thing-peeling pier-peer
 >peer xxx
-WRONG
+You could just L or X or LOOK for that. The pier is more flexible than that--rhymes will give more than homonyms here.
+#[?? release 5 maybe check if/when pier is finally useless after HEAL HERE. This is a bug nobody will find unless they try.]
 #homonyms basic test thing-steel steer-steal
 >steal xxx
-WRONG
+The ceiling seer would not approve!
 #homonyms close test verb-kneel-near-neal
 >neal neyer
-WRONG
+You don't need to call anyone by their first names. It would be disrespectful to try, with the Ceiling Seer.
 #homonyms close test verb-deal-dear-deer
 >deel deer
-WRONG
+You don't need to populate this area with wildlife. It's the right amount of peaceful.
 #homonyms close test verb-heal-here-heel
 >heel heer
-WRONG
+A bit too bossy for the Ceiling Seer.
 #homonyms close test verb-heal-here-hear
 >hael hear
-WRONG
+The Ceiling Seer only helps the good guys.
 #homonyms basic test room-real rear-reel
 >reel reer
 The Sage Sea is not for fishing.
@@ -140,10 +134,10 @@ by one point
 
 #homonyms basic test thing-vapor vial-vile
 > vapur vile
-WRONG
+You need to change the vial into something more pleasant and constructive.
 #homonyms basic test thing-vapor vial-vaper
 > vaper viyul
-WRONG
+You need to change the vial into something more pleasant and constructive.
 
 > paper pile
 by one point
@@ -161,7 +155,7 @@ You feel ... something. But not enough. Homophones must not quite be the way to 
 
 #homonyms close test verb-mark-more-moor
 >murk moor
-WRONG
+Close, but what would a moor be doing near a store?
 
 > dark door
 by one point
@@ -171,50 +165,45 @@ by one point
 
 #homonyms basic test thing-weird way-whey
 >whey xxx
-WRONG
+Yes, whey is weird to eat. But it would still be a sticky barrier.
 
 > cleared clay
 by one point
 
 > w
 
-#homonyms close test verb-history-hall-haul
->hiss haul
-WRONG
-#homonyms close test verb-mystery-mall-maul
->miss maul
-WRONG
 #homonyms basic test room-history hall-haul
 >long haul
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic test room-history hall-maul
->long maul
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
+#[?? edge test case: if you've flipped this, shouldn't we have another error?]
+#homonyms close test verb-mystery-mall-maul
+>miss maul
+You don't need to destroy anything.
 
 > mystery mall
 by one point
 
-#homonyms basic retest room-history hall-haul
->long haul
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic retest room-history hall-maul
+#homonyms basic test room-history hall-maul
 >long maul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+#homonyms close test verb-history-hall-haul
+>hiss haul
+You don't need THAT much stuff.
 #homonyms close test verb-glean-glows-gloze
 >gleen gloze
-WRONG
+You shouldn't be fishing for flattery.
 
 > listen
 
 #homonyms basic test thing-toe tappin-roe
 >roe xxx
-WRONG
+You don't need fish or homonyms.
 #homonyms basic test thing-toe tappin-tow
 >tow xxx
-WRONG
+You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.. Homonyms aren't quite the way to go, here.
 #homonyms close test verb-ho-happen-hoe
 >hoe hoppin
-WRONG
+Keep farming, you'll get the right homonym.
 
 > lots lame
 by one point
@@ -226,13 +215,13 @@ by one point
 
 #homonyms close test verb-lie-lol-lye
 >lye lawwal
-WRONG
+Lye poisoning is a serious matter. Maybe there's a better way to deal with the shawl, but only if you want.
 #homonyms close test verb-lie-lol-loll
 >ly loll
-WRONG
+Instead of lolling, why not have more fun? Maybe there's a better way to deal with the shawl, but only if you want.
 #homonyms close test verb-not-near-knot
 >knot kneer
-WRONG
+Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles.
 #homonyms basic test room-got gear hot here-hear
 >hear hear
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
@@ -258,7 +247,7 @@ by one point
 
 #homonyms basic test thing-worst wave-wurst
 >wurst xxx
-WRONG
+You're not hungry. Besides, the wave can become something better, nicer.
 
 > dreaming dull
 by one point
@@ -290,7 +279,7 @@ by one point
 
 #homonyms close test verb-wake-whee-we
 >waik we
-WRONG
+You are already awake. You need to make Jake ache to be awake.
 
 #homonyms basic test room-lake lea-lee
 >lee smith
@@ -301,17 +290,17 @@ by one point
 
 #homonyms close test verb-take-tea-t
 >taik t
-WRONG
+You need to, um, tee up something more positive.
 #homonyms close test verb-take-tea-tee
 >taik tee
-WRONG
+You need to, um, tee up something more positive.
 
 > take tea
 by one point
 
 #homonyms close test verb-break-brie-brake
 >brake breee
-WRONG
+You get the feeling you can, but don't have to, change things up just a bit.
 
 > fake fee
 by one point
@@ -323,7 +312,7 @@ by one point
 
 #homonyms basic test thing-jake g-cappin
 > co cappin
-You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
+Close. Jake is ambitious but not violent.
 
 > co capn
 by one point
@@ -336,20 +325,24 @@ Silent Sail
 
 #homonyms close test verb-lean-luggin-lien
 >lien loggin
-WRONG
+Whoah! Close, but tax stuff is too complicated and bloated.
 #homonyms close test verb-mean-muggin-mien
 >mien moggin
-WRONG
+Something similar, but much tougher, if not tougher to spell, than mien.
 
 #homonyms basic test room-been buggin-bin
 >bin xxx
-You do sort of need to bin your shortcomings.
+!You do sort of need to bin your shortcomings.
 
 > stay strong
 by one point
 
 > glow glad
 by one point
+
+#homonyms basic test room-been buggin-bin
+>bin xxx
+You do sort of need to bin your shortcomings.
 
 > mean muggin
 by one point
@@ -359,7 +352,7 @@ by one point
 
 #homonyms basic test thing-way woke-whey
 >whey xxx
-WRONG
+It's woke to eat whey, probably, but you can transform the cloak better with something else.
 
 > enter boat
 
@@ -374,7 +367,7 @@ by one point
 
 #homonyms basic test thing-poor ponder-pore
 >pore xxx
-WRONG
+You don't need to pore over Poor? Ponder for Fonder. You need it to come alive!
 
 > youre yonder
 by one point
@@ -383,10 +376,10 @@ by one point
 
 #homonyms basic test thing-bold bard-bowled
 >bowled xxx
-WRONG
+Cricket isn't cricket right now, old chap!
 #homonyms basic test thing-bold bard-barred
 >barred xxx
-WRONG
+The bold bard sort of is, already, and you're trying to fix that.
 
 > smashing smoke
 by one point
@@ -399,19 +392,16 @@ by one point
 
 #homonyms basic test thing-we whine-whee
 > whee xxx
-WRONG
+That'd be a heel turn, actually liking We Whine: ME, MINE.
 #homonyms basic test thing-we whine-wine
 > wine xxx
-WRONG
+We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or homonyms.
 #homonyms close test verb-see-sign-sea
 > sea syne
-WRONG
+You remain landlocked. But perhaps you can find a better way to, umm, look at things.
 #homonyms close test verb-see-sign-sine
 > see sine
-> see sine
-We Whine: ME, MINE is too practical for stuffy advanced math contests.
->sea sine
-WRONG
+The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
 > see sign
 by one point
@@ -426,16 +416,16 @@ by one point
 
 #homonyms basic test thing-pain peasant-pane
 >pane xxxx
-WRONG
+The peasant acquires no magical transportation.
 #homonyms close test verb-plain-pleasant-plane
 >plane present
-WRONG
+The peasant acquires no magical transportation.
 #homonyms basic test room-foe field-sew
 > sew zzz
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+The field is not for manual labor.
 #homonyms basic test room-foe field-sow
 > sow zzz
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+The field is not for manual labor.
 
 > plain pleasant
 by one point
@@ -448,10 +438,10 @@ by one point
 
 #homonyms basic test thing-coral cage-choral
 >choral xxx
-A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
+You don't need the cage to sing. You need to figure who's in there.
 #homonyms close test verb-moral-mage-morel
 >morel may
-WRONG
+You don't need a plantomancer.
 
 #homonyms basic test room-store all stage-awl
 >awl righty
@@ -489,17 +479,17 @@ by one point
 
 #homonyms basic test thing-stuck stair-stare
 >stare xxx
-WRONG
+You need to figure what the stair would hold. Staring may help, or it may not.
 
 > luck lair
 by one point
 
 #homonyms basic retest room-blinding blaze-graze
 >graze xxx
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
 #homonyms basic retest room-blinding blaze-grace
 >grace xxx
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
 
 > w
 > w
@@ -524,7 +514,7 @@ by one point
 
 #homonyms close test verb-dear-dull-deer
 >deer doll
-WRONG
+But the beer bull might maul the deer.
 
 #homonyms basic test room-here hull-hear
 >hear hull
@@ -570,10 +560,10 @@ by one point
 
 #homonyms close test verb-so-sappin-sew
 >sew soppin
-WRONG
+Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 #homonyms close test verb-so-sappin-sow
 >sow soppin
-WRONG
+Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
 #homonyms basic test room-whining war-wining
 > wining dining
@@ -609,7 +599,7 @@ by one point
 
 #homonyms close test verb-cast-cap-caste
 >caste kap
-WRONG
+You don't have to show anyone you're better than they are. Well, maybe you can defeat them in a challenge, but that's different.
 
 > go gappin
 by one point
@@ -622,13 +612,13 @@ by one point
 
 #homonyms close test verb-wood-one-won
 >whud won
-WRONG
+The good gun seems to bend a bit. You must be close to a concrete way to change it.
 #homonyms close test verb-wood-one-would
 >would wun
-WRONG
+The good gun seems to bend a bit. You must be close to a concrete way to change it.
 #homonyms close test verb-meeker-muscle-mussel
 >meaker mussel
-WRONG
+Ooh! You're on the right track, but you don't quite need to turn Russell into seafood.
 #homonyms basic test thing-reeker russell-wreaker
 >wreaker wrussle
 This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action.
@@ -643,16 +633,16 @@ by one point
 
 #homonyms basic test thing-sought sword-sot
 >sot xxx
-WRONG
+No, it wasn't lost by some drunk.
 #homonyms basic test thing-mist mess-missed
 >missed xxx
-WRONG
+You can miss the mess more productively by figuring your way through Airy Isle.
 #homonyms basic test thing-bot board-bought
 >bought xxxx
-Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
+Perhaps their soulless corporate overlords would be interested in a quick buck, but the Bot Board isn't.
 #homonyms basic test thing-bot board-bored
->bought xxx
-WRONG
+>bored xxx
+Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
 > xxx gourd
 That worked in The Life of Brian, but ... try a homophone, here. You're close.
@@ -671,14 +661,14 @@ The Airy Isle can't really be changed.
 
 #homonyms close test verb-hot-horde-hoard
 >hoard haught
-WRONG
+Treasure isn't the goal, here. You need allies.
 
 > hot horde
 by one point
 
 #homonyms basic test thing-hot horde-hoard
 >hoard haught
-WRONG
+You are after virtue, and so is the hot horde. They seem to need a leader.
 
 > lot lord
 by one point
@@ -688,31 +678,31 @@ by one point
 
 #homonyms close test verb-whoa-wait-weight
 >woo weight
-WRONG
+You wouldn't want to be crushed by a weight. But you've got the right idea.
+
+#homonyms basic test thing-grow grate-great
+>great xxx
+But you want to lessen the grate/gate's influence.
 
 > whoa wait
 by one point
 
-#homonyms basic test thing-grow grate-great
->great xxx
-WRONG
-
 #homonyms basic test thing-white waste-waist
 >waist xxx
-WRONG
+It's sort of a waist, too, but let's concentrate on finishing the quest, here.
 #homonyms basic test room-tarry tile-terry
 >terry crews
 Nobody named Terry appears, nor does any terry cloth.
 #homonyms basic test thing-well worn hell horn-warn
 >warn warn
-WRONG
+The well worn hell horn is already giving a false warning.
 
 > tell torn
 by one point
 
 #homonyms close test verb-merry-mile-marry
 >myill marry
-WRONG
+It's debatable whether marriage makes things happier or not. Tweak things for assurance.
 
 > merry mile
 by one point
@@ -723,7 +713,7 @@ by one point
 
 #homonyms close test verb-bury-bile-berry
 >buyall berry
-WRONG
+You need to do the opposite of eat something.
 
 > bury bile
 by one point

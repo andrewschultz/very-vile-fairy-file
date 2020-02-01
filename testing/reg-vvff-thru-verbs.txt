@@ -38,6 +38,7 @@ by one point
 by one point
 
 > eat mind malt
+Worthless. It's empty.
 
 > find fault
 by one point
@@ -60,7 +61,7 @@ by one point
 > n
 A voice booms in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
 >  d
-> Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
+Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
 > s
 

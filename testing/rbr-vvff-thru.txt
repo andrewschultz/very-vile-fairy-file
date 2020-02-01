@@ -21,6 +21,7 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 #--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 OK-APOSTROPHE:Bold 'n Brave
+ALSO-IGNORE:enter boat	blow by	jj
 
 ## *FILE
 ## *FORK
@@ -45,7 +46,7 @@ You need something a little more than homonyms to leave the Wet Wood. It feels l
 >git goob
 You don't need source control, but you're close, here.
 >git good
-brightly
+The button's really bright. Your rhyme must be very close, indeed.
 !don't need source control
 >goat goat git
 You don't need source control, but you're close, here.
@@ -87,12 +88,6 @@ The action was okay, but I couldn't recognize the object.
 @alt
 > z
 
-@hom
-> wet woo
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-> we would
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-
 @ha
 #this is very basic option testing
 >hut can
@@ -127,10 +122,6 @@ DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 @mis
-#next-cmd-pass
-> whet wood
-!Learner needle
-You feel ... something. But not enough. Homophones must not quite be the way to go, here.
 > wig wag
 Learner needle
 If you're wearing a hairpiece, I don't want to know.
@@ -157,7 +148,7 @@ Learner needle
 You aren't up for dancing.
 > pairy pile
 Learner needle
-No, we don't need the Very Vile Fairy File splitting and reproducing.
+Goodness, no, we don't need the Very Vile Fairy File splitting and reproducing.
 > dairy dial
 Learner needle
 No dial appears to give you more excitement or milk products. Rats.
@@ -278,6 +269,7 @@ You already made the big bag.
 
 @thi
 > bury bile
+!by one point
 > think
 BURY BILE
 
@@ -303,10 +295,6 @@ You need to have riffed, but with rhyming, as you did in the Wet Wood.
 @gt
 > gt wet wood
 You don't need to go back.
-
-@hom
->riffed rrr
-No, you rhymed to get out of the Wet Wood. But homonyms aren't quite the way to go, here.
 
 @ha
 > get good
@@ -351,9 +339,11 @@ by one point
 @hom
 #homonyms close test verb-find-fault-fined
 >fined falt
-WRONG
+Pretty close, but you don't need to make this a debtor's prison. You need to make it easier to get out of.
+#homonyms basic test thing-mind malt-mined
 > mined malt
 Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
+
 
 @gt
 > gt rift river
@@ -361,6 +351,7 @@ You don't need to go back.
 
 @ver
 > eat mind malt
+Worthless. It's empty.
 
 @ha
 > gift giver
@@ -443,9 +434,9 @@ by one point
 ###newitm mined malt
 
 @hom
-#homonyms basic test thing-mind malt-mined
+#homonyms basic retest thing-mind malt-mined
 >mined xxx
-WRONG
+You had to lose a letter from Vined to find fault. Maybe this time you need to add a letter to mean, or mass, or both.
 
 @mis
 #next-cmd-pass
@@ -513,7 +504,7 @@ by one point
 @hom
 #homonyms close test verb-grow-grit-owe
 >owe oit
-WRONG
+Not quite OWE ... but you sense there are several ways to toughen up.
 #homonyms basic test room-po pit-poe
 > poe pit
 You don't need a pendulum about to cut you.
@@ -607,6 +598,7 @@ Clever complaining will make you feel better but won't do anything.
 
 @thi
 > mash map
+!by one point
 > think
 MASH MAP
 
@@ -732,7 +724,7 @@ by one point
 @hom
 #homonyms close test verb-mind-me-mined
 >mined moo
-WRONG
+You need to take care of, not booby-trap, yourself.
 
 @ha
 > mash map
@@ -751,6 +743,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 > think
 !MASH MAP
 > flim flam
+!by one point
 > think
 FLIM FLAM
 
@@ -909,7 +902,7 @@ by one point
 @hom
 #homonyms basic test thing-wry wall-rye
 >rye xxx
-WRONG
+The wall remains inorganic. You can't really do anything to it.. Homonyms aren't quite the way to go, here.
 #homonyms basic test room-fun fen-phen
 >fun phen
 Organic chemistry is much too complex, here.
@@ -926,7 +919,7 @@ Organic chemistry is much too complex, here.
 > n
 A voice booms in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
 >  d
-> Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
+Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
 @ha
 > flim flam
@@ -960,22 +953,23 @@ east to Fate Farm
 @hom
 #homonyms basic test thing-peeling pier-peer
 >peer xxx
-WRONG
+You could just L or X or LOOK for that. The pier is more flexible than that--rhymes will give more than homonyms here.
+#[?? release 5 maybe check if/when pier is finally useless after HEAL HERE. This is a bug nobody will find unless they try.]
 #homonyms basic test thing-steel steer-steal
 >steal xxx
-WRONG
+The ceiling seer would not approve!
 #homonyms close test verb-kneel-near-neal
 >neal neyer
-WRONG
+You don't need to call anyone by their first names. It would be disrespectful to try, with the Ceiling Seer.
 #homonyms close test verb-deal-dear-deer
 >deel deer
-WRONG
+You don't need to populate this area with wildlife. It's the right amount of peaceful.
 #homonyms close test verb-heal-here-heel
 >heel heer
-WRONG
+A bit too bossy for the Ceiling Seer.
 #homonyms close test verb-heal-here-hear
 >hael hear
-WRONG
+The Ceiling Seer only helps the good guys.
 #homonyms basic test room-real rear-reel
 >reel reer
 The Sage Sea is not for fishing.
@@ -1027,8 +1021,11 @@ This isn't a nature retreat.
 
 @thi
 > feel fear
+!by one point
 > deal dear
+!by one point
 > heal here
+!by one point
 > think
 FEEL FEAR
 DEAL DEAR
@@ -1297,10 +1294,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms basic test thing-vapor vial-vile
 > vapur vile
-WRONG
+You need to change the vial into something more pleasant and constructive.
 #homonyms basic test thing-vapor vial-vaper
 > vaper viyul
-WRONG
+You need to change the vial into something more pleasant and constructive.
 
 @ha
 > zdive deep rule
@@ -1412,7 +1409,7 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 @hom
 #homonyms close test verb-mark-more-moor
 >murk moor
-WRONG
+Close, but what would a moor be doing near a store?
 
 @mis
 > lark lore
@@ -1433,6 +1430,7 @@ Biological warfare is probably dangerous.
 
 @thi
 > mark more
+!by one point
 > think
 MARK MORE
 
@@ -1504,7 +1502,7 @@ by one point
 @hom
 #homonyms basic test thing-weird way-whey
 >whey xxx
-WRONG
+Yes, whey is weird to eat. But it would still be a sticky barrier.
 
 @mis #stark store after
 > arc ore
@@ -1591,18 +1589,13 @@ The clay is cleared enough.
 ###newloc history hall
 
 @hom
-#homonyms close test verb-history-hall-haul
->hiss haul
-WRONG
-#homonyms close test verb-mystery-mall-maul
->miss maul
-WRONG
 #homonyms basic test room-history hall-haul
 >long haul
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic test room-history hall-maul
->long maul
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
+#[?? edge test case: if you've flipped this, shouldn't we have another error?]
+#homonyms close test verb-mystery-mall-maul
+>miss maul
+You don't need to destroy anything.
 
 @ha
 > zmystery mall rule
@@ -1619,15 +1612,15 @@ by one point
 ###newitm mean moe's clean clothes
 
 @hom
-#homonyms basic retest room-history hall-haul
->long haul
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic retest room-history hall-maul
+#homonyms basic test room-history hall-maul
 >long maul
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+#homonyms close test verb-history-hall-haul
+>hiss haul
+You don't need THAT much stuff.
 #homonyms close test verb-glean-glows-gloze
 >gleen gloze
-WRONG
+You shouldn't be fishing for flattery.
 
 @ha
 > mystery mall
@@ -1644,6 +1637,7 @@ You've already flipped this area to the Mystery Mall.
 
 @thi
 > glean glows
+!by one point
 > think
 GLEAN GLOWS
 
@@ -1689,13 +1683,13 @@ That insult only works once.
 @hom
 #homonyms basic test thing-toe tappin-roe
 >roe xxx
-WRONG
+You don't need fish or homonyms.
 #homonyms basic test thing-toe tappin-tow
 >tow xxx
-WRONG
+You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.. Homonyms aren't quite the way to go, here.
 #homonyms close test verb-ho-happen-hoe
 >hoe hoppin
-WRONG
+Keep farming, you'll get the right homonym.
 
 @mis
 > fo fappin
@@ -1775,8 +1769,11 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 @thi
 > co capn
+!by one point
 > so sappin
+!by one point
 > mo mappin
+!by one point
 > THINK
 MO MAPPIN
 SO SAPPIN
@@ -1800,7 +1797,7 @@ by one point
 > ho happen
 !by one point
 #?? for postcomp: TRY DOING
-You already said HO HAPPEN.
+You already said HO HAPPEN. Now you have to make things happen!
 
 @ha
 > dimd
@@ -1851,13 +1848,13 @@ You already changed Toe Tappin Row Rappin that way.
 @hom
 #homonyms close test verb-lie-lol-lye
 >lye lawwal
-WRONG
+Lye poisoning is a serious matter. Maybe there's a better way to deal with the shawl, but only if you want.
 #homonyms close test verb-lie-lol-loll
 >ly loll
-WRONG
+Instead of lolling, why not have more fun? Maybe there's a better way to deal with the shawl, but only if you want.
 #homonyms close test verb-not-near-knot
 >knot kneer
-WRONG
+Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles.
 #homonyms basic test room-got gear hot here-hear
 >hear hear
 You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
@@ -2226,6 +2223,7 @@ You wonder briefly how that automaton back in the 18th century played chess, any
 
 @thi
 > couple caps
+!by one point
 > think
 COUPLE CAPS
 
@@ -2294,10 +2292,10 @@ You're already on the Soft Sand.
 > undo
 > zsoft sand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 > soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
 @ha
 > zloft land rule
@@ -2325,10 +2323,11 @@ Loft Land isn't much to look at, but it's not worth scorn.
 @hom
 #homonyms basic test thing-worst wave-wurst
 >wurst xxx
-WRONG
+You're not hungry. Besides, the wave can become something better, nicer.
 
 @thi
 > first fave
+!by one point
 > think
 FIRST FAVE
 
@@ -2604,7 +2603,7 @@ The boring boat seems to anchor itself okay here.
 @hom
 #homonyms close test verb-wake-whee-we
 >waik we
-WRONG
+You are already awake. You need to make Jake ache to be awake.
 
 @gt
 >gt silent sail
@@ -2625,7 +2624,9 @@ Ooh! That'd be nice and tasty. But you don't need that right now.
 
 @thi
 >take tea
+!by one point
 >fake fee
+!by one point
 >think
 TAKE TEA
 FAKE FEE
@@ -2691,10 +2692,10 @@ The HA HALF button lights up on your Leet Learner.
 @hom
 #homonyms close test verb-take-tea-t
 >taik t
-WRONG
+You need to, um, tee up something more positive.
 #homonyms close test verb-take-tea-tee
 >taik tee
-WRONG
+You need to, um, tee up something more positive.
 
 > take tea
 by one point
@@ -2727,7 +2728,7 @@ The HA HALF button lights up on your Leet Learner, but dimly.
 @hom
 #homonyms close test verb-break-brie-brake
 >brake breee
-WRONG
+You get the feeling you can, but don't have to, change things up just a bit.
 
 @all,mis,ha
 > break brie
@@ -2886,6 +2887,7 @@ down to Lake Light
 
 @thi
 > snake snap
+!by one point
 > think
 SNAKE SNAP
 
@@ -2900,7 +2902,7 @@ The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a 
 @hom #co cappin before
 #homonyms basic test thing-jake g-cappin
 > co cappin
-You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
+Close. Jake is ambitious but not violent.
 
 > co capn
 by one point
@@ -2960,6 +2962,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 # test bug found in-comp
 \\
 >couple caps
+!by one point
 >enter boat
 Been Buggin
 >undo
@@ -2972,10 +2975,10 @@ Been Buggin
 @hom
 #homonyms close test verb-lean-luggin-lien
 >lien loggin
-WRONG
+Whoah! Close, but tax stuff is too complicated and bloated.
 #homonyms close test verb-mean-muggin-mien
 >mien moggin
-WRONG
+Something similar, but much tougher, if not tougher to spell, than mien.
 
 @gt
 >gt silent sail
@@ -2984,7 +2987,7 @@ You're too bummed to make big trips.
 @hom
 #homonyms basic test room-been buggin-bin
 >bin xxx
-You do sort of need to bin your shortcomings.
+!You do sort of need to bin your shortcomings.
 
 @thi
 >lean luggin
@@ -3069,6 +3072,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newnpc dean duggan
+
+@hom
+#homonyms basic test room-been buggin-bin
+>bin xxx
+You do sort of need to bin your shortcomings.
 
 @ver
 > t dean duggan
@@ -3165,7 +3173,7 @@ Sorry, but GO TO is disabled until you take the boring boat back. You can just E
 @hom
 #homonyms basic test thing-way woke-whey
 >whey xxx
-WRONG
+It's woke to eat whey, probably, but you can transform the cloak better with something else.
 
 @mis
 >glean gluggin
@@ -3333,6 +3341,7 @@ No genetically twisted tree appears.
 
 @thi
 > smashing smoke
+!by one point
 > think
 !GLEAN GLOWS
 SMASHING SMOKE
@@ -3350,7 +3359,7 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 @hom
 #homonyms basic test thing-poor ponder-pore
 >pore xxx
-WRONG
+You don't need to pore over Poor? Ponder for Fonder. You need it to come alive!
 
 @ha
 >zmystery mall
@@ -3412,10 +3421,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms basic test thing-bold bard-bowled
 >bowled xxx
-WRONG
+Cricket isn't cricket right now, old chap!
 #homonyms basic test thing-bold bard-barred
 >barred xxx
-WRONG
+The bold bard sort of is, already, and you're trying to fix that.
 
 @ha
 > zsmashing smoke rule
@@ -3524,19 +3533,16 @@ by one point
 @hom
 #homonyms basic test thing-we whine-whee
 > whee xxx
-WRONG
+That'd be a heel turn, actually liking We Whine: ME, MINE.
 #homonyms basic test thing-we whine-wine
 > wine xxx
-WRONG
+We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or homonyms.
 #homonyms close test verb-see-sign-sea
 > sea syne
-WRONG
+You remain landlocked. But perhaps you can find a better way to, umm, look at things.
 #homonyms close test verb-see-sign-sine
 > see sine
-> see sine
-We Whine: ME, MINE is too practical for stuffy advanced math contests.
->sea sine
-WRONG
+The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
 @ha
 > lending libe
@@ -3580,7 +3586,7 @@ Learner needle
 We Whine: ME, MINE only blows figurative wind.
 > pee pine
 Learner needle
-There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably Very Vile Fairy File-approved, so no.
 > she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -3612,7 +3618,7 @@ We Whine: ME, MINE is only about mental violence and nastiness to people
 We Whine: ME, MINE only blows figurative wind.
 > pee pine
 !Learner needle
-There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably [fairy file]-approved, so no.
+There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably Very Vile Fairy File-approved, so no.
 > she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
@@ -3639,7 +3645,9 @@ You've seen enough signs. Overkill might leave you demoralized or too analytical
 
 @thi
 > beast boss
+!by one point
 > least loss
+!by one point
 > think
 BEAST BOSS
 LEAST LOSS
@@ -3653,16 +3661,16 @@ LEAST LOSS
 @hom
 #homonyms basic test thing-pain peasant-pane
 >pane xxxx
-WRONG
+The peasant acquires no magical transportation.
 #homonyms close test verb-plain-pleasant-plane
 >plane present
-WRONG
+The peasant acquires no magical transportation.
 #homonyms basic test room-foe field-sew
 > sew zzz
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+The field is not for manual labor.
 #homonyms basic test room-foe field-sow
 > sow zzz
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+The field is not for manual labor.
 
 @mis
 > crane crescent
@@ -3683,6 +3691,7 @@ Alas, no food magically appears. You need a more fighting stance.
 
 @thi
 > show shield
+!by one point
 > think
 SHOW SHIELD
 
@@ -3723,10 +3732,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms basic test thing-coral cage-choral
 >choral xxx
-A whole chorale wouldn't fit in there. One person. Plus, homophones aren't quite it.
+You don't need the cage to sing. You need to figure who's in there.
 #homonyms close test verb-moral-mage-morel
 >morel may
-WRONG
+You don't need a plantomancer.
 
 @ver
 >open coral cage
@@ -3810,6 +3819,7 @@ Now you mention it, you do feel a bit restricted here. Expressing your feelings 
 
 @thi
 > fit found
+!by one point
 > think
 FIT FOUND
 
@@ -4014,7 +4024,7 @@ by one point
 @hom
 #homonyms basic test thing-stuck stair-stare
 >stare xxx
-WRONG
+You need to figure what the stair would hold. Staring may help, or it may not.
 
 @ha
 > mo mappin
@@ -4092,10 +4102,10 @@ by one point
 @hom
 #homonyms basic retest room-blinding blaze-graze
 >graze xxx
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
 #homonyms basic retest room-blinding blaze-grace
 >grace xxx
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
 
 @mis #snuck snare guesses when you have it
 > buck bear
@@ -4270,7 +4280,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms close test verb-dear-dull-deer
 >deer doll
-WRONG
+But the beer bull might maul the deer.
 
 @ver
 > attack beer bull
@@ -4499,6 +4509,7 @@ Greedy, to try for more.
 
 @thi
 > cull ceased
+!by one point
 > think
 !LEAST LOSS
 CULL CEASED
@@ -4587,6 +4598,7 @@ A bit of taunting might work here, but you might need to be a bit harsher.
 
 @thi
 > full feast
+!by one point
 > think
 FULL FEAST
 
@@ -4690,6 +4702,7 @@ Dental hygiene is a good idea in general, but here, it's unnecessary.
 
 @thi
 > pull pieced
+!by one point
 > think
 !FULL FEAST
 PULL PIECED
@@ -4702,10 +4715,10 @@ PULL PIECED
 @hom
 #homonyms close test verb-so-sappin-sew
 >sew soppin
-WRONG
+Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 #homonyms close test verb-so-sappin-sow
 >sow soppin
-WRONG
+Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
 @hom
 #homonyms basic test room-whining war-wining
@@ -4734,8 +4747,11 @@ Alas, nobody falls into line to tell stories of how they got here.
 
 @thi
 > shining shore
+!by one point
 > mining more
+!by one point
 > dining door
+!by one point
 > think
 SHINING SHORE
 MINING MORE
@@ -4980,6 +4996,7 @@ Alas, no food magically appears. You did what you needed.
 
 @thi
 > go gappin
+!by one point
 > think
 GO GAPPIN
 
@@ -4990,7 +5007,7 @@ GO GAPPIN
 @hom
 #homonyms close test verb-cast-cap-caste
 >caste kap
-WRONG
+You don't have to show anyone you're better than they are. Well, maybe you can defeat them in a challenge, but that's different.
 
 @gt
 # test places you can't go back to
@@ -5020,8 +5037,7 @@ by one point
 @ha
 > go gappin
 !by one point
-#?? this is a dumb bug, but it still might be worth poking at.
-That noun did not make sense in this context.
+The action was okay, but I couldn't recognize the object.
 
 @ha
 > zgo gappin rule
@@ -5057,6 +5073,7 @@ You look for someone who has recently lost an argument, but nobody turns up.
 
 @thi
 > cast cap
+!by one point
 > think
 CAST CAP
 
@@ -5113,13 +5130,13 @@ by one point
 @hom
 #homonyms close test verb-wood-one-won
 >whud won
-WRONG
+The good gun seems to bend a bit. You must be close to a concrete way to change it.
 #homonyms close test verb-wood-one-would
 >would wun
-WRONG
+The good gun seems to bend a bit. You must be close to a concrete way to change it.
 #homonyms close test verb-meeker-muscle-mussel
 >meaker mussel
-WRONG
+Ooh! You're on the right track, but you don't quite need to turn Russell into seafood.
 #homonyms basic test thing-reeker russell-wreaker
 >wreaker wrussle
 This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action.
@@ -5228,6 +5245,7 @@ east to Hopping Hills
 
 @ha
 > wood one
+by one point
 > wood one
 !by one point
 Russell's already disarmed, but he's still too strong.
@@ -5297,16 +5315,16 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms basic test thing-sought sword-sot
 >sot xxx
-WRONG
+No, it wasn't lost by some drunk.
 #homonyms basic test thing-mist mess-missed
 >missed xxx
-WRONG
+You can miss the mess more productively by figuring your way through Airy Isle.
 #homonyms basic test thing-bot board-bought
 >bought xxxx
-Perhaps their soulless corporate overlords would be interested in a quick buck, but they aren't.
+Perhaps their soulless corporate overlords would be interested in a quick buck, but the Bot Board isn't.
 #homonyms basic test thing-bot board-bored
->bought xxx
-WRONG
+>bored xxx
+Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
 > xxx gourd
 That worked in The Life of Brian, but ... try a homophone, here. You're close.
@@ -5351,9 +5369,13 @@ While snot and snoring may gross some people out, they won't scare armies away. 
 > fought ford
 Learner needle
 The battle is ahead, not in the past.
+> tryst tress
+!Learner needle
+The last thing you need now is a hair appointment.
 
 @thi
 > got gored
+!by one point
 > think
 GOT GORED
 
@@ -5368,7 +5390,7 @@ The HA HALF button lights up on your Leet Learner.
 @hom
 #homonyms close test verb-hot-horde-hoard
 >hoard haught
-WRONG
+Treasure isn't the goal, here. You need allies.
 
 > hot horde
 by one point
@@ -5378,7 +5400,7 @@ by one point
 @hom
 #homonyms basic test thing-hot horde-hoard
 >hoard haught
-WRONG
+You are after virtue, and so is the hot horde. They seem to need a leader.
 
 @ver
 > t hot horde
@@ -5452,7 +5474,7 @@ by one point
 @hom
 #homonyms close test verb-whoa-wait-weight
 >woo weight
-WRONG
+You wouldn't want to be crushed by a weight. But you've got the right idea.
 
 @ha
 > got gored
@@ -5525,13 +5547,13 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> whoa wait
-by one point
-
 @hom
 #homonyms basic test thing-grow grate-great
 >great xxx
-WRONG
+But you want to lessen the grate/gate's influence.
+
+> whoa wait
+by one point
 
 ###newloc tarry tile
 ###newitm very vile fairy file
@@ -5540,13 +5562,13 @@ WRONG
 @hom
 #homonyms basic test thing-white waste-waist
 >waist xxx
-WRONG
+It's sort of a waist, too, but let's concentrate on finishing the quest, here.
 #homonyms basic test room-tarry tile-terry
 >terry crews
 Nobody named Terry appears, nor does any terry cloth.
 #homonyms basic test thing-well worn hell horn-warn
 >warn warn
-WRONG
+The well worn hell horn is already giving a false warning.
 
 @ver
 >t fairy file
@@ -5581,6 +5603,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 @thi
 > merry mile
+!by one point
 > think
 MERRY MILE
 
@@ -5599,7 +5622,7 @@ You must be on the right track. But perhaps the shell that is shorn might make t
 If you needed to get through the spite spaced white waste, that would work. But you don't. You need to defeat the Very Vile Fairy File.
 > light laced
 !Learner needle
-Perhaps the [spite spaced white waste] will become light-laced once you dispel the Very Vile Fairy File.
+Perhaps the spite spaced white waste will become light-laced once you dispel the Very Vile Fairy File.
 > tight taste
 !Learner needle
 No, you don't want a taste of being tased.
@@ -5618,7 +5641,7 @@ by one point
 @hom
 #homonyms close test verb-merry-mile-marry
 >myill marry
-WRONG
+It's debatable whether marriage makes things happier or not. Tweak things for assurance.
 
 @gt
 >gt merry mile
@@ -5686,15 +5709,10 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@mis #final bit
-> tryst tress
-!Learner needle
-The last thing you need now is a hair appointment.
-
 @hom
 #homonyms close test verb-bury-bile-berry
 >buyall berry
-WRONG
+You need to do the opposite of eat something.
 
 @gt
 >gt merry mile
@@ -5713,12 +5731,15 @@ by one point
 \\
 > blow by
 > fall free
+###skip test checking
 > n
 > n
 > n
 > plain pleasant
+###skip test checking
 > w
 > moral mage
+!by one point
 > think
 MORAL MAGE
 >e
@@ -5727,14 +5748,18 @@ MORAL MAGE
 >s
 >s
 >kneel near
+by one point
 >feel fear
+by one point
 >deal dear
+by one point
 >n
 >n
 >n
 >n
 >w
 > moral mage
+by one point
 >think
 !MORAL MAGE
 
@@ -5747,21 +5772,25 @@ DEBUG: dynamic magic number directed us to 4 / 4.
 As you say/think this, the Leet Learner needle bounces back and forth
 #next-cmd-pass
 > wake whee
+by one point
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
 #next-cmd-pass
 > take tea
+by one point
 > shake she
 DEBUG: dynamic magic number directed us to 4 / 3.
 As you say/think this, the Leet Learner needle slides center-right.
 #next-cmd-pass
 > fake fee
+by one point
 > shake she
 DEBUG: dynamic magic number directed us to -5 / -4.
 As you say/think this, the Leet Learner dims a bit, and the needle slides center-left.
 #next-cmd-pass
 >break brie
+by one point
 > shake she
 !As you say/think this
 
@@ -5796,6 +5825,7 @@ rematerializes
 >call cree
 !lump
 >strong start
+by one point
 >s
 >appealing appear
 lump
