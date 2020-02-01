@@ -85,7 +85,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "fake"	"fee"	--	--	false	false	true	false	false	Lake Lea	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
 "break"	"brie"	"brake"	vh-break-brie rule	false	false	false	false	false	--	vc-break-brie rule	vr-break-brie rule	--	--
 "make"	"map"	--	--	false	false	true	false	false	--	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
-"co"	"capn|cappin"	--	--	false	false	true	false	true	--	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
+"co"	"capn"	"cappin"	vh-co-capn rule	false	false	true	false	true	--	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
 "snake"	"snap"	--	--	false	true	true	false	false	--	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
 "lean"	"luggin|lugging"	"lien"	vh-lean-luggin rule	false	false	true	false	false	--	vc-lean-luggin rule	vr-lean-luggin rule	--	"You tried some [b]LEAN LUGGIN[r], which should be more doable [once-now of vc-lean-luggin rule] you've dealt with your temporary loss of faith." [start Been Buggin]
 "mean"	"muggin|mugging"	"mien"	vh-mean-muggin rule	false	false	true	false	false	--	vc-mean-muggin rule	vr-mean-muggin rule	--	"You tried some [b]MEAN MUGGIN[r], which should be more doable [once-now of vc-mean-muggin rule] you've dealt with your temporary loss of faith."
@@ -116,6 +116,8 @@ the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailabl
 
 section verb homonym rules rules [xxvhr]
 
+this is the vh-co-capn rule: say "You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway." instead;
+
 this is the vh-find-fault rule: say "Pretty close, but you don't need to make this a debtor's prison. You need to make it easier to get out of." instead;
 
 this is the vh-get-good rule: say "You don't need source control, but you're close, here." instead;
@@ -129,8 +131,8 @@ this is the vh-kneel-near rule: say "You don't need to call anyone by their firs
 this is the vh-deal-dear rule: say "You don't need to populate this area with wildlife. It's the right amount of peaceful." instead;
 
 this is the vh-heal-here rule:
-	if the player's command matches "hear", say "A bit too bossy for the Ceiling Seer." instead;
-	if the player's command matches "heel", say "The Ceiling Seer only helps the good guys." instead;
+	if the player's command includes "hear", say "A bit too bossy for the Ceiling Seer." instead;
+	if the player's command includes "heel", say "The Ceiling Seer only helps the good guys." instead;
 
 this is the vh-history-hall rule: say "You don't need THAT much stuff." instead;
 
@@ -145,12 +147,12 @@ this is the vh-got-gored rule: say "That worked in The Life of Brian, but ... we
 this is the vh-glean-glows rule: say "You shouldn't be fishing for flattery." instead;
 
 this is the vh-see-sign rule:
-	if the player's command matches "sea", say "You remain landlocked." instead;
-	if the player's command matches "sine", say "The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK!" instead;
+	if the player's command includes "sea", say "You remain landlocked. But perhaps you can find a better way to, umm, look at things." instead;
+	if the player's command includes "sine", say "The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to [i]discover[r] something more relevant." instead;
 
 this is the vh-lie-lol rule:
-	if the player's command matches "lye", say "Lye poisoning is a serious matter. Maybe there's a better way to deal with the shawl, but only if you want." instead;
-	if the player's command matches "loll", say "Instead of lolling, why not have more fun? Maybe there's a better way to deal with the shawl, but only if you want." instead;
+	if the player's command includes "lye", say "Lye poisoning is a serious matter. Maybe there's a better way to deal with the shawl, but only if you want." instead;
+	if the player's command includes "loll", say "Instead of lolling, why not have more fun? Maybe there's a better way to deal with the shawl, but only if you want." instead;
 
 this is the vh-not-near rule: say "Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles." instead;
 
@@ -170,19 +172,21 @@ this is the vh-lean-luggin rule: say "Whoah! Close, but tax stuff is too complic
 
 this is the vh-mean-muggin rule: say "Something similar, but much tougher, if not tougher to spell, than mien." instead;
 
-this is the vh-so-sappin rule: say "Three letters is too much! You need to keep it simple." instead;
+this is the vh-so-sappin rule:
+	if player is in foe field so sealed and gold guard is not moot, continue the action; [?? tricky to test]
+	say "Three letters is too much to twiddle [toe tappin]! You need to keep it simple." instead;
 
-this is the vh-cast-cap rule: say "You don't have to show anyone you're better. Well, not [i]before[r] you make a challenge." instead;
+this is the vh-cast-cap rule: say "You don't have to show anyone you're better than they are. Well, maybe you can defeat them in a challenge, but that's different." instead;
 
 this is the vh-meeker-muscle rule: say "Ooh! You're on the right track, but you don't quite need to turn Russell into seafood." instead;
 
 this is the vh-wood-one rule: say "The good gun seems to bend a bit. You must be close to a concrete way to change it." instead;
 
-this is the vh-hot-horde rule: say "You are after virtue[if hot horde is touchable], and so is the hot horde[end if]. They seem to need [if lot lord is off-stage]a leader[else]a battle cry, instead[end if]." instead;
+this is the vh-hot-horde rule: say "Treasure isn't the goal, here. You[if lot lord is touchable] and the lot lord[end if] [if hot horde is touchable]need[else]already have[end if] allies." instead; [?? what about after in place]
 
 this is the vh-whoa-wait rule: say "You wouldn't want to be crushed by a weight. But you've got the right idea." instead;
 
-this is the vh-merry-mile rule: say "It's debatable whether marriage makes things happier or not. Tweak this for assurance." instead;
+this is the vh-merry-mile rule: say "It's debatable whether marriage makes things happier or not. Tweak things for assurance." instead;
 
 this is the vh-bury-bile rule: say "You need to do the opposite of eat something." instead;
 
@@ -822,7 +826,7 @@ this is the vr-history-hall rule:
 a goodrhyme rule (this is the vc-ho-happen rule) :
 	if player does not have Toe Tappin, unavailable;
 	if sco-ho-happen is true:
-		vcal "You already said HO HAPPEN.";
+		vcal "You already said HO HAPPEN. Now you have to make things happen!";
 		already-done;
 	ready;
 
@@ -1953,16 +1957,16 @@ jake g	hom-toe-tappin-to-co-capn rule	"cappin"
 mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault..."
 mist mess	--	"missed"	"You can miss the mess more productively by figuring your way through Airy Isle."
 pain peasant	--	"pane"	"Broken person, broken window, eh?"
-peeling pier	--	"peer"	"You could just L or X or LOOK for that. The pier is more flexible than that."
+peeling pier	--	"peer"	"You could just L or X or LOOK for that. The pier is more flexible than that--rhymes will give more than homonyms here."
 poor ponder	--	"pore"	"You don't need to pore over [poor ponder]. You need it to come alive!"
 reeker russell	--	"wreaker"	"This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action."
 sought sword	--	"sot"	"No, it wasn't lost by some drunk."
 steel steer	--	"steal"	"The ceiling seer would not approve!"
 stuck stair	--	"stare"	"You need to figure what the stair would hold. Staring may help, or it may not."
-toe tappin	hom-toe-tappin-to-roe-tow rule	"roe/tow"	"You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway."
+toe tappin	hom-toe-tappin-to-roe-tow rule	"roe/tow"	--
 way woke	--	"whey"	"It's woke to eat whey, probably, but you can transform the cloak better with something else."
 we whine	hom-we-whine-to-whee-wine rule	"whee/wine"
-weird way	--	"whey"	"Yes, whey is weird to eat."
+weird way	--	"whey"	"Yes, whey is weird to eat. But it would still be a sticky barrier."
 well worn hell horn	--	"warn"	"The well worn hell horn is already giving a false warning."
 white waste	--	"waist"	"It's sort of a waist, too, but let's concentrate on finishing the quest, here."
 worst wave	--	"wurst"	"You're not hungry. Besides, the wave can become something better, nicer."
@@ -2013,13 +2017,15 @@ chapter room homonyms
 
 [the room homonyms work as follows: if we have a rule with multiple room states/possibilities and no topic, then we skip the topic. If we have a rule and a topic, we print the custom-msg if the rule and topic match. Otherwise, we print the custom-msg for a generic error if the topic matches. So that is why the topic or rule can be blank.]
 
+to say hom-not: say ". Homonyms aren't quite the way to go, here"
+ 
 table of room homonyms
 loc	hom-rule (a rule)	myhom (topic)	custom-msg (text)
 airy isle	--	"aerie/erry/aisle"	"The Airy Isle can't really be changed."
 been buggin	--	"bin"	"You do sort of need to bin your shortcomings."
 blinding blaze	hom-blinding-blaze-to-wheys-grace-graze rule	--	--
 creased cross	--	"craws"
-foe field	peasant-around rule	"sew/sow" [ALTRULE hom-foe-field-to-sew-sow rule]
+foe field	--	"sew/sow"	"The field is not for manual labor."
 fun fen	--	"phen"	"Organic chemistry is much too complex, here."
 got gear hot here	--	"hear"
 here hull	--	"hear"	"You can just listen."
@@ -2030,19 +2036,27 @@ real rear	--	"reel"	"The Sage Sea is not for fishing."
 rift river	a rule	"riffed"	"You need to have riffed, but with rhyming, as you did in the Wet Wood."
 store all stage	--	"awl"
 tarry tile	--	"terry"	"Nobody named Terry appears, nor does any terry cloth."
-violent vale	violent-not-silent rule	"veil"	"You need to get rid the violence, not put a veil over it."
+violent vale	fail-silent-sail rule	"veil"	"You need to get rid the violence, not put a veil over it." [ALTRULE hom-violent-vale-to-veil rule]
 wet wood	--	"whet/would"	"You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough."
 whining war	hom-whining-war-to-wining-wore rule	--
 
 to say basic-homonym-reject: say "Homonyms aren't the way to go, here."
 
+section room homonym pre-rules
+
+[in the main rule, if these rule fail, we move to the next rule. If they succeed, the rule succeeds. If no action, then we say the custom message.]
+
+this is the fail-silent-sail rule: if sco-silent-sail is true, the rule fails;
+
+this is the tarry-not-marry rule: if sco-merry-mile is true, the rule fails;
+
 section room homonym rules [xxrhr]
 
 this is the hom-history-hall-to-haul-maul rule:
-	if in-mystery-mall is true and the player's command matches "maul":
+	if in-mystery-mall is true and the player's command includes "maul":
 		say "[basic-homonym-reject]";
 		the rule succeeds;
-	if in-mystery-mall is false and the player's command matches "haul":
+	if in-mystery-mall is false and the player's command includes "haul":
 		say "[basic-homonym-reject]";
 		the rule succeeds;
 
@@ -2052,13 +2066,13 @@ this is the hom-blinding-blaze-to-wheys-grace-graze rule:
 			say "[basic-homonym-reject]";
 			the rule succeeds;
 	if stuck stair is moot:
-		if the player's command includes "grays" or the player's command includes "grace":
+		if the player's command includes "graze" or the player's command includes "grace":
 			say "[basic-homonym-reject]";
 			the rule succeeds;
 
 this is the hom-whining-war-to-wining-wore rule:
 	if sco-shining-shore is false:
-		if the player's command matches "wining" or the player's command matches "wore":
+		if the player's command includes "wining" or the player's command includes "wore":
 			say "[basic-homonym-reject]";
 			the rule succeeds;
 

@@ -6,7 +6,7 @@ Version 1/181018 of Very Vile Fairy File Mistakes by Andrew Schultz begins here.
 
 [use vmc.py to check for duplicates]
 [use mch.py to check to make sure everything in the mistakes file is in the rbr file]
-[use hgc.py for homophone guess checks--you may see <ok> at various places in the file. This tells HGC to ignore this line as homophones would not make quite enough sense.]
+[use hgc.py for homonym guess checks--you may see <ok> at various places in the file. This tells HGC to ignore this line as homonyms would not make quite enough sense.]
 
 [dbh.py shortens to the debug version]
 
@@ -236,7 +236,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of po pit guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"cash cap"	in-po-pit rule	true	43	--	"You need more than just a homophone here."
+"cash cap"	in-po-pit rule	true	43	--	"You need more than just a homonym here."
 "clash clap"	in-po-pit rule	false	43	--	"Your vehement applause goes unheeded. But perhaps other violence might be more productive."
 "crash crap"	in-po-pit rule	false	43	--	"Profanity isn't necessary, here. Even minor ones."
 "gnash/nash nap"	in-po-pit rule	false	43	--	"You need something more active."
@@ -265,7 +265,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "wheel/wheeling weir"	in-real-rear rule	false	45	--	"The Sage Sea is enough of a boundary."
 "eel ear/ere"	in-real-rear rule	false	--	--	"You don't need an eel, or a piece of one, to electrify things right now."
 "peel pear"	in-real-rear rule	false	--	if-rear-undone rule	"You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy."
-"steal steer"	in-real-rear rule	false	44	if-rear-undone rule	"Direct homophones don't work here, and the steer would not fit in your bag."
+"steal steer"	in-real-rear rule	false	44	if-rear-undone rule	"Direct homonyms don't work here, and the steer would not fit in your bag."
 "wheel where"	in-real-rear rule	false	--	if-rear-undone rule	"The Ceiling Seer does not direct you to any wheel or any form of transportation."
 
 table of Rift River guesses
@@ -540,7 +540,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "tough toll"	trivially true rule	false	--	--	"You groan about how heavy your inventory is."
 "drowsy drakes"	in-lousy-lakes rule	false	--	--	"No sleepy ducks walk by."
 
-[this is for cases that may conflict with actual puzzles. Homophones may apply as well.]
+[this is for cases that may conflict with actual puzzles. Homonyms may apply as well.]
 
 table of first check rhymes
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt

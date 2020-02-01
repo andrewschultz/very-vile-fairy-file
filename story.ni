@@ -2216,7 +2216,7 @@ carry out optsing:
 	if vined vault is not visited:
 		say "The Leet Learner has options to toggle, but it would spoil things to list them now.";
 	else:
-		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homophone detection on and off.";
+		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
 	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
 	the rule succeeds.
@@ -2267,7 +2267,7 @@ carry out abouting:
 	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
 	say "[line break]Release 1 was at the end of September 2019.";
 	say "Release 2 was November 22, 2019. It featured bug fixes, LLPs, and general player conveniences.";
-	say "Release 3 was December 12, 2019. It featured code speedup, a small narrative based on point scores, and checking for homophones, along with other small improvements.";
+	say "Release 3 was December 12, 2019. It featured code speedup, a small narrative based on point scores, and checking for homonyms, along with other small improvements.";
 	say "[line break]And finally, if you enjoyed VVFF, Quite Queer Night Near is on itch.io at https://andrewschultz.itch.io/quite-queer-night-near. VVFF is at https://andrewschultz.itch.io/very-vile-fairy-file.";
 	the rule succeeds;
 
@@ -2287,7 +2287,7 @@ carry out othersing:
 
 book hinting
 
-the leet learner is a thing. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]. There's another toggle between [b]TWO TOO[r] (on) and [b]DO DUE[r] (off)[if core-score > 1] for homophone detection[end if]."
+the leet learner is a thing. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]. There's another toggle between [b]TWO TOO[r] (on) and [b]DO DUE[r] (off)[if core-score > 1] for homonym detection[end if]."
 
 the needle is part of the leet learner. it is boring. description is "The needle will move (or not) whenever you SCAN something.". bore-text of needle is "You can't really operate the needle, and you don't need to.".
 
@@ -2323,7 +2323,7 @@ understand the command "two too" as something new.
 understand "two too" as twotooing.
 
 carry out twotooing:
-	say "[if two-too is true]Homophone detection is already set[else]You set homophone detection[end if] to on.";
+	say "[if two-too is true]Homonym detection is already set[else]You set homonym detection[end if] to on.";
 	now two-too is true;
 	the rule succeeds.
 
@@ -2339,7 +2339,7 @@ understand "do due" as dueing.
 
 carry out dueing:
 	abide by the wait-after-intro rule;
-	say "[if two-too is false]Homophone detection is already set[else]You set homophone detection[end if] to off.";
+	say "[if two-too is false]Homonym detection is already set[else]You set homonym detection[end if] to off.";
 	now two-too is false;
 	the rule succeeds.
 
@@ -2730,7 +2730,7 @@ this is the vending-vibe-hint rule:
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
-		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homophone that makes sense[or]You need to FIND FAULT[stopping].";
+		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
 	else:
 		say "[one of]The mean mass is a bit trickier. The leet learner swings to the left[or]If you've been observant, you may notice VINED VAULT and MIND MALT swung center-right and center-left, respectively, for FIND FAULT. This may help you guess what swinging left could mean[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
 	the rule succeeds;
@@ -3641,9 +3641,12 @@ after reading a command:
 		change the text of the player's command to "[XX in lower case]";
 		if debug-state is true, say "(LOWERCASING) [XX][line break]";
 	if the player's command matches the regular expression "^say ":
-		if say-warn is false:
-			now say-warn is true;
-			say "NOTE: you never need to SAY anything. Just type it in. In other words, WHOAH is the same as SAY WHOAH. Ailihphilia will cut SAY off of the start of all commands.";
+		if player has way woke clay cloak and the player's command includes "say soak": [this is a hack to allow "say soak" as a clue-rhyme]
+			do nothing;
+		else:
+			if say-warn is false:
+				now say-warn is true;
+				say "NOTE: you never need to SAY anything. Just type it in. In other words, WHOAH is the same as SAY WHOAH. [fairy file] will cut SAY off of the start of all commands.";
 			let XX be the player's command;
 			replace the regular expression "^say " in XX with "";
 			change the text of the player's command to XX;
@@ -3702,7 +3705,9 @@ Rule for printing a parser error (this is the clue half right words rule):
 
 zap-weird-break is a truth state that varies.
 
-Rule for printing a parser error (this is the check for room name and homophones in player command rule):
+to say not-quite-homonyms: say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar"
+
+Rule for printing a parser error (this is the check for room name and homonyms in player command rule):
 	repeat through table of room homonyms:
 		if location of player is loc entry:
 			if there is a hom-rule entry:
@@ -3712,9 +3717,9 @@ Rule for printing a parser error (this is the check for room name and homophones
 				if there is no myhom entry, next;
 			if the player's command includes myhom entry:
 				if there is a custom-msg entry:
-					say "[custom-msg entry] But homonyms aren't quite the way to go, here.";
+					say "[custom-msg entry]";
 				else:
-					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
+					say "[not-quite-homonyms].";
 				the rule succeeds;
 			break;
 	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can'r quite combine the code.]
@@ -3728,7 +3733,7 @@ Rule for printing a parser error (this is the check for room name and homophones
 				if there is a custom-msg entry:
 					say "[custom-msg entry]. Homonyms aren't quite the way to go, here.";
 				else:
-					say "You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.";
+					say "[not-quite-homonyms].";
 				the rule succeeds;
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
@@ -3764,9 +3769,9 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
 	say "The action was okay, but I couldn't recognize the object."
 
-the check for room name and homophones in player command rule is listed first in the for printing a parser error rulebook.
+the check for room name and homonyms in player command rule is listed first in the for printing a parser error rulebook.
 
-the clue half right words rule is listed before the check for room name and homophones in player command rule in the for printing a parser error rulebook.
+the clue half right words rule is listed before the check for room name and homonyms in player command rule in the for printing a parser error rulebook.
 
 oopsies is a number that varies.
 
@@ -3803,7 +3808,7 @@ this is the verb-checker rule:
 	let local-ha-half be false;
 	let local-post-hom be false;
 	let brightness be false;
-	let progressive be false;
+	let new-point-to-get be false;
 	let is-song be false;
 	let global-row-check be 0;
 	let hom-row be 0;
@@ -3901,11 +3906,11 @@ this is the verb-checker rule:
 			if sing-clue is true, now is-song is whether or not songy entry is true;
 			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
 			if there is a core entry:
-				now progressive is true;
+				now new-point-to-get is true;
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if progressive is false]--wait, you're just switching back, you must've mis-thought a word[else if brightness is false], but dimly[end if][if is-song is true], and the Leet Learner emits a tune, as well[end if][if local-post-hom is true].[paragraph break]The button's really bright. Your rhyme must be very close, indeed[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if new-point-to-get is false]--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word[else if brightness is false], but dimly--perhaps this is a rhyme you don't need[else if local-post-hom is true], and its brightness suggests your rhyme must be very close, indeed[end if][if is-song is true]. The Leet Learner emits a tune as well[end if].";
 		the rule succeeds;
 	if local-post-hom is true:
 		if hom-row > 0:
