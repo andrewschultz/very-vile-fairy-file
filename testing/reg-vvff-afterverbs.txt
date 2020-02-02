@@ -1,0 +1,170 @@
+# reg-vvff-jjthru.txt
+
+## reg-vvff-jjthru.txt
+## NO GENERATOR FILE, THOUGH I ORIGINALLY GOT THIS FROM THE FULL WALKTHROUGHT.
+## it roughly corresponds to reg-vvff-min-thru.txt.
+
+## walkthrough with all points, jumping everywhere
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+> gonear tarry tile
+
+> tell torn
+
+> merry mile
+
+> bury bile
+
+RAND 0 for list, RAND 1-6 for a specific table, RN for next table
+
+> rank
+cold cod is 0 points.
+lol'd, lawd is 1 to 9 points.
+FLOL'd, flawed is 10 to 13 points.
+mold-mawed is 14 to 18 points.
+holed, hawed is 19 to 23 points.
+bowled, bah'd is 24 to 27 points.
+sold sod is 28 to 32 points.
+old, odd is 33 to 37 points.
+told, tawed is 38 to 41 points.
+th'old thawed is 42 to 46 points.
+polled, pawed is 47 to 51 points.
+shoaled, shod is 52 to 55 points.
+scrolled scrod is 56 to 60 points.
+trolled, trod is 61 to 65 points.
+mold-mod is 66 to 69 points.
+bold bod is 70 to 74 points.
+rolled, rah'd is 75 to 79 points.
+
+Gold God is 80 to 81 points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.
+
+> missed
+At any time, you could've guessed my pen name was a riff on REALLY ROLLING.
+In the Fun Fen, you could've used the wrong art for a STRONG START.
+You could've figured the Peeling Pier's brand name as APPEALING APPEAR.
+You could've said WHAT A or WHATTA WANKSTA to the Gutta Ganksta before saying LOTS LAME in the mall.
+You could've said HO HAPPEN while listening to Toe Tappin' Row Rappin'.
+You could have DIMD (dim'd) the horrible song Oi Mo in Mystery Mall.
+You could've said LIE LOL to the shy shawl in Got Here Hot Here.
+You could've gone NOT NEAR in Got Gear Hot Here.
+You could've tried to BREAK BRIE with Jake G. after taking tea.
+You could've cleared up the clumped cluster in Been Buggin' with BUMPED BUSTER or DUMPED DUSTER.
+You could've made the mild mead into WILD WEED.
+You could've tried to SPARK SPLIFF by Cark Cliff once you had something worth lighting, from the mild mead.
+You could've given Reeker Russell BEAKER BUSTLE in the Gassed Gap/Last Lap.
+
+> narr q
+Valid specifications for NARR are (B)eginning, (M)iddle, (E)nd, or some combination, or (A)ll. No argument lists all the narratives.
+
+> narr
+(INTRO)
+(ENDGAME)
+(MIDDLE)
+
+> narr a
+(INTRO)
+(ENDGAME)
+(MIDDLE)
+
+> narr b
+1. A vision!
+8. You see the Crimes Crew Times Two snickering
+Seek so-chic-show
+!75. "How hot NOW?! Not!"
+!80. "More make war! Wake!"
+!(INTRO)
+!NOTE: you can turn off post-point-scoring narratives with NO NARR or turn them back on with WHOA(H) WHERE.
+
+> narr e
+!1. A vision!
+!8. You see the Crimes Crew Times Two snickering
+!Seek so-chic-show
+75. "How hot NOW?! Not!"
+80. "More make war! Wake!"
+!(ENDGAME)
+
+> narr m
+!1. A vision!
+!8. You see the Crimes Crew Times Two snickering
+Seek so-chic-show
+!75. "How hot NOW?! Not!"
+!80. "More make war! Wake!"
+!(MIDDLE)
+
+>narr em
+!1. A vision!
+Seek so-chic-show
+75. "How hot NOW?! Not!"
+
+>narr me
+!1. A vision!
+Seek so-chic-show
+75. "How hot NOW?! Not!"
+
+>narr bm
+1. A vision!
+Seek so-chic-show
+!75. "How hot NOW?! Not!"
+
+>narr mb
+1. A vision!
+Seek so-chic-show
+!75. "How hot NOW?! Not!"
+
+>narr eb
+1. A vision!
+!Seek so-chic-show
+75. "How hot NOW?! Not!"
+
+>narr be
+1. A vision!
+!Seek so-chic-show
+75. "How hot NOW?! Not!"
+
+>rand 0
+!0.
+1. Books in the Lending Libe
+2. Mystery Mall fake shops
+3. Songs after Tim T Sims
+4. Assorted randos in Fussed Folks Just Jokes
+5. Assorted random locations around Y'Old Yard
+6. Insults in the VVFF
+!7.
+
+> rand 1
+You can also rummage
+All random text for Books in the Lending Libe:
+Fixed last entry before looping: The final book is Tish Tausch's Pish Posh Mish Mosh, which lives down to its title. That's enough text digested for one adventure.
+You can also rummage
+> rand 2
+All random text for Mystery Mall fake shops:
+There is no fixed last entry before looping.
+> rand 3
+All random text for Songs after Tim T Sims:
+Fixed last entry before looping: Oh man, this one's really good! Tip Top Hip Hop! You stay until you hear the playlist, um, flip flop.
+> rand 4
+All random text for Assorted randos in Fussed Folks Just Jokes:
+Fixed last entry before looping: Hazy Hairy Lazy Larry ends the list with a whimper.
+> rand 5
+All random text for Assorted random locations around Y'Old Yard:
+Fixed last entry before looping: clues you'll never make it to Worthwhile Birth-Bile Earth Isle
+> rand 6
+All random text for Insults in the VVFF:
+Fixed last entry before looping: The final entry reads, simply, "Stare-y style, chary chile'!"
+It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all.
+
+> rn
+All random text for Books in the Lending Libe:
+> rn
+All random text for Mystery Mall fake shops:
+> rn
+All random text for Songs after Tim T Sims:
+> rn
+All random text for Assorted randos in Fussed Folks Just Jokes:
+> rn
+All random text for Assorted random locations around Y'Old Yard:
+> rn
+All random text for Insults in the VVFF:
