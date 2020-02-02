@@ -3457,6 +3457,7 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
 "see the point-based [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
 "see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for a specific table, RN for next table)"	true	"RAND [number]"	--	rling
+"see [b]MISC[r]ellaneous [b]RHYME[r]s in response to verbs"	true	"misc/rhyme/rhymes"	--	amuselisting
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
 "see [b]NARR[r]atives for [narr-end-opts]"	true	"narr a/b/e/m/be/bm/em/eb/me/mb" or "narr"	--	narring
@@ -3480,6 +3481,18 @@ This is the modified respond to final question rule:
 		say "Valid specifications for NARR are [narr-end-opts]. No argument lists all the narratives.";
 		the rule succeeds;
 	issue miscellaneous library message number 8.
+
+chapter amuselisting
+
+amuselisting is an activity.
+
+rule for amuselisting:
+	say "DRINKing the worst wave or Sage Sea?";
+	say "TALKing to anyone, including the [fairy file]?";
+	say "EATing the wild weed?";
+	say "ATTACKING people, especially the Bot Board and [fairy file]?";
+	say "Cussing around the [fairy file]?";
+	say "Saying yes or no, waiting or giving an empty command, or sleeping?";
 
 chapter narring
 

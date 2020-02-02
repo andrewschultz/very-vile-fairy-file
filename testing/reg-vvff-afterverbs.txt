@@ -168,3 +168,10 @@ All random text for Assorted randos in Fussed Folks Just Jokes:
 All random text for Assorted random locations around Y'Old Yard:
 > rn
 All random text for Insults in the VVFF:
+
+>rhyme
+EATing the wild weed?
+>rhymes
+EATing the wild weed?
+>misc
+EATing the wild weed?
