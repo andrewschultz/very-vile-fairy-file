@@ -19,7 +19,7 @@ You need something a little more than homonyms to leave the Wet Wood. It feels l
 >git goob
 You don't need source control, but you're close, here.
 >git good
-The button's really bright. Your rhyme must be very close, indeed.
+The HA HALF button lights up on your Leet Learner, and its brightness suggests your rhyme must be very close, indeed.
 !don't need source control
 >goat goat git
 You don't need source control, but you're close, here.
@@ -149,7 +149,7 @@ by one point
 
 #homonyms basic test room-creased cross-craws
 >craws crews
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > w
 
@@ -185,7 +185,7 @@ by one point
 
 #homonyms basic test room-history hall-maul
 >long maul
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms close test verb-history-hall-haul
 >hiss haul
 You don't need THAT much stuff.
@@ -224,7 +224,7 @@ Instead of lolling, why not have more fun? Maybe there's a better way to deal wi
 Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles.
 #homonyms basic test room-got gear hot here-hear
 >hear hear
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > hard hat
 by one point
@@ -283,7 +283,7 @@ You are already awake. You need to make Jake ache to be awake.
 
 #homonyms basic test room-lake lea-lee
 >lee smith
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > wake whee
 by one point
@@ -432,7 +432,7 @@ by one point
 
 #homonyms basic retest room-foe field-sow
 >sow see
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > w
 
@@ -445,7 +445,7 @@ You don't need a plantomancer.
 
 #homonyms basic test room-store all stage-awl
 >awl righty
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > moral mage
 by one point
@@ -463,13 +463,13 @@ by one point
 
 #homonyms basic test room-blinding blaze-graze
 >graze xxx
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-blinding blaze-grace
 >grace xxx
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-blinding blaze-wheys
 >grace xxx
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > winding ways
 by one point
@@ -567,10 +567,10 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 
 #homonyms basic test room-whining war-wining
 > wining dining
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-whining war-wore
 > wore more
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > so sappin
 by one point
@@ -645,9 +645,9 @@ Perhaps their soulless corporate overlords would be interested in a quick buck, 
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
 > xxx gourd
-That worked in The Life of Brian, but ... try a homophone, here. You're close.
+That worked in The Life of Brian, but ... try a homonym, here. You're close.
 > xxx hoard
-You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
+You already hoarded enough inventory in your big bag. Try a homonym, here. You're close.
 
 #homonyms basic test room-airy isle-erry
 >erry xxx

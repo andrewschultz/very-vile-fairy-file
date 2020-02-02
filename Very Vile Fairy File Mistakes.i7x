@@ -74,6 +74,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
 "glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is touchable]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
 "jay joke"	have-clay-cloak rule	false	--	--	"You recall some off-color drug humor from your younger days."
+"stay stoke"	have-clay-cloak rule	false	--	--	"Wrong grammar is woke and all, but you don't need to act out or show anyone."
 "ho had"	in-so-sad rule	false	44	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	44	--	"Once the anger wore off, you might be even more lethargic."
 "co cad"	in-so-sad rule	false	44	--	"Nobody appears to commiserate with you."

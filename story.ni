@@ -1426,6 +1426,14 @@ Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It look
 
 Gassed Gap is north of Foe Field. cht of Gassed Gap is partminus. guess-table of Gassed Gap is table of Gassed Gap guesses. [-> Last Lap]
 
+check going in Gassed Gap when Reeker Russell is in Gassed Gap:
+	say "There's no running from Reeker Russell! ";
+	if russell-progress is 2:
+		say "You'll have to diminsh him and his gun.";
+	else:
+		say "You still have to diminish [if good gun is moot]him[else]his gun[end if].";
+	the rule succeeds;
+
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
 
 cap-cast is a truth state that varies.
@@ -3717,7 +3725,7 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 				if there is no myhom entry, next;
 			if the player's command includes myhom entry:
 				if there is a custom-msg entry:
-					say "[custom-msg entry]";
+					say "[custom-msg entry][line break]";
 				else:
 					say "[not-quite-homonyms].";
 				the rule succeeds;
@@ -3731,7 +3739,7 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 				if there is no myhom entry, next;
 			if the player's command includes myhom entry:
 				if there is a custom-msg entry:
-					say "[custom-msg entry]. Homonyms aren't quite the way to go, here.";
+					say "[custom-msg entry][line break]";
 				else:
 					say "[not-quite-homonyms].";
 				the rule succeeds;
@@ -3910,7 +3918,7 @@ this is the verb-checker rule:
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if new-point-to-get is false]--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word[else if brightness is false], but dimly--perhaps this is a rhyme you don't need[else if local-post-hom is true], and its brightness suggests your rhyme must be very close, indeed[end if][if is-song is true]. The Leet Learner emits a tune as well[end if].";
+		say "The HA HALF button lights up on your Leet Learner[if new-point-to-get is false]--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word[else if brightness is false], but dimly--perhaps this is a rhyme you don't strictly need to figure to win[else if local-post-hom is true], and its brightness suggests your rhyme must be very close, indeed[end if][if is-song is true]. The Leet Learner emits a tune as well[end if].";
 		the rule succeeds;
 	if local-post-hom is true:
 		if hom-row > 0:

@@ -131,7 +131,7 @@ this is the vh-kneel-near rule: say "You don't need to call anyone by their firs
 this is the vh-deal-dear rule: say "You don't need to populate this area with wildlife. It's the right amount of peaceful." instead;
 
 this is the vh-heal-here rule:
-	if the player's command includes "hear", say "A bit too bossy for the Ceiling Seer." instead;
+	if the player's command includes "hear", say "There is no noise or distraction preventing hearing." instead;
 	if the player's command includes "heel", say "The Ceiling Seer only helps the good guys." instead;
 
 this is the vh-history-hall rule: say "You don't need THAT much stuff." instead;
@@ -1724,6 +1724,7 @@ randtxt
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
 "Been Back: Men Mack When Wack, by Ren Rack and Len Lack"
+"Born, Battered, Torn, Tattered, Shorn, Shattered"
 "Briny Brims Tiny Tim's Whiny Whims"
 "Bumpkin, Buy Pumpkin Pie"
 "Car Curst Far First[r], by Gar Gerst"
@@ -1998,7 +1999,7 @@ this is the hom-toe-tappin-to-roe-tow rule:
 	if the player's command includes "roe":
 		say "You don't need fish or homonyms.";
 		the rule succeeds;
-	if the player's command includes "roe":
+	if the player's command includes "tow":
 		say "You don't need a tow truck or homonyms.";
 		the rule succeeds;
 
@@ -2036,7 +2037,7 @@ real rear	--	"reel"	"The Sage Sea is not for fishing."
 rift river	a rule	"riffed"	"You need to have riffed, but with rhyming, as you did in the Wet Wood."
 store all stage	--	"awl"
 tarry tile	--	"terry"	"Nobody named Terry appears, nor does any terry cloth."
-violent vale	fail-silent-sail rule	"veil"	"You need to get rid the violence, not put a veil over it." [ALTRULE hom-violent-vale-to-veil rule]
+violent vale	fail-silent-sail rule	"veil"	"You need to get rid of the violence, not put a veil over it." [ALTRULE hom-violent-vale-to-veil rule]
 wet wood	--	"whet/would"	"You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough."
 whining war	hom-whining-war-to-wining-wore rule	--
 

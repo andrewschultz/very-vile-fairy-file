@@ -225,7 +225,7 @@ Good guys don't brag about having been
 
 > cash cap
 Learner needle
-You need more than just a homophone here.
+You need more than just a homonym here.
 > clash clap
 Learner needle
 Your vehement applause goes unheeded. But perhaps other violence might be more productive.
@@ -420,7 +420,7 @@ You don't need an eel, or a piece of one, to electrify things right now.
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
 > steal steer
 Learner needle
-Direct homophones don't work here, and the steer would not fit in your bag.
+Direct homonyms don't work here, and the steer would not fit in your bag.
 > wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
@@ -1837,7 +1837,7 @@ by one point
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
 > steal steer
 !Learner needle
-Direct homophones don't work here, and the steer would not fit in your bag.
+Direct homonyms don't work here, and the steer would not fit in your bag.
 > wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.

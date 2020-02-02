@@ -46,7 +46,7 @@ You need something a little more than homonyms to leave the Wet Wood. It feels l
 >git goob
 You don't need source control, but you're close, here.
 >git good
-The button's really bright. Your rhyme must be very close, indeed.
+The HA HALF button lights up on your Leet Learner, and its brightness suggests your rhyme must be very close, indeed.
 !don't need source control
 >goat goat git
 You don't need source control, but you're close, here.
@@ -99,7 +99,7 @@ The Leet Learner is already set to Ha Half.
 >nah naff
 I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
 >two too
-Homophone detection is already set to on.
+Homonym detection is already set to on.
 >do due
 I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
 
@@ -172,10 +172,10 @@ You groan about how heavy your inventory is.
 @ha
 > zreally rolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > really zrolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @all,mis,ha
 >really rolling
@@ -184,10 +184,10 @@ by one point
 @ha
 > zreally rolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > really zrolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 >really rolling
 !by one point
 You already guessed the significance of my pen name.
@@ -535,7 +535,7 @@ Good guys don't brag about having been
 @mis
 > cash cap
 Learner needle
-You need more than just a homophone here.
+You need more than just a homonym here.
 > clash clap
 Learner needle
 Your vehement applause goes unheeded. But perhaps other violence might be more productive.
@@ -779,7 +779,7 @@ The HA HALF button lights up on your Leet Learner.
 # now we look at the actual options
 >due do
 It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
-You set homophone detection to off.
+You set homonym detection to off.
 >undo
 >shut scan
 It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
@@ -801,18 +801,18 @@ You set the Leet Learner to Ha Half.
 >ha half
 The Leet Learner is already set to Ha Half.
 >due do
-You set homophone detection to off.
+You set homonym detection to off.
 >due do
-Homophone detection is already set to off.
+Homonym detection is already set to off.
 >mined me
 The HA HALF button lights up on your Leet Learner.
-!The button's really bright. Your word must be very close, indeed.
+!The HA HALF button lights up on your Leet Learner, and its brightness suggests your rhyme must be very close, indeed.
 >two too
-You set homophone detection to on.
+You set homonym detection to on.
 >two too
-Homophone detection is already set to on.
+Homonym detection is already set to on.
 >mined me
-The HA HALF button lights up on your Leet Learner. The button's really bright. Your word must be very close, indeed.
+The HA HALF button lights up on your Leet Learner, and its brightness suggests your rhyme must be very close, indeed.
 >shut scan
 You turn the Leet Learner off. You can turn it on with HUT CAN or LL ON or CC ON.
 >shut scan
@@ -966,10 +966,10 @@ You don't need to call anyone by their first names. It would be disrespectful to
 You don't need to populate this area with wildlife. It's the right amount of peaceful.
 #homonyms close test verb-heal-here-heel
 >heel heer
-A bit too bossy for the Ceiling Seer.
+The Ceiling Seer only helps the good guys.
 #homonyms close test verb-heal-here-hear
 >hael hear
-The Ceiling Seer only helps the good guys.
+There is no noise or distraction preventing hearing.
 #homonyms basic test room-real rear-reel
 >reel reer
 The Sage Sea is not for fishing.
@@ -994,7 +994,7 @@ You don't need an eel, or a piece of one, to electrify things right now.
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
 > steal steer
 Learner needle
-Direct homophones don't work here, and the steer would not fit in your bag.
+Direct homonyms don't work here, and the steer would not fit in your bag.
 > wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
@@ -1129,10 +1129,10 @@ Overdoing dealing with it is ... one way to show you might not be dealing with i
 @ha
 > zappealing appear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > appealing zappear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @all,mis,ha
 > appealing appear
@@ -1146,10 +1146,10 @@ The peeling pier already looks better.
 @ha
 > zappealing appear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > appealing zappear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 > n
 
@@ -1167,18 +1167,18 @@ Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
 @ha
 > zspark spliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > spark zspliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @ha
 > zstrong start rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > strong zstart rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @all,mis,ha
 > strong start
@@ -1192,10 +1192,10 @@ You already did. You wouldn't want a stale start or a pale part. Why, you might 
 @ha
 > zstrong start rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > strong zstart rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @mis #fall free before
 > call cree
@@ -1386,7 +1386,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @hom
 #homonyms basic test room-creased cross-craws
 >craws crews
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > ceased sauce
@@ -1614,7 +1614,7 @@ by one point
 @hom
 #homonyms basic test room-history hall-maul
 >long maul
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
 #homonyms close test verb-history-hall-haul
 >hiss haul
 You don't need THAT much stuff.
@@ -1644,10 +1644,10 @@ GLEAN GLOWS
 @ha
 > zwhatta wanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > whatta zwanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @alt
 > whatta wanksta
@@ -1671,10 +1671,10 @@ That insult only works once.
 @ha
 > zwhatta wanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > whatta zwanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 > listen
 
@@ -1686,7 +1686,7 @@ That insult only works once.
 You don't need fish or homonyms.
 #homonyms basic test thing-toe tappin-tow
 >tow xxx
-You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.. Homonyms aren't quite the way to go, here.
+You don't need a tow truck or homonyms.
 #homonyms close test verb-ho-happen-hoe
 >hoe hoppin
 Keep farming, you'll get the right homonym.
@@ -1782,10 +1782,10 @@ CO CAPN
 @ha
 > zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
 > ho zhappen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
 
 @all,mis,ha
 > ho happen
@@ -1807,18 +1807,18 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @ha
 > zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > ho zhappen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @ha
 > zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 > no znappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
 @alt
 > no napping
@@ -1857,7 +1857,7 @@ Instead of lolling, why not have more fun? Maybe there's a better way to deal wi
 Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles.
 #homonyms basic test room-got gear hot here-hear
 >hear hear
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis #lie lol before
 > try trawl
@@ -1912,10 +1912,10 @@ No sunlight appears.
 @ha
 > zlie lol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > lie zlol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @all,mis,ha
 > lie lol
@@ -1929,10 +1929,10 @@ The shy shawl has taken enough abuse.
 @ha
 > zlie lol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > lie zlol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @mis #lie lol after
 > try trawl
@@ -2005,10 +2005,10 @@ I'm not getting into issues like whether a powerful gun is actually for defense 
 @ha
 > znot near rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > not znear rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @mis #not near before
 > blot blear
@@ -2086,10 +2086,10 @@ You don't need ... cookware.
 @ha
 > znot near rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > not znear rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @ha
 > zhard hat rule
@@ -2612,7 +2612,7 @@ Sorry, but GO TO is disabled here in the lakes.
 @hom
 #homonyms basic test room-lake lea-lee
 >lee smith
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > drowsy drakes
@@ -2720,10 +2720,10 @@ Don't get greedy. You have the sustenance needed to work with Jake G.
 @ha
 > zbreak brie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > break zbrie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @hom
 #homonyms close test verb-break-brie-brake
@@ -2742,10 +2742,10 @@ Hey! Don't get greedy, now.
 @ha
 > zbreak brie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > break zbrie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @ha
 > zfake fee rule
@@ -2894,14 +2894,14 @@ SNAKE SNAP
 @ha
 > zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 > co zcapn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
 @hom #co cappin before
 #homonyms basic test thing-jake g-cappin
-> co cappin
+> cow cappin
 Close. Jake is ambitious but not violent.
 
 > co capn
@@ -3212,6 +3212,9 @@ The Very Vile Fairy File has probably gotten more than a few people to vote agai
 > lumped luster
 the Leet Learner dims a bit
 The cluster would still be in the way if it were shiny.
+> stay stoke
+!Learner needle
+Wrong grammar is woke and all, but you don't need to act out or show anyone anything.
 > jay joke
 !Learner needle
 You recall some off-color drug humor from your younger days.
@@ -3248,10 +3251,10 @@ by one point
 @ha
 > zbumped buster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > bumped zbuster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @all,mis,ha
 > bumped buster
@@ -3270,10 +3273,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @ha
 > zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > bumped zbuster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 > enter boat
 
@@ -3349,10 +3352,10 @@ SMASHING SMOKE
 @ha
 > zhistory hall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 > history zhall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
 > history hall
 
@@ -3364,10 +3367,10 @@ You don't need to pore over Poor? Ponder for Fonder. You need it to come alive!
 @ha
 >zmystery mall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 >mystery zmall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back, you must've mis-thought a word.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 > history hall
 !by one point
 You already flipped back to History Hall.
@@ -3541,7 +3544,7 @@ We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or 
 > sea syne
 You remain landlocked. But perhaps you can find a better way to, umm, look at things.
 #homonyms close test verb-see-sign-sine
-> see sine
+> sey sine
 The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
 @ha
@@ -3661,16 +3664,15 @@ LEAST LOSS
 @hom
 #homonyms basic test thing-pain peasant-pane
 >pane xxxx
-The peasant acquires no magical transportation.
+Broken person, broken window, eh?
 #homonyms close test verb-plain-pleasant-plane
 >plane present
 The peasant acquires no magical transportation.
-#homonyms basic test room-foe field-sew
+# below "so sappin" takes priority
 > sew zzz
-The field is not for manual labor.
-#homonyms basic test room-foe field-sow
+!The field is not for manual labor.
 > sow zzz
-The field is not for manual labor.
+!The field is not for manual labor.
 
 @mis
 > crane crescent
@@ -3709,7 +3711,7 @@ by one point
 @hom
 #homonyms basic retest room-foe field-sow
 >sow see
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @ha
 > plain pleasant
@@ -3748,7 +3750,7 @@ You have nothing that opens the coral cage.
 @hom
 #homonyms basic test room-store all stage-awl
 >awl righty
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > oral age
@@ -3925,13 +3927,13 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 @hom
 #homonyms basic test room-blinding blaze-graze
 >graze xxx
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-blinding blaze-grace
 >grace xxx
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-blinding blaze-wheys
 >grace xxx
-!You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > binding bays
@@ -4000,10 +4002,10 @@ north to Straight Street
 @ha
 > zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 > mo zmappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
 @alt
 > mo mapping
@@ -4440,10 +4442,10 @@ by one point
 @ha
 > zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > wild zweed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @mis #wild weed before
 > dialed deed
@@ -4502,10 +4504,10 @@ Greedy, to try for more.
 @ha
 > zwild weed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > wild zweed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @thi
 > cull ceased
@@ -4538,10 +4540,10 @@ Whoah, dude! Jonesing for more already?
 @ha
 > zspark spliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > spark zspliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 > s
 
@@ -4580,7 +4582,7 @@ No need to heal further.
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
 > steal steer
 !Learner needle
-Direct homophones don't work here, and the steer would not fit in your bag.
+Direct homonyms don't work here, and the steer would not fit in your bag.
 > wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
@@ -4723,10 +4725,10 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 @hom
 #homonyms basic test room-whining war-wining
 > wining dining
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-whining war-wore
 > wore more
-You feel ... something. But not enough. Homophones must not quite be the way to go, here. Something similar, but not quite that similar.
+You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @mis
 > signing sore
@@ -4760,10 +4762,10 @@ DINING DOOR
 @ha
 > zso sappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 > so zsappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
 @alt
 > so sapping
@@ -5018,13 +5020,19 @@ You don't need or want to revisit that.
 >gt lake lea
 You already did that.
 
+@dea
+>w
+west to Rattlin' Runs
+>e
+east to Hopping Hills
+
 @ha
 > zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 > go zgappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, and the Leet Learner emits a tune, as well.
+The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
 @alt
 > go gapping
@@ -5127,6 +5135,10 @@ by one point
 ###newnpc reeker russell
 ###newitm good gun
 
+@ver
+>w
+There's no running from Reeker Russell! You'll have to diminish him and his gun.
+
 @hom
 #homonyms close test verb-wood-one-won
 >whud won
@@ -5199,10 +5211,10 @@ You look for someone who has recently lost an argument, but nobody turns up.
 @ha
 > zbeaker bustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > beaker zbustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner, but dimly.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @ha
 > zmeeker muscle rule
@@ -5232,16 +5244,10 @@ Russell's moment of interest in the sciences has passed.
 @ha
 > zbeaker bustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 > beaker zbustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner, but dimly.
-
-@dea
->w
-west to Rattlin' Runs
->e
-east to Hopping Hills
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @ha
 > wood one
@@ -5252,8 +5258,19 @@ Russell's already disarmed, but he's still too strong.
 >undo
 >undo
 
+@ver
+>wood one
+>e
+There's no running from Reeker Russell! You still have to diminish him.
+>undo
+>undo
+
 > meeker muscle
 by one point
+
+@ver
+>w
+There's no running from Reeker Russell! You still have to diminish his gun.
 
 @ha
 > meeker muscle
@@ -5307,6 +5324,15 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+@hom
+>s
+#homonyms basic test room-foe field-sew
+>sew xxx
+The field is not for manual labor.
+#homonyms basic test room-foe field-sow
+>sow sxx
+>n
+
 > n
 
 ###newloc airy isle
@@ -5327,9 +5353,9 @@ Perhaps their soulless corporate overlords would be interested in a quick buck, 
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
 > xxx gourd
-That worked in The Life of Brian, but ... try a homophone, here. You're close.
+That worked in The Life of Brian, but ... try a homonym, here. You're close.
 > xxx hoard
-You already hoarded enough inventory in your big bag. Try a homophone, here. You're close.
+You already hoarded enough inventory in your big bag. Try a homonym, here. You're close.
 
 
 @gt
