@@ -902,7 +902,7 @@ by one point
 @hom
 #homonyms basic test thing-wry wall-rye
 >rye xxx
-The wall remains inorganic. You can't really do anything to it.. Homonyms aren't quite the way to go, here.
+The wall remains inorganic. You can't really do anything to it.
 #homonyms basic test room-fun fen-phen
 >fun phen
 Organic chemistry is much too complex, here.
@@ -2899,10 +2899,11 @@ The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
-@hom #co cappin before
+@hom
 #homonyms basic test thing-jake g-cappin
 > cow cappin
-Close. Jake is ambitious but not violent.
+You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.
+#homonyms close test verb-co-capn-cappin
 
 > co capn
 by one point
@@ -3074,7 +3075,7 @@ by one point
 ###newnpc dean duggan
 
 @hom
-#homonyms basic test room-been buggin-bin
+#homonyms basic retest room-been buggin-bin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
@@ -3709,8 +3710,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @hom
-#homonyms basic retest room-foe field-sow
+#homonyms basic test room-foe field-sow
 >sow see
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+#homonyms basic test room-foe field-sew
+>sew see
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 @ha
@@ -4724,11 +4728,11 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 
 @hom
 #homonyms basic test room-whining war-wining
-> wining dining
-You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+> wining woor
+Homonyms aren't quite the way to change the whining war.
 #homonyms basic test room-whining war-wore
-> wore more
-You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+> wore muur
+Homonyms aren't quite the way to change the whining war.
 
 @mis
 > signing sore
@@ -5259,7 +5263,9 @@ Russell's already disarmed, but he's still too strong.
 >undo
 
 @ver
+# this is to test both pathways of the "Reeker Russell blocks you" text
 >wood one
+by one point
 >e
 There's no running from Reeker Russell! You still have to diminish him.
 >undo
@@ -5326,11 +5332,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 @hom
 >s
-#homonyms basic test room-foe field-sew
+#homonyms basic retest room-foe field-sew
 >sew xxx
 The field is not for manual labor.
-#homonyms basic test room-foe field-sow
->sow sxx
+#homonyms basic retest room-foe field-sow
+>sow xxx
+The field is not for manual labor.
 >n
 
 > n
@@ -5353,10 +5360,9 @@ Perhaps their soulless corporate overlords would be interested in a quick buck, 
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
 > xxx gourd
-That worked in The Life of Brian, but ... try a homonym, here. You're close.
+That worked in The Life of Brian, but ... well, you need something with more oomph. You're close.
 > xxx hoard
-You already hoarded enough inventory in your big bag. Try a homonym, here. You're close.
-
+Treasure isn't the goal, here. You need allies.
 
 @gt
 > gt gassed gap
@@ -5426,7 +5432,7 @@ by one point
 @hom
 #homonyms basic test thing-hot horde-hoard
 >hoard haught
-You are after virtue, and so is the hot horde. They seem to need a leader.
+Treasure isn't the goal, here. You already have allies.
 
 @ver
 > t hot horde

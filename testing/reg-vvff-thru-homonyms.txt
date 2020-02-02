@@ -104,10 +104,10 @@ You don't need to call anyone by their first names. It would be disrespectful to
 You don't need to populate this area with wildlife. It's the right amount of peaceful.
 #homonyms close test verb-heal-here-heel
 >heel heer
-A bit too bossy for the Ceiling Seer.
+The Ceiling Seer only helps the good guys.
 #homonyms close test verb-heal-here-hear
 >hael hear
-The Ceiling Seer only helps the good guys.
+There is no noise or distraction preventing hearing.
 #homonyms basic test room-real rear-reel
 >reel reer
 The Sage Sea is not for fishing.
@@ -185,7 +185,7 @@ by one point
 
 #homonyms basic test room-history hall-maul
 >long maul
-You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't the way to go, here.
 #homonyms close test verb-history-hall-haul
 >hiss haul
 You don't need THAT much stuff.
@@ -200,7 +200,7 @@ You shouldn't be fishing for flattery.
 You don't need fish or homonyms.
 #homonyms basic test thing-toe tappin-tow
 >tow xxx
-You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.. Homonyms aren't quite the way to go, here.
+You don't need a tow truck or homonyms.
 #homonyms close test verb-ho-happen-hoe
 >hoe hoppin
 Keep farming, you'll get the right homonym.
@@ -311,8 +311,11 @@ by one point
 by one point
 
 #homonyms basic test thing-jake g-cappin
-> co cappin
+> cow cappin
 Close. Jake is ambitious but not violent.
+#homonyms close test verb-co-capn-cappin
+>co cappin
+You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.
 
 > co capn
 by one point
@@ -340,7 +343,7 @@ by one point
 > glow glad
 by one point
 
-#homonyms basic test room-been buggin-bin
+#homonyms basic retest room-been buggin-bin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
@@ -400,7 +403,7 @@ We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or 
 > sea syne
 You remain landlocked. But perhaps you can find a better way to, umm, look at things.
 #homonyms close test verb-see-sign-sine
-> see sine
+> sey sine
 The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
 > see sign
@@ -416,22 +419,24 @@ by one point
 
 #homonyms basic test thing-pain peasant-pane
 >pane xxxx
-The peasant acquires no magical transportation.
+Broken person, broken window, eh?
 #homonyms close test verb-plain-pleasant-plane
 >plane present
 The peasant acquires no magical transportation.
-#homonyms basic test room-foe field-sew
+# below "so sappin" takes priority
 > sew zzz
-The field is not for manual labor.
-#homonyms basic test room-foe field-sow
+!The field is not for manual labor.
 > sow zzz
-The field is not for manual labor.
+!The field is not for manual labor.
 
 > plain pleasant
 by one point
 
-#homonyms basic retest room-foe field-sow
+#homonyms basic test room-foe field-sow
 >sow see
+!You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+#homonyms basic test room-foe field-sew
+>sew see
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > w
@@ -566,10 +571,10 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
 #homonyms basic test room-whining war-wining
-> wining dining
+> wining woor
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 #homonyms basic test room-whining war-wore
-> wore more
+> wore muur
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
 > so sappin
@@ -629,6 +634,15 @@ by one point
 > wood one
 by one point
 
+>s
+#homonyms basic retest room-foe field-sew
+>sew xxx
+The field is not for manual labor.
+#homonyms basic retest room-foe field-sow
+>sow xxx
+The field is not for manual labor.
+>n
+
 > n
 
 #homonyms basic test thing-sought sword-sot
@@ -645,9 +659,9 @@ Perhaps their soulless corporate overlords would be interested in a quick buck, 
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
 > xxx gourd
-That worked in The Life of Brian, but ... try a homonym, here. You're close.
+That worked in The Life of Brian, but ... well, you need something with more oomph. You're close.
 > xxx hoard
-You already hoarded enough inventory in your big bag. Try a homonym, here. You're close.
+Treasure isn't the goal, here. You already have allies.
 
 #homonyms basic test room-airy isle-erry
 >erry xxx
@@ -668,7 +682,7 @@ by one point
 
 #homonyms basic test thing-hot horde-hoard
 >hoard haught
-You are after virtue, and so is the hot horde. They seem to need a leader.
+The horde is after victories, not treasure.
 
 > lot lord
 by one point

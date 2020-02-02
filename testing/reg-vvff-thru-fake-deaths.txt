@@ -376,6 +376,11 @@ by one point
 
 > n
 
+>w
+west to Rattlin' Runs
+>e
+east to Hopping Hills
+
 > go gappin
 by one point
 
@@ -384,11 +389,6 @@ by one point
 
 > cast cap
 by one point
-
->w
-west to Rattlin' Runs
->e
-east to Hopping Hills
 
 > meeker muscle
 by one point

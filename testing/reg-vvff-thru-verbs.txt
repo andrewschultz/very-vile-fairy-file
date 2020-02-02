@@ -414,6 +414,9 @@ by one point
 > cast cap
 by one point
 
+>w
+There's no running from Reeker Russell! You'll have to diminish him and his gun.
+
 >attack russell
 But he'd become Rager Russell. With major muscle.
 > smell reeker russell
@@ -423,8 +426,19 @@ Stench-stained, drench-drained.
 > t reeker russell
 "My mood: DIE, dude!"
 
+# this is to test both pathways of the "Reeker Russell blocks you" text
+>wood one
+by one point
+>e
+There's no running from Reeker Russell! You still have to diminish him.
+>undo
+>undo
+
 > meeker muscle
 by one point
+
+>w
+There's no running from Reeker Russell! You still have to diminish his gun.
 
 > wood one
 by one point

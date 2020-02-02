@@ -1428,7 +1428,7 @@ Gassed Gap is north of Foe Field. cht of Gassed Gap is partminus. guess-table of
 
 check going in Gassed Gap when Reeker Russell is in Gassed Gap:
 	say "There's no running from Reeker Russell! ";
-	if russell-progress is 2:
+	if russell-progress is 0:
 		say "You'll have to diminsh him and his gun.";
 	else:
 		say "You still have to diminish [if good gun is moot]him[else]his gun[end if].";
@@ -2226,7 +2226,7 @@ carry out optsing:
 	else:
 		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
-	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
+	if core-score >= 1 and the story has not ended finally, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
 	the rule succeeds.
 
 chapter soundsing

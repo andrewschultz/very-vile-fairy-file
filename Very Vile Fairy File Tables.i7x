@@ -182,7 +182,7 @@ this is the vh-meeker-muscle rule: say "Ooh! You're on the right track, but you 
 
 this is the vh-wood-one rule: say "The good gun seems to bend a bit. You must be close to a concrete way to change it." instead;
 
-this is the vh-hot-horde rule: say "Treasure isn't the goal, here. You[if lot lord is touchable] and the lot lord[end if] [if hot horde is touchable]need[else]already have[end if] allies." instead; [?? what about after in place]
+this is the vh-hot-horde rule: say "Treasure isn't the goal, here. You[if lot lord is touchable] and the lot lord[end if] [if hot horde is touchable]already have[else]need[end if] allies." instead; [?? what about after in place]
 
 this is the vh-whoa-wait rule: say "You wouldn't want to be crushed by a weight. But you've got the right idea." instead;
 
@@ -1953,7 +1953,6 @@ bold bard	hom-bold-bard-to-bowled-barred rule	--
 bot board	hom-bot-board-to-bought-bored rule	--
 coral cage	--	"choral"	"You don't need the cage to sing. You need to figure who's in there."
 grow grate	--	"great"	"But you want to lessen the grate/gate's influence."
-hot horde	--	"hoard"	"The horde is after victories, not treasure."
 jake g	hom-toe-tappin-to-co-capn rule	"cappin"
 mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault..."
 mist mess	--	"missed"	"You can miss the mess more productively by figuring your way through Airy Isle."
@@ -1972,6 +1971,9 @@ well worn hell horn	--	"warn"	"The well worn hell horn is already giving a false
 white waste	--	"waist"	"It's sort of a waist, too, but let's concentrate on finishing the quest, here."
 worst wave	--	"wurst"	"You're not hungry. Besides, the wave can become something better, nicer."
 wry wall	--	"rye"	"The wall remains inorganic. You can't really do anything to it."
+
+[usurped by the main verb checker rules but kept just in case
+hot horde	--	"hoard"	"The horde is after victories, not treasure."]
 
 section thing homonym rules [xxthr]
 
@@ -2029,14 +2031,14 @@ creased cross	--	"craws"
 foe field	--	"sew/sow"	"The field is not for manual labor."
 fun fen	--	"phen"	"Organic chemistry is much too complex, here."
 got gear hot here	--	"hear"
-here hull	--	"hear"	"You can just listen."
+here hull	--	"hear"	"You can just listen, if you need to."
 history hall	hom-history-hall-to-haul-maul rule	--	--
 lake lea	--	"lee"
 po pit	--	"poe"	"You don't need a pendulum about to cut you."
 real rear	--	"reel"	"The Sage Sea is not for fishing."
 rift river	a rule	"riffed"	"You need to have riffed, but with rhyming, as you did in the Wet Wood."
 store all stage	--	"awl"
-tarry tile	--	"terry"	"Nobody named Terry appears, nor does any terry cloth."
+tarry tile	tarry-not-marry rule	"terry"	"Nobody named Terry appears, nor does any terry cloth." [ALTRULE hom-tarry-tile-to-terry rule]
 violent vale	fail-silent-sail rule	"veil"	"You need to get rid of the violence, not put a veil over it." [ALTRULE hom-violent-vale-to-veil rule]
 wet wood	--	"whet/would"	"You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough."
 whining war	hom-whining-war-to-wining-wore rule	--
@@ -2074,7 +2076,7 @@ this is the hom-blinding-blaze-to-wheys-grace-graze rule:
 this is the hom-whining-war-to-wining-wore rule:
 	if sco-shining-shore is false:
 		if the player's command includes "wining" or the player's command includes "wore":
-			say "[basic-homonym-reject]";
+			say "Homonyms aren't quite the way to change the whining war.";
 			the rule succeeds;
 
 [zzrhr]
