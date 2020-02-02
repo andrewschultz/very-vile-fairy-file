@@ -74,7 +74,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
 "glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is touchable]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
 "jay joke"	have-clay-cloak rule	false	--	--	"You recall some off-color drug humor from your younger days."
-"stay stoke"	have-clay-cloak rule	false	--	--	"Wrong grammar is woke and all, but you don't need to act out or show anyone."
+"stay stoke"	have-clay-cloak rule	false	--	--	"Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything."
 "ho had"	in-so-sad rule	false	44	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	44	--	"Once the anger wore off, you might be even more lethargic."
 "co cad"	in-so-sad rule	false	44	--	"Nobody appears to commiserate with you."
@@ -171,7 +171,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "spot spear"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You don't need a weapon."
 "dot dear/deer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"No Animaniacs appear to spout poetry. Probably a good thing."
 "drought drear"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You thirst for an effective rhyme."
-"fraught freer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You wish Got Gear Hot Hear led somewere else."
+"fraught freer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You wish Got Gear Hot Hear led somewhere else."
 "sought/sot seer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"Nobody, sober or otherwise, appears to give you advice about the future."
 "snot sneer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You turn up your nose at kids these days['] terrible fashions."
 "pot pier/peer"	got-gear-hot-here rule	false	-44	not-near-yet rule	"You don't need ... cookware."
@@ -201,7 +201,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "dots dame"	ganksta-nearby rule	false	44	--	"The Gutta Ganksta's fashion sense tends away from polka dots."
 "knots/nots name"	ganksta-nearby rule	false	44	--	"You fail to tie the ganksta up in knots with well-timed 'NOT's."
 "shots shame"	ganksta-nearby rule	false	44	--	"The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun."
-"sots same"	ganksta-nearby rule	false	44	--	"The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult."
+"sots same"	ganksta-nearby rule	false	44	--	"The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakable insult."
 "tots tame"	ganksta-nearby rule	false	44	--	"The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though."
 "frotz frame"	ganksta-nearby rule	false	44	--	"Anything as esoteric as text adventure vocabulary would go over the Gutta Ganksta's head. You need to be more brutal."
 "gene/jean joes"	mean-moes-by rule	false	55	--	"You don't need to visit another clothing store."
@@ -258,7 +258,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "know/no knit/nit"	in-po-pit rule	false	44	if-grit-ungrown rule	"You look for details to understand, but you might want to go in for a bigger picture."
 "show shit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!"
 "mo/mow mitt"	in-po-pit rule	false	44	if-grit-ungrown rule	"Please proceed, adventurer."
-"glow glit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here."
+"glow glit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here."
 "woe/whoa/whoah wit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Clever complaining will make you feel better but won't do anything."
 
 table of Real Rear guesses

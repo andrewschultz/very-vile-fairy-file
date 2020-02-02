@@ -492,7 +492,7 @@ a goodrhyme rule (this is the vc-dimd rule) :
 	ready;
 
 this is the vr-dimd rule:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or the crushingly simplistic dut [b]Hey Hey Bay-Bay[r] by Jay-Jay and Neneh, but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or the crushingly simplistic duet [b]Hey Hey Bay-Bay[r] by Jay-Jay and Neneh, but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
 	if Gutta Ganksta is in History Hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
 	moot oi mo;
 
@@ -719,7 +719,7 @@ a goodrhyme rule (this is the vc-go-gappin rule) :
 	ready;
 
 this is the vr-go-gappin rule:
-	say "Man! Toe Tappin Row Rappin is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
+	say "Man! Toe Tappin['] Row Rappin['] is pretty handy for all sorts of things. Now it gives you confidence you can make it through north[if cool cap is not moot] once you figure what to do[else if russell is not moot] once Russell is gone[end if].";
 	now sco-go-gappin is true;
 	process the check-sing-max rule;
 
@@ -1016,7 +1016,7 @@ a goodrhyme rule (this is the vc-mash-map rule) :
 	process the ashap rule; [to determine what was the first word]
 	if sco-grow-grit is false:
 		process the ashap rule;
-		vcp "You aren't brave enough yet. Perhaps you can face down the po['] pit so you can be.";
+		vcp "You aren't brave enough yet. Perhaps you can face down the [po pit] so you can be.";
 		not-yet;
 	ready;
 
@@ -1584,7 +1584,7 @@ Lake Lap	down	true	false	"Lake Light"	"Oh hey! Another lake to visit! What's the
 Lake Lap	south	true	false	"Rad Route"	"Oh, it starts off okay. The lad lout is no problem. You walk cheerily by Stade Stout and Pad Pout, giving yourself a tad tout. But at the end, you run into people with clad clout, and it's a bad bout."
 Lake Lap	north	true	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
 Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. You hear a voice (and oh, what a best boom it is) intone 'DEST.: DOOM!' You realize you have wound up in ... a TEST TOMB."
-Lake Lea	west	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]AFter a night in the Store Stay, you try to leave. But a sore-say voice booms 'POOR?! PAY!' You can't. 'NOR? ... NAY!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
+Lake Lea	west	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]After a night in the Store Stay, you try to leave. But a sore-say voice booms 'POOR?! PAY!' You can't. 'NOR? ... NAY!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
 Lake Lea	north	true	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
 Lake Lea	up	true	false	"Top Tower"	"Anyone with ambition should want to visit the Top Tower! And along the way, there's no glop (glower,) but there's a run through the Shop Shower reminds you of running through sprinklers as a kid, and you stop to sniff a lovely flop-flower. You've even prepared to run 'Cop, COWER' at a rogue policeman, but you never get the chance. Unfortunately, the top tower isn't a very welcoming place. Everyone's trying to prove they're not a sop. Sour. 'Pop! Power!' they yell as they fight. You are pulled into the Op-Hour competition and meet your doom in your first contest, at the bop-bower. The last you hear is 'Plop! Plow [']er!' before you are fed to ... the chop-chower."
 Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
@@ -1713,7 +1713,7 @@ rank-num	done-yet	rank-txt
 -5	false	"You hear a voice boom, 'Blast[']er blind, master mind!' The [fairy file]'s power must be cracking. And you must be very close."
 -4	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close."
 -3	false	"Another howl from the [fairy file]: 'Gonna go off! Shun a show-off!'"
--1	false	"'More make war! Wake!' booms a voice from the [very vile]. IT's stil scary and all, but ... nobody shows up."
+-1	false	"'More make war! Wake!' booms a voice from the [very vile]. It's still scary and all, but ... nobody shows up."
 
 volume random tables
 
@@ -1893,7 +1893,7 @@ randtxt
 "Great Grouse Hate House"
 "Low Key Louse Hokey House"
 "Mighty Mole's Hidey Holes"
-"Numb Gnomes' Dumb Domes"
+"Numb Gnomes['] Dumb Domes"
 "Whee-Will-He Hill"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
@@ -1943,7 +1943,7 @@ volume homonym rejections
 
 chapter thing homonyms
 
-[this should not be alphabetized as otherwise Inform will assume from thhe first entry, the Bot Board, that everything is a person.]
+[this should not be alphabetized as otherwise Inform will assume from the first entry, the Bot Board, that everything is a person.]
 [how to fix this?]
 
 table of thing homonyms
@@ -2140,7 +2140,7 @@ every turn (this is the notify cycling rule):
 				increment tables-found;
 				if debug-state is true, say "DEBUG NOTE: [tabnam entry].";
 				if tables-found is 1:
-					say "Whoah...that sounds familiar! Fourth wall note: you've circled to the start of [one of]a random table after going through it. Thanks for being interested enough to look through it! There are commands at the game's end to see other tables[or]another random table[stopping].";
+					say "Whoah... that seems familiar! Fourth wall note: you've circled to the start of [one of]a random table after going through it. Thanks for being interested enough to look through it! There are commands at the game's end to see other tables[or]another random table[stopping].";
 				else if tables-found is 2:
 					say "[line break]This is a further note to say you've cycled a random table more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
 		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
@@ -2150,12 +2150,12 @@ volume big meta table
 
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
-table of books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure."
-table of mall shops	0	false	0	"Mystery Mall fake shops"	--
+table of books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure"
+table of mall shops	0	false	0	"Mystery Mall fake shops"	"Well Wail Sell Sale, the final one"
 table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
-table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry ends the list with a whimper."
+table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry, who ends the list with a whimper"
 table of silly locations	0	false	0	"Assorted random locations around Y'Old Yard"	"clues you'll never make it to Worthwhile Birth-Bile Earth Isle"
-table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
+table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
 
 Very Vile Fairy File Tables ends here.
 

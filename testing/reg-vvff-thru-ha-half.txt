@@ -46,6 +46,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 
 >really rolling
 by one point
+A stun-steed zooms by
 
 > zreally rolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
@@ -357,6 +358,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 
 > appealing appear
 by one point
+!A stun-steed zooms by
 
 > appealing appear
 !by one point

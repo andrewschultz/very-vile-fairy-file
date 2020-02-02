@@ -10,6 +10,7 @@
 
 >really rolling
 by one point
+A stun-steed zooms by
 
 > big bag
 by one point
@@ -51,6 +52,7 @@ by one point
 
 > appealing appear
 by one point
+!A stun-steed zooms by
 
 > n
 

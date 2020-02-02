@@ -62,17 +62,17 @@ Valid specifications for NARR are (B)eginning, (M)iddle, (E)nd, or some combinat
 > narr
 (INTRO)
 (ENDGAME)
-(MIDDLE)
+(MIDDLEGAME)
 
 > narr a
 (INTRO)
 (ENDGAME)
-(MIDDLE)
+(MIDDLEGAME)
 
 > narr b
 1. A vision!
 8. You see the Crimes Crew Times Two snickering
-Seek so-chic-show
+!Seek so-chic-show
 !75. "How hot NOW?! Not!"
 !80. "More make war! Wake!"
 !(INTRO)
@@ -92,7 +92,7 @@ Seek so-chic-show
 Seek so-chic-show
 !75. "How hot NOW?! Not!"
 !80. "More make war! Wake!"
-!(MIDDLE)
+!(MIDDLEGAME)
 
 >narr em
 !1. A vision!
@@ -125,6 +125,7 @@ Seek so-chic-show
 75. "How hot NOW?! Not!"
 
 >rand 0
+You can also rummage
 !0.
 1. Books in the Lending Libe
 2. Mystery Mall fake shops
@@ -135,19 +136,19 @@ Seek so-chic-show
 !7.
 
 > rand 1
-You can also rummage
+!You can also rummage
 All random text for Books in the Lending Libe:
 Fixed last entry before looping: The final book is Tish Tausch's Pish Posh Mish Mosh, which lives down to its title. That's enough text digested for one adventure.
-You can also rummage
+
 > rand 2
 All random text for Mystery Mall fake shops:
-There is no fixed last entry before looping.
+Fixed last entry before looping: Well Wail Sell Sale, the final one.
 > rand 3
 All random text for Songs after Tim T Sims:
 Fixed last entry before looping: Oh man, this one's really good! Tip Top Hip Hop! You stay until you hear the playlist, um, flip flop.
 > rand 4
 All random text for Assorted randos in Fussed Folks Just Jokes:
-Fixed last entry before looping: Hazy Hairy Lazy Larry ends the list with a whimper.
+Fixed last entry before looping: Hazy Hairy Lazy Larry, who ends the list with a whimper.
 > rand 5
 All random text for Assorted random locations around Y'Old Yard:
 Fixed last entry before looping: clues you'll never make it to Worthwhile Birth-Bile Earth Isle

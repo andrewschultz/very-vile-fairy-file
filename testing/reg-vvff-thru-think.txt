@@ -258,7 +258,7 @@ Silent Sail
 # test bug found in-comp
 
 >couple caps
-!by one point
+by one point
 >enter boat
 Been Buggin
 >undo

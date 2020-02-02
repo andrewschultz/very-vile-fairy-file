@@ -180,6 +180,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 @all,mis,ha
 >really rolling
 by one point
+A stun-steed zooms by
 
 @ha
 > zreally rolling
@@ -619,7 +620,7 @@ Learner needle
 Please proceed, adventurer.
 > glow glit
 Learner needle
-Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here.
 
 @ha
 > zgrow grit rule
@@ -646,7 +647,7 @@ You receive no kit to help you throw, corporate or otherwise.
 Please proceed, adventurer.
 > glow glit
 !Learner needle
-Glowing slimy matter is still silimy. Besides, you need to look inside YOU, here.
+Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here.
 
 @ha
 > zgrow grit rule
@@ -1137,6 +1138,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 @all,mis,ha
 > appealing appear
 by one point
+!A stun-steed zooms by
 
 @ha
 > appealing appear
@@ -1746,7 +1748,7 @@ Learner needle
 The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun.
 > sots same
 Learner needle
-The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakeable insult.
+The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakable insult.
 > tots tame
 Learner needle
 The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though.
@@ -2031,7 +2033,7 @@ the Leet Learner dims a bit, and the needle
 You thirst for an effective rhyme.
 > fraught freer
 the Leet Learner dims a bit, and the needle
-You wish Got Gear Hot Hear led somewere else.
+You wish Got Gear Hot Hear led somewhere else.
 > sought seer
 the Leet Learner dims a bit, and the needle
 Nobody, sober or otherwise, appears to give you advice about the future.
@@ -2072,7 +2074,7 @@ No Animaniacs appear to spout poetry. Probably a good thing.
 You thirst for an effective rhyme.
 > fraught freer
 !the Leet Learner dims a bit, and the needle
-You wish Got Gear Hot Hear led somewere else.
+You wish Got Gear Hot Hear led somewhere else.
 > sought seer
 !the Leet Learner dims a bit, and the needle
 Nobody, sober or otherwise, appears to give you advice about the future.
@@ -2902,7 +2904,7 @@ The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune
 @hom
 #homonyms basic test thing-jake g-cappin
 > cow cappin
-You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.
+You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
 #homonyms close test verb-co-capn-cappin
 
 > co capn
@@ -2963,7 +2965,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 # test bug found in-comp
 \\
 >couple caps
-!by one point
+by one point
 >enter boat
 Been Buggin
 >undo
@@ -3221,7 +3223,7 @@ Wrong grammar is woke and all, but you don't need to act out or show anyone anyt
 You recall some off-color drug humor from your younger days.
 > stay stoke
 !Learner needle
-You take a slightly ungrammatical approach to keeping your spirits up.
+Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything.
 > bray broke
 !Learner needle
 You try a poor-righteous-teacher approach with the clay cloak.

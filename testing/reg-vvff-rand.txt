@@ -17,10 +17,8 @@
 >u
 It feels like there could be something up there. Maybe not very important, but it's there. You just feel as though History Hall isn't defined enough, yet.
 >mystery mall
-You go up and browse Mystery Mall for a while.
-WRONG
-Need special: figure it out! Look in backpack!
 >u
+You go up and browse Mystery Mall for a while. One store that clearly has nothing you want is (Cycling) Well Wail Sell Sale, the final one.
 >history hall
 >u
 
@@ -33,7 +31,7 @@ Need special: figure it out! Look in backpack!
 A random song plays briefly: (Cycling)
 Oh man, this one's really good! Tip Top Hip Hop! You stay until you hear the playlist, um, flip flop.
 >listen
-Whoah...that sounds familiar! Fourth wall note: you've circled to the start of a random table after going through it. Thanks for being interested enough to look through it! There are commands at the game's end to see other tables.
+Whoah... that seems familiar! Fourth wall note: you've circled to the start of another random table.
 
 # the two books in the Lending Libe: the libe itself and Fussed Folks
 > history hall
@@ -50,14 +48,12 @@ Looking in, you see one book labeled
 !This locational libe has no vocational vibe.
 #RANDTEST table of miscellaneous people
 > x fussed folks
-You read about Hazy Hairy Lazy Larry, who ends the list with a whimper.
+You read about (Cycling) Hazy Hairy Lazy Larry, who ends the list with a whimper.
 
 #RANDTEST table of silly locations
 >gonear yard
 >n
-You wander around for a while before discovering clues you'll never make it to Worthwhile Birth-Bile Earth Isle. An interesting detour, but not useful
->e
-Cycling
+You wander around for a while before discovering (Cycling) clues you'll never make it to Worthwhile Birth-Bile Earth Isle. An interesting detour, but not useful
 >e
 !Cycling
 

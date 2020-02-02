@@ -79,7 +79,7 @@ by one point
 
 #homonyms basic test thing-wry wall-rye
 >rye xxx
-The wall remains inorganic. You can't really do anything to it.. Homonyms aren't quite the way to go, here.
+The wall remains inorganic. You can't really do anything to it.
 #homonyms basic test room-fun fen-phen
 >fun phen
 Organic chemistry is much too complex, here.
@@ -312,10 +312,8 @@ by one point
 
 #homonyms basic test thing-jake g-cappin
 > cow cappin
-Close. Jake is ambitious but not violent.
+You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
 #homonyms close test verb-co-capn-cappin
->co cappin
-You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway.
 
 > co capn
 by one point
@@ -572,10 +570,10 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 
 #homonyms basic test room-whining war-wining
 > wining woor
-You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't quite the way to change the whining war.
 #homonyms basic test room-whining war-wore
 > wore muur
-You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
+Homonyms aren't quite the way to change the whining war.
 
 > so sappin
 by one point
@@ -661,7 +659,7 @@ Sadly, the bot board is unable to feel bored of sitting around and being repress
 > xxx gourd
 That worked in The Life of Brian, but ... well, you need something with more oomph. You're close.
 > xxx hoard
-Treasure isn't the goal, here. You already have allies.
+Treasure isn't the goal, here. You need allies.
 
 #homonyms basic test room-airy isle-erry
 >erry xxx
@@ -682,7 +680,7 @@ by one point
 
 #homonyms basic test thing-hot horde-hoard
 >hoard haught
-The horde is after victories, not treasure.
+Treasure isn't the goal, here. You already have allies.
 
 > lot lord
 by one point

@@ -97,7 +97,7 @@ section rules to exclude
 
 The print final score rule is not listed in for printing the player's obituary.
 
-book i6 replacemets
+book i6 replacements
 
 Include (-
 Replace LanguageVerb;
@@ -1429,7 +1429,7 @@ Gassed Gap is north of Foe Field. cht of Gassed Gap is partminus. guess-table of
 check going in Gassed Gap when Reeker Russell is in Gassed Gap:
 	say "There's no running from Reeker Russell! ";
 	if russell-progress is 0:
-		say "You'll have to diminsh him and his gun.";
+		say "You'll have to diminish him and his gun.";
 	else:
 		say "You still have to diminish [if good gun is moot]him[else]his gun[end if].";
 	the rule succeeds;
@@ -1880,7 +1880,7 @@ the block listening rule is not listed in any rulebook.
 
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
-	if player is in Whining War, say "[if sco-so-sappin is false]It's more 'HEAD, HURT' than 'DEAD DIRT', but it's draining. Reason alone won't dispel itMaybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
+	if player is in Whining War, say "[if sco-so-sappin is false]It's more 'HEAD, HURT' than 'DEAD DIRT', but it's draining. Reason alone won't dispel it. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
 	if player is in History Hall and in-mystery-mall is true:
 		if Toe is in History Hall, try examining Toe Tappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
@@ -1988,6 +1988,8 @@ check requesting the score:
 
 the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
 
+llp-notify is a truth state that varies.
+
 this is the score and thinking changes rule:
 	process the notify score changes rule;
 	repeat through table of verb checks:
@@ -1998,6 +2000,9 @@ this is the score and thinking changes rule:
 		if done-yet entry is false and core-score >= rank-num entry:
 			now done-yet entry is true;
 			say "[line break][rank-txt entry][line break]";
+	if llp-notify is false and min-needed > core-max:
+		say "[line break]A stun-steed zooms by, bellowing 'None-need-done deed!' You feel guilty for losing focus instead of for your extra rigor, but eh, you deal by imagining a bin-bare-min mare showed up to insult you for not finding something extra.";
+		now llp-notify is true;
 
 to decide which number is can-do-hint of (ts - a truth state):
 	let temp be 0;
@@ -2063,7 +2068,7 @@ carry out wherewhoaing:
 
 ever-toggle-narr is a truth state that varies.
 
-definite-backlog-warned is a truth state that varies. [?? havent got a definitive case. I need more rows in the table.]
+definite-backlog-warned is a truth state that varies. [?? haven't got a definitive case. I need more rows in the table.]
 
 to say narrative-backlog:
 	let temp be 0;
@@ -2256,7 +2261,7 @@ understand "credits" as creditsing.
 carry out creditsing:
 	say "First, thanks to Wade Clarke, dgtziea, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. Their requests, observations, clever tries and plowing on in the face of some pretty obvious bugs helped push me to do things I didn't consider or put off--in particular, many ways of hinting. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
 	say "[line break]Thanks to Arclight_Dynamo and Matt Weiner for finding and reporting in-comp bugs that, uh, revealed other bugs, too.";
-	say "[line break]Thanks to GitHub for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of bitbucket, but GitHub's daily commit tracker helps so much with big and small goals.";
+	say "[line break]Thanks to GitHub for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of BitBucket, but GitHub's daily commit tracker helps so much with big and small goals.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
 	say "[line break]You can get in the testing credits too if you find a bug or a worthwhile game-related rhyme command. I suspect I've missed some.";
@@ -3589,10 +3594,10 @@ carry out randlisting:
 	repeat through mytab:
 		increment count;
 		say "[randtxt entry][line break]";
-		if the remainder after dividing count by 20 is 0, wfak;
+		if debug-state is false and the remainder after dividing count by 20 is 0, wfak;
 	choose row number understood in table of all randoms;
 	if there is a cycle-note entry:
-		say "Fixed last entry before looping: [cycle-note entry][line break]";
+		say "Fixed last entry before looping: [cycle-note entry].[line break]";
 	else:
 		say "There is no fixed last entry before looping.";
 
@@ -3774,7 +3779,7 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 					say "[not-quite-homonyms].";
 				the rule succeeds;
 			break;
-	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can'r quite combine the code.]
+	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
 		if mything entry is touchable:
 			if there is a hom-rule entry:
 				process the hom-rule entry;
@@ -3831,7 +3836,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 [	if debug-state is true, say "[the latest parser error].";]
 	if player is in Wet Wood:
 		increment oopsies;
-		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't neeed anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
+		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't need anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
 	else if player is in Rift River:
 		say "Hmm. You managed to GET GOOD out of the Wet Wood, but you just need to meet someone now.";
 	else if player is in Vined Vault:
