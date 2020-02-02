@@ -2226,7 +2226,7 @@ carry out optsing:
 	else:
 		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
-	if core-score >= 1 and the story has not ended finally, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
+	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
 	the rule succeeds.
 
 chapter soundsing
@@ -3459,9 +3459,27 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for a specific table, RN for next table)"	true	"RAND [number]"	--	rling
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
-"see [b]NARR[r]atives for [narr-end-opts]"	true	"narr a/b/e/m/" or "narr"	--	narring
+"see [b]NARR[r]atives for [narr-end-opts]"	true	"narr a/b/e/m/be/bm/em/eb/me/mb" or "narr"	--	narring
 
-to say narr-end-opts: say "(B)eginning, (M)iddle, (E)nd, or some combination, or (A)ll"
+to say narr-end-opts: say "([b]B[r])eginning, ([b]M[r])iddle, ([b]E[r])nd, or some combination, or ([b]A[r])ll"
+
+section narr checking
+
+The modified respond to final question rule is listed instead of the standard respond to final question rule in for handling the final question.
+
+This is the modified respond to final question rule:
+	repeat through the Table of Final Question Options:
+		if the only if victorious entry is false or the story has ended finally:
+			if there is a final response rule entry
+				or the final response activity entry [activity] is not empty:
+				if the player's command matches the topic entry:
+					if there is a final response rule entry, abide by final response rule entry;
+					otherwise carry out the final response activity entry activity;
+					rule succeeds;
+	if the player's command includes "narr":
+		say "Valid specifications for NARR are [narr-end-opts]. No argument lists all the narratives.";
+		the rule succeeds;
+	issue miscellaneous library message number 8.
 
 chapter narring
 
@@ -3482,12 +3500,13 @@ rule for narring:
 			now see-beginning is true;
 			now see-middle is true;
 			now see-end is true;
-		else if Q matches the text "b":
-			now see-beginning is true;
-		else if Q matches the text "e":
-			now see-end is true;
-		else if Q matches the text "m":
-			now see-middle is true;
+		else:
+			if Q matches the text "b":
+				now see-beginning is true;
+			if Q matches the text "e":
+				now see-end is true;
+			if Q matches the text "m":
+				now see-middle is true;
 	let see-all be false;
 	if see-beginning is true and see-end is true and see-middle is true:
 		now see-all is true;
@@ -3509,6 +3528,13 @@ rule for narring:
 			repeat through table of narratives:
 				if rank-num entry <= max-main, next;
 				say "[if see-all is true][relreg of rank-num entry] [end if][rank-num entry]. [rank-txt entry][line break]";
+
+section narrbading
+
+narrbading is an activity.
+
+rule for narrbading:
+	say "You need to specify [narr-end-opts].";
 
 chapter rling
 
@@ -3551,6 +3577,11 @@ carry out randlisting:
 		increment count;
 		say "[randtxt entry][line break]";
 		if the remainder after dividing count by 20 is 0, wfak;
+	choose row number understood in table of all randoms;
+	if there is a cycle-note entry:
+		say "Fixed last entry before looping: [cycle-note entry][line break]";
+	else:
+		say "There is no fixed last entry before looping.";
 
 chapter showranksing
 
