@@ -1427,11 +1427,11 @@ Gassed Gap is a room in Vale Verminous. "[if Reeker Russell is off-stage]It look
 Gassed Gap is north of Foe Field. cht of Gassed Gap is partminus. guess-table of Gassed Gap is table of Gassed Gap guesses. [-> Last Lap]
 
 check going in Gassed Gap when Reeker Russell is in Gassed Gap:
-	say "There's no running from Reeker Russell! ";
+	say "'Go, gassed foe, fast!' Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you";
 	if russell-progress is 0:
-		say "You'll have to diminish him and his gun.";
+		say "ll have to diminish him and his gun.";
 	else:
-		say "You still have to diminish [if good gun is moot]him[else]his gun[end if].";
+		say " still have to diminish [if good gun is moot]him[else]his gun[end if].";
 	the rule succeeds;
 
 printed name of Gassed Gap is "[if cap-cast is true]Last Lap[else]Gassed Gap[end if]".
