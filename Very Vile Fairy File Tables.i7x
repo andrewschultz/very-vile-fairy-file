@@ -1717,9 +1717,8 @@ rank-num	done-yet	rank-txt
 
 volume random tables
 
-table of books [xxbooks]
+table of library books [xxbooks] [xxlibe] [xxlibrary]
 randtxt
-"Ache or Make More Lake Lore"
 "Bane, Bones, Stain Stones[r], by Jane Jones"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
@@ -1728,7 +1727,6 @@ randtxt
 "Briny Brims Tiny Tim's Whiny Whims"
 "Bumpkin, Buy Pumpkin Pie"
 "Car Curst Far First[r], by Gar Gerst"
-"Crew Came Grew Game"
 "Cropping Crews['] Shopping Shoes"
 "Dandy Dyin['] Sandy, Sighin[r], by Randy Ryan"
 "Dare, Dream, Stare, Stream[r], by Bear Bream"
@@ -1740,9 +1738,7 @@ randtxt
 "Fat Farms['] Chat Charms: at Arms"
 "Find Fame, Mind, Maim"
 "Fly Phat Spy Spat"
-"Gain Goals, Sane Souls"
 "Good Girl Would Whirl"
-"Good Guys Would: Wise"
 "Gray Grill, Stay Still[r], by Jay-Jill Hayhill"
 "Greater Gravel Traitor Travel"
 "Grepping: Groan? STEPPING STONE"
@@ -1765,14 +1761,12 @@ randtxt
 "My Mod Guy God"
 "Nag? No: Brag, Bro"
 "Nail [']Nuff: Bail, Buff"
-"Near Null Fearful"
 "Nosy Nan, Dozy Dan[r], by Rosie Rann"
 "[']Nuff Nerd Stuff Stirred"
 "Numb Nude Dumb Dude"
 "Oh, Trait So Straight"
 "Oh, Uh, Lola[r], by Nona Sosa-Doda"
 "One Wet Sunset"
-"One Wise Son Sighs: RUN, RISE"
 "Page Punk Stage Stunk, Mage Monk"
 "Pan, Pot, Plan, Plot[r], by Stan Stott"
 "Quick Quest: Pick Pest[r], by Rick Rest"
@@ -1885,9 +1879,21 @@ randtxt
 "Work-Will Kirk Kill"
 "Would-Whirl Bud Burrell"
 
+table of motivational books [xxmotivational]
+randtxt
+"Ache or Make More: Lake Lore"
+"Crew Came Grew Game"
+"Gain Goals, Sane Souls"
+"Good Guys Would: Wise"
+"Lad Lit: Bad Bit Had Hit"
+"Near Null Fearful"
+"One Wise Son Sighs: RUN, RISE"
+"Sell So Well, Whoah"
+
 table of poems
 randtxt
 "Grow grace, bro! Brace!"
+"Oft, Ol['] Soft Soul."
 "You, your show, sure!"
 
 table of silly locations
@@ -1900,7 +1906,9 @@ randtxt
 "Great Grouse Hate House"
 "Low Key Louse Hokey House"
 "Mighty Mole's Hidey Holes"
+"Nice-Nail Vice Vale"
 "Numb Gnomes['] Dumb Domes"
+"Terse Tale Verse Vale"
 "Whee-Will-He Hill"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
@@ -2158,10 +2166,12 @@ volume big meta table
 
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
-table of books	0	false	0	"Books in the Lending Libe"	"The final book is Tish Tausch's [b]Pish Posh Mish Mosh[r], which lives down to its title. That's enough text digested for one adventure"
+table of library books	0	false	0	"Books in the Lending Libe"	"[b]Pish Posh Mish Mosh[r] by Tish Tausch, which lives down to its title. That's enough text digested for one adventure"
 table of mall shops	0	false	0	"Mystery Mall fake shops"	"Well Wail Sell Sale, the final one"
 table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
 table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry, who ends the list with a whimper"
+table of motivational books	0	false	0	"Motivational books [we whine] negs"	"Go-Get-Low Lit[r], its predecessor in nasty advice"
+table of poems	0	false	0	"Poems the Pain Peasant says"	"Done, dude. Run? RUDE!"
 table of silly locations	0	false	0	"Assorted random locations around Y'Old Yard"	"clues you'll never make it to Worthwhile Birth-Bile Earth Isle"
 table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
 

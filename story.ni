@@ -917,7 +917,7 @@ to say may-already:
 
 The Trending Tribe are plural-named people in Vending Vibe. cht of Trending Tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> Lending Libe]
 
-the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of books][r][one of]. This locational libe has no vocational vibe[or][stopping].";
+the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of library books][r][one of]. This locational libe has no vocational vibe[or][stopping].";
 
 after going to Vending Vibe:
 	process the card-and-libe rule;
@@ -930,7 +930,7 @@ this is the card-and-libe rule:
 		moot cold card;
 	continue the action;
 
-We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want, a companion tome to the mercifully unavailable [i]Sell So Well, Whoah[r]. [if sco-see-sign is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now[else]Why would you want to know that? Maybe a careful reading would turn something up[end if].". guess-table of we whine is the table of we whine guesses. [-> see sign]
+We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want, far better than the mere [i][next-rand-txt of table of motivational books][r]. [if sco-see-sign is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now[else]Why would you want to know that? Maybe a careful reading would turn something up[end if].". guess-table of we whine is the table of we whine guesses. [-> see sign]
 
 understand "book" as We Whine Me Mine when We Whine Me Mine is touchable.
 
@@ -2121,7 +2121,7 @@ carry out reading:
 	if noun is evidencey, say "Yes, [the noun]'s details are important, but you've gotten enough." instead;
 	repeat through table of readables:
 		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
-	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for most items. Items you can [b]READ[r] usually say so when you examine them.";
+	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for all items except those giving general advice. Items you can [b]READ[r] usually say so when you examine them.";
 	now read-exam-note is true;
 	try examining the noun instead;
 
@@ -3461,7 +3461,7 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
 "see the point-based [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
-"see lists of random text (RAND 0 for list, RAND 1-[number of rows in table of all randoms] for a specific table, RN for next table)"	true	"RAND [number]"	--	rling
+"see lists of random text ([b]RAND 0[r] for list, [b]RAND 1-[number of rows in table of all randoms][r] for a specific table, [b]RN[r] for next table)"	true	"RAND [number]"	--	rling
 "see [b]MISC[r]ellaneous [b]RHYME[r]s in response to verbs"	true	"misc/rhyme/rhymes"	--	amuselisting
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
@@ -3492,12 +3492,13 @@ chapter amuselisting
 amuselisting is an activity.
 
 rule for amuselisting:
-	say "DRINKing the worst wave or Sage Sea?";
-	say "TALKing to anyone, including the [fairy file]?";
-	say "EATing the wild weed?";
-	say "ATTACKING people, especially the Bot Board and [fairy file]?";
-	say "Cussing around the [fairy file]?";
-	say "Saying yes or no, waiting or giving an empty command, or sleeping?";
+	say "Have you tried:[paragraph break]";
+	say "[2da]DRINKing the worst wave or Sage Sea?";
+	say "[2da]TALKing to anyone, including the [fairy file]?";
+	say "[2da]EATing the wild weed?";
+	say "[2da]ATTACKING people, especially the Bot Board and [fairy file]?";
+	say "[2da]Cussing around the [fairy file]?";
+	say "[2da]Saying yes or no, waiting or giving an empty command, or sleeping?";
 
 chapter narring
 
