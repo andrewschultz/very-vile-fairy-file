@@ -1336,7 +1336,7 @@ part Foe Field So Sealed 0,3
 Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if sco-show-shield is true]: Ho, HEALED[end if]". "Passages lead all four directions[if sco-show-shield is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. [->show shield]
 
 check going south in Foe Field So Sealed:
-	if Pain Peasant is in Foe Field, say "The Pain Peasant booms 'Go, gassed foe, fast!'" instead;
+	if Pain Peasant is in Foe Field, say "As you leave, the Pain Peasant whines 'My, me, fly, flee!' Perhaps you gave up too quickly, and there's a simple way by. Eh, later.";
 
 check going north in Foe Field So Sealed: if sco-show-shield is false and Pain Peasant is moot, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
 
@@ -1349,7 +1349,7 @@ chapter Pain Peasant
 the Pain Peasant is a person in Foe Field. description is "Pretty simple looking, really. But clearly Upset about Stuff enough to push you back out of spite.". "A Pain Peasant paces back and forth, looking nervously east and west.". cht of Pain Peasant is letplus. [-> plain pleasant]
 
 check going in Foe Field So Sealed when Pain Peasant is in Foe Field:
-	say "The Pain Peasant blocks you, saying 'It is even worse there than in here! Trust me!' Geez, what a pain!" instead; [?? fain pheasant]
+	say "The Pain Peasant blocks you, saying 'Which way? Hitch! Hey!' Whether the peasant is trying to save you from pain or trying to be a pain is unclear. But you're not getting by unless you get the Pain Peasant to leave." instead; [?? fain pheasant]
 
 part Store All Stage -1,3
 
@@ -1735,7 +1735,7 @@ check sleeping: say "Lie late, my mate? Why wait?" instead;
 
 chapter waiting
 
-check waiting: say "[one of]Hi ho! Lie low[or]D'oh! Deed? No need[or]Woo! Will stew, still[cycling]." instead;
+check waiting: say "[one of]Whoah, wait? Mo['], mate![or]Hi ho! Lie low![or]D'oh! Deed? No need.[or]Woo! Will stew, still![cycling]" instead;
 
 chapter talking
 
@@ -3821,7 +3821,7 @@ Rule for printing a parser error when the latest parser error is the can't see a
 	say "You can't see any objects like that here.";
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
-	say "Blank blather? Rank! Rather!"
+	say "[one of]Blank blather? Rank! Rather![or]Weak will! Speak, spill![in random order]"
 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
 	say "The action was okay, but I couldn't recognize the object."
@@ -4158,7 +4158,7 @@ to win-the-game:
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	phbt Tarry Tile;
 	say "Yes. You know what to do. And after your journey, you are ready. As you bury the bile -- yours for others you have met in the game and in the past, and even for your own faults -- you toss the [fairy file] a sad, pitying smile, and it begins to dissolve. Final futile protests of 'Flame? Flee Lamely!' and a final 'Same! SEE!' fail, before it winks out with a cryptic 'Dame Dee, shame she...'.[paragraph break]The Merry Mile changes significantly. A puffed portal appears, which you can't enter until you give a chuffed chortle--you've earned it! Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board, now reformed as the more benign Plot-Planned Bot Band![paragraph break]There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.[wfak]";
-	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. It captures some of the more memorable parts of your journey. The tag on the back of the neck says 'FUN FAIR WON WEAR.' There's a bracelet, too, perhaps a bit too optimistic: LIFE LONG STRIFE-STRONG. Good enough.";
+	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. A tortoise and porpoise smile next to each other on it. The tag on the back of the neck says 'FUN FAIR WON WEAR.' There's a bracelet, too, perhaps a bit too optimistic: LIFE LONG STRIFE-STRONG. Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;

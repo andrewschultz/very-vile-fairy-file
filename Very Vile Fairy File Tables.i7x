@@ -439,7 +439,7 @@ a goodrhyme rule (this is the vc-cull-ceased rule) :
 	ready;
 
 this is the vr-cull-ceased rule:
-	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! Your words, which the spear translates into a few sharp slurps, groans and growls, cause the Bull Beast to run off in extreme psychological anguish before collapsing from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by so little.[paragraph break]You give chase, and it traps and lashes out at you. Reflexively, you block with the spear and strike back. Your first swipe is lethal.[paragraph break]Perhaps you can do something constructive with the Bull Beast's dead body.";
+	say "Your battle cry, coupled with your new improved healed self, worries the Bull Beast. But what worries it even more is the Spiel Spear that flashes suddenly in your hand. Your faith in the Ceiling Seer is rewarded! Your words, which the spear translates into a few sharp slurps, groans and growls, cause the Bull Beast to run off in extreme psychological anguish before collapsing from something stress-related, I guess. Or maybe from being embarrassed about being so embarrassed by so little.[paragraph break]You give chase, and it traps and lashes out at you. Reflexively, you block with the spear and strike back. Your first swipe is lethal.[paragraph break]Well, that's certainly enough bull for one silly nonsense adventure. At least, you hope there's no Frightful Bright Bull in your future. But perhaps you can do something constructive with the Bull Beast's dead body.";
 	now sco-cull-ceased is true;
 	now Bull Beast is boring; [?? what if dead]
 	now cht of Bull Beast is leteq; [Bull Beast->full feast]
@@ -1753,6 +1753,7 @@ randtxt
 "Hole Hound Bowl Bound"
 "How High? Wow, Why"
 "Jail Jen, Bail Ben"
+"Kill Car, Still Star"
 "Lay [']Lone, May Mone[r], by Ray Rhone"
 "Lay Lorn, Way Worn May Morn[r], by Kay Korn" [pay porn?]
 "Meet Me Leetly"
@@ -1795,11 +1796,12 @@ randtxt
 "Yo, Yet Go Get Mo['] Met[r], by Joe Jett"
 "Your Be-Yays: Derby Days[r], by Herbie Hayes"
 
-table of mall shops [xxshops]
+table of mall shops [xxshops] [xxmalls] [xxstores]
 randtxt
 "Bold Bud's Doled Duds"
 "Cold Crude Bold Brewed"
 "Musty Mike's Trusty Trikes"
+"Pork Pie Stork Sty"
 "There-They-Wear Way"
 "Trench Tries French Fries"
 
@@ -1883,6 +1885,11 @@ randtxt
 "Work-Will Kirk Kill"
 "Would-Whirl Bud Burrell"
 
+table of poems
+randtxt
+"Grow grace, bro! Brace!"
+"You, your show, sure!"
+
 table of silly locations
 randtxt
 "Bad Beef Fad Fief"
@@ -1907,6 +1914,7 @@ randtxt
 "Dark day! Hark, hey!"
 "Fie! Face my mace!"
 "Fry, freak-guy(?)-geek!"
+"Geek, get weak wit!"
 "Gosh, go wash, whoa!"
 "Lard! Left hard heft!"
 "Look leading?! Book beating!"

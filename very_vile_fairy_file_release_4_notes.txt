@@ -1,0 +1,13 @@
+Release 4 of Very Vile Fairy File provides:
+
+--full homonym recognition, both for the original item/room and what you need to change it to. Homonyms were pulled from the standard good guess table to their own so, for instance, "whet (any)" and "would (any)" in the wood cover more commands and let the player know homonyms don't work.
+--more silly responses to standard verbs, especially with the File itself
+--more narrative entries after you score points
+--a note to verify optional points are,, indeed, optional
+--GT/GO TO now covers more possibilities. There were a few bugs where you could skip away from an important scene and a few outright unhandled cases
+--random place names if you go north/east in Y'Old Yard
+--random stores if you go up in Mystery Mall
+--end of game review options are tightened up
+--scenery near the game's end includes the listless mist mess moved to the penultimate room, replaced by the spite spaced white waste (final room)--the scenery is strictly aesthetic, but I think it fleshes out the game a bit.
+
+There is not much left to do. I have some random text in my notes and some "??" notes in the code.

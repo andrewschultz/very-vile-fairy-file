@@ -58,6 +58,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "pot poured"	trivially true rule	false	35	--	"There's no time for coffee here!"
 "rot roared"	trivially true rule	false	35	--	"A decent battle cry, but you sense there could a more violent action."
 "caught cord"	trivially true rule	false	35	--	"You might be able to trip one of the Bot Board with a cord, but not all of them."
+"scott scored"	trivially true rule	false	35	--	"The situation demands more than gossip. It demands leadership and teamwork!"
 "snot snored"	trivially true rule	false	35	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
 "fought ford"	trivially true rule	false	35	--	"The battle is ahead, not in the past."
 "tryst tress"	trivially true rule	false	--	--	"The last thing you need now is a hair appointment."
