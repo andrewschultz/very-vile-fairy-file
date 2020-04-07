@@ -58,10 +58,6 @@ A stun-steed zooms by
 !by one point
 You already guessed the significance of my pen name.
 
->really rolling
-!by one point
-You already guessed the significance of my pen name.
-
 > big bag
 by one point
 
@@ -272,6 +268,21 @@ The HA HALF button lights up on your Leet Learner.
 
 > flim flam
 by one point
+
+> zbloke blessed rule
+DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+> bloke zblessed rule
+DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
+> bloke blessed
+by one point
+You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+
+> really rolling
+!by one point
+You already guessed the significance of my pen name.
 
 > flim flam
 !by one point

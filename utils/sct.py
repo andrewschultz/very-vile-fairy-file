@@ -23,7 +23,6 @@ open_source_post = True
 
 fin = i7.hdr('vv', 'ta')
 (core_column, topic_column) = i7.column_from_file(fin, "table of verb checks", ["core", "wfull"])
-print(core_column, topic_column)
 
 min_line = 0
 max_line = 0
@@ -57,6 +56,10 @@ def usage(msg = "CMD LINE USAGE"):
     print("p py = open source post run / pn = don't open it")
     print("u = update, nu/un = don't update")
     exit()
+
+def is_think(my_line):
+    if my_line.startswith("==t") and '2' in line: return True
+    return my_line.startswith("@thi")
 
 def check_invisiclues_vs_walkthrough():
     fname = "c:/writing/scripts/invis/vv.txt"
@@ -123,9 +126,10 @@ def check_think_tests():
             think_needed["!" + tnq] = 0
     in_think_test = False
     prev_think = False
+    think_errs = 0
     with open(ft) as file:
         for (line_count, line) in enumerate(file, 1):
-            if line.startswith("==t") and '2' in line:
+            if is_think(line):
                 in_think_test = True
                 continue
             if in_think_test and not line.strip():
@@ -138,7 +142,6 @@ def check_think_tests():
             prev_think = 'think' in line.lower() and '>' in line.lower()
             if line.strip() in think_needed:
                 think_needed[line.strip()] += 1
-    think_errs = 0
     for q in sorted(think_needed, key=lambda x: (re.sub("^!", "", x), "!" in x)):
         if q == '!BURY BILE': continue #special case for final command
         if think_needed[q] == 0:
@@ -612,6 +615,7 @@ def read_cmd_line():
         elif arg == '?': usage()
         else: usage("Bad option {:s}".format(arg))
         cmd_count += 1
+
 #
 # main program
 #

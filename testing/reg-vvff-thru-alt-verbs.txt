@@ -72,6 +72,10 @@ by one point
 > flim flam
 by one point
 
+> bloke blest
+by one point
+>undo
+
 > s
 
 > kneeling near
@@ -137,6 +141,12 @@ by one point
 by one point
 
 > no napping
+by one point
+>undo
+> know nappin
+by one point
+>undo
+> know napping
 by one point
 >undo
 

@@ -408,6 +408,10 @@ That might be cool, to make the puzzle a slam dunk and lose the last few pounds,
 > flim flam
 by one point
 
+> bloke blessed
+by one point
+You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+
 > s
 
 > wheel weir
@@ -1290,9 +1294,6 @@ The Very Vile Fairy File has probably gotten more than a few people to vote agai
 > lumped luster
 the Leet Learner dims a bit
 The cluster would still be in the way if it were shiny.
-> stay stoke
-!Learner needle
-Wrong grammar is woke and all, but you don't need to act out or show anyone anything.
 > jay joke
 !Learner needle
 You recall some off-color drug humor from your younger days.
@@ -2052,6 +2053,9 @@ There's no time for coffee here!
 > rot roared
 Learner needle
 A decent battle cry, but you sense there could a more violent action.
+> scott scored
+Learner needle
+The situation demands more than gossip. It demands leadership and teamwork!
 > snot snored
 Learner needle
 While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral.

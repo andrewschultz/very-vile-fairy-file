@@ -193,11 +193,6 @@ A stun-steed zooms by
 !by one point
 You already guessed the significance of my pen name.
 
-@ha
->really rolling
-!by one point
-You already guessed the significance of my pen name.
-
 @mis
 > trilly trolling
 !the Leet Learner dims a bit, and the needle
@@ -899,6 +894,29 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newloc fun fen
+
+@ha
+> zbloke blessed rule
+DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+> bloke zblessed rule
+DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
+@alt
+> bloke blest
+by one point
+>undo
+
+@all,mis,ha
+> bloke blessed
+by one point
+You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+
+@ha
+> really rolling
+!by one point
+You already guessed the significance of my pen name.
 
 @hom
 #homonyms basic test thing-wry wall-rye
@@ -1824,6 +1842,12 @@ The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune
 
 @alt
 > no napping
+by one point
+>undo
+> know nappin
+by one point
+>undo
+> know napping
 by one point
 >undo
 
@@ -3215,9 +3239,6 @@ The Very Vile Fairy File has probably gotten more than a few people to vote agai
 > lumped luster
 the Leet Learner dims a bit
 The cluster would still be in the way if it were shiny.
-> stay stoke
-!Learner needle
-Wrong grammar is woke and all, but you don't need to act out or show anyone anything.
 > jay joke
 !Learner needle
 You recall some off-color drug humor from your younger days.
@@ -5397,6 +5418,9 @@ There's no time for coffee here!
 > rot roared
 Learner needle
 A decent battle cry, but you sense there could a more violent action.
+> scott scored
+Learner needle
+The situation demands more than gossip. It demands leadership and teamwork!
 > snot snored
 Learner needle
 While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral.
