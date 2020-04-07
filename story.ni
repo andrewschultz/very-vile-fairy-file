@@ -541,6 +541,12 @@ check going in Fun Fen:
 		if need-healing, say "You're not ready to go back and confront the Bull Beast in your injured state yet." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
+section joke jest poke pest
+
+the joke jest poke pest is a thing. description is "You can't see it, and it's probably not a good idea to dwell on it. The more you do, the less you'll focus on your quest."
+
+sco-bloke-blessed is a truth state that varies.
+
 section done den
 
 the done den is scenery in Fun Fen. "It looks nice and cozy. You feel a sense of accomplishment having made it through the done den, but you don't want to go back."
@@ -1716,6 +1722,7 @@ instead of dropping when number of entries in multiple object list > 1 (this is 
 	continue the action;
 
 instead of dropping:
+	if noun is poke pest, say "You can't quite drop it, literally or metaphorically." instead;
 	say "You don't need to drop anything in this game[if player has zig zag rig rag]. However, you have a way to make a carryall that can hold everything you want. Check your inventory[end if].";
 
 chapter taking
@@ -1772,11 +1779,13 @@ check taking inventory:
 	now all things enclosed by the player are marked for listing;
 	now toe tappin is unmarked for listing;
 	now lurking lump is unmarked for listing;
+	now joke jest poke pest is unmarked for listing;
 	now all gaphats are unmarked for listing;
 	now all evidencey things are unmarked for listing;
 	now big bag is unmarked for listing;
 	say "Stuff stole (rough role):[line break]";
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
+	if player has joke jest poke pest, say "The joke jest poke pest is buzzing around, but [if sco-bloke-blessed is true]it's not so distracting any more[else]maybe there's a way to tame it[end if].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
 	show-evidence-and-hats;
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
@@ -1996,10 +2005,12 @@ this is the score and thinking changes rule:
 		if think-cue entry is true and idid entry is true, now think-cue entry is false;
 	if buggin-freeze, continue the action;
 	if narr-on is false, continue the action;
+	if this-beta-warp is true, say "[line break](skipping narratives, which you can see at game's end anyway)[line break]";
 	repeat through table of narratives:
 		if done-yet entry is false and core-score >= rank-num entry:
 			now done-yet entry is true;
-			say "[line break][rank-txt entry][line break]";
+			if this-beta-warp is false, say "[line break][rank-txt entry][line break]";
+	now this-beta-warp is false;
 	if llp-notify is false and min-needed > core-max:
 		say "[line break]A stun-steed zooms by, bellowing 'None-need-done deed!' You feel guilty for losing focus instead of for your extra rigor, but eh, you deal by imagining a bin-bare-min mare showed up to insult you for not finding something extra.";
 		now llp-notify is true;
@@ -4079,7 +4090,7 @@ to say firstor of (t - indexed text):
 
 to lump-minus:
 	decrement lump-charges;
-	say "The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
+	say "[line break]The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
 	if lump-charges is 0, moot lurking lump;
 	now in-jerk-jump is false;
 	increment lump-uses;
@@ -4226,6 +4237,13 @@ to vcal (t - text): [verb conditional print, flag already rhymed]
 
 sco-really-rolling is a truth state that varies.
 
+to start-middlegame:
+	move the player to Fun Fen;
+	say "After looking around, you hear a voice. 'Hot hero? Zot! Zero!' It's much more convincing audibly than as bad MSPaint cover art. What could it be? You remember, now, some things the Gift Giver said. Your eyes glazed over at the mention of [the poke pest]. But apparently you don't need to DO anything to or with it, just not let it get in your way.";
+	now player has the joke jest poke pest;
+	repeat with X running through rooms in worst whew:
+		phbt X;
+
 volume warp commands
 
 warp-warn-yet is a truth state that varies.
@@ -4260,7 +4278,7 @@ carry out blowbying:
 	process the any-warp rule;
 	now core-score is whew-score + bag-point;
 	now score is whew-score + cur-bonus + bag-point;
-	move player to Fun Fen;
+	start-middlegame;
 	moot mind malt;
 	now player has too totes new notes;
 	the rule succeeds.
@@ -4303,9 +4321,12 @@ understand "climb clear" as climbclearing.
 
 any-beta-warp is a truth state that varies.
 
+this-beta-warp is a truth state that varies.
+
 this is the any-warp rule:
 	if any-beta-warp is true, say "You already used a Beta testing warp." instead;
 	now any-beta-warp is true;
+	now this-beta-warp is true;
 
 carry out climbclearing:
 	if Airy Isle is visited, say "You're already in the endgame." instead;

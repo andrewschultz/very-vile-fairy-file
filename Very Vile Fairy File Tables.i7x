@@ -641,7 +641,7 @@ this is the vr-flim-flam rule:
 	loop-note "FLIM FLAM/SKIM SCAM";
 	say "That does it! The tram moves off to a more open place...";
 	process the trimtramcmd rule;
-	move the player to Fun Fen;
+	start-middlegame;
 	phbt Trim Tram;
 
 a goodrhyme rule (this is the vc-full-feast rule) :
@@ -1687,14 +1687,15 @@ rank-num	done-yet	rank-txt
 4	false	"The loser of the rock paper scissors game's eyes open wide as they realize the [very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel the [very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
 5	false	"You recall harsh words from an alleged friend, Chum Chilly Bum Billy: 'Some silly? Dumb, dilly.'"
 6	false	"You remember a depressing holiday season. 'Blear, Blue? Near New Year, You! We're ... WOO!' But you're having more fun now. You hope."
-7	false	"A voice says 'Sigh. Say hi, hey?' But you ignore it. Ply, play, you think. Gotta focus."
-8	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
+7	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
+--	false	"The [poke pest] whispers 'Sigh. Say hi, hey?' But you ignore it. Ply, play, you think. Gotta focus."
 --	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
 --	false	"'Surly? Soften early, often!' a random voice booms. Probably some burly boffin. The [fairy file]'s bait is smart."
 --	false	"'Fame fast? Lame, last!' a voice calls. You ... you were just looking for a way out. You think. But nobody thinks they're too proud. Right?"
 --	false	"You remember saying 'War, why?' with the response: 'BORE, BYE!'"
 --	false	"You are quasi-catcalled as 'Some super-dumb duper.' You immediately wonder if you're too dumb to remember HOW you tried to dupe anyone, but after a moment's thought, you brush the insult off with 'Um, oop, err...'"
 --	false	"You picture yourself in a sales job. 'Cold call? Fold, fall.' You fail and are exiled to the Hold Hall."
+--	false	"You recall your only Dungeons and Dragons experience: a bunch of bullies yelling 'D&D? TNT! Flee [']n flee!'"
 --	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
 --	false	"'Blue blood? Boo, bud!' Standard demoralizing fare. You feel a slight flu-flood."
 --	false	"A disembodied voice that can only be from the [very vile] booms: 'High hope nigh? Nope!' You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible."
