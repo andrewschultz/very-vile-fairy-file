@@ -46,21 +46,23 @@ test tobug with "test w1/test w2/test w3/test w4/test w5/test w6/test w7"
 
 test qbug with "purloin toe/gonear violent vale/purloin cake cap/silent sail/boring boat/no nappin/enter boat/mo mappin/ho happen/lean luggin/mean muggin"
 
-test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag/s". [this is the intro.]
+test w1 with "get good/gift giver/find fault/green grass/grow grit/mash map/mind me/flim flam/big bag". [this is the intro.]
 
-test w2 with "kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]
+test w2 with "s/kneel near/feel fear/deal dear/n/fall free/dive deep/paper pile/backed binder". [real rear 1st try, get binder]
+
+test w2b with "strong start/bloke blessed/s/kneel near/feel fear/deal dear/appealing appear/n/fall free/dive deep/paper pile/backed binder"
 
 test w3 with "n/w/dark door/mark more/cleared clay/w/mystery mall/listen" [get TTRR]
 
-test w3b with "whatta wanksta/ho happen/dimd" [bonus points: songs and get ganksta before gone]
-
 test w4 with "lots lame/w/hard hat" [get first hat]
+
+test w4b with "whatta wanksta/dimd/lots lame/ho happen/w/hard hat" [get first hat]
 
 test w5 with "e/e/e/n/w/work well/e/loft land/w/dreaming dull/first fave/cool cap" [get 2nd cap]
 
-test w6 with "e/s/e/brightening bridge/silent sail/boring boat/no nappin/enter boat/wake whee". [get cap, take boat]
+test w6 with "e/s/e/brightening bridge/silent sail/boring boat/no nappin/enter boat/wake whee/take tea". [get cap, take boat]
 
-test w7 with "take tea/fake fee/e/make map/co capn/snake snap/enter boat". [this is part 1 of the boat quest]
+test w7 with "fake fee/e/make map/co capn/snake snap/enter boat". [this is part 1 of the boat quest]
 
 test w8 with "stay strong/glow glad/mean muggin/lean luggin"
 
@@ -70,9 +72,11 @@ test w10 with "e/e/sit sound/fit found/e/winding ways/mo mappin/luck lair/w/w/s/
 
 test w11 with "dear dull/near null/w/s/w/d/w" [bye bye bull beast]
 
-test w12 with "s/beast boss/least loss/s/s/heal here/n" [ready to defeat the beast boss]
+test w12 with "s/beast boss/least loss/s/heal here/n/n" [ready to defeat the beast boss]
 
-test w13 with "n/cull ceased/full feast/e/e/so sappin/shining shore/dining door/pull pieced/mining more". [get the hold hard gold guard]
+test w12b with "s/beast boss/least loss/s/heal here/n/wild weed/spark spliff/n" [ready to defeat the beast boss]
+
+test w13 with "cull ceased/full feast/e/e/so sappin/shining shore/dining door/pull pieced/mining more". [get the hold hard gold guard]
 
 test w14 with "w/w/n/n/show shield/n/go gappin/couple caps/cast cap"
 
@@ -84,7 +88,7 @@ test w16 with "hot horde/lot lord/got gored/whoa wait/tell torn/merry mile/bury 
 
 test wa with "test w1/test w2/test w3/test w4/test w5/test w6/test w7/test w8/test w9/test w10/test w11/test w12/test w13/test w14/test w15/test w16".
 
-test wb with "really rolling/test w1/appealing appear/test w2/strong start/test w3/test w3b/test w4/lie lol/not near/test w5/test w6/break brie/test w7/test w8/bumped buster/test w9/test w10/test w11/test w12/wild weed/spark spliff/test w13/test w14/beaker bustle/test w15/test w16".
+test wb with "really rolling/test w1/test w2b/test w3/test w3b/test w4b/lie lol/not near/test w5/test w6/break brie/test w7/test w8/bumped buster/test w9/test w10/test w11/test w12b/test w13/test w14/beaker bustle/test w15/test w16".
 
 test qw with "gonear tarry tile/tell torn/merry mile/bury bile".
 

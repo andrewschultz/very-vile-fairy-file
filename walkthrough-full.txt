@@ -9,27 +9,31 @@ Two things about good guesses: sometimes, you will be able to switch the word or
 
 We start in the Wet Wood, and it seems like there's no standard direction out. But if you listen carefully and pay attention to clues, you can decide what to do.
 
-> GET GOOD (1)
+By the way, the game has bonus points, and one is guessing what my pen name "means."
+
+> REALLY ROLLING (OPTIONAL) (1)
+
+> GET GOOD (2)
 
 Okay, you found your way out but now you're blocked at the Rift River.
 
-> GIFT GIVER (2)
+> GIFT GIVER (3)
 
 Oops! You fell into the Vined Vault, which seems to have no weaknesses.
 
-> FIND FAULT (3)
+> FIND FAULT (4)
 
 But now you must deal with the Mean Mass.
 
-> GREEN GRASS (4)
+> GREEN GRASS (5)
 
 Now, ugh! The trash trap is so gross. You don't have the guts to face it, yet. Something about this room ... the Po' Pit ...
 
-> GROW GRIT (5)
+> GROW GRIT (6)
 
 Now there is the cache cap with something on it. There's the gash gap and trash trap. This suggests ...
 
-> MASH MAP (6)
+> MASH MAP (7)
 
 An alternative here would be to BASH BAP, which is obscure but still sensible.
 
@@ -37,13 +41,13 @@ After this, you've got one more room before you emerge aboveground.
 
 Now you need to fake your way into (not really) paying for a trip on the Trim Tram.
 
-> MIND ME (7)
+> MIND ME (8)
 
 Okay, you're focused! Now the trim tram needs you to pay to get it started.
 
 There are three ways.
 
-> FLIM FLAM (8)
+> FLIM FLAM (9)
 
 The alternatives: FLIMFLAM with no space, or you can also try a SKIM SCAM.
 
@@ -51,11 +55,7 @@ You climb out of the Done Den to the Fun Fen, finished with the linear introduct
 
 Now about that zig zag rig rag. It can become something more useful. In fact, it always could have, but maybe things are clearer now.
 
-> BIG BAG (9)
-
-The game also has bonus points. One is guessing what my pen name "means."
-
-> REALLY ROLLING (OPTIONAL) (10)
+> BIG BAG (10)
 
 Another is noticing the wrong art. It's not critical to the game, but it's your first clear non-generic bonus point.
 
@@ -63,9 +63,9 @@ Since the "wr" is pronounced as "r," and there is a prong part as you examine it
 
 > STRONG START (OPTIONAL) (11)
 
-The wry wall can also be deal with, sort of, for a bonus point. There are other wry walls in future locations, and you can pick up this bonus point at any time. It's obviously all wrong, but how to say so?
+Another thing can be done at any time. It involves the joke jest poke pest.
 
-> LIE LOL (12)
+> BLOKE BLESSED (OPTIONAL) (12)
 
 > S
 
@@ -387,48 +387,53 @@ Now to set a trap for a bit later...
 
 You'll note you don't want to go back to the niche, because you know there's a trap there. But nobody else does. Maybe there's someone or something that deserves to be suckered.
 
-So now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP?
+So now to find the poor sap to trap... or, should I say TRICK-TRAP SICK SAP? You need someone or something mad and impulsive.
 
 > U
 > E
 > N
 > E
+
+But the bull is just sitting there!
+
 > DEAR DULL (67)
+
+It's too powerful for you now.
+
 > NEAR NULL (68)
+
+Now to lead it on a chase back to the tap.
+
 > W
 > S
 > W
 > D
 > W (69)
 
-Yay! You get a point for this. The mild mead will come in handy. The game also takes you back to the Gear Gull, who enhances your gold guard. You can now (sort of) deal with the odd peace in creased cross.
+Yay! This is the only non-rhyming point in the game. The mild mead will come in handy. The game also takes you back to the Gear Gull, who enhances your gold guard. You can now (sort of) deal with the odd peace in creased cross. Here Hull is also closed off to you--you don't need it any more.
 
-You can do something with the mild mead, though.
+> S
 
-> WILD WEED (OPTIONAL) (70)
+> BEAST BOSS (70)
+
+> LEAST LOSS (71)
+
+You're sort of trapped south of the Beast Boss, but that's okay. You can focus on what you need to do.
+
+> S
+
+> HEAL HERE (72)
+
+> N
+
+You can do something with the mild mead here, though. It's slightly off-color, but you can still do it.
+
+> WILD WEED (OPTIONAL) (73)
 
 And now something with the wild weed. It's a very silly extra point. Cark Cliff is actually useful for something.
 
-> S
+> SPARK SPLIFF (OPTIONAL) (74)
 
-> S
-
-> SPARK SPLIFF (OPTIONAL) (71)
-
-> N
-
-> N
-
-> BEAST BOSS (72)
-
-> LEAST LOSS (73)
-
-> S
-> S
-
-> HEAL HERE (74)
-
-> N
 > N
 
 This time, you know what to do, and you can defeat the bull beast with a magic word!
