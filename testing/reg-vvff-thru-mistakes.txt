@@ -408,9 +408,35 @@ That might be cool, to make the puzzle a slam dunk and lose the last few pounds,
 > flim flam
 by one point
 
+> broke breast
+Learner needle
+Nothing violent.
+> croak crest
+Learner needle
+Nothing forms to kill the joke jest poke pest.
+> toke test
+Learner needle
+Hey now! You don't have, or need, anything smokable.
+> woke west
+Learner needle
+The/doesn't care about directions.
+
 > bloke blessed
 by one point
 You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+
+> broke breast
+!Learner needle
+Nothing violent.
+> croak crest
+!Learner needle
+Nothing forms to kill the/.
+> toke test
+!Learner needle
+Hey now! You/had your fun with drugs/might do something for fun, but you don't need to, and you need a source of flame/don't have, or need, anything smokable/.
+> woke west
+!Learner needle
+The/doesn't care about directions.
 
 > s
 
@@ -1797,9 +1823,15 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
+> toke test
+Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
+
 # maybe this should be !min?
 > wild weed
 by one point
+
+> toke test
+Hey now! You had your fun. Don't overdo it.
 
 > dialed deed
 !the Leet Learner dims a bit, and

@@ -456,6 +456,13 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "smirk smell"	gel-or-shell rule	false	44	need-work-well rule	"No, you don't want that."
 "turk tell"	gel-or-shell rule	false	44	need-work-well rule	"You wonder briefly how that automaton back in the 18th century played chess, anyway."
 
+table of joke jest poke pest guesses
+mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
+"broke breast"	pest-known rule	false	55	pest-undealt rule	"Nothing violent."
+"croak crest"	pest-known rule	false	55	pest-undealt rule	"Nothing forms to kill the [poke pest]."
+"toke test"	pest-known rule	false	55	pest-undealt rule	"Hey now! You [if wild weed is moot]had your fun. Don't overdo it[else if wild weed is touchable]might indulge, but you don't need to, and besides, you need a source of flame[else]don't have, or need, anything smokable[end if]."
+"woke west"	pest-known rule	false	55	pest-undealt rule	"The [poke pest] doesn't care about directions."
+
 table of lurking lump guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "perking pump"	lump-known rule	false	--	--	"I don't want to know."
@@ -622,8 +629,7 @@ this is the have-clay-cloak rule: if player has clay cloak, the rule succeeds;
 
 this is the have-toe-tappin rule: if player has toe tappin row rappin, the rule succeeds;
 
-this is the hell-horn-near rule:
-	if hell horn is touchable, the rule succeeds;
+this is the hell-horn-near rule: if hell horn is touchable, the rule succeeds;
 
 this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
 
@@ -700,6 +706,8 @@ this is the mean-moes-by rule: if mean moe's is touchable, the rule succeeds;
 this is the meed-or-weed rule: if player carries mild mead or player carries wild weed, the rule succeeds;
 
 this is the peasant-around rule: if Pain Peasant is touchable, the rule succeeds;
+
+this is the pest-known rule: if joke jest poke pest is not off-stage, the rule succeeds;
 
 this is the pit-pound-unsolved rule: if player is in Pit Pound and sco-fit-found is false, the rule succeeds;
 
@@ -784,6 +792,8 @@ this is the not-fit-yet rule: if sco-fit-found is false, the rule succeeds;
 this is the not-near-yet rule: if sco-not-near is false, the rule succeeds;
 
 this is the not-rolled-yet rule: if sco-really-rolling is false, the rule succeeds;
+
+this is the pest-undealt rule: if sco-bloke-blessed is false, the rule succeeds;
 
 this is the shawl-unloled rule: if shy shawl is touchable and sco-lie-lol is false, the rule succeeds;
 

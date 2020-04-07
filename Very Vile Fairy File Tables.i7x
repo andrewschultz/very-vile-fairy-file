@@ -1244,7 +1244,7 @@ a goodrhyme rule (this is the vc-bloke-blessed rule):
 	ready;
 
 this is the vr-bloke-blessed rule:
-	say "You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.";
+	say "You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.";
 	now sco-bloke-blessed is true;
 
 this is the vr-pull-pieced rule:

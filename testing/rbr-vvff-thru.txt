@@ -895,6 +895,20 @@ by one point
 
 ###newloc fun fen
 
+@mis
+> broke breast
+Learner needle
+Nothing violent.
+> croak crest
+Learner needle
+Nothing forms to kill the joke jest poke pest.
+> toke test
+Learner needle
+Hey now! You don't have, or need, anything smokable.
+> woke west
+Learner needle
+The/doesn't care about directions.
+
 @ha
 > zbloke blessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
@@ -912,6 +926,20 @@ by one point
 > bloke blessed
 by one point
 You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+
+@mis
+> broke breast
+!Learner needle
+Nothing violent.
+> croak crest
+!Learner needle
+Nothing forms to kill the/.
+> toke test
+!Learner needle
+Hey now! You/had your fun with drugs/might do something for fun, but you don't need to, and you need a source of flame/don't have, or need, anything smokable/.
+> woke west
+!Learner needle
+The/doesn't care about directions.
 
 @ha
 > really rolling
@@ -4494,10 +4522,18 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
+@mis
+> toke test
+Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
+
 @all,mis,ha,ver
 # maybe this should be !min?
 > wild weed
 by one point
+
+@mis
+> toke test
+Hey now! You had your fun. Don't overdo it.
 
 @ver
 > eat wild weed
