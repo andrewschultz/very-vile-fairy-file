@@ -8,7 +8,7 @@ the story headline is "Less Lame Guess Game: Double Dip Trouble Trip"
 
 volume includes
 
-the release number is 4.
+the release number is 5.
 
 release along with a website.
 
@@ -210,11 +210,11 @@ core-max is a number that varies. core-max is 81. [core-max is fixed. It is the 
 
 min-needed is a number that varies. min-needed is 81. [min-needed increases as you find LLPs.]
 
-max-bonus is a number that varies. max-bonus is 13.
+max-bonus is a number that varies. max-bonus is 14.
 
 cur-bonus is a number that varies. cur-bonus is 0. [we could define min-needed as core-max + cur-bonus I guess.]
 
-isle-score is a number that varies. isle-score is 7. [this is the number of points in the endgame.]
+isle-score is a number that varies. isle-score is 7. [this is the number of points in the endgame. 4 in isle, 3 in tile]
 
 core-score is a number that varies. core-score is 0.
 
@@ -1451,7 +1451,7 @@ check going north in Gassed Gap:
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
 	if sco-go-gappin is false, say "You whistle in fear. You need some sort of motivation. One last song, maybe" instead;
 	unless evidence-pieces is 3, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
-	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit.";
+	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit. The way north and up crumbles after you take it. When you turn back to look, somehow, you're on an island.";
 	isle-adjust-score-think;
 
 to decide what number is bag-point: decide on boolval of whether or not player has big bag;
@@ -1459,7 +1459,9 @@ to decide what number is bag-point: decide on boolval of whether or not player h
 to isle-adjust-score-think:
 	repeat through table of verb checks:
 		if think-cue entry is true, now think-cue entry is false; [SPARK SPLIFF, for instance, can no longer be done, along with other LLPs(?) ]
-	now max-poss is isle-score + score + 1 - bag-point + boolval of whether or not sco-really-rolling is false;
+	say "rolling [boolval of sco-really-rolling].";
+	say "blessed c[boolval of sco-bloke-blessed].";
+	now max-poss is isle-score + score + 2 - (boolval of sco-really-rolling + boolval of sco-bloke-blessed);
 
 to decide which number is evidence-pieces:
 	decide on boolval of sco-see-sign + boolval of (whether or not player has backed binder) + boolval of (whether or not coral cage is moot);
@@ -1501,9 +1503,7 @@ part Airy Isle 0,5
 
 Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses.
 
-check going south in Airy Isle:
-	if climb-clear is true, say "Since you used the CLIMB CLEAR jump command, going south would mess things up." instead;
-	if Bot Board is in Airy Isle, say "The Bot Board loses interest as you flee back south.";
+check going south in Airy Isle: say "There is no way back. Your destiny awaits." instead;
 
 for printing a locale paragraph about a person (called per) in Airy Isle:
 	now per is mentioned;
@@ -3660,6 +3660,7 @@ showmissesing is an activity.
 rule for showmissesing:
 	if sco-really-rolling is false, say "At any time, you could've guessed my pen name was a riff on [b]REALLY ROLLING[r].";
 	if sco-start-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
+	if sco-start-strong is false, say "After visiting the Fun Fen, you could've brushed off the [poke pest] with [b]BLOKE BLESSED[r], or [b]BLEST[r].";
 	if sco-appealing-appear is false, say "You could've figured the Peeling Pier's brand name as [b]APPEALING APPEAR[r].";
 	if sco-whatta-wanksta is false, say "You could've said [b]WHAT A or WHATTA WANKSTA[r] to the Gutta Ganksta before saying LOTS LAME in the mall.";
 	if sco-ho-happen is false, say "You could've said [b]HO HAPPEN[r] while listening to [Toe].";

@@ -1,6 +1,6 @@
 Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
-"This is divided into 3 volumes: the tables, the core code and the big meta table. It is roughly copied from Ailihphilia. Ctrl-end for meta table. The core code is about a page long, so you can go ctrl-end page-up for that."
+"This is divided into 3 volumes: the tables, the core code and the big meta table. The structure is roughly copied from Ailihphilia. Ctrl-end for meta table. The core code is about a page long, so you can go ctrl-end page-up for that."
 
 [dbh.py shortens to the debug version]
 
@@ -26,6 +26,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "flim|skim"	"flam|scam"	--	--	false	false	true	false	false	Trim Tram	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
 "spark"	"spliff"	--	--	false	true	false	false	false	Fun Fen	vc-spark-spliff rule	vr-spark-spliff rule	--	"You can [b]SPARK SPLIFF[r] [once-now of vc-spark-spliff rule] you've brought something combustible [here-to of Fun Fen]." [start of Fun Fen]
 "strong"	"start"	--	--	false	true	false	false	false	Fun Fen	vc-strong-start rule	vr-strong-start rule	--	--
+"bloke"	"blessed|blest"	--	--	false	true	false	false	false	--	vc-bloke-blessed rule	vr-bloke-blessed rule	--	--
 "fall"	"free"	--	--	false	true	true	false	false	Fun Fen	vc-fall-free rule	vr-fall-free rule	--	--
 "dive"	"deep"	--	--	false	true	true	false	false	Fun Fen	vc-dive-deep rule	vr-dive-deep rule	--	--
 "paper"	"pile"	--	--	false	true	true	false	false	Fun Fen	vc-paper-pile rule	vr-paper-pile rule	--	--
@@ -642,7 +643,6 @@ this is the vr-flim-flam rule:
 	say "That does it! The tram moves off to a more open place...";
 	process the trimtramcmd rule;
 	start-middlegame;
-	phbt Trim Tram;
 
 a goodrhyme rule (this is the vc-full-feast rule) :
 	if Bull Beast is not in location of player, unavailable;
@@ -1234,6 +1234,18 @@ a goodrhyme rule (this is the vc-pull-pieced rule) :
 		vcp "The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.";
 		not-yet;
 	ready;
+
+a goodrhyme rule (this is the vc-bloke-blessed rule):
+	if joke jest poke pest is touchable, ready;
+	if joke jest poke pest is off-stage, unavailable;
+	if sco-bloke-blessed is true:
+		say "Telling someone or something more than once that you're ignoring it never quite works.";
+		already-done;
+	ready;
+
+this is the vr-bloke-blessed rule:
+	say "You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.";
+	now sco-bloke-blessed is true;
 
 this is the vr-pull-pieced rule:
 	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
