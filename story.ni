@@ -537,7 +537,7 @@ to decide whether need-healing:
 
 check going in Fun Fen:
 	if noun is north:
-		if sco-fall-free is false, say "A voice booms in your head: 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+		if sco-fall-free is false, say "The [poke pest] whispers in your head: 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
 		if need-healing, say "You're not ready to go back and confront the Bull Beast in your injured state yet." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
@@ -1344,7 +1344,7 @@ Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printe
 check going south in Foe Field So Sealed:
 	if Pain Peasant is in Foe Field, say "As you leave, the Pain Peasant whines 'My, me, fly, flee!' Perhaps you gave up too quickly, and there's a simple way by. Eh, later.";
 
-check going north in Foe Field So Sealed: if sco-show-shield is false and Pain Peasant is moot, say "A booming voice calls 'YO! YIELD!' You need to find a way to protect yourself from it." instead;
+check going north in Foe Field So Sealed: if sco-show-shield is false and Pain Peasant is moot, say "A booming call of 'YO! YIELD!' echoes. There's something more than the [poke pest]'s taunting, there. You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
@@ -1535,7 +1535,7 @@ there is a thing called the go gate. it is fakeenter. "A go gate stands here. Yo
 check taking go gate: try entering go gate instead.
 
 check entering go gate:
-	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' a voice says, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
+	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' the [poke pest] whispers, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
 
 the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait]
@@ -1563,14 +1563,14 @@ chapter Very Vile Fairy File
 the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". bore-rule of Very Vile Fairy File is bore-vvff rule. [-> bury bile]
 
 this is the bore-vvff rule:
-	if current action is talktoing, say "'THUMP THAT CHUMP-CHAT!' booms a loud voice from inside the [fairy file]." instead;
+	if current action is talktoing, say "'THUMP THAT CHUMP-CHAT!' booms from inside the [fairy file]." instead;
 	if current action is closing or current action is opening or current action is taking or current action is attacking, now skip-bore-text is true;
 
 check opening very vile fairy file: try closing very vile fairy file instead;
 
 check closing very vile fairy file: say "You will need to close the book on the [fairy file] with what you've been doing all game." instead;
 
-check taking very vile fairy file: say "A voice from the [fairy file]: 'Oh, ick! So sick!' You should've expected that, really." instead;
+check taking very vile fairy file: say "From the [fairy file]: 'Oh, ick! So sick!' You should've expected that, really." instead;
 
 understand "vv/ff" and "vvff" as Very Vile Fairy File.
 
@@ -1831,9 +1831,11 @@ the need bag for lots of items rule is listed last in the check taking rulebook.
 
 chapter undoing
 
+to say pest-sneer: say "You [if poke pest is touchable]hear the [poke pest] whisper[else]imagine someone sneering[end if]"
+
 before undoing an action:
 	if save undo state is false:
-		say "You hear a voice booming 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
+		say "[pest-sneer] 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
 		enable saving of undo state;
 	else:
 		say "Wiping one's typing ... TONS!";
@@ -1844,7 +1846,8 @@ chapter trivial pointless but amusing verbs
 the block attacking rule is not listed in any rulebook.
 
 check attacking:
-	if noun is very vile fairy file, say "You imagine a voice saying 'Big boom! Dig doom!' You step back and, err, rig room." instead;
+	if noun is very vile fairy file, say "[pest-sneer] 'Big boom! Dig doom!' You step back and, err, rig room." instead;
+	if noun is poke pest, say "'Lash like trash, tyke!' the [poke pest] whispers." instead;
 	if noun is Kerry Kyle, say "Maim-me aim? Eeee..." instead;
 	if noun is go gate, say "Ho! Hate!" instead;
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
@@ -1865,7 +1868,7 @@ to say yn-tell: say "[one of](you never need to answer yes/no questions unless s
 the block swearing obscenely rule is not listed in any rulebook.
 
 check swearing obscenely:
-	if player is in Tarry Tile, say "A voice from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown.";
+	if player is in Tarry Tile, say "A howl from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown.";
 	say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
 
 the block swearing mildly rule is not listed in any rulebook.
@@ -3450,7 +3453,7 @@ Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporari
 
 book meta verbs
 
-check saving the game for the first time: say "A mocking disembodied voice teases you, 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if Dave is a better name for a hero than Kerry Kyle.";
+check saving the game for the first time: say "[pest-sneer] 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if someone named Dave should be on this quest instead, but it passes.";
 
 check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
@@ -4240,7 +4243,7 @@ sco-really-rolling is a truth state that varies.
 
 to start-middlegame:
 	move the player to Fun Fen;
-	say "After looking around, you hear a voice. 'Hot hero? Zot! Zero!' It's much more convincing audibly than as bad MSPaint cover art. What could it be? You remember, now, some things the Gift Giver said. Your eyes glazed over at the mention of [the poke pest]. But apparently you don't need to DO anything to or with it, just not let it get in your way.";
+	say "After looking around, you are taunted by 'Hot hero? Zot! Zero!' It's much more convincing audibly than as bad MSPaint cover art. What could it be? You remember, now, some things the Gift Giver said. Your eyes glazed over at the mention of [the poke pest]. But apparently you don't need to DO anything to or with it, just not let it get in your way.";
 	now player has the joke jest poke pest;
 	repeat with X running through rooms in worst whew:
 		phbt X;

@@ -141,7 +141,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "one wen"	in-fun-fen rule	false	--	--	"Your skin remains unblemished, despite you tempting fate."
 "pun pen"	in-fun-fen rule	false	--	--	"You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me."
 "won when"	in-fun-fen rule	false	--	--	"Hey, now! The Fun Fen is too cheery for such 'Am I done yet' angst."
-"bark biff"	in-fun-fen rule	false	-56	spliff-unsparked rule	"A cruel voice calls from the distance 'Hello, McFly? Hello!'" [?? this-faint]
+"bark biff"	in-fun-fen rule	false	-56	spliff-unsparked rule	"The [poke pest] whispers 'Hello, McFly? Hello!'" [?? this-faint]
 "gaper guile"	vial-or-pile rule	false	54	vapor-vial-vis rule	"You stare a bit but get no insight[kind-of-paper]."
 "taper/tapir tile"	vial-or-pile rule	false	54	vapor-vial-vis rule	"No tile appears, but on the bright side, neither does a charging tapir[kind-of-paper]."
 "aper isle"	vial-or-pile rule	false	54	vapor-vial-vis rule	"You are not teleported to somewhere similar to the Fun Fen."
