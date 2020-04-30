@@ -20,6 +20,9 @@ import mytools as mt
 import __main__ as main
 
 max_full_score = 0
+# the maximum score is ...
+max_score = 0
+# vvff specific: if we have optional points
 max_bonus = 0
 core_max = 0
 
@@ -31,8 +34,15 @@ delete_after = False #It's ok to have this, since we don't copy over the pre-fil
 verbose = True
 
 open_last_err = True
+need_core_max = False
 
 print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
+
+def get_max_file():
+    my_proj = i7.dir2proj()
+    if my_proj == 'under-they-thunder':
+        return i7.hdr('ut', 'glo')
+    return i7.main_src(my_proj)
 
 def usage(cmd="USAGE LIST"):
     print(cmd)
@@ -40,6 +50,11 @@ def usage(cmd="USAGE LIST"):
     print("-d/-da = delete after, -nd/-dn = don't")
     print("-v = verbose")
     exit()
+
+def need_core_from_path():
+    if 'very-vile' in os.path():
+        return True
+    return False
 
 def zap_it(base):
     print("Relinking", base)
@@ -62,13 +77,6 @@ def first_line(txt):
             q = re.sub("^> *", "", q)
             return q
     return ""
-
-def get_first_num(txt):
-    temp = re.sub(".*? -?([0-9]+).*", r'\1', txt)
-    try:
-        return int(temp)
-    except:
-        print("WARNING no number found in line string {:s}. Returning 0.".format(txt.strip()))
 
 def new_points(my_line, my_score, end_points = False, max_num = 0):
     if max_num:
@@ -121,6 +129,8 @@ while cmd_count < len(sys.argv):
     elif arg == 'lo' or arg == 'loc': wri_dir = wri_loc
     elif arg == 'of': open_last = False
     elif arg == 'ol': open_last = True
+    elif arg == 'cm': need_core_max = True
+    elif arg == 'ncm' or arg == 'nc': need_core_max = False
     elif arg == 'rl':
         relink()
         exit()
@@ -128,19 +138,26 @@ while cmd_count < len(sys.argv):
     else: usage("BAD COMMAND {:s}".format(sys.argv[cmd_count]))
     cmd_count += 1
 
-i7.dir2proj("vv")
+file_with_max = get_max_file()
 
-with open("story.ni") as file:
+with open(file_with_max) as file:
     for (line_count, line) in enumerate(file, 1):
         if line.startswith("max-bonus"):
-            max_bonus = get_first_num(line)
+            max_bonus = mt.num_value_from_text(line)
             if max_bonus and core_max: break
         elif line.startswith("core-max"):
-            core_max = get_first_num(line)
+            core_max = mt.num_value_from_text(line)
             if max_bonus and core_max: break
+        elif line.startswith("the maximum score is "):
+            max_score = mt.num_value_from_text(line)
+            break
 
-if not (max_bonus and core_max): sys.exit("Failed to read in maximum and minimum full scores. Max={} Min={}. Bailing.".format(max_bonus, core_max))
-max_full_score = max_bonus
+if max_score or (max_bonus and core_max):
+    pass
+else:
+    sys.exit("Failed to read in maximum and minimum full scores. Max={} Min={}. Bailing.".format(max_bonus, core_max))
+
+max_full_score = max_bonus if max_bonus else max_score
 
 warnings = []
 
@@ -159,5 +176,5 @@ insert_stuff("walkthrough-full-pre.txt", os.path.join(wri_dir, "walkthrough-full
 
 lw = len(warnings)
 if lw:
-    print("Found {:d} warning{:s}: {:s}".format(lw, mt.plur(lw), ", ".join(lw)))
+    print("Found {:d} warning{:s}: {:s}".format(lw, mt.plur(lw), ", ".join([str(x) for x in warnings])))
     i7.npo("wbase.txt", warnings[-1 if open_last_err else 0])
