@@ -1,7 +1,7 @@
 #
 # wdrop.py
 #
-# Very Vile Fairy File specific
+# Very Vile Fairy File specific at first, branched to Under They Thunder
 #
 # this drops in the new walkthroughs created after rbr.py wbase.txt forks the min- and max- point walkthroughs.
 #
@@ -26,8 +26,12 @@ max_score = 0
 max_bonus = 0
 core_max = 0
 
-wri_dir = i7.gh_src("vv", give_source = False)
-wri_loc = i7.sdir("vv")
+my_proj = i7.dir2proj()
+
+wri_dir = i7.gh_src(my_proj, give_source = False)
+wri_loc = i7.sdir(my_proj)
+
+fix_spaces = False
 
 out_read_only = True
 delete_after = False #It's ok to have this, since we don't copy over the pre-files to the source control directory
@@ -36,7 +40,9 @@ verbose = True
 open_last_err = True
 need_core_max = False
 
-print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
+show_rbr_warning = '-norbr' in sys.argv or 'norbr' in sys.argv
+if show_rbr_warning: print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
+
 
 def get_max_file():
     my_proj = i7.dir2proj()
@@ -130,10 +136,12 @@ while cmd_count < len(sys.argv):
     elif arg == 'of': open_last = False
     elif arg == 'ol': open_last = True
     elif arg == 'cm': need_core_max = True
+    elif arg == 'fs': fix_spaces = True
     elif arg == 'ncm' or arg == 'nc': need_core_max = False
     elif arg == 'rl':
         relink()
         exit()
+    elif arg == 'norbr': show_rbr_warning = False
     elif arg == '?': usage()
     else: usage("BAD COMMAND {:s}".format(sys.argv[cmd_count]))
     cmd_count += 1
@@ -160,21 +168,31 @@ else:
 max_full_score = max_bonus if max_bonus else max_score
 
 warnings = []
+base_out_string = ''
 
 with open("wbase.txt") as file:
     for (line_count, line) in enumerate(file, 1):
         if line.startswith(">"):
-            old_line = line
-            line = re.sub("^> *", "> ", line)
-            line = re.sub(" *\(", " (", line)
-            if old_line != line:
+            if line[1] != ' ':
                 warnings.append(line_count)
                 print("WARNING bad spacing line {:d} of wbase.txt: {:s}".format(line_count, line.strip()))
-
-insert_stuff("walkthrough-pre.txt", os.path.join(wri_dir, "walkthrough.txt"), delete_after, core_max)
-insert_stuff("walkthrough-full-pre.txt", os.path.join(wri_dir, "walkthrough-full.txt"), delete_after, max_full_score)
+                line = line[0] + ' ' + line[1:]
+        if fix_spaces:
+            base_out_string += line
 
 lw = len(warnings)
-if lw:
-    print("Found {:d} warning{:s}: {:s}".format(lw, mt.plur(lw), ", ".join([str(x) for x in warnings])))
+
+if fix_spaces and lw:
+    print("Fixing", len(warnings), "spacing(s)")
+    fout = open("wbase.txt", "w")
+    fout.write(base_out_string)
+    fout.close()
+
+insert_stuff("walkthrough-pre.txt", os.path.join(wri_dir, "walkthrough.txt"), delete_after, core_max)
+
+if my_proj != 'under-they-thunder':
+    insert_stuff("walkthrough-full-pre.txt", os.path.join(wri_dir, "walkthrough-full.txt"), delete_after, max_full_score)
+
+if lw and not fix_spaces:
+    print("Found {:d} warning{:s}: {:s} (fix with -fs)".format(lw, mt.plur(lw), ", ".join([str(x) for x in warnings])))
     i7.npo("wbase.txt", warnings[-1 if open_last_err else 0])
