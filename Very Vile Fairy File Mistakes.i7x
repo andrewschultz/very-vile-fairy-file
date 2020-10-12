@@ -481,7 +481,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "buck bear/bare"	stair-or-snare rule	false	44	no-snare-yet rule	"There are enough animals in this game that could maul you." [start Blinding Blaze]
 "chuck chair"	stair-or-snare rule	false	44	no-snare-yet rule	"No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway." [note losing the h's is doable, but it's vile and vulgar enough, I can't find a funny response.]
 "duck dare"	stair-or-snare rule	false	44	no-snare-yet rule	"Too late for that. You took Kit Cohen's dare, and you're on a quest, now."
-"fuck fair/fare"	stair-or-snare rule	false	44	no-snare-yet rule	"There are other games for that."
+"fuck fair/fare"	stair-or-snare rule	false	44	no-snare-yet rule	"There are other games for that. Doesn't this one have enough scoring?"
 "muck mare/mere/mayor"	stair-or-snare rule	false	44	no-snare-yet rule	"No, it's something much cleaner than that."
 "puck pair/pare/pere/payer"	stair-or-snare rule	false	44	no-snare-yet rule	"No time for hockey! You also aren't really dressed for the cold."
 "pluck player"	stair-or-snare rule	false	44	no-snare-yet rule	"Personal grooming can wait."

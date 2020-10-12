@@ -40,7 +40,7 @@ verbose = True
 open_last_err = True
 need_core_max = False
 
-show_rbr_warning = '-norbr' in sys.argv or 'norbr' in sys.argv
+show_rbr_warning = not ('-norbrwarn' in sys.argv or 'norbrwarn' in sys.argv)
 if show_rbr_warning: print("NOTE do not run wdrop.py on its own--run rbr.py wbase.txt.")
 
 
@@ -105,7 +105,10 @@ def insert_stuff(f, fout, delete=False, max_here = 0):
     with open(f) as file:
         for (line_count, line) in enumerate(file, 1):
             if line.startswith("##"): continue #this is for comments
-            if re.search("^>.*\([u0-9]+\)", line):
+            if line.startswith("#+"):
+                cur_points += 1
+                fstream.write("1 point: {}\n".format(line[2:].strip()))
+            elif re.search("^>.*\([u0-9]+\)", line):
                 cur_points += 1
                 fstream.write(new_points(line, cur_points, max_num = max_here))
             elif re.search(r'^>.*\(x(-[0-9]+)?\)', line):
@@ -141,7 +144,7 @@ while cmd_count < len(sys.argv):
     elif arg == 'rl':
         relink()
         exit()
-    elif arg == 'norbr': show_rbr_warning = False
+    elif arg == 'norbrwarn': show_rbr_warning = False
     elif arg == '?': usage()
     else: usage("BAD COMMAND {:s}".format(sys.argv[cmd_count]))
     cmd_count += 1

@@ -2869,6 +2869,7 @@ That's over. Time to work with Jake!
 >w
 >enter boat
 >gt lake lea
+
 You'll need to take the boring boat here to get back there.
 >w
 >gt lake lap

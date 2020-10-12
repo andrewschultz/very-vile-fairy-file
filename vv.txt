@@ -176,7 +176,7 @@ Not by you alone.
 This command won't work until you have friends post-Whining War.
 They will help you move the corpse, though it's still tough to move all at once.
 PULL PIECED.
-> PIDDLING PAIN (WEST)
+>PIDDLING PAIN (WEST)
 >>STARK STORE
 ?There's nothing here! Should there be?
 Yes. Maybe something that could create passage.
@@ -247,7 +247,7 @@ It provides a clue about the area beyond.
 The first word has two homonyms.
 Poor Ponder, For Fonder... and you're in History Hall...
 YOURE YONDER. (Yore and Your are also accepted.)
-> GOT GEAR HOT HERE
+>>GOT GEAR HOT HERE
 ?Is the shawl useful?
 For a last lousy point and for lurking lump charges, yes.
 Otherwise, no.
@@ -261,7 +261,7 @@ NOT NEAR.
 It is out of place in a clothing store.
 Maybe make it into something you could wear.
 HARD HAT.
-> VENDING VIBE
+>>VENDING VIBE
 ?How do I deal with the trending tribe?
 They and the vending vibe want money, which you don't have.
 You need to get rid of that, for something that doesn't usually charge money.
@@ -277,7 +277,7 @@ Entertainment.
 We Whine Me Mine seems to have nothing practical for you.
 But if you read it right, it will describe the Crimes Crew Times Two's strategies and exploits.
 You need to SEE SIGN.
->YORE YONDER
+>>Y'OLD YARD
 ?What does the bold bard need to get in the Shoaled Shard?
 Nothing rhyming with bold bard.
 The bold bard needs a distraction.
@@ -285,8 +285,8 @@ You can make one from under your cloak.
 If you don't have the clay cloak or haven't cleaned it off yet, you won't be able to do what comes next.
 The clashing cloak can blind people a different way.
 SMASHING SMOKE.
-> PIDDLING PAIN (EAST)
->> VIOLENT VALE
+>PIDDLING PAIN (EAST)
+>>VIOLENT VALE
 ?Can I make this place nicer?
 Yes, there are two phrases--well, one, where the second word is a homonym.
 It would be less stressful if it were quieter.
@@ -308,7 +308,7 @@ There's only one other place.
 ?Can I dispel the frightening fridge?
 Certainly. It can become something that allows passage elsewhere.
 A BRIGHTENING BRIDGE.
->> WHINING WAR
+>>WHINING WAR
 ?How do I stop the whining?
 Toe Tappin' Row Rappin is bouncing around inside your head.
 You can make a double rhyme to disburse everyone's energy.
@@ -325,7 +325,7 @@ They need something to do.
 Don't continue until you've all eaten.
 MINING MORE or MINING MOOR.
 Now your gold guard is upgraded!
-> BROWSY BREAKS
+>BROWSY BREAKS
 >>LAKE LEA
 ?How can I get Jake G to notice me?
 He is sleeping.
@@ -340,7 +340,7 @@ TAKE TEA.
 ?Jake G wants payment, or does he?
 You need to show a sense of humor. Pay him but not really.
 FAKE FEE.
->> LAKE LAP
+>>LAKE LAP
 ?What do I do here?
 There are two things. You're a bit lost here.
 What's good when you're lost?
@@ -361,7 +361,7 @@ Yes. There was one more thing to do with Jake G.
 It relates to TAKE TEA.
 There was one sort of food Jake didn't like.
 BREAK BRIE.
->> BEEN BUGGIN
+>>BEEN BUGGIN'
 ?How do I stop feeling way wrong?
 A double rhyme of WAY WRONG.
 There's only a couple that make sense.
@@ -380,20 +380,20 @@ MEAN MUGGIN will improve you mentally.
 For maximum points, yes.
 It has two solutions.
 You can uncover a DUMPED DUSTER or say BUMPED BUSTER.
-> PIDDLING PAIN (NORTH)
+>PIDDLING PAIN (NORTH)
 >>SOFT SAND
 ?What's with the place I can't reach in the west?
 You can, if the soft sand becomes something else.
 LOFT LAND.
 Toggling the soft sand allows you to visit the Shirk Shell or the Curst Cave.
->SHIRK SHELL
+>>SHIRK SHELL
 ?How do I get the jerk gel? Do I need to?
 Well, you need to do the opposite of shirking.
 WORK WELL.
 ?What do I do with the jerk gel?
 You may notice the brand is SUPPLE SAPS.
 When you have enough caps, you can COUPLE CAPS.
->LOOPING LAIR
+>>LOOPING LAIR
 ?What is the hooping hare doing here?
 You need to beat it at basketball to get to the stooping stair.
 And quiet the whooping ... where?
@@ -402,7 +402,7 @@ The hooping hare sure can dunk, dude!
 BUNK BOOED will get rid of things.
 Alternatively, since this is such a blatant ripoff of Space Jam, SUNK SUED would work, too.
 Or it would, if any of this nonsense were in the game.
->CURST CAVE
+>>CURST CAVE
 ?What do I do about the screaming skull?
 Maybe you can make it less intrusive and absorbing.
 DREAMING DULL.
@@ -412,7 +412,7 @@ FIRST FAVE makes it more pleasant.
 ?What is inside the tool tap?
 Well, it's not a tool, but it's something that rhymes.
 You can get a COOL CAP.
->HERE HULL
+>>HERE HULL
 ?What is with the beer bull?
 You need to get behind it.
 It won't chase you unless you anger it.
