@@ -286,7 +286,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 table of Stark Store guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "lark lore"	in-stark-store rule	false	44	need-mark-more rule	"This is no time for jokes! Or bird-watching."
-"arc ore/oar/or"	in-stark-store rule	false	44	need-mark-more rule	"The store remains rectangular-ish. Probably for the best."
+"arc/ark ore/oar/or"	in-stark-store rule	false	44	need-mark-more rule	"The store remains rectangular-ish. Probably for the best."
 "bark bore/boar"	in-stark-store rule	false	44	need-mark-more rule	"You don't need to make a tree or summon anything tiresome or porcine."
 "hark whore"	in-stark-store rule	false	44	need-mark-more rule	"That's inappropriate. Logical, but inappropriate."
 "park pore/poor"	in-stark-store rule	false	44	need-mark-more rule	"The store cannot become outdoorsy. Or a parking lot."

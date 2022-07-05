@@ -3,7 +3,7 @@ Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 "This is divided into 3 volumes: the tables, the core code and the big meta table. The structure is roughly copied from Ailihphilia. Ctrl-end for meta table. The core code is about a page long, so you can go ctrl-end page-up for that."
 
 [dbh.py shortens to the debug version]
-
+[duptab.py checks for duplicate tables]
 [sct.py checks for a lot of things including the Table of Bad Locs]
 
 volume core tables
@@ -1732,6 +1732,21 @@ volume random tables
 
 table of library books [xxbooks] [xxlibe] [xxlibrary]
 randtxt
+"Hell, Heaven: Sell Seven[r], by Belle Bevin"
+"Spot Spice, Not Nice Lot Lice[r], by Trot Trice"
+"Stall STAT, Fall Flat[r], by Paul Platt"
+"Bad Ban, Madman[r], by Chad Chan and Tad Tan"
+"Dandy Dane's Candy Canes[r], by Mandy Maines"
+"Queequeg's Key Kegs[r], by Lee Leggs"
+"Rick Roll? Sick Soul[r], by Dick Dole"
+"Fold, Fall, Bold Ball: Cold Call Sold Saul"
+"Locksley Mocks Me"
+"Feel Fright, Wheelwright"
+"Mate Maury's Straight Stories"
+"Glowing Glitter, Knowing Knitter"
+"Say, Slummer, Pay Plumber"
+"Less-Leet Chess Cheat"
+"Sick, Say? Pick, Pay, Hick--Hey[r], by Rick Ray"
 "Bane, Bones, Stain Stones[r], by Jane Jones"
 "Bank Books, Crank Crooks[r], by Hank Hooks"
 "Barge, Banned Large Land"
@@ -1747,8 +1762,8 @@ randtxt
 "Do, Dare: Woo! Where"
 "Duel Down, Cruel Crown"
 "Dust Devils['] Lust Levels"
-"Fall For Stall Store"
-"Fat Farms['] Chat Charms: at Arms"
+"Fall for Stall Store"
+"Fat Farms['] Chat Charms at Arms"
 "Find Fame, Mind, Maim"
 "Fly Phat Spy Spat"
 "Good Girl Would Whirl"
@@ -1812,15 +1827,21 @@ randtxt
 "There-They-Wear Way"
 "Trench Tries French Fries"
 
-table of mall songs [xxmall] [xxsongs]
+table of mall songs [xxsongs]
 randtxt
+"Pole Perching, Soul Searching"
+"Tasked: Ten Masked Men"
+"Drooler Drew's Crueler Crews"
+"Heigh-Ho, I Owe"
+"Swift Sweep Lift Leap"
+"Mesh, Mend, Fresh Friend"
 "Be Bop: See, Sop"
 "Beatbox Fleet Flocks"
 "Big Bang Gig Gang[r], by Sig Sang"
 "Blue Blood Crew? Crud"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
 "Clear Classed Beer Blast Mo['] Massed"
-"Deal Dope?! Heal! Hope!"
+"Deal Dope?! Heal! Hope!" [puncok]
 "Doom Doc's Boom-Box Room Rocks"
 "Eh, Un-Gay Gun"
 "Fit Fo['] Wit, Whoah" [show]
@@ -1833,7 +1854,7 @@ randtxt
 "Hata['] Heft Data, Deft"
 "Hey, Hang, Gay Gang"
 "Lo Love Show Shove"
-"Mercy Me, Jersey G[r], by Versy V & Percy P"
+"Mercy Me, Jersey G[r], by Versy V & Percy P" [capsok]
 "My, Mo['] Sly, Slow"
 "Old, Rude, Cold, Crude"
 "Pay, Pow, Hey, How"
@@ -1843,8 +1864,16 @@ randtxt
 "Will Woo [']Til Two"
 "You'll Yell Woo Well"
 
-table of miscellaneous people [xxpeople]
+table of miscellaneous people [xxpeople] [xxbadguy]
 randtxt
+"Tweet-Too-Sweet Sue"
+"Toll Taxin['] Joel Jackson"
+"Bad-Back Mad Mack"
+"Bad Back Mad Mack"
+"Whole Haxin['] Joel Jackson"
+"Seek-So-Meek Moe"
+"Guy Guess-My-Mess"
+"Lich Liker Rich Riker"
 "All Anger Bawl Banger Saul Sanger"
 "Be-Bought Lee Lott"
 "Big Baddy Pig Paddy"
@@ -1894,6 +1923,7 @@ randtxt
 
 table of motivational books [xxmotivational]
 randtxt
+"hark honey: mark money"
 "Ache or Make More: Lake Lore"
 "Crew Came Grew Game"
 "Gain Goals, Sane Souls"
@@ -1923,10 +1953,13 @@ randtxt
 "Numb Gnomes['] Dumb Domes"
 "Terse Tale Verse Vale"
 "Whee-Will-He Hill"
+"Fight-for-Flight Floor"
+"Hill Here-Still-Steer"
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
 table of vvff digs [xxtaunts] [xxdigs] [xxmean]
 randtxt
+"Mend, my friend? FRY!"
 "Bad bid, cad kid!"
 "Blue blood? Do? Dud! Boo, bud!"
 "Bud, bug? Dud, dig!"
@@ -1973,7 +2006,7 @@ volume homonym rejections
 chapter thing homonyms
 
 [this should not be alphabetized as otherwise Inform will assume from the first entry, the Bot Board, that everything is a person.]
-[how to fix this?]
+[the fixfirst= in talf.txt makes sure that a regular item comes first.]
 
 table of thing homonyms
 mything	hom-rule (a rule)	myhom (topic)	custom-msg (text)
@@ -2041,7 +2074,6 @@ this is the hom-we-whine-to-whee-wine rule:
 	if the player's command includes "wine":
 		say "[we whine] may drive moral people to drink, but you don't need that. Or homonyms.";
 		the rule succeeds;
-
 
 [zzthr]
 
@@ -2111,9 +2143,6 @@ this is the hom-whining-war-to-wining-wore rule:
 [zzrhr]
 
 volume miscellaneous hints and rules
-
-this is the trivially false rule: the rule fails;
-this is the trivially true rule: the rule succeeds;
 
 to say rhyme-display: [pok]
 	if Fun Fen is visited:
