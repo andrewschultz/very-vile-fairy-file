@@ -107,7 +107,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "whoa|whoah|woe"	"wait"	"weight"	vh-whoa-wait rule	false	true	true	false	false	Airy Isle	vc-whoa-wait rule	vr-whoa-wait rule	--	--
 "tell"	"torn"	--	--	false	false	true	false	false	Tarry Tile	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
 "merry"	"mile"	"marry"	vh-merry-mile rule	false	false	true	false	false	Tarry Tile	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
-"bury"	"bile"	"berry"	vh-bury-bile rule	false	false	true	false	false	Tarry Tile	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is touchable]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
+"bury"	"bile"	"berry"	vh-bury-bile rule	false	false	true	false	false	Tarry Tile	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is fungible]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
 "big"	"bag"	--	--	false	true	true	false	false	--	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
 "really"	"rolling"	--	--	false	true	false	false	false	--	vc-really-rolling rule	vr-really-rolling rule	--	--
 
@@ -183,7 +183,7 @@ this is the vh-meeker-muscle rule: say "Ooh! You're on the right track, but you 
 
 this is the vh-wood-one rule: say "The good gun seems to bend a bit. You must be close to a concrete way to change it." instead;
 
-this is the vh-hot-horde rule: say "Treasure isn't the goal, here. You[if lot lord is touchable] and the lot lord[end if] [if hot horde is touchable]already have[else]need[end if] allies." instead; [?? what about after in place]
+this is the vh-hot-horde rule: say "Treasure isn't the goal, here. You[if lot lord is fungible] and the lot lord[end if] [if hot horde is fungible]already have[else]need[end if] allies." instead; [?? what about after in place]
 
 this is the vh-whoa-wait rule: say "You wouldn't want to be crushed by a weight. But you've got the right idea." instead;
 
@@ -212,7 +212,7 @@ this is the vr-appealing-appear rule:
 		phbt peeling pier;
 
 a goodrhyme rule (this is the vc-backed-binder rule) :
-	if paper pile is not touchable or player has the backed binder, unavailable;
+	if paper pile is not fungible or player has the backed binder, unavailable;
 	ready;
 
 this is the vr-backed-binder rule:
@@ -222,7 +222,7 @@ this is the vr-backed-binder rule:
 	set the pronoun it to backed binder;
 
 a goodrhyme rule (this is the vc-beaker-bustle rule) :
-	if Reeker Russell is not touchable, unavailable;
+	if Reeker Russell is not fungible, unavailable;
 	if sco-beaker-bustle is true:
 		vcal "Russell's moment of interest in the sciences has passed.";
 		already-done;
@@ -287,7 +287,7 @@ this is the vr-boring-boat rule:
 	set the pronoun it to boring boat;
 
 a goodrhyme rule (this is the vc-break-brie rule) :
-	if jake is not touchable, unavailable;
+	if jake is not fungible, unavailable;
 	if sco-wake-whee is false:
 		vcp "This bonus point action won't work until Jake is conscious.";
 		not-yet;
@@ -301,7 +301,7 @@ this is the vr-break-brie rule:
 	now sco-break-brie is true;
 
 a goodrhyme rule (this is the vc-brightening-bridge rule) :
-	if frightening fridge is not touchable, unavailable;
+	if frightening fridge is not fungible, unavailable;
 	ready;
 
 this is the vr-brightening-bridge rule:
@@ -309,7 +309,7 @@ this is the vr-brightening-bridge rule:
 	moot frightening fridge;
 
 a goodrhyme rule (this is the vc-bumped-buster rule) :
-	if clumped cluster is touchable, ready;
+	if clumped cluster is fungible, ready;
 	unavailable;
 
 this is the vr-bumped-buster rule:
@@ -381,9 +381,9 @@ this is the vr-cleared-clay rule:
 a goodrhyme rule (this is the vc-co-capn rule) :
 	if player does not have toe tappin or sco-snake-snap is true, unavailable;
 	if sco-co-capn is true:
-		vcal "Jake already is[if jake is not touchable] and will be when you return to see him[end if].";
+		vcal "Jake already is[if jake is not fungible] and will be when you return to see him[end if].";
 		already-done;
-	if jake is not touchable:
+	if jake is not fungible:
 		vcp "It might be nice to have a cohort for a bit, but there's nobody worthy here.";
 		not-yet;
 	if sco-fake-fee is false:
@@ -397,7 +397,7 @@ this is the vr-co-capn rule:
 	process the check-sing-max rule;
 
 a goodrhyme rule (this is the vc-cool-cap rule) :
-	if tool tap is not touchable, unavailable;
+	if tool tap is not fungible, unavailable;
 	ready;  [?? YOULL YAP / CRUEL CRAP !!!!!]
 
 this is the vr-cool-cap rule:
@@ -489,7 +489,7 @@ this is the vr-dear-dull rule:
 	start-bull-chase;
 
 a goodrhyme rule (this is the vc-dimd rule) :
-	if oi mo is not touchable, unavailable;
+	if oi mo is not fungible, unavailable;
 	ready;
 
 this is the vr-dimd rule:
@@ -518,7 +518,7 @@ this is the vr-dining-door rule:
 	set the pronoun it to dining door;
 
 a goodrhyme rule (this is the vc-dive-deep rule) :
-	if hive heap is not touchable, unavailable;
+	if hive heap is not fungible, unavailable;
 	ready;
 
 this is the vr-dive-deep rule:
@@ -528,7 +528,7 @@ this is the vr-dive-deep rule:
 	set the pronoun it to vapor vial;
 
 a goodrhyme rule (this is the vc-dreaming-dull rule) :
-	if screaming skull is not touchable, unavailable;
+	if screaming skull is not fungible, unavailable;
 	ready;
 
 this is the vr-dreaming-dull rule:
@@ -536,7 +536,7 @@ this is the vr-dreaming-dull rule:
 	say "The screaming skull stops screaming and starts alternatively snoring and mumbling about that time it wound up naked at Undead Orientation, or the time the ghost of its secret crush found proof of said crush, or its own groundhog day studying for an exam it still can't pass, dreaming of their job when home from work, or walking in as a skeleton at its own funeral, or how it wrote a brilliant poem but then woke up, or how its final judgment went a bit differently, for better or worse.[paragraph break]The whining outlasts your own empathy and interest, both real and (later) feigned. The skull, upset and exhausted from its harangue, rolls off through the worst wave. Unable to help yourself, you call out 'May you sleep in interesting dreams!'";
 
 a goodrhyme rule (this is the vc-fake-fee rule) :
-	if jake is not touchable, unavailable;
+	if jake is not fungible, unavailable;
 	if sco-wake-whee is false:
 		vcp "Maybe when Jake is awake.";
 		not-yet;
@@ -772,7 +772,7 @@ this is the vr-grow-grit rule:
 	phbt Po Pit;
 
 a goodrhyme rule (this is the vc-hard-hat rule) :
-	if marred mat is not touchable, unavailable;
+	if marred mat is not fungible, unavailable;
 	ready;
 
 this is the vr-hard-hat rule:
@@ -877,7 +877,7 @@ a goodrhyme rule (this is the vc-lean-luggin rule) :
 	if sco-lean-luggin is true:
 		vcal "You already learned lean luggin['].";
 		already-done;
-	if Dean Duggan is not touchable:
+	if Dean Duggan is not fungible:
 		vcpforce "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
 		not-yet;
 	ready;
@@ -962,7 +962,7 @@ this is the vr-lot-lord rule:
 	set the pronoun him to Lot Lord;
 
 a goodrhyme rule (this is the vc-lots-lame rule) :
-	if Gutta Ganksta is not touchable, unavailable;
+	if Gutta Ganksta is not fungible, unavailable;
 	ready;
 
 this is the vr-lots-lame rule:
@@ -1031,7 +1031,7 @@ a goodrhyme rule (this is the vc-mean-muggin rule) :
 	if sco-mean-muggin is true:
 		vcal "You already learned mean muggin['].";
 		already-done;
-	if Dean Duggan is not touchable:
+	if Dean Duggan is not fungible:
 		vcpforce "You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.";
 		not-yet;
 	ready;
@@ -1042,7 +1042,7 @@ this is the vr-mean-muggin rule:
 	lean-and-mean;
 
 a goodrhyme rule (this is the vc-meeker-muscle rule) :
-	if Reeker Russell is not touchable, unavailable;
+	if Reeker Russell is not fungible, unavailable;
 	if sco-meeker-muscle is true:
 		vcal "Russell's already meeker. Maybe disarm him?";
 		already-done;
@@ -1129,7 +1129,7 @@ this is the vr-mo-mappin rule:
 	set the pronoun it to stuck stair;
 
 a goodrhyme rule (this is the vc-moral-mage rule) :
-	if coral cage is not touchable, unavailable;
+	if coral cage is not fungible, unavailable;
 	if player does not have cage key:
 		vcp "That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.";
 		not-yet;
@@ -1169,7 +1169,7 @@ this is the vr-mystery-mall rule:
 	now ever-hall is true;
 
 a goodrhyme rule (this is the vc-near-null rule) :
-	if Beer Bull is not touchable, unavailable;
+	if Beer Bull is not fungible, unavailable;
 	if sco-near-null is true:
 		vcal "You already reduced the bull's power!";
 		already-done;
@@ -1181,7 +1181,7 @@ this is the vr-near-null rule:
 	now sco-near-null is true;
 
 a goodrhyme rule (this is the vc-no-nappin rule) :
-	if toe tappin row rappin is not touchable, unavailable;
+	if toe tappin row rappin is not fungible, unavailable;
 	if sco-no-nappin is true:
 		vcal "You already changed Toe Tappin Row Rappin that way.";
 		already-done;
@@ -1205,7 +1205,7 @@ this is the vr-not-near rule:
 	now sco-not-near is true;
 
 a goodrhyme rule (this is the vc-paper-pile rule) :
-	if vapor vial is not touchable, unavailable;
+	if vapor vial is not fungible, unavailable;
 	ready;
 
 this is the vr-paper-pile rule:
@@ -1215,7 +1215,7 @@ this is the vr-paper-pile rule:
 	set the pronoun it to paper pile;
 
 a goodrhyme rule (this is the vc-plain-pleasant rule) :
-	if Pain Peasant is not touchable, unavailable;
+	if Pain Peasant is not fungible, unavailable;
 	ready;
 
 this is the vr-plain-pleasant rule:
@@ -1236,7 +1236,7 @@ a goodrhyme rule (this is the vc-pull-pieced rule) :
 	ready;
 
 a goodrhyme rule (this is the vc-bloke-blessed rule):
-	if joke jest poke pest is touchable, ready;
+	if joke jest poke pest is fungible, ready;
 	if joke jest poke pest is off-stage, unavailable;
 	if sco-bloke-blessed is true:
 		say "Telling someone or something more than once that you're ignoring it never quite works.";
@@ -1327,7 +1327,7 @@ this is the vr-silent-sail rule:
 
 a goodrhyme rule (this is the vc-sit-sound rule) :
 	if player is not in Pit Pound, unavailable;
-	if hit hound is not touchable:
+	if hit hound is not fungible:
 		vcal "You already sat sound[if sco-fit-found is false]. But maybe there's a way to feel more comfortable[end if].";
 		already-done;
 	ready;
@@ -1379,7 +1379,7 @@ a goodrhyme rule (this is the vc-so-sappin rule) : [?? we need to make sure this
 	if sco-so-sappin is true:
 		vcal "You already discouraged some whining. Bringing it up again might make you the whiny one.";
 		already-done;
-	if beer bull is touchable:
+	if beer bull is fungible:
 		vcp "That might work on people who understand songs and poetry. The Beer Bull does not. You need a stronger way to kill it off.";
 		not-yet;
 	if player is not in Whining War:
@@ -1443,7 +1443,7 @@ this is the vr-strong-start rule:
 	moot wrong art;
 
 a goodrhyme rule (this is the vc-take-tea rule) :
-	if jake is not touchable, unavailable;
+	if jake is not fungible, unavailable;
 	if sco-wake-whee is false:
 		vcp "Maybe when Jake is awake.";
 		not-yet;
@@ -1457,7 +1457,7 @@ this is the vr-take-tea rule:
 	now sco-take-tea is true;
 
 a goodrhyme rule (this is the vc-tell-torn rule) :
-	if well worn hell horn is not touchable, unavailable;
+	if well worn hell horn is not fungible, unavailable;
 	ready;
 
 this is the vr-tell-torn rule:
@@ -1477,7 +1477,7 @@ this is the vr-tight-tunnel rule:
 	phbt Fight Funnel;
 
 a goodrhyme rule (this is the vc-wake-whee rule) :
-	if Jake G is not touchable, unavailable;
+	if Jake G is not fungible, unavailable;
 	if sco-wake-whee is true:
 		vcal "He's already awake, Blake.";
 		already-done;
@@ -1489,7 +1489,7 @@ this is the vr-wake-whee rule:
 	set the pronoun him to Jake G;
 
 a goodrhyme rule (this is the vc-whatta-wanksta rule) :
-	if Gutta Ganksta is not touchable, unavailable;
+	if Gutta Ganksta is not fungible, unavailable;
 	if sco-whatta-wanksta is true:
 		vcal "That insult only works once.";
 		already-done;
@@ -1509,7 +1509,7 @@ this is the vr-whoa-wait rule:
 	set the pronoun it to well worn hell horn;
 
 a goodrhyme rule (this is the vc-wild-weed rule) :
-	if mild mead is not touchable, unavailable;
+	if mild mead is not fungible, unavailable;
 	if wild weed is not off-stage:
 		vcal "Greedy, to try for more.";
 		already-done;
@@ -1535,7 +1535,7 @@ this is the vr-winding-ways rule:
 	set the pronoun it to Minding Maze;
 
 a goodrhyme rule (this is the vc-wood-one rule) :
-	if Reeker Russell is not touchable, unavailable;
+	if Reeker Russell is not fungible, unavailable;
 	if good gun is moot:
 		vcal "Russell's already disarmed, but he's still too strong.";
 		already-done;
@@ -1547,7 +1547,7 @@ this is the vr-wood-one rule:
 	check-russell-go; [nec]
 
 a goodrhyme rule (this is the vc-work-well rule) :
-	if jerk gel is not touchable, unavailable;
+	if jerk gel is not fungible, unavailable;
 	if player has jerk gel:
 		vcal "Any further futzing might undo your previous good work.";
 		already-done;
@@ -1560,7 +1560,7 @@ this is the vr-work-well rule:
 	now cht of jerk gel is leteq; [supple saps->couple caps]
 
 a goodrhyme rule (this is the vc-youre-yonder rule) :
-	if poor ponder is not touchable, unavailable;
+	if poor ponder is not fungible, unavailable;
 	ready;
 
 this is the vr-youre-yonder rule:
@@ -2040,7 +2040,7 @@ hot horde	--	"hoard"	"The horde is after victories, not treasure."]
 section thing homonym rules [xxthr]
 
 this is the hom-toe-tappin-to-co-capn rule:
-	unless jake g is touchable and toe tappin row rappin is touchable, the rule fails;
+	unless jake g is fungible and toe tappin row rappin is fungible, the rule fails;
 	if sco-co-capn is true, the rule fails;
 
 this is the hom-bold-bard-to-bowled-barred rule:

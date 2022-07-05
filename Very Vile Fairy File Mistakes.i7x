@@ -73,7 +73,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 table of Been Buggin guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
-"glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is touchable]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
+"glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is fungible]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
 "jay joke"	have-clay-cloak rule	false	--	--	"You recall some off-color drug humor from your younger days."
 "stay stoke"	have-clay-cloak rule	false	--	--	"Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything."
 "ho had"	in-so-sad rule	false	44	--	"You're trying to feel less in the dumps, not more."
@@ -460,7 +460,7 @@ table of joke jest poke pest guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "broke breast"	pest-known rule	false	55	pest-undealt rule	"Nothing violent."
 "croak crest"	pest-known rule	false	55	pest-undealt rule	"Nothing forms to kill the [poke pest]."
-"toke test"	pest-known rule	false	55	pest-undealt rule	"Hey now! You [if wild weed is moot]had your fun. Don't overdo it[else if wild weed is touchable]might indulge, but you don't need to, and besides, you need a source of flame[else]don't have, or need, anything smokable[end if]."
+"toke test"	pest-known rule	false	55	pest-undealt rule	"Hey now! You [if wild weed is moot]had your fun. Don't overdo it[else if wild weed is fungible]might indulge, but you don't need to, and besides, you need a source of flame[else]don't have, or need, anything smokable[end if]."
 "woke west"	pest-known rule	false	55	pest-undealt rule	"The [poke pest] doesn't care about directions."
 
 table of lurking lump guesses
@@ -489,7 +489,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "tuck tare"	stair-or-snare rule	false	44	no-snare-yet rule	"Alterations are not your Thing."
 "truck trayer"	stair-or-snare rule	false	44	no-snare-yet rule	"Manual labor is not very adventurous."
 "shuck share"	stair-or-snare rule	false	44	no-snare-yet rule	"You have no share to shuck."
-"tuck tear"	stair-or-snare rule	false	44	no-snare-yet rule	"You see no way to refigure the [if stuck stair is touchable]stair[else]snare[end if]."
+"tuck tear"	stair-or-snare rule	false	44	no-snare-yet rule	"You see no way to refigure the [if stuck stair is fungible]stair[else]snare[end if]."
 
 table of toe tappin row rappin guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -571,7 +571,7 @@ to say bag-rag: say "[if player has big bag]big bag[else]zig zag rig rag[end if]
 
 to say kind-of-paper: if vapor vial is moot, say ". Now you've organized the pile, maybe its details are more important to read or examine"
 
-to say float-boat: say "[if flooring float is touchable]flooring float[else]boring boat[end if]"
+to say float-boat: say "[if flooring float is fungible]flooring float[else]boring boat[end if]"
 
 to say shawl-lol: if sco-lie-lol is false, say ". The shawl seems worthless to your quest, but maybe it's good for [one of][or]further [stopping]practice"
 
@@ -587,41 +587,41 @@ section mist-rules alphabetized
 
 [xxmisrul]
 
-this is the bard-card-guard rule: if bold bard is touchable or cold card is touchable or gold guard is touchable, the rule succeeds;
+this is the bard-card-guard rule: if bold bard is fungible or cold card is fungible or gold guard is fungible, the rule succeeds;
 
-this is the beer-bull-by rule: if Beer Bull is touchable, the rule succeeds;
+this is the beer-bull-by rule: if Beer Bull is fungible, the rule succeeds;
 
 this is the before-grays rule: if player is in Blinding Blaze and stuck stair is not moot, the rule succeeds;
 
-this is the boat-or-float rule: if flooring float is touchable or boring boat is touchable, the rule succeeds;
+this is the boat-or-float rule: if flooring float is fungible or boring boat is fungible, the rule succeeds;
 
-this is the bold-bard-near rule: if Bold Bard is touchable, the rule succeeds;
+this is the bold-bard-near rule: if Bold Bard is fungible, the rule succeeds;
 
-this is the bot-board-vis rule: if Bot Board is touchable, the rule succeeds;
+this is the bot-board-vis rule: if Bot Board is fungible, the rule succeeds;
 
-this is the bull-beast-here rule: if Bull Beast is touchable, the rule succeeds;
+this is the bull-beast-here rule: if Bull Beast is fungible, the rule succeeds;
 
 this is the cage-key-offstage rule: if cage key is off-stage, the rule succeeds;
 
 this is the cap-or-lap rule: if player has cake cap or player is in Lake Lap, the rule succeeds;
 
-this is the cap-or-tap rule: if tool tap is touchable or cool cap is touchable, the rule succeeds;
+this is the cap-or-tap rule: if tool tap is fungible or cool cap is fungible, the rule succeeds;
 
-this is the cluster-near rule: if clumped cluster is touchable, the rule succeeds;
+this is the cluster-near rule: if clumped cluster is fungible, the rule succeeds;
 
-this is the ganksta-nearby rule: if Gutta Ganksta is touchable, the rule succeeds;
+this is the ganksta-nearby rule: if Gutta Ganksta is fungible, the rule succeeds;
 
-this is the gel-or-shell rule: if player is in Shirk Shell or jerk gel is touchable, the rule succeeds;
+this is the gel-or-shell rule: if player is in Shirk Shell or jerk gel is fungible, the rule succeeds;
 
-this is the go-gate-vis rule: if go gate is touchable, the rule succeeds;
+this is the go-gate-vis rule: if go gate is fungible, the rule succeeds;
 
-this is the good-gun-here rule: if good gun is touchable, the rule succeeds;
+this is the good-gun-here rule: if good gun is fungible, the rule succeeds;
 
 this is the got-gear-hot-here rule: if player is in Got Gear Hot Here, the rule succeeds;
 
 this is the has-too-totes rule: if player has too totes new notes, the rule succeeds;
 
-this is the hat-or-mat rule: if hard hat is touchable or marred mat is touchable, the rule succeeds;
+this is the hat-or-mat rule: if hard hat is fungible or marred mat is fungible, the rule succeeds;
 
 this is the have-clashing-cloak rule: if player has clashing cloak, the rule succeeds;
 
@@ -629,9 +629,9 @@ this is the have-clay-cloak rule: if player has clay cloak, the rule succeeds;
 
 this is the have-toe-tappin rule: if player has toe tappin row rappin, the rule succeeds;
 
-this is the hell-horn-near rule: if hell horn is touchable, the rule succeeds;
+this is the hell-horn-near rule: if hell horn is fungible, the rule succeeds;
 
-this is the hive-heap-near rule: if hive heap is touchable, the rule succeeds;
+this is the hive-heap-near rule: if hive heap is fungible, the rule succeeds;
 
 this is the in-been-buggin rule: if player is in Been Buggin, the rule succeeds;
 
@@ -697,31 +697,31 @@ this is the lap-not-cap rule: if player is in Lake Lap, the rule succeeds;
 
 this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds;
 
-this is the mass-near rule: if mean mass is touchable, the rule succeeds;
+this is the mass-near rule: if mean mass is fungible, the rule succeeds;
 
-this is the mead-or-weed rule: if mild mead is touchable or wild weed is touchable, the rule succeeds;
+this is the mead-or-weed rule: if mild mead is fungible or wild weed is fungible, the rule succeeds;
 
-this is the mean-moes-by rule: if mean moe's is touchable, the rule succeeds;
+this is the mean-moes-by rule: if mean moe's is fungible, the rule succeeds;
 
 this is the meed-or-weed rule: if player carries mild mead or player carries wild weed, the rule succeeds;
 
-this is the peasant-around rule: if Pain Peasant is touchable, the rule succeeds;
+this is the peasant-around rule: if Pain Peasant is fungible, the rule succeeds;
 
 this is the pest-known rule: if joke jest poke pest is not off-stage, the rule succeeds;
 
 this is the pit-pound-unsolved rule: if player is in Pit Pound and sco-fit-found is false, the rule succeeds;
 
-this is the poor-ponder-near rule: if poor ponder for fonder is touchable, the rule succeeds;
+this is the poor-ponder-near rule: if poor ponder for fonder is fungible, the rule succeeds;
 
-this is the skull-near rule: if screaming skull is touchable, the rule succeeds;
+this is the skull-near rule: if screaming skull is fungible, the rule succeeds;
 
-this is the stair-or-snare rule: if player has snuck snare or stuck stair is touchable, the rule succeeds;
+this is the stair-or-snare rule: if player has snuck snare or stuck stair is fungible, the rule succeeds;
 
-this is the tool-tap-near rule: if tool tap is touchable, the rule succeeds;
+this is the tool-tap-near rule: if tool tap is fungible, the rule succeeds;
 
 this is the tram-first-puzzle rule: if player is in Trim Tram and sco-mind-me is false, the rule succeeds;
 
-this is the vial-or-pile rule: if vapor vial is touchable or paper pile is touchable, the rule succeeds;
+this is the vial-or-pile rule: if vapor vial is fungible or paper pile is fungible, the rule succeeds;
 
 this is the wallish-loc rule: if location of player is wallish, the rule succeeds;
 
@@ -729,11 +729,11 @@ this is the war-no-poor rule: if player is in Whining War and pining poor are of
 
 this is the we-whine-near rule: if player has we whine, the rule succeeds;
 
-this is the weird-way-near rule: if weird way is touchable, the rule succeeds;
+this is the weird-way-near rule: if weird way is fungible, the rule succeeds;
 
 [zzmisrul]
 
-section leet-rules alphabetized [note these may be more stringent than they strictly need to be. For instance, the shawl-unloled rule *probably* doesn't fire unless the shawl is already touchable, but we need to make sure.]
+section leet-rules alphabetized [note these may be more stringent than they strictly need to be. For instance, the shawl-unloled rule *probably* doesn't fire unless the shawl is already fungible, but we need to make sure.]
 
 [xxleetrul]
 
@@ -741,13 +741,13 @@ this is the blaze-before-maze rule: if player is in Blinding Blaze and sco-windi
 
 this is the cap-uncast rule: if cool cap is not moot, the rule succeeds;
 
-this is the coral-cage-around rule: if coral cage is touchable, the rule succeeds;
+this is the coral-cage-around rule: if coral cage is fungible, the rule succeeds;
 
-this is the dean-duggan-near rule: if dean duggan is touchable, the rule succeeds;
+this is the dean-duggan-near rule: if dean duggan is fungible, the rule succeeds;
 
 this is the fee-or-brie-still rule: if sco-fake-fee is false or sco-break-brie is false, the rule succeeds;
 
-this is the float-present rule: if flooring float is touchable, the rule succeeds;
+this is the float-present rule: if flooring float is fungible, the rule succeeds;
 
 this is the full-feast-here rule: if full feast is not moot, the rule succeeds;
 
@@ -795,7 +795,7 @@ this is the not-rolled-yet rule: if sco-really-rolling is false, the rule succee
 
 this is the pest-undealt rule: if sco-bloke-blessed is false, the rule succeeds;
 
-this is the shawl-unloled rule: if shy shawl is touchable and sco-lie-lol is false, the rule succeeds;
+this is the shawl-unloled rule: if shy shawl is fungible and sco-lie-lol is false, the rule succeeds;
 
 this is the shield-unshown rule: if player is in Foe Field and gold guard is not moot, the rule succeeds;
 
@@ -803,7 +803,7 @@ this is the sign-unseen rule: if sco-see-sign is false, the rule succeeds;
 
 this is the spliff-unsparked rule: if wild weed is not moot, the rule succeeds;
 
-this is the vapor-vial-vis rule: if vapor vial is touchable, the rule succeeds;
+this is the vapor-vial-vis rule: if vapor vial is fungible, the rule succeeds;
 
 this is the violent-not-silent rule: if sco-silent-sail is false, the rule succeeds;
 

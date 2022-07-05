@@ -136,6 +136,11 @@ definition: a thing (called th) is moot:
 	if th is in Gazy Gap, yes;
 	no;
 
+definition: a  thing (called th) is fungible:
+	if th is in location of player, yes;
+	if th is enclosed by the player, yes;
+	no;
+
 definition: a thing (called th) is known-to-player:
 	if th is in Hidey House, no;
 	if th is off-stage, no;
@@ -288,14 +293,14 @@ a thing has a rule called bore-rule. bore-rule of a thing is usually the bore-no
 a thing can be fakeenter. a thing is usually not fakeenter.
 
 rule for supplying a missing noun when entering: [?? yes, this is bad coding. I should define a property. But ... later.]
-	let TFE be number of touchable fakeenter things;
+	let TFE be number of fungible fakeenter things;
 	if TFE > 1:
 		say "There's more than one thing you can logically enter here. IN works better as a command.";
 		reject the player's command;
 	else if TFE is 0:
 		say "I didn't find anything to enter.";
 		reject the player's command;
-	now noun is a random touchable fakeenter thing;
+	now noun is a random fungible fakeenter thing;
 	say "([the noun])[line break][one of][line break]NOTE: IN is a substitute for trying to enter something, and you only need to do so with one object.[or][stopping]";
 
 section boring rules
@@ -573,7 +578,7 @@ section vapor vial
 
 the vapor vial is a thing. cht of vapor vial is leteq. "A vapor vial fell out from the hive heap. Perhaps there is something inside it.". description is "The vapor vial may or may not be easy to shatter and release the toxic, err, vile vapor within. Perhaps there is a way to make it and its contents less toxic and more biodegradable.". [-> paper pile]
 
-understand "vapor vile" and "vile" and "vile vapor" as vapor vial when vapor vial is touchable.
+understand "vapor vile" and "vile" and "vile vapor" as vapor vial when vapor vial is fungible.
 
 check opening vapor vial: say "It might be poisonous." instead;
 
@@ -865,7 +870,7 @@ Poor Ponder for Fonder is scenery. cht of Poor Ponder for Fonder is partplus. "R
 
 printed name of Poor Ponder is "[i]Poor? Ponder for Fonder[r]".
 
-understand "book" as Poor Ponder when Poor Ponder is touchable.
+understand "book" as Poor Ponder when Poor Ponder is fungible.
 
 check taking Poor Ponder: say "You can figure out its inner meaning right here." instead;
 
@@ -932,7 +937,7 @@ this is the card-and-libe rule:
 
 We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's about how to be an extremely effective jerk and to get what you want, far better than the mere [i][next-rand-txt of table of motivational books][r]. [if sco-see-sign is true]This isn't something you would want to know, but it explains how and why certain people behaved that way in the past, and now[else]Why would you want to know that? Maybe a careful reading would turn something up[end if].". guess-table of we whine is the table of we whine guesses. [-> see sign]
 
-understand "book" as We Whine Me Mine when We Whine Me Mine is touchable.
+understand "book" as We Whine Me Mine when We Whine Me Mine is fungible.
 
 the printed name of We Whine is "[i]We Whine: ME, MINE[r]".
 
@@ -942,7 +947,7 @@ chapter fussed folks
 
 Fussed Folks Just Jokes is scenery. "You read about [next-rand-txt of table of miscellaneous people].". printed name of Fussed Folks Just Jokes is "[i]Fussed Folks Just Jokes[r]".
 
-understand "book" as Fussed Folks when Fussed Folks is touchable.
+understand "book" as Fussed Folks when Fussed Folks is fungible.
 
 check taking Fussed Folks: say "It's pretty obviously got nothing concrete to help you. It's just for entertainment." instead;
 
@@ -1007,8 +1012,8 @@ does the player mean entering boring boat: it is very likely;
 
 check taking boring boat: try entering boring boat instead;
 
-check going inside when boring boat is touchable: try entering boring boat instead;
-check going inside when flooring float is touchable: try entering flooring float instead;
+check going inside when boring boat is fungible: try entering boring boat instead;
+check going inside when flooring float is fungible: try entering flooring float instead;
 
 sco-no-nappin is a truth state that varies.
 
@@ -1053,7 +1058,7 @@ part Lake Lea 3,2
 
 Lake Lea is a room. It is in Browsy Breaks. "You're on the Lake Lea, which borders on Lake Lap to the east.".
 
-check going east in Lake Lea when Jake G is touchable:
+check going east in Lake Lea when Jake G is fungible:
 	if sco-wake-whee is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if sco-fake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
@@ -1281,7 +1286,7 @@ every turn when in-bull-chase is true: [?? make this so that we track by last-bu
 		if player is in History Hall:
 			say "The Bull seems out of place here, but it's not particularly bothered by that.";
 		else if player is in Violent Vale and frightening fridge is in Violent Vale:
-			say "Oh no! Between the Beer Bull and the fridge, you feel trapped[if flooring float is touchable], and the float won't help you escape[else if boring boat is touchable], and you'd get caught boarding the boat[end if].";
+			say "Oh no! Between the Beer Bull and the fridge, you feel trapped[if flooring float is fungible], and the float won't help you escape[else if boring boat is fungible], and you'd get caught boarding the boat[end if].";
 		else if player is in Blinding Blaze:
 			say "[if sco-winding-ways is true]Bringing a half-bull to a maze is a bad idea without a ball of string. You have none in this game[else]Uh oh. You've trapped yourself with no easy visible way out[end if].";
 		else if player is in Whining War:
@@ -1384,7 +1389,7 @@ sco-fit-found is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if sco-winding-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if sco-winding-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if sco-mo-mappin is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is touchable]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if sco-winding-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno].". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if sco-winding-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if sco-winding-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if sco-mo-mappin is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is fungible]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if sco-winding-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno].". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
 
 to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
 
@@ -1495,7 +1500,7 @@ sco-meeker-muscle is a truth state that varies.
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is touchable]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses.
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is fungible]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses.
 
 check going south in Airy Isle: say "There is no way back. Your destiny awaits." instead;
 
@@ -1647,7 +1652,7 @@ chapter cleaning
 the block rubbing rule is not listed in any rulebook.
 
 check rubbing:
-	if mean moe's clean clothes is not touchable, say "You aren't by any machine that can clean anything. And you don't need to clean anything directly." instead;
+	if mean moe's clean clothes is not fungible, say "You aren't by any machine that can clean anything. And you don't need to clean anything directly." instead;
 	say "You can just [if can-glean]GLEAN GLOWS[else]riff on [mean moe's][end if] to see if anything in your inventory is cleanable." instead;
 
 chapter singing
@@ -1691,7 +1696,7 @@ every turn when sing-clue is true:
 to decide whether song-clue:
 	if player is in Violent Vale and boring boat is in Violent Vale and sco-no-nappin is false, yes; [now cht of toe tappin is partminus] [->no nappin]
 	if player is in Gassed Gap and sco-go-gappin is false, yes; [now cht of toe tappin is partminus] [now cht of toe tappin is partminus] [->go gappin]
-	if Jake G is touchable and sco-fake-fee is true and sco-co-capn is false, yes; [now cht of toe tappin is letminus] [->co capn]
+	if Jake G is fungible and sco-fake-fee is true and sco-co-capn is false, yes; [now cht of toe tappin is letminus] [->co capn]
 	if sco-mo-mappin is false and player is in Blinding Blaze and sco-winding-ways is true, yes; [now cht of toe tappin is partminus] [->mo mappin]
 	if player is in Whining War and sco-so-sappin is false, yes; [now cht of toe tappin is partminus] [->so sappin]
 	no;
@@ -1825,7 +1830,7 @@ the need bag for lots of items rule is listed last in the check taking rulebook.
 
 chapter undoing
 
-to say pest-sneer: say "You [if poke pest is touchable]hear the [poke pest] whisper[else]imagine someone sneering[end if]"
+to say pest-sneer: say "You [if poke pest is fungible]hear the [poke pest] whisper[else]imagine someone sneering[end if]"
 
 before undoing an action:
 	if save undo state is false:
@@ -2432,7 +2437,7 @@ ever-opt-scan is a truth state that varies.
 to say ll-cheat of (rm - a room): say "[scancol of cht of rm]"
 
 to say ll-cheat of (th - a thing):
-	if th is Toe and Jake G is touchable and sco-fake-fee is true and sco-co-capn is false:
+	if th is Toe and Jake G is fungible and sco-fake-fee is true and sco-co-capn is false:
 		say "[scancol of partminus]";
 	else:
 		say "[scancol of cht of th]"
@@ -3416,7 +3421,7 @@ when play begins (this is the opening text rule):
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
 	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
-	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall, before going off to the Set-So Inn with Rhett Rowan. You are left in ...";
+	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall. 'Wait!' Kit cries. 'This should be the Met-Mo['] Inn! With Rhett Rowan!' You turn around, and Kit is gone. You're somewhere entirely different...";
 
 when play begins (this is the score and status tweak rule):
 	now the maximum score is min-needed + max-bonus;
@@ -3753,11 +3758,11 @@ Rule for printing a parser error (this is the clue half right words rule):
 		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
 		abide by the rhyme-guess-checker rule for guess-table of location of player;
 	let table-list be a list of table names;
-	repeat with tou running through touchable rhymables:
+	repeat with tou running through fungible rhymables:
 		let gtt be guess-table of tou;
 		if gtt is table of no good guesses or gtt is listed in table-list, next;
 		add gtt to table-list;
-	repeat with tou running through touchable people:
+	repeat with tou running through fungible people:
 		let gtt be guess-table of tou;
 		if gtt is table of no good guesses or gtt is listed in table-list, next;
 		add gtt to table-list;
@@ -3790,7 +3795,7 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 				the rule succeeds;
 			break;
 	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
-		if mything entry is touchable:
+		if mything entry is fungible:
 			if there is a hom-rule entry:
 				process the hom-rule entry;
 				if the rule failed, next;
@@ -3826,8 +3831,8 @@ Rule for printing a parser error when the latest parser error is the can't see a
 	if player is in Wet Wood and word number 1 in the player's command is "get", continue the action;
 	if wn1 is "pull":
 		if full feast is moot, say "You don't need to pull anything other than the full feast." instead;
-		if beer bull is touchable, say "You don't need to pull the Beer Bull for it to follow you." instead;
-		if full feast is touchable or bull beast is touchable, continue the action;
+		if beer bull is fungible, say "You don't need to pull the Beer Bull for it to follow you." instead;
+		if full feast is fungible or bull beast is fungible, continue the action;
 	say "You can't see any objects like that here.";
 
 Rule for printing a parser error when the latest parser error is the i beg your pardon error:
@@ -3923,7 +3928,7 @@ this is the verb-checker rule:
 					say "Ugh! That should work, but you don't feel up to it. Maybe once your head is clearer, you'll figure where and why.";
 					now think-cue entry is true;
 					the rule succeeds;
-			if beer bull is touchable and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
+			if beer bull is fungible and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
 				now think-cue entry is true;
 				if debug-state is true, say "[ver-rule entry] set to true.";
 				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. While you're distracted, it slaps you around a bit.[paragraph break]Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
@@ -4019,7 +4024,7 @@ to decide which number is variable-scan-length of (mynum - a number):
 		decide on 0;
 	else if mynum is 101: [Toe Tappin' Row Rappin]
 		if player is in whining war and sco-so-sappin is false, decide on 26; [so sappin]
-		if player is in violent vale and boring boat is touchable and sco-no-nappin is false, decide on 26; [no nappin]
+		if player is in violent vale and boring boat is fungible and sco-no-nappin is false, decide on 26; [no nappin]
 		if player is in gassed gap and sco-go-gappin is false, decide on 26; [go gappin]
 		if player is in blinding blaze and sco-mo-mappin is false and sco-winding-ways is true, decide on 26; [mo mappin]
 		if player is in lake lap and sco-co-capn is false, decide on 24; [co capn]
@@ -4384,7 +4389,7 @@ understand the command "lla" as something new.
 understand "lla" as llaing.
 
 definition: a thing (called th) is llable:
-	if th is touchable, yes;
+	if th is fungible, yes;
 	no;
 
 carry out llaing:
