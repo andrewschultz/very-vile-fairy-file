@@ -34,8 +34,6 @@ include undo output control by Erik Temple.
 
 use authorial modesty.
 
-use MAX_ACTIONS of 210.
-
 section verb carnage
 
 [xxvvcarn]
@@ -80,10 +78,6 @@ understand the command "wipe" as something new.
 understand the command "wreck" as something new.
 
 [zzvvcarn]
-
-section debug include values - not for release
-
-use MAX_VERBS of 200
 
 section establish debug - not for release
 
