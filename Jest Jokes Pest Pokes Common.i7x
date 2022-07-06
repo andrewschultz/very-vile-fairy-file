@@ -252,6 +252,42 @@ carry out welpwowing:
 	say "Help-how is off. Welp-wow mode is on. In other words, fewer hints now." instead;
 	the rule succeeds.
 
+chapter blue bleahing
+
+blue-bleah is a truth state that varies. blue-bleah is false.
+
+bluebleahing is an action out of world.
+
+understand the command "blue bleah" as something new.
+
+understand "blue bleah" as bluebleahing.
+
+carry out bluebleahing:
+	if blue-bleah is true, say "Blue-bleah is already on." instead;
+	now blue-bleah is true;
+	say "Blue-bleah is on. Hoo-Heh is off. In other words, risque writing (mostly random text) has been redacted.";
+	the rule succeeds;
+
+chapter hoo hehing
+
+hoohehing is an action out of world.
+
+understand the command "hoo heh" as something new.
+understand the command "hooh heh" as something new.
+understand the command "heh hooh" as something new.
+understand the command "heh hoo" as something new.
+
+understand "hoo heh" as hoohehing.
+understand "hooh heh" as hoohehing.
+understand "heh hoo" as hoohehing.
+understand "heh hooh" as hoohehing.
+
+carry out hoohehing:
+	if blue-bleah is false, say "Blue-bleah is already off." instead;
+	now blue-bleah is false;
+	say "Blue-bleah is off. Hoo-Heh is on. In other words, risque writing (mostly random text) is no longer redacted.";
+	the rule succeeds;
+
 book deciphering mistakes
 
 [to decide which number is variable-scan-length of (mynum - a number):] [keep this in the main file]

@@ -412,6 +412,10 @@ wood-row is a number that varies.
 
 to say wood-noway:
 	increment wood-row;
+	while blue-bleah is true and wood-row <= (number of rows in table of Wet Wood clues):
+		choose row wood-row in table of Wet Wood clues;
+		if prof entry is false, break;
+		increment wood-row;
 	if wood-row > number of rows in table of Wet Wood clues:
 		now wood-row is 1;
 		say "You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though";
