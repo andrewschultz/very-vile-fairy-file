@@ -30,7 +30,7 @@ first-room is a room that varies.
 first-main-room is a room that varies.
 
 this is the wait-after-intro rule:
-	if player is in first-room, say "I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait [if player is in first-room]until you've explored[else]until you get to the next room[end if]." instead;
+	if player is in first-room, say "I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond [first-room]." instead;
 	if first-main-room is not visited and ll-flip-warn is false:
 		now ll-flip-warn is true;
 		say "It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?";

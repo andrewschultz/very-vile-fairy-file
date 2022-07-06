@@ -61,6 +61,7 @@ understand the command "kill" as something new.
 understand the command "kiss" as something new.
 understand the command "light" as something new.
 understand the command "murder" as something new.
+understand the command "pay" as something new.
 understand the command "polish" as something new.
 understand the command "prune" as something new.
 understand the command "punch" as something new.
@@ -138,6 +139,16 @@ to decide whether the action is procedural:
 	if lling, yes;
 	if thinking, yes;
 	if jerkingjumping, yes;
+	no;
+
+to decide whether the action is unboring:
+	if the action is procedural, yes;
+	if attacking, yes;
+	if eating, yes;
+	if drinking, yes;
+	if talktoing, yes;
+	if opening, yes;
+	if wearing, yes;
 	no;
 
 definition: a thing (called th) is moot:
@@ -279,7 +290,8 @@ rule for supplying a missing noun when entering: [?? yes, this is bad coding. I 
 section boring rules
 
 instead of doing something with a boring thing:
-	if action is procedural, continue the action;
+	if action is unboring, continue the action;
+	if noun is a person and current action is talktoing, continue the action;
 	abide by the bore-rule of noun;
 	if skip-bore-text is true:
 		now skip-bore-text is false;
@@ -513,7 +525,7 @@ check going in Fun Fen:
 
 section joke jest poke pest
 
-the joke jest poke pest is a thing. description is "You can't see it, and it's probably not a good idea to dwell on it. The more you do, the less you'll focus on your quest."
+the joke jest poke pest is a rhymable. description is "You can't see it, and it's probably not a good idea to dwell on it. The more you do, the less you'll focus on your quest.". guess-table of joke jest poke pest is table of joke jest poke pest guesses.
 
 sco-bloke-blessed is a truth state that varies.
 
@@ -1408,7 +1420,7 @@ Gassed Gap is north of Foe Field. cht of Gassed Gap is partminus. guess-table of
 check going in Gassed Gap when Reeker Russell is in Gassed Gap:
 	say "'Go, gassed foe, fast!' Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you";
 	if russell-progress is 0:
-		say "ll have to diminish him and his gun.";
+		say "[']ll have to diminish him and his gun.";
 	else:
 		say " still have to diminish [if good gun is moot]him[else]his gun[end if].";
 	the rule succeeds;
@@ -1444,6 +1456,11 @@ sco-couple-caps is a truth state that varies.
 chapter Reeker Russell
 
 Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell blocks the way north[if good gun is not moot], and he's armed with a good gun![else].[end if]". talk-text is "'My mood: DIE, dude!'". description of Reeker Russell is "He looks [if sco-meeker-muscle is true]meeker than at first[else]pretty strong[end if]. He is also [if good gun is moot]unarmed[else]holding a good gun[end if].". cht of Reeker Russell is partminus. [-> meeker muscle] [-> beaker bustle]
+
+bore-rule of reeker russell is bore-russell rule.
+
+this is the bore-russell rule:
+	if current action is smelling, now skip-bore-text is true;
 
 description of good gun is "It's made up of an obviously sleek and superior metal. A lesser material, and it might fall apart and be useless.". cht of good gun is leteq. [->wood one]
 
@@ -1509,7 +1526,7 @@ check entering go gate:
 	say "Too fast. Boom! The grow grate pops up and crushes you. 'Lo, late! Foe, fate!' the [poke pest] whispers, and your last thought is, 'Ho, hate!'[paragraph  break]Today is definitely a ... d'oh date.[paragraph break]Maybe you should have expected that. Perhaps you need to be more circumspect.";
 	end the story;
 
-the grow grate is part of the go gate. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait]
+the grow grate is scenery. description is "The grow grate looks like it could spring up at any time.". cht of grow grate is partminus. [->whoa wait]
 
 section listless mist mess
 
@@ -1533,15 +1550,18 @@ chapter Very Vile Fairy File
 
 the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may want to [b]READ[r][ever-tried of table of vvff digs], but that's not critical to defeating it.". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". bore-rule of Very Vile Fairy File is bore-vvff rule. [-> bury bile]
 
+Include (-
+	has transparent talkable
+-) when defining Very Vile Fairy File.
+
 this is the bore-vvff rule:
-	if current action is talktoing, say "'THUMP THAT CHUMP-CHAT!' booms from inside the [fairy file]." instead;
 	if current action is closing or current action is opening or current action is taking or current action is attacking, now skip-bore-text is true;
 
 check opening very vile fairy file: try closing very vile fairy file instead;
 
 check closing very vile fairy file: say "You will need to close the book on the [fairy file] with what you've been doing all game." instead;
 
-check taking very vile fairy file: say "From the [fairy file]: 'Oh, ick! So sick!' You should've expected that, really." instead;
+check taking very vile fairy file: say "A voice from the [fairy file]: 'Oh, ick! So sick!' You should've expected that, really." instead;
 
 understand "vv/ff" and "vvff" as Very Vile Fairy File.
 
@@ -1584,7 +1604,7 @@ check opening:
 	if noun is frightening fridge, say "You're scared to. There must be a better way to get rid of the fridge." instead;
 	if noun is coral cage, say "[if player does not have cage key]You have nothing that opens the coral cage[else]The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage[end if]." instead;
 	if noun is dining door, say "You'd need a big banquet around before doing that." instead;
-	say "You don't need to use OPEN anywhere in this game." instead;
+	say "You don't need to use [b]OPEN[r] anywhere in this game." instead;
 
 chapter eating
 
@@ -1597,7 +1617,7 @@ check eating:
 	if noun is a gaphat, say "Idioms are neat, but this adventure is about rhyming." instead;
 	if noun is wild weed, say "That is not filed feed." instead;
 	if noun is full feast, say "Too much for one person. You need to move it somewhere everyone can enjoy it." instead;
-	say "You [if full feast is moot]already had a feast. [end if]don't need to eat anything explicitly." instead;
+	say "You [if full feast is moot]already had a feast. [else]don't need to eat anything explicitly[end if]." instead;
 
 chapter drinking
 
@@ -1617,7 +1637,7 @@ the can't wear what's not clothing rule is not listed in any rulebook.
 check wearing:
 	if noun is a gaphat, say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
 	if noun is gold guard, say "You'll wear it when you need to." instead;
-	say "You never need to WEAR anything explicitly in this adventure." instead;
+	say "You never need to [b]WEAR[r] anything explicitly in this adventure." instead;
 
 chapter cleaning
 
@@ -1730,6 +1750,7 @@ understand "t [something]" as talktoing.
 does the player mean talktoing a person: it is very likely.
 
 check talktoing:
+	if noun is Very Vile Fairy File, say "'THUMP THAT CHUMP-CHAT!' booms a loud voice from inside the [fairy file]." instead;
 	if noun is not a person, say "You can only talk to living things, and [the noun] doesn't qualify." instead;
 	if talk-text of noun is empty, say "BUG: there should be text, but there isn't." instead;
 	say "[talk-text of noun][line break]" instead;

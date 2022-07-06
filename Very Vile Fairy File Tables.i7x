@@ -741,6 +741,7 @@ this is the vr-got-gored rule:
 	moot Bot Board;
 	wall-add Airy Isle;
 	move go gate to Airy Isle;
+	move grow grate to Airy Isle;
 	set the pronoun it to go gate;
 
 a goodrhyme rule (this is the vc-green-grass rule) :
@@ -1418,6 +1419,9 @@ this is the vr-spark-spliff rule:
 	moot wild weed;
 
 a goodrhyme rule (this is the vc-stay-strong rule) :
+	if sco-stay-strong is true and sco-glow-glad is false:
+		vcal "Staying strong reduced one kind of negativity, but now there's another.";
+		already-done;
 	unless in-way-wrong, unavailable;
 	ready;
 
@@ -2011,6 +2015,7 @@ vapor vial	--	"vaper/vile"	"You need to change the vial into something more plea
 bold bard	hom-bold-bard-to-bowled-barred rule	--
 bot board	hom-bot-board-to-bought-bored rule	--
 coral cage	--	"choral"	"You don't need the cage to sing. You need to figure who's in there."
+go gate	--	"gait"	"Ah, but what sort of gait should you take?"
 grow grate	--	"great"	"But you want to lessen the grate/gate's influence."
 jake g	hom-toe-tappin-to-co-capn rule	"cappin"
 mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault..."
@@ -2078,12 +2083,10 @@ chapter room homonyms
 
 [the room homonyms work as follows: if we have a rule with multiple room states/possibilities and no topic, then we skip the topic. If we have a rule and a topic, we print the custom-msg if the rule and topic match. Otherwise, we print the custom-msg for a generic error if the topic matches. So that is why the topic or rule can be blank.]
 
-to say hom-not: say ". Homonyms aren't quite the way to go, here"
-
 table of room homonyms
 loc	hom-rule (a rule)	myhom (topic)	custom-msg (text)
 airy isle	--	"aerie/erry/aisle"	"The Airy Isle can't really be changed."
-been buggin	--	"bin"	"You do sort of need to bin your shortcomings."
+been buggin	--	"bin"	"[if buggin-score is 2]You've binned all the shortcomings you can here[else]You need to address [buggin-left][end if]."
 blinding blaze	hom-blinding-blaze-to-wheys-grace-graze rule	--	--
 creased cross	--	"craws"
 foe field	--	"sew/sow"	"The field is not for manual labor."
@@ -2100,6 +2103,8 @@ tarry tile	tarry-not-marry rule	"terry"	"Nobody named Terry appears, nor does an
 violent vale	fail-silent-sail rule	"veil"	"You need to get rid of the violence, not put a veil over it." [ALTRULE hom-violent-vale-to-veil rule]
 wet wood	--	"whet/would"	"You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough."
 whining war	hom-whining-war-to-wining-wore rule	--
+
+to say buggin-left: say "[if buggin-score is 1]one more specific shortcoming[else]two specific shortcomings[end if]".
 
 to say basic-homonym-reject: say "Homonyms aren't the way to go, here."
 

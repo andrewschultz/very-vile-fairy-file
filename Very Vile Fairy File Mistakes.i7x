@@ -611,7 +611,7 @@ this is the gel-or-shell rule: if player is in Shirk Shell or jerk gel is fungib
 
 this is the go-gate-vis rule: if go gate is fungible, the rule succeeds;
 
-this is the good-gun-here rule: if good gun is fungible, the rule succeeds;
+this is the good-gun-here rule: if reeker russell is fungible and reeker russell has good gun, the rule succeeds;
 
 this is the got-gear-hot-here rule: if player is in Got Gear Hot Here, the rule succeeds;
 
