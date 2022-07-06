@@ -30,6 +30,8 @@ include Bold Final Question Rows by Andrew Schultz.
 
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
+include Very Vile Fairy File Random Text by Andrew Schultz.
+
 include Very Vile Fairy File Tables by Andrew Schultz.
 
 include Jest Jokes Pest Pokes Universal by Andrew Schultz.
