@@ -38,7 +38,7 @@ core-max is a number that varies.
 
 min-needed is a number that varies.
 
-max-bonus is a number that varies. 
+max-bonus is a number that varies.
 
 cur-bonus is a number that varies.
 
