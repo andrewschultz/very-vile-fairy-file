@@ -1700,6 +1700,7 @@ rank-num	done-yet	rank-txt
 5	false	"You recall harsh words from an alleged friend, Chum Chilly Bum Billy: 'Some silly? Dumb, dilly.'"
 6	false	"You remember a depressing holiday season. 'Blear, Blue? Near New Year, You! We're ... WOO!' But you're having more fun now. You hope."
 7	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
+8	false	"You see the Crimes Crew Times Two looking almost impressed with your competence. But then they whisper among each other. 'Lucky! LOL! Sucky soul!'"
 --	false	"The [poke pest] whispers 'Sigh. Say hi, hey?' But you ignore it. Ply, play, you think. Gotta focus."
 --	false	"'Seek so-chic-show? Geek, go! Meek, mo['] weak, woe!' A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak [']Fro."
 --	false	"'Surly? Soften early, often!' the [poke pest] needles you. You look around, but thankfully, there is no burly boffin."
@@ -2208,14 +2209,14 @@ volume big meta table
 
 table of all randoms
 tabnam	tabidx	lbrk	thru-yet	desc	cycle-note
-table of library books	0	false	0	"Books in the Lending Libe"	"[b]Pish Posh Mish Mosh[r] by Tish Tausch, which lives down to its title. That's enough text digested for one adventure"
-table of mall shops	0	false	0	"Mystery Mall fake shops"	"Well Wail Sell Sale, the final one"
+table of library books	0	false	0	"Books in the Lending Libe"	"The final book is [b]Pish-Posh Mish-Mosh[r] by Tish Tausch, which lives down to its title. That's enough text digested for one adventure."
+table of mall shops	0	false	0	"Mystery Mall fake shops"	"Well Wail Sell Sale, from a store whose profits probably fell (FAIL)"
 table of mall songs	0	false	0	"Songs after Tim T Sims"	"Oh man, this one's really good! [b]Tip Top Hip Hop[r]! You stay until you hear the playlist, um, flip flop."
-table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry, who ends the list with a whimper"
-table of motivational books	0	false	0	"Motivational books [we whine] negs"	"Go-Get-Low Lit[r], its predecessor in nasty advice"
+table of miscellaneous people	0	false	0	"Assorted randos in [fussed]"	"Hazy Hairy Lazy Larry, who ends the list with a whimper."
+table of motivational books	0	false	0	"Motivational books [we whine] negs"	"Go-Get-Low Lit[r], its predecessor in nasty advice."
 table of poems	0	false	0	"Poems the Pain Peasant says"	"Done, dude. Run? RUDE!"
-table of silly locations	0	false	0	"Assorted random locations around Y'Old Yard"	"clues you'll never make it to Worthwhile Birth-Bile Earth Isle"
-table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all"
+table of silly locations	0	false	0	"Assorted random locations around Y'Old Yard"	"clues you'll never make it to Worthwhile Birth-Bile Earth Isle."
+table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simply, 'Stare-y style, chary chile[']![r]'[paragraph break]It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all."
 
 Very Vile Fairy File Tables ends here.
 

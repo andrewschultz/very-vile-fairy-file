@@ -18,7 +18,7 @@
 
 > bury bile
 
-RAND 0 for list, RAND 1-6 for a specific table, RN for next table
+RAND 0 for list, RAND 1-8 for a specific table, RN for next table
 
 > rank
 cold cod is 0 points.
@@ -71,7 +71,7 @@ Valid specifications for NARR are (B)eginning, (M)iddle, (E)nd, or some combinat
 
 > narr b
 1. A vision!
-8. You see the Crimes Crew Times Two snickering
+7. You see the Crimes Crew Times Two snickering
 !Seek so-chic-show
 !75. "How hot NOW?! Not!"
 !80. "More make war! Wake!"
@@ -124,6 +124,9 @@ Seek so-chic-show
 !Seek so-chic-show
 75. "How hot NOW?! Not!"
 
+>rand 9
+RAND requires a number from 1 to 8, or 0 to list them all.
+
 >rand 0
 You can also rummage
 !0.
@@ -131,30 +134,46 @@ You can also rummage
 2. Mystery Mall fake shops
 3. Songs after Tim T Sims
 4. Assorted randos in Fussed Folks Just Jokes
-5. Assorted random locations around Y'Old Yard
-6. Insults in the VVFF
-!7.
+5. Motivational books We Whine: ME, MINE negs
+6. Poems the Pain Peasant says
+7. Assorted random locations around Y'Old Yard
+8. Insults in the VVFF
+!9.
 
 > rand 1
 !You can also rummage
 All random text for Books in the Lending Libe:
-Fixed last entry before looping: The final book is Tish Tausch's Pish Posh Mish Mosh, which lives down to its title. That's enough text digested for one adventure.
+FINAL FIXED ENTRY:
+The final book is Pish-Posh Mish-Mosh by Tish Tausch, which lives down to its title. That's enough text digested for one adventure.
 
 > rand 2
 All random text for Mystery Mall fake shops:
-Fixed last entry before looping: Well Wail Sell Sale, the final one.
+FINAL FIXED ENTRY:
+Well Wail Sell Sale, from a store whose profits probably fell (FAIL)
 > rand 3
 All random text for Songs after Tim T Sims:
-Fixed last entry before looping: Oh man, this one's really good! Tip Top Hip Hop! You stay until you hear the playlist, um, flip flop.
+FINAL FIXED ENTRY:
+Oh man, this one's really good! Tip Top Hip Hop! You stay until you hear the playlist, um, flip flop.
 > rand 4
 All random text for Assorted randos in Fussed Folks Just Jokes:
-Fixed last entry before looping: Hazy Hairy Lazy Larry, who ends the list with a whimper.
+FINAL FIXED ENTRY:
+Hazy Hairy Lazy Larry, who ends the list with a whimper.
 > rand 5
-All random text for Assorted random locations around Y'Old Yard:
-Fixed last entry before looping: clues you'll never make it to Worthwhile Birth-Bile Earth Isle
+All random text for Motivational books We Whine: ME, MINE negs:
+FINAL FIXED ENTRY:
+Go-Get-Low Lit, its predecessor in nasty advice
 > rand 6
+All random text for Poems the Pain Peasant says:
+FINAL FIXED ENTRY:
+Done, dude. Run? RUDE!
+> rand 7
+All random text for Assorted random locations around Y'Old Yard:
+FINAL FIXED ENTRY:
+clues you'll never make it to Worthwhile Birth-Bile Earth Isle.
+> rand 8
 All random text for Insults in the VVFF:
-Fixed last entry before looping: The final entry reads, simply, "Stare-y style, chary chile'!"
+FINAL FIXED ENTRY:
+The final entry reads, simply, "Stare-y style, chary chile'!"
 It's the last one. A vicious slam book, indeed. Yet you feel pulled to looking at it again, instead of dispelling it once and for all.
 
 > rn
@@ -165,6 +184,10 @@ All random text for Mystery Mall fake shops:
 All random text for Songs after Tim T Sims:
 > rn
 All random text for Assorted randos in Fussed Folks Just Jokes:
+> rn
+All random text for Motivational books We Whine: ME, MINE negs:
+> rn
+All random text for Poems the Pain Peasant says:
 > rn
 All random text for Assorted random locations around Y'Old Yard:
 > rn

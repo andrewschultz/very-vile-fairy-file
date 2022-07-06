@@ -3572,6 +3572,7 @@ randlisting is an action applying to one number.
 last-table-tried is a number that varies.
 
 carry out randlisting:
+	if number understood < 0 or number understood > number of rows in table of all randoms, say "[b]RAND[r] requires a number from 1 to [number of rows in table of all randoms], or 0 to list them all." instead;
 	let count be 0;
 	say "[one of][line break]You can also rummage through Very Vile Fairy File Tables.i7x for details if you want.[or][stopping]";
 	if number understood is 0:
@@ -3579,7 +3580,6 @@ carry out randlisting:
 			increment count;
 			say "[count]. [desc entry][line break]";
 		the rule succeeds;
-	if number understood < 0 or number understood > number of rows in table of all randoms, say "Need 1-[number of rows in table of all randoms]." instead;
 	now last-table-tried is number understood;
 	choose row number understood in table of all randoms;
 	let mytab be tabnam entry;
@@ -3591,7 +3591,8 @@ carry out randlisting:
 		if debug-state is false and the remainder after dividing count by 20 is 0, wfak;
 	choose row number understood in table of all randoms;
 	if there is a cycle-note entry:
-		say "Fixed last entry before looping: [cycle-note entry].[line break]";
+		say "[b]FINAL FIXED ENTRY:[line break]";
+		say "[cycle-note entry][paragraph break]";
 	else:
 		say "There is no fixed last entry before looping.";
 
