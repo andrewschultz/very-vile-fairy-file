@@ -18,7 +18,7 @@
 It feels like there could be something up there. Maybe not very important, but it's there. You just feel as though History Hall isn't defined enough, yet.
 >mystery mall
 >u
-You go up and browse Mystery Mall for a while. One store that clearly has nothing you want is (Cycling) Well Wail Sell Sale, the final one.
+You go up and browse Mystery Mall for a while. One store that clearly has nothing you want is (Cycling) Well Wail Sell Sale, from a store whose profits probably fell (FAIL).
 >history hall
 >u
 
@@ -53,7 +53,7 @@ You read about (Cycling) Hazy Hairy Lazy Larry, who ends the list with a whimper
 #RANDTEST table of silly locations
 >gonear yard
 >n
-You wander around for a while before discovering (Cycling) clues you'll never make it to Worthwhile Birth-Bile Earth Isle. An interesting detour, but not useful
+You wander around for a while before discovering (Cycling) clues you'll never make it to Worthwhile Birth-Bile Earth Isle.. An interesting detour, but not useful.
 >e
 !Cycling
 

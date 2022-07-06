@@ -430,7 +430,7 @@ a goodrhyme rule (this is the vc-cull-ceased rule) :
 	if sco-heal-here is false:
 		vcp "You need to find a way to restore your health.";
 		not-yet;
-	if Bull Beast is boring:
+	if sco-cull-ceased is true:
 		vcal "Don't brag too much, now.";
 		already-done;
 	ready;
@@ -642,7 +642,7 @@ this is the vr-flim-flam rule:
 
 a goodrhyme rule (this is the vc-full-feast rule) :
 	if Bull Beast is not in location of player, unavailable;
-	if Bull Beast is not boring:
+	if sco-cull-ceased is false:
 		vcp "That should work. It might work better if the Bull Beast were incapacitated.";
 		not-yet;
 	ready;
