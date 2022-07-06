@@ -1,127 +1,128 @@
-
 ## reg-vvff-thru-goto.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
+
+## walkthrough testing goto
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
-> gt wet wood
+>gt wet wood
 Already there! Er, here.
-> gt rift river
+>gt rift river
 The action was okay, but I couldn't recognize the object.
-> gt vined vault
+>gt vined vault
 The action was okay, but I couldn't recognize the object.
-> gt trim tram
+>gt trim tram
 The action was okay, but I couldn't recognize the object.
-> gt fun fen
+>gt fun fen
 The action was okay, but I couldn't recognize the object.
 
-> big bag
+>big bag
 by one point
 
-> get good
+>get good
 by one point
 
-> gt wet wood
+>gt wet wood
 You don't need to go back.
 
-> gift giver
+>gift giver
 by one point
 
-> gt rift river
+>gt rift river
 You don't need to go back.
 
-> find fault
+>find fault
 by one point
 
-> green grass
+>green grass
 by one point
 
-> gt vined vault
+>gt vined vault
 You don't need to go back.
 
-> grow grit
+>grow grit
 by one point
 
-> mash map
+>mash map
 by one point
 
-> mind me
+>mind me
 by one point
 
-> flim flam
+>flim flam
 by one point
 
 >gt wet wood
 You don't need to go back. The introductory bit is over.
 
-> s
+>s
 
-> kneel near
+>kneel near
 by one point
 
-> feel fear
+>feel fear
 by one point
 
-> deal dear
+>deal dear
 by one point
 
-> n
+>n
 
-> fall free
+>fall free
 by one point
 
-> dive deep
+>dive deep
 by one point
 
-> paper pile
+>paper pile
 by one point
 
-> backed binder
+>backed binder
 by one point
 
-> n
+>n
 
-> w
+>w
 
-> dark door
+>dark door
 by one point
 
-> mark more
+>mark more
 by one point
 
-> cleared clay
+>cleared clay
 by one point
 
-> w
+>w
 
-> mystery mall
+>mystery mall
 by one point
 
-> listen
+>listen
 
-> lots lame
+>lots lame
 by one point
 
-> no nappin
+>no nappin
 by one point
 
-> w
+>w
 
-> hard hat
+>hard hat
 by one point
 
-> e
-> e
-> e
-> n
-> w
+>e
+>e
+>e
+>n
+>w
 
-> e
+>e
 
-> loft land
+>loft land
 by one point
 
 >w
@@ -147,111 +148,118 @@ Curst Cave
 >gt shirk shell
 You got the jerk gel already.
 
-> w
+>w
 
-> dreaming dull
+>dreaming dull
 by one point
 
-> first fave
+>first fave
 by one point
 
-> cool cap
+>cool cap
 by one point
 
-> e
-> s
-> e
+>e
+>s
+>e
 
-> silent sail
+>silent sail
 by one point
 
-> brightening bridge
+>brightening bridge
 by one point
 
-> boring boat
+>boring boat
 by one point
 
-> enter boat
+>enter boat
 
 >gt silent sail
 Sorry, but GO TO is disabled here in the lakes.
 
-> wake whee
+>wake whee
 by one point
 
-> take tea
+>take tea
 by one point
 
-> fake fee
+>fake fee
 by one point
 
-> e
+>e
 
 >w
+
 >enter boat
+
 >gt lake lea
 You'll need to take the boring boat here to get back there.
 >w
+
 >gt lake lap
+
 You'll need to take the boring boat in Silent Sail to get back there.
+
 >e
+
 >enter boat
+
 >e
 
-> make map
+>make map
 by one point
 
-> co capn
+>co capn
 by one point
 
-> snake snap
+>snake snap
 by one point
 Silent Sail
 
-> enter boat
+>enter boat
 
 >gt silent sail
 You're too bummed to make big trips.
 
-> stay strong
+>stay strong
 by one point
 
-> glow glad
+>glow glad
 by one point
 
 >gt silent sail
 Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be.
 
-> mean muggin
+>mean muggin
 by one point
 
-> lean luggin
+>lean luggin
 by one point
 
 >gt silent sail
 Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now.
 
-> enter boat
+>enter boat
 
-> w
-> w
-> w
+>w
+>w
+>w
 
-> glean glows
+>glean glows
 by one point
 
-> history hall
+>history hall
 
-> youre yonder
+>youre yonder
 by one point
 
-> out
+>out
 
-> smashing smoke
+>smashing smoke
 by one point
 
-> in
-> w
+>in
+>w
 
 #here we test flipping MM/HH
 >e
@@ -271,140 +279,140 @@ Vending Vibe
 !flip
 Vending Vibe
 
-> lending libe
+>lending libe
 by one point
 
-> see sign
+>see sign
 by one point
 
-> e
-> e
-> e
+>e
+>e
+>e
 
-> n
+>n
 
-> n
+>n
 
-> plain pleasant
+>plain pleasant
 by one point
 
-> w
+>w
 
-> moral mage
+>moral mage
 by one point
 
-> e
-> e
+>e
+>e
 
-> sit sound
+>sit sound
 by one point
 
-> fit found
+>fit found
 by one point
 
-> e
+>e
 
-> winding ways
+>winding ways
 by one point
 
-> mo mappin
+>mo mappin
 by one point
 
-> luck lair
+>luck lair
 by one point
 
-> w
-> w
-> s
-> s
-> w
-> d
+>w
+>w
+>s
+>s
+>w
+>d
 
-> tight tunnel
+>tight tunnel
 by one point
 
-> w
+>w
 
-> knives niche
+>knives niche
 by one point
 
-> e
-> u
-> e
-> n
-> e
+>e
+>u
+>e
+>n
+>e
 
-> dear dull
+>dear dull
 by one point
 
 >gt tight tunnel
 Sorry, GO TO is disabled during the Beer Bull chase.
 
-> near null
+>near null
 by one point
 
-> w
-> s
-> w
-> d
-> w
-> s
+>w
+>s
+>w
+>d
+>w
+>s
 
-> beast boss
+>beast boss
 by one point
 
 >gt stark store
 You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast.
 
-> least loss
+>least loss
 by one point
 
-> s
+>s
 
-> s
+>s
 
-> heal here
+>heal here
 by one point
 
-> n
-> n
+>n
+>n
 
 >gt stark store
 You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast.
 
-> cull ceased
+>cull ceased
 by one point
 
-> full feast
+>full feast
 by one point
 
-> e
-> e
+>e
+>e
 
-> so sappin
+>so sappin
 by one point
 
-> shining shore
+>shining shore
 by one point
 
-> dining door
+>dining door
 by one point
 
-> pull pieced
+>pull pieced
 by one point
 
-> mining more
+>mining more
 by one point
 
-> w
-> w
-> n
-> n
+>w
+>w
+>n
+>n
 
-> show shield
+>show shield
 by one point
 
-> n
+>n
 
 # test places you can't go back to
 >gt here hull
@@ -414,36 +422,36 @@ You don't need or want to revisit that.
 >gt lake lea
 You already did that.
 
-> go gappin
+>go gappin
 by one point
 
-> couple caps
+>couple caps
 by one point
 
-> cast cap
+>cast cap
 by one point
 
-> meeker muscle
+>meeker muscle
 by one point
 
-> wood one
+>wood one
 by one point
 
-> n
+>n
 
-> gt gassed gap
+>gt gassed gap
 There's no way back. You are so close to the end.
 
-> hot horde
+>hot horde
 by one point
 
-> lot lord
+>lot lord
 by one point
 
-> got gored
+>got gored
 by one point
 
-> whoa wait
+>whoa wait
 by one point
 
 >gt airy isle
@@ -451,18 +459,18 @@ You cannot flee from your fears and your destiny. You are at the final confronta
 >gt tarry tile
 Already there! Er, here.
 
-> tell torn
+>tell torn
 by one point
 
 >gt merry mile
 !Already there! Er, here.
 
-> merry mile
+>merry mile
 by one point
 
 >gt merry mile
 Already there! Er, here.
 
-> bury bile
+>bury bile
 by one point
 

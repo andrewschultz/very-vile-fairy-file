@@ -1,213 +1,213 @@
-
 ## reg-vvff-thru-think.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
 
-## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
+## walkthrough with all out-of-order possibilities
+
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
 
-> big bag
+>big bag
 by one point
 
 # this is regression testing, as once upon a time, we blocked creating the big bag
-> think
+>think
 !BIG BAG
 
-> bury bile
+>bury bile
 !by one point
-> think
+>think
 BURY BILE
 
-> get good
+>get good
 by one point
 
-> gift giver
+>gift giver
 by one point
 
-> find fault
+>find fault
 by one point
 
-> green grass
+>green grass
 by one point
 
-> mash map
+>mash map
 !by one point
-> think
+>think
 MASH MAP
 
-> grow grit
+>grow grit
 by one point
 
-> mash map
+>mash map
 by one point
 
-> think
+>think
 !MASH MAP
-> flim flam
+>flim flam
 !by one point
-> think
+>think
 FLIM FLAM
 
-> mind me
+>mind me
 by one point
 
-> flim flam
+>flim flam
 by one point
 
-> think
+>think
 !FLIM FLAM
 
-> s
+>s
 
-> feel fear
+>feel fear
 !by one point
-> deal dear
+>deal dear
 !by one point
-> heal here
+>heal here
 !by one point
-> think
+>think
 FEEL FEAR
 DEAL DEAR
 HEAL HERE
 
-> kneel near
+>kneel near
 by one point
 
-> feel fear
+>feel fear
 by one point
 
-> think
+>think
 !FEEL FEAR
 
-> deal dear
+>deal dear
 by one point
 
-> think
+>think
 !DEAL DEAR
 
-> n
+>n
 
-> fall free
+>fall free
 by one point
 
-> dive deep
+>dive deep
 by one point
 
-> paper pile
+>paper pile
 by one point
 
-> backed binder
+>backed binder
 by one point
 
-> n
+>n
 
-> w
+>w
 
-> mark more
+>mark more
 !by one point
-> think
+>think
 MARK MORE
 
-> dark door
+>dark door
 by one point
 
-> mark more
+>mark more
 by one point
 
-> think
+>think
 !MARK MORE
 
-> cleared clay
+>cleared clay
 by one point
 
-> w
+>w
 
-> mystery mall
+>mystery mall
 by one point
 
-> glean glows
+>glean glows
 !by one point
-> think
+>think
 GLEAN GLOWS
 
-> listen
+>listen
 
-> lots lame
+>lots lame
 by one point
 
-> co capn
+>co capn
 !by one point
-> so sappin
+>so sappin
 !by one point
-> mo mappin
+>mo mappin
 !by one point
-> THINK
+>think
 MO MAPPIN
 SO SAPPIN
 CO CAPN
 
-> no nappin
+>no nappin
 by one point
 
-> w
+>w
 
-> hard hat
+>hard hat
 by one point
 
-> e
-> e
-> e
-> n
-> w
+>e
+>e
+>e
+>n
+>w
 
-> work well
+>work well
 by one point
 
-> couple caps
+>couple caps
 !by one point
-> think
+>think
 COUPLE CAPS
 
-> e
+>e
 
-> loft land
+>loft land
 by one point
 
-> w
+>w
 
-> first fave
+>first fave
 !by one point
-> think
+>think
 FIRST FAVE
 
-> dreaming dull
+>dreaming dull
 by one point
 
-> first fave
+>first fave
 by one point
 
-> think
+>think
 !FIRST FAVE
 
-> cool cap
+>cool cap
 by one point
 
-> e
-> s
-> e
+>e
+>s
+>e
 
-> silent sail
+>silent sail
 by one point
 
-> brightening bridge
+>brightening bridge
 by one point
 
-> boring boat
+>boring boat
 by one point
 
-> enter boat
+>enter boat
 
 >take tea
 !by one point
@@ -217,42 +217,42 @@ by one point
 TAKE TEA
 FAKE FEE
 
-> wake whee
+>wake whee
 by one point
 
-> take tea
+>take tea
 by one point
 
 >think
 !TAKE TEA
 
-> fake fee
+>fake fee
 by one point
 
 >think
 !FAKE FEE
 
-> e
+>e
 
-> make map
+>make map
 by one point
 
-> snake snap
+>snake snap
 !by one point
-> think
+>think
 SNAKE SNAP
 
-> co capn
+>co capn
 by one point
 
 >think
 !CO CAPN
 
-> snake snap
+>snake snap
 by one point
 Silent Sail
 
-> think
+>think
 !SNAKE SNAP
 
 # test bug found in-comp
@@ -264,7 +264,7 @@ Been Buggin
 >undo
 >undo
 
-> enter boat
+>enter boat
 
 >lean luggin
 You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
@@ -275,349 +275,349 @@ You're not well-adjusted enough yet to learn anything so emotionally complex. Es
 >think
 MEAN MUGGIN
 
-> stay strong
+>stay strong
 by one point
 
-> glow glad
+>glow glad
 by one point
 
 >think
 You tried some LEAN LUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 
-> mean muggin
+>mean muggin
 by one point
 
-> lean luggin
+>lean luggin
 by one point
 
 >think
 !LEAN LUGGIN
 !MEAN MUGGIN
 
-> enter boat
+>enter boat
 
-> w
-> w
-> w
+>w
+>w
+>w
 
-> glean glows
+>glean glows
 by one point
 
-> smashing smoke
+>smashing smoke
 !by one point
-> think
+>think
 !GLEAN GLOWS
 SMASHING SMOKE
 
-> history hall
+>history hall
 
-> youre yonder
+>youre yonder
 by one point
 
-> out
+>out
 
-> smashing smoke
+>smashing smoke
 by one point
 
-> think
+>think
 !SMASHING SMOKE
 
-> in
-> w
+>in
+>w
 
-> lending libe
+>lending libe
 by one point
 
-> see sign
+>see sign
 by one point
 
-> e
-> e
-> e
+>e
+>e
+>e
 
-> beast boss
+>beast boss
 !by one point
-> least loss
+>least loss
 !by one point
-> think
+>think
 BEAST BOSS
 LEAST LOSS
 
-> n
+>n
 
-> n
+>n
 
-> show shield
+>show shield
 !by one point
-> think
+>think
 SHOW SHIELD
 
-> plain pleasant
+>plain pleasant
 by one point
 
-> w
+>w
 
-> moral mage
+>moral mage
 by one point
 
-> e
-> e
+>e
+>e
 
-> fit found
+>fit found
 !by one point
-> think
+>think
 FIT FOUND
 
-> sit sound
+>sit sound
 by one point
 
-> fit found
+>fit found
 by one point
 
-> think
+>think
 !FIT FOUND
 
-> e
+>e
 
-> winding ways
+>winding ways
 by one point
 
-> mo mappin
+>mo mappin
 by one point
 
-> think
+>think
 !MO MAPPIN
 
-> luck lair
+>luck lair
 by one point
 
-> w
-> w
-> s
-> s
-> w
-> d
+>w
+>w
+>s
+>s
+>w
+>d
 
-> tight tunnel
+>tight tunnel
 by one point
 
-> w
+>w
 
-> knives niche
+>knives niche
 by one point
 
-> e
-> u
-> e
-> n
-> e
+>e
+>u
+>e
+>n
+>e
 
-> dear dull
+>dear dull
 by one point
 
-> near null
+>near null
 by one point
 
-> w
-> s
-> w
-> d
-> w
-> s
+>w
+>s
+>w
+>d
+>w
+>s
 
-> beast boss
+>beast boss
 by one point
 
-> think
+>think
 !BEAST BOSS
 
-> least loss
+>least loss
 by one point
 
-> cull ceased
+>cull ceased
 !by one point
-> think
+>think
 !LEAST LOSS
 CULL CEASED
 
-> s
+>s
 
-> s
+>s
 
-> heal here
+>heal here
 by one point
 
-> think
+>think
 !HEAL HERE
 
-> n
-> n
+>n
+>n
 
-> full feast
+>full feast
 !by one point
-> think
+>think
 FULL FEAST
 
-> cull ceased
+>cull ceased
 by one point
 
-> think
+>think
 !CULL CEASED
 
-> full feast
+>full feast
 by one point
 
-> pull pieced
+>pull pieced
 !by one point
-> think
+>think
 !FULL FEAST
 PULL PIECED
 
-> e
-> e
+>e
+>e
 
-> shining shore
+>shining shore
 !by one point
-> mining more
+>mining more
 !by one point
-> dining door
+>dining door
 !by one point
-> think
+>think
 SHINING SHORE
 MINING MORE
 DINING DOOR
 
-> so sappin
+>so sappin
 by one point
 
-> think
+>think
 !SO SAPPIN
 
-> shining shore
+>shining shore
 by one point
 
-> think
+>think
 !SHINING SHORE
 
-> dining door
+>dining door
 by one point
 
-> think
+>think
 !DINING DOOR
 
-> pull pieced
+>pull pieced
 by one point
 
-> think
+>think
 !PULL PIECED
 
-> mining more
+>mining more
 by one point
 
-> think
+>think
 !MINING MORE
 
-> w
-> w
-> n
-> n
+>w
+>w
+>n
+>n
 
-> show shield
+>show shield
 by one point
 
-> think
+>think
 !SHOW SHIELD
 
-> go gappin
+>go gappin
 !by one point
-> think
+>think
 GO GAPPIN
 
-> n
+>n
 
-> go gappin
+>go gappin
 by one point
 
-> think
+>think
 !GO GAPPIN
 
-> cast cap
+>cast cap
 !by one point
-> think
+>think
 CAST CAP
 
-> couple caps
+>couple caps
 by one point
 
-> think
+>think
 !COUPLE CAPS
 
-> cast cap
+>cast cap
 by one point
 
-> think
+>think
 !CAST CAP
 
-> meeker muscle
+>meeker muscle
 by one point
 
-> wood one
+>wood one
 by one point
 
-> n
+>n
 
-> got gored
+>got gored
 !by one point
-> think
+>think
 GOT GORED
 
-> hot horde
+>hot horde
 by one point
 
-> lot lord
+>lot lord
 by one point
 
-> got gored
+>got gored
 by one point
 
-> think
+>think
 !GOT GORED
 
-> whoa wait
+>whoa wait
 by one point
 
-> merry mile
+>merry mile
 !by one point
-> think
+>think
 MERRY MILE
 
-> tell torn
+>tell torn
 by one point
 
-> merry mile
+>merry mile
 by one point
 
-> think
+>think
 !MERRY MILE
 
-> bury bile
+>bury bile
 by one point
 
 * moral-mage-check
 
 # while technically I could have rolled this into the walkthrough, 1) it would have clashed with the general traceable quick way through, and 2) it's a bit out of the way, and it doesn't take long, anyway.
 
-> blow by
-> fall free
-> n
-> n
-> n
-> plain pleasant
-> w
-> moral mage
+>blow by
+>fall free
+>n
+>n
+>n
+>plain pleasant
+>w
+>moral mage
 !by one point
-> think
+>think
 MORAL MAGE
 >e
 >s
@@ -635,7 +635,7 @@ by one point
 >n
 >n
 >w
-> moral mage
+>moral mage
 by one point
 >think
 !MORAL MAGE

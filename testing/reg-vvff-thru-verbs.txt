@@ -1,6 +1,7 @@
-
 ## reg-vvff-thru-verbs.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
+
+##walkthrough testing special verbs
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -28,235 +29,235 @@ Hi-ho! Why woe?
 >t rig rag
 You can only talk to living things, and the zig zag rig rag doesn't qualify.
 
-> big bag
+>big bag
 by one point
 
-> get good
+>get good
 by one point
 
-> gift giver
+>gift giver
 by one point
 
-> eat mind malt
+>eat mind malt
 Worthless. It's empty.
 
-> find fault
+>find fault
 by one point
 
-> green grass
+>green grass
 by one point
 
-> grow grit
+>grow grit
 by one point
 
-> mash map
+>mash map
 by one point
 
-> mind me
+>mind me
 by one point
 
-> flim flam
+>flim flam
 by one point
 
-> n
+>n
 A voice booms in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
->  d
+>d
 Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
-> s
+>s
 
 >drink sage sea
 Sea salt? Ee! Alt!
 
-> kneel near
+>kneel near
 by one point
 
-> feel fear
+>feel fear
 by one point
 
-> deal dear
+>deal dear
 by one point
 
-> n
+>n
 
-> fall free
+>fall free
 by one point
 
-> dive deep
+>dive deep
 by one point
 
-> paper pile
+>paper pile
 by one point
 
-> backed binder
+>backed binder
 by one point
 
-> n
+>n
 
-> w
+>w
 
-> dark door
+>dark door
 by one point
 
 >open dark door
 You can't find a way off-hand. It doesn't even seem to have a handle. Perhaps careful observation will turn something up.
 
-> mark more
+>mark more
 by one point
 
-> cleared clay
+>cleared clay
 by one point
 
-> w
+>w
 
-> mystery mall
+>mystery mall
 by one point
 
-> listen
+>listen
 
-> lots lame
+>lots lame
 by one point
 
-> no nappin
+>no nappin
 by one point
 
-> w
+>w
 
-> hard hat
+>hard hat
 by one point
 
-> eat hard hat
+>eat hard hat
 Idioms are neat, but this adventure is about rhyming.
-> wear hard hat
+>wear hard hat
 Somehow, the hard hat isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion.
 
-> e
-> e
-> e
-> n
-> w
+>e
+>e
+>e
+>n
+>w
 
-> work well
+>work well
 by one point
 
-> e
+>e
 
-> loft land
+>loft land
 by one point
 
-> w
+>w
 
-> dreaming dull
+>dreaming dull
 by one point
 
 >drink worst wave
 Sea salt? Ee! Alt!
 
-> first fave
+>first fave
 by one point
 
-> cool cap
+>cool cap
 by one point
 
-> e
-> s
-> e
+>e
+>s
+>e
 
-> silent sail
+>silent sail
 by one point
 
 >open frightening fridge
 You're scared to. There must be a better way to get rid of the fridge.
 
-> brightening bridge
+>brightening bridge
 by one point
 
-> boring boat
+>boring boat
 by one point
 
-> enter boat
+>enter boat
 
-> wake whee
+>wake whee
 by one point
 
-> take tea
+>take tea
 by one point
 
-> fake fee
+>fake fee
 by one point
 
-> e
+>e
 
-> make map
+>make map
 by one point
 
-> co capn
+>co capn
 by one point
 
-> snake snap
+>snake snap
 by one point
 Silent Sail
 
-> enter boat
+>enter boat
 
-> stay strong
+>stay strong
 by one point
 
-> glow glad
+>glow glad
 by one point
 
-> t dean duggan
+>t dean duggan
 "Teach tons, reach runs!" You don't need beach buns, but you probably need a specific phrase suitable to him, or this place. His lax demeanor suggests a bit of slang.
 
-> mean muggin
+>mean muggin
 by one point
 
-> lean luggin
+>lean luggin
 by one point
 
-> enter boat
+>enter boat
 
-> w
-> w
-> w
+>w
+>w
+>w
 
-> glean glows
+>glean glows
 by one point
 
-> history hall
+>history hall
 
-> youre yonder
+>youre yonder
 by one point
 
-> out
+>out
 
-> smashing smoke
+>smashing smoke
 by one point
 
-> in
-> w
+>in
+>w
 
-> t trending tribe
+>t trending tribe
 "Bam, burning! Am earning!"
 
-> lending libe
+>lending libe
 by one point
 
-> see sign
+>see sign
 by one point
 
-> e
-> e
-> e
+>e
+>e
+>e
 
-> n
+>n
 
-> n
+>n
 
-> plain pleasant
+>plain pleasant
 by one point
 
-> w
+>w
 
 >open coral cage
 The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage.
@@ -265,153 +266,153 @@ The cage key seems to fit, but you feel a sense of dread. Perhaps you should con
 You have nothing that opens the coral cage.
 >purloin cage key
 
-> moral mage
+>moral mage
 by one point
 
-> e
-> e
+>e
+>e
 
-> t hit hound
+>t hit hound
 Yowl. Yip. Growl. Grip?
 
-> sit sound
+>sit sound
 by one point
 
-> fit found
+>fit found
 by one point
 
-> e
+>e
 
-> winding ways
+>winding ways
 by one point
 
-> mo mappin
+>mo mappin
 by one point
 
-> luck lair
+>luck lair
 by one point
 
-> w
-> w
-> s
-> s
-> w
-> d
+>w
+>w
+>s
+>s
+>w
+>d
 
-> tight tunnel
+>tight tunnel
 by one point
 
-> w
+>w
 
-> knives niche
+>knives niche
 by one point
 
-> e
-> u
-> e
-> n
-> e
+>e
+>u
+>e
+>n
+>e
 
-> attack beer bull
+>attack beer bull
 You'd get a triple-tough cripple-cuff in return. You must fight with words.
-> t beer bull
+>t beer bull
 It can't speak, but its look says "Real rude? Deal, dude!"
 
-> dear dull
+>dear dull
 by one point
 
-> near null
+>near null
 by one point
 
-> w
-> s
-> w
-> d
-> w
-> s
+>w
+>s
+>w
+>d
+>w
+>s
 
-> drink mild mead
+>drink mild mead
 It's too much mead for one person. You need to share it, with something to eat.
-> wear gold guard
+>wear gold guard
 You'll wear it when you need to.
 
-> beast boss
+>beast boss
 by one point
 
-> attack bull beast
+>attack bull beast
 You'd get a triple-tough cripple-cuff in return. You must fight with words.
-> t bull beast
+>t bull beast
 If it could talk, it'd say "Tame? Tush! Maim! Mush!"
 >s
 You don't have the energy
 
-> least loss
+>least loss
 by one point
 
 # maybe this should be !min?
-> wild weed
+>wild weed
 by one point
 
-> eat wild weed
+>eat wild weed
 That is not filed feed.
 
-> s
+>s
 
-> s
+>s
 
-> heal here
+>heal here
 by one point
 
-> n
-> n
+>n
+>n
 
-> cull ceased
+>cull ceased
 by one point
 
-> full feast
+>full feast
 by one point
 
 >eat full feast
 Too much for one person. You need to move it somewhere everyone can enjoy it.
 
-> e
-> e
+>e
+>e
 
-> so sappin
+>so sappin
 by one point
 
-> shining shore
+>shining shore
 by one point
 
-> dining door
+>dining door
 by one point
 
-> open dining door
+>open dining door
 You'd need a big banquet around before doing that.
 
-> pull pieced
+>pull pieced
 by one point
 
-> mining more
+>mining more
 by one point
 
-> w
-> w
-> n
-> n
+>w
+>w
+>n
+>n
 
-> show shield
+>show shield
 by one point
 
-> n
+>n
 
-> go gappin
+>go gappin
 by one point
 
-> couple caps
+>couple caps
 by one point
 
-> cast cap
+>cast cap
 by one point
 
 >w
@@ -419,11 +420,11 @@ There's no running from Reeker Russell! You'll have to diminish him and his gun.
 
 >attack russell
 But he'd become Rager Russell. With major muscle.
-> smell reeker russell
+>smell reeker russell
 Stench-stained, drench-drained.
-> smell
+>smell
 (Russell... his smell is overpowering)
-> t reeker russell
+>t reeker russell
 "My mood: DIE, dude!"
 
 # this is to test both pathways of the "Reeker Russell blocks you" text
@@ -434,41 +435,41 @@ There's no running from Reeker Russell! You still have to diminish him.
 >undo
 >undo
 
-> meeker muscle
+>meeker muscle
 by one point
 
 >w
 There's no running from Reeker Russell! You still have to diminish his gun.
 
-> wood one
+>wood one
 by one point
 
-> n
+>n
 
-> attack bot board
+>attack bot board
 The Bot Board intones "Pif-paf? Riff-raff!" That's about as close to a joke as they'll get.
-> t bot board
+>t bot board
 "Meep, mate! Heap hate! Weep, wait!"
 
-> hot horde
+>hot horde
 by one point
 
-> t hot horde
+>t hot horde
 Lots of rot roared right now.
 
-> lot lord
+>lot lord
 by one point
 
-> t lot lord
+>t lot lord
 "Eeg, not ig-nored." Ugh?
 
-> got gored
+>got gored
 by one point
 
-> attack go gate
+>attack go gate
 Ho! Hate!
 
-> whoa wait
+>whoa wait
 by one point
 
 >t fairy file
@@ -476,17 +477,17 @@ by one point
 >shit
 A voice from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
 
-> attack vvff
+>attack vvff
 You imagine a voice saying "Big boom! Dig doom!" You step back and, err, rig room.
-> take vvff
+>take vvff
 A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expected that, really.
 
-> tell torn
+>tell torn
 by one point
 
-> merry mile
+>merry mile
 by one point
 
-> bury bile
+>bury bile
 by one point
 

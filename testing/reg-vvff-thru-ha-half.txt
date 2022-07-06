@@ -1,6 +1,7 @@
-
 ## reg-vvff-thru-ha-half.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
+
+## walkthrough testing half-right cases
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -21,13 +22,13 @@ Homonym detection is already set to on.
 >do due
 I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
 
-> zget good
+>zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> good zget
+>good zget
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> zgood get
+>zgood get
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 >zbig bag
@@ -37,10 +38,10 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> zreally rolling
+>zreally rolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> really zrolling
+>really zrolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
@@ -48,146 +49,146 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 by one point
 A stun-steed zooms by
 
-> zreally rolling
+>zreally rolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> really zrolling
+>really zrolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 >really rolling
 !by one point
 You already guessed the significance of my pen name.
 
-> big bag
+>big bag
 by one point
 
-> zbig bag rule
+>zbig bag rule
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> big zbag rule
+>big zbag rule
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> big bag
+>big bag
 !by one point
 You already made the big bag.
 
-> get good
+>get good
 by one point
 
-> get good
+>get good
 !by one point
 You already managed to GET GOOD.
 
-> zgift giver
+>zgift giver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> gift zgiver
+>gift zgiver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> gift giver
+>gift giver
 by one point
 
-> gift giver
+>gift giver
 !by one point
 That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's.
 
-> zgift giver rule
+>zgift giver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> gift zgiver rule
+>gift zgiver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zfind fault rule
+>zfind fault rule
 DEBUG: vc-find-fault rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> find zfault rule
+>find zfault rule
 DEBUG: vc-find-fault rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> find fault
+>find fault
 by one point
 
-> find fault
+>find fault
 !by one point
 You already did, and things got worse. You'll have to try something else.
 
-> zfind fault rule
+>zfind fault rule
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> find zfault rule
+>find zfault rule
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zgreen grass rule
+>zgreen grass rule
 DEBUG: vc-green-grass rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> green zgrass rule
+>green zgrass rule
 DEBUG: vc-green-grass rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> green grass
+>green grass
 by one point
 
-> green grass
+>green grass
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zgreen grass rule
+>zgreen grass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> green zgrass rule
+>green zgrass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zgrow grit rule
+>zgrow grit rule
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> grow zgrit rule
+>grow zgrit rule
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> grow grit
+>grow grit
 by one point
 
-> grow grit
+>grow grit
 !by one point
 You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.
 
-> zgrow grit rule
+>zgrow grit rule
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> grow zgrit rule
+>grow zgrit rule
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmash map rule
+>zmash map rule
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> mash zmap rule
+>mash zmap rule
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> mash map
+>mash map
 by one point
 
-> mash map
+>mash map
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zmash map rule
+>zmash map rule
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mash zmap rule
+>mash zmap rule
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmind me rule
+>zmind me rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> mind zme rule
+>mind zme rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
@@ -200,15 +201,15 @@ You set homonym detection to off.
 It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
 You turn the Leet Learner off. You can turn it on with HUT CAN or LL ON or CC ON.
 >undo
-> nah naff
+>nah naff
 It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
 You set the Leet Learner to Nah Naff.
 >nah naff
 The Leet Learner is already set to Nah Naff.
-> zmind me
+>zmind me
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mind zme
+>mind zme
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 >ha half
@@ -245,996 +246,996 @@ You wave the leet learner all around Trim Tram...
 !You turned the Leet Learner off, so nothing shows up.
 The leet learner needle lights up. Then it stays at the center as you wave it around.
 
-> mind me
+>mind me
 by one point
 
-> mind me
+>mind me
 !by one point
 You already minded yourself.
 
-> zmind me rule
+>zmind me rule
 !DEBUG: vc-mind-me rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mind zme rule
+>mind zme rule
 !DEBUG: vc-mind-me rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zflim flam rule
+>zflim flam rule
 DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> flim zflam rule
+>flim zflam rule
 DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> flim flam
+>flim flam
 by one point
 
-> zbloke blessed rule
+>zbloke blessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> bloke zblessed rule
+>bloke zblessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> bloke blessed
+>bloke blessed
 by one point
 You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
 
-> really rolling
+>really rolling
 !by one point
 You already guessed the significance of my pen name.
 
-> flim flam
+>flim flam
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zflim flam rule
+>zflim flam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> flim zflam rule
+>flim zflam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> s
+>s
 
-> zkneel near rule
+>zkneel near rule
 DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> kneel znear rule
+>kneel znear rule
 DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> kneel near
+>kneel near
 by one point
 
-> kneel near
+>kneel near
 !by one point
 No need to kneel twice.
 
-> zkneel near rule
+>zkneel near rule
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> kneel znear rule
+>kneel znear rule
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zfeel fear rule
+>zfeel fear rule
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> feel zfear rule
+>feel zfear rule
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> feel fear
+>feel fear
 by one point
 
-> feel fear
+>feel fear
 !by one point
 No need to overdo feeling fear.
 
-> zfeel fear rule
+>zfeel fear rule
 !DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> feel zfear rule
+>feel zfear rule
 !DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zdeal dear rule
+>zdeal dear rule
 DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> deal zdear rule
+>deal zdear rule
 DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> deal dear
+>deal dear
 by one point
 
-> deal dear
+>deal dear
 !by one point
 Overdoing dealing with it is ... one way to show you might not be dealing with it.
 
-> zdeal dear rule
+>zdeal dear rule
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> deal zdear rule
+>deal zdear rule
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zappealing appear rule
+>zappealing appear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> appealing zappear rule
+>appealing zappear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> appealing appear
+>appealing appear
 by one point
 !A stun-steed zooms by
 
-> appealing appear
+>appealing appear
 !by one point
 The peeling pier already looks better.
 
-> zappealing appear rule
+>zappealing appear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> appealing zappear rule
+>appealing zappear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> n
+>n
 
-> zspark spliff rule
+>zspark spliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> spark zspliff rule
+>spark zspliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> zstrong start rule
+>zstrong start rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> strong zstart rule
+>strong zstart rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> strong start
+>strong start
 by one point
 
-> strong start
+>strong start
 !by one point
 You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.
 
-> zstrong start rule
+>zstrong start rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> strong zstart rule
+>strong zstart rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> zfall free rule
+>zfall free rule
 DEBUG: vc-fall-free rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> fall zfree rule
+>fall zfree rule
 DEBUG: vc-fall-free rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> fall free
+>fall free
 by one point
 
-> fall free
+>fall free
 !by one point
 The tree is already fallen. It's in a good place.
 
-> zfall free rule
+>zfall free rule
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> fall zfree rule
+>fall zfree rule
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zdive deep rule
+>zdive deep rule
 DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> dive zdeep rule
+>dive zdeep rule
 DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> dive deep
+>dive deep
 by one point
 
-> dive deep
+>dive deep
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zdive deep rule
+>zdive deep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> dive zdeep rule
+>dive zdeep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zpaper pile rule
+>zpaper pile rule
 DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> paper zpile rule
+>paper zpile rule
 DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> paper pile
+>paper pile
 by one point
 
-> paper pile
+>paper pile
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zpaper pile rule
+>zpaper pile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> paper zpile rule
+>paper zpile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zbacked binder rule
+>zbacked binder rule
 DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> backed zbinder rule
+>backed zbinder rule
 DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> backed binder
+>backed binder
 by one point
 
-> backed binder
+>backed binder
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zbacked binder rule
+>zbacked binder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> backed zbinder rule
+>backed zbinder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> n
+>n
 
-> w
+>w
 
-> zdark door rule
+>zdark door rule
 DEBUG: vc-dark-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> dark zdoor rule
+>dark zdoor rule
 DEBUG: vc-dark-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> dark door
+>dark door
 by one point
 
-> dark door
+>dark door
 !by one point
 You already made the dark door appear.
 
-> zdark door rule
+>zdark door rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> dark zdoor rule
+>dark zdoor rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmark more rule
+>zmark more rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> mark zmore rule
+>mark zmore rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> mark more
+>mark more
 by one point
 
-> mark more
+>mark more
 !by one point
 You already saw what you could.
 
-> zmark more rule
+>zmark more rule
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mark zmore rule
+>mark zmore rule
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zcleared clay rule
+>zcleared clay rule
 DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> cleared zclay rule
+>cleared zclay rule
 DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> cleared clay
+>cleared clay
 by one point
 
-> cleared clay
+>cleared clay
 !by one point
 The clay is cleared enough.
 
-> zcleared clay rule
+>zcleared clay rule
 !DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> cleared zclay rule
+>cleared zclay rule
 !DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
+>w
 
-> zmystery mall rule
+>zmystery mall rule
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> mystery zmall rule
+>mystery zmall rule
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> mystery mall
+>mystery mall
 by one point
 
-> mystery mall
+>mystery mall
 !by one point
 You've already flipped this area to the Mystery Mall.
 
-> zmystery mall rule
+>zmystery mall rule
 !DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mystery zmall rule
+>mystery zmall rule
 !DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zwhatta wanksta rule
+>zwhatta wanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> whatta zwanksta rule
+>whatta zwanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> what a wanksta
+>what a wanksta
 by one point
 
-> whatta wanksta
+>whatta wanksta
 !by one point
 That insult only works once.
 
-> zwhatta wanksta rule
+>zwhatta wanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> whatta zwanksta rule
+>whatta zwanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> listen
+>listen
 
-> zlots lame rule
+>zlots lame rule
 DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> lots zlame rule
+>lots zlame rule
 DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> lots lame
+>lots lame
 by one point
 
-> lots lame
+>lots lame
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zlots lame rule
+>zlots lame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> lots zlame rule
+>lots zlame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zho happen rule
+>zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
-> ho zhappen rule
+>ho zhappen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
 
-> ho happen
+>ho happen
 by one point
-> dimd
+>dimd
 by one point
 
-> ho happen
+>ho happen
 !by one point
 #?? for postcomp: TRY DOING
 You already said HO HAPPEN. Now you have to make things happen!
 
-> dimd
+>dimd
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zho happen rule
+>zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> ho zhappen rule
+>ho zhappen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> zno nappin rule
+>zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
-> no znappin rule
+>no znappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
-> no nappin
+>no nappin
 by one point
 
-> no nappin
+>no nappin
 !by one point
 You already changed Toe Tappin Row Rappin that way.
 
-> zno nappin rule
+>zno nappin rule
 !DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> no znappin rule
+>no znappin rule
 !DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
+>w
 
-> zlie lol rule
+>zlie lol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> lie zlol rule
+>lie zlol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> lie lol
+>lie lol
 by one point
 
-> lie lol
+>lie lol
 !by one point
 The shy shawl has taken enough abuse.
 
-> zlie lol rule
+>zlie lol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> lie zlol rule
+>lie zlol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> znot near rule
+>znot near rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> not znear rule
+>not znear rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> not near
+>not near
 by one point
 
-> not near
+>not near
 !by one point
 You already teleported for a bonus point.
 
-> znot near rule
+>znot near rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> not znear rule
+>not znear rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> zhard hat rule
+>zhard hat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> hard zhat rule
+>hard zhat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> hard hat
+>hard hat
 by one point
 
-> hard hat
+>hard hat
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zhard hat rule
+>zhard hat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> hard zhat rule
+>hard zhat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
-> e
-> e
-> n
-> w
+>e
+>e
+>e
+>n
+>w
 
-> zwork well rule
+>zwork well rule
 DEBUG: vc-work-well rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> work zwell rule
+>work zwell rule
 DEBUG: vc-work-well rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> work well
+>work well
 by one point
 
-> work well
+>work well
 !by one point
 Any further futzing might undo your previous good work.
 
-> zwork well rule
+>zwork well rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> work zwell rule
+>work zwell rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
+>e
 
-> zloft land rule
+>zloft land rule
 DEBUG: vc-loft-land rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> loft zland rule
+>loft zland rule
 DEBUG: vc-loft-land rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> loft land
+>loft land
 by one point
 
-> loft land
+>loft land
 !by one point
 You're already on the Loft Land.
 
-> soft sand
+>soft sand
 !by one point
-> soft sand
+>soft sand
 !by one point
 You're already on the Soft Sand.
-> undo
-> undo
-> zsoft sand
+>undo
+>undo
+>zsoft sand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
-> soft zsand
+>soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
-> zloft land rule
+>zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> loft zland rule
+>loft zland rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
+>w
 
-> zdreaming dull rule
+>zdreaming dull rule
 DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> dreaming zdull rule
+>dreaming zdull rule
 DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> dreaming dull
+>dreaming dull
 by one point
 
-> dreaming dull
+>dreaming dull
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zdreaming dull rule
+>zdreaming dull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> dreaming zdull rule
+>dreaming zdull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zfirst fave rule
+>zfirst fave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> first zfave rule
+>first zfave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> first fave
+>first fave
 by one point
 
-> first fave
+>first fave
 !by one point
 The Curst Cave is already a cheerier place.
 
-> zfirst fave rule
+>zfirst fave rule
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> first zfave rule
+>first zfave rule
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zcool cap rule
+>zcool cap rule
 DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> cool zcap rule
+>cool zcap rule
 DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> cool cap
+>cool cap
 by one point
 
-> cool cap
+>cool cap
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zcool cap rule
+>zcool cap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> cool zcap rule
+>cool zcap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
-> s
-> e
+>e
+>s
+>e
 
-> zsilent sail rule
+>zsilent sail rule
 DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> silent zsail rule
+>silent zsail rule
 DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> silent sail
+>silent sail
 by one point
 
-> silent sail
+>silent sail
 !by one point
 You already called up the flooring float.
 
-> zsilent sail rule
+>zsilent sail rule
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> silent zsail rule
+>silent zsail rule
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zbrightening bridge rule
+>zbrightening bridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> brightening zbridge rule
+>brightening zbridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> brightening bridge
+>brightening bridge
 by one point
 
-> brightening bridge
+>brightening bridge
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zbrightening bridge rule
+>zbrightening bridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> brightening zbridge rule
+>brightening zbridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zboring boat rule
+>zboring boat rule
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> boring zboat rule
+>boring zboat rule
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> boring boat
+>boring boat
 by one point
 
-> boring boat
+>boring boat
 !by one point
 The boat is already boring and practical enough.
 
-> zboring boat rule
+>zboring boat rule
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> boring zboat rule
+>boring zboat rule
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> enter boat
+>enter boat
 
-> zwake whee rule
+>zwake whee rule
 DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> wake zwhee rule
+>wake zwhee rule
 DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> wake whee
+>wake whee
 by one point
 
-> wake whee
+>wake whee
 !by one point
 He's already awake, Blake.
 
-> zwake whee rule
+>zwake whee rule
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> wake zwhee rule
+>wake zwhee rule
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> ztake tea rule
+>ztake tea rule
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> take ztea rule
+>take ztea rule
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> take tea
+>take tea
 by one point
 
-> take tea
+>take tea
 !by one point
 Don't get greedy. You have the sustenance needed to work with Jake G.
 
-> ztake tea rule
+>ztake tea rule
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> take ztea rule
+>take ztea rule
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zbreak brie rule
+>zbreak brie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> break zbrie rule
+>break zbrie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> break brie
+>break brie
 by one point
 
-> break brie
+>break brie
 !by one point
 Hey! Don't get greedy, now.
 
-> zbreak brie rule
+>zbreak brie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> break zbrie rule
+>break zbrie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> zfake fee rule
+>zfake fee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> fake zfee rule
+>fake zfee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> fake fee
+>fake fee
 by one point
 
-> fake fee
+>fake fee
 !by one point
 That's over. Time to work with Jake!
 
-> zfake fee rule
+>zfake fee rule
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> fake zfee rule
+>fake zfee rule
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
+>e
 
-> zmake map rule
+>zmake map rule
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> make zmap rule
+>make zmap rule
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> make map
+>make map
 by one point
 
-> make map
+>make map
 !by one point
 You already made a map.
 
-> zmake map rule
+>zmake map rule
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> make zmap rule
+>make zmap rule
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zco capn rule
+>zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
-> co zcapn rule
+>co zcapn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
-> co capn
+>co capn
 by one point
 
-> co capn
+>co capn
 !by one point
 Jake already is.
 
-> zco capn rule
+>zco capn rule
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> co zcapn rule
+>co zcapn rule
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zsnake snap rule
+>zsnake snap rule
 DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> snake zsnap rule
+>snake zsnap rule
 DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> snake snap
+>snake snap
 by one point
 Silent Sail
 
-> snake snap
+>snake snap
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zsnake snap rule
+>zsnake snap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> snake zsnap rule
+>snake zsnap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> enter boat
+>enter boat
 
-> zstay strong rule
+>zstay strong rule
 DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> stay zstrong rule
+>stay zstrong rule
 DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> stay strong
+>stay strong
 by one point
 
-> stay strong
+>stay strong
 !by one point
 You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling so sad.
 
-> zstay strong rule
+>zstay strong rule
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> stay zstrong rule
+>stay zstrong rule
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zglow glad rule
+>zglow glad rule
 DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> glow zglad rule
+>glow zglad rule
 DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> glow glad
+>glow glad
 by one point
 
-> glow glad
+>glow glad
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zglow glad rule
+>zglow glad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> glow zglad rule
+>glow zglad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmean muggin rule
+>zmean muggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> mean zmuggin rule
+>mean zmuggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> mean muggin
+>mean muggin
 by one point
 
-> mean muggin
+>mean muggin
 !by one point
 You already learned mean muggin'.
 
-> zmean muggin rule
+>zmean muggin rule
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mean zmuggin rule
+>mean zmuggin rule
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zlean luggin rule
+>zlean luggin rule
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> lean zluggin rule
+>lean zluggin rule
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> lean luggin
+>lean luggin
 by one point
 
-> lean luggin
+>lean luggin
 !by one point
 You already learned lean luggin'.
-> undo
+>undo
 
-> zlean luggin rule
+>zlean luggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> lean zluggin rule
+>lean zluggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zbumped buster rule
+>zbumped buster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> bumped zbuster rule
+>bumped zbuster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> bumped buster
+>bumped buster
 by one point
 
-> bumped buster
+>bumped buster
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zbumped buster rule
+>zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> bumped zbuster rule
+>bumped zbuster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> enter boat
+>enter boat
 
-> w
-> w
-> w
+>w
+>w
+>w
 
-> zglean glows rule
+>zglean glows rule
 DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> glean zglows rule
+>glean zglows rule
 DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> glean glows
+>glean glows
 by one point
 
-> glean glows
+>glean glows
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zglean glows rule
+>zglean glows rule
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> glean zglows rule
+>glean zglows rule
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zhistory hall
+>zhistory hall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
-> history zhall
+>history zhall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
-> history hall
+>history hall
 
 >zmystery mall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
@@ -1242,922 +1243,922 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 >mystery zmall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
-> history hall
+>history hall
 !by one point
 You already flipped back to History Hall.
 
-> zyoure yonder rule
+>zyoure yonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> youre zyonder rule
+>youre zyonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> youre yonder
+>youre yonder
 by one point
 
-> youre yonder
+>youre yonder
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zyoure yonder rule
+>zyoure yonder rule
 !DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> youre zyonder rule
+>youre zyonder rule
 !DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> out
+>out
 
-> zsmashing smoke rule
+>zsmashing smoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> smashing zsmoke rule
+>smashing zsmoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> smashing smoke
+>smashing smoke
 by one point
 
-> smashing smoke
+>smashing smoke
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zsmashing smoke rule
+>zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> smashing zsmoke rule
+>smashing zsmoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> in
-> w
+>in
+>w
 
-> zlending libe rule
+>zlending libe rule
 DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> lending zlibe rule
+>lending zlibe rule
 DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> lending libe
+>lending libe
 by one point
 
-> lending libe
+>lending libe
 !by one point
 Yes, It's a library now.
 
-> zlending libe rule
+>zlending libe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> lending zlibe rule
+>lending zlibe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zsee sign rule
+>zsee sign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> see zsign rule
+>see zsign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> see sign
+>see sign
 by one point
 
-> see sign
+>see sign
 !by one point
 You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
 
-> zsee sign rule
+>zsee sign rule
 !DEBUG: vc-see-sign rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> see zsign rule
+>see zsign rule
 !DEBUG: vc-see-sign rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
-> e
-> e
+>e
+>e
+>e
 
-> n
+>n
 
-> n
+>n
 
-> zplain pleasant rule
+>zplain pleasant rule
 DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> plain zpleasant rule
+>plain zpleasant rule
 DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> plain pleasant
+>plain pleasant
 by one point
 
-> plain pleasant
+>plain pleasant
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zplain pleasant rule
+>zplain pleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> plain zpleasant rule
+>plain zpleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
+>w
 
-> zmoral mage rule
+>zmoral mage rule
 DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> moral zmage rule
+>moral zmage rule
 DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> moral mage
+>moral mage
 by one point
 
-> moral mage
+>moral mage
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zmoral mage rule
+>zmoral mage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> moral zmage rule
+>moral zmage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
-> e
+>e
+>e
 
-> zsit sound rule
+>zsit sound rule
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> sit zsound rule
+>sit zsound rule
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> sit sound
+>sit sound
 by one point
 
-> sit sound
+>sit sound
 !by one point
 You already sat sound. But maybe there's a way to feel more comfortable.
 
-> zsit sound rule
+>zsit sound rule
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> sit zsound rule
+>sit zsound rule
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zfit found rule
+>zfit found rule
 DEBUG: vc-fit-found rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> fit zfound rule
+>fit zfound rule
 DEBUG: vc-fit-found rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> fit found
+>fit found
 by one point
 
-> fit found
+>fit found
 !by one point
 You already fit in.
 
-> zfit found rule
+>zfit found rule
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> fit zfound rule
+>fit zfound rule
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
+>e
 
-> zwinding ways rule
+>zwinding ways rule
 DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> winding zways rule
+>winding zways rule
 DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> winding ways
+>winding ways
 by one point
 
-> winding ways
+>winding ways
 !by one point
 You already made it out of the Blinding Blaze.
 
-> zwinding ways rule
+>zwinding ways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> winding zways rule
+>winding zways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmo mappin rule
+>zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
-> mo zmappin rule
+>mo zmappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
-> mo mappin
+>mo mappin
 by one point
 
-> mo mappin
+>mo mappin
 !by one point
 You're already in the mood to map. No need to overdo it.
 
-> zmo mappin rule
+>zmo mappin rule
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mo zmappin rule
+>mo zmappin rule
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zluck lair rule
+>zluck lair rule
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> luck zlair rule
+>luck zlair rule
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> luck lair
+>luck lair
 by one point
 
-> luck lair
+>luck lair
 !by one point
 You already got the snuck snare from the luck lair.
 
-> zluck lair rule
+>zluck lair rule
 !DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> luck zlair rule
+>luck zlair rule
 !DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
-> w
-> s
-> s
-> w
-> d
+>w
+>w
+>s
+>s
+>w
+>d
 
-> ztight tunnel rule
+>ztight tunnel rule
 DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> tight ztunnel rule
+>tight ztunnel rule
 DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> tight tunnel
+>tight tunnel
 by one point
 
-> tight tunnel
+>tight tunnel
 !by one point
 You already narrowed the funnel to a tunnel.
 
-> ztight tunnel rule
+>ztight tunnel rule
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> tight ztunnel rule
+>tight ztunnel rule
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
+>w
 
-> zknives niche rule
+>zknives niche rule
 DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> knives zniche rule
+>knives zniche rule
 DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> knives niche
+>knives niche
 by one point
 
-> knives niche
+>knives niche
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zknives niche rule
+>zknives niche rule
 !DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> knives zniche rule
+>knives zniche rule
 !DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
-> u
-> e
-> n
-> e
+>e
+>u
+>e
+>n
+>e
 
-> zdear dull rule
+>zdear dull rule
 DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> dear zdull rule
+>dear zdull rule
 DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> dear dull
+>dear dull
 by one point
 
-> dear dull
+>dear dull
 !by one point
 You don't need to do any more taunting.
 
-> zdear dull rule
+>zdear dull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> dear zdull rule
+>dear zdull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> znear null rule
+>znear null rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> near znull rule
+>near znull rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> near null
+>near null
 by one point
 
-> near null
+>near null
 !by one point
 You already reduced the bull's power!
 
-> znear null rule
+>znear null rule
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> near znull rule
+>near znull rule
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
-> s
-> w
-> d
-> w
-> s
+>w
+>s
+>w
+>d
+>w
+>s
 
-> zbeast boss rule
+>zbeast boss rule
 DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> beast zboss rule
+>beast zboss rule
 DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> beast boss
+>beast boss
 by one point
 
-> beast boss
+>beast boss
 !by one point
 You already summoned the Bull Beast.
 
-> zbeast boss rule
+>zbeast boss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> beast zboss rule
+>beast zboss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zleast loss rule
+>zleast loss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> least zloss rule
+>least zloss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> least loss
+>least loss
 by one point
 
-> zwild weed rule
+>zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> wild zweed rule
+>wild zweed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 # maybe this should be !min?
-> wild weed
+>wild weed
 by one point
 
-> wild weed
+>wild weed
 !by one point
 Greedy, to try for more.
 
-> zwild weed rule
+>zwild weed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> wild zweed rule
+>wild zweed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> spark spliff
+>spark spliff
 by one point
 
-> s
+>s
 
-> spark spliff
+>spark spliff
 !by one point
 Whoah, dude! Jonesing for more already?
 
-> zspark spliff rule
+>zspark spliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> spark zspliff rule
+>spark zspliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> s
+>s
 
-> zheal here rule
+>zheal here rule
 DEBUG: vc-heal-here rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> heal zhere rule
+>heal zhere rule
 DEBUG: vc-heal-here rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> heal here
+>heal here
 by one point
 
-> heal here
+>heal here
 !by one point
 No need to heal further.
 
-> zheal here rule
+>zheal here rule
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> heal zhere rule
+>heal zhere rule
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> n
-> n
+>n
+>n
 
-> zcull ceased rule
+>zcull ceased rule
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> cull zceased rule
+>cull zceased rule
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> least loss
+>least loss
 !by one point
 You already minimized your losses. Time to be more aggressive.
 
-> cull ceased
+>cull ceased
 by one point
 
-> zleast loss rule
+>zleast loss rule
 !DEBUG: vc-least-loss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> least zloss rule
+>least zloss rule
 !DEBUG: vc-least-loss rule tipped off the HA HALF button.
 #note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
 #!The HA HALF button lights up on your Leet Learner.
 
-> cull ceased
+>cull ceased
 !by one point
 Don't brag too much, now.
 
-> zcull ceased rule
+>zcull ceased rule
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> cull zceased rule
+>cull zceased rule
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zfull feast rule
+>zfull feast rule
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> full zfeast rule
+>full zfeast rule
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> full feast
+>full feast
 by one point
 
-> full feast
+>full feast
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zfull feast rule
+>zfull feast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> full zfeast rule
+>full zfeast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> e
-> e
+>e
+>e
 
-> zso sappin rule
+>zso sappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
-> so zsappin rule
+>so zsappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
-> so sappin
+>so sappin
 by one point
 
-> so sappin
+>so sappin
 !by one point
 You already discouraged some whining. Bringing it up again might make you the whiny one.
 
-> zso sappin rule
+>zso sappin rule
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> so zsappin rule
+>so zsappin rule
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zshining shore rule
+>zshining shore rule
 DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> shining zshore rule
+>shining zshore rule
 DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> shining shore
+>shining shore
 by one point
 
-> shining shore
+>shining shore
 !by one point
 You already got (t)here.
 
-> zshining shore rule
+>zshining shore rule
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> shining zshore rule
+>shining zshore rule
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zdining door rule
+>zdining door rule
 DEBUG: vc-dining-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> dining zdoor rule
+>dining zdoor rule
 DEBUG: vc-dining-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> dining door
+>dining door
 by one point
 
-> dining door
+>dining door
 !by one point
 The dining door is already here.
 
-> zdining door rule
+>zdining door rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> dining zdoor rule
+>dining zdoor rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zpull pieced rule
+>zpull pieced rule
 DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> pull zpieced rule
+>pull zpieced rule
 DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> pull pieced
+>pull pieced
 by one point
 
-> pull pieced
+>pull pieced
 !by one point
 You don't need to pull anything other than the full feast.
 
-> zpull pieced rule
+>zpull pieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> pull zpieced rule
+>pull zpieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmining more rule
+>zmining more rule
 DEBUG: vc-mining-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> mining zmore rule
+>mining zmore rule
 DEBUG: vc-mining-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> mining more
+>mining more
 by one point
 
-> mining more
+>mining more
 !by one point
 You've gotten all the mined materials you need. Wasting them might cause another whining war.
 
-> zmining more rule
+>zmining more rule
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> mining zmore rule
+>mining zmore rule
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> w
-> w
-> n
-> n
+>w
+>w
+>n
+>n
 
-> zshow shield rule
+>zshow shield rule
 DEBUG: vc-show-shield rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> show zshield rule
+>show zshield rule
 DEBUG: vc-show-shield rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> show shield
+>show shield
 by one point
 
-> show shield
+>show shield
 !by one point
 Your gold guard has done its duty.
 
-> zshow shield rule
+>zshow shield rule
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> show zshield rule
+>show zshield rule
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> n
+>n
 
-> zgo gappin rule
+>zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
-> go zgappin rule
+>go zgappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
-> go gappin
+>go gappin
 by one point
 
-> go gappin
+>go gappin
 !by one point
 The action was okay, but I couldn't recognize the object.
 
-> zgo gappin rule
+>zgo gappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> go zgappin rule
+>go zgappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zcouple caps rule
+>zcouple caps rule
 DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> couple zcaps rule
+>couple zcaps rule
 DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> couple caps
+>couple caps
 by one point
 
-> couple caps
+>couple caps
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zcouple caps rule
+>zcouple caps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> couple zcaps rule
+>couple zcaps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zcast cap rule
+>zcast cap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> cast zcap rule
+>cast zcap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> cast cap
+>cast cap
 by one point
 
-> cast cap
+>cast cap
 !by one point
 The cap has been cast.
 
-> zcast cap rule
+>zcast cap rule
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> cast zcap rule
+>cast zcap rule
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zbeaker bustle rule
+>zbeaker bustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> beaker zbustle rule
+>beaker zbustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> zmeeker muscle rule
+>zmeeker muscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> meeker zmuscle rule
+>meeker zmuscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> zwood one rule
+>zwood one rule
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> wood zone rule
+>wood zone rule
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> beaker bustle
+>beaker bustle
 by one point
 
-> beaker bustle
+>beaker bustle
 !by one point
 Russell's moment of interest in the sciences has passed.
 
-> zbeaker bustle rule
+>zbeaker bustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-> beaker zbustle rule
+>beaker zbustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-> wood one
+>wood one
 by one point
-> wood one
+>wood one
 !by one point
 Russell's already disarmed, but he's still too strong.
 >undo
 >undo
 
-> meeker muscle
+>meeker muscle
 by one point
 
-> meeker muscle
+>meeker muscle
 !by one point
 Russell's already meeker. Maybe disarm him?
 
-> zmeeker muscle rule
+>zmeeker muscle rule
 !DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> meeker zmuscle rule
+>meeker zmuscle rule
 !DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> wood one
+>wood one
 by one point
 
-> wood one
+>wood one
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zwood one rule
+>zwood one rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> wood zone rule
+>wood zone rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> n
+>n
 
-> zhot horde rule
+>zhot horde rule
 DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> hot zhorde rule
+>hot zhorde rule
 DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> hot horde
+>hot horde
 by one point
 
-> hot horde
+>hot horde
 !by one point
 You already summoned the Hot Horde.
 
-> zhot horde rule
+>zhot horde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> hot zhorde rule
+>hot zhorde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zlot lord rule
+>zlot lord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> lot zlord rule
+>lot zlord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> lot lord
+>lot lord
 by one point
 
-> lot lord
+>lot lord
 !by one point
 You already summoned the Lot Lord.
 
-> zlot lord rule
+>zlot lord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> lot zlord rule
+>lot zlord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zgot gored rule
+>zgot gored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> got zgored rule
+>got zgored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> got gored
+>got gored
 by one point
 
-> got gored
+>got gored
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zgot gored rule
+>zgot gored rule
 !DEBUG: vc-got-gored rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> got zgored rule
+>got zgored rule
 !DEBUG: vc-got-gored rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zwhoa wait rule
+>zwhoa wait rule
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> whoa zwait rule
+>whoa zwait rule
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> whoa wait
+>whoa wait
 by one point
 
-> whoa wait
+>whoa wait
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> zwhoa wait rule
+>zwhoa wait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> whoa zwait rule
+>whoa zwait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> ztell torn rule
+>ztell torn rule
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> tell ztorn rule
+>tell ztorn rule
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> tell torn
+>tell torn
 by one point
 
-> tell torn
+>tell torn
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
-> ztell torn rule
+>ztell torn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> tell ztorn rule
+>tell ztorn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zmerry mile rule
+>zmerry mile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> merry zmile rule
+>merry zmile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> merry mile
+>merry mile
 by one point
 
-> merry mile
+>merry mile
 !by one point
 You already did. And forcing cheeriness tends to backfire.
 
-> zmerry mile rule
+>zmerry mile rule
 !DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-> merry zmile rule
+>merry zmile rule
 !DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
-> zbury bile rule
+>zbury bile rule
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-> bury zbile rule
+>bury zbile rule
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-> bury bile
+>bury bile
 by one point
 
 !see the points you MISSED

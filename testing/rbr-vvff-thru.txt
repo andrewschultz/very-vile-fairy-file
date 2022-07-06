@@ -21,12 +21,12 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 #--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 OK-APOSTROPHE:Bold 'n Brave
-ALSO-IGNORE:enter boat	blow by	jj
+ALSO-IGNORE:enter boat,blow by,jj
 
 ## *FILE
 ## *FORK
 
-TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities ## walkthrough with altverb tests ## walkthrough with fake deaths ## walkthrough testing all mistakes
+TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities	## walkthrough with altverb tests	## walkthrough with fake deaths	## walkthrough testing all mistakes	## walkthrough testing half-right cases	## walkthrough testing homonyms	##walkthrough testing special verbs	## walkthrough testing GOTO
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -102,7 +102,6 @@ I want to make sure you have some basic familiarity with the game mechanic befor
 Homonym detection is already set to on.
 >do due
 I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
-
 
 @ha
 >zget good
@@ -339,7 +338,6 @@ Pretty close, but you don't need to make this a debtor's prison. You need to mak
 #homonyms basic test thing-mind malt-mined
 >mined malt
 Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
-
 
 @gt
 >gt rift river
@@ -1822,7 +1820,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !by one point
 >mo mappin
 !by one point
->THINK
+>think
 MO MAPPIN
 SO SAPPIN
 CO CAPN
@@ -2867,15 +2865,21 @@ That's over. Time to work with Jake!
 
 @gt
 >w
+\\
 >enter boat
+\\
 >gt lake lea
-
 You'll need to take the boring boat here to get back there.
 >w
+\\
 >gt lake lap
+\\
 You'll need to take the boring boat in Silent Sail to get back there.
+\\
 >e
+\\
 >enter boat
+\\
 >e
 
 @mis
@@ -3570,7 +3574,6 @@ Vending Vibe
 >gt vending vibe
 !flip
 Vending Vibe
-
 
 @ha
 >zlending libe rule
@@ -5772,7 +5775,6 @@ by one point
 #homonyms basic retest room-tarry tile-terry
 >terry tyle
 !Nobody named Terry appears, nor does any terry cloth.
-
 
 @ha
 >merry mile

@@ -1,6 +1,7 @@
-
 ## reg-vvff-thru-homonyms.txt
 ## GENERATOR FILE: rbr-vvff-thru.txt
+
+## walkthrough testing homonyms
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -24,57 +25,57 @@ The HA HALF button lights up on your Leet Learner, and its brightness suggests y
 >goat goat git
 You don't need source control, but you're close, here.
 
-> big bag
+>big bag
 by one point
 
-> get good
+>get good
 by one point
 
 #homonyms basic test room-rift river-riffed
 >riffed riffer
 You need to have riffed, but with rhyming, as you did in the Wet Wood.
 
-> gift giver
+>gift giver
 by one point
 
 #homonyms close test verb-find-fault-fined
 >fined falt
 Pretty close, but you don't need to make this a debtor's prison. You need to make it easier to get out of.
 #homonyms basic test thing-mind malt-mined
-> mined malt
+>mined malt
 Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
 
-> find fault
+>find fault
 by one point
 
 #homonyms basic retest thing-mind malt-mined
 >mined xxx
 You had to lose a letter from Vined to find fault. Maybe this time you need to add a letter to mean, or mass, or both.
 
-> green grass
+>green grass
 by one point
 
 #homonyms close test verb-grow-grit-owe
 >owe oit
 Not quite OWE ... but you sense there are several ways to toughen up.
 #homonyms basic test room-po pit-poe
-> poe pit
+>poe pit
 You don't need a pendulum about to cut you.
 
-> grow grit
+>grow grit
 by one point
 
-> mash map
+>mash map
 by one point
 
 #homonyms close test verb-mind-me-mined
 >mined moo
 You need to take care of, not booby-trap, yourself.
 
-> mind me
+>mind me
 by one point
 
-> flim flam
+>flim flam
 by one point
 
 #homonyms basic test thing-wry wall-rye
@@ -84,10 +85,10 @@ The wall remains inorganic. You can't really do anything to it.
 >fun phen
 Organic chemistry is much too complex, here.
 
-> phun phen
+>phun phen
 Organic chemistry is much too complex, here.
 
-> s
+>s
 
 #homonyms basic test thing-peeling pier-peer
 >peer xxx
@@ -112,65 +113,65 @@ There is no noise or distraction preventing hearing.
 >reel reer
 The Sage Sea is not for fishing.
 
-> reel reer
+>reel reer
 The Sage Sea is not for fishing.
 
-> kneel near
+>kneel near
 by one point
 
-> feel fear
+>feel fear
 by one point
 
-> deal dear
+>deal dear
 by one point
 
-> n
+>n
 
-> fall free
+>fall free
 by one point
 
-> dive deep
+>dive deep
 by one point
 
 #homonyms basic test thing-vapor vial-vile
-> vapur vile
+>vapur vile
 You need to change the vial into something more pleasant and constructive.
 #homonyms basic test thing-vapor vial-vaper
-> vaper viyul
+>vaper viyul
 You need to change the vial into something more pleasant and constructive.
 
-> paper pile
+>paper pile
 by one point
 
-> backed binder
+>backed binder
 by one point
 
-> n
+>n
 
 #homonyms basic test room-creased cross-craws
 >craws crews
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
-> w
+>w
 
 #homonyms close test verb-mark-more-moor
 >murk moor
 Close, but what would a moor be doing near a store?
 
-> dark door
+>dark door
 by one point
 
-> mark more
+>mark more
 by one point
 
 #homonyms basic test thing-weird way-whey
 >whey xxx
 Yes, whey is weird to eat. But it would still be a sticky barrier.
 
-> cleared clay
+>cleared clay
 by one point
 
-> w
+>w
 
 #homonyms basic test room-history hall-haul
 >long haul
@@ -180,7 +181,7 @@ Homonyms aren't the way to go, here.
 >miss maul
 You don't need to destroy anything.
 
-> mystery mall
+>mystery mall
 by one point
 
 #homonyms basic test room-history hall-maul
@@ -193,7 +194,7 @@ You don't need THAT much stuff.
 >gleen gloze
 You shouldn't be fishing for flattery.
 
-> listen
+>listen
 
 #homonyms basic test thing-toe tappin-roe
 >roe xxx
@@ -205,13 +206,13 @@ You don't need a tow truck or homonyms.
 >hoe hoppin
 Keep farming, you'll get the right homonym.
 
-> lots lame
+>lots lame
 by one point
 
-> no nappin
+>no nappin
 by one point
 
-> w
+>w
 
 #homonyms close test verb-lie-lol-lye
 >lye lawwal
@@ -226,56 +227,56 @@ Homonyms will tie you up in knots in this game, especially homonyms of solutions
 >hear hear
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
-> hard hat
+>hard hat
 by one point
 
-> e
-> e
-> e
-> n
-> w
+>e
+>e
+>e
+>n
+>w
 
-> work well
+>work well
 by one point
 
-> e
+>e
 
-> loft land
+>loft land
 by one point
 
-> w
+>w
 
 #homonyms basic test thing-worst wave-wurst
 >wurst xxx
 You're not hungry. Besides, the wave can become something better, nicer.
 
-> dreaming dull
+>dreaming dull
 by one point
 
-> first fave
+>first fave
 by one point
 
-> cool cap
+>cool cap
 by one point
 
-> e
-> s
-> e
+>e
+>s
+>e
 
 #homonyms basic test room-violent vale-veil
 >vicki veil
 You need to get rid of the violence, not put a veil over it.
 
-> silent sail
+>silent sail
 by one point
 
-> brightening bridge
+>brightening bridge
 by one point
 
-> boring boat
+>boring boat
 by one point
 
-> enter boat
+>enter boat
 
 #homonyms close test verb-wake-whee-we
 >waik we
@@ -285,7 +286,7 @@ You are already awake. You need to make Jake ache to be awake.
 >lee smith
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
-> wake whee
+>wake whee
 by one point
 
 #homonyms close test verb-take-tea-t
@@ -295,34 +296,34 @@ You need to, um, tee up something more positive.
 >taik tee
 You need to, um, tee up something more positive.
 
-> take tea
+>take tea
 by one point
 
 #homonyms close test verb-break-brie-brake
 >brake breee
 You get the feeling you can, but don't have to, change things up just a bit.
 
-> fake fee
+>fake fee
 by one point
 
-> e
+>e
 
-> make map
+>make map
 by one point
 
 #homonyms basic test thing-jake g-cappin
-> cow cappin
+>cow cappin
 You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
 #homonyms close test verb-co-capn-cappin
 
-> co capn
+>co capn
 by one point
 
-> snake snap
+>snake snap
 by one point
 Silent Sail
 
-> enter boat
+>enter boat
 
 #homonyms close test verb-lean-luggin-lien
 >lien loggin
@@ -335,45 +336,45 @@ Something similar, but much tougher, if not tougher to spell, than mien.
 >bin xxx
 !You do sort of need to bin your shortcomings.
 
-> stay strong
+>stay strong
 by one point
 
-> glow glad
+>glow glad
 by one point
 
 #homonyms basic retest room-been buggin-bin
 >bin xxx
 You do sort of need to bin your shortcomings.
 
-> mean muggin
+>mean muggin
 by one point
 
-> lean luggin
+>lean luggin
 by one point
 
 #homonyms basic test thing-way woke-whey
 >whey xxx
 It's woke to eat whey, probably, but you can transform the cloak better with something else.
 
-> enter boat
+>enter boat
 
-> w
-> w
-> w
+>w
+>w
+>w
 
-> glean glows
+>glean glows
 by one point
 
-> history hall
+>history hall
 
 #homonyms basic test thing-poor ponder-pore
 >pore xxx
 You don't need to pore over Poor? Ponder for Fonder. You need it to come alive!
 
-> youre yonder
+>youre yonder
 by one point
 
-> out
+>out
 
 #homonyms basic test thing-bold bard-bowled
 >bowled xxx
@@ -382,38 +383,38 @@ Cricket isn't cricket right now, old chap!
 >barred xxx
 The bold bard sort of is, already, and you're trying to fix that.
 
-> smashing smoke
+>smashing smoke
 by one point
 
-> in
-> w
+>in
+>w
 
-> lending libe
+>lending libe
 by one point
 
 #homonyms basic test thing-we whine-whee
-> whee xxx
+>whee xxx
 That'd be a heel turn, actually liking We Whine: ME, MINE.
 #homonyms basic test thing-we whine-wine
-> wine xxx
+>wine xxx
 We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or homonyms.
 #homonyms close test verb-see-sign-sea
-> sea syne
+>sea syne
 You remain landlocked. But perhaps you can find a better way to, umm, look at things.
 #homonyms close test verb-see-sign-sine
-> sey sine
+>sey sine
 The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
-> see sign
+>see sign
 by one point
 
-> e
-> e
-> e
+>e
+>e
+>e
 
-> n
+>n
 
-> n
+>n
 
 #homonyms basic test thing-pain peasant-pane
 >pane xxxx
@@ -422,12 +423,12 @@ Broken person, broken window, eh?
 >plane present
 The peasant acquires no magical transportation.
 # below "so sappin" takes priority
-> sew zzz
+>sew zzz
 !The field is not for manual labor.
-> sow zzz
+>sow zzz
 !The field is not for manual labor.
 
-> plain pleasant
+>plain pleasant
 by one point
 
 #homonyms basic test room-foe field-sow
@@ -437,7 +438,7 @@ by one point
 >sew see
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
-> w
+>w
 
 #homonyms basic test thing-coral cage-choral
 >choral xxx
@@ -450,19 +451,19 @@ You don't need a plantomancer.
 >awl righty
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
-> moral mage
+>moral mage
 by one point
 
-> e
-> e
+>e
+>e
 
-> sit sound
+>sit sound
 by one point
 
-> fit found
+>fit found
 by one point
 
-> e
+>e
 
 #homonyms basic test room-blinding blaze-graze
 >graze xxx
@@ -474,17 +475,17 @@ by one point
 >grace xxx
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
-> winding ways
+>winding ways
 by one point
 
-> mo mappin
+>mo mappin
 by one point
 
 #homonyms basic test thing-stuck stair-stare
 >stare xxx
 You need to figure what the stair would hold. Staring may help, or it may not.
 
-> luck lair
+>luck lair
 by one point
 
 #homonyms basic retest room-blinding blaze-graze
@@ -494,26 +495,26 @@ Homonyms aren't the way to go, here.
 >grace xxx
 Homonyms aren't the way to go, here.
 
-> w
-> w
-> s
-> s
-> w
-> d
+>w
+>w
+>s
+>s
+>w
+>d
 
-> tight tunnel
+>tight tunnel
 by one point
 
-> w
+>w
 
-> knives niche
+>knives niche
 by one point
 
-> e
-> u
-> e
-> n
-> e
+>e
+>u
+>e
+>n
+>e
 
 #homonyms close test verb-dear-dull-deer
 >deer doll
@@ -523,43 +524,43 @@ But the beer bull might maul the deer.
 >hear hull
 You can just listen, if you need to.
 
-> dear dull
+>dear dull
 by one point
 
-> near null
+>near null
 by one point
 
-> w
-> s
-> w
-> d
-> w
-> s
+>w
+>s
+>w
+>d
+>w
+>s
 
-> beast boss
+>beast boss
 by one point
 
-> least loss
+>least loss
 by one point
 
-> s
+>s
 
-> s
+>s
 
-> heal here
+>heal here
 by one point
 
-> n
-> n
+>n
+>n
 
-> cull ceased
+>cull ceased
 by one point
 
-> full feast
+>full feast
 by one point
 
-> e
-> e
+>e
+>e
 
 #homonyms close test verb-so-sappin-sew
 >sew soppin
@@ -569,48 +570,48 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
 #homonyms basic test room-whining war-wining
-> wining woor
+>wining woor
 Homonyms aren't quite the way to change the whining war.
 #homonyms basic test room-whining war-wore
-> wore muur
+>wore muur
 Homonyms aren't quite the way to change the whining war.
 
-> so sappin
+>so sappin
 by one point
 
-> shining shore
+>shining shore
 by one point
 
-> dining door
+>dining door
 by one point
 
-> pull pieced
+>pull pieced
 by one point
 
-> mining more
+>mining more
 by one point
 
-> w
-> w
-> n
-> n
+>w
+>w
+>n
+>n
 
-> show shield
+>show shield
 by one point
 
-> n
+>n
 
 #homonyms close test verb-cast-cap-caste
 >caste kap
 You don't have to show anyone you're better than they are. Well, maybe you can defeat them in a challenge, but that's different.
 
-> go gappin
+>go gappin
 by one point
 
-> couple caps
+>couple caps
 by one point
 
-> cast cap
+>cast cap
 by one point
 
 #homonyms close test verb-wood-one-won
@@ -626,10 +627,10 @@ Ooh! You're on the right track, but you don't quite need to turn Russell into se
 >wreaker wrussle
 This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action.
 
-> meeker muscle
+>meeker muscle
 by one point
 
-> wood one
+>wood one
 by one point
 
 >s
@@ -641,7 +642,7 @@ The field is not for manual labor.
 The field is not for manual labor.
 >n
 
-> n
+>n
 
 #homonyms basic test thing-sought sword-sot
 >sot xxx
@@ -656,9 +657,9 @@ Perhaps their soulless corporate overlords would be interested in a quick buck, 
 >bored xxx
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 #homonyms close test verb-got-gored-gourd
-> xxx gourd
+>xxx gourd
 That worked in The Life of Brian, but ... well, you need something with more oomph. You're close.
-> xxx hoard
+>xxx hoard
 Treasure isn't the goal, here. You need allies.
 
 #homonyms basic test room-airy isle-erry
@@ -675,17 +676,17 @@ The Airy Isle can't really be changed.
 >hoard haught
 Treasure isn't the goal, here. You need allies.
 
-> hot horde
+>hot horde
 by one point
 
 #homonyms basic test thing-hot horde-hoard
 >hoard haught
 Treasure isn't the goal, here. You already have allies.
 
-> lot lord
+>lot lord
 by one point
 
-> got gored
+>got gored
 by one point
 
 #homonyms close test verb-whoa-wait-weight
@@ -696,7 +697,7 @@ You wouldn't want to be crushed by a weight. But you've got the right idea.
 >great xxx
 But you want to lessen the grate/gate's influence.
 
-> whoa wait
+>whoa wait
 by one point
 
 #homonyms basic test thing-white waste-waist
@@ -709,14 +710,14 @@ Nobody named Terry appears, nor does any terry cloth.
 >warn warn
 The well worn hell horn is already giving a false warning.
 
-> tell torn
+>tell torn
 by one point
 
 #homonyms close test verb-merry-mile-marry
 >myill marry
 It's debatable whether marriage makes things happier or not. Tweak things for assurance.
 
-> merry mile
+>merry mile
 by one point
 
 #homonyms basic retest room-tarry tile-terry
@@ -727,6 +728,6 @@ by one point
 >buyall berry
 You need to do the opposite of eat something.
 
-> bury bile
+>bury bile
 by one point
 
