@@ -26,6 +26,8 @@ include Basic Screen Effects by Emily Short.
 
 [include Property Checking for VVFF by Emily Short.] [modified version]
 
+include Bold Final Question Rows by Andrew Schultz.
+
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 include Very Vile Fairy File Tables by Andrew Schultz.
@@ -972,10 +974,13 @@ check entering flooring float: say "It's there for decoration, not transport. Bu
 
 chapter boring boat
 
-the boring boat is a fakeenter rhymable. "[if buggin-freeze]That boring boat is here, but you don't have the energy to operate it[else][bore-boat-desc][end if].". guess-table of boring boat is the table of boring boat flooring float guesses.
+the boring boat is a fakeenter rhymable. "[if buggin-freeze]That boring boat is here, but you don't have the energy to operate it[else][bore-boat-desc][end if].". guess-table of boring boat is the table of boring boat flooring float guesses. bore-rule of boring boat is the bore-boat rule.
+
+this is the bore-boat rule:
+	if current action is entering, now skip-bore-text is true;
 
 to say bore-boat-desc:
-	say "[if lake lea is visited]Your[else]A[end if] boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if sco-snake-snap is true], but it seems sturdy enough for more adventure[else if sco-no-nappin is true] a bit even though you think NO NAPPIN, NO NAPPIN[else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]"
+	say "[if lake lea is visited]Your[else]A[end if] boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if sco-snake-snap is true], but it seems sturdy enough for more adventure[else if sco-no-nappin is true] a bit even though you think [b]NO NAPPIN, NO NAPPIN[r][else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]"
 
 does the player mean entering boring boat: it is very likely;
 
@@ -1427,8 +1432,6 @@ to decide what number is bag-point: decide on boolval of whether or not player h
 to isle-adjust-score-think:
 	repeat through table of verb checks:
 		if think-cue entry is true, now think-cue entry is false; [SPARK SPLIFF, for instance, can no longer be done, along with other LLPs(?) ]
-	say "rolling [boolval of sco-really-rolling].";
-	say "blessed c[boolval of sco-bloke-blessed].";
 	now max-poss is isle-score + score + 2 - (boolval of sco-really-rolling + boolval of sco-bloke-blessed);
 
 to decide which number is evidence-pieces:
@@ -1528,7 +1531,7 @@ the well worn hell horn is a boring thing in Tarry Tile. cht of well worn hell h
 
 chapter Very Vile Fairy File
 
-the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may or may not be up to READing it[ever-tried of table of vvff digs].". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". bore-rule of Very Vile Fairy File is bore-vvff rule. [-> bury bile]
+the Very Vile Fairy File is a boring thing in Tarry Tile. "The Very Vile Fairy File sort of repels you and attracts you at the same time. You know there must be a way to neutralize it. It is co-written by, unsurprisingly, Harry Hile, Larry Lyle, Perry Pyle and Sherry Shiel[one of]. They must be the Crimes Crew Times Two that Kit Cohen talked about! There's an even number of them, so that part works out[or][stopping]. You may want to [b]READ[r][ever-tried of table of vvff digs], but that's not critical to defeating it.". cht of Very Vile Fairy File is partminus. bore-text of Very Vile Fairy File is "[ff-no].". bore-rule of Very Vile Fairy File is bore-vvff rule. [-> bury bile]
 
 this is the bore-vvff rule:
 	if current action is talktoing, say "'THUMP THAT CHUMP-CHAT!' booms from inside the [fairy file]." instead;
