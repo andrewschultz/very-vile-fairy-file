@@ -420,24 +420,24 @@ Learner needle
 Hey now! You don't have, or need, anything smokable.
 >woke west
 Learner needle
-The/doesn't care about directions.
+The joke jest poke pest doesn't care about directions.
 
 >bloke blessed
 by one point
-You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
 >broke breast
 !Learner needle
 Nothing violent.
 >croak crest
 !Learner needle
-Nothing forms to kill the/.
+Nothing forms to kill the joke jest poke pest.
 >toke test
 !Learner needle
-Hey now! You/had your fun with drugs/might do something for fun, but you don't need to, and you need a source of flame/don't have, or need, anything smokable/.
+Hey now! You don't have, or need, anything smokable.
 >woke west
 !Learner needle
-The/doesn't care about directions.
+The joke jest poke pest doesn't care about directions.
 
 >s
 
@@ -1824,15 +1824,12 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
->toke test
-Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
-
 # maybe this should be !min?
 >wild weed
 by one point
 
 >toke test
-Hey now! You had your fun. Don't overdo it.
+Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
 
 >dialed deed
 !the Leet Learner dims a bit, and
@@ -1859,6 +1856,9 @@ McFly
 
 >spark spliff
 by one point
+
+>toke test
+Hey now! You had your fun. Don't overdo it.
 
 >bark biff
 McFly

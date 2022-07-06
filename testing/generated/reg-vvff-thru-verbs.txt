@@ -60,7 +60,7 @@ by one point
 by one point
 
 >n
-A voice booms in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
+The joke jest poke pest whispers in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
 >d
 Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
@@ -416,7 +416,7 @@ by one point
 by one point
 
 >w
-There's no running from Reeker Russell! You'll have to diminish him and his gun.
+"Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you'll have to diminish him and his gun.
 
 >attack russell
 But he'd become Rager Russell. With major muscle.
@@ -431,7 +431,7 @@ Stench-stained, drench-drained.
 >wood one
 by one point
 >e
-There's no running from Reeker Russell! You still have to diminish him.
+"Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you still have to diminish him.
 >undo
 >undo
 
@@ -439,7 +439,7 @@ There's no running from Reeker Russell! You still have to diminish him.
 by one point
 
 >w
-There's no running from Reeker Russell! You still have to diminish his gun.
+"Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you still have to diminish his gun.
 
 >wood one
 by one point
@@ -475,10 +475,10 @@ by one point
 >t fairy file
 "THUMP THAT CHUMP-CHAT!" booms a loud voice from inside the Very Vile Fairy File.
 >shit
-A voice from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
+A howl from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
 
 >attack vvff
-You imagine a voice saying "Big boom! Dig doom!" You step back and, err, rig room.
+You hear the joke jest poke pest whisper "Big boom! Dig doom!" You step back and, err, rig room.
 >take vvff
 A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expected that, really.
 

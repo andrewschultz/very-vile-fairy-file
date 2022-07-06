@@ -93,15 +93,15 @@ The action was okay, but I couldn't recognize the object.
 >hut can
 The Leet Learner is already on. You can turn it on with HUT CAN or LL ON or CC ON.
 >shut scan
-I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 >ha half
 The Leet Learner is already set to Ha Half.
 >nah naff
-I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 >two too
 Homonym detection is already set to on.
 >do due
-I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 
 @ha
 >zget good
@@ -905,15 +905,15 @@ Learner needle
 Hey now! You don't have, or need, anything smokable.
 >woke west
 Learner needle
-The/doesn't care about directions.
+The joke jest poke pest doesn't care about directions.
 
 @ha
 >zbloke blessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 >bloke zblessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 @alt
 >bloke blest
@@ -923,7 +923,7 @@ by one point
 @all,mis,ha
 >bloke blessed
 by one point
-You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
 @mis
 >broke breast
@@ -931,13 +931,13 @@ You neutralize the joke jest poke pest and its possible insults by thinking you'
 Nothing violent.
 >croak crest
 !Learner needle
-Nothing forms to kill the/.
+Nothing forms to kill the joke jest poke pest.
 >toke test
 !Learner needle
-Hey now! You/had your fun with drugs/might do something for fun, but you don't need to, and you need a source of flame/don't have, or need, anything smokable/.
+Hey now! You don't have, or need, anything smokable.
 >woke west
 !Learner needle
-The/doesn't care about directions.
+The joke jest poke pest doesn't care about directions.
 
 @ha
 >really rolling
@@ -962,7 +962,7 @@ Organic chemistry is much too complex, here.
 
 @ver
 >n
-A voice booms in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
+The joke jest poke pest whispers in your head: "WORK WITH MURK? MYTH!" You need a way through the murky bit to the north. Well, a much safer one.
 >d
 Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
@@ -3047,7 +3047,7 @@ You're too bummed to make big trips.
 @hom
 #homonyms basic test room-been buggin-bin
 >bin xxx
-!You do sort of need to bin your shortcomings.
+You need to address two specific shortcomings.
 
 @thi
 >lean luggin
@@ -3081,7 +3081,7 @@ by one point
 @ha
 >stay strong
 !by one point
-You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling so sad.
+Staying strong reduced one kind of negativity, but now there's another.
 
 @ha
 >zstay strong rule
@@ -3132,11 +3132,6 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 ###newnpc dean duggan
-
-@hom
-#homonyms basic retest room-been buggin-bin
->bin xxx
-You do sort of need to bin your shortcomings.
 
 @ver
 >t dean duggan
@@ -3199,6 +3194,11 @@ Don't ditch Dean! He has valuable training. You can brute-force your way through
 >mean muggin
 by one point
 
+@hom
+#homonyms basic retest room-been buggin-bin
+>bin xxx
+You need to address one more specific shortcoming.
+
 @ha
 >mean muggin
 !by one point
@@ -3222,6 +3222,11 @@ The HA HALF button lights up on your Leet Learner.
 
 >lean luggin
 by one point
+
+@hom
+#homonyms basic test room-been buggin-bin
+>bin xxx
+You've binned all the shortcomings you can here.
 
 @gt
 >gt silent sail
@@ -4526,10 +4531,6 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
-@mis
->toke test
-Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
-
 @all,mis,ha,ver
 # maybe this should be !min?
 >wild weed
@@ -4537,7 +4538,7 @@ by one point
 
 @mis
 >toke test
-Hey now! You had your fun. Don't overdo it.
+Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
 
 @ver
 >eat wild weed
@@ -4591,6 +4592,10 @@ McFly
 @all,mis,ha
 >spark spliff
 by one point
+
+@mis
+>toke test
+Hey now! You had your fun. Don't overdo it.
 
 @mis
 >bark biff
@@ -5204,7 +5209,7 @@ by one point
 
 @ver
 >w
-There's no running from Reeker Russell! You'll have to diminish him and his gun.
+"Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you'll have to diminish him and his gun.
 
 @hom
 #homonyms close test verb-wood-one-won
@@ -5330,7 +5335,7 @@ Russell's already disarmed, but he's still too strong.
 >wood one
 by one point
 >e
-There's no running from Reeker Russell! You still have to diminish him.
+"Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you still have to diminish him.
 >undo
 >undo
 
@@ -5339,7 +5344,7 @@ by one point
 
 @ver
 >w
-There's no running from Reeker Russell! You still have to diminish his gun.
+"Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you still have to diminish his gun.
 
 @ha
 >meeker muscle
@@ -5650,6 +5655,11 @@ The HA HALF button lights up on your Leet Learner.
 >great xxx
 But you want to lessen the grate/gate's influence.
 
+@hom
+#homonyms basic test thing-go gate-gait
+>gait xxx
+Ah, but what sort of gait should you take?
+
 >whoa wait
 by one point
 
@@ -5672,7 +5682,7 @@ The well worn hell horn is already giving a false warning.
 >t fairy file
 "THUMP THAT CHUMP-CHAT!" booms a loud voice from inside the Very Vile Fairy File.
 >shit
-A voice from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
+A howl from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
 
 @gt
 >gt airy isle
@@ -5682,7 +5692,7 @@ Already there! Er, here.
 
 @ver
 >attack vvff
-You imagine a voice saying "Big boom! Dig doom!" You step back and, err, rig room.
+You hear the joke jest poke pest whisper "Big boom! Dig doom!" You step back and, err, rig room.
 >take vvff
 A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expected that, really.
 

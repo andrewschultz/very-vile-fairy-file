@@ -238,16 +238,6 @@ max-poss is a number that varies.
 
 to decide what number is isle-min: decide on core-max - isle-score. [the minimum score you need to reach the endgame]
 
-to up-min:
-	increment min-needed;
-	increment the score;
-
-to up-reg:
-	increment core-score;
-	increment the score;
-
-to max-down: decrement max-poss;
-
 to decide which number is max-main: decide on min-needed - isle-score;
 
 book region definitions
@@ -395,7 +385,7 @@ Kerry Kyle is a person. The player is Kerry Kyle. talk-text of Kerry Kyle is "My
 
 the zig zag rig rag is a rhymable. cht of zig zag rig rag is leteq. The player carries the zig zag rig rag. description of zig zag rig rag is "It certainly looks snazzy, but maybe you can convert it to something more practical.". guess-table of zig zag rig rag is the table of big bag zig zag rig rag guesses. [-> big bag]
 
-the big bag is a rhymable. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want tn, now!". guess-table of big bag is the table of big bag zig zag rig rag guesses.
+the big bag is a rhymable. description of big bag is "It's pretty nondescript, but it gets the job done. You can hold everything you want to, now!". guess-table of big bag is the table of big bag zig zag rig rag guesses.
 
 volume Worst Whew
 
@@ -417,7 +407,7 @@ to say wood-noway:
 		if prof entry is false, break;
 		increment wood-row;
 	if wood-row > number of rows in table of Wet Wood clues:
-		now wood-row is 1;
+		now wood-row is 0;
 		say "You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though";
 		continue the action;
 	choose row wood-row in table of Wet Wood clues;

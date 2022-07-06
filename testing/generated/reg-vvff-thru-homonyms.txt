@@ -334,7 +334,7 @@ Something similar, but much tougher, if not tougher to spell, than mien.
 
 #homonyms basic test room-been buggin-bin
 >bin xxx
-!You do sort of need to bin your shortcomings.
+You need to address two specific shortcomings.
 
 >stay strong
 by one point
@@ -342,15 +342,19 @@ by one point
 >glow glad
 by one point
 
-#homonyms basic retest room-been buggin-bin
->bin xxx
-You do sort of need to bin your shortcomings.
-
 >mean muggin
 by one point
 
+#homonyms basic retest room-been buggin-bin
+>bin xxx
+You need to address one more specific shortcoming.
+
 >lean luggin
 by one point
+
+#homonyms basic test room-been buggin-bin
+>bin xxx
+You've binned all the shortcomings you can here.
 
 #homonyms basic test thing-way woke-whey
 >whey xxx
@@ -696,6 +700,10 @@ You wouldn't want to be crushed by a weight. But you've got the right idea.
 #homonyms basic test thing-grow grate-great
 >great xxx
 But you want to lessen the grate/gate's influence.
+
+#homonyms basic test thing-go gate-gait
+>gait xxx
+Ah, but what sort of gait should you take?
 
 >whoa wait
 by one point

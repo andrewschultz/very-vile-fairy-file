@@ -12,15 +12,15 @@
 >hut can
 The Leet Learner is already on. You can turn it on with HUT CAN or LL ON or CC ON.
 >shut scan
-I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 >ha half
 The Leet Learner is already set to Ha Half.
 >nah naff
-I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 >two too
 Homonym detection is already set to on.
 >do due
-I want to make sure you have some basic familiarity with the game mechanic before fiddling with Leet Learner options. So I'm going to make you wait a couple rooms.
+I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 
 >zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
@@ -272,14 +272,14 @@ by one point
 
 >zbloke blessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 >bloke zblessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner.
+The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 >bloke blessed
 by one point
-You neutralize the joke jest poke pest and its possible insults by thinking you're just glad to have this unusual experience. The pest is still there, but you don't mind it as much.
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
 >really rolling
 !by one point
@@ -1107,7 +1107,7 @@ by one point
 
 >stay strong
 !by one point
-You can't do much, but that doesn't seem like it. You sort of have to break out of being and feeling so sad.
+Staying strong reduced one kind of negativity, but now there's another.
 
 >zstay strong rule
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
