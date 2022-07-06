@@ -45,7 +45,7 @@ definition: a thing (called th) is acquired:
 	if th is enclosed by the player, yes;
 	no;
 
-volume unversal meta command(s)
+volume universal meta command(s)
 
 chapter othersing
 
@@ -58,9 +58,9 @@ understand "other" as othersing.
 understand "others" as othersing.
 
 carry out othersing:
-	say "[this-game] is not the first parser game to deal with rhymes. While [series-names], the other two entries in [jjpp] do, other authors have worked with the concept.";
+	say "[this-game] is not the first parser game to deal with rhymes. While [other-two] do, other authors have worked with the concept.";
 	say "[line break]So, if you like the idea, I recommend the following games from the parser side: Michael Martin's [i]EXTERMINATE![run paragraph on][r] (SpeedIF 2008) and DCBSupafly's [i]Beythilda the Witch Queen[r] (2011 EctoComp) were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) as part of Taleslinger's 2012 New Year's competition offered more of a narrative and provides source.";
-	say "[line break]On the choice-based side, Pace Smith's [i]Limerick Quest[r] and [i]Limerick Quest[r] offers rhyme-based puzzles (and meta-commands!) as well, while Snoother's [i]A Tale of the Cave[r] is a tribute to William McGonagall's wonderfully bad poetry.";
+	say "[line break]On the choice-based side, Pace Smith's [i]Limerick Heist[r] and its sequel [i]Limerick Quest[r] offer rhyme-based puzzles (and meta-commands!) as well, while Snoother's [i]A Tale of the Cave[r] is a tribute to William McGonagall's wonderfully bad poetry.";
 	say "[line break]I would love to hear of more such games.";
 	the rule succeeds.
 
@@ -72,6 +72,8 @@ entry-in-series is a number that varies.
 
 when play begins:
 	remove entry entry-in-series from series-names;
+
+to say other-two: say "[series-names], the other two entries in [jjpp]"
 
 to say jjpp: say "[i]Jest Jokes Pest Pokes[r]"
 
