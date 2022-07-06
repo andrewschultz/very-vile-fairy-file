@@ -111,10 +111,6 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "big"	"bag"	--	--	false	true	true	false	false	--	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
 "really"	"rolling"	--	--	false	true	false	false	false	--	vc-really-rolling rule	vr-really-rolling rule	--	--
 
-section vc- and vr- rule definitions
-
-the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailable, not-yet, already-done and ready.
-
 section verb homonym rules rules [xxvhr]
 
 this is the vh-co-capn rule: say "You need camaraderie, not firepower. [toe tappin] is not a stereotypical violent rap song, anyway." instead;

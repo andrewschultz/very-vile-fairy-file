@@ -44,12 +44,6 @@ volume what you start with
 
 [the mist-rule tells if the mist-txt should be printed out. The leet-rule tells if a leet-clue should be printed out. If there is no w1let or w2let, nothing is printed out, either.]
 
-section generic table
-
-table of no good guesses
-mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-a topic	a rule	a truth state	a number	a rule	text
-
 book guesses by room, alphabetical
 
 table of Airy Isle guesses
@@ -462,6 +456,8 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "croak crest"	pest-known rule	false	55	pest-undealt rule	"Nothing forms to kill the [poke pest]."
 "toke test"	pest-known rule	false	55	pest-undealt rule	"Hey now! You [if wild weed is moot]had your fun. Don't overdo it[else if wild weed is fungible]might indulge, but you don't need to, and besides, you need a source of flame[else]don't have, or need, anything smokable[end if]."
 "woke west"	pest-known rule	false	55	pest-undealt rule	"The [poke pest] doesn't care about directions."
+
+[this could technically go in the common file, but it would create so many problems with test verification.]
 
 table of lurking lump guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt

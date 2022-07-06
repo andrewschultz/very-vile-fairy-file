@@ -80,7 +80,11 @@ a rhymable is a kind of thing. a rhymable has a table name called guess-table. t
 
 a person has a table name called guess-table. the guess-table of a person is usually the Table of No Good Guesses.
 
+volume common verb definitions
+
 volume rules and rulebooks
+
+The print final score rule is not listed in for printing the player's obituary.
 
 the rhymeguess rules are a table name based rulebook.
 
