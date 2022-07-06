@@ -64,6 +64,18 @@ carry out othersing:
 	say "[line break]I would love to hear of more such games.";
 	the rule succeeds.
 
+chapter xyzzying
+
+xyzzying is an action out of world.
+
+understand the command "xyzzy" as something new.
+
+understand "xyzzy" as xyzzying.
+
+report xyzzying for the first time:
+	say "(Cross-promotion: why, yes, [other-two] have different and equally 'witty' [b]XYZZY[r] responses. Of course they do!)";
+	continue the action;
+
 volume proper names
 
 series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]" }

@@ -2162,12 +2162,6 @@ my-text	my-color
 
 chapter xyzzying
 
-xyzzying is an action out of world.
-
-understand the command "xyzzy" as something new.
-
-understand "xyzzy" as xyzzying.
-
 carry out xyzzying:
 	say "Fie, fie. Sigh, sigh. Why, why?";
 	the rule succeeds.
