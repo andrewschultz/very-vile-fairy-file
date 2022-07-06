@@ -2297,20 +2297,6 @@ carry out abouting:
 	say "[line break]And finally, if you enjoyed VVFF, Quite Queer Night Near is on itch.io at https://andrewschultz.itch.io/quite-queer-night-near. VVFF is at https://andrewschultz.itch.io/very-vile-fairy-file.";
 	the rule succeeds;
 
-chapter othersing
-
-othersing is an action applying to nothing.
-
-understand the command "others" as something new.
-understand the command "other" as something new.
-
-understand "other" as othersing.
-understand "others" as othersing.
-
-carry out othersing:
-	say "VVFF is not the first parser game to deal with rhymes. If you like the idea, you may wish to check out the following games: Michael Martin's [i]EXTERMINATE![r] (SpeedIF 2008) and DCBSupafly's [i]Beythilda the Witch Queen[r] (2011 EctoComp) were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) as part of Taleslinger's New Year's competitions offered more of a narrative.";
-	the rule succeeds.
-
 book hinting
 
 the leet learner is a thing. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. You can probably [b]READ[r] it more in depth, because, well, there's more.[paragraph break]It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]It also has a toggle between [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]. There's another toggle between [b]TWO TOO[r] (on) and [b]DO DUE[r] (off)[if core-score > 1] for homonym detection[end if]."
