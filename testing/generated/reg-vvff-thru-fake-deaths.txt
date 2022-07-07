@@ -35,10 +35,15 @@ by one point
 >flim flam
 by one point
 
+#ttc-table-of-bad-locs-fun-fen-west
 >w
 west to Fame Fort
+
+#+ttc-table-of-bad-locs-fun-fen-west
 >w
 You already went west
+
+#ttc-table-of-bad-locs-fun-fen-east
 >e
 east to Fate Farm
 
@@ -141,12 +146,19 @@ by one point
 >wake whee
 by one point
 
+#ttc-table-of-bad-locs-lake-lea-west
 >w
 west to Bore Bay
+
+#ttc-table-of-bad-locs-lake-lea-south
 >s
 south to Blest Bloom
+
+#ttc-table-of-bad-locs-lake-lea-north
 >n
 north to Mo Main Low Lane
+
+#ttc-table-of-bad-locs-lake-lea-up
 >u
 up to Top Tower
 
@@ -161,12 +173,19 @@ by one point
 >make map
 by one point
 
+#ttc-table-of-bad-locs-lake-lap-east
 >e
 east to Hi! Here, Buy Beer
+
+#ttc-table-of-bad-locs-lake-lap-south
 >s
 south to Rad Route
+
+#ttc-table-of-bad-locs-lake-lap-north
 >n
 north to See Some... Gee, Gum
+
+#ttc-table-of-bad-locs-lake-lap-down
 >d
 down to Lake Light
 
@@ -185,10 +204,15 @@ by one point
 >glow glad
 by one point
 
+#ttc-table-of-bad-locs-been-buggin-south
 >s
 !south to Leaf Lake
+
+#ttc-table-of-bad-locs-been-buggin-north
 >n
 !north to Fun-Filled Gun Guild
+
+#ttc-table-of-bad-locs-been-buggin-west
 >w
 !west to Trust Trail
 
@@ -198,10 +222,15 @@ by one point
 >lean luggin
 by one point
 
+#+ttc-table-of-bad-locs-been-buggin-south
 >s
 south to Leaf Lake
+
+#+ttc-table-of-bad-locs-been-buggin-north
 >n
 north to Fun-Filled Gun Guild
+
+#+ttc-table-of-bad-locs-been-buggin-west
 >w
 west to Trust Trail
 
@@ -224,8 +253,11 @@ by one point
 >smashing smoke
 by one point
 
+#ttc-table-of-bad-locs-y'old-yard-west
 >w
 west to Faun Fen
+
+#ttc-table-of-bad-locs-y'old-yard-south
 >s
 south to Lit Lawn
 
@@ -263,8 +295,11 @@ by one point
 >fit found
 by one point
 
+#ttc-table-of-bad-locs-blinding-blaze-north
 >n
 !north to Straight Street
+
+#ttc-table-of-bad-locs-blinding-blaze-east
 >e
 !east to Bold 'n Brave
 
@@ -273,9 +308,11 @@ by one point
 >winding ways
 by one point
 
+#+ttc-table-of-bad-locs-blinding-blaze-east
 >e
 east to Bold 'n Brave
 
+#+ttc-table-of-bad-locs-blinding-blaze-north
 >n
 north to Straight Street
 
@@ -295,6 +332,7 @@ by one point
 >tight tunnel
 by one point
 
+#ttc-table-of-bad-locs-fight-funnel-north
 >n
 north to Fortune Funnel
 
@@ -350,8 +388,11 @@ by one point
 >so sappin
 by one point
 
+#ttc-table-of-bad-locs-whining-war-east
 >e
 east to Done Dune
+
+#ttc-table-of-bad-locs-whining-war-down
 >d
 down to Fast Foi'd
 
@@ -377,8 +418,11 @@ by one point
 
 >n
 
+#ttc-table-of-bad-locs-gassed-gap-west
 >w
 west to Rattlin' Runs
+
+#ttc-table-of-bad-locs-gassed-gap-east
 >e
 east to Hopping Hills
 
@@ -405,20 +449,30 @@ by one point
 >lot lord
 by one point
 
+#ttc-table-of-bad-locs-airy-isle-down
 >d
 !down to Happy Hall
+
+#ttc-table-of-bad-locs-airy-isle-up
 >u
 !up to Hippy Hill
+
+#ttc-table-of-bad-locs-airy-isle-north
 >n
 !north to Earning Ridges
 
 >got gored
 by one point
 
+#+ttc-table-of-bad-locs-airy-isle-down
 >d
 down to Happy Hall
+
+#+ttc-table-of-bad-locs-airy-isle-up
 >u
 up to Hippy Hill
+
+#+ttc-table-of-bad-locs-airy-isle-north
 >n
 north to Earning Ridges
 

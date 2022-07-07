@@ -984,10 +984,15 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !FLIM FLAM
 
 @dea
+#ttc-table-of-bad-locs-fun-fen-west
 >w
 west to Fame Fort
+\\
+#+ttc-table-of-bad-locs-fun-fen-west
 >w
 You already went west
+\\
+#ttc-table-of-bad-locs-fun-fen-east
 >e
 east to Fate Farm
 
@@ -2724,12 +2729,19 @@ He's already awake, Blake.
 !The HA HALF button lights up on your Leet Learner.
 
 @dea
+#ttc-table-of-bad-locs-lake-lea-west
 >w
 west to Bore Bay
+\\
+#ttc-table-of-bad-locs-lake-lea-south
 >s
 south to Blest Bloom
+\\
+#ttc-table-of-bad-locs-lake-lea-north
 >n
 north to Mo Main Low Lane
+\\
+#ttc-table-of-bad-locs-lake-lea-up
 >u
 up to Top Tower
 
@@ -2935,12 +2947,19 @@ You already made a map.
 !The HA HALF button lights up on your Leet Learner.
 
 @dea
+#ttc-table-of-bad-locs-lake-lap-east
 >e
 east to Hi! Here, Buy Beer
+\\
+#ttc-table-of-bad-locs-lake-lap-south
 >s
 south to Rad Route
+\\
+#ttc-table-of-bad-locs-lake-lap-north
 >n
 north to See Some... Gee, Gum
+\\
+#ttc-table-of-bad-locs-lake-lap-down
 >d
 down to Lake Light
 
@@ -3151,10 +3170,15 @@ You tried some LEAN LUGGIN, which should be more doable now you've dealt with yo
 You tried some MEAN MUGGIN, which should be more doable now you've dealt with your temporary loss of faith.
 
 @dea
+#ttc-table-of-bad-locs-been-buggin-south
 >s
 !south to Leaf Lake
+\\
+#ttc-table-of-bad-locs-been-buggin-north
 >n
 !north to Fun-Filled Gun Guild
+\\
+#ttc-table-of-bad-locs-been-buggin-west
 >w
 !west to Trust Trail
 
@@ -3252,10 +3276,15 @@ You already learned lean luggin'.
 >undo
 
 @dea
+#+ttc-table-of-bad-locs-been-buggin-south
 >s
 south to Leaf Lake
+\\
+#+ttc-table-of-bad-locs-been-buggin-north
 >n
 north to Fun-Filled Gun Guild
+\\
+#+ttc-table-of-bad-locs-been-buggin-west
 >w
 west to Trust Trail
 
@@ -3546,8 +3575,11 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !SMASHING SMOKE
 
 @dea
+#ttc-table-of-bad-locs-y'old-yard-west
 >w
 west to Faun Fen
+\\
+#ttc-table-of-bad-locs-y'old-yard-south
 >s
 south to Lit Lawn
 
@@ -3979,8 +4011,11 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 !FIT FOUND
 
 @dea
+#ttc-table-of-bad-locs-blinding-blaze-north
 >n
 !north to Straight Street
+\\
+#ttc-table-of-bad-locs-blinding-blaze-east
 >e
 !east to Bold 'n Brave
 
@@ -4035,6 +4070,7 @@ by one point
 ###newloc winding ways
 
 @dea
+#+ttc-table-of-bad-locs-blinding-blaze-east
 >e
 east to Bold 'n Brave
 
@@ -4060,6 +4096,7 @@ You need to find your way here, not get more tied up.
 Even if it were duller, you'd still be left with a tricky maze.
 
 @dea
+#+ttc-table-of-bad-locs-blinding-blaze-north
 >n
 north to Straight Street
 
@@ -4276,6 +4313,7 @@ You already narrowed the funnel to a tunnel.
 !The HA HALF button lights up on your Leet Learner.
 
 @dea
+#ttc-table-of-bad-locs-fight-funnel-north
 >n
 north to Fortune Funnel
 
@@ -4861,8 +4899,11 @@ You already discouraged some whining. Bringing it up again might make you the wh
 !The HA HALF button lights up on your Leet Learner.
 
 @dea
+#ttc-table-of-bad-locs-whining-war-east
 >e
 east to Done Dune
+\\
+#ttc-table-of-bad-locs-whining-war-down
 >d
 down to Fast Foi'd
 
@@ -5093,8 +5134,11 @@ You don't need or want to revisit that.
 You already did that.
 
 @dea
+#ttc-table-of-bad-locs-gassed-gap-west
 >w
 west to Rattlin' Runs
+\\
+#ttc-table-of-bad-locs-gassed-gap-east
 >e
 east to Hopping Hills
 
@@ -5561,10 +5605,15 @@ DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 @dea
+#ttc-table-of-bad-locs-airy-isle-down
 >d
 !down to Happy Hall
+\\
+#ttc-table-of-bad-locs-airy-isle-up
 >u
 !up to Hippy Hill
+\\
+#ttc-table-of-bad-locs-airy-isle-north
 >n
 !north to Earning Ridges
 
@@ -5635,10 +5684,15 @@ by one point
 >undo
 
 @dea
+#+ttc-table-of-bad-locs-airy-isle-down
 >d
 down to Happy Hall
+\\
+#+ttc-table-of-bad-locs-airy-isle-up
 >u
 up to Hippy Hill
+\\
+#+ttc-table-of-bad-locs-airy-isle-north
 >n
 north to Earning Ridges
 
