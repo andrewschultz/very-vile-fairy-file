@@ -1755,7 +1755,7 @@ bot board	hom-bot-board-to-bought-bored rule	--
 coral cage	--	"choral"	"You don't need the cage to sing. You need to figure who's in there."
 go gate	--	"gait"	"Ah, but what sort of gait should you take?"
 grow grate	--	"great"	"But you want to lessen the grate/gate's influence."
-jake g	hom-toe-tappin-to-co-capn rule	"cappin"
+jake g	hom-toe-tappin-to-co-capn rule	--
 mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault..."
 mist mess	--	"missed"	"You can miss the mess more productively by figuring your way through Airy Isle."
 pain peasant	--	"pane"	"Broken person, broken window, eh?"
@@ -1765,9 +1765,9 @@ reeker russell	--	"wreaker"	"This game doesn't want homonyms, and that's probabl
 sought sword	--	"sot"	"No, it wasn't lost by some drunk."
 steel steer	--	"steal"	"The ceiling seer would not approve!"
 stuck stair	--	"stare"	"You need to figure what the stair would hold. Staring may help, or it may not."
-toe tappin	hom-toe-tappin-to-roe-tow rule	"roe/tow"	--
+toe tappin	hom-toe-tappin-to-roe-tow rule	--	--
 way woke	--	"whey"	"It's woke to eat whey, probably, but you can transform the cloak better with something else."
-we whine	hom-we-whine-to-whee-wine rule	"whee/wine"
+we whine	hom-we-whine-to-whee-wine rule	--
 weird way	--	"whey"	"Yes, whey is weird to eat. But it would still be a sticky barrier."
 well worn hell horn	--	"warn"	"The well worn hell horn is already giving a false warning."
 white waste	--	"waist"	"It's sort of a waist, too, but let's concentrate on finishing the quest, here."

@@ -1,6 +1,6 @@
 #-- rbr-vvff-thru.txt
 #-- main branch file for Very Vile Fairy File walkthroughs
-#--
+#
 #-- use HHV.PY to verify ha-half
 #-- use MCH.PY to verify mistake checking code
 #-- use SCT.PY to verify alternate verb solutions
@@ -34,15 +34,17 @@ TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with al
 * main-thru
 
 @hom
-#homonyms basic test room-wet wood-whet
+#ttc-table-of-room-homonyms-wet-wood-whet-would
 >whet wud
 You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
-#homonyms basic test room-wet wood-would
+\\
 >wett would
 You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
+\\
 >whet would
 You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
-#homonyms close test verb-get-good-git
+
+@hom
 >git goob
 You don't need source control, but you're close, here.
 >git good
@@ -283,7 +285,7 @@ by one point
 ##newloc rift river
 
 @hom
-#homonyms basic test room-rift river-riffed
+#ttc-table-of-room-homonyms-rift-river-riffed
 >riffed riffer
 You need to have riffed, but with rhyming, as you did in the Wet Wood.
 
@@ -335,7 +337,8 @@ by one point
 #homonyms close test verb-find-fault-fined
 >fined falt
 Pretty close, but you don't need to make this a debtor's prison. You need to make it easier to get out of.
-#homonyms basic test thing-mind malt-mined
+\\
+#ttc-table-of-thing-homonyms-mind-malt-mined
 >mined malt
 Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault...
 
@@ -428,7 +431,7 @@ by one point
 ###newitm mined malt
 
 @hom
-#homonyms basic retest thing-mind malt-mined
+#+ttc-table-of-thing-homonyms-mind-malt-mined
 >mined xxx
 You had to lose a letter from Vined to find fault. Maybe this time you need to add a letter to mean, or mass, or both.
 
@@ -499,7 +502,8 @@ by one point
 #homonyms close test verb-grow-grit-owe
 >owe oit
 Not quite OWE ... but you sense there are several ways to toughen up.
-#homonyms basic test room-po pit-poe
+\\
+#ttc-table-of-room-homonyms-po-pit-poe
 >poe pit
 You don't need a pendulum about to cut you.
 
@@ -945,20 +949,17 @@ The joke jest poke pest doesn't care about directions.
 You already guessed the significance of my pen name.
 
 @hom
-#homonyms basic test thing-wry wall-rye
+#ttc-table-of-thing-homonyms-wry-wall-rye
 >rye xxx
 The wall remains inorganic. You can't really do anything to it.
-#homonyms basic test room-fun fen-phen
+\\
+#ttc-table-of-room-homonyms-fun-fen-phen
 >fun phen
 Organic chemistry is much too complex, here.
 
 @gt
 >gt wet wood
 You don't need to go back. The introductory bit is over.
-
-@hom
->phun phen
-Organic chemistry is much too complex, here.
 
 @ver
 >n
@@ -1001,36 +1002,39 @@ east to Fate Farm
 ###newloc real rear
 
 @hom
-#homonyms basic test thing-peeling pier-peer
+#ttc-table-of-thing-homonyms-peeling-pier-peer
 >peer xxx
 You could just L or X or LOOK for that. The pier is more flexible than that--rhymes will give more than homonyms here.
+\\
 #[?? release 5 maybe check if/when pier is finally useless after HEAL HERE. This is a bug nobody will find unless they try.]
-#homonyms basic test thing-steel steer-steal
+\\
+#ttc-table-of-thing-homonyms-steel-steer-steal
 >steal xxx
 The ceiling seer would not approve!
+\\
 #homonyms close test verb-kneel-near-neal
 >neal neyer
 You don't need to call anyone by their first names. It would be disrespectful to try, with the Ceiling Seer.
+\\
 #homonyms close test verb-deal-dear-deer
 >deel deer
 You don't need to populate this area with wildlife. It's the right amount of peaceful.
+\\
 #homonyms close test verb-heal-here-heel
 >heel heer
 The Ceiling Seer only helps the good guys.
+\\
 #homonyms close test verb-heal-here-hear
 >hael hear
 There is no noise or distraction preventing hearing.
-#homonyms basic test room-real rear-reel
+\\
+#ttc-table-of-room-homonyms-real-rear-reel
 >reel reer
 The Sage Sea is not for fishing.
 
 @ver
 >drink sage sea
 Sea salt? Ee! Alt!
-
-@hom
->reel reer
-The Sage Sea is not for fishing.
 
 @mis
 >wheel weir
@@ -1343,10 +1347,11 @@ by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @hom
-#homonyms basic test thing-vapor vial-vile
+#ttc-table-of-thing-homonyms-vapor-vial-vaper-vile
 >vapur vile
 You need to change the vial into something more pleasant and constructive.
-#homonyms basic test thing-vapor vial-vaper
+\\
+#+ttc-table-of-thing-homonyms-vapor-vial-vaper-vile
 >vaper viyul
 You need to change the vial into something more pleasant and constructive.
 
@@ -1435,7 +1440,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 ###newloc creased cross
 
 @hom
-#homonyms basic test room-creased cross-craws
+#ttc-table-of-room-homonyms-creased-cross-craws
 >craws crews
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -1551,7 +1556,7 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @hom
-#homonyms basic test thing-weird way-whey
+#ttc-table-of-thing-homonyms-weird-way-whey
 >whey xxx
 Yes, whey is weird to eat. But it would still be a sticky barrier.
 
@@ -1640,10 +1645,11 @@ The clay is cleared enough.
 ###newloc history hall
 
 @hom
-#homonyms basic test room-history hall-haul
+#ttc-table-of-room-homonyms-history-hall-hom-history-hall-to-haul-maul-rule
 >long haul
 Homonyms aren't the way to go, here.
 #[?? edge test case: if you've flipped this, shouldn't we have another error?]
+\\
 #homonyms close test verb-mystery-mall-maul
 >miss maul
 You don't need to destroy anything.
@@ -1663,12 +1669,14 @@ by one point
 ###newitm mean moe's clean clothes
 
 @hom
-#homonyms basic test room-history hall-maul
+#+ttc-table-of-room-homonyms-history-hall-hom-history-hall-to-haul-maul-rule
 >long maul
 Homonyms aren't the way to go, here.
+\\
 #homonyms close test verb-history-hall-haul
 >hiss haul
 You don't need THAT much stuff.
+\\
 #homonyms close test verb-glean-glows-gloze
 >gleen gloze
 You shouldn't be fishing for flattery.
@@ -1732,12 +1740,14 @@ That insult only works once.
 ###newitm toe tappin row rappin
 
 @hom
-#homonyms basic test thing-toe tappin-roe
+#ttc-table-of-thing-homonyms-toe-tappin-hom-toe-tappin-to-roe-tow-rule
 >roe xxx
 You don't need fish or homonyms.
-#homonyms basic test thing-toe tappin-tow
+\\
+#+ttc-table-of-thing-homonyms-toe-tappin-hom-toe-tappin-to-roe-tow-rule
 >tow xxx
 You don't need a tow truck or homonyms.
+\\
 #homonyms close test verb-ho-happen-hoe
 >hoe hoppin
 Keep farming, you'll get the right homonym.
@@ -1912,7 +1922,8 @@ Instead of lolling, why not have more fun? Maybe there's a better way to deal wi
 #homonyms close test verb-not-near-knot
 >knot kneer
 Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles.
-#homonyms basic test room-got gear hot here-hear
+\\
+#ttc-table-of-room-homonyms-got-gear-hot-here-hear
 >hear hear
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -2378,7 +2389,7 @@ Loft Land isn't much to look at, but it's not worth scorn.
 ###newloc curst cave
 
 @hom
-#homonyms basic test thing-worst wave-wurst
+#ttc-table-of-thing-homonyms-worst-wave-wurst
 >wurst xxx
 You're not hungry. Besides, the wave can become something better, nicer.
 
@@ -2524,7 +2535,7 @@ You need something more substantial to come out of the cool cap.
 ###newloc violent vale
 
 @hom
-#homonyms basic test room-violent vale-veil
+#ttc-table-of-room-homonyms-violent-vale-fail-silent-sail-rule-veil
 >vicki veil
 You need to get rid of the violence, not put a veil over it.
 
@@ -2667,7 +2678,7 @@ You are already awake. You need to make Jake ache to be awake.
 Sorry, but GO TO is disabled here in the lakes.
 
 @hom
-#homonyms basic test room-lake lea-lee
+#ttc-table-of-room-homonyms-lake-lea-lee
 >lee smith
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -2978,7 +2989,7 @@ DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
 @hom
-#homonyms basic test thing-jake g-cappin
+#ttc-table-of-thing-homonyms-jake-g-hom-toe-tappin-to-co-capn-rule
 >cow cappin
 You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
 #homonyms close test verb-co-capn-cappin
@@ -3055,6 +3066,7 @@ Been Buggin
 #homonyms close test verb-lean-luggin-lien
 >lien loggin
 Whoah! Close, but tax stuff is too complicated and bloated.
+\\
 #homonyms close test verb-mean-muggin-mien
 >mien moggin
 Something similar, but much tougher, if not tougher to spell, than mien.
@@ -3064,7 +3076,7 @@ Something similar, but much tougher, if not tougher to spell, than mien.
 You're too bummed to make big trips.
 
 @hom
-#homonyms basic test room-been buggin-bin
+#ttc-table-of-room-homonyms-been-buggin-bin
 >bin xxx
 You need to address two specific shortcomings.
 
@@ -3219,7 +3231,7 @@ Don't ditch Dean! He has valuable training. You can brute-force your way through
 by one point
 
 @hom
-#homonyms basic retest room-been buggin-bin
+#+ttc-table-of-room-homonyms-been-buggin-bin
 >bin xxx
 You need to address one more specific shortcoming.
 
@@ -3248,7 +3260,7 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @hom
-#homonyms basic test room-been buggin-bin
+#+ttc-table-of-room-homonyms-been-buggin-bin
 >bin xxx
 You've binned all the shortcomings you can here.
 
@@ -3260,7 +3272,7 @@ Sorry, but GO TO is disabled until you take the boring boat back. You can just E
 ###newitm way woke
 
 @hom
-#homonyms basic test thing-way woke-whey
+#ttc-table-of-thing-homonyms-way-woke-whey
 >whey xxx
 It's woke to eat whey, probably, but you can transform the cloak better with something else.
 
@@ -3451,7 +3463,7 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 >history hall
 
 @hom
-#homonyms basic test thing-poor ponder-pore
+#ttc-table-of-thing-homonyms-poor-ponder-pore
 >pore xxx
 You don't need to pore over Poor? Ponder for Fonder. You need it to come alive!
 
@@ -3513,10 +3525,11 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 ###newnpc bold bard
 
 @hom
-#homonyms basic test thing-bold bard-bowled
+#ttc-table-of-thing-homonyms-bold-bard-hom-bold-bard-to-bowled-barred-rule
 >bowled xxx
 Cricket isn't cricket right now, old chap!
-#homonyms basic test thing-bold bard-barred
+\\
+#+ttc-table-of-thing-homonyms-bold-bard-hom-bold-bard-to-bowled-barred-rule
 >barred xxx
 The bold bard sort of is, already, and you're trying to fix that.
 
@@ -3627,15 +3640,18 @@ by one point
 ###newitm we whine me mine
 
 @hom
-#homonyms basic test thing-we whine-whee
+#ttc-table-of-thing-homonyms-we-whine-hom-we-whine-to-whee-wine-rule
 >whee xxx
 That'd be a heel turn, actually liking We Whine: ME, MINE.
-#homonyms basic test thing-we whine-wine
+\\
+#+ttc-table-of-thing-homonyms-we-whine-hom-we-whine-to-whee-wine-rule
 >wine xxx
 We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or homonyms.
+\\
 #homonyms close test verb-see-sign-sea
 >sea syne
 You remain landlocked. But perhaps you can find a better way to, umm, look at things.
+\\
 #homonyms close test verb-see-sign-sine
 >sey sine
 The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
@@ -3755,15 +3771,18 @@ LEAST LOSS
 ###newloc foe field so sealed
 
 @hom
-#homonyms basic test thing-pain peasant-pane
+#ttc-table-of-thing-homonyms-pain-peasant-pane
 >pane xxxx
 Broken person, broken window, eh?
+\\
 #homonyms close test verb-plain-pleasant-plane
 >plane present
 The peasant acquires no magical transportation.
+\\
 # below "so sappin" takes priority
 >sew zzz
 !The field is not for manual labor.
+\\
 >sow zzz
 !The field is not for manual labor.
 
@@ -3802,10 +3821,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @hom
-#homonyms basic test room-foe field-sow
+#ttc-table-of-room-homonyms-foe-field-sew-sow
 >sow see
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic test room-foe field-sew
+\\
+#+ttc-table-of-room-homonyms-foe-field-sew-sow
 >sew see
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -3828,9 +3848,10 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 ###newitm coral cage
 
 @hom
-#homonyms basic test thing-coral cage-choral
+#ttc-table-of-thing-homonyms-coral-cage-choral
 >choral xxx
 You don't need the cage to sing. You need to figure who's in there.
+\\
 #homonyms close test verb-moral-mage-morel
 >morel may
 You don't need a plantomancer.
@@ -3844,7 +3865,7 @@ You have nothing that opens the coral cage.
 >purloin cage key
 
 @hom
-#homonyms basic test room-store all stage-awl
+#ttc-table-of-room-homonyms-store-all-stage-awl
 >awl righty
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -4024,13 +4045,15 @@ Now you mention it, you did feel a bit restricted here. Expressing your feelings
 ###newloc blinding blaze
 
 @hom
-#homonyms basic test room-blinding blaze-graze
+#ttc-table-of-room-homonyms-blinding-blaze-hom-blinding-blaze-to-wheys-grace-graze-rule
 >graze xxx
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic test room-blinding blaze-grace
+\\
+#+ttc-table-of-room-homonyms-blinding-blaze-hom-blinding-blaze-to-wheys-grace-graze-rule
 >grace xxx
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
-#homonyms basic test room-blinding blaze-wheys
+\\
+#+ttc-table-of-room-homonyms-blinding-blaze-hom-blinding-blaze-to-wheys-grace-graze-rule
 >grace xxx
 !You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
@@ -4125,7 +4148,7 @@ by one point
 ###newitm stuck stair
 
 @hom
-#homonyms basic test thing-stuck stair-stare
+#ttc-table-of-thing-homonyms-stuck-stair-stare
 >stare xxx
 You need to figure what the stair would hold. Staring may help, or it may not.
 
@@ -4203,10 +4226,11 @@ by one point
 ###newloc grinding grays
 
 @hom
-#homonyms basic retest room-blinding blaze-graze
+#+ttc-table-of-room-homonyms-blinding-blaze-hom-blinding-blaze-to-wheys-grace-graze-rule
 >graze xxx
 Homonyms aren't the way to go, here.
-#homonyms basic retest room-blinding blaze-grace
+\\
+#+ttc-table-of-room-homonyms-blinding-blaze-hom-blinding-blaze-to-wheys-grace-graze-rule
 >grace xxx
 Homonyms aren't the way to go, here.
 
@@ -4393,7 +4417,7 @@ You'd get a triple-tough cripple-cuff in return. You must fight with words.
 It can't speak, but its look says "Real rude? Deal, dude!"
 
 @hom
-#homonyms basic test room-here hull-hear
+#ttc-table-of-room-homonyms-here-hull-hear
 >hear hull
 You can just listen, if you need to.
 
@@ -4828,15 +4852,17 @@ PULL PIECED
 #homonyms close test verb-so-sappin-sew
 >sew soppin
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
+\\
 #homonyms close test verb-so-sappin-sow
 >sow soppin
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
 @hom
-#homonyms basic test room-whining war-wining
+#ttc-table-of-room-homonyms-whining-war-hom-whining-war-to-wining-wore-rule
 >wining woor
 Homonyms aren't quite the way to change the whining war.
-#homonyms basic test room-whining war-wore
+\\
+#+ttc-table-of-room-homonyms-whining-war-hom-whining-war-to-wining-wore-rule
 >wore muur
 Homonyms aren't quite the way to change the whining war.
 
@@ -5259,13 +5285,16 @@ by one point
 #homonyms close test verb-wood-one-won
 >whud won
 The good gun seems to bend a bit. You must be close to a concrete way to change it.
+\\
 #homonyms close test verb-wood-one-would
 >would wun
 The good gun seems to bend a bit. You must be close to a concrete way to change it.
+\\
 #homonyms close test verb-meeker-muscle-mussel
 >meaker mussel
 Ooh! You're on the right track, but you don't quite need to turn Russell into seafood.
-#homonyms basic test thing-reeker russell-wreaker
+\\
+#ttc-table-of-thing-homonyms-reeker-russell-wreaker
 >wreaker wrussle
 This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action.
 
@@ -5444,10 +5473,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 @hom
 >s
-#homonyms basic retest room-foe field-sew
+\\
+#+ttc-table-of-room-homonyms-foe-field-sew-sow
 >sew xxx
 The field is not for manual labor.
-#homonyms basic retest room-foe field-sow
+\\
+#+ttc-table-of-room-homonyms-foe-field-sew-sow
 >sow xxx
 The field is not for manual labor.
 >n
@@ -5458,21 +5489,26 @@ The field is not for manual labor.
 ###newnpc bot board
 
 @hom
-#homonyms basic test thing-sought sword-sot
+#ttc-table-of-thing-homonyms-sought-sword-sot
 >sot xxx
 No, it wasn't lost by some drunk.
-#homonyms basic test thing-mist mess-missed
+\\
+#ttc-table-of-thing-homonyms-mist-mess-missed
 >missed xxx
 You can miss the mess more productively by figuring your way through Airy Isle.
-#homonyms basic test thing-bot board-bought
+\\
+#ttc-table-of-thing-homonyms-bot-board-hom-bot-board-to-bought-bored-rule
 >bought xxxx
 Perhaps their soulless corporate overlords would be interested in a quick buck, but the Bot Board isn't.
-#homonyms basic test thing-bot board-bored
+\\
+#+ttc-table-of-thing-homonyms-bot-board-hom-bot-board-to-bought-bored-rule
 >bored xxx
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
+\\
 #homonyms close test verb-got-gored-gourd
 >xxx gourd
 That worked in The Life of Brian, but ... well, you need something with more oomph. You're close.
+\\
 >xxx hoard
 Treasure isn't the goal, here. You need allies.
 
@@ -5487,13 +5523,15 @@ The Bot Board intones "Pif-paf? Riff-raff!" That's about as close to a joke as t
 "Meep, mate! Heap hate! Weep, wait!"
 
 @hom
-#homonyms basic test room-airy isle-erry
+#ttc-table-of-room-homonyms-airy-isle-aerie-erry-aisle
 >erry xxx
 The Airy Isle can't really be changed.
-#homonyms basic test room-airy isle-aerie
+\\
+#+ttc-table-of-room-homonyms-airy-isle-aerie-erry-aisle
 >aerie xxx
 The Airy Isle can't really be changed.
-#homonyms basic test room-airy isle-aisle
+\\
+#+ttc-table-of-room-homonyms-airy-isle-aerie-erry-aisle
 >aisle xxx
 The Airy Isle can't really be changed.
 
@@ -5545,7 +5583,7 @@ by one point
 ###newnpc hot horde
 
 @hom
-#homonyms basic test thing-hot horde-hoard
+#homonyms basic test verb-hot horde-hoard
 >hoard haught
 Treasure isn't the goal, here. You already have allies.
 
@@ -5705,12 +5743,12 @@ DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
 @hom
-#homonyms basic test thing-grow grate-great
+#ttc-table-of-thing-homonyms-grow-grate-great
 >great xxx
 But you want to lessen the grate/gate's influence.
 
 @hom
-#homonyms basic test thing-go gate-gait
+#ttc-table-of-thing-homonyms-go-gate-gait
 >gait xxx
 Ah, but what sort of gait should you take?
 
@@ -5722,13 +5760,15 @@ by one point
 ###newitm fairy file
 
 @hom
-#homonyms basic test thing-white waste-waist
+#ttc-table-of-thing-homonyms-white-waste-waist
 >waist xxx
 It's sort of a waist, too, but let's concentrate on finishing the quest, here.
-#homonyms basic test room-tarry tile-terry
+\\
+#ttc-table-of-room-homonyms-tarry-tile-tarry-not-marry-rule-terry
 >terry crews
 Nobody named Terry appears, nor does any terry cloth.
-#homonyms basic test thing-well worn hell horn-warn
+\\
+#ttc-table-of-thing-homonyms-well-worn-hell-horn-warn
 >warn warn
 The well worn hell horn is already giving a false warning.
 
@@ -5836,7 +5876,7 @@ by one point
 ###newloc merry mile
 
 @hom
-#homonyms basic retest room-tarry tile-terry
+#+ttc-table-of-room-homonyms-tarry-tile-tarry-not-marry-rule-terry
 >terry tyle
 !Nobody named Terry appears, nor does any terry cloth.
 
