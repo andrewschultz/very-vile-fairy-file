@@ -408,7 +408,7 @@ to say wood-noway:
 		increment wood-row;
 	if wood-row > number of rows in table of Wet Wood clues:
 		now wood-row is 0;
-		say "You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though";
+		say "You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though.[no line break]";
 		continue the action;
 	choose row wood-row in table of Wet Wood clues;
 	say "[randtxt entry]";

@@ -1,14 +1,15 @@
-# reg-vvff-jjthru.txt
+# reg-vvff-lone-afterverbs.txt
 
-## reg-vvff-jjthru.txt
-## NO GENERATOR FILE, THOUGH I ORIGINALLY GOT THIS FROM THE FULL WALKTHROUGHT.
-## it roughly corresponds to reg-vvff-min-thru.txt.
+## reg-vvff-lone-afterverbs.txt
+## THIS TESTS OPTIONS AT THE END OF GAMEPLAY.
 
 ## walkthrough with all points, jumping everywhere
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
 
 * main-thru
+
+# first, let's cheat to win quickly!
 
 > gonear tarry tile
 

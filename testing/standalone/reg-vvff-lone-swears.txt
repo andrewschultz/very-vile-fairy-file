@@ -1,0 +1,55 @@
+# reg-vvff-lone-swears.txt
+
+## reg-vvff-lone-swears.txt
+## NO GENERATOR FILE, JUST UNIT TESTING THE SWEARING/BLUE BLEAH OPTION
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+#ttc-table-of-wet-wood-clues-1
+>w
+You walk around a bit for the first time, and you wind up by a place called the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You notice the Leet Learner turned stays at the center.
+You'd like a simple way to become better.
+
+#ttc-table-of-wet-wood-clues-2
+>w
+You walk around some more and run into someone who calls out, "Fret, frood..." Disheartened, you lose your way, but at least you make it back to the Wet Wood. You notice the Leet Learner turned swerves right.
+Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve.
+
+#ttc-table-of-wet-wood-clues-3
+>w
+You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. You notice the Leet Learner turned stays at the center.
+You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started.
+
+#ttc-table-of-wet-wood-clues-4
+>w
+You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. You notice the Leet Learner turned stays at the center.
+You'd like a simple way to become better.
+
+>w
+You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though
+Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve.
+
+>blue bleah
+
+#+ttc-table-of-wet-wood-clues-1
+>w
+You walk around a bit, and you wind up back by the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. You notice the Leet Learner turned stays at the center.
+You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started.
+
+#+ttc-table-of-wet-wood-clues-2
+>w
+You walk around some more and run into someone who calls out, "Fret, frood..." Disheartened, you lose your way, but at least you make it back to the Wet Wood. You notice the Leet Learner turned swerves right.
+You'd like a simple way to become better.
+You think back to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.
+
+#+ttc-table-of-wet-wood-clues-3
+>w
+You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. You notice the Leet Learner turned stays at the center.
+Wandering around has fleshed things out, but maybe there's a concise way to put things together and improve.
+
+>w
+You go and get lost again, but there are no more unique clues in any direction. You can probably wander around again to get the old clues, though.
+You remember self-help about how you can get better if you just want to, and it's a matter of flicking a switch. It's not that simple in life, but maybe it could help for leaving the Wet Wood and getting started.

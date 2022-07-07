@@ -1,6 +1,6 @@
-# reg-vvff-rand.txt
+# reg-vvff-lone-rand.txt
 
-## reg-vvff-rand.txt
+## reg-vvff-lone-rand.txt
 ## NO GENERATOR FILE, JUST RANDOM SHUFFLED TEXT TEST CASES
 
 ## this should not be confused with a walkthrough. It is a unit test of all the random texts available.

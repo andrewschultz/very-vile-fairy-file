@@ -1,6 +1,6 @@
-# reg-vvff-jjthru.txt
+# reg-vvff-lone-jjthru.txt
 
-## reg-vvff-jjthru.txt
+## reg-vvff-lone-jjthru.txt
 ## NO GENERATOR FILE, THOUGH I ORIGINALLY GOT THIS FROM THE FULL WALKTHROUGHT.
 ## it roughly corresponds to reg-vvff-min-thru.txt.
 

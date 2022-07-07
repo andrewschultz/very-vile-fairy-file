@@ -155,7 +155,7 @@ randtxt
 "Trench Tries French Fries"
 
 table of mall songs [xxsongs]
-randtxt
+randtxt	prof
 "Pole Perching, Soul Searching"
 "Tasked: Ten Masked Men"
 "Drooler Drew's Crueler Crews"

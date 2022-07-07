@@ -1,6 +1,6 @@
-# reg-vvff-bull.txt
+# reg-vvff-lone-bull.txt
 
-## reg-vvff-bull.txt
+## reg-vvff-lone-bull.txt
 ## NO GENERATOR FILE, JUST BULL CHASE TEST CASES
 
 ## this should not be confused with a walkthrough. It has unit tests of many bull chases.
