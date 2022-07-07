@@ -4,22 +4,39 @@ Version 1/220706 of Very Vile Fairy File Random Text by Andrew Schultz begins he
 
 volume random table code
 
-to next-rand (t - a table name):
+to decide which number is next-rand-row of (t - a table name):
+	say "a.";
 	choose row with tabnam of t in table of all randoms;
-	increment tabidx entry;
-	let lb be lbrk entry;
-	if tabidx entry > number of rows in tabnam entry:
-		if debug-state is true, say "(Cycling) ";
-		if thru-yet entry is 0:
-			now thru-yet entry is 1;
-		if there is a cycle-note entry:
-			say "[cycle-note entry][if lb is true][line break][else][no line break][end if]";
-			now tabidx entry is 0;
-			continue the action;
-		now tabidx entry is 1;
-	if thru-yet entry is 1 and tabidx entry is 1, now rand-cycle is true;
-	let Q be tabidx entry;
-	choose row Q in tabnam entry;
+	let last-row be tabidx entry;
+	let cur-row be tabidx entry;
+	let this-max-row be number of rows in tabnam entry;
+	let has-cycle be whether or not there is a cycle-note entry;
+	increment cur-row;
+	while cur-row is not last-row:
+		say "b.";
+		if cur-row > this-max-row:
+			if debug-state is true, say "(Cycling) ";
+			if has-cycle is true:
+				decide on 0;
+			else:
+				now cur-row is 1;
+		say "c.";
+		if blue-bleah is false, decide on cur-row;
+		choose row cur-row in t;
+		if there is a prof entry and prof entry is true:
+			increment cur-row;
+			next;
+		decide on cur-row;
+
+to next-rand (t - a table name):
+	let nr be next-rand-row of t;
+	choose row with tabnam of t in table of all randoms;
+	now tabidx entry is nr;
+	let lb be whether or not lbrk entry is true;
+	if nr is 0: [this means there is a cycle-note entry]
+		say "[cycle-note entry][if lb is true][line break][else][no line break][end if]";
+		continue the action;
+	choose row nr in t;
 	say "[randtxt entry][if lb is true][line break][else][no line break][end if]";
 
 to say next-rand-txt of (t - a table name):
@@ -41,8 +58,8 @@ table of vvff digs	0	false	0	"Insults in the VVFF"	"The final entry reads, simpl
 volume random tables
 
 table of library books [xxbooks] [xxlibe] [xxlibrary]
-randtxt
-"Hell, Heaven: Sell Seven[r], by Belle Bevin"
+randtxt	prof
+"Hell, Heaven: Sell Seven[r], by Belle Bevin"	true
 "Spot Spice, Not Nice Lot Lice[r], by Trot Trice"
 "Stall STAT, Fall Flat[r], by Paul Platt"
 "Bad Ban, Madman[r], by Chad Chan and Tad Tan"
@@ -150,10 +167,10 @@ randtxt
 "Big Bang Gig Gang[r], by Sig Sang"
 "Blue Blood Crew? Crud"
 "Boy Boss Toy Toss[r], by Soy Sauce Roy Ross"
-"Clear Classed Beer Blast Mo['] Massed"
+"Clear Classed Beer Blast"
 "Deal Dope?! Heal! Hope!" [puncok]
 "Doom Doc's Boom-Box Room Rocks"
-"Eh, Un-Gay Gun"
+"Eh, Un-Gay Gun"	true
 "Fit Fo['] Wit, Whoah" [show]
 "Fly Phat Lie-At"
 "Fo['] Flow So Slow"
@@ -179,7 +196,6 @@ randtxt
 "Tweet-Too-Sweet Sue"
 "Toll Taxin['] Joel Jackson"
 "Bad-Back Mad Mack"
-"Bad Back Mad Mack"
 "Whole Haxin['] Joel Jackson"
 "Seek-So-Meek Moe"
 "Guy Guess-My-Mess"
@@ -268,7 +284,7 @@ randtxt
 
 [the taunts below could be something from an enemy as well. I may wish to randomize them later.]
 table of vvff digs [xxtaunts] [xxdigs] [xxmean]
-randtxt
+randtxt	prof
 "Mend, my friend? FRY!"
 "Bad bid, cad kid!"
 "Blue blood? Do? Dud! Boo, bud!"
@@ -277,7 +293,7 @@ randtxt
 "Catcall: at ALL!"
 "Dark day! Hark, hey!"
 "Fie! Face my mace!"
-"Fry, freak-guy(?)-geek!"
+"Fry, freak-guy(?)-geek!"	true
 "Geek, get weak wit!"
 "Gosh, go wash, whoa!"
 "Lard! Left hard heft!"
