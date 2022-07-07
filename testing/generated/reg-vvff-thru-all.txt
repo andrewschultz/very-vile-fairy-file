@@ -8,117 +8,309 @@
 
 * main-thru
 
->really rolling
-by one point
-A stun-steed zooms by
+>z
 
->big bag
-by one point
+#ttc-table-of-ranks-1
+>score
+You have scored a total of 0 out of 95 points and need 81 to win. You have found 0 of 14 optional points so far.
+Your current (utterly meaningless but hopefully amusing) rank is cold cod.
 
 >get good
 by one point
 
+#ttc-table-of-ranks-2
+>score
+You have scored a total of 1 out of 95 points and need 81 to win. You have found 0 of 14 optional points so far.
+Your current rank is lol'd, lawd.
+
+>undo
+>undo
+>undo
+
+>really rolling
+by one point
+A stun-steed zooms by
+
+#+ttc-table-of-ranks-1
+>score
+You have scored a total of 1 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current (utterly meaningless but hopefully amusing) rank is cold cod.
+
+>big bag
+by one point
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 2 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
+
+>get good
+by one point
+
+/^Rift River
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 3 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
+
 >gift giver
 by one point
+
+/^Vined Vault
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 4 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
 
 >find fault
 by one point
 
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 5 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
+
 >green grass
 by one point
+
+/^Po' Pit
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 6 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
 
 >grow grit
 by one point
 
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 7 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
+
 >mash map
 by one point
+
+/^Trim Tram
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 8 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
 
 >mind me
 by one point
 
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 9 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
+
 >flim flam
 by one point
+
+/^Fun Fen
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 10 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
+Your current rank is lol'd, lawd.
 
 >bloke blessed
 by one point
 You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
+
+#+ttc-table-of-ranks-2
+>score
+You have scored a total of 11 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
+Your current rank is lol'd, lawd.
 
 >s
 
 >kneel near
 by one point
 
+#ttc-table-of-ranks-3
+>score
+You have scored a total of 12 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
+Your current rank is FLOL'd, flawed.
+
 >feel fear
 by one point
+
+#+ttc-table-of-ranks-3
+>score
+You have scored a total of 13 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
+Your current rank is FLOL'd, flawed.
 
 >deal dear
 by one point
 
+#+ttc-table-of-ranks-3
+>score
+You have scored a total of 14 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
+Your current rank is FLOL'd, flawed.
+
 >appealing appear
 by one point
 !A stun-steed zooms by
+
+#+ttc-table-of-ranks-3
+>score
+You have scored a total of 15 out of 95 points and need 84 to win. You have found 3 of 14 optional points so far.
+Your current rank is FLOL'd, flawed.
 
 >n
 
 >strong start
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 16 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is FLOL'd, flawed.
+
 >fall free
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 17 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is FLOL'd, flawed.
 
 >dive deep
 by one point
 
+#ttc-table-of-ranks-4
+>score
+You have scored a total of 18 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is mold-mawed.
+
 >paper pile
 by one point
+
+#+ttc-table-of-ranks-4
+>score
+You have scored a total of 19 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is mold-mawed.
 
 >backed binder
 by one point
 
+#+ttc-table-of-ranks-4
+>score
+You have scored a total of 20 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is mold-mawed.
+
 >n
+
+/^Creased Cross
 
 >w
 
 >dark door
 by one point
 
+#+ttc-table-of-ranks-4
+>score
+You have scored a total of 21 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is mold-mawed.
+
 >mark more
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 22 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is mold-mawed.
+
 >cleared clay
 by one point
+
+#ttc-table-of-ranks-5
+>score
+You have scored a total of 23 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is holed, haw-ed.
 
 >w
 
 >mystery mall
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 24 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
+Your current rank is holed, haw-ed.
+
 >what a wanksta
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 25 out of 95 points and need 86 to win. You have found 5 of 14 optional points so far.
+Your current rank is holed, haw-ed.
 
 >listen
 
 >lots lame
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 26 out of 95 points and need 86 to win. You have found 5 of 14 optional points so far.
+Your current rank is holed, haw-ed.
+
 >ho happen
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 27 out of 95 points and need 87 to win. You have found 6 of 14 optional points so far.
+Your current rank is holed, haw-ed.
+
 >dimd
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 28 out of 95 points and need 88 to win. You have found 7 of 14 optional points so far.
+Your current rank is holed, haw-ed.
+
 >no nappin
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 29 out of 95 points and need 88 to win. You have found 7 of 14 optional points so far.
+Your current rank is holed, haw-ed.
 
 >w
 
 >lie lol
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 30 out of 95 points and need 89 to win. You have found 8 of 14 optional points so far.
+Your current rank is holed, haw-ed.
+
 >not near
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 31 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is holed, haw-ed.
+
 >hard hat
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 32 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is holed, haw-ed.
 
 >e
 >e
@@ -129,21 +321,48 @@ by one point
 >work well
 by one point
 
+#ttc-table-of-ranks-6
+>score
+You have scored a total of 33 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is bowled, bah'd.
+
 >e
 
 >loft land
 by one point
+
+becomes the Loft Land
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 34 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is bowled, bah'd.
 
 >w
 
 >dreaming dull
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 35 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is bowled, bah'd.
+
 >first fave
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 36 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is bowled, bah'd.
+
 >cool cap
 by one point
+
+#ttc-table-of-ranks-7
+>score
+You have scored a total of 37 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is sold sod.
 
 >e
 >s
@@ -152,54 +371,131 @@ by one point
 >silent sail
 by one point
 
+/^Silent Sail
+
+#+ttc-table-of-ranks-7
+>score
+You have scored a total of 38 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is sold sod.
+
 >brightening bridge
 by one point
 
+#+ttc-table-of-ranks-7
+>score
+You have scored a total of 39 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is sold sod.
+
 >boring boat
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 40 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is sold sod.
 
 >enter boat
 
 >wake whee
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 41 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is sold sod.
+
 >take tea
 by one point
+
+#ttc-table-of-ranks-8
+>score
+You have scored a total of 42 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
+Your current rank is old, odd.
 
 >break brie
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 43 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is old, odd.
+
 >fake fee
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 44 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is old, odd.
 
 >e
 
 >make map
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 45 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is old, odd.
+
 >co capn
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 46 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is old, odd.
 
 >snake snap
 by one point
 Silent Sail
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 47 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is old, odd.
 
 >enter boat
 
 >stay strong
 by one point
 
+#ttc-table-of-ranks-9
+>score
+You have scored a total of 48 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is told, tawed.
+
 >glow glad
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 49 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is told, tawed.
 
 >mean muggin
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 50 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is told, tawed.
+
 >lean luggin
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 51 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
+Your current rank is told, tawed.
+
 >bumped buster
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 52 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is told, tawed.
 
 >enter boat
 
@@ -210,15 +506,30 @@ by one point
 >glean glows
 by one point
 
+#ttc-table-of-ranks-10
+>score
+You have scored a total of 53 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is th'old thawed.
+
 >history hall
 
 >youre yonder
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 54 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is th'old thawed.
+
 >out
 
 >smashing smoke
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 55 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is th'old thawed.
 
 >in
 >w
@@ -226,8 +537,20 @@ by one point
 >lending libe
 by one point
 
+/^Lending Libe
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 56 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is th'old thawed.
+
 >see sign
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 57 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is th'old thawed.
 
 >e
 >e
@@ -240,10 +563,20 @@ by one point
 >plain pleasant
 by one point
 
+#ttc-table-of-ranks-11
+>score
+You have scored a total of 58 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is polled, pawed.
+
 >w
 
 >moral mage
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 59 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is polled, pawed.
 
 >e
 >e
@@ -251,19 +584,48 @@ by one point
 >sit sound
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 60 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is polled, pawed.
+
 >fit found
 by one point
+
+/^Grit Ground
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 61 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is polled, pawed.
 
 >e
 
 >winding ways
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 62 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is polled, pawed.
+
 >mo mappin
 by one point
 
+#ttc-table-of-ranks-12
+>score
+You have scored a total of 63 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is shoaled, shod.
+
 >luck lair
 by one point
+
+/^Grinding Grays
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 64 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is shoaled, shod.
 
 >w
 >w
@@ -275,10 +637,24 @@ by one point
 >tight tunnel
 by one point
 
+/^Tight Tunnel
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 65 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is shoaled, shod.
+
 >w
 
 >knives niche
 by one point
+
+/^Knives Niche
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 66 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is shoaled, shod.
 
 >e
 >u
@@ -289,28 +665,59 @@ by one point
 >dear dull
 by one point
 
+#ttc-table-of-ranks-13
+>score
+You have scored a total of 67 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is scrolled scrod.
+
 >near null
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 68 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is scrolled scrod.
 
 >w
 >s
 >w
 >d
 >w
+
 >s
 
 >beast boss
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 70 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is scrolled scrod.
+
 >least loss
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 71 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is scrolled scrod.
 
 # maybe this should be !min?
 >wild weed
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 72 out of 95 points and need 93 to win. You have found 12 of 14 optional points so far.
+Your current rank is scrolled scrod.
+
 >spark spliff
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 73 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is scrolled scrod.
 
 >s
 
@@ -319,14 +726,29 @@ by one point
 >heal here
 by one point
 
+#ttc-table-of-ranks-14
+>score
+You have scored a total of 74 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is trolled, trod.
+
 >n
 >n
 
 >cull ceased
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 75 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is trolled, trod.
+
 >full feast
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 76 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is trolled, trod.
 
 >e
 >e
@@ -334,17 +756,44 @@ by one point
 >so sappin
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 77 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is trolled, trod.
+
 >shining shore
 by one point
+
+/^Shining Shore
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 78 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is trolled, trod.
 
 >dining door
 by one point
 
+#ttc-table-of-ranks-15
+>score
+You have scored a total of 79 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is mold-mod.
+
 >pull pieced
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 80 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is mold-mod.
+
 >mining more
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 81 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is mold-mod.
 
 >w
 >w
@@ -354,45 +803,113 @@ by one point
 >show shield
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 82 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is mold-mod.
+
 >n
 
 >go gappin
 by one point
 
+#ttc-table-of-ranks-16
+>score
+You have scored a total of 83 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is bold bod.
+
 >couple caps
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 84 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is bold bod.
 
 >cast cap
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 85 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
+Your current rank is bold bod.
+
 >beaker bustle
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 86 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is bold bod.
 
 >meeker muscle
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 87 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is bold bod.
+
 >wood one
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 88 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is bold bod.
 
 >n
 
 >hot horde
 by one point
 
+#ttc-table-of-ranks-17
+>score
+You have scored a total of 89 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is rolled, rah'd.
+
 >lot lord
 by one point
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 90 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is rolled, rah'd.
 
 >got gored
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 91 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is rolled, rah'd.
+
 >whoa wait
 by one point
+
+/^Tarry Tile
+
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 92 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is rolled, rah'd.
 
 >tell torn
 by one point
 
+#ttc-table-of-ranks-0
+>score
+You have scored a total of 93 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is rolled, rah'd.
+
 >merry mile
 by one point
+
+/^Merry Mile
+
+>score
+You have scored a total of 94 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
+Your current rank is gold god (almost).
 
 >bury bile
 by one point

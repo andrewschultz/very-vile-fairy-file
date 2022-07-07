@@ -1612,7 +1612,7 @@ rank-max	rank-name
 -1	"lol'd, lawd" [this is defined explicitly as -1 because 1. I want to trigger a rank gain at the Fun Fen and 2. the introductory score may change]
 --	"FLOL'd, flawed" [false laugh out loud]
 --	"mold-mawed"
---	"holed, hawed"
+--	"holed, haw-ed"
 --	"bowled, bah'd"
 --	"sold sod"
 --	"old, odd"

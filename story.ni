@@ -416,8 +416,8 @@ to say wood-noway:
 to say oh-simp: say "oh, there's GOT to be a simple way to say things"
 
 every turn when player is in Wet Wood:
-	if turn count < 5, continue the action;
-	if the remainder after dividing turn count by 3 is 0, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
+	if turn count < 6, continue the action;
+	if the remainder after dividing turn count by 3 is 1, say "You think back [one of][or]again [stopping]to being made fun of for being bad at Kick the Can. Who led the chants? Oh, that's right. Mick-the-Man.";
 
 after looking in Wet Wood for the first time:
 	say "And what's this on the ground? Something called a Leet Learner. You pick it up. It looks like you could [b]EXAMINE[r] or [b]READ[r] it for instructions. (NOTE: You can point the learner at something by typing [ll] (thing), or you can refer to the learner as [ll]. You can also [ll] to scan your current location.)[line break]";
@@ -1776,6 +1776,7 @@ check taking inventory:
 	if player has joke jest poke pest, say "The joke jest poke pest is buzzing around, but [if sco-bloke-blessed is true]it's not so distracting any more[else]maybe there's a way to tame it[end if].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
 	show-evidence-and-hats;
+	if lurking lump is not off-stage, say "[line break]";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
 	if lurking lump is moot, say "The lurking lump disappeared when you used it, but maybe with more good guesses, it will come back.";
 	check-injury;
@@ -1787,7 +1788,7 @@ to show-evidence-and-hats:
 			say "You also have the extra cool cap you constructed.";
 		else:
 			say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
-	if evidence-pieces > 0, say "[line break]You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
+	if evidence-pieces > 0, say "[if my-hats > 0][line break][end if]You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
 
 to check-injury: if need-healing, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
 
@@ -1826,7 +1827,10 @@ before undoing an action:
 		say "[pest-sneer] 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
 		enable saving of undo state;
 	else:
-		say "Wiping one's typing ... TONS!";
+		if the turn count is 1:
+			say "'Chickening, chum? Sickening, some,' booms a voice. There's no way back to Fall Fest.";
+		else:
+			say "Wiping one's typing ... TONS!";
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
@@ -1975,9 +1979,9 @@ check requesting the score:
 	let dh be doable-hinted;
 	let fh be future-hinted;
 	if dh + fh > 0:
-		say "You also have [dh + fh in words] task[plur of dh + fh] you performed when you weren't quite ready, and [if dh is 0][it-they of fh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with THINK.";
+		say "You also have [dh + fh in words] useful idea[plur of dh + fh] you thought of before you weren't quite ready, and [if dh is 0][it-they of fh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with [b]THINK[r].";
 	else:
-		say "There are no tasks you have figured out but weren't quite ready.";
+		say "You haven't figured any ideas that might score a point later, but if you do, [this-game] will explicitly warn you. [b]THINK[r] would give more detailed information.";
 	if lurking lump is not off-stage:
 		let gguess be next-lump-level - lump-count;
 		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
@@ -3181,7 +3185,7 @@ when play begins (this is the score and status tweak rule):
 	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-poss]*[else]-[max-poss][end if]";
 	force-status;
 	now the left hand status line is "[location of the player] ([mrlp])";
-	now the turn count is 0;
+	now the turn count is 1;
 
 to wall-refresh: move the wry wall backdrop to all wallish rooms;
 

@@ -454,7 +454,7 @@ table of joke jest poke pest guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "broke breast"	pest-known rule	false	55	pest-undealt rule	"Nothing violent."
 "croak crest"	pest-known rule	false	55	pest-undealt rule	"Nothing forms to kill the [poke pest]."
-"toke test"	pest-known rule	false	55	pest-undealt rule	"Hey now! You [if wild weed is moot]had your fun. Don't overdo it[else if wild weed is fungible]might indulge, but you don't need to, and besides, you need a source of flame[else]don't have, or need, anything smokable[end if]."
+"toke test"	pest-known rule	false	55	pest-undealt rule	"Hey now! You [if wild weed is moot]had your fun. Don't overdo it[else if wild weed is fungible]might indulge, but you don't strictly need to, and besides, you'd need a source of flame for that, anyway[else]don't have, or need, anything smokable[end if]."
 "woke west"	pest-known rule	false	55	pest-undealt rule	"The [poke pest] doesn't care about directions."
 
 [this could technically go in the common file, but it would create so many problems with test verification.]

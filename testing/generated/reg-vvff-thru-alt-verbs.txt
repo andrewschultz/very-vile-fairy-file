@@ -239,6 +239,7 @@ by one point
 >lean lugging
 by one point
 >undo
+
 >mean mugging
 by one point
 >undo
@@ -267,6 +268,7 @@ by one point
 >your yonder
 by one point
 >undo
+
 >yore yonder
 by one point
 >undo
@@ -318,12 +320,15 @@ by one point
 >finding phase
 by one point
 >undo
+//
 >finding fays
 by one point
 >undo
+//
 >finding feys
 by one point
 >undo
+//
 >minding maze
 by one point
 >undo
@@ -334,9 +339,11 @@ by one point
 >mo mapping
 by one point
 >undo
+
 >mow mappin
 by one point
 >undo
+
 >mow mapping
 by one point
 >undo
@@ -383,6 +390,11 @@ by one point
 >w
 >d
 >w
+
+>score
+You have scored a total of 69 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
+Your current rank is scrolled scrod.
+
 >s
 
 >beast boss
