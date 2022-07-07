@@ -391,10 +391,6 @@ by one point
 >d
 >w
 
->score
-You have scored a total of 69 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
-Your current rank is scrolled scrod.
-
 >s
 
 >beast boss

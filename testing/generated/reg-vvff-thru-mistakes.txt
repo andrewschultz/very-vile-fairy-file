@@ -8,49 +8,100 @@
 
 * main-thru
 
->wig wag
-Learner needle
-If you're wearing a hairpiece, I don't want to know.
->mig mag
-Learner needle
-Fighter plane ammunition will not help you.
->gig gag
-Learner needle
-There are enough gags in this adventure. I hope.
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-brig-brag
 >brig brag
 Good guys don't brag about if they
 Learner needle
->swig swag
-There's no time to be drinking here!
-Learner needle
->tig tag
-But you already have one utterly childish game right in front of you.
-Learner needle
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-cig-sag
 >cig sag
 You find no black market currency in the zig zag rig rag.
 Learner needle
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-gig-gag
+>gig gag
+Learner needle
+There are enough gags in this adventure. I hope.
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-jig-jag
 >jig jag
 Learner needle
 You aren't up for dancing.
->pairy pile
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-mig-mag
+>mig mag
 Learner needle
-Goodness, no, we don't need the Very Vile Fairy File splitting and reproducing.
+Fighter plane ammunition will not help you.
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-swig-swag
+>swig swag
+There's no time to be drinking here!
+Learner needle
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-tig-tag
+>tig tag
+But you already have one utterly childish game right in front of you.
+Learner needle
+
+#ttc-table-of-big-bag-zig-zag-rig-rag-guesses-wig-wag
+>wig wag
+Learner needle
+If you're wearing a hairpiece, I don't want to know.
+
+#ttc-table-of-lurking-lump-guesses-perking-pump
+>perking pump
+!Learner needle
+I don't want to know.
+
+#ttc-table-of-general-good-guesses-treat-turner
+>beat burner
+Nothing happens. The words are just settings
+
+>cheat churner
+Nothing happens. The words are just settings
+
+>conceit concerner
+Nothing happens. The words are just settings
+
+>eat earner
+Nothing happens. The words are just settings
+
+>meet mourner
+Nothing happens. The words are just settings
+
+>treat turner
+Nothing happens. The words are just settings
+
+#ttc-table-of-general-good-guesses-dairy-darey-dial
 >dairy dial
 Learner needle
 No dial appears to give you more excitement or milk products. Rats.
+
+#ttc-table-of-general-good-guesses-pairy-pile
+>pairy pile
+Learner needle
+Goodness, no, we don't need the Very Vile Fairy File splitting and reproducing.
+
+#ttc-table-of-general-good-guesses-wary-wile
 >wary wile
 Yes, you will need wary wile, and lots of it!
->perking pump
-!Learner needle
->trilly trolling
-the Leet Learner dims a bit, and the needle
-The Very Vile Fairy File probably has information on that, yes.
->silly souling
-the Leet Learner dims a bit, and the needle
-Why yes, I'm sort of a silly soul. At least when I'm writing games.
+
+#ttc-table-of-general-good-guesses-filly-foaling
 >filly foaling
 the Leet Learner dims a bit, and the needle
 Caring for young animals is a good thing but beyond this game's scope.
+
+#ttc-table-of-general-good-guesses-silly-souling-soling
+>silly souling
+the Leet Learner dims a bit, and the needle
+Why yes, I'm sort of a silly soul. At least when I'm writing games.
+
+#ttc-table-of-general-good-guesses-trilly-trolling
+>trilly trolling
+the Leet Learner dims a bit, and the needle
+The Very Vile Fairy File probably has information on that, yes.
+
+#ttc-table-of-general-good-guesses-tough-toll
 >tough toll
 !Learner needle
 You groan about how heavy your inventory is.
@@ -68,18 +119,6 @@ Why yes, I'm sort of a silly soul. At least when I'm writing games.
 >filly foaling
 !the Leet Learner dims a bit, and the needle
 Caring for young animals is a good thing but beyond this game's scope.
->treat turner
-Nothing happens. The words are just settings
->conceit concerner
-Nothing happens. The words are just settings
->cheat churner
-Nothing happens. The words are just settings
->meet mourner
-Nothing happens. The words are just settings
->beat burner
-Nothing happens. The words are just settings
->eat earner
-Nothing happens. The words are just settings
 
 >big bag
 by one point
@@ -109,73 +148,107 @@ You find no black market currency in the big bag.
 You aren't up for dancing.
 !Learner needle
 
->stet stood
-!dims
-Learner needle
-No comment on if and where proofreading is necessary, here.
+#ttc-table-of-wet-wood-guesses-het-hood
 >het hood
 Learner needle
 You consider the possibility of changing the Wet Wood to a Straight Pride parade, but decide against it, as you're worried you might get trampled by all of a dozen people.
 
+#ttc-table-of-wet-wood-guesses-stet-stood
+>stet stood
+!dims
+Learner needle
+No comment on if and where proofreading is necessary, here.
+
 >get good
 by one point
 
->lift liver
-Learner needle
-You gain no nutritious meat nor uplifting advice. But you must be close. You just feel you could use another person's help, here.
->sift siever
-Learner needle
-That would be a good tool in a cooking simulation, but the Leet Learner is more useful. You just feel you could use another person's help, here.
+#ttc-table-of-rift-river-guesses-drift-driver
 >drift driver
 Learner needle
 No vehicle comes to take you across the river. And that doesn't quite rhyme, anyway. You just feel you could use another person's help, here.
+
+#ttc-table-of-rift-river-guesses-lift-liver
+>lift liver
+Learner needle
+You gain no nutritious meat nor uplifting advice. But you must be close. You just feel you could use another person's help, here.
+
+#ttc-table-of-rift-river-guesses-shift-shiver
 >shift shiver
 Learner needle
 You try fearing things different ways, but nobody comes to comfort you.
 
+#ttc-table-of-rift-river-guesses-sift-siever
+>sift siever
+Learner needle
+That would be a good tool in a cooking simulation, but the Leet Learner is more useful. You just feel you could use another person's help, here.
+
 >gift giver
 by one point
 
-#okdup
 >brig brag
 Good guys don't brag about being
->flu floats
-!Learner needle
-No flying craft appears, but on the bright side, you fail to feel sick.
->grew groats
-!Learner needle
-No coins spring from the ground. A coin with a grue would be kind of creepy, anyway.
->goo goats
-!Learner needle
-Ugh! Regular goats are messy enough.
->coo coats
-!Learner needle
-No need for warmth.
->do dotes
-!Learner needle
-Wowzers! What a neat document Too Totes New Notes is. Golly gee!
->rue rotes
-!Learner needle
-You fail to find yourself in a more straightforward adventure.
->glue gloats
-!Learner needle
-What kind of person boasts about stockpiling glue?
+
+#ttc-table-of-too-totes-new-notes-guesses-blew-blue-bloats
 >blew bloats
 !Learner needle
 You thought you saw Violet Beauregarde roll by there for a minute.
->stew stoats
+
+#ttc-table-of-too-totes-new-notes-guesses-coo-coats
+>coo coats
 !Learner needle
-Badger, Mole and Rat would agree that's going too far. Even Toad.
+No need for warmth.
+
+#ttc-table-of-too-totes-new-notes-guesses-do-dotes
+>do dotes
+!Learner needle
+Wowzers! What a neat document Too Totes New Notes is. Golly gee!
+
+#ttc-table-of-too-totes-new-notes-guesses-flu-flew-floats
+>flu floats
+!Learner needle
+No flying craft appears, but on the bright side, you fail to feel sick.
+
+#ttc-table-of-too-totes-new-notes-guesses-glue-gloats
+>glue gloats
+!Learner needle
+What kind of person boasts about stockpiling glue?
+
+#ttc-table-of-too-totes-new-notes-guesses-goo-goats
+>goo goats
+!Learner needle
+Ugh! Regular goats are messy enough.
+
+#ttc-table-of-too-totes-new-notes-guesses-grew-grue-groats
+>grew groats
+!Learner needle
+No coins spring from the ground. A coin with a grue would be kind of creepy, anyway.
+
+#ttc-table-of-too-totes-new-notes-guesses-rue-rotes
+>rue rotes
+!Learner needle
+You fail to find yourself in a more straightforward adventure.
+
+#ttc-table-of-too-totes-new-notes-guesses-shoo-shoats
 >shoo shoats
 !Learner needle
 There are no young pigs here to shoo.
 
+#ttc-table-of-too-totes-new-notes-guesses-stew-stoats
+>stew stoats
+!Learner needle
+Badger, Mole and Rat would agree that's going too far. Even Toad.
+
+#ttc-table-of-vined-vault-guesses-hind-halt
 >hind halt
 Learner needle
 You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.
+
+#ttc-table-of-vined-vault-guesses-signed-salt
 >signed salt
 Learner needle
 Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though.
+
+#ttc-table-of-vined-vault-guesses-wined-wind-walt
 >wined walt
 Learner needle
 A drinking buddy you can play practical jokes on won't be any help here.
@@ -188,34 +261,50 @@ by one point
 Good guys don't brag about being
 !Learner needle
 
+#+ttc-table-of-vined-vault-guesses-hind-halt
 >hind halt
 !Learner needle
 You do feel sort of paranoid here, but fortunately, nothing is behind you or needs to stop.
->signed salt
-!Learner needle
-Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though.
->wined walt
-!Learner needle
-A drinking buddy you can play practical jokes on won't be any help here.
+
+#ttc-table-of-vined-vault-guesses-mind-malt
 >mind malt
 !Learner needle
 The mind malt is gone. You have to rely on yourself!
 
+#+ttc-table-of-vined-vault-guesses-signed-salt
+>signed salt
+!Learner needle
+Alas, the walls of the vault do not turn to salt. Perhaps they still have a structural deficiency, though.
+
+#+ttc-table-of-vined-vault-guesses-wined-wind-walt
+>wined walt
+!Learner needle
+A drinking buddy you can play practical jokes on won't be any help here.
+
+#ttc-table-of-vined-vault-guesses-bean-bass
 >bean bass
 Learner needle
 You could use a delicious meal, but perhaps there is something even simpler the mean mass can become.
->seen sass
-Learner needle
-You worry any sass you direct at the mean mass would be spun back at you. But there must be a way to change the mean mass!
+
+#ttc-table-of-vined-vault-guesses-clean-class
 >clean class
 Learner needle
 You can't help but feel the mean mass could be more wholesome, but that's not quite the right way to do things. It doesn't feel quite natural enough.
+
+#ttc-table-of-vined-vault-guesses-glean-glass
 >glean glass
 Learner needle
 No, there's no hidden window you overlooked.
+
+#ttc-table-of-vined-vault-guesses-lean-lass
 >lean lass
 Learner needle
 This isn't that sort of game.
+
+#ttc-table-of-vined-vault-guesses-seen-scene-sass
+>seen sass
+Learner needle
+You worry any sass you direct at the mean mass would be spun back at you. But there must be a way to change the mean mass!
 
 >green grass
 by one point
@@ -225,77 +314,120 @@ by one point
 Good guys don't brag about having been
 !Learner needle
 
+#ttc-table-of-po-pit-guesses-cash-cap
 >cash cap
 Learner needle
 You need more than just a homonym here.
+
+#ttc-table-of-po-pit-guesses-clash-clap
 >clash clap
 Learner needle
 Your vehement applause goes unheeded. But perhaps other violence might be more productive.
+
+#ttc-table-of-po-pit-guesses-crash-crap
 >crash crap
 Learner needle
 Profanity isn't necessary, here. Even minor ones.
->gnash nap
-Learner needle
-You need something more active.
->sash sap
-Learner needle
-You don't need to be dressed outlandishly to figure what to do.
+
+#ttc-table-of-po-pit-guesses-flash-flap
 >flash flap
 Learner needle
 Perhaps more focused violence would work better.
+
+#ttc-table-of-po-pit-guesses-gnash-nash-nap
+>gnash nap
+Learner needle
+You need something more active.
+
+#ttc-table-of-po-pit-guesses-lash-lap
 >lash lap
 Learner needle
 You bang your fists against your pockets. It sort of helps, you guess.
 
->snow snit
+#ttc-table-of-po-pit-guesses-sash-sap
+>sash sap
 Learner needle
-No bad weather blows in to be complained about.
->crow crit
-Learner needle
-You wait for a little bird to give advice, but nothing happens.
->flow flit
-Learner needle
-You don't need your mind to wander further. You need to focus on a solution.
->foe fit
-Learner needle
-Complaining and speculation about who or what put you there won't help.
->go get
-Learner needle
-You have no-one to order around, not that it'd do any good.
->ho hit
-Learner needle
-You half-heartedly consider violence, but you probably need thinking, instead.
->lo lit
-Learner needle
-You wonder if the dark, or a racy novel, will help. Probably not.
+You don't need to be dressed outlandishly to figure what to do.
+
+#ttc-table-of-po-pit-guesses-bo-bow-bit
 >bo bit
 Learner needle
 There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though.
->slow slit
-Learner needle
-You can't see where to make a cut, and you have nothing to make a cut with.
+
+#ttc-table-of-po-pit-guesses-bro-brit-britt
 >bro brit
 Learner needle
 You don't need a sidekick. Well, right now, you don't. Hard to summon them, anyway.
->know knit
-Learner needle
-You look for details to understand, but you might want to go in for a bigger picture.
->show shit
-Learner needle
-Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
->woe wit
-Learner needle
-Clever complaining will make you feel better but won't do anything.
 
+#ttc-table-of-po-pit-guesses-co-kit
 >co kit
 Learner needle
 You receive no kit to help you throw, corporate or otherwise.
->mo mitt
+
+#ttc-table-of-po-pit-guesses-crow-crit
+>crow crit
 Learner needle
-Please proceed, adventurer.
+You wait for a little bird to give advice, but nothing happens.
+
+#ttc-table-of-po-pit-guesses-flow-flit
+>flow flit
+Learner needle
+You don't need your mind to wander further. You need to focus on a solution.
+
+#ttc-table-of-po-pit-guesses-foe-fit
+>foe fit
+Learner needle
+Complaining and speculation about who or what put you there won't help.
+
+#ttc-table-of-po-pit-guesses-glow-glit
 >glow glit
 Learner needle
 Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here.
+
+#ttc-table-of-po-pit-guesses-go-get-git
+>go get
+Learner needle
+You have no-one to order around, not that it'd do any good.
+
+#ttc-table-of-po-pit-guesses-ho-hoe-hit
+>ho hit
+Learner needle
+You half-heartedly consider violence, but you probably need thinking, instead.
+
+#ttc-table-of-po-pit-guesses-lo-low-lit
+>lo lit
+Learner needle
+You wonder if the dark, or a racy novel, will help. Probably not.
+
+#ttc-table-of-po-pit-guesses-know-no-knit-nit
+>know knit
+Learner needle
+You look for details to understand, but you might want to go in for a bigger picture.
+
+#ttc-table-of-po-pit-guesses-mo-mow-mitt
+>mo mitt
+Learner needle
+Please proceed, adventurer.
+
+#ttc-table-of-po-pit-guesses-show-shit
+>show shit
+Learner needle
+Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
+
+#ttc-table-of-po-pit-guesses-slow-slit
+>slow slit
+Learner needle
+You can't see where to make a cut, and you have nothing to make a cut with.
+
+#ttc-table-of-po-pit-guesses-snow-snit
+>snow snit
+Learner needle
+No bad weather blows in to be complained about.
+
+#ttc-table-of-po-pit-guesses-woe-whoa-whoah-wit
+>woe wit
+Learner needle
+Clever complaining will make you feel better but won't do anything.
 
 >grow grit
 by one point
@@ -310,42 +442,82 @@ Please proceed, adventurer.
 !Learner needle
 Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here.
 
->snow snit
-!Learner needle
-No bad weather blows in to be complained about.
->crow crit
-!Learner needle
-You wait for a little bird to give advice, but nothing happens.
->flow flit
-!Learner needle
-You don't need your mind to wander further. You need to focus on a solution.
->foe fit
-!Learner needle
-Complaining and speculation about who or what put you there won't help.
->go get
-!Learner needle
-You have no-one to order around, not that it'd do any good.
->ho hit
-!Learner needle
-You half-heartedly consider violence, but you probably need thinking, instead.
->lo lit
-!Learner needle
-You wonder if the dark, or a racy novel, will help. Probably not.
+#+ttc-table-of-po-pit-guesses-bo-bow-bit
 >bo bit
 !Learner needle
 There's no fiddly bit like a bow. You showed a bit of persistence there looking for it, though.
->slow slit
-!Learner needle
-You can't see where to make a cut, and you have nothing to make a cut with.
+
+#+ttc-table-of-po-pit-guesses-bro-brit-britt
 >bro brit
 !Learner needle
 You don't need a sidekick. Well, right now, you don't. Hard to summon them, anyway.
+
+#+ttc-table-of-po-pit-guesses-co-kit
+>co kit
+Learner needle
+You receive no kit to help you throw, corporate or otherwise.
+
+#+ttc-table-of-po-pit-guesses-crow-crit
+>crow crit
+!Learner needle
+You wait for a little bird to give advice, but nothing happens.
+
+#+ttc-table-of-po-pit-guesses-flow-flit
+>flow flit
+!Learner needle
+You don't need your mind to wander further. You need to focus on a solution.
+
+#+ttc-table-of-po-pit-guesses-foe-fit
+>foe fit
+!Learner needle
+Complaining and speculation about who or what put you there won't help.
+
+#+ttc-table-of-po-pit-guesses-glow-glit
+>glow glit
+Learner needle
+Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here.
+
+#+ttc-table-of-po-pit-guesses-go-get-git
+>go get
+!Learner needle
+You have no-one to order around, not that it'd do any good.
+
+#+ttc-table-of-po-pit-guesses-ho-hoe-hit
+>ho hit
+!Learner needle
+You half-heartedly consider violence, but you probably need thinking, instead.
+
+#+ttc-table-of-po-pit-guesses-lo-low-lit
+>lo lit
+!Learner needle
+You wonder if the dark, or a racy novel, will help. Probably not.
+
+#+ttc-table-of-po-pit-guesses-know-no-knit-nit
 >know knit
 !Learner needle
 You look for details to understand, but you might want to go in for a bigger picture.
+
+#+ttc-table-of-po-pit-guesses-mo-mow-mitt
+>mo mitt
+Learner needle
+Please proceed, adventurer.
+
+#+ttc-table-of-po-pit-guesses-show-shit
 >show shit
 !Learner needle
 Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!
+
+#+ttc-table-of-po-pit-guesses-slow-slit
+>slow slit
+!Learner needle
+You can't see where to make a cut, and you have nothing to make a cut with.
+
+#+ttc-table-of-po-pit-guesses-snow-snit
+>snow snit
+!Learner needle
+No bad weather blows in to be complained about.
+
+#+ttc-table-of-po-pit-guesses-woe-whoa-whoah-wit
 >woe wit
 !Learner needle
 Clever complaining will make you feel better but won't do anything.
@@ -353,71 +525,113 @@ Clever complaining will make you feel better but won't do anything.
 >mash map
 by one point
 
+#ttc-table-of-trim-tram-guesses-bind-be
 >bind be
 Learner needle
 Your incantation fails. Perhaps something more straightforward and inward-looking would work better.
+WRONG remember to try after find fee is gone
+
+#ttc-table-of-trim-tram-guesses-bind-bee
 >bind bee
 Learner needle
 If there were a bee, it might distract you from being, well, you.
->wined whee
-Learner needle
-Whether or not you are more or less tense, or more or less exciting, you need to focus on you the right way here.
->signed see
-Learner needle
-There's nobody to see any forged signature. Look within.
->tined tee
-Learner needle
-You don't have time for silly games like golf now!
+
+#ttc-table-of-trim-tram-guesses-kind-key
 >kind key
 Learner needle
 Oh, it won't be that easy. Someone won't drop a key for you. But you can do for yourself.
 
+#ttc-table-of-trim-tram-guesses-signed-see-sea
+>signed see
+Learner needle
+There's nobody to see any forged signature. Look within.
+
+#ttc-table-of-trim-tram-guesses-tined-tee
+>tined tee
+Learner needle
+You don't have time for silly games like golf now!
+
+#ttc-table-of-trim-tram-guesses-wined-wind-whee-we
+>wined whee
+Learner needle
+Whether or not you are more or less tense, or more or less exciting, you need to focus on you the right way here.
+
 >mind me
 by one point
 
->whim wham
-Learner needle
-Hmm, you try to figure a poetic way through, but perhaps you need something more worldly.
->grim gram
-Learner needle
-No elder appears to upbraid you, which is all for the better.
->jim jam
-Learner needle
-No pajamas appear. It's much too early for rest, anyway.
+#ttc-table-of-trim-tram-guesses-dim-dam-damn
 >dim dam
 Learner needle
 You need fewer blockages and/or minor curses, not more.
->swim swam
+
+#ttc-table-of-trim-tram-guesses-grim-gram
+>grim gram
 Learner needle
-You don't need to fall in the water here.
->rim ram
-Learner needle
-Banging on the walls won't help.
->shim sham
-Learner needle
-Hmm. Interesting. But you might need to fake something besides a shim.
+No elder appears to upbraid you, which is all for the better.
+
+#ttc-table-of-trim-tram-guesses-him-ham
 >him ham
 Learner needle
 Pigs, male or female, aren't allowed on public transport.
+
+#ttc-table-of-trim-tram-guesses-jim-jam
+>jim jam
+Learner needle
+No pajamas appear. It's much too early for rest, anyway.
+
+#ttc-table-of-trim-tram-guesses-prim-pram
 >prim pram
 Learner needle
 That worked in Trinity, but this game isn't Trinity. For better or, more likely, for worse.
+
+#ttc-table-of-trim-tram-guesses-rim-ram
+>rim ram
+Learner needle
+Banging on the walls won't help.
+
+#ttc-table-of-trim-tram-guesses-shim-sham
+>shim sham
+Learner needle
+Hmm. Interesting. But you might need to fake something besides a shim.
+
+#ttc-table-of-trim-tram-guesses-slim-slam
 >slim slam
 Learner needle
 That might be cool, to make the puzzle a slam dunk and lose the last few pounds, but it's not sneaky enough. You must be close, though.
 
+#ttc-table-of-trim-tram-guesses-swim-swam
+>swim swam
+Learner needle
+You don't need to fall in the water here.
+
+#ttc-table-of-trim-tram-guesses-whim-wham
+>whim wham
+Learner needle
+Hmm, you try to figure a poetic way through, but perhaps you need something more worldly.
+
 >flim flam
 by one point
 
+#ttc-table-of-fun-fen-guesses-jive-jeep
+>jive jeep
+!No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
+
+#ttc-table-of-joke-jest-poke-pest-guesses-broke-breast
 >broke breast
 Learner needle
 Nothing violent.
+
+#ttc-table-of-joke-jest-poke-pest-guesses-croak-crest
 >croak crest
 Learner needle
 Nothing forms to kill the joke jest poke pest.
+
+#ttc-table-of-joke-jest-poke-pest-guesses-toke-test
 >toke test
 Learner needle
 Hey now! You don't have, or need, anything smokable.
+
+#ttc-table-of-joke-jest-poke-pest-guesses-woke-west
 >woke west
 Learner needle
 The joke jest poke pest doesn't care about directions.
@@ -426,55 +640,57 @@ The joke jest poke pest doesn't care about directions.
 by one point
 You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
+#+ttc-table-of-joke-jest-poke-pest-guesses-broke-breast
 >broke breast
 !Learner needle
 Nothing violent.
+
+#+ttc-table-of-joke-jest-poke-pest-guesses-croak-crest
 >croak crest
 !Learner needle
 Nothing forms to kill the joke jest poke pest.
+
+#+ttc-table-of-joke-jest-poke-pest-guesses-toke-test
 >toke test
 !Learner needle
 Hey now! You don't have, or need, anything smokable.
+
+#+ttc-table-of-joke-jest-poke-pest-guesses-woke-west
 >woke west
 !Learner needle
 The joke jest poke pest doesn't care about directions.
 
 >s
 
->wheel weir
-Learner needle
-The Sage Sea is enough of a boundary.
->eel ear
-!Learner needle
-You don't need an eel, or a piece of one, to electrify things right now.
->peel pear
-!Learner needle
-You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
->steal steer
-Learner needle
-Direct homonyms don't work here, and the steer would not fit in your bag.
->wheel where
-!Learner needle
-The Ceiling Seer does not direct you to any wheel or any form of transportation.
-
->cage key
-!Learner needle
-You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it.
->wage wee
-!Learner needle
-Hey, now! You're not in it for the money! Or a handheld game console!
->phage fee
-!Learner needle
-Biological warfare is too expensive.
->mage me
-!Learner needle
-One look at the Sage Sea and you remember mastering real magic takes training and practice. You'll find enough silly magic to do.
->page pea
-Learner needle
-You don't need to skip around a book or summon anything.
+#ttc-table-of-cage-key-sage-sea-guesses-beige-bee
 >beige bee
 Learner needle
 This isn't a nature retreat.
+
+#ttc-table-of-cage-key-sage-sea-guesses-cage-key
+>cage key
+!Learner needle
+You correctly guessed what's in the Sage Sea, but you need to be wise, not clever, to earn it.
+
+#ttc-table-of-cage-key-sage-sea-guesses-mage-me
+>mage me
+!Learner needle
+One look at the Sage Sea and you remember mastering real magic takes training and practice. You'll find enough silly magic to do.
+
+#ttc-table-of-cage-key-sage-sea-guesses-page-pea-pee-p
+>page pea
+Learner needle
+You don't need to skip around a book or summon anything.
+
+#ttc-table-of-cage-key-sage-sea-guesses-phage-fee
+>phage fee
+!Learner needle
+Biological warfare is too expensive.
+
+#ttc-table-of-cage-key-sage-sea-guesses-wage-wee-whee-wii
+>wage wee
+!Learner needle
+Hey, now! You're not in it for the money! Or a handheld game console!
 
 >kneel near
 by one point
@@ -491,12 +707,17 @@ by one point
 
 >n
 
+#ttc-table-of-fun-fen-guesses-one-wen
 >one wen
 !Learner needle
 Your skin remains unblemished, despite you tempting fate.
+
+#ttc-table-of-fun-fen-guesses-pun-pen
 >pun pen
 !Learner needle
 You find no way to reach behind the fourth wall and grab my pun pen. Besides, it's not the pen that's magically clever. It's me.
+
+#ttc-table-of-fun-fen-guesses-won-when
 >won when
 !Learner needle
 Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
@@ -504,12 +725,17 @@ Hey, now! The Fun Fen is too cheery for such "Am I done yet" angst.
 >strong start
 by one point
 
->call cree
-Learner needle
-You need something simpler than an unusual language here.
+#ttc-table-of-fun-fen-guesses-ball-brie
 >ball brie
 Learner needle
 This game is cheesy-making, not cheese-making.
+
+#ttc-table-of-fun-fen-guesses-call-cree
+>call cree
+Learner needle
+You need something simpler than an unusual language here.
+
+#ttc-table-of-fun-fen-guesses-wall-whee
 >wall whee
 Learner needle
 You want to have fewer things in your way, not more. Just spitballing here.
@@ -517,132 +743,180 @@ You want to have fewer things in your way, not more. Just spitballing here.
 >fall free
 by one point
 
->call cree
-!Learner needle
-You need something simpler than an unusual language here.
+#+ttc-table-of-fun-fen-guesses-ball-brie
 >ball brie
 !Learner needle
 This game is cheesy-making, not cheese-making.
+
+#+ttc-table-of-fun-fen-guesses-call-cree
+>call cree
+!Learner needle
+You need something simpler than an unusual language here.
+
+#+ttc-table-of-fun-fen-guesses-wall-whee
 >wall whee
 !Learner needle
 You want to have fewer things in your way, not more. Just spitballing here.
 
 # must be after the FALL FREE or FRY FALL gives an erroneous HA HALF.
+#ttc-table-of-wry-wall-guesses-cry-call
 >cry call
 You lash out meaninglessly at the wry wall.
 !Learner needle
+
+#ttc-table-of-wry-wall-guesses-dry-doll
 >dry doll
 The wry wall relinquishes nothing. You're not sure what you'd do with a doll, anyway.
 !Learner needle
+
+#ttc-table-of-wry-wall-guesses-fry-fall
 >fry fall
 !Learner needle
 The wry wall remains upright.
+
+#ttc-table-of-wry-wall-guesses-pry-pall
 >pry pall
 !Learner needle
 There is no hidden tomb under the wry wall.
+
+#ttc-table-of-wry-wall-guesses-try-tall
 >try tall
 !Learner needle
 The wry wall does not grow.
 
+#ttc-table-of-fun-fen-guesses-chive-cheap
 >chive cheap
 Learner needle
 The hive heap, and this game, acquire no additional flavor.
->live leap
-Learner needle
-The leap wouldn't be live for very long.
->rive reap
-Learner needle
-Tearing apart the hive heap would get you stung before you found whatever's in there.
+
+#+ttc-table-of-fun-fen-guesses-jive-jeep
 >jive jeep
 Learner needle
 No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
 
+#ttc-table-of-fun-fen-guesses-live-leap
+>live leap
+Learner needle
+The leap wouldn't be live for very long.
+
+#ttc-table-of-fun-fen-guesses-rive-reap
+>rive reap
+Learner needle
+Tearing apart the hive heap would get you stung before you found whatever's in there.
+
 >dive deep
 by one point
 
+#+ttc-table-of-fun-fen-guesses-jive-jeep
+>jive jeep
+!No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
+
+#ttc-table-of-fun-fen-guesses-aper-isle
+>aper isle
+Learner needle
+You are not teleported to somewhere similar to the Fun Fen.
+
+#ttc-table-of-fun-fen-guesses-gaper-guile
 >gaper guile
 Learner needle
 You stare a bit but get no insight.
 !the pile
+
+#ttc-table-of-fun-fen-guesses-taper-tapir-tile
 >taper tile
 Learner needle
 No tile appears, but on the bright side, neither does a charging tapir.
 !the pile
->aper isle
-Learner needle
-You are not teleported to somewhere similar to the Fun Fen.
 
 >paper pile
 by one point
 
->gaper guile
-!Learner needle
-You stare a bit but get no insight. Now you've organized the pile, maybe its details are more important to read or examine.
->taper tile
-!Learner needle
-No tile appears, but on the bright side, neither does a charging tapir. Now you've organized the pile, maybe its details are more important to read or examine.
+#+ttc-table-of-fun-fen-guesses-aper-isle
 >aper isle
 !Learner needle
 You are not teleported to somewhere similar to the Fun Fen.
+
+#+ttc-table-of-fun-fen-guesses-gaper-guile
+>gaper guile
+!Learner needle
+You stare a bit but get no insight. Now you've organized the pile, maybe its details are more important to read or examine.
+
+#+ttc-table-of-fun-fen-guesses-taper-tapir-tile
+>taper tile
+!Learner needle
+No tile appears, but on the bright side, neither does a charging tapir. Now you've organized the pile, maybe its details are more important to read or examine.
 
 >backed binder
 by one point
 
 >n
 
+#ttc-table-of-creased-cross-guesses-ceased-sauce
 >ceased sauce
 Learner needle
 You'll need all the sauce you can get, literally or figuratively.
->greased gross
-Learner needle
-The Creased Cross doesn't need to become ickier.
+
+#ttc-table-of-creased-cross-guesses-fleeced-floss
 >fleeced floss
 Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
+
+#ttc-table-of-creased-cross-guesses-greased-gross
+>greased gross
+Learner needle
+The Creased Cross doesn't need to become ickier.
+
+#ttc-table-of-creased-cross-guesses-teased-toss
 >teased toss
 Learner needle
 A bit of taunting might work here, but you might need to be a bit harsher.
 
 >w
 
->lark lore
-Learner needle
-This is no time for jokes! Or bird-watching.
->bark bore
-Learner needle
-You don't need to make a tree or summon anything tiresome or porcine.
->park pore
-Learner needle
-The store cannot become outdoorsy. Or a parking lot.
->shark shore
-Learner needle
-No, you don't need more danger here.
->spark spore
-Learner needle
-Biological warfare is probably dangerous.
-
+#ttc-table-of-stark-store-guesses-arc-ark-ore-oar-or
 >arc ore
 Learner needle
 The store remains rectangular-ish. Probably for the best.
+
+#ttc-table-of-stark-store-guesses-bark-bore-boar
+>bark bore
+Learner needle
+You don't need to make a tree or summon anything tiresome or porcine.
+
+#ttc-table-of-stark-store-guesses-hark-whore
 >hark whore
 Learner needle
 That's inappropriate. Logical, but inappropriate.
+
+#ttc-table-of-stark-store-guesses-lark-lore
+>lark lore
+Learner needle
+This is no time for jokes! Or bird-watching.
+
+#ttc-table-of-stark-store-guesses-park-pore-poor
+>park pore
+Learner needle
+The store cannot become outdoorsy. Or a parking lot.
+
+#ttc-table-of-stark-store-guesses-shark-shore
+>shark shore
+Learner needle
+No, you don't need more danger here.
+
+#ttc-table-of-stark-store-guesses-snark-snore
 >snark snore
 Learner needle
 You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
+#ttc-table-of-stark-store-guesses-spark-spore
+>spark spore
+Learner needle
+Biological warfare is probably dangerous.
+
 >dark door
 by one point
 
-#next-cmd-pass
->arc ore
-Learner needle
-The store remains rectangular-ish. Probably for the best.
-#next-cmd-pass
->hark whore
-Learner needle
-That's inappropriate. Logical, but inappropriate.
-#next-cmd-pass
+#+ttc-table-of-stark-store-guesses-snark-snore
 >snark snore
 Learner needle
 You pretend you've already done much harder things. It gives you confidence, or something close enough.
@@ -650,38 +924,27 @@ You pretend you've already done much harder things. It gives you confidence, or 
 >mark more
 by one point
 
->arc ore
-!Learner needle
-The store remains rectangular-ish. Probably for the best.
->hark whore
-!Learner needle
-That's inappropriate. Logical, but inappropriate.
+#+ttc-table-of-stark-store-guesses-snark-snore
 >snark snore
 !Learner needle
 You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
->lark lore
-!Learner needle
-This is no time for jokes! Or bird-watching.
->bark bore
-!Learner needle
-You don't need to make a tree or summon anything tiresome or porcine.
->park pore
-!Learner needle
-The store cannot become outdoorsy. Or a parking lot.
->shark shore
-!Learner needle
-No, you don't need more danger here.
->spark spore
-!Learner needle
-Biological warfare is probably dangerous.
+#+ttc-table-of-stark-store-guesses-snark-snore
+>snark snore
+Learner needle
+You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
+#ttc-table-of-stark-store-guesses-beard-bay
 >beard bay
 Learner needle
 No, the store is landlocked.
+
+#ttc-table-of-stark-store-guesses-feared-fay
 >feared fay
 Learner needle
 No, there is enough fearful magic.
+
+#ttc-table-of-stark-store-guesses-steered-stay
 >steered stay
 Learner needle
 No, you'd like to move on through the Weird Way, somehow.
@@ -694,6 +957,7 @@ by one point
 >mystery mall
 by one point
 
+#ttc-table-of-history-hall-guesses-butter-butta-bankster-banksta
 >butter bankster
 the Leet Learner dims a bit, and the needle
 The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
@@ -703,52 +967,82 @@ by one point
 
 >listen
 
->fo fappin
-Learner dims a bit
-may not be highbrow, but it's not that low-class.
->woe whappin
-Learner dims a bit
-You don't need an exhortation to violence.
+#ttc-table-of-toe-tappin-row-rappin-guesses-crow-crappin
 >crow crappin
 Learner dims a bit
 You plan out some filk called Bad Bird Had Heard, about Tad, but it has nothing on Poisoning Pigeons in the Park. Eh, Toe Tappin' Row Rappin' is versatile enough.
->slow slappin
-Learner dims a bit
-That would be handy in a more violent adventure, but not this one.
+
+#ttc-table-of-toe-tappin-row-rappin-guesses-flow-flappin
 >flow flappin
 Learner dims a bit
 That might be funky to some, but you need something more practical.
+
+#ttc-table-of-toe-tappin-row-rappin-guesses-fo-foe-fappin
+>fo fappin
+Learner dims a bit
+may not be highbrow, but it's not that low-class.
+
+#ttc-table-of-toe-tappin-row-rappin-guesses-low-lappin
 >low lappin
 Learner dims a bit
 You put your best-ever time for a mile run to Toe Tappin' Row Rappin', but you can't see how it will help here. Plus, Chariots of Fire works better, anyway.
+
+#ttc-table-of-toe-tappin-row-rappin-guesses-slow-slappin
+>slow slappin
+Learner dims a bit
+That would be handy in a more violent adventure, but not this one.
+
+#ttc-table-of-toe-tappin-row-rappin-guesses-woe-whoa-whoah-whappin
+>woe whappin
+Learner dims a bit
+You don't need an exhortation to violence.
+
+#+ttc-table-of-history-hall-guesses-butter-butta-bankster-banksta
 >butter bankster
 !the Leet Learner dims a bit, and the needle
 The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
+
+#ttc-table-of-history-hall-guesses-frotz-frame
 >frotz frame
 Learner needle
 Anything as esoteric as text adventure vocabulary would go over the Gutta Ganksta's head. You need to be more brutal.
 
+#ttc-table-of-history-hall-guesses-blots-blame
 >blots blame
 Learner needle
 There's another way to insult the tattoo as bad art. You're very close.
+
+#ttc-table-of-history-hall-guesses-clots-claim
 >clots claim
 Learner needle
 You're trying to chase, not impress the ganksta.
+
+#ttc-table-of-history-hall-guesses-cots-came
 >cots came
 Learner needle
 The Gutta Ganksta is unmoved by the prospect of a good night's sleep.
+
+#ttc-table-of-history-hall-guesses-dots-dame
 >dots dame
 Learner needle
 The Gutta Ganksta's fashion sense tends away from polka dots.
+
+#ttc-table-of-history-hall-guesses-knots-nots-name
 >knots name
 Learner needle
 You fail to tie the ganksta up in knots with well-timed
+
+#ttc-table-of-history-hall-guesses-shots-shame
 >shots shame
 Learner needle
 The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun.
+
+#ttc-table-of-history-hall-guesses-sots-same
 >sots same
 Learner needle
 The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakable insult.
+
+#ttc-table-of-history-hall-guesses-tots-tame
 >tots tame
 Learner needle
 The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though.
@@ -767,221 +1061,345 @@ by one point
 
 >w
 
->try trawl
-the Leet Learner dims a bit, and the needle
-You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
->fie fall
-the Leet Learner dims a bit, and the needle
-The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless to your quest, but maybe it's good for further practice.
->die doll
-the Leet Learner dims a bit, and the needle
-There are no dolls to manipulate in this game.
->scry scrawl
-the Leet Learner dims a bit, and the needle
-The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
->spry sprawl
-the Leet Learner dims a bit, and the needle
-The shy shawl fails to spread out all over the floor.
->sty stall
-the Leet Learner dims a bit, and the needle
-You denigrate the condition of Got Gear Hot Here.
->dry droll
-the Leet Learner dims a bit, and the needle
-You make fun of the shy shawl subtly.
->high hall
-the Leet Learner dims a bit, and the needle
-You imagine yourself in a much more spacious megastore.
->guy gall
-the Leet Learner dims a bit, and the needle
-You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
+#ttc-table-of-got-gear-hot-here-guesses-buy-by-bye-ball-bawl
 >buy ball
 the Leet Learner dims a bit, and the needle
 You can only buy clothes, not sporting goods, here. Also, no whining.
->pie paul
-the Leet Learner dims a bit, and the needle
-You bemoan the lack of a food court in the mall.
->my mall
-the Leet Learner dims a bit, and the needle
-You show suitable ambition and aggression for an adventurer.
->why wall
-the Leet Learner dims a bit, and the needle
-You complain to nobody in particular about the number of dead ends in the mall.
+
+#ttc-table-of-got-gear-hot-here-guesses-cry-crawl
 >cry crawl
 the Leet Learner dims a bit, and the needle
 You feel overcome with emotion.
->tie tall
+
+#ttc-table-of-got-gear-hot-here-guesses-die-dye-doll
+>die doll
 the Leet Learner dims a bit, and the needle
-You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
+There are no dolls to manipulate in this game.
+
+#ttc-table-of-got-gear-hot-here-guesses-dry-droll-drawl
+>dry droll
+the Leet Learner dims a bit, and the needle
+You make fun of the shy shawl subtly.
+
+#ttc-table-of-got-gear-hot-here-guesses-fie-fall
+>fie fall
+the Leet Learner dims a bit, and the needle
+The shawl remains motionless, but you feel smarter for your guess. The shawl seems worthless to your quest, but maybe it's good for further practice.
+
+#ttc-table-of-got-gear-hot-here-guesses-scry-scrawl
+>scry scrawl
+the Leet Learner dims a bit, and the needle
+The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
+
+#ttc-table-of-got-gear-hot-here-guesses-sigh-sol-saul
 >sigh sol
 the Leet Learner dims a bit, and the needle
 No sunlight appears.
+
+#ttc-table-of-got-gear-hot-here-guesses-spry-sprawl
+>spry sprawl
+the Leet Learner dims a bit, and the needle
+The shy shawl fails to spread out all over the floor.
+
+#ttc-table-of-got-gear-hot-here-guesses-sty-stall
+>sty stall
+the Leet Learner dims a bit, and the needle
+You denigrate the condition of Got Gear Hot Here.
+
+#ttc-table-of-got-gear-hot-here-guesses-high-hall
+>high hall
+the Leet Learner dims a bit, and the needle
+You imagine yourself in a much more spacious megastore.
+
+#ttc-table-of-got-gear-hot-here-guesses-guy-gall-gaul
+>guy gall
+the Leet Learner dims a bit, and the needle
+You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
+
+#ttc-table-of-got-gear-hot-here-guesses-my-mall-maul
+>my mall
+the Leet Learner dims a bit, and the needle
+You show suitable ambition and aggression for an adventurer.
+
+#ttc-table-of-got-gear-hot-here-guesses-pie-paul-pall
+>pie paul
+the Leet Learner dims a bit, and the needle
+You bemoan the lack of a food court in the mall.
+
+#ttc-table-of-got-gear-hot-here-guesses-why-wall
+>why wall
+the Leet Learner dims a bit, and the needle
+You complain to nobody in particular about the number of dead ends in the mall.
+
+#ttc-table-of-got-gear-hot-here-guesses-tie-tall
+>tie tall
+the Leet Learner dims a bit, and the needle
+You look for any way-too-long ties that might help you feel taller, or more "Presidental," or whatever. You find none, and you also receive no mispronounced title
+
+#ttc-table-of-got-gear-hot-here-guesses-try-trawl
+>try trawl
+the Leet Learner dims a bit, and the needle
+You put in effort, and stuff. The shawl seems worthless to your quest, but maybe it's good for practice.
 
 >lie lol
 by one point
 
->try trawl
-!the Leet Learner dims a bit, and the needle
-You put in effort, and stuff.
-!further practice
->fie fall
-!the Leet Learner dims a bit, and the needle
-The shawl remains motionless, but you feel smarter for your guess.
->die doll
-!the Leet Learner dims a bit, and the needle
-There are no dolls to manipulate in this game.
->scry scrawl
-!the Leet Learner dims a bit, and the needle
-The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
->spry sprawl
-!the Leet Learner dims a bit, and the needle
-The shy shawl fails to spread out all over the floor.
->sty stall
-!the Leet Learner dims a bit, and the needle
-You denigrate the condition of Got Gear Hot Here.
->dry droll
-!the Leet Learner dims a bit, and the needle
-You make fun of the shy shawl subtly.
->high hall
-!the Leet Learner dims a bit, and the needle
-You imagine yourself in a much more spacious megastore.
->guy gall
-!the Leet Learner dims a bit, and the needle
-You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
+#+ttc-table-of-got-gear-hot-here-guesses-buy-by-bye-ball-bawl
 >buy ball
 !the Leet Learner dims a bit, and the needle
 You can only buy clothes, not sporting goods, here. Also, no whining.
->pie paul
-!the Leet Learner dims a bit, and the needle
-You bemoan the lack of a food court in the mall.
->my mall
-!the Leet Learner dims a bit, and the needle
-You show suitable ambition and aggression for an adventurer.
->why wall
-!the Leet Learner dims a bit, and the needle
-You complain to nobody in particular about the number of dead ends in the mall.
+
+#+ttc-table-of-got-gear-hot-here-guesses-cry-crawl
 >cry crawl
 !the Leet Learner dims a bit, and the needle
 You feel overcome with emotion.
->tie tall
+
+#+ttc-table-of-got-gear-hot-here-guesses-die-dye-doll
+>die doll
 !the Leet Learner dims a bit, and the needle
-You look for any way-too-long ties that might help you feel taller, or more
+There are no dolls to manipulate in this game.
+
+#+ttc-table-of-got-gear-hot-here-guesses-dry-droll-drawl
+>dry droll
+!the Leet Learner dims a bit, and the needle
+You make fun of the shy shawl subtly.
+
+#+ttc-table-of-got-gear-hot-here-guesses-fie-fall
+>fie fall
+!the Leet Learner dims a bit, and the needle
+The shawl remains motionless, but you feel smarter for your guess.
+
+#+ttc-table-of-got-gear-hot-here-guesses-guy-gall-gaul
+>guy gall
+!the Leet Learner dims a bit, and the needle
+You imagine yourself being an obnoxious customer, like Obelix in ... well, anywhere.
+
+#+ttc-table-of-got-gear-hot-here-guesses-high-hall
+>high hall
+!the Leet Learner dims a bit, and the needle
+You imagine yourself in a much more spacious megastore.
+
+#+ttc-table-of-got-gear-hot-here-guesses-my-mall-maul
+>my mall
+!the Leet Learner dims a bit, and the needle
+You show suitable ambition and aggression for an adventurer.
+
+#+ttc-table-of-got-gear-hot-here-guesses-pie-paul-pall
+>pie paul
+!the Leet Learner dims a bit, and the needle
+You bemoan the lack of a food court in the mall.
+
+#+ttc-table-of-got-gear-hot-here-guesses-scry-scrawl
+>scry scrawl
+!the Leet Learner dims a bit, and the needle
+The design on the shawl almost becomes something legible. It's like one of those dotted pictures you were supposed to see something when you stared at, but nothing came up. Bummer.
+
+#+ttc-table-of-got-gear-hot-here-guesses-sigh-sol-saul
 >sigh sol
 !the Leet Learner dims a bit, and the needle
 No sunlight appears.
 
->card cat
-Learner needle
-A card catalog certainly repels some folks, but you need something sturdier.
->charred chat
-Learner needle
-No time for scorched-earth conversation, here.
->barred bat
-Learner needle
-You don't need a pet or a weapon. Especially not a potentially evil one.
->starred stat
-Learner needle
-Get ahold of yourself! There's no time for in-depth sabermetrics!
->guard gat
-Learner needle
-I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
+#+ttc-table-of-got-gear-hot-here-guesses-spry-sprawl
+>spry sprawl
+!the Leet Learner dims a bit, and the needle
+The shy shawl fails to spread out all over the floor.
 
+#+ttc-table-of-got-gear-hot-here-guesses-sty-stall
+>sty stall
+!the Leet Learner dims a bit, and the needle
+You denigrate the condition of Got Gear Hot Here.
+
+#+ttc-table-of-got-gear-hot-here-guesses-tie-tall
+>tie tall
+!the Leet Learner dims a bit, and the needle
+You look for any way-too-long ties that might help you feel taller, or more
+
+#+ttc-table-of-got-gear-hot-here-guesses-try-trawl
+>try trawl
+!the Leet Learner dims a bit, and the needle
+You put in effort, and stuff.
+!further practice
+
+#+ttc-table-of-got-gear-hot-here-guesses-why-wall
+>why wall
+!the Leet Learner dims a bit, and the needle
+You complain to nobody in particular about the number of dead ends in the mall.
+
+#ttc-table-of-got-gear-hot-here-guesses-blot-blear
 >blot blear
 the Leet Learner dims a bit, and the needle
 You don't need to make this store more dreary.
+
+#ttc-table-of-got-gear-hot-here-guesses-bought-bot-beer
 >bought beer
 the Leet Learner dims a bit, and the needle
 Alas, the mall has no license to buy or serve alcohol.
->fought fear
-the Leet Learner dims a bit, and the needle
-With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
->spot spear
-the Leet Learner dims a bit, and the needle
-You don't need a weapon.
+
+#ttc-table-of-got-gear-hot-here-guesses-dot-dear-deer
 >dot dear
 the Leet Learner dims a bit, and the needle
 No Animaniacs appear to spout poetry. Probably a good thing.
+
+#ttc-table-of-got-gear-hot-here-guesses-drought-drear
 >drought drear
 the Leet Learner dims a bit, and the needle
 You thirst for an effective rhyme.
+
+#ttc-table-of-got-gear-hot-here-guesses-fraught-freer
 >fraught freer
 the Leet Learner dims a bit, and the needle
 You wish Got Gear Hot Hear led somewhere else.
->sought seer
+
+#ttc-table-of-got-gear-hot-here-guesses-fought-fear
+>fought fear
 the Leet Learner dims a bit, and the needle
-Nobody, sober or otherwise, appears to give you advice about the future.
->snot sneer
-the Leet Learner dims a bit, and the needle
-You turn up your nose at kids these days' terrible fashions.
+With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
+
+#ttc-table-of-got-gear-hot-here-guesses-pot-pier-peer
 >pot pier
 the Leet Learner dims a bit, and the needle
 You don't need ... cookware.
+
+#ttc-table-of-got-gear-hot-here-guesses-sought-sot-seer
+>sought seer
+the Leet Learner dims a bit, and the needle
+Nobody, sober or otherwise, appears to give you advice about the future.
+
+#ttc-table-of-got-gear-hot-here-guesses-snot-sneer
+>snot sneer
+the Leet Learner dims a bit, and the needle
+You turn up your nose at kids these days' terrible fashions.
+
+#ttc-table-of-got-gear-hot-here-guesses-spot-spear
+>spot spear
+the Leet Learner dims a bit, and the needle
+You don't need a weapon.
 
 >not near
 by one point
 
+#+ttc-table-of-got-gear-hot-here-guesses-blot-blear
 >blot blear
 !the Leet Learner dims a bit, and the needle
 You don't need to make this store more dreary.
+
+#+ttc-table-of-got-gear-hot-here-guesses-bought-bot-beer
 >bought beer
 !the Leet Learner dims a bit, and the needle
 Alas, the mall has no license to buy or serve alcohol.
->fought fear
-!the Leet Learner dims a bit, and the needle
-With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
->spot spear
-!the Leet Learner dims a bit, and the needle
-You don't need a weapon.
+
+#+ttc-table-of-got-gear-hot-here-guesses-dot-dear-deer
 >dot dear
 !the Leet Learner dims a bit, and the needle
 No Animaniacs appear to spout poetry. Probably a good thing.
+
+#+ttc-table-of-got-gear-hot-here-guesses-drought-drear
 >drought drear
 !the Leet Learner dims a bit, and the needle
 You thirst for an effective rhyme.
+
+#+ttc-table-of-got-gear-hot-here-guesses-fought-fear
+>fought fear
+!the Leet Learner dims a bit, and the needle
+With nobody around to kibitz, you reflect on the barriers you've broken through to get this far.
+
+#+ttc-table-of-got-gear-hot-here-guesses-fraught-freer
 >fraught freer
 !the Leet Learner dims a bit, and the needle
 You wish Got Gear Hot Hear led somewhere else.
->sought seer
-!the Leet Learner dims a bit, and the needle
-Nobody, sober or otherwise, appears to give you advice about the future.
->snot sneer
-!the Leet Learner dims a bit, and the needle
-You turn up your nose at kids these days' terrible fashions.
+
+#+ttc-table-of-got-gear-hot-here-guesses-pot-pier-peer
 >pot pier
 !the Leet Learner dims a bit, and the needle
 You don't need ... cookware.
 
+#+ttc-table-of-got-gear-hot-here-guesses-snot-sneer
+>snot sneer
+!the Leet Learner dims a bit, and the needle
+You turn up your nose at kids these days' terrible fashions.
+
+#+ttc-table-of-got-gear-hot-here-guesses-sought-sot-seer
+>sought seer
+!the Leet Learner dims a bit, and the needle
+Nobody, sober or otherwise, appears to give you advice about the future.
+
+#+ttc-table-of-got-gear-hot-here-guesses-spot-spear
+>spot spear
+!the Leet Learner dims a bit, and the needle
+You don't need a weapon.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-barred-bard-bat
+>barred bat
+Learner needle
+You don't need a pet or a weapon. Especially not a potentially evil one.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-card-cat
+>card cat
+Learner needle
+A card catalog certainly repels some folks, but you need something sturdier.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-charred-chat
+>charred chat
+Learner needle
+No time for scorched-earth conversation, here.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-guard-gat
+>guard gat
+Learner needle
+I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-lard-lat
 >lard lat
 Learner needle
 You poke at your abs. Nah, you're doing okay.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-pard-pat
 >pard pat
 Learner needle
 You fail to enter a Western with a sidekick.
+
+#ttc-table-of-hard-hat-marred-mat-guesses-starred-stat
+>starred stat
+Learner needle
+Get ahold of yourself! There's no time for in-depth sabermetrics!
 
 >hard hat
 by one point
 
+#+ttc-table-of-hard-hat-marred-mat-guesses-barred-bard-bat
+>barred bat
+!Learner needle
+You don't need a pet or a weapon. Especially not a potentially evil one.
+
+#+ttc-table-of-hard-hat-marred-mat-guesses-card-cat
+>card cat
+!Learner needle
+A card catalog certainly repels some folks, but you have something sturdier.
+
+#+ttc-table-of-hard-hat-marred-mat-guesses-charred-chat
+>charred chat
+!Learner needle
+No time for scorched-earth conversation, here.
+
+#+ttc-table-of-hard-hat-marred-mat-guesses-guard-gat
+>guard gat
+!Learner needle
+I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
+
+#+ttc-table-of-hard-hat-marred-mat-guesses-lard-lat
 >lard lat
 !Learner needle
 You poke at your abs. Nah, you're doing okay.
+
+#+ttc-table-of-hard-hat-marred-mat-guesses-pard-pat
 >pard pat
 !Learner needle
 You fail to enter a Western with a sidekick.
 
->card cat
-!Learner needle
-A card catalog certainly repels some folks, but you have something sturdier.
->charred chat
-!Learner needle
-No time for scorched-earth conversation, here.
->barred bat
-!Learner needle
-You don't need a pet or a weapon. Especially not a potentially evil one.
+#+ttc-table-of-hard-hat-marred-mat-guesses-starred-stat
 >starred stat
 !Learner needle
 Get ahold of yourself! There's no time for in-depth sabermetrics!
->guard gat
-!Learner needle
-I'm not getting into issues like whether a powerful gun is actually for defense or not. There's something lightweight to change things to, though.
 
 >e
 >e
@@ -989,46 +1407,72 @@ I'm not getting into issues like whether a powerful gun is actually for defense 
 >n
 >w
 
+#ttc-table-of-jerk-gel-guesses-dirk-dell
 >dirk dell
 Learner needle
 You don't need an olde tyme adventure with daggers and stuff.
->urkel
-!Learner needle
-You hear an annoying laugh in the distance.
->urk ell
-Learner needle
-The gel is messy, but odd interjections won't help you use it or put it back in the tube.
+
+#ttc-table-of-jerk-gel-guesses-smirk-smell
 >smirk smell
 Learner needle
 No, you don't want that.
+
+#ttc-table-of-jerk-gel-guesses-turk-tell
 >turk tell
 Learner needle
 You wonder briefly how that automaton back in the 18th century played chess, anyway.
+
+#ttc-table-of-jerk-gel-guesses-urk-erk-ell
+>urk ell
+Learner needle
+The gel is messy, but odd interjections won't help you use it or put it back in the tube.
+
+#ttc-table-of-jerk-gel-guesses-urkel
+>urkel
+!Learner needle
+You hear an annoying laugh in the distance.
 
 >work well
 by one point
 
+#+ttc-table-of-jerk-gel-guesses-dirk-dell
 >dirk dell
 !Learner needle
 You don't need an olde tyme adventure with daggers and stuff.
->urk ell
-!Learner needle
-The gel is messy, but odd interjections won't help you use it or put it back in the tube.
+
+#+ttc-table-of-jerk-gel-guesses-smirk-smell
 >smirk smell
 !Learner needle
 No, you don't want that.
+
+#+ttc-table-of-jerk-gel-guesses-turk-tell
 >turk tell
 !Learner needle
 You wonder briefly how that automaton back in the 18th century played chess, anyway.
 
+#+ttc-table-of-jerk-gel-guesses-urkel
+>urkel
+!Learner needle
+You hear an annoying laugh in the distance.
+
+#+ttc-table-of-jerk-gel-guesses-urk-erk-ell
+>urk ell
+!Learner needle
+The gel is messy, but odd interjections won't help you use it or put it back in the tube.
+
 >e
 
+#ttc-table-of-soft-sand-guesses-coughed-canned
 >coughed canned
 Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+
+#ttc-table-of-soft-sand-guesses-offed-oft-and
 >offed and
 Learner needle
 You try for an impressive anticipatory silence, but nobody is around to appreciate it.
+
+#ttc-table-of-soft-sand-guesses-scoffed-scanned
 >scoffed scanned
 Learner needle
 Soft Sand isn't much to look at, but it's not worth scorn.
@@ -1036,18 +1480,24 @@ Soft Sand isn't much to look at, but it's not worth scorn.
 >loft land
 by one point
 
+#+ttc-table-of-soft-sand-guesses-coughed-canned
 >coughed canned
 !Learner needle
 You try to suppress a cough while avoiding any sudden downturn in fortune.
+
+#+ttc-table-of-soft-sand-guesses-offed-oft-and
 >offed and
 !Learner needle
 You try for an impressive anticipatory silence, but nobody is around to appreciate it.
+
+#+ttc-table-of-soft-sand-guesses-scoffed-scanned
 >scoffed scanned
 !Learner needle
 Loft Land isn't much to look at, but it's not worth scorn.
 
 >w
 
+#ttc-table-of-curst-cave-guesses-creaming-cull
 >creaming cull
 Learner needle
 Less violence, more letters.
@@ -1055,6 +1505,7 @@ Less violence, more letters.
 >dreaming dull
 by one point
 
+#ttc-table-of-curst-cave-guesses-nursed-nave-knave
 >nursed nave
 Learner needle
 You don't need to nurse a bad guy or a religious place.
@@ -1062,49 +1513,69 @@ You don't need to nurse a bad guy or a religious place.
 >first fave
 by one point
 
+#+ttc-table-of-curst-cave-guesses-nursed-nave-knave
 >nursed nave
 !Learner needle
 You don't need to nurse a bad guy or a religious place.
 
+#ttc-table-of-cool-cap-tool-tap-guesses-cruel-crap
 >cruel crap
 Learner needle
 But you got rid of the skull. Also, swearing is naughty.
->youll yap
-Learner needle
-Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
->pool pap
-Learner needle
-You want something nice and useful to come out of the tap, not ... that.
+
+#ttc-table-of-cool-cap-tool-tap-guesses-mule-map
 >mule map
 Learner needle
 It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try.
+
+#ttc-table-of-cool-cap-tool-tap-guesses-pool-pap
+>pool pap
+Learner needle
+You want something nice and useful to come out of the tap, not ... that.
+
+#ttc-table-of-cool-cap-tool-tap-guesses-rule-rap-wrap
 >rule rap
 Learner needle
 You need something more substantial to come out of the cool cap.
+
+#ttc-table-of-cool-cap-tool-tap-guesses-youll-yap
+>youll yap
+Learner needle
+Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
 
 >cool cap
 by one point
 
+#+ttc-table-of-cool-cap-tool-tap-guesses-cruel-crap
 >cruel crap
 !Learner needle
 But you got rid of the skull. Also, swearing is naughty.
->youll yap
-!Learner needle
-Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
->pool pap
-!Learner needle
-You want something nice and useful to come out of the tap, not ... that.
+
+#+ttc-table-of-cool-cap-tool-tap-guesses-mule-map
 >mule map
 !Learner needle
 It's a bit of a stretch, and maps might be useful elsewhere here, but it was worth a try.
+
+#+ttc-table-of-cool-cap-tool-tap-guesses-pool-pap
+>pool pap
+!Learner needle
+You want something nice and useful to come out of the tap, not ... that.
+
+#+ttc-table-of-cool-cap-tool-tap-guesses-rule-rap-wrap
 >rule rap
 !Learner needle
 You need something more substantial to come out of the cool cap.
+
+#+ttc-table-of-cool-cap-tool-tap-guesses-youll-yap
+>youll yap
+!Learner needle
+Don't give a computer carte blanche to talk endlessly. Infinite loops are too easy to make!
 
 >e
 >s
 >e
 
+#ttc-table-of-violent-vale-guesses-island-ale-ail
 >island ale
 Learner needle
 No need to drink or get an island disease.
@@ -1112,6 +1583,7 @@ No need to drink or get an island disease.
 >silent sail
 by one point
 
+#+ttc-table-of-violent-vale-guesses-island-ale-ail
 >island ale
 !Learner needle
 No need to drink or get an island disease.
@@ -1119,16 +1591,22 @@ No need to drink or get an island disease.
 >brightening bridge
 by one point
 
+#ttc-table-of-boring-boat-flooring-float-guesses-goring-goat
 >goring goat
 Learner needle
 You don't need an aggressive animal sidekick.
->storing stoat
-Learner needle
-You can carry what you need. You don't need any Brian Jacques villains upsetting that.
+
+#ttc-table-of-boring-boat-flooring-float-guesses-mooring-moat-mote
 >mooring moat
 Learner needle
 The flooring float seems to anchor itself okay here.
 
+#ttc-table-of-boring-boat-flooring-float-guesses-storing-stoat
+>storing stoat
+Learner needle
+You can carry what you need. You don't need any Brian Jacques villains upsetting that.
+
+#ttc-table-of-boring-boat-flooring-float-guesses-touring-tote
 >touring tote
 Learner needle
 The big bag is good enough
@@ -1136,25 +1614,34 @@ The big bag is good enough
 >boring boat
 by one point
 
+#+ttc-table-of-boring-boat-flooring-float-guesses-touring-tote
 >touring tote
 !Learner needle
 The big bag is good enough
 
+#+ttc-table-of-boring-boat-flooring-float-guesses-goring-goat
 >goring goat
 !Learner needle
 You don't need an aggressive animal sidekick.
->storing stoat
-!Learner needle
-You can carry what you need. You don't need any Brian Jacques villains upsetting that.
+
+#+ttc-table-of-boring-boat-flooring-float-guesses-mooring-moat-mote
 >mooring moat
 !Learner needle
 The boring boat seems to anchor itself okay here.
 
+#+ttc-table-of-boring-boat-flooring-float-guesses-storing-stoat
+>storing stoat
+!Learner needle
+You can carry what you need. You don't need any Brian Jacques villains upsetting that.
+
 >enter boat
 
+#ttc-table-of-general-good-guesses-drowsy-drakes
 >drowsy drakes
 !Learner needle
 No sleepy ducks walk by.
+
+#ttc-table-of-jake-g-guesses-cake-key
 >cake key
 Learner needle
 Ooh! That'd be nice and tasty. But you don't need that right now.
@@ -1178,22 +1665,25 @@ by one point
 >break brie
 by one point
 
-#next-cmd-pass
->cake key
-Learner needle
-Ooh! That'd be nice and tasty. But you don't need that right now.
-#next-cmd-pass
->shake she
-Learner needle
-Jake has no horrible ex to avoid.
-#next-cmd-pass
->flake flee
-Learner needle
-Be nice! You need Jake.
-#next-cmd-pass
+#ttc-table-of-jake-g-guesses-bake-be-bee
 >bake be
 Learner needle
 This is not a cooking sim.
+
+#+ttc-table-of-jake-g-guesses-cake-key
+>cake key
+Learner needle
+Ooh! That'd be nice and tasty. But you don't need that right now.
+
+#ttc-table-of-jake-g-guesses-flake-flee
+>flake flee
+Learner needle
+Be nice! You need Jake.
+
+#ttc-table-of-jake-g-guesses-shake-she
+>shake she
+Learner needle
+Jake has no horrible ex to avoid.
 
 >fake fee
 by one point
@@ -1213,28 +1703,42 @@ This is not a cooking sim.
 
 >e
 
+#ttc-table-of-lake-lap-guesses-cake-cap
 >cake cap
 Learner needle
 No edible headgear appears.
+
+#ttc-table-of-lake-lap-guesses-crake-crap
+>crake crap
+Learner needle
+No bird droppings provide a trail.
+
+#ttc-table-of-lake-lap-guesses-fake-fap
 >fake fap
 Learner needle
 You make a rude gesture, for whatever good it does.
 
->crake crap
-Learner needle
-No bird droppings provide a trail.
+#ttc-table-of-lake-lap-guesses-flake-flap
 >flake flap
 Learner needle
 Nobody starts blathering uselessly.
+
+#ttc-table-of-lake-lap-guesses-rake-wrap-rap
 >rake wrap
 Learner needle
 You probably don't want or need a rake to step on.
+
+#ttc-table-of-lake-lap-guesses-sake-sap
 >sake sap
 Learner needle
 No! You want more purpose, not less.
+
+#ttc-table-of-lake-lap-guesses-slake-slap
 >slake slap
 Learner needle
 You don't need to slap anyone here, hard or soft.
+
+#ttc-table-of-lake-lap-guesses-wake-whap
 >wake whap
 Learner needle
 You already woke Jake much more nicely.
@@ -1255,9 +1759,12 @@ You make a rude gesture, for whatever good it does.
 
 >enter boat
 
+#ttc-table-of-been-buggin-guesses-pay-prong
 >pay prong
 Learner needle
 Buying things won't improve your lack of self-worth.
+
+#ttc-table-of-been-buggin-guesses-glean-gluggin
 >glean gluggin
 !Learner needle
 You don't need to drink, or have a drinking buddy.
@@ -1265,40 +1772,60 @@ You don't need to drink, or have a drinking buddy.
 >stay strong
 by one point
 
->ho had
-Learner needle
-You're trying to feel less in the dumps, not more.
->mo mad
-Learner needle
-Once the anger wore off, you might be even more lethargic.
+#ttc-table-of-been-buggin-guesses-co-cad
 >co cad
 Learner needle
 Nobody appears to commiserate with you.
->grow grad
-Learner needle
-You acquire no diploma.
->po pad
-Learner needle
-You don't need a depressing place to live.
->lo lad
-Learner needle
-Recalling a condescending adult's advice to you (or others) fails to help.
->go gad
-Learner needle
-Trying to shock yourself into action fails.
->foe fad
-Learner needle
-You try to convince yourself it's a passing phase, but it doesn't work.
+
+#ttc-table-of-been-buggin-guesses-doh-dad
 >doh dad
 Learner needle
 Blaming your parents fails to help.
 
+#ttc-table-of-been-buggin-guesses-foe-fo-fad
+>foe fad
+Learner needle
+You try to convince yourself it's a passing phase, but it doesn't work.
+
+#ttc-table-of-been-buggin-guesses-go-gad
+>go gad
+Learner needle
+Trying to shock yourself into action fails.
+
+#ttc-table-of-been-buggin-guesses-grow-grad
+>grow grad
+Learner needle
+You acquire no diploma.
+
+#ttc-table-of-been-buggin-guesses-ho-had
+>ho had
+Learner needle
+You're trying to feel less in the dumps, not more.
+
+#ttc-table-of-been-buggin-guesses-lo-lad
+>lo lad
+Learner needle
+Recalling a condescending adult's advice to you (or others) fails to help.
+
+#ttc-table-of-been-buggin-guesses-mo-mad
+>mo mad
+Learner needle
+Once the anger wore off, you might be even more lethargic.
+
+#ttc-table-of-been-buggin-guesses-po-pad
+>po pad
+Learner needle
+You don't need a depressing place to live.
+
 >glow glad
 by one point
 
+#+ttc-table-of-been-buggin-guesses-glean-gluggin
 >glean gluggin
 Learner needle
 Dean is not a secret drinker.
+
+#ttc-table-of-been-buggin-guesses-teen-tuggin
 >teen tuggin
 Learner needle
 Dealing with the shame of having done, er, THAT is beyond the scope of this game.
@@ -1309,46 +1836,70 @@ by one point
 >lean luggin
 by one point
 
+#+ttc-table-of-been-buggin-guesses-glean-gluggin
 >glean gluggin
 !Learner needle
 After all you've done, you don't need alcohol to help you get by.
 
+#+ttc-table-of-been-buggin-guesses-teen-tuggin
 >teen tuggin
 !Learner needle
 Dealing with the shame of having done, er, THAT is beyond the scope of this game.
+
+#ttc-table-of-been-buggin-guesses-trumped-truster
 >trumped truster
 the Leet Learner dims a bit
 The Very Vile Fairy File has probably gotten more than a few people to vote against their self-interests.
+
+#ttc-table-of-been-buggin-guesses-lumped-luster-lustre
 >lumped luster
 the Leet Learner dims a bit
 The cluster would still be in the way if it were shiny.
->jay joke
-!Learner needle
-You recall some off-color drug humor from your younger days.
->stay stoke
-!Learner needle
-Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything.
+
+#ttc-table-of-clay-cloak-guesses-bray-broke
 >bray broke
 !Learner needle
 You try a poor-righteous-teacher approach with the clay cloak.
->k coke
-!Learner needle
-No fizzy beverage (or anything less healthy) appears.
->yay yoke
-!Learner needle
-Some woke people like to self-immolate, but not you.
->pay poke
-!Learner needle
-The clay cloak was free. No need to pay anything.
+
+#ttc-table-of-clay-cloak-guesses-cray-croak
 >cray croak
 !Learner needle
 You make a weird noise. It doesn't help, but it doesn't hurt.
+
+#ttc-table-of-clay-cloak-guesses-fay-folk
 >fay folk
 !Learner needle
 There's not enough magic in this game? Aww, rats.
+
+#ttc-table-of-clay-cloak-guesses-jay-joke
+>jay joke
+!Learner needle
+You recall some off-color drug humor from your younger days.
+
+#ttc-table-of-clay-cloak-guesses-k-coke
+>k coke
+!Learner needle
+No fizzy beverage (or anything less healthy) appears.
+
+#ttc-table-of-clay-cloak-guesses-pay-poke
+>pay poke
+!Learner needle
+The clay cloak was free. No need to pay anything.
+
+#ttc-table-of-clay-cloak-guesses-say-soak
 >say soak
 !Learner needle
 Water might make the clay cloak even heavier and messier.
+
+#ttc-table-of-clay-cloak-guesses-stay-stoke
+>stay stoke
+!Learner needle
+Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything.
+
+#ttc-table-of-clay-cloak-guesses-yay-yoke-yolk
+>yay yoke
+!Learner needle
+Some woke people like to self-immolate, but not you.
 
 >bumped buster
 by one point
@@ -1359,27 +1910,42 @@ by one point
 >w
 >w
 
->gene joes
-Learner needle
-You don't need to visit another clothing store.
->seen sos
-Learner needle
-That must be about right, but it's not specific enough. You need to see something specific, and not quite see...
->sheen shows
-Learner needle
-That must be about right, but you need to do something to look and find a light, or lights.
+#ttc-table-of-history-hall-guesses-bean-been-bows
 >bean bows
 Learner needle
 No bows pop up to garnish your current clothes.
+
+#ttc-table-of-history-hall-guesses-gene-jean-joes
+>gene joes
+Learner needle
+You don't need to visit another clothing store.
+
+#ttc-table-of-history-hall-guesses-green-grows
 >green grows
 Learner needle
 There's no gardening shop in the mall, but there doesn't need to be.
+
+#ttc-table-of-history-hall-guesses-lean-lows
 >lean lows
 Learner needle
 You feel the blues for a second.
+
+#ttc-table-of-history-hall-guesses-seen-scene-sos-sews
+>seen sos
+Learner needle
+That must be about right, but it's not specific enough. You need to see something specific, and not quite see...
+
+#ttc-table-of-history-hall-guesses-sheen-shows
+>sheen shows
+Learner needle
+That must be about right, but you need to do something to look and find a light, or lights.
+
+#ttc-table-of-history-hall-guesses-teen-toes
 >teen toes
 Learner needle
 Not sure I want to know.
+
+#ttc-table-of-history-hall-guesses-wean-woes
 >wean woes
 Learner needle
 You take time to feel less awful about some horrid event in your past. The resulting inner peace cheers you even more than a Last Lousy Point would have!
@@ -1387,51 +1953,72 @@ You take time to feel less awful about some horrid event in your past. The resul
 >glean glows
 by one point
 
->mashing moke
-Learner needle
-You need subtlety, not violence.
+#ttc-table-of-clashing-cloak-guesses-ashing-oak
 >ashing oak
 Learner needle
 No genetically twisted tree appears.
 
+#ttc-table-of-clashing-cloak-guesses-mashing-moke
+>mashing moke
+Learner needle
+You need subtlety, not violence.
+
+#ttc-table-of-clashing-cloak-guesses-stashing-stoke
+>stashing stoke
+Learner needle
+You don't need to start a fire or win this game on a rainy Tuesday.
+
 >history hall
 
->war wander
-Learner needle
-You don't need to visit anything that drastic.
+#ttc-table-of-history-hall-guesses-bore-boar-bonder
 >bore bonder
 Learner needle
 Something more archaic and interesting.
+
+#ttc-table-of-history-hall-guesses-war-wander
+>war wander
+Learner needle
+You don't need to visit anything that drastic.
 
 >youre yonder
 by one point
 
 >out
 
->stashing stoke
-Learner needle
-You don't need to start a fire or win this game on a rainy Tuesday.
+#ttc-table-of-yold-yard-guesses-mold-marred
 >mold marred
 !Learner needle
-You'll actually be getting that later!
+Why ruin the rustic environment?
+
+#ttc-table-of-yold-yard-guesses-gold-guard
 >gold guard
 !Learner needle
 You'll actually be getting that later!
+
+#+ttc-table-of-yold-yard-guesses-gold-guard
 >cold card
 !Learner needle
 You'll actually be getting that later!
+
+#+ttc-table-of-yold-yard-guesses-gold-guard
 >hold hard
 !Learner needle
 You'll actually be getting that later!
->polled pard
-!Learner needle
-Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far.
+
+#ttc-table-of-bold-bard-guesses-lold-lard
 >lold lard
 !Learner needle
 Fat jokes aren't funny, self-depreciating or otherwise.
+
+#ttc-table-of-bold-bard-guesses-old-ard
 >old ard
 !Learner needle
 Nobody needs to feel like a grizzled veteran here.
+
+#ttc-table-of-bold-bard-guesses-polled-pard
+>polled pard
+!Learner needle
+Nobody stops by with a clipboard, or the medieval equivalent, to ask how you are enjoying your experience so far.
 
 >smashing smoke
 by one point
@@ -1442,30 +2029,47 @@ by one point
 >lending libe
 by one point
 
+#ttc-table-of-we-whine-guesses-bree-brine
 >bree brine
 Learner needle
 Less gross than what's in We Whine: ME, MINE, but no.
+
+#ttc-table-of-we-whine-guesses-fee-fine
 >fee fine
 Learner needle
 No, there's no charge on We Whine: ME, MINE.
+
+#ttc-table-of-we-whine-guesses-flee-flyin
 >flee flyin
 Learner needle
 We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
+
+#ttc-table-of-we-whine-guesses-key-kine
 >key kine
 Learner needle
 We Whine: ME, MINE already provides a figurative key to things.
+
+#ttc-table-of-we-whine-guesses-knee-nine
 >knee nine
 Learner needle
 We Whine: ME, MINE is only about mental violence and nastiness to people
+
+#ttc-table-of-we-whine-guesses-lee-lea-line
 >lee line
 Learner needle
 We Whine: ME, MINE only blows figurative wind.
+
+#ttc-table-of-we-whine-guesses-pee-pine
 >pee pine
 Learner needle
 There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably Very Vile Fairy File-approved, so no.
+
+#ttc-table-of-we-whine-guesses-she-shine
 >she shine
 Learner needle
 Why yes, pointless greed should not be limited to men only.
+
+#ttc-table-of-we-whine-guesses-tee-tine
 >tee tine
 Learner needle
 No golf tee provides a bookmark for We Whine: ME, MINE.
@@ -1473,30 +2077,47 @@ No golf tee provides a bookmark for We Whine: ME, MINE.
 >see sign
 by one point
 
+#+ttc-table-of-we-whine-guesses-bree-brine
 >bree brine
 !Learner needle
 Less gross than what's in We Whine: ME, MINE, but no.
+
+#+ttc-table-of-we-whine-guesses-fee-fine
 >fee fine
 !Learner needle
 No, there's no charge on We Whine: ME, MINE.
+
+#+ttc-table-of-we-whine-guesses-flee-flyin
 >flee flyin
 !Learner needle
 We Whine: ME, MINE encourages thinking outside the box, but that's a bit far.
+
+#+ttc-table-of-we-whine-guesses-key-kine
 >key kine
 !Learner needle
 We Whine: ME, MINE already provides a figurative key to things.
+
+#+ttc-table-of-we-whine-guesses-knee-nine
 >knee nine
 !Learner needle
 We Whine: ME, MINE is only about mental violence and nastiness to people
+
+#+ttc-table-of-we-whine-guesses-lee-lea-line
 >lee line
 !Learner needle
 We Whine: ME, MINE only blows figurative wind.
+
+#+ttc-table-of-we-whine-guesses-pee-pine
 >pee pine
 !Learner needle
 There probably is a section in We Whine: ME, MINE about figuratively marking your territory, but it's probably Very Vile Fairy File-approved, so no.
+
+#+ttc-table-of-we-whine-guesses-she-shine
 >she shine
 !Learner needle
 Why yes, pointless greed should not be limited to men only.
+
+#+ttc-table-of-we-whine-guesses-tee-tine
 >tee tine
 !Learner needle
 No golf tee provides a bookmark for We Whine: ME, MINE.
@@ -1509,72 +2130,111 @@ No golf tee provides a bookmark for We Whine: ME, MINE.
 
 >n
 
+#ttc-table-of-foe-field-guesses-crane-crescent
 >crane crescent
 Learner needle
 No bird or complex machinery drops by to sweep the Pain Peasant away.
+
+#ttc-table-of-foe-field-guesses-fain-pheasant
 >fain pheasant
 Learner needle
 The Pain Peasant remains human.
->stow steeled
+
+#ttc-table-of-foe-field-guesses-know-no-kneeled
+>know kneeled
 Learner needle
-You don't have anything steely to stow.
->woe wield
-Learner needle
-You don't need a weapon but rather armor to repel the Foe Field.
+That is the wrong defensive posture for here.
+
+#ttc-table-of-first-check-rhymes-mo-mealed
 >mo mealed
 Learner needle
 Alas, no food magically appears. You need a more fighting stance.
+
+#ttc-table-of-foe-field-guesses-stow-steeled
+>stow steeled
+Learner needle
+You don't have anything steely to stow.
+
+#ttc-table-of-foe-field-guesses-woe-whoah-whoa-wield
+>woe wield
+Learner needle
+You don't need a weapon but rather armor to repel the Foe Field.
 
 >plain pleasant
 by one point
 
 >w
 
->oral age
-Learner needle
-Someone here is really old-school. As if text adventures weren't retro enough!
->sorel sage
-Learner needle
-Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
+#ttc-table-of-store-all-stage-guesses-immoral-image
 >immoral image
 Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
+
+#ttc-table-of-store-all-stage-guesses-oral-age
+>oral age
+Learner needle
+Someone here is really old-school. As if text adventures weren't retro enough!
+
+#ttc-table-of-store-all-stage-guesses-sorel-sorrel-sage
+>sorel sage
+Learner needle
+Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
 
 >moral mage
 by one point
 
->oral age
+#+ttc-table-of-cage-key-sage-sea-guesses-cage-key
+>cage key
 !Learner needle
-Someone here is really old-school. As if text adventures weren't retro enough!
->sorel sage
-!Learner needle
-Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
+You already got the key.
+
+#+ttc-table-of-store-all-stage-guesses-immoral-image
 >immoral image
 !Learner needle
 You sort of need the opposite. I suspect you know this and are just trying to see what happens.
 
+#+ttc-table-of-store-all-stage-guesses-oral-age
+>oral age
+!Learner needle
+Someone here is really old-school. As if text adventures weren't retro enough!
+
+#+ttc-table-of-store-all-stage-guesses-sorel-sorrel-sage
+>sorel sage
+!Learner needle
+Someone not just wise but ethical is behind the coral cage. Besides, there's already the sage sea.
+
 >e
 >e
 
->mit mound
-Learner needle
-The hit hound won't need to go chasing after that.
->grit ground
-Learner needle
-You need to find some other way to banish the hit hound and feel comfortable here. You already showed grit in the Po' Pit, anyway.
+#ttc-table-of-pit-pound-guesses-bit-bound
 >bit bound
 Learner needle
 Now you mention it, you do feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
->wit wound
+#ttc-table-of-pit-pound-guesses-grit-ground
+>grit ground
 Learner needle
-No need for unnecessary tension.
+You need to find some other way to banish the hit hound and feel comfortable here. You already showed grit in the Po' Pit, anyway.
+
+#ttc-table-of-pit-pound-guesses-mit-mitt-mound
+>mit mound
+Learner needle
+The hit hound won't need to go chasing after that.
+
+#ttc-table-of-pit-pound-guesses-clit-clowned
 >clit clowned
 Learner needle
 I mean, that WORKS, but geez.
+
+#ttc-table-of-pit-pound-guesses-crit-crowned
 >crit crowned
 Learner needle
 You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
+
+#ttc-table-of-pit-pound-guesses-wit-whit-wound
+>wit wound
+Learner needle
+No need for unnecessary tension.
 
 >sit sound
 by one point
@@ -1596,18 +2256,24 @@ I mean, that WORKS, but geez.
 !Learner needle
 You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
 
->mit mound
-!Learner needle
-The Pit Pound doesn't need clutter like that.
+#+ttc-table-of-pit-pound-guesses-bit-bound
 >bit bound
 !Learner needle
 Now you mention it, you did feel a bit restricted here. Expressing your feelings helps a bit! You think.
 
+#+ttc-table-of-pit-pound-guesses-mit-mitt-mound
+>mit mound
+!Learner needle
+The Pit Pound doesn't need clutter like that.
+
 >e
 
+#ttc-table-of-blinding-blaze-guesses-binding-bays-baize
 >binding bays
 Learner needle
 You need to find your way here, not get more tied up.
+
+#ttc-table-of-blinding-blaze-guesses-grinding-grays
 >grinding grays
 Learner needle
 Even if it were duller, you'd still be left with a hot blaze.
@@ -1615,9 +2281,12 @@ Even if it were duller, you'd still be left with a hot blaze.
 >winding ways
 by one point
 
+#+ttc-table-of-blinding-blaze-guesses-binding-bays-baize
 >binding bays
 !Learner needle
 You need to find your way here, not get more tied up.
+
+#+ttc-table-of-blinding-blaze-guesses-grinding-grays
 >grinding grays
 !Learner needle
 Even if it were duller, you'd still be left with a tricky maze.
@@ -1625,79 +2294,125 @@ Even if it were duller, you'd still be left with a tricky maze.
 >mo mappin
 by one point
 
+#ttc-table-of-snuck-snare-stuck-stair-guesses-buck-bear-bare
 >buck bear
 Learner needle
 There are enough animals in this game that could maul you.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-chuck-chair
 >chuck chair
 Learner needle
 No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-duck-dare
 >duck dare
 Learner needle
 Too late for that. You took Kit Cohen's dare, and you're on a quest, now.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-fuck-fair-fare
 >fuck fair
 Learner needle
 There are other games for that.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-muck-mare-mere-mayor
 >muck mare
 Learner needle
 No, it's something much cleaner than that.
->puck pair
-Learner needle
-No time for hockey! You also aren't really dressed for the cold.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-pluck-player
 >pluck player
 Learner needle
 Personal grooming can wait.
->struck strayer
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-puck-pair-pare-pere-payer
+>puck pair
 Learner needle
-This game does not need or want to end in tragedy.
->tuck tare
-Learner needle
-Alterations are not your Thing.
->truck trayer
-Learner needle
-Manual labor is not very adventurous.
+No time for hockey! You also aren't really dressed for the cold.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-shuck-share
 >shuck share
 Learner needle
 You have no share to shuck.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-struck-strayer
+>struck strayer
+Learner needle
+This game does not need or want to end in tragedy.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-tuck-tare
+>tuck tare
+Learner needle
+Alterations are not your Thing.
+
+#ttc-table-of-snuck-snare-stuck-stair-guesses-tuck-tear
 >tuck tear
 Learner needle
 You see no way to refigure the stair.
 
+#ttc-table-of-snuck-snare-stuck-stair-guesses-truck-trayer
+>truck trayer
+Learner needle
+Manual labor is not very adventurous.
+
 >luck lair
 by one point
 
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-buck-bear-bare
 >buck bear
 !Learner needle
 There are enough animals in this game that could maul you.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-chuck-chair
 >chuck chair
 !Learner needle
 No time for a Bobby Knight impression! Plus there are no 20-year-olds nearby to choke, anyway.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-duck-dare
 >duck dare
 !Learner needle
 Too late for that. You took Kit Cohen's dare, and you're on a quest, now.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-fuck-fair-fare
 >fuck fair
 !Learner needle
 There are other games for that.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-muck-mare-mere-mayor
 >muck mare
 !Learner needle
 No, it's something much cleaner than that.
->puck pair
-!Learner needle
-No time for hockey! You also aren't really dressed for the cold.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-pluck-player
 >pluck player
 !Learner needle
 Personal grooming can wait.
->struck strayer
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-puck-pair-pare-pere-payer
+>puck pair
 !Learner needle
-This game does not need or want to end in tragedy.
->tuck tare
-!Learner needle
-Alterations are not your Thing.
->truck trayer
-!Learner needle
-Manual labor is not very adventurous.
+No time for hockey! You also aren't really dressed for the cold.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-shuck-share
 >shuck share
 !Learner needle
 You have no share to shuck.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-struck-strayer
+>struck strayer
+!Learner needle
+This game does not need or want to end in tragedy.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-truck-trayer
+>truck trayer
+!Learner needle
+Manual labor is not very adventurous.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-tuck-tare
+>tuck tare
+!Learner needle
+Alterations are not your Thing.
+
+#+ttc-table-of-snuck-snare-stuck-stair-guesses-tuck-tear
 >tuck tear
 !Learner needle
 You see no way to refigure the snare.
@@ -1709,9 +2424,12 @@ You see no way to refigure the snare.
 >w
 >d
 
+#ttc-table-of-fight-funnel-guesses-right-runnel
 >right runnel
 Learner needle
 No river appears. It might just make things even more crowded and messy, anyway.
+
+#ttc-table-of-fight-funnel-guesses-trite-trunnel
 >trite trunnel
 Learner needle
 You don't need anything as obscure as a wooden peg.
@@ -1719,36 +2437,52 @@ You don't need anything as obscure as a wooden peg.
 >tight tunnel
 by one point
 
+#+ttc-table-of-fight-funnel-guesses-right-runnel
 >right runnel
 !Learner needle
 No river appears. It might just make things even more crowded and messy, anyway.
+
+#+ttc-table-of-fight-funnel-guesses-trite-trunnel
 >trite trunnel
 !Learner needle
 You don't need anything as obscure as a wooden peg.
 
 >w
 
->fives fitch
-Learner needle
-A polecat (or several) would maul you, too. You need some sort of general ambush.
->hives hitch
-Learner needle
-Whether that means a hive of bees or hives on your skin, that would affect anyone entering. You need some sort of general ambush.
->lives lich
-Learner needle
-But the lich would surely wipe you out. You need some sort of general ambush.
->stives stitch
-Learner needle
-We don't want a red-light-district sort of trap. You need some sort of general ambush.
->strives stritch
-Learner needle
-A screeching owl would only be annoying. You need some sort of general ambush.
->wives witch
-Learner needle
-The witch might be evil enough to wipe everyone out. You need some sort of general ambush.
+#ttc-table-of-dives-ditch-guesses-chives-chich
 >chives chich
 Learner needle
 This is no time for frou-frou vegetables!
+
+#ttc-table-of-dives-ditch-guesses-fives-fitch
+>fives fitch
+Learner needle
+A polecat (or several) would maul you, too. You need some sort of general ambush.
+
+#ttc-table-of-dives-ditch-guesses-hives-hitch
+>hives hitch
+Learner needle
+Whether that means a hive of bees or hives on your skin, that would affect anyone entering. You need some sort of general ambush.
+
+#ttc-table-of-dives-ditch-guesses-lives-lich-liche
+>lives lich
+Learner needle
+But the lich would surely wipe you out. You need some sort of general ambush.
+
+#ttc-table-of-dives-ditch-guesses-stives-stitch
+>stives stitch
+Learner needle
+We don't want a red-light-district sort of trap. You need some sort of general ambush.
+
+#ttc-table-of-dives-ditch-guesses-strives-stritch
+>strives stritch
+Learner needle
+A screeching owl would only be annoying. You need some sort of general ambush.
+
+#ttc-table-of-dives-ditch-guesses-wives-witch
+>wives witch
+Learner needle
+The witch might be evil enough to wipe everyone out. You need some sort of general ambush.
 
 >knives niche
 by one point
@@ -1761,15 +2495,22 @@ by one point
 >n
 >e
 
->mere mull
-Learner needle
-The Beer Bull is not impressed by thoughtfulness.
+#ttc-table-of-beer-bull-guesses-gear-gull
 >gear gull
 Learner needle
 Spoiler: once you get rid of the bull, a gear gull will appear.
+
+#ttc-table-of-beer-bull-guesses-leer-lear-lull-lul
 >leer lull
 Learner needle
 The Beer Bull does not stop looking aggressively at you.
+
+#ttc-table-of-beer-bull-guesses-mere-mull
+>mere mull
+Learner needle
+The Beer Bull is not impressed by thoughtfulness.
+
+#ttc-table-of-beer-bull-guesses-peer-pier-pull
 >peer pull
 Learner needle
 No, you can't bring the bull down with peer pressure.
@@ -1807,21 +2548,32 @@ by one point
 >least loss
 by one point
 
+#ttc-table-of-mild-mead-guesses-dialed-deed
 >dialed deed
 the Leet Learner dims a bit, and
 You don't need chemical stimulants to be dialed in to what you need to do.
+
+#ttc-table-of-mild-mead-guesses-filed-feed
 >filed feed
 the Leet Learner dims a bit, and
 Nope. Can't quite categorize that as food.
+
+#ttc-table-of-mild-mead-guesses-riled-reed-read
 >riled reed
 the Leet Learner dims a bit, and
 Any controlled substances found in the course of your adventure are for relaxation.
+
+#ttc-table-of-mild-mead-guesses-siled-seed
 >siled seed
 the Leet Learner dims a bit, and
 No time for farming.
+
+#ttc-table-of-mild-mead-guesses-styled-steed
 >styled steed
 the Leet Learner dims a bit, and
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
+
+#ttc-table-of-mild-mead-guesses-tiled-teed
 >tiled teed
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
@@ -1833,25 +2585,37 @@ by one point
 >toke test
 Hey now! You might indulge, but you don't need to, and besides, you need a source of flame.
 
+#+ttc-table-of-mild-mead-guesses-dialed-deed
 >dialed deed
 !the Leet Learner dims a bit, and
 You don't need chemical stimulants to be dialed in to what you need to do.
+
+#+ttc-table-of-mild-mead-guesses-filed-feed
 >filed feed
 !the Leet Learner dims a bit, and
 Nope. Can't quite categorize that as food.
+
+#+ttc-table-of-mild-mead-guesses-riled-reed-read
 >riled reed
 !the Leet Learner dims a bit, and
 Any controlled substances found in the course of your adventure are for relaxation.
+
+#+ttc-table-of-mild-mead-guesses-siled-seed
 >siled seed
 !the Leet Learner dims a bit, and
 No time for farming.
+
+#+ttc-table-of-mild-mead-guesses-styled-steed
 >styled steed
 !the Leet Learner dims a bit, and
 Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
+
+#+ttc-table-of-mild-mead-guesses-tiled-teed
 >tiled teed
 !the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
+#ttc-table-of-fun-fen-guesses-bark-biff
 >bark biff
 the Leet Learner dims a bit, and
 McFly
@@ -1862,6 +2626,7 @@ by one point
 >toke test
 Hey now! You had your fun. Don't overdo it.
 
+#+ttc-table-of-fun-fen-guesses-bark-biff
 >bark biff
 McFly
 !Learner needle
@@ -1873,12 +2638,27 @@ McFly
 >heal here
 by one point
 
+#ttc-table-of-real-rear-guesses-eel-ear-ere
+>eel ear
+!Learner needle
+You don't need an eel, or a piece of one, to electrify things right now.
+
+#ttc-table-of-real-rear-guesses-peel-pear
 >peel pear
 !Learner needle
 You have no fruit. However, the Ceiling Seer seems to appreciate your attempts to eat healthy.
+
+#ttc-table-of-real-rear-guesses-steal-steer
 >steal steer
 !Learner needle
 Direct homonyms don't work here, and the steer would not fit in your bag.
+
+#ttc-table-of-real-rear-guesses-wheel-wheeling-weir
+>wheel weir
+Learner needle
+The Sage Sea is enough of a boundary.
+
+#ttc-table-of-real-rear-guesses-wheel-where
 >wheel where
 !Learner needle
 The Ceiling Seer does not direct you to any wheel or any form of transportation.
@@ -1886,48 +2666,59 @@ The Ceiling Seer does not direct you to any wheel or any form of transportation.
 >n
 >n
 
->teased toss
-A bit of taunting might work here, but you might need to be a bit harsher.
-
 >cull ceased
 by one point
-
-#okdup
->teased toss
-!Learner needle
-You imagine yourself cleverly insulting the Crimes Crew Times Two.
 
 >full feast
 by one point
 
+#+ttc-table-of-creased-cross-guesses-ceased-sauce
 >ceased sauce
 !Learner needle
 You'll need all the sauce you can get, literally or figuratively.
->greased gross
-!Learner needle
-The Creased Cross doesn't need to become ickier.
+
+#+ttc-table-of-creased-cross-guesses-fleeced-floss
 >fleeced floss
 !Learner needle
 Dental hygiene is a good idea in general, but here, it's unnecessary.
 
+#+ttc-table-of-creased-cross-guesses-greased-gross
+>greased gross
+!Learner needle
+The Creased Cross doesn't need to become ickier.
+
+#+ttc-table-of-creased-cross-guesses-teased-toss
+>teased toss
+!Learner needle
+You imagine yourself cleverly insulting the Crimes Crew Times Two.
+
 >e
 >e
 
->signing sore
-Learner needle
-You make a rude gesture, for whatever good it does.
->spining spore
-Learner needle
-Your foray into speculative biology goes nowhere.
->pining pore
-Learner needle
-They'll come along later, if you do something else.
+#ttc-table-of-whining-war-guesses-fining-four
 >fining four
 Learner needle
 You don't need to summon people that may audit you.
+
+#ttc-table-of-whining-war-guesses-lining-lor-lore
 >lining lor
 Learner needle
 Alas, nobody falls into line to tell stories of how they got here.
+
+#ttc-table-of-whining-war-guesses-pining-pore-poor
+>pining pore
+Learner needle
+They'll come along later, if you do something else.
+
+#ttc-table-of-whining-war-guesses-signing-sore
+>signing sore
+Learner needle
+You make a rude gesture, for whatever good it does.
+
+#ttc-table-of-whining-war-guesses-spining-spore
+>spining spore
+Learner needle
+Your foray into speculative biology goes nowhere.
 
 >so sappin
 by one point
@@ -1944,41 +2735,54 @@ by one point
 >mining more
 by one point
 
->signing sore
-!Learner needle
-You make a rude gesture, for whatever good it does.
->spining spore
-!Learner needle
-Your foray into speculative biology goes nowhere.
+#+ttc-table-of-whining-war-guesses-fining-four
 >fining four
 !Learner needle
 You don't need to summon people that may audit you.
+
+#+ttc-table-of-whining-war-guesses-lining-lor-lore
 >lining lor
 !Learner needle
 Alas, nobody falls into line to tell stories of how they got here.
 
->w
->w
->n
->n
+#+ttc-table-of-whining-war-guesses-pining-pore-poor
+>pining poor
+!They'll come along
 
->know kneeled
-Learner needle
-That is the wrong defensive posture for here.
+#+ttc-table-of-whining-war-guesses-signing-sore
+>signing sore
+!Learner needle
+You make a rude gesture, for whatever good it does.
+
+#+ttc-table-of-whining-war-guesses-spining-spore
+>spining spore
+!Learner needle
+Your foray into speculative biology goes nowhere.
+
+>w
+>w
+>n
+>n
 
 >show shield
 by one point
 
+#+ttc-table-of-foe-field-guesses-know-no-kneeled
 >know kneeled
 !Learner needle
 That is the wrong defensive posture for here.
 
->woe wield
-!Learner needle
-You didn't need a weapon but rather armor to repel the Foe Field.
+#+ttc-table-of-foe-field-guesses-stow-steeled
 >stow steeled
 !Learner needle
 You don't have anything steely to stow.
+
+#+ttc-table-of-foe-field-guesses-woe-whoah-whoa-wield
+>woe wield
+!Learner needle
+You didn't need a weapon but rather armor to repel the Foe Field.
+
+#+ttc-table-of-first-check-rhymes-mo-mealed
 >mo mealed
 !Learner needle
 Alas, no food magically appears. You did what you needed.
@@ -1988,21 +2792,42 @@ Alas, no food magically appears. You did what you needed.
 >go gappin
 by one point
 
+#ttc-table-of-gassed-gap-guesses-chaste-chap
+>chaste chap
+Learner needle
+Yes, you've been a model of morality. Yay, you.
+
+#ttc-table-of-gassed-gap-guesses-classed-clap
+>classed clap
+Learner needle
+You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
+
+#ttc-table-of-gassed-gap-guesses-fast-fap
 >fast fap
 Learner needle
 Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.
+
+#ttc-table-of-gassed-gap-guesses-last-lap
 >last lap
 Learner needle
 It will be the last lap one day. But you need a different action to get to this finality.
+
+#ttc-table-of-gassed-gap-guesses-massed-mast-map
 >massed map
 Learner needle
 You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here.
+
+#ttc-table-of-gassed-gap-guesses-passed-past-pap
 >passed pap
 Learner needle
 You don't need to look back on what a trashy adventure this has been. Well, not in front of me.
+
+#ttc-table-of-gassed-gap-guesses-razzed-rap
 >razzed rap
 Learner needle
 There's enough bad music in this game if you know where to look.
+
+#ttc-table-of-gassed-gap-guesses-sassed-sap
 >sassed sap
 Learner needle
 You look for someone who has recently lost an argument, but nobody turns up.
@@ -2010,38 +2835,45 @@ You look for someone who has recently lost an argument, but nobody turns up.
 >couple caps
 by one point
 
->classed clap
-Learner needle
-You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
->chaste chap
-Learner needle
-Yes, you've been a model of morality. Yay, you.
-
 >cast cap
 by one point
 
->classed clap
-!Learner needle
-You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
+#+ttc-table-of-gassed-gap-guesses-chaste-chap
 >chaste chap
 !Learner needle
 Yes, you've been a model of morality. Yay, you.
 
+#+ttc-table-of-gassed-gap-guesses-classed-clap
+>classed clap
+!Learner needle
+You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug.
+
+#+ttc-table-of-gassed-gap-guesses-fast-fap
 >fast fap
 !Learner needle
 Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here.
+
+#+ttc-table-of-gassed-gap-guesses-last-lap
 >last lap
 !Learner needle
 It will be the last lap one day. But you need a different action to get to this finality.
+
+#+ttc-table-of-gassed-gap-guesses-massed-mast-map
 >massed map
 !Learner needle
 You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here.
+
+#+ttc-table-of-gassed-gap-guesses-passed-past-pap
 >passed pap
 !Learner needle
 You don't need to look back on what a trashy adventure this has been. Well, not in front of me.
+
+#+ttc-table-of-gassed-gap-guesses-razzed-rap
 >razzed rap
 !Learner needle
 There's enough bad music in this game if you know where to look.
+
+#+ttc-table-of-gassed-gap-guesses-sassed-sap
 >sassed sap
 !Learner needle
 You look for someone who has recently lost an argument, but nobody turns up.
@@ -2052,51 +2884,82 @@ by one point
 >meeker muscle
 by one point
 
->should shun
-Learner needle
-Gentle rebukes won't work. You need to make the gun less dangerous.
->spud spun
-Learner needle
-Alas, potato-guns are still a thing.
->stud stun
-Learner needle
-Unfortunately, that has an equal chance of stunning Russell or making Russell stun you.
+#ttc-table-of-gassed-gap-guesses-bud-bun
 >bud bun
 Learner needle
 You have no bread to share, and Russell would probably want meat, anyway.
+
+#ttc-table-of-gassed-gap-guesses-food-fun
 >food fun
 Learner needle
 Sorry, no replacing a real fight with a food fight.
+
+#ttc-table-of-gassed-gap-guesses-hood-hun
 >hood hun
 Learner needle
 Brilliant! Two enemies instead of one?
+
+#ttc-table-of-gassed-gap-guesses-should-shun
+>should shun
+Learner needle
+Gentle rebukes won't work. You need to make the gun less dangerous.
+
+#ttc-table-of-gassed-gap-guesses-spud-spun
+>spud spun
+Learner needle
+Alas, potato-guns are still a thing.
+
+#ttc-table-of-gassed-gap-guesses-stood-stun
 >stood stun
 Learner needle
 If only he were good gunNED, that might be more effective. Wait, he'd probably be dead and not need to be stunned.
+
+#ttc-table-of-gassed-gap-guesses-stud-stun
+>stud stun
+Learner needle
+Unfortunately, that has an equal chance of stunning Russell or making Russell stun you.
 
 >wood one
 by one point
 
 >n
 
+#ttc-table-of-airy-isle-guesses-caught-cord
 >caught cord
 Learner needle
+You might be able to trip one of the Bot Board with a cord, but not all of them.
+
+#ttc-table-of-airy-isle-guesses-cot-cord
+>cot cord
+Learner needle
 The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot.
->pot poured
-Learner needle
-There's no time for coffee here!
->rot roared
-Learner needle
-A decent battle cry, but you sense there could a more violent action.
->scott scored
-Learner needle
-The situation demands more than gossip. It demands leadership and teamwork!
->snot snored
-Learner needle
-While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral.
+
+#ttc-table-of-airy-isle-guesses-fought-ford
 >fought ford
 Learner needle
 The battle is ahead, not in the past.
+
+#ttc-table-of-airy-isle-guesses-pot-poured
+>pot poured
+Learner needle
+There's no time for coffee here!
+
+#ttc-table-of-airy-isle-guesses-rot-roared
+>rot roared
+Learner needle
+A decent battle cry, but you sense there could a more violent action.
+
+#ttc-table-of-airy-isle-guesses-scott-scored
+>scott scored
+Learner needle
+The situation demands more than gossip. It demands leadership and teamwork!
+
+#ttc-table-of-airy-isle-guesses-snot-snored
+>snot snored
+Learner needle
+While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral.
+
+#ttc-table-of-airy-isle-guesses-tryst-tress
 >tryst tress
 !Learner needle
 The last thing you need now is a hair appointment.
@@ -2110,49 +2973,75 @@ by one point
 >got gored
 by one point
 
->slow slate
-Learner needle
-No blackboard appears telling you EXACTLY the right move.
->so sate
-Learner needle
-You aren't satisfied yet. Only finishing the job will fix that!
+#ttc-table-of-airy-isle-guesses-crow-crate
 >crow crate
 Learner needle
 No birds appear to fly you over the grate, nor does a box of crowbars materialize.
+
+#ttc-table-of-airy-isle-guesses-foe-fate
 >foe fate
 Learner needle
 You are very near the end, but it's not that easy.
+
+#ttc-table-of-airy-isle-guesses-know-no-nate
 >know nate
 Learner needle
 Nobody named Nate appears to help you through the go gate.
+
+#ttc-table-of-airy-isle-guesses-lo-low-late
 >lo late
 Learner needle
 You feel you are on the right path to disabling the go gate.
+
+#ttc-table-of-first-check-rhymes-mo-mate
 >mo mate
 Learner needle
 You remain alone.
+
+#ttc-table-of-airy-isle-guesses-oh-ate
 >oh ate
 Learner needle
 Nothing takes a bite out of the go gate.
 
+#ttc-table-of-airy-isle-guesses-slow-slate
+>slow slate
+Learner needle
+No blackboard appears telling you EXACTLY the right move.
+
+#ttc-table-of-airy-isle-guesses-so-sate
+>so sate
+Learner needle
+You aren't satisfied yet. Only finishing the job will fix that!
+
 >whoa wait
 by one point
 
+#ttc-table-of-well-worn-hell-horn-guesses-bell-born
 >bell born
 Learner needle
 There's enough noise right now.
->swell sworn
-Learner needle
-That might augment the hell horn.
+
+#ttc-table-of-well-worn-hell-horn-guesses-shell-shorn
 >shell shorn
 Learner needle
 You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
+
+#ttc-table-of-well-worn-hell-horn-guesses-swell-sworn
+>swell sworn
+Learner needle
+That might augment the hell horn.
+
+#ttc-table-of-tarry-tile-guesses-bright-braced
 >bright braced
 !Learner needle
 If you needed to get through the spite spaced white waste, that would work. But you don't. You need to defeat the Very Vile Fairy File.
+
+#ttc-table-of-tarry-tile-guesses-light-laced
 >light laced
 !Learner needle
 Perhaps the spite spaced white waste will become light-laced once you dispel the Very Vile Fairy File.
+
+#ttc-table-of-tarry-tile-guesses-tight-taste-tased
 >tight taste
 !Learner needle
 No, you don't want a taste of being tased.

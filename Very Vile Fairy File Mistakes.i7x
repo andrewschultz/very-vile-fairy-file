@@ -48,28 +48,26 @@ book guesses by room, alphabetical
 
 table of Airy Isle guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"caught/cot cord"	trivially true rule	false	35	--	"The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot." [start Airy Isle]
-"pot poured"	trivially true rule	false	35	--	"There's no time for coffee here!"
-"rot roared"	trivially true rule	false	35	--	"A decent battle cry, but you sense there could a more violent action."
 "caught cord"	trivially true rule	false	35	--	"You might be able to trip one of the Bot Board with a cord, but not all of them."
-"scott scored"	trivially true rule	false	35	--	"The situation demands more than gossip. It demands leadership and teamwork!"
-"snot snored"	trivially true rule	false	35	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
-"fought ford"	trivially true rule	false	35	--	"The battle is ahead, not in the past."
-"tryst tress"	trivially true rule	false	--	--	"The last thing you need now is a hair appointment."
+"cot cord"	trivially true rule	false	35	--	"The Bot Board never sleeps, so they're not likely to be fooled by a string attached to a cot." [start Airy Isle]
 "crow crate"	go-gate-vis rule	false	44	--	"No birds appear to fly you over the grate, nor does a box of crowbars materialize."
 "foe fate"	go-gate-vis rule	false	44	--	"You are very near the end, but it's not that easy."
+"fought ford"	trivially true rule	false	35	--	"The battle is ahead, not in the past."
 "know/no nate"	go-gate-vis rule	false	44	--	"Nobody named Nate appears to help you through the go gate."
 "lo/low late"	go-gate-vis rule	false	44	--	"You feel you are on the right path to disabling the go gate."
 "oh ate"	go-gate-vis rule	false	44	--	"Nothing takes a bite out of the go gate."
+"pot poured"	trivially true rule	false	35	--	"There's no time for coffee here!"
+"rot roared"	trivially true rule	false	35	--	"A decent battle cry, but you sense there could a more violent action."
+"scott scored"	trivially true rule	false	35	--	"The situation demands more than gossip. It demands leadership and teamwork!"
 "slow slate"	go-gate-vis rule	false	44	--	"No blackboard appears telling you EXACTLY the right move."
+"snot snored"	trivially true rule	false	35	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
 "so sate"	go-gate-vis rule	false	44	--	"You aren't satisfied yet. Only finishing the job will fix that!"
+"tryst tress"	trivially true rule	false	--	--	"The last thing you need now is a hair appointment."
 
 table of Been Buggin guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
 "glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is fungible]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
-"jay joke"	have-clay-cloak rule	false	--	--	"You recall some off-color drug humor from your younger days."
-"stay stoke"	have-clay-cloak rule	false	--	--	"Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything."
 "ho had"	in-so-sad rule	false	44	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	44	--	"Once the anger wore off, you might be even more lethargic."
 "co cad"	in-so-sad rule	false	44	--	"Nobody appears to commiserate with you."
@@ -302,9 +300,6 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "bright braced"	trivially true rule	false	--	--	"If you needed to get through the [spite spaced], that would work. But you don't. You need to defeat the [fairy file]."
 "light laced"	trivially true rule	false	--	--	"Perhaps the [spite spaced] will become light-laced once you dispel the [fairy file]."
 "tight taste/tased"	trivially true rule	false	--	--	"No, you don't want a taste of being tased."
-"bell born"	hell-horn-near rule	false	44	--	"There's enough noise right now."
-"shell shorn"	hell-horn-near rule	false	44	--	"You must be on the right track. But perhaps the shell that is shorn might make the [hell horn] more effective."
-"swell sworn"	hell-horn-near rule	false	44	--	"That might augment the hell horn."
 
 table of Trim Tram guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -356,7 +351,8 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of yold yard guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"mold marred" or "gold guard" or "cold card" or "hold hard"	bold-bard-near rule	false	--	--	"You'll actually be getting that later!"
+"mold marred"	trivially true rule	false	--	--	"Why ruin the rustic environment?"
+"gold guard" or "cold card" or "hold hard"	bold-bard-near rule	false	--	--	"You'll actually be getting that later!"
 
 book guesses by item, alphabetized
 
@@ -408,14 +404,15 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of clay cloak guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"stay stoke"	have-clay-cloak rule	false	--	--	"You take a slightly ungrammatical approach to keeping your spirits up." [start Been Buggin]
 "bray broke"	have-clay-cloak rule	false	--	--	"You try a poor-righteous-teacher approach with the clay cloak."
-"k coke"	have-clay-cloak rule	false	--	--	"No fizzy beverage (or anything less healthy) appears."
-"say soak"	have-clay-cloak rule	false	--	--	"Water might make the clay cloak even heavier and messier."
-"yay yoke/yolk"	have-clay-cloak rule	false	--	--	"Some woke people like to self-immolate, but not you."
-"pay poke"	have-clay-cloak rule	false	--	--	"The clay cloak was free. No need to pay anything."
 "cray croak"	have-clay-cloak rule	false	--	--	"You make a weird noise. It doesn't help, but it doesn't hurt."
 "fay folk"	have-clay-cloak rule	false	--	--	"There's not enough magic in this game? Aww, rats."
+"jay joke"	have-clay-cloak rule	false	--	--	"You recall some off-color drug humor from your younger days."
+"k coke"	have-clay-cloak rule	false	--	--	"No fizzy beverage (or anything less healthy) appears."
+"pay poke"	have-clay-cloak rule	false	--	--	"The clay cloak was free. No need to pay anything."
+"say soak"	have-clay-cloak rule	false	--	--	"Water might make the clay cloak even heavier and messier."
+"stay stoke"	have-clay-cloak rule	false	--	--	"Wrong grammar is potentially very woke and all, but you don't need to act out or show anyone anything. Still, it keeps your spirits up a bit."
+"yay yoke/yolk"	have-clay-cloak rule	false	--	--	"Some woke people like to self-immolate, but not you."
 
 table of cool cap tool tap guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
@@ -496,18 +493,6 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "low lappin"	have-toe-tappin rule	false	101	--	"You put your best-ever time for a mile run to [Toe], but you can't see how it will help here. Plus, [i]Chariots of Fire[r] works better, anyway."
 "fo/foe fappin"	have-toe-tappin rule	false	101	--	"[Toe] may not be highbrow, but it's not that low-class."
 
-table of we whine guesses
-mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"bree brine"	we-whine-near rule	false	34	sign-unseen rule	"Less gross than what's in [we whine], but no." [start Trending Tribe]
-"fee fine"	we-whine-near rule	false	34	sign-unseen rule	"No, there's no charge on [we whine]."
-"flee flyin"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] encourages thinking outside the box, but that's a bit far."
-"key kine"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] already provides a figurative key to things."
-"knee nine"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] is only about mental violence and nastiness to people 'beneath' you, not physical."
-"lee/lea line"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] only blows figurative wind."
-"pee pine"	we-whine-near rule	false	34	sign-unseen rule	"There probably is a section in [we whine] about figuratively marking your territory, but it's probably [fairy file]-approved, so no."
-"she shine"	we-whine-near rule	false	34	sign-unseen rule	"Why yes, pointless greed should not be limited to men only."
-"tee tine"	we-whine-near rule	false	34	sign-unseen rule	"No golf tee provides a bookmark for [we whine]."
-
 table of too totes new notes guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "flu/flew floats"	has-too-totes rule	false	--	--	"No flying craft appears, but on the bright side, you fail to feel sick."
@@ -520,6 +505,24 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "blew/blue bloats"	has-too-totes rule	false	--	--	"You thought you saw Violet Beauregarde roll by there for a minute."
 "stew stoats"	has-too-totes rule	false	--	--	"Badger, Mole and Rat would agree that's going too far. Even Toad."
 "shoo shoats"	has-too-totes rule	false	--	--	"There are no young pigs here to shoo."
+
+table of we whine guesses
+mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
+"bree brine"	we-whine-near rule	false	34	sign-unseen rule	"Less gross than what's in [we whine], but no." [start Trending Tribe]
+"fee fine"	we-whine-near rule	false	34	sign-unseen rule	"No, there's no charge on [we whine]."
+"flee flyin"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] encourages thinking outside the box, but that's a bit far."
+"key kine"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] already provides a figurative key to things."
+"knee nine"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] is only about mental violence and nastiness to people 'beneath' you, not physical."
+"lee/lea line"	we-whine-near rule	false	34	sign-unseen rule	"[we whine] only blows figurative wind."
+"pee pine"	we-whine-near rule	false	34	sign-unseen rule	"There probably is a section in [we whine] about figuratively marking your territory, but it's probably [fairy file]-approved, so no."
+"she shine"	we-whine-near rule	false	34	sign-unseen rule	"Why yes, pointless greed should not be limited to men only."
+"tee tine"	we-whine-near rule	false	34	sign-unseen rule	"No golf tee provides a bookmark for [we whine]."
+
+table of well worn hell horn guesses
+mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
+"bell born"	hell-horn-near rule	false	44	--	"There's enough noise right now."
+"shell shorn"	hell-horn-near rule	false	44	--	"You must be on the right track. But perhaps the shell that is shorn might make the [hell horn] more effective."
+"swell sworn"	hell-horn-near rule	false	44	--	"That might augment the hell horn."
 
 book wallish guesses
 
