@@ -18,8 +18,10 @@ You need something a little more than homonyms to leave the Wet Wood. It feels l
 >whet would
 You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
 
+#ttc-table-of-verb-checks-vh-get-good-rule-git
 >git goob
 You don't need source control, but you're close, here.
+
 >git good
 The HA HALF button lights up on your Leet Learner, and its brightness suggests your rhyme must be very close, indeed.
 !don't need source control
@@ -39,7 +41,7 @@ You need to have riffed, but with rhyming, as you did in the Wet Wood.
 >gift giver
 by one point
 
-#homonyms close test verb-find-fault-fined
+#ttc-table-of-verb-checks-vh-find-fault-rule-fined
 >fined falt
 Pretty close, but you don't need to make this a debtor's prison. You need to make it easier to get out of.
 
@@ -57,7 +59,7 @@ You had to lose a letter from Vined to find fault. Maybe this time you need to a
 >green grass
 by one point
 
-#homonyms close test verb-grow-grit-owe
+#ttc-table-of-verb-checks-vh-grow-grit-rule-owe
 >owe oit
 Not quite OWE ... but you sense there are several ways to toughen up.
 
@@ -71,7 +73,7 @@ by one point
 >mash map
 by one point
 
-#homonyms close test verb-mind-me-mined
+#ttc-table-of-verb-checks-vh-mind-me-rule-mined
 >mined moo
 You need to take care of, not booby-trap, yourself.
 
@@ -101,19 +103,19 @@ You could just L or X or LOOK for that. The pier is more flexible than that--rhy
 >steal xxx
 The ceiling seer would not approve!
 
-#homonyms close test verb-kneel-near-neal
+#ttc-table-of-verb-checks-vh-kneel-near-rule-neal
 >neal neyer
 You don't need to call anyone by their first names. It would be disrespectful to try, with the Ceiling Seer.
 
-#homonyms close test verb-deal-dear-deer
+#ttc-table-of-verb-checks-vh-deal-dear-rule-deer
 >deel deer
 You don't need to populate this area with wildlife. It's the right amount of peaceful.
 
-#homonyms close test verb-heal-here-heel
+#ttc-table-of-verb-checks-vh-heal-here-rule-heel-hear
 >heel heer
 The Ceiling Seer only helps the good guys.
 
-#homonyms close test verb-heal-here-hear
+#+ttc-table-of-verb-checks-vh-heal-here-rule-heel-hear
 >hael hear
 There is no noise or distraction preventing hearing.
 
@@ -160,7 +162,7 @@ You feel ... something. But not enough. Homonyms must not quite be the way to go
 
 >w
 
-#homonyms close test verb-mark-more-moor
+#ttc-table-of-verb-checks-vh-mark-more-rule-moor
 >murk moor
 Close, but what would a moor be doing near a store?
 
@@ -184,7 +186,7 @@ by one point
 Homonyms aren't the way to go, here.
 #[?? edge test case: if you've flipped this, shouldn't we have another error?]
 
-#homonyms close test verb-mystery-mall-maul
+#ttc-table-of-verb-checks-vh-mystery-mall-rule-maul
 >miss maul
 You don't need to destroy anything.
 
@@ -195,11 +197,11 @@ by one point
 >long maul
 Homonyms aren't the way to go, here.
 
-#homonyms close test verb-history-hall-haul
+#ttc-table-of-verb-checks-vh-history-hall-rule-haul
 >hiss haul
 You don't need THAT much stuff.
 
-#homonyms close test verb-glean-glows-gloze
+#ttc-table-of-verb-checks-vh-glean-glows-rule-gloze
 >gleen gloze
 You shouldn't be fishing for flattery.
 
@@ -213,7 +215,7 @@ You don't need fish or homonyms.
 >tow xxx
 You don't need a tow truck or homonyms.
 
-#homonyms close test verb-ho-happen-hoe
+#ttc-table-of-verb-checks-vh-ho-happen-rule-hoe
 >hoe hoppin
 Keep farming, you'll get the right homonym.
 
@@ -225,13 +227,15 @@ by one point
 
 >w
 
-#homonyms close test verb-lie-lol-lye
+#ttc-table-of-verb-checks-vh-lie-lol-rule-lye-loll
 >lye lawwal
 Lye poisoning is a serious matter. Maybe there's a better way to deal with the shawl, but only if you want.
-#homonyms close test verb-lie-lol-loll
+
+#+ttc-table-of-verb-checks-vh-lie-lol-rule-lye-loll
 >ly loll
 Instead of lolling, why not have more fun? Maybe there's a better way to deal with the shawl, but only if you want.
-#homonyms close test verb-not-near-knot
+
+#ttc-table-of-verb-checks-vh-not-near-rule-knot
 >knot kneer
 Homonyms will tie you up in knots in this game, especially homonyms of solutions to optional puzzles.
 
@@ -290,7 +294,7 @@ by one point
 
 >enter boat
 
-#homonyms close test verb-wake-whee-we
+#ttc-table-of-verb-checks-vh-wake-whee-rule-we
 >waik we
 You are already awake. You need to make Jake ache to be awake.
 
@@ -301,17 +305,18 @@ You feel ... something. But not enough. Homonyms must not quite be the way to go
 >wake whee
 by one point
 
-#homonyms close test verb-take-tea-t
+#ttc-table-of-verb-checks-vh-take-tea-rule-t-tee
 >taik t
 You need to, um, tee up something more positive.
-#homonyms close test verb-take-tea-tee
+
+#+ttc-table-of-verb-checks-vh-take-tea-rule-t-tee
 >taik tee
 You need to, um, tee up something more positive.
 
 >take tea
 by one point
 
-#homonyms close test verb-break-brie-brake
+#ttc-table-of-verb-checks-vh-break-brie-rule-brake
 >brake breee
 You get the feeling you can, but don't have to, change things up just a bit.
 
@@ -323,10 +328,18 @@ by one point
 >make map
 by one point
 
+# this is a bug! We want to be able to test "cappin" randomly
 #ttc-table-of-thing-homonyms-jake-g-hom-toe-tappin-to-co-capn-rule
 >cow cappin
+Toe Tappin' Row Rappin' is not about randomly shooting people. If you change things slightly, though, you should find someone to cooperate with.
+
+#+ttc-table-of-thing-homonyms-jake-g-hom-toe-tappin-to-co-capn-rule
+>cow cappin
+Toe Tappin' Row Rappin' is not about randomly shooting people. You already found someone to cooperate with.
+
+#ttc-table-of-verb-checks-vh-co-capn-rule-cappin
+>cow cappin
 You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypical violent rap song, anyway.
-#homonyms close test verb-co-capn-cappin
 
 >co capn
 by one point
@@ -337,11 +350,11 @@ Silent Sail
 
 >enter boat
 
-#homonyms close test verb-lean-luggin-lien
+#ttc-table-of-verb-checks-vh-lean-luggin-rule-lien
 >lien loggin
 Whoah! Close, but tax stuff is too complicated and bloated.
 
-#homonyms close test verb-mean-muggin-mien
+#ttc-table-of-verb-checks-vh-mean-muggin-rule-mien
 >mien moggin
 Something similar, but much tougher, if not tougher to spell, than mien.
 
@@ -418,11 +431,11 @@ That'd be a heel turn, actually liking We Whine: ME, MINE.
 >wine xxx
 We Whine: ME, MINE may drive moral people to drink, but you don't need that. Or homonyms.
 
-#homonyms close test verb-see-sign-sea
+#ttc-table-of-verb-checks-vh-see-sign-rule-sea-sine
 >sea syne
 You remain landlocked. But perhaps you can find a better way to, umm, look at things.
 
-#homonyms close test verb-see-sign-sine
+#+ttc-table-of-verb-checks-vh-see-sign-rule-sea-sine
 >sey sine
 The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
@@ -441,7 +454,7 @@ by one point
 >pane xxxx
 Broken person, broken window, eh?
 
-#homonyms close test verb-plain-pleasant-plane
+#ttc-table-of-verb-checks-vh-plain-pleasant-rule-plane
 >plane present
 The peasant acquires no magical transportation.
 
@@ -469,7 +482,7 @@ by one point
 >choral xxx
 You don't need the cage to sing. You need to figure who's in there.
 
-#homonyms close test verb-moral-mage-morel
+#ttc-table-of-verb-checks-vh-moral-mage-rule-morel
 >morel may
 You don't need a plantomancer.
 
@@ -545,7 +558,7 @@ by one point
 >n
 >e
 
-#homonyms close test verb-dear-dull-deer
+#ttc-table-of-verb-checks-vh-dear-dull-rule-deer
 >deer doll
 But the beer bull might maul the deer.
 
@@ -592,11 +605,11 @@ by one point
 >e
 >e
 
-#homonyms close test verb-so-sappin-sew
+#ttc-table-of-verb-checks-vh-so-sappin-rule-sew-sow
 >sew soppin
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
-#homonyms close test verb-so-sappin-sow
+#+ttc-table-of-verb-checks-vh-so-sappin-rule-sew-sow
 >sow soppin
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
 
@@ -633,7 +646,7 @@ by one point
 
 >n
 
-#homonyms close test verb-cast-cap-caste
+#ttc-table-of-verb-checks-vh-cast-cap-rule-caste
 >caste kap
 You don't have to show anyone you're better than they are. Well, maybe you can defeat them in a challenge, but that's different.
 
@@ -646,15 +659,15 @@ by one point
 >cast cap
 by one point
 
-#homonyms close test verb-wood-one-won
+#ttc-table-of-verb-checks-vh-wood-one-rule-won-would
 >whud won
 The good gun seems to bend a bit. You must be close to a concrete way to change it.
 
-#homonyms close test verb-wood-one-would
+#+ttc-table-of-verb-checks-vh-wood-one-rule-won-would
 >would wun
 The good gun seems to bend a bit. You must be close to a concrete way to change it.
 
-#homonyms close test verb-meeker-muscle-mussel
+#ttc-table-of-verb-checks-vh-meeker-muscle-rule-mussel
 >meaker mussel
 Ooh! You're on the right track, but you don't quite need to turn Russell into seafood.
 
@@ -697,7 +710,7 @@ Perhaps their soulless corporate overlords would be interested in a quick buck, 
 >bored xxx
 Sadly, the bot board is unable to feel bored of sitting around and being repressive.
 
-#homonyms close test verb-got-gored-gourd
+#ttc-table-of-verb-checks-vh-got-gored-rule-gourd
 >xxx gourd
 That worked in The Life of Brian, but ... well, you need something with more oomph. You're close.
 
@@ -716,7 +729,7 @@ The Airy Isle can't really be changed.
 >aisle xxx
 The Airy Isle can't really be changed.
 
-#homonyms close test verb-hot-horde-hoard
+#ttc-table-of-verb-checks-vh-hot-horde-rule-hoard
 >hoard haught
 Treasure isn't the goal, here. You need allies.
 
@@ -733,7 +746,7 @@ by one point
 >got gored
 by one point
 
-#homonyms close test verb-whoa-wait-weight
+#ttc-table-of-verb-checks-vh-whoa-wait-rule-weight
 >woo weight
 You wouldn't want to be crushed by a weight. But you've got the right idea.
 
@@ -763,7 +776,7 @@ The well worn hell horn is already giving a false warning.
 >tell torn
 by one point
 
-#homonyms close test verb-merry-mile-marry
+#ttc-table-of-verb-checks-vh-merry-mile-rule-marry
 >myill marry
 It's debatable whether marriage makes things happier or not. Tweak things for assurance.
 
@@ -774,7 +787,7 @@ by one point
 >terry tyle
 !Nobody named Terry appears, nor does any terry cloth.
 
-#homonyms close test verb-bury-bile-berry
+#ttc-table-of-verb-checks-vh-bury-bile-rule-berry
 >buyall berry
 You need to do the opposite of eat something.
 

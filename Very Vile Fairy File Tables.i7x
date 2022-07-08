@@ -1782,8 +1782,13 @@ hot horde	--	"hoard"	"The horde is after victories, not treasure."]
 section thing homonym rules [xxthr]
 
 this is the hom-toe-tappin-to-co-capn rule:
-	unless jake g is fungible and toe tappin row rappin is fungible, the rule fails;
-	if sco-co-capn is true, the rule fails;
+	if toe tappin row rappin is not fungible, the rule fails;
+	if sco-co-capn is true:
+		say "[rappin] is not about randomly shooting people. You already found someone to cooperate with.";
+		the rule succeeds;
+	if jake g is not fungible:
+		say "[rappin] is not about randomly shooting people. If you change things slightly, though, you should find someone to cooperate with.";
+		the rule succeeds;
 
 this is the hom-bold-bard-to-bowled-barred rule:
 	if the player's command includes "bowled":

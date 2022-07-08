@@ -22,25 +22,37 @@ Homonym detection is already set to on.
 >do due
 I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
 
+#ttc-table-of-verb-checks-3-get
 >zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-3-good
 >good zget
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-3-get
 >zgood get
 DEBUG: vc-get-good rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-95-bag
 >zbig bag
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-95-big
 >big zbag
 DEBUG: vc-big-bag rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-96-rolling
 >zreally rolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-96-really
 >really zrolling
 DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -62,9 +74,12 @@ You already guessed the significance of my pen name.
 >big bag
 by one point
 
+#+ttc-table-of-verb-checks-95-bag
 >zbig bag rule
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-95-big
 >big zbag rule
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -80,9 +95,22 @@ by one point
 !by one point
 You already managed to GET GOOD.
 
+#+ttc-table-of-verb-checks-3-get
+>zget good
+!DEBUG: vc-get-good rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-3-good
+>good zget
+!DEBUG: vc-get-good rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-4-gift
 >zgift giver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-4-giver
 >gift zgiver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -94,16 +122,22 @@ by one point
 !by one point
 That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's.
 
+#+ttc-table-of-verb-checks-4-giver
 >zgift giver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-4-gift
 >gift zgiver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-5-fault
 >zfind fault rule
 DEBUG: vc-find-fault rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-5-find
 >find zfault rule
 DEBUG: vc-find-fault rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -115,16 +149,22 @@ by one point
 !by one point
 You already did, and things got worse. You'll have to try something else.
 
+#+ttc-table-of-verb-checks-5-fault
 >zfind fault rule
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-5-find
 >find zfault rule
 !DEBUG: vc-find-fault rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-6-grass
 >zgreen grass rule
 DEBUG: vc-green-grass rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-6-green
 >green zgrass rule
 DEBUG: vc-green-grass rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -136,16 +176,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-6-green
 >zgreen grass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-6-grass
 >green zgrass rule
 !DEBUG: vc-green-grass rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-7-grit-it-sit
 >zgrow grit rule
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-7-grow-oh-so
 >grow zgrit rule
 DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -157,17 +203,43 @@ by one point
 !by one point
 You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.
 
+#+ttc-table-of-verb-checks-7-grit-it-sit
 >zgrow grit rule
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-7-grow-oh-so
 >grow zgrit rule
 !DEBUG: vc-grow-grit rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-8-map-bap-rap-slap
 >zmash map rule
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-8-mash-bash-rash-slash
 >mash zmap rule
+DEBUG: vc-mash-map rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-8-map-bap-rap-slap
+>zrash rap rule
+DEBUG: vc-mash-map rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-8-mash-bash-rash-slash
+>rash zrap rule
+DEBUG: vc-mash-map rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-8-map-bap-rap-slap
+>zslash slap rule
+DEBUG: vc-mash-map rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-8-mash-bash-rash-slash
+>slash zslap rule
 DEBUG: vc-mash-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
@@ -185,9 +257,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-mash-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-9-me
 >zmind me rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-9-mind
 >mind zme rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -260,9 +335,12 @@ You already minded yourself.
 !DEBUG: vc-mind-me rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-10-flam-scam
 >zflim flam rule
 DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-10-flim-skim
 >flim zflam rule
 DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -270,9 +348,12 @@ The HA HALF button lights up on your Leet Learner.
 >flim flam
 by one point
 
+#ttc-table-of-verb-checks-13-blessed-blest
 >zbloke blessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-13-bloke
 >bloke zblessed rule
 DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -280,6 +361,16 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 >bloke blessed
 by one point
 You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
+
+#+ttc-table-of-verb-checks-13-blessed-blest
+>zbloke blessed rule
+!DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-13-bloke
+>bloke zblessed rule
+!DEBUG: vc-bloke-blessed rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 >really rolling
 !by one point
@@ -289,18 +380,24 @@ You already guessed the significance of my pen name.
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-10-flam-scam
 >zflim flam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-10-flim-skim
 >flim zflam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >s
 
+#ttc-table-of-verb-checks-19-near
 >zkneel near rule
 DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-19-kneel-kneeling
 >kneel znear rule
 DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -312,16 +409,22 @@ by one point
 !by one point
 No need to kneel twice.
 
+#+ttc-table-of-verb-checks-19-near
 >zkneel near rule
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-19-kneel-kneeling
 >kneel znear rule
 !DEBUG: vc-kneel-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-20-fear
 >zfeel fear rule
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-20-feel-feeling
 >feel zfear rule
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -333,16 +436,22 @@ by one point
 !by one point
 No need to overdo feeling fear.
 
+#+ttc-table-of-verb-checks-20-fear
 >zfeel fear rule
 !DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-20-feel-feeling
 >feel zfear rule
 !DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-21-dear
 >zdeal dear rule
 DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-21-deal-dealing
 >deal zdear rule
 DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -354,16 +463,22 @@ by one point
 !by one point
 Overdoing dealing with it is ... one way to show you might not be dealing with it.
 
+#+ttc-table-of-verb-checks-21-dear
 >zdeal dear rule
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-21-deal-dealing
 >deal zdear rule
 !DEBUG: vc-deal-dear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-18-appear
 >zappealing appear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-18-appealing
 >appealing zappear rule
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -372,29 +487,39 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 by one point
 !A stun-steed zooms by
 
+11xx-table-of-verb-checks-vc-appealing-appear-rule
 >appealing appear
 !by one point
 The peeling pier already looks better.
 
+#+ttc-table-of-verb-checks-18-appear
 >zappealing appear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-18-appealing
 >appealing zappear rule
 !DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 >n
 
+#ttc-table-of-verb-checks-11-spliff
 >zspark spliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-11-spark
 >spark zspliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-12-start
 >zstrong start rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-12-strong
 >strong zstart rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -406,16 +531,22 @@ by one point
 !by one point
 You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.
 
+#+ttc-table-of-verb-checks-12-start
 >zstrong start rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-12-strong
 >strong zstart rule
 !DEBUG: vc-strong-start rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-14-free
 >zfall free rule
 DEBUG: vc-fall-free rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-14-fall
 >fall zfree rule
 DEBUG: vc-fall-free rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -427,16 +558,22 @@ by one point
 !by one point
 The tree is already fallen. It's in a good place.
 
+#+ttc-table-of-verb-checks-14-free
 >zfall free rule
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-14-fall
 >fall zfree rule
 !DEBUG: vc-fall-free rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-15-deep
 >zdive deep rule
 DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-15-dive
 >dive zdeep rule
 DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -448,16 +585,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-15-deep
 >zdive deep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-15-dive
 >dive zdeep rule
 !DEBUG: vc-dive-deep rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-16-pile
 >zpaper pile rule
 DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-16-paper
 >paper zpile rule
 DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -469,16 +612,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-16-pile
 >zpaper pile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-16-paper
 >paper zpile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-17-binder
 >zbacked binder rule
 DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-17-backed
 >backed zbinder rule
 DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -490,9 +639,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-17-binder
 >zbacked binder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-17-backed
 >backed zbinder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -501,9 +653,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 >w
 
+#ttc-table-of-verb-checks-25-door
 >zdark door rule
 DEBUG: vc-dark-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-25-dark
 >dark zdoor rule
 DEBUG: vc-dark-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -515,16 +670,22 @@ by one point
 !by one point
 You already made the dark door appear.
 
+#+ttc-table-of-verb-checks-25-door
 >zdark door rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-25-dark
 >dark zdoor rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-26-more
 >zmark more rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-26-mark
 >mark zmore rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -536,16 +697,22 @@ by one point
 !by one point
 You already saw what you could.
 
+#+ttc-table-of-verb-checks-26-more
 >zmark more rule
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
->mark zmore rule
+
+#+ttc-table-of-verb-checks-26-mark
+>+mark zmore rule
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-27-clay
 >zcleared clay rule
 DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-27-cleared
 >cleared zclay rule
 DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -557,18 +724,24 @@ by one point
 !by one point
 The clay is cleared enough.
 
+#+ttc-table-of-verb-checks-27-clay
 >zcleared clay rule
 !DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-27-cleared
 >cleared zclay rule
 !DEBUG: vc-cleared-clay rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >w
 
+#ttc-table-of-verb-checks-24-mall
 >zmystery mall rule
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-24-mystery
 >mystery zmall rule
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -580,16 +753,22 @@ by one point
 !by one point
 You've already flipped this area to the Mystery Mall.
 
+#+ttc-table-of-verb-checks-24-mall
 >zmystery mall rule
 !DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-24-mystery
 >mystery zmall rule
 !DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-36-wanksta
 >zwhatta wanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-36-whatta
 >whatta zwanksta rule
 DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -601,18 +780,24 @@ by one point
 !by one point
 That insult only works once.
 
+#+ttc-table-of-verb-checks-36-wanksta
 >zwhatta wanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-36-whatta
 >whatta zwanksta rule
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 >listen
 
+#ttc-table-of-verb-checks-32-lame
 >zlots lame rule
 DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-32-lots
 >lots zlame rule
 DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -624,16 +809,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-32-lame
 >zlots lame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-32-lots
 >lots zlame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-34-happen
 >zho happen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
+
+#ttc-table-of-verb-checks-34-ho
 >ho zhappen rule
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
@@ -653,16 +844,22 @@ You already said HO HAPPEN. Now you have to make things happen!
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-34-happen
 >zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-34-ho
 >ho zhappen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-33-nappin-napping
 >zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
+
+#ttc-table-of-verb-checks-33-no-know
 >no znappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
@@ -674,18 +871,24 @@ by one point
 !by one point
 You already changed Toe Tappin Row Rappin that way.
 
+#+ttc-table-of-verb-checks-33-nappin-napping
 >zno nappin rule
 !DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-33-no-know
 >no znappin rule
 !DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >w
 
+#ttc-table-of-verb-checks-43-lol
 >zlie lol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-43-lie
 >lie zlol rule
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -697,16 +900,22 @@ by one point
 !by one point
 The shy shawl has taken enough abuse.
 
+#+ttc-table-of-verb-checks-43-lol
 >zlie lol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-43-lie
 >lie zlol rule
 !DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-44-near
 >znot near rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-44-not
 >not znear rule
 DEBUG: vc-not-near rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -718,16 +927,22 @@ by one point
 !by one point
 You already teleported for a bonus point.
 
+#+ttc-table-of-verb-checks-44-near
 >znot near rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-44-not
 >not znear rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-42-hat
 >zhard hat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-42-hard
 >hard zhat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -739,9 +954,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-42-hat
 >zhard hat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-42-hard
 >hard zhat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -752,9 +970,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >n
 >w
 
+#ttc-table-of-verb-checks-57-well
 >zwork well rule
 DEBUG: vc-work-well rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-57-work
 >work zwell rule
 DEBUG: vc-work-well rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -766,18 +987,24 @@ by one point
 !by one point
 Any further futzing might undo your previous good work.
 
+#+ttc-table-of-verb-checks-57-well
 >zwork well rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-57-work
 >work zwell rule
 !DEBUG: vc-work-well rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >e
 
+#ttc-table-of-verb-checks-49-land
 >zloft land rule
 DEBUG: vc-loft-land rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-49-loft
 >loft zland rule
 DEBUG: vc-loft-land rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -791,30 +1018,44 @@ You're already on the Loft Land.
 
 >soft sand
 !by one point
+
 >soft sand
 !by one point
 You're already on the Soft Sand.
+
 >undo
 >undo
+
+# soft sand doesn't have a "before point" check because Soft Sand is the original name of the place
+
+#ttc-table-of-verb-checks-50-sand
 >zsoft sand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
+
+#ttc-table-of-verb-checks-50-soft
 >soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
+#+ttc-table-of-verb-checks-49-land
 >zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-49-loft
 >loft zland rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >w
 
+#ttc-table-of-verb-checks-54-dull
 >zdreaming dull rule
 DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-54-dreaming
 >dreaming zdull rule
 DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -826,16 +1067,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-54-dull
 >zdreaming dull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-54-dreaming
 >dreaming zdull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-55-fave
 >zfirst fave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-55-first
 >first zfave rule
 DEBUG: vc-first-fave rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -847,16 +1094,22 @@ by one point
 !by one point
 The Curst Cave is already a cheerier place.
 
+#+ttc-table-of-verb-checks-55-fave
 >zfirst fave rule
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-55-first
 >first zfave rule
 !DEBUG: vc-first-fave rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-53-cap
 >zcool cap rule
 DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-53-cool
 >cool zcap rule
 DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -868,9 +1121,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-53-cap
 >zcool cap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-53-cool
 >cool zcap rule
 !DEBUG: vc-cool-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -879,9 +1135,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >s
 >e
 
+#ttc-table-of-verb-checks-66-sail-sale
 >zsilent sail rule
 DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-66-silent
 >silent zsail rule
 DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -893,16 +1152,22 @@ by one point
 !by one point
 You already called up the flooring float.
 
+#+ttc-table-of-verb-checks-66-sail-sale
 >zsilent sail rule
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-66-silent
 >silent zsail rule
 !DEBUG: vc-silent-sail rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-65-bridge
 >zbrightening bridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-65-brightening
 >brightening zbridge rule
 DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -914,16 +1179,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-65-bridge
 >zbrightening bridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-65-brightening
 >brightening zbridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-67-boat
 >zboring boat rule
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-67-boring
 >boring zboat rule
 DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -935,18 +1206,24 @@ by one point
 !by one point
 The boat is already boring and practical enough.
 
+#+ttc-table-of-verb-checks-67-boat
 >zboring boat rule
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-67-boring
 >boring zboat rule
 !DEBUG: vc-boring-boat rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >enter boat
 
+#ttc-table-of-verb-checks-68-whee-wee
 >zwake whee rule
 DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-68-wake
 >wake zwhee rule
 DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -958,16 +1235,22 @@ by one point
 !by one point
 He's already awake, Blake.
 
+#+ttc-table-of-verb-checks-68-whee-wee
 >zwake whee rule
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-68-wake
 >wake zwhee rule
 !DEBUG: vc-wake-whee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-69-tea
 >ztake tea rule
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-69-take
 >take ztea rule
 DEBUG: vc-take-tea rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -979,16 +1262,22 @@ by one point
 !by one point
 Don't get greedy. You have the sustenance needed to work with Jake G.
 
+#+ttc-table-of-verb-checks-69-tea
 >ztake tea rule
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-69-take
 >take ztea rule
 !DEBUG: vc-take-tea rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-71-break
 >zbreak brie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-71-brie
 >break zbrie rule
 DEBUG: vc-break-brie rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -1000,16 +1289,22 @@ by one point
 !by one point
 Hey! Don't get greedy, now.
 
+#+ttc-table-of-verb-checks-71-brie
 >zbreak brie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-71-break
 >break zbrie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-70-fake
 >zfake fee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-70-fee
 >fake zfee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1021,18 +1316,24 @@ by one point
 !by one point
 That's over. Time to work with Jake!
 
+#+ttc-table-of-verb-checks-70-fee
 >zfake fee rule
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-70-fake
 >fake zfee rule
 !DEBUG: vc-fake-fee rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >e
 
+#ttc-table-of-verb-checks-72-map
 >zmake map rule
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-72-make
 >make zmap rule
 DEBUG: vc-make-map rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1044,16 +1345,22 @@ by one point
 !by one point
 You already made a map.
 
+#+ttc-table-of-verb-checks-72-map
 >zmake map rule
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-72-make
 >make zmap rule
 !DEBUG: vc-make-map rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-73-capn
 >zco capn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
+
+#ttc-table-of-verb-checks-73-co
 >co zcapn rule
 DEBUG: vc-co-capn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
@@ -1065,16 +1372,22 @@ by one point
 !by one point
 Jake already is.
 
+#+ttc-table-of-verb-checks-73-capn
 >zco capn rule
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-73-co
 >co zcapn rule
 !DEBUG: vc-co-capn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-74-snap
 >zsnake snap rule
 DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-74-snake
 >snake zsnap rule
 DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1087,18 +1400,24 @@ Silent Sail
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-74-snap
 >zsnake snap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-74-snake
 >snake zsnap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >enter boat
 
+#ttc-table-of-verb-checks-2-strong
 >zstay strong rule
 DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-2-stay
 >stay zstrong rule
 DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1110,16 +1429,22 @@ by one point
 !by one point
 Staying strong reduced one kind of negativity, but now there's another.
 
+#+ttc-table-of-verb-checks-2-strong
 >zstay strong rule
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-2-stay
 >stay zstrong rule
 !DEBUG: vc-stay-strong rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-1-glad
 >zglow glad rule
 DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-1-glow
 >glow zglad rule
 DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1131,16 +1456,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-1-glad
 >zglow glad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-1-glow
 >glow zglad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-76-muggin-mugging
 >zmean muggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-76-mean
 >mean zmuggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1152,16 +1483,22 @@ by one point
 !by one point
 You already learned mean muggin'.
 
+#+ttc-table-of-verb-checks-76-muggin-mugging
 >zmean muggin rule
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-76-mean
 >mean zmuggin rule
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-75-luggin-lugging
 >zlean luggin rule
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-75-lean
 >lean zluggin rule
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1174,16 +1511,22 @@ by one point
 You already learned lean luggin'.
 >undo
 
+#+ttc-table-of-verb-checks-75-luggin-lugging
 >zlean luggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-75-lean
 >lean zluggin rule
 !DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-28-buster-duster
 >zbumped buster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-28-bumped-dumped
 >bumped zbuster rule
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -1195,9 +1538,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-28-buster-duster
 >zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-28-bumped-dumped
 >bumped zbuster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -1208,9 +1554,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >w
 >w
 
+#ttc-table-of-verb-checks-38-glows
 >zglean glows rule
 DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-38-glean
 >glean zglows rule
 DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1222,25 +1571,34 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-38-glows
 >zglean glows rule
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-38-glean
 >glean zglows rule
 !DEBUG: vc-glean-glows rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-23-hall
 >zhistory hall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
+
+#ttc-table-of-verb-checks-23-history
 >history zhall
 DEBUG: vc-history-hall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
 
 >history hall
 
+#+ttc-table-of-verb-checks-24-mall
 >zmystery mall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
+
+#+ttc-table-of-verb-checks-24-mystery
 >mystery zmall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
@@ -1248,9 +1606,12 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 !by one point
 You already flipped back to History Hall.
 
+#ttc-table-of-verb-checks-37-yonder
 >zyoure yonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-37-youre-your-yore
 >youre zyonder rule
 DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1258,22 +1619,29 @@ The HA HALF button lights up on your Leet Learner.
 >youre yonder
 by one point
 
+11xx-table-of-verb-checks-vc-youre-yonder-rule
 >youre yonder
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-37-yonder
 >zyoure yonder rule
 !DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-37-youre-your-yore
 >youre zyonder rule
 !DEBUG: vc-youre-yonder rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >out
 
+#ttc-table-of-verb-checks-39-smoke
 >zsmashing smoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-39-smashing
 >smashing zsmoke rule
 DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1285,9 +1653,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-39-smoke
 >zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-39-smashing
 >smashing zsmoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1295,9 +1666,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >in
 >w
 
+#ttc-table-of-verb-checks-40-libe
 >zlending libe rule
 DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-40-lending
 >lending zlibe rule
 DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1309,16 +1683,22 @@ by one point
 !by one point
 Yes, It's a library now.
 
+#+ttc-table-of-verb-checks-40-libe
 >zlending libe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-40-lending
 >lending zlibe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-41-sign
 >zsee sign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-41-see
 >see zsign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1330,9 +1710,12 @@ by one point
 !by one point
 You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
 
+#+ttc-table-of-verb-checks-41-sign
 >zsee sign rule
 !DEBUG: vc-see-sign rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-41-see
 >see zsign rule
 !DEBUG: vc-see-sign rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1345,9 +1728,12 @@ You've seen enough signs. Overkill might leave you demoralized or too analytical
 
 >n
 
+#ttc-table-of-verb-checks-51-pleasant
 >zplain pleasant rule
 DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-51-plain
 >plain zpleasant rule
 DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1359,18 +1745,24 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-51-pleasant
 >zplain pleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-51-plain
 >plain zpleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >w
 
+#ttc-table-of-verb-checks-56-mage
 >zmoral mage rule
 DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-56-moral
 >moral zmage rule
 DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1382,9 +1774,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-56-mage
 >zmoral mage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-56-moral
 >moral zmage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1392,9 +1787,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >e
 >e
 
+#ttc-table-of-verb-checks-60-sound
 >zsit sound rule
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-60-sit
 >sit zsound rule
 DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1406,16 +1804,22 @@ by one point
 !by one point
 You already sat sound. But maybe there's a way to feel more comfortable.
 
+#+ttc-table-of-verb-checks-60-sound
 >zsit sound rule
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-60-sit
 >sit zsound rule
 !DEBUG: vc-sit-sound rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-61-found
 >zfit found rule
 DEBUG: vc-fit-found rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-61-fit
 >fit zfound rule
 DEBUG: vc-fit-found rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1427,18 +1831,24 @@ by one point
 !by one point
 You already fit in.
 
+#+ttc-table-of-verb-checks-61-found
 >zfit found rule
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-61-fit
 >fit zfound rule
 !DEBUG: vc-fit-found rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >e
 
+#ttc-table-of-verb-checks-62-ways-maze-phase-fays-feys
 >zwinding ways rule
 DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-62-winding-minding-finding
 >winding zways rule
 DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1450,16 +1860,22 @@ by one point
 !by one point
 You already made it out of the Blinding Blaze.
 
+#+ttc-table-of-verb-checks-62-ways-maze-phase-fays-feys
 >zwinding ways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-62-winding-minding-finding
 >winding zways rule
 !DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-63-mappin-mapping
 >zmo mappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
+
+#ttc-table-of-verb-checks-63-mo-mow
 >mo zmappin rule
 DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
@@ -1471,16 +1887,22 @@ by one point
 !by one point
 You're already in the mood to map. No need to overdo it.
 
+#+ttc-table-of-verb-checks-63-mappin-mapping
 >zmo mappin rule
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-63-mo-mow
 >mo zmappin rule
 !DEBUG: vc-mo-mappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-64-lair-snare
 >zluck lair rule
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-64-luck-snuck
 >luck zlair rule
 DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1492,9 +1914,12 @@ by one point
 !by one point
 You already got the snuck snare from the luck lair.
 
+#+ttc-table-of-verb-checks-64-lair-snare
 >zluck lair rule
 !DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-64-luck-snuck
 >luck zlair rule
 !DEBUG: vc-luck-lair rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1506,9 +1931,12 @@ You already got the snuck snare from the luck lair.
 >w
 >d
 
+#ttc-table-of-verb-checks-29-tunnel
 >ztight tunnel rule
 DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-29-tight
 >tight ztunnel rule
 DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1520,18 +1948,24 @@ by one point
 !by one point
 You already narrowed the funnel to a tunnel.
 
+#+ttc-table-of-verb-checks-29-tunnel
 >ztight tunnel rule
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-29-tight
 >tight ztunnel rule
 !DEBUG: vc-tight-tunnel rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >w
 
+#ttc-table-of-verb-checks-30-niche
 >zknives niche rule
 DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-30-knives
 >knives zniche rule
 DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1543,9 +1977,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-30-niche
 >zknives niche rule
 !DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-30-knives
 >knives zniche rule
 !DEBUG: vc-knives-niche rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1556,9 +1993,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >n
 >e
 
+#ttc-table-of-verb-checks-58-dull
 >zdear dull rule
 DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-58-dear
 >dear zdull rule
 DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1570,16 +2010,22 @@ by one point
 !by one point
 You don't need to do any more taunting.
 
+#+ttc-table-of-verb-checks-58-dull
 >zdear dull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-58-dear
 >dear zdull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-59-null
 >znear null rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-59-near
 >near znull rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1591,9 +2037,12 @@ by one point
 !by one point
 You already reduced the bull's power!
 
+#+ttc-table-of-verb-checks-59-null
 >znear null rule
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-59-near
 >near znull rule
 !DEBUG: vc-near-null rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1606,9 +2055,12 @@ You already reduced the bull's power!
 
 >s
 
+#ttc-table-of-verb-checks-45-boss
 >zbeast boss rule
 DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-45-beast
 >beast zboss rule
 DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1620,16 +2072,22 @@ by one point
 !by one point
 You already summoned the Bull Beast.
 
+#+ttc-table-of-verb-checks-45-boss
 >zbeast boss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-45-beast
 >beast zboss rule
 !DEBUG: vc-beast-boss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-48-loss
 >zleast loss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-48-least
 >least zloss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1637,9 +2095,12 @@ The HA HALF button lights up on your Leet Learner.
 >least loss
 by one point
 
+#ttc-table-of-verb-checks-31-weed
 >zwild weed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-31-wild
 >wild zweed rule
 DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -1652,9 +2113,12 @@ by one point
 !by one point
 Greedy, to try for more.
 
+#+ttc-table-of-verb-checks-31-weed
 >zwild weed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-31-wild
 >wild zweed rule
 !DEBUG: vc-wild-weed rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -1668,18 +2132,24 @@ by one point
 !by one point
 Whoah, dude! Jonesing for more already?
 
+#+ttc-table-of-verb-checks-11-spliff
 >zspark spliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-11-spark
 >spark zspliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 >s
 
+#ttc-table-of-verb-checks-22-here
 >zheal here rule
 DEBUG: vc-heal-here rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-22-heal-healing
 >heal zhere rule
 DEBUG: vc-heal-here rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1691,9 +2161,12 @@ by one point
 !by one point
 No need to heal further.
 
+#+ttc-table-of-verb-checks-22-here
 >zheal here rule
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-22-heal-healing
 >heal zhere rule
 !DEBUG: vc-heal-here rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1701,9 +2174,12 @@ No need to heal further.
 >n
 >n
 
+#ttc-table-of-verb-checks-46-ceased-least
 >zcull ceased rule
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-46-cull-lul
 >cull zceased rule
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1715,9 +2191,12 @@ You already minimized your losses. Time to be more aggressive.
 >cull ceased
 by one point
 
+#+ttc-table-of-verb-checks-48-loss
 >zleast loss rule
 !DEBUG: vc-least-loss rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-48-least
 >least zloss rule
 !DEBUG: vc-least-loss rule tipped off the HA HALF button.
 #note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
@@ -1727,16 +2206,22 @@ by one point
 !by one point
 Don't brag too much, now.
 
+#+ttc-table-of-verb-checks-46-ceased-least
 >zcull ceased rule
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-46-cull-lul
 >cull zceased rule
 !DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-47-feast
 >zfull feast rule
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-47-full
 >full zfeast rule
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1748,9 +2233,12 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-47-feast
 >zfull feast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-47-full
 >full zfeast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1758,9 +2246,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >e
 >e
 
+#ttc-table-of-verb-checks-77-sappin-sapping
 >zso sappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
+
+#ttc-table-of-verb-checks-77-so
 >so zsappin rule
 DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
@@ -1772,16 +2263,22 @@ by one point
 !by one point
 You already discouraged some whining. Bringing it up again might make you the whiny one.
 
+#+ttc-table-of-verb-checks-77-sappin-sapping
 >zso sappin rule
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-77-so
 >so zsappin rule
 !DEBUG: vc-so-sappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-78-shore
 >zshining shore rule
 DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-78-shining
 >shining zshore rule
 DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1793,16 +2290,22 @@ by one point
 !by one point
 You already got (t)here.
 
+#+ttc-table-of-verb-checks-78-shore
 >zshining shore rule
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-78-shining
 >shining zshore rule
 !DEBUG: vc-shining-shore rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-80-door
 >zdining door rule
 DEBUG: vc-dining-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-80-dining
 >dining zdoor rule
 DEBUG: vc-dining-door rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1814,16 +2317,22 @@ by one point
 !by one point
 The dining door is already here.
 
+#+ttc-table-of-verb-checks-80-door
 >zdining door rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-80-dining
 >dining zdoor rule
 !DEBUG: vc-dining-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-81-pieced
 >zpull pieced rule
 DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-81-pull
 >pull zpieced rule
 DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1835,16 +2344,22 @@ by one point
 !by one point
 You don't need to pull anything other than the full feast.
 
+#+ttc-table-of-verb-checks-81-pieced
 >zpull pieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-81-pull
 >pull zpieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-79-more-moor
 >zmining more rule
 DEBUG: vc-mining-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-79-mining
 >mining zmore rule
 DEBUG: vc-mining-more rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1856,9 +2371,12 @@ by one point
 !by one point
 You've gotten all the mined materials you need. Wasting them might cause another whining war.
 
+#+ttc-table-of-verb-checks-79-more-moor
 >zmining more rule
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-79-mining
 >mining zmore rule
 !DEBUG: vc-mining-more rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -1868,9 +2386,12 @@ You've gotten all the mined materials you need. Wasting them might cause another
 >n
 >n
 
+#ttc-table-of-verb-checks-52-shield
 >zshow shield rule
 DEBUG: vc-show-shield rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-52-show-sho
 >show zshield rule
 DEBUG: vc-show-shield rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1882,18 +2403,24 @@ by one point
 !by one point
 Your gold guard has done its duty.
 
+#+ttc-table-of-verb-checks-52-shield
 >zshow shield rule
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-52-show-sho
 >show zshield rule
 !DEBUG: vc-show-shield rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >n
 
+#ttc-table-of-verb-checks-86-gappin-gapping
 >zgo gappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
+
+#ttc-table-of-verb-checks-86-go
 >go zgappin rule
 DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
@@ -1905,16 +2432,22 @@ by one point
 !by one point
 The action was okay, but I couldn't recognize the object.
 
+#+ttc-table-of-verb-checks-86-gappin-gapping
 >zgo gappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-86-go
 >go zgappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-87-caps
 >zcouple caps rule
 DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-87-couple
 >couple zcaps rule
 DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1926,16 +2459,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-87-caps
 >zcouple caps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-87-couple
 >couple zcaps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-82-cap
 >zcast cap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-82-cast
 >cast zcap rule
 DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1947,30 +2486,42 @@ by one point
 !by one point
 The cap has been cast.
 
+#+ttc-table-of-verb-checks-82-cap
 >zcast cap rule
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-82-cast
 >cast zcap rule
 !DEBUG: vc-cast-cap rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-83-bustle
 >zbeaker bustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#ttc-table-of-verb-checks-83-beaker
 >beaker zbustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+#ttc-table-of-verb-checks-84-muscle
 >zmeeker muscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-84-meeker
 >meeker zmuscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-85-one
 >zwood one rule
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-85-wood
 >wood zone rule
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -1982,9 +2533,12 @@ by one point
 !by one point
 Russell's moment of interest in the sciences has passed.
 
+#+ttc-table-of-verb-checks-83-bustle
 >zbeaker bustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
+
+#+ttc-table-of-verb-checks-83-beaker
 >beaker zbustle rule
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
@@ -2004,9 +2558,12 @@ by one point
 !by one point
 Russell's already meeker. Maybe disarm him?
 
+#+ttc-table-of-verb-checks-84-muscle
 >zmeeker muscle rule
 !DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-84-meeker
 >meeker zmuscle rule
 !DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
@@ -2018,18 +2575,24 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-85-one
 >zwood one rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-85-wood
 >wood zone rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
 >n
 
+#ttc-table-of-verb-checks-89-horde
 >zhot horde rule
 DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-89-hot
 >hot zhorde rule
 DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2041,16 +2604,22 @@ by one point
 !by one point
 You already summoned the Hot Horde.
 
+#+ttc-table-of-verb-checks-89-horde
 >zhot horde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-89-hot
 >hot zhorde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-88-lord
 >zlot lord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-88-lot
 >lot zlord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2062,16 +2631,22 @@ by one point
 !by one point
 You already summoned the Lot Lord.
 
+#+ttc-table-of-verb-checks-88-lord
 >zlot lord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-88-lot
 >lot zlord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-90-gored
 >zgot gored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-90-got
 >got zgored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2090,9 +2665,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !DEBUG: vc-got-gored rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-91-wait
 >zwhoa wait rule
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-91-whoa-whoah-woe
 >whoa zwait rule
 DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2104,16 +2682,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-91-wait
 >zwhoa wait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-91-whoa-whoah-woe
 >whoa zwait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-92-torn
 >ztell torn rule
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-92-tell
 >tell ztorn rule
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2125,16 +2709,22 @@ by one point
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
+#+ttc-table-of-verb-checks-92-torn
 >ztell torn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-92-tell
 >tell ztorn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-93-mile
 >zmerry mile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-93-merry
 >merry zmile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
@@ -2146,16 +2736,22 @@ by one point
 !by one point
 You already did. And forcing cheeriness tends to backfire.
 
+#+ttc-table-of-verb-checks-93-mile
 >zmerry mile rule
 !DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
+
+#+ttc-table-of-verb-checks-93-mile
 >merry zmile rule
 !DEBUG: vc-merry-mile rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
 
+#ttc-table-of-verb-checks-94-bile
 >zbury bile rule
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+#ttc-table-of-verb-checks-94-bury
 >bury zbile rule
 DEBUG: vc-bury-bile rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
