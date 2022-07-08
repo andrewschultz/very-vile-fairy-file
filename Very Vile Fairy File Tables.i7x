@@ -1679,13 +1679,15 @@ to seed-narratives:
 			if range-top < 0, increase range-top by core-max;
 	let current-blank-rows be 0;
 	if debug-state is true, say "DEBUG: range = [range-bottom] to [range-top].";
+	let cur-row be 0;
 	repeat through table of narratives:
+		increment cur-row;
 		if there is a rank-num entry:
 			if rank-num entry < 0, increase rank-num entry by core-max;
-			next;
-		increment current-blank-rows;
-		now rank-num entry is (((range-top - range-bottom) * current-blank-rows) / total-blank-rows) + range-bottom;
-		if debug-state is true, say "DEBUG: new narrative when you score [range-top - range-bottom] * [current-blank-rows] / [total-blank-rows] + [range-bottom] = [rank-num entry] points.";
+		else:
+			increment current-blank-rows;
+			now rank-num entry is (((range-top - range-bottom) * current-blank-rows) / total-blank-rows) + range-bottom;
+		if debug-state is true, say "DEBUG: new narrative at row [cur-row] when you score [range-top - range-bottom] * [current-blank-rows] / [total-blank-rows] + [range-bottom] = [rank-num entry] points.";
 
 narr-on is a truth state that varies. narr-on is true.
 
@@ -1693,10 +1695,10 @@ to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]N
 
 table of narratives [xxton]
 rank-num	done-yet	rank-txt
-1	false	"A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out 'Bright! Broader!'[paragraph break]The book's cover slowly becomes colored in. It is the [very vile]."
+1	false	"A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out 'Bright! Broader!'[paragraph break]The book's cover slowly becomes colored in. It is [the very vile]."
 2	false	"The plotters from your previous vision remark how it is not just a guide to manipulation, but something that can affect people from afar. Its one weakness: if someone gets too close and is legitimately happy and forgiving around it, its spell will break.[paragraph break]They leave it by the Real Rot/Feel Fought Spiel Spot, because they have other evil to delegate, elsewhere. Small relief--facing them would've been too much[if ever-toggle-narr is false and the story has not ended finally].[paragraph break]NOTE: y[narr-toggle][end if]."
-3	false	"Another vision![wfak][paragraph break]A bunch of seedy looking hoodlums approach the shrine where the [very vile] was left. You know they must be the Crimes Crew Times Two Kit Cohen told you about. While the general consensus is 'What an unusually stupid looking book,' they nonetheless play rock-paper-scissors to decide the poor sap who has to read it."
-4	false	"The loser of the rock paper scissors game's eyes open wide as they realize the [very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel the [very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
+3	false	"Another vision![wfak][paragraph break]A bunch of seedy looking hoodlums approach the shrine where [the very vile] was left. You know they must be the Crimes Crew Times Two Kit Cohen told you about. While the general consensus is 'What an unusually stupid looking book,' they nonetheless play rock-paper-scissors to decide the poor sap who has to read it."
+4	false	"The loser of the rock paper scissors game's eyes open wide as they realize [the very vile] doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.[paragraph break]You can already feel [the very vile] working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure."
 5	false	"You recall harsh words from an alleged friend, Chum Chilly Bum Billy: 'Some silly? Dumb, dilly.'"
 6	false	"You remember a depressing holiday season. 'Blear, Blue? Near New Year, You! We're ... WOO!' But you're having more fun now. You hope."
 7	false	"You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. 'Done?! Do?! Ton to one, woo!' they laugh. 'Fun, phew!' And yet ... they walk away from the [fairy file], as if they can't get too close to it."
@@ -1709,25 +1711,25 @@ rank-num	done-yet	rank-txt
 --	false	"You are quasi-catcalled as 'Some super-dumb duper.' You immediately wonder if you're too dumb to remember HOW you tried to dupe anyone, but after a moment's thought, you brush the insult off with 'Um, oop, err...'"
 --	false	"You picture yourself in a sales job. 'Cold call? Fold, fall.' You fail and are exiled to the Hold Hall."
 --	false	"You recall your only Dungeons and Dragons experience: a bunch of bullies yelling 'D&D? TNT! Flee [']n flee!'"
---	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be the [very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the [very vile] is warping your memories to make them traumatic?"
+--	false	"A memory from the past, well, sort of: 'Falling for calling? Cor! Bawling bore!' It must be [the very vile] doing its work on you.[paragraph break]You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps [the very vile] is warping your memories to make them traumatic?"
 --	false	"'Blue blood? Boo, bud!' Standard demoralizing fare. You feel a slight flu-flood."
 --	false	"The [poke pest] pipes up: 'High hope nigh? Nope!' You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible."
 --	false	"The [poke pest] is at it again: 'Raking rhyme?! Making mime!' You feel discouraged, knowing if you slow up, it will change its tune and taunt you with 'Taking time?'[paragraph break]The [very vile]'s reach is wide indeed. If it can mix up these taunts on you, what can it do to others?"
 --	false	"Despite your success, a memory: 'Rad? Wrong! Gad! Gong! Bad! BBOONNGG!' You remember all the times you felt guilty getting things right for the wrong reason, as well as the times you were mocked for knowing things too well."
 --	false	"Blare blame! Share shame!"
 --	false	"'Wet willy set? Silly! Bet, Billy!' A reminder of tormentors from your past."
---	false	"'Sing-song ding-dong!' he [poke pest] mocks you, as if the double-rhyme puzzles you solved were your fault. It does slightly ... ring wrong. But at least you are not trampled by King Kong or beaten badly at Ping Pong. You're getting used to the silly taunts." [?? if postmortem 4, expound on this. It was an original double rhyme before VVFF.]
+--	false	"'Sing-song ding-dong!' [the poke pest] mocks you, as if the double-rhyme puzzles you solved were your fault. It does slightly ... ring wrong. But at least you are not trampled by King Kong or beaten badly at Ping Pong. You're getting used to the silly taunts." [?? if postmortem 4, expound on this. It was an original double rhyme before VVFF.]
 --	false	"You almost started feeling good about things, but the [poke pest] whispers 'Smart smack. Heart? Hack!' Oh, [poke pest], you so manipulative!"
 --	false	"Sick, Sought Thick Thought."
 --	false	"'Wonder-weary? Blunder-bleary!' you think to yourself. No. Keep positive. Things must be ending soon."
 --	false	"'So seedy! Grow greedy! No, needy!' taunts the [poke pest]. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!"
---	false	"'Hi, hi! Why, why? My, my! Sigh, sigh!' There was a time when you thought you didn't even deserve complex insults. But here--surely the [very vile] is running out of steam? There's only one way to find out. Keep going!"
+--	false	"'Hi, hi! Why, why? My, my! Sigh, sigh!' There was a time when you thought you didn't even deserve complex insults. But here--surely [the very vile] is running out of steam? There's only one way to find out. Keep going!"
 -7	false	"Something in you snaps. You've made it this far. The [fairy file] must be close, but you hear yourself blurting 'Mock me, Jock? gee!'"
--6	false	"'How hot NOW?! Not!' the [poke pest] insinuates. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
+-6	false	"'How hot NOW?! Not!' [the poke pest] insinuates. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress."
 -5	false	"An unexpectedly cheery exhortation: 'Blast[']er blind, master mind!' The [fairy file]'s power must be cracking. And you must be very close."
--4	false	"An exceptionally loud howl from the [very vile fairy file]: 'Quit, quick! Sit sick!' You must be close."
--3	false	"Another howl from the [fairy file]: 'Gonna go off! Shun a show-off!'"
--1	false	"'More make war! Wake!' booms [very vile]. It's still scary and all, but ... nobody shows up. That's a positive."
+-4	false	"An exceptionally loud howl from [the very vile]: 'Quit, quick! Sit sick!' You must be close."
+-3	false	"Another howl from [the fairy file]: 'Gonna go off! Shun a show-off!'"
+-1	false	"'More make war! Wake!' booms [the very vile]. It's still scary and all, but ... nobody shows up. That's a positive."
 
 to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [scancol of x]"
 

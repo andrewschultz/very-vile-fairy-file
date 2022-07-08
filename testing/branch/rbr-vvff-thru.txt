@@ -294,7 +294,6 @@ Caring for young animals is a good thing but beyond this game's scope.
 >big bag
 by one point
 
-
 @all
 #+ttc-table-of-narratives-1
 !A vision
@@ -370,7 +369,7 @@ No comment on if and where proofreading is necessary, here.
 by one point
 
 @all
-#ttc-table-of-narratives-1
+#+ttc-table-of-narratives-1
 A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out "Bright! Broader!"
 The book's cover slowly becomes colored in. It is the Very Vile Fairy File.
 
@@ -434,6 +433,11 @@ That would be a good tool in a cooking simulation, but the Leet Learner is more 
 
 >gift giver
 by one point
+
+@all
+#ttc-table-of-narratives-2
+The plotters from your previous vision remark how it is not just a guide to manipulation, but something that can affect people from afar. Its one weakness: if someone gets too close and is legitimately happy and forgiving around it, its spell will break.
+They leave it by the Real Rot/Feel Fought Spiel Spot, because they have other evil to delegate, elsewhere. Small relief--facing them would've been too much.
 
 @all
 /^Vined Vault
@@ -566,6 +570,11 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-3
+Another vision!
+A bunch of seedy looking hoodlums approach the shrine where the Very Vile Fairy File was left. You know they must be the Crimes Crew Times Two Kit Cohen told you about. While the general consensus is "What an unusually stupid looking book," they nonetheless play rock-paper-scissors to decide the poor sap who has to read it.
+
+@all
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 5 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -654,6 +663,11 @@ The HA HALF button lights up on your Leet Learner.
 
 >green grass
 by one point
+
+@all
+#ttc-table-of-narratives-4
+The loser of the rock paper scissors game's eyes open wide as they realize the Very Vile Fairy File doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.
+You can already feel the Very Vile Fairy File working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure.
 
 @all
 /^Po' Pit
@@ -841,6 +855,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-5
+You recall harsh words from an alleged friend, Chum Chilly Bum Billy: "Some silly? Dumb, dilly."
+
+@all
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 7 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -977,6 +995,10 @@ by one point
 /^Trim Tram
 
 @all
+#ttc-table-of-narratives-6
+You remember a depressing holiday season. "Blear, Blue? Near New Year, You! We're ... WOO!" But you're having more fun now. You hope.
+
+@all
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 8 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -1107,6 +1129,10 @@ The leet learner needle lights up. Then it stays at the center as you wave it ar
 by one point
 
 @all
+#ttc-table-of-narratives-7
+You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. "Done?! Do?! Ton to one, woo!" they laugh. "Fun, phew!" And yet ... they walk away from the Very Vile Fairy File, as if they can't get too close to it.
+
+@all
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 9 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -1194,6 +1220,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >flim flam
 by one point
+
+@all
+#ttc-table-of-narratives-8
+You see the Crimes Crew Times Two looking almost impressed with your competence. But then they whisper among each other. "Lucky! LOL! Sucky soul!"
 
 @all
 /^Fun Fen
@@ -1502,6 +1532,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-9
+The joke jest poke pest whispers "Sigh. Say hi, hey?" But you ignore it. Ply, play, you think. Gotta focus.
+
+@all
 #+ttc-table-of-ranks-3
 >score
 You have scored a total of 14 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
@@ -1797,6 +1831,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-10
+"Seek so-chic-show? Geek, go! Meek, mo' weak, woe!" A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak 'Fro.
+
+@all
 #+ttc-table-of-ranks-4
 >score
 You have scored a total of 19 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
@@ -2000,6 +2038,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >mark more
 by one point
+
+@all
+#ttc-table-of-narratives-11
+"Surly? Soften early, often!" the joke jest poke pest needles you. You look around, but thankfully, there is no burly boffin.
 
 @all
 #+ttc-table-of-ranks-4
@@ -2305,6 +2347,10 @@ The ganksta looks slightly upset but realizes it can't be childish to have a tat
 
 >lots lame
 by one point
+
+@all
+#ttc-table-of-narratives-12
+"Fame fast? Lame, last!" snickers the joke jest poke pest. You ... you were just looking for a way out. You think. But nobody thinks they're too proud. Right?
 
 @all
 #+ttc-table-of-ranks-5
@@ -2929,6 +2975,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-13
+You remember saying "War, why?" with the response: "BORE, BYE!"
+
+@all
 #ttc-table-of-ranks-6
 >score
 You have scored a total of 33 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -3158,6 +3208,10 @@ Sea salt? Ee! Alt!
 by one point
 
 @all
+#ttc-table-of-narratives-14
+You are quasi-catcalled as "Some super-dumb duper." You immediately wonder if you're too dumb to remember HOW you tried to dupe anyone, but after a moment's thought, you brush the insult off with "Um, oop, err..."
+
+@all
 #+ttc-table-of-ranks-6
 >score
 You have scored a total of 36 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -3343,6 +3397,10 @@ You're scared to. There must be a better way to get rid of the fridge.
 
 >brightening bridge
 by one point
+
+@all
+#ttc-table-of-narratives-15
+You picture yourself in a sales job. "Cold call? Fold, fall." You fail and are exiled to the Hold Hall.
 
 @all
 #+ttc-table-of-ranks-7
@@ -3556,6 +3614,10 @@ You need to, um, tee up something more positive.
 
 >take tea
 by one point
+
+@all
+#ttc-table-of-narratives-16
+You recall your only Dungeons and Dragons experience: a bunch of bullies yelling "D&D? TNT! Flee 'n flee!"
 
 @all
 #ttc-table-of-ranks-8
@@ -3820,6 +3882,11 @@ You need camaraderie, not firepower. Toe Tappin' Row Rappin' is not a stereotypi
 by one point
 
 @all
+#ttc-table-of-narratives-17
+A memory from the past, well, sort of: "Falling for calling? Cor! Bawling bore!" It must be the Very Vile Fairy File doing its work on you.
+You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the Very Vile Fairy File is warping your memories to make them traumatic?
+
+@all
 #+ttc-table-of-ranks-8
 >score
 You have scored a total of 46 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
@@ -4021,6 +4088,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >glow glad
 by one point
+
+@all
+#ttc-table-of-narratives-18
+"Blue blood? Boo, bud!" Standard demoralizing fare. You feel a slight flu-flood.
 
 @all
 #+ttc-table-of-ranks-9
@@ -4353,6 +4424,10 @@ You take time to feel less awful about some horrid event in your past. The resul
 by one point
 
 @all
+#ttc-table-of-narratives-19
+The joke jest poke pest pipes up: "High hope nigh? Nope!" You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible.
+
+@all
 #ttc-table-of-ranks-10
 >score
 You have scored a total of 53 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -4603,6 +4678,11 @@ The HA HALF button lights up on your Leet Learner.
 
 >lending libe
 by one point
+
+@all
+#ttc-table-of-narratives-20
+The joke jest poke pest is at it again: "Raking rhyme?! Making mime!" You feel discouraged, knowing if you slow up, it will change its tune and taunt you with "Taking time?"
+The Very Vile Fairy File's reach is wide indeed. If it can mix up these taunts on you, what can it do to others?
 
 @all
 /^Lending Libe
@@ -4934,6 +5014,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-21
+Despite your success, a memory: "Rad? Wrong! Gad! Gong! Bad! BBOONNGG!" You remember all the times you felt guilty getting things right for the wrong reason, as well as the times you were mocked for knowing things too well.
+
+@all
 #+ttc-table-of-ranks-11
 >score
 You have scored a total of 59 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -5180,6 +5264,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >winding ways
 by one point
+
+@all
+#ttc-table-of-narratives-22
+Blare blame! Share shame! EXPOUND
 
 @all
 #+ttc-table-of-ranks-11
@@ -5478,6 +5566,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-23
+"Wet willy set? Silly! Bet, Billy!" A reminder of tormentors from your past.
+
+@all
 /^Tight Tunnel
 
 @all
@@ -5682,6 +5774,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-24
+"Sing-song ding-dong!" the joke jest poke pest mocks you, as if the double-rhyme puzzles you solved were your fault. It does slightly ... ring wrong. But at least you are not trampled by King Kong or beaten badly at Ping Pong. You're getting used to the silly taunts.
+
+@all
 #+ttc-table-of-ranks-13
 >score
 You have scored a total of 68 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -5790,6 +5886,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >least loss
 by one point
+
+@all
+#ttc-table-of-narratives-25
+You almost started feeling good about things, but the joke jest poke pest whispers "Smart smack. Heart? Hack!" Oh, joke jest poke pest, you so manipulative!
 
 @all
 #+ttc-table-of-ranks-13
@@ -6092,6 +6192,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-26
+Sick, Sought Thick Thought. EXPOUND
+
+@all
 #+ttc-table-of-ranks-14
 >score
 You have scored a total of 76 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
@@ -6302,6 +6406,10 @@ The HA HALF button lights up on your Leet Learner.
 by one point
 
 @all
+#ttc-table-of-narratives-27
+"Wonder-weary? Blunder-bleary!" you think to yourself. No. Keep positive. Things must be ending soon.
+
+@all
 #ttc-table-of-ranks-15
 >score
 You have scored a total of 79 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
@@ -6448,6 +6556,10 @@ by one point
 
 >show shield
 by one point
+
+@all
+#ttc-table-of-narratives-28
+"So seedy! Grow greedy! No, needy!" taunts the joke jest poke pest. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!
 
 @all
 #+ttc-table-of-ranks-15
@@ -6824,6 +6936,10 @@ by one point
 by one point
 
 @all
+#ttc-table-of-narratives-29
+"Hi, hi! Why, why? My, my! Sigh, sigh!" There was a time when you thought you didn't even deserve complex insults. But here--surely the Very Vile Fairy File is running out of steam? There's only one way to find out. Keep going!
+
+@all
 #+ttc-table-of-ranks-16
 >score
 You have scored a total of 87 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -6884,6 +7000,10 @@ Unfortunately, that has an equal chance of stunning Russell or making Russell st
 
 >wood one
 by one point
+
+@all
+#ttc-table-of-narratives-30
+Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting "Mock me, Jock? gee!"
 
 @all
 #+ttc-table-of-ranks-16
@@ -7032,6 +7152,10 @@ Treasure isn't the goal, here. You need allies.
 by one point
 
 @all
+#ttc-table-of-narratives-31
+"How hot NOW?! Not!" the joke jest poke pest insinuates. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress.
+
+@all
 #ttc-table-of-ranks-17
 >score
 You have scored a total of 89 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -7071,6 +7195,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >lot lord
 by one point
+
+@all
+#ttc-table-of-narratives-32
+An unexpectedly cheery exhortation: "Blast'er blind, master mind!" The Very Vile Fairy File's power must be cracking. And you must be very close.
 
 @all
 #+ttc-table-of-ranks-17
@@ -7120,6 +7248,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >got gored
 by one point
+
+@all
+#ttc-table-of-narratives-33
+An exceptionally loud howl from the Very Vile Fairy File: "Quit, quick! Sit sick!" You can't see it yet, but you must be close. WRONG due to narration I think
 
 @all
 #+ttc-table-of-ranks-17
@@ -7238,6 +7370,10 @@ Ah, but what sort of gait should you take?
 
 >whoa wait
 by one point
+
+@all
+#ttc-table-of-narratives-34
+Another howl from the Very Vile Fairy File: "Gonna go off! Shun a show-off!"
 
 @all
 /^Tarry Tile
@@ -7382,6 +7518,10 @@ The HA HALF button lights up on your Leet Learner.
 
 >merry mile
 by one point
+
+@all
+#ttc-table-of-narratives-35
+"More make war! Wake!" booms the Very Vile Fairy File. It's still scary and all, but ... nobody shows up. That's a positive.
 
 @all
 /^Merry Mile
