@@ -555,6 +555,7 @@ by one point
 >e
 >u
 >e
+
 >n
 >e
 
@@ -577,6 +578,7 @@ by one point
 >w
 >d
 >w
+by one point
 
 >s
 
@@ -771,7 +773,7 @@ Nobody named Terry appears, nor does any terry cloth.
 
 #ttc-table-of-thing-homonyms-well-worn-hell-horn-warn
 >warn warn
-The well worn hell horn is already giving a false warning.
+The well-worn hell horn is already giving a false warning.
 
 >tell torn
 by one point

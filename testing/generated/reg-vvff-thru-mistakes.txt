@@ -638,7 +638,7 @@ The joke jest poke pest doesn't care about directions.
 
 >bloke blessed
 by one point
-You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
 #+ttc-table-of-joke-jest-poke-pest-guesses-broke-breast
 >broke breast
@@ -2492,6 +2492,7 @@ by one point
 >e
 >u
 >e
+
 >n
 >e
 
@@ -2539,6 +2540,7 @@ No, you can't bring the bull down with peer pressure.
 >w
 >d
 >w
+by one point
 
 >s
 
@@ -3024,7 +3026,7 @@ There's enough noise right now.
 #ttc-table-of-well-worn-hell-horn-guesses-shell-shorn
 >shell shorn
 Learner needle
-You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
+You must be on the right track. But perhaps the shell that is shorn might make the well-worn hell horn more effective.
 
 #ttc-table-of-well-worn-hell-horn-guesses-swell-sworn
 >swell sworn

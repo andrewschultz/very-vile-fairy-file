@@ -157,7 +157,7 @@ Your current rank is lol'd, lawd.
 
 >bloke blessed
 by one point
-You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
 #+ttc-table-of-ranks-2
 >score
@@ -165,6 +165,8 @@ You have scored a total of 11 out of 95 points and need 83 to win. You have foun
 Your current rank is lol'd, lawd.
 
 >s
+
+/^Real Rear
 
 >kneel near
 by one point
@@ -493,6 +495,8 @@ Your current rank is old, odd.
 
 >e
 
+/^Lake Lap
+
 >make map
 by one point
 
@@ -637,6 +641,8 @@ Your current rank is th'old thawed.
 
 >n
 
+/^Foe Field So Sealed
+
 >plain pleasant
 by one point
 
@@ -745,6 +751,7 @@ Your current rank is shoaled, shod.
 >e
 >u
 >e
+
 >n
 >e
 
@@ -772,6 +779,7 @@ Your current rank is scrolled scrod.
 >w
 >d
 >w
+by one point
 
 #+ttc-table-of-ranks-10
 >score
@@ -916,6 +924,8 @@ Your current rank is mold-mod.
 
 >n
 
+/^Gassed Gap
+
 >go gappin
 by one point
 
@@ -971,6 +981,8 @@ You have scored a total of 88 out of 95 points and need 95 to win. You have foun
 Your current rank is bold bod.
 
 >n
+
+/^Airy Isle
 
 >hot horde
 by one point

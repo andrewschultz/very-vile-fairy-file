@@ -7,7 +7,12 @@
 #-- use HCH.PY to verify room/thing homonyms
 #--
 
-files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt,reg-vvff-thru-verbs.txt,reg-vvff-thru-goto.txt
+#to fix (large work little reward): move KNEEL NEAR just before HEAL HERE (?)
+#list when there is no bump-up for points as well
+
+Your rhyming attempts bring up nothing.
+
+files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vvff-thru-alt-verbs.txt,reg-vvff-thru-fake-deaths.txt,reg-vvff-thru-mistakes.txt,reg-vvff-thru-ha-half.txt,reg-vvff-thru-homonyms.txt,reg-vvff-thru-verbs.txt,reg-vvff-thru-goto.txt,reg-vvff-thru-vc.txt
 ~	min	t0
 ~	all	t1
 ~	thi	t2
@@ -18,15 +23,18 @@ files=reg-vvff-thru-min.txt,reg-vvff-thru-all.txt,reg-vvff-thru-think.txt,reg-vv
 ~	hom	t7
 ~	ver	t8
 ~	goto,gt,go	t9
+~	vc	t10
 #--stable-file: this says that the project is stable, and I shouldn't change the main/minimal file unless I really need to.
 #--strict-file: this says that the project requires strict section marking e.g. @all instead of ==t1.
 OK-APOSTROPHE:Bold 'n Brave
 ALSO-IGNORE:enter boat,blow by,jj
 
+}$REJECT=Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
 ## *FILE
 ## *FORK
 
-TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities	## walkthrough with altverb tests	## walkthrough with fake deaths	## walkthrough testing all mistakes	## walkthrough testing half-right cases	## walkthrough testing homonyms	##walkthrough testing special verbs	## walkthrough testing GOTO
+TSV:## minimum walkthrough	## walkthrough with all points	## walkthrough with all out-of-order possibilities	## walkthrough with altverb tests	## walkthrough with fake deaths	## walkthrough testing all mistakes	## walkthrough testing half-right cases	## walkthrough testing homonyms	##walkthrough testing special verbs	## walkthrough testing GOTO	## walkthrough with pre-right command testing
 
 ** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
 ** interpreter: /home/andrew/prt/glulxe -q
@@ -89,7 +97,7 @@ The action was okay, but I couldn't recognize the object.
 >gt fun fen
 The action was okay, but I couldn't recognize the object.
 
-@all,alt
+@all,alt,vc
 >z
 
 @ha
@@ -268,7 +276,7 @@ Your current rank is lol'd, lawd.
 >undo
 >undo
 
-@all,mis,ha
+@all,mis,ha,vc
 >really rolling
 by one point
 A stun-steed zooms by
@@ -290,9 +298,6 @@ Your current (utterly meaningless but hopefully amusing) rank is cold cod.
 >really zrolling
 !DEBUG: vc-really-rolling rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
->really rolling
-!by one point
-You already guessed the significance of my pen name.
 
 @mis
 >trilly trolling
@@ -316,6 +321,24 @@ by one point
 >score
 You have scored a total of 2 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
 Your current rank is lol'd, lawd.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-big-bag-rule
+>big bag
+You already made the big bag.
+
+@vc
+#testcase-unavailable-table-of-verb-checks-vc-find-fault-rule
+>find fault
+DEBUG note of general parser error.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-gift-giver-rule
+>gift giver
+DEBUG note of general parser error.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-green-grass-rule
+>green grass
+DEBUG note of general parser error.
 
 @mis
 >wig wag
@@ -407,11 +430,6 @@ You need to have riffed, but with rhyming, as you did in the Wet Wood.
 @gt
 >gt wet wood
 You don't need to go back.
-
-@ha
->get good
-!by one point
-You already managed to GET GOOD.
 
 @alt
 # test the reverse flip warning
@@ -630,7 +648,8 @@ You had to lose a letter from Vined to find fault. Maybe this time you need to a
 Good guys don't brag about being
 !Learner needle
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-find-fault-rule
 >find fault
 !by one point
 You already did, and things got worse. You'll have to try something else.
@@ -723,6 +742,367 @@ You can already feel the Very Vile Fairy File working on you, reminding you of t
 You have scored a total of 6 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
 Your current rank is lol'd, lawd.
 
+@vc
+#testcase-unavailable-table-of-verb-checks-vc-appealing-appear-rule
+>appealing appear
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-backed-binder-rule
+>backed binder
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-bloke-blessed-rule
+>bloke blessed
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-break-brie-rule
+>break brie
+You can't see any objects like that here.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-brightening-bridge-rule
+>brightening bridge
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-bumped-buster-rule
+>bumped buster
+{$REJECT}
+\\
+#testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-cleared-clay-rule
+>cleared clay
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-co-capn-rule
+>co capn
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-cool-cap-rule
+>cool cap
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-dark-door-rule
+>dark door
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-dear-dull-rule
+>dear dull
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-dimd-rule
+>dimd
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-dining-door-rule
+>dining door
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-dive-deep-rule
+>dive deep
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-dreaming-dull-rule
+>dreaming dull
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-fall-free-rule
+>fall free
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-feel-fear-rule
+>feel fear
+You can't see any objects like that here.
+\\
+#testcase-moot-table-of-verb-checks-vc-find-fault-rule
+>find fault
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-first-fave-rule
+>first fave
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-fit-found-rule
+>fit found
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-flim-flam-rule
+>flim flam
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-full-feast-rule
+>full feast
+{$REJECT}
+\\
+#testcase-reject-table-of-verb-checks-vc-get-good-rule
+>get good
+You already managed to GET GOOD.
+\\
+#testcase-moot-table-of-verb-checks-vc-gift-giver-rule
+>gift giver
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-glean-glows-rule
+>glean glows
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-glow-glad-rule
+>glow glad
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+The action was okay, but I couldn't recognize the object.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-got-gored-rule
+>got gored
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-green-grass-rule
+>green grass
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-hard-hat-rule
+>hard hat
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-heal-here-rule
+>heal here
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-history-hall-rule
+>history hall
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-ho-happen-rule
+>ho happen
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-hot-horde-rule
+>hot horde
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-kneel-near-rule
+>kneel near
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-knives-niche-rule
+>knives niche
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-least-loss-rule
+>least loss
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-lending-libe-rule
+>lending libe
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-lie-lol-rule
+>lie lol
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-loft-land-rule
+>loft land
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-lot-lord-rule
+>lot lord
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-lots-lame-rule
+>lots lame
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-luck-lair-rule
+>luck lair
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mark-more-rule
+>mark more
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-meeker-muscle-rule
+>meeker muscle
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mind-me-rule
+>mind me
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mining-more-rule
+>mining more
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-moral-mage-rule
+>moral mage
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mystery-mall-rule
+>mystery mall
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-near-null-rule
+>near null
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-no-nappin-rule
+>no nappin
+The first word was okay, but what came after didn't quite work. You may wish to type in only the first word, or use the up arrow and delete.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-not-near-rule
+>not near
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-paper-pile-rule
+>paper pile
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-plain-pleasant-rule
+>plain pleasant
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+You can't see any objects like that here.
+\\
+#testcase-reject-table-of-verb-checks-vc-really-rolling-rule
+>really rolling
+You already guessed the significance of my pen name.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-see-sign-rule
+>see sign
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-show-shield-rule
+>show shield
+You can't see any objects like that here.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-silent-sail-rule
+>silent sail
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-soft-sand-rule
+>soft sand
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-stay-strong-rule
+>stay strong
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-strong-start-rule
+>strong start
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-take-tea-rule
+>take tea
+You can't see any objects like that here.
+\\
+#testcase-unavailable-table-of-verb-checks-vc-tell-torn-rule
+>tell torn
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-tight-tunnel-rule
+>tight tunnel
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-wake-whee-rule
+>wake whee
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-whatta-wanksta-rule
+>whatta wanksta
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-whoa-wait-rule
+>whoa wait
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-wild-weed-rule
+>wild weed
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-winding-ways-rule
+>winding ways
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-wood-one-rule
+>wood one
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-work-well-rule
+>work well
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-youre-yonder-rule
+>youre yonder
+{$REJECT}
+
 @hom
 #ttc-table-of-verb-checks-vh-grow-grit-rule-owe
 >owe oit
@@ -735,11 +1115,6 @@ You don't need a pendulum about to cut you.
 @gt
 >gt vined vault
 You don't need to go back.
-
-@ha
->green grass
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 #+ttc-table-of-verb-checks-6-green
@@ -875,6 +1250,11 @@ No bad weather blows in to be complained about.
 Learner needle
 Clever complaining will make you feel better but won't do anything.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-mash-map-rule
+>mash map
+You aren't brave enough yet. Perhaps you can face down the Po' Pit so you can be.
+
 @thi
 >mash map
 !by one point
@@ -913,7 +1293,8 @@ You recall harsh words from an alleged friend, Chum Chilly Bum Billy: "Some sill
 You have scored a total of 7 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
 Your current rank is lol'd, lawd.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-grow-grit-rule
 >grow grit
 !by one point
 You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.
@@ -1079,15 +1460,31 @@ You remember a depressing holiday season. "Blear, Blue? Near New Year, You! We'r
 You have scored a total of 8 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
 Your current rank is lol'd, lawd.
 
+@vc
+#testcase-unavailable-table-of-verb-checks-vc-grow-grit-rule
+>grow grit
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-mash-map-rule
+>mash map
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-make-map-rule
+>make map
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+{$REJECT}
+\\
+#testcase-unavailable-table-of-verb-checks-vc-sit-sound-rule
+>sit sound
+{$REJECT}
+
 @hom
 #ttc-table-of-verb-checks-vh-mind-me-rule-mined
 >mined moo
 You need to take care of, not booby-trap, yourself.
-
-@ha
->mash map
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 >zmash map rule
@@ -1203,6 +1600,11 @@ You wave the leet learner all around Trim Tram...
 !You turned the Leet Learner off, so nothing shows up.
 The leet learner needle lights up. Then it stays at the center as you wave it around.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-flim-flam-rule
+>flim flam
+That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.
+
 >mind me
 by one point
 
@@ -1216,7 +1618,8 @@ You see the Crimes Crew Times Two snickering. They're looking at a vision of ...
 You have scored a total of 9 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
 Your current rank is lol'd, lawd.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-mind-me-rule
 >mind me
 !by one point
 You already minded yourself.
@@ -1309,6 +1712,31 @@ You see the Crimes Crew Times Two looking almost impressed with your competence.
 @all
 /^Fun Fen
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+You have nothing to spark up, dude!
+
+@vc
+#testcase-moot-table-of-verb-checks-vc-backed-binder-rule
+>backed binder
+{$REJECT}Your rhyming attempts bring up nothing.
+\\
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You can sort of deal with that right now. But you need to do better! You still have adventure to go!
+
+@vc
+##balance undos
+>gonear coral cage
+\\
+#testcase-reject-table-of-verb-checks-vc-moral-mage-rule
+>moral mage
+That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.
+\\
+>undo
+>undo
+
 @all
 #+ttc-table-of-ranks-2
 >score
@@ -1357,16 +1785,21 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 by one point
 >undo
 
-@all,mis,ha
+@all,mis,ha,vc
 >bloke blessed
 by one point
-You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
 
 @all
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 11 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
 Your current rank is lol'd, lawd.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-bloke-blessed-rule
+>bloke blessed
+Telling someone or something more than once that you're ignoring it never quite works.
 
 @ha
 #+ttc-table-of-verb-checks-13-blessed-blest
@@ -1425,11 +1858,6 @@ The joke jest poke pest whispers in your head: "WORK WITH MURK? MYTH!" You need 
 Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. "Don't die." / "Won't! Why?"
 
 @ha
->flim flam
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
 #+ttc-table-of-verb-checks-10-flam-scam
 >zflim flam rule
 !DEBUG: vc-flim-flam rule tipped off the HA HALF button.
@@ -1459,7 +1887,14 @@ east to Fate Farm
 
 >s
 
-###newloc real rear
+@all
+/^Real Rear
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-heal-here-rule
+>heal here
+!by one point
+You have not shown the Ceiling Seer the proper respect, yet.
 
 @hom
 #ttc-table-of-thing-homonyms-peeling-pier-peer
@@ -1564,10 +1999,17 @@ by one point
 You have scored a total of 12 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
 Your current rank is FLOL'd, flawed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-kneel-near-rule
 >kneel near
 !by one point
 No need to kneel twice.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-heal-here-rule
+>heal here
+!by one point
+You don't have anything to heal from. The Ceiling Seer seems to be watching down on you, saying you can't do that yet. WRONG
 
 @ha
 #+ttc-table-of-verb-checks-19-near
@@ -1596,6 +2038,11 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-feel-fear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+You haven't found anything you need to deal with. The Ceiling Seer seems to be watching down on you, saying you can't do that yet.
+
 >feel fear
 by one point
 
@@ -1605,7 +2052,8 @@ by one point
 You have scored a total of 13 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
 Your current rank is FLOL'd, flawed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-feel-fear-rule
 >feel fear
 !by one point
 No need to overdo feeling fear.
@@ -1654,7 +2102,8 @@ The joke jest poke pest whispers "Sigh. Say hi, hey?" But you ignore it. Ply, pl
 You have scored a total of 14 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
 Your current rank is FLOL'd, flawed.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-deal-dear-rule
 >deal dear
 !by one point
 Overdoing dealing with it is ... one way to show you might not be dealing with it.
@@ -1685,7 +2134,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 DEBUG: vc-appealing-appear rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-@all,mis,ha
+@all,mis,ha,vc
 >appealing appear
 by one point
 !A stun-steed zooms by
@@ -1696,8 +2145,8 @@ by one point
 You have scored a total of 15 out of 95 points and need 84 to win. You have found 3 of 14 optional points so far.
 Your current rank is FLOL'd, flawed.
 
-@ha
-11xx-table-of-verb-checks-vc-appealing-appear-rule
+@vc
+#testcase-reject-table-of-verb-checks-vc-appealing-appear-rule
 >appealing appear
 !by one point
 The peeling pier already looks better.
@@ -1753,7 +2202,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-@all,mis,ha
+@all,mis,ha,vc
 >strong start
 by one point
 
@@ -1763,7 +2212,8 @@ by one point
 You have scored a total of 16 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
 Your current rank is FLOL'd, flawed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-strong-start-rule
 >strong start
 !by one point
 You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.
@@ -1815,10 +2265,53 @@ by one point
 You have scored a total of 17 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
 Your current rank is FLOL'd, flawed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-fall-free-rule
 >fall free
 !by one point
 The tree is already fallen. It's in a good place.
+
+@vc
+##balance undos
+>gonear gassed gap
+\\
+#testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+You don't have any caps to cast.
+\\
+>undo
+\\
+>purloin hard hat
+\\
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The hard hat isn't enough on its own.
+\\
+>undo
+\\
+>purloin cool cap
+\\
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The cool cap and hard hat aren't quite enough.
+\\
+>undo
+\\
+>purloin cake cap
+\\
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+Wow! Three hats! They would be great to cast! But if only there was a way to combine them into an extra-cool hat you could cast all at once!
+\\
+>undo
+>undo
+>undo
+>undo
+>undo
 
 @ha
 #+ttc-table-of-verb-checks-14-free
@@ -2065,6 +2558,27 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >craws crews
 You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-least-loss-rule
+>least loss
+Not yet. You need to be in a fighting situation.
+
+@vc
+##balance undos
+>n
+>w
+>work well
+by one point
+\\
+#testcase-reject-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+You have no caps to couple. Maybe one day, though.
+\\
+>undo
+>undo
+>undo
+>undo
+
 @mis
 #ttc-table-of-creased-cross-guesses-ceased-sauce
 >ceased sauce
@@ -2137,6 +2651,11 @@ You pretend you've already done much harder things. It gives you confidence, or 
 Learner needle
 Biological warfare is probably dangerous.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-mark-more-rule
+>mark more
+That'd work, if there was something to mark. There isn't, yet.
+
 @thi
 >mark more
 !by one point
@@ -2174,7 +2693,8 @@ You can't find a way off-hand. It doesn't even seem to have a handle. Perhaps ca
 Learner needle
 You pretend you've already done much harder things. It gives you confidence, or something close enough.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-dark-door-rule
 >dark door
 !by one point
 You already made the dark door appear.
@@ -2213,6 +2733,12 @@ by one point
 >score
 You have scored a total of 22 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
 Your current rank is mold-mawed.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-dark-door-rule
+>dark door
+!by one point
+You already made the dark door appear and disappear to create a passage.
 
 @hom
 #ttc-table-of-thing-homonyms-weird-way-whey
@@ -2287,7 +2813,8 @@ by one point
 You have scored a total of 23 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-cleared-clay-rule
 >cleared clay
 !by one point
 The clay is cleared enough.
@@ -2340,6 +2867,11 @@ Your current rank is holed, haw-ed.
 ###newloc mystery mall
 ###newitm mean moe's clean clothes
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-glean-glows-rule
+>glean glows
+That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.
+
 @hom
 #+ttc-table-of-room-homonyms-history-hall-hom-history-hall-to-haul-maul-rule
 >long maul
@@ -2353,7 +2885,8 @@ You don't need THAT much stuff.
 >gleen gloze
 You shouldn't be fishing for flattery.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-mystery-mall-rule
 >mystery mall
 !by one point
 You've already flipped this area to the Mystery Mall.
@@ -2397,7 +2930,7 @@ by one point
 the Leet Learner dims a bit, and the needle
 The ganksta will never have such a good job. Perhaps you can make fun of something simpler the ganksta is proud of.
 
-@all,mis,ha
+@all,mis,ha,vc
 >what a wanksta
 by one point
 
@@ -2407,7 +2940,8 @@ by one point
 You have scored a total of 25 out of 95 points and need 86 to win. You have found 5 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-whatta-wanksta-rule
 >whatta wanksta
 !by one point
 That insult only works once.
@@ -2423,9 +2957,34 @@ That insult only works once.
 !DEBUG: vc-whatta-wanksta rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
+@vc
+##balance undos
+>gonear blinding blaze
+\\
+#testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+You'd love to, but you need some sort of artistic, lively way to make the mapping less tedious. Even fun.
+\\
+>undo
+>undo
+
 >listen
 
 ###newitm toe tappin row rappin
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+Maybe some other place could use mapping, but not here.
+\\
+#testcase-reject-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+!by one point
+That's an interesting riff, but it doesn't seem to work here.
+\\
+#testcase-reject-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+Hm! Toe Tappin' Row Rappin' could be tweaked like that to be useful in the right place.
 
 @hom
 #ttc-table-of-thing-homonyms-toe-tappin-hom-toe-tappin-to-roe-tow-rule
@@ -2586,7 +3145,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win. The Leet Learner emits a tune as well.
 
-@all,mis,ha
+@all,mis,ha,vc
 >ho happen
 by one point
 
@@ -2596,7 +3155,7 @@ by one point
 You have scored a total of 27 out of 95 points and need 87 to win. You have found 6 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@all,mis,ha
+@all,mis,ha,vc
 >dimd
 by one point
 
@@ -2606,7 +3165,8 @@ by one point
 You have scored a total of 28 out of 95 points and need 88 to win. You have found 7 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-ho-happen-rule
 >ho happen
 !by one point
 #?? for postcomp: TRY DOING
@@ -2639,6 +3199,12 @@ The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune as well.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-co-capn-rule
+>co capn
+It might be nice to have a cohort for a bit, but there's nobody worthy here.
+>undo
+
 @alt
 >no napping
 by one point
@@ -2659,10 +3225,11 @@ by one point
 You have scored a total of 29 out of 95 points and need 88 to win. You have found 7 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-no-nappin-rule
 >no nappin
 !by one point
-You already changed Toe Tappin Row Rappin that way.
+You already managed to change up Toe Tappin Row Rappin' so No Nappin' was useful.
 
 @ha
 #+ttc-table-of-verb-checks-33-nappin-napping
@@ -2788,7 +3355,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 DEBUG: vc-lie-lol rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-@all,mis,ha
+@all,mis,ha,vc
 >lie lol
 by one point
 
@@ -2798,7 +3365,8 @@ by one point
 You have scored a total of 30 out of 95 points and need 89 to win. You have found 8 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-lie-lol-rule
 >lie lol
 !by one point
 The shy shawl has taken enough abuse.
@@ -2958,7 +3526,7 @@ You turn up your nose at kids these days' terrible fashions.
 the Leet Learner dims a bit, and the needle
 You don't need a weapon.
 
-@all,mis,ha
+@all,mis,ha,vc
 >not near
 by one point
 
@@ -2968,7 +3536,8 @@ by one point
 You have scored a total of 31 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is holed, haw-ed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-not-near-rule
 >not near
 !by one point
 You already teleported for a bonus point.
@@ -3211,7 +3780,13 @@ You remember saying "War, why?" with the response: "BORE, BYE!"
 You have scored a total of 33 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is bowled, bah'd.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+The hard hat isn't enough on its own.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-work-well-rule
 >work well
 !by one point
 Any further futzing might undo your previous good work.
@@ -3300,6 +3875,30 @@ becomes the Loft Land
 You have scored a total of 34 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is bowled, bah'd.
 
+@ha
+# soft sand doesn't have a "before point" check because Soft Sand is the original name of the place
+\\
+#ttc-table-of-verb-checks-50-sand
+>zsoft sand
+DEBUG: vc-soft-sand rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
+\\
+#ttc-table-of-verb-checks-50-soft
+>soft zsand
+DEBUG: vc-soft-sand rule tipped off the HA HALF button.
+The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
+
+@ha
+#+ttc-table-of-verb-checks-49-land
+>zloft land rule
+!DEBUG: vc-loft-land rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+\\
+#+ttc-table-of-verb-checks-49-loft
+>loft zland rule
+!DEBUG: vc-loft-land rule tipped off the HA HALF button.
+!The HA HALF button lights up on your Leet Learner.
+
 @gt
 >w
 >e
@@ -3324,7 +3923,9 @@ Curst Cave
 >gt shirk shell
 You got the jerk gel already.
 
-@ha
+@vc
+##balance undos
+#testcase-reject-table-of-verb-checks-vc-loft-land-rule
 >loft land
 !by one point
 You're already on the Loft Land.
@@ -3332,35 +3933,14 @@ You're already on the Loft Land.
 >soft sand
 !by one point
 \\
+#testcase-reject-table-of-verb-checks-vc-soft-sand-rule
 >soft sand
 !by one point
 You're already on the Soft Sand.
 \\
 >undo
 >undo
-\\
-# soft sand doesn't have a "before point" check because Soft Sand is the original name of the place
-\\
-#ttc-table-of-verb-checks-50-sand
->zsoft sand
-DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
-\\
-#ttc-table-of-verb-checks-50-soft
->soft zsand
-DEBUG: vc-soft-sand rule tipped off the HA HALF button.
-The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
-
-@ha
-#+ttc-table-of-verb-checks-49-land
->zloft land rule
-!DEBUG: vc-loft-land rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
-\\
-#+ttc-table-of-verb-checks-49-loft
->loft zland rule
-!DEBUG: vc-loft-land rule tipped off the HA HALF button.
-!The HA HALF button lights up on your Leet Learner.
+>undo
 
 @mis
 #+ttc-table-of-soft-sand-guesses-coughed-canned
@@ -3409,6 +3989,12 @@ The HA HALF button lights up on your Leet Learner.
 >dreaming zdull rule
 DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-first-fave-rule
+>first fave
+!by one point
+You can't like anything with that screaming skull around!
 
 >dreaming dull
 by one point
@@ -3469,7 +4055,8 @@ You are quasi-catcalled as "Some super-dumb duper." You immediately wonder if yo
 You have scored a total of 36 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is bowled, bah'd.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-first-fave-rule
 >first fave
 !by one point
 The Curst Cave is already a cheerier place.
@@ -3541,10 +4128,10 @@ by one point
 You have scored a total of 37 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is sold sod.
 
-@ha
->cool cap
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+@vc
+#+testcase-reject-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+The cool cap and hard hat aren't quite enough.
 
 @ha
 #+ttc-table-of-verb-checks-53-cap
@@ -3628,7 +4215,8 @@ by one point
 You have scored a total of 38 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is sold sod.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-silent-sail-rule
 >silent sail
 !by one point
 You already called up the flooring float.
@@ -3742,7 +4330,8 @@ Your current rank is sold sod.
 !Learner needle
 The big bag is good enough
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-boring-boat-rule
 >boring boat
 !by one point
 The boat is already boring and practical enough.
@@ -3839,6 +4428,24 @@ Be nice! You need Jake.
 Learner needle
 This is not a cooking sim.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-take-tea-rule
+>take tea
+!by one point
+Maybe when Jake is awake.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-break-brie-rule
+>break brie
+!by one point
+This bonus point action won't work until Jake is conscious.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+!by one point
+Maybe when Jake is awake.
+
 >wake whee
 by one point
 
@@ -3848,7 +4455,8 @@ by one point
 You have scored a total of 41 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is sold sod.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-wake-whee-rule
 >wake whee
 !by one point
 He's already awake, Blake.
@@ -3901,6 +4509,12 @@ You need to, um, tee up something more positive.
 >taik tee
 You need to, um, tee up something more positive.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+!by one point
+But Jake has given you nothing of value yet.
+
 >take tea
 by one point
 
@@ -3914,7 +4528,8 @@ You recall your only Dungeons and Dragons experience: a bunch of bullies yelling
 You have scored a total of 42 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
 Your current rank is old, odd.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-take-tea-rule
 >take tea
 !by one point
 Don't get greedy. You have the sustenance needed to work with Jake G.
@@ -3950,7 +4565,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 >brake breee
 You get the feeling you can, but don't have to, change things up just a bit.
 
-@all,mis,ha
+@all,mis,ha,vc
 >break brie
 by one point
 
@@ -3960,7 +4575,8 @@ by one point
 You have scored a total of 43 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
 Your current rank is old, odd.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-break-brie-rule
 >break brie
 !by one point
 Hey! Don't get greedy, now.
@@ -4008,6 +4624,12 @@ Be nice! You need Jake.
 Learner needle
 Jake has no horrible ex to avoid.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-co-capn-rule
+>co capn
+You haven't (yet) bonded with Jake G. enough for that.
+>undo
+
 >fake fee
 by one point
 
@@ -4031,7 +4653,8 @@ Be nice! You need Jake.
 !Learner needle
 This is not a cooking sim.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-fake-fee-rule
 >fake fee
 !by one point
 That's over. Time to work with Jake!
@@ -4053,7 +4676,13 @@ That's over. Time to work with Jake!
 
 >e
 
-###newloc lake lap
+@all
+/^Lake Lap
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+There might be a snake here. But you'd have to find it, first.
 
 @gt
 >w
@@ -4135,7 +4764,13 @@ by one point
 You have scored a total of 45 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
 Your current rank is old, odd.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-make-map-rule
 >make map
 !by one point
 You already made a map.
@@ -4213,7 +4848,8 @@ You find yourself worried this silly adventure may be boringly linear--or, equal
 You have scored a total of 46 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
 Your current rank is old, odd.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-co-capn-rule
 >co capn
 !by one point
 Jake already is.
@@ -4311,6 +4947,18 @@ You're too bummed to make big trips.
 >bin xxx
 You need to address two specific shortcomings.
 
+@vc
+##balance undos
+#testcase-reject-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+\\
+#testcase-reject-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>undo
+>undo
+
 @thi
 >lean luggin
 You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
@@ -4352,7 +5000,8 @@ by one point
 You have scored a total of 48 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
 Your current rank is told, tawed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-stay-strong-rule
 >stay strong
 !by one point
 Staying strong reduced one kind of negativity, but now there's another.
@@ -4527,7 +5176,8 @@ Your current rank is told, tawed.
 >bin xxx
 You need to address one more specific shortcoming.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-mean-muggin-rule
 >mean muggin
 !by one point
 You already learned mean muggin'.
@@ -4586,7 +5236,8 @@ It's woke to eat whey, probably, but you can transform the cloak better with som
 !Learner needle
 After all you've done, you don't need alcohol to help you get by.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-lean-luggin-rule
 >lean luggin
 !by one point
 You already learned lean luggin'.
@@ -4694,7 +5345,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-@all,mis,ha
+@all,mis,ha,vc
 >bumped buster
 by one point
 
@@ -4726,6 +5377,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
 >enter boat
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+!by one point
+You don't need to bring the boring boat back.
 
 >w
 >w
@@ -4796,10 +5453,10 @@ The joke jest poke pest pipes up: "High hope nigh? Nope!" You sigh, but no soap 
 You have scored a total of 53 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
 Your current rank is th'old thawed.
 
-@ha
->glean glows
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+@vc
+#testcase-reject-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+Hmm, maybe that'd make a useful disturbance elsewhere, with someone to distract, but not here.
 
 @ha
 #+ttc-table-of-verb-checks-38-glows
@@ -4863,6 +5520,9 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 >mystery zmall
 DEBUG: vc-mystery-mall rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-history-hall-rule
 >history hall
 !by one point
 You already flipped back to History Hall.
@@ -4906,12 +5566,6 @@ by one point
 >score
 You have scored a total of 54 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
 Your current rank is th'old thawed.
-
-@ha
-11xx-table-of-verb-checks-vc-youre-yonder-rule
->youre yonder
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 #+ttc-table-of-verb-checks-37-yonder
@@ -5100,7 +5754,8 @@ You remain landlocked. But perhaps you can find a better way to, umm, look at th
 >sey sine
 The sine of 15 degrees is square root of 6 - square root of 2 over 4. The sine of 18 degrees is square root of 5 - 1 over 4. TMYK! Though ... you may want to discover something more relevant.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-lending-libe-rule
 >lending libe
 !by one point
 Yes, It's a library now.
@@ -5228,10 +5883,11 @@ Why yes, pointless greed should not be limited to men only.
 !Learner needle
 No golf tee provides a bookmark for We Whine: ME, MINE.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-see-sign-rule
 >see sign
 !by one point
-You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
+You've seen enough signs from We Whine: ME, MINE. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
 
 @ha
 #+ttc-table-of-verb-checks-41-sign
@@ -5248,6 +5904,16 @@ You've seen enough signs. Overkill might leave you demoralized or too analytical
 >e
 >e
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+That's not enough to distract the Beer Bull for good. The Beer Bull can smell you.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+You don't feel armed for that, yet.
+
 @thi
 >beast boss
 !by one point
@@ -5261,7 +5927,18 @@ LEAST LOSS
 
 >n
 
-###newloc foe field so sealed
+@all
+/^Foe Field So Sealed
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-show-shield-rule
+>show shield
+That seems right, but you have nothing that would guard you effectively. Maybe later.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-show-shield-rule
+>show shield
+Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements even beyond what the gull guard gave.
 
 @hom
 #ttc-table-of-thing-homonyms-pain-peasant-pane
@@ -5436,11 +6113,6 @@ Your current rank is polled, pawed.
 You already got the key.
 
 @ha
->moral mage
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
 #+ttc-table-of-verb-checks-56-mage
 >zmoral mage rule
 !DEBUG: vc-moral-mage rule tipped off the HA HALF button.
@@ -5526,6 +6198,12 @@ You acquire no increased aptitude for removing an opponent's hit points. Which w
 Learner needle
 No need for unnecessary tension.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-fit-found-rule
+>fit found
+!by one point
+Maybe later, but you can't focus on that with the hit hound around.
+
 >sit sound
 by one point
 
@@ -5535,7 +6213,8 @@ by one point
 You have scored a total of 60 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
 Your current rank is polled, pawed.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-sit-sound-rule
 >sit sound
 !by one point
 You already sat sound. But maybe there's a way to feel more comfortable.
@@ -5590,7 +6269,8 @@ I mean, that WORKS, but geez.
 !Learner needle
 You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-fit-found-rule
 >fit found
 !by one point
 You already fit in.
@@ -5686,6 +6366,11 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-winding-ways rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+The blaze isn't mappable, but maybe something that replaces it is.
+
 >winding ways
 by one point
 
@@ -5706,7 +6391,8 @@ Your current rank is polled, pawed.
 >e
 east to Bold 'n Brave
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-winding-ways-rule
 >winding ways
 !by one point
 You already made it out of the Blinding Blaze.
@@ -5778,7 +6464,8 @@ Your current rank is shoaled, shod.
 >stare xxx
 You need to figure what the stair would hold. Staring may help, or it may not.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
 >mo mappin
 !by one point
 You're already in the mood to map. No need to overdo it.
@@ -5887,6 +6574,11 @@ by one point
 You have scored a total of 64 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
 Your current rank is shoaled, shod.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+You did all the mapping you needed to.
+
 @hom
 #+ttc-table-of-room-homonyms-blinding-blaze-hom-blinding-blaze-to-wheys-grace-graze-rule
 >graze xxx
@@ -5957,7 +6649,8 @@ Alterations are not your Thing.
 !Learner needle
 You see no way to refigure the snare.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-luck-lair-rule
 >luck lair
 !by one point
 You already got the snuck snare from the luck lair.
@@ -6031,7 +6724,8 @@ No river appears. It might just make things even more crowded and messy, anyway.
 !Learner needle
 You don't need anything as obscure as a wooden peg.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-tight-tunnel-rule
 >tight tunnel
 !by one point
 You already narrowed the funnel to a tunnel.
@@ -6118,7 +6812,8 @@ Your current rank is shoaled, shod.
 @mis
 #no need to check mistakes after, since you are booted from the room
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-knives-niche-rule
 >knives niche
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
@@ -6137,6 +6832,12 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >e
 >u
 >e
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.
+
 >n
 >e
 
@@ -6199,6 +6900,17 @@ by one point
 You have scored a total of 67 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
 Your current rank is scrolled scrod.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-dear-dull-rule
+>dear dull
+You don't need to do any more taunting.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+!by one point
+That might work on people who understand songs and poetry. The Beer Bull does not. You need a stronger way to kill it off.
+
 @gt
 >gt tight tunnel
 Sorry, GO TO is disabled during the Beer Bull chase.
@@ -6243,7 +6955,8 @@ by one point
 You have scored a total of 68 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
 Your current rank is scrolled scrod.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-near-null-rule
 >near null
 !by one point
 You already reduced the bull's power!
@@ -6273,11 +6986,17 @@ The Beer Bull does not stop looking aggressively at you.
 !Learner needle
 No, you can't bring the bull down with peer pressure.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-full-feast-rule
+>full feast
+That should work. It might work better if the Bull Beast were incapacitated.
+
 >w
 >s
 >w
 >d
 >w
+by one point
 
 @all
 #+ttc-table-of-ranks-10
@@ -6325,7 +7044,8 @@ If it could talk, it'd say "Tame? Tush! Maim! Mush!"
 >s
 You don't have the energy
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-beast-boss-rule
 >beast boss
 !by one point
 You already summoned the Bull Beast.
@@ -6355,6 +7075,11 @@ The HA HALF button lights up on your Leet Learner.
 >least zloss rule
 DEBUG: vc-least-loss rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+You'd have to defeat the Bull Beast first.
 
 >least loss
 by one point
@@ -6411,7 +7136,7 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
-@all,mis,ha,ver
+@all,mis,ha,vc,ver
 # maybe this should be !min?
 >wild weed
 by one point
@@ -6421,6 +7146,15 @@ by one point
 >score
 You have scored a total of 72 out of 95 points and need 93 to win. You have found 12 of 14 optional points so far.
 Your current rank is scrolled scrod.
+
+@vc
+>w
+\\
+#+testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Not here, dude! No source of flame!
+\\
+>e
 
 @mis
 >toke test
@@ -6461,7 +7195,8 @@ Too hard to implement. I mean, too fancy for this game. Too fancy, that's it.
 !the Leet Learner dims a bit, and
 That would make for an odd golf course.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-wild-weed-rule
 >wild weed
 !by one point
 Greedy, to try for more.
@@ -6490,7 +7225,7 @@ CULL CEASED
 the Leet Learner dims a bit, and
 McFly
 
-@all,mis,ha
+@all,mis,ha,vc
 >spark spliff
 by one point
 
@@ -6499,6 +7234,11 @@ by one point
 >score
 You have scored a total of 73 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
 Your current rank is scrolled scrod.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Whoah, dude! Jonesing for more already?
 
 @mis
 >toke test
@@ -6546,6 +7286,12 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-heal-here rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+!by one point
+You need to find a way to restore your health.
+
 >heal here
 by one point
 
@@ -6555,7 +7301,14 @@ by one point
 You have scored a total of 74 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
 Your current rank is trolled, trod.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+!by one point
+You need to go back to Creased Cross.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-heal-here-rule
 >heal here
 !by one point
 No need to heal further.
@@ -6635,6 +7388,11 @@ You already minimized your losses. Time to be more aggressive.
 >gt stark store
 You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-least-loss-rule
+>least loss
+You already minimized your losses. Time to be more aggressive.
+
 >cull ceased
 by one point
 
@@ -6656,7 +7414,8 @@ Your current rank is trolled, trod.
 #note that LUL LEAST will tip things off a valid positive here. Or will it? ?? post-comp release won't allow "LEAST LOSS" so you need to shift things around
 #!The HA HALF button lights up on your Leet Learner.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
 >cull ceased
 !by one point
 Don't brag too much, now.
@@ -6687,6 +7446,11 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-full-feast rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+The Bull Beast could be pulled, but in its current form, it wouldn't be useful.
+
 >full feast
 by one point
 
@@ -6701,6 +7465,11 @@ You have scored a total of 76 out of 95 points and need 94 to win. You have foun
 Your current rank is trolled, trod.
 
 ###newitm full feast
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+You're not sure where you could pull the full feast to, yet.
 
 @ver
 >eat full feast
@@ -6827,6 +7596,17 @@ The HA HALF button lights up on your Leet Learner. The Leet Learner emits a tune
 by one point
 >undo
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+It could be that way. But you need to get rid of the whining first.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-dining-door-rule
+>dining door
+!by one point
+You can't make a dining door with all this whining going on!
+
 >so sappin
 by one point
 
@@ -6836,7 +7616,25 @@ by one point
 You have scored a total of 77 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
 Your current rank is trolled, trod.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-dining-door-rule
+>dining door
+!by one point
+You hear a rumbling, but it's still too dingy here for anything nice like a dining door.
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-mining-more-rule
+>mining more
+!by one point
+You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+You already got (t)here.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-so-sappin-rule
 >so sappin
 !by one point
 You already discouraged some whining. Bringing it up again might make you the whiny one.
@@ -6888,10 +7686,10 @@ by one point
 You have scored a total of 78 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
 Your current rank is trolled, trod.
 
-@ha
->shining shore
-!by one point
-You already got (t)here.
+@vc
+#+testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.
 
 @ha
 #+ttc-table-of-verb-checks-78-shore
@@ -6938,7 +7736,8 @@ Your current rank is mold-mod.
 >open dining door
 You'd need a big banquet around before doing that.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-dining-door-rule
 >dining door
 !by one point
 The dining door is already here.
@@ -7023,7 +7822,8 @@ by one point
 You have scored a total of 81 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
 Your current rank is mold-mod.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-mining-more-rule
 >mining more
 !by one point
 You've gotten all the mined materials you need. Wasting them might cause another whining war.
@@ -7102,7 +7902,8 @@ by one point
 You have scored a total of 82 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
 Your current rank is mold-mod.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-show-shield-rule
 >show shield
 !by one point
 Your gold guard has done its duty.
@@ -7151,7 +7952,13 @@ GO GAPPIN
 
 >n
 
-###newloc gassed gap
+@all
+/^Gassed Gap
+
+@vc
+#testcase-reject-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+Your rhyming attempts bring up nothing.
 
 @hom
 #ttc-table-of-verb-checks-vh-cast-cap-rule-caste
@@ -7194,6 +8001,11 @@ by one point
 
 >go gappin
 by one point
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+The song already worked.
 
 @all
 #ttc-table-of-ranks-16
@@ -7362,10 +8174,11 @@ Stench-stained, drench-drained.
 >t reeker russell
 "My mood: DIE, dude!"
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
 >cast cap
 !by one point
-The cap has been cast.
+The cap has been cast into Gassed Gap.
 
 @ha
 #+ttc-table-of-verb-checks-82-cap
@@ -7456,7 +8269,7 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
-@all,mis,ha
+@all,mis,ha,vc
 >beaker bustle
 by one point
 
@@ -7466,7 +8279,8 @@ by one point
 You have scored a total of 86 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
 Your current rank is bold bod.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-beaker-bustle-rule
 >beaker bustle
 !by one point
 Russell's moment of interest in the sciences has passed.
@@ -7482,9 +8296,12 @@ Russell's moment of interest in the sciences has passed.
 !DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
 
-@ha
+@vc
+##balance undos
 >wood one
 by one point
+\\
+#testcase-reject-table-of-verb-checks-vc-wood-one-rule
 >wood one
 !by one point
 Russell's already disarmed, but he's still too strong.
@@ -7517,7 +8334,8 @@ Your current rank is bold bod.
 >w
 "Go, gassed foe, fast!" Reeker Russell taunts you. That makes you mad enough to stay and deal. He's about all that's left in your way. Somehow, you still have to diminish his gun.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-meeker-muscle-rule
 >meeker muscle
 !by one point
 Russell's already meeker. Maybe disarm him?
@@ -7612,8 +8430,43 @@ The field is not for manual labor.
 
 >n
 
-###newloc airy isle
+@all
+/^Airy Isle
+
 ###newnpc bot board
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You'd like to do that, but not here with so many distractions, during perhaps the big last fight.
+
+@vc
+##balance undos
+#testcase-reject-table-of-verb-checks-vc-got-gored-rule
+>got gored
+That sounds right, but it would just be your epitaph right now. With some organized help, though, it could be a potent rallying cry. You save the thought for later.
+\\
+>undo
+\\
+>lot lord
+by one point
+\\
+#+testcase-reject-table-of-verb-checks-vc-got-gored-rule
+>got gored
+The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work.
+\\
+>undo
+>undo
+\\
+>hot horde
+by one point
+\\
+#+testcase-reject-table-of-verb-checks-vc-got-gored-rule
+>got gored
+The Hot Horde needs more than a battle cry. It needs a leader.
+\\
+>undo
+>undo
 
 @hom
 #ttc-table-of-thing-homonyms-sought-sword-sot
@@ -7749,7 +8602,8 @@ Treasure isn't the goal, here. You already have allies.
 >t hot horde
 Lots of rot roared right now.
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-hot-horde-rule
 >hot horde
 !by one point
 You already summoned the Hot Horde.
@@ -7795,7 +8649,8 @@ Your current rank is rolled, rah'd.
 >t lot lord
 "Eeg, not ig-nored." Ugh?
 
-@ha
+@vc
+#testcase-reject-table-of-verb-checks-vc-lot-lord-rule
 >lot lord
 !by one point
 You already summoned the Lot Lord.
@@ -7835,8 +8690,20 @@ The HA HALF button lights up on your Leet Learner.
 >n
 !north to Earning Ridges
 
+@vc
+#testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+Hard to be happy with the Bot Board around.
+
 >got gored
 by one point
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead.
 
 @all
 #ttc-table-of-narratives-33
@@ -7855,11 +8722,6 @@ Your current rank is rolled, rah'd.
 #ttc-table-of-verb-checks-vh-whoa-wait-rule-weight
 >woo weight
 You wouldn't want to be crushed by a weight. But you've got the right idea.
-
-@ha
->got gored
-!by one point
-Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 @ha
 >zgot gored rule
@@ -7960,6 +8822,11 @@ But you want to lessen the grate/gate's influence.
 >gait xxx
 Ah, but what sort of gait should you take?
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+It must be about the right time. But you are not quite there, yet.
+
 >whoa wait
 by one point
 
@@ -7990,13 +8857,18 @@ Nobody named Terry appears, nor does any terry cloth.
 \\
 #ttc-table-of-thing-homonyms-well-worn-hell-horn-warn
 >warn warn
-The well worn hell horn is already giving a false warning.
+The well-worn hell horn is already giving a false warning.
 
 @ver
 >t fairy file
 "THUMP THAT CHUMP-CHAT!" booms a loud voice from inside the Very Vile Fairy File.
 >shit
 A howl from the Very Vile Fairy File: "You yell to tell WHO?!?!" Dang! Implied profanity can be a real smackdown.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+The well-worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.
 
 @gt
 >gt airy isle
@@ -8041,7 +8913,7 @@ There's enough noise right now.
 #ttc-table-of-well-worn-hell-horn-guesses-shell-shorn
 >shell shorn
 Learner needle
-You must be on the right track. But perhaps the shell that is shorn might make the well worn hell horn more effective.
+You must be on the right track. But perhaps the shell that is shorn might make the well-worn hell horn more effective.
 \\
 #ttc-table-of-well-worn-hell-horn-guesses-swell-sworn
 >swell sworn
@@ -8075,6 +8947,12 @@ The HA HALF button lights up on your Leet Learner.
 DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
 
+@vc
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+Not with the well-worn hell horn making those un-merry noises.
+
 >tell torn
 by one point
 
@@ -8097,6 +8975,11 @@ It's debatable whether marriage makes things happier or not. Tweak things for as
 >tell torn
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+@vc
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.
 
 @ha
 #+ttc-table-of-verb-checks-92-torn
@@ -8140,7 +9023,8 @@ Your current rank is gold god (almost).
 >terry tyle
 !Nobody named Terry appears, nor does any terry cloth.
 
-@ha
+@vc
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
 >merry mile
 !by one point
 You already did. And forcing cheeriness tends to backfire.
@@ -8185,10 +9069,397 @@ You need to do the opposite of eat something.
 >gt merry mile
 Already there! Er, here.
 
+@vc
+# some of these cases are "reject" because there is no official mooting
+# we want double test cases here to make sure any end comments are appropriate
+# bury bile of course is not included since it is the final command with rejects tested elsewhere as well
+#
+#testcase-moot-table-of-verb-checks-vc-appealing-appear-rule
+>appealing appear
+{$REJECT}
+\\
+#+testcase-moot-table-of-verb-checks-vc-backed-binder-rule
+>backed binder
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-big-bag-rule
+>big bag
+You already made the big bag.
+\\
+#testcase-reject-table-of-verb-checks-vc-bloke-blessed-rule
+>bloke blessed
+Telling someone or something more than once that you're ignoring it never quite works.
+\\
+#testcase-moot-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-break-brie-rule
+>break brie
+You can't see any objects like that here.
+\\
+#testcase-moot-table-of-verb-checks-vc-brightening-bridge-rule
+>brightening bridge
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-bumped-buster-rule
+>bumped buster
+{$REJECT}
+\\
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The cap has long since been cast into Gassed Gap.
+\\
+#testcase-moot-table-of-verb-checks-vc-cleared-clay-rule
+>cleared clay
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-co-capn-rule
+>co capn
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-cool-cap-rule
+>cool cap
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+{$REJECT}
+\\
+#+testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+Don't brag too much about something that far in the past, now.
+\\
+#testcase-moot-table-of-verb-checks-vc-dark-door-rule
+>dark door
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-dear-dull-rule
+>dear dull
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-dimd-rule
+>dimd
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-dining-door-rule
+>dining door
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-dive-deep-rule
+>dive deep
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-dreaming-dull-rule
+>dreaming dull
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-fall-free-rule
+>fall free
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-feel-fear-rule
+>feel fear
+You can't see any objects like that here.
+\\
+#testcase-moot-table-of-verb-checks-vc-find-fault-rule
+>find fault
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-first-fave-rule
+>first fave
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-fit-found-rule
+>fit found
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-flim-flam-rule
+>flim flam
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-full-feast-rule
+>full feast
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-get-good-rule
+>get good
+{{$GENERIC}}
+\\
+#testcase-moot-table-of-verb-checks-vc-gift-giver-rule
+>gift giver
+{{$GENERIC}}
+\\
+#testcase-moot-table-of-verb-checks-vc-glean-glows-rule
+>glean glows
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-glow-glad-rule
+>glow glad
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-got-gored-rule
+>got gored
+{$REJECT}
+\\
+#+testcase-moot-table-of-verb-checks-vc-green-grass-rule
+>green grass
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-grow-grit-rule
+>grow grit
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-hard-hat-rule
+>hard hat
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-heal-here-rule
+>heal here
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-history-hall-rule
+>history hall
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-ho-happen-rule
+>ho happen
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-hot-horde-rule
+>hot horde
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-kneel-near-rule
+>kneel near
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-knives-niche-rule
+>knives niche
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-least-loss-rule
+>least loss
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-lending-libe-rule
+>lending libe
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-lie-lol-rule
+>lie lol
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-loft-land-rule
+>loft land
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-lot-lord-rule
+>lot lord
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-lots-lame-rule
+>lots lame
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-luck-lair-rule
+>luck lair
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-make-map-rule
+>make map
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-mark-more-rule
+>mark more
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-mash-map-rule
+>mash map
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-meeker-muscle-rule
+>meeker muscle
+{$REJECT}
+\\
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+You already did. And forcing cheeriness tends to backfire.
+\\
+#testcase-moot-table-of-verb-checks-vc-mind-me-rule
+>mind me
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-mining-more-rule
+>mining more
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-moral-mage-rule
+>moral mage
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-mystery-mall-rule
+>mystery mall
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-near-null-rule
+>near null
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-no-nappin-rule
+>no nappin
+The first word was okay, but what came after didn't quite work. You may wish to type in only the first word, or use the up arrow and delete.
+\\
+#testcase-moot-table-of-verb-checks-vc-not-near-rule
+>not near
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-paper-pile-rule
+>paper pile
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-plain-pleasant-rule
+>plain pleasant
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-really-rolling-rule
+>really rolling
+{{$GENERIC}}
+\\
+#+testcase-reject-table-of-verb-checks-vc-see-sign-rule
+>see sign
+You've seen enough signs from We Whine: ME, MINE. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
+\\
+#testcase-moot-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-show-shield-rule
+>show shield
+You can't see any objects like that here.
+\\
+#testcase-moot-table-of-verb-checks-vc-silent-sail-rule
+>silent sail
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-sit-sound-rule
+>sit sound
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-soft-sand-rule
+>soft sand
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Whoah, dude! Jonesing for more already?
+\\
+#testcase-moot-table-of-verb-checks-vc-stay-strong-rule
+>stay strong
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-strong-start-rule
+>strong start
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-take-tea-rule
+>take tea
+You can't see any objects like that here.
+\\
+#testcase-moot-table-of-verb-checks-vc-tell-torn-rule
+>tell torn
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-tight-tunnel-rule
+>tight tunnel
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-wake-whee-rule
+>wake whee
+That'd be a heel turn, actually liking We Whine: ME, MINE.
+# "wake whee" nullified for a homonym entry
+\\
+#testcase-moot-table-of-verb-checks-vc-whatta-wanksta-rule
+>whatta wanksta
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-whoa-wait-rule
+>whoa wait
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-wild-weed-rule
+>wild weed
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-winding-ways-rule
+>winding ways
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-wood-one-rule
+>wood one
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-work-well-rule
+>work well
+{$REJECT}
+\\
+#testcase-moot-table-of-verb-checks-vc-youre-yonder-rule
+>youre yonder
+{$REJECT}
+
 >bury bile
 by one point
 
-@all,mis,ha
+@all,mis,ha,vc
 !see the points you MISSED
 
 @thi

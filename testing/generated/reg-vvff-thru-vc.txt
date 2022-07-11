@@ -1,0 +1,1879 @@
+## reg-vvff-thru-vc.txt
+## GENERATOR FILE: rbr-vvff-thru.txt
+
+## walkthrough with pre-right command testing
+
+** game: /home/andrew/prt/debug-very-vile-fairy-file.ulx
+** interpreter: /home/andrew/prt/glulxe -q
+
+* main-thru
+
+>z
+
+>really rolling
+by one point
+A stun-steed zooms by
+
+>big bag
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-big-bag-rule
+>big bag
+You already made the big bag.
+
+#testcase-unavailable-table-of-verb-checks-vc-find-fault-rule
+>find fault
+DEBUG note of general parser error.
+
+#testcase-unavailable-table-of-verb-checks-vc-gift-giver-rule
+>gift giver
+DEBUG note of general parser error.
+
+#testcase-unavailable-table-of-verb-checks-vc-green-grass-rule
+>green grass
+DEBUG note of general parser error.
+
+>get good
+by one point
+
+>gift giver
+by one point
+
+>find fault
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-find-fault-rule
+>find fault
+!by one point
+You already did, and things got worse. You'll have to try something else.
+
+>green grass
+by one point
+
+#testcase-unavailable-table-of-verb-checks-vc-appealing-appear-rule
+>appealing appear
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-backed-binder-rule
+>backed binder
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-bloke-blessed-rule
+>bloke blessed
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-break-brie-rule
+>break brie
+You can't see any objects like that here.
+
+#testcase-unavailable-table-of-verb-checks-vc-brightening-bridge-rule
+>brightening bridge
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-bumped-buster-rule
+>bumped buster
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You try, and it seems right, but it's not that easy. You have quite a journey before you, until you can do that. But when the time is right, it will be very effective.
+
+#testcase-unavailable-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-cleared-clay-rule
+>cleared clay
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-co-capn-rule
+>co capn
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-cool-cap-rule
+>cool cap
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-dark-door-rule
+>dark door
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-dear-dull-rule
+>dear dull
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-dimd-rule
+>dimd
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-dining-door-rule
+>dining door
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-dive-deep-rule
+>dive deep
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-dreaming-dull-rule
+>dreaming dull
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-fall-free-rule
+>fall free
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-feel-fear-rule
+>feel fear
+You can't see any objects like that here.
+
+#testcase-moot-table-of-verb-checks-vc-find-fault-rule
+>find fault
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-first-fave-rule
+>first fave
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-fit-found-rule
+>fit found
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-flim-flam-rule
+>flim flam
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-full-feast-rule
+>full feast
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-reject-table-of-verb-checks-vc-get-good-rule
+>get good
+You already managed to GET GOOD.
+
+#testcase-moot-table-of-verb-checks-vc-gift-giver-rule
+>gift giver
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-glean-glows-rule
+>glean glows
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-glow-glad-rule
+>glow glad
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+The action was okay, but I couldn't recognize the object.
+
+#testcase-unavailable-table-of-verb-checks-vc-got-gored-rule
+>got gored
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-green-grass-rule
+>green grass
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-hard-hat-rule
+>hard hat
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-heal-here-rule
+>heal here
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-history-hall-rule
+>history hall
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-ho-happen-rule
+>ho happen
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-hot-horde-rule
+>hot horde
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-kneel-near-rule
+>kneel near
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-knives-niche-rule
+>knives niche
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-least-loss-rule
+>least loss
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-lending-libe-rule
+>lending libe
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-lie-lol-rule
+>lie lol
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-loft-land-rule
+>loft land
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-lot-lord-rule
+>lot lord
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-lots-lame-rule
+>lots lame
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-luck-lair-rule
+>luck lair
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mark-more-rule
+>mark more
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-meeker-muscle-rule
+>meeker muscle
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mind-me-rule
+>mind me
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mining-more-rule
+>mining more
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-moral-mage-rule
+>moral mage
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mystery-mall-rule
+>mystery mall
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-near-null-rule
+>near null
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-no-nappin-rule
+>no nappin
+The first word was okay, but what came after didn't quite work. You may wish to type in only the first word, or use the up arrow and delete.
+
+#testcase-unavailable-table-of-verb-checks-vc-not-near-rule
+>not near
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-paper-pile-rule
+>paper pile
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-plain-pleasant-rule
+>plain pleasant
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+You can't see any objects like that here.
+
+#testcase-reject-table-of-verb-checks-vc-really-rolling-rule
+>really rolling
+You already guessed the significance of my pen name.
+
+#testcase-unavailable-table-of-verb-checks-vc-see-sign-rule
+>see sign
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-show-shield-rule
+>show shield
+You can't see any objects like that here.
+
+#testcase-unavailable-table-of-verb-checks-vc-silent-sail-rule
+>silent sail
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-soft-sand-rule
+>soft sand
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-stay-strong-rule
+>stay strong
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-strong-start-rule
+>strong start
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-take-tea-rule
+>take tea
+You can't see any objects like that here.
+
+#testcase-unavailable-table-of-verb-checks-vc-tell-torn-rule
+>tell torn
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-tight-tunnel-rule
+>tight tunnel
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-wake-whee-rule
+>wake whee
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-whatta-wanksta-rule
+>whatta wanksta
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-whoa-wait-rule
+>whoa wait
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-wild-weed-rule
+>wild weed
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-winding-ways-rule
+>winding ways
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-wood-one-rule
+>wood one
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-work-well-rule
+>work well
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-youre-yonder-rule
+>youre yonder
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-reject-table-of-verb-checks-vc-mash-map-rule
+>mash map
+You aren't brave enough yet. Perhaps you can face down the Po' Pit so you can be.
+
+>grow grit
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-grow-grit-rule
+>grow grit
+!by one point
+You already did that. Grit is internalized in you. If you try to be grittier, you may use up the grit you worked so hard to gain.
+
+>mash map
+by one point
+
+#testcase-unavailable-table-of-verb-checks-vc-grow-grit-rule
+>grow grit
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-mash-map-rule
+>mash map
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-make-map-rule
+>make map
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-unavailable-table-of-verb-checks-vc-sit-sound-rule
+>sit sound
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-reject-table-of-verb-checks-vc-flim-flam-rule
+>flim flam
+That's a good idea, but you don't have the confidence yet! You need to get your bearings a bit.
+
+>mind me
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-mind-me-rule
+>mind me
+!by one point
+You already minded yourself.
+
+>flim flam
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+You have nothing to spark up, dude!
+
+#testcase-moot-table-of-verb-checks-vc-backed-binder-rule
+>backed binder
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.Your rhyming attempts bring up nothing.
+
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You can sort of deal with that right now. But you need to do better! You still have adventure to go!
+
+>gonear coral cage
+
+#testcase-reject-table-of-verb-checks-vc-moral-mage-rule
+>moral mage
+That certainly feels right. But the coral cage is too dense to see through or destroy right now. Maybe if you had a key that let you unlock it.
+
+>undo
+>undo
+
+>bloke blessed
+by one point
+You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.
+
+#testcase-reject-table-of-verb-checks-vc-bloke-blessed-rule
+>bloke blessed
+Telling someone or something more than once that you're ignoring it never quite works.
+
+>s
+
+#testcase-reject-table-of-verb-checks-vc-heal-here-rule
+>heal here
+!by one point
+You have not shown the Ceiling Seer the proper respect, yet.
+
+>kneel near
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-kneel-near-rule
+>kneel near
+!by one point
+No need to kneel twice.
+
+#+testcase-reject-table-of-verb-checks-vc-heal-here-rule
+>heal here
+!by one point
+You don't have anything to heal from. The Ceiling Seer seems to be watching down on you, saying you can't do that yet. WRONG
+
+#testcase-reject-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+You haven't found anything you need to deal with. The Ceiling Seer seems to be watching down on you, saying you can't do that yet.
+
+>feel fear
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-feel-fear-rule
+>feel fear
+!by one point
+No need to overdo feeling fear.
+
+>deal dear
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+!by one point
+Overdoing dealing with it is ... one way to show you might not be dealing with it.
+
+>appealing appear
+by one point
+!A stun-steed zooms by
+
+#testcase-reject-table-of-verb-checks-vc-appealing-appear-rule
+>appealing appear
+!by one point
+The peeling pier already looks better.
+
+>n
+
+>strong start
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-strong-start-rule
+>strong start
+!by one point
+You already did. You wouldn't want a stale start or a pale part. Why, you might get sent to Male Mart. Or run over by a kale cart.
+
+>fall free
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-fall-free-rule
+>fall free
+!by one point
+The tree is already fallen. It's in a good place.
+
+>gonear gassed gap
+
+#testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+You don't have any caps to cast.
+
+>undo
+
+>purloin hard hat
+
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The hard hat isn't enough on its own.
+
+>undo
+
+>purloin cool cap
+
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The cool cap and hard hat aren't quite enough.
+
+>undo
+
+>purloin cake cap
+
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+Wow! Three hats! They would be great to cast! But if only there was a way to combine them into an extra-cool hat you could cast all at once!
+
+>undo
+>undo
+>undo
+>undo
+>undo
+
+>dive deep
+by one point
+
+>paper pile
+by one point
+
+>backed binder
+by one point
+
+>n
+
+#testcase-reject-table-of-verb-checks-vc-least-loss-rule
+>least loss
+Not yet. You need to be in a fighting situation.
+
+>n
+>w
+>work well
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+You have no caps to couple. Maybe one day, though.
+
+>undo
+>undo
+>undo
+>undo
+
+>w
+
+#testcase-reject-table-of-verb-checks-vc-mark-more-rule
+>mark more
+That'd work, if there was something to mark. There isn't, yet.
+
+>dark door
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-dark-door-rule
+>dark door
+!by one point
+You already made the dark door appear.
+
+>mark more
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-dark-door-rule
+>dark door
+!by one point
+You already made the dark door appear and disappear to create a passage.
+
+>cleared clay
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-cleared-clay-rule
+>cleared clay
+!by one point
+The clay is cleared enough.
+
+>w
+
+>mystery mall
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-glean-glows-rule
+>glean glows
+That would work, to find how to clean your clothes, but you don't have any clothes that need cleaning.
+
+#testcase-reject-table-of-verb-checks-vc-mystery-mall-rule
+>mystery mall
+!by one point
+You've already flipped this area to the Mystery Mall.
+
+>what a wanksta
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-whatta-wanksta-rule
+>whatta wanksta
+!by one point
+That insult only works once.
+
+>gonear blinding blaze
+
+#testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+You'd love to, but you need some sort of artistic, lively way to make the mapping less tedious. Even fun.
+
+>undo
+>undo
+
+>listen
+
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+Maybe some other place could use mapping, but not here.
+
+#testcase-reject-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+!by one point
+That's an interesting riff, but it doesn't seem to work here.
+
+#testcase-reject-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+Hm! Toe Tappin' Row Rappin' could be tweaked like that to be useful in the right place.
+
+>lots lame
+by one point
+
+>ho happen
+by one point
+
+>dimd
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-ho-happen-rule
+>ho happen
+!by one point
+#?? for postcomp: TRY DOING
+You already said HO HAPPEN. Now you have to make things happen!
+
+#testcase-reject-table-of-verb-checks-vc-co-capn-rule
+>co capn
+It might be nice to have a cohort for a bit, but there's nobody worthy here.
+>undo
+
+>no nappin
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-no-nappin-rule
+>no nappin
+!by one point
+You already managed to change up Toe Tappin Row Rappin' so No Nappin' was useful.
+
+>w
+
+>lie lol
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-lie-lol-rule
+>lie lol
+!by one point
+The shy shawl has taken enough abuse.
+
+>not near
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-not-near-rule
+>not near
+!by one point
+You already teleported for a bonus point.
+
+>hard hat
+by one point
+
+>e
+>e
+>e
+>n
+>w
+
+>work well
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+The hard hat isn't enough on its own.
+
+#testcase-reject-table-of-verb-checks-vc-work-well-rule
+>work well
+!by one point
+Any further futzing might undo your previous good work.
+
+>e
+
+>loft land
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-loft-land-rule
+>loft land
+!by one point
+You're already on the Loft Land.
+
+>soft sand
+!by one point
+
+#testcase-reject-table-of-verb-checks-vc-soft-sand-rule
+>soft sand
+!by one point
+You're already on the Soft Sand.
+
+>undo
+>undo
+>undo
+
+>w
+
+#testcase-reject-table-of-verb-checks-vc-first-fave-rule
+>first fave
+!by one point
+You can't like anything with that screaming skull around!
+
+>dreaming dull
+by one point
+
+>first fave
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-first-fave-rule
+>first fave
+!by one point
+The Curst Cave is already a cheerier place.
+
+>cool cap
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+The cool cap and hard hat aren't quite enough.
+
+>e
+>s
+>e
+
+>silent sail
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-silent-sail-rule
+>silent sail
+!by one point
+You already called up the flooring float.
+
+>brightening bridge
+by one point
+
+>boring boat
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+!by one point
+The boat is already boring and practical enough.
+
+>enter boat
+
+#testcase-reject-table-of-verb-checks-vc-take-tea-rule
+>take tea
+!by one point
+Maybe when Jake is awake.
+
+#testcase-reject-table-of-verb-checks-vc-break-brie-rule
+>break brie
+!by one point
+This bonus point action won't work until Jake is conscious.
+
+#testcase-reject-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+!by one point
+Maybe when Jake is awake.
+
+>wake whee
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-wake-whee-rule
+>wake whee
+!by one point
+He's already awake, Blake.
+
+#+testcase-reject-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+!by one point
+But Jake has given you nothing of value yet.
+
+>take tea
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-take-tea-rule
+>take tea
+!by one point
+Don't get greedy. You have the sustenance needed to work with Jake G.
+
+>break brie
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-break-brie-rule
+>break brie
+!by one point
+Hey! Don't get greedy, now.
+
+#+testcase-reject-table-of-verb-checks-vc-co-capn-rule
+>co capn
+You haven't (yet) bonded with Jake G. enough for that.
+>undo
+
+>fake fee
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+!by one point
+That's over. Time to work with Jake!
+
+>e
+
+#testcase-reject-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+There might be a snake here. But you'd have to find it, first.
+
+>make map
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.
+
+#testcase-reject-table-of-verb-checks-vc-make-map-rule
+>make map
+!by one point
+You already made a map.
+
+>co capn
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-co-capn-rule
+>co capn
+!by one point
+Jake already is.
+
+>snake snap
+by one point
+Silent Sail
+
+>enter boat
+
+#testcase-reject-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+
+#testcase-reject-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+You're not well-adjusted enough yet to learn anything so emotionally complex. Especially not on your own.
+>undo
+>undo
+
+>stay strong
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-stay-strong-rule
+>stay strong
+!by one point
+Staying strong reduced one kind of negativity, but now there's another.
+
+>glow glad
+by one point
+
+>mean muggin
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+!by one point
+You already learned mean muggin'.
+
+>lean luggin
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+!by one point
+You already learned lean luggin'.
+>undo
+
+>bumped buster
+by one point
+
+>enter boat
+
+#+testcase-reject-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+!by one point
+You don't need to bring the boring boat back.
+
+>w
+>w
+>w
+
+>glean glows
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+Hmm, maybe that'd make a useful disturbance elsewhere, with someone to distract, but not here.
+
+>history hall
+
+#testcase-reject-table-of-verb-checks-vc-history-hall-rule
+>history hall
+!by one point
+You already flipped back to History Hall.
+
+>youre yonder
+by one point
+
+>out
+
+>smashing smoke
+by one point
+
+>in
+>w
+
+>lending libe
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-lending-libe-rule
+>lending libe
+!by one point
+Yes, It's a library now.
+
+>see sign
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-see-sign-rule
+>see sign
+!by one point
+You've seen enough signs from We Whine: ME, MINE. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
+
+>e
+>e
+>e
+
+#+testcase-reject-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+That's not enough to distract the Beer Bull for good. The Beer Bull can smell you.
+
+#testcase-reject-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+You don't feel armed for that, yet.
+
+>n
+
+>n
+
+#testcase-reject-table-of-verb-checks-vc-show-shield-rule
+>show shield
+That seems right, but you have nothing that would guard you effectively. Maybe later.
+
+#+testcase-reject-table-of-verb-checks-vc-show-shield-rule
+>show shield
+Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements even beyond what the gull guard gave.
+
+>plain pleasant
+by one point
+
+>w
+
+>moral mage
+by one point
+
+>e
+>e
+
+#testcase-reject-table-of-verb-checks-vc-fit-found-rule
+>fit found
+!by one point
+Maybe later, but you can't focus on that with the hit hound around.
+
+>sit sound
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-sit-sound-rule
+>sit sound
+!by one point
+You already sat sound. But maybe there's a way to feel more comfortable.
+
+>fit found
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-fit-found-rule
+>fit found
+!by one point
+You already fit in.
+
+>e
+
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+The blaze isn't mappable, but maybe something that replaces it is.
+
+>winding ways
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-winding-ways-rule
+>winding ways
+!by one point
+You already made it out of the Blinding Blaze.
+
+>mo mappin
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+!by one point
+You're already in the mood to map. No need to overdo it.
+
+>luck lair
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+You did all the mapping you needed to.
+
+#testcase-reject-table-of-verb-checks-vc-luck-lair-rule
+>luck lair
+!by one point
+You already got the snuck snare from the luck lair.
+
+>w
+>w
+>s
+>s
+>w
+>d
+
+>tight tunnel
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-tight-tunnel-rule
+>tight tunnel
+!by one point
+You already narrowed the funnel to a tunnel.
+
+>w
+
+>knives niche
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-knives-niche-rule
+>knives niche
+!by one point
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+>e
+>u
+>e
+
+#+testcase-reject-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+You aren't very confident your mold-marred gold guard could hold up in any sort of fight. You need to buff it up somehow first.
+
+>n
+>e
+
+>dear dull
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-dear-dull-rule
+>dear dull
+You don't need to do any more taunting.
+
+#+testcase-reject-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+!by one point
+That might work on people who understand songs and poetry. The Beer Bull does not. You need a stronger way to kill it off.
+
+>near null
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-near-null-rule
+>near null
+!by one point
+You already reduced the bull's power!
+
+#testcase-reject-table-of-verb-checks-vc-full-feast-rule
+>full feast
+That should work. It might work better if the Bull Beast were incapacitated.
+
+>w
+>s
+>w
+>d
+>w
+by one point
+
+>s
+
+>beast boss
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+!by one point
+You already summoned the Bull Beast.
+
+#testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+You'd have to defeat the Bull Beast first.
+
+>least loss
+by one point
+
+# maybe this should be !min?
+>wild weed
+by one point
+
+>w
+
+#+testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Not here, dude! No source of flame!
+
+>e
+
+#testcase-reject-table-of-verb-checks-vc-wild-weed-rule
+>wild weed
+!by one point
+Greedy, to try for more.
+
+>spark spliff
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Whoah, dude! Jonesing for more already?
+
+>s
+
+>s
+
+#testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+!by one point
+You need to find a way to restore your health.
+
+>heal here
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+!by one point
+You need to go back to Creased Cross.
+
+#+testcase-reject-table-of-verb-checks-vc-heal-here-rule
+>heal here
+!by one point
+No need to heal further.
+
+>n
+>n
+
+#+testcase-reject-table-of-verb-checks-vc-least-loss-rule
+>least loss
+You already minimized your losses. Time to be more aggressive.
+
+>cull ceased
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+!by one point
+Don't brag too much, now.
+
+#+testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+The Bull Beast could be pulled, but in its current form, it wouldn't be useful.
+
+>full feast
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+You're not sure where you could pull the full feast to, yet.
+
+>e
+>e
+
+#testcase-reject-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+It could be that way. But you need to get rid of the whining first.
+
+#testcase-reject-table-of-verb-checks-vc-dining-door-rule
+>dining door
+!by one point
+You can't make a dining door with all this whining going on!
+
+>so sappin
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-dining-door-rule
+>dining door
+!by one point
+You hear a rumbling, but it's still too dingy here for anything nice like a dining door.
+
+#testcase-reject-table-of-verb-checks-vc-mining-more-rule
+>mining more
+!by one point
+You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.
+
+#+testcase-reject-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+You already got (t)here.
+
+#+testcase-reject-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+!by one point
+You already discouraged some whining. Bringing it up again might make you the whiny one.
+
+>shining shore
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+The folks at the Shining Shore aren't quite ready for a feast, yet. Perhaps the Shining Shore needs a bit of adjustment.
+
+>dining door
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-dining-door-rule
+>dining door
+!by one point
+The dining door is already here.
+
+>pull pieced
+by one point
+
+>mining more
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-mining-more-rule
+>mining more
+!by one point
+You've gotten all the mined materials you need. Wasting them might cause another whining war.
+
+>w
+>w
+>n
+>n
+
+>show shield
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-show-shield-rule
+>show shield
+!by one point
+Your gold guard has done its duty.
+
+>n
+
+#testcase-reject-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+Your rhyming attempts bring up nothing.
+
+>go gappin
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+The song already worked.
+
+>couple caps
+by one point
+
+>cast cap
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The cap has been cast into Gassed Gap.
+
+>beaker bustle
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+!by one point
+Russell's moment of interest in the sciences has passed.
+
+>wood one
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-wood-one-rule
+>wood one
+!by one point
+Russell's already disarmed, but he's still too strong.
+>undo
+>undo
+
+>meeker muscle
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-meeker-muscle-rule
+>meeker muscle
+!by one point
+Russell's already meeker. Maybe disarm him?
+
+>wood one
+by one point
+
+>n
+
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You'd like to do that, but not here with so many distractions, during perhaps the big last fight.
+
+#testcase-reject-table-of-verb-checks-vc-got-gored-rule
+>got gored
+That sounds right, but it would just be your epitaph right now. With some organized help, though, it could be a potent rallying cry. You save the thought for later.
+
+>undo
+
+>lot lord
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-got-gored-rule
+>got gored
+The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work.
+
+>undo
+>undo
+
+>hot horde
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-got-gored-rule
+>got gored
+The Hot Horde needs more than a battle cry. It needs a leader.
+
+>undo
+>undo
+
+>hot horde
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-hot-horde-rule
+>hot horde
+!by one point
+You already summoned the Hot Horde.
+
+>lot lord
+by one point
+
+#testcase-reject-table-of-verb-checks-vc-lot-lord-rule
+>lot lord
+!by one point
+You already summoned the Lot Lord.
+
+#testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+Hard to be happy with the Bot Board around.
+
+>got gored
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead.
+
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+It must be about the right time. But you are not quite there, yet.
+
+>whoa wait
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+The well-worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.
+
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+Not with the well-worn hell horn making those un-merry noises.
+
+>tell torn
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
+>bury bile
+You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.
+
+>merry mile
+by one point
+
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+!by one point
+You already did. And forcing cheeriness tends to backfire.
+
+# some of these cases are "reject" because there is no official mooting
+# we want double test cases here to make sure any end comments are appropriate
+# bury bile of course is not included since it is the final command with rejects tested elsewhere as well
+#
+#testcase-moot-table-of-verb-checks-vc-appealing-appear-rule
+>appealing appear
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#+testcase-moot-table-of-verb-checks-vc-backed-binder-rule
+>backed binder
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-beaker-bustle-rule
+>beaker bustle
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-beast-boss-rule
+>beast boss
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-big-bag-rule
+>big bag
+You already made the big bag.
+
+#testcase-reject-table-of-verb-checks-vc-bloke-blessed-rule
+>bloke blessed
+Telling someone or something more than once that you're ignoring it never quite works.
+
+#testcase-moot-table-of-verb-checks-vc-boring-boat-rule
+>boring boat
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-break-brie-rule
+>break brie
+You can't see any objects like that here.
+
+#testcase-moot-table-of-verb-checks-vc-brightening-bridge-rule
+>brightening bridge
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-bumped-buster-rule
+>bumped buster
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#+testcase-reject-table-of-verb-checks-vc-cast-cap-rule
+>cast cap
+!by one point
+The cap has long since been cast into Gassed Gap.
+
+#testcase-moot-table-of-verb-checks-vc-cleared-clay-rule
+>cleared clay
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-co-capn-rule
+>co capn
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-cool-cap-rule
+>cool cap
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-couple-caps-rule
+>couple caps
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#+testcase-reject-table-of-verb-checks-vc-cull-ceased-rule
+>cull ceased
+Don't brag too much about something that far in the past, now.
+
+#testcase-moot-table-of-verb-checks-vc-dark-door-rule
+>dark door
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-deal-dear-rule
+>deal dear
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-dear-dull-rule
+>dear dull
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-dimd-rule
+>dimd
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-dining-door-rule
+>dining door
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-dive-deep-rule
+>dive deep
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-dreaming-dull-rule
+>dreaming dull
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-fake-fee-rule
+>fake fee
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-fall-free-rule
+>fall free
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-feel-fear-rule
+>feel fear
+You can't see any objects like that here.
+
+#testcase-moot-table-of-verb-checks-vc-find-fault-rule
+>find fault
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-first-fave-rule
+>first fave
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-fit-found-rule
+>fit found
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-flim-flam-rule
+>flim flam
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-full-feast-rule
+>full feast
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-get-good-rule
+>get good
+{{$GENERIC}}
+
+#testcase-moot-table-of-verb-checks-vc-gift-giver-rule
+>gift giver
+{{$GENERIC}}
+
+#testcase-moot-table-of-verb-checks-vc-glean-glows-rule
+>glean glows
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-glow-glad-rule
+>glow glad
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-go-gappin-rule
+>go gappin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-got-gored-rule
+>got gored
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#+testcase-moot-table-of-verb-checks-vc-green-grass-rule
+>green grass
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-grow-grit-rule
+>grow grit
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-hard-hat-rule
+>hard hat
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-heal-here-rule
+>heal here
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-history-hall-rule
+>history hall
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-ho-happen-rule
+>ho happen
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-hot-horde-rule
+>hot horde
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-kneel-near-rule
+>kneel near
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-knives-niche-rule
+>knives niche
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-lean-luggin-rule
+>lean luggin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-least-loss-rule
+>least loss
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-lending-libe-rule
+>lending libe
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-lie-lol-rule
+>lie lol
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-loft-land-rule
+>loft land
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-lot-lord-rule
+>lot lord
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-lots-lame-rule
+>lots lame
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-luck-lair-rule
+>luck lair
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-make-map-rule
+>make map
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-mark-more-rule
+>mark more
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-mash-map-rule
+>mash map
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-mean-muggin-rule
+>mean muggin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-meeker-muscle-rule
+>meeker muscle
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#+testcase-reject-table-of-verb-checks-vc-merry-mile-rule
+>merry mile
+You already did. And forcing cheeriness tends to backfire.
+
+#testcase-moot-table-of-verb-checks-vc-mind-me-rule
+>mind me
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-mining-more-rule
+>mining more
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-mo-mappin-rule
+>mo mappin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-moral-mage-rule
+>moral mage
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-mystery-mall-rule
+>mystery mall
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-near-null-rule
+>near null
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-no-nappin-rule
+>no nappin
+The first word was okay, but what came after didn't quite work. You may wish to type in only the first word, or use the up arrow and delete.
+
+#testcase-moot-table-of-verb-checks-vc-not-near-rule
+>not near
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-paper-pile-rule
+>paper pile
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-plain-pleasant-rule
+>plain pleasant
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-pull-pieced-rule
+>pull pieced
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-really-rolling-rule
+>really rolling
+{{$GENERIC}}
+
+#+testcase-reject-table-of-verb-checks-vc-see-sign-rule
+>see sign
+You've seen enough signs from We Whine: ME, MINE. Overkill might leave you demoralized or too analytical to just cut loose and adventure.
+
+#testcase-moot-table-of-verb-checks-vc-shining-shore-rule
+>shining shore
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-show-shield-rule
+>show shield
+You can't see any objects like that here.
+
+#testcase-moot-table-of-verb-checks-vc-silent-sail-rule
+>silent sail
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-sit-sound-rule
+>sit sound
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-smashing-smoke-rule
+>smashing smoke
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-snake-snap-rule
+>snake snap
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-so-sappin-rule
+>so sappin
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-soft-sand-rule
+>soft sand
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-spark-spliff-rule
+>spark spliff
+Whoah, dude! Jonesing for more already?
+
+#testcase-moot-table-of-verb-checks-vc-stay-strong-rule
+>stay strong
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-strong-start-rule
+>strong start
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-take-tea-rule
+>take tea
+You can't see any objects like that here.
+
+#testcase-moot-table-of-verb-checks-vc-tell-torn-rule
+>tell torn
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-tight-tunnel-rule
+>tight tunnel
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-wake-whee-rule
+>wake whee
+That'd be a heel turn, actually liking We Whine: ME, MINE.
+# "wake whee" nullified for a homonym entry
+
+#testcase-moot-table-of-verb-checks-vc-whatta-wanksta-rule
+>whatta wanksta
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-whoa-wait-rule
+>whoa wait
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-wild-weed-rule
+>wild weed
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-winding-ways-rule
+>winding ways
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-wood-one-rule
+>wood one
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-work-well-rule
+>work well
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+#testcase-moot-table-of-verb-checks-vc-youre-yonder-rule
+>youre yonder
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
+
+>bury bile
+by one point
+
+!see the points you MISSED
+
