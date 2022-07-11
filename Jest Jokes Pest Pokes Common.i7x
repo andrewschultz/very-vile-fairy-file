@@ -359,6 +359,119 @@ to check-lump-progress:
 		increase next-lump-level by next-lump-delta;
 		if next-lump-level > max-guesses-needed, now next-lump-level is max-guesses-needed;
 
+volume meta verb definitions
+
+chapter optsing
+
+optsing is an action applying to nothing.
+
+understand the command "opts" as something new.
+
+understand "opts" as optsing.
+
+carry out optsing:
+	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
+	if vined vault is not visited:
+		say "The Leet Learner has options to toggle, but it would spoil things to list them now.";
+	else:
+		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
+
+report optsing:
+	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
+	continue the action;
+
+volume more active or help-seeking verb(s)
+
+chapter exitsing
+
+exitsing is an action applying to nothing.
+
+understand the command "exits" as something new.
+
+understand "exits" as exitsing.
+
+exitdirs is a list of directions variable. exitdirs is { north, south, east, west, inside, outside, up, down }.
+
+carry out exitsing:
+	let my-exits be 0;
+	repeat with Q running through exitdirs:
+		let RQ be the room Q of location of player;
+		if RQ is not nowhere:
+			if my-exits is 0, say "LIST OF EXITS:[line break]";
+			say "[Q]: [if Q is blocked](unavailable.)[else if RQ is visited][RQ].[else](unvisited.)[end if]";
+			increment my-exits;
+	if my-exits is 0, say "There are no clear safe exits. It looks like you need to solve a puzzle to find your way out of here.";
+	the rule succeeds.
+
+chapter hinting an object verb
+
+hintobjing is an action applying to one thing.
+
+understand "hint [thing]" as hintobjing.
+understand "hint on [thing]" as hintobjing.
+understand "help [thing]" as hintobjing.
+understand "help on [thing]" as hintobjing.
+
+carry out hintobjing:
+	abide by the welp-wow-check rule;
+	if noun is optional and noun is not optional-noted:
+		now noun is optional-noted;
+		say "While you can score a point from [the noun], it's not critical to the game. [this-game] notes each such item before giving concrete help. [b]HINT[r] it again to see what to do [the noun]." instead;
+	process thing-hint-rule of noun;
+	if the rule failed, say "There doesn't seem to be anything more to do with [the noun] in general.";
+	the rule succeeds.
+
+section thing hint rule definitions
+
+a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
+
+book reading
+
+reading is an action applying to one thing.
+
+understand the command "r" as something new.
+understand the command "read" as something new.
+
+understand "r [thing]" as reading.
+understand "read [thing]" as reading.
+
+definition: a thing (called th) is readable:
+	if th is a read-thing listed in the table of readables, yes;
+	no;
+
+does the player mean reading a readable thing: it is very likely.
+does the player mean reading the leet learner: it is likely.
+
+read-exam-note is a truth state that varies.
+
+carry out reading:
+	repeat through table of readables:
+		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
+	if read-exam-note is false, say "[i][bracket][r][b]NOTE: READ[r][i] and [b]X/EXAMINE[r][i] are functionally equivalent for all items except those giving general advice. Items you can [b]READ[r][i] usually say so when you examine them.[close bracket]";
+	now read-exam-note is true;
+	try examining the noun instead;
+
+chapter initialize the table
+
+table of readables
+read-thing	read-txt
+leet learner	"Some text matches up with where the needle nose might spin. It's a bit of a stretch, in some cases, but you figure the more help the better.[paragraph break][table-of-needle-hints][run paragraph on]"
+
+section stuff about the leet learner
+
+to say table-of-needle-hints: [puncok]
+	repeat through table of color clues:
+		say "[fixed letter spacing][my-text entry][variable letter spacing] is written to the [my-color entry].";
+	say "[line break]Also, TREAT TURNER is plastered across the bottom in wavy font. Maybe if you know what everything else stands for, you can figure that, too."
+
+table of color clues
+my-text	my-color
+"CONCEIT CONCERNER"	"left"
+"  CHEAT CHURNER  "	"center-left"
+"   MEET MOURNER  "	"center"
+"   BEAT BURNER   "	"center-right"
+"    EAT EARNER   "	"right"
+
 volume scoring and such
 
 book replace old score/thinking rule(s)

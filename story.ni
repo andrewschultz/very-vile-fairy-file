@@ -2033,7 +2033,7 @@ carry out narrnoing:
 
 chapter wherewhoaing
 
-wherewhoaing is an action applying to nothing.
+wherewhoaing is an action out of world.
 
 understand the command "where whoa" as something new.
 understand the command "where whoah" as something new.
@@ -2093,11 +2093,14 @@ section score/think notification
 this is the narrative-checking rule:
 	if buggin-freeze, the rule succeeds;
 	if narr-on is false, the rule succeeds;
-	if this-beta-warp is true, say "[line break][i][bracket][b]NOTE:[r][i] warping skipps narratives, but you can see them at the end anyway.[close bracket][r][line break]";
+	if this-beta-warp is true, say "[line break][i][bracket][b]NOTE:[r][i] warping skips narratives, but you can see them at the end anyway.[close bracket][r][line break]";
+	let cur-row be 0;
 	repeat through table of narratives:
+		increment cur-row;
 		if done-yet entry is false and core-score >= rank-num entry:
 			now done-yet entry is true;
 			if this-beta-warp is false:
+				if debug-state is true, say "DEBUG: narrative text row [cur-row] core score [core-score] total score [score] gets new narrative.[line break]";
 				say "[line break][rank-txt entry][line break]";
 				the rule succeeds;
 	now this-beta-warp is false;
@@ -2138,52 +2141,16 @@ book nonstandard but general verbs
 
 chapter reading
 
-reading is an action applying to one thing.
-
-understand the command "r" as something new.
-understand the command "read" as something new.
-
-understand "r [thing]" as reading.
-understand "read [thing]" as reading.
-
-definition: a thing (called th) is readable:
-	if th is a read-thing listed in the table of readables, yes;
-	no;
-
-does the player mean reading a readable thing: it is very likely.
-does the player mean reading the leet learner: it is likely.
-
-read-exam-note is a truth state that varies.
-
-carry out reading:
-	if noun is evidencey, say "Yes, [the noun]'s details are important, but you've gotten enough." instead;
-	repeat through table of readables:
-		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
-	if read-exam-note is false, say "NOTE: READ and X/EXAMINE are functionally equivalent for all items except those giving general advice. Items you can [b]READ[r] usually say so when you examine them.";
-	now read-exam-note is true;
-	try examining the noun instead;
+check reading: if noun is evidencey, say "Yes, [the noun]'s details are important, but you've gotten enough." instead;
 
 to say read-vvff: now ever-read-vvff is true;
 
-table of readables
+table of readables (continued)
 read-thing	read-txt
-Very Vile Fairy File	"[read-vvff]The [fairy file] contains advice and catch-phrases to seem like an alpha male or demoralize others you feel you need to demoralize. One is [i][next-rand-txt of table of vvff digs][r]"
 leet learner	"Some text matches up with where the needle nose might spin. It's a bit of a stretch, in some cases, but you figure the more help the better.[paragraph break][table-of-needle-hints][run paragraph on]"
+Very Vile Fairy File	"[read-vvff]The [fairy file] contains advice and catch-phrases to seem like an alpha male or demoralize others you feel you need to demoralize. One is [i][next-rand-txt of table of vvff digs][r]"
 marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
 paper pile	"It's too disorganized to read any details. You do notice FACT FINDER is stamped on pretty much every single page, though."
-
-to say table-of-needle-hints: [puncok]
-	repeat through table of color clues:
-		say "[fixed letter spacing][my-text entry][variable letter spacing] is written to the [my-color entry].";
-	say "[line break]Also, TREAT TURNER is plastered across the bottom in wavy font. Maybe if you know what everything else stands for, you can figure that, too."
-
-table of color clues
-my-text	my-color
-"CONCEIT CONCERNER"	"left"
-"  CHEAT CHURNER  "	"center-left"
-"   MEET MOURNER  "	"center"
-"   BEAT BURNER   "	"center-right"
-"    EAT EARNER   "	"right"
 
 chapter xyzzying
 
@@ -2193,18 +2160,8 @@ carry out xyzzying:
 
 chapter verbsing
 
-verbsing is an action out of world.
-
-understand the command "v" as something new.
-understand the command "verb" as something new.
-understand the command "verbs" as something new.
-
-understand "v" as verbsing.
-understand "verb" as verbsing.
-understand "verbs" as verbsing.
-
 carry out verbsing:
-	say "[one of]NOTE: More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles.[paragraph break][or][stopping]";
+	say "[one of]NOTE: More obscure verbs from old-school parser games have been disabled, to help you focus on the puzzles. However, in some cases, a semi-standard old-school verb may be the right thing to say.[paragraph break][or][stopping]";
 	say "[2da]You can use the general directions, but you often have to figure out what to do, here. It's a guess the verb situation, but not really. The verb should never involve proper names, though clever or sensible guesses may help you gain a hint/spoiler item.";
 	say "[b]HINT[r] with no object tells you if you need to do anything with the room, while [b]HINT[r] (object) looks at specific objects.";
 	say "[2da][b]ABOUT[r] and [b]CREDITS[r] give general information.";
@@ -2218,45 +2175,11 @@ carry out verbsing:
 
 chapter optsing
 
-optsing is an action applying to nothing.
-
-understand the command "opts" as something new.
-
-understand "opts" as optsing.
-
-carry out optsing:
-	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
-	if vined vault is not visited:
-		say "The Leet Learner has options to toggle, but it would spoil things to list them now.";
-	else:
-		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
+report optsing (this is the VVFF song commands rule):
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
-	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
-	the rule succeeds.
-
-chapter soundsing
-
-soundsing is an action applying to nothing.
-
-understand the command "sounds" as something new.
-understand the command "sound" as something new.
-
-understand "sounds" and "sound" as soundsing.
-
-carry out soundsing:
-	say "The basic sounds in the English language are:[paragraph break]";
-	say "one letter: b k d f g h j l m n p r s t v w x z (c q and x map to others.)";
-	say "two letters: ur ar or bl br cl cr dr fl fr gl gr pl pr sk sl sp st sw spr str tr.";
-	say "rarer two letters: ch so th (thing or this) wh ng nk oi ow oo (took) aw zh (vision.)";
-	the rule succeeds.
+	continue the action;
 
 chapter creditsing
-
-creditsing is an action out of world.
-
-understand the command "credits" as something new.
-
-understand "credits" as creditsing.
 
 carry out creditsing:
 	say "First, thanks to Wade Clarke, dgtziea, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. Their requests, observations, clever tries and plowing on in the face of some pretty obvious bugs helped push me to do things I didn't consider or put off--in particular, many ways of hinting. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
@@ -2269,12 +2192,6 @@ carry out creditsing:
 
 chapter abouting
 
-abouting is an action out of world.
-
-understand the command "about" as something new.
-
-understand "about" as abouting.
-
 carry out abouting:
 	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break][b]OTHERS[r] will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
 	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
@@ -2285,16 +2202,6 @@ carry out abouting:
 	the rule succeeds;
 
 chapter hinting verb
-
-hinting is an action applying to nothing.
-
-understand the command "hint" as something new.
-understand the command "help" as something new.
-understand the command "hints" as something new.
-
-understand "hint" as hinting.
-understand "help" as hinting.
-understand "hints" as hinting.
 
 to say sorry-bull: say ". Sorry. But you can try as often as you need"
 
@@ -2492,7 +2399,7 @@ this is the store-all-stage-hint rule:
 
 this is the tarry-tile-hint rule:
 	if well worn hell horn is in Tarry Tile:
-		say "You can do something with this location [once-now of vc-merry-mile rule] the well worn hell horn is dealt with.";
+		say "You can do something with this location [once-now of vc-merry-mile rule] the [hell horn] is dealt with.";
 	else if sco-merry-mile is false:
 		say "[one of]The Tarry Tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
 	else:
@@ -2546,26 +2453,6 @@ this is the yold-yard-hint rule:
 [zzhrr]
 
 chapter hinting an object verb
-
-hintobjing is an action applying to one thing.
-
-understand "hint [thing]" as hintobjing.
-understand "hint on [thing]" as hintobjing.
-understand "help [thing]" as hintobjing.
-understand "help on [thing]" as hintobjing.
-
-carry out hintobjing:
-	abide by the welp-wow-check rule;
-	if noun is optional and noun is not optional-noted:
-		now noun is optional-noted;
-		say "While you can score a point from [the noun], it's not critical to the game. HINTing it again will show what to do with [the noun]." instead;
-	process thing-hint-rule of noun;
-	if the rule failed, say "There doesn't seem to be anything more to do with [the noun] in general.";
-	the rule succeeds.
-
-section thing hint rule definitions
-
-a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule. [postalf]
 
 the thing-hint-rule of Beer Bull is beer-bull-hint rule.
 the thing-hint-rule of Bold Bard is bold-bard-hint rule.
@@ -3126,25 +3013,6 @@ carry out gotothinging:
 	try gotoing Q instead;
 
 chapter exitsing
-
-exitsing is an action applying to nothing.
-
-understand the command "exits" as something new.
-
-understand "exits" as exitsing.
-
-exitdirs is a list of directions variable. exitdirs is { north, south, east, west, inside, outside, up, down }.
-
-carry out exitsing:
-	let my-exits be 0;
-	repeat with Q running through exitdirs:
-		let RQ be the room Q of location of player;
-		if RQ is not nowhere:
-			if my-exits is 0, say "LIST OF EXITS:[line break]";
-			say "[Q]: [if Q is blocked](unavailable.)[else if RQ is visited][RQ].[else](unvisited.)[end if]";
-			increment my-exits;
-	if my-exits is 0, say "There are no clear safe exits. It looks like you need to solve a puzzle to find your way out of here.";
-	the rule succeeds.
 
 to decide whether (di - a direction) is blocked:
 	if player is in Fun Fen and di is north and sco-fall-free is false, yes;

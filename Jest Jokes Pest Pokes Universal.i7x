@@ -170,6 +170,34 @@ definition: a thing (called th) is acquired:
 
 volume universal meta command(s)
 
+chapter abouting
+
+abouting is an action out of world.
+
+understand the command "about" as something new.
+
+understand "about" as abouting.
+
+chapter creditsing
+
+creditsing is an action out of world.
+
+understand the command "credits" as something new.
+
+understand "credits" as creditsing.
+
+chapter hinting verb
+
+hinting is an action out of world.
+
+understand the command "hint" as something new.
+understand the command "help" as something new.
+understand the command "hints" as something new.
+
+understand "hint" as hinting.
+understand "help" as hinting.
+understand "hints" as hinting.
+
 chapter othersing
 
 othersing is an action out of world.
@@ -186,6 +214,42 @@ carry out othersing:
 	say "[line break]On the choice-based side, Pace Smith's [i]Limerick Heist[r] and its sequel [i]Limerick Quest[r] offer rhyme-based puzzles (and meta-commands!) as well, while Snoother's [i]A Tale of the Cave[r] is a tribute to William McGonagall's wonderfully bad poetry.";
 	say "[line break]I would love to hear of more such games.";
 	the rule succeeds.
+
+chapter soundsing
+
+soundsing is an action applying to nothing.
+
+understand the command "sounds" as something new.
+understand the command "sound" as something new.
+
+understand "sounds" and "sound" as soundsing.
+
+carry out soundsing:
+	say "The basic sounds in the English language are:[paragraph break]";
+	say "one letter: b k d f g h j l m n p r s t v w x z (c q and x map to others.)";
+	say "two letters: ur ar or bl br cl cr dr fl fr gl gr pl pr sk sl sp st sw spr str tr.";
+	say "rarer two letters: ch so th (thing or this) wh ng nk oi ow oo (took) aw zh (vision.)";
+	the rule succeeds.
+
+chapter verbsing
+
+verbsing is an action out of world.
+
+understand the command "v" as something new.
+understand the command "verb" as something new.
+understand the command "verbs" as something new.
+
+understand "v" as verbsing.
+understand "verb" as verbsing.
+understand "verbs" as verbsing.
+
+chapter versioning
+
+versioning is an action applying to nothing.
+
+understand the command "version" as something new.
+
+understand "version" as versioning.
 
 chapter xyzzying
 
