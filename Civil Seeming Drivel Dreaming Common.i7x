@@ -1,6 +1,6 @@
-Version 1/220705 of Jest Jokes Pest Pokes Common by Andrew Schultz begins here.
+Version 1/220705 of Civil Seeming Drivel Dreaming Common by Andrew Schultz begins here.
 
-"This is a common file for all the entries in the Jest Jokes Pest Pokes series. It includes variables used for the hinting device, among other things."
+"This is a common file for all the entries in the Civil Seeming Drivel Dreaming series. It includes variables used for the hinting device, among other things."
 
 volume leet learner portable code
 
@@ -493,6 +493,6 @@ book checking/running point-scoring command rule definitions
 
 the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailable, not-yet, already-done and ready.
 
-Jest Jokes Pest Pokes Common ends here.
+Civil Seeming Drivel Dreaming Common ends here.
 
 ---- DOCUMENTATION ----

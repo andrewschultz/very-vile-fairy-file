@@ -1,6 +1,6 @@
-Version 1/220705 of Jest Jokes Pest Pokes Universal by Andrew Schultz begins here.
+Version 1/220705 of Civil Seeming Drivel Dreaming Universal by Andrew Schultz begins here.
 
-"This is a universal file for all the entries in the Jest Jokes Pest Pokes series. It includes very basic things such as the meta-rooms for done items and fungibility."
+"This is a universal file for all the entries in the Civil Seeming Drivel Dreaming series. It includes very basic things such as the meta-rooms for done items and fungibility."
 
 volume variables and their stubs
 
@@ -272,11 +272,11 @@ entry-in-series is a number that varies.
 when play begins:
 	remove entry entry-in-series from series-names;
 
-to say other-two: say "[series-names], the other two entries in [jjpp]"
+to say other-two: say "[series-names], the other two entries in [ccdd]"
 
-to say jjpp: say "[i]Jest Jokes Pest Pokes[r]"
+to say ccdd: say "[i]Civil Seeming Drivel Dreaming[r]"
 
-to say jjpps: say "the [jjpp] series"
+to say ccdds: say "the [ccdd] series"
 
 to say vvff: say "[i]Very Vile Fairy File[r]"
 
@@ -284,6 +284,6 @@ to say qqnn: say "[i]Quite Queer Night Near[r]"
 
 to say lljj: say "[i]Low-Key Learny Jokey Journey[r]"
 
-Jest Jokes Pest Pokes Universal ends here.
+Civil Seeming Drivel Dreaming Universal ends here.
 
 ---- DOCUMENTATION ----
