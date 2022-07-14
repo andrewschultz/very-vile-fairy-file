@@ -107,7 +107,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "whoa|whoah|woe"	"wait"	"weight"	vh-whoa-wait rule	false	true	true	false	false	Airy Isle	vc-whoa-wait rule	vr-whoa-wait rule	--	--
 "tell"	"torn"	--	--	false	false	true	false	false	Tarry Tile	vc-tell-torn rule	vr-tell-torn rule	--	-- [start Tarry Tile/Merry Mile]
 "merry"	"mile"	"marry"	vh-merry-mile rule	false	false	true	false	false	Tarry Tile	vc-merry-mile rule	vr-merry-mile rule	--	"You can call for a [b]MERRY MILE[r] [once-now of vc-merry-mile rule] things have calmed down."
-"bury"	"bile"	"berry"	vh-bury-bile rule	false	false	true	false	false	Tarry Tile	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is fungible]But that Well Worn Hell Horn needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
+"bury"	"bile"	"berry"	vh-bury-bile rule	false	false	true	false	false	Tarry Tile	vc-bury-bile rule	vr-bury-bile rule	--	"When you tried to [b]BURY BILE[r], it didn't feel like the right place. [if Airy Isle is unvisited]And maybe you need to find the Very Vile Fairy File first[else if well worn hell horn is fungible]But that [hell horn] needs to go[else if sco-merry-mile is false]But you're not feeling cheery enough yet[else]The time and place are now[end if]."
 "big"	"bag"	--	--	false	true	true	false	false	--	vc-big-bag rule	vr-big-bag rule	--	-- [two any-time things]
 "really"	"rolling"	--	--	false	true	false	false	false	--	vc-really-rolling rule	vr-really-rolling rule	--	--
 
@@ -266,6 +266,18 @@ this is the vr-big-bag rule:
 			else:
 				break;
 
+a goodrhyme rule (this is the vc-bloke-blessed rule):
+	if sco-bloke-blessed is true:
+		vcal "Telling someone or something more than once that you're ignoring it never quite works.";
+		already-done;
+	if joke jest poke pest is fungible, ready;
+	if joke jest poke pest is off-stage, unavailable;
+	ready;
+
+this is the vr-bloke-blessed rule:
+	say "You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.";
+	now sco-bloke-blessed is true;
+
 a goodrhyme rule (this is the vc-boring-boat rule) :
 	if player is not in Violent Vale or flooring float is off-stage, unavailable;
 	if boring boat is moot:
@@ -316,7 +328,7 @@ a goodrhyme rule (this is the vc-bury-bile rule) :
 	if player is in Tarry Tile:
 		if well worn hell horn is moot and sco-merry-mile is true, ready;
 		if well worn hell horn is in Tarry Tile:
-			vcp "The well worn hell horn makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
+			vcp "The [hell horn] makes a loud noise. It's intimidating, and yet, you could find a way to prep yourself to ignore or get rid of the horn, then take the file.";
 			not-yet;
 		if sco-merry-mile is false:
 			vcp "You want to, but you're still just barely forcing it. You need a way to cheer yourself up to get going.";
@@ -328,9 +340,10 @@ a goodrhyme rule (this is the vc-bury-bile rule) :
 		vcp "You can sort of deal with that right now. But you need to do better! You still have adventure to go!";
 		not-yet;
 	if player is in Airy Isle:
-		vcp "You'd like to do that, but not here with so many distractions, during perhaps the big last fight.";
-		not-yet;
-	if mrlp is Vale Verminous:
+		if bot board is not moot:
+			vcp "You'd like to do that, but not here with so many distractions, during perhaps the big last fight.";
+			not-yet;
+	if mrlp is Vale Verminous: [this is a catch-all that *could* be put into the if statement above I guess]
 		vcp "It must be about the right time. But you are not quite there, yet.";
 		not-yet;
 	unavailable;
@@ -339,10 +352,10 @@ this is the vr-bury-bile rule:
 	win-the-game;
 
 a goodrhyme rule (this is the vc-cast-cap rule) :
-	if player is not in Gassed Gap, unavailable;
 	if cool cap is moot:
-		vcal "The cap has been cast.";
+		vcal "The cap has [if mrlp is vale verminous]long since [end if]been cast into Gassed Gap.";
 		already-done;
+	if player is not in Gassed Gap, unavailable;
 	if sco-couple-caps is false:
 		let N be my-hats;
 		if N is 0:
@@ -394,7 +407,7 @@ this is the vr-co-capn rule:
 
 a goodrhyme rule (this is the vc-cool-cap rule) :
 	if tool tap is not fungible, unavailable;
-	ready;  [?? YOULL YAP / CRUEL CRAP !!!!!]
+	ready;
 
 this is the vr-cool-cap rule:
 	say "Whoah! A cool cap must REALLY have been stuck in the tool tap. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips. The tool tap explodes and vaporizes from the effort of having squeezed out the cool cap.";
@@ -424,15 +437,15 @@ this is the vr-couple-caps rule:
 a goodrhyme rule (this is the vc-cull-ceased rule) :
 	if Bull Beast is off-stage, unavailable;
 	process the lul-cull rule; [to determine which was the first word, LUL LEAST or CULL CEASED]
-	if player is not in Creased Cross:
-		vcp "You need to go back to Creased Cross.";
-		not-yet;
+	if sco-cull-ceased is true:
+		vcal "Don't brag too much[if mrlp is vale verminous] about something that far in the past[end if], now.";
+		already-done;
 	if sco-heal-here is false:
 		vcp "You need to find a way to restore your health.";
 		not-yet;
-	if sco-cull-ceased is true:
-		vcal "Don't brag too much, now.";
-		already-done;
+	if player is not in Creased Cross:
+		vcp "You need to go back to Creased Cross.";
+		not-yet;
 	ready;
 
 this is the vr-cull-ceased rule:
@@ -471,9 +484,9 @@ this is the vr-deal-dear rule:
 
 a goodrhyme rule (this is the vc-dear-dull rule) :
 	if player is not in Here Hull, unavailable;
-	if Beer Bull is moot:
+[	if Beer Bull is moot:
 		vcal "Yeah, easy to say with the Beer Bull gone for good.";
-		already-done;
+		already-done;] [this code isn't hit now you are given the reward for defeating the bull but I'll save it out of paranoia]
 	if in-bull-chase is true:
 		vcal "You don't need to do any more taunting.";
 		already-done;
@@ -784,7 +797,7 @@ a goodrhyme rule (this is the vc-heal-here rule) :
 		vcal "No need to heal further.";
 		already-done;
 	if sco-least-loss is false:
-		vcp "You don't have anything to heal from, yet[seer-sez].";
+		vcp "You don't have anything to heal from[seer-sez].";
 		not-yet;
 	if sco-kneel-near is false:
 		vcp "You have not shown the Ceiling Seer the proper respect, yet.";
@@ -859,9 +872,9 @@ this is the vr-kneel-near rule:
 
 a goodrhyme rule (this is the vc-knives-niche rule) :
 	if player is not in dives ditch, unavailable;
-	if sco-knives-niche is true:
+	[if sco-knives-niche is true:
 		vcal "You already changed the dives ditch.";
-		already-done;
+		already-done;] [reinstate this if I ever decide to allow the player back after you set the trap]
 	ready;
 
 this is the vr-knives-niche rule:
@@ -1012,7 +1025,6 @@ a goodrhyme rule (this is the vc-mash-map rule) :
 	if player is not in Po Pit, unavailable;
 	process the ashap rule; [to determine what was the first word]
 	if sco-grow-grit is false:
-		process the ashap rule;
 		vcp "You aren't brave enough yet. Perhaps you can face down the [po pit] so you can be.";
 		not-yet;
 	ready;
@@ -1060,7 +1072,7 @@ a goodrhyme rule (this is the vc-merry-mile rule) :
 		vcp "[if Bot Board is moot]You're happy, but you can't force it any more. You haven't found the Very Vile Fairy File yet, and when you do, this may be a more appropriate name for wherever it is that is ahead[else]Hard to be happy with the Bot Board around[end if].";
 		not-yet;
 	if well worn hell horn is not moot:
-		vcp "Not with the well worn hell horn making those un-merry noises.";
+		vcp "Not with [the hell horn] making those un-merry noises.";
 		not-yet;
 	ready;
 
@@ -1100,6 +1112,9 @@ this is the vr-mining-more rule:
 
 a goodrhyme rule (this is the vc-mo-mappin rule) :
 	if player does not have Toe Tappin Row Rappin and player is not in Blinding Blaze, unavailable;
+	if player does not have Toe Tappin Row Rappin:
+		vcp "You'd love to, but you need some sort of artistic, lively way to make the mapping less tedious. Even fun.";
+		not-yet;
 	if stuck stair is moot:
 		vcp "You did all the mapping you needed to.";
 		not-yet;
@@ -1112,9 +1127,6 @@ a goodrhyme rule (this is the vc-mo-mappin rule) :
 	if stuck stair is in Blinding Blaze:
 		vcal "You're already in the mood to map. No need to overdo it.";
 		already-done;
-	if player does not have Toe Tappin Row Rappin:
-		vcp "You'd love to, but you need some sort of artistic, peppy way to make the mapping less tedious. Even fun.";
-		not-yet;
 	ready;
 
 this is the vr-mo-mappin rule:
@@ -1180,7 +1192,7 @@ this is the vr-near-null rule:
 a goodrhyme rule (this is the vc-no-nappin rule) :
 	if toe tappin row rappin is not fungible, unavailable;
 	if sco-no-nappin is true:
-		vcal "You already changed Toe Tappin Row Rappin that way.";
+		vcal "You already managed to change [Toe Tappin] so No Nappin['] was useful.";
 		already-done;
 	ready;
 
@@ -1232,18 +1244,6 @@ a goodrhyme rule (this is the vc-pull-pieced rule) :
 		not-yet;
 	ready;
 
-a goodrhyme rule (this is the vc-bloke-blessed rule):
-	if joke jest poke pest is fungible, ready;
-	if joke jest poke pest is off-stage, unavailable;
-	if sco-bloke-blessed is true:
-		say "Telling someone or something more than once that you're ignoring it never quite works.";
-		already-done;
-	ready;
-
-this is the vr-bloke-blessed rule:
-	say "You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a b loke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.";
-	now sco-bloke-blessed is true;
-
 this is the vr-pull-pieced rule:
 	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
@@ -1264,7 +1264,7 @@ this is the vr-really-rolling rule:
 a goodrhyme rule (this is the vc-see-sign rule) :
 	if player does not have We Whine, unavailable;
 	if sco-see-sign is true:
-		vcal "You've seen enough signs. Overkill might leave you demoralized or too analytical to just cut loose and adventure.";
+		vcal "You've seen enough signs from [we whine]. Overkill might leave you demoralized or too analytical to just cut loose and adventure.";
 		already-done;
 	ready;
 
@@ -1353,11 +1353,11 @@ this is the vr-smashing-smoke rule:
 
 a goodrhyme rule (this is the vc-snake-snap rule) :
 	if player is not in Lake Lap, unavailable;
-	if sco-co-capn is false:
-		vcp "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
-		not-yet;
 	if sco-make-map is false:
 		vcp "There might be a snake here. But you'd have to find it, first.";
+		not-yet;
+	if sco-co-capn is false:
+		vcp "You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.";
 		not-yet;
 	ready;
 
@@ -1461,7 +1461,7 @@ a goodrhyme rule (this is the vc-tell-torn rule) :
 	ready;
 
 this is the vr-tell-torn rule:
-	say "The well worn hell horn rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
+	say "The [hell horn] rips apart and unwinds. Fortunately, as it does so, there is no bell born. It's more peaceful around, now. You can focus better and come to grips with your inner self, and all that sort of thing.";
 	moot well worn hell horn;
 
 a goodrhyme rule (this is the vc-tight-tunnel rule) :
@@ -1689,10 +1689,6 @@ to seed-narratives:
 			now rank-num entry is (((range-top - range-bottom) * current-blank-rows) / total-blank-rows) + range-bottom;
 		if debug-state is true, say "DEBUG: new narrative at row [cur-row] when you score [range-top - range-bottom] * [current-blank-rows] / [total-blank-rows] + [range-bottom] = [rank-num entry] points.";
 
-narr-on is a truth state that varies. narr-on is true.
-
-to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]NO NARR[r] or turn them back on with [b]WHOA(H) WHERE[r]"
-
 table of narratives [xxton]
 rank-num	done-yet	rank-txt
 1	false	"A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out 'Bright! Broader!'[paragraph break]The book's cover slowly becomes colored in. It is [the very vile]."
@@ -1771,7 +1767,7 @@ toe tappin	hom-toe-tappin-to-roe-tow rule	--	--
 way woke	--	"whey"	"It's woke to eat whey, probably, but you can transform the cloak better with something else."
 we whine	hom-we-whine-to-whee-wine rule	--
 weird way	--	"whey"	"Yes, whey is weird to eat. But it would still be a sticky barrier."
-well worn hell horn	--	"warn"	"The well worn hell horn is already giving a false warning."
+well worn hell horn	--	"warn"	"The [hell horn] is already giving a false warning."
 white waste	--	"waist"	"It's sort of a waist, too, but let's concentrate on finishing the quest, here."
 worst wave	--	"wurst"	"You're not hungry. Besides, the wave can become something better, nicer."
 wry wall	--	"rye"	"The wall remains inorganic. You can't really do anything to it."

@@ -5,7 +5,6 @@ Version 1/220706 of Very Vile Fairy File Random Text by Andrew Schultz begins he
 volume random table code
 
 to decide which number is next-rand-row of (t - a table name):
-	say "a.";
 	choose row with tabnam of t in table of all randoms;
 	let last-row be tabidx entry;
 	let cur-row be tabidx entry;
@@ -13,14 +12,12 @@ to decide which number is next-rand-row of (t - a table name):
 	let has-cycle be whether or not there is a cycle-note entry;
 	increment cur-row;
 	while cur-row is not last-row:
-		say "b.";
 		if cur-row > this-max-row:
 			if debug-state is true, say "(Cycling) ";
 			if has-cycle is true:
 				decide on 0;
 			else:
 				now cur-row is 1;
-		say "c.";
 		if blue-bleah is false, decide on cur-row;
 		choose row cur-row in t;
 		if there is a prof entry and prof entry is true:
