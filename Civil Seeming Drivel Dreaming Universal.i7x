@@ -88,7 +88,11 @@ The print final score rule is not listed in for printing the player's obituary.
 
 the rhymeguess rules are a table name based rulebook.
 
-volume types
+volume types and properties
+
+book rooms
+
+a room has text called noway-text.
 
 book boringness
 
@@ -167,6 +171,12 @@ definition: a thing (called th) is acquired:
 	if th is moot, yes;
 	if th is enclosed by the player, yes;
 	no;
+
+volume universal common verbs
+
+check going (this is the check diagonal directions rule): if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
+
+the check diagonal directions rule is listed first in the check going rules.
 
 volume universal meta command(s)
 
