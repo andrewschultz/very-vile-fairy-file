@@ -1774,14 +1774,14 @@ check taking inventory:
 	list the contents of the player, with newlines, indented, including contents, giving inventory information, with extra indentation, listing marked items only;
 	if player has joke jest poke pest, say "The joke jest poke pest is buzzing around, but [if sco-bloke-blessed is true]it's not so distracting any more[else]maybe there's a way to tame it[end if].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
-	show-evidence-and-hats;
+	note-big-item-progress;
 	if lurking lump is not off-stage, say "[line break]";
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
 	if lurking lump is moot, say "The lurking lump disappeared when you used it, but maybe with more good guesses, it will come back.";
 	check-injury;
 	the rule succeeds;
 
-to show-evidence-and-hats:
+to note-big-item-progress:
 	if my-hats > 0:
 		if jerk gel is moot:
 			say "You also have the extra cool cap you constructed.";
@@ -1907,9 +1907,9 @@ to read-laters (wt - a which-think):
 				say "DEBUG note--I forgot to clear [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if] somehow. It would be nice to know how and when this happened.";
 				now think-cue entry is false;
 				next;
-			process the ver-rule entry;
+			process the check-rule entry;
 			let rb-out be the outcome of the rulebook;
-			let pre-bug be whether or not ver-rule entry is vc-mean-muggin rule or ver-rule entry is vc-lean-luggin rule;
+			let pre-bug be whether or not check-rule entry is vc-mean-muggin rule or check-rule entry is vc-lean-luggin rule;
 			if wt is no-details:
 				if there is a think-advice entry and not too-distracted, next;
 				if pre-bug is true, next;
@@ -1958,7 +1958,7 @@ check thinking:
 to decide whether tried-yet of (vc - a rule):
 	let tried-any be false;
 	repeat through table of verb checks:
-		if vc is ver-rule entry:
+		if vc is check-rule entry:
 			now tried-any is true;
 			if think-cue entry is true and idid entry is false, decide yes;
 	if tried-any is false, say "I tried to check if [vc] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
@@ -1968,52 +1968,11 @@ to say not-crit-but: say ". This is not a critical bug, but I'd like to know abo
 
 chapter score
 
-to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
+report requesting the score (this is the VVFF specific score notes rule):
+	say "Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].";
+	continue the action;
 
-check requesting the score:
-	now vc-dont-print is true;
-	say "You have scored a total of [score] out of [maximum score] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
-	say "[line break]Your current[one of] (utterly meaningless but hopefully amusing)[or][stopping] rank is [your-rank].[paragraph break]";
-	show-evidence-and-hats;
-	let dh be doable-hinted;
-	let fh be future-hinted;
-	if dh + fh > 0:
-		say "You also have [dh + fh in words] useful idea[plur of dh + fh] you thought of before you weren't quite ready, and [if dh is 0][it-they of fh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with [b]THINK[r].";
-	else:
-		say "You haven't figured any ideas that might score a point later, but if you do, [this-game] will explicitly warn you. [b]THINK[r] would give more detailed information.";
-	if lurking lump is not off-stage:
-		let gguess be next-lump-level - lump-count;
-		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
-	now vc-dont-print is false;
-	the rule succeeds;
-
-to decide which number is can-do-hint of (ts - a truth state):
-	let temp be 0;
-	now vc-dont-print is true;
-	repeat through the table of verb checks:
-		if think-cue entry is true:
-			process the ver-rule entry;
-			let rb-out be the outcome of the rulebook;
-			if ts is true:
-				if rb-out is the ready outcome or there is no think-advice entry, increment temp; [the reason for "no think-advice entry" is because we also want to track when the beer bull distracts us. If there is no think-advice entry, there are no normal barriers to a certain command.]
-			else if rb-out is the not-yet outcome:
-				increment temp;
-	now vc-dont-print is false;
-	decide on temp;
-
-to decide which number is doable-hinted:
-	decide on can-do-hint of true;
-
-to decide which number is future-hinted:
-	decide on can-do-hint of false;
-
-to decide which number is all-hinted:
-	let temp be 0;
-	repeat through table of verb checks:
-		if think-cue entry is true, increment temp;
-	decide on temp;
-
-[see header file for table of ranks]
+the VVFF specific score notes rule is listed before the lump and half-solved notes rule in the report requesting the score rules.
 
 chapter narrnoing
 
@@ -3504,11 +3463,11 @@ this is the verb-checker rule:
 		increment global-row-check;
 		now my-count is 0;
 		now vc-dont-print is true;
-		process the ver-rule entry;
+		process the check-rule entry;
 		let rb-out be the outcome of the rulebook;
 		if rb-out is the unavailable outcome, next;
 		now vc-dont-print is false;
-		[say "[ver-rule entry].";]
+		[say "[check-rule entry].";]
 		if there is a wfull entry and the player's command matches the wfull entry:
 			now my-count is 4; [ 4 = topic match, 3 = mix up alt solutions, 2 = 2 word match (or DIMD). This is a magic number to get rid of a boolean, so we can have all non global variables inside one rule, because Inform only allows 15 local variables. ]
 		else:
@@ -3520,8 +3479,8 @@ this is the verb-checker rule:
 			if there is a wfull entry and my-count is 2:
 				increment my-count;
 		if my-count >= 2:
-[			if debug-state is true, say "DEBUG: processing [ver-rule entry], outcome [if rb-out is unavailable outcome]UA[else if rb-out is not-yet outcome]NOT YET[else if rb-out is already-done outcome]already done[else]rady[end if].";]
-			process the ver-rule entry;
+[			if debug-state is true, say "DEBUG: processing [check-rule entry], outcome [if rb-out is unavailable outcome]UA[else if rb-out is not-yet outcome]NOT YET[else if rb-out is already-done outcome]already done[else]rady[end if].";]
+			process the check-rule entry;
 			if rb-out is the already-done outcome, the rule succeeds;
 			if rb-out is the not-yet outcome:
 				let exact-cmd be whether or not the player's command matches the text "[first-of-ors of w1 entry][if there is a w2 entry] [first-of-ors of w2 entry][end if]", case insensitively;
@@ -3539,13 +3498,13 @@ this is the verb-checker rule:
 				say "Ooh! You're close. You've probably juggled two valid solutions.";
 				the rule succeeds;
 			if buggin-freeze:
-				if ver-rule entry is not vc-glow-glad rule and ver-rule entry is not vc-stay-strong rule:
+				if check-rule entry is not vc-glow-glad rule and check-rule entry is not vc-stay-strong rule:
 					say "Ugh! That should work, but you don't feel up to it. Maybe once your head is clearer, you'll figure where and why.";
 					now think-cue entry is true;
 					the rule succeeds;
-			if beer bull is fungible and do-rule entry is not vr-near-null rule and do-rule entry is not vr-dear-dull rule:
+			if beer bull is fungible and run-rule entry is not vr-near-null rule and run-rule entry is not vr-dear-dull rule:
 				now think-cue entry is true;
-				if debug-state is true, say "[ver-rule entry] set to true.";
+				if debug-state is true, say "[check-rule entry] set to true.";
 				say "The beer bull roars as you attempt the simple rhyme! Little surprise it hates any sort of poetry. While you're distracted, it slaps you around a bit.[paragraph break]Such a shame ... you should probably come back ASAP and do things without the bull chasing you.[paragraph break]";
 				let oldloc be location of player;
 				reset-bull-chase;
@@ -3559,8 +3518,8 @@ this is the verb-checker rule:
 					increase lump-count by 1;
 			now idid entry is true;
 			now think-cue entry is false;
-			process the do-rule entry;
-			if zap-core-entry is true: [must be after "process the do-rule entry" or next LLP may not register]
+			process the run-rule entry;
+			if zap-core-entry is true: [must be after "process the run-rule entry" or next LLP may not register]
 				blank out the core entry;
 				now zap-core-entry is false;
 			process the score and thinking changes rule;
@@ -3569,13 +3528,13 @@ this is the verb-checker rule:
 		if shut-scan is true, next;
 		if two-too is true:
 			if there is a posthom entry:
-				if ver-rule entry is vc-history-hall rule and in-mystery-mall is false:
+				if check-rule entry is vc-history-hall rule and in-mystery-mall is false:
 					do nothing;
-				else if ver-rule entry is vc-mystery-mall rule and in-mystery-mall is true:
+				else if check-rule entry is vc-mystery-mall rule and in-mystery-mall is true:
 					do nothing;
-				else if ver-rule entry is vc-loft-land rule and in-loft-land is true:
+				else if check-rule entry is vc-loft-land rule and in-loft-land is true:
 					do nothing;
-				else if ver-rule entry is vc-soft-sand rule and in-loft-land is false:
+				else if check-rule entry is vc-soft-sand rule and in-loft-land is false:
 					do nothing;
 				else if the player's command includes the posthom entry:
 					now local-post-hom is true;
@@ -3583,7 +3542,7 @@ this is the verb-checker rule:
 		if ha-half is true and my-count is 1:
 			now vc-dont-print is true;
 			now already-rhymed-this is false;
-			process the ver-rule entry;
+			process the check-rule entry;
 			if the rule failed:
 				now vc-dont-print is false;
 				next;
@@ -3591,7 +3550,7 @@ this is the verb-checker rule:
 			if already-rhymed-this is true, break;
 			now local-ha-half is true;
 			if sing-clue is true, now is-song is whether or not songy entry is true;
-			if debug-state is true, say "DEBUG: [ver-rule entry] tipped off the HA HALF button.";
+			if debug-state is true, say "DEBUG: [check-rule entry] tipped off the HA HALF button.";
 			if there is a core entry:
 				now new-point-to-get is true;
 				if core entry is true, now brightness is true;
@@ -3670,13 +3629,13 @@ carry out jerkingjumping:
 		unless there is a core entry, next;
 		if core entry is false, next;
 		if idid entry is true, next;
-		process the ver-rule entry;
+		process the check-rule entry;
 		let vr be the outcome of the rulebook;
 		if vr is the ready outcome:
 			say "After some thought, you consider the right way forward: [firstor of w1 entry] [firstor of w2 entry]...";
 			now idid entry is true; [this is so BURY BILE gets processed. We already checked IDID above.]
 			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
-			process the do-rule entry;
+			process the run-rule entry;
 			if zap-core-entry is true:
 				blank out the core entry;
 				now zap-core-entry is false;
@@ -3814,7 +3773,7 @@ carry out blowbying:
 	repeat through table of verb checks:
 		if cur-row > 2: [we need to skip GLOW GLAD/STAY STRONG]
 			now idid entry is true;
-		if do-rule entry is vr-flim-flam rule, break;
+		if run-rule entry is vr-flim-flam rule, break;
 		increment cur-row;
 	process the any-warp rule;
 	now core-score is whew-score + bag-point;
@@ -3842,9 +3801,9 @@ carry out tricktriping:
 	let prev-blowby-score be the score;
 	now in-test-loop is true;
 	repeat through table of verb checks:
-		process the ver-rule entry;
+		process the check-rule entry;
 		if the rule succeeded:
-			process the do-rule entry;
+			process the run-rule entry;
 			if there is a core entry and idid entry is false, up-which core entry;
 			now idid entry is true;
 			now in-test-loop is false;
@@ -3879,7 +3838,7 @@ carry out climbclearing:
 	move player to Airy Isle;
 	repeat through table of verb checks:
 		if there is a core entry and core entry is true, now idid entry is true;
-		if do-rule entry is vr-couple-caps rule, break;
+		if run-rule entry is vr-couple-caps rule, break;
 	now score is min-needed - isle-score;
 	isle-adjust-score-think;
 	the rule succeeds.

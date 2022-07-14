@@ -13,7 +13,7 @@ chapter the verb check table
 [verb check and verb run rules. This is in approximate game-solve order.]
 
 table of verb checks [xxvc]
-w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	songy	best-room	ver-rule	do-rule	wfull (topic)	think-advice
+w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	songy	best-room	check-rule	run-rule	wfull (topic)	think-advice
 "glow"	"glad"	--	--	false	true	true	false	false	Been Buggin	vc-glow-glad rule	vr-glow-glad rule	--	text	[start interlude-y]
 "stay"	"strong"	--	--	false	false	true	false	false	Been Buggin	vc-stay-strong rule	vr-stay-strong rule	--	-- [must be at top for JJ]
 "get"	"good"	"git"	vh-get-good rule	false	false	true	false	false	Wet Wood	vc-get-good rule	vr-get-good rule	--	-- [start Intro]

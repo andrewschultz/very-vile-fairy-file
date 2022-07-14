@@ -2,6 +2,8 @@ Version 1/220705 of Civil Seeming Drivel Dreaming Common by Andrew Schultz begin
 
 "This is a common file for all the entries in the Civil Seeming Drivel Dreaming series. It includes variables used for the hinting device, among other things."
 
+include Civil Seeming Drivel Dreaming Universal by Andrew Schultz.
+
 volume leet learner portable code
 
 chapter stubs
@@ -369,16 +371,19 @@ understand the command "opts" as something new.
 
 understand "opts" as optsing.
 
-carry out optsing:
+check optsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
-	if vined vault is not visited:
-		say "The Leet Learner has options to toggle, but it would spoil things to list them now.";
-	else:
-		say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
+
+carry out optsing:
+	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
 
 report optsing:
 	if core-score >= 1, say "[2da]Y[narr-toggle]. Extra point-scoring narrative is currently [on-off of narr-on].";
 	continue the action;
+
+narr-on is a truth state that varies. narr-on is true.
+
+to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]NO NARR[r] or turn them back on with [b]WHOA(H) WHERE[r]"
 
 volume more active or help-seeking verb(s)
 
@@ -473,6 +478,58 @@ my-text	my-color
 "    EAT EARNER   "	"right"
 
 volume scoring and such
+
+book SCORE, the parser action
+
+chapter score
+
+the announce the score rule is not listed in the carry out requesting the score rulebook.
+
+to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
+
+carry out requesting the score:
+	now vc-dont-print is true;
+	say "You have scored a total of [score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
+	continue the action;
+
+report requesting the score (this is the lump and half-solved notes rule):
+	let dh be doable-hinted;
+	let fh be future-hinted;
+	if dh + fh > 0:
+		say "You also have [dh + fh in words] useful idea[plur of dh + fh] you thought of before you weren't quite ready, and [if dh is 0][it-they of fh] still need[plurnos of fh] to wait[else if fh is 0][dh in words] can be done now[else][dh in words] can be done now, but [fh in words] can't, yet[end if]. You can see more detailed information with [b]THINK[r].";
+	else:
+		say "You haven't figured any ideas that might score a point later, but if you do, [this-game] will explicitly warn you. [b]THINK[r] would give more detailed information.";
+	if lurking lump is not off-stage:
+		let gguess be next-lump-level - lump-count;
+		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
+	now vc-dont-print is false;
+	the rule succeeds;
+
+to decide which number is can-do-hint of (ts - a truth state):
+	let temp be 0;
+	now vc-dont-print is true;
+	repeat through the table of verb checks:
+		if think-cue entry is true:
+			process the check-rule entry;
+			let rb-out be the outcome of the rulebook;
+			if ts is true:
+				if rb-out is the ready outcome or there is no think-advice entry, increment temp; [the reason for "no think-advice entry" is because we also want to track when the beer bull distracts us. If there is no think-advice entry, there are no normal barriers to a certain command.]
+			else if rb-out is the not-yet outcome:
+				increment temp;
+	now vc-dont-print is false;
+	decide on temp;
+
+to decide which number is doable-hinted:
+	decide on can-do-hint of true;
+
+to decide which number is future-hinted:
+	decide on can-do-hint of false;
+
+to decide which number is all-hinted:
+	let temp be 0;
+	repeat through table of verb checks:
+		if think-cue entry is true, increment temp;
+	decide on temp;
 
 book replace old score/thinking rule(s)
 
