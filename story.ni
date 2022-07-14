@@ -12,7 +12,7 @@ the release number is 5.
 
 release along with a website.
 
-release along with an interpreter.
+release along with the "Parchment" interpreter.
 
 release along with cover art.
 
@@ -34,9 +34,7 @@ include Very Vile Fairy File Random Text by Andrew Schultz.
 
 include Very Vile Fairy File Tables by Andrew Schultz.
 
-include Jest Jokes Pest Pokes Universal by Andrew Schultz.
-
-include Jest Jokes Pest Pokes Common by Andrew Schultz.
+include Civil Seeming Drivel Dreaming Common by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
@@ -72,8 +70,8 @@ understand the command "say" as something new.
 understand the command "scrub" as something new.
 understand the command "shine" as something new.
 understand the command "sip" as something new.
+understand the command "sit" as something new.
 understand the command "skip" as something new.
-understand the command "slice" as something new.
 understand the command "slice" as something new.
 understand the command "sorry" as something new.
 understand the command "swallow" as something new.
@@ -84,6 +82,7 @@ understand the command "thump" as something new.
 understand the command "tie" as something new.
 understand the command "torture" as something new.
 understand the command "touch" as something new.
+understand the command "wake" as something new.
 understand the command "wave" as something new.
 understand the command "wipe" as something new.
 understand the command "wreck" as something new.
@@ -259,8 +258,6 @@ to decide whether in-middlegame:
 	no;
 
 book properties
-
-a room has text called noway-text.
 
 a person has text called talk-text.
 
@@ -789,7 +786,7 @@ check going outside in History Hall:
 to say mist-hist of (ts - a truth state): say "[if in-mystery-mall is ts]Mystery Mall[else]History Hall[end if]"
 
 to say mystdesc:
-	say "[if sco-mystery-mall is false]The wall to the west seems hollow[else if in-mystery-mall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]. [if oi mo is in History Hall]There's a horrible song providing atmosphere[else if toe tappin is in History Hall]There's mall music in the air you can LISTEN to[else]You can LISTEN to random music if you want, too[end if][if mean moe's is in History Hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
+	say "[if sco-mystery-mall is false]The wall to the west seems hollow[else if in-mystery-mall is true]History Hall's wist-eerie wall has disappeared, affording passage west[end if]. [if oi mo is in History Hall]There's a horrible song providing atmosphere[else if toe tappin is in History Hall]There's mall music in the air you can [b]LISTEN[r] to[else]You can [b]LISTEN[r] to random music if you want, too[end if][if mean moe's is in History Hall]. There's also something called Mean Moe's Clean Clothes, a small booth where you could tidy up, if you figured how to use it[end if]"
 
 to say histdesc:
 	say "[if poor ponder is in History Hall][Poor Ponder] lies here seeming, or trying to seem, more important[else if sco-mystery-mall is false]It's pretty empty in here. Perhaps it could become something more modern. Or less ancient[else]History Hall is empty once again[end if]"
@@ -1371,7 +1368,7 @@ sco-fit-found is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if sco-winding-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if sco-winding-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west[else if sco-mo-mappin is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through[else if stuck stair is fungible]A stuck stair leads down, but to where?[else]You've probably dealt with everything you can, here.[end if] [if sco-winding-ways is true][can-nothing] can also just go back west[end if].". noway-text is "[blazno].". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if sco-winding-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if sco-winding-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west. [else if sco-mo-mappin is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through. [else if stuck stair is fungible]A stuck stair leads down, but to where? [else]You've probably dealt with everything you can, here. [end if][if sco-winding-ways is true][can-nothing] can also just go back west.[else][line break][end if]". noway-text is "[blazno].". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
 
 to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
 
@@ -1540,7 +1537,9 @@ the spite spaced white waste is scenery in Tarry Tile. "It stretches out endless
 
 chapter well worn hell horn
 
-the well worn hell horn is a boring rhymable in Tarry Tile. cht of well worn hell horn is leteq. "A well worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.". guess-table of well worn hell horn is table of well worn hell horn guesses. bore-text of well worn hell horn is "It ... well, it looks used, but it still hasn't fallen apart.".[-> tell torn]
+the well worn hell horn is a boring rhymable in Tarry Tile. cht of well worn hell horn is leteq. "A well-worn hell horn balefully drones out dirgeful noises that makes you wonder why you should even bother.". description is "The well-worn hell horn looks old, but still in good shape. At least with a cursory glance. But maybe there is a flaw.". guess-table of well worn hell horn is table of well worn hell horn guesses. bore-text of well worn hell horn is "It ... well, it looks used, but it still hasn't fallen apart.".[-> tell torn]
+
+printed name of well worn hell horn is "well-worn hell horn".
 
 chapter Very Vile Fairy File
 
@@ -1934,8 +1933,8 @@ to read-laters (wt - a which-think):
 			say "[think-advice entry][line break]";
 
 to check-reversible-rooms:
-	if player is in Soft Sand and sco-loft-land is true, say "[line break]You can switch between LOFT LAND and SOFT SAND freely.";
-	if player is in History Hall and sco-mystery-mall is true, say "[line break]You can switch between MYSTERY MALL and HISTORY HALL freely.";
+	if player is in Soft Sand and sco-loft-land is true, say "[line break]You can switch between [b]LOFT LAND[r] and [b]SOFT SAND[r] freely.";
+	if player is in History Hall and sco-mystery-mall is true, say "[line break]You can switch between [b]MYSTERY MALL[r] and [b]HISTORY HALL[r] freely.";
 
 check thinking:
 	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if].";
@@ -2018,7 +2017,7 @@ to decide which number is all-hinted:
 
 chapter narrnoing
 
-narrnoing is an action applying to nothing.
+narrnoing is an action out of world.
 
 understand the command "narr no" as something new.
 understand the command "no narr" as something new.
@@ -2174,6 +2173,8 @@ carry out verbsing:
 	the rule succeeds.
 
 chapter optsing
+
+check optsing (this is the VVFF don't spoil too soon rule): if vined vault is not visited, say "The Leet Learner has options to toggle, but they won't become relevant until the third room." instead;
 
 report optsing (this is the VVFF song commands rule):
 	if player has Toe Tappin, say "[2da]You can also [b]SAVE SONG[r] or [b]RAVE WRONG[r] to toggle hints whether [Toe] could help you, or [b]LL TOE[r] for further hints. Help on when to use [Toe] is currently [on-off of sing-clue].";
@@ -2875,7 +2876,7 @@ this is the weird-way-hint rule:
 	say "[one of]The weird way is some odd substance blocking you. Maybe it could vanish and there'd be less of it.[or]Make it CLEARED CLAY.[stopping]"
 
 this is the well-worn-hell-horn-hint rule:
-	say "[one of]The well worn hell horn seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
+	say "[one of]The [hell horn] seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
 
 this is the wild-weed-hint rule:
 	say "[one of]The point for the wild weed is truly optional and recreational and slang-based[or]There's one place that makes you feel nervous, but you can relax[or]The wild weed may help at Cark Cliff[or]You can SPARK SPLIFF[stopping]."
@@ -3477,9 +3478,10 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 [	if debug-state is true, say "[the latest parser error].";]
 	if player is in Wet Wood:
 		increment oopsies;
+		if debug-state is true, say "DEBUG note of general parser error.";
 		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't need anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
 	else if player is in Rift River:
-		say "Hmm. You managed to GET GOOD out of the Wet Wood, but you just need to meet someone now.";
+		say "Hmm. You managed to [b]GET GOOD[r] out of the Wet Wood, but you just need to meet someone now.";
 	else if player is in Vined Vault:
 		say "[if mean mass is off-stage]That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's[else]You had to lose a letter from Vined to find fault. Maybe this time you need to add a letter to mean, or mass, or both[end if].";
 	else:
@@ -3887,7 +3889,6 @@ volume beta testing - not for release
 the force tester wherever rule is listed last in the when play begins rulebook.
 
 when play begins (this is the force tester wherever rule):
-	now debug-state is true;
 	now in-beta is true;
 	if currently transcripting:
 		say "It looks like you restarted, and the transcript should still be running.";
