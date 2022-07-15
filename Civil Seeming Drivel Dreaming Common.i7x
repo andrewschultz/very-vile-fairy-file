@@ -543,12 +543,16 @@ this is the score and thinking changes rule:
 		if think-cue entry is true and idid entry is true, now think-cue entry is false;
 	process the narrative-checking rule;
 	if llp-notify is false and min-needed > core-max:
-		say "A stun-steed zooms by, bellowing 'None-need-done deed!' Have you lost focus on what's really important? Or just put in a bit of extra rigor? You decide on the second, as you could also picture the Very Vile Fairy File summoning a bin-bare-min mare to insult you for finding no extra neat stuff.";
+		say "[line break]A stun-steed zooms by, bellowing 'None-need-done deed!' Have you lost focus on what's really important? Or just put in a bit of extra rigor? You decide on the second, as [if entry-in-series is 1]you could also picture the Very Vile Fairy File summoning[else]you could also imagine[end if] a bin-bare-min mare to insult you for finding no extra neat stuff.";
 		now llp-notify is true;
 
 book checking/running point-scoring command rule definitions
 
 the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailable, not-yet, already-done and ready.
+
+volume common item-known rules
+
+this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds;
 
 Civil Seeming Drivel Dreaming Common ends here.
 

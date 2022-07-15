@@ -694,8 +694,6 @@ this is the key-or-rear rule: if player is in Real Rear or player has cage key, 
 
 this is the lap-not-cap rule: if player is in Lake Lap, the rule succeeds;
 
-this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds;
-
 this is the mass-near rule: if mean mass is fungible, the rule succeeds;
 
 this is the mead-or-weed rule: if mild mead is fungible or wild weed is fungible, the rule succeeds;
