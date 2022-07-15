@@ -1775,11 +1775,13 @@ check taking inventory:
 	if player has joke jest poke pest, say "The joke jest poke pest is buzzing around, but [if sco-bloke-blessed is true]it's not so distracting any more[else]maybe there's a way to tame it[end if].";
 	if player has toe tappin, say "[Toe], that catchy song, is [if sing-clue is false]out of your head, but you can bring it back with [b]SAVE SONG[r][else]in your head. It has ... possibilities. [toe-poss][end if].";
 	note-big-item-progress;
-	if lurking lump is not off-stage, say "[line break]";
+	follow the lurking lump inventory check rule;
+	follow the VVFF note injuries while thinking rule;
+	the rule succeeds;
+
+this is the lurking lump inventory check rule:
 	if player has lurking lump, say "You also have a lurking lump that will help make a jerking jump if you are stuck. It has [lump-charges in words] charge[plur of lump-charges] left.";
 	if lurking lump is moot, say "The lurking lump disappeared when you used it, but maybe with more good guesses, it will come back.";
-	check-injury;
-	the rule succeeds;
 
 to note-big-item-progress:
 	if my-hats > 0:
@@ -1788,8 +1790,6 @@ to note-big-item-progress:
 		else:
 			say "You are also carrying a [if my-hats < 3]budding[else]complete[end if] hat collection: [the list of gaphats carried by player].";
 	if evidence-pieces > 0, say "[if my-hats > 0][line break][end if]You also have evidence[if evidence-pieces < 3], but not enough yet,[end if] of the Crimes Crew Times Two's misdeeds: [the list of carried evidencey things].";
-
-to check-injury: if need-healing, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
 
 to decide which number is toe-clued:
 	let temp be 0;
@@ -1932,26 +1932,43 @@ to read-laters (wt - a which-think):
 			now thought-any is true;
 			say "[think-advice entry][line break]";
 
-to check-reversible-rooms:
+this is the check reversible rooms rule:
+	follow the check soft sand reversible rule;
+	follow the check history hall reversible rule;
+
+this is the check soft sand reversible rule:
 	if player is in Soft Sand and sco-loft-land is true, say "[line break]You can switch between [b]LOFT LAND[r] and [b]SOFT SAND[r] freely.";
+
+this is the check history hall reversible rule:
 	if player is in History Hall and sco-mystery-mall is true, say "[line break]You can switch between [b]MYSTERY MALL[r] and [b]HISTORY HALL[r] freely.";
 
-check thinking:
+check thinking (this is the check for any presolves before thinking rule):
 	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if].";
-	if all-hinted is 0:
-		say "[line break]But you don't have leads for any puzzles right now." instead;
-	now vc-dont-print is true;
-	check-reversible-rooms;
+	if all-hinted is 0, say "[line break]But you don't have leads for any puzzles right now." instead;
+	now vc-dont-print is true; [ in VVFF, we insert two rules to check for places you can flip ]
+
+the check reversible rooms rule is listed after the check for any presolves before thinking rule in the check thinking rules.
+
+check thinking (this is the list all presolves while thinking rule):
 	read-laters no-details;
 	read-laters doable-now;
 	read-laters undoable-now;
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
+
+check thinking (this is the VVFF note boring boat rule):
 	if boat-reject is true and sco-no-nappin is true and Lake Lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
-	if number of optional-noted things > 0:
-		say "You also know several things that are optional to figure out: [list of optional-noted things].";
-	check-injury;
+
+the VVFF note boring boat rule is listed after the list all presolves while thinking rule in the check thinking rules.
+
+check thinking (this is the list all optional presolves while thinking rule):
+	if number of optional-noted things > 0, say "You also know several things that are optional to figure out: [list of optional-noted things].";
+
+check thinking (this is the VVFF note injuries while thinking rule):
+	if need-healing, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
+
+report thinking:
 	now vc-dont-print is false;
 	the rule succeeds;
 
@@ -2095,6 +2112,13 @@ to decide whether vcp-ignore:
 	if buggin-freeze, yes;
 	no;
 
+section "too-distracted" determines if we should reject THINK
+
+to decide whether too-distracted:
+	if buggin-freeze, yes;
+	if in-bull-chase is true, yes;
+	no;
+
 book nonstandard but general verbs
 
 chapter reading
@@ -2127,8 +2151,8 @@ carry out verbsing:
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
-	say "Finally, [2da]OPTS lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
-	check-reversible-rooms;
+	say "The final general command, [2da]OPTS, lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
+	follow the check reversible rooms rule;
 	the rule succeeds.
 
 chapter optsing
@@ -3321,11 +3345,6 @@ book parser errors
 
 to decide whether buggin-freeze:
 	if player is in Been Buggin and sco-glow-glad is false, yes;
-	no;
-
-to decide whether too-distracted:
-	if buggin-freeze, yes;
-	if in-bull-chase is true, yes;
 	no;
 
 Rule for printing a parser error:
