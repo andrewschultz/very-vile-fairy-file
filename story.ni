@@ -343,38 +343,10 @@ check going nowhere (this is the look for bad locs rule):
 			now ever-wry-wall is true;
 			say "[line break][b][location of player][r][paragraph break]";
 			the rule succeeds;
-	unless noway-text of location of player is empty, say "[noway-text of location of player][line break]" instead;
-	carry out the exitlisting activity;
-	the rule succeeds;
 
-definition: a direction (called d) is viable:
-	if the room d of location of the player is nowhere, no;
-	if player is in History Hall and in-mystery-mall is true and d is outside, no;
-	yes;
-
-definition: a direction (called d) is viable-gone:
-	if d is viable and the room d of location of player is visited, yes;
-	no;
-
-definition: a direction (called d) is viable-ungone:
-	if d is viable and the room d of location of player is unvisited, yes;
-	no;
+the look for bad locs rule is listed before the check going nowhere rule in the check going rules.
 
 [see header file for table of bad locs]
-
-section exitslisting
-
-exitlisting is an activity.
-
-rule for exitlisting:
-	let lvd be list of viable-gone directions;
-	let lvd2 be list of viable-ungone directions;
-	add lvd2 to lvd;
-	say "You [if noun is diagonal]never need to use diagonal directions[else]can't go [noun][end if], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [lvd][end if].";
-
-after printing the name of a direction (called d) while exitlisting:
-	let rm be the room d of location of player;
-	if rm is visited, say " to [rm]";
 
 volume you
 
@@ -388,7 +360,7 @@ volume Worst Whew
 
 part Wet Wood 3,0
 
-Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". noway-text is "[wood-noway][paragraph break][how-better].". cht of Wet Wood is leteq. guess-table of Wet Wood is table of Wet Wood guesses. [-> get good]
+Wet Wood is a room in Worst Whew. "You just don't feel competent enough to get out of here. You can't find any way to go. You need to become better ... [oh-simp]. You also think you can hear something.". cht of Wet Wood is leteq. guess-table of Wet Wood is table of Wet Wood guesses. [-> get good]
 
 the player is in Wet Wood.
 
@@ -424,7 +396,7 @@ after looking in Wet Wood for the first time:
 
 part Rift River
 
-Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. noway-text of Rift River is "Directions don't seem to work here. You feel like a guide would be helpful.". guess-table of Rift River is table of Rift River guesses. [-> gift giver]
+Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. guess-table of Rift River is table of Rift River guesses. [-> gift giver]
 
 chapter Mind Malt
 
@@ -461,7 +433,7 @@ to say cul-lul: say "[if lul-clue is true]LUL LEAST[else]CULL CEASED[end if]"
 
 part Vined Vault 3,-1
 
-Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, so there's a way out.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". noway-text is "You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in Vined Vault] again[end if].". cht of Vined Vault is partminus. guess-table of Vined Vault is table of Vined Vault guesses. [-> find fault]
+Vined Vault is a room in Worst Whew. "[if mean mass is in Vined Vault]You found fault in the Vined Vault, so there's a way out.[else]You're stuck here! There looks to be no way out. It looks like a perfect trap, but...[end if]". cht of Vined Vault is partminus. guess-table of Vined Vault is table of Vined Vault guesses. [-> find fault]
 
 chapter mean mass
 
@@ -469,7 +441,7 @@ The mean mass is a thing. "The mean mass continues to pulse and block the way ou
 
 part Po' Pit 2,-1
 
-Po Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap[if sco-grow-grit is false]. But right now you feel too immature and jumpy to have a revelation how to even start. You suspect there is more than one way, and that's frustrating[end if].". noway-text is "You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap.". cht of Po Pit is letplus. guess-table of Po Pit is table of po pit guesses. printed name of Po Pit is "Po['] Pit". [-> grow grit]
+Po Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no less ... looks like freedom, of a sort. You've got to get by! There is a row writ, which may or may not be helpful, by an obvious trash trap that guards a long gash gap[if sco-grow-grit is false]. But right now you feel too immature and jumpy to have a revelation how to even start. You suspect there is more than one way, and that's frustrating[end if].". cht of Po Pit is letplus. guess-table of Po Pit is table of po pit guesses. printed name of Po Pit is "Po['] Pit". [-> grow grit]
 
 the row writ is scenery in Po Pit. "[if sco-grow-grit is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
 
@@ -490,7 +462,7 @@ sco-grow-grit is a truth state that varies.
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if sco-mind-me is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". noway-text is "You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?". cht of Trim Tram is leteq. guess-table of Trim Tram is table of Trim Tram guesses. [-> flim flam]
+Trim Tram is a room in Worst Whew. "[if sco-mind-me is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". cht of Trim Tram is leteq. guess-table of Trim Tram is table of Trim Tram guesses. [-> flim flam]
 
 FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. "FIND FEE is plastered everywhere. [if sco-mind-me is true]But you can shrug it off now[else]You wish you could find something a bit different to do[end if].". [-> mind me]
 
@@ -504,7 +476,7 @@ volume Piddling Pain
 
 part Fun Fen 0,0
 
-Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if sco-fall-free is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". noway-text is "You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen.". guess-table of Fun Fen is table of Fun Fen guesses.
+Fun Fen is a room in Piddling Pain. "It's a bit nicer here than back in the Done Den [one of]you came from[or]back below[stopping]. You don't fear ambush by a hun hen. You can go south, and [if sco-fall-free is true]with the tall tree pushed over, you can go north[else]it looks like you could go north, but the way looks treacherous and murky. Maybe you could do something with the tall tree nearby[end if][if wrong art is in Fun Fen], and maybe that wrong art is worth poking at. Or not[end if].". guess-table of Fun Fen is table of Fun Fen guesses.
 
 to decide whether need-healing:
 	if sco-least-loss is true and sco-heal-here is false, yes;
@@ -580,7 +552,7 @@ Cark Cliff is optional proper-named scenery in Fun Fen. "[if wild weed is moot]Y
 
 part Real Rear 0,-1
 
-Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". noway-text is "The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do.". cht of Real Rear is partplus. guess-table of Real Rear is table of Real Rear guesses. [-> kneel near]
+Real Rear is south of Fun Fen. Real Rear is in Piddling Pain. "Yup. This feels about like the edge of where you can explore. You can really only go back north. A peeling pier leads out south to the Sage Sea, which expands on all sides. There's also a steel steer here, and you sense the presence of a Ceiling Seer as well. [seer-is].". cht of Real Rear is partplus. guess-table of Real Rear is table of Real Rear guesses. [-> kneel near]
 
 to say seer-is:
 	say "[if sco-heal-here is true]You're glad it's there, even though you don't need it any more[else if sco-kneel-near is false]You don't feel it's paying attention to you, yet[else if sco-felt-fear is false]Perhaps you should confide, somehow[else if cage key is off-stage]You remember the fear you felt, and you just need to show you can do something for yourself, now[else]Perhaps the Seer can do a bit more for you, if you ask right[end if]";
@@ -659,7 +631,7 @@ check taking the full feast: say "Too much at once." instead;
 
 part Stark Store -1,1
 
-Stark Store is west of Creased Cross. cht of Stark Store is letminus. Stark Store is in Piddling Pain. "[if dark door is in Stark Store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]It's far too empty here! You can't have hit a dead end so soon[end if][if weird way is in Stark Store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". noway-text of Stark Store is "It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.". guess-table of Stark Store is table of Stark Store guesses. [-> dark door]
+Stark Store is west of Creased Cross. cht of Stark Store is letminus. Stark Store is in Piddling Pain. "[if dark door is in Stark Store]A dark door leads to the west. You have no idea how to open it[else if dark door is moot]There's a way west where the dark door was[else]It's far too empty here! You can't have hit a dead end so soon[end if][if weird way is in Stark Store]. There's also a (blocked) weird way down[else if weird way is moot]. You cleared a weird way down as well[end if]. You can go back east to Creased Cross, too.". guess-table of Stark Store is table of Stark Store guesses. [-> dark door]
 
 check going west in Stark Store:
 	if dark door is off-stage, say "Maybe there's something there. This can't just be a dead end." instead;
@@ -877,7 +849,7 @@ talk-text of Bold Bard is "'Scold-scarred. Told. Tarred.' The Bold Bard clearly 
 
 chapter gold guard
 
-the mold marred gold guard is a rhymable. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if sco-mining-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if sco-mining-more is true]hold-hard [end if]gold guard". guess-table of gold guard is the table of Bold Bard guesses. noway-text of Y'Old Yard is "You wander around for a while before discovering [next-rand-txt of table of silly locations]. An interesting detour, but not useful."
+the mold marred gold guard is a rhymable. description is "[if Beer Bull is not moot]Very flimsy indeed, but maybe it could be repaired[else if sco-mining-more is false]Could sturdier be sturdier, actually. The gear gull said something about finding other materials[else]Super sturdy now you got the boost from the Shining Shore[end if].". printed name is "[if gull-guard is false]mold-marred [else if sco-mining-more is true]hold-hard [end if]gold guard". guess-table of gold guard is the table of Bold Bard guesses.
 
 understand "hold hard gold/guard" and "hold hard gold guard" and "hold/hard gold/guard" and "hold/hard gold guard" and "hold/hard" and "hold" as gold guard when sco-mining-more is true. [ugh! This is terrible, but I checked, and it covers all the possibilities.]
 
@@ -1368,7 +1340,7 @@ sco-fit-found is a truth state that varies.
 
 part Blinding Blaze 2,3
 
-Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if sco-winding-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if sco-winding-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west. [else if sco-mo-mappin is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through. [else if stuck stair is fungible]A stuck stair leads down, but to where? [else]You've probably dealt with everything you can, here. [end if][if sco-winding-ways is true][can-nothing] can also just go back west.[else][line break][end if]". noway-text is "[blazno].". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
+Blinding Blaze is east of Pit Pound. It is in Piddling Pain. cht of Blinding Blaze is letminus. printed name of Blinding Blaze is "[if stuck stair is moot]Grinding Grays[else if sco-winding-ways is true]Winding Ways[else]Blinding Blaze[end if]". description is "[if sco-winding-ways is false]This is such a terrible blaze. Unless you can make it into something else, you can only go back west. [else if sco-mo-mappin is false]There's a maze to the south and east. You'll want to plan out fully how to deal with it. It feels like you'll need something to lighten the mood of brute-forcing through. [else if stuck stair is fungible]A stuck stair leads down, but to where? [else]You've probably dealt with everything you can, here. [end if][if sco-winding-ways is true][can-nothing] can also just go back west.[else][line break][end if]". guess-table is table of Blinding Blaze guesses. [-> Minding Maze]
 
 to say can-nothing: say "[if snuck snare is off-stage]You can also[else]Nothing to do except[end if]"
 
@@ -1482,7 +1454,7 @@ sco-meeker-muscle is a truth state that varies.
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". noway-text is "[if Lot Lord is fungible]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if].". guess-table is table of Airy Isle guesses.
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". guess-table is table of Airy Isle guesses.
 
 check going south in Airy Isle: say "There is no way back. Your destiny awaits." instead;
 
@@ -1527,7 +1499,7 @@ the listless mist mess is scenery in Airy Isle. "It's very thick. You don't know
 
 part Tarry Tile 1,5
 
-Tarry Tile is a room in Vale Verminous. "Spite-spaced white waste surrounds you on all sides. Running away would do no good.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". noway-text of Tarry Tile is "No way through the listless mist mess.". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
+Tarry Tile is a room in Vale Verminous. "Spite-spaced white waste surrounds you on all sides. Running away would do no good.". printed name is "[if sco-merry-mile is true]Merry Mile[else]Tarry Tile[end if]". cht of Tarry Tile is leteq. guess-table of Tarry Tile is table of Tarry Tile guesses. [->Merry Mile]
 
 understand "merry/mile" and "merry mile" as tarry tile when sco-merry-mile is true.
 
@@ -2055,7 +2027,14 @@ to decide which number is narratives-left:
 		if done-yet entry is false, increment temp;
 	decide on temp;
 
-chapter game-specific code relying on common file
+chapter game-specific code relying on CSDD common file
+
+section viable directions
+
+definition: a direction (called d) is viable:
+	if the room d of location of the player is nowhere, no;
+	if player is in History Hall and in-mystery-mall is true and d is outside, no;
+	yes;
 
 section assigning variables
 
@@ -2997,6 +2976,8 @@ carry out gotothinging:
 	try gotoing Q instead;
 
 chapter exitsing
+
+[the main verb is in the common file, but this game-specific conditional should be here.]
 
 to decide whether (di - a direction) is blocked:
 	if player is in Fun Fen and di is north and sco-fall-free is false, yes;

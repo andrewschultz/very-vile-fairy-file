@@ -174,6 +174,40 @@ definition: a thing (called th) is acquired:
 
 volume universal common verbs
 
+book going
+
+[ viability is defined in the game itself. Most of the time it's, is there a room d of location of player? But VVFF switches rooms and exits around a bit. ]
+
+chapter going
+
+check going nowhere (this is the print my own can't go that way rule):
+	repeat through table of noways:
+		if location of player is noway-rm entry, say "[noway-txt entry][line break]" instead;
+	carry out the exitlisting activity;
+	the rule succeeds;
+
+section exitslisting
+
+exitlisting is an activity.
+
+rule for exitlisting:
+	let lvd be list of viable-gone directions;
+	let lvd2 be list of viable-ungone directions;
+	add lvd2 to lvd;
+	say "You [if noun is diagonal]never need to use diagonal directions[else]can't go [noun][end if], [if number of viable directions is 0]and you may need to figure a puzzle to go anywhere[else]but you can go [lvd][end if].";
+
+after printing the name of a direction (called d) while exitlisting:
+	let rm be the room d of location of player;
+	if rm is visited, say " to [rm]";
+
+definition: a direction (called d) is viable-gone:
+	if d is viable and the room d of location of player is visited, yes;
+	no;
+
+definition: a direction (called d) is viable-ungone:
+	if d is viable and the room d of location of player is unvisited, yes;
+	no;
+
 check going (this is the check diagonal directions rule): if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
 
 the check diagonal directions rule is listed first in the check going rules.

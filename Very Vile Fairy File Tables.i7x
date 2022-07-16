@@ -1604,6 +1604,23 @@ Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-for
 Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! You waltz easily past the pawn pen, an obvious trap. But soon you suffer horrible, and ultimately fatal, tauntin['] and conkin[']. Set to gongin[']. All a bit off-key, but effective."
 Y'Old Yard	south	true	false	"Lit Lawn"	"Boy! The lit lawn seems nice and bright! A fit faun is frolicking alone! You ignore the [poke pest] urging you to 'get gone' and are unaware of a pit pawn and spit-spawn that grab you from behind, making you sit, sawn. You curse them with your last though, wondering if one was named Sean."
 
+chapter can't go that way replacements
+
+table of noways
+noway-rm	noway-txt
+Wet Wood	"[wood-noway][paragraph break][how-better]."
+Rift River	"Directions don't seem to work here. You feel like a guide would be helpful."
+Vined Vault	"You can't tell directions here, but then again, there's no actual unblocked way out. You need to use your head[if mean mass is in Vined Vault] again[end if]."
+Po Pit	"You can't go back, and directions don't seem to apply here. You need to think your way past the trash trap."
+Trim Tram	"You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
+Fun Fen	"You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen."
+Real Rear	"The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do."
+Stark Store	"It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.".
+Y'Old Yard	"You wander around for a while before discovering [next-rand-txt of table of silly locations]. An interesting detour, but not useful."
+Blinding Blaze	"[blazno]."
+Airy Isle	"[if Lot Lord is fungible]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if]."
+Tarry Tile	"No way through the listless mist mess."
+
 volume rank stuff
 
 table of ranks [xxranks]
