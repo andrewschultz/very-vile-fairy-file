@@ -273,7 +273,19 @@ report xyzzying for the first time:
 	say "(Cross-promotion: why, yes, [other-two], have different and equally 'witty' [b]XYZZY[r] responses. Of course they do!)";
 	continue the action;
 
-volume proper names
+volume status line
+
+when play begins (this is the score and status tweak rule):
+	now the maximum score is min-needed + max-bonus;
+	now max-poss is the maximum score;
+	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-poss]*[else]-[max-poss][end if]";
+	force-status;
+	now the left hand status line is "[location of the player] ([mrlp])";
+	now the turn count is 1;
+
+volume text stubs
+
+book proper names
 
 series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]" }
 
@@ -293,6 +305,10 @@ to say vvff: say "[i]Very Vile Fairy File[r]"
 to say qqnn: say "[i]Quite Queer Night Near[r]"
 
 to say lljj: say "[i]Low-Key Learny Jokey Journey[r]"
+
+book bug notes
+
+to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
 
 Civil Seeming Drivel Dreaming Universal ends here.
 

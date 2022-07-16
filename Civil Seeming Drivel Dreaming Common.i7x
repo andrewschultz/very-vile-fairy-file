@@ -1,6 +1,6 @@
 Version 1/220705 of Civil Seeming Drivel Dreaming Common by Andrew Schultz begins here.
 
-"This is a common file for all the entries in the Civil Seeming Drivel Dreaming series. It includes variables used for the hinting device, among other things."
+"This is a common file for the two larger entries in the Civil Seeming Drivel Dreaming series: Very Vile Fairy File and Low-Key Learny Jokey Journey. It includes variables used for the hinting device, among other things."
 
 include Civil Seeming Drivel Dreaming Universal by Andrew Schultz.
 
@@ -9,6 +9,19 @@ volume leet learner portable code
 chapter stubs
 
 to say ll: say "[b]LL[r]"
+
+book room- and rule-based stubs
+
+to say here-in of (rm - a room): say "[if rm is location of player]here[else]in [rm][end if]"
+
+to say here-to of (rm - a room): say "[if rm is location of player]here[else]to [rm][end if]"
+
+to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
+
+to say once-now of (ru - a rule):
+	process ru;
+	let rbo be the outcome of the rulebook;
+	say "[if rbo is the ready outcome]now[else]once[end if]"
 
 book leet learner and needle
 
@@ -531,7 +544,7 @@ to decide which number is all-hinted:
 		if think-cue entry is true, increment temp;
 	decide on temp;
 
-book replace old score/thinking rule(s)
+section replace old score/thinking rule(s)
 
 the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
 
@@ -545,6 +558,81 @@ this is the score and thinking changes rule:
 	if llp-notify is false and min-needed > core-max:
 		say "[line break]A stun-steed zooms by, bellowing 'None-need-done deed!' Have you lost focus on what's really important? Or just put in a bit of extra rigor? You decide on the second, as [if entry-in-series is 1]you could also picture the Very Vile Fairy File summoning[else]you could also imagine[end if] a bin-bare-min mare to insult you for finding no extra neat stuff.";
 		now llp-notify is true;
+
+chapter thinking
+
+the block thinking rule is not listed in any rulebook.
+
+ever-thought is a truth state that varies.
+
+a which-think is a kind of value. the which-thinks are no-details, doable-now, undoable-now. [ we could use 2 booleans for read-laters below, but that is awkward magic number stuff]
+
+to read-laters (wt - a which-think):
+	let thought-any be false;
+	repeat through table of verb checks:
+		if think-cue entry is true:
+			if idid entry is true:
+				say "DEBUG note--I forgot to clear [b][first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][r][end if] somehow. It would be nice to know how and when this happened.";
+				now think-cue entry is false;
+				next;
+			process the check-rule entry;
+			let rb-out be the outcome of the rulebook;
+			if wt is no-details:
+				if there is a think-advice entry and not too-distracted, next;
+				if immediate-attention of check-rule entry, next;
+				if thought-any is false, say "[line break]";
+				now thought-any is true;
+				let desired-command be indexed text;
+				now desired-command is "[first-of-ors of w1 entry in upper case][if there is a w2 entry] [first-of-ors of w2 entry in upper case][end if]";
+				if too-distracted:
+					say "You tried to [b][desired-command][r], which should've worked, but you were and still are too distracted.";
+				else:
+					say "Now you're not too distracted, [b][desired-command][r] will probably work[if there is a best-room entry] [here-in of best-room entry][end if].";
+				next;
+			if there is no think-advice entry or too-distracted:
+				unless immediate-attention of check-rule entry, next;
+			if wt is doable-now and rb-out is not the ready outcome, next;
+			if wt is undoable-now and rb-out is the ready outcome, next;
+			if thought-any is false, say "[line break]";
+			if there is a core entry and core entry is false, say "([b]OPTIONAL[r]) ";
+			if rb-out is the ready outcome, say "([b]CAN DO NOW[r]) ";
+			now thought-any is true;
+			say "[think-advice entry][line break]";
+
+[ first, we check if there is anything we can look ahead to ]
+
+check thinking (this is the check for any presolves before thinking rule):
+	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[optional-hint-think-item].";
+	if all-hinted is 0, say "[line break]But you don't have leads for any puzzles right now." instead;
+	now vc-dont-print is true; [ in VVFF, we insert two rules to check for places you can flip ]
+
+check thinking (this is the list all presolves while thinking rule):
+	read-laters no-details;
+	read-laters doable-now;
+	read-laters undoable-now;
+	if ever-thought is false:
+		now ever-thought is true;
+		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
+
+check thinking (this is the list all optional presolves while thinking rule):
+	if number of optional-noted things > 0, say "You also know several things that are optional to figure out: [list of optional-noted things].";
+
+report thinking:
+	now vc-dont-print is false;
+	the rule succeeds;
+
+section tried-yet stub
+
+[this isn't in THINK, but it is an auxiliary to say "Hey! You can do Act X now!" ]
+
+to decide whether tried-yet of (vc - a rule):
+	let tried-any be false;
+	repeat through table of verb checks:
+		if vc is check-rule entry:
+			now tried-any is true;
+			if think-cue entry is true and idid entry is false, decide yes;
+	if tried-any is false, say "I tried to check if [vc] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
+	decide no;
 
 book checking/running point-scoring command rule definitions
 
