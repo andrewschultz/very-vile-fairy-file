@@ -59,7 +59,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "pot poured"	trivially true rule	false	35	--	"There's no time for coffee here!"
 "rot roared"	trivially true rule	false	35	--	"A decent battle cry, but you sense there could a more violent action."
 "scott scored"	trivially true rule	false	35	--	"The situation demands more than gossip. It demands leadership and teamwork!"
-"slow slate"	go-gate-vis rule	false	44	--	"No blackboard appears telling you EXACTLY the right move."
+"slow slate"	go-gate-vis rule	false	44	--	"No blackboard appears telling you [b]EXACTLY[r] the right move."
 "snot snored"	trivially true rule	false	35	--	"While snot and snoring may gross some people out, they won't scare armies away. You need something more visceral."
 "so sate"	go-gate-vis rule	false	44	--	"You aren't satisfied yet. Only finishing the job will fix that!"
 "tryst tress"	trivially true rule	false	--	--	"The last thing you need now is a hair appointment."
@@ -544,7 +544,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "dairy/darey dial"	trivially true rule	false	44	--	"No dial appears to give you more excitement or milk products. Rats."
 "wary wile"	trivially true rule	false	44	--	"Yes, you [if score < 40]will need[else]have shown[end if] wary wile, and lots of it!"
 "pairy pile"	trivially true rule	false	44	--	"Goodness, no, we don't need the [fairy file] splitting and reproducing."
-"treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, HINT LEET LEARNER[or][stopping]."
+"treat turner" or "conceit concerner" or "cheat churner" or "meet mourner" or "beat burner" or "eat earner"	trivially true rule	true	--	--	"Nothing happens. The words are just settings that can help you work out what the needle means[one of]. By the way, if you want to learn how the Leet Learner works, [b]HINT LEET LEARNER[r][or][stopping]."
 "tough toll"	trivially true rule	false	--	--	"You groan about how heavy your inventory is."
 "drowsy drakes"	in-lousy-lakes rule	false	--	--	"No sleepy ducks walk by."
 

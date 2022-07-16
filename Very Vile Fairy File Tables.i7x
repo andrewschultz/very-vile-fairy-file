@@ -1,6 +1,6 @@
 Version 1/181108 of Very Vile Fairy File Tables by Andrew Schultz begins here.
 
-"This is divided into 2 volumes: the table and core cod. The structure is roughly copied from Ailihphilia and STS. The random amusing text is in Random Text, and good guesses are in Mistakes."
+"This is divided into 2 volumes: the table and core cod. The structure is roughly copied from Ailihphilia and Stale Tales Slate. The random amusing text is in Random Text, and good guesses are in Mistakes."
 
 [dbh.py shortens to the debug version]
 [duptab.py checks for duplicate tables]
@@ -23,7 +23,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "grow|oh|so"	"grit|it|sit"	"owe"	vh-grow-grit rule	false	true	true	false	false	Po Pit	vc-grow-grit rule	vr-grow-grit rule	"grow grit" or "oh it" or "so sit"	--
 "mash|bash|rash|slash"	"map|bap|rap|slap"	--	--	false	true	true	false	false	Po Pit	vc-mash-map rule	vr-mash-map rule	"mash map" or "bash bap" or "rash rap" or "slash slap"	"You should be able to [b]MASH MAP[r] [once-now of vc-mash-map rule] you feel mentally tougher."
 "mind"	"me"	"mined"	vh-mind-me rule	false	false	true	false	false	Trim Tram	vc-mind-me rule	vr-mind-me rule	--	--
-"flim|skim"	"flam|scam"	--	--	false	false	true	false	false	Trim Tram	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to FIND FEE."
+"flim|skim"	"flam|scam"	--	--	false	false	true	false	false	Trim Tram	vc-flim-flam rule	vr-flim-flam rule	"flim flam" or "flimflam" or "skim scam"	"You tried to [b][ski-fli][r], but you didn't have the confidence. You may feel more comfortable doing so [once-now of vc-flim-flam rule] you have focused inward and feel no need to [b]FIND FEE[r]."
 "spark"	"spliff"	--	--	false	true	false	false	false	Fun Fen	vc-spark-spliff rule	vr-spark-spliff rule	--	"You can [b]SPARK SPLIFF[r] [once-now of vc-spark-spliff rule] you've brought something combustible [here-to of Fun Fen]." [start of Fun Fen]
 "strong"	"start"	--	--	false	true	false	false	false	Fun Fen	vc-strong-start rule	vr-strong-start rule	--	--
 "bloke"	"blessed|blest"	--	--	false	true	false	false	false	--	vc-bloke-blessed rule	vr-bloke-blessed rule	--	--
@@ -212,7 +212,7 @@ a goodrhyme rule (this is the vc-backed-binder rule) :
 	ready;
 
 this is the vr-backed-binder rule:
-	say "The papers labeled FACT FINDER should be useful. You find a way to glue them all together. They contain objective documentation of the Crimes Crew Times Two's exploits. You've been at the receiving end of some of their psychological tricks, and though you appreciate proof you weren't being oversensitive, you still shudder.";
+	say "The papers labeled [b]FACT FINDER[r] should be useful. You find a way to glue them all together. They contain objective documentation of the Crimes Crew Times Two's exploits. You've been at the receiving end of some of their psychological tricks, and though you appreciate proof you weren't being oversensitive, you still shudder.";
 	now player has backed binder;
 	moot paper pile;
 	set the pronoun it to backed binder;
@@ -836,7 +836,7 @@ this is the vr-history-hall rule:
 a goodrhyme rule (this is the vc-ho-happen rule) :
 	if player does not have Toe Tappin, unavailable;
 	if sco-ho-happen is true:
-		vcal "You already said HO HAPPEN. Now you have to make things happen!";
+		vcal "You already said [b]HO HAPPEN[r]. Now you have to make things happen!";
 		already-done;
 	ready;
 
@@ -1169,7 +1169,7 @@ this is the vr-mystery-mall rule:
 	now Got Gear Hot Here is mapped west of History Hall;
 	now in-mystery-mall is true;
 	if sco-mystery-mall is false:
-		say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksta 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to LISTEN to, as well.";
+		say "A way opens up to the west as History Hall shudders into Mystery Mall! You suspect it would be easy to flip between the two in the future, as necessary.[paragraph break]Mystery Mall is certainly livelier. A Gutta Ganksta 'chills' here, Mean Moe's Clean Clothes is a small kiosk, and there's mall music to [b]LISTEN[r] to, as well.";
 	else:
 		bold-my-room;
 		say "[description of History Hall][line break]";
@@ -1731,7 +1731,7 @@ to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [s
 
 table of Wet Wood clues
 prof	randtxt
-False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the HET HOOD. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
+False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the [b]HET HOOD[r]. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
 False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood. [not-leet of letminus]."
 False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. [not-leet of leteq]."
 True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
@@ -1891,19 +1891,19 @@ to say rhyme-display: [pok]
 	if Fun Fen is visited:
 		say "you realize that you can change the first two letters to one, or vice versa, or change the first two letters completely. And it can be anything that rhymes.";
 	else if sco-mind-me is true:
-		say "You managed to MIND ME, but now you need to evade the trash trap.";
+		say "You managed to [b]MIND ME[r], but now you need to evade the trash trap.";
 	else if player is in Trim Tram:
 		say "you've been able to collapse the first two letters to one (Trash Trap to Mash Map, which is an action, too) and vice versa (Mean Mass to Green Grass) but maybe there's something else to do.";
 	else if player is in Po Pit:
 		say "you've been able to change the mean mass to green grass, meaning the number of letters doesn't have to be constant. You're not likely to find a fee, but maybe you can do something else.";
 	else if mean mass is in Vined Vault:
-		say "FIND FAULT wasn't spelled quite the same as VINED VAULT. In fact, FIND had fewer letters than VINED. So maybe you just need to change a different number of letters again.";
+		say "[b]FIND FAULT[r] wasn't spelled quite the same as [b]VINED VAULT[r]. In fact, [b]FIND[r] had fewer letters than [b]VINED[r]. So maybe you just need to change a different number of letters again.";
 	else if player is in Vined Vault:
-		say "GET GOOD and GIFT GIVER just switched two letters from WET WOOD and RIFT RIVER, but maybe you need to change a bit more here. While still rhyming.";
+		say "[b]GET GOOD[r] and [b]GIFT GIVER[r] just switched two letters from [b]WET WOOD[r] and [b]RIFT RIVER[r], but maybe you need to change a bit more here. While still rhyming.";
 	else if player is in Rift River:
-		say "GET GOOD worked to leave the WET WOOD. Perhaps something similar will work here.";
+		say "[b]GET GOOD[r] worked to leave the [b]WET WOOD[r]. Perhaps something similar will work here.";
 	else:
-		say "WET WOOD. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with WET WOOD?";
+		say "[b]WET WOOD[r]. You've got that zig zag rig rag. Maybe there's alliterative rhyming, here. What rhymes with [b]WET WOOD[r]?";
 
 rand-cycle is a truth state that varies.
 

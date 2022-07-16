@@ -1,6 +1,6 @@
 Version 1/220706 of Very Vile Fairy File Random Text by Andrew Schultz begins here.
 
-"These are the random text tables for auxiliary amusing stuff in VVFF."
+"These are the random text tables for auxiliary amusing stuff in Very Vile Fairy File."
 
 volume random table code
 

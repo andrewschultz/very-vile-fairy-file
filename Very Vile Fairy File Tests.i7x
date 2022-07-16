@@ -127,7 +127,7 @@ understand "noway v" as nowaying.
 carry out nowaying:
 	let needs be 0;
 	let noway-verbose be whether or not the player's command includes "v";
-	say "==================NOWAY TEST==================[paragraph break]";
+	say "==================[b]NOWAY TEST[r]==================[paragraph break]";
 	repeat with Q running through rooms:
 		if the noway-text of Q is empty:
 			say "[b][Q] needs noway-text.[r]";
@@ -143,7 +143,7 @@ chapter end of game CHT test check
 
 Table of Final Question Options (continued)
 final question wording	only if victorious	topic		final response rule		final response activity
-"track CHT of each room"	true	"cht"	--	chttracking
+"track [b]CHT[r] of each room"	true	"cht"	--	chttracking
 
 chttracking is an activity.
 
@@ -156,7 +156,7 @@ rule for chttracking:
 		if cht of X is not phbt:
 			increment phbts;
 			say "[phbts]. [X] should be phbt but is [cht of X].";
-	if phbts is 0, say "Hooray! All rooms have been reduced to PHBT.";
+	if phbts is 0, say "Hooray! All rooms have been reduced to [b]PHBT[r].";
 
 chapter table cycle check
 
