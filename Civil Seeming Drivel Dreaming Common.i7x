@@ -421,6 +421,70 @@ carry out exitsing:
 	if my-exits is 0, say "There are no clear safe exits. It looks like you need to solve a puzzle to find your way out of here.";
 	the rule succeeds.
 
+chapter gotoing
+
+section gotoing
+
+gotoing is an action applying to one visible thing.
+
+understand the command "gi" as something new.
+understand the command "gr" as something new.
+understand the command "gt" as something new.
+understand the command "goto" as something new.
+understand the command "go to" as something new.
+
+understand "go to [any visited room]" as gotoing.
+understand "goto [any visited room]" as gotoing.
+understand "gt [any visited room]" as gotoing.
+understand "gr [any visited room]" as gotoing.
+understand "go [any visited room]" as gotoing.
+
+does the player mean gotoing a room (called rm):
+	if rm is location of player, it is unlikely;
+	if rm is visited, it is very likely;
+	if rm is available-from-here, it is likely;
+
+carry out gotoing:
+	move player to noun;
+
+check gotoing (this is the prevent bad game-specific gotos rule):
+	abide by the flag bad goto from rule;
+	abide by the flag bad goto to rule;
+	if noun is not available-from-here, say "You can't walk to [noun] from here." instead;
+
+section gotothinging
+
+[maybe move this to universal?]
+
+definition: a thing (called th) is known-to-player:
+	if th is in Hidey House, yes;
+	if th is off-stage, no;
+	if location of th is unvisited, no;
+	if th is not a backdrop and location of th is visited, yes;
+	yes;
+
+gotothinging is an action applying to one visible thing.
+
+does the player mean gotothinging a thing (called th):
+	if location of th is unvisited, it is very unlikely;
+	if th is moot, it is unlikely;
+	if th is carried by the player, it is unlikely;
+	if th is not in location of player, it is likely.
+
+understand "go to [any known-to-player thing]" as gotothinging.
+understand "goto [any known-to-player thing]" as gotothinging.
+understand "gt [any known-to-player thing]" as gotothinging.
+understand "gi [any known-to-player thing]" as gotothinging.
+understand "go [any known-to-player thing]" as gotothinging.
+
+carry out gotothinging:
+	if noun is off-stage, say "Unfortunately, you tried to go to something that wasn't introduced to the game world yet." instead; [shouldn't be necessary, but just in case... we want to avoid weird errors, for now, until things have been tested. ??]
+	let Q be location of noun;
+	if Q is Hidey House, say "Right now [the noun] is temporarily unavailable." instead;
+	if noun is moot, say "Unfortunately, you tried to go to something that has been dealt with. Okay, it's fortunate you dealt with [the noun], but [b]GT[r] doesn't know where to go." instead;
+	if debug-state is true, say "DEBUG: [noun] is in [Q], so gotoing there.";
+	try gotoing Q instead;
+
 chapter hinting an object verb
 
 hintobjing is an action applying to one thing.
@@ -465,7 +529,7 @@ read-exam-note is a truth state that varies.
 carry out reading:
 	repeat through table of readables:
 		if read-thing entry is noun, say "[read-txt entry][line break]" instead;
-	if read-exam-note is false, say "[i][bracket][r][b]NOTE: READ[r][i] and [b]X/EXAMINE[r][i] are functionally equivalent for all items except those giving general advice. Items you can [b]READ[r][i] usually say so when you examine them.[close bracket]";
+	if read-exam-note is false, say "[i][bracket][r][b]NOTE: READ[r][i] and [b]X/EXAMINE[r][i] are functionally equivalent for all items except those giving general advice. Items you can [b]READ[r][i] usually say so when you examine them.[close bracket][r]";
 	now read-exam-note is true;
 	try examining the noun instead;
 

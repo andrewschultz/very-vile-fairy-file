@@ -161,12 +161,6 @@ definition: a thing (called th) is fungible:
 to decide which region is mrlp:
 	decide on map region of location of player;
 
-definition: a thing (called th) is known-to-player:
-	if th is in Hidey House, no;
-	if th is off-stage, no;
-	if th is not a backdrop and location of th is unvisited, yes;
-	yes;
-
 definition: a thing (called th) is acquired:
 	if th is moot, yes;
 	if th is enclosed by the player, yes;

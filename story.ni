@@ -2860,31 +2860,7 @@ this is the zig-zag-rig-rag-hint rule:
 
 chapter going to rooms
 
-section gotoing
-
-gotoing is an action applying to one visible thing.
-
-understand the command "gi" as something new.
-understand the command "gr" as something new.
-understand the command "gt" as something new.
-understand the command "goto" as something new.
-understand the command "go to" as something new.
-
-understand "go to [any visited room]" as gotoing.
-understand "goto [any visited room]" as gotoing.
-understand "gt [any visited room]" as gotoing.
-understand "gr [any visited room]" as gotoing.
-understand "go [any visited room]" as gotoing.
-
-does the player mean gotoing a room:
-	if noun is visited, it is very likely;
-	if noun is available-from-here, it is likely;
-
-to decide whether goto-available:
-	yes.
-
 definition: a room (called rm) is available-from-here:
-	if rm is location of player, yes;
 	if rm is unvisited, no;
 	let mrrm be map region of rm;
 	if player is in Tarry Tile, no;
@@ -2893,8 +2869,6 @@ definition: a room (called rm) is available-from-here:
 	if mrrm is Browsy Breaks, no;
 	if rm is Shirk Shell and jerk gel is not in Shirk Shell, no;
 	yes;
-
-does the player mean gotoing location of player: it is unlikely.
 
 to decide which room is fliproom of (rm - a room):
 	if in-mystery-mall is true:
@@ -2927,24 +2901,14 @@ this is the flag bad goto to rule:
 		if sco-snake-snap is true, say "You already did that." instead;
 		say "You'll need to take the boring boat [here-in of Violent Vale] to get back there." instead;
 
-to decide whether need-to-flip of (rm - a room):
-	if rm is Vending Vibe or rm is Y'Old Yard:
-		if in-mystery-mall is true, yes;
-	if rm is Got Gear Hot Here and in-mystery-mall is false, yes;
-	if rm is Curst Cave and in-loft-land is false, yes;
-	if rm is Shirk Shell and in-loft-land is true, yes;
-	no;
-
-carry out gotoing:
+check gotoing (this is the prevent bad VVFF gotos rule):
 	abide by the flag bad goto from rule;
 	abide by the flag bad goto to rule;
-	if noun is available-from-here:
-		let N be fliproom of noun;
-		if N is not Fun Fen, say "[line break][name-twiddle of N].";
-		move player to noun;
-	else:
-		say "You can't walk to [noun] from here.";
-	the rule succeeds;
+	if noun is not available-from-here, say "You can't walk to [noun] from here." instead;
+
+check gotoing (this is the remember to flip room states while gotoing rule):
+	let N be fliproom of noun;
+	if N is not Fun Fen, say "[line break][name-twiddle of N].";
 
 to say name-twiddle of (rm - a room):
 	say "You flip [rm] back to ";
@@ -2954,26 +2918,6 @@ to say name-twiddle of (rm - a room):
 to twiddle-my-room (rm - a room):
 	if rm is History Hall, now in-mystery-mall is whether or not in-mystery-mall is false;
 	if rm is Soft Sand, now in-loft-land is whether or not in-loft-land is false;
-
-section gotothinging
-
-gotothinging is an action applying to one visible thing.
-
-does the player mean gotothinging a thing carried by the player: it is unlikely.
-does the player mean gotothinging a thing in location of the player: it is unlikely.
-
-understand "go to [any known-to-player thing]" as gotothinging.
-understand "goto [any known-to-player thing]" as gotothinging.
-understand "gt [any known-to-player thing]" as gotothinging.
-understand "gi [any known-to-player thing]" as gotothinging.
-understand "go [any known-to-player thing]" as gotothinging.
-
-carry out gotothinging:
-	if noun is off-stage, say "Unfortunately, you tried to go to something that wasn't introduced to the game world yet." instead; [shouldn't be necessary, but just in case... we want to avoid weird errors, for now, until things have been tested. ??]
-	let Q be location of noun;
-	if Q is Hidey House, say "Right now [the noun] is temporarily unavailable." instead;
-	if noun is moot, say "Unfortunately, you tried to go to something that has been dealt with. Okay, it's fortunate you dealt with [the noun], but GT doesn't know where to go." instead;
-	try gotoing Q instead;
 
 chapter exitsing
 
