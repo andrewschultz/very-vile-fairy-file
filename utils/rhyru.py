@@ -4,6 +4,7 @@
 
 import re
 import i7
+import mytools as mt
 
 def anything_but(my_ary, my_text):
     for x in my_ary:
@@ -30,12 +31,17 @@ with open(my_file) as file:
         if 'already-done;' in line:
             if anything_but(my_ary, 'vcal'):
                 print(this_rule, "already-done has non-vcal print above line", line_count)
+                mt.add_postopen(my_file, line_count)
             my_ary = []
         if 'not-yet;' in line:
             if anything_but(my_ary, 'vcp'):
                 print(this_rule, "not-yet has non-vcp print above line", line_count)
+                mt.add_postopen(my_file, line_count)
             my_ary = []
         if 'ready;' in line:
             if anything_but(my_ary, 'xxx'):
                 print(this_rule, "ready has printing above line", line_count)
+                mt.add_postopen(my_file, line_count)
             my_ary = []
+
+mt.post_open()
