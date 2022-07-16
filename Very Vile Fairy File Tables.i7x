@@ -119,7 +119,7 @@ this is the vh-find-fault rule: say "Pretty close, but you don't need to make th
 
 this is the vh-get-good rule: say "You don't need source control, but you're close, here." instead;
 
-this is the vh-grow-grit rule: say "Not quite OWE ... but you sense there are several ways to toughen up." instead;
+this is the vh-grow-grit rule: say "You want to feel less indebted to others, not more." instead;
 
 this is the vh-mind-me rule: say "You need to take care of, not booby-trap, yourself." instead;
 
@@ -131,7 +131,7 @@ this is the vh-heal-here rule:
 	if the player's command includes "hear", say "There is no noise or distraction preventing hearing." instead;
 	if the player's command includes "heel", say "The Ceiling Seer only helps the good guys." instead;
 
-this is the vh-history-hall rule: say "You don't need THAT much stuff." instead;
+this is the vh-history-hall rule: say "You don't need to clog up your inventory that much[if big bag is off-stage], and you don't have a carry-all for that yet, anyway. Yet[end if]." instead;
 
 this is the vh-mystery-mall rule: say "You don't need to destroy anything." instead;
 
@@ -199,7 +199,7 @@ a goodrhyme rule (this is the vc-appealing-appear rule) :
 	ready;
 
 this is the vr-appealing-appear rule:
-	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by APPEALING-APPEAR. Yes, it looks nicer now, and of course, it doesn't HAVE to look perfect in such a spiritual area.";
+	say "A little tilt of the head, a little impromptu cleanup, and suddenly you can see that the peeling pier's was, in fact, made by [b]APPEALING-APPEAR[r]. Yes, it looks nicer now, but of course, it doesn't need to be super-shiny."; [bold-ok]
 	now sco-appealing-appear is true; [probably shouldn't zap this and replace with "peeling pier is optional" checks...]
 	now peeling pier is not optional;
 	if sco-heal-here is false:
@@ -275,7 +275,7 @@ a goodrhyme rule (this is the vc-bloke-blessed rule):
 	ready;
 
 this is the vr-bloke-blessed rule:
-	say "You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make COMPLETE sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.";
+	say "You feel a ripple as you throw unmerited kindness the joke jest poke pest's way. You yourself feel blessed, even though you may not be a bloke. Perhaps it doesn't make total sense, but there's something to be said for being able to blow off annoyances with a bit of silliness. The pest does not even shine a why-white-lie light your way.";
 	now sco-bloke-blessed is true;
 
 a goodrhyme rule (this is the vc-boring-boat rule) :
@@ -410,7 +410,7 @@ a goodrhyme rule (this is the vc-cool-cap rule) :
 	ready;
 
 this is the vr-cool-cap rule:
-	say "Whoah! A cool cap must REALLY have been stuck in the tool tap. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips. The tool tap explodes and vaporizes from the effort of having squeezed out the cool cap.";
+	say "Whoah! The tool tap chugs, and just about when it seems to give out, a cool cap squeezes out and plops on the ground. Somehow, it squeezes through. It appears to be sturdy, with no obvious rips. The tool tap explodes and vaporizes from the effort of having squeezed out the cool cap.";
 	now player has cool cap;
 	moot tool tap;
 
@@ -420,7 +420,7 @@ a goodrhyme rule (this is the vc-couple-caps rule) :
 		if my-hats is 2:
 			vcp "You'd think if you're coupling, you'd only need two hats or caps, but after some fiddling, you realize you need one more. Bummer!";
 		else if my-hats is 1:
-			vcp "You need at least one more hat to couple the CAPS.";
+			vcp "You need at least one more hat to couple the [b]CAPS[r].";
 		else:
 			vcp "You have no caps to couple. Maybe one day, though.";
 		not-yet;
@@ -502,7 +502,7 @@ a goodrhyme rule (this is the vc-dimd rule) :
 	ready;
 
 this is the vr-dimd rule:
-	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or the crushingly simplistic duet [b]Hey Hey Bay-Bay[r] by Jay-Jay and Neneh, but it's your lucky day. It's calmer now--random songs have started playing, which you can LISTEN to if you want.";
+	say "The beats of [i]Oi, Mo[r] quiet down out of hearing. You're worried they may be replaced by some song like [i]Primp'r[r] or the crushingly simplistic duet [b]Hey Hey Bay-Bay[r] by Jay-Jay and Neneh, but it's your lucky day. It's calmer now--random songs have started playing, which you can [b]LISTEN[r] to if you want.";
 	if Gutta Ganksta is in History Hall, say "[line break]The Gutta Ganksta, upset at the change in music, petulantly lashes out 'Hey, hack! Way wack!'";
 	moot oi mo;
 
@@ -600,7 +600,7 @@ a goodrhyme rule (this is the vc-find-fault rule) :
 
 this is the vr-find-fault rule:
 	loop-note "FIND FAULT";
-	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go ... if you do THIS, and THIS ...[wfak]";
+	say "It sure seems, at first glance, like the Vined Vault is inescapable. But you notice a few flaws. A loose tile, a crack in the wall ... you have all sorts of time, and there are no guards. And here you go! A little poke there, wiggle a small chunk there ...[wfak]";
 	say "[line break]But of course something outside rushes into the fault you found in the vault. A mean mass roars in and mangles the packet of Mind Malt! It pulses threateningly, and while it hasn't attacked you, it now blocks your way out!";
 	move mean mass to Vined Vault;
 	moot mind malt;
@@ -661,14 +661,14 @@ a goodrhyme rule (this is the vc-full-feast rule) :
 	ready;
 
 this is the vr-full-feast rule:
-	say "BOOM! You managed to make a full feast of the Bull Beast. But there's a lot of it. It'll be hard to move all at once.";
+	say "BOOM! You managed to make a full feast of the Bull Beast. But there's a lot of it. It'll be hard to move all at once."; [bold-ok]
 	moot Bull Beast;
 	move full feast to location of player;
 	set the pronoun it to full feast;
 
 a goodrhyme rule (this is the vc-get-good rule) :
 	if player is not in Wet Wood:
-		if print-why-fail, vcal "You already managed to GET GOOD.";
+		if print-why-fail, vcal "You already managed to [b]GET GOOD[r].";
 		already-done;
 	ready;
 
@@ -684,7 +684,7 @@ a goodrhyme rule (this is the vc-gift-giver rule) :
 
 this is the vr-gift-giver rule:
 	loop-note "GIFT GIVER";
-	say "Someone appears from the distance. 'Here! Take this. It will help you with a future puzzle or puzzles.' It's a packet of Mind Malt, whatever that is. And ... it's empty. You open your mouth to protest, but their hand goes up. 'The best sort of magic helps you help yourself.'[paragraph break]You stifle a hmph. 'Oh,' they continue, 'Also some Too-Totes-New Notes. They will tell you what your Leet Learner would've scanned for the puzzles you face at the start. Though you may wish to keep track of things by yourself. If you wish, you can DROP it to solve things the hard way.'[paragraph break]That's a bit better. They walk away. You grumble and putter around, wondering where you should go next. You put your hand on a tree, which has sick sap on it. You walk around, trying to get it off, and you fall into a ... TRICK TRAP.";
+	say "Someone appears from the distance. 'Here! Take this. It will help you with a future puzzle or puzzles.' It's a packet of Mind Malt, whatever that is. And ... it's empty. You open your mouth to protest, but their hand goes up. 'The best sort of magic helps you help yourself.'[paragraph break]You stifle a hmph. 'Oh,' they continue, 'Also some Too-Totes-New Notes. They will tell you what your Leet Learner would've scanned for the puzzles you face at the start. Though you may wish to keep track of things by yourself. If you wish, you can [b]DROP[r] it to solve things the hard way.'[paragraph break]That's a bit better. They walk away. You grumble and putter around, wondering where you should go next. You put your hand on a tree, which has sick sap on it. You walk around, trying to get it off, and you fall into a ... [b]TRICK TRAP[r].";
 	now player has Too Totes New Notes;
 	now player has Mind Malt;
 	move player to Vined Vault;
@@ -744,11 +744,11 @@ a goodrhyme rule (this is the vc-got-gored rule) :
 	if Hot Horde is off-stage:
 		vcp "The Lot Lord nods, but alas, one person using a battle cry against the Bot Board won't work.";
 		not-yet;
-	say "Uh oh. This is a BUG case. This should not have happened, but you can still win the game."; [oksay]
+	say "Uh oh. This is a [b]BUG[r] case. This should not have happened, but you can still win the game."; [oksay]
 	ready;
 
 this is the vr-got-gored rule:
-	say "YES! That's the cheer the Hot Horde needs, even if there's no gore inside the Bot Board. No need for a ham-handed 'BAM! BANDED!' as they coalesce and organize under the Lot Lord's leadership.[paragraph break]As things calm down, you realize a wry wall points you three ways, and there is now a go gate ahead! You must be close now.";
+	say "YES! That's the cheer the Hot Horde needs, even if there's no gore inside the Bot Board. No need for a ham-handed 'BAM! BANDED!' as they coalesce and organize under the Lot Lord's leadership.[paragraph break]As things calm down, you realize a wry wall points you three ways, and there is now a go gate ahead! You must be close now."; [bold-ok]
 	moot Hot Horde;
 	moot Lot Lord;
 	moot Bot Board;
@@ -1090,7 +1090,7 @@ a goodrhyme rule (this is the vc-mind-me rule) :
 
 this is the vr-mind-me rule:
 	loop-note "MIND ME";
-	say "FIND FEE can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The FIND FEE plastered everywhere vanishes.";
+	say "[b]FIND FEE[r] can't be right. There's nobody here to collect it. You have a bit more confidence in your ability to swindle someone, or something, else now. The [b]FIND FEE[r] plastered everywhere vanishes.";
 	now sco-mind-me is true;
 
 a goodrhyme rule (this is the vc-mining-more rule) :
@@ -1210,7 +1210,7 @@ a goodrhyme rule (this is the vc-not-near rule) :
 	ready;
 
 this is the vr-not-near rule:
-	say "You feel pulled from the ground, and you zoom through the walls without feeling anything. After the Too Top Shoe Shop flew ... flop. You black out and wake up at a TROUNCE TRACK.[paragraph break]There you are set upon by what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think BOUNCE BACK. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. This adventure's enough.";
+	say "You feel pulled from the ground, and you zoom through the walls without feeling anything. After the Too Top Shoe Shop flew ... flop. You black out and wake up at a [b]TROUNCE TRACK[r].[paragraph break]There you are set upon by what must be a Pounce Pack. You only have a few seconds to react, but with what you've done so far, you know to yell or think [b]BOUNCE BACK[r]. And you do.[paragraph break]Whew! You weren't cut out for the violent stuff. This adventure's enough.";
 	now sco-not-near is true;
 
 a goodrhyme rule (this is the vc-paper-pile rule) :
@@ -1245,7 +1245,7 @@ a goodrhyme rule (this is the vc-pull-pieced rule) :
 	ready;
 
 this is the vr-pull-pieced rule:
-	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. 'DEED, DUDE: FEED FOOD!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
+	say "With the help of the pining poor, you pull the full feast that was the Bull Beast to the Shining Shore. There, the dining door swings open. '[b]DEED, [b]DUDE[r]: [b]FEED FOOD[r]!' You enter and have a very good feast. As it finishes, everyone chants in unison, 'Some say yum, yay!' The door dissolves.[paragraph break]The pining poor look ready for work, now they've been properly fed.";
 	moot full feast;
 	moot mild mead;
 	if wild weed is off-stage, max-down;
@@ -1303,7 +1303,7 @@ a goodrhyme rule (this is the vc-show-shield rule) :
 	ready;
 
 this is the vr-show-shield rule:
-	say "You flash your gold guard, and bam, the YO YIELD starts up again, briefly, but nowhere near as loud, before it vanishes. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You edge north, and YO YIELD does not start up again. It's probably safe to go that way now.";
+	say "You flash your gold guard, and bam, the [b]YO YIELD[r] starts up again, briefly, but nowhere near as loud, before it vanishes. But not before the usual energy ray shows up and blasts your gold guard to pieces. Eh, it did its job. You edge north, and [b]YO YIELD[r] does not start up again. It's probably safe to go that way now.";
 	now sco-show-shield is true;
 	moot gold guard;
 	phbt Foe Field So Sealed;
@@ -1564,7 +1564,7 @@ a goodrhyme rule (this is the vc-youre-yonder rule) :
 	ready;
 
 this is the vr-youre-yonder rule:
-	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going OUT. One you'd otherwise have missed. Leo Strauss would approve![paragraph break]The book itself, however, bursts into flames like any proper secret communication now you've discovered the secret passage.";
+	say "You begin to make sense of [poor ponder]. Of course it should not be too obviously easy to enjoy, or the Crimes Crew Times Two would have suppressed it. Reading between the lines, you can see how they would give up on it without sorting out its nuances. And as you figure that out, you see clues to a passage going [b]OUT[r]. One you'd otherwise have missed. Leo Strauss would approve![paragraph break]The book itself, however, bursts into flames like any proper secret communication now you've discovered the secret passage.";
 	moot poor ponder;
 	now Y'Old Yard is mapped outside History Hall;
 	now History Hall is mapped inside Y'Old Yard;
@@ -1578,28 +1578,28 @@ chapter joke death ends
 [pest post / messed most / rest roast/ guest ghost / best boast]
 table of bad locs [xxloc] [xxbadloc]
 e1	e2	avail	been-here	fake-name	death-trap
-Airy Isle	north	false	false	"Earning Ridges"	"You figure you've got a right to profit as you have gotten this far. Why, there're some bridges to cross ahead, even brighter than the brightening bridge you made back in the Violent Vale! Everything seems lit so clearly as you walk across them, but too late, you realize that is because they are BURNING BRIDGES."
+Airy Isle	north	false	false	"Earning Ridges"	"You figure you've got a right to profit as you have gotten this far. Why, there're some bridges to cross ahead, even brighter than the brightening bridge you made back in the Violent Vale! Everything seems lit so clearly as you walk across them, but too late, you realize that is because they are [b]BURNING BRIDGES[r]."
 Airy Isle	down	false	false	"Happy Hall"	"Man! You could use some cheer right now. The happy hall is spacious at first until you ... need to start crawling. You realize what this means."
 Airy Isle	up	false	false	"Hippy Hill"	"You are sure the Hippy Hill will be full of peace and love and goodness and be an appropriate end to all this ... until you hear noises. A drippy drill. Then you are caught by a grippy grill! You suddenly realize you lack ... skippy skill."
 Been Buggin	north	false	false	"Fun-Filled Gun Guild"	"Boy, there just hasn't been enough violence so far. You need a change of pace. But since it's fun-filled, it obviously can't harm you! It might be just the thing to get (further) un-illed. But unfortunately, as you think 'I'm one willed...' the fun starts. Loud gunshots. You are stun-shilled, then spun, spilled and finally none, nilled. You should have shun-shilled!"
-Been Buggin	south	false	false	"Leaf Lake"	"Ah, that's an easy one! You sure could use a brief break. You do your homework: Jefe Jake doesn't rhyme, and Chief Chake and Grief Grake make nonsense. You think you smell beef bake as you walk by what is a fief (fake) and hear a sheaf shake, but that's harmless ... 'TEEF?! TAKE!' suddenly reverberates. You cover your mouth, but you're still pushed over. A giant grabs you and takes you to the sea as its servant. Your job? 'REEF! RAKE!'"
-Been Buggin	west	false	false	"Trust Trail"	"You walk down the Trust Trail, shortly given a side quest. 'Must mail,' someone says, handing you a letter and pointing to Dust Dale. Everything goes well until a gust-gale sweeps you off your feet--you grasp at a rust rail which is torn from the ground--and deposits you in, well, just jail. With no way to bust bail! You mutter to yourself, fussed, 'FAIL.'"
+Been Buggin	south	false	false	"Leaf Lake"	"Ah, that's an easy one! You sure could use a brief break. You do your homework: Jefe Jake doesn't rhyme, and Chief Chake and Grief Grake make nonsense. You think you smell beef bake as you walk by what is a fief (fake) and hear a sheaf shake, but that's harmless ... '[b]TEEF[r]?! [b]TAKE[r]!' suddenly reverberates. You cover your mouth, but you're still pushed over. A giant grabs you and takes you to the sea as its servant. Your job? '[b]REEF[r]! [b]RAKE[r]!'"
+Been Buggin	west	false	false	"Trust Trail"	"You walk down the Trust Trail, shortly given a side quest. 'Must mail,' someone says, handing you a letter and pointing to Dust Dale. Everything goes well until a gust-gale sweeps you off your feet--you grasp at a rust rail which is torn from the ground--and deposits you in, well, just jail. With no way to bust bail! You mutter to yourself, fussed, '[b]FAIL[r].'"
 Blinding Blaze	east	false	false	"Bold [']n Brave"	"You feel like you can handle anything. Yes sir/ma'am! You are bold and brave! But shortly, you feel less warm. 'Cold ... and crave,' you think, slightly ungrammatically. Then an olden rave leaves you even more scared. You flee, until you tumble down and look up and realize you are trapped in a ...  golden grave!"
 Blinding Blaze	north	false	false	"Straight Street"	"Oh boy, a straight street is a lot better than a maze! You might even find a Great Greet, or at least a Mate Meet. It's getting a bit lonely. But of course, you run into a Bait Beat chock full of Hate Heat, where people cry 'Late! Leet?!' You wind up crushed by weight ... wheat. It's not the desired fate-feat."
-Fight Funnel	north	true	false	"Fortune Funnel"	"Boy oh boy! Enough of these rhymes. It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the TORCHIN['] TUNNEL.[paragraph break]Given where you started, you probably should've seen this, but it was worth a try."
+Fight Funnel	north	true	false	"Fortune Funnel"	"Boy oh boy! Enough of these rhymes. It would be neat to have fortune, you think as you walk. But it's also a bit hot...well, very hot... and you realize you've run into the [b]TORCHIN[r]['] [b]TUNNEL[r].[paragraph break]Given where you started, you probably should've seen this, but it was worth a try."
 Fun Fen	west	true	false	"Fame Fort"	"Hey, why not give it a chance? The place right after the intro, maybe there's a quick way through. I mean, what can they throw at you? A tame tort? Call you a 'same-sort?' It doesn't seem too difficult, until you hear 'Maim! Mort!' and remember Mort means death. Before you pass out, you see someone standing over you saying 'Shame, short.'"
-Fun Fen	east	true	false	"Fate Farm"	"You figure, why not get to my fate sooner rather than later? A farm can't be that bad. You hear an innocuous 'Mate?! Marm?!' as you walk down a road, then a dismayed 'DISARM!' Yup, pretty nonviolent...[paragraph break]Until you are faced with mass chanting of 'Hate, harm!' The rest is unspeakable."
-Gassed Gap	east	true	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and POPPING PILLS you buy from SHOPPING SHILLS and, more speciously, drinking very bad alcohol from (brain) STOPPING STILLS."
+Fun Fen	east	true	false	"Fate Farm"	"You figure, why not get to my fate sooner rather than later? A farm can't be that bad. You hear an innocuous 'Mate?! Marm?!' as you walk down a road, then a dismayed '[b]DISARM[r]!' Yup, pretty nonviolent...[paragraph break]Until you are faced with mass chanting of 'Hate, harm!' The rest is unspeakable."
+Gassed Gap	east	true	false	"Hopping Hills"	"Boy! You could use some funky music right now. There is some, but there's also someone who offers you some drugs to enhance the music. You eventually find yourself forgetting about your mission and [b]POPPING PILLS[r] you buy from [b]SHOPPING SHILLS[r] and, more speciously, drinking very bad alcohol from (brain) [b]STOPPING STILLS[r]."
 Gassed Gap	west	true	false	"Rattlin['] Runs"	"Perhaps you expected to be battlin['] buns, which could not be too hard, but you really should not have been surprised to walk into a bunch of gatlin guns. People are tattlin['] tons at your obliviousness."
 Lake Lap	east	true	false	"Hi! Here, Buy Beer"	"You don't have any cash, but so what? Maybe someone will recognize your adventuring exploits so far and give you some, free. You ignore the [poke pest] mocking you with 'Fie! Fear!' It's probably from a sigh-seer or someone with a lie-leer, as it's to dry, drear. Passing shops called My Mere Guy Gear, Tie Teer and Pie Pier, you have a feeling something is nigh, near. The last words you and Jake hear are, of course, 'Die, dear' as you simultaneously feel an impact of a spy-spear and are run over by a sty-steer. And your last thought is 'Why? We're ...'"
-Lake Lap	down	true	false	"Lake Light"	"Oh hey! Another lake to visit! What's the worst that could happen? A fake fight? Things do seem to break bright at first. Until you hear the [poke pest] incant: 'WAKE, WIGHT!' You try to run, but it-s a ... flake flight. You wind up in Bake Bight."
+Lake Lap	down	true	false	"Lake Light"	"Oh hey! Another lake to visit! What's the worst that could happen? A fake fight? Things do seem to break bright at first. Until you hear the [poke pest] incant: '[b]WAKE, [b]WIGHT[r]!' You try to run, but it's a ... flake flight. You wind up in Bake Bight."
 Lake Lap	south	true	false	"Rad Route"	"Oh, it starts off okay. The lad lout is no problem. You walk cheerily by Stade Stout and Pad Pout, giving yourself a tad tout. But at the end, you run into people with clad clout, and it's a bad bout."
-Lake Lap	north	true	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...GLUM' after you are ambushed by some ski scum."
-Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. A deep, sonorous incantation that can only be a best boom intones 'DEST.: DOOM!' You realize you have wound up in ... a TEST TOMB."
-Lake Lea	west	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]After a night in the Store Stay, you try to leave. But a sore-say whine booms 'POOR?! PAY!' You can't. 'NOR? ... NAY!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
+Lake Lap	north	true	false	"See Some... Gee, Gum"	"Maybe there's not just gum but you can say 'Me! Mum...' However, your thoughts are more 'Glee...[b]GLUM[r]' after you are ambushed by some ski scum."
+Lake Lea	south	true	false	"Blest Bloom"	"Zest! Zoom! It smells nice at first as you walk along. But soon, it starts smelling like a rest room and then a smell of death. A deep, sonorous incantation that can only be a best boom intones '[b]DEST[r].: [b]DOOM[r]!' You realize you have wound up in ... a [b]TEST TOMB[r]."
+Lake Lea	west	true	false	"Bore Bay"	"Since you took the boring boat to get here, it's only logical that you need to explore Bore Bay. Perhaps it leads to the important and secret Core Cay or Lore Lay. You just need to watch out for War Way or a passing drawer dray, presumably, but that'll be easy to see in advance. As you discover a handy can of Spore-Spay, you realize how long you've been walking. Soon, you see Four fay hovering over a Store Stay (the 'Shore Chez') and inviting you to relax a while. So you do.[paragraph break]After a night in the Store Stay, you try to leave. But a sore-say whine booms '[b]POOR[r]?! [b]PAY[r]!' You can't. '[b]NOR[r]? ... [b]NAY[r]!' To avoid a floor-flay, you run out back ... to not just War Way, but (Gore-Gay) More May War Way. You lose consciousness before finding who wins or, for that matter, what the sides are and what they're fighting over. Your last thought is, someone named Jorge probably thumped you."
 Lake Lea	north	true	false	"Mo Main Low Lane"	"You walk along, feeling sure you will go gain so sane. But you are utterly surprised to find someone offering you ... cocaine. You just say no, but it is not heroic enough. When you aren't looking, you are enveloped by the horrid Bro Brain."
-Lake Lea	up	true	false	"Top Tower"	"Anyone with ambition should want to visit the Top Tower! And along the way, there's no glop (glower,) but there's a run through the Shop Shower reminds you of running through sprinklers as a kid, and you stop to sniff a lovely flop-flower. You've even prepared to run 'Cop, COWER' at a rogue policeman, but you never get the chance. Unfortunately, the top tower isn't a very welcoming place. Everyone's trying to prove they're not a sop. Sour. 'Pop! Power!' they yell as they fight. You are pulled into the Op-Hour competition and meet your doom in your first contest, at the bop-bower. The last you hear is 'Plop! Plow [']er!' before you are fed to ... the chop-chower."
-Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a GUN GOON."
+Lake Lea	up	true	false	"Top Tower"	"Anyone with ambition should want to visit the Top Tower! And along the way, there's no glop (glower,) but there's a run through the Shop Shower reminds you of running through sprinklers as a kid, and you stop to sniff a lovely flop-flower. You've even prepared to run '[b]COP, [b]COWER[r]' at a rogue policeman, but you never get the chance. Unfortunately, the top tower isn't a very welcoming place. Everyone's trying to prove they're not a sop. Sour. 'Pop! Power!' they yell as they fight. You are pulled into the Op-Hour competition and meet your doom in your first contest, at the bop-bower. The last you hear is 'Plop! Plow [']er!' before you are fed to ... the chop-chower."
+Whining War	east	true	false	"Done Dune"	"Despite a clearly-marked run rune, it doesn't seem like a place you should shun soon ... until you run into a [b]GUN GOON[r]."
 Whining War	down	true	false	"Fast Foi'd"	"Apparently, you do not get to fast-forward. Well, you sort of do, but not to a good end. The last thing you see as you realize you can't breathe is a ... vast void. To you, it is classed cloyed."
 Y'Old Yard	west	true	false	"Faun Fen"	"Boy, the faun fen seems relaxing! You waltz easily past the pawn pen, an obvious trap. But soon you suffer horrible, and ultimately fatal, tauntin['] and conkin[']. Set to gongin[']. All a bit off-key, but effective."
 Y'Old Yard	south	true	false	"Lit Lawn"	"Boy! The lit lawn seems nice and bright! A fit faun is frolicking alone! You ignore the [poke pest] urging you to 'get gone' and are unaware of a pit pawn and spit-spawn that grab you from behind, making you sit, sawn. You curse them with your last though, wondering if one was named Sean."
@@ -1627,7 +1627,7 @@ table of ranks [xxranks]
 rank-max	rank-name
 0	"cold cod"
 -1	"lol'd, lawd" [this is defined explicitly as -1 because 1. I want to trigger a rank gain at the Fun Fen and 2. the introductory score may change]
---	"FLOL'd, flawed" [false laugh out loud]
+--	"FLOL'd, flawed" [false laugh out loud] [bold-ok]
 --	"mold-mawed"
 --	"holed, haw-ed"
 --	"bowled, bah'd"
@@ -1774,9 +1774,9 @@ jake g	hom-toe-tappin-to-co-capn rule	--
 mind malt	--	"mined"	"Rhyming's moved you ahead so far. Maybe try it again. Mind malt, vined vault..."
 mist mess	--	"missed"	"You can miss the mess more productively by figuring your way through Airy Isle."
 pain peasant	--	"pane"	"Broken person, broken window, eh?"
-peeling pier	--	"peer"	"You could just L or X or LOOK for that. The pier is more flexible than that--rhymes will give more than homonyms here."
+peeling pier	--	"peer"	"You could just [b]L[r] or [b]X[r] or [b]LOOK[r] for that. The pier is more flexible than that--rhymes will give more than homonyms here."
 poor ponder	--	"pore"	"You don't need to pore over [poor ponder]. You need it to come alive!"
-reeker russell	--	"wreaker"	"This game doesn't want homonyms, and that's probably one homonym you REALLY don't want to put into action."
+reeker russell	--	"wreaker"	"If this game were looking for homonyms, well, that is one homonym you wouldn't want it to accept."
 sought sword	--	"sot"	"No, it wasn't lost by some drunk."
 steel steer	--	"steal"	"The ceiling seer would not approve!"
 stuck stair	--	"stare"	"You need to figure what the stair would hold. Staring may help, or it may not."
@@ -1859,7 +1859,7 @@ rift river	a rule	"riffed"	"You need to have riffed, but with rhyming, as you di
 store all stage	--	"awl"
 tarry tile	tarry-not-marry rule	"terry"	"Nobody named Terry appears, nor does any terry cloth." [ALTRULE hom-tarry-tile-to-terry rule]
 violent vale	fail-silent-sail rule	"veil"	"You need to get rid of the violence, not put a veil over it." [ALTRULE hom-violent-vale-to-veil rule]
-wet wood	--	"whet/would"	"You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough."
+wet wood	--	"whet/would"	"You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but slightly more of a change than a homonym."
 whining war	hom-whining-war-to-wining-wore rule	--
 
 to say buggin-left: say "[if buggin-score is 1]one more specific shortcoming[else]two specific shortcomings[end if]".
@@ -1938,7 +1938,7 @@ every turn (this is the notify cycling rule):
 					say "Whoah... that seems familiar! Fourth wall note: you've circled to the start of [one of]a random table after going through it. Thanks for being interested enough to look through it! There are commands at the game's end to see other tables[or]another random table[stopping].";
 				else if tables-found is 2:
 					say "[line break]This is a further note to say you've cycled a random table more than once this turn, which is an impressive bit of timing, even if it doesn't get you any points.";
-		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't.";
+		if tables-found is 0 and debug-state is true, say "This is a BUG--you should have been notified of random cycling in a table, but you weren't."; [bold-ok]
 		the rule succeeds;
 
 Very Vile Fairy File Tables ends here.

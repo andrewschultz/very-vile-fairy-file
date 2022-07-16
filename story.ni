@@ -268,13 +268,13 @@ a thing can be fakeenter. a thing is usually not fakeenter.
 rule for supplying a missing noun when entering: [?? yes, this is bad coding. I should define a property. But ... later.]
 	let TFE be number of fungible fakeenter things;
 	if TFE > 1:
-		say "There's more than one thing you can logically enter here. IN works better as a command.";
+		say "There's more than one thing you can logically enter here. [b]IN[r] works better as a command.";
 		reject the player's command;
 	else if TFE is 0:
 		say "I didn't find anything to enter.";
 		reject the player's command;
 	now noun is a random fungible fakeenter thing;
-	say "([the noun])[line break][one of][line break]NOTE: IN is a substitute for trying to enter something, and you only need to do so with one object.[or][stopping]";
+	say "([the noun])[line break][one of][line break][i][bracket][i]NOTE: [b]IN[r][i] is a substitute for trying to enter something, and you only need to do so with one object.[close bracket][r][or][stopping]";
 
 section boring rules
 
@@ -308,10 +308,10 @@ to say sign-dir:
 		if there is an e1 entry and e1 entry is location of player and there is an e2 entry:
 			now got-wry is true;
 			say "[b][fake-name entry][r]: [e2 entry].";
-	if player is in Fun Fen, say "[b]CARK CLIFF: straight down.[r]";
-	if player is in Y'Old Yard, say "[b]RANDOM PLACES: east or north.[r]";
+	if player is in Fun Fen, say "[b]CARK CLIFF[r]: straight down.";
+	if player is in Y'Old Yard, say "[b]RANDOM PLACES[r]: east or north.";
 	say "[run paragraph on]";
-	if got-wry is false, say " (NOTHING) -- that's a bug.";
+	if got-wry is false, say " ([b]NOTHING[r]) -- that's a bug.";
 
 definition: a room (called rm) is wallish:
 	if rm is Airy Isle and Bot Board is in Airy Isle, no;
@@ -382,7 +382,7 @@ to say wood-noway:
 	choose row wood-row in table of Wet Wood clues;
 	say "[randtxt entry]";
 
-to say oh-simp: say "oh, there's GOT to be a simple way to say things"
+to say oh-simp: say "oh, there must be something simple and general to say"
 
 every turn when player is in Wet Wood:
 	if turn count < 6, continue the action;
@@ -396,7 +396,7 @@ after looking in Wet Wood for the first time:
 
 part Rift River
 
-Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to GET GOOD to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. guess-table of Rift River is table of Rift River guesses. [-> gift giver]
+Rift River is a room in Worst Whew. "The Rift River blocks you, and you can't go back, and you don't know which direction to go in, anyway. You managed to [b]GET GOOD[r] to get out of the wood, and maybe you'll need to do something similar to get around the river. It's too wide to cross, and you don't want to go back. Maybe you could summon a guide.". cht of Rift River is leteq. guess-table of Rift River is table of Rift River guesses. [-> gift giver]
 
 chapter Mind Malt
 
@@ -405,31 +405,31 @@ a packet of Mind Malt is a thing. description is "It looks like there used to be
 Too Totes New Notes is a rhymable. description is "You read about your accomplishments and what the Leet Learner scanned, or would have scanned:[paragraph break][fixed letter spacing][my-notes][variable letter spacing][run paragraph on]". guess-table of too totes new notes is the table of too totes new notes guesses.
 
 to say my-notes:
-	if player has big bag, say "    RIG RAG to BIG BAG     = center.";
+	if player has big bag, say "    [b]RIG RAG[r] to [b]BIG BAG[r]     = center.";
 	repeat through table of newnotes:
 		if there is a score-needed entry and core-score < score-needed entry, continue the action;
 		say "[note-to-give entry][line break]";
 
 table of newnotes
 score-needed	note-to-give
-1	"   GET GOOD to WET WOOD    = center."
-2	" RIFT RIVER to GIFT GIVER  = center."
-3	"VINED VAULT to FIND FAULT  = center-right."
---	"  MIND MALT to FIND FAULT  = center-left."
-4	"  MEAN MASS to GREEN GRASS = left."
-5	"     PO PIT to GROW GRIT   = left."
---	"   ROW WRIT to GROW GRIT   = center-left."
-6	" TRASH TRAP to [ash-ap]    = right."
---	"   GASH GAP to [ash-ap]    = center."
---	"  CACHE CAP to [ash-ap]    = center-right."
-7	"   FIND FEE to MIND ME     = center-right."
-8	"  TRIM TRAM to [ski-fli]   = center."
+1	"   [b]GET GOOD[r] to [b]WET WOOD[r]    = center."
+2	" [b]RIFT RIVER[r] to [b]GIFT GIVER[r]  = center."
+3	"[b]VINED VAULT[r] to [b]FIND FAULT[r]  = center-right."
+--	"  [b]MIND MALT[r] to [b]FIND FAULT[r]  = center-left."
+4	"  [b]MEAN MASS[r] to [b]GREEN GRASS[r] = left."
+5	"     [b]PO PIT[r] to [b]GROW GRIT[r]   = left."
+--	"   [b]ROW WRIT[r] to [b]GROW GRIT[r]   = center-left."
+6	" [b]TRASH TRAP[r] to [ash-ap]    = right."
+--	"   [b]GASH GAP[r] to [ash-ap]    = center."
+--	"  [b]CACHE CAP[r] to [ash-ap]    = center-right."
+7	"   [b]FIND FEE[r] to [b]MIND ME[r]     = center-right."
+8	"  [b]TRIM TRAM[r] to [ski-fli]   = center."
 
-to say ski-fli: say "[if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if]"
+to say ski-fli: say "[b][if skim-not-flim is true]SKIM SCAM[else]FLIM FLAM[end if][r]" [bold-ok]
 
-to say ash-ap: say "[if bap-map-rap is 1]BASH BAP[else if bap-map-rap is 2]RASH RAP[else]MASH MAP[end if]"
+to say ash-ap: say "[b][if bap-map-rap is 1]BASH BAP[else if bap-map-rap is 2]RASH RAP[else]MASH MAP[end if][r]" [bold-ok]
 
-to say cul-lul: say "[if lul-clue is true]LUL LEAST[else]CULL CEASED[end if]"
+to say cul-lul: say "[b][if lul-clue is true]LUL LEAST[else]CULL CEASED[end if][r]" [bold-ok]
 
 part Vined Vault 3,-1
 
@@ -445,7 +445,7 @@ Po Pit is a room in Worst Whew. "Just beyond a trash trap ... an obvious one, no
 
 the row writ is scenery in Po Pit. "[if sco-grow-grit is true]It doesn't seem to be helpful any more, but it got you started. Yay[else]It's obviously meant to be motivational, but it's the sort of motivation that says if you want to do better, you have to be better. Be more of a person and have more hustle or desire. Still, despite its lack of detail, perhaps it is in the Po['] Pit for a reason[end if].". cht of row writ is partplus. [-> grow grit]
 
-the trash trap is boring scenery in Po Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. bore-text of trash trap is "You want to NOT do anything with the trash trap. You don't know what could set it off.". [-> mash map]
+the trash trap is boring scenery in Po Pit. "It's pretty obvious that if you step on the trap, you'll plunge into a further pit.". cht of trash trap is letminus. bore-text of trash trap is "You'd like to avoid doing anything directly with the trash trap. You don't know what could set it off.". [-> mash map]
 
 the cache cap is a boring thing in Po Pit. "A cap sits here, with half its bill under something. You're not going to pull it out. It's intricately designed. I guess you could call it a cache cap, since it is stuck.". description is "Oh, look here. The cache cap has a layout of the Po['] Pit, along with the gash gap and trash trap. Okay, maybe layout isn't quite the right word. But it seems to indicate there's no way through. [if sco-grow-grit is false]You'd like to believe there is[else]With your new-found confidence, perhaps the right action could convince you otherwise[end if].". cht of cache cap is partminus. bore-text of cache cap is "The cache cap is only there to (sort of) help you figure how to get beyond the Po['] Pit.". bore-rule of cache cap is bore-cache-cap rule. [-> mash map]
 
@@ -462,9 +462,9 @@ sco-grow-grit is a truth state that varies.
 
 part Trim Tram 1,-1
 
-Trim Tram is a room in Worst Whew. "[if sco-mind-me is false]FIND FEE is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". cht of Trim Tram is leteq. guess-table of Trim Tram is table of Trim Tram guesses. [-> flim flam]
+Trim Tram is a room in Worst Whew. "[if sco-mind-me is false][b]FIND FEE[r] is plastered all over the Trim Tram, making you feel poor and worthless compared to other adventurers. [end if]There's got to be a way to pay here to get the Trim Tram going. You hope so. Because there's no easy way out.". cht of Trim Tram is leteq. guess-table of Trim Tram is table of Trim Tram guesses. [-> flim flam]
 
-FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. "FIND FEE is plastered everywhere. [if sco-mind-me is true]But you can shrug it off now[else]You wish you could find something a bit different to do[end if].". [-> mind me]
+FIND FEE is scenery in Trim Tram. cht of FIND FEE is partminus. "[b]FIND FEE[r] is plastered everywhere. [if sco-mind-me is true]But you can shrug it off now[else]You wish you could find something a bit different to do[end if].". [-> mind me]
 
 sco-mind-me is a truth state that varies.
 
@@ -484,7 +484,7 @@ to decide whether need-healing:
 
 check going in Fun Fen:
 	if noun is north:
-		if sco-fall-free is false, say "The [poke pest] whispers in your head: 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead;
+		if sco-fall-free is false, say "The [poke pest] whispers in your head: 'WORK WITH MURK? MYTH!' You need a way through the murky bit to the north. Well, a much safer one." instead; [bold-ok]
 		if need-healing, say "You're not ready to go back and confront the Bull Beast in your injured state yet." instead;
 	if noun is down, say "Perhaps Cark Cliff has some use, but tumbling down it isn't one of them. 'Don't die.' / 'Won't! Why?'" instead;
 
@@ -534,7 +534,7 @@ check taking vapor vial: say "It might break in its current form." instead;
 
 section paper pile
 
-the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled FACT FINDER.". cht of paper pile is partplus. [fact finder -> backed binder]
+the paper pile is a thing. "A paper pile lies here. You'd like it to be a bit more firmly bound together before you take it.". description is "It is a bit loose. Every single paper is labeled [b]FACT FINDER[r].". cht of paper pile is partplus. [fact finder -> backed binder]
 
 check taking paper pile: say "It's too disorganized as-is[if player has big bag], even with your big bag[end if]." instead;
 
@@ -577,7 +577,7 @@ chapter Steel Steer
 
 the steel steer is scenery in Real Rear. description is "It's probably a good thing it's not a stealing steer, which would fit in fully with the pier, but all the same, it suggests things you might be able to do.". cht of steel steer is partminus. [-> kneel near]
 
-check taking steel steer: say "It is way too heavy to STEAL STEER." instead;
+check taking steel steer: say "It is way too heavy to [b]STEAL STEER[r]." instead;
 
 chapter Cage Key
 
@@ -617,7 +617,7 @@ instead of doing something when need-loss:
 
 chapter Bull Beast
 
-The Bull Beast is a person. talk-text is "If it could talk, it'd say 'Tame? Tush! Maim! Mush!'". "[if sco-cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here. Perhaps one phrase would dispel it--maybe a weird one, but it IS a beast boss, after all[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if sco-cull-ceased is true]Dead. Perhaps it can be remade into something nicer[else if sco-heal-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].". cht of Bull Beast is partplus. [Bull Beast->cull ceased]
+The Bull Beast is a person. talk-text is "If it could talk, it'd say 'Tame? Tush! Maim! Mush!'". "[if sco-cull-ceased is true]The Bull Beast lies dead here[else]The Bull Beast roars around here. Perhaps one phrase would dispel it--maybe a weird one, but for a beast boss, it probably wouldn't be straightforward[end if].". bore-text of Bull Beast is "The Bull Beast is dead. No need to muck around.". description of Bull Beast is "[if sco-cull-ceased is true]Dead. Perhaps it can be remade into something nicer[else if sco-heal-here is true]Not quite as impressive and intimidating as when it mauled you at first. Maybe the right words can repel it[else]Too tough to beat now, but maybe you can avoid total defeat[end if].". cht of Bull Beast is partplus. [Bull Beast->cull ceased]
 
 sco-cull-ceased is a truth state that varies.
 
@@ -668,7 +668,7 @@ this is the drop-snare rule:
 		moot snuck snare;
 		phbt dives ditch;
 		if in-bull-chase is true:
-			say "Oh no! You don't have the time to place the snare AND distract the Bull Beast at once! Sorry about that. On the bright side, you managed to place the snare, though, and the Bull Beast was so busy beating you up, it didn't notice you setting a trap. So it's probably no problem just to come back here, now.";
+			say "Oh no! You don't have the time to place the snare AND distract the Bull Beast at once! Sorry about that. On the bright side, you managed to place the snare, though, and the Bull Beast was so busy beating you up, it didn't notice you setting a trap. So it's probably no problem just to come back here, now."; [bold-ok]
 			reset-bull-chase;
 		else:
 			say "As you go [if player is in fight funnel]west[else]look around[end if], you realize the snuck snare would be quite nice for trapping someone unsuspecting, somewhere, somehow. So you place it and return.";
@@ -683,7 +683,7 @@ check going west in Fight Funnel:
 	process the drop-snare rule;
 	if Beer Bull is in location of player:
 		if snuck snare is moot:
-			say "You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: 'TRICK! TRAP! SICK SAP!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead, far less potent than whatever horrible alcohol the Beer Bull advertised.[paragraph break]You walk back to Here Hull, where a Gear Gull waits. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
+			say "You crawl through the Fight Funnel and roll off to the side. The Beer Bull, not knowing better, springs the snare! Aigh! In its death throes, the Beer Bull speaks its first--and last--words: '[b]TRICK[r]! [b]TRAP[r]! [b]SICK SAP[r]!' before it explodes, most of it tumbling into the remains of the Dives Ditch. But something's left behind: a flagon (or firkin or whatever) of mild mead, far less potent than whatever horrible alcohol the Beer Bull advertised.[paragraph break]You walk back to Here Hull, where a Gear Gull waits. 'Thank you for freeing me from the Beer Bull. I would like to do you a favor in return.' The Gear Gull inspects you.";
 			solve-bull-chase;
 			the rule succeeds;
 		say "You lead the Beer Bull into [the room west of Fight Funnel], where it pauses a bit before cornering you. Perhaps next time, with a bit more preparation, you could take the Beer Bull down.";
@@ -781,7 +781,7 @@ sco-whatta-wanksta is a truth state that varies. [have we called the ganksta a r
 
 chapter Gutta Ganksta (M)
 
-the Gutta Ganksta is an optional person. "A Gutta Ganksta with a tattoo chills (unconvincingly) here.". description is "GOTS GAME is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of Gutta Ganksta is partplus. [-> whatta wanksta]
+the Gutta Ganksta is an optional person. "A Gutta Ganksta with a tattoo chills (unconvincingly) here.". description is "[b]GOTS GAME[r] is tattooed on the Gutta Ganksta.". talk-text is "'Chill, chap. Will WHAP!'". cht of Gutta Ganksta is partplus. [-> whatta wanksta] [bold-ok]
 
 understand "tattoo" as GOTS GAME when Gutta Ganksta is quicknear.
 
@@ -789,7 +789,7 @@ GOTS GAME is part of the Gutta Ganksta. cht of gots game is leteq. description i
 
 after lling Gutta Ganksta:
 	if cht of gots game is leteq:
-		say "But the GOTS GAME tattoo is worth scanning, too, so you do so.";
+		say "But the [b]GOTS GAME[r] tattoo is worth scanning, too, so you do so.";
 		try lling gots game;
 	continue the action;
 
@@ -814,7 +814,7 @@ understand "song" as oi mo when player is in History Hall and oi mo is in Histor
 
 chapter Poor Ponder for Fonder
 
-Poor Ponder for Fonder is scenery. cht of Poor Ponder for Fonder is partplus. "Reading [poor ponder], it seems quite bad. It's trying to give the reader a grasp of history, but it seems like it doesn't really place the reader IN the era it's trying to describe. It's not even trying. And yet, perhaps it is worth the effort for YOU to try.". [->youre yonder]
+Poor Ponder for Fonder is scenery. cht of Poor Ponder for Fonder is partplus. "Reading [poor ponder], it seems quite bad. It's trying to give the reader a grasp of history, but it seems like it doesn't really place the reader in the era it's trying to describe. It's not even trying. And yet, maybe you, as the reader, could benefit from trying.". [->youre yonder]
 
 printed name of Poor Ponder is "[i]Poor? Ponder for Fonder[r]".
 
@@ -833,7 +833,7 @@ to decide whether can-glean:
 check entering Mean Moe's: say "It is too small to do anything to accept clothes." instead;
 
 check inserting into Mean Moe's:
-	say "You need to [if can-glean]GLEAN GLOWS[else]find the right command to get Mean Moe's to work[end if]." instead;
+	say "You need to [if can-glean][b]GLEAN GLOWS[r][else]find the right command to get Mean Moe's to work[end if]." instead;
 
 chapter clashing cloak (M)
 
@@ -841,7 +841,7 @@ the clashing cloak is a rhymable. description is "It seems suited for more than 
 
 part Y'Old Yard -2,-1
 
-Y'Old Yard is a room in Piddling Pain. "This is a very wide-open place. While you can try (and fail) to go INSIDE to the Shoaled Shard, all sorts of random places lie in every direction. [if Bold Bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back INSIDE to the History Hall[if Bold Bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)". guess-table of Y'Old Yard is table of Yold Yard guesses.
+Y'Old Yard is a room in Piddling Pain. "This is a very wide-open place. While you can try (and fail) to go [b]INSIDE[r] to the Shoaled Shard, all sorts of random places lie in every direction. [if Bold Bard is not moot]It probably won't respond to any direct rhyming. It's that imposing. [end if]You can go back [b]INSIDE[r] to the History Hall[if Bold Bard is moot], and with the Bold Bard gone, there's really nothing else to do[end if].". printed name of Y'Old Yard is "Y'Old(e) Yard(e)". guess-table of Y'Old Yard is table of Yold Yard guesses.
 
 The Bold Bard is a person in Y'Old Yard. description is "The Bold Bard looks longingly at the Shoaled Shard. There must be some way in!". "[one of]'Hi! I'm a Bold Bard, and I'd love to get into the Shoaled Shard to perform and show how great I am. But the guards won't let me in. Maybe you could help? Some sort of distraction?'[or]The Bold Bard continues to pace back and forth here, looking for a way in the Shoaled Shard. Probably the obvious local ones didn't work.[stopping]". guess-table of Bold Bard is the table of Bold Bard guesses.
 
@@ -868,7 +868,7 @@ Vending Vibe is a room in Piddling Pain. "This isn't a very big place[if Lending
 to say may-already:
 	say "[if we whine is off-stage]may wish[else]managed[end if]"
 
-The Trending Tribe are plural-named people in Vending Vibe. cht of Trending Tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to BORROW. Perhaps they can be vacated for something different, if a bit slangy". [-> Lending Libe]
+The Trending Tribe are plural-named people in Vending Vibe. cht of Trending Tribe is letminus. talk-text is "'Bam, burning! Am earning!'". "A Trending Tribe stands here, just waiting to sell you something you can't afford, because there is no money in this game.". description is "They look greedy enough. They'd overcharge you to borrow anything. Perhaps they can be vacated for something different, if a bit slangy". [-> Lending Libe]
 
 the Lending Libe is scenery. "Looking in, you see one book labeled [i][next-rand-txt of table of library books][r][one of]. This locational libe has no vocational vibe[or][stopping].";
 
@@ -887,7 +887,7 @@ We Whine ME MINE is a rhymable. cht of We Whine is letboth. description is "It's
 
 understand "book" as We Whine Me Mine when We Whine Me Mine is fungible.
 
-the printed name of We Whine is "[i]We Whine: ME, MINE[r]".
+the printed name of We Whine is "[i]We Whine: ME, MINE[r]". [bold-ok]
 
 sco-see-sign is a truth state that varies.
 
@@ -957,7 +957,7 @@ this is the bore-boat rule:
 	if current action is entering, now skip-bore-text is true;
 
 to say bore-boat-desc:
-	say "[if lake lea is visited]Your[else]A[end if] boring boat is docked here. Perhaps you could ENTER it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if sco-snake-snap is true], but it seems sturdy enough for more adventure[else if sco-no-nappin is true] a bit even though you think [b]NO NAPPIN, NO NAPPIN[r][else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]"
+	say "[if lake lea is visited]Your[else]A[end if] boring boat is docked here. Perhaps you could [b]ENTER[r] it to [if player is in Violent Vale]see somewhere new[else]return to [Violent Vale][end if].". description is "Just the sight of the boring boat leaves you yawning[if sco-snake-snap is true], but it seems sturdy enough for more adventure[else if sco-no-nappin is true] a bit even though you think [b]NO NAPPIN, NO NAPPIN[r][else]. It's not going to make itself more exciting, but maybe you can break its sleep-spell so you can board and ride it[end if]"
 
 does the player mean entering boring boat: it is very likely;
 
@@ -1013,7 +1013,7 @@ check going east in Lake Lea when Jake G is fungible:
 	if sco-wake-whee is false, say "You have a feeling you may need Jake G.[']s guidance.";
 	if sco-fake-fee is false, say "You haven't fully negotiated with Jake G. yet." instead;
 
-Jake G is a person in Lake Lea. "[one of]You come on someone with JAKE G tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if sco-wake-whee is false]dozes here[else if sco-take-tea is false]seems to be waiting to give you hospitality[else if sco-fake-fee is false]seems to want payment, but not really[else if sco-co-capn is false]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if sco-wake-whee is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. guess-table of jake g is the table of jake g guesses. [-> wake whee] [-> fake fee] [-> take tea]
+Jake G is a person in Lake Lea. "[one of]You come on someone with [b]JAKE G[r] tattooed on him. It's the guy the boring boat told you to see. But he's sleeping right now[or]Jake G [if sco-wake-whee is false]dozes here[else if sco-take-tea is false]seems to be waiting to give you hospitality[else if sco-fake-fee is false]seems to want payment, but not really[else if sco-co-capn is false]looks at you longingly, as if for more equal companionship, maybe a song[else]paces back and forth here[end if][stopping].". talk-text of Jake G is "[if sco-wake-whee is false]Sleep/slumber, deep/dumber(?)[else]'Achy! Make me!'[end if]". cht of Jake G is partplus. guess-table of jake g is the table of jake g guesses. [-> wake whee] [-> fake fee] [-> take tea]
 
 description of Jake G is "[if sco-wake-whee is false]He's sleeping. You need a personalized, cheery greeting[else if sco-take-tea is false]Jake seems to be fiddling with utensils and snack packs[else if sco-fake-fee is false]Jake rubs the fingers of one hand together but waves it off with the other[else if sco-make-map is false]Jake looks a little lost[else if sco-co-capn is false]Jake looks a little down here, as if he wants to feel equal to you, or he could use a song[else]Jake seems eager for battle[end if]."
 
@@ -1179,12 +1179,12 @@ check going west in Here Hull:
 		reset-bull-chase;
 		the rule succeeds;
 
-The Beer Bull is a person in Here Hull. cht of Beer Bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has FEAR FULL tattooed on its chest, because that's how beer advertising is--but maybe you should've expected it, since BULL and HULL don't quite rhyme, anyway. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if].". guess-table of Beer Bull is the table of Beer Bull guesses. [->dear dull] [->near null]
+The Beer Bull is a person in Here Hull. cht of Beer Bull is leteq. talk-text is "It can't speak, but its look says 'Real rude? Deal, dude!'". "[if in-bull-chase is false][bull-standby][else]The Beer Bull looks quite upset, ready to chase you wherever you may go. While it's too quick for you to double back on, it could be goaded somewhere dangerous[end if].". description of Beer Bull is "It has [b]FEAR FULL[r] tattooed on its chest, because that's how beer advertising is--but maybe you should've expected it, since [b]BULL[r] and [b]HULL[r] don't quite rhyme, anyway. [if in-bull-chase is true]And boy, you annoyed it. Better try to keep running while you can[else]It looks formidable, and yet -- you'd love to outsmart it, somehow[end if].". guess-table of Beer Bull is the table of Beer Bull guesses. [->dear dull] [->near null]
 
 check taking Beer Bull: say "You need to worry about the Beer Bull taking you." instead;
 
 to say bull-standby:
-	say "[if ever-bull-chase is false]A Beer Bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying DEAR DULL. If only you could dispose of the bull, you could see what it is[end if]"
+	say "[if ever-bull-chase is false]A Beer Bull stands motionless here. There may be a way to wake it up, and it looks like there's something behind it[else]You saw something behind the Beer Bull before you made it chase you by saying [b]DEAR DULL[r]. If only you could dispose of the bull, you could see what it is[end if]"
 
 sco-near-null is a truth state that varies.
 
@@ -1257,9 +1257,9 @@ Shirk Shell is west of Soft Sand. IT is a room in Piddling Pain. "You feel like 
 
 check going east in Shirk Shell: if player has jerk gel, say "A smirk smell erupts in Shirk Shell. You don't want or need to go back.";
 
-after printing the name of jerk gel while taking inventory: say " (brand name: SUPPLE SAPS)";
+after printing the name of jerk gel while taking inventory: say " (brand name: [b]SUPPLE SAPS[r])";
 
-the tube of jerk gel is a rhymable in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[else]. A closer look indicates its ingredients include SUPPLE SAPS[end if].". cht of jerk gel is partplus. guess-table of jerk gel is the table of jerk gel guesses. [-> work well]
+the tube of jerk gel is a rhymable in Shirk Shell. "A slightly leaky tube of Jerk Gel lies here. It doesn't seem trivial to take, but maybe it will come in handy.". description is "It seems to be a powerful glue, the sort jerks use for pranks, hence jerk gel. You figure you'll know what to do with it when the time comes[if player does not have jerk gel], but right now, you'll want to figure how to pick it up carefully[else]. A closer look indicates its ingredients include [b]SUPPLE SAPS[r][end if].". cht of jerk gel is partplus. guess-table of jerk gel is the table of jerk gel guesses. [-> work well]
 
 understand "supple/saps" and "supple saps" as jerk gel.
 
@@ -1289,12 +1289,12 @@ sco-first-fave is a truth state that varies.
 
 part Foe Field So Sealed 0,3
 
-Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if sco-show-shield is true]: Ho, HEALED[end if]". "Passages lead all four directions[if sco-show-shield is false]. However, the words YO YIELD to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. [->show shield]
+Foe Field So Sealed is a room in Piddling Pain. It is north of Soft Sand. printed name is "Foe Field[if Pain Peasant is in Foe Field] So Sealed[else if sco-show-shield is true]: [b]HO, HEALED[r][end if]". "Passages lead all four directions[if sco-show-shield is false]. However, the words [b]YO YIELD[r] to the north suggest you'll be blocked if you go that way[end if].". cht of Foe Field So Sealed is partplus. guess-table of foe field so sealed is table of Foe Field guesses. [->show shield] [bold-ok]
 
 check going south in Foe Field So Sealed:
 	if Pain Peasant is in Foe Field, say "As you leave, the Pain Peasant whines 'My, me, fly, flee!' Perhaps you gave up too quickly, and there's a simple way by. Eh, later.";
 
-check going north in Foe Field So Sealed: if sco-show-shield is false and Pain Peasant is moot, say "A booming call of 'YO! YIELD!' echoes. There's something more than the [poke pest]'s taunting, there. You need to find a way to protect yourself from it." instead;
+check going north in Foe Field So Sealed: if sco-show-shield is false and Pain Peasant is moot, say "A booming call of '[b]YO[r]! [b]YIELD[r]!' echoes. There's something more than the [poke pest]'s taunting, there. You need to find a way to protect yourself from it." instead;
 
 chapter showshielding
 
@@ -1401,7 +1401,7 @@ check going north in Gassed Gap:
 	if Reeker Russell is in Gassed Gap, say "Not with Reeker Russell around." instead;
 	if sco-go-gappin is false, say "You whistle in fear. You need some sort of motivation. One last song, maybe" instead;
 	unless evidence-pieces is 3, say "You aren't armed with enough evidence to take down the Very Vile Fairy File." instead;
-	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the VVFF's ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the VVFF. You can resist. You're not going to give up in this last bit. The way north and up crumbles after you take it. When you turn back to look, somehow, you're on an island.";
+	say "You review the evidence you have and take a deep breath. The backed binder, revealing the worst of the [fairy file]'s ideas. [We Whine] and its examples of how such meanness affects everyday people. The lessons from the Moral Mage. You understand the [fairy file]. You can resist. You're not going to give up in this last bit. The way north and up crumbles after you take it. When you turn back to look, somehow, you're on an island.";
 	isle-adjust-score-think;
 
 to decide what number is bag-point: decide on boolval of whether or not player has big bag;
@@ -1420,7 +1420,7 @@ sco-couple-caps is a truth state that varies.
 
 chapter Reeker Russell
 
-Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell blocks the way north[if good gun is not moot], and he's armed with a good gun![else].[end if]". talk-text is "'My mood: DIE, dude!'". description of Reeker Russell is "He looks [if sco-meeker-muscle is true]meeker than at first[else]pretty strong[end if]. He is also [if good gun is moot]unarmed[else]holding a good gun[end if].". cht of Reeker Russell is partminus. [-> meeker muscle] [-> beaker bustle]
+Reeker Russell is a person. Reeker Russell carries the good gun. "Reeker Russell blocks the way north[if good gun is not moot], and he's armed with a good gun![else].[end if]". talk-text is "'My mood: DIE, dude!'". description of Reeker Russell is "He looks [if sco-meeker-muscle is true]meeker than at first[else]pretty strong[end if]. He is also [if good gun is moot]unarmed[else]holding a good gun[end if].". cht of Reeker Russell is partminus. [-> meeker muscle] [-> beaker bustle] [bold-ok]
 
 bore-rule of reeker russell is bore-russell rule.
 
@@ -1454,7 +1454,7 @@ sco-meeker-muscle is a truth state that varies.
 
 part Airy Isle 0,5
 
-Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (I mean, it just LOOKS important) lies unused here. Yet it's not for you[end if].". guess-table is table of Airy Isle guesses.
+Airy Isle is north of Gassed Gap. It is in Vale Verminous. "You hear laughter here, but it's all wrong. You could back out to the south, but you sense you must be very close to the Very Vile Fairy File now[if sought sword is in Airy Isle].[paragraph break]A sought sword (well, it seems worth seeking) lies unused here. Yet it's not for you[end if].". guess-table is table of Airy Isle guesses.
 
 check going south in Airy Isle: say "There is no way back. Your destiny awaits." instead;
 
@@ -1471,9 +1471,9 @@ for printing a locale paragraph about a person (called per) in Airy Isle:
 	else:
 		say "The Lot Lord and Hot Horde mumble amongst themselves. The right battle cry, and they will be fully jazzed to take down the Bot Board!";
 
-the Bot Board are plural-named people in Airy Isle. talk-text is "'Meep, mate! Heap hate! Weep, wait!'". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own. NOT [']NORED is etched on each of their chests.". cht of Bot Board is leteq. [->got gored] [-> Hot Horde]
+the Bot Board are plural-named people in Airy Isle. talk-text is "'Meep, mate! Heap hate! Weep, wait!'". description is "They stand impassively, likely programmed by the Very Vile Fairy File to strike down anyone with a creative or potentially subversive thought, yet thankfully unable to attack on their own. [b]NOT[r] ['][b]NORED[r] is etched on each of their chests.". cht of Bot Board is leteq. [->got gored] [-> Hot Horde]
 
-the sought sword is scenery in Airy Isle. "It looks important, much better than a sot sword, shot sword, or swat sword, but it's intimidating. It says PROPERTY OF ... Man, maybe if you figured out who owned it, they might be able to help you.". cht of sought sword is letminus. [-> Lot Lord]
+the sought sword is scenery in Airy Isle. "It looks important, much better than a sot sword, shot sword, or swat sword, but it's intimidating. It says THIS SHOULD BELONG TO ... Man, maybe if you figured out who owned it, they might be able to help you.". cht of sought sword is letminus. [-> Lot Lord] [bold-ok]
 
 check taking the sought sword: say "You can't get near it. It must be someone else's. But who?" instead;
 
@@ -1534,7 +1534,7 @@ understand "vv/ff" and "vvff" as Very Vile Fairy File.
 
 ever-read-vvff is a truth state that varies.
 
-description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless. You may or may not wish to READ it[if ever-read-vvff is true] again[end if]."
+description of Very Vile Fairy File is "You regard the Very Vile Fairy File nervously. You are pretty sure you have all you need to deal with it, and yet at the same time, you feel as if you must either follow it or be beaten down by its ways, and there is no third way to render it irrelevant and powerless. You may or may not wish to [b]READ[r] it[if ever-read-vvff is true] again[end if]."
 
 to say ever-tried of (t - a table name):
 	repeat through table of all randoms:
@@ -1569,7 +1569,7 @@ the can't open unless openable rule is not listed in any rulebook.
 check opening:
 	if noun is dark door, say "You can't find a way off-hand. It doesn't even seem to have a handle. Perhaps careful observation will turn something up." instead;
 	if noun is frightening fridge, say "You're scared to. There must be a better way to get rid of the fridge." instead;
-	if noun is coral cage, say "[if player does not have cage key]You have nothing that opens the coral cage[else]The cage key seems to fit, but you feel a sense of dread. Perhaps you should consider WHOM you are releasing before opening the cage[end if]." instead;
+	if noun is coral cage, say "[if player does not have cage key]You have nothing that opens the coral cage[else]The cage key seems to fit, but you feel a sense of dread. Perhaps figuring whom you are releasing would help assure you they're not evil[end if]." instead;
 	if noun is dining door, say "You'd need a big banquet around before doing that." instead;
 	say "You don't need to use [b]OPEN[r] anywhere in this game." instead;
 
@@ -1593,7 +1593,7 @@ the block drinking rule is not listed in any rulebook.
 check drinking:
 	if noun is mild mead, say "It's too much mead for one person. You need to share it, with something to eat." instead;
 	if noun is sage sea or noun is worst wave, say "Sea salt? Ee! Alt!" instead;
-	say "Drink dry? Sink ... sigh ... [one of] (you don't need to DRINK anything in this game.)[or][line break][stopping]" instead;
+	say "Drink dry? Sink ... sigh ... [one of] (you don't need to [b]DRINK[r] anything in this game.)[or][line break][stopping]" instead;
 
 chapter wearing
 
@@ -1602,7 +1602,7 @@ procedural rule while wearing something: ignore the can't wear what's not held r
 the can't wear what's not clothing rule is not listed in any rulebook.
 
 check wearing:
-	if noun is a gaphat, say "Somehow, [the noun] isn't quite right to WEAR around. You will probably reflexively slip it on for the right occasion." instead;
+	if noun is a gaphat, say "Somehow, [the noun] isn't quite right to [b]WEAR[r] around. You will probably reflexively slip it on for the right occasion." instead;
 	if noun is gold guard, say "You'll wear it when you need to." instead;
 	say "You never need to [b]WEAR[r] anything explicitly in this adventure." instead;
 
@@ -1612,7 +1612,7 @@ the block rubbing rule is not listed in any rulebook.
 
 check rubbing:
 	if mean moe's clean clothes is not fungible, say "You aren't by any machine that can clean anything. And you don't need to clean anything directly." instead;
-	say "You can just [if can-glean]GLEAN GLOWS[else]riff on [mean moe's][end if] to see if anything in your inventory is cleanable." instead;
+	say "You can just [if can-glean][b]GLEAN GLOWS[r][else]riff on [mean moe's][end if] to see if anything in your inventory is cleanable." instead;
 
 chapter singing
 
@@ -1717,14 +1717,14 @@ understand "t [something]" as talktoing.
 does the player mean talktoing a person: it is very likely.
 
 check talktoing:
-	if noun is Very Vile Fairy File, say "'THUMP THAT CHUMP-CHAT!' booms a loud voice from inside the [fairy file]." instead;
+	if noun is Very Vile Fairy File, say "'THUMP THAT CHUMP-CHAT!' booms a loud voice from inside the [fairy file]." instead; [bold-ok]
 	if noun is not a person, say "You can only talk to living things, and [the noun] doesn't qualify." instead;
-	if talk-text of noun is empty, say "BUG: there should be text, but there isn't." instead;
+	if talk-text of noun is empty, say "[b]BUG[r]: there should be text, but there isn't." instead;
 	say "[talk-text of noun][line break]" instead;
 
 chapter inventory
 
-after printing the name of We Whine while taking inventory: if sco-see-sign is true, say " (in which you can SEE SIGN)"
+after printing the name of We Whine while taking inventory: if sco-see-sign is true, say " (in which you can [b]SEE SIGN[r])"
 
 to decide which number is my-hats: decide on number of gaphats carried by player;
 
@@ -1801,7 +1801,7 @@ before undoing an action:
 		if the turn count is 1:
 			say "'Chickening, chum? Sickening, some,' booms a voice. There's no way back to Fall Fest.";
 		else:
-			say "Wiping one's typing ... TONS!";
+			say "Wiping one's typing ... TONS!"; [bold-ok]
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
@@ -1816,7 +1816,7 @@ check attacking:
 	if noun is Reeker Russell, say "But he'd become Rager Russell. With major muscle." instead;
 	if noun is Bot Board, say "The Bot Board intones 'Pif-paf? Riff-raff!' That's about as close to a joke as they'll get." instead;
 	if noun is Bull Beast or noun is Beer Bull, say "You'd get a triple-tough cripple-cuff in return. You must fight with words." instead;
-	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]! [one of](NOTE: you don't need to attack anything. Well, not with the ATTACK command.)[or][line break][stopping]"
+	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]! [one of](NOTE: you don't need to attack anything. Well, not with the [b]ATTACK[r] command.)[or][line break][stopping]"
 
 the block saying no rule is not listed in any rulebook.
 
@@ -1831,8 +1831,8 @@ to say yn-tell: say "[one of](you never need to answer yes/no questions unless s
 the block swearing obscenely rule is not listed in any rulebook.
 
 check swearing obscenely:
-	if player is in Tarry Tile, say "A howl from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown.";
-	say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead;
+	if player is in Tarry Tile, say "A howl from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown."; [bold-ok]
+	say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead; [bold-ok]
 
 the block swearing mildly rule is not listed in any rulebook.
 
@@ -1847,7 +1847,7 @@ check smelling:
 	if noun is Gassed Gap and Reeker Russell is in Gassed Gap:
 		say "(Russell... his smell is overpowering)[paragraph break]";
 		try smelling Reeker Russell instead;
-	say "[one of]'Scent so went. Whoah!'[paragraph break][or][stopping]You don't need to SMELL anything." instead;
+	say "[one of]'Scent so went. Whoah!'[paragraph break][or][stopping]You don't need to [b]SMELL[r] anything." instead;
 
 chapter listening
 
@@ -1855,7 +1855,7 @@ the block listening rule is not listed in any rulebook.
 
 check listening:
 	if player is in Wet Wood, say "'Bet, bud! Met mud!' That sounds a bit off, but ... perhaps it can help you in some odd way beyond just going in random directions." instead;
-	if player is in Whining War, say "[if sco-so-sappin is false]It's more 'HEAD, HURT' than 'DEAD DIRT', but it's draining. Reason alone won't dispel it. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead;
+	if player is in Whining War, say "[if sco-so-sappin is false]It's more 'HEAD, HURT' than 'DEAD DIRT', but it's draining. Reason alone won't dispel it. Maybe some artiness might help, here[else]It's quieted down now. You can think and plan more things to do[end if]." instead; [bold-ok]
 	if player is in History Hall and in-mystery-mall is true:
 		if Toe is in History Hall, try examining Toe Tappin instead;
 		if Oi Mo is in History Hall, say "Tim T. Sims, Pimp, still 'sings' [i]Oi, Mo[r]. The chorus mentions double duty, which, eww. Maybe there's a way to quiet it down." instead;
@@ -1950,7 +1950,7 @@ to decide whether tried-yet of (vc - a rule):
 		if vc is check-rule entry:
 			now tried-any is true;
 			if think-cue entry is true and idid entry is false, decide yes;
-	if tried-any is false, say "I tried to check if [vc] was hinted in the THINK command but it wasn't in the help table[not-crit-but].";
+	if tried-any is false, say "I tried to check if [vc] was hinted in the [b]THINK[r] command but it wasn't in the help table[not-crit-but].";
 	decide no;
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
@@ -2110,8 +2110,8 @@ table of readables (continued)
 read-thing	read-txt
 leet learner	"Some text matches up with where the needle nose might spin. It's a bit of a stretch, in some cases, but you figure the more help the better.[paragraph break][table-of-needle-hints][run paragraph on]"
 Very Vile Fairy File	"[read-vvff]The [fairy file] contains advice and catch-phrases to seem like an alpha male or demoralize others you feel you need to demoralize. One is [i][next-rand-txt of table of vvff digs][r]"
-marred mat	"SCARRED? SCAT.[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully."
-paper pile	"It's too disorganized to read any details. You do notice FACT FINDER is stamped on pretty much every single page, though."
+marred mat	"[b]SCARRED? SCAT[r].[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully." [bold-ok]
+paper pile	"It's too disorganized to read any details. You do notice [b]FACT FINDER[r] is stamped on pretty much every single page, though."
 
 chapter xyzzying
 
@@ -2130,7 +2130,7 @@ carry out verbsing:
 	say "[2da]The Leet Learner can help you determine what needs to be changed. [ll] or [b]CC[r] is the shorthand for scanning a location, and [ll] or [b]CC[r] (any thing) scans it.";
 	if lurking lump is not off-stage, say "[2da]You can [jjj] to use the Lurking Lump spoiler item[if lurking lump is moot] once you get it back[end if].";
 	if core-score > 1, say "[2da]You can also see a list of [b]SOUND(S)[r] if you want to brute-force things.";
-	say "The final general command, [2da]OPTS, lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
+	say "The final general command, [2da][b]OPTS[r], lists various options to toggle. The default settings are to make the game less difficult or add narrative depth, but if you want, you can switch them.";
 	follow the check reversible rooms rule;
 	the rule succeeds.
 
@@ -2147,7 +2147,7 @@ chapter creditsing
 carry out creditsing:
 	say "First, thanks to Wade Clarke, dgtziea, Arthur DiBianca, Juhana Leinonen, Anssi Räisänen, Jack Welch and Ingrid Wolf for testing. Their requests, observations, clever tries and plowing on in the face of some pretty obvious bugs helped push me to do things I didn't consider or put off--in particular, many ways of hinting. Testers always see things I would not have, and though sometimes it means extra work, well--my bugs caused them extra work, and it's quite absorbing and rewarding and helps me grow as a programmer and game designer. It's an adventure of its own. If there still are bugs, well, that's on me, and I'd like to know.";
 	say "[line break]Thanks to Arclight_Dynamo and Matt Weiner for finding and reporting in-comp bugs that, uh, revealed other bugs, too.";
-	say "[line break]Thanks to GitHub for hosting private repositories that helped keep VVFF hidden and let me organize it fully. I'm also a fan of BitBucket, but GitHub's daily commit tracker helps so much with big and small goals.";
+	say "[line break]Thanks to GitHub for hosting private repositories that helped keep [this-game] hidden and let me organize it fully. I'm also a fan of BitBucket, but GitHub's daily commit tracker helps so much with big and small goals.";
 	say "[line break]Thanks to the IFComp crew past and present for giving me motivation to write all kinds of odd things.";
 	say "[line break]Thanks to https://www.thoughtco.com/sounds-in-english-language-3111166 for giving me a list of sounds to cycle through.";
 	say "[line break]You can get in the testing credits too if you find a bug or a worthwhile game-related rhyme command. I suspect I've missed some.";
@@ -2156,12 +2156,12 @@ carry out creditsing:
 chapter abouting
 
 carry out abouting:
-	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like VVFF would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break][b]OTHERS[r] will list games that used this concept first. But I hope this is something new and does not abuse the concept. Well, not TOO much.";
-	say "[line break]VVFF is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. VVFF is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
+	say "Very Vile Fairy File came about after I noticed alliterative rhymes and thought, neat, how many are there? As someone who pokes around with spoonerisms, I was looking for a variant, and I think I found it after unintentionally scrambling 'Very Fine Fairy Vine.' No progress without deviation, as Frank Zappa said.[paragraph break]It seemed like [this-game] would, at first, make a nice short EctoComp game at first until I dug deeper. I don't know when I first had the idea, but once I had the name, things picked up. My daily notes suggest it started gaining momentum in June of 2018.[paragraph break]I wanted a reasonably intuitive game mechanic that still made use of the parser, though I recognize the spelling for some of the commands may be tricky. I hope the alliterative rhymes are interesting and amusing.[paragraph break][b]OTHERS[r] will list games that used this concept first. But I hope this is something new and does not abuse the concept. Okay, I abused it a little, but hopefully it is entertaining.";
+	say "[line break][this-game] is overall meant to be family friendly, although there is one bonus point for using a minor pejorative, and if you deliberately look for crude non-solutions, some are implemented. [this-game] is also meant to be polite on the Zarfian cruelty scale.[paragraph break]If you find a good try I didn't implement, let me know. I may put you in the [b]CREDITS[r], which gives information on people who helped with the game.";
 	say "[line break]Release 1 was at the end of September 2019.";
 	say "Release 2 was November 22, 2019. It featured bug fixes, LLPs, and general player conveniences.";
 	say "Release 3 was December 12, 2019. It featured code speedup, a small narrative based on point scores, and checking for homonyms, along with other small improvements.";
-	say "[line break]And finally, if you enjoyed VVFF, Quite Queer Night Near is on itch.io at https://andrewschultz.itch.io/quite-queer-night-near. VVFF is at https://andrewschultz.itch.io/very-vile-fairy-file.";
+	say "[line break]And finally, if you enjoyed [this-game], Quite Queer Night Near is on itch.io at https://andrewschultz.itch.io/quite-queer-night-near. [this-game] is at https://andrewschultz.itch.io/very-vile-fairy-file.";
 	the rule succeeds;
 
 chapter hinting verb
@@ -2173,10 +2173,10 @@ carry out hinting:
 	if in-bull-chase is true:
 		if player does not have snuck snare, say "You don't have what you need to neutralize the Beer Bull yet[sorry-bull]." instead;
 		if dives ditch is unvisited, say "You haven't found the place to take the Beer Bull too, yet. Sorry. But you can try as often as you need[sorry-bull].";
-		if snuck snare is not moot, say "[one of]You won't have time to place the snuck snare AND sucker the Bull Beast this chase, but you will be able to place the snare. HINT again to see where to put the snare[or]You will automatically put the snare in [dives ditch] once you get there[if sco-knives-niche is false], though you need to change the name, first[end if][stopping]." instead;
+		if snuck snare is not moot, say "[one of]You won't have time to place the snuck snare and sucker the Bull Beast this chase, but you will be able to place the snare. [b]HINT[r] again to see where to put the snare[or]You will automatically put the snare in [dives ditch] once you get there[if sco-knives-niche is false], though you need to change the name, first[end if][stopping]." instead;
 		say "You need to lure the Beer Bull to [dives ditch] now you've placed the snare." instead;
 	process room-hint-rule of location of player;
-	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but you can still hint specific things in [location of player] with HINT (object).";
+	if the rule failed, say "There doesn't seem to be anything more to do with [location of player] in general, but you can still hint specific things in [location of player] with [b]HINT[r] (object).";
 	the rule succeeds.
 
 section auxiliary functions
@@ -2239,12 +2239,12 @@ this is the been-buggin-hint rule:
 	if should-mug-first:
 		say "[one of]You need to look a bit tougher, since you've Been Buggin['][or]You need to change your facial expression[or]Change your facial expression with [b]MEAN MUGGIN[r][stopping].";
 	else:
-		say "[one of]You need to be able to carry more weight.[or]You need to be stronger and, not quite thinner, but ...[or]...leaner.[or]LEAN LUGGIN.[stopping]";
+		say "[one of]You need to be able to carry more weight.[or]You need to be stronger and, not quite thinner, but ...[or]...leaner.[or][b]LEAN LUGGIN[r].[stopping]";
 	the rule succeeds;
 
 this is the blinding-blaze-hint rule:
 	if sco-winding-ways is true, the rule fails;
-	say "[one of]The Blinding Blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become WINDING WAYS. There are actually three acceptable answers here[or]WINDING WAYS, MINDING MAZE or FINDING PHASE[stopping].";
+	say "[one of]The Blinding Blaze can become more navigable[or]Something more solid, yet still annoying[or]It can become [b]WINDING WAYS[r]. There are actually three acceptable answers here[or][b]WINDING WAYS[r], [b]MINDING MAZE[r] or [b]FINDING PHASE[r][stopping].";
 	the rule succeeds;
 
 this is the creased-cross-hint rule:
@@ -2257,23 +2257,23 @@ this is the creased-cross-hint rule:
 
 this is the curst-cave-hint rule:
 	if sco-first-fave is true, the rule fails;
-	say "[one of]You need to show optimism.[or]FIRST FAVE.[stopping]";
+	say "[one of]You need to show optimism.[or][b]FIRST FAVE[r].[stopping]";
 	the rule succeeds.
 
 this is the dives-ditch-hint rule:
 	if sco-knives-niche is true, the rule fails;
-	say "[one of]Set up a subtler trap.[or]KNIVES NICHE.[stopping]";
+	say "[one of]Set up a subtler trap.[or][b]KNIVES NICHE[r].[stopping]";
 
 this is the fight-funnel-hint rule:
 	if sco-tight-tunnel is true, the rule fails;
-	say "[one of]You need to get rid of the fighters[or]Maybe make it more awkward to fight[or]TIGHT TUNNEL[stopping].";
+	say "[one of]You need to get rid of the fighters[or]Maybe make it more awkward to fight[or][b]TIGHT TUNNEL[r][stopping].";
 
 this is the foe-field-so-sealed-hint rule:
 	if sco-show-shield is true, the rule fails;
 	if player does not have gold guard:
 		say "You don't have what you need, yet, to open up the Foe Field.";
 	else:
-		say "[one of]You need to brandish protection to get further in the Foe Field.[or]That's a fancy way of saying something much simpler[or]What's a synonym for guard? Especially the gold guard?[or]SHOW SHIELD.[stopping]";
+		say "[one of]You need to brandish protection to get further in the Foe Field.[or]That's a fancy way of saying something much simpler[or]What's a synonym for guard? Especially the gold guard?[or][b]SHOW SHIELD[r].[stopping]";
 
 this is the fun-fen-hint rule:
 	if backed binder is not off-stage, the rule succeeds;
@@ -2285,7 +2285,7 @@ this is the gassed-gap-hint rule:
 	if player does not have cool cap:
 		say "You don't have what you need yet to change the Gassed Gap.";
 	else:
-		say "[one of]You need to put forth a challenge.[or]You don't have a gauntlet to throw down, but you have something else.[or]You have a cap.[or]CAST CAP.[stopping]";
+		say "[one of]You need to put forth a challenge.[or]You don't have a gauntlet to throw down, but you have something else.[or]You have a cap.[or][b]CAST CAP[r].[stopping]";
 
 this is the got-gear-hot-here-hint rule:
 	if marred mat is moot, the rule fails;
@@ -2300,7 +2300,7 @@ this is the history-hall-hint rule:
 	if sco-mystery-mall is true:
 		say "You can pretty much twiddle the Mystery Mall and History Hall as you want. There are plenty of things to hint in each of them.";
 	else:
-		say "[one of]The History Hall can become something a bit less profound.[or]A place of commerce, not of study.[or]MYSTERY MALL.[stopping]";
+		say "[one of]The History Hall can become something a bit less profound.[or]A place of commerce, not of study.[or][b]MYSTERY MALL[r].[stopping]";
 
 this is the lake-lap-hint rule:
 	say "Later..."; [??]
@@ -2313,28 +2313,28 @@ this is the pit-pound-hint rule:
 	if hit hound is in Pit Pound:
 		say "The hit hound has your full attention here.";
 		try hintobjing hit hound instead;
-	say "[one of]The Pit Pound still leaves you uncomfortable[or]Like you don't belong here[or]FIT FOUND[stopping]."
+	say "[one of]The Pit Pound still leaves you uncomfortable[or]Like you don't belong here[or][b]FIT FOUND[r][stopping]."
 
 this is the po-pit-hint rule:
 	if sco-grow-grit is false:
-		say "[one of]You have to deal with the Po['] Pit itself before dealing with the trash trap. You can find the right verb for the trash trap, but you can't use it until you deal with the Po['] Pit.[or]The learner needle swinging left indicates you need two longer words.[or]The learner needle going center-left indicates that either row or writ is the right number of letters.[or]You need to get a lot tougher. Become a bigger person.[or]GROW GRIT.[stopping]";
+		say "[one of]You have to deal with the Po['] Pit itself before dealing with the trash trap. You can find the right verb for the trash trap, but you can't use it until you deal with the Po['] Pit.[or]The learner needle swinging left indicates you need two longer words.[or]The learner needle going center-left indicates that either row or writ is the right number of letters.[or]You need to get a lot tougher. Become a bigger person.[or][b]GROW GRIT[r].[stopping]";
 	else:
-		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cache cap is stupid, but they both keep the learner needle in the center.[or]Looking at the cache cap, it's got a rendering of the trap and gap. Which seems all wrong.[or]MASH MAP.[stopping]"; [??bash bap]
+		say "[one of]The trash trap has a way through...sort of.[or]The row writ has been drawn on so that there is no way through. Even though you've grown grit, you can't see a way through it.[or]The gash gap is treacherous, and the cache cap is stupid, but they both keep the learner needle in the center.[or]Looking at the cache cap, it's got a rendering of the trap and gap. Which seems all wrong.[or][b]MASH MAP[r].[stopping]"; [??bash bap]
 
 this is the real-rear-hint rule:
 	if sco-heal-here is true, the rule fails;
-	say "You need to do 3 things here rhyming with REAL REAR.";
+	say "You need to do 3 things here rhyming with [b]REAL REAR[r].";
 	if sco-kneel-near is false:
-		say "SPOILER need to KNEEL NEAR.";
+		say "[b]SPOILER[r]: need to [b]KNEEL NEAR[r].";
 	else if sco-felt-fear is false:
-		say "SPOILER need to FEEL FEAR.";
+		say "[b]SPOILER[r]: need to [b]FEEL FEAR[r].";
 	else if cage key is off-stage:
-		say "SPOILER need to DEAL DEAR.";
+		say "[b]SPOILER[r]: need to [b]DEAL DEAR[r].";
 	else:
-		say "BUG in the hint code, but you're probably done here."
+		say "BUG in the hint code, but you're probably done here." [bold-ok]
 
 this is the rift-river-hint rule:
-	say "[one of]You need someone to help you here[or]Maybe you could use an item, too[or]You need a GIFT GIVER to come by[stopping].";
+	say "[one of]You need someone to help you here[or]Maybe you could use an item, too[or]You need a [b]GIFT GIVER[r] to come by[stopping].";
 
 this is the shirk-shell-hint rule:
 	if player has jerk gel, the rule fails;
@@ -2342,17 +2342,17 @@ this is the shirk-shell-hint rule:
 
 this is the soft-sand-hint rule:
 	if sco-loft-land is false:
-		say "[one of]You can't quite reach what's to the west[or]The Soft Sand can change its contours[or]Perhaps it could rise or fall based on what you do or think[or]LOFT LAND will raise the Soft Sand so you can go west[stopping].";
+		say "[one of]You can't quite reach what's to the west[or]The Soft Sand can change its contours[or]Perhaps it could rise or fall based on what you do or think[or][b]LOFT LAND[r] will raise the Soft Sand so you can go west[stopping].";
 	else:
-		say "You can toggle LOFT LAND and SOFT SAND back and forth as needed.";
+		say "You can toggle [b]LOFT LAND[r] and [b]SOFT SAND[r] back and forth as needed.";
 	the rule succeeds.
 
 this is the stark-store-hint rule:
 	if dark door is moot, the rule fails;
 	if dark door is off-stage:
-		say "[one of]You need to find something that would indicate passage. What rhymes with store?[or]The something that might indicate passage also might not be easily seen. What rhymes with stark?[or]You need to find a DARK DOOR.[stopping]";
+		say "[one of]You need to find something that would indicate passage. What rhymes with store?[or]The something that might indicate passage also might not be easily seen. What rhymes with stark?[or]You need to find a [b]DARK DOOR[r].[stopping]";
 	else:
-		say "[one of]You can't see much about the dark door, so you need to increase how observant you are.[or]You need to become more observant.[or]MARK MORE.[stopping]";
+		say "[one of]You can't see much about the dark door, so you need to increase how observant you are.[or]You need to become more observant.[or][b]MARK MORE[r].[stopping]";
 	the rule succeeds;
 
 this is the store-all-stage-hint rule:
@@ -2364,16 +2364,16 @@ this is the tarry-tile-hint rule:
 	if well worn hell horn is in Tarry Tile:
 		say "You can do something with this location [once-now of vc-merry-mile rule] the [hell horn] is dealt with.";
 	else if sco-merry-mile is false:
-		say "[one of]The Tarry Tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a MERRY MILE.[stopping]";
+		say "[one of]The Tarry Tile can become cheerier.[or]It's a rather long tile, and it can become...[or]...a [b]MERRY MILE[r].[stopping]";
 	else:
 		consider the very-vile-fairy-file-hint rule;
 	the rule fails.
 
 this is the trim-tram-hint rule:
 	if sco-mind-me is true:
-		say "[one of]You need to find a way to sucker the Trim Tram into thinking you paid.[or]There are two ways.[or]FLIM FLAM, or SKIM SCAM.[stopping]";
+		say "[one of]You need to find a way to sucker the Trim Tram into thinking you paid.[or]There are two ways.[or][b]FLIM FLAM[r], or [b]SKIM SCAM[r].[stopping]";
 	else:
-		say "[one of]You can't get FIND FEE out of your head. It distracts you from thinking of you.[or]Wait, 'you' is the wrong pronoun from your perspective.[or]What can you do to ME?[or]MIND ME.[stopping]";
+		say "[one of]You can't get [b]FIND FEE[r] out of your head. It distracts you from thinking of you.[or]Wait, 'you' is the wrong pronoun from your perspective.[or]What can you do to [b]ME[r]?[or][b]MIND ME[r].[stopping]";
 
 this is the vending-vibe-hint rule:
 	if Trending Tribe is moot, the rule fails;
@@ -2382,9 +2382,9 @@ this is the vending-vibe-hint rule:
 
 this is the vined-vault-hint rule:
 	if mean mass is off-stage:
-		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to FIND FAULT[stopping].";
+		say "[one of]You need to deal with the Vined Vault. Another room, another rhyme[or]In this case, it isn't a quick letter replacement. You may wish to consult the leet learner. It's pointing center-right, which is different from the center of the Wet Wood and Rift River[or]You also need to discover some weakness in the Vined Vault[or]Again, you can go through the 25 other letters, and this time, there will be a homonym that makes sense[or]You need to [b]FIND FAULT[r][stopping].";
 	else:
-		say "[one of]The mean mass is a bit trickier. The leet learner swings to the left[or]If you've been observant, you may notice VINED VAULT and MIND MALT swung center-right and center-left, respectively, for FIND FAULT. This may help you guess what swinging left could mean[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or]GREEN GRASS will dispose of the mean mass[stopping].";
+		say "[one of]The mean mass is a bit trickier. The leet learner swings to the left[or]If you've been observant, you may notice [b]VINED VAULT[r] and [b]MIND MALT[r] swung center-right and center-left, respectively, for [b]FIND FAULT[r]. This may help you guess what swinging left could mean[or]Try and think of a word or two that rhyme with mean or mass that are harmless, then pull that new beginning sound to the other word[or][b]GREEN GRASS[r] will dispose of the mean mass[stopping].";
 	the rule succeeds;
 
 this is the violent-vale-hint rule:
@@ -2392,7 +2392,7 @@ this is the violent-vale-hint rule:
 		say "You've done all you need to here.";
 		the rule fails;
 	if float is off-stage:
-		say "[one of]You need to make the Violent Vale less violent[or]Quieter, perhaps[or]SILENT SAIL (or SALE)[stopping].";
+		say "[one of]You need to make the Violent Vale less violent[or]Quieter, perhaps[or][b]SILENT SAIL[r] (or [b]SALE[r])[stopping].";
 		the rule succeeds;
 	if fridge is not moot:
 		say "Have a look at the fridge, for the moment.";
@@ -2401,12 +2401,12 @@ this is the violent-vale-hint rule:
 	the rule succeeds;
 
 this is the wet-wood-hint rule:
-	say "[one of]You may notice a pattern to items and people here, especially if you try going certain directions in the Wet Wood. You're very bad at finding your way through[or]There are parallel rhymes[or]Perhaps a parallel rhyme would help you get out of the Wet Wood[or]It's the first location, so you may guess the first action is easy[or]Try replacing W with each of the other 25 letters. Maybe one pair of words stands out[or]You need to GET GOOD[stopping].";
+	say "[one of]You may notice a pattern to items and people here, especially if you try going certain directions in the Wet Wood. You're very bad at finding your way through[or]There are parallel rhymes[or]Perhaps a parallel rhyme would help you get out of the Wet Wood[or]It's the first location, so you may guess the first action is easy[or]Try replacing W with each of the other 25 letters. Maybe one pair of words stands out[or]You need to [b]GET GOOD[r][stopping].";
 	the rule succeeds;
 
 this is the whining-war-hint rule:
 	if sco-shining-shore is true, the rule fails;
-	say "[one of]You need to make the Whining War something more positive.[or]Brighter. This is a waterfront, sort of, as well.[or]SHINING SHORE.[stopping]";
+	say "[one of]You need to make the Whining War something more positive.[or]Brighter. This is a waterfront, sort of, as well.[or][b]SHINING SHORE[r].[stopping]";
 
 this is the yold-yard-hint rule:
 	if Bold Bard is moot, the rule fails;
@@ -2534,10 +2534,10 @@ this is the backed-binder-hint rule:
 
 this is the beer-bull-hint rule:
 	if sco-near-null is false:
-		say "[one of]The Beer Bull is too powerful in its present form! You have to lessen its power a bit. A pretty simple rhyme will work[or]NEAR NULL[stopping]." instead;
-	if ever-bull-chase is false, say "[one of]You need to provoke the Beer Bull to chase you[or]There's a phrase that might insult something or someone who is part of something as exciting as alcohol advertising[or]DEAR DULL[stopping]." instead;
+		say "[one of]The Beer Bull is too powerful in its present form! You have to lessen its power a bit. A pretty simple rhyme will work[or][b]NEAR NULL[r][stopping]." instead;
+	if ever-bull-chase is false, say "[one of]You need to provoke the Beer Bull to chase you[or]There's a phrase that might insult something or someone who is part of something as exciting as alcohol advertising[or][b]DEAR DULL[r][stopping]." instead;
 	if in-bull-chase is false
-	, say "You can say DEAR DULL to get the bull to chase you again." instead;
+	, say "You can say [b]DEAR DULL[r] to get the bull to chase you again." instead;
 	say "This is a bit tricky--you need to get the bull to chase you somewhere and spring a trap. I'm going to palm the rest of these hints on to an item you have[if snuck snare is off-stage]n't found yet[end if].";
 
 this is the big-bag-hint rule:
@@ -2545,33 +2545,33 @@ this is the big-bag-hint rule:
 
 this is the bold-bard-hint rule:
 	if player does not have clashing cloak, say "You have nothing to help the Bold Bard make a distraction, yet." instead;
-	say "[one of]The Bold Bard needs a distraction, and something you have will help.[or]More precisely, use something you're wearing.[or]The clashing cloak is distracting in another form, too.[or]SMASHING SMOKE.[stopping]";
+	say "[one of]The Bold Bard needs a distraction, and something you have will help.[or]More precisely, use something you're wearing.[or]The clashing cloak is distracting in another form, too.[or][b]SMASHING SMOKE[r].[stopping]";
 
 this is the boring-boat-hint rule:
 	if sco-no-nappin is true, say "You can just board the boat.";
 	say "A song might help the boring boat be less boring.";
 	if player does not have toe tappin row rappin, say "[line break]You haven't found one yet." instead;
-	say "[line break][one of][Toe] can be modified[or]How to feel less sleepy or bored on the boat, using [Toe]?[or][Toe] can become NO NAPPIN.[stopping]";
+	say "[line break][one of][Toe] can be modified[or]How to feel less sleepy or bored on the boat, using [Toe]?[or][Toe] can become [b]NO NAPPIN[r].[stopping]";
 
 this is the bot-board-hint rule:
 	if Lot Lord is in Airy Isle and Hot Horde is in Airy Isle:
-		say "[one of]Now that the Lot Lord and Hot Horde are in Airy Isle, they need a rallying cry[or]Or a victory cry[or]GOT GORED[stopping].";
+		say "[one of]Now that the Lot Lord and Hot Horde are in Airy Isle, they need a rallying cry[or]Or a victory cry[or][b]GOT GORED[r][stopping].";
 	else if Lot Lord is in Airy Isle:
-		say "[one of]The Lot Lord needs people to lead[or]The Lot Lord needs an enthusiastic, large following[or]HOT HORDE[stopping].";
+		say "[one of]The Lot Lord needs people to lead[or]The Lot Lord needs an enthusiastic, large following[or][b]HOT HORDE[r][stopping].";
 	else if Hot Horde is in Airy Isle:
-		say "[one of]The Hot Horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or]LOT LORD[stopping].";
+		say "[one of]The Hot Horde is disorganized and needs a leader[or]Someone regal would gain the horde's attention[or][b]LOT LORD[r][stopping].";
 	else:
-		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or]LOT LORD.[or]The people to be led must also be enthusiastic.[or]HOT HORDE.[stopping]";
+		say "[one of]You need allies to take out the Bot Board. One leader and one group of people.[or]This will give both answers if you go through.[or]The leader isn't quite a baron or king.[or][b]LOT LORD[r].[or]The people to be led must also be enthusiastic.[or][b]HOT HORDE[r].[stopping]";
 
 this is the bull-beast-hint rule:
 	if need-loss:
-		if tried-yet of vc-least-loss rule, say "Now is the time to go in for LEAST LOSS." instead;
-		say "[one of]The Beast Boss/Bull Beast is going to hurt you, no question. But you want to minimize the damage[or]LEAST LOSS[stopping]." instead;
-	if tried-yet of vc-cull-ceased rule, say "You already tried to say CULL CEASED. Now, it will work!" instead; [?? what if LUL LEAST??]
-	say "[one of]You need to say or do something that will put the Bull Beast down[or]There are two ways to nail the Bull Beast[or][one of]CULL CEASED tells the Bull Beast its rampaging days are over[or]LUL LEAST is a put-down that leaves the beast in shame[stopping][stopping].";
+		if tried-yet of vc-least-loss rule, say "Now is the time to go in for [b]LEAST LOSS[r]." instead;
+		say "[one of]The Beast Boss/Bull Beast is going to hurt you, no question. But you want to minimize the damage[or][b]LEAST LOSS[r][stopping]." instead;
+	if tried-yet of vc-cull-ceased rule, say "You already tried to say [b]CULL CEASED[r]. Now, it will work!" instead; [?? what if LUL LEAST??]
+	say "[one of]You need to say or do something that will put the Bull Beast down[or]There are two ways to nail the Bull Beast[or][one of][b]CULL CEASED[r] tells the Bull Beast its rampaging days are over[or][b]LUL LEAST[r] is a put-down that leaves the beast in shame[stopping][stopping].";
 
 this is the cache-cap-hint rule:
-	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if sco-grow-grit is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or]BASH BAP or MASH MAP both work to get out of Po['] Pit for good[stopping][end if][stopping].";
+	say "[one of]As you may have guessed, the cache cap, trash trap and gash gap are linked. One of them gives clues about the other two[or][if sco-grow-grit is false]You need to deal with the row writ and Po['] Pit, first[else][one of]The cache cap seems to offer a way through the trash trap or gash gap, but not really[or]You need to find a way to put the cache cap out of its misery[or][b]BASH BAP[r] or [b]MASH MAP[r] both work to get out of Po['] Pit for good[stopping][end if][stopping].";
 	the rule succeeds;
 
 this is the cage-key-hint rule:
@@ -2582,7 +2582,7 @@ this is the cage-key-hint rule:
 	say ", but you need to figure the right command.";
 
 this is the cark-cliff-hint rule:
-	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or]SPARK SPLIFF.[stopping]";
+	say "[one of]The Cark Cliff point is a bit obscure. You need to mellow out, man.[or][b]SPARK SPLIFF[r].[stopping]";
 
 this is the ceiling-seer-hint rule:
 	say "The Ceiling Seer is just there to reinforce what you need to do in the Real Rear. The -ing in each act is superfluous.";
@@ -2597,11 +2597,11 @@ this is the clashing-cloak-hint rule:
 		else:
 			say "Using the cloak in Y'Old Yard will help the Bold Bard.";
 		the rule succeeds;
-	say "[one of]The clashing cloak can transform into another sort of distraction[or]SMASHING SMOKE[stopping].";
+	say "[one of]The clashing cloak can transform into another sort of distraction[or][b]SMASHING SMOKE[r][stopping].";
 	if poor ponder is not moot, say "You can't use the clashing cloak yet."
 
 this is the clumped-cluster-hint rule:
-	say "[one of]The clumped cluster can be moved two ways. Either is equivalent[or]You can use an order to move the cluster or find an item[or][one of]BUMPED BUSTER is one way[or]DUMPED DUSTER is one way[cycling] to clear the clumped cluster[stopping].";
+	say "[one of]The clumped cluster can be moved two ways. Either is equivalent[or]You can use an order to move the cluster or find an item[or][one of][b]BUMPED BUSTER[r] is one way[or][b]DUMPED DUSTER[r] is one way[cycling] to clear the clumped cluster[stopping].";
 
 this is the cold-card-hint rule:
 	say "You need to bring the cold card somewhere as a voucher[one of]. Hint again to see where[or]. [if the room east of Vending Vibe is nowhere]You will need to change Mystery Mall back, first[else if Vending Vibe is unvisited]You need to visit west of Mystery Mall[else if Trending Tribe is moot]The Lending Libe[else]The Vending Vibe, but first you must deal with the Trending Tribe[end if][stopping]."
@@ -2610,10 +2610,10 @@ this is the coral-cage-hint rule:
 	if player does not have cage key:
 		say "You don't have the key you need yet. Look for something that rhymes with key.";
 	else:
-		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*ORAL *AGE is likely, according to the Leet Learner.[or]MORAL MAGE.[stopping]";
+		say "[one of]You need to call out the denizen of the coral cage.[or]What sort of person could be in there?[or]*[b]ORAL[r] *[b]AGE[r] is likely, according to the Leet Learner.[or][b]MORAL MAGE[r].[stopping]";
 
 this is the dark-door-hint rule:
-	say "[one of]The dark door is sort of defined and accessible, but not enough. You need to observe it a bit extra.[or]MARK MORE.[stopping]"
+	say "[one of]The dark door is sort of defined and accessible, but not enough. You need to observe it a bit extra.[or][b]MARK MORE[r].[stopping]"
 
 this is the dean-duggan-hint rule:
 	say "[one of]Dean Duggan is an integral part of Been Buggin[']. So hints about him are hints about Been Buggin['].[or][stopping]";
@@ -2621,83 +2621,83 @@ this is the dean-duggan-hint rule:
 
 this is the dining-door-hint rule:
 	if full feast is not moot, say "(NOTE: you can't fully solve this until you do something else. But you can guess the verb.)[paragraph break]";
-	say "[one of]There's one more thing you can do with the dining door and pining poor once you've had a feast[or]The pining poor want jobs, or to discover riches[or]You can find riches here if you look the right way[or]MINING MORE[stopping]";
+	say "[one of]There's one more thing you can do with the dining door and pining poor once you've had a feast[or]The pining poor want jobs, or to discover riches[or]You can find riches here if you look the right way[or][b]MINING MORE[r][stopping]";
 
 this is the done-den-hint rule:
 	say "You don't need to go back through the done den. There are not even any extra points."
 
 this is the find-fee-hint rule:
-	say "[one of]The FIND FEE makes you feel as though you need to pay, but you need to pay attention to yourself.[or]The leet learner scans center-right, but the first word has to be *IND. So the second word must be very short indeed.[or]MIND ME.[stopping]"
+	say "[one of]The [b]FIND FEE[r] makes you feel as though you need to pay, but you need to pay attention to yourself.[or]The leet learner scans center-right, but the first word has to be *[b]IND[r]. So the second word must be very short indeed.[or][b]MIND ME[r].[stopping]"
 
 this is the flooring-float-hint rule:
-	say "[one of]The flooring float seems almost too exciting to use. You need to tone it down.[or]Make the float a BORING BOAT.[stopping]";
+	say "[one of]The flooring float seems almost too exciting to use. You need to tone it down.[or]Make the float a [b]BORING BOAT[r].[stopping]";
 
 this is the frightening-fridge-hint rule:
-	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or]BRIGHTENING BRIDGE.[stopping]"
+	say "[one of]The frightening fridge could be more cheery, and it could stop blocking your way.[or][b]BRIGHTENING BRIDGE[r].[stopping]"
 
 this is the full-feast-hint rule:
 	if tried-yet of vc-pull-pieced rule:
 		say "You know what to do with the full feast. Nobody's ready for it yet." instead;
-	say "[one of]The full feast is too much to carry by yourself all at once[or]You can bring the full feast over a bit at a time[or]PULL PIECED[stopping].";
+	say "[one of]The full feast is too much to carry by yourself all at once[or]You can bring the full feast over a bit at a time[or][b]PULL PIECED[r][stopping].";
 
 this is the fussed-folks-just-jokes-hint rule: say "The random names are just for fun."
 
 this is the go-gate-hint rule:
-	say "[one of]You want to go through the go gate, but you need to show a bit of caution[or]LO LATE doesn't quite cut it, here[or]You can also scan the component part, the grow grate, for maybe a bit of help[or]WHOAH WAIT, or any of three alternate spellings, works[stopping].";
+	say "[one of]You want to go through the go gate, but you need to show a bit of caution[or][b]LO LATE[r] doesn't quite cut it, here[or]You can also scan the component part, the grow grate, for maybe a bit of help[or][b]WHOAH WAIT[r], or any of three alternate spellings, works[stopping].";
 
 this is the gold-guard-hint rule:
-	say "[one of]The gold guard helps protect you [if player is in Foe Field]here[else if Foe Field is unvisited]somewhere you haven't been[else]somewhere you've been[end if].[or]Once the gold guard is in the right place, you can use it to protect yourself.[or]You need to be in the Foe Field for the gold guard to work.[or]Once in the Foe Field, SHOW SHIELD.[stopping]"
+	say "[one of]The gold guard helps protect you [if player is in Foe Field]here[else if Foe Field is unvisited]somewhere you haven't been[else]somewhere you've been[end if].[or]Once the gold guard is in the right place, you can use it to protect yourself.[or]You need to be in the Foe Field for the gold guard to work.[or]Once in the Foe Field, [b]SHOW SHIELD[r].[stopping]"
 
 this is the good-gun-hint rule:
-	say "[one of]You want to make the gun worthless.[or]A good gun is generally made out of metal. Any material you could change it to?[or]This sort of reverses a very early puzzle.[or]WOOD ONE.[stopping]"
+	say "[one of]You want to make the gun worthless.[or]A good gun is generally made out of metal. Any material you could change it to?[or]This sort of reverses a very early puzzle.[or][b]WOOD ONE[r].[stopping]"
 
 this is the gots-game-hint rule:
-	say "[one of]The Gutta Ganksta seems proud of the GOTS GAME tattoo, but perhaps there's a way to cut it down.[or]LOTS LAME.[stopping]"
+	say "[one of]The Gutta Ganksta seems proud of the [b]GOTS GAME[r] tattoo, but perhaps there's a way to cut it down.[or][b]LOTS LAME[r].[stopping]"
 
 this is the grow-grate-hint rule:
 	say "[one of]Since the grow grate is part of the go gate, and they rhyme, they make the same puzzle.[or][stopping]";
 	process the go-gate-hint rule;
 
 this is the gutta-ganksta-hint rule:
-	say "[one of]This is a tricky one. The Gutta Ganksta's tattoo is/was more important.[or]Calling the Gutta Ganksta a name gets you an optional point, but it's only esoteric name calling.[or]WHATTA (or WHAT A) WANKSTA.[stopping]";
+	say "[one of]This is a tricky one. The Gutta Ganksta's tattoo is/was more important.[or]Calling the Gutta Ganksta a name gets you an optional point, but it's only esoteric name calling.[or][b]WHATTA[r] (or [b]WHAT A[r]) [b]WANKSTA[r].[stopping]";
 
 this is the ha-half-nah-naff-hint rule:
-	say "HA HALF will tell you if one of your words is right. NAH NAFF hides that.";
+	say "[b]HA HALF[r] will tell you if one of your words is right. [b]NAH NAFF[r] hides that.";
 
 this is the here-hip-queer-quip-hint rule:
 	say "[part-ev of queer quip]."
 
 this is the hit-hound-hint rule:
-	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can SIT SOUND.[stopping]"
+	say "[one of]The hit hound can smell fear. You can't really run or lash out at it.[or]You need to stand your ground or, figuratively...[or]You can [b]SIT SOUND[r].[stopping]"
 
 this is the hive-heap-hint rule:
-	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or]DIVE DEEP.[stopping]"
+	say "[one of]The hive heap has nothing on the surface, but maybe if you dig in...[or]Look way down into the hive heap...[or][b]DIVE DEEP[r].[stopping]"
 
 this is the jake-g-hint rule:
-	if sco-wake-whee is false, say "[one of]Jake needs to be roused from his sleep gently and cheerily[or]Maybe you can rouse him with enthusiasm[or]WAKE WHEE[stopping]." instead;
-	if sco-take-tea is false, say "[one of]Time to eat and drink with Jake[or]A standard Inform verb does nicely here[or]TAKE TEA[stopping]." instead;
-	if sco-fake-fee is false, say "[one of]Jake wants payment, but not really[or]You've sort of done this back at the Trim Tram, but it's a bit different[or]FAKE FEE[stopping]." instead;
-	if sco-co-capn is false, say "[one of]Jake wants to feel like an equal[or]You may or may not hear [Toe Tappin] again[or]A riff on [Toe Tappin] will make Jake happy[or]You can say CO CAPN[stopping]." instead;
-	if sco-make-map is false, say "[one of]You and Jake G are lost. You're in Lake Lap, so you may do things a bit differently[or]I'm pretty sure you know an item that helps you not get lost[or]MAKE MAP[stopping]." instead;
-	if sco-snake-snap is false, say "[one of]Now you and Jake must deal with that hissing noise[or]I think you know what sort of animal makes a hissing noise[or]SNAKE SNAP[stopping]" instead;
+	if sco-wake-whee is false, say "[one of]Jake needs to be roused from his sleep gently and cheerily[or]Maybe you can rouse him with enthusiasm[or][b]WAKE WHEE[r][stopping]." instead;
+	if sco-take-tea is false, say "[one of]Time to eat and drink with Jake[or]A standard Inform verb does nicely here[or][b]TAKE TEA[r][stopping]." instead;
+	if sco-fake-fee is false, say "[one of]Jake wants payment, but not really[or]You've sort of done this back at the Trim Tram, but it's a bit different[or][b]FAKE FEE[r][stopping]." instead;
+	if sco-co-capn is false, say "[one of]Jake wants to feel like an equal[or]You may or may not hear [Toe Tappin] again[or]A riff on [Toe Tappin] will make Jake happy[or]You can say [b]CO CAPN[r][stopping]." instead;
+	if sco-make-map is false, say "[one of]You and Jake G are lost. You're in Lake Lap, so you may do things a bit differently[or]I'm pretty sure you know an item that helps you not get lost[or][b]MAKE MAP[r][stopping]." instead;
+	if sco-snake-snap is false, say "[one of]Now you and Jake must deal with that hissing noise[or]I think you know what sort of animal makes a hissing noise[or][b]SNAKE SNAP[r][stopping]" instead;
 	say "Oops. It's a bug you got this far, but it's not a fatal one."
 
 this is the jerk-gel-hint rule:
 	if player does not have jerk gel:
-		say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]The Jerk Gel is there, but you can't just take it.[or]You won't find the Jerk Gel if you're lazy.[or]WORK WELL.[stopping]";
+		say "[one of]There's something hidden in the Shirk Shell, if you just expend the energy.[or]The Jerk Gel is there, but you can't just take it.[or]You won't find the Jerk Gel if you're lazy.[or][b]WORK WELL[r].[stopping]";
 	else:
 		say "You need to find whom to use the jerk gel on.";
 
 this is the kerry-kyle-hint rule:
 	if in-so-sad:
-		say "[one of]You need to make yourself happier, from being so sad.[or]Become shiny and happy.[or]GLOW GLAD.[stopping]";
+		say "[one of]You need to make yourself happier, from being so sad.[or]Become shiny and happy.[or][b]GLOW GLAD[r].[stopping]";
 	else if in-way-wrong:
-		say "[one of]You feel not just wrong but weak. Things are slipping away.[or]How to keep things from slipping away?[or]STAY STRONG.[stopping]";
+		say "[one of]You feel not just wrong but weak. Things are slipping away.[or]How to keep things from slipping away?[or][b]STAY STRONG[r].[stopping]";
 	else:
 		say "Woohoo! There's nothing wrong with you right now!"
 
 this is the leet-learner-hint rule:
-	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or]LEET LEARNER and MEET MOURNER both point to the center, suggesting that spelling may be an unimportant variable.[or]What do MOURNER and LEARNER have in common?[or]MOURNER and LEARNER both have seven letters. LEET and MEET also each have four letters.[or]The reading the needle gives when you scan is related to how many letters are in the solution.[or]CONCEIT CONCERNER adds letters to each word, and it is on the left.[or]CHEAT CHURNER adds a letter only to LEET, and it is center-left.[or]EAT EARNER takes one letter each from LEET LEARNER and is on the right.[or]BEAT BURNER is center-right. It only takes one letter from one word.[or]Finally, TREAT TURNER adds a letter and subtracts another. What's up with that?[or]In this case, the Leet Learner will swing back and forth.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, left means add letters to both words, center-left means add to one, center means no change in the number of letters, center-right means subtract letters from one word, and right means subtract letters from both words. Blinking means the target is optional.[stopping]";
+	say "[one of]First, note the leet learner may give different readings if you scan an area or an item. If it gives a reading when you scan an area, you can do something with the room.[or]So the big thing is, probably, what do the colors on the leet learner mean? Read it again, if you haven't.[or][b]LEET LEARNER[r] and [b]MEET MOURNER[r] both point to the center, suggesting that spelling may be an unimportant variable.[or]What do [b]MOURNER[r] and [b]LEARNER[r] have in common?[or][b]MOURNER[r] and [b]LEARNER[r] both have seven letters. [b]LEET[r] and [b]MEET[r] also each have four letters.[or]The reading the needle gives when you scan is related to how many letters are in the solution.[or][b]CONCEIT CONCERNER[r] adds letters to each word, and it is on the left.[or][b]CHEAT CHURNER[r] adds a letter only to [b]LEET[r], and it is center-left.[or][b]EAT EARNER[r] takes one letter each from [b]LEET LEARNER[r] and is on the right.[or][b]BEAT BURNER[r] is center-right. It only takes one letter from one word.[or]Finally, [b]TREAT TURNER[r] adds a letter and subtracts another. What's up with that?[or]In this case, the Leet Learner will swing back and forth.[or]There's one more thing: some items may cause the leet learner to blink. You may be able to guess what this means.[or]Items that make the learner blink are optional.[or]So, in conclusion: for the leet learner, left means add letters to both words, center-left means add to one, center means no change in the number of letters, center-right means subtract letters from one word, and right means subtract letters from both words. Blinking means the target is optional.[stopping]";
 	the rule succeeds;
 
 this is the lending-libe-hint rule:
@@ -2708,42 +2708,42 @@ this is the listless-mist-mess-hint rule:
 
 this is the lurking-lump-hint rule:
 	say "The lurking lump can be used to bypass any available local puzzle with [jjj]. It gains charges when you make enough good guesses--some especially amusing guesses may count extra.";
-	say "[line break][one of]HINT the lump again to see the mechanics of when you get a good guess[or]The lump drops after the first [next-lump-level in words] good guesses, then the next [(next-lump-level + next-lump-delta) in words], then [(next-lump-level + (2 * next-lump-delta)) in words], and so on. Particularly good guesses (author's discretion,) or bonus points, count double[stopping]."
+	say "[line break][one of][b]HINT[r] the lump again to see the mechanics of when you get a good guess[or]The lump drops after the first [next-lump-level in words] good guesses, then the next [(next-lump-level + next-lump-delta) in words], then [(next-lump-level + (2 * next-lump-delta)) in words], and so on. Particularly good guesses (author's discretion,) or bonus points, count double[stopping]."
 
 this is the marred-mat-hint rule:
-	say "[one of]The marred mat is in Got Gear Hot Here, suggesting maybe it can become something you can wear.[or]What can you wear that rhymes with mat?[or]HARD HAT.[stopping]"
+	say "[one of]The marred mat is in Got Gear Hot Here, suggesting maybe it can become something you can wear.[or]What can you wear that rhymes with mat?[or][b]HARD HAT[r].[stopping]"
 
 this is the mean-mass-hint rule:
-	say "[one of]You need to make the mean mass into something much less harmful. Wholesome, even.[or]Maybe the mean mass can be changed to something you're missing on the outside. Something from nature.[or]The mean mass can become GREEN GRASS.[stopping]"
+	say "[one of]You need to make the mean mass into something much less harmful. Wholesome, even.[or]Maybe the mean mass can be changed to something you're missing on the outside. Something from nature.[or]The mean mass can become [b]GREEN GRASS[r].[stopping]"
 
 this is the mean-moes-clean-clothes-hint rule:
 	say "You need something to clean as well as a way to operate the machine.";
 	if can-glean:
-		say "You already know to GLEAN GLOWS.";
+		say "You already know to [b]GLEAN GLOWS[r].";
 	else:
-		say "[one of]How can you look into the inner mechanism of [clean clothes]?[or]Bells and lights and whistles.[or]GLEAN GLOWS.[stopping]";
+		say "[one of]How can you look into the inner mechanism of [clean clothes]?[or]Bells and lights and whistles.[or][b]GLEAN GLOWS[r].[stopping]";
 		the rule succeeds;
 	if player has way woke clay cloak:
 		say "The way woke clay cloak can be cleaned.";
 	else:
-		say "[one of]You'll need a dirty-ish clothing item. You don't have it yet, but you'll know when you do. Or the next hint will spoil it[or]The way woke clay cloak goes in once you GLEAN GLOWS[stopping].";
+		say "[one of]You'll need a dirty-ish clothing item. You don't have it yet, but you'll know when you do. Or the next hint will spoil it[or]The way woke clay cloak goes in once you [b]GLEAN GLOWS[r][stopping].";
 
-this is the mild-mead-hint rule: say "The mild mead is there just to provide a liquid refreshment for a feast. It has no use on its own. [if wild weed is off-stage][one of]It does have a bonus point, though[or]The mild mead can get a little more kick[or]It can become a different drug, sort of[or]WILD WEED[stopping][else]And you already got the wild weed from it[end if]."
+this is the mild-mead-hint rule: say "The mild mead is there just to provide a liquid refreshment for a feast. It has no use on its own. [if wild weed is off-stage][one of]It does have a bonus point, though[or]The mild mead can get a little more kick[or]It can become a different drug, sort of[or][b]WILD WEED[r][stopping][else]And you already got the wild weed from it[end if]."
 
 this is the mind-malt-hint rule: say "The mind malt is just there to give another clue about weaknesses in the Vined Vault."
 
 this is the minding-maze-hint rule:
 	if toe tappin row rappin is not acquired, say "You don't have what you need yet to get through the maze. You need a riff on another item." instead;
-	say "[one of]You need to think outside the box, or the maze, for the Minding Maze.[or]If you have Toe Tappin in your head, well, you may have a clue you need to use it.[or]What do you need to do to get through a maze?[or]You need to MAP it. A lot.[or]You can only map a bit if you just use your head.[or]MO MAPPIN will make mapping the maze go faster.[stopping]";
+	say "[one of]You need to think outside the box, or the maze, for the Minding Maze.[or]If you have Toe Tappin in your head, well, you may have a clue you need to use it.[or]What do you need to do to get through a maze?[or]You need to [b]MAP[r] it. A lot.[or]You can only map a bit if you just use your head.[or][b]MO MAPPIN[r] will make mapping the maze go faster.[stopping]";
 
 this is the oi-mo-hint rule:
-	say "[one of]Oi Mo['] is a bad song, but there may be a way to tune it out.[or]This is a bit tricky, because it relies on something different than the usual mechanic. That's why it's an optional point.[or]Everything is in the XimX format.[or]DIMD will turn the volume down.[stopping]"
+	say "[one of]Oi Mo['] is a bad song, but there may be a way to tune it out.[or]This is a bit tricky, because it relies on something different than the usual mechanic. That's why it's an optional point.[or]Everything is in the XimX format.[or][b]DIMD[r] will turn the volume down.[stopping]"
 
 this is the pain-peasant-hint rule:
-	say "[one of]There needs to be a way to calm the peasant down and make it nicer.[or]PLAIN PLEASANT.[stopping]"
+	say "[one of]There needs to be a way to calm the peasant down and make it nicer.[or][b]PLAIN PLEASANT[r].[stopping]"
 
 this is the paper-pile-hint rule:
-	say "[one of]It's not what the paper pile is, but that it's a rather messy FACT FINDER. You need to organize it.[or]You can organize the paper pile/fact finder into a BACKED BINDER.[stopping]"
+	say "[one of]It's not what the paper pile is, but that it's a rather messy [b]FACT FINDER[r]. You need to organize it.[or]You can organize the paper pile/fact finder into a [b]BACKED BINDER[r].[stopping]"
 
 this is the peeling-pier-hint rule:
 	if sco-heal-here is true, the rule fails;
@@ -2751,30 +2751,30 @@ this is the peeling-pier-hint rule:
 	process the real-rear-hint rule;
 
 this is the poor-ponder-for-fonder rule:
-	say "[one of][poor ponder] isn't a good read. It doesn't really put the reader where the history was[or]So you have to force what [poor ponder] does. Imagine being there[or]YOU'RE (or YORE) YONDER[stopping].";
+	say "[one of][poor ponder] isn't a good read. It doesn't really put the reader where the history was[or]So you have to force what [poor ponder] does. Imagine being there[or][b]YOU[r]'[b]RE[r] (or [b]YORE[r]) [b]YONDER[r][stopping].";
 
 this is the prong-part-hint rule:
 	say "[one of]The prong part is part of the wrong art, so future clues will refer you there.[or][stopping]";
 	process the wrong-art-hint rule;
 
 this is the reeker-russell-hint rule:
-	say "[one of]Reeker Russell is big and tough, but you can make him less strong.[or]No, 'weaker wussle' doesn't quite work, but there's a synonym for weaker.[or]MEEKER MUSCLE.[stopping]"
+	say "[one of]Reeker Russell is big and tough, but you can make him less strong.[or]No, 'weaker wussle' doesn't quite work, but there's a synonym for weaker.[or][b]MEEKER MUSCLE[r].[stopping]"
 
 this is the row-writ-hint rule:
 	if sco-grow-grit is true, the rule fails;
-	say "[one of]The row writ and Po['] Pit may have you stumped.[or]The leet learner on both will give you a clue of the number of letters.[or]You need to toughen up.[or]GROW GRIT.[stopping]"
+	say "[one of]The row writ and Po['] Pit may have you stumped.[or]The leet learner on both will give you a clue of the number of letters.[or]You need to toughen up.[or][b]GROW GRIT[r].[stopping]"
 
 this is the sage-sea-hint rule:
 	say "You don't need to do anything specifically with the Sage Sea. It just blocks you from elsewhere, [if cage key is off-stage]but it holds something you need, if you deal with Real Rear correctly[else]and you already got the cage key from it[end if].";
 	the rule succeeds;
 
-this is the screaming-skull-hint rule: say "[one of]If there only were a way to make the screaming skull less imposing![or]Maybe there is a way the skull can make less noise as well.[or]DREAMING DULL.[stopping]"
+this is the screaming-skull-hint rule: say "[one of]If there only were a way to make the screaming skull less imposing![or]Maybe there is a way the skull can make less noise as well.[or][b]DREAMING DULL[r].[stopping]"
 
 this is the shoaled-shard-hint rule:
 	say "The Shoaled Shard is just the place the Bold Bard need[if Bold Bard is moot]s[else]ed[end if] to get to. It's irrelevant on its own."
 
 this is the shy-shawl-hint rule:
-	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]The shawl looks silly and stupid and wrong. There's a right way to make light of this, spoiled if you HINT again[or]LIE LOL[stopping]."
+	say "[one of]The shy shawl isn't necessary, but it allows a lot of good guesses that may give you a spoiler [if lump is not off-stage]with the lump[else]item[end if] later[or]The shawl looks silly and stupid and wrong. There's a right way to make light of this, spoiled if you [b]HINT[r] again[or][b]LIE LOL[r][stopping]."
 
 this is the snuck-snare-hint rule:
 	if ssh-yet is false:
@@ -2788,7 +2788,7 @@ this is the snuck-snare-hint rule:
 	say "You will need to place the snare in [Dives Ditch] before leading someone on a chase. Then, run back there to spring the trap.";
 
 this is the sought-sword-hint rule:
-	say "[one of]The sought sword belongs to someone. It just looks important[or]Who might the owner be? Someone with a noble title[or]Call the LOT LORD[stopping].";
+	say "[one of]The sought sword belongs to someone. It just looks important[or]Who might the owner be? Someone with a noble title[or]Call the [b]LOT LORD[r][stopping].";
 
 this is the steel-steer-hint rule:
 	if sco-heal-here is true, the rule fails;
@@ -2796,11 +2796,11 @@ this is the steel-steer-hint rule:
 	process the real-rear-hint rule;
 
 this is the stuck-stair-hint rule:
-	say "[one of]The stuck stair holds a place as well as an item. Guessing either one works, but the place has fewer letters[or]The stair may lead to good fortune[or]Or luck[or][one of]The place is LUCK LAIR[or]The item is a SNUCK SNARE[cycling][stopping]."
+	say "[one of]The stuck stair holds a place as well as an item. Guessing either one works, but the place has fewer letters[or]The stair may lead to good fortune[or]Or luck[or][one of]The place is [b]LUCK LAIR[r][or]The item is a [b]SNUCK SNARE[r][cycling][stopping]."
 
 this is the tall-tree-hint rule:
 	if sco-fall-free is true, the rule fails;
-	say "[one of]The way north is treacherous, and having a bridge over it would be nice.[or]The tall tree would make a nice bridge, if it were on the ground. But it is fixed upright.[or]How do you loosen the tall tree so it creates a walkway?[or]FALL FREE.[stopping]";
+	say "[one of]The way north is treacherous, and having a bridge over it would be nice.[or]The tall tree would make a nice bridge, if it were on the ground. But it is fixed upright.[or]How do you loosen the tall tree so it creates a walkway?[or][b]FALL FREE[r].[stopping]";
 
 this is the toe-tappin-row-rappin-hint rule:
 	say "[Toe] is useful many different places, and a rhyming riff on it will help solve puzzles elsewhere. Hinting the right room at the right time will give more detail."
@@ -2813,47 +2813,47 @@ this is the too-totes-new-notes-hint rule:
 		process the leet-learner-hint rule;
 
 this is the tool-tap-hint rule: [FOOL FAP?? / POOL PAP / CRUEL CRAP]
-	say "[one of]You can request something from the tool tap.[or]It might not be a tool, but who knows when it comes in handy.[or]Summon a COOL CAP.[stopping]"
+	say "[one of]You can request something from the tool tap.[or]It might not be a tool, but who knows when it comes in handy.[or]Summon a [b]COOL CAP[r].[stopping]"
 
 this is the trending-tribe-hint rule:
-	say "[one of]The Trending Tribe seems very focused on money.[or]What is something that would be free that might disappoint the Trending Tribe?[or]LENDING LIBE.[stopping]"
+	say "[one of]The Trending Tribe seems very focused on money.[or]What is something that would be free that might disappoint the Trending Tribe?[or][b]LENDING LIBE[r].[stopping]"
 
 this is the vapor-vial-hint rule:
-	say "[one of]It would be nice if the vapor vial became something more useful or at least less toxic.[or]It can become a PAPER PILE.[stopping]"
+	say "[one of]It would be nice if the vapor vial became something more useful or at least less toxic.[or]It can become a [b]PAPER PILE[r].[stopping]"
 
 this is the very-vile-fairy-file-hint rule:
 	if sco-merry-mile is false:
 		say "You can't do anything with the file until the Tarry Tile is cheerier.";
 	else:
-		say "[one of]Now that you're happy, the Fairy File can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives a center-right reading. This tells you the second word is four letters and the first is four or less.[or]BURY BILE to win the game.[stopping]";
+		say "[one of]Now that you're happy, the Fairy File can't affect you so much. But it still needs to be put out to pasture.[or]What can you do that will bury the hatchet?[or]The leet learner gives a center-right reading. This tells you the second word is four letters and the first is four or less.[or][b]BURY BILE[r] to win the game.[stopping]";
 	the rule succeeds;
 
 this is the way-woke-clay-cloak-hint rule:
-	say "[one of]You need to find a place to clean the cloak[or]A machine off to the side can clean your cloak[or]The Mystery Mall holds [clean clothes][or]In the Mystery Mall, GLEAN GLOWS[stopping]."
+	say "[one of]You need to find a place to clean the cloak[or]A machine off to the side can clean your cloak[or]The Mystery Mall holds [clean clothes][or]In the Mystery Mall, [b]GLEAN GLOWS[r][stopping]."
 
 this is the we-whine-me-mine-hint rule:
-	say "[one of][We Whine] is useless read straight-up, but reading the right way can give insights[or]SEE SIGN[stopping]."
+	say "[one of][We Whine] is useless read straight-up, but reading the right way can give insights[or][b]SEE SIGN[r][stopping]."
 
 this is the weird-way-hint rule:
-	say "[one of]The weird way is some odd substance blocking you. Maybe it could vanish and there'd be less of it.[or]Make it CLEARED CLAY.[stopping]"
+	say "[one of]The weird way is some odd substance blocking you. Maybe it could vanish and there'd be less of it.[or]Make it [b]CLEARED CLAY[r].[stopping]"
 
 this is the well-worn-hell-horn-hint rule:
-	say "[one of]The [hell horn] seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or]TELL TORN.[stopping]";
+	say "[one of]The [hell horn] seems old but sturdy. It has no apparent cracks.[or]There's a way to look for a crack in the horn.[or][b]TELL TORN[r].[stopping]";
 
 this is the wild-weed-hint rule:
-	say "[one of]The point for the wild weed is truly optional and recreational and slang-based[or]There's one place that makes you feel nervous, but you can relax[or]The wild weed may help at Cark Cliff[or]You can SPARK SPLIFF[stopping]."
+	say "[one of]The point for the wild weed is truly optional and recreational and slang-based[or]There's one place that makes you feel nervous, but you can relax[or]The wild weed may help at Cark Cliff[or]You can [b]SPARK SPLIFF[r][stopping]."
 
 this is the worst-wave-hint rule:
-	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or]FIRST FAVE.[stopping]"
+	say "[one of]What is a rhyming opposite of worst?[or]In this case, the rhyming opposite of worst also changes 'wave' more favorably.[or][b]FIRST FAVE[r].[stopping]"
 
 this is the wrong-art-hint rule:
-	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a STRONG START.[stopping]";
+	say "[one of]The wrong art is at the beginning. Understanding how to get rid of it will help, but like much art, it is not strictly necessary.[or]Even if you've got a few points along the way, you can still get a boost from setting the wrong art right.[or]Make a [b]STRONG START[r].[stopping]";
 
 this is the wry-wall-hint rule:
 	say "The wry wall is simply there to provide amusing deaths.";
 
 this is the zig-zag-rig-rag-hint rule:
-	say "[one of]The zig zag rig rag can be changed with a simple command[or]The leet learner flags the rag in the center, so you have 24 possibilities for -IG -AG[or]One possibility for the rag is extremely practical for carrying a lot of things[or]BIG BAG[stopping].";
+	say "[one of]The zig zag rig rag can be changed with a simple command[or]The leet learner flags the rag in the center, so you have 24 possibilities for *[b]IG *[b]AG[r][or]One possibility for the rag is extremely practical for carrying a lot of things[or][b]BIG BAG[r][stopping].";
 	the rule succeeds;
 
 [zzthr]
@@ -2887,10 +2887,10 @@ this is the flag bad goto from rule:
 	if player is in Airy Isle, say "There's no way back. You are so close to the end." instead;
 	if player is in Tarry Tile, say "You cannot flee from your fears and your destiny. You are at the final confrontation. Besides, the Very Vile Fairy File would emit a huge, mean laugh." instead;
 	if noun is in Worst Whew, say "You don't need to go back[if mrlp is not Worst Whew]. The introductory bit is over[end if]." instead; [okay, maybe this should be in the other rule if we go by names. But it's a big case we want to have up front.]
-	if in-bull-chase is true, say "[chase-pass]Sorry, GO TO is disabled during the Beer Bull chase." instead;
+	if in-bull-chase is true, say "[chase-pass]Sorry, [b]GO TO[r] is disabled during the Beer Bull chase." instead;
 	if player is in Creased Cross and Bull Beast is in Creased Cross, say "You could run off, but you need to deal with the Bull Beast. You can deal with the Bull Beast." instead;
-	if player is in Been Buggin, say "[if dean duggan is off-stage]You're too bummed to make big trips.[else if dean duggan is in been buggin]Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be[else]Sorry, but GO TO is disabled until you take the boring boat back. You can just ENTER it now[end if]." instead;
-	if mrlp is Browsy Breaks, say "Sorry, but GO TO is disabled here in the lakes." instead;
+	if player is in Been Buggin, say "[if dean duggan is off-stage]You're too bummed to make big trips.[else if dean duggan is in been buggin]Don't ditch Dean! He has valuable training. You can brute-force your way through it, if need be[else]Sorry, but [b]GO TO[r] is disabled until you take the boring boat back. You can just [b]ENTER[r] it now[end if]." instead;
+	if mrlp is Browsy Breaks, say "Sorry, but [b]GO TO[r] is disabled here in the lakes." instead;
 	if need-healing, say "You can't zoom around in your weakened state. The Bull Beast will push you back. But with so few places to go, maybe what you need is close by." instead;
 
 this is the flag bad goto to rule:
@@ -2950,9 +2950,9 @@ when play begins (this is the opening text rule):
 	if skip-stuff is true, continue the action;
 	say "[paragraph break]You wouldn't have gone to Fall Fest if you hadn't gotten a free ticket. But of course, the ticket was the only thing that was free. Inside, super high food prices. Lots of noise. And, well, the sun always seeming to get in your eyes. But you still feel you might as well see everything.[paragraph break]And you do. Then off on the west edge, there's a wall. A wall west, if you will. 'Oh, man,' you think. 'Why did I bother?' Well, at least you didn't waste all afternoon watching football games you didn't care about. But you're still mumbling to yourself about how there must be something, anything interesting here. Then you feel a tap on your shoulder.[paragraph break][wfak]";
 	say "'Hey! Don't head to the Sit-So Inn! Get Goin[']! I can help. I'm Kit Cohen.' You're just not in the mood for motivational nonsense right now, so you brush Kit off. Or try to.[wfak]";
-	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The PALL PEST of CRAWL CREST!'[wfak]";
+	say "[line break]'No! Seriously! You managed to bawl best--well, the best of anyone I've seen today--so you get a chance at a tall test!'[paragraph break]'What sort of test?'[paragraph break]'The [b]PALL PEST[r] of [b]CRAWL CREST[r]!'[wfak]";
 	say "[line break]And it's a big one. You look to Kit for help, but Kit shrugs.[wfak]";
-	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, 'GALL, guest!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]";
+	say "[line break]It approaches. It's about to touch you ...and reflexively you boom, '[b]GALL, GUEST[r]!'[paragraph break]The pall pest stumbles back into the west wall, which crumbles. Kit Cohen applauds. 'Well done! You did it! I think you are the one ... the one to recover the Very Vile Fairy File from ... from ...'[wfak]"; [bold-ok]
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall. 'Wait!' Kit cries. 'This should be the Met-Mo['] Inn! With Rhett Rowan!' You turn around, and Kit is gone. You're somewhere entirely different...";
 
@@ -3007,7 +3007,7 @@ final question wording	only if victorious	topic		final response rule		final resp
 "see other [b]DEATH TRAPS[r]"	true	"death/traps/trap" or "death traps/trap"	--	showdeathsing
 "see [b]ALT[r]ernate point scoring verbs"	true	"alt/alternate"	--	showaltverbsing
 "see the point-based [b]RANK[r]s"	true	"rank/ranks"	--	showranksing
-"see lists of random text ([b]RAND 0[r] for list, [b]RAND 1-[number of rows in table of all randoms][r] for a specific table, [b]RN[r] for next table)"	true	"RAND [number]"	--	rling
+"see lists of random text ([b]RAND 0[r] for list, [b]RAND 1-[number of rows in table of all randoms][r] for a specific table, [b]RN[r] for next table)"	true	"RAND [number]"	--	rling [bold-ok]
 "see [b]MISC[r]ellaneous [b]RHYME[r]s in response to verbs"	true	"misc/rhyme/rhymes"	--	amuselisting
 --	true	"RN"	--	rlning
 --	true	"RAND"	--	rl0ing
@@ -3029,7 +3029,7 @@ This is the modified respond to final question rule:
 					otherwise carry out the final response activity entry activity;
 					rule succeeds;
 	if the player's command includes "narr":
-		say "Valid specifications for NARR are [narr-end-opts]. No argument lists all the narratives.";
+		say "Valid specifications for [b]NARR[r] are [narr-end-opts]. No argument lists all the narratives.";
 		the rule succeeds;
 	issue miscellaneous library message number 8.
 
@@ -3039,10 +3039,10 @@ amuselisting is an activity.
 
 rule for amuselisting:
 	say "Have you tried:[paragraph break]";
-	say "[2da]DRINKing the worst wave or Sage Sea?";
-	say "[2da]TALKing to anyone, including the [fairy file]?";
-	say "[2da]EATing the wild weed?";
-	say "[2da]ATTACKING people, especially the Bot Board and [fairy file]?";
+	say "[2da]to [b]DRINK[r] the worst wave or Sage Sea?";
+	say "[2da]to [b]TALK[r] to anyone, including the [fairy file]?";
+	say "[2da]to [b]EAT[r] the wild weed?";
+	say "[2da]to [b]ATTACK[r] people, especially the Bot Board and [fairy file]?";
 	say "[2da]Cussing around the [fairy file]?";
 	say "[2da]Saying yes or no, waiting or giving an empty command, or sleeping?";
 
@@ -3144,7 +3144,7 @@ carry out randlisting:
 		if debug-state is false and the remainder after dividing count by 20 is 0, wfak;
 	choose row number understood in table of all randoms;
 	if there is a cycle-note entry:
-		say "[b]FINAL FIXED ENTRY:[line break]";
+		say "[b]FINAL FIXED ENTRY[r]:[line break]";
 		say "[cycle-note entry][paragraph break]";
 	else:
 		say "There is no fixed last entry before looping.";
@@ -3158,14 +3158,14 @@ rule for showranksing:
 	repeat through table of ranks:
 		say "[rank-name entry] is [if rank-max entry > 0][low-bound-score] to [end if][rank-max entry] points.";
 		now low-bound-score is rank-max entry + 1;
-	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you UNDO, you'll see an (almost) to hedge things.";
+	say "[line break]Gold God is [core-max - 1] to [core-max] points. Yes, you get it before you get the last point, but if you [b]UNDO[r], you'll see an (almost) to hedge things.";
 
 chapter shownarring
 
 shownarring is an activity
 
 to say relreg of (x - a number):
-	say "([if x <= whew-score]INTRO[else if x <= isle-min]MIDDLEGAME[else]ENDGAME[end if])";
+	say "([b][if x <= whew-score]INTRO[else if x <= isle-min]MIDDLEGAME[else]ENDGAME[end if][r])"; [bold-ok]
 
 rule for shownarring:
 	repeat through table of narratives:
@@ -3180,14 +3180,14 @@ rule for showaltverbsing:
 	say "[2da]You could either [b]MASH MAP[r], [b]BASH BAP[r] or [b]RASH RAP[r] the cache cap.";
 	say "[2da]You could either [b]FLIM FLAM[r] or [b]SKIM SCAM[r] to leave the Trim Tram.";
 	say "[2da][b]BUMPED BUSTER[r] or [b]DUMPED DUSTER[r] could've cleared the clumped cluster.";
-	say "[2da][b]WHAT A/WHATTA WANKSTA[r] would've annoyed the Gutta Ganksta.";
-	say "[2da][b]KNEEL NEAR/FEEL FEAR/DEAL DEAR/HEAL HERE[r] could've had an ING because of the Ceiling Seer.";
+	say "[2da][b]WHAT A[r]/[b]WHATTA[r] [b]WANKSTA[r] would've annoyed the Gutta Ganksta.";
+	say "[2da][b]KNEEL NEAR[r]/[b]FEEL FEAR[r]/[b]DEAL DEAR[r]/[b]HEAL HERE[r] could've had an -ing suffix because of the Ceiling Seer.";
 	say "[2da]You could've dispersed the Blinding Blaze with [b]WINDING WAYS[r], [b]MINDING MAZE[r] or [b]FINDING PHASE[r].";
 	say "[2da]You could've found the [b]LUCK LAIR[r] or the [b]SNUCK SNARE[r].";
-	say "[2da][b]SILENT SAIL/SALE[r]  could've quieted the Violent Vale.";
+	say "[2da][b]SILENT SAIL[r]/[b]SALE[r]  could've quieted the Violent Vale.";
 	say "[2da][b]CULL CEASED[r] or [b]LUL LEAST[r] could've taken down the Bull Beast.";
-	say "[2da][b]MINING MOOR/MORE[r] could give the pining poor employment.";
-	say "[2da][b]WHOA/WOE/WHOAH WAIT[r] were all acceptable by the Go Gate in Airy Isle.";
+	say "[2da][b]MINING MOOR[r]/[b]MORE[r] could give the pining poor employment.";
+	say "[2da][b]WHOA[r]/[b]WOE[r]/[b]WHOAH WAIT[r] were all acceptable by the Go Gate in Airy Isle.";
 
 chapter showmissesing
 
@@ -3198,7 +3198,7 @@ rule for showmissesing:
 	if sco-start-strong is false, say "In the Fun Fen, you could've used the wrong art for a [b]STRONG START[r].";
 	if sco-start-strong is false, say "After visiting the Fun Fen, you could've brushed off the [poke pest] with [b]BLOKE BLESSED[r], or [b]BLEST[r].";
 	if sco-appealing-appear is false, say "You could've figured the Peeling Pier's brand name as [b]APPEALING APPEAR[r].";
-	if sco-whatta-wanksta is false, say "You could've said [b]WHAT A or WHATTA WANKSTA[r] to the Gutta Ganksta before saying LOTS LAME in the mall.";
+	if sco-whatta-wanksta is false, say "You could've said [b]WHAT A[r] or [b]WHATTA WANKSTA[r] to the Gutta Ganksta before saying [b]LOTS LAME[r] in the mall.";
 	if sco-ho-happen is false, say "You could've said [b]HO HAPPEN[r] while listening to [Toe].";
 	unless oi mo is moot, say "You could have [b]DIMD[r] (dim'd) the horrible song Oi Mo in Mystery Mall.";
 	if sco-lie-lol is false, say "You could've said [b]LIE LOL[r] to the shy shawl in Got Here Hot Here.";
@@ -3242,7 +3242,7 @@ after reading a command:
 			say "Noted.";
 			reject the player's command;
 	let XX be indexed text;
-	if the player's command matches the regular expression "<A-Z>":
+	if the player's command matches the regular expression "<A-Z>": [bold-ok]
 		let XX be the player's command;
 		change the text of the player's command to "[XX in lower case]";
 		if debug-state is true, say "(LOWERCASING) [XX][line break]";
@@ -3252,7 +3252,7 @@ after reading a command:
 		else:
 			if say-warn is false:
 				now say-warn is true;
-				say "NOTE: you never need to SAY anything. Just type it in. In other words, WHOAH is the same as SAY WHOAH. [fairy file] will cut SAY off of the start of all commands.";
+				say "[i][bracket][b]NOTE[r][i]: you never need to [b]SAY[r][i] anything. Just type it in. In other words, [b]WHOAH[r][i] is the same as [b]SAY WHOAH[r][i]. [this-game] will cut [b]SAY[r][i] off of the start of all commands.[close bracket][r]";
 			let XX be the player's command;
 			replace the regular expression "^say " in XX with "";
 			change the text of the player's command to XX;
@@ -3340,7 +3340,7 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
 			if word number 1 in the player's command is "ll":
-				say "It looks like you may have tried to scan the current location. You just need to say LL to do this. Would you like to do so now?[line break]";
+				say "It looks like you may have tried to scan the current location. You just need to say [b]LL[r] to do this. Would you like to do so now?[line break]";
 				if the player consents:
 					skip upcoming rulebook break;
 					now zap-weird-break is true;
@@ -3382,7 +3382,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 	if player is in Wet Wood:
 		increment oopsies;
 		if debug-state is true, say "DEBUG note of general parser error.";
-		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't need anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to GET GOOD to get out of here[end if].";
+		say "[if oopsies < 2]You have to do something special to get out of here, you sense. Something simple. Perhaps going random directions can give you a clue. Clues will also get more explicit if you try things that don't work, at least in the Wet Wood. But there is one action that works here and only here. Eventually, I'll spoil it, if you can't find what to guess[else if oopsies < 4]Hmm. You don't need anything fancy. You need to improve your wood-exploring skills[else if oopsies < 6]There seems to be some reason, or rhyme, to the places around the Wet Wood, and how you were recruited, but you haven't figured it out yet[else if oopsies < 8]You wish there were some wet weeds, all of a sudden. They'd let leads become apparent[else if oopsies < 10]'Wet wonder, set [']sunder,' you think to yourself. No, you need to be more positive[else if oopsies < 12]Perhaps it's a mirage! Your efforts are getting nowhere, but see some wet wheat by a set seat. You think you hear 'Met, meet.' Perhaps there is something special about the Wet Wood[else if oopsies < 14]A noise through the trees moans 'Woe! Wet Wood! Go! ... ' How would this end, you wonder[else]You need to [b]GET GOOD[r] to get out of here[end if].";
 	else if player is in Rift River:
 		say "Hmm. You managed to [b]GET GOOD[r] out of the Wet Wood, but you just need to meet someone now.";
 	else if player is in Vined Vault:
@@ -3500,13 +3500,13 @@ this is the verb-checker rule:
 				if core entry is true, now brightness is true;
 			next;
 	if local-ha-half is true:
-		say "The HA HALF button lights up on your Leet Learner[if new-point-to-get is false]--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word[else if brightness is false], but dimly--perhaps this is a rhyme you don't strictly need to figure to win[else if local-post-hom is true], and its brightness suggests your rhyme must be very close, indeed[end if][if is-song is true]. The Leet Learner emits a tune as well[end if].";
+		say "The [b]HA HALF[r] button lights up on your Leet Learner[if new-point-to-get is false]--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word[else if brightness is false], but dimly--perhaps this is a rhyme you don't strictly need to figure to win[else if local-post-hom is true], and its brightness suggests your rhyme must be very close, indeed[end if][if is-song is true]. The Leet Learner emits a tune as well[end if].";
 		the rule succeeds;
 	if local-post-hom is true:
 		if hom-row > 0:
 			choose row hom-row in table of verb checks;
 			abide by the hom-txt-rule entry;
-		say "The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't THINK it right.";
+		say "The Leet Learner shakes back and forth. Something you said sounded right, but maybe you didn't [b]THINK[r] it right.";
 		the rule succeeds;
 
 to decide which number is variable-scan-length of (mynum - a number):
@@ -3524,7 +3524,7 @@ to decide which number is variable-scan-length of (mynum - a number):
 		if player is in lake lap and sco-co-capn is false, decide on 24; [co capn]
 		if sco-ho-happen is false, decide on -26;
 		decide on 0;
-	say "BUG: no variable-scan-length for [mynum]. Please let me know what you typed.";
+	say "[b]BUG[r]: no variable-scan-length for [mynum]. Please let me know what you typed.";
 	decide on 44;
 
 section jerkingjumping
@@ -3565,9 +3565,9 @@ carry out jerkingjumping:
 		lump-minus;
 		the rule succeeds;
 	if doable-hinted > 0:
-		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. (THINK should give details.) Use it anyway?";
+		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. ([b]THINK[r] should give details.) Use it anyway?";
 		unless the player yes-consents:
-			say "OK. Again, THINKing should show what you can do now." instead;
+			say "Okay. Again, [b]THINK[r] should show what you can do now." instead;
 	now vc-dont-print is true;
 	repeat through table of verb checks:
 		unless there is a core entry, next;
@@ -3607,7 +3607,7 @@ to decide whether print-why-fail:
 to say seer-sez: say ". The Ceiling Seer seems to be watching down on you, saying you can't do that yet"
 
 to loop-note (t - text):
-	if in-test-loop is true, say "COMMAND: [t]...[paragraph break]";
+	if in-test-loop is true, say "[b]COMMAND[r]: [t]...[paragraph break]";
 
 to check-missing-necc:
 	repeat through table of verb checks:
@@ -3624,8 +3624,8 @@ to win-the-game:
 		choose row with final response activity of showmissesing in the Table of Final Question Options;
 		blank out the whole row; [don't let the player see MISSED if they got everything]
 	phbt Tarry Tile;
-	say "Yes. You know what to do. And after your journey, you are ready. As you bury the bile -- yours for others you have met in the game and in the past, and even for your own faults -- you toss the [fairy file] a sad, pitying smile, and it begins to dissolve. Final futile protests of 'Flame? Flee Lamely!' and a final 'Same! SEE!' fail, before it winks out with a cryptic 'Dame Dee, shame she...'.[paragraph break]The Merry Mile changes significantly. A puffed portal appears, which you can't enter until you give a chuffed chortle--you've earned it! Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board, now reformed as the more benign Plot-Planned Bot Band![paragraph break]There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.[wfak]";
-	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. A tortoise and porpoise smile next to each other on it. The tag on the back of the neck says 'FUN FAIR WON WEAR.' There's a bracelet, too, perhaps a bit too optimistic: LIFE LONG STRIFE-STRONG. Good enough.";
+	say "Yes. You know what to do. And after your journey, you are ready. As you bury the bile -- yours for others you have met in the game and in the past, and even for your own faults -- you toss the [fairy file] a sad, pitying smile, and it begins to dissolve. Final futile protests of 'Flame? Flee Lamely!' and a final 'Same! See!' fail, before it winks out with a cryptic 'Dame Dee, shame she...'.[paragraph break]The Merry Mile changes significantly. A puffed portal appears, which you can't enter until you give a chuffed chortle--you've earned it! Your surroundings change.[paragraph break]You wind up back in the Fun Fen, where everyone you met (and didn't eat or lure to a gruesome end) in your adventure congratulates you, even the Bot Board, now reformed as the more benign Plot-Planned Bot Band![paragraph break]There's lots of 'I don't know what I was thinking! I'm glad you didn't let me stop you!' and 'I knew you could do it, sport,' and stuff, but with the Very Vile Fairy File recently vanquished, people let it slide. Someone even has the nerve to say that we all have to do small things every day to defeat the Very Vile Fairy File lodged in our own hearts and embedded in society without any magic, but the mood's so positive, people nod and prepare for the task ahead.[wfak]";
+	say "But they need to do it without you. It's time to leave--you recognize what can only be an In/Out Spin Spout. It must be what teleported you here. You step in. Soon you're back home. Fall Fest's last booths are being dismantled. You sort of wish you could have a memento of your trip. Then you see it. A t-shirt in the grass, forgotten. It's been left a while. A tortoise and porpoise smile next to each other on it. The tag on the back of the neck says '[b]FUN FAIR WON WEAR[r].' There's a bracelet, too, perhaps a bit too optimistic: [b]LIFE LONG STRIFE-STRONG[r]. Good enough.";
 	process the score and thinking changes rule;
 	if in-beta is true or debug-state is true:
 		check-missing-necc;
@@ -3636,7 +3636,7 @@ to check-gored-clue:
 	say "[line break]";
 	if Hot Horde is in Airy Isle and Lot Lord is in Airy Isle:
 		say "The Hot Horde greets the Lord enthusiastically, waiting for a battle cry or something to pump them up and really focus on killing the hated Bot Board.";
-		if tried-yet of vc-got-gored rule, say "[line break]Maybe the 'GOT GORED' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
+		if tried-yet of vc-got-gored rule, say "[line break]Maybe the '[b]GOT GORED[r]' battle cry you tried earlier would work better, now, with a leader and followers to use it properly.";
 	else if Hot Horde is in Airy Isle:
 		say "The Hot Horde runs around a bit, leaderless. You're not quite up to it. But maybe someone else is.";
 	else:
@@ -3683,7 +3683,7 @@ sco-really-rolling is a truth state that varies.
 
 to start-middlegame:
 	move the player to Fun Fen;
-	say "After looking around, you are taunted by 'Hot hero? Zot! Zero!' It's much more convincing audibly than as bad MSPaint cover art. What could it be? You remember, now, some things the Gift Giver said. Your eyes glazed over at the mention of [the poke pest]. But apparently you don't need to DO anything to or with it, just not let it get in your way.";
+	say "After looking around, you are taunted by 'Hot hero? Zot! Zero!' It's much more convincing audibly than as bad MSPaint cover art. What could it be? You remember, now, some things the Gift Giver said. Your eyes glazed over at the mention of [the poke pest]. But apparently you don't need to get rid of it. Just don't let it get in your way.";
 	now player has the joke jest poke pest;
 	repeat with X running through rooms in worst whew:
 		phbt X;
@@ -3741,7 +3741,7 @@ understand "trick trip" as tricktriping.
 
 carry out tricktriping:
 	abide by the warp-warn rule;
-	say "You utter a, uh, QUICK QUIP. You feel enlightened.";
+	say "You utter a, uh, [b]QUICK QUIP[r]. You feel enlightened.";
 	let prev-blowby-score be the score;
 	now in-test-loop is true;
 	repeat through table of verb checks:
@@ -3799,13 +3799,13 @@ when play begins (this is the force tester wherever rule):
 		say "Note: I like to make sure beta testers have a transcript working. It's a big help to me. So, after you press a key, you'll be asked to save a file.";
 		wfak;
 		try switching the story transcript on;
-		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository.";
+		say "Transcripts can be sent to blurglecruncheon@gmail.com. Any punctuation before the comment is okay, e.g. *TYPO or ;typo or :typo. Also, you can report issues in the repository."; [bold-ok]
 	if debug-state is false:
 		say "Currently I'm just worried about what there is up until the Fun Fen and if it's hinted well enough, but if you want to poke around more, feel free to go ahead.";
 		if Fun Fen is unvisited:
-			say "[line break]You can [b]SLOW SIGH or BLOW BY or FLOW FLY[r] to jump to the nonlinear part and avoid the introduction.[paragraph break]You can [b]TRICK TRIP or SLICK SLIP[r] before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.";
+			say "[line break]You can [b]SLOW SIGH[r] or [b]BLOW BY[r] or [b]FLOW FLY[r] to jump to the nonlinear part and avoid the introduction.[paragraph break]You can [b]TRICK TRIP[r] or [b]SLICK SLIP[r] before reaching the main area, as well, to skip past the current puzzle. You'll know the main area, because it is non-linear.";
 		if Airy Isle is unvisited:
-			say "[line break]Also, you can [b]CLIMB CLEAR[r] to jump to the (relatively brief) endgame, and LLA leet-learns everything in sight.";
+			say "[line break]Also, you can [b]CLIMB CLEAR[r] to jump to the (relatively brief) endgame, and [b]LLA[r] leet-learns everything in sight.";
 	continue the action;
 
 chapter missesing

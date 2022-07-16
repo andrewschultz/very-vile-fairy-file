@@ -66,7 +66,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of Been Buggin guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Dealing with the shame of having done, er, THAT is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
+"teen tuggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"Such actions, or needless regret over such actions, is beyond the scope of this game." [?? lean-mean-left rule] [start Been Buggin]
 "glean gluggin"	in-been-buggin rule	false	46	dean-duggan-near rule	"[if buggin-freeze]You don't need to drink, or have a drinking buddy[else if dean duggan is fungible]Dean is not a secret drinker[else]After all you've done, you don't need alcohol to help you get by[end if]."
 "ho had"	in-so-sad rule	false	44	--	"You're trying to feel less in the dumps, not more."
 "mo mad"	in-so-sad rule	false	44	--	"Once the anger wore off, you might be even more lethargic."
@@ -142,7 +142,7 @@ table of Gassed Gap guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "classed clap"	in-gassed-gap rule	false	43	cap-uncast rule	"You picture crowds applauding you at the adventure's end, then feel like a bit of a humbug." [start Gassed Gap]
 "chaste chap"	in-gassed-gap rule	false	43	cap-uncast rule	"Yes, you've been a model of morality. Yay, you."
-"fast fap"	in-gassed-gap rule	false	43	cap-uncast rule	"Stop that! While this is, uh, a solo adventure, this is not AIF. We're not THAT sort of juvenile, here."
+"fast fap"	in-gassed-gap rule	false	43	cap-uncast rule	"Stop that! While this is, uh, a solo adventure, it also doesn't want to cross over into AIF."
 "last lap"	in-gap-with-cap rule	false	43	cap-uncast rule	"It will be the last lap one day. But you need a different action to get to this finality."
 "massed/mast map"	in-gap-with-cap rule	false	43	cap-uncast rule	"You don't need a map--the gap is pretty straightforward. You just need to make a challenge the right way and fight whatever guardian is here."
 "passed/past pap"	in-gassed-gap rule	false	43	cap-uncast rule	"You don't need to look back on what a trashy adventure this has been. Well, not in front of me." [?? cap cast yet?]
@@ -192,7 +192,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "clots claim"	ganksta-nearby rule	false	44	--	"You're trying to chase, not impress the ganksta."
 "cots came"	ganksta-nearby rule	false	44	--	"The Gutta Ganksta is unmoved by the prospect of a good night's sleep."
 "dots dame"	ganksta-nearby rule	false	44	--	"The Gutta Ganksta's fashion sense tends away from polka dots."
-"knots/nots name"	ganksta-nearby rule	false	44	--	"You fail to tie the ganksta up in knots with well-timed 'NOT's."
+"knots/nots name"	ganksta-nearby rule	false	44	--	"You fail to tie the ganksta up in knots with well-timed 'NOT's. You need something a bit harsher." [bold-ok]
 "shots shame"	ganksta-nearby rule	false	44	--	"The ganksta ignores your anti-violence message, as well as any possibility you might be threatening them with a gun."
 "sots same"	ganksta-nearby rule	false	44	--	"The ganksta actually rates getting drunk too much as a feature, not a bug. You need a more unshakable insult."
 "tots tame"	ganksta-nearby rule	false	44	--	"The ganksta looks slightly upset but realizes it can't be childish to have a tattoo. You must be close to the right insult, though."
@@ -225,7 +225,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "grit ground"	pit-pound-unsolved rule	false	35	--	"You need to find some other way to [if hit hound is in Pit Pound]banish the hit hound and [end if]feel comfortable here. You already showed grit in the Po['] Pit, anyway."
 "bit bound"	in-pit-pound rule	false	35	not-fit-yet rule	"Now you mention it, you [if sco-fit-found is false]do[else]did[end if] feel a bit restricted here. Expressing your feelings helps a bit! You think."
 "wit/whit wound"	in-pit-pound rule	false	35	not-fit-yet rule	"No need for unnecessary tension."
-"clit clowned"	in-pit-pound rule	false	35	not-fit-yet rule	"I mean, that WORKS, but geez."
+"clit clowned"	in-pit-pound rule	false	35	not-fit-yet rule	"Semantically, that's a good guess, if not particularly tasteful."
 "crit crowned"	in-pit-pound rule	false	35	not-fit-yet rule	"You acquire no increased aptitude for removing an opponent's hit points. Which would be a bummer if hit points existed in this game."
 
 table of po pit guesses
@@ -251,7 +251,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "know/no knit/nit"	in-po-pit rule	false	44	if-grit-ungrown rule	"You look for details to understand, but you might want to go in for a bigger picture."
 "show shit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Profanity doesn't work here. But perhaps there is a similar phrase to help you feel tough enough!"
 "mo/mow mitt"	in-po-pit rule	false	44	if-grit-ungrown rule	"Please proceed, adventurer."
-"glow glit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Glowing slimy matter is still slimy. Besides, you need to look inside YOU, here."
+"glow glit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Glowing slimy matter is still slimy. Look inside yourself for an inner glow!"
 "woe/whoa/whoah wit"	in-po-pit rule	false	44	if-grit-ungrown rule	"Clever complaining will make you feel better but won't do anything."
 
 table of Real Rear guesses
