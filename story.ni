@@ -344,7 +344,7 @@ check going nowhere (this is the look for bad locs rule):
 			say "[line break][b][location of player][r][paragraph break]";
 			the rule succeeds;
 
-the look for bad locs rule is listed before the check going nowhere rule in the check going rules.
+the look for bad locs rule is listed before the print my own can't go that way rule in the check going rules.
 
 [see header file for table of bad locs]
 

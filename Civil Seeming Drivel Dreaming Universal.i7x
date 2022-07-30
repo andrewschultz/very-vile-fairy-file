@@ -12,9 +12,6 @@ vc-dont-print is a truth state that varies.
 
 section printing
 
-to vcp (t - text): [verb conditional print]
-	if vc-dont-print is false, say "[t][line break]";
-
 to vcal (t - text): [verb conditional print, flag already rhymed e.g. if HEAP HEAT and then try it again]
 	now already-rhymed-this is true;
 	if vc-dont-print is false, say "[t][line break]";
@@ -202,7 +199,7 @@ definition: a direction (called d) is viable-ungone:
 	if d is viable and the room d of location of player is unvisited, yes;
 	no;
 
-check going (this is the check diagonal directions rule): if noun is diagonal, say "Diagonal directions aren't used in this game." instead;
+check going (this is the check diagonal directions rule): if noun is diagonal, say "Diagonal directions aren't used in [this-game]." instead;
 
 the check diagonal directions rule is listed first in the check going rules.
 
@@ -259,8 +256,10 @@ soundsing is an action applying to nothing.
 
 understand the command "sounds" as something new.
 understand the command "sound" as something new.
+understand the command "soun" as something new.
+understand the command "sou" as something new.
 
-understand "sounds" and "sound" as soundsing.
+understand "sounds" and "sound" and "soun" and "sou" as soundsing.
 
 carry out soundsing:
 	say "The basic sounds in the English language are:[paragraph break]";
@@ -322,11 +321,11 @@ entry-in-series is a number that varies.
 when play begins:
 	remove entry entry-in-series from series-names;
 
-to say other-two: say "[series-names], the other two entries in [ccdd]"
+to say other-two: say "[series-names], the other two entries in [csdd]"
 
-to say ccdd: say "[i]Civil Seeming Drivel Dreaming[r]"
+to say csdd: say "[i]Civil Seeming Drivel Dreaming[r]"
 
-to say ccdds: say "the [ccdd] series"
+to say csdds: say "the [csdd] series"
 
 to say vvff: say "[i]Very Vile Fairy File[r]"
 
