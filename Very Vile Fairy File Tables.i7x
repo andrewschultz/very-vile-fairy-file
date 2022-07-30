@@ -1615,11 +1615,19 @@ Po Pit	"You can't go back, and directions don't seem to apply here. You need to 
 Trim Tram	"You're on the tram. There's no way to get off, and it'd probably lead back to the Vined Vault. How can you fake your way to paying a fare?"
 Fun Fen	"You don't want to go back through the Done Den to the Wet Wood or Vined Vault. Or fall off Fun Fen."
 Real Rear	"The Sage Sea surrounds you all ways except back north[if cage key is not off-stage]. You already got the cage key from it, anyway[end if]. You also sense a Ceiling Seer above, judging what you do."
-Stark Store	"It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east.".
+Stark Store	"It's pretty stark here. You can only go [if weird way is moot]down, [end if][if dark door is moot]west and [end if]east."
 Y'Old Yard	"You wander around for a while before discovering [next-rand-txt of table of silly locations]. An interesting detour, but not useful."
 Blinding Blaze	"[blazno]."
 Airy Isle	"[if Lot Lord is fungible]You need to figure how to win a battle, not run away[else]You need to move a bit differently to advance[end if]."
 Tarry Tile	"No way through the listless mist mess."
+
+chapter readables
+
+table of readables (continued)
+read-thing	read-txt
+Very Vile Fairy File	"[read-vvff]The [fairy file] contains advice and catch-phrases to seem like an alpha male or demoralize others you feel you need to demoralize. One is [i][next-rand-txt of table of vvff digs][r]"
+marred mat	"[b]SCARRED? SCAT[r].[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully." [bold-ok]
+paper pile	"It's too disorganized to read any details. You do notice [b]FACT FINDER[r] is stamped on pretty much every single page, though."
 
 volume rank stuff
 
@@ -1744,14 +1752,13 @@ rank-num	done-yet	rank-txt
 -3	false	"Another howl from [the fairy file]: 'Gonna go off! Shun a show-off!'"
 -1	false	"'More make war! Wake!' booms [the very vile]. It's still scary and all, but ... nobody shows up. That's a positive."
 
-to say not-leet of (x - a cheattype): say "You notice the Leet Learner turned [scancol of x]"
-
 table of Wet Wood clues
 prof	randtxt
-False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the [b]HET HOOD[r]. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File. [not-leet of leteq]."
-False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood. [not-leet of letminus]."
-False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood. [not-leet of leteq]."
-True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh. [not-leet of leteq]." [pet pood]
+False	"You walk around a bit[one of] for the first time[or][stopping], and you wind up [one of]by a place called[or]back by[stopping] the [b]HET HOOD[r]. Homophobia and discrimination aren't cool, and you suspect they are part of the agenda of the Very Vile Fairy File."
+False	"You walk around some more, and you get distracted a bit thinking Kit Cohen would know what to do. In particular, 'Kit could ...' but what? Maybe it's just a matter of saying what you need to do abstractly, then working out the details later."
+False	"You walk around some more and run into someone who calls out, 'Fret, frood...' Disheartened, you lose your way, but at least you make it back to the Wet Wood."
+False	"You walk around and discover a cabin belonging to someone named Det. Dood, who offers to help you sleuth how to get out of the Wet Wood for a modest fee. You decline the offer and run back to the Wet Wood."
+True	"You walk around and notice a distasteful small puddle where a pet peed, then a slightly more distasteful small mound where ... eegh." [pet pood]
 
 [leetclue of xxx]
 
@@ -1759,7 +1766,7 @@ volume homonym rejections
 
 chapter thing homonyms
 
-[this should not be alphabetized as otherwise Inform will assume from the first entry, the Bot Board, that everything is a person.]
+[this should not be alphabetized as otherwise Inform will assume from the first entry, the Bot Board, that everything is a person. This is a bug in 6G but is okay in 6L.]
 [the fixfirst= in talf.txt makes sure that a regular item comes first.]
 
 table of thing homonyms
