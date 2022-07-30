@@ -456,10 +456,6 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 [this could technically go in the common file, but it would create so many problems with test verification.]
 
-table of lurking lump guesses
-mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"perking pump"	lump-known rule	false	--	--	"I don't want to know."
-
 table of mild mead guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "dialed deed"	mead-or-weed rule	false	-44	weed-offstage rule	"You don't need chemical stimulants to be dialed in to what you need to do." [start Knives Niche]

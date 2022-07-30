@@ -95,17 +95,17 @@ ha-half is a truth state that varies.
 
 the ha half nah naff button is part of the leet learner. description is "It is set [on-off of ha-half], meaning if you get a guess half-right, the Leet Learner [will-wont of ha-half] alert you."
 
-section halfing
+section hahalfing
 
-halfing is an action applying to nothing.
+hahalfing is an action applying to nothing.
 
 understand the command "ha half" as something new.
 
-understand "ha half" as halfing.
-understand "half" as halfing.
-understand "hh" as halfing.
+understand "ha half" as hahalfing.
+understand "half" as hahalfing.
+understand "hh" as hahalfing.
 
-carry out halfing:
+carry out hahalfing:
 	say "[if ha-half is true]The Leet Learner is already set[else]You set the Leet Learner[end if] to Ha Half.";
 	now ha-half is true;
 	the rule succeeds.
@@ -705,6 +705,65 @@ the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailabl
 volume common item-known rules
 
 this is the lump-known rule: if lurking lump is not off-stage, the rule succeeds;
+
+volume common parser errors
+
+[ this was formerly after the clue half right words rule. We can adjust them. ]
+
+to say not-quite-homonyms: say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar"
+
+Rule for printing a parser error (this is the check for room name and homonyms in player command rule):
+	repeat through table of room homonyms:
+		if location of player is loc entry:
+			if there is a hom-rule entry:
+				process the hom-rule entry;
+				if the rule failed, break;
+				if the rule succeeded, the rule succeeds;
+				if there is no myhom entry, next;
+			if the player's command includes myhom entry:
+				if there is a custom-msg entry:
+					say "[custom-msg entry][line break]";
+				else:
+					say "[not-quite-homonyms].";
+				the rule succeeds;
+			break;
+	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
+		if mything entry is fungible:
+			if there is a hom-rule entry:
+				process the hom-rule entry;
+				if the rule failed, next;
+				if the rule succeeded, the rule succeeds;
+				if there is no myhom entry, next;
+			if the player's command includes myhom entry:
+				if there is a custom-msg entry:
+					say "[custom-msg entry][line break]";
+				else:
+					say "[not-quite-homonyms].";
+				the rule succeeds;
+	repeat with X running from 1 to the number of words in the player's command:
+		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
+			if word number 1 in the player's command is "ll":
+				say "It looks like you may have tried to scan the current location. You just need to say [b]LL[r] to do this. Would you like to do so now?[line break]";
+				if the player consents:
+					skip upcoming rulebook break;
+					now zap-weird-break is true;
+					try lling location of player;
+					now zap-weird-break is false;
+					the rule succeeds;
+				say "Okay. ";
+			else:
+				say "It looks like you may have tried to refer to the room name, or part of it. ";
+			say "You often need to riff on the room name, but you never need to use the room name directly.";
+			the rule succeeds;
+	if debug-state is true, say "DEBUG: [the latest parser error].";
+	continue the action;
+
+volume item(s) common to both major games
+
+table of lurking lump guesses
+mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
+"clerking clump"	lump-known rule	false	--	--	"The lump can't keep track of things. That would be the Leet Learner."
+"perking pump"	lump-known rule	false	--	--	"I don't want to know."
 
 Civil Seeming Drivel Dreaming Common ends here.
 

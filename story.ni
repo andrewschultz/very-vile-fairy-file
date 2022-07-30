@@ -28,13 +28,13 @@ include Basic Screen Effects by Emily Short.
 
 include Bold Final Question Rows by Andrew Schultz.
 
+include Civil Seeming Drivel Dreaming Common by Andrew Schultz.
+
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 include Very Vile Fairy File Random Text by Andrew Schultz.
 
 include Very Vile Fairy File Tables by Andrew Schultz.
-
-include Civil Seeming Drivel Dreaming Common by Andrew Schultz.
 
 include undo output control by Erik Temple.
 
@@ -1914,28 +1914,12 @@ this is the check soft sand reversible rule:
 this is the check history hall reversible rule:
 	if player is in History Hall and sco-mystery-mall is true, say "[line break]You can switch between [b]MYSTERY MALL[r] and [b]HISTORY HALL[r] freely.";
 
-check thinking (this is the check for any presolves before thinking rule):
-	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if].";
-	if all-hinted is 0, say "[line break]But you don't have leads for any puzzles right now." instead;
-	now vc-dont-print is true; [ in VVFF, we insert two rules to check for places you can flip ]
-
 the check reversible rooms rule is listed after the check for any presolves before thinking rule in the check thinking rules.
-
-check thinking (this is the list all presolves while thinking rule):
-	read-laters no-details;
-	read-laters doable-now;
-	read-laters undoable-now;
-	if ever-thought is false:
-		now ever-thought is true;
-		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
 
 check thinking (this is the VVFF note boring boat rule):
 	if boat-reject is true and sco-no-nappin is true and Lake Lea is unvisited, say "[line break]You also feel up to going back to the boring boat.";
 
 the VVFF note boring boat rule is listed after the list all presolves while thinking rule in the check thinking rules.
-
-check thinking (this is the list all optional presolves while thinking rule):
-	if number of optional-noted things > 0, say "You also know several things that are optional to figure out: [list of optional-noted things].";
 
 check thinking (this is the VVFF note injuries while thinking rule):
 	if need-healing, say "[line break]You're injured and should do something about that before re-facing the Bull Beast.";
@@ -2028,6 +2012,12 @@ to decide which number is narratives-left:
 	decide on temp;
 
 chapter game-specific code relying on CSDD common file
+
+to say optional-hint-think-item: say "[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if]"
+
+to decide whether immediate-attention of (ru - a rule):
+	if ru is vc-stay-strong rule or ru is vc-glow-glad rule, yes;
+	no;
 
 section viable directions
 
@@ -2956,14 +2946,6 @@ when play begins (this is the opening text rule):
 	say "[line break]It takes a second for Kit Cohen to regain composure. 'The CRIMES CREW TIMES TWO.' Are you ready?[wfak]";
 	say "[line break]You accept. You might as well. Kit guides you across the remains of the wall. 'Wait!' Kit cries. 'This should be the Met-Mo['] Inn! With Rhett Rowan!' You turn around, and Kit is gone. You're somewhere entirely different...";
 
-when play begins (this is the score and status tweak rule):
-	now the maximum score is min-needed + max-bonus;
-	now max-poss is the maximum score;
-	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-poss]*[else]-[max-poss][end if]";
-	force-status;
-	now the left hand status line is "[location of the player] ([mrlp])";
-	now the turn count is 1;
-
 to wall-refresh: move the wry wall backdrop to all wallish rooms;
 
 to wall-add (rm - a room):
@@ -3308,52 +3290,6 @@ Rule for printing a parser error (this is the redirect to buggin rule):
 the redirect to buggin rule is listed after the clue half right words rule in the for printing a parser error rulebook.
 
 to say not-quite-homonyms: say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar"
-
-Rule for printing a parser error (this is the check for room name and homonyms in player command rule):
-	repeat through table of room homonyms:
-		if location of player is loc entry:
-			if there is a hom-rule entry:
-				process the hom-rule entry;
-				if the rule failed, break;
-				if the rule succeeded, the rule succeeds;
-				if there is no myhom entry, next;
-			if the player's command includes myhom entry:
-				if there is a custom-msg entry:
-					say "[custom-msg entry][line break]";
-				else:
-					say "[not-quite-homonyms].";
-				the rule succeeds;
-			break;
-	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
-		if mything entry is fungible:
-			if there is a hom-rule entry:
-				process the hom-rule entry;
-				if the rule failed, next;
-				if the rule succeeded, the rule succeeds;
-				if there is no myhom entry, next;
-			if the player's command includes myhom entry:
-				if there is a custom-msg entry:
-					say "[custom-msg entry][line break]";
-				else:
-					say "[not-quite-homonyms].";
-				the rule succeeds;
-	repeat with X running from 1 to the number of words in the player's command:
-		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
-			if word number 1 in the player's command is "ll":
-				say "It looks like you may have tried to scan the current location. You just need to say [b]LL[r] to do this. Would you like to do so now?[line break]";
-				if the player consents:
-					skip upcoming rulebook break;
-					now zap-weird-break is true;
-					try lling location of player;
-					now zap-weird-break is false;
-					the rule succeeds;
-				say "Okay. ";
-			else:
-				say "It looks like you may have tried to refer to the room name, or part of it. ";
-			say "You often need to riff on the room name, but you never need to use the room name directly.";
-			the rule succeeds;
-	if debug-state is true, say "DEBUG: [the latest parser error].";
-	continue the action;
 
 Rule for printing a parser error when the latest parser error is the can't see any such thing error:
 	let wn1 be word number 1 in the player's command;
