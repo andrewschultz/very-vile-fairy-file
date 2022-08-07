@@ -23,6 +23,10 @@ import re
 import os
 import i7
 
+show_sounds = True
+
+two_letter_sounds = [ 'ur', 'ar', 'or', 'bl', 'br', 'cl', 'cr', 'dr', 'fl', 'fr', 'gl', 'gr', 'pl', 'pr', 'sk', 'sl', 'sp', 'st', 'sw', 'spr', 'str', 'tr', 'ch', 'so', 'th', 'wh' ]
+
 this_time = defaultdict(int)
 all_time = defaultdict(int)
 
@@ -342,7 +346,12 @@ while count < len(sys.argv):
     if arg == 'i': standard_input = True
     elif arg == 'ni': standard_input = False
     elif arg == 'v': verbose = True
-    elif arg == 's': list_all_sounds()
+    elif arg in ( 'ls', 'sl' ):
+        list_all_sounds()
+    elif arg == 's':
+        show_sounds = True
+    elif arg in ( 'ns', 'sn' ):
+        show_sounds = False
     elif arg[0] == 't': two_letter = int(arg[1:])
     elif re.search("^[ec][0-9]", arg): every_x = int(arg[1:])
     elif '?' in arg: cmd_line_usage()
@@ -361,6 +370,9 @@ if not standard_input and not len(word_ary):
         print("No word array, so going to standard input.")
     else:
         sys.exit("I don't have a word array, and standard input is not specified or defaulteed to. Set standard_input_if_no_array to True or use the -i flag for standard input.")
+
+if show_sounds:
+    let_blank.extend(two_letter_sounds)
 
 starts_array = let_blank
 temp_letter_max = 0
@@ -386,6 +398,12 @@ if standard_input:
             continue
         if x == 's':
             list_all_sounds()
+            continue
+        if x == 's':
+            show_sounds = True
+            continue
+        if x in ( 'ns', 'sn' ):
+            show_sounds = False
             continue
         cmds.append(x)
         if ' ' not in x:
