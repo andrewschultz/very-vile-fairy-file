@@ -1818,25 +1818,9 @@ check attacking:
 	if noun is Bull Beast or noun is Beer Bull, say "You'd get a triple-tough cripple-cuff in return. You must fight with words." instead;
 	say "[if noun is a person]Gauge gore: wage war! Rage! Roar[else]Very vandal-ous? Scary! Scandalous[end if]! [one of](NOTE: you don't need to attack anything. Well, not with the [b]ATTACK[r] command.)[or][line break][stopping]"
 
-the block saying no rule is not listed in any rulebook.
-
-check saying no: say "Hi-ho! Why woe? [yn-tell]" instead;
-
-the block saying yes rule is not listed in any rulebook.
-
-check saying yes: say "Yay! Yep! Hey, hep! [yn-tell]" instead;
-
-to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
-
-the block swearing obscenely rule is not listed in any rulebook.
-
 check swearing obscenely:
 	if player is in Tarry Tile, say "A howl from the [fairy file]: 'You yell to tell WHO?!?!' Dang! Implied profanity can be a real smackdown."; [bold-ok]
 	say "[one of]Dang, dude rang RUDE![or]Gee, gad! Be bad! 'Me, mad!'[in random order]" instead; [bold-ok]
-
-the block swearing mildly rule is not listed in any rulebook.
-
-check swearing mildly: try swearing obscenely instead;
 
 chapter smelling
 

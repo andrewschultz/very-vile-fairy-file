@@ -233,6 +233,18 @@ understand "hint" as hinting.
 understand "help" as hinting.
 understand "hints" as hinting.
 
+chapter no/yes
+
+the block saying no rule is not listed in any rulebook.
+
+check saying no: say "Hi-ho! Why woe? [yn-tell]" instead;
+
+the block saying yes rule is not listed in any rulebook.
+
+check saying yes: say "Yay! Yep! Hey, hep! [yn-tell]" instead;
+
+to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
+
 chapter othersing
 
 othersing is an action out of world.
@@ -267,6 +279,14 @@ carry out soundsing:
 	say "two letters: ur ar or bl br cl cr dr fl fr gl gr pl pr sk sl sp st sw spr str tr.";
 	say "rarer two letters: ch so th (thing or this) wh ng nk oi ow oo (took) aw zh (vision.)";
 	the rule succeeds.
+
+chapter swearing
+
+the block swearing mildly rule is not listed in any rulebook.
+
+the block swearing obscenely rule is not listed in any rulebook.
+
+check swearing mildly: try swearing obscenely instead;
 
 chapter verbsing
 
