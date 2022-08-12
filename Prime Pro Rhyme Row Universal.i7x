@@ -1,6 +1,6 @@
-Version 1/220705 of Civil Seeming Drivel Dreaming Universal by Andrew Schultz begins here.
+Version 1/220705 of Prime Pro Rhyme Row Universal by Andrew Schultz begins here.
 
-"This is a universal file for all the entries in the Civil Seeming Drivel Dreaming series. It includes very basic things such as the meta-rooms for done items and fungibility."
+"This is a universal file for all the entries in the Prime Pro Rhyme Row series. It includes very basic things such as the meta-rooms for done items and fungibility."
 
 volume variables and their stubs
 
@@ -341,11 +341,11 @@ entry-in-series is a number that varies.
 when play begins:
 	remove entry entry-in-series from series-names;
 
-to say other-two: say "[series-names], the other two entries in [csdd]"
+to say other-two: say "[series-names], the other two entries in [pprr]"
 
-to say csdd: say "[i]Civil Seeming Drivel Dreaming[r]"
+to say pprr: say "[i]Prime Pro-Rhyme Row[r]"
 
-to say csdds: say "the [csdd] series"
+to say pprrs: say "the [pprr] series"
 
 to say vvff: say "[i]Very Vile Fairy File[r]"
 
@@ -357,6 +357,6 @@ book bug notes
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
 
-Civil Seeming Drivel Dreaming Universal ends here.
+Prime Pro Rhyme Row Universal ends here.
 
 ---- DOCUMENTATION ----

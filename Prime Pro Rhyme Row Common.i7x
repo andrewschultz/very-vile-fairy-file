@@ -1,8 +1,8 @@
-Version 1/220705 of Civil Seeming Drivel Dreaming Common by Andrew Schultz begins here.
+Version 1/220705 of Prime Pro Rhyme Row Common by Andrew Schultz begins here.
 
-"This is a common file for the two larger entries in the Civil Seeming Drivel Dreaming series: Very Vile Fairy File and Low-Key Learny Jokey Journey. It includes variables used for the hinting device, among other things."
+"This is a common file for the two larger entries in the Prime Pro-Rhyme Row series: Very Vile Fairy File and Low-Key Learny Jokey Journey. It includes variables used for the hinting device, among other things."
 
-include Civil Seeming Drivel Dreaming Universal by Andrew Schultz.
+include Prime Pro Rhyme Row Universal by Andrew Schultz.
 
 volume leet learner portable code
 
@@ -767,6 +767,6 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "clerking clump"	lump-known rule	false	--	--	"The lump can't keep track of things. That would be the Leet Learner."
 "perking pump"	lump-known rule	false	--	--	"I don't want to know."
 
-Civil Seeming Drivel Dreaming Common ends here.
+Prime Pro Rhyme Row Common ends here.
 
 ---- DOCUMENTATION ----

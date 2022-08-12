@@ -28,7 +28,7 @@ include Basic Screen Effects by Emily Short.
 
 include Bold Final Question Rows by Andrew Schultz.
 
-include Civil Seeming Drivel Dreaming Common by Andrew Schultz.
+include Prime Pro Rhyme Row Common by Andrew Schultz.
 
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
@@ -1995,7 +1995,7 @@ to decide which number is narratives-left:
 		if done-yet entry is false, increment temp;
 	decide on temp;
 
-chapter game-specific code relying on CSDD common file
+chapter game-specific code relying on PPRR common file
 
 to say optional-hint-think-item: say "[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if]"
 
