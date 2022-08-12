@@ -166,7 +166,7 @@ def stdin_help():
 
 def read_two_letters():
     global tot_freq
-    with open("2s.txt") as file:
+    with open(os.path.join(i7.proj2dir('vvff'), "2s.txt")) as file:
         for line in file:
             if line.startswith("#"): continue
             if line.startswith(";"): break

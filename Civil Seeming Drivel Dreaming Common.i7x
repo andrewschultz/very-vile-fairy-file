@@ -580,7 +580,7 @@ report requesting the score (this is the lump and half-solved notes rule):
 		say "You haven't figured any ideas that might score a point later, but if you do, [this-game] will explicitly warn you. [b]THINK[r] would give more detailed information.";
 	if lurking lump is not off-stage:
 		let gguess be next-lump-level - lump-count;
-		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
+		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] ([lump-charges - lump-uses] left) and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
 	now vc-dont-print is false;
 	the rule succeeds;
 

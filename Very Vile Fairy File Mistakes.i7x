@@ -56,6 +56,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 "know/no nate"	go-gate-vis rule	false	44	--	"Nobody named Nate appears to help you through the go gate."
 "lo/low late"	go-gate-vis rule	false	44	--	"You feel you are on the right path to disabling the go gate."
 "oh ate"	go-gate-vis rule	false	44	--	"Nothing takes a bite out of the go gate."
+"po plate"	go-gate-vis rule	false	44	--	"Alas, no plates in the go gate become of lesser quality."
 "pot poured"	trivially true rule	false	35	--	"There's no time for coffee here!"
 "rot roared"	trivially true rule	false	35	--	"A decent battle cry, but you sense there could a more violent action."
 "scott scored"	trivially true rule	false	35	--	"The situation demands more than gossip. It demands leadership and teamwork!"
@@ -271,6 +272,7 @@ mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
 
 table of Soft Sand guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
+"boffed band/banned"	in-soft-sand rule	false	44	need-loft-land rule	"No, that's too licentious."
 "coughed canned"	in-soft-sand rule	false	44	need-loft-land rule	"You try to suppress a cough while avoiding any sudden downturn in fortune."
 "scoffed scanned"	in-soft-sand rule	false	44	need-loft-land rule	"[Soft Sand] isn't much to look at, but it's not worth scorn."
 "offed/oft and"	in-soft-sand rule	false	44	need-loft-land rule	"You try for an impressive anticipatory silence, but nobody is around to appreciate it."
