@@ -31,23 +31,28 @@ book scoring
 
 core-score is a number that varies. core-score is 0.
 
-core-max is a number that varies.
+cur-bonus is a number that varies. cur-bonus is 0. [ how many bonus points now? ]
 
-min-needed is a number that varies.
+core-max is a number that varies. [all necessary points]
 
-max-bonus is a number that varies.
+max-bonus is a number that varies. [ what is the overall maximum? ]
 
-cur-bonus is a number that varies.
+cur-max-bonus is a number that varies. [ what is achievable in the current game state? ]
 
-to decide which number is max-overall:
-	decide on core-max + max-bonus.
+when play begins (this is the set current max points to max points rule): now cur-max-bonus is max-bonus;
 
-max-poss is a number that varies.
+to decide which number is current-score: decide on core-score + cur-bonus;
+
+to decide which number is min-needed: decide on core-max + cur-bonus.
+
+to decide which number is max-available: decide on core-max + cur-max-bonus.
+
+to decide which number is max-overall: decide on core-max + max-bonus.
 
 zap-core-entry is a truth state that varies.
 
 to up-min:
-	increment min-needed;
+	increment cur-bonus;
 	increment the score;
 
 to up-reg:
@@ -59,9 +64,8 @@ to up-which (ts - a truth state):
 		up-reg;
 	else:
 		up-min;
-		increment cur-bonus;
 
-to max-down: decrement max-poss;
+to max-down: decrement cur-max-bonus;
 
 book blank table
 
@@ -323,9 +327,7 @@ report xyzzying for the first time:
 volume status line
 
 when play begins (this is the score and status tweak rule):
-	now the maximum score is min-needed + max-bonus;
-	now max-poss is the maximum score;
-	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-poss]*[else]-[max-poss][end if]";
+	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
 	force-status;
 	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 1;

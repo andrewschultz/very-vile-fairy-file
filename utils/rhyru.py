@@ -59,24 +59,30 @@ def check_rhymes(this_proj=i7.dir2proj()):
     if not got_one:
         print("Everything worked out for", mb)
 
+rhyme_check_array = []
+
 try:
     if len(sys.argv) == 1:
-        check_rhymes()
+        rhyme_check_array = [ i7.dir2proj() ]
     elif sys.argv[1] == 'a':
-        check_rhymes('vvff')
-        check_rhymes('qqnn')
-        check_rhymes('lljj')
-    elif sys.argv[1] == '2':
-        check_rhymes('vvff')
-        check_rhymes('lljj')
-    elif re.search(r"^[vql]+$", sys.argv[1]):
-        if 'l' in argv[1]:
-            check_rhymes['lljj']
-        if 'v' in argv[1]:
-            check_rhymes['vvff']
-        if 'q' in argv[1]:
-            check_rhymes['qqnn']
+        rhyme_check_array = i7.i7com['pprr'].split(',')
+    elif sys.argv[1].isdigit():
+        rhyme_check_array = i7.i7com[:int(sys.argv[1])]
+    elif sys.argv[1] == 'm':
+        rhyme_check_array [ 'vvff', 'lljj' ]
+    elif re.search(r"^[vqlc]+$", sys.argv[1]):
+        if 'l' in sys.argv[1]:
+            rhyme_check_array.append('lljj')
+        if 'v' in sys.argv[1]:
+            rhyme_check_array.append('vvff')
+        if 'q' in sys.argv[1]:
+            rhyme_check_array.append('qqnn')
+        if 'c' in sys.argv[1]:
+            rhyme_check_array.append('csdd')
 except:
-    print("a tries all 3 projects, 2 tries the 2 main ones.")
+    print("Error reading commands. a tries all projects, 2 tries the 2 main ones.")
+
+for r in rhyme_check_array:
+    check_rhymes(r)
 
 mt.post_open()
