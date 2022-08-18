@@ -17,23 +17,42 @@ def anything_but(my_ary, my_text):
             return True
     return False
 
+def header_to_rule(my_line):
+    ret_val = re.sub(".*this is the *", "", my_line)
+    ret_val = re.sub("[ \)].*:", "", ret_val)
+    return ret_val
+
 def check_rhymes(this_proj=i7.dir2proj()):
     my_file = i7.hdr(this_proj, 'ta')
     print("Checking vc- and vr- rules for the right say-stubs in", my_file)
-    in_vc_rule = False
+    in_vc_rule = in_vr_rule = False
     mb = os.path.basename(my_file)
     got_one = False
     with open(my_file) as file:
         for (line_count, line) in enumerate(file, 1):
             l0 = line.strip()
             if not l0:
-                in_vc_rule = False
+                if in_vr_rule:
+                    if not got_score_variable:
+                        print("No", my_score_variable, "in", this_rule, "line", line_count)
+                in_vc_rule = in_vr_rule = False
+                continue
+            if "this is the vr-" in l0:
+                in_vr_rule = True
+                this_rule = header_to_rule(line.strip())
+                my_score_variable = this_rule.replace("vr-", "sco-").replace(" rule", "")
+                got_score_variable = False
+                continue
             if "this is the vc-" in l0:
                 in_vc_rule = True
                 this_rule = re.sub("^.*?\(", "", line.strip())
                 this_rule = re.sub("\).*", "", this_rule)
                 my_ary = []
-            if not in_vc_rule:
+            if not in_vc_rule and not in_vr_rule:
+                continue
+            if in_vr_rule:
+                if my_score_variable in line:
+                    got_score_variable = True
                 continue
             for x in addables:
                 if l0.startswith(x) and '[oksay]' not in line:
