@@ -749,6 +749,78 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 	if debug-state is true, say "DEBUG: [the latest parser error].";
 	continue the action;
 
+volume jerkingjumping
+
+jerkingjumping is an action applying to nothing.
+
+understand the command "jerking jump" as something new.
+understand the command "jj" as something new.
+
+understand "jerking jump" as jerkingjumping.
+understand "jj" as jerkingjumping.
+
+in-jerk-jump is a truth state that varies.
+
+to say firstor of (t - indexed text):
+	replace the regular expression "\|.*" in t with "";
+	say "[t in upper case]";
+
+to lump-minus:
+	decrement lump-charges;
+	say "[line break]The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
+	if lump-charges is 0, moot lurking lump;
+	now in-jerk-jump is false;
+	increment lump-uses;
+	process the score and thinking changes rule;
+
+check jerkingjumping (this is the basic jerkjump check rule):
+	if debug-state is false:
+		if lurking lump is off-stage, say "You have nothing that would help you do that." instead;
+		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
+	else:
+		say "DEBUG: ignoring the charges in the lump, currently at [lump-charges].";
+	now in-jerk-jump is true;
+
+check jerkingjumping (this is the check for finished before jerkjumping rule):
+	if doable-hinted > 0:
+		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. ([b]THINK[r] should give details.) Use it anyway?";
+		unless the player yes-consents:
+			now in-jerk-jump is false;
+			say "Okay. Again, [b]THINK[r] should show what you can do now." instead;
+
+carry out jerkingjumping:
+	now vc-dont-print is true;
+	repeat through table of verb checks:
+		unless there is a core entry, next;
+		if core entry is false, next;
+		if idid entry is true, next;
+		process the check-rule entry;
+		let vr be the outcome of the rulebook;
+		if vr is the ready outcome:
+			say "After some thought, you consider the right way forward: [b][firstor of w1 entry][if check-rule entry is spaceable] [end if][firstor of w2 entry][r]...";
+			now idid entry is true; [this is so BURY BILE gets processed. We already checked IDID above.]
+			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
+			process the run-rule entry;
+			if zap-core-entry is true:
+				blank out the core entry;
+				now zap-core-entry is false;
+			skip upcoming rulebook break;
+			lump-minus;
+			now think-cue entry is false;
+			now vc-dont-print is false;
+			the rule succeeds;
+	now vc-dont-print is false;
+	say "The lurking lump remains immovable. I guess you've done all you need, here.";
+	the rule fails.
+
+volume table variables
+
+to decide which number is left-count of (ta - a table name):
+	let temp be 0;
+	repeat through ta:
+		if got-yet entry is false, increment temp;
+	decide on temp;
+
 volume item(s) common to both major games
 
 table of lurking lump guesses
