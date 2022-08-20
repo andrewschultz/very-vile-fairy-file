@@ -323,6 +323,20 @@ the block swearing obscenely rule is not listed in any rulebook.
 
 check swearing mildly: try swearing obscenely instead;
 
+chapter talking / talktoing
+
+talktoing is an action applying to one thing.
+
+understand the command "talk to" as something new.
+understand the command "talk" as something new.
+understand the command "t" as something new.
+
+understand "talk to [something]" as talktoing.
+understand "talk [something]" as talktoing.
+understand "t [something]" as talktoing.
+
+does the player mean talktoing a person: it is very likely.
+
 chapter verbsing
 
 verbsing is an action out of world.

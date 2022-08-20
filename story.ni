@@ -1702,20 +1702,6 @@ chapter waiting
 
 check waiting: say "[one of]Whoah, wait? Mo['], mate![or]Hi ho! Lie low![or]D'oh! Deed? No need.[or]Woo! Will stew, still![cycling]" instead;
 
-chapter talking
-
-talktoing is an action applying to one thing.
-
-understand the command "talk to" as something new.
-understand the command "talk" as something new.
-understand the command "t" as something new.
-
-understand "talk to [something]" as talktoing.
-understand "talk [something]" as talktoing.
-understand "t [something]" as talktoing.
-
-does the player mean talktoing a person: it is very likely.
-
 check talktoing:
 	if noun is Very Vile Fairy File, say "'THUMP THAT CHUMP-CHAT!' booms a loud voice from inside the [fairy file]." instead; [bold-ok]
 	if noun is not a person, say "You can only talk to living things, and [the noun] doesn't qualify." instead;
