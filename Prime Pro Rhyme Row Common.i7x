@@ -568,7 +568,7 @@ to say it-they of (n - a number): say "[if n is 1]it[else]they[end if]";
 
 carry out requesting the score:
 	now vc-dont-print is true;
-	say "You have scored a total of [score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
+	say "You have scored a total of [current-score] out of [max-overall] points and need [min-needed] to win. You have found [cur-bonus] of [max-bonus] optional points so far.";
 	continue the action;
 
 report requesting the score (this is the lump and half-solved notes rule):
@@ -609,37 +609,6 @@ to decide which number is all-hinted:
 	repeat through table of verb checks:
 		if think-cue entry is true, increment temp;
 	decide on temp;
-
-section replace old score/thinking rule(s)
-
-the score and thinking changes rule is listed instead of the notify score changes rule in the turn sequence rulebook.
-
-llp-notify is a truth state that varies.
-
-last-cur-bonus is a number that varies. last-cur-bonus is 0. cur-bonus is 0.
-
-to say went-by (nu - a number): say "just went [if nu > 0]up[else]down[end if] by [nu in words] point[if nu > 1]s[end if]";
-
-this is the score and thinking changes rule:
-	let bonus-delt be cur-bonus - last-cur-bonus;
-	let sco-delt be score - last notified score;
-	if sco-delt is 0 and bonus-delt is 0, continue the action;
-	say "[i][bracket]Your score ";
-	if bonus-delt is 0:
-		say "[went-by sco-delt]";
-	else if bonus-delt is sco-delt:
-		say "and bonus points [went-by bonus-delt]";
-	else:
-		say "[went-by sco-delt], and your bonus points [went-by bonus-delt]";
-	say ".[close bracket][r][line break]";
-	now last-cur-bonus is cur-bonus;
-	now last notified score is score;
-	repeat through table of verb checks:
-		if think-cue entry is true and idid entry is true, now think-cue entry is false;
-	process the narrative-checking rule;
-	if llp-notify is false and last-cur-bonus > 0:
-		say "[line break]A stun-steed zooms by, bellowing 'None-need-done deed!' Have you lost focus on what's really important? Or just put in a bit of extra rigor? You decide on the second, as [if entry-in-series is 1]you could also picture the Very Vile Fairy File summoning[else]you could also imagine[end if] a bin-bare-min mare to insult you for finding no extra neat stuff.";
-		now llp-notify is true;
 
 chapter thinking
 
