@@ -363,6 +363,40 @@ when play begins (this is the score and status tweak rule):
 	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 1;
 
+volume after reading a command
+
+say-warn is a truth state that varies.
+
+no-punc-flag is a truth state that varies.
+
+after reading a command:
+	if the player's command matches the regular expression "^ *<\*;>":
+		if currently transcripting:
+			say "Noted.";
+			reject the player's command;
+	let XX be indexed text;
+	if the player's command matches the regular expression "<A-Z>": [bold-ok]
+		let XX be the player's command;
+		change the text of the player's command to "[XX in lower case]";
+		if debug-state is true, say "(LOWERCASING) [XX][line break]";
+	if the player's command matches the regular expression "<^-\.a-z 0-9>":
+		if no-punc-flag is false:
+			say "[i][bracket][b]NOTE[r][i]: only letters are necessary to get through [this-game]. The parser simply strips out non-alphabetic characters.[close bracket][r][paragraph break]";
+			now no-punc-flag is true;
+		let XX be the player's command;
+		replace the regular expression "-" in XX with " ";
+		replace the regular expression "<^a-z0-9\.>" in XX with "";
+		change the text of the player's command to XX;
+		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
+	if word number 1 in the player's command is "say":
+		unless this-game-say-nudge:
+			if say-warn is false:
+				now say-warn is true;
+				say "[i][bracket][b]NOTE[r][i]: you never need to [b]SAY[r][i] anything. Just type it in. In other words, [b]WHOAH[r][i] is the same as [b]SAY WHOAH[r][i]. [this-game] will cut [b]SAY[r][i] off of the start of all commands. Use [b]T[r][i] to talk to an NPC.[close bracket][r]";
+			let XX be the player's command;
+			replace the regular expression "^say " in XX with "";
+			change the text of the player's command to XX;
+
 volume text stubs
 
 book proper names
