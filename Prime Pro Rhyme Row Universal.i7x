@@ -29,6 +29,8 @@ to say first-of-ors of (x - indexed text):
 
 book scoring
 
+chapter base variables
+
 core-score is a number that varies. core-score is 0.
 
 cur-bonus is a number that varies. cur-bonus is 0. [ how many bonus points now? ]
@@ -122,7 +124,7 @@ volume types and properties
 
 book rooms
 
-a room has text called noway-text.
+[a room has text called noway-text.] [it conserves memory to put stuff in tables, so that's what we did.]
 
 book boringness
 
@@ -356,7 +358,7 @@ report xyzzying for the first time:
 volume status line
 
 when play begins (this is the score and status tweak rule):
-	now the right hand status line is "[score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
+	now the right hand status line is "[current-score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
 	force-status;
 	now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 1;
@@ -372,7 +374,7 @@ entry-in-series is a number that varies.
 when play begins:
 	remove entry entry-in-series from series-names;
 
-to say other-two: say "[series-names], the other two entries in [pprr]"
+to say other-two: say "[series-names], the other two entries in the [pprr] series"
 
 to say pprr: say "[i]Prime Pro-Rhyme Row[r]"
 

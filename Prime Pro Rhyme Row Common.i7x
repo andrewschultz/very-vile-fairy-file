@@ -18,7 +18,10 @@ to say here-to of (rm - a room): say "[if rm is location of player]here[else]to 
 
 to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][end if]"
 
+to nobreak-if-think: if current action is thinking, skip upcoming rulebook break;
+
 to say once-now of (ru - a rule):
+	nobreak-if-think;
 	process ru;
 	let rbo be the outcome of the rulebook;
 	say "[if rbo is the ready outcome]now[else]once[end if]"
@@ -417,8 +420,8 @@ carry out exitsing:
 	repeat with Q running through exitdirs:
 		let RQ be the room Q of location of player;
 		if RQ is not nowhere:
-			if my-exits is 0, say "LIST OF EXITS:[line break]";
-			say "[Q]: [if Q is blocked](unavailable.)[else if RQ is visited][RQ].[else](unvisited.)[end if]";
+			if my-exits is 0, say "[b]EXIT LIST[r]:[line break]";
+			say "[Q]: [if Q is blocked](blocked.)[else if RQ is visited][RQ].[else](unvisited.)[end if]";
 			increment my-exits;
 	if my-exits is 0, say "There are no clear safe exits. It looks like you need to solve a puzzle to find your way out of here.";
 	the rule succeeds.
@@ -663,7 +666,7 @@ check thinking (this is the list all presolves while thinking rule):
 	read-laters undoable-now;
 	if ever-thought is false:
 		now ever-thought is true;
-		say "[line break][b]NOTE[r]: The game will indicate when one command you found early will be applicable. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
+		say "[line break][b]NOTE[r]: [this-game] should indicate whenever you find the right rhyme but can't execute it yet. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r] to see things you figured but aren't quite ready to do yet.";
 
 check thinking (this is the list all optional presolves while thinking rule):
 	if number of optional-noted things > 0, say "You also know several things that are optional to figure out: [list of optional-noted things].";
