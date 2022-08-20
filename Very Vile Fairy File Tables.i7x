@@ -14,7 +14,7 @@ chapter the verb check table
 
 table of verb checks [xxvc]
 w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	idid	songy	best-room	check-rule	run-rule	wfull (topic)	think-advice
-"glow"	"glad"	--	--	false	true	true	false	false	Been Buggin	vc-glow-glad rule	vr-glow-glad rule	--	text	[start interlude-y]
+"glow"	"glad"	--	--	false	true	true	false	false	Been Buggin	vc-glow-glad rule	vr-glow-glad rule	--	text [start interlude-y]
 "stay"	"strong"	--	--	false	false	true	false	false	Been Buggin	vc-stay-strong rule	vr-stay-strong rule	--	-- [must be at top for JJ]
 "get"	"good"	"git"	vh-get-good rule	false	false	true	false	false	Wet Wood	vc-get-good rule	vr-get-good rule	--	-- [start Intro]
 "gift"	"giver"	--	--	false	false	true	false	false	Rift River	vc-gift-giver rule	vr-gift-giver rule	--	--
@@ -84,7 +84,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "wake"	"whee|wee"	"we"	vh-wake-whee rule	false	true	true	false	false	Lake Lea	vc-wake-whee rule	vr-wake-whee rule	--	-- [start Lake Lea]
 "take"	"tea"	"t/tee"	vh-take-tea rule	false	false	true	false	false	Lake Lea	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
 "fake"	"fee"	--	--	false	false	true	false	false	Lake Lea	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
-"break"	"brie"	"brake"	vh-break-brie rule	false	false	false	false	false	--	vc-break-brie rule	vr-break-brie rule	--	--
+"break"	"brie"	"brake"	vh-break-brie rule	false	false	false	false	false	--	vc-break-brie rule	vr-break-brie rule	--	"You can [b]BREAK BRIE[r] with Jake G. [once-now of vc-break-brie] you're pals."
 "make"	"map"	--	--	false	false	true	false	false	--	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
 "co"	"capn"	"cappin"	vh-co-capn rule	false	false	true	false	true	--	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
 "snake"	"snap"	--	--	false	true	true	false	false	--	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
