@@ -745,19 +745,20 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 					say "[not-quite-homonyms].";
 				the rule succeeds;
 			break;
-	repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
-		if mything entry is fungible:
-			if there is a hom-rule entry:
-				process the hom-rule entry;
-				if the rule failed, next;
-				if the rule succeeded, the rule succeeds;
-				if there is no myhom entry, next;
-			if the player's command includes myhom entry:
-				if there is a custom-msg entry:
-					say "[custom-msg entry][line break]";
-				else:
-					say "[not-quite-homonyms].";
-				the rule succeeds;
+	if two-too is true:
+		repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
+			if mything entry is fungible:
+				if there is a hom-rule entry:
+					process the hom-rule entry;
+					if the rule failed, next;
+					if the rule succeeded, the rule succeeds;
+					if there is no myhom entry, next;
+				if the player's command includes myhom entry:
+					if there is a custom-msg entry:
+						say "[custom-msg entry][line break]";
+					else:
+						say "[not-quite-homonyms].";
+					the rule succeeds;
 	repeat with X running from 1 to the number of words in the player's command:
 		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
 			if word number 1 in the player's command is "ll":
