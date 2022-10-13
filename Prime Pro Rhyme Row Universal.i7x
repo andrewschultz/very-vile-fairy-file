@@ -4,11 +4,15 @@ Version 1/220705 of Prime Pro Rhyme Row Universal by Andrew Schultz begins here.
 
 volume variables and their stubs
 
+understand the command "say" as something new.
+
 book global flags
 
 already-rhymed-this is a truth state that varies.
 
 vc-dont-print is a truth state that varies.
+
+in-jerk-jump is a truth state that varies.
 
 section printing
 
@@ -40,6 +44,8 @@ core-max is a number that varies. [all necessary points]
 max-bonus is a number that varies. [ what is the overall maximum? ]
 
 cur-max-bonus is a number that varies. [ what is achievable in the current game state? ]
+
+to decide which number is bonus-locked-out: decide on max-bonus - cur-max-bonus;
 
 when play begins (this is the set current max points to max points rule): now cur-max-bonus is max-bonus;
 
@@ -114,6 +120,22 @@ a person has a table name called guess-table. the guess-table of a person is usu
 
 volume common verb definitions
 
+chapter dropping
+
+check dropping: say "You never need to drop anything in [this-game]. To help with inventory management, items are usually destroyed once you're done with them, hopefully with some degree of believability." instead;
+
+chapter searching
+
+search-warn is a truth state that varies.
+
+the redirect from search rule is listed first in the check searching rules.
+
+check searching (this is the redirect from search rule):
+	if search-warn is false:
+		say "One-time note: in [this-game], [b]LOOK IN[r] or [b]SEARCH[r] is redirected to examining, so you can just focus on the [if core-score is 0]puzzle mechanice[else]rhyme pairs[end if].";
+		now search-warn is true;
+	try examining the noun instead;
+
 volume rules and rulebooks
 
 The print final score rule is not listed in for printing the player's obituary.
@@ -143,23 +165,6 @@ book LLPs/optionality
 a thing can be optional. a thing is usually not optional.
 
 a thing can be optional-noted. A thing is usually not optional-noted.
-
-book cheat/hint types
-
-cheattype is a kind of value. the cheattypes are phbt, letplus, letminus, partplus, partminus, leteq, letboth, and allover.
-
-chapter un-hinting
-
-to phbt (x - a thing):
-	now cht of x is phbt;
-	now x is not optional-noted;
-	now x is not optional;
-
-to phbt (x - a room): now cht of x is phbt;
-
-a room has a cheattype called cht. cht of a room is usually phbt.
-
-a thing has a cheattype called cht. cht of a thing is usually phbt.
 
 volume meta item shuffling
 
@@ -197,6 +202,10 @@ definition: a thing (called th) is acquired:
 	if th is moot, yes;
 	if th is enclosed by the player, yes;
 	no;
+
+to say firstor of (t - indexed text):
+	replace the regular expression "\|.*" in t with "";
+	say "[t in upper case]";
 
 volume universal common verbs
 
@@ -280,6 +289,20 @@ check saying yes: say "Yay! Yep! Hey, hep! [yn-tell]" instead;
 
 to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
 
+chapter metaing
+
+metaing is an action out of world.
+
+understand the command "meta" as something new.
+
+understand "meta" as metaing.
+
+report metaing:
+	say "[b]CREDITS[r] lists people who helped, and [b]ABOUT[r] gives general information about [this-game].";
+	say "[line break][b]VERSION[r] shows you release dates of each version, and [b]EXT[r] shows extension and internal Inform compiler information.";
+	say "[line break][b]THINK[r] notes, among other things, where and when you guessed a useful command but weren't prepared yet.";
+	say "[line break][b]SOUNDS[r] tells you the complete list of English sounds. [b]OTHER[r] tells you other games similar to [this-game].";
+
 chapter othersing
 
 othersing is an action out of world.
@@ -291,11 +314,15 @@ understand "other" as othersing.
 understand "others" as othersing.
 
 carry out othersing:
-	say "[this-game] is not the first parser game to deal with rhymes. While [other-two], do as well, other authors have worked with the concept.";
+	say "[this-game] is not the first parser game to deal with rhymes in a puzzly context. While [other-two], do as well, other authors have worked with the concept.";
 	say "[line break]So, if you like the idea, I recommend the following games from the parser side: Michael Martin's [i]EXTERMINATE![run paragraph on][r] (SpeedIF 2008) and DCBSupafly's [i]Beythilda the Witch Queen[r] (2011 EctoComp) were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) as part of Taleslinger's 2012 New Year's competition offered more of a narrative and provides source.";
 	say "[line break]On the choice-based side, Pace Smith's [i]Limerick Heist[r] and its sequel [i]Limerick Quest[r] offer rhyme-based puzzles (and meta-commands!) as well, while Snoother's [i]A Tale of the Cave[r] is a tribute to William McGonagall's wonderfully bad poetry.";
 	say "[line break]I would love to hear of more such games.";
 	the rule succeeds.
+
+chapter singing
+
+the block singing rule is not listed in any rulebook.
 
 chapter soundsing
 
@@ -349,13 +376,36 @@ understand "v" as verbsing.
 understand "verb" as verbsing.
 understand "verbs" as verbsing.
 
-chapter versioning
+chapter renaming what versioning does
+
+section versioning
 
 versioning is an action applying to nothing.
 
 understand the command "version" as something new.
+understand the command "versions" as something new.
 
 understand "version" as versioning.
+understand "versions" as versioning.
+
+report versioning: say "To see extensions used in [this-game] and Inform's internal release data, type [b]EXT[r].";
+
+chapter exting
+
+exting is an action out of world.
+
+understand the command "ext" as something new.
+understand the command "exts" as something new.
+
+understand "ext" as exting.
+understand "exts" as exting.
+
+to showext: (- ShowExtensionVersions(); -)
+
+carry out exting:
+	showext;
+	say "[line break]All of my extensions should be in the GitHub repo found in [b]ABOUT[r][if entry-in-series > 1], except for the Prime Pro Rhyme Row extensions, which are in the very-vile-fairy-file repo[end if].";
+	the rule succeeds;
 
 chapter xyzzying
 
@@ -374,7 +424,7 @@ volume status line
 when play begins (this is the score and status tweak rule):
 	now the right hand status line is "[current-score][if doable-hinted > 0](+[doable-hinted])[end if]/[min-needed][if score is min-needed][else if min-needed is max-available]*[else]-[max-available][end if]";
 	force-status;
-	now the left hand status line is "[location of the player] ([mrlp])";
+	if map region of location of player is not nothing, now the left hand status line is "[location of the player] ([mrlp])";
 	now the turn count is 1;
 
 volume after reading a command
@@ -403,7 +453,7 @@ after reading a command:
 		change the text of the player's command to XX;
 		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
 	if word number 1 in the player's command is "say":
-		unless this-game-say-nudge:
+		unless good-say-guess:
 			if say-warn is false:
 				now say-warn is true;
 				say "[i][bracket][b]NOTE[r][i]: you never need to [b]SAY[r][i] anything. Just type it in. In other words, [b]WHOAH[r][i] is the same as [b]SAY WHOAH[r][i]. [this-game] will cut [b]SAY[r][i] off of the start of all commands. Use [b]T[r][i] to talk to an NPC.[close bracket][r]";
@@ -420,7 +470,7 @@ series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "
 entry-in-series is a number that varies.
 
 when play begins:
-	remove entry entry-in-series from series-names;
+	if entry-in-series > 0, remove entry entry-in-series from series-names;
 
 to say other-two: say "[series-names], the other two entries in the [pprr] series"
 
