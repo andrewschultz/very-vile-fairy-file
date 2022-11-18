@@ -10,13 +10,7 @@ a room has a rule called room-hint-rule. room-hint-rule of a room is usually tri
 
 a thing has a rule called thing-hint-rule. thing-hint-rule of a thing is usually trivially false rule.
 
-volume leet learner portable code
-
-chapter stubs
-
-to say ll: say "[b]LL[r]"
-
-book room- and rule-based stubs
+volume room-based stubs
 
 to say here-in of (rm - a room): say "[if rm is location of player]here[else]in [rm][end if]"
 
@@ -26,185 +20,15 @@ to say swh of (rm - a room): say "[if rm is unvisited]somewhere new[else][rm][en
 
 to nobreak-if-think: if current action is thinking, skip upcoming rulebook break;
 
-to say once-now of (ru - a rule):
-	nobreak-if-think;
-	process ru;
-	let rbo be the outcome of the rulebook;
-	say "[if rbo is the ready outcome or rbo is the already-done outcome]now[else]once[end if]"
+volume leet learner and hint options (leet learner code is separate for QQNN)
 
-book leet learner
+ha-half is a truth state that varies. ha-half is true.
 
-the leet learner is a rhymable. description is "It says [b]LEET LEARNER/CHEAT CHURNER[r]. It has two main settings: [b]HUT! CAN![r] (on) and [b]SHUT SCAN[r] (off). It's currently [off-on of shut-scan]. [ll]/[b]CC ON[r]/[b]OFF[r] can turn it on or off.[paragraph break]Also, to use it, [ll] (something). [ll] with no argument scans the current location.[paragraph break]You can [b]READ[r] it for more detailed information."
-
-guess-table of leet learner is table of leet learner guesses.
-
-understand "cheat/churner" and "cheat churner" and "device" as leet learner.
-
-after printing the name of leet learner while taking inventory: say " ([off-on of shut-scan])";
-
-understand "ll" and "cc" as leet learner.
-
-to say will-wont of (ts - a truth state):
-	say "[if ts is true]will[else]won't[end if]"
-
-ll-flip-warn is a truth state that varies.
-
-first-room is a room that varies.
-
-first-main-room is a room that varies.
-
-book options verbs
-
-chapter two too functionality
+ha-half-check is a truth state that varies.
 
 two-too is a truth state that varies. two-too is true.
 
 two-too-check is a truth state that varies.
-
-this is the two-too-help rule:
-	abide by the disable-learner-options rule;
-	if two-too-check is false, say "[i][bracket][b]ONE-TIME NOTE[r][i]: typing [b]DO DUE[r][i] will switch the homonym-detection option off on your Leet Learner[opt-out-note].[close bracket]";
-	now two-too-check is true;
-	the rule succeeds;
-
-to say opt-out-note: say ". It will make [this-game][i] more difficult. I wanted to make this feature opt-out so the player did not miss it"
-
-section twotooing
-
-twotooing is an action applying to nothing.
-
-understand the command "two too" as something new.
-
-understand "two too" as twotooing.
-
-carry out twotooing:
-	abide by the disable-learner-options rule;
-	say "[if two-too is true]Homonym detection is already set[else]You set homonym detection[end if] to on.";
-	now two-too is true;
-	the rule succeeds.
-
-chapter dueing
-
-dueing is an action applying to nothing.
-
-understand the command "do due" as something new.
-understand the command "due do" as something new.
-
-understand "due do" as dueing.
-understand "do due" as dueing.
-
-carry out dueing:
-	abide by the disable-learner-options rule;
-	say "[if two-too is false]Homonym detection is already set[else]You set homonym detection[end if] to off.";
-	now two-too is false;
-	the rule succeeds.
-
-chapter ha half functionality
-
-section ha half button
-
-ha-half is a truth state that varies. ha-half is true.
-
-the ha half nah naff button is part of the leet learner. description is "It is set [on-off of ha-half], meaning if you get a guess half-right, the Leet Learner [will-wont of ha-half] alert you."
-
-section hahalfing
-
-ha-half-check is a truth state that varies.
-
-hahalfing is an action applying to nothing.
-
-understand the command "ha half" as something new.
-
-understand "ha half" as hahalfing.
-understand "half" as hahalfing.
-understand "hh" as hahalfing.
-
-carry out hahalfing:
-	say "[if ha-half is true]The Leet Learner is already set[else]You set the Leet Learner[end if] to Ha Half.";
-	now ha-half is true;
-	now ha-half-check is true;
-	the rule succeeds.
-
-this is the ha-half-help rule:
-	if ha-half-check is false:
-		say "[line break][i][bracket][b]ONE-TIME NOTE[r][i]: typing [b]NAH NAFF[r][i] will switch this option off on your Leet Learner[opt-out-note].[close bracket]";
-	now ha-half-check is true;
-	the rule succeeds;
-
-section nahnaffing
-
-nahnaffing is an action applying to nothing.
-
-understand the command "nah naff" as something new.
-
-understand "nah naff" as nahnaffing.
-understand "naff" as nahnaffing.
-understand "nn" as nahnaffing.
-
-carry out nahnaffing:
-	abide by the disable-learner-options rule;
-	say "[if ha-half is false]The Leet Learner is already set[else]You set the Leet Learner[end if] to Nah Naff.";
-	now ha-half is false;
-	now ha-half-check is true;
-	the rule succeeds.
-
-chapter lling
-
-[ note LLing is different for VVFF and LLJJ ]
-
-lling is an action applying to one thing.
-
-understand the command "cc" as something new.
-understand the command "ll" as something new.
-understand the command "scan" as something new.
-
-understand "cc [thing]" as lling when player has leet learner.
-understand "ll [thing]" as lling when player has leet learner.
-understand "scan [thing]" as lling when player has leet learner.
-understand "cc" as lling when player has leet learner.
-understand "ll" as lling when player has leet learner.
-understand "scan" as lling when player has leet learner.
-
-chapter shutscaning
-
-shutscaning is an action applying to nothing.
-
-understand the command "cc off" as something new.
-understand the command "ll off" as something new.
-understand the command "shut scan" as something new.
-
-understand "cc off" as shutscaning.
-understand "ll off" as shutscaning.
-understand "shut scan" as shutscaning.
-
-shut-scan is a truth state that varies.
-
-carry out shutscaning:
-	abide by the disable-learner-options rule;
-	say "[if shut-scan is true]The Leet Learner is already[else]You turn the Leet Learner[end if] off. You can turn it on with [llon-cmd].";
-	now shut-scan is true;
-	the rule succeeds.
-
-to say llon-cmd: say "[b]HUT CAN[r] or [b]LL ON[r] or [b]CC ON[r]"
-
-chapter hutcaning
-
-hutcaning is an action applying to nothing.
-
-understand the command "cc on" as something new.
-understand the command "ll on" as something new.
-understand the command "hut can" as something new.
-
-understand "cc on" as hutcaning.
-understand "ll on" as hutcaning.
-understand "hut can" as hutcaning.
-
-carry out hutcaning:
-	say "[if shut-scan is false]The Leet Learner is already[else]You turn the Leet Learner[end if] on. You can turn it on with [llon-cmd].";
-	now shut-scan is false;
-	the rule succeeds.
-
-to say lloff-cmd: say "[b]SHUT SCAN[r] or [b]LL OFF[r] or [b]CC OFF[r]"
 
 chapter helphowing
 
@@ -236,91 +60,17 @@ carry out welpwowing:
 	say "Help-how is off. Welp-wow mode is on. In other words, fewer hints now." instead;
 	the rule succeeds.
 
-chapter less-loing
-
-less-loing is an action out of world.
-
-less-lo-warn is a truth state that varies.
-
-understand the command "less lo" as something new.
-understand the command "lesslo" as something new.
-understand the command "llo" as something new.
-
-understand "lesslo" as less-loing when player has leet learner.
-understand "less lo" as less-loing when player has leet learner.
-understand "llo" as less-loing when player has leet learner.
-
-carry out less-loing:
-	now less-lo-warn is false;
-	now guess-go is false;
-	say "Guess-go is [if guess-go is false]already[else]now[end if] in less-lo mode. You will not see how many possible good guesses you've found about a location or a thing each time you get a new rhyme. To change this, type [b]YES YO[r].";
-	the rule succeeds;
-
-chapter yes-yoing
-
-guess-go is a truth state that varies. guess-go is true.
-
-yes-yoing is an action out of world.
-
-understand the command "yes yo" as something new.
-understand the command "yesyo" as something new.
-
-understand "yesyo" as yes-yoing.
-understand "yes yo" as yes-yoing.
-understand "yyo" as yes-yoing.
-understand "yy" as yes-yoing.
-
-carry out yes-yoing:
-	now less-lo-warn is true;
-	now guess-go is false;
-	say "Guess-go is [if guess-go is true]already[else]now[end if] in yes-yo mode. You will now see how many possible good guesses you've found about a location or a thing each time you find a new rhyme. To change this, type [b]LESS LO[r].";
-	the rule succeeds;
-
-chapter blue bleahing
-
-blue-bleah is a truth state that varies. blue-bleah is false.
-
-bluebleahing is an action out of world.
-
-understand the command "blue bleah" as something new.
-
-understand "blue bleah" as bluebleahing.
-
-carry out bluebleahing:
-	if blue-bleah is true, say "Blue-bleah is already on." instead;
-	now blue-bleah is true;
-	say "Blue-bleah is on. Hoo-Heh is off. In other words, risque writing (mostly random text) has been redacted.";
-	the rule succeeds;
-
-chapter hoo hehing
-
-hoohehing is an action out of world.
-
-understand the command "hoo heh" as something new.
-understand the command "hooh heh" as something new.
-understand the command "heh hooh" as something new.
-understand the command "heh hoo" as something new.
-
-understand "hoo heh" as hoohehing.
-understand "hooh heh" as hoohehing.
-understand "heh hoo" as hoohehing.
-understand "heh hooh" as hoohehing.
-
-carry out hoohehing:
-	if blue-bleah is false, say "Blue-bleah is already off." instead;
-	now blue-bleah is false;
-	say "Blue-bleah is off. Hoo-Heh is on. In other words, risque writing (mostly random text) is no longer redacted.";
-	the rule succeeds;
-
-chapter guess table stubs
+volume guess table stubs
 
 section guess table progress tally
 
 to current-table-note (tn - a table name):
-	if guess-go is false, continue the action;
+	if press-pro-level < 2, continue the action;
 	let temp-poss be 0;
 	let temp-got be 0;
+	let can-show-details be false;
 	repeat through tn:
+		if there is a mist-regex entry, now can-show-details is true;
 		if there is a mist-rule entry:
 			process the mist-rule entry;
 			if the rule failed, next;
@@ -330,7 +80,20 @@ to current-table-note (tn - a table name):
 	if temp-got is temp-poss:
 		say "You've gotten everything you can for that rhyme-pair.";
 	else:
-		say "You've gotten [temp-got in words] of [temp-poss in words] available related rhyme pairs.";
+		say "You've gotten [temp-got in words] of [temp-poss in words] available related good-guess rhyme pairs";
+		if can-show-details is true and press-pro-level is 3:
+			say ": [b]";
+			let temp-listed be 0;
+			repeat through tn:
+				if there is a mist-rule entry:
+					process the mist-rule entry;
+					if the rule failed, next;
+				if there is no mist-regex entry, next;
+				if got-yet entry is false, next;
+				if temp-listed > 0, say ", ";
+				say "[mist-regex entry in upper case]";
+				increment temp-listed;
+		say "[r].";
 
 section guess table arithmetic
 
@@ -383,9 +146,6 @@ understand "opts" as optsing.
 check optsing:
 	say "[2da][b]HELP HOW[r] and [b]WELP WOW[r] toggle the [b]HINT[r] command on and off, respectively. Currently they are [on-off of help-how].";
 
-carry out optsing:
-	say "[2da][llon-cmd] turn the Leet Learner on while [lloff-cmd] turn it off. Currently it is [off-on of shut-scan]. You can also use it to see or hide if you're half-right with [b]HA HALF[r]/[b]NAH NAFF[r]. [b]TWO TOO[r] and [b]DO DUE/DUE DO[r] set homonym detection on and off.";
-
 volume more active or help-seeking verb(s)
 
 chapter exitsing
@@ -436,6 +196,8 @@ carry out gotoing:
 	move player to noun;
 
 check gotoing (this is the prevent bad game-specific gotos rule):
+	abide by the flag reflexive goto rule;
+	abide by the stuck-right-now rule;
 	abide by the flag bad goto from rule;
 	abide by the flag bad goto to rule;
 	if noun is not available-from-here, say "You can't walk to [noun] from here." instead;
@@ -515,7 +277,6 @@ definition: a thing (called th) is readable:
 	no;
 
 does the player mean reading a readable thing: it is very likely.
-does the player mean reading the leet learner: it is likely.
 
 read-exam-note is a truth state that varies.
 
@@ -552,7 +313,7 @@ report requesting the score (this is the lump and half-solved notes rule):
 		let gguess be next-lump-level - lump-count;
 		say "[line break]You have also used the lurking lump [lump-uses] time[plur of lump-uses] ([lump-charges - lump-uses] left) and are [gguess] of [next-lump-level] good-guess rhymes away from it re[if lurking lump is moot]turn[else]charg[end if]ing. You have made a total of [total-good-guesses] good guesses, as well.";
 	now vc-dont-print is false;
-	the rule succeeds;
+	continue the action;
 
 to decide which number is can-do-hint of (ts - a truth state):
 	let temp be 0;
@@ -585,6 +346,8 @@ chapter thinking
 the block thinking rule is not listed in any rulebook.
 
 ever-thought is a truth state that varies.
+
+any-valid-thought is a truth state that varies.
 
 a which-think is a kind of value. the which-thinks are no-details, doable-now, undoable-now. [ we could use 2 booleans for read-laters below, but that is awkward magic number stuff]
 
@@ -621,6 +384,7 @@ to read-laters (wt - a which-think):
 [ first, we check if there is anything we can look ahead to ]
 
 check thinking (this is the check for any presolves before thinking rule):
+	now any-valid-thought is false;
 	say "You think about more specific challenges you've encountered and not solved, and what you've done and tried, and what you can do[optional-hint-think-item].";
 
 check thinking (this is the list all presolves while thinking rule):
@@ -629,13 +393,18 @@ check thinking (this is the list all presolves while thinking rule):
 		read-laters no-details;
 		read-laters doable-now;
 		read-laters undoable-now;
-	else:
-		say "But you don't have leads for any puzzles right now.";
 
 check thinking (this is the list all optional presolves while thinking rule):
 	if number of optional-noted things > 0, say "You also know several things that are optional to figure out: [list of optional-noted things].";
 
 carry out thinking:
+	if any-valid-thought is false:
+		say "But you don't remember anything that could work later.";
+
+report thinking when press-pro-level is 3:
+	current-table-note-x (guess-table of location of player);
+
+report thinking:
 	if ever-thought is false:
 		now ever-thought is true;
 		say "[i][bracket][b]NOTE[r][i]: [this-game][i] should indicate whenever you find the right rhyme but can't execute it yet. An asterisk or (+) will also appear in the score in the upper right. Until then, you can [b]THINK[r][i] to see things you figured but aren't quite ready to do yet.";
@@ -659,6 +428,12 @@ to decide whether tried-yet of (vc - a rule):
 
 book checking/running point-scoring command rule definitions
 
+to say once-now of (ru - a rule):
+	nobreak-if-think;
+	process ru;
+	let rbo be the outcome of the rulebook;
+	say "[if rbo is the ready outcome or rbo is the already-done outcome]now[else]once[end if]"
+
 the goodrhyme rules are a rulebook. the goodrhyme rules have outcomes unavailable, not-yet, already-done, jump-reject, semi-pass and ready.
 
 definition: a rulebook outcome (called oc) is worth-parsing:
@@ -678,22 +453,21 @@ zap-weird-break is a truth state that varies.
 to say not-quite-homonyms: say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar"
 
 Rule for printing a parser error (this is the check for room name and homonyms in player command rule):
-	repeat through table of room homonyms:
-		if location of player is loc entry:
-			if there is a hom-rule entry:
-				process the hom-rule entry;
-				if the rule failed, break;
-				if the rule succeeded, the rule succeeds;
-				if there is no myhom entry, next;
-			if the player's command includes myhom entry:
-				if there is a custom-msg entry:
-					say "[custom-msg entry][line break]";
-				else:
-					say "[not-quite-homonyms].";
-				the rule succeeds;
-			break;
 	if two-too is true:
-		repeat through table of thing homonyms: [these look very similar, but I'd like to save a bit of time with breaking on loc entry for room homonyms, so I can't quite combine the code.]
+		repeat through table of room homonyms:
+			if location of player is loc entry:
+				if there is a hom-rule entry:
+					process the hom-rule entry;
+					if the rule failed, break;
+					if the rule succeeded, the rule succeeds;
+					if there is no myhom entry, next;
+				if the player's command includes myhom entry:
+					if there is a custom-msg entry:
+						say "[custom-msg entry][line break]";
+					else:
+						say "[not-quite-homonyms].";
+					the rule succeeds; [ I used to break here, but I had a case in CSDD where there were different homonyms based on the room name. This is a very small performance hit. ]
+		repeat through table of thing homonyms:
 			if mything entry is fungible:
 				if there is a hom-rule entry:
 					process the hom-rule entry;
@@ -706,21 +480,7 @@ Rule for printing a parser error (this is the check for room name and homonyms i
 					else:
 						say "[not-quite-homonyms].";
 					the rule succeeds;
-	repeat with X running from 1 to the number of words in the player's command:
-		if the printed name of location of player matches the regular expression "(^|\W)([word number X in the player's command])($|\W)", case insensitively:
-			if action-to-be is the lling action:
-				say "It looks like you may have tried to scan the current location. You just need to say [b]LL[r] to do this. Would you like to do so now?[line break]";
-				if the player consents:
-					skip upcoming rulebook break;
-					now zap-weird-break is true;
-					try lling location of player;
-					now zap-weird-break is false;
-					the rule succeeds;
-				say "Okay. ";
-			else:
-				say "It looks like you may have tried to refer to the room name, or part of it. ";
-			say "You often need to riff on the room name, but you never need to use the room name directly.";
-			the rule succeeds;
+	abide by the did-i-ll rule;
 	if debug-state is true, say "DEBUG: [the latest parser error].";
 	continue the action;
 
@@ -769,7 +529,9 @@ carry out jerkingjumping:
 		process the check-rule entry;
 		let vr be the outcome of the rulebook;
 		if vr is the ready outcome:
-			say "After some thought, you consider the right way forward: [b][firstor of w1 entry][if there is a w2 entry and check-rule entry is spaceable] [end if][firstor of w2 entry][r]...";
+			say "After some thought, you consider the right way forward: [b][firstor of w1 entry]";
+			if there is a w2 entry, say "[if check-rule entry is spaceable] [end if][firstor of w2 entry]";
+			say "[r]...";
 			now idid entry is true; [this is so BURY BILE gets processed. We already checked IDID above.]
 			up-which core entry; [?? I really need to clean this code up. I want just to increment the score in one place. If a rule can keep track of the current row, that would be nifty.]
 			process the run-rule entry;
@@ -794,17 +556,9 @@ to decide which number is left-count of (ta - a table name):
 
 volume item(s) common to both major games
 
-table of readables
-read-thing	read-txt
-leet learner	"The [learner] has three toggles: [b]HA HALF[r] (on) and [b]NAH NAFF[r] (off) to note when you are half right. It's currently [on-off of ha-half]. [b]TWO TOO[r] (on) and [b]DO DUE[r] (off) is for homonym detection, and a [b]GUESS GO[r] toggle has [b]YES YO[r] and [b]LESS LO[r], which seems to track how many good guesses you've found so far."
-
-table of leet learner guesses
-mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"yeet yearner"	--	false	--	--	"Yes, with such a device, you can reach for the skies."
-
 table of lurking lump guesses
 mist-cmd(topic)	mist-rule	got-yet	magicnum	leet-rule	mist-txt
-"clerking clump"	lump-known rule	false	--	--	"The lump can't keep track of things. That would be the Leet Learner."
+"clerking clump"	lump-known rule	false	--	--	"The lump can't keep track of things[if entry-in-series is not 2]. That would be the Leet Learner[end if]."
 "perking pump"	lump-known rule	false	--	--	"I don't want to know."
 "working whump/wump"	lump-known rule	false	--	--	"The lump will act with whatever sound effects it chooses."
 

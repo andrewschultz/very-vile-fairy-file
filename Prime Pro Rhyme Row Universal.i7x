@@ -2,9 +2,21 @@ Version 1/220705 of Prime Pro Rhyme Row Universal by Andrew Schultz begins here.
 
 "This is a universal file for all the entries in the Prime Pro Rhyme Row series. It includes very basic things such as the meta-rooms for done items and fungibility."
 
-volume variables and their stubs
+volume everyone includes these
+
+include Punctuation Stripper by Andrew Schultz.
+
+include Bold Final Question Rows by Andrew Schultz.
 
 understand the command "say" as something new.
+
+volume variables and their stubs
+
+press-pro-level is a number that varies. press-pro-level is 1.
+
+press-pro-warn is a truth state that varies.
+
+note-learner-dots is a truth state that varies.
 
 book global flags
 
@@ -31,6 +43,10 @@ to say first-of-ors of (x - indexed text):
 	replace the regular expression "\|.*" in x with "";
 	say "[x]";
 
+compare-item is a thing that varies.
+
+got-half-match is a truth state that varies.
+
 book scoring
 
 chapter base variables
@@ -41,7 +57,7 @@ cur-bonus is a number that varies. cur-bonus is 0. [ how many bonus points now? 
 
 core-max is a number that varies. [all necessary points]
 
-max-bonus is a number that varies. [ what is the overall maximum? ]
+max-bonus is a number that varies. [ what is the overall maximum bonus? ]
 
 cur-max-bonus is a number that varies. [ what is achievable in the current game state? ]
 
@@ -56,6 +72,11 @@ to decide which number is min-needed: decide on core-max + cur-bonus.
 to decide which number is max-available: decide on core-max + cur-max-bonus.
 
 to decide which number is max-overall: decide on core-max + max-bonus.
+
+to flip-bonus-core (nu - a number):
+	increase core-max by nu;
+	decrease max-bonus by nu;
+	decrease cur-max-bonus by nu;
 
 zap-core-entry is a truth state that varies.
 
@@ -103,8 +124,15 @@ this is the score and thinking changes rule:
 	if llp-notify is false and last-cur-bonus > 0:
 		say "[line break]A stun-steed zooms by, bellowing 'None-need-done deed!' Have you lost focus on what's really important? Or just put in a bit of extra rigor? You decide on the second, as [if entry-in-series is 1]you could also picture the Very Vile Fairy File summoning[else]you could also imagine[end if] a bin-bare-min mare to insult you for finding no extra neat stuff.";
 		now llp-notify is true;
+	process the note learner changes rule;
 
 book blank table
+
+section readables
+
+table of readables
+read-thing	read-txt
+a thing	indexed text
 
 section generic table
 
@@ -141,6 +169,10 @@ volume rules and rulebooks
 The print final score rule is not listed in for printing the player's obituary.
 
 the rhymeguess rules are a table name based rulebook.
+
+book universal rules
+
+this is the flag reflexive goto rule: if noun is location of player, say "You're already there! Well, here." instead;
 
 volume types and properties
 
@@ -287,7 +319,7 @@ the block saying yes rule is not listed in any rulebook.
 
 check saying yes: say "Yay! Yep! Hey, hep! [yn-tell]" instead;
 
-to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][stopping][paragraph break]"
+to say yn-tell: say "[one of](you never need to answer yes/no questions unless specifically prompted.)[or][line break][stopping]"
 
 chapter metaing
 
@@ -314,7 +346,7 @@ understand "other" as othersing.
 understand "others" as othersing.
 
 carry out othersing:
-	say "[this-game] is not the first parser game to deal with rhymes in a puzzly context. While [other-two], do as well, other authors have worked with the concept.";
+	say "[this-game] is not the first parser game to deal with rhymes in a puzzly context. While [other-ones], do as well, other authors have worked with the concept.";
 	say "[line break]So, if you like the idea, I recommend the following games from the parser side: Michael Martin's [i]EXTERMINATE![run paragraph on][r] (SpeedIF 2008) and DCBSupafly's [i]Beythilda the Witch Queen[r] (2011 EctoComp) were both SpeedIF. Joey Jones's [i]Danse Nocturne[r] (as Eggerich von Eggermond) as part of Taleslinger's 2012 New Year's competition offered more of a narrative and provides source.";
 	say "[line break]On the choice-based side, Pace Smith's [i]Limerick Heist[r] and its sequel [i]Limerick Quest[r] offer rhyme-based puzzles (and meta-commands!) as well, while Snoother's [i]A Tale of the Cave[r] is a tribute to William McGonagall's wonderfully bad poetry.";
 	say "[line break]I would love to hear of more such games.";
@@ -361,6 +393,8 @@ understand the command "t" as something new.
 understand "talk to [something]" as talktoing.
 understand "talk [something]" as talktoing.
 understand "t [something]" as talktoing.
+
+does the player mean talktoing the player: it is unlikely.
 
 does the player mean talktoing a person: it is very likely.
 
@@ -416,8 +450,120 @@ understand the command "xyzzy" as something new.
 understand "xyzzy" as xyzzying.
 
 report xyzzying for the first time:
-	say "(Cross-promotion: why, yes, [other-two], have different and equally 'witty' [b]XYZZY[r] responses. Of course they do!)";
+	say "(Cross-promotion: why, yes, [other-ones], have different and equally 'witty' [b]XYZZY[r] responses. Of course they do!)";
 	continue the action;
+
+volume guide gong / pride prong / stride strong
+
+hunt-bonus-points is a truth state that varies. [ this is for detailed path checking since I7 can only take two many arguments to a function ]
+
+guide-gong-warn is a truth state that varies. [this is for going north in rocks -- we only see the GONG nag once]
+
+book gong core actions
+
+this is the nothing-left gong rule: completed;
+
+this is the everything-left gong rule: uncompleted;
+
+[this may be moved to PPRR common later]
+
+the gong rules are a rulebook. the gong rules have outcomes completed, llp-remaining, and uncompleted.
+
+a room has a rule called this-gong-rule. this-gong-rule of a room is usually the everything-left gong rule.
+
+a room-hint-state is a kind of value. The room-hint-states are points-left, bonus-left, and nothing-left.
+
+player-room-allow-threshold is a room-hint-state that varies. player-room-allow-threshold is nothing-left.
+
+to reset-go-check:
+	now all rooms are not go-checked;
+	now location of player is go-checked;
+
+check going when player-room-allow-threshold is not nothing-left:
+	if the room gone to is nothing, continue the action;
+	now hunt-bonus-points is false;
+	reset-go-check;
+	if the room gone to is overall-go-useful, continue the action;
+	say "[one of]A guide gong[or]That guide gong, again,[stopping] rings to notify you that you don't need to go back through [room gone to]." instead;
+
+a room can be go-checked. a room is usually not go-checked.
+
+book gong core definitions
+
+definition: a room (called rm) is overall-go-useful:
+	now hunt-bonus-points is false;
+	reset-go-check;
+	if rm is go-useful, yes;
+	if player-room-allow-threshold is nothing-left, yes;
+	if player-room-allow-threshold is bonus-left:
+		now hunt-bonus-points is true;
+		reset-go-check;
+		if rm is go-useful:
+			vcal "The pride-prong you summoned earlier pokes you to go and see what's ahead, even if it might not be critical to your quest.";
+			yes;
+	no;
+
+definition: a room (called rm) is go-useful:
+	if rm is location of player, no;
+	now rm is go-checked;
+	process the this-gong-rule of rm;
+	let room-done be the outcome of the rulebook;
+	if room-done is the uncompleted outcome, yes;
+	if room-done is the llp-remaining outcome and hunt-bonus-points is true, yes;
+	repeat with R2 running through rooms:
+		unless R2 and rm are gong-adjacent, next;
+		if R2 is go-checked, next;
+		if R2 is go-useful, yes;
+	no;
+
+book gong rules
+
+chapter guide-gonging
+
+guide-gonging is an action out of world.
+
+understand the command "guide gong" as something new.
+
+understand "guide gong" as guide-gonging.
+
+carry out guide-gonging:
+	follow the know-ide-ong rule;
+	say "You are [if player-room-allow-threshold is points-left]already[else]now[end if] repelled by a guide gong if you try to go down a path where you have nothing game-critical to do in any branches.";
+	now player-room-allow-threshold is points-left;
+	the rule succeeds;
+
+this is the know-ide-ong rule:
+	if guide-gong-warn is false:
+		now guide-gong-warn is true;
+		say "(disabling later explanation of [b]GUIDE GONG[r], etc., but it will still be in [b]VERBS[r])[paragraph break]";
+
+chapter stride-stronging
+
+stride-stronging is an action out of world.
+
+understand the command "stride strong" as something new.
+
+understand "stride strong" as stride-stronging.
+
+carry out stride-stronging:
+	follow the know-ide-ong rule;
+	say "You are [if player-room-allow-threshold is nothing-left]already[else]now[end if] able to move freely between locations, even ones with nothing left to do.";
+	now player-room-allow-threshold is nothing-left;
+	the rule succeeds;
+
+chapter pride-pronging
+
+pride-pronging is an action out of world.
+
+understand the command "pride prong" as something new.
+
+understand "pride prong" as pride-pronging.
+
+carry out pride-pronging:
+	follow the know-ide-ong rule;
+	say "You are [if player-room-allow-threshold is bonus-left]already[else]now[end if] blocked from paths where no branches contain any point-scoring activities, critical or bonus.";
+	now player-room-allow-threshold is bonus-left;
+	the rule succeeds;
 
 volume status line
 
@@ -435,7 +581,7 @@ no-punc-flag is a truth state that varies.
 
 after reading a command:
 	if the player's command matches the regular expression "^ *<\*;>":
-		if currently transcripting:
+		if currently transcripting or debug-state is true:
 			say "Noted.";
 			reject the player's command;
 	let XX be indexed text;
@@ -443,15 +589,6 @@ after reading a command:
 		let XX be the player's command;
 		change the text of the player's command to "[XX in lower case]";
 		if debug-state is true, say "(LOWERCASING) [XX][line break]";
-	if the player's command matches the regular expression "<^-\.a-z 0-9>":
-		if no-punc-flag is false:
-			say "[i][bracket][b]NOTE[r][i]: only letters are necessary to get through [this-game]. The parser simply strips out non-alphabetic characters.[close bracket][r][paragraph break]";
-			now no-punc-flag is true;
-		let XX be the player's command;
-		replace the regular expression "-" in XX with " ";
-		replace the regular expression "<^a-z0-9\.>" in XX with "";
-		change the text of the player's command to XX;
-		if debug-state is true, say "(PUNCTUATION REMOVAL) Changed to: [XX][line break]";
 	if word number 1 in the player's command is "say":
 		unless good-say-guess:
 			if say-warn is false:
@@ -465,14 +602,14 @@ volume text stubs
 
 book proper names
 
-series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]" }
+series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]", "[csdd]", "[ttdd]" }
 
 entry-in-series is a number that varies.
 
 when play begins:
 	if entry-in-series > 0, remove entry entry-in-series from series-names;
 
-to say other-two: say "[series-names], the other two entries in the [pprr] series"
+to say other-ones: say "[series-names], the other [(number of entries in series-names) in words] entries in the [pprr] series"
 
 to say pprr: say "[i]Prime Pro-Rhyme Row[r]"
 
@@ -484,9 +621,19 @@ to say qqnn: say "[i]Quite Queer Night Near[r]"
 
 to say lljj: say "[i]Low-Key Learny Jokey Journey[r]"
 
+to say csdd: say "[i]Civil Seeming Drivel Dreaming[r]"
+
+to say ttdd: say "[i]There Those Dare Doze[r]"
+
 book bug notes
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
+
+volume backwards compatibility for now
+
+table of stuff
+mist-cmd (topic)	mist-regex (text)
+--	--
 
 Prime Pro Rhyme Row Universal ends here.
 
