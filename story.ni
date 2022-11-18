@@ -30,6 +30,10 @@ include Bold Final Question Rows by Andrew Schultz.
 
 include Prime Pro Rhyme Row Common by Andrew Schultz.
 
+include Prime Pro Rhyme Row E12 by Andrew Schultz.
+
+include Prime Pro Rhyme Row Leet Learner by Andrew Schultz.
+
 include Very Vile Fairy File Mistakes by Andrew Schultz.
 
 include Very Vile Fairy File Random Text by Andrew Schultz.
@@ -1789,7 +1793,7 @@ before undoing an action:
 chapter trivial pointless but amusing verbs
 
 check attacking:
-	if noun is very vile fairy file, say "[pest-sneer] 'Big boom! Dig doom!' You step back and, err, rig room." instead;
+	if noun is very vile fairy file, say "[sneer-prefix] 'Big boom! Dig doom!' You step back and, err, rig room." instead;
 	if noun is poke pest, say "'Lash like trash, tyke!' the [poke pest] whispers." instead;
 	if noun is Kerry Kyle, say "Maim-me aim? Eeee..." instead;
 	if noun is go gate, say "Ho! Hate!" instead;
@@ -1911,7 +1915,45 @@ report requesting the score (this is the VVFF specific score notes rule):
 
 the VVFF specific score notes rule is listed before the lump and half-solved notes rule in the report requesting the score rules.
 
+chapter blue bleahing
+
+blue-bleah is a truth state that varies. blue-bleah is false.
+
+bluebleahing is an action out of world.
+
+understand the command "blue bleah" as something new.
+
+understand "blue bleah" as bluebleahing.
+
+carry out bluebleahing:
+	if blue-bleah is true, say "Blue-bleah is already on." instead;
+	now blue-bleah is true;
+	say "Blue-bleah is on. Hoo-Heh is off. In other words, risque writing (mostly random text) has been redacted.";
+	the rule succeeds;
+
+chapter hoo hehing
+
+hoohehing is an action out of world.
+
+understand the command "hoo heh" as something new.
+understand the command "hooh heh" as something new.
+understand the command "heh hooh" as something new.
+understand the command "heh hoo" as something new.
+
+understand "hoo heh" as hoohehing.
+understand "hooh heh" as hoohehing.
+understand "heh hoo" as hoohehing.
+understand "heh hooh" as hoohehing.
+
+carry out hoohehing:
+	if blue-bleah is false, say "Blue-bleah is already off." instead;
+	now blue-bleah is false;
+	say "Blue-bleah is off. Hoo-Heh is on. In other words, risque writing (mostly random text) is no longer redacted.";
+	the rule succeeds;
+
 chapter narrnoing
+
+narr-on is a truth state that varies.
 
 narrnoing is an action out of world.
 
@@ -1977,6 +2019,16 @@ to decide which number is narratives-left:
 
 chapter game-specific code relying on PPRR common file
 
+this is the stuck-right-now rule: if in-way-wrong, say "No, you can't move around like that. Way wrong ... way wrong ..." instead;
+
+to decide whether (ru - a rule) is spaceable: yes;
+
+to decide whether (r1 - a room) and (r2 - a room) are gong-adjacent: [not quite right -- what about loft land/soft sand?]
+	if r1 is adjacent to r2, yes;
+	no;
+
+this is the note learner changes rule: do nothing;
+
 to say optional-hint-think-item: say "[if player has too totes new notes]. Perhaps [too totes] would refresh details[end if]"
 
 to decide whether immediate-attention of (ru - a rule):
@@ -1991,10 +2043,6 @@ definition: a direction (called d) is viable:
 	yes;
 
 section assigning variables
-
-first-room is Wet Wood.
-
-first-main-room is Fun Fen.
 
 section score/think notification
 
@@ -2054,6 +2102,82 @@ to decide whether too-distracted:
 
 book nonstandard but general verbs
 
+chapter lling
+
+this is the disable-learner-options rule: if player does not have leet learner, say "you've tried an option you can't exercise until you get a hint item. you should, shortly." instead;
+
+understand the command "cc" as something new.
+understand the command "ll" as something new.
+understand the command "scan" as something new.
+
+understand "cc [thing]" as lling when player has leet learner.
+understand "ll [thing]" as lling when player has leet learner.
+understand "scan [thing]" as lling when player has leet learner.
+understand "cc" as lling when player has leet learner.
+understand "ll" as lling when player has leet learner.
+understand "scan" as lling when player has leet learner.
+
+rule for supplying a missing noun when lling:
+	if cht of the player is not phbt:
+		say "You are so focused inward, you just point the learner at yourself.";
+		now the noun is the player;
+	else:
+		say "You wave the leet learner all around [location of player]...";
+		now the noun is the location of the player;
+	continue the action;
+
+ever-opt-scan is a truth state that varies.
+
+to say ll-cheat of (rm - a room): say "[scancol of cht of rm]"
+
+to say ll-cheat of (th - a thing):
+	if th is Toe and Jake G is touchable and sco-fake-fee is true and sco-co-capn is false:
+		say "[scancol of partminus]";
+	else:
+		say "[scancol of cht of th]"
+
+to say ll: say "[b]LL[r]"
+
+carry out lling:
+	if player does not have the leet learner, say "Regular hints aren't available." instead; [this should not happen]
+	if noun is leet learner, say "The leet learner is great as it is. You don't want to change it." instead;
+	if shut-scan is true, say "You turned the Leet Learner off, so nothing shows up." instead;
+	if noun is Here Hull:
+		say "Only the Beer Bull picks anything up.";
+		try lling Beer Bull instead;
+	if noun is Store All Stage and coral cage is not moot:
+		say "Only the coral cage picks anything up.[paragraph break]";
+		try lling coral cage instead;
+	if noun is ceiling seer:
+		say "You don't know where the ceiling seer is, exactly, so you just scan the whole [location of the player].";
+		try lling location of player instead;
+	if cht of noun is phbt, say "The needle area of the leet learner stays dark when you scan [the noun][if noun is a room], so there's nothing you need to do with the room title[end if]." instead;
+	say "The leet learner needle lights up[if noun is optional], but dimly[end if]. Then it [ll-cheat of noun] as you [if noun is a room]wave it around[else]focus it on [the noun][end if].[if zap-weird-break is true][run paragraph on][end if]";
+	if noun is optional and ever-opt-scan is false:
+		say "[line break]The faint light must mean something. The learner is usually lit solidly or not at all.";
+		now ever-opt-scan is true;
+	the rule succeeds.
+
+report lling:
+	if noun is We Whine and sco-see-sign is false, say "[line break]Well, it's alternately in the center and waving around, actually.";
+
+ever-leet-clue is a truth state that varies.
+
+to say leetclue of (x - a cheattype) and (isopt - a truth state):
+	if shut-scan is true, continue the action;
+	say "[line break]As you say/think this, the Leet Learner[if isopt is true] dims a bit, and the[end if] needle [scancol of x]";
+	if Fun Fen is visited and ever-leet-clue is true, continue the action;
+	now ever-leet-clue is true;
+	if leetcool is 0:
+		say ". Once you do something that makes progress, you may wish to remember how the words you saw or read combined with the Leet Learner reading";
+		now leetcool is a random number between 3 and 6;
+	else:
+		decrement leetcool;
+
+leetcool is a number that varies. leetcool is 0.
+
+to say scancol of (x - a cheattype): say "[if x is letplus]swerves left[else if x is partplus]slides center-left[else if x is leteq]stays at the center[else if x is partminus]slides center-right[else if x is letminus]swerves right[else if x is letboth]bounces back and forth[else if x is phbt]sits in the center[else]BUG[end if]"
+
 chapter reading
 
 check reading: if noun is evidencey, say "Yes, [the noun]'s details are important, but you've gotten enough." instead;
@@ -2066,6 +2190,19 @@ leet learner	"Some text matches up with where the needle nose might spin. It's a
 Very Vile Fairy File	"[read-vvff]The [fairy file] contains advice and catch-phrases to seem like an alpha male or demoralize others you feel you need to demoralize. One is [i][next-rand-txt of table of vvff digs][r]"
 marred mat	"[b]SCARRED? SCAT[r].[paragraph break]Hmm. Not very welcoming. In another form, it might repel other things more usefully." [bold-ok]
 paper pile	"It's too disorganized to read any details. You do notice [b]FACT FINDER[r] is stamped on pretty much every single page, though."
+
+to say table-of-needle-hints: [puncok]
+	repeat through table of color clues:
+		say "[fixed letter spacing][my-text entry][variable letter spacing] is written to the [my-color entry].";
+	say "[line break]Also, TREAT TURNER is plastered across the bottom in wavy font. Maybe if you know what everything else stands for, you can figure that, too."
+
+table of color clues
+my-text	my-color
+"CONCEIT CONCERNER"	"left"
+"  CHEAT CHURNER  "	"center-left"
+"   MEET MOURNER  "	"center"
+"   BEAT BURNER   "	"center-right"
+"    EAT EARNER   "	"right"
 
 chapter xyzzying
 
@@ -2931,7 +3068,7 @@ Hidey House is a room in Get a Guess. [mighty mouse: stuff that's only temporari
 
 book meta verbs
 
-check saving the game for the first time: say "[pest-sneer] 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if someone named Dave should be on this quest instead, but it passes.";
+check saving the game for the first time: say "[sneer-prefix] 'Some save? Dumb, Dave!' That must be the Very Vile Fairy File, trying to get in your head. And it almost works. For a moment you wonder if someone named Dave should be on this quest instead, but it passes.";
 
 check quitting the game: say "You say to yourself, not fully convinced, 'Best bit? Quest quit!'";
 
@@ -3182,6 +3319,10 @@ say-warn is a truth state that varies.
 
 no-punc-flag is a truth state that varies.
 
+to decide whether good-say-guess:
+	if the player's command matches the regular expression "^say ":
+		if player has way woke clay cloak and the player's command includes "say soak", yes;
+
 after reading a command:
 	if the player's command matches the regular expression "^ *<\*;>":
 		if currently transcripting:
@@ -3192,16 +3333,6 @@ after reading a command:
 		let XX be the player's command;
 		change the text of the player's command to "[XX in lower case]";
 		if debug-state is true, say "(LOWERCASING) [XX][line break]";
-	if the player's command matches the regular expression "^say ":
-		if player has way woke clay cloak and the player's command includes "say soak": [this is a hack to allow "say soak" as a clue-rhyme]
-			do nothing;
-		else:
-			if say-warn is false:
-				now say-warn is true;
-				say "[i][bracket][b]NOTE[r][i]: you never need to [b]SAY[r][i] anything. Just type it in. In other words, [b]WHOAH[r][i] is the same as [b]SAY WHOAH[r][i]. [this-game] will cut [b]SAY[r][i] off of the start of all commands.[close bracket][r]";
-			let XX be the player's command;
-			replace the regular expression "^say " in XX with "";
-			change the text of the player's command to XX;
 	if the player's command matches the regular expression "<^-\.a-z 0-9>":
 		if no-punc-flag is false:
 			say "(NOTE: you don't need to use anything but letters to get through the game. Even commas for addressing NPCs aren't necessary. The parser simply strips out non-alphabetic characters.)[paragraph break]";
@@ -3218,32 +3349,49 @@ to decide whether buggin-freeze:
 	if player is in Been Buggin and sco-glow-glad is false, yes;
 	no;
 
+a rhymeguess rule for a table name (called tn) (this is the rhyme-guess-checker rule):
+	repeat through tn:
+		if the player's command matches mist-cmd entry:
+			if there is a mist-rule entry:
+				process the mist-rule entry;
+				unless the rule succeeded, continue the action;
+			say "[mist-txt entry][line break]";
+			let see-leet-read be true;
+			let is-opt be false;
+			if there is a leet-rule entry:
+				process the leet-rule entry;
+				unless the rule succeeded, now see-leet-read is false;
+			if see-leet-read is true and there is a magicnum entry: [see mistakes file for explanations of magic numbers]
+				let Q be magicnum entry;
+				if Q >= 100: [Just to make sure we start with a number that's out of bounds]
+					now Q is variable-scan-length of Q;
+					if debug-state is true, say "DEBUG: dynamic magic number directed us to [Q / 10] / [the remainder after dividing Q by 10].";
+				if Q < 0:
+					now is-opt is true;
+					now Q is 0 - Q;
+				if Q is not 0:
+					let d1 be Q / 10;
+					let d2 be the remainder after dividing Q by 10;
+					decrease d1 by number of characters in word number 1 in the player's command;
+					decrease d2 by number of characters in word number 2 in the player's command;
+					let cc be cluecheat of d1 and d2;
+					say "[leetclue of cc and is-opt].";
+			if got-yet entry is false:
+				increment total-good-guesses;
+				check-lump-progress;
+			now got-yet entry is true;
+			the rule succeeds;
+
 Rule for printing a parser error:
 	if the latest parser error is the only understood as far as error:
 		say "The first word was okay, but what came after didn't quite work. You may wish to type in only the first word, or use the up arrow and delete.";
 		the rule succeeds;
 	continue the action;
 
-Rule for printing a parser error (this is the clue half right words rule):
-	abide by the rhyme-guess-checker rule for the table of first check rhymes;
+Rule for printing a parser error (this is the check for walls in parser error rule):
 	if location of player is wallish, abide by the rhyme-guess-checker rule for the table of wry wall guesses;
-	unless guess-table of location of player is table of no good guesses:
-		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
-		abide by the rhyme-guess-checker rule for guess-table of location of player;
-	let table-list be a list of table names;
-	repeat with tou running through fungible rhymables:
-		let gtt be guess-table of tou;
-		if gtt is table of no good guesses or gtt is listed in table-list, next;
-		add gtt to table-list;
-	repeat with tou running through fungible people:
-		let gtt be guess-table of tou;
-		if gtt is table of no good guesses or gtt is listed in table-list, next;
-		add gtt to table-list;
-	repeat with cur-guess-table running through table-list:
-		abide by the rhyme-guess-checker rule for cur-guess-table;
-	abide by the verb-checker rule;
-	abide by the rhyme-guess-checker rule for table of general good guesses;
-	continue the action;
+
+the check for walls in parser error rule is listed before the look through good guess tables rule in the for printing a parser error rulebook.
 
 Rule for printing a parser error (this is the redirect to buggin rule):
 	if buggin-freeze:
@@ -3251,7 +3399,7 @@ Rule for printing a parser error (this is the redirect to buggin rule):
 		the rule succeeds;
 	continue the action;
 
-the redirect to buggin rule is listed after the clue half right words rule in the for printing a parser error rulebook.
+the redirect to buggin rule is listed after the look through good guess tables rule in the for printing a parser error rulebook.
 
 to say not-quite-homonyms: say "You feel ... something. But not enough. Homonyms must not quite be the way to go, here. Something similar, but not quite that similar"
 
@@ -3270,10 +3418,6 @@ Rule for printing a parser error when the latest parser error is the i beg your 
 
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
 	say "The action was okay, but I couldn't recognize the object."
-
-the check for room name and homonyms in player command rule is listed first in the for printing a parser error rulebook.
-
-the clue half right words rule is listed before the check for room name and homonyms in player command rule in the for printing a parser error rulebook.
 
 oopsies is a number that varies.
 

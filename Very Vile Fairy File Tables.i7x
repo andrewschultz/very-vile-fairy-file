@@ -1692,6 +1692,7 @@ to seed-narratives:
 	let any-blank-yet be false;
 	let my-row be 0;
 	let total-blank-rows be 0;
+	now narr-on is true;
 	repeat through table of narratives:
 		if there is no rank-num entry, increment total-blank-rows;
 		if any-blank-yet is false:
