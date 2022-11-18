@@ -38,6 +38,11 @@ The reason a number is negative is that whatever you rhymed is an optional point
 #########################Shining Shore
 ]
 
+volume general stuff
+
+to current-table-note-x (tn - a table name):
+	current-table-note tn;
+
 volume what you start with
 
 [note that these are arranged alphabetically, not in order of play.]

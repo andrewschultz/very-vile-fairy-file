@@ -84,7 +84,7 @@ w1 (text)	w2 (text)	posthom (topic)	hom-txt-rule (rule)	think-cue	okflip	core	id
 "wake"	"whee|wee"	"we"	vh-wake-whee rule	false	true	true	false	false	Lake Lea	vc-wake-whee rule	vr-wake-whee rule	--	-- [start Lake Lea]
 "take"	"tea"	"t/tee"	vh-take-tea rule	false	false	true	false	false	Lake Lea	vc-take-tea rule	vr-take-tea rule	--	"You could [b]TAKE TEA[r] with Jake G. [once-now of vc-fake-fee rule] he's conscious."
 "fake"	"fee"	--	--	false	false	true	false	false	Lake Lea	vc-fake-fee rule	vr-fake-fee rule	--	"You could give Jake G. a [b]FAKE FEE[r] [once-now of vc-fake-fee rule] Jake G. has given you something of value."
-"break"	"brie"	"brake"	vh-break-brie rule	false	false	false	false	false	--	vc-break-brie rule	vr-break-brie rule	--	"You can [b]BREAK BRIE[r] with Jake G. [once-now of vc-break-brie] you're pals."
+"break"	"brie"	"brake"	vh-break-brie rule	false	false	false	false	false	--	vc-break-brie rule	vr-break-brie rule	--	"You can [b]BREAK BRIE[r] with Jake G. [once-now of vc-break-brie rule] you're pals."
 "make"	"map"	--	--	false	false	true	false	false	--	vc-make-map rule	vr-make-map rule	--	-- [start Lake Lap]
 "co"	"capn"	"cappin"	vh-co-capn rule	false	false	true	false	true	--	vc-co-capn rule	vr-co-capn rule	--	"You tried to find a [b]CO CAPN[r] but need to try again [once-now of vc-co-capn rule] there's a worthy comrade."
 "snake"	"snap"	--	--	false	true	true	false	false	--	vc-snake-snap rule	vr-snake-snap rule	--	"You can [b]SNAKE SNAP[r] [once-now of vc-snake-snap rule] it's clear a snake is present."
@@ -1751,6 +1751,8 @@ rank-num	done-yet	rank-txt
 -4	false	"An exceptionally loud howl from [the very vile]: 'Quit, quick! Sit sick!' You must be close."
 -3	false	"Another howl from [the fairy file]: 'Gonna go off! Shun a show-off!'"
 -1	false	"'More make war! Wake!' booms [the very vile]. It's still scary and all, but ... nobody shows up. That's a positive."
+
+to say narr-toggle: say "ou can turn off post-point-scoring narratives with [b]NO NARR[r] or turn them back on with [b]WHOA(H) WHERE[r]"
 
 table of Wet Wood clues
 prof	randtxt

@@ -225,8 +225,6 @@ whew-score is a number that varies. whew-score is 8.
 
 core-max is 81. [core-max is fixed. It is the number of point-scoring actions you need.]
 
-min-needed is 81. [min-needed increases as you find LLPs.]
-
 max-bonus is 14.
 
 cur-bonus is 0. [we could define min-needed as core-max + cur-bonus I guess.]
@@ -1616,8 +1614,6 @@ check rubbing:
 
 chapter singing
 
-the block singing rule is not listed in any rulebook.
-
 sing-clue is a truth state that varies.
 
 check singing:
@@ -1777,11 +1773,11 @@ the need bag for lots of items rule is listed last in the check taking rulebook.
 
 chapter undoing
 
-to say pest-sneer: say "You [if poke pest is fungible]hear the [poke pest] whisper[else]imagine someone sneering[end if]"
+to say sneer-prefix: say "You [if poke pest is fungible]hear the [poke pest] whisper[else]imagine someone sneering[end if]" [?? move to common]
 
 before undoing an action:
 	if save undo state is false:
-		say "[pest-sneer] 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
+		say "[sneer-prefix] 'Take two? Fake, foo[']!'[paragraph break]The lurking lump still [if lurking lump is moot]rematerializes[else]grows bigger[end if], though. Hopefully your time-bending and potential double-dipping didn't make it radioactive or something.";
 		enable saving of undo state;
 	else:
 		if the turn count is 1:
@@ -1791,8 +1787,6 @@ before undoing an action:
 	the rule succeeds;
 
 chapter trivial pointless but amusing verbs
-
-the block attacking rule is not listed in any rulebook.
 
 check attacking:
 	if noun is very vile fairy file, say "[pest-sneer] 'Big boom! Dig doom!' You step back and, err, rig room." instead;
@@ -3435,45 +3429,15 @@ to decide which number is variable-scan-length of (mynum - a number):
 
 section jerkingjumping
 
-jerkingjumping is an action applying to nothing.
-
-understand the command "jerking jump" as something new.
-understand the command "jj" as something new.
-
-understand "jerking jump" as jerkingjumping.
-understand "jj" as jerkingjumping.
-
-in-jerk-jump is a truth state that varies.
-
-to say firstor of (t - indexed text):
-	replace the regular expression "\|.*" in t with "";
-	say "[t in upper case]";
-
-to lump-minus:
-	decrement lump-charges;
-	say "[line break]The lurking lump shrivels[if lump-charges is 0] and vanishes. Maybe more good guesses will bring it back[one of][or] again[stopping][else], but it still looks functional[end if].";
-	if lump-charges is 0, moot lurking lump;
-	now in-jerk-jump is false;
-	increment lump-uses;
-	process the score and thinking changes rule;
-
-carry out jerkingjumping:
-	if debug-state is false:
-		if lurking lump is off-stage, say "You have nothing that would help you do that." instead;
-		if lurking lump is moot, say "You used up all the lump's charges, but maybe you can get more." instead;
-	else:
-		say "DEBUG: ignoring the charges in the lump, currently at [lump-charges].";
-	now in-jerk-jump is true;
+check jerkingjumping (this is the jump over bull if you can rule):
 	if in-bull-chase is true and sco-near-null is true:
 		if snuck snare is not moot, say "The lurking lump remains immovable. Perhaps you can't quite outrun or outsmart the Beer Bull, yet, and you'll have to take your lumps. Which is a hint in its own way, I guess." instead;
 		say "The lurking lump bounces down and around all the way to the Knives Niche. Where you trick the Beer Bull into running into the trap you set. You head back to the Gear Gull in Here Hull.";
 		solve-bull-chase;
 		lump-minus;
 		the rule succeeds;
-	if doable-hinted > 0:
-		say "The lump glistens weirdly. Perhaps you've forgotten something you tried, which didn't work then, but it does, now. ([b]THINK[r] should give details.) Use it anyway?";
-		unless the player yes-consents:
-			say "Okay. Again, [b]THINK[r] should show what you can do now." instead;
+
+carry out jerkingjumping:
 	now vc-dont-print is true;
 	repeat through table of verb checks:
 		unless there is a core entry, next;
