@@ -629,6 +629,38 @@ book bug notes
 
 to say not-crit-but: say ". This is not a critical bug, but I'd like to know about it"
 
+volume parser stuff that's everywhere
+
+[this is the big one that is consistent across games, where we detect good guesses]
+
+Rule for printing a parser error (this is the look through good guess tables rule):
+	now compare-item is the player;
+	now got-half-match is false;
+	abide by the rhyme-guess-checker rule for the table of first check rhymes;
+	abide by the game-specific-backdrop-check rule;
+	unless guess-table of location of player is table of no good guesses:
+		[if debug-state is true, say "DEBUG location guesses: [location of player], [guess-table of location of player].";]
+		abide by the rhyme-guess-checker rule for guess-table of location of player;
+	let table-list be a list of table names;
+	repeat with fun running through fungible rhymables:
+		let gtt be guess-table of fun;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
+		now compare-item is fun;
+		abide by the rhyme-guess-checker rule for gtt;
+	repeat with fun running through fungible people:
+		let gtt be guess-table of fun;
+		if gtt is table of no good guesses or gtt is listed in table-list, next;
+		add gtt to table-list;
+		now compare-item is fun;
+		abide by the rhyme-guess-checker rule for gtt;
+	abide by the verb-checker rule;
+	abide by the rhyme-guess-checker rule for table of general good guesses;
+	if press-pro-level is 4 and got-half-match is true, say "The leet learner beeps weirdly. You had one word guessed right." instead;
+	continue the action;
+
+the look through good guess tables rule is listed first in the for printing a parser error rulebook.
+
 volume backwards compatibility for now
 
 table of stuff
