@@ -1009,6 +1009,8 @@ by one point
 >lending libe
 by one point
 
+/^Lending Libe
+
 #testcase-reject-table-of-verb-checks-vc-lending-libe-rule
 >lending libe
 !by one point
@@ -1617,11 +1619,11 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 #testcase-moot-table-of-verb-checks-vc-get-good-rule
 >get good
-{{$GENERIC}}
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 #testcase-moot-table-of-verb-checks-vc-gift-giver-rule
 >gift giver
-{{$GENERIC}}
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 #testcase-moot-table-of-verb-checks-vc-glean-glows-rule
 >glean glows
@@ -1777,7 +1779,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 
 #testcase-moot-table-of-verb-checks-vc-really-rolling-rule
 >really rolling
-{{$GENERIC}}
+Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
 
 #+testcase-reject-table-of-verb-checks-vc-see-sign-rule
 >see sign

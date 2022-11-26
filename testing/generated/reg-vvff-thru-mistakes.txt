@@ -2029,6 +2029,8 @@ by one point
 >lending libe
 by one point
 
+/^Lending Libe
+
 #ttc-table-of-we-whine-guesses-bree-brine
 >bree brine
 Learner needle

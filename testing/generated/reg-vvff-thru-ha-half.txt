@@ -21,7 +21,7 @@ I want to make sure you have some basic familiarity with the game mechanic befor
 Homonym detection is already set to on.
 >do due
 I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
-
+\\s
 #ttc-table-of-verb-checks-3-get
 >zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
@@ -1506,6 +1506,8 @@ The HA HALF button lights up on your Leet Learner.
 
 >lending libe
 by one point
+
+/^Lending Libe
 
 #+ttc-table-of-verb-checks-40-libe
 >zlending libe rule

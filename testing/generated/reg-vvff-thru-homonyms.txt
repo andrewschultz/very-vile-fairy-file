@@ -423,6 +423,8 @@ by one point
 >lending libe
 by one point
 
+/^Lending Libe
+
 #ttc-table-of-thing-homonyms-we-whine-hom-we-whine-to-whee-wine-rule
 >whee xxx
 That'd be a heel turn, actually liking We Whine: ME, MINE.

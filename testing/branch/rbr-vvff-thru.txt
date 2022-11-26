@@ -51,8 +51,7 @@ You need something a little more than homonyms to leave the Wet Wood. It feels l
 \\
 >whet would
 You need something a little more than homonyms to leave the Wet Wood. It feels like it should be simple, but not TOO simple. Homonyms ... don't quite change enough.
-
-@hom
+\\
 #ttc-table-of-verb-checks-vh-get-good-rule-git
 >git goob
 You don't need source control, but you're close, here.
@@ -114,8 +113,7 @@ I want to make sure you have some basic familiarity with the game mechanic befor
 Homonym detection is already set to on.
 >do due
 I want to make sure you have some basic familiarity with the game mechanic before disabling any Leet Learner options. So I'm going to make you wait until you've explored beyond Wet Wood.
-
-@ha
+\\s
 #ttc-table-of-verb-checks-3-get
 >zget good
 DEBUG: vc-get-good rule tipped off the HA HALF button.
@@ -284,8 +282,7 @@ A stun-steed zooms by
 @all
 #+ttc-table-of-narratives-1
 !A vision
-
-@all
+\\
 #+ttc-table-of-ranks-1
 >score
 You have scored a total of 1 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -326,8 +323,7 @@ Your current rank is lol'd, lawd.
 #testcase-reject-table-of-verb-checks-vc-big-bag-rule
 >big bag
 You already made the big bag.
-
-@vc
+\\
 #testcase-unavailable-table-of-verb-checks-vc-find-fault-rule
 >find fault
 DEBUG note of general parser error.
@@ -381,8 +377,7 @@ You aren't up for dancing.
 >big zbag rule
 !DEBUG: vc-big-bag rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 >big bag
 !by one point
 You already made the big bag.
@@ -412,11 +407,9 @@ by one point
 #+ttc-table-of-narratives-1
 A vision! Some tough-looking people sit sneering around an empty book. They are quickly revealed as the Plight Plotter, the Spite Spotter, the Fright Frotteur, and the Right Rotter. They are seeking to formalize the knowledge they have gained from picking on, well, fight fodder. Such as the Trite Trotter and the Night Nodder. You watch them each write parts of a book at ultra-speed before they walk out to by some white water and call out "Bright! Broader!"
 The book's cover slowly becomes colored in. It is the Very Vile Fairy File.
-
-@all
+\\
 /^Rift River
-
-@all
+\\
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 3 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -447,8 +440,7 @@ You've got it backwards! Just flip things around, and it'll be okay.
 >good zget
 !DEBUG: vc-get-good rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-4-gift
 >zgift giver
 DEBUG: vc-gift-giver rule tipped off the HA HALF button.
@@ -487,11 +479,9 @@ by one point
 #ttc-table-of-narratives-2
 The plotters from your previous vision remark how it is not just a guide to manipulation, but something that can affect people from afar. Its one weakness: if someone gets too close and is legitimately happy and forgiving around it, its spell will break.
 They leave it by the Real Rot/Feel Fought Spiel Spot, because they have other evil to delegate, elsewhere. Small relief--facing them would've been too much.
-
-@all
+\\
 /^Vined Vault
-
-@all
+\\
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 4 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -519,8 +509,7 @@ Worthless. It's empty.
 >gift giver
 !by one point
 That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it goes beyond starting with g's.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-4-giver
 >zgift giver rule
 !DEBUG: vc-gift-giver rule tipped off the HA HALF button.
@@ -534,8 +523,7 @@ That's not it. Maybe there's a small wrinkle with what you need to rhyme--and it
 @mis
 >brig brag
 Good guys don't brag about being
-
-@mis
+\\
 #ttc-table-of-too-totes-new-notes-guesses-blew-blue-bloats
 >blew bloats
 !Learner needle
@@ -628,8 +616,7 @@ by one point
 #ttc-table-of-narratives-3
 Another vision!
 A bunch of seedy looking hoodlums approach the shrine where the Very Vile Fairy File was left. You know they must be the Crimes Crew Times Two Kit Cohen told you about. While the general consensus is "What an unusually stupid looking book," they nonetheless play rock-paper-scissors to decide the poor sap who has to read it.
-
-@all
+\\
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 5 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -685,8 +672,7 @@ Alas, the walls of the vault do not turn to salt. Perhaps they still have a stru
 >wined walt
 !Learner needle
 A drinking buddy you can play practical jokes on won't be any help here.
-
-@mis
+\\
 #ttc-table-of-vined-vault-guesses-bean-bass
 >bean bass
 Learner needle
@@ -730,8 +716,7 @@ by one point
 #ttc-table-of-narratives-4
 The loser of the rock paper scissors game's eyes open wide as they realize the Very Vile Fairy File doesn't just have lame poetry. It has advice on important things like pushing people around and getting in their head! In the end, there's a fight over the book, but nobody manages to tear it apart. There's more fast-forwarding, and once everyone is done re-reading it, they leave it somewhere distant. Maybe for the next person, or their underlings, to read.
 You can already feel the Very Vile Fairy File working on you, reminding you of things you'd rather forget. These brief flashes may pop up for the remainder of your adventure.
-
-@all
+\\
 /^Po' Pit
 
 ###newloc po pit
@@ -1132,8 +1117,7 @@ You don't need to go back.
 >brig brag
 Good guys don't brag about having been
 !Learner needle
-
-@mis
+\\
 #ttc-table-of-po-pit-guesses-cash-cap
 >cash cap
 Learner needle
@@ -1168,8 +1152,7 @@ You bang your fists against your pockets. It sort of helps, you guess.
 >sash sap
 Learner needle
 You don't need to be dressed outlandishly to figure what to do.
-
-@mis
+\\
 #ttc-table-of-po-pit-guesses-bo-bow-bit
 >bo bit
 Learner needle
@@ -1286,8 +1269,7 @@ by one point
 @all
 #ttc-table-of-narratives-5
 You recall harsh words from an alleged friend, Chum Chilly Bum Billy: "Some silly? Dumb, dilly."
-
-@all
+\\
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 7 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -1449,12 +1431,10 @@ by one point
 
 @all
 /^Trim Tram
-
-@all
+\\
 #ttc-table-of-narratives-6
 You remember a depressing holiday season. "Blear, Blue? Near New Year, You! We're ... WOO!" But you're having more fun now. You hope.
-
-@all
+\\
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 8 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -1544,8 +1524,7 @@ The HA HALF button lights up on your Leet Learner.
 >mind zme rule
 DEBUG: vc-mind-me rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 # now we look at the actual options
 >due do
 It's recommended you wait until finishing the introduction before shutting off the Leet Learner. Do you still wish to toggle a feature?
@@ -1611,8 +1590,7 @@ by one point
 @all
 #ttc-table-of-narratives-7
 You see the Crimes Crew Times Two snickering. They're looking at a vision of ... you, stumbling through the Wet Wood. "Done?! Do?! Ton to one, woo!" they laugh. "Fun, phew!" And yet ... they walk away from the Very Vile Fairy File, as if they can't get too close to it.
-
-@all
+\\
 #+ttc-table-of-ranks-2
 >score
 You have scored a total of 9 out of 95 points and need 82 to win. You have found 1 of 14 optional points so far.
@@ -1708,16 +1686,14 @@ by one point
 @all
 #ttc-table-of-narratives-8
 You see the Crimes Crew Times Two looking almost impressed with your competence. But then they whisper among each other. "Lucky! LOL! Sucky soul!"
-
-@all
+\\
 /^Fun Fen
 
 @vc
 #testcase-reject-table-of-verb-checks-vc-spark-spliff-rule
 >spark spliff
 You have nothing to spark up, dude!
-
-@vc
+\\
 #testcase-moot-table-of-verb-checks-vc-backed-binder-rule
 >backed binder
 {$REJECT}Your rhyming attempts bring up nothing.
@@ -1725,8 +1701,7 @@ You have nothing to spark up, dude!
 #+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
 >bury bile
 You can sort of deal with that right now. But you need to do better! You still have adventure to go!
-
-@vc
+\\
 ##balance undos
 >gonear coral cage
 \\
@@ -1747,8 +1722,7 @@ Your current rank is lol'd, lawd.
 #ttc-table-of-fun-fen-guesses-jive-jeep
 >jive jeep
 !No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
-
-@mis
+\\
 #ttc-table-of-joke-jest-poke-pest-guesses-broke-breast
 >broke breast
 Learner needle
@@ -2004,8 +1978,7 @@ Your current rank is FLOL'd, flawed.
 >kneel near
 !by one point
 No need to kneel twice.
-
-@vc
+\\
 #+testcase-reject-table-of-verb-checks-vc-heal-here-rule
 >heal here
 !by one point
@@ -2095,8 +2068,7 @@ by one point
 @all
 #ttc-table-of-narratives-9
 The joke jest poke pest whispers "Sigh. Say hi, hey?" But you ignore it. Ply, play, you think. Gotta focus.
-
-@all
+\\
 #+ttc-table-of-ranks-3
 >score
 You have scored a total of 14 out of 95 points and need 83 to win. You have found 2 of 14 optional points so far.
@@ -2190,8 +2162,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 >spark zspliff rule
 DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-
-@ha
+\\
 #ttc-table-of-verb-checks-12-start
 >zstrong start rule
 DEBUG: vc-strong-start rule tipped off the HA HALF button.
@@ -2270,8 +2241,7 @@ Your current rank is FLOL'd, flawed.
 >fall free
 !by one point
 The tree is already fallen. It's in a good place.
-
-@vc
+\\
 ##balance undos
 >gonear gassed gap
 \\
@@ -2366,8 +2336,7 @@ There is no hidden tomb under the wry wall.
 >try tall
 !Learner needle
 The wry wall does not grow.
-
-@mis
+\\
 #ttc-table-of-fun-fen-guesses-chive-cheap
 >chive cheap
 Learner needle
@@ -2437,8 +2406,7 @@ You need to change the vial into something more pleasant and constructive.
 #+ttc-table-of-fun-fen-guesses-jive-jeep
 >jive jeep
 !No wacky form of transport drives by blaring noises you'd need an 80 year old lady to help translate.
-
-@mis
+\\
 #ttc-table-of-fun-fen-guesses-aper-isle
 >aper isle
 Learner needle
@@ -2473,8 +2441,7 @@ by one point
 @all
 #ttc-table-of-narratives-10
 "Seek so-chic-show? Geek, go! Meek, mo' weak, woe!" A bleak blow! Looking back at the insulter, it's not even a person but ... a saucy Creek Crow. You involuntarily touch your head, hoping you have not grown a Freak 'Fro.
-
-@all
+\\
 #+ttc-table-of-ranks-4
 >score
 You have scored a total of 19 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
@@ -2484,8 +2451,7 @@ Your current rank is mold-mawed.
 >paper pile
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-16-pile
 >zpaper pile rule
 !DEBUG: vc-paper-pile rule tipped off the HA HALF button.
@@ -2536,8 +2502,7 @@ Your current rank is mold-mawed.
 >backed binder
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-17-binder
 >zbacked binder rule
 !DEBUG: vc-backed-binder rule tipped off the HA HALF button.
@@ -2562,8 +2527,7 @@ You feel ... something. But not enough. Homonyms must not quite be the way to go
 #testcase-reject-table-of-verb-checks-vc-least-loss-rule
 >least loss
 Not yet. You need to be in a fighting situation.
-
-@vc
+\\
 ##balance undos
 >n
 >w
@@ -2709,8 +2673,7 @@ You already made the dark door appear.
 >dark zdoor rule
 !DEBUG: vc-dark-door rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-26-more
 >zmark more rule
 DEBUG: vc-mark-more rule tipped off the HA HALF button.
@@ -2727,8 +2690,7 @@ by one point
 @all
 #ttc-table-of-narratives-11
 "Surly? Soften early, often!" the joke jest poke pest needles you. You look around, but thankfully, there is no burly boffin.
-
-@all
+\\
 #+ttc-table-of-ranks-4
 >score
 You have scored a total of 22 out of 95 points and need 85 to win. You have found 4 of 14 optional points so far.
@@ -2755,8 +2717,7 @@ You pretend you've already done much harder things. It gives you confidence, or 
 >mark more
 !by one point
 You already saw what you could.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-26-more
 >zmark more rule
 !DEBUG: vc-mark-more rule tipped off the HA HALF button.
@@ -3029,8 +2990,7 @@ That would be handy in a more violent adventure, but not this one.
 >woe whappin
 Learner dims a bit
 You don't need an exhortation to violence.
-
-@mis
+\\
 #+ttc-table-of-history-hall-guesses-butter-butta-bankster-banksta
 >butter bankster
 !the Leet Learner dims a bit, and the needle
@@ -3099,8 +3059,7 @@ by one point
 @all
 #ttc-table-of-narratives-12
 "Fame fast? Lame, last!" snickers the joke jest poke pest. You ... you were just looking for a way out. You think. But nobody thinks they're too proud. Right?
-
-@all
+\\
 #+ttc-table-of-ranks-5
 >score
 You have scored a total of 26 out of 95 points and need 86 to win. You have found 5 of 14 optional points so far.
@@ -3110,8 +3069,7 @@ Your current rank is holed, haw-ed.
 >lots lame
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-32-lame
 >zlots lame rule
 !DEBUG: vc-lots-lame rule tipped off the HA HALF button.
@@ -3176,8 +3134,7 @@ You already said HO HAPPEN. Now you have to make things happen!
 >dimd
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-34-happen
 >zho happen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
@@ -3187,8 +3144,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >ho zhappen rule
 !DEBUG: vc-ho-happen rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-
-@ha
+\\
 #ttc-table-of-verb-checks-33-nappin-napping
 >zno nappin rule
 DEBUG: vc-no-nappin rule tipped off the HA HALF button.
@@ -3603,8 +3559,7 @@ You don't need a weapon.
 >not znear rule
 !DEBUG: vc-not-near rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-
-@ha
+\\
 #ttc-table-of-verb-checks-42-hat
 >zhard hat rule
 DEBUG: vc-hard-hat rule tipped off the HA HALF button.
@@ -3706,8 +3661,7 @@ Get ahold of yourself! There's no time for in-depth sabermetrics!
 >hard hat
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-42-hat
 >zhard hat rule
 !DEBUG: vc-hard-hat rule tipped off the HA HALF button.
@@ -3773,8 +3727,7 @@ by one point
 @all
 #ttc-table-of-narratives-13
 You remember saying "War, why?" with the response: "BORE, BYE!"
-
-@all
+\\
 #ttc-table-of-ranks-6
 >score
 You have scored a total of 33 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -3784,8 +3737,7 @@ Your current rank is bowled, bah'd.
 #+testcase-reject-table-of-verb-checks-vc-couple-caps-rule
 >couple caps
 The hard hat isn't enough on its own.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-work-well-rule
 >work well
 !by one point
@@ -3868,8 +3820,7 @@ by one point
 
 @all
 becomes the Loft Land
-
-@all
+\\
 #+ttc-table-of-ranks-6
 >score
 You have scored a total of 34 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -3887,8 +3838,7 @@ The HA HALF button lights up on your Leet Learner--wait, you're just switching b
 >soft zsand
 DEBUG: vc-soft-sand rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner--wait, you're just switching back to a rhyme you knew before. You must've mis-thought a word.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-49-land
 >zloft land rule
 !DEBUG: vc-loft-land rule tipped off the HA HALF button.
@@ -4009,8 +3959,7 @@ Your current rank is bowled, bah'd.
 >dreaming dull
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-54-dull
 >zdreaming dull rule
 !DEBUG: vc-dreaming-dull rule tipped off the HA HALF button.
@@ -4048,8 +3997,7 @@ by one point
 @all
 #ttc-table-of-narratives-14
 You are quasi-catcalled as "Some super-dumb duper." You immediately wonder if you're too dumb to remember HOW you tried to dupe anyone, but after a moment's thought, you brush the insult off with "Um, oop, err..."
-
-@all
+\\
 #+ttc-table-of-ranks-6
 >score
 You have scored a total of 36 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -4208,8 +4156,7 @@ by one point
 
 @all
 /^Silent Sail
-
-@all
+\\
 #+ttc-table-of-ranks-7
 >score
 You have scored a total of 38 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -4259,8 +4206,7 @@ by one point
 @all
 #ttc-table-of-narratives-15
 You picture yourself in a sales job. "Cold call? Fold, fall." You fail and are exiled to the Hold Hall.
-
-@all
+\\
 #+ttc-table-of-ranks-7
 >score
 You have scored a total of 39 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -4270,8 +4216,7 @@ Your current rank is sold sod.
 >brightening bridge
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-65-bridge
 >zbrightening bridge rule
 !DEBUG: vc-brightening-bridge rule tipped off the HA HALF button.
@@ -4433,14 +4378,12 @@ This is not a cooking sim.
 >take tea
 !by one point
 Maybe when Jake is awake.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-break-brie-rule
 >break brie
 !by one point
 This bonus point action won't work until Jake is conscious.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-fake-fee-rule
 >fake fee
 !by one point
@@ -4521,8 +4464,7 @@ by one point
 @all
 #ttc-table-of-narratives-16
 You recall your only Dungeons and Dragons experience: a bunch of bullies yelling "D&D? TNT! Flee 'n flee!"
-
-@all
+\\
 #ttc-table-of-ranks-8
 >score
 You have scored a total of 42 out of 95 points and need 90 to win. You have found 9 of 14 optional points so far.
@@ -4591,8 +4533,7 @@ Hey! Don't get greedy, now.
 >break zbrie rule
 !DEBUG: vc-break-brie rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-
-@ha
+\\
 #ttc-table-of-verb-checks-70-fake
 >zfake fee rule
 DEBUG: vc-fake-fee rule tipped off the HA HALF button.
@@ -4768,8 +4709,7 @@ Your current rank is old, odd.
 #+testcase-reject-table-of-verb-checks-vc-snake-snap-rule
 >snake snap
 You don't know if you can take that snake by itself. Jake doesn't quite seem willing, yet, either.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-make-map-rule
 >make map
 !by one point
@@ -4841,8 +4781,7 @@ by one point
 #ttc-table-of-narratives-17
 A memory from the past, well, sort of: "Falling for calling? Cor! Bawling bore!" It must be the Very Vile Fairy File doing its work on you.
 You find yourself worried this silly adventure may be boringly linear--or, equally, that it may branch out into something too complex to solve. Perhaps the Very Vile Fairy File is warping your memories to make them traumatic?
-
-@all
+\\
 #+ttc-table-of-ranks-8
 >score
 You have scored a total of 46 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
@@ -4899,8 +4838,7 @@ You make a rude gesture, for whatever good it does.
 >snake snap
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-74-snap
 >zsnake snap rule
 !DEBUG: vc-snake-snap rule tipped off the HA HALF button.
@@ -4914,8 +4852,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 @thi
 >think
 !SNAKE SNAP
-
-@thi
+\\
 # test bug found in-comp
 \\
 >couple caps
@@ -5080,8 +5017,7 @@ by one point
 @all
 #ttc-table-of-narratives-18
 "Blue blood? Boo, bud!" Standard demoralizing fare. You feel a slight flu-flood.
-
-@all
+\\
 #+ttc-table-of-ranks-9
 >score
 You have scored a total of 49 out of 95 points and need 91 to win. You have found 10 of 14 optional points so far.
@@ -5126,8 +5062,7 @@ You tried some MEAN MUGGIN, which should be more doable now you've dealt with yo
 >glow glad
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-1-glad
 >zglow glad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
@@ -5137,8 +5072,7 @@ Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, 
 >glow zglad rule
 !DEBUG: vc-glow-glad rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-76-muggin-mugging
 >zmean muggin rule
 DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
@@ -5192,8 +5126,7 @@ You already learned mean muggin'.
 >mean zmuggin rule
 !DEBUG: vc-mean-muggin rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-75-luggin-lugging
 >zlean luggin rule
 DEBUG: vc-lean-luggin rule tipped off the HA HALF button.
@@ -5364,8 +5297,7 @@ Your current rank is told, tawed.
 >bumped buster
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-28-buster-duster
 >zbumped buster rule
 !DEBUG: vc-bumped-buster rule tipped off the HA HALF button.
@@ -5446,8 +5378,7 @@ by one point
 @all
 #ttc-table-of-narratives-19
 The joke jest poke pest pipes up: "High hope nigh? Nope!" You sigh, but no soap turns up. All this discouragement and despair can add up, even if it isn't sensible.
-
-@all
+\\
 #ttc-table-of-ranks-10
 >score
 You have scored a total of 53 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -5653,8 +5584,7 @@ Your current rank is th'old thawed.
 >smashing smoke
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-39-smoke
 >zsmashing smoke rule
 !DEBUG: vc-smashing-smoke rule tipped off the HA HALF button.
@@ -5721,17 +5651,15 @@ The HA HALF button lights up on your Leet Learner.
 >lending libe
 by one point
 
-@all
-#ttc-table-of-narratives-20
-The joke jest poke pest is at it again: "Raking rhyme?! Making mime!" You feel discouraged, knowing if you slow up, it will change its tune and taunt you with "Taking time?"
-The Very Vile Fairy File's reach is wide indeed. If it can mix up these taunts on you, what can it do to others?
-
-@all
 /^Lending Libe
 
 ###newitm we whine me mine
 
 @all
+#ttc-table-of-narratives-20
+The joke jest poke pest is at it again: "Raking rhyme?! Making mime!" You feel discouraged, knowing if you slow up, it will change its tune and taunt you with "Taking time?"
+The Very Vile Fairy File's reach is wide indeed. If it can mix up these taunts on you, what can it do to others?
+\\
 #+ttc-table-of-ranks-10
 >score
 You have scored a total of 56 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -5770,8 +5698,7 @@ Yes, It's a library now.
 >lending zlibe rule
 !DEBUG: vc-lending-libe rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-41-sign
 >zsee sign rule
 DEBUG: vc-see-sign rule tipped off the HA HALF button.
@@ -5908,8 +5835,7 @@ You've seen enough signs from We Whine: ME, MINE. Overkill might leave you demor
 #+testcase-reject-table-of-verb-checks-vc-smashing-smoke-rule
 >smashing smoke
 That's not enough to distract the Beer Bull for good. The Beer Bull can smell you.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-beast-boss-rule
 >beast boss
 You don't feel armed for that, yet.
@@ -5934,8 +5860,7 @@ LEAST LOSS
 #testcase-reject-table-of-verb-checks-vc-show-shield-rule
 >show shield
 That seems right, but you have nothing that would guard you effectively. Maybe later.
-
-@vc
+\\
 #+testcase-reject-table-of-verb-checks-vc-show-shield-rule
 >show shield
 Ooh! The gold guard lasts a bit, but not quite long enough. It needs reinforcements even beyond what the gull guard gave.
@@ -6027,8 +5952,7 @@ Your current rank is polled, pawed.
 >plain pleasant
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-51-pleasant
 >zplain pleasant rule
 !DEBUG: vc-plain-pleasant rule tipped off the HA HALF button.
@@ -6099,8 +6023,7 @@ by one point
 @all
 #ttc-table-of-narratives-21
 Despite your success, a memory: "Rad? Wrong! Gad! Gong! Bad! BBOONNGG!" You remember all the times you felt guilty getting things right for the wrong reason, as well as the times you were mocked for knowing things too well.
-
-@all
+\\
 #+ttc-table-of-ranks-11
 >score
 You have scored a total of 59 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -6251,8 +6174,7 @@ by one point
 
 @all
 /^Grit Ground
-
-@all
+\\
 #+ttc-table-of-ranks-11
 >score
 You have scored a total of 61 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -6377,8 +6299,7 @@ by one point
 @all
 #ttc-table-of-narratives-22
 Blare blame! Share shame! EXPOUND
-
-@all
+\\
 #+ttc-table-of-ranks-11
 >score
 You have scored a total of 62 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -6567,8 +6488,7 @@ by one point
 
 @all
 /^Grinding Grays
-
-@all
+\\
 #+ttc-table-of-ranks-12
 >score
 You have scored a total of 64 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -6703,11 +6623,9 @@ by one point
 @all
 #ttc-table-of-narratives-23
 "Wet willy set? Silly! Bet, Billy!" A reminder of tormentors from your past.
-
-@all
+\\
 /^Tight Tunnel
-
-@all
+\\
 #+ttc-table-of-ranks-12
 >score
 You have scored a total of 65 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -6802,8 +6720,7 @@ by one point
 
 @all
 /^Knives Niche
-
-@all
+\\
 #+ttc-table-of-ranks-12
 >score
 You have scored a total of 66 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -6904,8 +6821,7 @@ Your current rank is scrolled scrod.
 #testcase-reject-table-of-verb-checks-vc-dear-dull-rule
 >dear dull
 You don't need to do any more taunting.
-
-@vc
+\\
 #+testcase-reject-table-of-verb-checks-vc-so-sappin-rule
 >so sappin
 !by one point
@@ -6919,8 +6835,7 @@ Sorry, GO TO is disabled during the Beer Bull chase.
 >dear dull
 !by one point
 You don't need to do any more taunting.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-58-dull
 >zdear dull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
@@ -6930,8 +6845,7 @@ You don't need to do any more taunting.
 >dear zdull rule
 !DEBUG: vc-dear-dull rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-59-null
 >znear null rule
 DEBUG: vc-near-null rule tipped off the HA HALF button.
@@ -6948,8 +6862,7 @@ by one point
 @all
 #ttc-table-of-narratives-24
 "Sing-song ding-dong!" the joke jest poke pest mocks you, as if the double-rhyme puzzles you solved were your fault. It does slightly ... ring wrong. But at least you are not trampled by King Kong or beaten badly at Ping Pong. You're getting used to the silly taunts.
-
-@all
+\\
 #+ttc-table-of-ranks-13
 >score
 You have scored a total of 68 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -7087,8 +7000,7 @@ by one point
 @all
 #ttc-table-of-narratives-25
 You almost started feeling good about things, but the joke jest poke pest whispers "Smart smack. Heart? Hack!" Oh, joke jest poke pest, you so manipulative!
-
-@all
+\\
 #+ttc-table-of-ranks-13
 >score
 You have scored a total of 71 out of 95 points and need 92 to win. You have found 11 of 14 optional points so far.
@@ -7243,8 +7155,7 @@ Whoah, dude! Jonesing for more already?
 @mis
 >toke test
 Hey now! You had your fun. Don't overdo it.
-
-@mis
+\\
 #+ttc-table-of-fun-fen-guesses-bark-biff
 >bark biff
 McFly
@@ -7256,8 +7167,7 @@ McFly
 >spark spliff
 !by one point
 Whoah, dude! Jonesing for more already?
-
-@ha
+\\
 #+ttc-table-of-verb-checks-11-spliff
 >zspark spliff rule
 !DEBUG: vc-spark-spliff rule tipped off the HA HALF button.
@@ -7306,8 +7216,7 @@ Your current rank is trolled, trod.
 >cull ceased
 !by one point
 You need to go back to Creased Cross.
-
-@vc
+\\
 #+testcase-reject-table-of-verb-checks-vc-heal-here-rule
 >heal here
 !by one point
@@ -7378,8 +7287,7 @@ The HA HALF button lights up on your Leet Learner.
 >cull zceased rule
 DEBUG: vc-cull-ceased rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 >least loss
 !by one point
 You already minimized your losses. Time to be more aggressive.
@@ -7457,8 +7365,7 @@ by one point
 @all
 #ttc-table-of-narratives-26
 Sick, Sought Thick Thought. EXPOUND
-
-@all
+\\
 #+ttc-table-of-ranks-14
 >score
 You have scored a total of 76 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
@@ -7479,8 +7386,7 @@ Too much for one person. You need to move it somewhere everyone can enjoy it.
 >full feast
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-47-feast
 >zfull feast rule
 !DEBUG: vc-full-feast rule tipped off the HA HALF button.
@@ -7532,8 +7438,7 @@ Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep i
 #+ttc-table-of-verb-checks-vh-so-sappin-rule-sew-sow
 >sow soppin
 Three letters is too much to twiddle Toe Tappin' Row Rappin'! You need to keep it simple.
-
-@hom
+\\
 #ttc-table-of-room-homonyms-whining-war-hom-whining-war-to-wining-wore-rule
 >wining woor
 Homonyms aren't quite the way to change the whining war.
@@ -7600,8 +7505,7 @@ by one point
 #testcase-reject-table-of-verb-checks-vc-shining-shore-rule
 >shining shore
 It could be that way. But you need to get rid of the whining first.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-dining-door-rule
 >dining door
 !by one point
@@ -7621,19 +7525,16 @@ Your current rank is trolled, trod.
 >dining door
 !by one point
 You hear a rumbling, but it's still too dingy here for anything nice like a dining door.
-
-@vc
+\\
 #testcase-reject-table-of-verb-checks-vc-mining-more-rule
 >mining more
 !by one point
 You and the pining poor aren't ready to do any mining yet, not on an empty stomach, but maybe later.
-
-@vc
+\\
 #+testcase-reject-table-of-verb-checks-vc-shining-shore-rule
 >shining shore
 You already got (t)here.
-
-@vc
+\\
 #+testcase-reject-table-of-verb-checks-vc-so-sappin-rule
 >so sappin
 !by one point
@@ -7679,8 +7580,7 @@ by one point
 
 @all
 /^Shining Shore
-
-@all
+\\
 #+ttc-table-of-ranks-14
 >score
 You have scored a total of 78 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
@@ -7723,8 +7623,7 @@ by one point
 @all
 #ttc-table-of-narratives-27
 "Wonder-weary? Blunder-bleary!" you think to yourself. No. Keep positive. Things must be ending soon.
-
-@all
+\\
 #ttc-table-of-ranks-15
 >score
 You have scored a total of 79 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
@@ -7781,8 +7680,7 @@ Your current rank is mold-mod.
 >pull pieced
 !by one point
 You don't need to pull anything other than the full feast.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-81-pieced
 >zpull pieced rule
 !DEBUG: vc-pull-pieced rule tipped off the HA HALF button.
@@ -7895,8 +7793,7 @@ by one point
 @all
 #ttc-table-of-narratives-28
 "So seedy! Grow greedy! No, needy!" taunts the joke jest poke pest. And it's sort of true. The more you've done, the more you want and need to see what's next, and you'd hate to give up. On the other hand, greedy people never admit they've gotten greedy... no, no, stop it! That can't be right!
-
-@all
+\\
 #+ttc-table-of-ranks-15
 >score
 You have scored a total of 82 out of 95 points and need 94 to win. You have found 13 of 14 optional points so far.
@@ -7943,8 +7840,7 @@ Alas, no food magically appears. You did what you needed.
 @thi
 >think
 !SHOW SHIELD
-
-@thi
+\\
 >go gappin
 !by one point
 >think
@@ -8017,8 +7913,7 @@ Your current rank is bold bod.
 >go gappin
 !by one point
 The action was okay, but I couldn't recognize the object.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-86-gappin-gapping
 >zgo gappin rule
 !DEBUG: vc-go-gappin rule tipped off the HA HALF button.
@@ -8104,8 +7999,7 @@ Your current rank is bold bod.
 >couple caps
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-87-caps
 >zcouple caps rule
 !DEBUG: vc-couple-caps rule tipped off the HA HALF button.
@@ -8246,8 +8140,7 @@ The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a 
 >beaker zbustle rule
 DEBUG: vc-beaker-bustle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner, but dimly--perhaps this is a rhyme you don't strictly need to figure to win.
-
-@ha
+\\
 #ttc-table-of-verb-checks-84-muscle
 >zmeeker muscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
@@ -8257,8 +8150,7 @@ The HA HALF button lights up on your Leet Learner.
 >meeker zmuscle rule
 DEBUG: vc-meeker-muscle rule tipped off the HA HALF button.
 The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-85-one
 >zwood one rule
 DEBUG: vc-wood-one rule tipped off the HA HALF button.
@@ -8323,8 +8215,7 @@ by one point
 @all
 #ttc-table-of-narratives-29
 "Hi, hi! Why, why? My, my! Sigh, sigh!" There was a time when you thought you didn't even deserve complex insults. But here--surely the Very Vile Fairy File is running out of steam? There's only one way to find out. Keep going!
-
-@all
+\\
 #+ttc-table-of-ranks-16
 >score
 You have scored a total of 87 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -8393,8 +8284,7 @@ by one point
 @all
 #ttc-table-of-narratives-30
 Something in you snaps. You've made it this far. The Very Vile Fairy File must be close, but you hear yourself blurting "Mock me, Jock? gee!"
-
-@all
+\\
 #+ttc-table-of-ranks-16
 >score
 You have scored a total of 88 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -8404,8 +8294,7 @@ Your current rank is bold bod.
 >wood one
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-85-one
 >zwood one rule
 !DEBUG: vc-wood-one rule tipped off the HA HALF button.
@@ -8439,8 +8328,7 @@ The field is not for manual labor.
 #+testcase-reject-table-of-verb-checks-vc-bury-bile-rule
 >bury bile
 You'd like to do that, but not here with so many distractions, during perhaps the big last fight.
-
-@vc
+\\
 ##balance undos
 #testcase-reject-table-of-verb-checks-vc-got-gored-rule
 >got gored
@@ -8584,8 +8472,7 @@ by one point
 @all
 #ttc-table-of-narratives-31
 "How hot NOW?! Not!" the joke jest poke pest insinuates. Yet, you sense desperation. It's relied more and more on telling you you aren't as great as you think, instead of that you're just awful. That's ... progress, huge progress.
-
-@all
+\\
 #ttc-table-of-ranks-17
 >score
 You have scored a total of 89 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -8618,8 +8505,7 @@ You already summoned the Hot Horde.
 >hot zhorde rule
 !DEBUG: vc-hot-horde rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-88-lord
 >zlot lord rule
 DEBUG: vc-lot-lord rule tipped off the HA HALF button.
@@ -8636,8 +8522,7 @@ by one point
 @all
 #ttc-table-of-narratives-32
 An unexpectedly cheery exhortation: "Blast'er blind, master mind!" The Very Vile Fairy File's power must be cracking. And you must be very close.
-
-@all
+\\
 #+ttc-table-of-ranks-17
 >score
 You have scored a total of 90 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -8665,8 +8550,7 @@ You already summoned the Lot Lord.
 >lot zlord rule
 !DEBUG: vc-lot-lord rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-90-gored
 >zgot gored rule
 DEBUG: vc-got-gored rule tipped off the HA HALF button.
@@ -8708,8 +8592,7 @@ You're happy, but you can't force it any more. You haven't found the Very Vile F
 @all
 #ttc-table-of-narratives-33
 An exceptionally loud howl from the Very Vile Fairy File: "Quit, quick! Sit sick!" You can't see it yet, but you must be close. WRONG due to narration I think
-
-@all
+\\
 #+ttc-table-of-ranks-17
 >score
 You have scored a total of 91 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -8816,8 +8699,7 @@ The HA HALF button lights up on your Leet Learner.
 #ttc-table-of-thing-homonyms-grow-grate-great
 >great xxx
 But you want to lessen the grate/gate's influence.
-
-@hom
+\\
 #ttc-table-of-thing-homonyms-go-gate-gait
 >gait xxx
 Ah, but what sort of gait should you take?
@@ -8833,11 +8715,9 @@ by one point
 @all
 #ttc-table-of-narratives-34
 Another howl from the Very Vile Fairy File: "Gonna go off! Shun a show-off!"
-
-@all
+\\
 /^Tarry Tile
-
-@all
+\\
 #+ttc-table-of-ranks-17
 >score
 You have scored a total of 92 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
@@ -8886,8 +8766,7 @@ A voice from the Very Vile Fairy File: "Oh, ick! So sick!" You should've expecte
 >whoa wait
 !by one point
 Your rhyming attempts bring up nothing. Or, if you tried a standard verb--well, this game tries to keep it simple, so you can focus on the puzzle verbs. But VERBS will show what you can use.
-
-@ha
+\\
 #+ttc-table-of-verb-checks-91-wait
 >zwhoa wait rule
 !DEBUG: vc-whoa-wait rule tipped off the HA HALF button.
@@ -8919,8 +8798,7 @@ You must be on the right track. But perhaps the shell that is shorn might make t
 >swell sworn
 Learner needle
 That might augment the hell horn.
-
-@mis
+\\
 #ttc-table-of-tarry-tile-guesses-bright-braced
 >bright braced
 !Learner needle
@@ -8991,8 +8869,7 @@ You want to, but you're still just barely forcing it. You need a way to cheer yo
 >tell ztorn rule
 !DEBUG: vc-tell-torn rule tipped off the HA HALF button.
 !The HA HALF button lights up on your Leet Learner.
-
-@ha
+\\
 #ttc-table-of-verb-checks-93-mile
 >zmerry mile rule
 DEBUG: vc-merry-mile rule tipped off the HA HALF button.
@@ -9009,11 +8886,9 @@ by one point
 @all
 #ttc-table-of-narratives-35
 "More make war! Wake!" booms the Very Vile Fairy File. It's still scary and all, but ... nobody shows up. That's a positive.
-
-@all
+\\
 /^Merry Mile
-
-@all
+\\
 >score
 You have scored a total of 94 out of 95 points and need 95 to win. You have found 14 of 14 optional points so far.
 Your current rank is gold god (almost).
@@ -9201,11 +9076,11 @@ You can't see any objects like that here.
 \\
 #testcase-moot-table-of-verb-checks-vc-get-good-rule
 >get good
-{{$GENERIC}}
+{$REJECT}
 \\
 #testcase-moot-table-of-verb-checks-vc-gift-giver-rule
 >gift giver
-{{$GENERIC}}
+{$REJECT}
 \\
 #testcase-moot-table-of-verb-checks-vc-glean-glows-rule
 >glean glows
@@ -9361,7 +9236,7 @@ The first word was okay, but what came after didn't quite work. You may wish to 
 \\
 #testcase-moot-table-of-verb-checks-vc-really-rolling-rule
 >really rolling
-{{$GENERIC}}
+{$REJECT}
 \\
 #+testcase-reject-table-of-verb-checks-vc-see-sign-rule
 >see sign
@@ -9531,8 +9406,7 @@ As you say/think this, the Leet Learner dims a bit, and the needle slides center
 by one point
 >shake she
 !As you say/think this
-
-@mis
+\\
 * guess-overflow-and-undo-check
 #ignore-the-rest
 >z

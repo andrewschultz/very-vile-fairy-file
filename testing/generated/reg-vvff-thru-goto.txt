@@ -282,6 +282,8 @@ Vending Vibe
 >lending libe
 by one point
 
+/^Lending Libe
+
 >see sign
 by one point
 
