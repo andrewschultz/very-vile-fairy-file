@@ -354,9 +354,19 @@ carry out othersing:
 	say "[line break]I would love to hear of more such games.";
 	the rule succeeds.
 
+chapter jumping
+
+the block jumping rule is not listed in any rulebook.
+
+check jumping: say "Well, better to have a jumpy jones than grumpy groans." instead;
+
 chapter singing
 
 the block singing rule is not listed in any rulebook.
+
+check singing:
+	if entry-in-series is 2 or entry-in-series is 4 or entry-in-series is 5, say "The only sign that comes to mind is [i]Dearie, Dark Eerie Ark[r]." instead;
+	say "You hum a few too-totes-new notes, almost stringing together a wry witty dry ditty." instead;
 
 chapter soundsing
 
