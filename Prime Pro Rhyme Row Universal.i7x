@@ -631,7 +631,7 @@ to say outside-item: say "An outside item is required for what you need to do ne
 
 book proper names
 
-series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]", "[csdd]", "[ttdd]" }
+series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]", "[csdd]", "[ttdd]", "[bbkk]", "[ttmm]", "[bbgg]" }
 
 entry-in-series is a number that varies.
 
@@ -653,6 +653,12 @@ to say lljj: say "[i]Low-Key Learny Jokey Journey[r]"
 to say csdd: say "[i]Civil Seeming Drivel Dreaming[r]"
 
 to say ttdd: say "[i]There Those Dare Doze[r]"
+
+to say bbkk: say "[i]Bright Brave Knight Knave[r]"
+
+to say ttmm: say "[i]Taller Tech Mauler Mech[r]"
+
+to say bbgg: say "[i]Beef Beans Grief Greens[r]"
 
 book bug notes
 
