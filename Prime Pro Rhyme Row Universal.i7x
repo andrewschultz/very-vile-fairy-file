@@ -301,15 +301,19 @@ understand "credits" as creditsing.
 
 chapter hinting verb
 
-hinting is an action out of world.
+rmhinting is an action out of world.
 
 understand the command "hint" as something new.
 understand the command "help" as something new.
 understand the command "hints" as something new.
 
-understand "hint" as hinting.
-understand "help" as hinting.
-understand "hints" as hinting.
+understand "hint" as rmhinting.
+understand "help" as rmhinting.
+understand "hints" as rmhinting.
+
+carry out rmhinting:
+	abide by the room-hint-rule of location of player;
+	say "I should have advice here, but I don't." instead;
 
 chapter no/yes
 
