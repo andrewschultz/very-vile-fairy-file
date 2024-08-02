@@ -618,6 +618,17 @@ after reading a command:
 
 volume text stubs
 
+book hint text stubs
+
+to say done-here: say "you're done here in [location of player]"
+
+to say done-item: say "you're done rhyming that"
+
+this is the hint-just-scenery rule: say "You don't have to worry about [the noun], which is just scenery to provide clues or atmosphere." instead;
+this is the hint-done-stuff rule: say "You summoned [the noun] into existence, which is enough. You'll want to look elsewhere for double-rhymes." instead;
+
+to say outside-item: say "An outside item is required for what you need to do next"
+
 book proper names
 
 series-names is a list of text variable. series-names is { "[vvff]", "[qqnn]", "[lljj]", "[csdd]", "[ttdd]" }
