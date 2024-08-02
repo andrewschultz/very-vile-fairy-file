@@ -107,7 +107,7 @@ this is the score and thinking changes rule:
 	let bonus-delt be cur-bonus - last-cur-bonus;
 	let sco-delt be current-score - last-current-score;
 	if sco-delt is 0 and bonus-delt is 0, continue the action;
-	[say "[core-score] + [cur-bonus] = [core-score + cur-bonus].";]
+[	say "[core-score] + [cur-bonus] = [core-score + cur-bonus].";]
 	say "[i][bracket]Your score ";
 	if bonus-delt is 0:
 		say "[went-by sco-delt]";
@@ -296,8 +296,10 @@ chapter creditsing
 creditsing is an action out of world.
 
 understand the command "credits" as something new.
+understand the command "credit" as something new.
 
 understand "credits" as creditsing.
+understand "credit" as creditsing.
 
 chapter hinting verb
 
@@ -577,7 +579,7 @@ understand "pride prong" as pride-pronging.
 
 carry out pride-pronging:
 	follow the know-ide-ong rule;
-	say "You are [if player-room-allow-threshold is bonus-left]already[else]now[end if] blocked from paths where no branches contain any point-scoring activities, critical or bonus.";
+	say "You are [if player-room-allow-threshold is bonus-left]already[else]now[end if] blocked from paths with no points, critical or bonus, available in any branches.";
 	now player-room-allow-threshold is bonus-left;
 	the rule succeeds;
 
